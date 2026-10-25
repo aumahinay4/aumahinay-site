@@ -14,6 +14,18 @@ stylesheet lives in `style.py`.
 | `app.py` | Runs the site locally with Flask. |
 | `build.py` | Exports the site as static HTML into `dist/` for hosting. |
 
+## How to edit your site on GitHub (no software needed)
+1. Open https://github.com/aumahinay4/aumahinay-site and click **content.py**.
+2. Click the pencil icon (**Edit this file**) at the top right of the file.
+3. Change the words you want. Only edit the text inside the quotation marks `"like this"`,
+   and leave the commas, brackets and quotation marks in place.
+4. Click **Commit changes…**, then **Commit changes** again.
+5. aumahinay.dev updates by itself in about a minute. If it doesn't, open the **Actions** tab:
+   a red ✗ means something in the edit broke the file. Open the file's **History** to undo it,
+   or ask Claude to fix it.
+
+`content.py` holds all the text: About me, experience, education, ALTOS, courses and trainings.
+
 ## Run it on your computer
 ```bash
 python -m venv .venv
