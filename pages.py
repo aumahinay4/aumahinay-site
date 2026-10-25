@@ -1,7 +1,7 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
 import tags as t
-from content import ABOUT, ALTOS, CERTIFICATES, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
 from style import CSS
 from tags import Raw
 
@@ -10,7 +10,7 @@ def asset_url(name):
     return "/static/" + name
 
 
-NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/about/", "About")]
+NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/news/", "IT News"), ("/about/", "About")]
 
 
 def layout(title, active, body, description=None):
@@ -238,6 +238,31 @@ def courses():
     )
 
 
+def news_card(n):
+    return t.div(
+        t.div(t.span(n["topic"], class_="badge"), " ", t.span(n["date"], class_="muted"), class_="meta"),
+        t.h3(n["title"]),
+        t.p(n["summary"]),
+        t.div(t.a(f"Read the full story on {n['source']} →", href=n["url"], target="_blank", rel="noopener"), class_="foot"),
+        class_="card",
+    )
+
+
+def news():
+    return part(
+        "IT News", "/news/",
+        t.p("Updates", class_="eyebrow"),
+        t.h1("IT News"),
+        t.p(
+            "Selected technology news on digital government, cybersecurity and AI in the Philippines, "
+            "summarized briefly. Each item links to the original article.",
+            class_="lead",
+        ),
+        t.div([news_card(n) for n in NEWS], class_="grid one"),
+        description="Selected IT news for Philippine public service",
+    )
+
+
 def about():
     return part(
         "About", "/about/",
@@ -277,7 +302,7 @@ def about():
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/about/": about}
+PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/news/": news, "/about/": about}
 
 
 def _full_page(build):

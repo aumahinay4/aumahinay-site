@@ -348,3 +348,58 @@ TRAININGS = [
     ("1st Virtual Regional Conference of Local Assessors and Treasurers", "BLGF Region IV-A", "Dec 2021"),
     ("BLGF–PCOO Webinar on FOI Memorandum Circulars", "Bureau of Local Government Finance", "Nov 2021"),
 ]
+
+# IT news, newest first. To add a story, copy one block below, paste it at the TOP of
+# the list and change the words. Keep summaries short and in your own words, and always
+# link to the original article.
+NEWS = [
+    {
+        "date": "October 25, 2026",
+        "topic": "Cybersecurity",
+        "title": "DDoS attacks on Philippine telecom networks more than double",
+        "summary": (
+            "Data from security firm StormWall shows telecommunications accounted for a quarter of "
+            "DDoS attacks in the Philippines from January to August 2026, with attacks on telecom "
+            "networks up 118% from a year earlier and their average size about five times larger."
+        ),
+        "source": "The Manila Times",
+        "url": "https://www.manilatimes.net/2026/10/25/business/sunday-business-it/ddos-attacks-on-ph-telecoms-surge/2453202",
+    },
+    {
+        "date": "October 21, 2026",
+        "topic": "Digital ID",
+        "title": "DICT opens ₱496-million tender for National ID verification infrastructure",
+        "summary": (
+            "The Department of Information and Communications Technology is bidding out one year of "
+            "cloud, security and identity-verification services for its National ID eVerify program, "
+            "with a 99.5% uptime guarantee. Bids are due November 9, 2026."
+        ),
+        "source": "Biometric Update",
+        "url": "https://www.biometricupdate.com/202610/philippines-launches-7-8m-tender-for-national-digital-id-infrastructure",
+    },
+    {
+        "date": "October 19, 2026",
+        "topic": "E-government",
+        "title": "Electronic notarization launches nationwide",
+        "summary": (
+            "The Philippines formally launched electronic notarization in Taguig City. The Supreme "
+            "Court, the Land Registration Authority and the SEC issued joint guidelines for accepting "
+            "e-notarized documents, with identities checked through the DICT's eVerify service. "
+            "Linking it to the eGov platform is in final testing."
+        ),
+        "source": "Daily Tribune",
+        "url": "https://tribune.net.ph/2026/10/19/philippines-launches-nationwide-electronic-notarization",
+    },
+    {
+        "date": "September 21, 2026",
+        "topic": "AI in government",
+        "title": "eGovPH app gets an AI assistant",
+        "summary": (
+            "The DICT added eGovAI to the eGovPH Super App, including the \"Kuya AI\" assistant, "
+            "to help citizens find information, navigate government services and complete "
+            "transactions, with identity checks, document handling and translation built in."
+        ),
+        "source": "Marketech APAC",
+        "url": "https://marketech-apac.com/dict-brings-ai-powered-government-services-to-filipinos-through-egovai/",
+    },
+]

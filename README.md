@@ -24,7 +24,11 @@ stylesheet lives in `style.py`.
    a red ✗ means something in the edit broke the file. Open the file's **History** to undo it,
    or ask Claude to fix it.
 
-`content.py` holds all the text: About me, experience, education, ALTOS, courses and trainings.
+`content.py` holds all the text: About me, experience, education, ALTOS, courses, trainings and IT news.
+
+**To add an IT news item:** in `content.py`, scroll to `NEWS = [`, copy one `{ ... },` block,
+paste it right under `NEWS = [` (newest goes first) and change the date, topic, title,
+summary, source and link.
 
 ## Run it on your computer
 ```bash

@@ -59,6 +59,7 @@ nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
 nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
+@media (max-width: 480px) { nav { gap: 0; } nav a { padding: 8px 9px; font-size: 14px; } }
 
 main { padding: 40px 0 88px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
