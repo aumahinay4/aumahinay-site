@@ -143,7 +143,7 @@ def home():
             class_="hero",
         ),
         t.div(
-            t.div(t.b("15+"), t.span("years in public finance"), class_="stat"),
+            t.div(t.b("14+"), t.span("years in public finance"), class_="stat"),
             t.div(t.b(len(pro)), t.span("Google Professional Certificates"), class_="stat"),
             t.div(t.b(sum(c["courses"] for c in CERTIFICATES)), t.span("Coursera courses completed"), class_="stat"),
             t.div(t.b("10"), t.span("ALTOS principles of 360° accountability"), class_="stat"),
