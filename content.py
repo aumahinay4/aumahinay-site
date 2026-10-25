@@ -10,7 +10,7 @@ SITE = {
     "tagline": "Public finance professional who builds software for local government.",
     "email": "aumahinay4@gmail.com",
     "domain": "aumahinay.dev",
-    "brand": "aumahinay",  # shown in the top bar and browser tab
+    "brand": "aumahinay",  # shown in the browser tab
     # TODO: add real profile links (or leave empty to hide them)
     "github": "",
     "linkedin": "",

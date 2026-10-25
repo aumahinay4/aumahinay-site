@@ -48,7 +48,7 @@ def build():
         t.style(Raw(CSS + "body{background:var(--bg)}")),
         t.header(
             t.div(
-                t.a(SITE["brand"], href="#home", class_="brand"),
+                t.a(SITE["short_name"].split()[0], " ", t.span(SITE["short_name"].split()[1]), href="#home", class_="brand"),
                 t.nav([t.a(label, href="#" + SLUG[href]) for href, label in NAV]),
                 class_="wrap",
             ),
