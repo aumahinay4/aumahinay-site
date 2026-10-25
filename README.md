@@ -23,6 +23,6 @@ python app.py                   # open http://127.0.0.1:5000
 ```
 
 ## Publish (Cloudflare Pages)
-The site is served from `dist/` by Cloudflare Pages, which redeploys on every push to `main`.
-After changing content, run `python build.py`, then commit and push. Setup details are in
-**DEPLOY_CLOUDFLARE.md**.
+Every push to `main` is published to aumahinay.dev by the GitHub Actions workflow in
+`.github/workflows/deploy.yml`. After changing content, run `python build.py`, then
+commit and push. Setup details are in **DEPLOY_CLOUDFLARE.md**.

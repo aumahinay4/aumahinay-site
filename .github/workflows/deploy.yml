@@ -1,0 +1,31 @@
+# Publishes dist/ to the Cloudflare Pages project "aumahinay" (aumahinay.dev)
+# on every push to main. Needs one repo secret: CLOUDFLARE_API_TOKEN
+# (a Cloudflare API token with Account > Cloudflare Pages > Edit).
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the site
+        run: python build.py
+      - name: Publish to Cloudflare Pages
+        if: env.HAS_TOKEN == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: e523875678b6bea173fd8e84c1c53ba1
+          command: pages deploy dist --project-name=aumahinay --branch=main
