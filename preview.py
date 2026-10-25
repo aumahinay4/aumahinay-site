@@ -42,13 +42,13 @@ def build():
         p = make()
         views.append(t.section(p["body"], class_="view", id="view-" + SLUG[route], hidden=route != "/"))
     html = render([
-        t.title(SITE["domain"]),
+        t.title(SITE["brand"]),
         t.meta(name="claude:viewport-fit-sides", content="cover"),
         t.link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap"),
         t.style(Raw(CSS + "body{background:var(--bg)}")),
         t.header(
             t.div(
-                t.a(SITE["domain"].split(".")[0], t.span("." + SITE["domain"].split(".")[1]), href="#home", class_="brand"),
+                t.a(SITE["brand"], href="#home", class_="brand"),
                 t.nav([t.a(label, href="#" + SLUG[href]) for href, label in NAV]),
                 class_="wrap",
             ),

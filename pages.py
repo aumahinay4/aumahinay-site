@@ -14,7 +14,7 @@ NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/a
 
 
 def layout(title, active, body, description=None):
-    page_title = SITE["domain"] if active == "/" else f"{title} · {SITE['domain']}"
+    page_title = SITE["brand"] if active == "/" else f"{title} · {SITE['brand']}"
     doc = t.html(
         t.head(
             t.meta(charset="utf-8"),
@@ -28,7 +28,7 @@ def layout(title, active, body, description=None):
         t.body(
             t.header(
                 t.div(
-                    t.a(SITE["domain"].split(".")[0], t.span("." + SITE["domain"].split(".")[1]), href="/", class_="brand"),
+                    t.a(SITE["brand"], href="/", class_="brand"),
                     t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
                     class_="wrap",
                 ),
