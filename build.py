@@ -21,6 +21,7 @@ def build():
         print("wrote", out.relative_to(DIST.parent))
     (DIST / "404.html").write_text(not_found(), encoding="utf-8")
     shutil.copytree(Path(__file__).parent / "static", DIST / "static", dirs_exist_ok=True)
+    shutil.copy(DIST / "static" / "favicon.ico", DIST / "favicon.ico")  # browsers look for it at the root
     # GitHub Pages custom domain file
     (DIST / "CNAME").write_text(SITE["domain"] + "\n")
 

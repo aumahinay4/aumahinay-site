@@ -43,6 +43,7 @@ def build():
         views.append(t.section(p["body"], class_="view", id="view-" + SLUG[route], hidden=route != "/"))
     html = render([
         t.title(SITE["brand"]),
+        t.link(rel="icon", type="image/png", href=inline_asset("favicon-32.png")),
         t.meta(name="claude:viewport-fit-sides", content="cover"),
         t.link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap"),
         t.style(Raw(CSS + "body{background:var(--bg)}")),
