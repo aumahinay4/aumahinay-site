@@ -51,8 +51,10 @@ header.site { background: var(--navy-deep); position: sticky; top: env(safe-area
 header.site::after { content: ""; display: block; height: 3px; background: var(--rainbow); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 66px; flex-wrap: wrap; }
 .brand { font: 700 1.2rem var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
-.brand span { color: var(--gold); }
+.brand b { color: var(--gold); font-weight: inherit; }
 .brand:hover { text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
+.brand .avatar { width: 34px; height: 34px; border-radius: 50%; flex: none; display: block; }
 nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }

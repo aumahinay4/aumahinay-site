@@ -46,8 +46,10 @@ header.site { background: var(--navy-deep); position: sticky; top: env(safe-area
 header.site::after { content: ""; display: block; height: 3px; background: var(--rainbow); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 66px; flex-wrap: wrap; }
 .brand { font: 700 1.2rem var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
-.brand span { color: var(--gold); }
+.brand b { color: var(--gold); font-weight: inherit; }
 .brand:hover { text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
+.brand .avatar { width: 34px; height: 34px; border-radius: 50%; flex: none; display: block; }
 nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
@@ -247,4 +249,4 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 footer.site { padding: 32px 0; color: var(--on-navy-muted); font-size: 14px; background: var(--navy-deep); }
 footer.site::before { content: ""; display: block; height: 3px; background: var(--rainbow); margin-top: -32px; margin-bottom: 29px; }
 footer.site a { color: var(--on-navy); }
-</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand">Butch <span>Mahinay</span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/about/">About</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer></body></html>
+</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/about/">About</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer></body></html>
