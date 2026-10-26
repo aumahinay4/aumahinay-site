@@ -263,4 +263,5 @@ figure.screenshot { margin: 28px 0 8px; }
 figure.screenshot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 22, 48, .45); }
 figure.screenshot figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); text-align: center; }
 .note { margin-top: 28px; font-size: 14px; }
+figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizing: border-box; }
 """
