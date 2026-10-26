@@ -170,14 +170,14 @@ ALTOS = {
 # Subsystems of ALTOS (functioning and ready as of Oct 2026). ALTOS is the mother system.
 SUBSYSTEMS = [
     {
-        "code": "ALTOS Collect",
+        "code": "Treasury Collection System",
         "name": "Collections subsystem",
         "movement": "Collect + Report",
         "status": "Ready",
         "summary": "A subsystem of ALTOS for collections and their reports: official receipts, collectors and their OR series, remittances and deposits, the daily RCD, and the monthly RAAF and CRAAF.",
     },
     {
-        "code": "ALTOS Disburse",
+        "code": "Treasury Disbursement System",
         "name": "Disbursements subsystem",
         "movement": "Disburse + Report",
         "status": "Ready",

@@ -80,7 +80,6 @@ def altos_feature_card():
         t.div(
             t.p(ALTOS["where"], class_="eyebrow"),
             t.h3(t.span(wordmark(), class_="wordmark"), " ", ALTOS["full_name"]),
-            t.p(ALTOS["summary"]),
             tag_list(ALTOS["stack"]),
             t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn primary"), class_="foot"),
             class_="feature-body",
@@ -167,8 +166,8 @@ def projects():
         t.p("Software", class_="eyebrow"),
         t.h1("Projects"),
         t.p(
-            "ALTOS is the mother system. Its two subsystems are now up and running: ALTOS Collect for collections "
-            "and ALTOS Disburse for disbursements, each with its own reports.",
+            "ALTOS is the mother system. Its two subsystems are now up and running: the Treasury Collection System for collections "
+            "and the Treasury Disbursement System for disbursements, each with its own reports.",
             class_="lead",
         ),
         family(),
