@@ -88,10 +88,10 @@ def altos_feature_card():
     )
 
 
-def subsystem_node(sub):
+def subsystem_node(sub, summary=True):
     return t.div(
         t.div(t.span(sub["code"], class_="code"), t.span(sub["status"], class_="status" if sub["status"] == "Planned" else "status live"), class_="node-head"),
-        t.p(sub["summary"]),
+        t.p(sub["summary"]) if summary else None,
         t.div(sub["movement"], class_="forms"),
         class_="node child",
     )
@@ -152,7 +152,7 @@ def home():
         ),
         t.h2("Projects"),
         t.div(altos_feature_card(), class_="grid one"),
-        t.div([subsystem_node(sub) for sub in SUBSYSTEMS], class_="children compact"),
+        t.div([subsystem_node(sub, summary=False) for sub in SUBSYSTEMS], class_="children compact"),
         t.h2("Latest certificates"),
         t.div([cert_card(c) for c in CERTIFICATES[:3]], class_="grid"),
     )
