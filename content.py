@@ -8,7 +8,7 @@ SITE = {
     "short_name": "Butch Mahinay",
     "title": "Ambrosio “Butch” U. Mahinay, MPA",
     "tagline": "Public finance professional who builds software for local government.",
-    "email": "aumahinay4@gmail.com",
+    "email": "contact@aumahinay.dev",
     "domain": "aumahinay.dev",
     "brand": "aumahinay",  # shown in the browser tab
     # TODO: add real profile links (or leave empty to hide them)
