@@ -223,8 +223,9 @@ def courses():
         t.p("Learning", class_="eyebrow"),
         t.h1("Completed courses"),
         t.p(
-            "I started learning on Coursera, through Google Career Certificates, in 2020, during the pandemic, while serving as "
-            "Acting Municipal Treasurer of Mulanay, Quezon, and pursued it fully from 2024. Since then I have earned "
+            "I began learning on Coursera through Google Career Certificates (GCC) in 2020, during the pandemic, "
+            "while serving as Acting Municipal Treasurer of Mulanay, Quezon. In 2024 I committed to the GCC "
+            "program fully, and I have since earned "
             f"{len(pro)} Google Professional Certificates and {len(spec)} Specializations, "
             f"{sum(c['courses'] for c in CERTIFICATES)} courses in total. "
             "Every credential links to its Coursera verification page.",
