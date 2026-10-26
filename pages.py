@@ -182,12 +182,12 @@ def projects():
             ring(),
             class_="altos-hero",
         ),
+        t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
         t.figure(
             t.img(src=asset_url("altos-loop.png"), alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step.", width="1395", height="680", loading="lazy"),
             t.figcaption("Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step."),
             class_="screenshot diagram",
         ),
-        t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
         t.h2("Three movements of public money"),
         t.p("Every transaction in a local treasury belongs to one of three movements. ALTOS follows each one, with a named officer answerable at every step.", class_="muted"),
         t.div(
