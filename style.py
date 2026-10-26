@@ -146,7 +146,9 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .feature-body { min-width: 0; display: flex; flex-direction: column; }
 .feature-body h3 { font-size: 1.45rem; }
 .feature .foot { padding-top: 22px; }
-@media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } }
+.feature-art.wide { width: 46%; max-width: 440px; }
+.feature-shot { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .5); }
+@media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } .feature-art.wide { display: block; width: 100%; max-width: none; } }
 
 /* The ALTOS wordmark: one colour per letter, as on the cover */
 .wordmark { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.01em; }

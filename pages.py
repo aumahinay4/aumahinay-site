@@ -76,7 +76,7 @@ def cover_img(class_):
 
 def altos_feature_card():
     return t.div(
-        t.div(t.img(src=asset_url("altos-cover.jpg"), alt="", class_="feature-cover", width="600", height="900"), class_="feature-art"),
+        t.div(t.img(src=asset_url("altos-screen.jpg"), alt="The ALTOS sign-in page", class_="feature-shot", width="1600", height="1001", loading="lazy"), class_="feature-art wide"),
         t.div(
             t.p(ALTOS["where"], class_="eyebrow"),
             t.h3(t.span(wordmark(), class_="wordmark"), " ", ALTOS["full_name"]),
@@ -91,7 +91,6 @@ def altos_feature_card():
 def subsystem_node(sub):
     return t.div(
         t.div(t.span(sub["code"], class_="code"), t.span(sub["status"], class_="status" if sub["status"] == "Planned" else "status live"), class_="node-head"),
-        t.h3(sub["name"]),
         t.p(sub["summary"]),
         t.div(sub["movement"], class_="forms"),
         class_="node child",
