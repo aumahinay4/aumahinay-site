@@ -264,6 +264,11 @@ def news():
             class_="lead",
         ),
         t.div([news_card(n) for n in NEWS], class_="grid one"),
+        t.p(
+            "Summaries of published news, each linked to its original source. "
+            "This is a personal website and not an official publication of any government office.",
+            class_="muted note",
+        ),
         description="Selected IT news for Philippine public service",
     )
 
