@@ -19,9 +19,9 @@ SITE = {
 
 ABOUT = {
     "intro": (
-        "I am a public administration professional with over 14 years of career "
-        "service in local government fiscal administration and treasury "
-        "operations. I designed and built "
+        "I am a public administration professional with over 15 years in "
+        "government service, more than 13 of them in local government fiscal "
+        "administration and treasury operations. I designed and built "
         "ALTOS, the Automated Local Treasury Operations System."
     ),
     "paragraphs": [

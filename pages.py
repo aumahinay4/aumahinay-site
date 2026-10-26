@@ -103,7 +103,7 @@ def family():
     """ALTOS as the mother system with its subsystems branching below."""
     return t.div(
         t.div(
-            t.div(t.span(t.span(wordmark(), class_="wordmark"), class_="code"), t.span("Mother system · in use", class_="status live"), class_="node-head"),
+            t.div(t.span(t.span(wordmark(), class_="wordmark"), class_="code"), class_="node-head"),
             t.h3(ALTOS["full_name"]),
             t.p("Collect, Disburse and Report in one database, with the ALTOS Framework built in."),
             class_="node mother",
@@ -146,10 +146,10 @@ def home():
             class_="hero",
         ),
         t.div(
-            t.div(t.b("14+"), t.span("years in public finance"), class_="stat"),
+            t.div(t.b("15+"), t.span("years in government service"), class_="stat"),
+            t.div(t.b("13+"), t.span("years in public finance"), class_="stat"),
             t.div(t.b(len(pro)), t.span("Google Professional Certificates"), class_="stat"),
             t.div(t.b(sum(c["courses"] for c in CERTIFICATES)), t.span("Coursera courses completed"), class_="stat"),
-            t.div(t.b("10"), t.span("ALTOS principles of 360° accountability"), class_="stat"),
             class_="stats",
         ),
         t.h2("Projects"),
@@ -183,6 +183,11 @@ def projects():
             ),
             ring(),
             class_="altos-hero",
+        ),
+        t.figure(
+            t.img(src=asset_url("altos-screen.jpg"), alt="The ALTOS sign-in page, with working pages for the Collecting, Disbursing and Liquidating Officers and the System Administrator", width="1600", height="1001", loading="lazy"),
+            t.figcaption("The ALTOS sign-in page. Each officer works on their own page: Collecting, Disbursing, Liquidating and System Administrator."),
+            class_="screenshot",
         ),
         t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
         t.h2("Three movements of public money"),
