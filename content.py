@@ -362,6 +362,9 @@ NEWS = [
             "DDoS attacks in the Philippines from January to August 2026, with attacks on telecom "
             "networks up 118% from a year earlier and their average size about five times larger."
         ),
+        "why": (
+            "Government offices that serve citizens and accept payments online depend on these same networks, so stronger protection keeps public services running."
+        ),
         "source": "The Manila Times",
         "url": "https://www.manilatimes.net/2026/10/25/business/sunday-business-it/ddos-attacks-on-ph-telecoms-surge/2453202",
     },
@@ -373,6 +376,9 @@ NEWS = [
             "The Department of Information and Communications Technology is bidding out one year of "
             "cloud, security and identity-verification services for its National ID eVerify program, "
             "with a 99.5% uptime guarantee. Bids are due November 9, 2026."
+        ),
+        "why": (
+            "Quick, reliable ID checks help government offices confirm who they are dealing with, which cuts paperwork and helps prevent fraud."
         ),
         "source": "Biometric Update",
         "url": "https://www.biometricupdate.com/202610/philippines-launches-7-8m-tender-for-national-digital-id-infrastructure",
@@ -387,6 +393,9 @@ NEWS = [
             "e-notarized documents, with identities checked through the DICT's eVerify service. "
             "Linking it to the eGov platform is in final testing."
         ),
+        "why": (
+            "Documents that used to need a personal appearance before a notary can now be handled and verified online, saving citizens time and travel."
+        ),
         "source": "Daily Tribune",
         "url": "https://tribune.net.ph/2026/10/19/philippines-launches-nationwide-electronic-notarization",
     },
@@ -398,6 +407,9 @@ NEWS = [
             "The DICT added eGovAI to the eGovPH Super App, including the \"Kuya AI\" assistant, "
             "to help citizens find information, navigate government services and complete "
             "transactions, with identity checks, document handling and translation built in."
+        ),
+        "why": (
+            "An assistant that guides people step by step can mean fewer queues, fewer repeat visits and easier access to government services."
         ),
         "source": "Marketech APAC",
         "url": "https://marketech-apac.com/dict-brings-ai-powered-government-services-to-filipinos-through-egovai/",

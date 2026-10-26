@@ -264,4 +264,22 @@ figure.screenshot img { display: block; width: 100%; height: auto; border-radius
 figure.screenshot figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); text-align: center; }
 .note { margin-top: 28px; font-size: 14px; }
 figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizing: border-box; }
+
+.news-updated { font-size: 14px; margin: 4px 0 0; }
+.news-list { display: grid; gap: 22px; margin-top: 24px; }
+.card.news.gold { --c: var(--gold); --ci: var(--gold-ink); }
+.card.news.blue { --c: var(--blue); --ci: var(--blue-ink); }
+.card.news.green { --c: var(--green); --ci: var(--green-ink); }
+.card.news.coral { --c: var(--coral); --ci: var(--coral-ink); }
+.card.news.violet { --c: var(--violet); --ci: var(--violet-ink); }
+.card.news .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.card.news h3 { margin: 0; }
+.card.news.latest { padding: 30px 32px; border-left: 4px solid var(--c); }
+.card.news.latest::before { background: var(--rainbow); }
+.card.news.latest h3 { font-size: 1.35em; }
+.badge.latest { color: var(--navy-deep); background: var(--gold); }
+.card .why { margin-top: 14px; padding: 10px 14px; border-radius: 8px; font-size: 15px; background: color-mix(in srgb, var(--c) 10%, transparent); }
+.card .why b { color: var(--ci); }
+.card .foot.source { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; font-size: 14px; }
+.card .foot.source a { color: var(--ci); }
 """

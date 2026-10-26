@@ -242,13 +242,31 @@ def courses():
     )
 
 
-def news_card(n):
-    return t.div(
-        t.div(t.span(n["topic"], class_="badge"), " ", t.span(n["date"], class_="muted"), class_="meta"),
+NEWS_TOPIC_COLOR = {
+    "Cybersecurity": "coral",
+    "Digital ID": "blue",
+    "E-government": "green",
+    "AI in government": "violet",
+}
+
+
+def news_card(n, latest=False):
+    return t.article(
+        t.div(
+            t.span(n["topic"], class_="badge"),
+            t.span("Latest", class_="badge latest") if latest else "",
+            t.span(n["date"], class_="muted"),
+            class_="meta",
+        ),
         t.h3(n["title"]),
         t.p(n["summary"]),
-        t.div(t.a(f"Read the full story on {n['source']} →", href=n["url"], target="_blank", rel="noopener"), class_="foot"),
-        class_="card",
+        t.p(t.b("Why it matters: "), n["why"], class_="why") if n.get("why") else "",
+        t.div(
+            t.span(f"Source: {n['source']}", class_="muted"),
+            t.a("Read the full story →", href=n["url"], target="_blank", rel="noopener"),
+            class_="foot source",
+        ),
+        class_=f"card news {NEWS_TOPIC_COLOR.get(n['topic'], 'gold')}" + (" latest" if latest else ""),
     )
 
 
@@ -259,10 +277,11 @@ def news():
         t.h1("IT News"),
         t.p(
             "Selected technology news on digital government, cybersecurity and AI in the Philippines, "
-            "summarized briefly. Each item links to the original article.",
+            "summarized briefly in my own words. Each item links to the original article.",
             class_="lead",
         ),
-        t.div([news_card(n) for n in NEWS], class_="grid one"),
+        t.p(f"Last updated {NEWS[0]['date']} · {len(NEWS)} stories", class_="muted news-updated"),
+        t.div([news_card(n, latest=(i == 0)) for i, n in enumerate(NEWS)], class_="news-list"),
         t.p(
             "Summaries of published news, each linked to its original source. "
             "This is a personal website and not an official publication of any government office.",
