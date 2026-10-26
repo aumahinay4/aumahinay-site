@@ -32,8 +32,8 @@ ABOUT = {
         ),
         (
             "My technical background started with Computer System Design & "
-            "Programming at AMA Computer Learning Center. I started studying on "
-            "Coursera in 2020, during the pandemic, in Mulanay, Quezon, where I was "
+            "Programming at AMA Computer Learning Center. I started learning on "
+            "Coursera, through Google Career Certificates, in 2020, during the pandemic, in Mulanay, Quezon, where I was "
             "first designated Acting Municipal Treasurer and served for two years. "
             "In 2024 I committed to it fully, and I have since completed seven Google Professional Certificates and "
             "three Google Specializations, covering data analytics, AI, cybersecurity, "
