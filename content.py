@@ -340,6 +340,54 @@ CERTIFICATES = [
     },
 ]
 
+# The write-up at the top of the Courses page: my Google Career Certificates journey.
+GCC_STORY = {
+    "title": "Learning without limits",
+    "paragraphs": [
+        (
+            "My Coursera story began in 2020, during the pandemic. I had just been designated "
+            "Acting Municipal Treasurer of Mulanay, Quezon, and I started taking online courses "
+            "to understand the technology that could make a local treasury work better. For the "
+            "next few years I learned in between the demands of treasury work."
+        ),
+        (
+            "In 2024 I decided to pursue it fully, and I chose Google Career Certificates as my "
+            "path. They are designed by Google, they are practical, and they are built around "
+            "hands-on labs and projects instead of theory alone. Between June 2025 and October "
+            "2026 I completed seven Google Professional Certificates and three Google "
+            "Specializations, sixty courses in all."
+        ),
+        (
+            "I began with Cybersecurity and Project Management, because a system that holds "
+            "public money has to be secure, and it has to be delivered. Advanced Data Analytics, "
+            "Business Intelligence and AI followed. In 2026 I added the People Management and AI "
+            "Essentials specializations in May, the Data Analytics certificate in June, Stakeholder "
+            "Management in July and, most recently, IT Support in October."
+        ),
+        (
+            "These certificates are not separate from my work; they show up in ALTOS. Its "
+            "Security Center is organized by the NIST Cybersecurity Framework, with hashed "
+            "passwords, automatic log-out and encrypted backups. Its Data Analytics and Insights "
+            "module turns collections into targets, forecasts and control checks. ALTOS is written "
+            "in Python, the language I used across the analytics and cybersecurity courses, and "
+            "the project and stakeholder management courses shaped how I planned the system and "
+            "explained it to the officers who use it."
+        ),
+        (
+            "After more than 15 years in government service, 13 of them in public finance, I have "
+            "learned that it is never too late to learn a new field. Every credential below links "
+            "to its Coursera verification page."
+        ),
+    ],
+    "milestones": [
+        ("2020", "Started on Coursera", "During the pandemic, as Acting Municipal Treasurer of Mulanay, Quezon."),
+        ("2024", "Committed fully", "Chose Google Career Certificates as my learning path."),
+        ("Jun 2025", "First two certificates", "Google Cybersecurity and Google Project Management."),
+        ("Dec 2025 – Feb 2026", "Data and AI", "Advanced Data Analytics, Business Intelligence and AI."),
+        ("May – Oct 2026", "Management, analytics and IT", "Three specializations, Data Analytics and IT Support."),
+    ],
+}
+
 # Government and professional trainings (non-Coursera)
 TRAININGS = [
     ("Financial Education (10-hr Leadership & Management Training)", "Civil Service Institute, CSC", "Mar 2025"),

@@ -1,7 +1,7 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
 import tags as t
-from content import ABOUT, ALTOS, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, CERTIFICATES, GCC_STORY, NEWS, SITE, SUBSYSTEMS, TRAININGS
 from style import CSS
 from tags import Raw
 
@@ -225,12 +225,18 @@ def courses():
         t.p("Learning", class_="eyebrow"),
         t.h1("Completed courses"),
         t.p(
-            "I started learning on Coursera in 2020, during the pandemic, while serving as "
-            "Acting Municipal Treasurer of Mulanay, Quezon, and pursued it fully from 2024. Since then I have earned "
             f"{len(pro)} Google Professional Certificates and {len(spec)} Specializations, "
-            f"{sum(c['courses'] for c in CERTIFICATES)} courses in total. "
-            "Every credential links to its Coursera verification page.",
+            f"{sum(c['courses'] for c in CERTIFICATES)} courses in total, earned through Google Career Certificates on Coursera.",
             class_="lead",
+        ),
+        t.h2(GCC_STORY["title"]),
+        [t.p(p) for p in GCC_STORY["paragraphs"]],
+        t.div(
+            [
+                t.div(t.h3(title), t.div(when, class_="muted"), t.p(desc), class_="item")
+                for when, title, desc in GCC_STORY["milestones"]
+            ],
+            class_="timeline",
         ),
         t.h2("Google Professional Certificates"),
         t.div([cert_card(c) for c in pro], class_="grid"),

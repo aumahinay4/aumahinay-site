@@ -175,6 +175,8 @@ details ul { color: var(--muted); }
 .timeline .item:nth-child(4)::before { border-color: var(--coral); }
 .timeline .item:nth-child(5)::before { border-color: var(--blue); }
 .timeline ul { margin: 8px 0 0; padding-left: 20px; }
+p + .timeline { margin-top: 28px; }
+.timeline .item p { margin: 6px 0 0; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
 .two > * { min-width: 0; }
 @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
