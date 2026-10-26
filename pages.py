@@ -123,6 +123,10 @@ def cert_card(c):
     )
 
 
+def section_head(title, link_text, href):
+    return t.div(t.h2(title), t.a(f"{link_text} →", href=href, class_="more"), class_="section-head")
+
+
 def home():
     pro = [c for c in CERTIFICATES if c["kind"].startswith("Prof")]
     return part(
@@ -150,11 +154,43 @@ def home():
             t.div(t.b(sum(c["courses"] for c in CERTIFICATES)), t.span("Coursera courses completed"), class_="stat"),
             class_="stats",
         ),
-        t.h2("Projects"),
+        t.h2("What I do"),
+        t.div(
+            [
+                t.div(t.h3(title), t.p(text), class_="card focus")
+                for title, text in (
+                    ("Treasury operations",
+                     "More than 13 years in local government fiscal administration: collections, "
+                     "disbursements, deposits and the reports that keep them accountable."),
+                    ("Software for local treasuries",
+                     "I design and build ALTOS in Python, with tamper-evident audit logs and encrypted "
+                     "backups, to bring automation to treasury offices."),
+                    ("Continuous learning",
+                     f"{len(pro)} Google Professional Certificates and {len(CERTIFICATES) - len(pro)} Specializations "
+                     "in data analytics, AI, cybersecurity, IT support and project management."),
+                )
+            ],
+            class_="grid three",
+        ),
+        section_head("Projects", "All about ALTOS", "/projects/"),
         t.div(altos_feature_card(), class_="grid one"),
         t.div([subsystem_node(sub, summary=False) for sub in SUBSYSTEMS], class_="children compact"),
-        t.h2("Latest certificates"),
+        section_head("Latest certificates", f"All {len(CERTIFICATES)} credentials", "/courses/"),
         t.div([cert_card(c) for c in CERTIFICATES[:3]], class_="grid"),
+        section_head("Latest IT news", "More IT news", "/news/"),
+        t.div(
+            [
+                t.a(
+                    t.div(t.span(n["topic"], class_="badge"), t.span(n["date"], class_="muted"), class_="meta"),
+                    t.h3(n["title"]),
+                    t.span(f"{n['source']} →", class_="muted"),
+                    href="/news/",
+                    class_=f"card news-mini {NEWS_TOPIC_COLOR.get(n['topic'], 'gold')}",
+                )
+                for n in NEWS[:3]
+            ],
+            class_="grid three",
+        ),
     )
 
 
