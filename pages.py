@@ -165,7 +165,7 @@ def projects():
         t.p("Software", class_="eyebrow"),
         t.h1("Projects"),
         t.p(
-            "ALTOS is the mother system. Its two subsystems are now up and running: the Treasury Collection System for collections "
+            "ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections "
             "and the Treasury Disbursement System for disbursements, each with its own reports.",
             class_="lead",
         ),
