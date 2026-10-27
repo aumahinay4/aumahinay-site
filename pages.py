@@ -341,10 +341,11 @@ def blog_block(x):
     if kind == "quote":
         return t.blockquote(t.p(rest[0]))
     if kind == "photo":
-        path, caption = rest
+        path, caption, *size = rest
         if not (STATIC / path).exists():  # photo not uploaded yet
             return ""
-        return t.figure(t.img(src=asset_url(path), alt=caption, loading="lazy"), t.figcaption(caption), class_="screenshot")
+        return t.figure(t.img(src=asset_url(path), alt=caption, loading="lazy"), t.figcaption(caption),
+                        class_=" ".join(["screenshot", *size]))
     if kind == "ask":
         return t.p(rest[0], " ", t.a("Email me", href=f"mailto:{SITE['email']}"), ".", class_="ask")
     raise ValueError(f"unknown blog block {kind!r}")

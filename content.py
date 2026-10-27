@@ -426,7 +426,7 @@ NEWS = [
 #     "body": [
 #         "A paragraph.",
 #         ("h", "A subheading"),
-#         ("photo", "blog/photo.jpg", "Caption"),  # file in static/blog/; skipped until it exists
+#         ("photo", "blog/photo.jpg", "Caption", "small"),  # file in static/blog/; size small/medium/omit for full; skipped until it exists
 #         ("quote", "A highlighted line."),
 #     ],
 # },
@@ -435,48 +435,60 @@ BLOG = [
         "date": "October 27, 2026",
         "title": "Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries",
         "slug": "why-i-built-altos",
+        "summary": "A treasury system built around one idea: every peso should be accounted for from the moment it arrives to the moment it is reported.",
         "body": [
-            ("photo", "altos-screen.jpg", "The ALTOS sign-in page"),
-            "Much of the daily work in a Philippine local treasury is still done by hand. Official receipts, cash "
-            "books and monthly reports are written, totaled and checked one page at a time. Reporting is slow, and when "
-            "an error slips in, it is hard to catch.",
-            "After more than 13 years in local government fiscal administration, I wanted to close that gap. "
-            "ALTOS, the Automated Local Treasury Operations System, is my answer.",
-            ("h", "One Principle: 360° Accountability"),
-            ("quote", "Public money must be traceable in a full circle, from the moment it is collected to the moment "
-             "it is reported, with a named officer answerable at every point. Accountability that covers 300 degrees "
-             "leaves a gap, and money leaks through gaps."),
-            "Every transaction in a local treasury belongs to one of three movements: collect, disburse and report. "
-            "The three are not a line but a loop, because each cycle of reports sets the targets and budgets for the "
-            "next cycle of collections.",
-            ("photo", "altos-loop.png", "The ALTOS loop: collect, disburse, report"),
-            ("h", "Built From the Forms"),
-            "Every screen in ALTOS starts from an LTOM or COA form that treasury staff already know, so the system "
-            "stays auditable. The rules are built in, not just the records. The next OR number is always the next "
-            "in series, a check cannot predate its booklet, and the 20% Development Fund cannot be switched off. "
-            "RAAF and CRAAF reports are due on the 5th, and the days remaining are visible to both the officer and "
-            "the supervisor.",
-            ("h", "Two Subsystems, Now Ready"),
-            "ALTOS is the mother system, and its two subsystems are now ready. The Treasury Collection System handles "
-            "official receipts, collectors and their OR series, remittances and deposits, the daily RCD, and the "
-            "monthly RAAF and CRAAF. The Treasury Disbursement System handles vouchers, checks, cash advances and "
-            "their liquidation, the check register and disbursement reports. One database serves both a desktop "
-            "application and a web application across the office network.",
-            ("h", "Records That Cannot Hide"),
-            "Public money deserves records that cannot be quietly changed. Every entry in the ALTOS activity log "
-            "carries an HMAC-SHA256 code chained to the one before it, so any deletion or change shows. Posted "
-            "records are corrected only through a logged Data Correction, with a reason and an author. Security is "
-            "organized by the NIST Cybersecurity Framework, with hashed passwords, lock-out, automatic log-out, "
-            "AES-256 encrypted backups and a restore drill.",
-            ("h", "Build to Outlast the Builder"),
-            "A treasury system should keep working after the person who built it has moved on. That is why ALTOS "
-            "includes a turnover feature that assembles and verifies the records and produces a certificate for the "
-            "incoming treasurer. It is also why I am writing the ideas behind it into a book, 360° Accountability: "
-            "Public Fiscal Administration in Philippine Local Treasuries, which ends with ten principles any local "
-            "treasury can adopt, with or without software.",
-            "Every peso, every step, every officer: 360°.",
-            ("ask", "Do you work in a local treasury, or are you building tools for government? I'd love to hear "
-             "from you."),
+            ("photo", "altos-screen.jpg", "ALTOS sign-in page", "small"),
+            "Walk into many local treasury offices in the Philippines and you will still see stacks of receipts, "
+            "hand-ruled cash books and monthly reports added up with a calculator. The people doing this work are "
+            "careful and dedicated, but paper has limits. Reports take days to prepare, and a single wrong figure can "
+            "hide for months before anyone notices.",
+            "I have spent more than 13 years in local government fiscal administration, and I kept asking the same "
+            "question: what if the office's own rules were built into the tools it uses every day? That question "
+            "became ALTOS, the Automated Local Treasury Operations System.",
+            ("h", "The Idea Behind It: Close the Circle"),
+            "Picture the life of a single peso in a local treasury. It is received, recorded, deposited, perhaps paid "
+            "out, and finally reported. At each of those stops, someone should be responsible for it. If even one "
+            "stop has no clear owner, that is where errors and losses tend to happen.",
+            ("quote", "Accountability has to go all the way around. A circle with a missing piece is not a circle, "
+             "and public money slips out through the missing piece."),
+            "This is why I describe ALTOS as 360° accountability. Treasury work moves in a cycle of three steps: "
+            "money comes in, money goes out, and both are reported. The reports then guide next year's targets and "
+            "budget, and the cycle begins again.",
+            ("photo", "altos-loop.png", "The ALTOS loop: collect, disburse, report", "medium"),
+            ("h", "Starting From Forms People Already Know"),
+            "I did not want treasury staff to learn a strange new way of working. So every screen in ALTOS follows an "
+            "official form they already fill out, from the LTOM and the COA. An auditor looking at the system sees "
+            "the same documents they would see on paper.",
+            "The system also enforces the rules quietly in the background. Receipts are numbered strictly in "
+            "sequence, so none can go missing. A check cannot carry a date earlier than its checkbook. The 20% "
+            "Development Fund is always set aside. And because the RAAF and CRAAF are due on the 5th of each month, "
+            "ALTOS shows a countdown so the officer and the supervisor both know how many days are left.",
+            ("h", "Two Subsystems, Both Ready"),
+            "ALTOS is the main system, and it now has two working subsystems. The Treasury Collection System covers "
+            "everything on the receiving side: official receipts, collectors and their receipt series, remittances, "
+            "bank deposits, the daily report of collections, and the monthly accountability reports. The Treasury "
+            "Disbursement System covers the paying side: vouchers, checks, cash advances and their liquidation, "
+            "the check register, and disbursement reports. Both share one database, which can be used from a desktop "
+            "application or a web browser anywhere on the office network.",
+            ("h", "A Record You Can Trust"),
+            "A treasury's records are only as good as their protection against tampering. In ALTOS, each entry in "
+            "the activity log is digitally linked to the one before it, much like links in a chain. If anyone "
+            "deletes or alters an entry, the break in the chain shows. Mistakes can still be fixed, but only through "
+            "a recorded correction that states who made it and why.",
+            "Security follows the NIST Cybersecurity Framework, an internationally used guide. Passwords are stored "
+            "in scrambled form, accounts lock after repeated wrong attempts, idle sessions close on their own, "
+            "and backups are encrypted and tested to make sure they can actually be restored.",
+            ("h", "Made to Last Beyond Its Builder"),
+            "Treasurers are transferred, retire or move on. A good system should keep working after they leave. "
+            "That is why ALTOS has a turnover feature that gathers and checks the office's records and prepares a "
+            "certificate for the next treasurer.",
+            "I am also putting the thinking behind ALTOS into a book, 360° Accountability: Public Fiscal "
+            "Administration in Philippine Local Treasuries. It closes with ten principles that any local treasury "
+            "can follow, whether or not it uses software. I will write about each of them here, starting with the "
+            "first: Legality First.",
+            ("quote", "Every peso, every step, every officer: 360°."),
+            ("ask", "Do you work in a local treasury, or build tools for government offices? I'd love to hear from "
+             "you."),
         ],
     },
     {
@@ -537,7 +549,7 @@ BLOG = [
         "title": "200 Kilometers and Five Years Later: Coming Home to a Farm Full of Fruit",
         "slug": "coming-home-to-a-farm-full-of-fruit",
         "body": [
-            ("photo", "blog/farm-1.jpg", "The farm under the trees"),
+            ("photo", "blog/farm-1.jpg", "The farm under the trees", "medium"),
             "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
             "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
             "the years slip by faster than we realize. Recently, I finally made the time to take the 200-kilometer "
@@ -552,13 +564,13 @@ BLOG = [
             "Stepping onto those three hectares after half a decade felt like greeting old friends who had grown tall, "
             "strong, and generous in my absence. My coconut, mango, santol, and langka (jackfruit) trees had not only "
             "matured into a lush sanctuary; they were laden with fruit.",
-            ("photo", "blog/farm-2.jpg", "Coconut clusters beneath the fronds"),
+            ("photo", "blog/farm-2.jpg", "Coconut clusters beneath the fronds", "medium"),
             "Everywhere I looked, the farm was overflowing with life. Clusters of coconuts hung high beneath the swaying "
             "fronds, and the mango and santol branches bowed with ripening fruit.",
             "Walking past the langka trees, I marveled at the huge, bumpy jackfruits growing straight out of their "
             "sturdy trunks. Five years of sun, rain, and quiet patience had turned a simple planting into a true season "
             "of abundance.",
-            ("photo", "blog/farm-3.jpg", "Jackfruit growing on the trunk"),
+            ("photo", "blog/farm-3.jpg", "Jackfruit growing on the trunk", "medium"),
             ("h", "Shade, Breeze, and Childhood Memories"),
             "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick "
             "canopy of mango, santol, and langka filtered the harsh sunlight into soft patches of gold on the ground, "
@@ -572,7 +584,7 @@ BLOG = [
             "To top off the welcome, I sat down in the cool shade beneath the loaded branches and drank fresh coconut "
             "water straight from my own trees. After a 200-kilometer drive, that first sip\u2014cool, naturally sweet, "
             "and refreshing\u2014tasted like pure gratitude.",
-            ("photo", "blog/farm-4.jpg", "Fresh coconut, opened for drinking"),
+            ("photo", "blog/farm-4.jpg", "Fresh coconut, opened for drinking", "medium"),
             "Looking up at the fruit waiting to be harvested, and remembering where my love for farming began, I felt "
             "the weight of everyday stress melt away.",
             ("h", "What Five Years Taught Me"),
