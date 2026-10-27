@@ -48,3 +48,9 @@ Open `content.py`, find `BLOG = []`, and add a post at the top of the list
 (newest first), following the example in the comment just above it. Each post
 needs a date, title, slug (short, lowercase, with hyphens), an optional
 one-line summary, and its paragraphs. Then run `python build.py`, commit and push.
+
+### Scheduling or hiding a post
+Add `"publish_on": "2026-11-03"` to a post to keep it hidden until that date
+(Philippine time). `"publish_on": None` keeps it hidden until a date is set.
+The deploy workflow runs daily, so scheduled posts appear on their date once the
+Cloudflare token is set up.

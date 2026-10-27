@@ -1,5 +1,6 @@
 # Publishes dist/ to the Cloudflare Pages project "aumahinay" (aumahinay.dev)
-# on every push to main. Needs one repo secret: CLOUDFLARE_API_TOKEN
+# on every push to main, and daily so scheduled blog posts appear on their date.
+# Needs one repo secret: CLOUDFLARE_API_TOKEN
 # (a Cloudflare API token with Account > Cloudflare Pages > Edit).
 name: Deploy to Cloudflare Pages
 
@@ -7,6 +8,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "5 16 * * *"  # 00:05 Philippine time, so scheduled blog posts go live on their date
 
 jobs:
   deploy:

@@ -423,6 +423,7 @@ NEWS = [
 #     "title": "Why local treasuries need automation",
 #     "slug": "why-local-treasuries-need-automation",  # short, lowercase, hyphens
 #     "summary": "One or two sentences shown above the post.",
+#     "publish_on": "2026-11-03",  # optional: hidden until this date; None keeps it hidden
 #     "body": [
 #         "A paragraph.",
 #         ("h", "A subheading"),
@@ -483,22 +484,37 @@ BLOG = [
             "That is why ALTOS has a turnover feature that gathers and checks the office's records and prepares a "
             "certificate for the next treasurer.",
             ("h", "Adoption Needs a Policy That Protects the Builder"),
-            "ALTOS is not a classroom exercise. It is a working system that handles real money and produces real "
-            "reports, so adopting it is a serious step for any office, and it should never rest on a handshake.",
-            "Building software is not part of a treasurer's legal duties, and under the Intellectual Property Code "
-            "(RA 8293) the question of who owns such work depends on the facts and on what the parties agree. That "
-            "is why clear terms must come before adoption, not after. In practice, that means:",
-            "First, a dated record of authorship: the source files, design notes and version history that show who "
-            "built the system and when. Second, registration or deposit of the work with the Intellectual Property "
-            "Office of the Philippines (IPOPHL) where appropriate. Third, a written memorandum of agreement or "
-            "license that spells out how the office may use, maintain and host the system, including after the "
-            "builder leaves. And fourth, advice from legal counsel before any commercial use.",
-            ("quote", "Good terms protect everyone. The office keeps a working system and its records, the builder "
-             "keeps the authorship, and taxpayers keep uninterrupted service."),
+            "ALTOS is not a demo or a school project. It runs on real collections and real disbursements, and the "
+            "reports it produces are the ones an office signs and submits. When an office adopts a system like this, "
+            "the system becomes part of how public money is handled, and that calls for clear rules on paper.",
+            "Without those rules, the builder carries risks that nobody else sees. The system can be copied or "
+            "changed without the builder's knowledge. The builder can be expected to fix problems at any hour, for "
+            "free, long after leaving the office. Credit for the work can quietly disappear. And if something goes "
+            "wrong because of a change someone else made, the builder can still be the one blamed.",
+            "There is also a legal question. Under the Intellectual Property Code (RA 8293), there is no copyright in "
+            "a work of the Government, meaning a work an official creates as part of regularly prescribed duties. "
+            "Writing software is not among a treasurer's duties under the law, but the answer in each case depends "
+            "on the facts and on what the parties agree in writing. That is exactly why the agreement has to come "
+            "first.",
+            ("h", "What a Good Adoption Policy Covers"),
+            ("point", "Proof of authorship", "A dated record of the source files, design notes and versions that shows who built "
+            "the system and when."),
+            ("point", "Registration", "Where appropriate, registration or deposit of the work with the Intellectual Property "
+            "Office of the Philippines (IPOPHL)."),
+            ("point", "A written agreement", "A memorandum of agreement or license that states what the office may and may not "
+            "do with the system: how it may be used, who maintains and hosts it, who may change it, and what happens "
+            "when the builder is transferred, retires or resigns."),
+            ("point", "Clear ownership of the data", "The office's records belong to the office and must always be available to "
+            "it and to auditors, while the software itself remains the builder's work."),
+            ("point", "Fair responsibility", "The builder answers for the system as delivered, not for changes made by others "
+            "or for how it is operated after turnover."),
+            ("point", "Legal review", "Advice from legal counsel before signing, and before any commercial use."),
+            ("quote", "A clear agreement is not a sign of distrust. It is how both sides keep their promises: the "
+             "office keeps a working system and its records, the builder keeps the authorship, and taxpayers keep "
+             "uninterrupted service."),
             "I am also putting the thinking behind ALTOS into a book, 360° Accountability: Public Fiscal "
             "Administration in Philippine Local Treasuries. It closes with ten principles that any local treasury "
-            "can follow, whether or not it uses software. I will write about each of them here, starting with the "
-            "first: Legality First.",
+            "can follow, whether or not it uses software. I will write about each of them here.",
             ("quote", "Every peso, every step, every officer: 360°."),
             ("ask", "Do you work in a local treasury, or build tools for government offices? I'd love to hear from "
              "you."),
@@ -507,6 +523,7 @@ BLOG = [
     {
         "date": "October 27, 2026",
         "title": "The ALTOS Framework, Principle 1: Legality First",
+        "publish_on": None,  # hidden; set to "YYYY-MM-DD" to go live on that date
         "slug": "altos-framework-legality-first",
         "summary": "Before we ask how a peso was handled, we should ask whether the law allowed it at all.",
         "body": [
@@ -560,6 +577,7 @@ BLOG = [
     {
         "date": "October 27, 2026",
         "title": "200 Kilometers and Five Years Later: Coming Home to a Farm Full of Fruit",
+        "publish_on": None,  # hidden; set to "YYYY-MM-DD" to go live on that date
         "slug": "coming-home-to-a-farm-full-of-fruit",
         "body": [
             ("photo", "blog/farm-1.jpg", "The farm under the trees", "medium"),

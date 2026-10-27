@@ -1,5 +1,6 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import tags as t
@@ -346,6 +347,8 @@ def blog_block(x):
             return ""
         return t.figure(t.img(src=asset_url(path), alt=caption, loading="lazy"), t.figcaption(caption),
                         class_=" ".join(["screenshot", *size]))
+    if kind == "point":
+        return t.p(t.b(rest[0] + "."), " ", rest[1], class_="point")
     if kind == "ask":
         return t.p(rest[0], " ", t.a("Email me", href=f"mailto:{SITE['email']}"), ".", class_="ask")
     raise ValueError(f"unknown blog block {kind!r}")
@@ -362,15 +365,22 @@ def blog_post(b):
     )
 
 
+def live_posts():
+    """Posts without publish_on, or whose publish_on date has arrived (Philippine time)."""
+    today = datetime.now(timezone(timedelta(hours=8))).date().isoformat()
+    return [b for b in BLOG if "publish_on" not in b or (b["publish_on"] and b["publish_on"] <= today)]
+
+
 def blog():
-    if BLOG:
+    posts_live = live_posts()
+    if posts_live:
         posts = [
             t.div(
                 t.p("Posts", class_="eyebrow"),
-                t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted")) for b in BLOG]),
+                t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted")) for b in posts_live]),
                 class_="card post-index",
-            ) if len(BLOG) > 1 else "",
-            [blog_post(b) for b in BLOG],
+            ) if len(posts_live) > 1 else "",
+            [blog_post(b) for b in posts_live],
         ]
     else:
         posts = t.div(
