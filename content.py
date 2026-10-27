@@ -492,7 +492,7 @@ BLOG = [
             ("quote", "No legal basis, no transaction. If a peso cannot point to the rule that allows it, it should not "
              "move."),
             ("h", "Two Roles, One Line Between Them"),
-            "Local government works because two groups do two different jobs. The Sangguniang Bayan, as the "
+            "Local government works because two groups do two different jobs. The Sanggunian, as the local "
             "lawmaking body, chooses what to tax, what to charge, and what to spend on. The treasury carries out those "
             "choices. Scholars of public administration have written about this split for more than a century, and in "
             "a treasury office it is not theory: it is the daily difference between doing your job and overstepping it.",
