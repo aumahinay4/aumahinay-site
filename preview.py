@@ -12,7 +12,7 @@ from pages import NAV, PARTS
 from style import CSS
 from tags import Raw, render
 
-SLUG = {"/": "home", "/projects/": "projects", "/courses/": "courses", "/news/": "news", "/about/": "about"}
+SLUG = {"/": "home", "/projects/": "projects", "/courses/": "courses", "/news/": "news", "/blog/": "blog", "/about/": "about"}
 
 SCRIPT = """
 function show() {

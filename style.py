@@ -59,7 +59,7 @@ nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
 nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
-@media (max-width: 480px) { nav { gap: 0; } nav a { padding: 8px 9px; font-size: 14px; } }
+@media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
 main { padding: 40px 0 88px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
@@ -299,4 +299,13 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .card.news-mini.coral { --c: var(--coral); --ci: var(--coral-ink); }
 .card.news-mini.violet { --c: var(--violet); --ci: var(--violet-ink); }
 @media (prefers-reduced-motion: reduce) { .card.news-mini { transition: none; } .card.news-mini:hover { transform: none; } }
+
+.post { margin-top: 56px; padding-top: 8px; scroll-margin-top: 90px; }
+.post h2 { margin-top: 6px; }
+.post .lead { margin-top: 18px; }
+.post-index { margin-top: 28px; }
+.post-index ul { list-style: none; padding: 0; margin: 4px 0 0; }
+.post-index li { margin: 8px 0; }
+.card.empty { margin-top: 28px; }
+.card.empty h3 { margin: 0; }
 """

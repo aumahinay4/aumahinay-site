@@ -42,3 +42,9 @@ python app.py                   # open http://127.0.0.1:5000
 Every push to `main` is published to aumahinay.dev by the GitHub Actions workflow in
 `.github/workflows/deploy.yml`. After changing content, run `python build.py`, then
 commit and push. Setup details are in **DEPLOY_CLOUDFLARE.md**.
+
+## Adding a blog post
+Open `content.py`, find `BLOG = []`, and add a post at the top of the list
+(newest first), following the example in the comment just above it. Each post
+needs a date, title, slug (short, lowercase, with hyphens), an optional
+one-line summary, and its paragraphs. Then run `python build.py`, commit and push.

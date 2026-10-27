@@ -415,3 +415,17 @@ NEWS = [
         "url": "https://marketech-apac.com/dict-brings-ai-powered-government-services-to-filipinos-through-egovai/",
     },
 ]
+
+
+# Blog posts written by Butch, newest first. To add one, copy this shape:
+# {
+#     "date": "November 3, 2026",
+#     "title": "Why local treasuries need automation",
+#     "slug": "why-local-treasuries-need-automation",  # short, lowercase, hyphens
+#     "summary": "One or two sentences shown above the post.",
+#     "body": [
+#         "First paragraph.",
+#         "Second paragraph.",
+#     ],
+# },
+BLOG = []

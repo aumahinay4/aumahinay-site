@@ -1,7 +1,7 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
 import tags as t
-from content import ABOUT, ALTOS, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, BLOG, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
 from style import CSS
 from tags import Raw
 
@@ -10,7 +10,7 @@ def asset_url(name):
     return "/static/" + name
 
 
-NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/news/", "IT News"), ("/about/", "About")]
+NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/news/", "IT News"), ("/blog/", "Blog"), ("/about/", "About")]
 
 
 def layout(title, active, body, description=None):
@@ -327,6 +327,50 @@ def news():
     )
 
 
+def blog_post(b):
+    return t.article(
+        t.div(t.span(b["date"], class_="muted"), class_="meta"),
+        t.h2(b["title"]),
+        t.p(b["summary"], class_="lead") if b.get("summary") else "",
+        [t.p(x) for x in b["body"]],
+        class_="post",
+        id=b["slug"],
+    )
+
+
+def blog():
+    if BLOG:
+        posts = [
+            t.nav(
+                t.p("Posts", class_="eyebrow"),
+                t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted")) for b in BLOG]),
+                class_="card post-index",
+            ) if len(BLOG) > 1 else "",
+            [blog_post(b) for b in BLOG],
+        ]
+    else:
+        posts = t.div(
+            t.h3("First posts coming soon"),
+            t.p("I'll share notes here on treasury work, building ALTOS, and what I learn along the way."),
+            class_="card empty",
+        )
+    return part(
+        "Blog", "/blog/",
+        t.p("Writing", class_="eyebrow"),
+        t.h1("Blog"),
+        t.p(
+            "My own thoughts on public finance, local treasuries, and building software for government.",
+            class_="lead",
+        ),
+        posts,
+        t.p(
+            "Views here are my own and do not represent any government office.",
+            class_="muted note",
+        ),
+        description="Blog by " + SITE["short_name"],
+    )
+
+
 def about():
     return part(
         "About", "/about/",
@@ -366,7 +410,7 @@ def about():
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/news/": news, "/about/": about}
+PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/news/": news, "/blog/": blog, "/about/": about}
 
 
 def _full_page(build):
