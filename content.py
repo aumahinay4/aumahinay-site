@@ -517,8 +517,6 @@ BLOG = [
             "Administration in Philippine Local Treasuries. It closes with ten principles that any local treasury "
             "can follow, whether or not it uses software. I will write about each of them here.",
             ("quote", "Every peso, every step, every officer: 360°."),
-            ("ask", "Do you work in a local treasury, or build tools for government offices? I'd love to hear from "
-             "you."),
         ],
     },
     {
