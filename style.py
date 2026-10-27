@@ -317,4 +317,9 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post .point b { color: var(--text); }
 .blog-col { max-width: 820px; margin: 0 auto; }
 .blog-col .lead { max-width: none; }
+.post { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px 44px 40px; margin-top: 40px; }
+.post::before { content: ""; position: absolute; left: 44px; right: 44px; top: -1px; height: 4px; border-radius: 0 0 4px 4px; background: var(--rainbow); }
+.post > .meta { margin: 0; }
+.post > :last-child { margin-bottom: 0; }
+@media (max-width: 640px) { .post { padding: 24px 20px 28px; } .post::before { left: 20px; right: 20px; } }
 """
