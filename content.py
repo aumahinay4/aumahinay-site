@@ -483,55 +483,53 @@ BLOG = [
         "date": "October 27, 2026",
         "title": "The ALTOS Framework, Principle 1: Legality First",
         "slug": "altos-framework-legality-first",
-        "summary": "Every collection and every release must trace to a law, an ordinance or an appropriation.",
+        "summary": "Before we ask how a peso was handled, we should ask whether the law allowed it at all.",
         "body": [
-            "The ALTOS Framework condenses everything I have learned about local treasury work into ten principles. "
-            "Each one joins an idea from public administration to a Philippine rule and to a practice a treasury can "
-            "adopt tomorrow, with or without software. This is the first of a series, one principle at a time, and it "
-            "starts where every peso should start: with the law.",
-            ("quote", "Legality first. Every collection and every release must trace to a law, an ordinance or an "
-             "appropriation."),
-            ("h", "The Council Decides, the Treasurer Executes"),
-            "In 1900, Frank Goodnow separated the expression of the public will from its execution. The idea has been "
-            "debated ever since, but it still describes a useful division of labor in every local government.",
-            "The Sanggunian enacts the revenue code and the budget. The treasurer executes them. A treasurer may advise "
-            "on rates, but may not invent a fee that no ordinance authorizes, and may not release money that no "
-            "appropriation allows. The treasurer's first duty is simple to say and hard to keep: collect what the "
-            "ordinances levy, and release nothing without an appropriation.",
-            ("h", "Where the Law Says It"),
-            "Two sections of the Local Government Code (RA 7160) carry this principle. Section 130 sets the "
-            "fundamental principles of local taxation: taxes must be uniform, equitable, based on ability to pay, for "
-            "public purposes, not unjust or confiscatory, and collected by the local government, never by a private "
-            "person.",
-            "Section 305 sets the fundamental principles of local fiscal administration, and it opens with a "
-            "prohibition: no money shall be paid out of the local treasury except under an appropriations ordinance or "
-            "law. Its rules, that public money is held in trust, spent only for public purposes, and properly "
-            "documented and accounted for, are the 360° ring of accountability in statutory form.",
-            ("h", "Why Disbursement Is Guarded More"),
-            "Collection errors usually lose money the government never had. Disbursement errors lose money the "
-            "government already holds in trust. That is why, under Section 344, no money may be disbursed unless the "
-            "budget officer certifies the appropriation, the accountant has obligated it, and the treasurer certifies "
-            "that funds are available. Each signature answers a different question, and legality is the first of them: "
-            "did the Sanggunian authorize this kind of spending?",
-            ("h", "One Question for the Treasurer"),
-            "Every principle in the framework comes with one question a treasurer can ask any day of the week. For "
-            "legality, it is this:",
-            ("quote", "Can I cite the authority for this charge or payment?"),
-            "The evidence of compliance is just as plain: a revenue code and an appropriation on file for every "
-            "account. If a fee on the counter cannot point to a section of the revenue code, it should not be "
-            "collected. If a check cannot point to an appropriation, it should not be signed.",
-            ("h", "How ALTOS Applies It"),
-            "In ALTOS, every line of an official receipt must be charged to an income account on the office's chart "
-            "of accounts. The built-in ALTOS Framework self-assessment then shows what the records themselves say, "
-            "such as fee items that have no Revenue Code section behind them. The treasurer rates the office on each "
-            "principle from 1 (absent) to 4 (practiced and evidenced), names the two weakest, and acts on those first.",
-            ("h", "Why It Comes First"),
-            "The ten principles are cumulative, and legality is the foundation. Legality without documents cannot be "
-            "proved, which is why the next principle is \u201cEvery peso has a document.\u201d But documents built on "
-            "a charge the law never allowed only record a mistake neatly. Before we ask whether a peso was receipted, "
-            "deposited and reported, we must ask whether it should have been collected or released at all.",
-            ("ask", "Is there a fee or a payment in your office whose legal basis you have never checked? I'd love to "
-             "hear how you handle it."),
+            "Ask any treasury clerk what their job is, and most will say they receive payments and release checks. "
+            "That is true, but it skips a step. Behind every peso that crosses the counter, in or out, there should be "
+            "a rule that says it may. The ALTOS Framework has ten principles, and this first one is about that "
+            "unseen step.",
+            ("quote", "No legal basis, no transaction. If a peso cannot point to the rule that allows it, it should not "
+             "move."),
+            ("h", "Two Roles, One Line Between Them"),
+            "Local government works because two groups do two different jobs. The Sangguniang Bayan, as the "
+            "lawmaking body, chooses what to tax, what to charge, and what to spend on. The treasury carries out those "
+            "choices. Scholars of public administration have written about this split for more than a century, and in "
+            "a treasury office it is not theory: it is the daily difference between doing your job and overstepping it.",
+            "A treasurer can recommend a new rate, point out a fee that no longer makes sense, or warn that a budget "
+            "line is running low. What a treasurer cannot do is make up a charge on the spot, or pay for something the "
+            "council never funded, however reasonable it may seem at the time.",
+            ("h", "What the Local Government Code Requires"),
+            "The rule is written into the Local Government Code of 1991 (RA 7160). On the collection side, Section 130 "
+            "lists the ground rules for local taxes: they must be fair and uniform, fit the taxpayer's ability to pay, "
+            "serve a public purpose, and be collected only by the local government itself.",
+            "On the spending side, Section 305 starts with a flat ban: nothing leaves the local treasury without an "
+            "appropriation ordinance or a law behind it. Section 344 then adds a series of checks before any payment, "
+            "with the budget officer, the accountant and the treasurer each certifying their part.",
+            ("h", "Why Spending Needs Extra Care"),
+            "A mistake at the collection window and a mistake at the disbursing desk are not equal. Over-collecting "
+            "or under-collecting is serious, but it can usually be corrected with the taxpayer. Money paid out "
+            "without authority has already left the people's account, and recovering it is slow, costly and "
+            "sometimes impossible. That is why the law puts more locks on the door going out than on the door "
+            "coming in.",
+            ("h", "A Simple Daily Test"),
+            "This principle can be checked in seconds, at any counter, on any day:",
+            ("quote", "Which ordinance or appropriation allows this?"),
+            "If the answer is a specific section of the revenue code or a specific line in the approved budget, go "
+            "ahead. If the answer is \u201cwe have always done it this way,\u201d stop and look it up. Old habits are "
+            "often right, but they are not a legal basis.",
+            ("h", "Where ALTOS Helps"),
+            "In ALTOS, an official receipt cannot be issued for an item that is not linked to an income account, so "
+            "every amount collected has a home in the books. The ALTOS Framework self-assessment goes further and "
+            "flags fee items that have no revenue code reference, so gaps surface before an auditor finds them. "
+            "The office then scores itself on each principle and starts with its weakest areas.",
+            ("h", "The Foundation for the Other Nine"),
+            "The next principles in the framework deal with forms, officers, deadlines and records. All of them assume "
+            "the transaction was allowed in the first place. A perfectly filed receipt for a fee the law never "
+            "created is still a wrong collection, just a well-documented one. So legality comes first, and everything "
+            "else is built on top of it.",
+            ("ask", "Have you ever found a fee or a payment in your office with no clear legal basis? I'd love to hear "
+             "how you handled it."),
         ],
     },
     {
