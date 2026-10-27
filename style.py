@@ -300,7 +300,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .card.news-mini.violet { --c: var(--violet); --ci: var(--violet-ink); }
 @media (prefers-reduced-motion: reduce) { .card.news-mini { transition: none; } .card.news-mini:hover { transform: none; } }
 
-.post { margin-top: 56px; padding-top: 8px; scroll-margin-top: 90px; }
+.post { max-width: 760px; margin-top: 56px; padding-top: 8px; scroll-margin-top: 90px; }
 .post h2 { margin-top: 6px; }
 .post .lead { margin-top: 18px; }
 .post-index { margin-top: 28px; }
@@ -308,4 +308,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post-index li { margin: 8px 0; }
 .card.empty { margin-top: 28px; }
 .card.empty h3 { margin: 0; }
+.post h3 { margin: 36px 0 4px; font-size: 1.25rem; }
+.post figure { margin: 28px 0; }
+.post .ask { margin-top: 28px; padding: 16px 20px; border-radius: var(--radius); background: color-mix(in srgb, var(--gold) 14%, transparent); }
 """

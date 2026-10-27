@@ -1,9 +1,14 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
+from pathlib import Path
+
 import tags as t
 from content import ABOUT, ALTOS, BLOG, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
 from style import CSS
 from tags import Raw
+
+STATIC = Path(__file__).parent / "static"
+
 
 def asset_url(name):
     """URL of a file in static/. preview.py swaps this for inline data URLs."""
@@ -327,12 +332,30 @@ def news():
     )
 
 
+def blog_block(x):
+    if isinstance(x, str):
+        return t.p(x)
+    kind, *rest = x
+    if kind == "h":
+        return t.h3(rest[0])
+    if kind == "quote":
+        return t.blockquote(t.p(rest[0]))
+    if kind == "photo":
+        path, caption = rest
+        if not (STATIC / path).exists():  # photo not uploaded yet
+            return ""
+        return t.figure(t.img(src=asset_url(path), alt=caption, loading="lazy"), t.figcaption(caption), class_="screenshot")
+    if kind == "ask":
+        return t.p(rest[0], " ", t.a("Email me", href=f"mailto:{SITE['email']}"), ".", class_="ask")
+    raise ValueError(f"unknown blog block {kind!r}")
+
+
 def blog_post(b):
     return t.article(
         t.div(t.span(b["date"], class_="muted"), class_="meta"),
         t.h2(b["title"]),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
-        [t.p(x) for x in b["body"]],
+        [blog_block(x) for x in b["body"]],
         class_="post",
         id=b["slug"],
     )
@@ -359,7 +382,7 @@ def blog():
         t.p("Writing", class_="eyebrow"),
         t.h1("Blog"),
         t.p(
-            "My own thoughts on public finance, local treasuries, and building software for government.",
+            "My own stories and thoughts, from treasury work and building software to life beyond the office.",
             class_="lead",
         ),
         posts,
