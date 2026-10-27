@@ -481,60 +481,6 @@ BLOG = [
     },
     {
         "date": "October 27, 2026",
-        "title": "200 Kilometers and Five Years Later: Coming Home to a Farm Full of Fruit",
-        "slug": "coming-home-to-a-farm-full-of-fruit",
-        "body": [
-            ("photo", "blog/farm-1.jpg", "The farm under the trees"),
-            "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
-            "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
-            "the years slip by faster than we realize. Recently, I finally made the time to take the 200-kilometer "
-            "journey back.",
-            ("h", "The Long Road Home"),
-            "A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads "
-            "and greener horizons, I found myself wondering how much the land had changed.",
-            "When you are away from a place for five years, you hold on to a mental picture of how you left it: the "
-            "young trees, the wide open spaces, the quiet promise of what it could become.",
-            "Nothing quite prepared me for the moment I arrived.",
-            ("h", "A Farm Full of Fruit"),
-            "Stepping onto those three hectares after half a decade felt like greeting old friends who had grown tall, "
-            "strong, and generous in my absence. My coconut, mango, santol, and langka (jackfruit) trees had not only "
-            "matured into a lush sanctuary; they were laden with fruit.",
-            ("photo", "blog/farm-2.jpg", "Coconut clusters beneath the fronds"),
-            "Everywhere I looked, the farm was overflowing with life. Clusters of coconuts hung high beneath the swaying "
-            "fronds, and the mango and santol branches bowed with ripening fruit.",
-            "Walking past the langka trees, I marveled at the huge, bumpy jackfruits growing straight out of their "
-            "sturdy trunks. Five years of sun, rain, and quiet patience had turned a simple planting into a true season "
-            "of abundance.",
-            ("photo", "blog/farm-3.jpg", "Jackfruit growing on the trunk"),
-            ("h", "Shade, Breeze, and Childhood Memories"),
-            "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick "
-            "canopy of mango, santol, and langka filtered the harsh sunlight into soft patches of gold on the ground, "
-            "while a gentle breeze rustled through the coconut leaves above.",
-            "As I looked out across the wide spaces beneath the trees, a wave of nostalgia washed over me. The quiet land "
-            "brought back vivid memories of my childhood: raising carabaos, cows, and goats, and the familiar sight and "
-            "sound of native chickens roaming freely across the yard.",
-            "There was a special rhythm and joy to that way of life, tending the animals from early morning until dusk. "
-            "Being back on the farm made me realize how much I missed those simpler days.",
-            ("h", "A Sip of Gratitude"),
-            "To top off the welcome, I sat down in the cool shade beneath the loaded branches and drank fresh coconut "
-            "water straight from my own trees. After a 200-kilometer drive, that first sip\u2014cool, naturally sweet, "
-            "and refreshing\u2014tasted like pure gratitude.",
-            ("photo", "blog/farm-4.jpg", "Fresh coconut, opened for drinking"),
-            "Looking up at the fruit waiting to be harvested, and remembering where my love for farming began, I felt "
-            "the weight of everyday stress melt away.",
-            ("h", "What Five Years Taught Me"),
-            "Visiting the farm after five years taught me something simple but important:",
-            ("quote", "Growth takes time, patience bears the sweetest fruit, and our roots are always waiting for us if "
-             "we are willing to make the journey back."),
-            "I left with a full heart, a refreshed mind, and a renewed dream of hearing native chickens and livestock "
-            "under these trees once again.",
-            "One thing is for sure: I won't wait another five years for my next visit.",
-            ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
-             "story."),
-        ],
-    },
-    {
-        "date": "October 27, 2026",
         "title": "The ALTOS Framework, Principle 1: Legality First",
         "slug": "altos-framework-legality-first",
         "summary": "Every collection and every release must trace to a law, an ordinance or an appropriation.",
@@ -586,6 +532,60 @@ BLOG = [
             "deposited and reported, we must ask whether it should have been collected or released at all.",
             ("ask", "Is there a fee or a payment in your office whose legal basis you have never checked? I'd love to "
              "hear how you handle it."),
+        ],
+    },
+    {
+        "date": "October 27, 2026",
+        "title": "200 Kilometers and Five Years Later: Coming Home to a Farm Full of Fruit",
+        "slug": "coming-home-to-a-farm-full-of-fruit",
+        "body": [
+            ("photo", "blog/farm-1.jpg", "The farm under the trees"),
+            "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
+            "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
+            "the years slip by faster than we realize. Recently, I finally made the time to take the 200-kilometer "
+            "journey back.",
+            ("h", "The Long Road Home"),
+            "A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads "
+            "and greener horizons, I found myself wondering how much the land had changed.",
+            "When you are away from a place for five years, you hold on to a mental picture of how you left it: the "
+            "young trees, the wide open spaces, the quiet promise of what it could become.",
+            "Nothing quite prepared me for the moment I arrived.",
+            ("h", "A Farm Full of Fruit"),
+            "Stepping onto those three hectares after half a decade felt like greeting old friends who had grown tall, "
+            "strong, and generous in my absence. My coconut, mango, santol, and langka (jackfruit) trees had not only "
+            "matured into a lush sanctuary; they were laden with fruit.",
+            ("photo", "blog/farm-2.jpg", "Coconut clusters beneath the fronds"),
+            "Everywhere I looked, the farm was overflowing with life. Clusters of coconuts hung high beneath the swaying "
+            "fronds, and the mango and santol branches bowed with ripening fruit.",
+            "Walking past the langka trees, I marveled at the huge, bumpy jackfruits growing straight out of their "
+            "sturdy trunks. Five years of sun, rain, and quiet patience had turned a simple planting into a true season "
+            "of abundance.",
+            ("photo", "blog/farm-3.jpg", "Jackfruit growing on the trunk"),
+            ("h", "Shade, Breeze, and Childhood Memories"),
+            "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick "
+            "canopy of mango, santol, and langka filtered the harsh sunlight into soft patches of gold on the ground, "
+            "while a gentle breeze rustled through the coconut leaves above.",
+            "As I looked out across the wide spaces beneath the trees, a wave of nostalgia washed over me. The quiet land "
+            "brought back vivid memories of my childhood: raising carabaos, cows, and goats, and the familiar sight and "
+            "sound of native chickens roaming freely across the yard.",
+            "There was a special rhythm and joy to that way of life, tending the animals from early morning until dusk. "
+            "Being back on the farm made me realize how much I missed those simpler days.",
+            ("h", "A Sip of Gratitude"),
+            "To top off the welcome, I sat down in the cool shade beneath the loaded branches and drank fresh coconut "
+            "water straight from my own trees. After a 200-kilometer drive, that first sip\u2014cool, naturally sweet, "
+            "and refreshing\u2014tasted like pure gratitude.",
+            ("photo", "blog/farm-4.jpg", "Fresh coconut, opened for drinking"),
+            "Looking up at the fruit waiting to be harvested, and remembering where my love for farming began, I felt "
+            "the weight of everyday stress melt away.",
+            ("h", "What Five Years Taught Me"),
+            "Visiting the farm after five years taught me something simple but important:",
+            ("quote", "Growth takes time, patience bears the sweetest fruit, and our roots are always waiting for us if "
+             "we are willing to make the journey back."),
+            "I left with a full heart, a refreshed mind, and a renewed dream of hearing native chickens and livestock "
+            "under these trees once again.",
+            "One thing is for sure: I won't wait another five years for my next visit.",
+            ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
+             "story."),
         ],
     },
 ]
