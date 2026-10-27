@@ -462,7 +462,8 @@ BLOG = [
             "the same documents they would see on paper.",
             "The system also enforces the rules quietly in the background. Receipts are numbered strictly in "
             "sequence, so none can go missing. A check cannot carry a date earlier than its checkbook. The 20% "
-            "Development Fund is always set aside. And because the RAAF and CRAAF are due on the 5th of each month, "
+            "Development Fund and other mandatory budget allocations are set aside. And because the RAAF and CRAAF "
+            "are due on the 5th of each month, "
             "ALTOS shows a countdown so the officer and the supervisor both know how many days are left.",
             ("h", "Two Subsystems, Both Ready"),
             "ALTOS is the main system, and it now has two working subsystems. The Treasury Collection System covers "
