@@ -390,16 +390,19 @@ def blog():
         )
     return part(
         "Blog", "/blog/",
-        t.p("Writing", class_="eyebrow"),
-        t.h1("Blog"),
-        t.p(
-            "My own stories and thoughts, from treasury work and building software to life beyond the office.",
-            class_="lead",
-        ),
-        posts,
-        t.p(
-            "Views here are my own and do not represent any government office.",
-            class_="muted note",
+        t.div(
+            t.p("Writing", class_="eyebrow"),
+            t.h1("Blog"),
+            t.p(
+                "My own stories and thoughts, from treasury work and building software to life beyond the office.",
+                class_="lead",
+            ),
+            posts,
+            t.p(
+                "Views here are my own and do not represent any government office.",
+                class_="muted note",
+            ),
+            class_="blog-col",
         ),
         description="Blog by " + SITE["short_name"],
     )
