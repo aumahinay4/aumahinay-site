@@ -482,6 +482,19 @@ BLOG = [
             "Treasurers are transferred, retire or move on. A good system should keep working after they leave. "
             "That is why ALTOS has a turnover feature that gathers and checks the office's records and prepares a "
             "certificate for the next treasurer.",
+            ("h", "Adoption Needs a Policy That Protects the Builder"),
+            "ALTOS is not a classroom exercise. It is a working system that handles real money and produces real "
+            "reports, so adopting it is a serious step for any office, and it should never rest on a handshake.",
+            "Building software is not part of a treasurer's legal duties, and under the Intellectual Property Code "
+            "(RA 8293) the question of who owns such work depends on the facts and on what the parties agree. That "
+            "is why clear terms must come before adoption, not after. In practice, that means:",
+            "First, a dated record of authorship: the source files, design notes and version history that show who "
+            "built the system and when. Second, registration or deposit of the work with the Intellectual Property "
+            "Office of the Philippines (IPOPHL) where appropriate. Third, a written memorandum of agreement or "
+            "license that spells out how the office may use, maintain and host the system, including after the "
+            "builder leaves. And fourth, advice from legal counsel before any commercial use.",
+            ("quote", "Good terms protect everyone. The office keeps a working system and its records, the builder "
+             "keeps the authorship, and taxpayers keep uninterrupted service."),
             "I am also putting the thinking behind ALTOS into a book, 360° Accountability: Public Fiscal "
             "Administration in Philippine Local Treasuries. It closes with ten principles that any local treasury "
             "can follow, whether or not it uses software. I will write about each of them here, starting with the "
