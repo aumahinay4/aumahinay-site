@@ -433,6 +433,54 @@ NEWS = [
 BLOG = [
     {
         "date": "October 27, 2026",
+        "title": "Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries",
+        "slug": "why-i-built-altos",
+        "body": [
+            ("photo", "altos-screen.jpg", "The ALTOS sign-in page"),
+            "Much of the daily work in a Philippine local treasury is still done by hand. Official receipts, cash "
+            "books and monthly reports are written, totaled and checked one page at a time. Reporting is slow, and when "
+            "an error slips in, it is hard to catch.",
+            "After more than 13 years in local government fiscal administration, I wanted to close that gap. "
+            "ALTOS, the Automated Local Treasury Operations System, is my answer.",
+            ("h", "One Principle: 360° Accountability"),
+            ("quote", "Public money must be traceable in a full circle, from the moment it is collected to the moment "
+             "it is reported, with a named officer answerable at every point. Accountability that covers 300 degrees "
+             "leaves a gap, and money leaks through gaps."),
+            "Every transaction in a local treasury belongs to one of three movements: collect, disburse and report. "
+            "The three are not a line but a loop, because each cycle of reports sets the targets and budgets for the "
+            "next cycle of collections.",
+            ("photo", "altos-loop.png", "The ALTOS loop: collect, disburse, report"),
+            ("h", "Built From the Forms"),
+            "Every screen in ALTOS starts from an LTOM or COA form that treasury staff already know, so the system "
+            "stays auditable. The rules are built in, not just the records. The next OR number is always the next "
+            "in series, a check cannot predate its booklet, and the 20% Development Fund cannot be switched off. "
+            "RAAF and CRAAF reports are due on the 5th, and the days remaining are visible to both the officer and "
+            "the supervisor.",
+            ("h", "Two Subsystems, Now Ready"),
+            "ALTOS is the mother system, and its two subsystems are now ready. The Treasury Collection System handles "
+            "official receipts, collectors and their OR series, remittances and deposits, the daily RCD, and the "
+            "monthly RAAF and CRAAF. The Treasury Disbursement System handles vouchers, checks, cash advances and "
+            "their liquidation, the check register and disbursement reports. One database serves both a desktop "
+            "application and a web application across the office network.",
+            ("h", "Records That Cannot Hide"),
+            "Public money deserves records that cannot be quietly changed. Every entry in the ALTOS activity log "
+            "carries an HMAC-SHA256 code chained to the one before it, so any deletion or change shows. Posted "
+            "records are corrected only through a logged Data Correction, with a reason and an author. Security is "
+            "organized by the NIST Cybersecurity Framework, with hashed passwords, lock-out, automatic log-out, "
+            "AES-256 encrypted backups and a restore drill.",
+            ("h", "Build to Outlast the Builder"),
+            "A treasury system should keep working after the person who built it has moved on. That is why ALTOS "
+            "includes a turnover feature that assembles and verifies the records and produces a certificate for the "
+            "incoming treasurer. It is also why I am writing the ideas behind it into a book, 360° Accountability: "
+            "Public Fiscal Administration in Philippine Local Treasuries, which ends with ten principles any local "
+            "treasury can adopt, with or without software.",
+            "Every peso, every step, every officer: 360°.",
+            ("ask", "Do you work in a local treasury, or are you building tools for government? I'd love to hear "
+             "from you."),
+        ],
+    },
+    {
+        "date": "October 27, 2026",
         "title": "200 Kilometers and Five Years Later: Coming Home to a Farm Full of Fruit",
         "slug": "coming-home-to-a-farm-full-of-fruit",
         "body": [

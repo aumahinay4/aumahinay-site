@@ -364,7 +364,7 @@ def blog_post(b):
 def blog():
     if BLOG:
         posts = [
-            t.nav(
+            t.div(
                 t.p("Posts", class_="eyebrow"),
                 t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted")) for b in BLOG]),
                 class_="card post-index",
