@@ -433,9 +433,9 @@ NEWS = [
 # },
 BLOG = [
     {
-        "date": "December 28, 2026",
+        "date": "December 27, 2026",
         "title": "The ALTOS Framework, Principle 10: Build to Outlast the Builder",
-        "publish_on": "2026-12-28",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-27",  # goes live on this date (Philippine time)
         "slug": "altos-framework-build-to-outlast-the-builder",
         "summary": "Records, rules and systems must keep working after the person who set them up has left. A reform "
                    "that leaves with its author was never an institution.",
@@ -566,9 +566,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 21, 2026",
+        "date": "December 20, 2026",
         "title": "The ALTOS Framework, Principle 9: Evidence Before Decision",
-        "publish_on": "2026-12-21",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-20",  # goes live on this date (Philippine time)
         "slug": "altos-framework-evidence-before-decision",
         "summary": "Targets, forecasts and control checks should inform the treasurer's judgment, never replace it. "
                    "Every number is a prompt for a human decision.",
@@ -691,9 +691,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 14, 2026",
+        "date": "December 13, 2026",
         "title": "The ALTOS Framework, Principle 8: The Taxpayer Is a Citizen",
-        "publish_on": "2026-12-14",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-13",  # goes live on this date (Philippine time)
         "slug": "altos-framework-the-taxpayer-is-a-citizen",
         "summary": "Assess fairly, collect conveniently and disclose fully. The person at the counter is not a "
                    "customer buying a service but a citizen funding a shared project.",
@@ -798,9 +798,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 7, 2026",
+        "date": "December 6, 2026",
         "title": "The ALTOS Framework, Principle 7: Keep Money in Its Fund",
-        "publish_on": "2026-12-07",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-06",  # goes live on this date (Philippine time)
         "slug": "altos-framework-keep-money-in-its-fund",
         "summary": "A peso raised for schools should reach schools. Each peso belongs to the fund the law assigns it, "
                    "and it should stay there.",
@@ -891,9 +891,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 30, 2026",
+        "date": "November 29, 2026",
         "title": "The ALTOS Framework, Principle 6: Separate the Hands",
-        "publish_on": "2026-11-30",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-29",  # goes live on this date (Philippine time)
         "slug": "altos-framework-separate-the-hands",
         "summary": "No one person should both approve and release public money, or both hold it and record it. "
                    "Trust in a treasury has to be designed, not assumed.",
@@ -984,9 +984,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 23, 2026",
+        "date": "November 22, 2026",
         "title": "The ALTOS Framework, Principle 5: Every Record Has a Seal",
-        "publish_on": "2026-11-23",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-22",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-record-has-a-seal",
         "summary": "Once a record is posted, it can be corrected, but only in the open: with a reason, a name and a "
                    "trace that anyone can check.",
@@ -1078,9 +1078,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 16, 2026",
+        "date": "November 15, 2026",
         "title": "The ALTOS Framework, Principle 4: Every Owner Has a Deadline",
-        "publish_on": "2026-11-16",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-15",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-owner-has-a-deadline",
         "summary": "A deadline is not paperwork. It sets a limit on how long a mistake or a shortage can stay hidden.",
         "body": [
@@ -1172,9 +1172,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 9, 2026",
+        "date": "November 8, 2026",
         "title": "The ALTOS Framework, Principle 3: Every Document Has an Owner",
-        "publish_on": "2026-11-09",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-08",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-document-has-an-owner",
         "summary": "A receipt that belongs to everyone belongs to no one. Every form in custody and every peso in hand "
                    "needs a named, bonded officer who answers for it.",
@@ -1267,9 +1267,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 2, 2026",
+        "date": "November 1, 2026",
         "title": "The ALTOS Framework, Principle 2: Every Peso Has a Document",
-        "publish_on": "2026-11-02",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-01",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-peso-has-a-document",
         "summary": "No collection without an accountable form, no release without a voucher. A peso that leaves no paper "
                    "behind cannot be accounted for.",
