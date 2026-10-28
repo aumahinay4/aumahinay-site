@@ -52,7 +52,7 @@ ABOUT = {
             "period": "Sep 2024 – Present",
             "points": [
                 "Lead municipal fiscal management, revenue forecasting, fund custody and disbursement.",
-                "Designed and built ALTOS, the Automated Local Treasury Operations System.",
+                "Sign disbursement vouchers and checks.",
             ],
         },
         {
