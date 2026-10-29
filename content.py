@@ -1390,7 +1390,9 @@ BLOG = [
             "Some assignments arrive with a job description. Mine arrived with a microphone, a restaurant full of "
             "masked faces, and a turnover that took two full days.",
             "I received my first designation as Acting Municipal Treasurer of Mulanay, Quezon, at a time when I was "
-            "the only ICLTE passer in the Provincial Treasurer's Office. That credential opened a door I had not "
+            "the only ICLTE passer in the Provincial Treasurer's Office. An Acting Municipal Treasurer must have "
+            "passed the Basic Competency on Local Treasury Examination (BCLTE); the Intermediate Competency on "
+            "Local Treasury Examination (ICLTE) is the higher of the two. That credential opened a door I had not "
             "expected to walk through so soon. On the road to Mulanay, one quiet question kept me company: am I "
             "ready for this?",
             "Mulanay sits on the Bondoc Peninsula in southern Quezon, a short trip from my hometown of San Andres. "
