@@ -1445,12 +1445,13 @@ BLOG = [
             ("h", "When the Typhoon Came"),
             "As if a pandemic were not enough, a strong typhoon struck Mulanay during my term. Homes were damaged, "
             "livelihoods were lost, and families waited for help.",
-            "In a disaster, the treasury is where help becomes cash in people's hands. My staff and I visited all "
-            "28 barangays to distribute financial assistance to the affected families. It took about a week, and "
-            "I could not have done it without the responsible, hardworking team beside me.",
+            "In a disaster, the treasury is where help becomes cash in people's hands. Together with the municipal "
+            "officials, headed by the Municipal Mayor, my staff and I visited all 28 barangays to distribute "
+            "financial assistance to the affected families. It took about a week, and I could not have done it "
+            "without the responsible, hardworking team beside me.",
             "I came to know the town not from behind a desk, but from its roads, its coastline and its upland "
             "villages. Those trips changed how I understand my job.",
-            ("quote", "Every peso we safeguard in the vault exists for moments like that: a family receiving help "
+            ("quote", "Every peso we safeguard in the government account exists for moments like that: a family receiving help "
              "when they need it most."),
             ("h", "Election Duty: Neutral by Mandate"),
             "I also served through an election in Mulanay. I will leave the politics to others; that is not my "
