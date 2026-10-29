@@ -1486,40 +1486,6 @@ BLOG = [
         ],
     },
     {
-        "date": "October 29, 2026",
-        "title": "Learning Without Limits: My Google Career Certificates Journey",
-        "slug": "learning-without-limits",
-        "summary": "Seven Google Professional Certificates, three Specializations and sixty courses, earned one module at "
-                   "a time alongside full-time treasury work.",
-        "body": [
-            "It started in 2020, in the middle of the pandemic. I had just been designated Acting Municipal "
-            "Treasurer of Mulanay, Quezon, and I opened Coursera wanting to understand the technology that could help a local treasury run "
-            "better. For the next few years, I studied whenever the work allowed, a lesson here and a module there.",
-            ("h", "Going All In"),
-            "In 2024 I stopped treating it as a side interest and committed to it fully. I chose the Google Career "
-            "Certificates as my path because they are practical: each course is built around hands-on labs and "
-            "projects, not just reading and quizzes. Between June 2025 and October 2026, I finished seven Google "
-            "Professional Certificates and three Google Specializations, sixty courses in total.",
-            ("h", "One Certificate at a Time"),
-            ("point", "June 2025", "Google Cybersecurity and Google Project Management, my first two certificates."),
-            ("point", "December 2025 to February 2026", "Google Advanced Data Analytics, Google Business "
-             "Intelligence and Google AI."),
-            ("point", "May to July 2026", "Three specializations: People Management Essentials, AI Essentials and "
-             "Stakeholder Management, plus the Google Data Analytics certificate in June."),
-            ("point", "October 2026", "Google IT Support, the most recent one."),
-            ("h", "Where the Learning Went"),
-            "What I studied did not stay on a certificate. It found its way into ALTOS. The system's Security "
-            "Center follows the NIST Cybersecurity Framework, with scrambled passwords, automatic log-out of idle "
-            "sessions and encrypted backups. Its analytics module turns collection data into targets, forecasts "
-            "and control checks. And the whole system is written in Python, the language I used throughout the "
-            "data analytics and cybersecurity courses.",
-            ("quote", "It is never too late to learn a new field. You only have to keep showing up for the next "
-             "lesson."),
-            "After more than 15 years in government service, 13 of them in public finance, I am still a student. "
-            "The full list of my certificates, each with its Coursera verification link, is on the Courses page.",
-        ],
-    },
-    {
         "date": "October 28, 2026",
         "title": "The ALTOS Framework, Principle 1: Legality First",
         "publish_on": "2026-10-28",  # goes live on this date (Philippine time)
