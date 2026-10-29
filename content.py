@@ -429,6 +429,7 @@ NEWS = [
 #         ("h", "A subheading"),
 #         ("photo", "blog/photo.jpg", "Caption", "small"),  # file in static/blog/; size small/medium/omit for full; skipped until it exists
 #         ("quote", "A highlighted line."),
+#         ("source", "Text before ", "link text", "https://...", " text after."),  # small note with a link
 #     ],
 # },
 BLOG = [
@@ -1379,6 +1380,111 @@ BLOG = [
              "hear how your office handles spoiled forms."),
         ],
 },
+    {
+        "date": "October 29, 2026",
+        "title": "360 Degrees: My First Post as Acting Municipal Treasurer",
+        "slug": "first-post-as-acting-treasurer",
+        "summary": "Two years, two Mayors, a pandemic, a typhoon and an election: what my first post as Acting "
+                   "Municipal Treasurer of Mulanay, Quezon, taught me.",
+        "body": [
+            "Some assignments arrive with a job description. Mine arrived with a microphone, a restaurant full of "
+            "masked faces, and a turnover that took two full days.",
+            "I received my first designation as Acting Municipal Treasurer of Mulanay, Quezon, at a time when I was "
+            "the only ICLTE passer in the Provincial Treasurer's Office. That credential opened a door I had not "
+            "expected to walk through so soon. On the road to Mulanay, one quiet question kept me company: am I "
+            "ready for this?",
+            "Mulanay sits on the Bondoc Peninsula in southern Quezon, a short trip from my hometown of San Andres. "
+            "It is a town of 28 barangays and 55,576 people, according to the 2020 Census. The place was not new "
+            "to me, but the office was. What followed, from 2020 to 2022, were two of the most demanding and "
+            "meaningful years of my career, spent in the middle of the COVID-19 pandemic. This is the story of "
+            "that first post.",
+            ("h", "A Welcome I Did Not Expect"),
+            "I arrived in Mulanay at around two in the afternoon, ready for paperwork. I was not ready for the "
+            "warmth that waited for me that evening.",
+            "We gathered at a local restaurant for my welcome. Around the tables sat the Municipal Mayor, the Vice "
+            "Mayor, every member of the Sangguniang Bayan, the Municipal Administrator, the department heads and "
+            "the employees of the municipality. The outgoing Municipal Treasurer was there too, the officer whose "
+            "desk I was about to take.",
+            "The room was full, yet every face was half hidden behind a mask. It was the pandemic, and I learned "
+            "to read smiles in people's eyes. Among them was a familiar one: the Municipal Assessor, my friend and "
+            "former co-worker at the Provincial Treasurer's Office. In a room full of new colleagues, one friendly "
+            "face made all the difference.",
+            "Then someone handed me the microphone. I thanked everyone for receiving me, and I told them the truth:",
+            ("quote", "This is a challenge for me. My comfort zone has always been one division. Here, I will have "
+             "to work and decide in 360 degrees."),
+            "The next two days belonged to the turnover, formally conducted by a team from the Provincial "
+            "Treasurer's Office. In treasury work, a turnover is more than a handshake. It is the moment "
+            "accountability changes hands, as cash, records and responsibility pass from one officer to the next.",
+            ("h", "From One Division to 360 Degrees"),
+            "Until then, my work had clear borders. I belonged to a single division with a defined set of tasks, "
+            "and I knew that ground well.",
+            "Mulanay erased those borders. As head of the treasury office, I suddenly owned the whole circle: "
+            "collections, disbursements, cash management, reports, people, and the decisions that tie them "
+            "together. Problems no longer came from one direction. They came from every side, often at once, and "
+            "the final call was mine.",
+            "That shift is the real test of a first designation. It is not about knowing more rules. It is about "
+            "seeing the whole office at once and still deciding with care.",
+            ("h", "Home Was a Container House"),
+            "The pandemic shaped every part of those years. Travel was restricted, offices ran on skeleton "
+            "schedules, and going home was rarely an option.",
+            "For two years, my home was the municipal container house in Mulanay. It was small and simple, but it "
+            "kept me close to the office and the work. It stood near the sea, and every night I fell asleep to the "
+            "sound of the waves. I wore a face mask every working day, until it felt as much a part of my uniform "
+            "as my ID.",
+            "Those nights by the sea taught me something about public service: you cannot always choose your "
+            "conditions, but you can choose how you show up in them. I am deeply grateful to the people of "
+            "Mulanay who made those years easier. They checked on me, helped me settle in, and treated the new "
+            "treasurer like one of their own.",
+            ("h", "Three Days in Boracay"),
+            "In those years we could hardly go anywhere. Lockdowns and travel restrictions kept most of us within "
+            "town limits for months at a time.",
+            "So when the first Mayor I served approved my travel to Boracay for a three-day official training, it "
+            "felt like a rare gift. The training sharpened my skills as a new treasurer, and the short change of "
+            "scenery sent me back to Mulanay with fresh energy. I remain thankful for that trust, at a time when "
+            "every trip had to be justified.",
+            ("h", "When the Typhoon Came"),
+            "As if a pandemic were not enough, a strong typhoon struck Mulanay during my term. Homes were damaged, "
+            "livelihoods were lost, and families waited for help.",
+            "In a disaster, the treasury is where help becomes cash in people's hands. My staff and I visited all "
+            "28 barangays to distribute financial assistance to the affected families. It took about a week, and "
+            "I could not have done it without the responsible, hardworking team beside me.",
+            "I came to know the town not from behind a desk, but from its roads, its coastline and its upland "
+            "villages. Those trips changed how I understand my job.",
+            ("quote", "Every peso we safeguard in the vault exists for moments like that: a family receiving help "
+             "when they need it most."),
+            ("h", "Election Duty: Neutral by Mandate"),
+            "I also served through an election in Mulanay. I will leave the politics to others; that is not my "
+            "place, and it never should be.",
+            "What I can say is this: the law gives the municipal treasurer a role in the election, including the "
+            "counting and canvassing of votes. It is one of the least visible parts of the job, and one of the "
+            "most serious. On those days, neutrality is not just good manners. It is the duty itself.",
+            ("h", "Two Mayors, One Team"),
+            "During my term I served under two Mayors: the first for one year and ten months, and the second for "
+            "my final two months. Leadership changed, but the work never paused.",
+            "What made that possible was the people. We worked well together across the whole municipality, from "
+            "the department heads to the frontline staff. In the middle of a pandemic, that kind of teamwork is "
+            "not a bonus. It is how a town keeps running.",
+            ("h", "What the Job Taught Me"),
+            "The work of a municipal treasurer is not easy, and the accountability is high. Every collection, "
+            "every disbursement and every signature carries your name, and you answer for all of it. Mulanay "
+            "taught me three lessons I still carry:",
+            ("point", "Leadership begins outside your comfort zone", "I grew the most when I had to see the whole "
+             "office, not just one division."),
+            ("point", "Public money has a human face", "A week on the road to all 28 barangays after the typhoon "
+             "made that real for me."),
+            ("point", "No one serves alone", "A pandemic, a typhoon and an election were easier to face because of "
+             "the people beside me."),
+            ("h", "Thank You, Mulanay"),
+            "Looking back, I am truly happy for the experience and the work. To the two Mayors I served, the Vice "
+            "Mayor, the Sangguniang Bayan, the Municipal Administrator, the department heads, my treasury staff, "
+            "my friend the Municipal Assessor, and the people of Mulanay: thank you for welcoming a neighbor from "
+            "San Andres and making me one of your own.",
+            "And to anyone receiving a first designation today: say yes to the challenge. The comfort zone is "
+            "safe, but the growth is out there, all 360 degrees of it.",
+            ("source", "Population and barangay figures: ", "PhilAtlas, Mulanay, Province of Quezon",
+             "https://philatlas.com/luzon/r04a/quezon/mulanay.html", ", based on the 2020 Census."),
+        ],
+    },
     {
         "date": "October 29, 2026",
         "title": "Learning Without Limits: My Google Career Certificates Journey",
