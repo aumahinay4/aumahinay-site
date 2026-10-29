@@ -314,6 +314,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post figure.small { max-width: 440px; margin-left: auto; margin-right: auto; }
 .post figure.medium { max-width: 600px; margin-left: auto; margin-right: auto; }
 .post .point { padding-left: 16px; border-left: 3px solid var(--gold); }
+.post .source { margin-top: 28px; font-size: 0.85rem; }
 .post .point b { color: var(--text); }
 .blog-col { max-width: 820px; margin: 0 auto; }
 .blog-col .lead { max-width: none; }

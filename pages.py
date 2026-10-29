@@ -349,6 +349,9 @@ def blog_block(x):
                         class_=" ".join(["screenshot", *size]))
     if kind == "point":
         return t.p(t.b(rest[0] + "."), " ", rest[1], class_="point")
+    if kind == "source":
+        before, label, url, after = rest
+        return t.p(before, t.a(label, href=url, target="_blank", rel="noopener"), after, class_="muted source")
     if kind == "ask":
         return t.p(rest[0], " ", t.a("Email me", href=f"mailto:{SITE['email']}"), ".", class_="ask")
     raise ValueError(f"unknown blog block {kind!r}")
