@@ -1407,7 +1407,8 @@ BLOG = [
             "Treasurer for the service given to the town, and to welcome me as the new one. We practiced social "
             "distancing, so the tables were set well apart. Seated at them were the Municipal Mayor, the Vice "
             "Mayor, every member of the Sangguniang Bayan, the Municipal Administrator, the department heads and "
-            "a few employees of the municipality. I sat with my new group from the Municipal Treasurer's Office.",
+            "a few employees of the municipality. I sat with my new group from the Municipal Treasurer's Office, "
+            "joined by two employees from the Provincial Treasurer's Office who had come to conduct the turnover.",
             "Every face around the tables was half hidden behind a mask. It was the pandemic, and I learned "
             "to read smiles in people's eyes. Among them was a familiar one: the Municipal Assessor, my friend and "
             "former co-worker at the Provincial Treasurer's Office. In a room full of new colleagues, one friendly "
@@ -1415,8 +1416,8 @@ BLOG = [
             "Then someone handed me the microphone. I thanked everyone for receiving me, and I told them the truth:",
             ("quote", "This is a challenge for me. My comfort zone has always been one division. Here, I will have "
              "to work and decide in 360 degrees."),
-            "The next two days belonged to the turnover, formally conducted by a team from the Provincial "
-            "Treasurer's Office. In treasury work, a turnover is more than a handshake. It is the moment "
+            "The next two days belonged to the turnover, formally conducted by those two employees from the "
+            "Provincial Treasurer's Office. In treasury work, a turnover is more than a handshake. It is the moment "
             "accountability changes hands, as cash, records and responsibility pass from one officer to the next.",
             ("h", "From One Division to 360 Degrees"),
             "Until then, my work had clear borders. I belonged to a single division with a defined set of tasks, "
