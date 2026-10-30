@@ -1403,11 +1403,11 @@ BLOG = [
             ("h", "A Welcome I Did Not Expect"),
             "I arrived in Mulanay at around two in the afternoon, ready for paperwork. I was not ready for the "
             "warmth that waited for me that evening.",
-            "We gathered at a local restaurant for my welcome. Around the tables sat the Municipal Mayor, the Vice "
-            "Mayor, every member of the Sangguniang Bayan, the Municipal Administrator, the department heads and "
-            "the employees of the municipality. The outgoing Municipal Treasurer was there too, the officer whose "
-            "desk I was about to take.",
-            "The room was full, yet every face was half hidden behind a mask. It was the pandemic, and I learned "
+            "We gathered at a local restaurant for a dinner with two purposes: to thank the outgoing Municipal "
+            "Treasurer for the service given to the town, and to welcome me as the new one. Around the tables sat "
+            "the Municipal Mayor, the Vice Mayor, every member of the Sangguniang Bayan, the Municipal "
+            "Administrator, the department heads and a few employees of the municipality.",
+            "Every face around the tables was half hidden behind a mask. It was the pandemic, and I learned "
             "to read smiles in people's eyes. Among them was a familiar one: the Municipal Assessor, my friend and "
             "former co-worker at the Provincial Treasurer's Office. In a room full of new colleagues, one friendly "
             "face made all the difference.",
