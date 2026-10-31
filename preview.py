@@ -31,7 +31,7 @@ show();
 
 def inline_asset(name):
     data = (Path(__file__).parent / "static" / name).read_bytes()
-    kind = "jpeg" if name.endswith(".jpg") else name.rsplit(".", 1)[-1]
+    kind = {"jpg": "jpeg", "svg": "svg+xml"}.get(name.rsplit(".", 1)[-1], name.rsplit(".", 1)[-1])
     return f"data:image/{kind};base64," + base64.b64encode(data).decode()
 
 
@@ -49,7 +49,7 @@ def build():
         t.style(Raw(CSS + "body{background:var(--bg)}")),
         t.header(
             t.div(
-                t.a(t.img(src=inline_asset("avatar.png"), alt="", width="34", height="34", class_="avatar"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="#home", class_="brand"),
+                t.a(t.img(src=inline_asset("logo.svg"), alt="", width="34", height="34", class_="logo"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="#home", class_="brand"),
                 t.nav([t.a(label, href="#" + SLUG[href]) for href, label in NAV]),
                 class_="wrap",
             ),
