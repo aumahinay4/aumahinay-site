@@ -54,7 +54,7 @@ header.site .wrap { display: flex; align-items: center; justify-content: space-b
 .brand b { color: var(--gold); font-weight: inherit; }
 .brand:hover { text-decoration: none; }
 .brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
-.brand .avatar { width: 34px; height: 34px; border-radius: 50%; flex: none; display: block; }
+.brand .logo { width: 34px; height: 34px; flex: none; display: block; }
 nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
