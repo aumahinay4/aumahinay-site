@@ -323,4 +323,30 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post > .meta { margin: 0; }
 .post > :last-child { margin-bottom: 0; }
 @media (max-width: 640px) { .post { padding: 24px 20px 28px; } .post::before { left: 20px; right: 20px; } }
+
+/* Blog categories: a small coloured label on each post, and filter pills above the posts */
+.post > .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.cat { font-size: 12px; font-weight: 600; letter-spacing: .02em; padding: 3px 10px; border-radius: 999px; }
+.cat-blue { color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 18%, transparent); }
+.cat-green { color: var(--green-ink); background: color-mix(in srgb, var(--green) 18%, transparent); }
+.cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
+.cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
+.cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
+.blog-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.blog-filters input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.blog-filters label { cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--line); transition: background .15s, color .15s, border-color .15s; }
+.blog-filters label:hover { border-color: var(--muted); }
+.blog-filters .count { font-weight: 500; color: var(--muted); margin-left: 2px; }
+.blog-filters input:checked + label { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
+.blog-filters input:checked + label .count { color: var(--on-navy-muted); }
+.blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.blog-filters + .post-index { margin-top: 16px; }
 """
+
+# One hide rule per category: when its pill is picked, posts (and index lines) from other categories hide.
+from content import BLOG_CATEGORIES  # noqa: E402
+
+CSS += "".join(
+    f'.blog-col:has(#cat-{key}:checked) :is(.post, .post-index li):not([data-cat="{key}"]) {{ display: none; }}\n'
+    for key, _, _ in BLOG_CATEGORIES
+)

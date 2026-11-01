@@ -430,6 +430,7 @@ NEWS = [
 #     "date": "November 3, 2026",
 #     "title": "Why local treasuries need automation",
 #     "slug": "why-local-treasuries-need-automation",  # short, lowercase, hyphens
+#     "category": "finance",  # one of the keys in BLOG_CATEGORIES below
 #     "summary": "One or two sentences shown above the post.",
 #     "publish_on": "2026-11-03",  # optional: hidden until this date; None keeps it hidden
 #     "body": [
@@ -440,12 +441,21 @@ NEWS = [
 #         ("source", "Text before ", "link text", "https://...", " text after."),  # small note with a link
 #     ],
 # },
+# Blog categories: key used in each post's "category", label shown on the site, ALTOS colour.
+# The Blog page shows a filter button for each category that has a live post.
+BLOG_CATEGORIES = [
+    ("software", "Software & ALTOS", "blue"),
+    ("finance", "Public Finance", "green"),
+    ("personal", "Personal", "coral"),
+]
+
 BLOG = [
     {
         "date": "December 27, 2026",
         "title": "The ALTOS Framework, Principle 10: Build to Outlast the Builder",
         "publish_on": "2026-12-27",  # goes live on this date (Philippine time)
         "slug": "altos-framework-build-to-outlast-the-builder",
+        "category": "software",
         "summary": "Records, rules and systems must keep working after the person who set them up has left. A reform "
                    "that leaves with its author was never an institution.",
         "body": [
@@ -579,6 +589,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 9: Evidence Before Decision",
         "publish_on": "2026-12-20",  # goes live on this date (Philippine time)
         "slug": "altos-framework-evidence-before-decision",
+        "category": "software",
         "summary": "Targets, forecasts and control checks should inform the treasurer's judgment, never replace it. "
                    "Every number is a prompt for a human decision.",
         "body": [
@@ -704,6 +715,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 8: The Taxpayer Is a Citizen",
         "publish_on": "2026-12-13",  # goes live on this date (Philippine time)
         "slug": "altos-framework-the-taxpayer-is-a-citizen",
+        "category": "software",
         "summary": "Assess fairly, collect conveniently and disclose fully. The person at the counter is not a "
                    "customer buying a service but a citizen funding a shared project.",
         "body": [
@@ -811,6 +823,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 7: Keep Money in Its Fund",
         "publish_on": "2026-12-06",  # goes live on this date (Philippine time)
         "slug": "altos-framework-keep-money-in-its-fund",
+        "category": "software",
         "summary": "A peso raised for schools should reach schools. Each peso belongs to the fund the law assigns it, "
                    "and it should stay there.",
         "body": [
@@ -904,6 +917,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 6: Separate the Hands",
         "publish_on": "2026-11-29",  # goes live on this date (Philippine time)
         "slug": "altos-framework-separate-the-hands",
+        "category": "software",
         "summary": "No one person should both approve and release public money, or both hold it and record it. "
                    "Trust in a treasury has to be designed, not assumed.",
         "body": [
@@ -997,6 +1011,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 5: Every Record Has a Seal",
         "publish_on": "2026-11-22",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-record-has-a-seal",
+        "category": "software",
         "summary": "Once a record is posted, it can be corrected, but only in the open: with a reason, a name and a "
                    "trace that anyone can check.",
         "body": [
@@ -1091,6 +1106,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 4: Every Owner Has a Deadline",
         "publish_on": "2026-11-15",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-owner-has-a-deadline",
+        "category": "software",
         "summary": "A deadline is not paperwork. It sets a limit on how long a mistake or a shortage can stay hidden.",
         "body": [
             "Every treasury officer knows the feeling of the 5th of the month approaching. It is easy to treat "
@@ -1185,6 +1201,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 3: Every Document Has an Owner",
         "publish_on": "2026-11-08",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-document-has-an-owner",
+        "category": "software",
         "summary": "A receipt that belongs to everyone belongs to no one. Every form in custody and every peso in hand "
                    "needs a named, bonded officer who answers for it.",
         "body": [
@@ -1280,6 +1297,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 2: Every Peso Has a Document",
         "publish_on": "2026-11-01",  # goes live on this date (Philippine time)
         "slug": "altos-framework-every-peso-has-a-document",
+        "category": "software",
         "summary": "No collection without an accountable form, no release without a voucher. A peso that leaves no paper "
                    "behind cannot be accounted for.",
         "body": [
@@ -1392,6 +1410,7 @@ BLOG = [
         "date": "October 29, 2026",
         "title": "360 Degrees: My First Post as Acting Municipal Treasurer",
         "slug": "first-post-as-acting-treasurer",
+        "category": "finance",
         "summary": "Two years, two Mayors, a pandemic, a typhoon and an election: what my first post as Acting "
                    "Municipal Treasurer of Mulanay, Quezon, taught me.",
         "body": [
@@ -1503,6 +1522,7 @@ BLOG = [
         "title": "The ALTOS Framework, Principle 1: Legality First",
         "publish_on": "2026-10-28",  # goes live on this date (Philippine time)
         "slug": "altos-framework-legality-first",
+        "category": "software",
         "summary": "Before we ask how a peso was handled, we should ask whether the law allowed it at all.",
         "body": [
             "Ask any treasury clerk what their job is, and most will say they receive payments and release checks. "
@@ -1635,6 +1655,7 @@ BLOG = [
         "date": "October 27, 2026",
         "title": "Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries",
         "slug": "why-i-built-altos",
+        "category": "software",
         "summary": "A treasury system built around one idea: every peso should be accounted for from the moment it arrives to the moment it is reported.",
         "body": [
             ("photo", "altos-screen.jpg", "ALTOS sign-in page", "small"),
@@ -1772,5 +1793,6 @@ BLOG = [
             ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
              "story."),
         ],
+        "category": "personal",
     },
 ]

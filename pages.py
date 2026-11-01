@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, BLOG, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
 from style import CSS
 from tags import Raw
 
@@ -368,14 +368,23 @@ def blog_block(x):
     raise ValueError(f"unknown blog block {kind!r}")
 
 
+CATEGORY = {key: (label, colour) for key, label, colour in BLOG_CATEGORIES}
+
+
+def category_label(b):
+    label, colour = CATEGORY[b["category"]]
+    return t.span(label, class_=f"cat cat-{colour}")
+
+
 def blog_post(b):
     return t.article(
-        t.div(t.span(b["date"], class_="muted"), class_="meta"),
+        t.div(category_label(b), t.span(b["date"], class_="muted"), class_="meta"),
         t.h2(b["title"]),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
         [blog_block(x) for x in b["body"]],
         class_="post",
         id=b["slug"],
+        data_cat=b["category"],
     )
 
 
@@ -385,13 +394,30 @@ def live_posts():
     return [b for b in BLOG if "publish_on" not in b or (b["publish_on"] and b["publish_on"] <= today)]
 
 
+def blog_filters(posts):
+    """Category buttons. Plain radio buttons styled as pills; CSS hides the other posts, no JavaScript."""
+    used = [(key, label) for key, label, _ in BLOG_CATEGORIES if any(b["category"] == key for b in posts)]
+    if len(used) < 2:
+        return ""
+    choices = [("all", "All", len(posts))] + [(k, l, sum(b["category"] == k for b in posts)) for k, l in used]
+    return t.div(
+        [[t.input(type="radio", name="blog-cat", id=f"cat-{k}", value=k, checked=(k == "all")),
+          t.label(l, " ", t.span(n, class_="count"), for_=f"cat-{k}")] for k, l, n in choices],
+        class_="blog-filters",
+        role="radiogroup",
+        aria_label="Show posts by category",
+    )
+
+
 def blog():
     posts_live = live_posts()
     if posts_live:
         posts = [
+            blog_filters(posts_live),
             t.div(
                 t.p("Posts", class_="eyebrow"),
-                t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted")) for b in posts_live]),
+                t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted"),
+                           data_cat=b["category"]) for b in posts_live]),
                 class_="card post-index",
             ) if len(posts_live) > 1 else "",
             [blog_post(b) for b in posts_live],
