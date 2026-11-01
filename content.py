@@ -1740,15 +1740,15 @@ BLOG = [
         ],
     },
     {
-        "date": "October 27, 2026",
-        "title": "200 Kilometers and Five Years Later: Coming Home to a Farm Full of Fruit",
-        "publish_on": None,  # hidden; set to "YYYY-MM-DD" to go live on that date
-        "slug": "coming-home-to-a-farm-full-of-fruit",
+        "date": "November 4, 2026",
+        "title": "200 Kilometers and Five Years Later: Coming Home to the Farm",
+        "publish_on": "2026-11-04",  # goes live on this date (Philippine time)
+        "slug": "coming-home-to-the-farm",
         "body": [
-            ("photo", "blog/farm-1.jpg", "The farm under the trees", "medium"),
+            ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms", "medium"),
             "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
             "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
-            "the years slip by faster than we realize. Recently, I finally made the time to take the 200-kilometer "
+            "the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer "
             "journey back.",
             ("h", "The Long Road Home"),
             "A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads "
@@ -1756,39 +1756,42 @@ BLOG = [
             "When you are away from a place for five years, you hold on to a mental picture of how you left it: the "
             "young trees, the wide open spaces, the quiet promise of what it could become.",
             "Nothing quite prepared me for the moment I arrived.",
-            ("h", "A Farm Full of Fruit"),
-            "Stepping onto those three hectares after half a decade felt like greeting old friends who had grown tall, "
-            "strong, and generous in my absence. My coconut, mango, santol, and langka (jackfruit) trees had not only "
-            "matured into a lush sanctuary; they were laden with fruit.",
-            ("photo", "blog/farm-2.jpg", "Coconut clusters beneath the fronds", "medium"),
-            "Everywhere I looked, the farm was overflowing with life. Clusters of coconuts hung high beneath the swaying "
-            "fronds, and the mango and santol branches bowed with ripening fruit.",
-            "Walking past the langka trees, I marveled at the huge, bumpy jackfruits growing straight out of their "
-            "sturdy trunks. Five years of sun, rain, and quiet patience had turned a simple planting into a true season "
-            "of abundance.",
-            ("photo", "blog/farm-3.jpg", "Jackfruit growing on the trunk", "medium"),
+            "The first thing that caught my eye was the mulawin (molave) tree standing behind me in the photo above. "
+            "I remembered it as a young tree, and I was surprised to see how old it looks now, its trunk and crown "
+            "weathered by the years. There are many mulawin trees on the farm, and all of them have grown into "
+            "sturdy, seasoned hardwoods while I was away.",
+            ("h", "Coconuts for Copra"),
+            "The trees had grown tall and full while I was away. It was not the season for the mango, santol, and "
+            "langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take "
+            "a season off.",
+            ("photo", "blog/farm-2.jpg", "Mature coconuts gathered for copra", "medium"),
+            "Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be gathered for copra. "
+            "For a farm in our part of Quezon, copra is the steady crop, the one that keeps working through every "
+            "season while the other trees wait for their turn.",
+            "Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are "
+            "loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.",
+            "None of this happens on its own. Our caretaker looks after the farm while I am away, and the copra piled "
+            "under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.",
+            "Before walking on, my wife and I sat down in the shade and drank fresh coconut water straight from our own trees. "
+            "After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was "
+            "the most "
+            "refreshing drink we had tasted in a long time.",
             ("h", "Shade, Breeze, and Childhood Memories"),
-            "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick "
-            "canopy of mango, santol, and langka filtered the harsh sunlight into soft patches of gold on the ground, "
-            "while a gentle breeze rustled through the coconut leaves above.",
-            "As I looked out across the wide spaces beneath the trees, a wave of nostalgia washed over me. The quiet land "
-            "brought back vivid memories of my childhood: raising carabaos, cows, and goats, and the familiar sight and "
-            "sound of native chickens roaming freely across the yard.",
-            "There was a special rhythm and joy to that way of life, tending the animals from early morning until dusk. "
+            "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The "
+            "thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze "
+            "rustled through the coconut leaves above.",
+            "As I looked out across the wide spaces beneath the trees, old memories came rushing back: my childhood "
+            "days raising carabaos, cows, and goats, and the familiar "
+            "sight and sound of native chickens roaming freely across the yard.",
+            "There was a special rhythm and joy to that way of life, caring for the animals all day. "
             "Being back on the farm made me realize how much I missed those simpler days.",
-            ("h", "A Sip of Gratitude"),
-            "To top off the welcome, I sat down in the cool shade beneath the loaded branches and drank fresh coconut "
-            "water straight from my own trees. After a 200-kilometer drive, that first sip\u2014cool, naturally sweet, "
-            "and refreshing\u2014tasted like pure gratitude.",
-            ("photo", "blog/farm-4.jpg", "Fresh coconut, opened for drinking", "medium"),
-            "Looking up at the fruit waiting to be harvested, and remembering where my love for farming began, I felt "
-            "the weight of everyday stress melt away.",
             ("h", "What Five Years Taught Me"),
             "Visiting the farm after five years taught me something simple but important:",
-            ("quote", "Growth takes time, patience bears the sweetest fruit, and our roots are always waiting for us if "
-             "we are willing to make the journey back."),
-            "I left with a full heart, a refreshed mind, and a renewed dream of hearing native chickens and livestock "
-            "under these trees once again.",
+            ("quote", "Not every season is a season of fruit, but the land keeps working, and our roots are always "
+             "waiting for us if we are willing to make the journey back."),
+            "I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five "
+            "decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier "
+            "generation, and now it is my turn to plant for the next.",
             "One thing is for sure: I won't wait another five years for my next visit.",
             ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
              "story."),
