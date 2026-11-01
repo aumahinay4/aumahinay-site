@@ -1749,6 +1749,9 @@ BLOG = [
             "season while the other trees wait for their turn.",
             "Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are "
             "loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.",
+            "Before walking on, I sat down in the shade and drank fresh coconut water straight from my own trees. "
+            "After almost 500 steps across the farm, that first sip, cool and naturally sweet, was the most "
+            "refreshing drink I had tasted in a long time.",
             ("h", "Shade, Breeze, and Childhood Memories"),
             "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The "
             "thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze "
