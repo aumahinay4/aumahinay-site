@@ -1749,6 +1749,8 @@ BLOG = [
             "season while the other trees wait for their turn.",
             "Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are "
             "loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.",
+            "None of this happens on its own. My brother takes care of the farm while I am away, and the copra piled "
+            "under the trees is the fruit of his work. Seeing the land in such good hands, I am deeply grateful to him.",
             "Before walking on, I sat down in the shade and drank fresh coconut water straight from my own trees. "
             "After almost 500 steps across the farm, that first sip, cool and naturally sweet, was the most "
             "refreshing drink I had tasted in a long time.",
@@ -1756,8 +1758,8 @@ BLOG = [
             "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The "
             "thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze "
             "rustled through the coconut leaves above.",
-            "As I looked out across the wide spaces beneath the trees, a wave of nostalgia washed over me. The quiet "
-            "land brought back vivid memories of my childhood: raising carabaos, cows, and goats, and the familiar "
+            "As I looked out across the wide spaces beneath the trees, old memories came rushing back: my childhood "
+            "days raising carabaos, cows, and goats, and the familiar "
             "sight and sound of native chickens roaming freely across the yard.",
             "There was a special rhythm and joy to that way of life, caring for the animals all day. "
             "Being back on the farm made me realize how much I missed those simpler days.",
@@ -1765,10 +1767,10 @@ BLOG = [
             "Visiting the farm after five years taught me something simple but important:",
             ("quote", "Not every season is a season of fruit, but the land keeps working, and our roots are always "
              "waiting for us if we are willing to make the journey back."),
-            "I left with a full heart, a refreshed mind, and a renewed dream of hearing native chickens and livestock "
-            "under these trees once again.",
-            "One thing is for sure: I won't wait another five years for my next visit. Next time, I hope to come back "
-            "when the mango and santol trees are in season.",
+            "I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five "
+            "decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier "
+            "generation, and now it is my turn to plant for the next.",
+            "One thing is for sure: I won't wait another five years for my next visit.",
             ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
              "story."),
         ],
