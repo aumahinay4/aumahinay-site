@@ -1727,7 +1727,7 @@ BLOG = [
             ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms", "medium"),
             "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
             "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
-            "the years slip by faster than we realize. Recently, I finally made the time to take the 200-kilometer "
+            "the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer "
             "journey back.",
             ("h", "The Long Road Home"),
             "A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads "
@@ -1751,10 +1751,10 @@ BLOG = [
             "loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.",
             "None of this happens on its own. My caretaker looks after the farm while I am away, and the copra piled "
             "under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.",
-            "Before walking on, I sat down in the shade and drank fresh coconut water straight from my own trees. "
+            "Before walking on, my wife and I sat down in the shade and drank fresh coconut water straight from our own trees. "
             "After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was "
             "the most "
-            "refreshing drink I had tasted in a long time.",
+            "refreshing drink we had tasted in a long time.",
             ("h", "Shade, Breeze, and Childhood Memories"),
             "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The "
             "thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze "
