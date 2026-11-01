@@ -19,7 +19,8 @@ def asset_url(name):
 NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/news/", "IT News"), ("/blog/", "Blog"), ("/about/", "About")]
 
 
-def layout(title, active, body, description=None):
+def layout(title, active, body, description=None, url=None, og_type="website"):
+    url = url or active
     page_title = SITE["brand"] if active == "/" else f"{title} · {SITE['brand']}"
     doc = t.html(
         t.head(
@@ -28,11 +29,11 @@ def layout(title, active, body, description=None):
             t.title(page_title),
             t.meta(name="description", content=description or SITE["tagline"]),
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
-            t.meta(property="og:type", content="website"),
+            t.meta(property="og:type", content=og_type),
             t.meta(property="og:site_name", content=SITE["domain"]),
             t.meta(property="og:title", content=page_title),
             t.meta(property="og:description", content=description or SITE["tagline"]),
-            t.meta(property="og:url", content=f"https://{SITE['domain']}{active}"),
+            t.meta(property="og:url", content=f"https://{SITE['domain']}{url}"),
             t.meta(property="og:image", content=f"https://{SITE['domain']}/static/share.jpg"),
             t.meta(property="og:image:width", content="1200"),
             t.meta(property="og:image:height", content="630"),
@@ -68,9 +69,10 @@ def layout(title, active, body, description=None):
     return "<!doctype html>\n" + doc
 
 
-def part(title, active, *body, description=None):
+def part(title, active, *body, description=None, url=None, og_type="website"):
     """The pieces of one page, before it is wrapped in the site layout."""
-    return {"title": title, "active": active, "body": list(body), "description": description}
+    return {"title": title, "active": active, "body": list(body), "description": description, "url": url,
+            "og_type": og_type}
 
 
 def tag_list(items):
@@ -376,14 +378,52 @@ def category_label(b):
     return t.span(label, class_=f"cat cat-{colour}")
 
 
+def post_url(b):
+    return f"/blog/{b['slug']}/"
+
+
+def reading_minutes(b):
+    words = sum(len(" ".join(str(y) for y in ([x] if isinstance(x, str) else x[1:])).split()) for x in b["body"])
+    return max(1, round(words / 200))
+
+
+def post_meta(b):
+    return t.div(
+        category_label(b),
+        t.span(b["date"], class_="muted"),
+        t.span("·", class_="muted dot"),
+        t.span(f"{reading_minutes(b)} min read", class_="muted"),
+        class_="meta",
+    )
+
+
+def post_teaser(b):
+    """Short text for the Blog list: the summary, or the start of the first paragraph."""
+    if b.get("summary"):
+        return b["summary"]
+    first = next(x for x in b["body"] if isinstance(x, str))
+    return first if len(first) <= 200 else first[:200].rsplit(" ", 1)[0] + "…"
+
+
+def post_card(b):
+    return t.article(
+        post_meta(b),
+        t.h2(t.a(b["title"], href=post_url(b))),
+        t.p(post_teaser(b), class_="teaser"),
+        t.a("Read the post", Raw(" &rarr;"), href=post_url(b), class_="more"),
+        class_="post-card",
+        id=b["slug"],  # old /blog/#slug links still land on the right post
+        data_cat=b["category"],
+    )
+
+
 def blog_post(b):
     return t.article(
-        t.div(category_label(b), t.span(b["date"], class_="muted"), class_="meta"),
-        t.h2(b["title"]),
+        post_meta(b),
+        t.h1(b["title"]),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
         [blog_block(x) for x in b["body"]],
         class_="post",
-        id=b["slug"],
         data_cat=b["category"],
     )
 
@@ -412,16 +452,7 @@ def blog_filters(posts):
 def blog():
     posts_live = live_posts()
     if posts_live:
-        posts = [
-            blog_filters(posts_live),
-            t.div(
-                t.p("Posts", class_="eyebrow"),
-                t.ul([t.li(t.a(b["title"], href=f"#{b['slug']}"), " ", t.span(b["date"], class_="muted"),
-                           data_cat=b["category"]) for b in posts_live]),
-                class_="card post-index",
-            ) if len(posts_live) > 1 else "",
-            [blog_post(b) for b in posts_live],
-        ]
+        posts = [blog_filters(posts_live), t.div([post_card(b) for b in posts_live], class_="post-list")]
     else:
         posts = t.div(
             t.h3("First posts coming soon"),
@@ -446,6 +477,37 @@ def blog():
         ),
         description="Blog by " + SITE["short_name"],
     )
+
+
+def post_page(b):
+    """One blog post on its own page, with links to the newer and older posts."""
+    posts = live_posts()
+    i = posts.index(b)
+    newer = posts[i - 1] if i > 0 else None
+    older = posts[i + 1] if i + 1 < len(posts) else None
+
+    def step(p, label, class_):
+        return t.a(t.span(label, class_="muted"), t.b(p["title"]), href=post_url(p), class_=class_) if p else t.span()
+
+    return part(
+        b["title"], "/blog/",
+        t.div(
+            t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
+            blog_post(b),
+            t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
+                  aria_label="More posts"),
+            t.p("Views here are my own and do not represent any government office.", class_="muted note"),
+            class_="blog-col",
+        ),
+        description=b.get("summary") or post_teaser(b),
+        url=post_url(b),
+        og_type="article",
+    )
+
+
+def post_parts():
+    """Route -> page builder for every live post."""
+    return {post_url(b): (lambda b=b: post_page(b)) for b in live_posts()}
 
 
 def about():
@@ -493,11 +555,12 @@ PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/news/": news
 def _full_page(build):
     def render():
         p = build()
-        return layout(p["title"], p["active"], p["body"], description=p["description"])
+        return layout(p["title"], p["active"], p["body"], description=p["description"], url=p["url"],
+                      og_type=p["og_type"])
     return render
 
 
-ROUTES = {route: _full_page(build) for route, build in PARTS.items()}
+ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}.items()}
 
 
 def not_found():

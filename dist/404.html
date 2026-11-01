@@ -335,8 +335,38 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .blog-filters input:checked + label { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
 .blog-filters input:checked + label .count { color: var(--on-navy-muted); }
 .blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
-.blog-filters + .post-index { margin-top: 16px; }
-.blog-col:has(#cat-software:checked) :is(.post, .post-index li):not([data-cat="software"]) { display: none; }
-.blog-col:has(#cat-finance:checked) :is(.post, .post-index li):not([data-cat="finance"]) { display: none; }
-.blog-col:has(#cat-personal:checked) :is(.post, .post-index li):not([data-cat="personal"]) { display: none; }
+.post > .meta .dot { margin: 0 -4px; }
+.post > .meta { font-size: 14px; }
+/* On narrow phone screens justified text leaves wide gaps between words, so blog posts read better left-aligned there */
+@media (max-width: 640px) { .post p { text-align: left; } }
+.post h1 { font-size: clamp(1.9rem, 4.2vw, 2.6rem); line-height: 1.15; margin: 18px 0 0; }
+.blog-col > .back { display: inline-block; margin-top: 8px; font-weight: 600; font-size: 15px; }
+.blog-col > .back + .post { margin-top: 20px; }
+
+/* Blog list: one card per post, linking to the post's own page */
+.post-list { margin-top: 24px; display: grid; gap: 18px; }
+.post-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px 32px 24px; scroll-margin-top: 90px; transition: border-color .15s, transform .15s; }
+.post-card:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); transform: translateY(-1px); }
+.post-card .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; }
+.post-card .meta .dot { margin: 0 -4px; }
+.post-card h2 { margin: 12px 0 0; font-size: clamp(1.25rem, 2.6vw, 1.5rem); line-height: 1.25; }
+.post-card h2::after { display: none; }
+.post-card h2 a { color: var(--text); }
+.post-card h2 a::before { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }  /* whole card is clickable */
+.post-card h2 a:hover { color: var(--blue-ink); }
+.post-card .teaser { margin: 10px 0 0; color: var(--muted); text-align: left; hyphens: manual; }
+.post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15px; }
+@media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
+
+/* Newer / older post links under a post */
+.post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.post-steps a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.post-steps a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.post-steps .muted { font-size: 13px; }
+.post-steps b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+.post-steps .older { text-align: right; }
+@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } }
+.blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
+.blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
+.blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
 </style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/news/">IT News</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer></body></html>

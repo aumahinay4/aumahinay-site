@@ -335,8 +335,38 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .blog-filters input:checked + label { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
 .blog-filters input:checked + label .count { color: var(--on-navy-muted); }
 .blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
-.blog-filters + .post-index { margin-top: 16px; }
-.blog-col:has(#cat-software:checked) :is(.post, .post-index li):not([data-cat="software"]) { display: none; }
-.blog-col:has(#cat-finance:checked) :is(.post, .post-index li):not([data-cat="finance"]) { display: none; }
-.blog-col:has(#cat-personal:checked) :is(.post, .post-index li):not([data-cat="personal"]) { display: none; }
+.post > .meta .dot { margin: 0 -4px; }
+.post > .meta { font-size: 14px; }
+/* On narrow phone screens justified text leaves wide gaps between words, so blog posts read better left-aligned there */
+@media (max-width: 640px) { .post p { text-align: left; } }
+.post h1 { font-size: clamp(1.9rem, 4.2vw, 2.6rem); line-height: 1.15; margin: 18px 0 0; }
+.blog-col > .back { display: inline-block; margin-top: 8px; font-weight: 600; font-size: 15px; }
+.blog-col > .back + .post { margin-top: 20px; }
+
+/* Blog list: one card per post, linking to the post's own page */
+.post-list { margin-top: 24px; display: grid; gap: 18px; }
+.post-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px 32px 24px; scroll-margin-top: 90px; transition: border-color .15s, transform .15s; }
+.post-card:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); transform: translateY(-1px); }
+.post-card .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; }
+.post-card .meta .dot { margin: 0 -4px; }
+.post-card h2 { margin: 12px 0 0; font-size: clamp(1.25rem, 2.6vw, 1.5rem); line-height: 1.25; }
+.post-card h2::after { display: none; }
+.post-card h2 a { color: var(--text); }
+.post-card h2 a::before { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }  /* whole card is clickable */
+.post-card h2 a:hover { color: var(--blue-ink); }
+.post-card .teaser { margin: 10px 0 0; color: var(--muted); text-align: left; hyphens: manual; }
+.post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15px; }
+@media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
+
+/* Newer / older post links under a post */
+.post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.post-steps a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.post-steps a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.post-steps .muted { font-size: 13px; }
+.post-steps b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+.post-steps .older { text-align: right; }
+@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } }
+.blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
+.blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
+.blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
 </style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/news/" class="active">IT News</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Updates</p><h1>IT News</h1><p class="lead">Selected technology news on digital government, cybersecurity and AI in the Philippines, summarized briefly in my own words. Each item links to the original article.</p><p class="muted news-updated">Last updated October 25, 2026 · 4 stories</p><div class="news-list"><article class="card news coral latest"><div class="meta"><span class="badge">Cybersecurity</span><span class="badge latest">Latest</span><span class="muted">October 25, 2026</span></div><h3>DDoS attacks on Philippine telecom networks more than double</h3><p>Data from security firm StormWall shows telecommunications accounted for a quarter of DDoS attacks in the Philippines from January to August 2026, with attacks on telecom networks up 118% from a year earlier and their average size about five times larger.</p><p class="why"><b>Why it matters: </b>Government offices that serve citizens and accept payments online depend on these same networks, so stronger protection keeps public services running.</p><div class="foot source"><span class="muted">Source: The Manila Times</span><a href="https://www.manilatimes.net/2026/10/25/business/sunday-business-it/ddos-attacks-on-ph-telecoms-surge/2453202" target="_blank" rel="noopener">Read the full story →</a></div></article><article class="card news blue"><div class="meta"><span class="badge">Digital ID</span><span class="muted">October 21, 2026</span></div><h3>DICT opens ₱496-million tender for National ID verification infrastructure</h3><p>The Department of Information and Communications Technology is bidding out one year of cloud, security and identity-verification services for its National ID eVerify program, with a 99.5% uptime guarantee. Bids are due November 9, 2026.</p><p class="why"><b>Why it matters: </b>Quick, reliable ID checks help government offices confirm who they are dealing with, which cuts paperwork and helps prevent fraud.</p><div class="foot source"><span class="muted">Source: Biometric Update</span><a href="https://www.biometricupdate.com/202610/philippines-launches-7-8m-tender-for-national-digital-id-infrastructure" target="_blank" rel="noopener">Read the full story →</a></div></article><article class="card news green"><div class="meta"><span class="badge">E-government</span><span class="muted">October 19, 2026</span></div><h3>Electronic notarization launches nationwide</h3><p>The Philippines formally launched electronic notarization in Taguig City. The Supreme Court, the Land Registration Authority and the SEC issued joint guidelines for accepting e-notarized documents, with identities checked through the DICT&#x27;s eVerify service. Linking it to the eGov platform is in final testing.</p><p class="why"><b>Why it matters: </b>Documents that used to need a personal appearance before a notary can now be handled and verified online, saving citizens time and travel.</p><div class="foot source"><span class="muted">Source: Daily Tribune</span><a href="https://tribune.net.ph/2026/10/19/philippines-launches-nationwide-electronic-notarization" target="_blank" rel="noopener">Read the full story →</a></div></article><article class="card news violet"><div class="meta"><span class="badge">AI in government</span><span class="muted">September 21, 2026</span></div><h3>eGovPH app gets an AI assistant</h3><p>The DICT added eGovAI to the eGovPH Super App, including the &quot;Kuya AI&quot; assistant, to help citizens find information, navigate government services and complete transactions, with identity checks, document handling and translation built in.</p><p class="why"><b>Why it matters: </b>An assistant that guides people step by step can mean fewer queues, fewer repeat visits and easier access to government services.</p><div class="foot source"><span class="muted">Source: Marketech APAC</span><a href="https://marketech-apac.com/dict-brings-ai-powered-government-services-to-filipinos-through-egovai/" target="_blank" rel="noopener">Read the full story →</a></div></article></div><p class="muted note">Summaries of published news, each linked to its original source. This is a personal website and not an official publication of any government office.</p></div></main><footer class="site"><div class="wrap">Built in Python</div></footer></body></html>
