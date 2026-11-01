@@ -32,7 +32,7 @@ ABOUT = {
         ),
         (
             "My grounding is in public administration, studied at both levels at Manuel S. "
-            "Enverga University Foundation in Lucena City. I earned my Bachelor of Science in "
+            "Enverga University Foundation. I earned my Bachelor of Science in "
             "Public Administration through ETEEAP in 2008, while already working in government, "
             "and completed my Master in Public Administration in 2014. These studies gave me the "
             "theory behind my daily work: how local government is organized, how public money is "
@@ -99,8 +99,8 @@ ABOUT = {
         },
     ],
     "education": [
-        ("Master in Public Administration (MPA)", "Manuel S. Enverga University Foundation, Lucena City", "2014"),
-        ("Bachelor of Science in Public Administration (ETEEAP)", "Manuel S. Enverga University Foundation, Lucena City", "2008"),
+        ("Master in Public Administration (MPA)", "Manuel S. Enverga University Foundation", "2014"),
+        ("Bachelor of Science in Public Administration (ETEEAP)", "Manuel S. Enverga University Foundation", "2008"),
         ("Computer System Design & Programming", "AMA Computer Learning Center", "2000"),
     ],
     "eligibilities": [
