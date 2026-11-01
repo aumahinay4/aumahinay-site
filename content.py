@@ -1756,7 +1756,7 @@ BLOG = [
             "As I looked out across the wide spaces beneath the trees, a wave of nostalgia washed over me. The quiet "
             "land brought back vivid memories of my childhood: raising carabaos, cows, and goats, and the familiar "
             "sight and sound of native chickens roaming freely across the yard.",
-            "There was a special rhythm and joy to that way of life, caring for the animals. "
+            "There was a special rhythm and joy to that way of life, caring for the animals all day. "
             "Being back on the farm made me realize how much I missed those simpler days.",
             ("h", "What Five Years Taught Me"),
             "Visiting the farm after five years taught me something simple but important:",
