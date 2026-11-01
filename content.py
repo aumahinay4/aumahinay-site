@@ -1752,7 +1752,7 @@ BLOG = [
             "None of this happens on its own. My caretaker looks after the farm while I am away, and the copra piled "
             "under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.",
             "Before walking on, I sat down in the shade and drank fresh coconut water straight from my own trees. "
-            "After a walk of nearly 1,000 steps from the main road, that first sip, cool and naturally sweet, was "
+            "After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was "
             "the most "
             "refreshing drink I had tasted in a long time.",
             ("h", "Shade, Breeze, and Childhood Memories"),
