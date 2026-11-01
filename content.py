@@ -1735,6 +1735,10 @@ BLOG = [
             "When you are away from a place for five years, you hold on to a mental picture of how you left it: the "
             "young trees, the wide open spaces, the quiet promise of what it could become.",
             "Nothing quite prepared me for the moment I arrived.",
+            "The first thing that caught my eye was the mulawin (molave) tree standing behind me in the photo above. "
+            "I remembered it as a young tree, and I was surprised to see how old it looks now, its trunk and crown "
+            "weathered by the years. There are many mulawin trees on the farm, and all of them have grown into "
+            "sturdy, seasoned hardwoods while I was away.",
             ("h", "Coconuts for Copra"),
             "The trees had grown tall and full while I was away. It was not the season for the mango, santol, and "
             "langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take "
