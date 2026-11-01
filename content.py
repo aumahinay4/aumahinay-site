@@ -1750,7 +1750,7 @@ BLOG = [
             "Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are "
             "loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.",
             "None of this happens on its own. Our caretaker looks after the farm while I am away, and the copra piled "
-            "under the trees is the fruit of his work. Seeing the land in such good hands, I am deeply grateful for the work.",
+            "under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.",
             "Before walking on, I sat down in the shade and drank fresh coconut water straight from my own trees. "
             "After almost 500 steps across the farm, that first sip, cool and naturally sweet, was the most "
             "refreshing drink I had tasted in a long time.",
