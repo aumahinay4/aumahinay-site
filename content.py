@@ -1719,9 +1719,9 @@ BLOG = [
         ],
     },
     {
-        "date": "November 1, 2026",
+        "date": "November 4, 2026",
         "title": "200 Kilometers and Five Years Later: Coming Home to the Farm",
-        "publish_on": None,  # hidden; set to "YYYY-MM-DD" to go live on that date
+        "publish_on": "2026-11-04",  # goes live on this date (Philippine time)
         "slug": "coming-home-to-the-farm",
         "body": [
             ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms", "medium"),
@@ -1775,5 +1775,6 @@ BLOG = [
             ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
              "story."),
         ],
+        "category": "personal",
     },
 ]
