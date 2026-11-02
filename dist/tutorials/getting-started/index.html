@@ -126,13 +126,13 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 
 /* Figures strip */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-.stat { padding: 24px 26px 22px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.stat { padding: 14px 22px 14px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 5px; }
 .stat:first-child { border-left: 0; }
-.stat b { display: block; font: 700 2.6rem/1 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stat b { display: block; font: 700 1.56rem/1 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .stat b small { font-size: .6em; font-weight: 700; margin-left: 2px; vertical-align: .55em; }
 .stat:nth-child(1) b { color: var(--gold-ink); } .stat:nth-child(2) b { color: var(--blue-ink); }
 .stat:nth-child(3) b { color: var(--green-ink); } .stat:nth-child(4) b { color: var(--coral-ink); }
-.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin-top: 12px; background: currentColor; opacity: .55; }
+.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin-top: 5px; background: currentColor; opacity: .55; }
 .stat span { font-size: 14.5px; line-height: 1.35; font-weight: 500; color: var(--muted); max-width: 18ch; }
 @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(3) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid var(--line); } }
 
@@ -313,8 +313,8 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(11px, 3.3vw, 15px); }
   @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero { --bgap: 6px; } }
   td { padding: 12px 14px; }
-  .stat { padding: 20px 18px 18px; gap: 8px; }
-  .stat b { font-size: 2.2rem; }
+  .stat { padding: 12px 16px 12px; gap: 5px; }
+  .stat b { font-size: 1.32rem; }
   .stat span { font-size: 13.5px; }
 }
 /* Large computer screens: let the page breathe a little wider. */
