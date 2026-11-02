@@ -200,7 +200,6 @@ def home():
                 ),
                 class_="hero-text",
             ),
-            t.div(cover_img("hero-cover"), class_="hero-art"),
             class_="hero",
         ),
         t.div(
@@ -259,7 +258,7 @@ def projects():
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
             ),
-            ring(),
+            t.div(ring(), cover_img("altos-book"), class_="altos-art"),
             class_="altos-hero",
         ),
         t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),

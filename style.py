@@ -112,19 +112,14 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .hero .eyebrow, .altos-hero .eyebrow { color: var(--gold); }
 .hero .lead, .altos-hero .lead { color: var(--on-navy-muted); }
 
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) 135px; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
-.hero-cover { display: block; width: 100%; border-radius: 6px 12px 12px 6px; transform: rotate(3deg);
-              box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .08); }
-/* Phones and tablets: the three buttons share the full width in equal thirds, and the book (20% smaller) sits centred under "See ALTOS" */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
+/* Phones and tablets: the three buttons share the full width in equal thirds */
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; gap: 28px; }
-  .hero { --bgap: 12px; --book: 96px; }
-  .hero-art { width: var(--book); justify-self: start; margin-left: max(0px, calc((100% - 2 * var(--bgap)) / 6 - var(--book) / 2)); }
-  .hero-cover { transform: none; }
+  .hero { --bgap: 12px; }
   .hero .btns { flex-wrap: nowrap; gap: var(--bgap); }
   .hero .btn { flex: 1 1 0; text-align: center; white-space: nowrap; }
 }
-@media (max-width: 640px) { .hero { --bgap: 8px; --book: 80px; } }
+@media (max-width: 640px) { .hero { --bgap: 8px; } }
 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
@@ -217,7 +212,13 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .altos-hero h1.wordmark { font-size: clamp(3.4rem, 11vw, 6.2rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.3rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
-@media (max-width: 640px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } }
+/* the 360° ring with the ALTOS book beside it; one solid navy, top to bottom */
+.altos-hero { background: var(--navy-deep); }
+.altos-art { display: flex; align-items: center; gap: 28px; }
+.altos-book { display: block; width: calc(var(--ring, 230px) * .62); height: auto; border-radius: 4px 9px 9px 4px; transform: rotate(3deg);
+              box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .75), 0 0 0 1px rgba(255, 255, 255, .08); }
+@media (max-width: 1024px) { .altos-hero { grid-template-columns: 1fr; gap: 32px; } .altos-art { --ring: 170px; gap: 24px; justify-content: center; } }
+@media (max-width: 640px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } .altos-art { --ring: 150px; justify-content: center; gap: 18px; } .altos-book { transform: none; } }
 @media (min-width: 641px) and (max-width: 1024px) { .altos-hero { gap: 32px; } }
 .ring { --size: 230px; width: var(--size); height: var(--size); flex: none; border-radius: 50%; display: grid; place-content: center; text-align: center;
         background: radial-gradient(circle, var(--navy-deep) 60%, transparent 61%),
