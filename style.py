@@ -91,7 +91,8 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 }
 .hero > *, .altos-hero > * { position: relative; z-index: 1; min-width: 0; }
 .hero h1, .altos-hero h1, .hero h3 { color: var(--on-navy); }
-.hero h1 { font-size: clamp(1.1rem, 2.19vw, 1.42rem); }  /* about 40% of the default h1 */
+.hero h1 { font-size: clamp(1.1rem, 2.19vw, 1.42rem); margin-bottom: 0; }  /* about 40% of the default h1 */
+.hero h1 + .rule { margin-top: 10px; }  /* keep the colour bar close to the name */
 .hero .eyebrow, .altos-hero .eyebrow { color: var(--gold); }
 .hero .lead, .altos-hero .lead { color: var(--on-navy-muted); }
 
@@ -266,13 +267,12 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .grid.one { grid-template-columns: 1fr; }
   .card { padding: 22px 22px; }
   .card::before { left: 22px; right: 22px; }
-  .card p { text-align: left; hyphens: manual; }  /* narrow cards: justified text leaves gaps */
   h2, .section-head { margin-top: 60px; }
 }
-/* Phones: left-aligned text (justified lines get wide gaps on a small screen), all six menu links visible, bigger tap targets. */
+/* Phones: all six menu links visible, bigger tap targets, tighter spacing. Text stays justified (Butch's choice). */
 @media (max-width: 640px) {
   main { padding: 24px 0 64px; }
-  main p, .lead { text-align: left; -webkit-hyphens: manual; hyphens: manual; }
+  main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
   h2, .section-head { margin-top: 52px; }
   header.site .wrap { row-gap: 0; padding-top: 8px; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
