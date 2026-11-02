@@ -39,7 +39,7 @@ CSS = """
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 var(--font-body); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
@@ -77,7 +77,7 @@ main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.725rem, 4.05vw, 2.625rem);  /* page titles 25% smaller, same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; font-weight: 700; }
-h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); letter-spacing: -0.015em; margin: 72px 0 8px; font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); letter-spacing: -0.015em; margin: 36px 0 8px; font-weight: 700; }  /* space above section headings: half the old 72px */
 h2::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 4px; background: var(--rainbow); margin-top: 4px; }  /* bar nearly touches the heading */
 h2 + .muted { margin-top: 16px; }
 /* one rhythm under every section heading: 16px to an intro line, 24px to anything else */
@@ -85,7 +85,7 @@ main h2 + p { margin-top: 16px; }
 main h2 + :not(p, .muted) { margin-top: 24px; }
 * + .grid, h2 + .grid, h2 + table, h2 + .timeline, h2 + .tags, h2 + ol, h2 + .card { margin-top: 24px; }
 h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.005em; }
-.lead { font-size: 1.18rem; line-height: 1.6; color: var(--muted); max-width: 680px; }
+.lead { font-size: 1.18rem; line-height: 1.5; color: var(--muted); max-width: 680px; }
 .eyebrow { color: var(--gold-ink); font: 600 12.5px var(--font-body); text-transform: uppercase; letter-spacing: 0.16em; margin: 0 0 12px; }
 .muted { color: var(--muted); }
 .rule { width: 96px; height: 4px; border-radius: 4px; background: var(--rainbow); margin: 22px 0; }
@@ -163,7 +163,7 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .card .foot a:not(.btn) { color: var(--ci, var(--blue-ink)); }
 
 /* Home: ALTOS feature */
-.card.feature { flex-direction: row; gap: 36px; padding: 32px; align-items: center; }
+.card.feature { flex-direction: row; gap: 18px; padding: 32px; align-items: center; }
 .card.feature::before { background: var(--rainbow); }
 .feature-art { flex: none; width: 190px; }
 .feature-cover { display: block; width: 100%; border-radius: 4px 10px 10px 4px; box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .6); }
@@ -261,7 +261,7 @@ ol.principles li span { color: var(--muted); font-size: 15px; line-height: 1.5; 
 .family { margin-top: 36px; }
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .node h3 { margin: 12px 0 4px; }
-.node p { margin: 10px 0 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
+.node p { margin: 10px 0 0; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
 .node-head { display: flex; align-items: center; justify-content: space-between; gap: 10px 12px; flex-wrap: wrap; }
 .code { font: 800 1.35rem/1.15 var(--font-display); letter-spacing: .06em; color: var(--ci, var(--text)); }
 .status { font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; color: var(--muted); border: 1.5px dashed var(--line); }
@@ -295,7 +295,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .grid.one { grid-template-columns: 1fr; }
   .card { padding: 22px 22px; }
   .card::before { left: 22px; right: 22px; }
-  h2, main .section-head { margin-top: 60px; }
+  h2, main .section-head { margin-top: 30px; }
 }
 /* Phones: all six menu links visible, bigger tap targets, tighter spacing. Text stays justified (Butch's choice). */
 @media (max-width: 640px) {
@@ -339,7 +339,7 @@ figure.screenshot figcaption { margin-top: 10px; font-size: 14px; color: var(--m
 .note { margin-top: 28px; font-size: 14px; }
 figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizing: border-box; }
 
-.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px 20px; flex-wrap: wrap; margin-top: 72px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px 20px; flex-wrap: wrap; margin-top: 36px; }
 .section-head h2 { margin: 0; }
 .section-head .more { font-size: 15px; padding-bottom: 10px; }
 .section-head + .grid { margin-top: 24px; }
