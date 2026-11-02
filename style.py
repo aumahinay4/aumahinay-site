@@ -77,7 +77,7 @@ main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.725rem, 4.05vw, 2.625rem);  /* page titles 25% smaller, same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; font-weight: 700; }
-h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); letter-spacing: -0.015em; margin: 36px 0 8px; font-weight: 700; }  /* space above section headings: half the old 72px */
+h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); letter-spacing: -0.015em; margin: 72px 0 8px; font-weight: 700; }
 h2::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 4px; background: var(--rainbow); margin-top: 4px; }  /* bar nearly touches the heading */
 h2 + .muted { margin-top: 16px; }
 /* one rhythm under every section heading: 16px to an intro line, 24px to anything else */
@@ -172,7 +172,7 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .feature .foot { padding-top: 22px; }
 .feature-art.wide { width: 23%; max-width: 220px; }
 .feature-shot { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .5); }
-@media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } .feature-art.wide { display: block; width: 50%; max-width: none; } }
+@media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } .feature-art.wide { display: block; width: 50%; max-width: none; } .card.feature { gap: 14px; } }  /* phones: label sits half as far under the ALTOS picture */
 
 /* The ALTOS wordmark: one colour per letter, as on the cover */
 .wordmark { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.01em; }
@@ -295,7 +295,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .grid.one { grid-template-columns: 1fr; }
   .card { padding: 22px 22px; }
   .card::before { left: 22px; right: 22px; }
-  h2, main .section-head { margin-top: 30px; }
+  h2, main .section-head { margin-top: 60px; }
 }
 /* Phones: all six menu links visible, bigger tap targets, tighter spacing. Text stays justified (Butch's choice). */
 @media (max-width: 640px) {
@@ -304,7 +304,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   main h2 + p, h2 + .muted { margin-top: 10px; }  /* phones: text a little closer under each heading bar */
   main h2 + :not(p, .muted) { margin-top: 16px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
-  h2, main .section-head { margin-top: 26px; }
+  h2, main .section-head { margin-top: 26px; }  /* phones only: half the old 52px */
   header.site .wrap { row-gap: 0; padding-top: 8px; padding-bottom: 5px; min-height: 0; }  /* navy strip under the menu so the gold line shows clear of the rainbow */
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 6px 2px 2px; line-height: 1.2; font-size: clamp(12px, 3.7vw, 14.5px); }  /* menu sits close under the photo; gold/rainbow line nearly touches the words */
@@ -339,7 +339,7 @@ figure.screenshot figcaption { margin-top: 10px; font-size: 14px; color: var(--m
 .note { margin-top: 28px; font-size: 14px; }
 figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizing: border-box; }
 
-.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px 20px; flex-wrap: wrap; margin-top: 36px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px 20px; flex-wrap: wrap; margin-top: 72px; }
 .section-head h2 { margin: 0; }
 .section-head .more { font-size: 15px; padding-bottom: 10px; }
 .section-head + .grid { margin-top: 24px; }
