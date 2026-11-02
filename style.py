@@ -66,8 +66,8 @@ nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
 header.site nav { margin-left: auto; }
 .fs { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 20;
       width: 36px; height: 36px; display: grid; place-content: center; padding: 0; cursor: pointer;
-      color: #0b1630; background: #ffffff; border: 1px solid rgba(11, 22, 48, .15); border-radius: 50%;
-      box-shadow: 0 6px 18px rgba(11, 22, 48, .35); }  /* full-screen button floats at the bottom right on every screen */
+      color: #0b1630; background: rgba(255, 255, 255, .15); border: 1px solid rgba(11, 22, 48, .3); border-radius: 50%;
+      box-shadow: none; }  /* full-screen button floats at the bottom right on every screen */
 .fs[hidden] { display: none; }
 .fs:hover, .fs:focus-visible { color: #0b1630; border-color: var(--gold); }
 .fs svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
