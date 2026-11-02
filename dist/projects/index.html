@@ -299,9 +299,9 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   main > .wrap > .hero:first-child { margin-top: -12px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
   h2, main .section-head { margin-top: 52px; }
-  header.site .wrap { row-gap: 0; padding-top: 8px; }
+  header.site .wrap { row-gap: 0; padding-top: 8px; min-height: 0; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
-  nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
+  nav a { padding: 6px 2px 2px; line-height: 1.2; font-size: clamp(12px, 3.7vw, 14.5px); }  /* menu sits close under the photo; gold/rainbow line nearly touches the words */
   .fs { order: 1; margin-left: auto; width: 28px; height: 28px; border-radius: 8px; }
   .fs svg { width: 15px; height: 15px; }  /* phones: next to the name, so the menu row keeps all six links */
   nav { order: 2; }
