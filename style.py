@@ -106,15 +106,16 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 135px; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .hero-cover { display: block; width: 100%; border-radius: 6px 12px 12px 6px; transform: rotate(3deg);
               box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .08); }
-/* Phones and tablets: the book sits centred below the three buttons, which share the full width */
+/* Phones and tablets: the three buttons share the full width in equal thirds, and the book (20% smaller) sits centred under "See ALTOS" */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; gap: 28px; }
-  .hero-art { width: 120px; justify-self: center; }
+  .hero { --bgap: 12px; --book: 96px; }
+  .hero-art { width: var(--book); justify-self: start; margin-left: max(0px, calc((100% - 2 * var(--bgap)) / 6 - var(--book) / 2)); }
   .hero-cover { transform: none; }
-  .hero .btns { flex-wrap: nowrap; }
+  .hero .btns { flex-wrap: nowrap; gap: var(--bgap); }
   .hero .btn { flex: 1 1 0; text-align: center; white-space: nowrap; }
 }
-@media (max-width: 640px) { .hero-art { width: 100px; } }
+@media (max-width: 640px) { .hero { --bgap: 8px; --book: 80px; } }
 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
@@ -301,9 +302,8 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .btn { padding: 13px 20px; }
   .hero { padding: 26px 20px; }
   /* the three hero buttons share one line */
-  .hero .btns { flex-wrap: nowrap; gap: 8px; }
-  .hero .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; padding: 12px 4px; font-size: clamp(11.5px, 3.6vw, 15px); min-width: 0; }
-  @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero .btns { gap: 6px; } }
+  .hero .btn { flex: 1 1 0; text-align: center; white-space: nowrap; padding: 12px 4px; font-size: clamp(11.5px, 3.6vw, 15px); min-width: 0; }
+  @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero { --bgap: 6px; } }
   td { padding: 12px 14px; }
   .stat { padding: 20px 18px 18px; gap: 8px; }
   .stat b { font-size: 2.2rem; }
