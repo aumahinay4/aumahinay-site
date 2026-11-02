@@ -76,7 +76,7 @@ header.site nav { margin-left: auto; }
 main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
-h1 { font-size: clamp(2.3rem, 5.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; font-weight: 700; }
+h1 { font-size: clamp(1.725rem, 4.05vw, 2.625rem);  /* page titles 25% smaller, same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; font-weight: 700; }
 h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); letter-spacing: -0.015em; margin: 72px 0 8px; font-weight: 700; }
 h2::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 4px; background: var(--rainbow); margin-top: 4px; }  /* bar nearly touches the heading */
 h2 + .muted { margin-top: 16px; }
@@ -390,7 +390,7 @@ a.card.lesson:hover { text-decoration: none; transform: translateY(-2px); }
 
 .lesson-page { max-width: 820px; margin: 0 auto; }
 .lesson-page .crumb { display: inline-block; margin-bottom: 22px; font-size: 15px; }
-.lesson-page h1.lesson-title { font-size: clamp(1.9rem, 4.4vw, 2.7rem); }
+.lesson-page h1.lesson-title { font-size: clamp(1.725rem, 4.05vw, 2.625rem); }
 .lesson-page .lead { max-width: none; }
 .lesson-page h2 { margin-top: 52px; }
 .card.learn { margin-top: 28px; --c: var(--blue); --ci: var(--blue-ink); }
