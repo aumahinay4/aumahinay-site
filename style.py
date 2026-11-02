@@ -74,6 +74,8 @@ header.site nav { margin-left: auto; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
 main { padding: 40px 0 88px; }
+/* Home: the light gap between the navy top bar and the navy banner is half the usual (40px -> 20px; phones 24px -> 12px). */
+main > .wrap > .hero:first-child { margin-top: -20px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(2.3rem, 5.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; font-weight: 700; }
@@ -108,7 +110,8 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .hero > *, .altos-hero > * { position: relative; z-index: 1; min-width: 0; }
 .hero h1, .altos-hero h1, .hero h3 { color: var(--on-navy); }
 .hero h1 { font-size: clamp(1.1rem, 2.19vw, 1.42rem); margin-bottom: 0; }  /* about 40% of the default h1 */
-.hero h1 + .rule { margin-top: 10px; }  /* keep the colour bar close to the name */
+.hero h1 { line-height: 1.1; }
+.hero h1 + .rule { margin-top: 4px; }  /* colour bar nearly touches the name */
 .hero .eyebrow, .altos-hero .eyebrow { color: var(--gold); }
 .hero .lead, .altos-hero .lead { color: var(--on-navy-muted); }
 
@@ -131,13 +134,13 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 
 /* Figures strip */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-.stat { padding: 24px 26px 22px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.stat { padding: 18px 22px 14px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 5px; }
 .stat:first-child { border-left: 0; }
-.stat b { display: block; font: 700 2.6rem/1 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stat b { display: block; font: 700 1.56rem/.82 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .stat b small { font-size: .6em; font-weight: 700; margin-left: 2px; vertical-align: .55em; }
 .stat:nth-child(1) b { color: var(--gold-ink); } .stat:nth-child(2) b { color: var(--blue-ink); }
 .stat:nth-child(3) b { color: var(--green-ink); } .stat:nth-child(4) b { color: var(--coral-ink); }
-.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin-top: 12px; background: currentColor; opacity: .55; }
+.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin-top: 3px; background: currentColor; opacity: .55; }
 .stat span { font-size: 14.5px; line-height: 1.35; font-weight: 500; color: var(--muted); max-width: 18ch; }
 @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(3) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid var(--line); } }
 
@@ -299,11 +302,12 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 /* Phones: all six menu links visible, bigger tap targets, tighter spacing. Text stays justified (Butch's choice). */
 @media (max-width: 640px) {
   main { padding: 24px 0 64px; }
+  main > .wrap > .hero:first-child { margin-top: -12px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
   h2, main .section-head { margin-top: 52px; }
-  header.site .wrap { row-gap: 0; padding-top: 8px; }
+  header.site .wrap { row-gap: 0; padding-top: 8px; min-height: 0; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
-  nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
+  nav a { padding: 6px 2px 2px; line-height: 1.2; font-size: clamp(12px, 3.7vw, 14.5px); }  /* menu sits close under the photo; gold/rainbow line nearly touches the words */
   .fs { order: 1; margin-left: auto; width: 28px; height: 28px; border-radius: 8px; }
   .fs svg { width: 15px; height: 15px; }  /* phones: next to the name, so the menu row keeps all six links */
   nav { order: 2; }
@@ -318,8 +322,8 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(11px, 3.3vw, 15px); }
   @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero { --bgap: 6px; } }
   td { padding: 12px 14px; }
-  .stat { padding: 20px 18px 18px; gap: 8px; }
-  .stat b { font-size: 2.2rem; }
+  .stat { padding: 10px 14px 8px; gap: 4px; }
+  .stat b { font-size: 1.32rem; }
   .stat span { font-size: 13.5px; }
 }
 /* Large computer screens: let the page breathe a little wider. */
