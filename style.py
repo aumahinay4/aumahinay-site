@@ -98,7 +98,8 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 135px; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .hero-cover { display: block; width: 100%; border-radius: 6px 12px 12px 6px; transform: rotate(3deg);
               box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .08); }
-@media (max-width: 820px) { .hero { grid-template-columns: 1fr; } .hero-art { max-width: 100px; } .hero-cover { transform: none; } }
+@media (max-width: 640px) { .hero { grid-template-columns: 1fr; gap: 28px; } .hero-art { max-width: 92px; } .hero-cover { transform: none; } }
+@media (min-width: 641px) and (max-width: 1024px) { .hero { grid-template-columns: minmax(0, 1fr) 112px; gap: 32px; } }
 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
@@ -189,14 +190,16 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .altos-hero h1.wordmark { font-size: clamp(3.4rem, 11vw, 6.2rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.3rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); }
-@media (max-width: 820px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 640px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } }
+@media (min-width: 641px) and (max-width: 1024px) { .altos-hero { gap: 32px; } }
 .ring { --size: 230px; width: var(--size); height: var(--size); flex: none; border-radius: 50%; display: grid; place-content: center; text-align: center;
         background: radial-gradient(circle, var(--navy-deep) 60%, transparent 61%),
                     conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg);
         box-shadow: 0 0 0 10px rgba(255, 255, 255, .04); }
 .ring span { font: 800 calc(var(--size) * .23)/1 var(--font-display); color: var(--green); }
 .ring small { font-weight: 700; letter-spacing: .32em; color: var(--on-navy-muted); font-size: calc(var(--size) * .06); margin-top: 6px; padding-left: .32em; }
-@media (max-width: 820px) { .ring { --size: 150px; } }
+@media (max-width: 1024px) { .ring { --size: 170px; } }
+@media (max-width: 640px) { .ring { --size: 150px; } }
 
 blockquote { margin: 28px 0 0; padding: 30px 36px 30px 84px; }
 blockquote::before { content: "\\201C"; position: absolute; left: 26px; top: 6px; font: 800 5rem/1 var(--font-display); color: var(--gold); }
@@ -254,6 +257,38 @@ ol.principles li span { color: var(--muted); font-size: 15px; }
 
 /* Justified paragraphs (Butch's choice), with hyphenation to keep word spacing even */
 main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: pretty; }
+
+/* Screen sizes: phones up to 640px, tablets 641-1024px, computers above that. */
+/* Tablets: three cards per row so lists don't end with a lonely card, and a roomier page edge. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .wrap { padding-left: max(28px, env(safe-area-inset-left, 0px)); padding-right: max(28px, env(safe-area-inset-right, 0px)); }
+  .grid, .grid.four { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .grid.one { grid-template-columns: 1fr; }
+  .card { padding: 22px 22px; }
+  .card::before { left: 22px; right: 22px; }
+  .card p { text-align: left; hyphens: manual; }  /* narrow cards: justified text leaves gaps */
+  h2, .section-head { margin-top: 60px; }
+}
+/* Phones: left-aligned text (justified lines get wide gaps on a small screen), all six menu links visible, bigger tap targets. */
+@media (max-width: 640px) {
+  main { padding: 24px 0 64px; }
+  main p, .lead { text-align: left; -webkit-hyphens: manual; hyphens: manual; }
+  h2, .section-head { margin-top: 52px; }
+  header.site .wrap { row-gap: 0; padding-top: 8px; }
+  nav { width: 100%; justify-content: space-between; overflow: visible; }
+  nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
+  .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
+  .card { padding: 20px 20px; }
+  .card::before { left: 20px; right: 20px; }
+  .card.feature { padding: 22px 20px; }
+  .btns { margin-top: 24px; }
+  .btn { padding: 13px 20px; }
+  td { padding: 12px 14px; }
+  .stat { padding: 18px 18px; }
+  .stat b { font-size: 2rem; }
+}
+/* Large computer screens: let the page breathe a little wider. */
+@media (min-width: 1440px) { :root { --max: 1200px; } }
 
 footer.site { padding: 32px 0; color: var(--on-navy-muted); font-size: 14px; background: var(--navy-deep); }
 footer.site::before { content: ""; display: block; height: 3px; background: var(--rainbow); margin-top: -32px; margin-bottom: 29px; }
