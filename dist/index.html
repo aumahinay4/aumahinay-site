@@ -49,7 +49,10 @@ header.site .wrap { display: flex; align-items: center; justify-content: space-b
 .brand b { color: var(--gold); font-weight: inherit; }
 .brand:hover { text-decoration: none; }
 .brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
-.brand .avatar { width: 34px; height: 34px; border-radius: 50%; flex: none; display: block; }
+.brand .avatar { width: 34px; height: 34px; border-radius: 50%; flex: none; display: block; box-sizing: border-box; padding: 3px;
+                 /* ALTOS colour ring around the photo, as on share option 1; the overall size stays 34px */
+                 background: radial-gradient(closest-side, var(--navy-deep) 86%, transparent 87%),
+                             conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg); }
 nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
