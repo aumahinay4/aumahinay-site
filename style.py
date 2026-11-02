@@ -37,7 +37,7 @@ CSS = """
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 var(--font-body); -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
