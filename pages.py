@@ -20,7 +20,23 @@ def asset_url(name):
     return "/static/" + name
 
 
-# The full-screen button in the top bar.
+# Home-screen app (web manifest) and the full-screen button in the top bar.
+MANIFEST = {
+    "name": SITE["short_name"],
+    "short_name": SITE["brand"],
+    "description": SITE["tagline"],
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#0b1630",
+    "theme_color": "#0b1630",
+    "icons": [
+        {"src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+        {"src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+        {"src": "/static/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    ],
+}
+
 FULLSCREEN_SCRIPT = """
 (function () {
   var d = document, b = d.getElementById("fs");
@@ -75,6 +91,13 @@ def layout(title, active, body, description=None):
             t.link(rel="icon", href="/favicon.ico", sizes="any"),
             t.link(rel="icon", type="image/png", sizes="32x32", href=asset_url("favicon-32.png")),
             t.link(rel="apple-touch-icon", href=asset_url("apple-touch-icon.png")),
+            # add to home screen: opens like an app, without the browser bars
+            t.link(rel="manifest", href="/manifest.webmanifest"),
+            t.meta(name="theme-color", content=MANIFEST["theme_color"]),
+            t.meta(name="mobile-web-app-capable", content="yes"),
+            t.meta(name="apple-mobile-web-app-capable", content="yes"),
+            t.meta(name="apple-mobile-web-app-title", content=MANIFEST["short_name"]),
+            t.meta(name="apple-mobile-web-app-status-bar-style", content="black"),
             t.link(rel="preconnect", href="https://fonts.googleapis.com"),
             t.link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap"),
             t.style(Raw(CSS)),
