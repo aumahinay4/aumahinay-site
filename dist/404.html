@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found · aumahinay</title><meta name="description" content="Public finance professional who builds software for local government."><meta property="og:type" content="website"><meta property="og:site_name" content="aumahinay.dev"><meta property="og:title" content="Page not found · aumahinay"><meta property="og:description" content="Public finance professional who builds software for local government."><meta property="og:url" content="https://aumahinay.devNone"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found · aumahinay</title><meta name="description" content="Public finance professional who builds software for local government."><meta property="og:type" content="website"><meta property="og:site_name" content="aumahinay.dev"><meta property="og:title" content="Page not found · aumahinay"><meta property="og:description" content="Public finance professional who builds software for local government."><meta property="og:url" content="https://aumahinay.devNone"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#0b1630"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="aumahinay"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
 /* Layout: navy cover-style panels for the big moments, quiet white pages for reading; the five ALTOS colours mark sequence and emphasis. */
 :root {
   /* ALTOS colours, bright (fills, on navy) */
@@ -57,6 +57,15 @@ nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
 nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
+/* Full-screen button: a small square at the right end of the top bar (hidden where the browser can't do full screen) */
+header.site nav { margin-left: auto; }
+.fs { flex: none; width: 34px; height: 34px; display: grid; place-content: center; padding: 0; cursor: pointer;
+      color: var(--on-navy-muted); background: transparent; border: 1px solid rgba(238, 243, 255, .22); border-radius: 9px; }
+.fs[hidden] { display: none; }
+.fs:hover, .fs:focus-visible { color: var(--on-navy); border-color: var(--gold); }
+.fs svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fs .exit, .fs[aria-pressed="true"] .enter { display: none; }
+.fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
 main { padding: 40px 0 88px; }
@@ -289,6 +298,8 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   header.site .wrap { row-gap: 0; padding-top: 8px; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
+  .fs { order: 1; margin-left: auto; }  /* phones: next to the name, so the menu row keeps all six links */
+  nav { order: 2; }
   .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
   .card { padding: 20px 20px; }
   .card::before { left: 20px; right: 20px; }
@@ -413,4 +424,26 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .glossary dt { font: 600 1rem var(--font-display); color: var(--violet-ink); }
 .glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
-</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer></body></html>
+</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg></button></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
+(function () {
+  var d = document, b = d.getElementById("fs");
+  var on = d.fullscreenEnabled || d.webkitFullscreenEnabled;
+  if (!b || !on) return;  // e.g. iPhone Safari: no full-screen support, so the button stays hidden
+  function current() { return d.fullscreenElement || d.webkitFullscreenElement; }
+  function sync() {
+    var full = !!current();
+    b.setAttribute("aria-pressed", full);
+    b.setAttribute("aria-label", full ? "Exit full screen" : "Full screen");
+    b.title = full ? "Exit full screen" : "Full screen";
+  }
+  b.hidden = false;
+  b.addEventListener("click", function () {
+    var e = d.documentElement;
+    if (current()) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+    else (e.requestFullscreen || e.webkitRequestFullscreen).call(e);
+  });
+  d.addEventListener("fullscreenchange", sync);
+  d.addEventListener("webkitfullscreenchange", sync);
+  sync();
+})();
+</script></body></html>
