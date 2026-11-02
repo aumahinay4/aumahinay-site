@@ -283,6 +283,11 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .card.feature { padding: 22px 20px; }
   .btns { margin-top: 24px; }
   .btn { padding: 13px 20px; }
+  .hero { padding: 26px 20px; }
+  /* the three hero buttons share one line */
+  .hero .btns { flex-wrap: nowrap; gap: 8px; }
+  .hero .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; padding: 12px 4px; font-size: clamp(11.5px, 3.6vw, 15px); min-width: 0; }
+  @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero .btns { gap: 6px; } }
   td { padding: 12px 14px; }
   .stat { padding: 18px 18px; }
   .stat b { font-size: 2rem; }
