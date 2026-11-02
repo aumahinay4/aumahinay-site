@@ -197,7 +197,10 @@ details ul { color: var(--muted); }
 .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: linear-gradient(var(--gold), var(--green), var(--violet)); }
 .timeline .item { margin-bottom: 20px; position: relative; }  /* 30% closer (was 28px) */
 .timeline .item:last-child { margin-bottom: 0; }
-.timeline + .two { margin-top: 0; }  /* Education sits about half as far under the timeline: only its normal heading space remains */
+.timeline + .two { margin-top: 0; }
+.two + h2 { margin-top: 23px; }  /* About: Skills 25% closer (was 31px) */
+@media (max-width: 1024px) { .two + h2 { margin-top: 20px; } }  /* tablet: was 26px */
+@media (max-width: 640px) { .two + h2 { margin-top: 17px; } }  /* phone: was 22px */  /* Education sits about half as far under the timeline: only its normal heading space remains */
 .timeline .item::before { content: ""; position: absolute; left: -30px; top: 6px; width: 17px; height: 17px; border-radius: 50%; background: var(--surface); border: 4px solid var(--gold); }
 .timeline .item:nth-child(2)::before { border-color: var(--green); }
 .timeline .item:nth-child(3)::before { border-color: var(--violet); }
