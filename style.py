@@ -303,6 +303,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 @media (max-width: 640px) {
   main { padding: 24px 0 64px; }
   main > .wrap > .hero:first-child { margin-top: -12px; }
+  .hero .rule { margin-bottom: 14px; }  /* phones: intro sits a little closer under the colour bar */
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
   h2, main .section-head { margin-top: 52px; }
   header.site .wrap { row-gap: 0; padding-top: 8px; min-height: 0; }
