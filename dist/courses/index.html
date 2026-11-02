@@ -108,11 +108,11 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .hero .lead, .altos-hero .lead { color: var(--on-navy-muted); }
 
 .hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
-/* Phones and tablets: the three buttons share the full width in equal thirds */
+/* Phones and tablets: the three buttons stay on one line, each box just fitting its words */
 @media (max-width: 1024px) {
   .hero { --bgap: 12px; }
   .hero .btns { flex-wrap: nowrap; gap: var(--bgap); }
-  .hero .btn { flex: 1 1 0; text-align: center; white-space: nowrap; }
+  .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; }
 }
 @media (max-width: 640px) { .hero { --bgap: 8px; } }
 
@@ -310,7 +310,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .btn { padding: 13px 20px; }
   .hero { padding: 26px 20px; }
   /* the three hero buttons share one line */
-  .hero .btn { flex: 1 1 0; text-align: center; white-space: nowrap; padding: 12px 4px; font-size: clamp(11.5px, 3.6vw, 15px); min-width: 0; }
+  .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(11px, 3.3vw, 15px); }
   @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero { --bgap: 6px; } }
   td { padding: 12px 14px; }
   .stat { padding: 20px 18px 18px; gap: 8px; }
