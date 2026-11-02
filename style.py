@@ -198,9 +198,9 @@ details ul { color: var(--muted); }
 .timeline .item { margin-bottom: 20px; position: relative; }  /* 30% closer (was 28px) */
 .timeline .item:last-child { margin-bottom: 0; }
 .timeline + .two { margin-top: 0; }
-.two + h2 { margin-top: 23px; }  /* About: Skills 25% closer (was 31px) */
-@media (max-width: 1024px) { .two + h2 { margin-top: 20px; } }  /* tablet: was 26px */
-@media (max-width: 640px) { .two + h2 { margin-top: 17px; } }  /* phone: was 22px */  /* Education sits about half as far under the timeline: only its normal heading space remains */
+.two + h2 { margin-top: 20px; }  /* About: Skills closer (31px, -25%, then -15%) */
+@media (max-width: 1024px) { .two + h2 { margin-top: 17px; } }  /* tablet: was 26px */
+@media (max-width: 640px) { .two + h2 { margin-top: 12px; } }  /* phone: gap under the Eligibilities list 37px -> 27px */  /* Education sits about half as far under the timeline: only its normal heading space remains */
 .timeline .item::before { content: ""; position: absolute; left: -30px; top: 6px; width: 17px; height: 17px; border-radius: 50%; background: var(--surface); border: 4px solid var(--gold); }
 .timeline .item:nth-child(2)::before { border-color: var(--green); }
 .timeline .item:nth-child(3)::before { border-color: var(--violet); }
