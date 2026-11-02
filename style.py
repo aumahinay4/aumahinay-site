@@ -64,8 +64,10 @@ nav a:hover { color: var(--on-navy); text-decoration: none; }
 nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
 /* Full-screen button: a small square at the right end of the top bar (hidden where the browser can't do full screen) */
 header.site nav { margin-left: auto; }
-.fs { flex: none; width: 34px; height: 34px; display: grid; place-content: center; padding: 0; cursor: pointer;
-      color: var(--on-navy-muted); background: transparent; border: 1px solid rgba(238, 243, 255, .22); border-radius: 9px; }
+.fs { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 20;
+      width: 44px; height: 44px; display: grid; place-content: center; padding: 0; cursor: pointer;
+      color: var(--on-navy); background: var(--navy-deep); border: 1.5px solid rgba(238, 243, 255, .3); border-radius: 50%;
+      box-shadow: 0 6px 18px rgba(11, 22, 48, .35); }  /* full-screen button floats at the bottom right on every screen */
 .fs[hidden] { display: none; }
 .fs:hover, .fs:focus-visible { color: var(--on-navy); border-color: var(--gold); }
 .fs svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -197,7 +199,10 @@ details ul { color: var(--muted); }
 .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: linear-gradient(var(--gold), var(--green), var(--violet)); }
 .timeline .item { margin-bottom: 20px; position: relative; }  /* 30% closer (was 28px) */
 .timeline .item:last-child { margin-bottom: 0; }
-.timeline + .two { margin-top: 0; }  /* Education sits about half as far under the timeline: only its normal heading space remains */
+.timeline + .two { margin-top: 0; }
+.two + h2 { margin-top: 20px; }  /* About: Skills closer (31px, -25%, then -15%) */
+@media (max-width: 1024px) { .two + h2 { margin-top: 17px; } }  /* tablet: was 26px */
+@media (max-width: 640px) { .two + h2 { margin-top: 12px; } }  /* phone: gap under the Eligibilities list 37px -> 27px */  /* Education sits about half as far under the timeline: only its normal heading space remains */
 .timeline .item::before { content: ""; position: absolute; left: -30px; top: 6px; width: 17px; height: 17px; border-radius: 50%; background: var(--surface); border: 4px solid var(--gold); }
 .timeline .item:nth-child(2)::before { border-color: var(--green); }
 .timeline .item:nth-child(3)::before { border-color: var(--violet); }
@@ -206,7 +211,7 @@ details ul { color: var(--muted); }
 .timeline ul { margin: 8px 0 0; padding-left: 20px; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
 .two > * { min-width: 0; }
-@media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .two { grid-template-columns: 1fr; } .timeline + .two { row-gap: 7px; } }  /* About: Eligibilities half as far under Education when stacked (58px -> 29px) */
 table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; line-height: 1.45; }
 tr:last-child td { border-bottom: 0; }
@@ -311,8 +316,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   header.site .wrap { row-gap: 0; padding-top: 8px; padding-bottom: 5px; min-height: 0; }  /* navy strip under the menu so the gold line shows clear of the rainbow */
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 6px 2px 2px; line-height: 1.2; font-size: clamp(12px, 3.7vw, 14.5px); }  /* menu sits close under the photo; gold/rainbow line nearly touches the words */
-  .fs { order: 1; margin-left: auto; width: 28px; height: 28px; border-radius: 8px; }
-  .fs svg { width: 15px; height: 15px; }  /* phones: next to the name, so the menu row keeps all six links */
+  .fs { width: 40px; height: 40px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
   nav { order: 2; }
   .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
   .card { padding: 20px 20px; }
