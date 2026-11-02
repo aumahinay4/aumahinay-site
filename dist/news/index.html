@@ -61,13 +61,17 @@ nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
 
 main { padding: 40px 0 88px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
+h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(2.3rem, 5.4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 16px; font-weight: 700; }
 h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); letter-spacing: -0.015em; margin: 72px 0 8px; font-weight: 700; }
 h2::after { content: ""; display: block; width: 72px; height: 4px; border-radius: 4px; background: var(--rainbow); margin-top: 12px; }
-h2 + .muted { margin-top: 14px; }
+h2 + .muted { margin-top: 16px; }
+/* one rhythm under every section heading: 16px to an intro line, 24px to anything else */
+main h2 + p { margin-top: 16px; }
+main h2 + :not(p, .muted) { margin-top: 24px; }
 * + .grid, h2 + .grid, h2 + table, h2 + .timeline, h2 + .tags, h2 + ol, h2 + .card { margin-top: 24px; }
 h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.005em; }
-.lead { font-size: 1.18rem; color: var(--muted); max-width: 680px; }
+.lead { font-size: 1.18rem; line-height: 1.6; color: var(--muted); max-width: 680px; }
 .eyebrow { color: var(--gold-ink); font: 600 12.5px var(--font-body); text-transform: uppercase; letter-spacing: 0.16em; margin: 0 0 12px; }
 .muted { color: var(--muted); }
 .rule { width: 96px; height: 4px; border-radius: 4px; background: var(--rainbow); margin: 22px 0; }
@@ -139,7 +143,7 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .grid > *:nth-child(5n+5) { --c: var(--violet); --ci: var(--violet-ink); }
 .card { min-width: 0; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; display: flex; flex-direction: column; box-shadow: var(--shadow); }
 .card::before { content: ""; position: absolute; left: 26px; right: 26px; top: -1px; height: 3px; border-radius: 0 0 3px 3px; background: var(--c, var(--gold)); }
-.card .meta { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+.card .meta { font-size: 14px; line-height: 1.45; color: var(--muted); margin-bottom: 10px; }
 .card p { margin: 8px 0 0; }
 .card ul { padding-left: 20px; margin: 10px 0 0; }
 .card li { margin: 4px 0; }
@@ -190,14 +194,14 @@ details ul { color: var(--muted); }
 .two > * { min-width: 0; }
 @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
 table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; line-height: 1.45; }
 tr:last-child td { border-bottom: 0; }
 td:last-child { white-space: nowrap; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
 
 /* ALTOS page */
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .altos-hero h1.wordmark { font-size: clamp(3.4rem, 11vw, 6.2rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
-.subtitle { font: 600 1.3rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); }
+.subtitle { font: 600 1.3rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
 @media (max-width: 640px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } }
 @media (min-width: 641px) and (max-width: 1024px) { .altos-hero { gap: 32px; } }
 .ring { --size: 230px; width: var(--size); height: var(--size); flex: none; border-radius: 50%; display: grid; place-content: center; text-align: center;
@@ -225,7 +229,7 @@ ol.principles li:nth-child(5n+1) { --c: var(--gold); } ol.principles li:nth-chil
 ol.principles li:nth-child(5n+3) { --c: var(--green); } ol.principles li:nth-child(5n+4) { --c: var(--coral); }
 ol.principles li:nth-child(5n+5) { --c: var(--violet); }
 ol.principles li b { font-family: var(--font-display); font-weight: 600; }
-ol.principles li span { color: var(--muted); font-size: 15px; }
+ol.principles li span { color: var(--muted); font-size: 15px; line-height: 1.5; margin-top: 2px; }
 
 .card.book { flex-direction: row; gap: 36px; align-items: center; padding: 32px; --c: var(--violet); --ci: var(--violet-ink); }
 .card.book::before { background: var(--rainbow); }
@@ -239,10 +243,10 @@ ol.principles li span { color: var(--muted); font-size: 15px; }
 /* Projects: ALTOS as the mother system, subsystems branching below */
 .family { margin-top: 36px; }
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
-.node h3 { margin: 10px 0 4px; }
-.node p { margin: 6px 0 0; color: var(--muted); font-size: 15.5px; }
-.node-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.code { font: 800 1.35rem/1 var(--font-display); letter-spacing: .06em; color: var(--ci, var(--text)); }
+.node h3 { margin: 12px 0 4px; }
+.node p { margin: 10px 0 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
+.node-head { display: flex; align-items: center; justify-content: space-between; gap: 10px 12px; flex-wrap: wrap; }
+.code { font: 800 1.35rem/1.15 var(--font-display); letter-spacing: .06em; color: var(--ci, var(--text)); }
 .status { font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; color: var(--muted); border: 1.5px dashed var(--line); }
 .status.live { color: var(--navy-deep); background: var(--green); border: 0; }
 .node.mother { max-width: 620px; margin: 0 auto; border: 0; color: var(--on-navy);
@@ -274,13 +278,13 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .grid.one { grid-template-columns: 1fr; }
   .card { padding: 22px 22px; }
   .card::before { left: 22px; right: 22px; }
-  h2, .section-head { margin-top: 60px; }
+  h2, main .section-head { margin-top: 60px; }
 }
 /* Phones: all six menu links visible, bigger tap targets, tighter spacing. Text stays justified (Butch's choice). */
 @media (max-width: 640px) {
   main { padding: 24px 0 64px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
-  h2, .section-head { margin-top: 52px; }
+  h2, main .section-head { margin-top: 52px; }
   header.site .wrap { row-gap: 0; padding-top: 8px; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
