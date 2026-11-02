@@ -196,7 +196,7 @@ def home():
                 t.div(class_="rule"),
                 t.p(SITE["tagline"] + " My tools make treasury work faster, more accurate, and easier to audit.", class_="lead"),
                 t.div(
-                    t.a("See ALTOS", href="/projects/", class_="btn primary"),
+                    t.a("See ALTOS", href="/projects/", class_="btn ghost"),
                     t.a("Certificates", href="/courses/", class_="btn ghost"),
                     t.a("Contact me", href=f"mailto:{SITE['email']}", class_="btn ghost"),
                     class_="btns",
