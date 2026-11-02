@@ -7,7 +7,7 @@ from pathlib import Path
 import tags as t
 from content import ABOUT, ALTOS, BLOG, CERTIFICATES, SITE, SUBSYSTEMS, TRAININGS
 from highlight import highlight
-from lessons import LESSONS, TUTORIAL
+from lessons import GLOSSARY, LESSONS, TUTORIAL
 from style import CSS
 from tags import Raw
 
@@ -381,6 +381,19 @@ def lesson_block(x, b):
         return t.div(t.p("Practice", class_="eyebrow"), t.p(rest[0]), class_="card try")
     if kind == "list":
         return t.ul([t.li(i) for i in rest[0]])
+    if kind == "line":
+        return t.div(t.code(rest[0]), t.p(rest[1][:1].upper() + rest[1][1:]), class_="line")
+    if kind == "steps":
+        return t.ol([t.li(i) for i in rest[0]], class_="steps")
+    if kind == "terminal":
+        return code_box("Command Prompt / Terminal", escape(rest[0], quote=False), kind="terminal")
+    if kind == "answer":
+        return t.details(
+            t.summary("Show answer"),
+            lesson_block(x, ("code", rest[0])),
+            lesson_block(x, ("output", rest[0])),
+            class_="answer",
+        )
     raise ValueError(f"unknown lesson block {kind!r}")
 
 
@@ -408,8 +421,10 @@ def tutorials():
         t.p("Tutorials", class_="eyebrow"),
         t.h1(TUTORIAL["title"]),
         t.p(TUTORIAL["intro"], class_="lead"),
-        t.div(t.p(t.b("Getting started. "), TUTORIAL["setup"]), class_="card setup"),
+        t.div(t.p(t.b("Where to begin. "), TUTORIAL["setup"]), class_="card setup"),
         t.div([lesson_card(x) for x in LESSONS], class_="lesson-list"),
+        t.h2("Words to know"),
+        t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
         t.p(
             f"{len(shown)} of {len(LESSONS)} lessons published. New lessons are added regularly. "
             "All names, receipt numbers and amounts in the examples are made up.",

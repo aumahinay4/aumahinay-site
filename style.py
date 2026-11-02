@@ -345,4 +345,20 @@ a.card.lesson:hover { text-decoration: none; transform: translateY(-2px); }
 .codebox.output figcaption { background: #0b1630; border-bottom: 1px solid #1f2d4f; }
 .codebox.output pre { color: #cfe8d9; }
 @media (max-width: 640px) { .codebox pre { font-size: 12px; padding: 14px; } .lesson-nav { font-size: 14px; } }
+/* Lesson extras: line by line, steps, terminal, answers, glossary */
+.lesson-page .line { margin: 14px 0; padding-left: 16px; border-left: 3px solid var(--blue); }
+.lesson-page .line code { display: block; width: fit-content; max-width: 100%; overflow-x: auto; white-space: pre; font: 600 0.86em/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 12%, transparent); padding: 3px 8px; border-radius: 6px; }
+.lesson-page .line p { margin: 6px 0 0; }
+.lesson-page ol.steps { padding-left: 22px; }
+.lesson-page ol.steps li { margin: 8px 0; padding-left: 4px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.lesson-page ol.steps li::marker { color: var(--gold-ink); font-weight: 700; }
+.codebox.terminal pre { color: #cfe8d9; }
+details.answer { margin: 14px 0 0; font-size: inherit; }
+details.answer > summary { display: inline-block; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--green); color: var(--green-ink); background: var(--surface); }
+details.answer > summary:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
+details.answer[open] > summary { margin-bottom: 4px; }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 24px 0 0; }
+.glossary dt { font: 600 1rem var(--font-display); color: var(--violet-ink); }
+.glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 """

@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 preview.html
 *.zip
+tutorials/**/*.xlsx
+tutorials/**/audit_log.json

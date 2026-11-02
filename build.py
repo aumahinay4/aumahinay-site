@@ -27,7 +27,7 @@ def build():
     for x in LESSONS:
         if lesson_is_live(x):
             for f in (TUTORIALS / x["folder"]).iterdir():
-                if f.suffix in (".py", ".csv", ".txt", ".json"):
+                if f.suffix in (".py", ".csv"):
                     shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
     (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n")
