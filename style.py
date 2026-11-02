@@ -65,12 +65,12 @@ nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
 /* Full-screen button: a small square at the right end of the top bar (hidden where the browser can't do full screen) */
 header.site nav { margin-left: auto; }
 .fs { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 20;
-      width: 44px; height: 44px; display: grid; place-content: center; padding: 0; cursor: pointer;
-      color: var(--on-navy); background: var(--navy-deep); border: 1.5px solid rgba(238, 243, 255, .3); border-radius: 50%;
+      width: 36px; height: 36px; display: grid; place-content: center; padding: 0; cursor: pointer;
+      color: #0b1630; background: #ffffff; border: 1px solid rgba(11, 22, 48, .15); border-radius: 50%;
       box-shadow: 0 6px 18px rgba(11, 22, 48, .35); }  /* full-screen button floats at the bottom right on every screen */
 .fs[hidden] { display: none; }
-.fs:hover, .fs:focus-visible { color: var(--on-navy); border-color: var(--gold); }
-.fs svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fs:hover, .fs:focus-visible { color: #0b1630; border-color: var(--gold); }
+.fs svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .fs .exit, .fs[aria-pressed="true"] .enter { display: none; }
 .fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
@@ -316,7 +316,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   header.site .wrap { row-gap: 0; padding-top: 8px; padding-bottom: 5px; min-height: 0; }  /* navy strip under the menu so the gold line shows clear of the rainbow */
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 6px 2px 2px; line-height: 1.2; font-size: clamp(12px, 3.7vw, 14.5px); }  /* menu sits close under the photo; gold/rainbow line nearly touches the words */
-  .fs { width: 40px; height: 40px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+  .fs { width: 34px; height: 34px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
   nav { order: 2; }
   .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
   .card { padding: 20px 20px; }
