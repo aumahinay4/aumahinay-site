@@ -322,40 +322,11 @@ figure.screenshot figcaption { margin-top: 10px; font-size: 14px; color: var(--m
 .note { margin-top: 28px; font-size: 14px; }
 figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizing: border-box; }
 
-.news-updated { font-size: 14px; margin: 4px 0 0; }
-.news-list { display: grid; gap: 22px; margin-top: 24px; }
-.card.news.gold { --c: var(--gold); --ci: var(--gold-ink); }
-.card.news.blue { --c: var(--blue); --ci: var(--blue-ink); }
-.card.news.green { --c: var(--green); --ci: var(--green-ink); }
-.card.news.coral { --c: var(--coral); --ci: var(--coral-ink); }
-.card.news.violet { --c: var(--violet); --ci: var(--violet-ink); }
-.card.news .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
-.card.news h3 { margin: 0; }
-.card.news.latest { padding: 30px 32px; border-left: 4px solid var(--c); }
-.card.news.latest::before { background: var(--rainbow); }
-.card.news.latest h3 { font-size: 1.35em; }
-.badge.latest { color: var(--navy-deep); background: var(--gold); }
-.card .why { margin-top: 14px; padding: 10px 14px; border-radius: 8px; font-size: 15px; background: color-mix(in srgb, var(--c) 10%, transparent); }
-.card .why b { color: var(--ci); }
-.card .foot.source { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; font-size: 14px; }
-.card .foot.source a { color: var(--ci); }
-
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px 20px; flex-wrap: wrap; margin-top: 72px; }
 .section-head h2 { margin: 0; }
 .section-head .more { font-size: 15px; padding-bottom: 18px; }
 .section-head + .grid { margin-top: 24px; }
 .card.focus h3 { margin: 0; color: var(--ci); }
-.card.news-mini { color: inherit; font-weight: 400; transition: transform .15s ease, box-shadow .15s ease; }
-.card.news-mini:hover { transform: translateY(-2px); }
-.card.news-mini h3 { font-size: 1.02rem; line-height: 1.4; margin: 0 0 14px; }
-.card.news-mini > .muted { margin-top: auto; font-size: 14px; font-weight: 600; color: var(--ci); }
-.card.news-mini .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
-.card.news-mini.gold { --c: var(--gold); --ci: var(--gold-ink); }
-.card.news-mini.blue { --c: var(--blue); --ci: var(--blue-ink); }
-.card.news-mini.green { --c: var(--green); --ci: var(--green-ink); }
-.card.news-mini.coral { --c: var(--coral); --ci: var(--coral-ink); }
-.card.news-mini.violet { --c: var(--violet); --ci: var(--violet-ink); }
-@media (prefers-reduced-motion: reduce) { .card.news-mini { transition: none; } .card.news-mini:hover { transform: none; } }
 
 .post { margin-top: 56px; padding-top: 8px; scroll-margin-top: 90px; }
 .post h2 { margin-top: 6px; }
@@ -380,4 +351,71 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post > .meta { margin: 0; }
 .post > :last-child { margin-bottom: 0; }
 @media (max-width: 640px) { .post { padding: 24px 20px 28px; } .post::before { left: 20px; right: 20px; } }
+/* Tutorials: Python for Treasury Work */
+.lesson-list { display: grid; gap: 18px; margin-top: 28px; }
+.lesson-list > :nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
+.lesson-list > :nth-child(5n+2) { --c: var(--blue); --ci: var(--blue-ink); }
+.lesson-list > :nth-child(5n+3) { --c: var(--green); --ci: var(--green-ink); }
+.lesson-list > :nth-child(5n+4) { --c: var(--coral); --ci: var(--coral-ink); }
+.lesson-list > :nth-child(5n+5) { --c: var(--violet); --ci: var(--violet-ink); }
+.card.lesson { color: inherit; font-weight: 400; transition: transform .15s ease; }
+a.card.lesson:hover { text-decoration: none; transform: translateY(-2px); }
+.card.lesson .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.card.lesson h3 { margin: 0; font-size: 1.2rem; }
+.card.lesson.mini h3 { font-size: 1.05rem; line-height: 1.4; margin-bottom: 14px; }
+.card.lesson .go { margin-top: auto; padding-top: 14px; font-size: 14.5px; font-weight: 600; color: var(--ci); }
+.card.lesson.upcoming { box-shadow: none; background: transparent; border-style: dashed; }
+.card.lesson.upcoming .go { color: var(--muted); font-weight: 500; }
+.badge.soon { color: var(--muted); background: transparent; border: 1.5px dashed var(--line); }
+.card.setup { margin-top: 24px; border-left: 4px solid var(--green); --c: var(--green); }
+.card.setup p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .card.lesson { transition: none; } a.card.lesson:hover { transform: none; } }
+
+.lesson-page { max-width: 820px; margin: 0 auto; }
+.lesson-page .crumb { display: inline-block; margin-bottom: 22px; font-size: 15px; }
+.lesson-page h1.lesson-title { font-size: clamp(1.9rem, 4.4vw, 2.7rem); }
+.lesson-page .lead { max-width: none; }
+.lesson-page h2 { margin-top: 52px; }
+.card.learn { margin-top: 28px; --c: var(--blue); --ci: var(--blue-ink); }
+.card.learn .eyebrow { margin: 0; color: var(--blue-ink); }
+.lesson-page .point { padding-left: 16px; border-left: 3px solid var(--gold); }
+.lesson-page .point code, .lesson-page p code { font: 600 0.88em/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 12%, transparent); padding: 1px 6px; border-radius: 5px; overflow-wrap: anywhere; }
+.lesson-page .tip { padding: 14px 18px; border-radius: 10px; background: color-mix(in srgb, var(--gold) 14%, transparent); }
+.lesson-page .tip b { color: var(--gold-ink); }
+.card.try { margin-top: 18px; --c: var(--green); border-left: 4px solid var(--green); }
+.card.try .eyebrow { margin: 0; color: var(--green-ink); }
+.lesson-nav { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; }
+
+/* Code boxes: navy like the ALTOS screens, ALTOS colours for the syntax */
+.codebox { margin: 18px 0; border-radius: 12px; overflow: hidden; background: #0b1630; border: 1px solid #1f2d4f; box-shadow: var(--shadow); }
+.codebox figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px 8px 16px; background: #13244b; color: #a9b6d3; font-size: 13px; }
+.codebox .fname { font: 600 13px ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: #eef3ff; overflow-wrap: anywhere; }
+.codebox .actions { display: flex; gap: 6px; flex: none; }
+.codebox button, .codebox .actions a { font: 600 12.5px var(--font-body); color: #eef3ff; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .18); border-radius: 7px; padding: 4px 11px; cursor: pointer; }
+.codebox button:hover, .codebox .actions a:hover { background: rgba(255, 255, 255, .16); text-decoration: none; }
+.codebox pre { margin: 0; padding: 16px 18px; overflow-x: auto; color: #e8edf7; font: 13.5px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace; tab-size: 4; }
+.codebox code { font: inherit; }
+.codebox .k { color: #c9a7ff; font-weight: 600; } .codebox .s { color: #3ddc97; } .codebox .c { color: #8592b3; font-style: italic; }
+.codebox .n { color: #f6c453; } .codebox .b { color: #7cc4ff; } .codebox .f { color: #ff8a80; }
+.codebox.data pre { color: #f6e3b0; }
+.codebox.output { background: #050b1a; }
+.codebox.output figcaption { background: #0b1630; border-bottom: 1px solid #1f2d4f; }
+.codebox.output pre { color: #cfe8d9; }
+@media (max-width: 640px) { .codebox pre { font-size: 12px; padding: 14px; } .lesson-nav { font-size: 14px; } }
+/* Lesson extras: line by line, steps, terminal, answers, glossary */
+.lesson-page .line { margin: 14px 0; padding-left: 16px; border-left: 3px solid var(--blue); }
+.lesson-page .line code { display: block; width: fit-content; max-width: 100%; overflow-x: auto; white-space: pre; font: 600 0.86em/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 12%, transparent); padding: 3px 8px; border-radius: 6px; }
+.lesson-page .line p { margin: 6px 0 0; }
+.lesson-page ol.steps { padding-left: 22px; }
+.lesson-page ol.steps li { margin: 8px 0; padding-left: 4px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.lesson-page ol.steps li::marker { color: var(--gold-ink); font-weight: 700; }
+.codebox.terminal pre { color: #cfe8d9; }
+details.answer { margin: 14px 0 0; font-size: inherit; }
+details.answer > summary { display: inline-block; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--green); color: var(--green-ink); background: var(--surface); }
+details.answer > summary:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
+details.answer[open] > summary { margin-bottom: 4px; }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 24px 0 0; }
+.glossary dt { font: 600 1rem var(--font-display); color: var(--violet-ink); }
+.glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 """

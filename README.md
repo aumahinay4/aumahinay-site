@@ -10,6 +10,9 @@ stylesheet lives in `style.py`.
 | `content.py` | **All the text on the site.** Edit this to update projects, courses, About me. Search for `TODO` to find placeholders. |
 | `pages.py` | Builds the Home, Projects, Courses and About pages. |
 | `style.py` | Colours, fonts and layout (light and dark mode). |
+| `lessons.py`, `tutorials/` | The Python for Treasury Work lessons, and the code each one runs. |
+| `highlight.py` | Colours the lesson code, using Python's own tokenizer. |
+| `run_lessons.py` | Runs every lesson script and saves its printed output. |
 | `tags.py` | Tiny helper that turns Python calls into HTML. |
 | `app.py` | Runs the site locally with Flask. |
 | `build.py` | Exports the site as static HTML into `dist/` for hosting. |
@@ -24,11 +27,14 @@ stylesheet lives in `style.py`.
    a red ✗ means something in the edit broke the file. Open the file's **History** to undo it,
    or ask Claude to fix it.
 
-`content.py` holds all the text: About me, experience, education, ALTOS, courses, trainings and IT news.
+`content.py` holds all the text: About me, experience, education, ALTOS, courses, trainings and blog posts.
+The Python tutorials live in `lessons.py` (the lesson text) and `tutorials/` (each lesson's scripts and data).
 
-**To add an IT news item:** in `content.py`, scroll to `NEWS = [`, copy one `{ ... },` block,
-paste it right under `NEWS = [` (newest goes first) and change the date, topic, title,
-summary, source and link.
+**To add a Python tutorial lesson:** make a folder under `tutorials/` with the lesson's scripts
+and data files, run `python run_lessons.py` (it runs every script and saves its real output
+as a `.out` file), then add the lesson to `LESSONS` in `lessons.py`. A lesson with
+`publish_on` stays hidden until that date (Philippine time). `python run_lessons.py --check`
+confirms the saved outputs still match the code.
 
 ## Run it on your computer
 ```bash
