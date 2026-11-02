@@ -20,6 +20,36 @@ def asset_url(name):
     return "/static/" + name
 
 
+# The full-screen button in the top bar.
+FULLSCREEN_SCRIPT = """
+(function () {
+  var d = document, b = d.getElementById("fs");
+  var on = d.fullscreenEnabled || d.webkitFullscreenEnabled;
+  if (!b || !on) return;  // e.g. iPhone Safari: no full-screen support, so the button stays hidden
+  function current() { return d.fullscreenElement || d.webkitFullscreenElement; }
+  function sync() {
+    var full = !!current();
+    b.setAttribute("aria-pressed", full);
+    b.setAttribute("aria-label", full ? "Exit full screen" : "Full screen");
+    b.title = full ? "Exit full screen" : "Full screen";
+  }
+  b.hidden = false;
+  b.addEventListener("click", function () {
+    var e = d.documentElement;
+    if (current()) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+    else (e.requestFullscreen || e.webkitRequestFullscreen).call(e);
+  });
+  d.addEventListener("fullscreenchange", sync);
+  d.addEventListener("webkitfullscreenchange", sync);
+  sync();
+})();
+"""
+
+FULLSCREEN_ICON = Raw(
+    '<svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>'
+    '<svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg>'
+)
+
 NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
 
@@ -54,6 +84,7 @@ def layout(title, active, body, description=None):
                 t.div(
                     t.a(t.img(src=asset_url("avatar.png"), alt="", width="34", height="34", class_="avatar"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand"),
                     t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
+                    t.button(FULLSCREEN_ICON, type="button", id="fs", class_="fs", title="Full screen", aria_label="Full screen", aria_pressed="false", hidden=True),
                     class_="wrap",
                 ),
                 class_="site",
@@ -66,6 +97,7 @@ def layout(title, active, body, description=None):
                 ),
                 class_="site",
             ),
+            t.script(Raw(FULLSCREEN_SCRIPT)),
         ),
         lang="en",
     )

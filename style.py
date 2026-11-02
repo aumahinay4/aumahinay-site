@@ -62,6 +62,15 @@ nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
 nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
+/* Full-screen button: a small square at the right end of the top bar (hidden where the browser can't do full screen) */
+header.site nav { margin-left: auto; }
+.fs { flex: none; width: 34px; height: 34px; display: grid; place-content: center; padding: 0; cursor: pointer;
+      color: var(--on-navy-muted); background: transparent; border: 1px solid rgba(238, 243, 255, .22); border-radius: 9px; }
+.fs[hidden] { display: none; }
+.fs:hover, .fs:focus-visible { color: var(--on-navy); border-color: var(--gold); }
+.fs svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fs .exit, .fs[aria-pressed="true"] .enter { display: none; }
+.fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
 main { padding: 40px 0 88px; }
@@ -294,6 +303,8 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   header.site .wrap { row-gap: 0; padding-top: 8px; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
+  .fs { order: 1; margin-left: auto; }  /* phones: next to the name, so the menu row keeps all six links */
+  nav { order: 2; }
   .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
   .card { padding: 20px 20px; }
   .card::before { left: 20px; right: 20px; }

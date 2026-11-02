@@ -57,6 +57,15 @@ nav { display: flex; gap: 4px; flex-wrap: wrap; }
 nav a { color: var(--on-navy-muted); padding: 8px 14px; font-size: 15px; font-weight: 500; border-bottom: 2px solid transparent; }
 nav a:hover { color: var(--on-navy); text-decoration: none; }
 nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
+/* Full-screen button: a small square at the right end of the top bar (hidden where the browser can't do full screen) */
+header.site nav { margin-left: auto; }
+.fs { flex: none; width: 34px; height: 34px; display: grid; place-content: center; padding: 0; cursor: pointer;
+      color: var(--on-navy-muted); background: transparent; border: 1px solid rgba(238, 243, 255, .22); border-radius: 9px; }
+.fs[hidden] { display: none; }
+.fs:hover, .fs:focus-visible { color: var(--on-navy); border-color: var(--gold); }
+.fs svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fs .exit, .fs[aria-pressed="true"] .enter { display: none; }
+.fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
 main { padding: 40px 0 88px; }
@@ -289,6 +298,8 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   header.site .wrap { row-gap: 0; padding-top: 8px; }
   nav { width: 100%; justify-content: space-between; overflow: visible; }
   nav a { padding: 12px 2px; font-size: clamp(12px, 3.7vw, 14.5px); }
+  .fs { order: 1; margin-left: auto; }  /* phones: next to the name, so the menu row keeps all six links */
+  nav { order: 2; }
   .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
   .card { padding: 20px 20px; }
   .card::before { left: 20px; right: 20px; }
@@ -413,7 +424,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .glossary dt { font: 600 1rem var(--font-display); color: var(--violet-ink); }
 .glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
-</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 0 · Beginner · 15 min</p><h1 class="lesson-title">Getting started: install Python and run your first script</h1><p class="lead">Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.</p><div class="tags"><span class="tag">installing Python</span><span class="tag">Command Prompt</span><span class="tag">Terminal</span><span class="tag">pip</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>Install Python 3 the right way on Windows or Mac</li><li>Open Command Prompt or Terminal and move into a folder</li><li>Run a Python script and read what it prints</li><li>Install extra libraries with pip</li><li>Fix the errors that almost everyone meets on day one</li></ul></div><p>Every lesson in this series is a small Python script that you run on your own computer. This lesson sets that up once. It takes about fifteen minutes, and you only do it once.</p><h2>1. Install Python</h2><ol class="steps"><li>Go to python.org, open Downloads, and download the latest Python 3 for your computer.</li><li>Windows: run the installer and, on the very first screen, tick the box &quot;Add python.exe to PATH&quot;. Then click Install Now. That one box saves most of the trouble later.</li><li>Mac: open the downloaded .pkg file and follow the steps.</li></ol><h2>2. Open the command line</h2><p>Python scripts are usually run by typing a short command. On Windows, press the Windows key, type cmd and open Command Prompt. On a Mac, press Cmd + Space, type Terminal and press Enter. Check that Python is there by typing the command below and pressing Enter. It should answer with a version number such as Python 3.13.</p><figure class="codebox terminal"><figcaption><span class="fname">Command Prompt / Terminal</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>py --version          (Windows)
+</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg></button></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 0 · Beginner · 15 min</p><h1 class="lesson-title">Getting started: install Python and run your first script</h1><p class="lead">Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.</p><div class="tags"><span class="tag">installing Python</span><span class="tag">Command Prompt</span><span class="tag">Terminal</span><span class="tag">pip</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>Install Python 3 the right way on Windows or Mac</li><li>Open Command Prompt or Terminal and move into a folder</li><li>Run a Python script and read what it prints</li><li>Install extra libraries with pip</li><li>Fix the errors that almost everyone meets on day one</li></ul></div><p>Every lesson in this series is a small Python script that you run on your own computer. This lesson sets that up once. It takes about fifteen minutes, and you only do it once.</p><h2>1. Install Python</h2><ol class="steps"><li>Go to python.org, open Downloads, and download the latest Python 3 for your computer.</li><li>Windows: run the installer and, on the very first screen, tick the box &quot;Add python.exe to PATH&quot;. Then click Install Now. That one box saves most of the trouble later.</li><li>Mac: open the downloaded .pkg file and follow the steps.</li></ol><h2>2. Open the command line</h2><p>Python scripts are usually run by typing a short command. On Windows, press the Windows key, type cmd and open Command Prompt. On a Mac, press Cmd + Space, type Terminal and press Enter. Check that Python is there by typing the command below and pressing Enter. It should answer with a version number such as Python 3.13.</p><figure class="codebox terminal"><figcaption><span class="fname">Command Prompt / Terminal</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>py --version          (Windows)
 python3 --version     (Mac)</code></pre></figure><h2>3. Make a folder and save the script</h2><p>Make a folder for the lessons, for example python-lessons in your Documents. Open Notepad (Windows) or TextEdit (Mac, then choose Format, Make Plain Text), paste the code below, and save it in that folder as hello.py. You can also click Download on the code box. A code editor such as Visual Studio Code, which is free, makes this easier and colours the code like this page does.</p><figure class="codebox code"><figcaption><span class="fname">hello.py</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button><a href="/tutorials/getting-started/hello.py" download>Download</a></span></figcaption><pre><code><span class="s">"""Your first Python script: a quick check that Python is installed and working."""</span>
 
 office = <span class="s">"Municipal Treasurer's Office"</span>
@@ -447,4 +458,26 @@ document.addEventListener("click", function (e) {
   if (!navigator.clipboard) return select();
   navigator.clipboard.writeText(code).then(function () { done("Copied"); }, select);
 });
-</script></div></div></main><footer class="site"><div class="wrap">Built in Python</div></footer></body></html>
+</script></div></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
+(function () {
+  var d = document, b = d.getElementById("fs");
+  var on = d.fullscreenEnabled || d.webkitFullscreenEnabled;
+  if (!b || !on) return;  // e.g. iPhone Safari: no full-screen support, so the button stays hidden
+  function current() { return d.fullscreenElement || d.webkitFullscreenElement; }
+  function sync() {
+    var full = !!current();
+    b.setAttribute("aria-pressed", full);
+    b.setAttribute("aria-label", full ? "Exit full screen" : "Full screen");
+    b.title = full ? "Exit full screen" : "Full screen";
+  }
+  b.hidden = false;
+  b.addEventListener("click", function () {
+    var e = d.documentElement;
+    if (current()) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+    else (e.requestFullscreen || e.webkitRequestFullscreen).call(e);
+  });
+  d.addEventListener("fullscreenchange", sync);
+  d.addEventListener("webkitfullscreenchange", sync);
+  sync();
+})();
+</script></body></html>
