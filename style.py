@@ -206,7 +206,7 @@ details ul { color: var(--muted); }
 .timeline ul { margin: 8px 0 0; padding-left: 20px; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
 .two > * { min-width: 0; }
-@media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .two { grid-template-columns: 1fr; } .timeline + .two { row-gap: 7px; } }  /* About: Eligibilities half as far under Education when stacked (58px -> 29px) */
 table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; line-height: 1.45; }
 tr:last-child td { border-bottom: 0; }
