@@ -76,6 +76,9 @@ def layout(title, active, body, description=None):
             t.meta(charset="utf-8"),
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
             t.title(page_title),
+            # aumahinay.dev is the only address: test copies on *.pages.dev jump to it
+            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname)) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            t.link(rel="canonical", href=f"https://{SITE['domain']}{active}") if active else None,
             t.meta(name="description", content=description or SITE["tagline"]),
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
             t.meta(property="og:type", content="website"),
