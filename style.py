@@ -99,8 +99,15 @@ h3 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.0
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 135px; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .hero-cover { display: block; width: 100%; border-radius: 6px 12px 12px 6px; transform: rotate(3deg);
               box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .08); }
-@media (max-width: 640px) { .hero { grid-template-columns: 1fr; gap: 28px; } .hero-art { max-width: 92px; } .hero-cover { transform: none; } }
-@media (min-width: 641px) and (max-width: 1024px) { .hero { grid-template-columns: minmax(0, 1fr) 112px; gap: 32px; } }
+/* Phones and tablets: the book sits centred below the three buttons, which share the full width */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; }
+  .hero-art { width: 120px; justify-self: center; }
+  .hero-cover { transform: none; }
+  .hero .btns { flex-wrap: nowrap; }
+  .hero .btn { flex: 1 1 0; text-align: center; white-space: nowrap; }
+}
+@media (max-width: 640px) { .hero-art { width: 100px; } }
 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
