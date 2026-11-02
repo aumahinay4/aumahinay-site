@@ -389,9 +389,14 @@ document.addEventListener("click", function (e) {
   var b = e.target.closest("button[data-copy]");
   if (!b) return;
   var code = b.closest("figure").querySelector("pre").innerText;
-  navigator.clipboard.writeText(code).then(function () {
-    b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1600);
-  });
+  var pre = b.closest("figure").querySelector("pre");
+  function done(label) { b.textContent = label; setTimeout(function () { b.textContent = "Copy"; }, 1600); }
+  function select() {  // clipboard blocked: select the code so Ctrl+C / Cmd+C works
+    var r = document.createRange(); r.selectNodeContents(pre);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done("Selected");
+  }
+  if (!navigator.clipboard) return select();
+  navigator.clipboard.writeText(code).then(function () { done("Copied"); }, select);
 });
 """
 
