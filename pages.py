@@ -1,14 +1,18 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
 from datetime import datetime, timedelta, timezone
+from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, BLOG, CERTIFICATES, NEWS, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, BLOG, CERTIFICATES, SITE, SUBSYSTEMS, TRAININGS
+from highlight import highlight
+from lessons import LESSONS, TUTORIAL
 from style import CSS
 from tags import Raw
 
 STATIC = Path(__file__).parent / "static"
+TUTORIALS = Path(__file__).parent / "tutorials"
 
 
 def asset_url(name):
@@ -16,7 +20,7 @@ def asset_url(name):
     return "/static/" + name
 
 
-NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/news/", "IT News"), ("/blog/", "Blog"), ("/about/", "About")]
+NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
 
 def layout(title, active, body, description=None):
@@ -194,20 +198,8 @@ def home():
         t.div([subsystem_node(sub, summary=False) for sub in SUBSYSTEMS], class_="children compact"),
         section_head("Latest certificates", f"All {len(CERTIFICATES)} credentials", "/courses/"),
         t.div([cert_card(c) for c in CERTIFICATES[:3]], class_="grid"),
-        section_head("Latest IT news", "More IT news", "/news/"),
-        t.div(
-            [
-                t.a(
-                    t.div(t.span(n["topic"], class_="badge"), t.span(n["date"], class_="muted"), class_="meta"),
-                    t.h3(n["title"]),
-                    t.span(f"{n['source']} →", class_="muted"),
-                    href="/news/",
-                    class_=f"card news-mini {NEWS_TOPIC_COLOR.get(n['topic'], 'gold')}",
-                )
-                for n in NEWS[:3]
-            ],
-            class_="grid three",
-        ),
+        section_head(TUTORIAL["title"], "All lessons", "/tutorials/"),
+        t.div([lesson_card(x, mini=True) for x in home_lessons()], class_="grid three"),
     )
 
 
@@ -295,52 +287,158 @@ def courses():
     )
 
 
-NEWS_TOPIC_COLOR = {
-    "Cybersecurity": "coral",
-    "Digital ID": "blue",
-    "E-government": "green",
-    "AI in government": "violet",
-}
+# ---- Python for Treasury Work (tutorials) ----
+
+def ph_today():
+    return datetime.now(timezone(timedelta(hours=8))).date().isoformat()
 
 
-def news_card(n, latest=False):
-    return t.article(
-        t.div(
-            t.span(n["topic"], class_="badge"),
-            t.span("Latest", class_="badge latest") if latest else "",
-            t.span(n["date"], class_="muted"),
-            class_="meta",
+def nice_date(iso):
+    d = datetime.strptime(iso, "%Y-%m-%d")
+    return f"{d:%B} {d.day}, {d.year}"
+
+
+def lesson_is_live(x):
+    return "publish_on" not in x or (x["publish_on"] is not None and x["publish_on"] <= ph_today())
+
+
+# preview.py sets SHOW_SCHEDULED so lessons can be reviewed before their date,
+# and turns DOWNLOADS off because the one-file preview has no files to download
+SHOW_SCHEDULED = False
+DOWNLOADS = True
+
+
+def lesson_url(x):
+    return f"/tutorials/{x['slug']}/"
+
+
+def visible_lessons():
+    return [x for x in LESSONS if SHOW_SCHEDULED or lesson_is_live(x)]
+
+
+def home_lessons():
+    """Newest live lessons first, then the next ones coming; three in all."""
+    live = [x for x in LESSONS if lesson_is_live(x)]
+    soon = [x for x in LESSONS if not lesson_is_live(x)]
+    return (live[::-1] + soon)[:3]
+
+
+def lesson_meta(x):
+    return f"Lesson {x['number']} · {x['level']} · {x['minutes']} min"
+
+
+def lesson_card(x, mini=False):
+    open_ = SHOW_SCHEDULED or lesson_is_live(x)
+    when = None if lesson_is_live(x) else t.span("Coming " + nice_date(x["publish_on"]) if x.get("publish_on") else "Coming soon", class_="badge soon")
+    inner = [
+        t.div(t.span(f"Lesson {x['number']}", class_="badge"), when, t.span(f"{x['level']} · {x['minutes']} min", class_="muted"), class_="meta"),
+        t.h3(x["title"]),
+        None if mini else t.p(x["summary"]),
+        None if mini else tag_list(x["topics"]),
+        t.span("Start the lesson →" if open_ else "Not yet published", class_="go"),
+    ]
+    cls = "card lesson" + (" mini" if mini else "") + ("" if open_ else " upcoming")
+    return t.a(inner, href=lesson_url(x), class_=cls) if open_ else t.div(inner, class_=cls)
+
+
+def lesson_file(x, name):
+    return (TUTORIALS / x["folder"] / name).read_text(encoding="utf-8")
+
+
+def code_box(label, code_html, download=None, kind="code"):
+    return t.figure(
+        t.figcaption(
+            t.span(label, class_="fname"),
+            t.span(
+                t.button("Copy", type="button", class_="copy", data_copy=True),
+                t.a("Download", href=download, download=True) if download and DOWNLOADS else None,
+                class_="actions",
+            ),
         ),
-        t.h3(n["title"]),
-        t.p(n["summary"]),
-        t.p(t.b("Why it matters: "), n["why"], class_="why") if n.get("why") else "",
-        t.div(
-            t.span(f"Source: {n['source']}", class_="muted"),
-            t.a("Read the full story →", href=n["url"], target="_blank", rel="noopener"),
-            class_="foot source",
-        ),
-        class_=f"card news {NEWS_TOPIC_COLOR.get(n['topic'], 'gold')}" + (" latest" if latest else ""),
+        t.pre(t.code(Raw(code_html))),
+        class_=f"codebox {kind}",
     )
 
 
-def news():
+def lesson_block(x, b):
+    if isinstance(b, str):
+        return t.p(b)
+    kind, *rest = b
+    if kind == "h":
+        return t.h2(rest[0])
+    if kind == "code":
+        return code_box(rest[0], highlight(lesson_file(x, rest[0])), download=lesson_url(x) + rest[0])
+    if kind == "file":
+        return code_box(rest[0], escape(lesson_file(x, rest[0]), quote=False), download=lesson_url(x) + rest[0], kind="data")
+    if kind == "output":
+        out = lesson_file(x, rest[0].rsplit(".", 1)[0] + ".out")
+        return t.figure(t.figcaption(t.span("Output of " + rest[0], class_="fname")), t.pre(out), class_="codebox output")
+    if kind == "point":
+        return t.p(t.code(rest[0]), " ", rest[1], class_="point")
+    if kind == "tip":
+        return t.p(t.b("Note: "), rest[0], class_="tip")
+    if kind == "try":
+        return t.div(t.p("Practice", class_="eyebrow"), t.p(rest[0]), class_="card try")
+    if kind == "list":
+        return t.ul([t.li(i) for i in rest[0]])
+    raise ValueError(f"unknown lesson block {kind!r}")
+
+
+COPY_SCRIPT = """
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("button[data-copy]");
+  if (!b) return;
+  var code = b.closest("figure").querySelector("pre").innerText;
+  navigator.clipboard.writeText(code).then(function () {
+    b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1600);
+  });
+});
+"""
+
+
+def tutorials():
+    shown = visible_lessons()
     return part(
-        "IT News", "/news/",
-        t.p("Updates", class_="eyebrow"),
-        t.h1("IT News"),
+        "Tutorials", "/tutorials/",
+        t.p("Tutorials", class_="eyebrow"),
+        t.h1(TUTORIAL["title"]),
+        t.p(TUTORIAL["intro"], class_="lead"),
+        t.div(t.p(t.b("Getting started. "), TUTORIAL["setup"]), class_="card setup"),
+        t.div([lesson_card(x) for x in LESSONS], class_="lesson-list"),
         t.p(
-            "Selected technology news on digital government, cybersecurity and AI in the Philippines, "
-            "summarized briefly in my own words. Each item links to the original article.",
-            class_="lead",
-        ),
-        t.p(f"Last updated {NEWS[0]['date']} · {len(NEWS)} stories", class_="muted news-updated"),
-        t.div([news_card(n, latest=(i == 0)) for i, n in enumerate(NEWS)], class_="news-list"),
-        t.p(
-            "Summaries of published news, each linked to its original source. "
-            "This is a personal website and not an official publication of any government office.",
+            f"{len(shown)} of {len(LESSONS)} lessons published. New lessons are added regularly. "
+            "All names, receipt numbers and amounts in the examples are made up.",
             class_="muted note",
         ),
-        description="Selected IT news for Philippine public service",
+        description="Python lessons for local treasury work, by " + SITE["short_name"],
+    )
+
+
+def lesson_page(x):
+    i = LESSONS.index(x)
+    prev = LESSONS[i - 1] if i > 0 else None
+    nxt = LESSONS[i + 1] if i + 1 < len(LESSONS) else None
+    nxt_open = nxt and (SHOW_SCHEDULED or lesson_is_live(nxt))
+    return part(
+        x["title"], lesson_url(x),
+        t.div(
+            t.a("← " + TUTORIAL["title"], href="/tutorials/", class_="crumb"),
+            t.p(lesson_meta(x), class_="eyebrow"),
+            t.h1(x["title"], class_="lesson-title"),
+            t.p(x["summary"], class_="lead"),
+            tag_list(x["topics"]),
+            t.div(t.p("In this lesson", class_="eyebrow"), t.ul([t.li(item) for item in x["learn"]]), class_="card learn"),
+            [lesson_block(x, b) for b in x["body"]],
+            t.div(
+                t.a("← Lesson " + str(prev["number"]), href=lesson_url(prev)) if prev else t.span(),
+                (t.a("Lesson " + str(nxt["number"]) + " →", href=lesson_url(nxt)) if nxt_open
+                 else t.span(f"Lesson {nxt['number']} comes out {nice_date(nxt['publish_on'])}", class_="muted") if nxt else t.span()),
+                class_="lesson-nav",
+            ),
+            t.script(Raw(COPY_SCRIPT)),
+            class_="lesson-page",
+        ),
+        description=x["summary"],
     )
 
 
@@ -461,7 +559,7 @@ def about():
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/news/": news, "/blog/": blog, "/about/": about}
+PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about}
 
 
 def _full_page(build):
@@ -472,6 +570,8 @@ def _full_page(build):
 
 
 ROUTES = {route: _full_page(build) for route, build in PARTS.items()}
+# one page per published lesson; scheduled lessons appear on their publish_on date
+ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
 
 
 def not_found():

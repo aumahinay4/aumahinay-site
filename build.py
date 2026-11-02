@@ -7,7 +7,8 @@ import shutil
 from pathlib import Path
 
 from content import SITE
-from pages import ROUTES, not_found
+from lessons import LESSONS
+from pages import ROUTES, TUTORIALS, lesson_is_live, lesson_url, not_found
 
 DIST = Path(__file__).parent / "dist"
 
@@ -22,6 +23,14 @@ def build():
     (DIST / "404.html").write_text(not_found(), encoding="utf-8")
     shutil.copytree(Path(__file__).parent / "static", DIST / "static", dirs_exist_ok=True)
     shutil.copy(DIST / "static" / "favicon.ico", DIST / "favicon.ico")  # browsers look for it at the root
+    # each published lesson's scripts and data files, for the Download buttons
+    for x in LESSONS:
+        if lesson_is_live(x):
+            for f in (TUTORIALS / x["folder"]).iterdir():
+                if f.suffix in (".py", ".csv", ".txt", ".json"):
+                    shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
+    # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
+    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n")
     # GitHub Pages custom domain file
     (DIST / "CNAME").write_text(SITE["domain"] + "\n")
 
