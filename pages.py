@@ -59,6 +59,9 @@ def layout(title, active, body, description=None):
         t.head(
             t.meta(charset="utf-8"),
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
+            # paint the phone's browser bars in the top bar's navy, so the site looks full-screen
+            t.meta(name="theme-color", content="#0b1630", media="(prefers-color-scheme: light)"),
+            t.meta(name="theme-color", content="#0e1c3d", media="(prefers-color-scheme: dark)"),
             t.title(page_title),
             # aumahinay.dev is the only address: test copies on *.pages.dev jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname)) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
