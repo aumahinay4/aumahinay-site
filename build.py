@@ -3,13 +3,12 @@
 Upload the dist folder itself; see DEPLOY_CLOUDFLARE.md.
 """
 
-import json
 import shutil
 from pathlib import Path
 
 from content import SITE
 from lessons import LESSONS
-from pages import MANIFEST, ROUTES, TUTORIALS, lesson_is_live, lesson_url, not_found
+from pages import ROUTES, TUTORIALS, lesson_is_live, lesson_url, not_found
 
 DIST = Path(__file__).parent / "dist"
 
@@ -30,8 +29,6 @@ def build():
             for f in (TUTORIALS / x["folder"]).iterdir():
                 if f.suffix in (".py", ".csv"):
                     shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
-    # home-screen app settings (name, icons, colours)
-    (DIST / "manifest.webmanifest").write_text(json.dumps(MANIFEST, indent=2), encoding="utf-8")
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
     (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n")
     # GitHub Pages custom domain file
