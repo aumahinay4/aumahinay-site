@@ -165,8 +165,8 @@ def home():
             class_="hero",
         ),
         t.div(
-            t.div(t.b("15+"), t.span("years in government service"), class_="stat"),
-            t.div(t.b("13+"), t.span("years in public finance"), class_="stat"),
+            t.div(t.b("15", t.small("+")), t.span("Years in government service"), class_="stat"),
+            t.div(t.b("13", t.small("+")), t.span("Years in public finance"), class_="stat"),
             t.div(t.b(len(pro)), t.span("Google Professional Certificates"), class_="stat"),
             t.div(t.b(sum(c["courses"] for c in CERTIFICATES)), t.span("Coursera courses completed"), class_="stat"),
             class_="stats",
