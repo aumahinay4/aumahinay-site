@@ -36,6 +36,12 @@ TUTORIAL = {
         "errors almost everyone meets on the first day. Then take the lessons in order; each one builds "
         "on the one before."
     ),
+    # A promise we can keep and show (no "easiest" or "most updated" claims)
+    "pledge": (
+        "Every lesson is checked before it goes live: the code is run, the output you see is what it "
+        "really prints, the facts and laws are checked against sources, and the page is reviewed on "
+        "phone and computer. Each lesson shows the month it was last checked."
+    ),
 }
 
 # Shown at the bottom of the Tutorials page
@@ -66,9 +72,10 @@ LESSONS = [
         "title": "Getting started: install Python and run your first script",
         "summary": "Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.",
         "level": "Beginner",
-        "minutes": 15,
-        "topics": ["installing Python", "Command Prompt", "Terminal", "pip"],
+        "minutes": 20,
+        "topics": ["history of Python", "installing Python", "Command Prompt", "Terminal", "pip"],
         "learn": [
+            "Where Python came from and why its libraries make it so powerful",
             "Install Python 3 the right way on Windows or Mac",
             "Open Command Prompt or Terminal and move into a folder",
             "Run a Python script and read what it prints",
@@ -77,19 +84,71 @@ LESSONS = [
         ],
         "body": [
             "Every lesson in this series is a small Python script that you run on your own computer. "
-            "This lesson sets that up once. It takes about fifteen minutes, and you only do it once.",
+            "This lesson sets that up. It takes about twenty minutes, and you only do it once.",
+            ("h", "Why Python? A short history"),
+            "Before we install it, it helps to know where Python came from. It did not start in a big "
+            "company. It started as one programmer's holiday project, and it grew into one of the most "
+            "widely used programming languages in the world.",
+            ("point", "1989",
+             "Guido van Rossum, a Dutch programmer, began writing Python over the Christmas holidays as a "
+             "hobby. He wanted a language that was easy to read and quick to write. He named it after the "
+             "British comedy show Monty Python's Flying Circus, not after the snake."),
+            ("point", "1991",
+             "The first version was shared freely with the public. From the start, anyone could use it, "
+             "read its code and help improve it, at no cost."),
+            ("point", "2000",
+             "Python 2 came out and the language spread to schools, offices and websites."),
+            ("point", "2008",
+             "Python 3 cleaned up old design mistakes, such as how text in other languages is handled. "
+             "Python 2 was retired in 2020, so today everyone uses Python 3, and so do these lessons."),
+            ("point", "Today",
+             "Python sits at or near the top of the rankings of the most used programming languages. It runs "
+             "inside banks, government agencies, universities, scientific labs and websites such as "
+             "Instagram. It is also the main language for data analysis and artificial intelligence."),
+            ("h", "Where its power comes from: the libraries"),
+            "Python itself is simple. Its real strength is the huge collection of ready-made code, called "
+            "libraries, that people around the world have written and shared for free. Python's public "
+            "library index, PyPI, holds more than half a million of them. Instead of building everything "
+            "from scratch, you bring in a library with one line and use what experts have already tested.",
+            ("list", [
+                "Built in, with nothing to install: csv reads spreadsheet exports, decimal keeps peso amounts "
+                "exact to the centavo, datetime counts days and months for penalties, and sqlite3 stores "
+                "records in a small database. These come with Python; people call it \"batteries included\".",
+                "pandas works with tables of thousands of rows the way Excel does, but in seconds and without "
+                "mistakes from dragging formulas. It was first written by Wes McKinney in 2008 at a financial "
+                "firm, to analyse money data. That makes it a natural fit for treasury work.",
+                "NumPy does fast calculations on large sets of numbers. pandas and many other libraries are "
+                "built on top of it.",
+                "openpyxl reads and writes real Excel files, so a script can fill in a report template for you.",
+                "Flask turns Python code into a website or web system. This very site is written in Python, "
+                "and ALTOS is built in Python too.",
+            ]),
+            "This is why one office worker with a laptop can do with a short script what used to need a "
+            "team and expensive software. Collections can be added up, receipt series checked and penalties "
+            "computed in seconds, the same way every time.",
+            ("tip", "Python's guiding rules are built into it. After you install it, type py (Windows) or "
+                    "python3 (Mac) to open Python, then type import this and press Enter. You will see "
+                    "\"The Zen of Python\", which includes the line \"Readability counts.\" Type exit() to leave."),
             ("h", "1. Install Python"),
             ("steps", [
-                "Go to python.org, open Downloads, and download the latest Python 3 for your computer.",
-                "Windows: run the installer and, on the very first screen, tick the box \"Add python.exe to PATH\". "
-                "Then click Install Now. That one box saves most of the trouble later.",
-                "Mac: open the downloaded .pkg file and follow the steps.",
+                "Go to python.org and open Downloads.",
+                "Windows: download the Python install manager, double-click it and click Install. (You can also "
+                "get the same \"Python Install Manager\" free from the Microsoft Store.) Then press the Windows "
+                "key, type cmd, open Command Prompt, and type the command shown below the steps. It downloads "
+                "the latest Python 3 for you. If it asks any setup questions, pressing Enter to accept the "
+                "suggested answer is fine.",
+                "Mac: download the latest Python 3 macOS installer, open the downloaded .pkg file and follow "
+                "the steps.",
             ]),
+            ("terminal", "py install default      (Windows only)"),
+            ("tip", "On Windows you may also see the older installer (.exe) listed. It still works until "
+                    "Python 3.16; if you use it, tick \"Add python.exe to PATH\" on its very first screen "
+                    "before clicking Install Now."),
             ("h", "2. Open the command line"),
             "Python scripts are usually run by typing a short command. On Windows, press the Windows key, "
             "type cmd and open Command Prompt. On a Mac, press Cmd + Space, type Terminal and press Enter. "
             "Check that Python is there by typing the command below and pressing Enter. It should answer "
-            "with a version number such as Python 3.13.",
+            "with a version number such as Python 3.15.2.",
             ("terminal", "py --version          (Windows)\npython3 --version     (Mac)"),
             ("h", "3. Make a folder and save the script"),
             "Make a folder for the lessons, for example python-lessons in your Documents. Open Notepad "
@@ -111,8 +170,11 @@ LESSONS = [
             ("terminal", "py -m pip install pandas openpyxl          (Windows)\npython3 -m pip install pandas openpyxl     (Mac)"),
             ("h", "When something goes wrong"),
             ("point", "'python' is not recognized",
-             "On Windows, use py instead of python. If py is not found either, run the installer again, "
-             "choose Modify, and make sure Add Python to environment variables is ticked."),
+             "On Windows, close Command Prompt, open a new one and try again, or use py instead of python. "
+             "If neither works, press the Windows key, type Manage app execution aliases, open it and make "
+             "sure the Python entries are switched on. The same fix applies if typing python opens the "
+             "Microsoft Store. If you used the older .exe installer, run it again, choose Modify, and tick "
+             "Add Python to environment variables."),
             ("point", "No such file or directory",
              "Command Prompt is looking in a different folder. Use cd to move into the folder where you saved "
              "the file, and type dir (Windows) or ls (Mac) to see the files there."),
@@ -201,8 +263,10 @@ LESSONS = [
              "formatting codes inside the braces. <28 means left-aligned in 28 spaces. >16 means "
              "right-aligned in 16 spaces, the comma adds thousands separators, and .2f shows two decimal "
              "places. That is what makes the columns line up."),
-            ("tip", "Open the CSV with newline=\"\" and an explicit encoding. It prevents blank rows on "
-                    "Windows and keeps names with ñ readable."),
+            ("tip", "Open a CSV file with newline=\"\" and an explicit encoding, as Python's own "
+                    "documentation advises. newline=\"\" lets the csv module handle line breaks itself "
+                    "(and, when you write a CSV, it prevents blank rows on Windows); encoding=\"utf-8\" "
+                    "keeps names with ñ readable on every computer."),
             ("h", "Try it yourself"),
             ("try", "Add a second total per nature of collection (Business tax, Real property tax, and so "
                     "on). Hint: make another dictionary and fill it inside the same loop."),
@@ -334,7 +398,8 @@ LESSONS = [
             "were used, how much was collected for each fund, and whether all of it reached the bank. "
             "The pandas library answers each question in a few lines. This lesson builds a simple "
             "summary of those three parts; it is a learning exercise, not the official report form.",
-            ("tip", "pandas is not part of standard Python. Install it once with: pip install pandas"),
+            ("tip", "pandas is not part of standard Python. If you skipped step 5 of Lesson 0, install it "
+                    "once with: py -m pip install pandas (Windows) or python3 -m pip install pandas (Mac)."),
             ("h", "The data"),
             "Save the collections of two collectors as collections.csv:",
             ("file", "collections.csv"),
@@ -362,7 +427,7 @@ LESSONS = [
             "kind of line that should be explained, or deposited, before the report is signed.",
             ("h", "Try it yourself"),
             ("try", "Save the three tables to one Excel file with pandas: look up DataFrame.to_excel and "
-                    "pd.ExcelWriter. (You may need: pip install openpyxl.)"),
+                    "pd.ExcelWriter. This also needs openpyxl, which Lesson 0 installed with pandas."),
             ("answer", "answer_excel.py"),
         ],
     },
@@ -401,7 +466,8 @@ LESSONS = [
              "seal."),
             ("point", "previous_seal + ...",
              "each seal covers the one before it. Remove entry 3 and entry 4 no longer fits, which is "
-             "why Check 3 points at position 3."),
+             "why Check 3 points at position 3. The very last entry has nothing after it, so removing "
+             "it would not show; that is one more reason to keep copies of the log elsewhere."),
             ("point", "hmac.compare_digest",
              "compares two seals in a way that does not leak timing clues to an attacker. Use it "
              "instead of == whenever secrets are compared."),
@@ -418,3 +484,14 @@ LESSONS = [
         ],
     },
 ]
+
+# Month each lesson was last fully checked (code run, facts sourced, phone and computer view).
+# Update a lesson's entry whenever it is re-checked. A lesson missing here shows no "Last checked" line.
+LAST_CHECKED = {
+    0: "November 2026",
+    1: "November 2026",
+    2: "November 2026",
+    3: "November 2026",
+    4: "November 2026",
+    5: "November 2026",
+}
