@@ -238,11 +238,11 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 @media (max-width: 1024px) { .ring { --size: 170px; } }
 @media (max-width: 640px) { .ring { --size: 150px; } }
 
-blockquote { margin: 28px 0 0; padding: 30px 36px 30px 84px; }
-blockquote::before { content: "\\201C"; position: absolute; left: 26px; top: 6px; font: 800 4.5rem/1 var(--font-display); color: var(--gold); }
-blockquote p { margin: 0 0 12px; font: 500 clamp(0.99rem, 2.16vw, 1.26rem)/1.5 var(--font-display); color: var(--on-navy); }
+blockquote { margin: 28px 0 0; padding: 16px 20px 16px 52px; }
+blockquote::before { content: "\\201C"; position: absolute; left: 16px; top: 10px; font: 800 2.25rem/1 var(--font-display); color: var(--gold); }
+blockquote p { margin: 0 0 6px; font: 500 clamp(0.99rem, 2.16vw, 1.26rem)/1.5 var(--font-display); color: var(--on-navy); }
 blockquote footer { font-size: 11.25px; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); }
-@media (max-width: 560px) { blockquote { padding: 64px 24px 24px; } }
+@media (max-width: 560px) { blockquote { padding: 36px 16px 14px; } blockquote::before { left: 14px; top: 6px; } }
 
 .forms { margin-top: auto; padding-top: 14px; font-size: 11.7px; font-weight: 700; letter-spacing: .05em; color: var(--ci); }
 
