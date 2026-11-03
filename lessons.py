@@ -66,9 +66,10 @@ LESSONS = [
         "title": "Getting started: install Python and run your first script",
         "summary": "Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.",
         "level": "Beginner",
-        "minutes": 15,
-        "topics": ["installing Python", "Command Prompt", "Terminal", "pip"],
+        "minutes": 20,
+        "topics": ["history of Python", "installing Python", "Command Prompt", "Terminal", "pip"],
         "learn": [
+            "Where Python came from and why its libraries make it so powerful",
             "Install Python 3 the right way on Windows or Mac",
             "Open Command Prompt or Terminal and move into a folder",
             "Run a Python script and read what it prints",
@@ -77,7 +78,51 @@ LESSONS = [
         ],
         "body": [
             "Every lesson in this series is a small Python script that you run on your own computer. "
-            "This lesson sets that up once. It takes about fifteen minutes, and you only do it once.",
+            "This lesson sets that up. It takes about twenty minutes, and you only do it once.",
+            ("h", "Why Python? A short history"),
+            "Before we install it, it helps to know where Python came from. It did not start in a big "
+            "company. It started as one programmer's holiday project, and it grew into one of the most "
+            "widely used programming languages in the world.",
+            ("point", "1989",
+             "Guido van Rossum, a Dutch programmer, began writing Python over the Christmas holidays as a "
+             "hobby. He wanted a language that was easy to read and quick to write. He named it after the "
+             "British comedy show Monty Python's Flying Circus, not after the snake."),
+            ("point", "1991",
+             "The first version was shared freely with the public. From the start, anyone could use it, "
+             "read its code and help improve it, at no cost."),
+            ("point", "2000",
+             "Python 2 came out and the language spread to schools, offices and websites."),
+            ("point", "2008",
+             "Python 3 cleaned up old design mistakes, such as how text in other languages is handled. "
+             "Python 2 was retired in 2020, so today everyone uses Python 3, and so do these lessons."),
+            ("point", "Today",
+             "Python sits at or near the top of the rankings of the most used programming languages. It runs "
+             "inside banks, government agencies, universities, scientific labs and websites such as "
+             "Instagram. It is also the main language for data analysis and artificial intelligence."),
+            ("h", "Where its power comes from: the libraries"),
+            "Python itself is simple. Its real strength is the huge collection of ready-made code, called "
+            "libraries, that people around the world have written and shared for free. Python's public "
+            "library index, PyPI, holds more than half a million of them. Instead of building everything "
+            "from scratch, you bring in a library with one line and use what experts have already tested.",
+            ("list", [
+                "Built in, with nothing to install: csv reads spreadsheet exports, decimal keeps peso amounts "
+                "exact to the centavo, datetime counts days and months for penalties, and sqlite3 stores "
+                "records in a small database. These come with Python; people call it \"batteries included\".",
+                "pandas works with tables of thousands of rows the way Excel does, but in seconds and without "
+                "mistakes from dragging formulas. It was first written by Wes McKinney in 2008 at a financial "
+                "firm, to analyse money data. That makes it a natural fit for treasury work.",
+                "NumPy does fast calculations on large sets of numbers. pandas and many other libraries are "
+                "built on top of it.",
+                "openpyxl reads and writes real Excel files, so a script can fill in a report template for you.",
+                "Flask turns Python code into a website or web system. This very site is written in Python, "
+                "and ALTOS is built in Python too.",
+            ]),
+            "This is why one office worker with a laptop can do with a short script what used to need a "
+            "team and expensive software. Collections can be added up, receipt series checked and penalties "
+            "computed in seconds, the same way every time.",
+            ("tip", "Python's guiding rules are built into it. After you install it, type py (Windows) or "
+                    "python3 (Mac) to open Python, then type import this and press Enter. You will see "
+                    "\"The Zen of Python\", which includes the line \"Readability counts.\" Type exit() to leave."),
             ("h", "1. Install Python"),
             ("steps", [
                 "Go to python.org, open Downloads, and download the latest Python 3 for your computer.",
