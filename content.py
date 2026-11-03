@@ -8,6 +8,7 @@ SITE = {
     "short_name": "Butch Mahinay",
     "title": "Ambrosio “Butch” U. Mahinay, MPA",
     "tagline": "Public finance professional who builds software for local government.",
+    "tagline_short": "Public finance and software for local treasuries",  # home page title
     "email": "hello@aumahinay.dev",
     "domain": "aumahinay.dev",
     "brand": "aumahinay",  # shown in the browser tab
