@@ -137,7 +137,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 15,
         "topics": ["csv", "Decimal", "dictionaries", "f-strings"],
-        "publish_on": "2026-11-05",
+        "publish_on": "2026-11-07",
         "learn": [
             "Read a CSV file one row at a time with the csv module",
             "Keep peso amounts exact with Decimal",
@@ -218,7 +218,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["sets", "range", "Counter", "list comprehensions"],
-        "publish_on": "2026-11-12",
+        "publish_on": "2026-11-14",
         "learn": [
             "Use a set to compare what was expected with what was recorded",
             "Find repeated values with collections.Counter",
@@ -267,7 +267,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["Decimal", "functions", "rounding", "min()"],
-        "publish_on": "2026-11-19",
+        "publish_on": "2026-11-21",
         "learn": [
             "See the rounding errors that floats introduce",
             "Write a small, reusable function",
@@ -322,7 +322,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["pandas", "groupby", "pivot_table", "join"],
-        "publish_on": "2026-11-26",
+        "publish_on": "2026-11-28",
         "learn": [
             "Load CSV files into pandas DataFrames",
             "Summarize data with groupby and named aggregations",
@@ -375,7 +375,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["hmac", "hashlib", "json", "security"],
-        "publish_on": "2026-12-03",
+        "publish_on": "2026-12-05",
         "learn": [
             "What a hash and an HMAC are, in plain terms",
             "Chain records so that removing one breaks the next",
