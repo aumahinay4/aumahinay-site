@@ -12,7 +12,11 @@ with open("collections.csv", newline="", encoding="utf-8") as f:
         by_fund[row["fund"]] = by_fund.get(row["fund"], Decimal("0")) + amount
         by_nature[row["nature"]] = by_nature.get(row["nature"], Decimal("0")) + amount
 
-print("By nature of collection")
+print("By fund")
+for fund, total in sorted(by_fund.items()):
+    print(f"  {fund:<30}{total:>12,.2f}")
+
+print("\nBy nature of collection")
 for nature, total in sorted(by_nature.items()):
     print(f"  {nature:<30}{total:>12,.2f}")
 print(f"  {'TOTAL':<30}{sum(by_nature.values()):>12,.2f}")

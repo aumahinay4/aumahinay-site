@@ -201,8 +201,10 @@ LESSONS = [
              "formatting codes inside the braces. <28 means left-aligned in 28 spaces. >16 means "
              "right-aligned in 16 spaces, the comma adds thousands separators, and .2f shows two decimal "
              "places. That is what makes the columns line up."),
-            ("tip", "Open the CSV with newline=\"\" and an explicit encoding. It prevents blank rows on "
-                    "Windows and keeps names with ñ readable."),
+            ("tip", "Open a CSV file with newline=\"\" and an explicit encoding, as Python's own "
+                    "documentation advises. newline=\"\" lets the csv module handle line breaks itself "
+                    "(and, when you write a CSV, it prevents blank rows on Windows); encoding=\"utf-8\" "
+                    "keeps names with ñ readable on every computer."),
             ("h", "Try it yourself"),
             ("try", "Add a second total per nature of collection (Business tax, Real property tax, and so "
                     "on). Hint: make another dictionary and fill it inside the same loop."),
@@ -334,7 +336,8 @@ LESSONS = [
             "were used, how much was collected for each fund, and whether all of it reached the bank. "
             "The pandas library answers each question in a few lines. This lesson builds a simple "
             "summary of those three parts; it is a learning exercise, not the official report form.",
-            ("tip", "pandas is not part of standard Python. Install it once with: pip install pandas"),
+            ("tip", "pandas is not part of standard Python. If you skipped step 5 of Lesson 0, install it "
+                    "once with: py -m pip install pandas (Windows) or python3 -m pip install pandas (Mac)."),
             ("h", "The data"),
             "Save the collections of two collectors as collections.csv:",
             ("file", "collections.csv"),
@@ -362,7 +365,7 @@ LESSONS = [
             "kind of line that should be explained, or deposited, before the report is signed.",
             ("h", "Try it yourself"),
             ("try", "Save the three tables to one Excel file with pandas: look up DataFrame.to_excel and "
-                    "pd.ExcelWriter. (You may need: pip install openpyxl.)"),
+                    "pd.ExcelWriter. This also needs openpyxl, which Lesson 0 installed with pandas."),
             ("answer", "answer_excel.py"),
         ],
     },
@@ -401,7 +404,8 @@ LESSONS = [
              "seal."),
             ("point", "previous_seal + ...",
              "each seal covers the one before it. Remove entry 3 and entry 4 no longer fits, which is "
-             "why Check 3 points at position 3."),
+             "why Check 3 points at position 3. The very last entry has nothing after it, so removing "
+             "it would not show; that is one more reason to keep copies of the log elsewhere."),
             ("point", "hmac.compare_digest",
              "compares two seals in a way that does not leak timing clues to an attacker. Use it "
              "instead of == whenever secrets are compared."),
