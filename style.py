@@ -261,7 +261,7 @@ ol.principles li span { color: var(--muted); font-size: 13.5px; line-height: 1.5
 .card.book > div:last-child { min-width: 0; }
 .card.book h3 { margin-top: 12px; font-size: 1.26rem; }
 .book-cover { flex: none; width: 230px; border-radius: 4px 10px 10px 4px; box-shadow: 0 24px 44px -20px rgba(11, 22, 48, .65); }
-@media (max-width: 640px) { .card.book { flex-direction: column; align-items: flex-start; padding: 24px; } .book-cover { width: 180px; } }
+@media (max-width: 640px) { .card.book { flex-direction: column; align-items: flex-start; padding: 24px 12px; } .book-cover { width: 180px; } }
 .motto { text-align: center; margin-top: 56px; font: 600 1.17rem var(--font-display); color: var(--muted); }
 .motto em { font-style: normal; }
 
@@ -308,6 +308,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 /* Phones: all six menu links visible, bigger tap targets, tighter spacing. Text stays justified (Butch's choice). */
 @media (max-width: 640px) {
   main { padding: 12px 0 64px; }
+  main .wrap { padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }  /* phones, all pages: less empty space at the sides (was 20px) */
   .hero .rule { margin-bottom: 14px; }  /* phones: intro sits a little closer under the colour bar */
   main h2 + p, h2 + .muted { margin-top: 10px; }  /* phones: text a little closer under each heading bar */
   main h2 + :not(p, .muted) { margin-top: 16px; }
@@ -320,12 +321,12 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .fs { width: 34px; height: 34px; left: max(14px, env(safe-area-inset-left, 0px)); bottom: calc(2px + env(safe-area-inset-bottom, 0px)); }
   nav { order: 2; }
   .grid, .grid.three, .grid.four { grid-template-columns: 1fr; gap: 14px; }
-  .card { padding: 20px 20px; }
-  .card::before { left: 20px; right: 20px; }
-  .card.feature { padding: 22px 20px; }
+  .card { padding: 20px 12px; }  /* text 22px from the screen edge (was 40px) */
+  .card::before { left: 12px; right: 12px; }
+  .card.feature { padding: 22px 12px; }
   .btns { margin-top: 24px; }
   .btn { padding: 13px 20px; }
-  .hero { padding: 26px 20px; }
+  .hero { padding: 26px 12px; }
   /* the three hero buttons share one line */
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(9.9px, 2.97vw, 13.5px); }
   @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero { --bgap: 6px; } }
@@ -378,7 +379,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post::before { content: ""; position: absolute; left: 44px; right: 44px; top: -1px; height: 4px; border-radius: 0 0 4px 4px; background: var(--rainbow); }
 .post > .meta { margin: 0; }
 .post > :last-child { margin-bottom: 0; }
-@media (max-width: 640px) { .post { padding: 24px 20px 28px; } .post::before { left: 20px; right: 20px; } }
+@media (max-width: 640px) { .post { padding: 24px 12px 28px; } .post::before { left: 12px; right: 12px; } }  /* phones: with the 10px page edge, post text sits 22px from the screen (was 40px) */
 /* Tutorials: Python for Treasury Work */
 .lesson-list { display: grid; gap: 18px; margin-top: 28px; }
 .lesson-list > :nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
@@ -491,7 +492,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-steps .muted { font-size: 13px; }
 .post-steps b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
 .post-steps .older { text-align: right; }
-@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } }
+@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } .post-steps a { white-space: normal; padding: 14px 16px; font-size: inherit; line-height: inherit; } }  /* the top-menu phone rules for nav links made these one long line that ran off the screen */
 """
 
 # One hide rule per category: when its pill is picked, cards from other categories hide.
