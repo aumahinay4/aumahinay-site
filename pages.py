@@ -710,13 +710,52 @@ def post_parts():
     return {post_url(b): (lambda b=b: post_page(b)) for b in live_posts()}
 
 
+# About story: the first paragraph shows; "View more" opens the rest, and "View less"
+# (after "...written into the software.") closes it. Without JavaScript all of it shows.
+STORY_SCRIPT = """
+(function () {
+  var box = document.getElementById("story");
+  if (!box) return;
+  var more = document.getElementById("story-more-btn"), less = document.getElementById("story-less-btn");
+  function set(open) {
+    box.classList.toggle("closed", !open);
+    more.setAttribute("aria-expanded", open);
+    less.setAttribute("aria-expanded", open);
+  }
+  more.addEventListener("click", function () { set(true); });
+  less.addEventListener("click", function () {
+    set(false);
+    if (box.getBoundingClientRect().top < 0) box.scrollIntoView({ block: "start" });
+  });
+  box.classList.add("js");
+  set(false);
+})();
+"""
+
+
+def about_story(paragraphs):
+    first, *rest = paragraphs
+    toggle = lambda label, id_: t.button(label, type="button", id=id_, class_="story-toggle", aria_controls="story-rest", aria_expanded="true")
+    return t.div(
+        t.p(first, " ", toggle("View more", "story-more-btn")),
+        t.div(
+            [t.p(x) for x in rest[:-1]],
+            t.p(rest[-1], " ", toggle("View less", "story-less-btn")),
+            id="story-rest",
+        ),
+        t.script(Raw(STORY_SCRIPT)),
+        id="story",
+        class_="story",
+    )
+
+
 def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
         t.h1("Hello, I'm Butch."),
         t.p(ABOUT["intro"], class_="lead"),
-        [t.p(p) for p in ABOUT["paragraphs"]],
+        about_story(ABOUT["paragraphs"]),
         t.h2("Experience"),
         t.div(
             [
