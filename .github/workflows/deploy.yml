@@ -1,5 +1,6 @@
 # Publishes dist/ to the Cloudflare Pages project "aumahinay" (aumahinay.dev)
-# on every push to main, and daily so scheduled blog posts appear on their date.
+# on every push to main, and hourly checks so scheduled posts and lessons
+# appear on their date (Philippine time).
 # Needs one repo secret: CLOUDFLARE_API_TOKEN
 # (a Cloudflare API token with Account > Cloudflare Pages > Edit).
 name: Deploy to Cloudflare Pages
@@ -9,7 +10,11 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "5 16 * * *"  # 00:05 Philippine time, so scheduled blog posts go live on their date
+    # GitHub often starts scheduled runs hours late (the 00:05 PH run started
+    # 3-7 hours late), so check every hour. A scheduled run only deploys when
+    # a new post or lesson has reached its date (Philippine time), so the
+    # first hourly run after midnight PH puts it live.
+    - cron: "17 * * * *"
 
 jobs:
   deploy:
@@ -25,8 +30,22 @@ jobs:
           python-version: "3.12"
       - name: Build the site
         run: python build.py
+      - name: Anything new to publish?
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # dated posts and lessons add a page to the sitemap on their date
+          if curl -fsS --max-time 30 https://aumahinay.dev/sitemap.xml -o live-sitemap.xml \
+             && cmp -s live-sitemap.xml dist/sitemap.xml; then
+            echo "Nothing new today; the live site is up to date."
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Publish to Cloudflare Pages
-        if: env.HAS_TOKEN == 'true'
+        if: env.HAS_TOKEN == 'true' && steps.check.outputs.deploy == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
