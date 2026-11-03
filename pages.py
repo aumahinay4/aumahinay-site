@@ -401,6 +401,16 @@ def courses():
             "Every credential links to its Coursera verification page.",
             class_="lead",
         ),
+        t.div(
+            t.p("With gratitude", class_="thanks-label"),
+            t.p(
+                "Since April 2026, my Google Career Certificates have been sponsored by the "
+                "Local Government Unit (LGU) of Sampaloc, Quezon and the Department of Trade and "
+                "Industry (DTI) Quezon. Their support made my studies free and let me keep learning "
+                "without interruption. I am deeply grateful to both."
+            ),
+            class_="thanks",
+        ),
         t.h2("Google Professional Certificates"),
         t.div([cert_card(c) for c in pro], class_="grid"),
         t.h2("Google Specializations"),
