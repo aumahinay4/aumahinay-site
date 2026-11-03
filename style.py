@@ -124,6 +124,9 @@ h3 { font-size: 1.035rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; }
 }
 @media (max-width: 640px) { .hero { --bgap: 8px; } }
+/* Home name banner reaches about 90% of the screen width on wide screens.
+   Phones and tablets already fill more than 90%, so they keep their width. */
+.hero { width: max(100%, 90vw); margin-left: calc(50% - max(50%, 45vw)); }
 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 13.5px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
