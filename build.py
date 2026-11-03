@@ -13,6 +13,13 @@ from pages import ROUTES, TUTORIALS, lesson_is_live, lesson_url, not_found
 DIST = Path(__file__).parent / "dist"
 
 
+def sitemap(site):
+    """Every live page (scheduled posts and lessons appear on their date, with the nightly build)."""
+    urls = "".join(f"  <url><loc>{site}{route}</loc></url>\n" for route in ROUTES)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
+
+
 def build():
     shutil.rmtree(DIST, ignore_errors=True)  # start clean so deleted pages don't linger
     for route, render in ROUTES.items():
@@ -31,6 +38,10 @@ def build():
                     shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
     (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n")
+    # help search engines find every page
+    site = f"https://{SITE['domain']}"
+    (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")
+    (DIST / "sitemap.xml").write_text(sitemap(site), encoding="utf-8")
     # GitHub Pages custom domain file
     (DIST / "CNAME").write_text(SITE["domain"] + "\n")
 

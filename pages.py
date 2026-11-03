@@ -53,8 +53,41 @@ FULLSCREEN_ICON = Raw(
 NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
 
+def person_json_ld():
+    """Structured data for Google: who the site is about. Public facts only."""
+    import json
+    url = f"https://{SITE['domain']}/"
+    profiles = [SITE[k] for k in ("linkedin", "github", "coursera") if SITE.get(k)]
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": url + "#website",
+                "url": url,
+                "name": SITE["short_name"],
+                "inLanguage": "en",
+            },
+            {
+                "@type": "Person",
+                "@id": url + "#person",
+                "name": SITE["name"],
+                "alternateName": SITE["short_name"],
+                "url": url,
+                "image": url + "static/avatar.png",
+                "description": SITE["tagline"],
+                "jobTitle": "Acting Municipal Treasurer",
+                "knowsAbout": ["Public finance", "Local government treasury operations", "Python", "Software development"],
+                **({"sameAs": profiles} if profiles else {}),
+            },
+        ],
+    }
+    return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+
+
 def layout(title, active, body, description=None):
-    page_title = SITE["brand"] if active == "/" else f"{title} · {SITE['brand']}"
+    # his name in every title, so a search for "Butch Mahinay" finds the site
+    page_title = f"{SITE['short_name']} · {SITE['tagline_short']}" if active == "/" else f"{title} · {SITE['short_name']}"
     doc = t.html(
         t.head(
             t.meta(charset="utf-8"),
@@ -67,6 +100,8 @@ def layout(title, active, body, description=None):
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname)) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{active}") if active else None,
             t.meta(name="description", content=description or SITE["tagline"]),
+            t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
+            t.script(Raw(person_json_ld()), type="application/ld+json") if active == "/" else None,
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
             t.meta(property="og:type", content="website"),
             t.meta(property="og:site_name", content=SITE["domain"]),
@@ -82,6 +117,7 @@ def layout(title, active, body, description=None):
             t.link(rel="icon", type="image/png", sizes="32x32", href=asset_url("favicon-32.png")),
             t.link(rel="apple-touch-icon", href=asset_url("apple-touch-icon.png")),
             t.link(rel="preconnect", href="https://fonts.googleapis.com"),
+            t.link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=True),
             t.link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap"),
             t.style(Raw(CSS)),
         ),
@@ -320,7 +356,7 @@ def courses():
         t.h2("Government & professional training"),
         t.p("A selection of the government and professional trainings I have completed over the years. The full list is longer than what is shown here.", class_="muted"),
         t.table([t.tr(t.td(t.b(name), t.br(), t.span(org, class_="muted")), t.td(when)) for name, org, when in TRAININGS]),
-        description="Coursera and Google certificates completed by " + SITE["name"],
+        description=f"Google Career Certificates and Coursera specializations completed by {SITE['short_name']}, a public finance professional learning data, IT and software.",
     )
 
 
@@ -467,7 +503,7 @@ def tutorials():
             "All names, receipt numbers and amounts in the examples are made up.",
             class_="muted note",
         ),
-        description="Python lessons for local treasury work, by " + SITE["short_name"],
+        description=f"Free, beginner-friendly Python lessons for local treasury work: collections, disbursements and reports, by {SITE['short_name']}.",
     )
 
 
@@ -573,7 +609,7 @@ def blog():
             ),
             class_="blog-col",
         ),
-        description="Blog by " + SITE["short_name"],
+        description=f"Stories and notes by {SITE['short_name']} on local treasury work, public finance, building the ALTOS system, and life beyond the office.",
     )
 
 
@@ -612,7 +648,7 @@ def about():
         tag_list(ABOUT["skills"]),
         t.h2("Get in touch"),
         t.p("Email me at ", t.a(SITE["email"], href=f"mailto:{SITE['email']}"), "."),
-        description="About " + SITE["name"],
+        description=f"About {SITE['name']} (Butch): Acting Municipal Treasurer with 15+ years in government service and 13+ years in public finance, and builder of ALTOS.",
     )
 
 
