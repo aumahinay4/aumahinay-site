@@ -346,6 +346,10 @@ figure.screenshot { margin: 28px 0 8px; }
 figure.screenshot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 22, 48, .45); }
 figure.screenshot figcaption { margin-top: 10px; font-size: 12.6px; color: var(--muted); text-align: center; }
 .note { margin-top: 28px; font-size: 12.6px; }
+.thanks { margin: 18px 0 0; padding: 14px 18px; border-left: 4px solid var(--gold); border-radius: var(--radius); background: color-mix(in srgb, var(--gold) 12%, transparent); }
+.thanks p { margin: 0; }
+.thanks .thanks-label { margin-bottom: 4px; font-size: 11.25px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--gold-ink); }
+@media (max-width: 640px) { .thanks { padding: 12px 12px; } }
 figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizing: border-box; }
 
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px 20px; flex-wrap: wrap; margin-top: 31px; }
