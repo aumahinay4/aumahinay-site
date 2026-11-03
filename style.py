@@ -513,3 +513,11 @@ CSS += """
 .story.js .story-toggle { display: inline; }
 .story.js:not(.closed) #story-more-btn, .story.closed #story-rest, .story.closed ~ .story-extra { display: none; }
 """
+
+CSS += """
+/* swipe to the next / previous menu page on phones: the page slides out the way the finger went */
+main { transition: transform .14s ease-in, opacity .14s ease-in; }
+main.swipe-next { transform: translateX(-28%); opacity: 0; }
+main.swipe-prev { transform: translateX(28%); opacity: 0; }
+@media (prefers-reduced-motion: reduce) { main.swipe-next, main.swipe-prev { transform: none; } }
+"""

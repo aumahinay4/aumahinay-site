@@ -34,7 +34,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body { margin: 0; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
@@ -70,7 +70,7 @@ header.site nav { margin-left: auto; }
 .fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
-main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
+main { flex: 1 0 auto; padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.35rem, 3.04vw, 1.97rem);  /* page titles: another 25% smaller (phones floor at the section-heading size), same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 12px; font-weight: 700; }
@@ -493,6 +493,18 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
 .blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
 .blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
+
+.story-toggle { display: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--violet-ink); cursor: pointer; white-space: nowrap; }
+.story-toggle:hover { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
+.story-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.story.js .story-toggle { display: inline; }
+.story.js:not(.closed) #story-more-btn, .story.closed #story-rest, .story.closed ~ .story-extra { display: none; }
+
+/* swipe to the next / previous menu page on phones: the page slides out the way the finger went */
+main { transition: transform .14s ease-in, opacity .14s ease-in; }
+main.swipe-next { transform: translateX(-28%); opacity: 0; }
+main.swipe-prev { transform: translateX(28%); opacity: 0; }
+@media (prefers-reduced-motion: reduce) { main.swipe-next, main.swipe-prev { transform: none; } }
 </style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png?v=96d8fd7d" alt="" width="31" height="31" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/" class="active">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div></header><main><div class="wrap"><div class="blog-col"><p class="eyebrow">Writing</p><h1>Blog</h1><p class="lead">My own stories and thoughts, from treasury work and building software to life beyond the office.</p><div class="blog-filters" role="radiogroup" aria-label="Show posts by category"><input type="radio" name="blog-cat" id="cat-all" value="all" checked><label for="cat-all">All <span class="count">5</span></label><input type="radio" name="blog-cat" id="cat-software" value="software"><label for="cat-software">Software &amp; ALTOS <span class="count">3</span></label><input type="radio" name="blog-cat" id="cat-finance" value="finance"><label for="cat-finance">Public Finance <span class="count">1</span></label><input type="radio" name="blog-cat" id="cat-personal" value="personal"><label for="cat-personal">Personal <span class="count">1</span></label></div><div class="post-list"><article class="post-card" id="altos-framework-every-peso-has-a-document" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">November 1, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h2><a href="/blog/altos-framework-every-peso-has-a-document/">The ALTOS Framework, Principle 2: Every Peso Has a Document</a></h2><p class="teaser">No collection without an accountable form, no release without a voucher. A peso that leaves no paper behind cannot be accounted for.</p><a href="/blog/altos-framework-every-peso-has-a-document/" class="more">Read the post &rarr;</a></article><article class="post-card" id="first-post-as-acting-treasurer" data-cat="finance"><div class="meta"><span class="cat cat-green">Public Finance</span><span class="muted">October 29, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h2><a href="/blog/first-post-as-acting-treasurer/">360 Degrees: My First Post as Acting Municipal Treasurer</a></h2><p class="teaser">Two years, two Mayors, a pandemic, a typhoon and an election: what my first post as Acting Municipal Treasurer of Mulanay, Quezon, taught me.</p><a href="/blog/first-post-as-acting-treasurer/" class="more">Read the post &rarr;</a></article><article class="post-card" id="altos-framework-legality-first" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">October 28, 2026</span><span class="muted dot">·</span><span class="muted">9 min read</span></div><h2><a href="/blog/altos-framework-legality-first/">The ALTOS Framework, Principle 1: Legality First</a></h2><p class="teaser">Before we ask how a peso was handled, we should ask whether the law allowed it at all.</p><a href="/blog/altos-framework-legality-first/" class="more">Read the post &rarr;</a></article><article class="post-card" id="why-i-built-altos" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">October 27, 2026</span><span class="muted dot">·</span><span class="muted">5 min read</span></div><h2><a href="/blog/why-i-built-altos/">Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</a></h2><p class="teaser">A treasury system built around one idea: every peso should be accounted for from the moment it arrives to the moment it is reported.</p><a href="/blog/why-i-built-altos/" class="more">Read the post &rarr;</a></article><article class="post-card" id="coming-home-to-the-farm" data-cat="personal"><div class="meta"><span class="cat cat-coral">Personal</span><span class="muted">November 4, 2026</span><span class="muted dot">·</span><span class="muted">4 min read</span></div><h2><a href="/blog/coming-home-to-the-farm/">200 Kilometers and Five Years Later: Coming Home to the Farm</a></h2><p class="teaser">Five years. That is how long it had been since I last set foot on my 3-hectare farm.</p><a href="/blog/coming-home-to-the-farm/" class="more">Read the post &rarr;</a></article></div><p class="muted note">Views here are my own and do not represent any government office.</p></div></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
 (function () {
   var d = document, b = d.getElementById("fs");
@@ -514,5 +526,44 @@ details.answer[open] > summary { margin-bottom: 4px; }
   d.addEventListener("fullscreenchange", sync);
   d.addEventListener("webkitfullscreenchange", sync);
   sync();
+})();
+</script><script>
+(function () {
+  // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
+  // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
+  // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
+  var pages = ["/", "/projects/", "/courses/", "/tutorials/", "/blog/", "/about/"];
+  var path = location.pathname, here = -1;
+  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
+  if (here < 0) return;  // e.g. the "page not found" page
+  var x0, y0, t0, ok;
+  function scrollsSideways(el) {
+    for (; el && el !== document.body; el = el.parentElement) {
+      var ox = getComputedStyle(el).overflowX;
+      if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+    }
+    return false;
+  }
+  document.addEventListener("touchstart", function (e) {
+    var p = e.touches[0], edge = 24;
+    ok = e.touches.length === 1 && p.clientX > edge && p.clientX < innerWidth - edge &&
+         !(window.visualViewport && visualViewport.scale > 1.05) && !scrollsSideways(e.target);
+    x0 = p.clientX; y0 = p.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) { if (e.touches.length > 1) ok = false; }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    if (!ok) return;
+    ok = false;
+    var p = e.changedTouches[0], dx = p.clientX - x0, dy = p.clientY - y0;
+    if (Date.now() - t0 > 700 || Math.abs(dx) < Math.min(90, innerWidth * 0.25) || Math.abs(dx) < 2 * Math.abs(dy)) return;
+    if (window.getSelection && String(getSelection())) return;  // selecting text, not swiping
+    var step = dx < 0 ? 1 : -1, n = pages.length;
+    var main = document.querySelector("main");
+    if (main) main.classList.add(step > 0 ? "swipe-next" : "swipe-prev");
+    setTimeout(function () { location.href = pages[(here + step + n) % n]; }, 140);
+  }, { passive: true });
+  // coming back with the Back button: undo the slide-out
+  addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
 </script></body></html>
