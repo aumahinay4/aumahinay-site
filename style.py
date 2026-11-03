@@ -362,6 +362,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .card.empty { margin-top: 28px; }
 .card.empty h3 { margin: 0; }
 .post h3 { margin: 18px 0 4px; font-size: 1.125rem; }  /* blog headings: space above halved (was 36px), all screens */
+.post h3 + p { margin-top: 11.7px; }  /* text under a blog heading: 15.3px, -15%, then -10% more, all screens */
 .post figure { margin: 28px 0; }
 .post figure:has(+ h3) { margin-bottom: 18px; }  /* a heading after a picture: same halved gap (was 36px) */
 .post .ask { margin-top: 28px; padding: 16px 20px; border-radius: var(--radius); background: color-mix(in srgb, var(--gold) 14%, transparent); }
