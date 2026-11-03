@@ -66,10 +66,10 @@ nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
 header.site nav { margin-left: auto; }
 .fs { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 20;
       width: 36px; height: 36px; display: grid; place-content: center; padding: 0; cursor: pointer;
-      color: #0b1630; background: rgba(255, 255, 255, .15); border: 1px solid rgba(11, 22, 48, .3); border-radius: 50%;
-      box-shadow: none; }  /* full-screen button floats at the bottom right on every screen */
+      color: #0b1630; background: transparent; border: 0; border-radius: 50%;
+      box-shadow: none; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, .9)); }  /* full-screen button floats at the bottom right on every screen */
 .fs[hidden] { display: none; }
-.fs:hover, .fs:focus-visible { color: #0b1630; border-color: var(--gold); }
+.fs:hover, .fs:focus-visible { color: var(--gold); }
 .fs svg { width: 29px; height: 29px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .fs .exit, .fs[aria-pressed="true"] .enter { display: none; }
 .fs[aria-pressed="true"] .exit { display: block; }
