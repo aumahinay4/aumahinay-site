@@ -502,3 +502,12 @@ CSS += "".join(
     f'.blog-col:has(#cat-{key}:checked)  .post-card:not([data-cat="{key}"]) {{ display: none; }}\n'
     for key, _, _ in BLOG_CATEGORIES
 )
+
+# About story: "View more" / "View less" read like links in the ALTOS violet, gold on hover
+CSS += """
+.story-toggle { display: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--violet-ink); cursor: pointer; white-space: nowrap; }
+.story-toggle:hover { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
+.story-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.story.js .story-toggle { display: inline; }
+.story.js:not(.closed) #story-more-btn, .story.closed #story-rest { display: none; }
+"""
