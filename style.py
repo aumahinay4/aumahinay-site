@@ -39,7 +39,7 @@ CSS = """
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body { margin: 0; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
@@ -75,7 +75,7 @@ header.site nav { margin-left: auto; }
 .fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
-main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
+main { flex: 1 0 auto; padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.35rem, 3.04vw, 1.97rem);  /* page titles: another 25% smaller (phones floor at the section-heading size), same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 12px; font-weight: 700; }
