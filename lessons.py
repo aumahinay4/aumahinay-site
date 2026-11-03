@@ -36,6 +36,12 @@ TUTORIAL = {
         "errors almost everyone meets on the first day. Then take the lessons in order; each one builds "
         "on the one before."
     ),
+    # A promise we can keep and show (no "easiest" or "most updated" claims)
+    "pledge": (
+        "Every lesson is checked before it goes live: the code is run, the output you see is what it "
+        "really prints, the facts and laws are checked against sources, and the page is reviewed on "
+        "phone and computer. Each lesson shows the month it was last checked."
+    ),
 }
 
 # Shown at the bottom of the Tutorials page
@@ -422,3 +428,13 @@ LESSONS = [
         ],
     },
 ]
+
+# Month each lesson was last fully checked (code run, facts sourced, phone and computer view).
+# Update a lesson's entry whenever it is re-checked. A lesson missing here shows no "Last checked" line.
+LAST_CHECKED = {
+    1: "November 2026",
+    2: "November 2026",
+    3: "November 2026",
+    4: "November 2026",
+    5: "November 2026",
+}
