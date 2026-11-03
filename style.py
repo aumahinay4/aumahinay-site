@@ -400,7 +400,7 @@ a.card.lesson:hover { text-decoration: none; transform: translateY(-2px); }
 .lesson-page .crumb { display: inline-block; margin-bottom: 22px; font-size: 13.5px; }
 .lesson-page h1.lesson-title { font-size: clamp(1.35rem, 3.04vw, 1.97rem); }
 .lesson-page .lead { max-width: none; }
-.lesson-page h2 { margin-top: 52px; }
+.lesson-page h2 { margin-top: 26px; }  /* tutorial headings: space above halved (was 52px), all screens */
 .card.learn { margin-top: 28px; --c: var(--blue); --ci: var(--blue-ink); }
 .card.learn .eyebrow { margin: 0; color: var(--blue-ink); }
 .lesson-page .point { padding-left: 16px; border-left: 3px solid var(--gold); }
