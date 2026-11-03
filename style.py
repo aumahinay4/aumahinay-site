@@ -368,6 +368,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post .ask { margin-top: 28px; padding: 16px 20px; border-radius: var(--radius); background: color-mix(in srgb, var(--gold) 14%, transparent); }
 .post figure.small { max-width: 440px; margin-left: auto; margin-right: auto; }
 .post figure.medium { max-width: 600px; margin-left: auto; margin-right: auto; }
+.post figure.half { width: 50%; max-width: 300px; margin-left: auto; margin-right: auto; }  /* half the medium size, all screens */
 .post .point { padding-left: 16px; border-left: 3px solid var(--gold); }
 .post .source { margin-top: 28px; font-size: 0.765rem; }
 .post .point b { color: var(--text); }
