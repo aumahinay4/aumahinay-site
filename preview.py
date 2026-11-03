@@ -19,8 +19,9 @@ function show() {
   var id = (location.hash || "#home").slice(1);
   if (!document.getElementById("view-" + id)) id = "home";
   document.querySelectorAll("section.view").forEach(function (s) { s.hidden = s.id !== "view-" + id; });
-  document.querySelectorAll("nav a").forEach(function (a) {
-    a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+  var tab = id.indexOf("post-") === 0 ? "blog" : id;  // a blog post keeps "Blog" highlighted
+  document.querySelectorAll("header nav a").forEach(function (a) {
+    a.classList.toggle("active", a.getAttribute("href") === "#" + tab);
   });
   window.scrollTo(0, 0);
 }
@@ -39,9 +40,11 @@ def build():
     pages.asset_url = inline_asset  # one self-contained file, no separate images
     pages.SHOW_SCHEDULED, pages.DOWNLOADS = True, False  # show every lesson, even scheduled ones
     views = []
-    for route, make in PARTS.items():
+    slugs = dict(SLUG)
+    for route, make in {**PARTS, **pages.post_parts()}.items():
+        slugs.setdefault(route, "post-" + route.strip("/").split("/")[-1])  # blog posts get their own tab
         p = make()
-        views.append(t.section(p["body"], class_="view", id="view-" + SLUG[route], hidden=route != "/"))
+        views.append(t.section(p["body"], class_="view", id="view-" + slugs[route], hidden=route != "/"))
     lesson_slugs = {pages.lesson_url(x): "lesson-" + str(x["number"]) for x in pages.LESSONS}
     for x in pages.LESSONS:
         views.append(t.section(pages.lesson_page(x)["body"], class_="view", id="view-" + lesson_slugs[pages.lesson_url(x)], hidden=True))
@@ -64,7 +67,7 @@ def build():
         t.script(Raw(SCRIPT)),
     ])
     # Internal links point at tabs instead of separate pages
-    for route, slug in {**SLUG, **lesson_slugs}.items():
+    for route, slug in {**slugs, **lesson_slugs}.items():
         html = html.replace(f'href="{route}"', f'href="#{slug}"')
     out = Path(__file__).parent / "preview.html"
     out.write_text(html, encoding="utf-8")

@@ -440,6 +440,55 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .glossary dt { font: 600 0.9rem var(--font-display); color: var(--violet-ink); }
 .glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 13.5px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+
+/* Blog categories: a small coloured label on each post, and filter pills above the posts */
+.post > .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.cat { font-size: 12px; font-weight: 600; letter-spacing: .02em; padding: 3px 10px; border-radius: 999px; }
+.cat-blue { color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 18%, transparent); }
+.cat-green { color: var(--green-ink); background: color-mix(in srgb, var(--green) 18%, transparent); }
+.cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
+.cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
+.cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
+.blog-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.blog-filters input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.blog-filters label { cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--line); transition: background .15s, color .15s, border-color .15s; }
+.blog-filters label:hover { border-color: var(--muted); }
+.blog-filters .count { font-weight: 500; color: var(--muted); margin-left: 2px; }
+.blog-filters input:checked + label { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
+.blog-filters input:checked + label .count { color: var(--on-navy-muted); }
+.blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.post > .meta .dot { margin: 0 -4px; }
+.post > .meta { font-size: 14px; }
+.post h1 { font-size: clamp(1.35rem, 3.04vw, 1.97rem); line-height: 1.15; margin: 18px 0 0; }
+.blog-col > .back { display: inline-block; margin-top: 8px; font-weight: 600; font-size: 15px; }
+.blog-col > .back + .post { margin-top: 20px; }
+
+/* Blog list: one card per post, linking to the post's own page */
+.post-list { margin-top: 24px; display: grid; gap: 18px; }
+.post-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px 32px 24px; scroll-margin-top: 90px; transition: border-color .15s, transform .15s; }
+.post-card:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); transform: translateY(-1px); }
+.post-card .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; }
+.post-card .meta .dot { margin: 0 -4px; }
+.post-card h2 { margin: 12px 0 0; font-size: clamp(1.25rem, 2.6vw, 1.5rem); line-height: 1.25; }
+.post-card h2::after { display: none; }
+.post-card h2 a { color: var(--text); }
+.post-card h2 a::before { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }  /* whole card is clickable */
+.post-card h2 a:hover { color: var(--blue-ink); }
+.post-card .teaser { margin: 10px 0 0; color: var(--muted); text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15px; }
+@media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
+
+/* Newer / older post links under a post */
+.post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.post-steps a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.post-steps a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.post-steps .muted { font-size: 13px; }
+.post-steps b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+.post-steps .older { text-align: right; }
+@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } }
+.blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
+.blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
+.blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
 </style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png" alt="" width="34" height="34" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 0 · Beginner · 15 min</p><h1 class="lesson-title">Getting started: install Python and run your first script</h1><p class="lead">Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.</p><div class="tags"><span class="tag">installing Python</span><span class="tag">Command Prompt</span><span class="tag">Terminal</span><span class="tag">pip</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>Install Python 3 the right way on Windows or Mac</li><li>Open Command Prompt or Terminal and move into a folder</li><li>Run a Python script and read what it prints</li><li>Install extra libraries with pip</li><li>Fix the errors that almost everyone meets on day one</li></ul></div><p>Every lesson in this series is a small Python script that you run on your own computer. This lesson sets that up once. It takes about fifteen minutes, and you only do it once.</p><h2>1. Install Python</h2><ol class="steps"><li>Go to python.org, open Downloads, and download the latest Python 3 for your computer.</li><li>Windows: run the installer and, on the very first screen, tick the box &quot;Add python.exe to PATH&quot;. Then click Install Now. That one box saves most of the trouble later.</li><li>Mac: open the downloaded .pkg file and follow the steps.</li></ol><h2>2. Open the command line</h2><p>Python scripts are usually run by typing a short command. On Windows, press the Windows key, type cmd and open Command Prompt. On a Mac, press Cmd + Space, type Terminal and press Enter. Check that Python is there by typing the command below and pressing Enter. It should answer with a version number such as Python 3.13.</p><figure class="codebox terminal"><figcaption><span class="fname">Command Prompt / Terminal</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>py --version          (Windows)
 python3 --version     (Mac)</code></pre></figure><h2>3. Make a folder and save the script</h2><p>Make a folder for the lessons, for example python-lessons in your Documents. Open Notepad (Windows) or TextEdit (Mac, then choose Format, Make Plain Text), paste the code below, and save it in that folder as hello.py. You can also click Download on the code box. A code editor such as Visual Studio Code, which is free, makes this easier and colours the code like this page does.</p><figure class="codebox code"><figcaption><span class="fname">hello.py</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button><a href="/tutorials/getting-started/hello.py" download>Download</a></span></figcaption><pre><code><span class="s">"""Your first Python script: a quick check that Python is installed and working."""</span>
 
