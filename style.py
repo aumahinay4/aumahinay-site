@@ -378,7 +378,7 @@ figure.diagram img { background: #fff; padding: clamp(10px, 3vw, 28px); box-sizi
 .post::before { content: ""; position: absolute; left: 44px; right: 44px; top: -1px; height: 4px; border-radius: 0 0 4px 4px; background: var(--rainbow); }
 .post > .meta { margin: 0; }
 .post > :last-child { margin-bottom: 0; }
-@media (max-width: 640px) { .post { padding: 24px 20px 28px; } .post::before { left: 20px; right: 20px; } }
+@media (max-width: 640px) { .post { padding: 24px 14px 28px; margin-left: -12px; margin-right: -12px; } .post::before { left: 14px; right: 14px; } }  /* phones: post card 8px from the screen edges, text 22px (was 40px) */
 /* Tutorials: Python for Treasury Work */
 .lesson-list { display: grid; gap: 18px; margin-top: 28px; }
 .lesson-list > :nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
