@@ -34,7 +34,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body { margin: 0; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
@@ -70,7 +70,7 @@ header.site nav { margin-left: auto; }
 .fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
-main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
+main { flex: 1 0 auto; padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.35rem, 3.04vw, 1.97rem);  /* page titles: another 25% smaller (phones floor at the section-heading size), same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 12px; font-weight: 700; }
@@ -493,6 +493,18 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
 .blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
 .blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
+
+.story-toggle { display: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--violet-ink); cursor: pointer; white-space: nowrap; }
+.story-toggle:hover { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
+.story-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.story.js .story-toggle { display: inline; }
+.story.js:not(.closed) #story-more-btn, .story.closed #story-rest, .story.closed ~ .story-extra { display: none; }
+
+/* swipe to the next / previous menu page on phones: the page slides out the way the finger went */
+main { transition: transform .14s ease-in, opacity .14s ease-in; }
+main.swipe-next { transform: translateX(-28%); opacity: 0; }
+main.swipe-prev { transform: translateX(28%); opacity: 0; }
+@media (prefers-reduced-motion: reduce) { main.swipe-next, main.swipe-prev { transform: none; } }
 </style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png?v=96d8fd7d" alt="" width="31" height="31" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/" class="active">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="personal"><div class="meta"><span class="cat cat-coral">Personal</span><span class="muted">November 4, 2026</span><span class="muted dot">·</span><span class="muted">4 min read</span></div><h1>200 Kilometers and Five Years Later: Coming Home to the Farm</h1><figure class="screenshot half"><img src="/static/blog/farm-1.jpg?v=f0a09f62" alt="Back on the farm, under the coconut palms" loading="lazy"><figcaption>Back on the farm, under the coconut palms</figcaption></figure><p>Five years. That is how long it had been since I last set foot on my 3-hectare farm.</p><p>Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer journey back.</p><h3>The Long Road Home</h3><p>A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads and greener horizons, I found myself wondering how much the land had changed.</p><p>When you are away from a place for five years, you hold on to a mental picture of how you left it: the young trees, the wide open spaces, the quiet promise of what it could become.</p><p>Nothing quite prepared me for the moment I arrived.</p><p>The first thing that caught my eye was the mulawin (molave) tree standing behind me in the photo above. I remembered it as a young tree, and I was surprised to see how old it looks now, its trunk and crown weathered by the years. There are many mulawin trees on the farm, and all of them have grown into sturdy, seasoned hardwoods while I was away.</p><h3>Coconuts for Copra</h3><p>The trees had grown tall and full while I was away. It was not the season for the mango, santol, and langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take a season off.</p><figure class="screenshot half"><img src="/static/blog/farm-2.jpg?v=de58298b" alt="Mature coconuts gathered for copra" loading="lazy"><figcaption>Mature coconuts gathered for copra</figcaption></figure><p>Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be gathered for copra. For a farm in our part of Quezon, copra is the steady crop, the one that keeps working through every season while the other trees wait for their turn.</p><p>Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.</p><p>None of this happens on its own. Our caretaker looks after the farm while I am away, and the copra piled under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.</p><p>Before walking on, my wife and I sat down in the shade and drank fresh coconut water straight from our own trees. After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was the most refreshing drink we had tasted in a long time.</p><h3>Shade, Breeze, and Childhood Memories</h3><p>Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze rustled through the coconut leaves above.</p><p>As I looked out across the wide spaces beneath the trees, old memories came rushing back: my childhood days raising carabaos, cows, and goats, and the familiar sight and sound of native chickens roaming freely across the yard.</p><p>There was a special rhythm and joy to that way of life, caring for the animals all day. Being back on the farm made me realize how much I missed those simpler days.</p><h3>What Five Years Taught Me</h3><p>Visiting the farm after five years taught me something simple but important:</p><blockquote><p>Not every season is a season of fruit, but the land keeps working, and our roots are always waiting for us if we are willing to make the journey back.</p></blockquote><p>I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier generation, and now it is my turn to plant for the next.</p><p>One thing is for sure: I won&#x27;t wait another five years for my next visit.</p><p class="ask">Have you ever returned to a place after years away and found it changed? I&#x27;d love to hear your story. <a href="mailto:hello@aumahinay.dev">Email me</a>.</p></article><nav class="post-steps" aria-label="More posts"><a href="/blog/why-i-built-altos/" class="newer"><span class="muted">Newer post</span><b>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</b></a><span></span></nav><p class="muted note">Views here are my own and do not represent any government office.</p></div></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
 (function () {
   var d = document, b = d.getElementById("fs");
@@ -514,5 +526,44 @@ details.answer[open] > summary { margin-bottom: 4px; }
   d.addEventListener("fullscreenchange", sync);
   d.addEventListener("webkitfullscreenchange", sync);
   sync();
+})();
+</script><script>
+(function () {
+  // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
+  // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
+  // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
+  var pages = ["/", "/projects/", "/courses/", "/tutorials/", "/blog/", "/about/"];
+  var path = location.pathname, here = -1;
+  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
+  if (here < 0) return;  // e.g. the "page not found" page
+  var x0, y0, t0, ok;
+  function scrollsSideways(el) {
+    for (; el && el !== document.body; el = el.parentElement) {
+      var ox = getComputedStyle(el).overflowX;
+      if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+    }
+    return false;
+  }
+  document.addEventListener("touchstart", function (e) {
+    var p = e.touches[0], edge = 24;
+    ok = e.touches.length === 1 && p.clientX > edge && p.clientX < innerWidth - edge &&
+         !(window.visualViewport && visualViewport.scale > 1.05) && !scrollsSideways(e.target);
+    x0 = p.clientX; y0 = p.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) { if (e.touches.length > 1) ok = false; }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    if (!ok) return;
+    ok = false;
+    var p = e.changedTouches[0], dx = p.clientX - x0, dy = p.clientY - y0;
+    if (Date.now() - t0 > 700 || Math.abs(dx) < Math.min(90, innerWidth * 0.25) || Math.abs(dx) < 2 * Math.abs(dy)) return;
+    if (window.getSelection && String(getSelection())) return;  // selecting text, not swiping
+    var step = dx < 0 ? 1 : -1, n = pages.length;
+    var main = document.querySelector("main");
+    if (main) main.classList.add(step > 0 ? "swipe-next" : "swipe-prev");
+    setTimeout(function () { location.href = pages[(here + step + n) % n]; }, 140);
+  }, { passive: true });
+  // coming back with the Back button: undo the slide-out
+  addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
 </script></body></html>

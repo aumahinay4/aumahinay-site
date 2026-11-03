@@ -1,6 +1,7 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
 import hashlib
+import json
 from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
@@ -57,6 +58,48 @@ FULLSCREEN_ICON = Raw(
 )
 
 NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
+
+SWIPE_SCRIPT = """
+(function () {
+  // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
+  // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
+  // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
+  var pages = %s;
+  var path = location.pathname, here = -1;
+  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
+  if (here < 0) return;  // e.g. the "page not found" page
+  var x0, y0, t0, ok;
+  function scrollsSideways(el) {
+    for (; el && el !== document.body; el = el.parentElement) {
+      var ox = getComputedStyle(el).overflowX;
+      if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+    }
+    return false;
+  }
+  document.addEventListener("touchstart", function (e) {
+    var p = e.touches[0], edge = 24;
+    ok = e.touches.length === 1 && p.clientX > edge && p.clientX < innerWidth - edge &&
+         !(window.visualViewport && visualViewport.scale > 1.05) && !scrollsSideways(e.target);
+    x0 = p.clientX; y0 = p.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) { if (e.touches.length > 1) ok = false; }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    if (!ok) return;
+    ok = false;
+    var p = e.changedTouches[0], dx = p.clientX - x0, dy = p.clientY - y0;
+    if (Date.now() - t0 > 700 || Math.abs(dx) < Math.min(90, innerWidth * 0.25) || Math.abs(dx) < 2 * Math.abs(dy)) return;
+    if (window.getSelection && String(getSelection())) return;  // selecting text, not swiping
+    var step = dx < 0 ? 1 : -1, n = pages.length;
+    var main = document.querySelector("main");
+    if (main) main.classList.add(step > 0 ? "swipe-next" : "swipe-prev");
+    setTimeout(function () { location.href = pages[(here + step + n) %% n]; }, 140);
+  }, { passive: true });
+  // coming back with the Back button: undo the slide-out
+  addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
+})();
+""" % json.dumps([href for href, _ in NAV])
+
 
 
 def person_json_ld():
@@ -147,6 +190,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
                 class_="site",
             ),
             t.script(Raw(FULLSCREEN_SCRIPT)),
+            t.script(Raw(SWIPE_SCRIPT)),
         ),
         lang="en",
     )

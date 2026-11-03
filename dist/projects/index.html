@@ -34,7 +34,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body { margin: 0; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--text); font: 15.3px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
@@ -70,7 +70,7 @@ header.site nav { margin-left: auto; }
 .fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 13.5px; white-space: nowrap; } }
 
-main { padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
+main { flex: 1 0 auto; padding: 20px 0 88px; }  /* every page: gap under the top bar is half the old 40px (phones 12px) */
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.35rem, 3.04vw, 1.97rem);  /* page titles: another 25% smaller (phones floor at the section-heading size), same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 12px; font-weight: 700; }
@@ -493,6 +493,18 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
 .blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
 .blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
+
+.story-toggle { display: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--violet-ink); cursor: pointer; white-space: nowrap; }
+.story-toggle:hover { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
+.story-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.story.js .story-toggle { display: inline; }
+.story.js:not(.closed) #story-more-btn, .story.closed #story-rest, .story.closed ~ .story-extra { display: none; }
+
+/* swipe to the next / previous menu page on phones: the page slides out the way the finger went */
+main { transition: transform .14s ease-in, opacity .14s ease-in; }
+main.swipe-next { transform: translateX(-28%); opacity: 0; }
+main.swipe-prev { transform: translateX(28%); opacity: 0; }
+@media (prefers-reduced-motion: reduce) { main.swipe-next, main.swipe-prev { transform: none; } }
 </style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png?v=96d8fd7d" alt="" width="31" height="31" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/" class="active">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div></header><main><div class="wrap"><p class="eyebrow">Software</p><h1>Projects</h1><p class="lead">ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections and the Treasury Disbursement System for disbursements, each with its own reports.</p><div class="family"><div class="node mother"><div class="node-head"><span class="code"><span class="wordmark"><span class="l0">A</span><span class="l1">L</span><span class="l2">T</span><span class="l3">O</span><span class="l4">S</span></span></span></div><h3>Automated Local Treasury Operations System</h3><p>Collect, Disburse and Report in one database, with the ALTOS Framework built in.</p></div><div class="branch" aria-hidden="true"></div><div class="children"><div class="node child"><div class="node-head"><span class="code">Treasury Collection System</span><span class="status live">Ready</span></div><p>A subsystem of ALTOS for collections and their reports: official receipts, collectors and their OR series, remittances and deposits, the daily RCD, and the monthly RAAF and CRAAF.</p><div class="forms">Collect + Report</div></div><div class="node child"><div class="node-head"><span class="code">Treasury Disbursement System</span><span class="status live">Ready</span></div><p>A subsystem of ALTOS for disbursements and their reports: vouchers, checks, cash advances and their liquidation, the check register and disbursement reports.</p><div class="forms">Disburse + Report</div></div></div></div><h2>ALTOS, the mother system</h2><div class="altos-hero"><div><p class="eyebrow">Mother system</p><h1 class="wordmark" aria-label="ALTOS"><span class="l0">A</span><span class="l1">L</span><span class="l2">T</span><span class="l3">O</span><span class="l4">S</span></h1><p class="subtitle">Automated Local Treasury Operations System</p><p class="lead">Much of the daily work in a Philippine local treasury is still done by hand, from receipts and cash books to monthly reports, so reporting is slow and errors are hard to catch. ALTOS is my answer to that gap. It automates the full cycle of public money: official receipts, remittances and deposits, checks and cash advances, the monthly reports of accountable officers, and collection targets and results. One database serves both a desktop application and a web application across the office network.</p><div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Desktop app</span><span class="tag">Web app</span><span class="tag">HMAC-SHA256 audit log</span><span class="tag">AES-256 backups</span><span class="tag">NIST CSF</span></div></div><div class="altos-art"><div class="ring" aria-hidden="true"><span>360°</span><small>ALTOS</small></div><img src="/static/altos-cover.jpg?v=3f747ad3" alt="Cover of 360° Accountability: Public Fiscal Administration in Philippine Local Treasuries" class="altos-book" width="600" height="900"></div></div><blockquote><p>Public money must be traceable in a full circle, from the moment it is collected to the moment it is reported, with a named officer answerable at every point. Accountability that covers 300 degrees leaves a gap, and money leaks through gaps.</p><footer>The ALTOS principle</footer></blockquote><figure class="screenshot diagram"><img src="/static/altos-loop.png?v=9b98ae94" alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step." width="1395" height="680" loading="lazy"><figcaption>Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step.</figcaption></figure><h2>Three movements of public money</h2><p class="muted">Every transaction in a local treasury belongs to one of three movements. ALTOS follows each one, with a named officer answerable at every step.</p><div class="grid three"><div class="card"><h3>Collect</h3><p>Taxes, fees and charges, each acknowledged by an official receipt from a bonded collector.</p><div class="forms">OR · RCD · deposit</div></div><div class="card"><h3>Disburse</h3><p>Releases by check, cash advance or transfer, each resting on an appropriation and a voucher.</p><div class="forms">Voucher · check · cash advance</div></div><div class="card"><h3>Report</h3><p>Every collection and release summarized, reconciled and reported on fixed dates.</p><div class="forms">RAAF · CRAAF · RCI · BRS · SRE</div></div></div><h2>What ALTOS does</h2><div class="grid four"><div class="card"><h3>Built from the forms</h3><p>Every screen starts from an LTOM or COA form, so the system stays auditable.</p></div><div class="card"><h3>Rules, not just records</h3><p>The next OR number is always the next in series, a check cannot predate its booklet, and the 20% Development Fund cannot be switched off.</p></div><div class="card"><h3>Deadlines that count down</h3><p>RAAF and CRAAF reports are due on the 5th, and the days remaining are visible to the officer and the supervisor.</p></div><div class="card"><h3>The sealed ledger</h3><p>Every activity-log entry carries an HMAC-SHA256 code chained to the one before it, so any deletion or change shows.</p></div><div class="card"><h3>Security Center</h3><p>Organized by the NIST Cybersecurity Framework: hashed passwords (PBKDF2-SHA256), lock-out, 15-minute auto log-out, AES-256 encrypted backups and a restore drill.</p></div><div class="card"><h3>Correction without concealment</h3><p>Posted records are corrected only through a logged Data Correction with a reason and an author.</p></div><div class="card"><h3>Turnover built in</h3><p>Assembles and verifies the records and produces a certificate for the incoming treasurer.</p></div><div class="card"><h3>Data Analytics and Insights</h3><p>Targets, forecasts and control checks that inform the treasurer&#x27;s decisions, plus a quarterly ALTOS Framework self-assessment that prints as a signed report.</p></div></div><h2>The ALTOS Framework</h2><p class="muted">Ten principles for Philippine public fiscal administration. ALTOS checks its own records against each one in a quarterly self-assessment.</p><ol class="principles"><li><b>Legality first</b><span>Every collection and release traces to a law, ordinance or appropriation.</span></li><li><b>Every peso has a document</b><span>No collection without a receipt, no release without a voucher.</span></li><li><b>Every document has an owner</b><span>A named, bonded officer answers for each form and each peso.</span></li><li><b>Every owner has a deadline</b><span>Reports fall due on fixed dates, and the days remaining are visible.</span></li><li><b>Every record has a seal</b><span>Posted records change only through a visible, logged correction.</span></li><li><b>Separate the hands</b><span>No one person both authorizes and releases public money.</span></li><li><b>Keep money in its fund</b><span>Each peso stays in the fund the law assigns it, including SEF and the 20% DF.</span></li><li><b>The taxpayer is a citizen</b><span>Assess fairly, collect conveniently and disclose fully.</span></li><li><b>Evidence before decision</b><span>Targets and forecasts inform the treasurer&#x27;s judgment but never replace it.</span></li><li><b>Build to outlast the builder</b><span>Systems must work after the incumbent leaves.</span></li></ol><h2>The book</h2><div class="card book"><img src="/static/altos-cover.jpg?v=3f747ad3" alt="Cover of 360° Accountability: Public Fiscal Administration in Philippine Local Treasuries" class="book-cover" width="600" height="900"><div><span class="badge spec">Draft edition, October 2026</span><h3>360° Accountability: Public Fiscal Administration in Philippine Local Treasuries</h3><p class="muted">The ALTOS Principles</p><p>A book that joins public administration theory, from Wilson and Weber to New Public Governance, with Philippine treasury law and the lessons of building ALTOS. It ends with the ALTOS Framework: ten principles any local treasury can adopt, with or without software.</p></div></div><p class="motto"><em>Every peso, every step, every officer: 360°.</em></p></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
 (function () {
   var d = document, b = d.getElementById("fs");
@@ -514,5 +526,44 @@ details.answer[open] > summary { margin-bottom: 4px; }
   d.addEventListener("fullscreenchange", sync);
   d.addEventListener("webkitfullscreenchange", sync);
   sync();
+})();
+</script><script>
+(function () {
+  // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
+  // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
+  // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
+  var pages = ["/", "/projects/", "/courses/", "/tutorials/", "/blog/", "/about/"];
+  var path = location.pathname, here = -1;
+  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
+  if (here < 0) return;  // e.g. the "page not found" page
+  var x0, y0, t0, ok;
+  function scrollsSideways(el) {
+    for (; el && el !== document.body; el = el.parentElement) {
+      var ox = getComputedStyle(el).overflowX;
+      if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+    }
+    return false;
+  }
+  document.addEventListener("touchstart", function (e) {
+    var p = e.touches[0], edge = 24;
+    ok = e.touches.length === 1 && p.clientX > edge && p.clientX < innerWidth - edge &&
+         !(window.visualViewport && visualViewport.scale > 1.05) && !scrollsSideways(e.target);
+    x0 = p.clientX; y0 = p.clientY; t0 = Date.now();
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) { if (e.touches.length > 1) ok = false; }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    if (!ok) return;
+    ok = false;
+    var p = e.changedTouches[0], dx = p.clientX - x0, dy = p.clientY - y0;
+    if (Date.now() - t0 > 700 || Math.abs(dx) < Math.min(90, innerWidth * 0.25) || Math.abs(dx) < 2 * Math.abs(dy)) return;
+    if (window.getSelection && String(getSelection())) return;  // selecting text, not swiping
+    var step = dx < 0 ? 1 : -1, n = pages.length;
+    var main = document.querySelector("main");
+    if (main) main.classList.add(step > 0 ? "swipe-next" : "swipe-prev");
+    setTimeout(function () { location.href = pages[(here + step + n) % n]; }, 140);
+  }, { passive: true });
+  // coming back with the Back button: undo the slide-out
+  addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
 </script></body></html>
