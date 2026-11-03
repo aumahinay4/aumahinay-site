@@ -511,5 +511,5 @@ CSS += """
 .story-toggle:hover { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
 .story-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 .story.js .story-toggle { display: inline; }
-.story.js:not(.closed) #story-more-btn, .story.closed #story-rest { display: none; }
+.story.js:not(.closed) #story-more-btn, .story.closed #story-rest, .story.closed ~ .story-extra { display: none; }
 """

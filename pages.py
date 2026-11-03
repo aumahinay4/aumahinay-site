@@ -710,8 +710,9 @@ def post_parts():
     return {post_url(b): (lambda b=b: post_page(b)) for b in live_posts()}
 
 
-# About story: the first paragraph shows; "View more" opens the rest, and "View less"
-# (after "...written into the software.") closes it. Without JavaScript all of it shows.
+# About story: the first paragraph shows; "View more" opens the rest of the story and
+# Experience to Skills, and "View less" (after "...written into the software.") closes
+# them again. "Get in touch" always shows. Without JavaScript all of it shows.
 STORY_SCRIPT = """
 (function () {
   var box = document.getElementById("story");
@@ -756,6 +757,8 @@ def about():
         t.h1("Hello, I'm Butch."),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
+        # Experience to Skills hide together with the story's rest; "Get in touch" always shows
+        t.div(
         t.h2("Experience"),
         t.div(
             [
@@ -782,6 +785,8 @@ def about():
         ),
         t.h2("Skills"),
         tag_list(ABOUT["skills"]),
+        class_="story-extra",
+        ),
         t.h2("Get in touch"),
         t.p("Email me at ", t.a(SITE["email"], href=f"mailto:{SITE['email']}"), "."),
         description=f"About {SITE['name']} (Butch): Acting Municipal Treasurer with 15+ years in government service and 13+ years in public finance, and builder of ALTOS.",
