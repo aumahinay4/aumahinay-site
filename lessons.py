@@ -131,16 +131,24 @@ LESSONS = [
                     "\"The Zen of Python\", which includes the line \"Readability counts.\" Type exit() to leave."),
             ("h", "1. Install Python"),
             ("steps", [
-                "Go to python.org, open Downloads, and download the latest Python 3 for your computer.",
-                "Windows: run the installer and, on the very first screen, tick the box \"Add python.exe to PATH\". "
-                "Then click Install Now. That one box saves most of the trouble later.",
-                "Mac: open the downloaded .pkg file and follow the steps.",
+                "Go to python.org and open Downloads.",
+                "Windows: download the Python install manager, double-click it and click Install. (You can also "
+                "get the same \"Python Install Manager\" free from the Microsoft Store.) Then press the Windows "
+                "key, type cmd, open Command Prompt, and type the command shown below the steps. It downloads "
+                "the latest Python 3 for you. If it asks any setup questions, pressing Enter to accept the "
+                "suggested answer is fine.",
+                "Mac: download the latest Python 3 macOS installer, open the downloaded .pkg file and follow "
+                "the steps.",
             ]),
+            ("terminal", "py install default      (Windows only)"),
+            ("tip", "On Windows you may also see the older installer (.exe) listed. It still works until "
+                    "Python 3.16; if you use it, tick \"Add python.exe to PATH\" on its very first screen "
+                    "before clicking Install Now."),
             ("h", "2. Open the command line"),
             "Python scripts are usually run by typing a short command. On Windows, press the Windows key, "
             "type cmd and open Command Prompt. On a Mac, press Cmd + Space, type Terminal and press Enter. "
             "Check that Python is there by typing the command below and pressing Enter. It should answer "
-            "with a version number such as Python 3.13.",
+            "with a version number such as Python 3.15.2.",
             ("terminal", "py --version          (Windows)\npython3 --version     (Mac)"),
             ("h", "3. Make a folder and save the script"),
             "Make a folder for the lessons, for example python-lessons in your Documents. Open Notepad "
@@ -162,8 +170,11 @@ LESSONS = [
             ("terminal", "py -m pip install pandas openpyxl          (Windows)\npython3 -m pip install pandas openpyxl     (Mac)"),
             ("h", "When something goes wrong"),
             ("point", "'python' is not recognized",
-             "On Windows, use py instead of python. If py is not found either, run the installer again, "
-             "choose Modify, and make sure Add Python to environment variables is ticked."),
+             "On Windows, close Command Prompt, open a new one and try again, or use py instead of python. "
+             "If neither works, press the Windows key, type Manage app execution aliases, open it and make "
+             "sure the Python entries are switched on. The same fix applies if typing python opens the "
+             "Microsoft Store. If you used the older .exe installer, run it again, choose Modify, and tick "
+             "Add Python to environment variables."),
             ("point", "No such file or directory",
              "Command Prompt is looking in a different folder. Use cd to move into the folder where you saved "
              "the file, and type dir (Windows) or ls (Mac) to see the files there."),
@@ -477,6 +488,7 @@ LESSONS = [
 # Month each lesson was last fully checked (code run, facts sourced, phone and computer view).
 # Update a lesson's entry whenever it is re-checked. A lesson missing here shows no "Last checked" line.
 LAST_CHECKED = {
+    0: "November 2026",
     1: "November 2026",
     2: "November 2026",
     3: "November 2026",
