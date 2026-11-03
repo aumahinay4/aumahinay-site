@@ -50,12 +50,12 @@ img { max-width: 100%; height: auto; }
 header.site { background: var(--navy-deep); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
 header.site::after { content: ""; display: block; height: 3px; background: var(--rainbow); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 66px; flex-wrap: wrap; }
-.brand { font: 700 1.2rem var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
+.brand { font: 700 1.08rem var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
 .brand b { color: var(--gold); font-weight: inherit; }
 .brand:hover { text-decoration: none; }
 .brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; }
-.brand .avatar { width: 34px; height: 34px; border-radius: 50%; flex: none; display: block; box-sizing: border-box; padding: 3px;
-                 /* ALTOS colour ring around the photo, as on share option 1; the overall size stays 34px */
+.brand .avatar { width: 31px; height: 31px; border-radius: 50%; flex: none; display: block; box-sizing: border-box; padding: 3px;
+                 /* ALTOS colour ring around the photo, as on share option 1; 31px overall (10% smaller than 34px) */
                  background: radial-gradient(closest-side, var(--navy-deep) 86%, transparent 87%),
                              conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg); }
 nav { display: flex; gap: 4px; flex-wrap: wrap; }
