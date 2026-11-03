@@ -8,6 +8,7 @@ SITE = {
     "short_name": "Butch Mahinay",
     "title": "Ambrosio “Butch” U. Mahinay, MPA",
     "tagline": "Public finance professional who builds software for local government.",
+    "tagline_short": "Public finance and software for local treasuries",  # home page title
     "email": "hello@aumahinay.dev",
     "domain": "aumahinay.dev",
     "brand": "aumahinay",  # shown in the browser tab
@@ -356,74 +357,6 @@ TRAININGS = [
     ("1st Virtual Regional Conference of Local Assessors and Treasurers", "BLGF Region IV-A", "Dec 2021"),
     ("BLGF–PCOO Webinar on FOI Memorandum Circulars", "Bureau of Local Government Finance", "Nov 2021"),
 ]
-
-# IT news, newest first. To add a story, copy one block below, paste it at the TOP of
-# the list and change the words. Keep summaries short and in your own words, and always
-# link to the original article.
-NEWS = [
-    {
-        "date": "October 25, 2026",
-        "topic": "Cybersecurity",
-        "title": "DDoS attacks on Philippine telecom networks more than double",
-        "summary": (
-            "Data from security firm StormWall shows telecommunications accounted for a quarter of "
-            "DDoS attacks in the Philippines from January to August 2026, with attacks on telecom "
-            "networks up 118% from a year earlier and their average size about five times larger."
-        ),
-        "why": (
-            "Government offices that serve citizens and accept payments online depend on these same networks, so stronger protection keeps public services running."
-        ),
-        "source": "The Manila Times",
-        "url": "https://www.manilatimes.net/2026/10/25/business/sunday-business-it/ddos-attacks-on-ph-telecoms-surge/2453202",
-    },
-    {
-        "date": "October 21, 2026",
-        "topic": "Digital ID",
-        "title": "DICT opens ₱496-million tender for National ID verification infrastructure",
-        "summary": (
-            "The Department of Information and Communications Technology is bidding out one year of "
-            "cloud, security and identity-verification services for its National ID eVerify program, "
-            "with a 99.5% uptime guarantee. Bids are due November 9, 2026."
-        ),
-        "why": (
-            "Quick, reliable ID checks help government offices confirm who they are dealing with, which cuts paperwork and helps prevent fraud."
-        ),
-        "source": "Biometric Update",
-        "url": "https://www.biometricupdate.com/202610/philippines-launches-7-8m-tender-for-national-digital-id-infrastructure",
-    },
-    {
-        "date": "October 19, 2026",
-        "topic": "E-government",
-        "title": "Electronic notarization launches nationwide",
-        "summary": (
-            "The Philippines formally launched electronic notarization in Taguig City. The Supreme "
-            "Court, the Land Registration Authority and the SEC issued joint guidelines for accepting "
-            "e-notarized documents, with identities checked through the DICT's eVerify service. "
-            "Linking it to the eGov platform is in final testing."
-        ),
-        "why": (
-            "Documents that used to need a personal appearance before a notary can now be handled and verified online, saving citizens time and travel."
-        ),
-        "source": "Daily Tribune",
-        "url": "https://tribune.net.ph/2026/10/19/philippines-launches-nationwide-electronic-notarization",
-    },
-    {
-        "date": "September 21, 2026",
-        "topic": "AI in government",
-        "title": "eGovPH app gets an AI assistant",
-        "summary": (
-            "The DICT added eGovAI to the eGovPH Super App, including the \"Kuya AI\" assistant, "
-            "to help citizens find information, navigate government services and complete "
-            "transactions, with identity checks, document handling and translation built in."
-        ),
-        "why": (
-            "An assistant that guides people step by step can mean fewer queues, fewer repeat visits and easier access to government services."
-        ),
-        "source": "Marketech APAC",
-        "url": "https://marketech-apac.com/dict-brings-ai-powered-government-services-to-filipinos-through-egovai/",
-    },
-]
-
 
 # Blog posts written by Butch, newest first. To add one, copy this shape:
 # {
