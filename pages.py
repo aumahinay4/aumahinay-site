@@ -1,5 +1,6 @@
 """Page builders. Each function returns a full HTML document as a string."""
 
+import hashlib
 from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
@@ -16,8 +17,13 @@ TUTORIALS = Path(__file__).parent / "tutorials"
 
 
 def asset_url(name):
-    """URL of a file in static/. preview.py swaps this for inline data URLs."""
-    return "/static/" + name
+    """URL of a file in static/, with ?v=<content hash> so phones and Cloudflare
+    fetch a changed picture right away instead of showing an old cached copy.
+    preview.py swaps this for inline data URLs."""
+    f = STATIC / name
+    if not f.exists():
+        return "/static/" + name
+    return "/static/" + name + "?v=" + hashlib.sha1(f.read_bytes()).hexdigest()[:8]
 
 
 # The full-screen button in the top bar.
