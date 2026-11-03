@@ -398,6 +398,8 @@ a.card.lesson:hover { text-decoration: none; transform: translateY(-2px); }
 .badge.soon { color: var(--muted); background: transparent; border: 1.5px dashed var(--line); }
 .card.setup { margin-top: 24px; border-left: 4px solid var(--green); --c: var(--green); }
 .card.setup p { margin: 0; }
+.card.setup.pledge { margin-top: 12px; border-left-color: var(--gold); --c: var(--gold); }
+.lesson-page .checked { margin: -6px 0 12px; font-size: 13.05px; font-weight: 600; color: var(--green-ink); }
 @media (prefers-reduced-motion: reduce) { .card.lesson { transition: none; } a.card.lesson:hover { transform: none; } }
 
 .lesson-page { max-width: 820px; margin: 0 auto; }

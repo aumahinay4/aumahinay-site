@@ -8,7 +8,7 @@ from pathlib import Path
 import tags as t
 from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, SITE, SUBSYSTEMS, TRAININGS
 from highlight import highlight
-from lessons import GLOSSARY, LESSONS, TUTORIAL
+from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from style import CSS
 from tags import Raw
 
@@ -503,6 +503,7 @@ def tutorials():
         t.h1(TUTORIAL["title"]),
         t.p(TUTORIAL["intro"], class_="lead"),
         t.div(t.p(t.b("Where to begin. "), TUTORIAL["setup"]), class_="card setup"),
+        t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
         t.div([lesson_card(x) for x in LESSONS], class_="lesson-list"),
         t.h2("Words to know"),
         t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
@@ -527,6 +528,8 @@ def lesson_page(x):
             t.p(lesson_meta(x), class_="eyebrow"),
             t.h1(x["title"], class_="lesson-title"),
             t.p(x["summary"], class_="lead"),
+            t.p("✓ Last checked: " + LAST_CHECKED[x["number"]] + " · code run, output real, facts checked",
+                class_="checked") if x["number"] in LAST_CHECKED else None,
             tag_list(x["topics"]),
             t.div(t.p("In this lesson", class_="eyebrow"), t.ul([t.li(item) for item in x["learn"]]), class_="card learn"),
             [lesson_block(x, b) for b in x["body"]],
