@@ -49,8 +49,8 @@ ABOUT = {
             "IT support, business intelligence, and project management."
         ),
         (
-            "ALTOS is where both worlds meet: a working treasury system built in a "
-            "real municipal office, where every rule of collecting, disbursing and "
+            "ALTOS is where both worlds meet: a working treasury system for "
+            "Philippine local treasuries, where every rule of collecting, disbursing and "
             "reporting public money is written into the software."
         ),
     ],
@@ -401,7 +401,7 @@ BLOG = [
             ("h", "The File Outlives the Official"),
             "We have met Max Weber several times in this series, and he belongs at the end too. His point that the "
             "file outlives the official is the institutional heart of the treasury. Treasurers, mayors and collectors "
-            "change. The obligations of the municipality and the rights of taxpayers do not.",
+            "change. The obligations of the local government and the rights of taxpayers do not.",
             "Our system already leans this way. The Local Treasury Operations Manual, 2nd Edition, issued under DOF "
             "Department Order No. 085-2019 of December 3, 2019, writes down standard procedures and forms so that every office does the "
             "work the same way, and so that a newly assigned treasurer does not have to start from zero. It is to "
@@ -435,7 +435,7 @@ BLOG = [
             "three questions: where does the system run when the main machine is away, who can restore it, and how "
             "long can the office work on paper in the meantime?",
             "Executive Order 170 itself requires agencies that adopt digital payments to keep a business continuity "
-            "plan. The options include a reserve machine, the municipality's own server run by its information "
+            "plan. The options include a reserve machine, the local government's own server run by its information "
             "technology office, or a documented fallback to manual forms with encoding afterward. Whatever the "
             "choice, the restore must be tested. A backup that has never been restored is a hope, not a control.",
             ("h", "Turnover Is Part of the Design"),
@@ -454,7 +454,7 @@ BLOG = [
             "through a memorandum of agreement or license on how the local government may use, maintain and host "
             "the system after the developer leaves. And get legal advice before any commercial use. I wrote more "
             "about why this protects everyone in my earlier post, Why I Built ALTOS. Clear terms mean the "
-            "municipality keeps a working system and its records, the developer keeps the authorship, and taxpayers "
+            "local government keeps a working system and its records, the developer keeps the authorship, and taxpayers "
             "keep uninterrupted service.",
             ("h", "The Practitioner Can Be the Builder"),
             "Local governments usually face two choices for treasury software: buy a package that does not quite fit "
@@ -503,7 +503,7 @@ BLOG = [
             "The principles can also serve as a teaching outline for public fiscal administration, pairing each one "
             "with its founding thinker and its Philippine law. And because they are a practitioner's theory, they "
             "should be tested. Does rule-enforcing collection raise local revenue in fourth- and fifth-class "
-            "municipalities? Do visible deadlines reduce late RAAF, CRAAF and RCD submissions? Which delinquency "
+            "local governments? Do visible deadlines reduce late RAAF, CRAAF and RCD submissions? Which delinquency "
             "notices, by timing and channel, lead to payment? Do statistical screening tools predict COA audit "
             "findings? How did the larger NTA after Mandanas-Garcia change local revenue effort and the use of the "
             "20% Development Fund? Do digital payment channels widen or narrow access for rural and elderly "
@@ -513,7 +513,7 @@ BLOG = [
             "will take these up.",
             "The founders of public administration built their theories by studying their own governments. Filipino "
             "practitioners and scholars can do the same with ours. Our records are rich, our rules are explicit, and "
-            "our results can be measured. Every municipal treasury is a laboratory.",
+            "our results can be measured. Every local treasury is a laboratory.",
             ("ask", "If you rated your own office on these ten principles, which two would come out weakest? I'd be "
              "glad to hear, and to compare notes."),
         ],
@@ -616,11 +616,11 @@ BLOG = [
             "the Data Privacy Act. Its operational capacity was the hardest test of all: one laptop, one office "
             "network, and a small staff.",
             ("h", "Why Good Records Matter Beyond the Audit"),
-            "Evidence also shapes how a municipality is seen from outside. Under the Automatic Income Classification "
+            "Evidence also shapes how a local government is seen from outside. Under the Automatic Income Classification "
             "Act (RA 11964), signed on October 26, 2023, provinces, cities and municipalities are sorted into five income classes based on their average regular "
             "income over three years, with a general reclassification every three years. That class affects "
             "salaries, borrowing capacity and eligibility for programs. Accurate treasury records are therefore not "
-            "only an audit matter. They help decide the municipality's class. The Seal of Good Local Governance, "
+            "only an audit matter. They help decide the local government's class. The Seal of Good Local Governance, "
             "institutionalized by RA 11292 in 2019, likewise looks at financial administration and sustainability. "
             "Its indicators, such as growth in locally sourced revenue, compliance with full disclosure and the use "
             "of funds, are far easier to show when the treasury's records are complete and searchable.",
@@ -684,7 +684,7 @@ BLOG = [
             "called social equity the third pillar of public administration. In a treasury, equity looks very "
             "practical: payment points people can actually reach, receipts in plain language, and no informal "
             "“fixers.” A citizen from a distant barangay should face the same procedure and the same cost "
-            "as someone who lives beside the municipal hall.",
+            "as someone who lives beside the town or city hall.",
             ("h", "The Same Rules for Everyone"),
             "Equity has an older ally in Max Weber's idea of impersonal treatment. The procedure is the same for every "
             "taxpayer, from the largest business in town to the smallest farm. The same rate table applies to "
@@ -736,9 +736,9 @@ BLOG = [
             "information under the Data Privacy Act. Respecting the citizen includes keeping their data safe. When "
             "ALTOS exports data for analysis, names and addresses are removed first.",
             ("h", "Paying Taxes as Local Citizenship"),
-            "Own-source revenue measures how far a municipality funds itself. Every peso of local revenue widens the "
+            "Own-source revenue measures how far a local government funds itself. Every peso of local revenue widens the "
             "room for local choice, and it builds the habit of paying for local services that makes local democracy "
-            "real. Even with a larger National Tax Allotment, I see local revenue effort as a measure of a town's "
+            "real. Even with a larger National Tax Allotment, I see local revenue effort as a measure of a community's "
             "fiscal citizenship. People who pay are entitled to a say, and to an account of what was done with their "
             "money.",
             ("h", "The Question to Ask"),
@@ -766,8 +766,8 @@ BLOG = [
             "turns a legal promise into a guess.",
             ("quote", "Every peso has an address. The law decides which fund it lives in, and the treasury's job is "
              "to make sure it gets there and stays there."),
-            ("h", "The Funds of a Municipality"),
-            "A Philippine municipality's money sits in the funds that the Local Government Code and the budget "
+            ("h", "The Funds of a Local Government"),
+            "A Philippine local government's money sits in the funds that the Local Government Code and the budget "
             "create. The main ones are the General Fund, the Special Education Fund and the Trust Fund. Within the "
             "budget, the 20% Development Fund is set aside for development projects. Each fund should have its own "
             "accounts in the books and, where required, its own bank account.",
@@ -786,10 +786,10 @@ BLOG = [
             "agriculture, social welfare and other services. Funds tie the money to those services.",
             "Devolution also left a lasting gap between what local governments must spend and what they can raise "
             "on their own. Economists at the Philippine Institute for Development Studies, notably Rosario G. "
-            "Manasan, documented this imbalance and how heavily many municipalities depend on national transfers. "
+            "Manasan, documented this imbalance and how heavily many local governments depend on national transfers. "
             "This is why the allotment from the national government exists: it moves money from where it is raised "
             "to where services are needed. And because that money arrives with conditions attached, keeping it in "
-            "the right fund is how a town shows it kept those conditions.",
+            "the right fund is how a local government shows it kept those conditions.",
             ("h", "One Receipt, Two Funds"),
             "Real property tax is the clearest everyday example. The basic tax and the Special Education Fund levy "
             "under Section 235 are often paid together, on one receipt. But they belong to different funds. The SEF "
@@ -821,7 +821,7 @@ BLOG = [
             "For the treasurer, this has two consequences. A larger NTA means a larger 20% Development Fund in pesos, "
             "and with it closer scrutiny of how that fund is used. The 20% Development Fund has become the clearest "
             "test of whether the bigger allotment turns into development or simply disappears into day-to-day "
-            "operations. A larger allotment can also deepen a town's reliance on transfers. My own view is that a bigger allotment "
+            "operations. A larger allotment can also deepen a local government's reliance on transfers. My own view is that a bigger allotment "
             "makes local revenue effort more important, not less.",
             ("h", "Keeping Inflows and Outflows Apart"),
             "Keeping money in its fund also means not short-circuiting the books. Collections should not be used to "
@@ -916,7 +916,7 @@ BLOG = [
             "that has already been encoded. Everyone else asks for a correction, and the request, the reason and the "
             "author are all recorded.",
             ("h", "The Small-Office Problem"),
-            "Here is the honest difficulty. Many municipal treasuries have only a handful of people. Perfect "
+            "Here is the honest difficulty. Many local treasuries have only a handful of people. Perfect "
             "separation is not always possible, and sometimes one person must wear two hats.",
             "When that happens, compensating controls take over. The treasurer reviews that person's work more "
             "often. Cash is counted by surprise. Someone outside the cash function reconciles the bank accounts every "
@@ -964,7 +964,7 @@ BLOG = [
             ("h", "What the Law Expects"),
             "Four sets of laws and rules shape how treasury records must be protected:",
             ("point", "Data Privacy Act of 2012 (RA 10173)", "Taxpayer names, addresses, property holdings and "
-             "payments are personal information. The municipality is a personal information controller and must "
+             "payments are personal information. The local government is a personal information controller and must "
              "protect them with organizational, physical and technical measures. The National Privacy Commission "
              "requires notice of certain breaches within 72 hours of discovery."),
             ("point", "Cybercrime Prevention Act of 2012 (RA 10175)", "Unauthorized access to, or interference with, "
@@ -1056,7 +1056,7 @@ BLOG = [
             "Luther Gulick saw this in 1937 when he summed up an executive's work in the acronym POSDCORB: Planning, "
             "Organizing, Staffing, Directing, Coordinating, Reporting and Budgeting. Two of those seven letters, "
             "Reporting and Budgeting, are about money and records. If you want to see Gulick's list in its most "
-            "concrete form, visit a municipal treasury.",
+            "concrete form, visit a local treasury.",
             ("h", "The Calendar of a Treasury"),
             "Each report has a form, an owner, a deadline and a reader. These are the regular ones:",
             ("point", "Report of Collections and Deposits (RCD)", "Prepared by each collecting officer, and by the "
@@ -1149,8 +1149,8 @@ BLOG = [
             "Jensen, William Meckling and others, looks at any relationship in which one party, the principal, "
             "relies on another, the agent, who knows more and whose interests may differ. The usual remedies are "
             "contracts, monitoring and incentives that narrow the gap in information.",
-            "Local government is a long chain of such relationships. Citizens elect the mayor and the Sanggunian. "
-            "The mayor and the Sanggunian rely on the treasurer. The treasurer relies on the collecting officers. At every link, the person "
+            "Local government is a long chain of such relationships. Citizens elect the governor or mayor and the Sanggunian. "
+            "These officials rely on the treasurer. The treasurer relies on the collecting officers. At every link, the person "
             "doing the work knows more than the person who depends on it. The theory does not assume anyone is "
             "dishonest. It only assumes that information is uneven.",
             "Accountable forms, fidelity bonds, reports with deadlines and audit trails are all tools for closing that "
@@ -1169,7 +1169,7 @@ BLOG = [
             "one a collection area and putting it in an office order. Ownership starts with a written assignment.",
             ("h", "Who Holds What"),
             "An accountable officer is any official or employee whose duties require custody of government funds, "
-            "property or accountable forms. In a municipal treasury the main roles are:",
+            "property or accountable forms. In a local treasury the main roles are:",
             ("point", "Collecting officer", "Holds official receipts and the cash collected, and answers for every "
              "receipt in custody, used or unused, and every peso until it is deposited or remitted."),
             ("point", "Liquidating officer", "Receives the collectors' remittances and reports, checks each "
@@ -1305,7 +1305,7 @@ BLOG = [
             ("point", "By electronic transfer", "Executive Order 170 of 2022 allows payment straight into a payee's "
              "bank or e-money account, but the same documents must stand behind it."),
             "Electronic collections follow the same logic. When a taxpayer pays through a bank or a payment channel, "
-            "the receipt is issued once the credit to the municipality's account is confirmed, and the payment is "
+            "the receipt is issued once the credit to the local government's account is confirmed, and the payment is "
             "recorded against the bank account that received it. A new channel does not mean a new exception to the "
             "rule.",
             ("h", "Start From the Form, Not the Screen"),
@@ -1489,13 +1489,13 @@ BLOG = [
             "Woodrow Wilson, writing even earlier, in 1887, observed that running a constitution is harder than "
             "framing one, and argued that administration deserves to be studied as a business-like field of its own, "
             "apart from the making of policy. Our law reflects that view too. Under Section 470 of the Local "
-            "Government Code, the treasurer is appointed by the Secretary of Finance from a list of at least three nominees of the mayor, and "
-            "works under the mayor's administrative supervision. The arrangement keeps the collection of revenue "
-            "professional and uniform from one town to the next, and it lets the treasurer serve each administration "
+            "Government Code, the treasurer is appointed by the Secretary of Finance from a list of at least three nominees of the governor or mayor, and "
+            "works under the administrative supervision of the governor or mayor. The arrangement keeps the collection of revenue "
+            "professional and uniform from one local government to the next, and it lets the treasurer serve each administration "
             "the same way. The tax ordinance is applied identically to every taxpayer, whoever is in office.",
             "The Code also spells out the treasurer's duties: taking custody of and managing local funds; taking "
             "charge of their disbursement; collecting taxes, fees and charges, and inspecting businesses for "
-            "compliance with tax ordinances; keeping tax information up to date; advising the mayor and the "
+            "compliance with tax ordinances; keeping tax information up to date; advising the governor or mayor and the "
             "Sanggunian on fiscal matters, including the income estimates used for the budget; and certifying "
             "whether cash is available for an obligation. Every one of these duties carries out decisions that "
             "others wrote into law. None of them gives the power to make new ones.",
@@ -1506,7 +1506,7 @@ BLOG = [
             "and gives it power over every government peso, earned or spent. So local fiscal autonomy is real, but "
             "it is autonomy under audit, never autonomy from it.",
             "The next link is the Local Government Code of 1991 (RA 7160), which turns those constitutional grants "
-            "into working rules. Then come the municipality's own ordinances: the revenue code that sets rates and "
+            "into working rules. Then come the local government's own ordinances: the revenue code that sets rates and "
             "fees, and the annual appropriation ordinance that sets what may be spent. For a municipality, the "
             "Sangguniang Panlalawigan reviews both the tax ordinances and the annual budget. The last link is the "
             "official receipt or the check itself. A transaction is legal only when every link above it holds.",
@@ -1518,7 +1518,7 @@ BLOG = [
             "Each source of revenue also has its own legal home. Real property tax comes from Title II of Book II of "
             "the Code, and the Special Education Fund levy from Section 235. Business taxes rest on Section 143, and "
             "the community tax on Sections 156 to 158. Regulatory fees and service charges, such as market stall "
-            "rentals or slaughterhouse fees, come from the municipality's own revenue code, and regulatory fees in "
+            "rentals or slaughterhouse fees, come from the local government's own revenue code, and regulatory fees in "
             "particular must stay in line with the actual cost of regulating.",
             "This is also why the amount due is computed, not negotiated. It comes from the ordinance rate or the tax "
             "declaration, the same way for everyone. Adam Smith called this certainty: a good tax is one whose amount "

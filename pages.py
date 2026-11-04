@@ -378,7 +378,7 @@ def projects():
             class_="card book",
         ),
         t.p(t.em(ALTOS["motto"]), class_="motto"),
-        description=f"{ALTOS['name']}, the {ALTOS['full_name']}, built by {SITE['name']}",
+        description=f"{ALTOS['name']}, the {ALTOS['full_name']}: software for Philippine local treasuries, built by {SITE['name']}",
     )
 
 
