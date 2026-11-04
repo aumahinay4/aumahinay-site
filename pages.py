@@ -387,7 +387,7 @@ def projects():
     )
 
 
-BOOK_PREVIEW_PAGES = 13  # cover, title, copyright, contents, preface, Part I and Chapter 1 (static/book/page-NN.jpg)
+BOOK_PREVIEW_PAGES = 9  # cover, title, copyright, contents, Part I and Chapter 1 (preface left out at Butch's request) (static/book/page-NN.jpg)
 BOOK_URL = "/projects/altos-book/"
 
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
@@ -436,7 +436,7 @@ def book_reader():
         t.a("← Back to Projects", href="/projects/", class_="crumb"),
         t.p("Book preview", class_="eyebrow"),
         t.h1(book["title"]),
-        t.p(f"{book['subtitle']} · {book['status']}. Read the opening pages here: the contents, the preface and Chapter 1.", class_="lead"),
+        t.p(f"{book['subtitle']} · {book['status']}. Read the opening pages here: the contents and Chapter 1.", class_="lead"),
         t.div(
             t.div(
                 t.button("← Previous", type="button", class_="btn prev"),
