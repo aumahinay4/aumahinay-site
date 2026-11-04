@@ -457,7 +457,7 @@ def book_reader():
                 "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
             t.p(f"Reading time: once your request is approved, you can read the whole book for {BOOK_FIRST_DAYS} days. "
                 f"Need more time? Send another request; each one after that gives you {BOOK_MORE_DAYS} more days. "
-                "There is no limit on requests."),
+                "Access ends automatically when the time is up. There is no limit on requests."),
             t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
             class_="reader-request",
         ),
