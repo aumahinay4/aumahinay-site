@@ -244,7 +244,19 @@ ol.principles li span { color: var(--muted); font-size: 13.8375px; line-height: 
 .card.book > div:last-child { min-width: 0; }
 .card.book h3 { margin-top: 12px; font-size: 1.2915rem; }
 .book-cover { flex: none; width: 230px; border-radius: 4px 10px 10px 4px; box-shadow: 0 24px 44px -20px rgba(11, 22, 48, .65); }
-@media (max-width: 640px) { .card.book { flex-direction: column; align-items: flex-start; padding: 24px 12px; } .book-cover { width: 180px; } }
+/* phones: small cover on the left, badge + title + subtitle on its right; blurb and button below, full width */
+@media (max-width: 640px) {
+  .card.book { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 14px; row-gap: 0; align-items: start; padding: 20px 12px; }
+  .card.book > div:last-child { display: contents; }
+  .card.book .book-link { grid-column: 1; grid-row: 1 / span 3; align-self: start; }
+  .book-cover { width: 112px; }
+  .card.book .badge, .card.book h3, .card.book .muted { grid-column: 2; justify-self: start; }
+  .card.book .badge { white-space: normal; }
+  .card.book h3 { margin: 8px 0 4px; text-align: left; hyphens: manual; }
+  .card.book .muted { margin: 0; text-align: left; }
+  .card.book > div:last-child > p:not(.muted), .card.book .btn { grid-column: 1 / -1; justify-self: start; }
+  .card.book > div:last-child > p:not(.muted) { margin-top: 16px; justify-self: stretch; }
+}
 .motto { text-align: center; margin-top: 56px; font: 600 1.1992rem var(--font-display); color: var(--muted); }
 .motto em { font-style: normal; }
 
