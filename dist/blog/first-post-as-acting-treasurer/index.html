@@ -218,22 +218,8 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
 .altos-hero h1.wordmark { font-size: clamp(3.485rem, 11.275vw, 6.355rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.1992rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
-/* the 360° ring with the ALTOS book beside it; one solid navy, top to bottom */
-.altos-hero { background: var(--navy-deep); }
-.altos-art { display: flex; align-items: center; gap: 28px; }
-.altos-book { display: block; width: calc(var(--ring, 230px) * .62); height: auto; border-radius: 4px 9px 9px 4px; transform: rotate(3deg);
-              box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .75), 0 0 0 1px rgba(255, 255, 255, .08); }
-@media (max-width: 1024px) { .altos-hero { grid-template-columns: 1fr; gap: 32px; } .altos-art { --ring: 170px; gap: 24px; justify-content: center; } }
-@media (max-width: 640px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } .altos-art { --ring: 150px; justify-content: center; gap: 18px; } .altos-book { transform: none; } }
-@media (min-width: 641px) and (max-width: 1024px) { .altos-hero { gap: 32px; } }
-.ring { --size: 230px; width: var(--size); height: var(--size); flex: none; border-radius: 50%; display: grid; place-content: center; text-align: center;
-        background: radial-gradient(circle, var(--navy-deep) 60%, transparent 61%),
-                    conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg);
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, .04); }
-.ring span { font: 800 calc(var(--size) * .23575)/1 var(--font-display); color: var(--green); }
-.ring small { font-weight: 700; letter-spacing: .32em; color: var(--on-navy-muted); font-size: calc(var(--size) * .0615); margin-top: 6px; padding-left: .32em; }
-@media (max-width: 1024px) { .ring { --size: 170px; } }
-@media (max-width: 640px) { .ring { --size: 150px; } }
+/* one solid navy, top to bottom; ALTOS title and text (no ring or book) */
+.altos-hero { background: var(--navy-deep); grid-template-columns: 1fr; }
 
 blockquote { margin: 28px 0 0; padding: 16px 20px 16px 52px; }
 blockquote::before { content: "\201C"; position: absolute; left: 16px; top: 10px; font: 800 2.3062rem/1 var(--font-display); color: var(--gold); }
@@ -258,7 +244,19 @@ ol.principles li span { color: var(--muted); font-size: 13.8375px; line-height: 
 .card.book > div:last-child { min-width: 0; }
 .card.book h3 { margin-top: 12px; font-size: 1.2915rem; }
 .book-cover { flex: none; width: 230px; border-radius: 4px 10px 10px 4px; box-shadow: 0 24px 44px -20px rgba(11, 22, 48, .65); }
-@media (max-width: 640px) { .card.book { flex-direction: column; align-items: flex-start; padding: 24px 12px; } .book-cover { width: 180px; } }
+/* phones: small cover on the left, badge + title + subtitle on its right; blurb and button below, full width */
+@media (max-width: 640px) {
+  .card.book { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 14px; row-gap: 0; align-items: start; padding: 20px 12px; }
+  .card.book > div:last-child { display: contents; }
+  .card.book .book-link { grid-column: 1; grid-row: 1 / span 3; align-self: start; }
+  .book-cover { width: 112px; }
+  .card.book .badge, .card.book h3, .card.book .muted { grid-column: 2; justify-self: start; }
+  .card.book .badge { white-space: normal; }
+  .card.book h3 { margin: 8px 0 4px; text-align: left; hyphens: manual; }
+  .card.book .muted { margin: 0; text-align: left; }
+  .card.book > div:last-child > p:not(.muted), .card.book .btn { grid-column: 1 / -1; justify-self: start; }
+  .card.book > div:last-child > p:not(.muted) { margin-top: 16px; justify-self: stretch; }
+}
 .motto { text-align: center; margin-top: 56px; font: 600 1.1992rem var(--font-display); color: var(--muted); }
 .motto em { font-style: normal; }
 
