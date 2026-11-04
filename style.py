@@ -552,3 +552,62 @@ CSS += """
 .reader-request h2::after { margin-left: auto; margin-right: auto; }
 .reader-request p { text-align: center; }
 """
+
+
+# Computer screens only (wider than 1024px): every text size 2.5% larger
+# (Butch, 2026-11-04). Phones and tablets keep the sizes above. The override
+# rules are made from the stylesheet itself, so new font sizes are covered too.
+DESKTOP_MIN_WIDTH = 1025
+DESKTOP_TEXT_SCALE = 1.025
+
+
+def _desktop_text_rules(css, scale):
+    import re
+
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    rules, stack, start = [], [], 0
+    for i, ch in enumerate(css):
+        if ch == "{":
+            stack.append(css[start:i].strip())
+            start = i + 1
+        elif ch == "}":
+            body, start = css[start:i], i + 1
+            if not stack:
+                continue
+            selector = stack.pop()
+            if selector.startswith("@") or not body.strip():
+                continue
+            # skip rules that only apply below computer width, or never on screen
+            if any("max-width" in m or "print" in m for m in stack):
+                continue
+            rules.append((tuple(stack), selector, body))
+
+    def bigger(size):
+        num = re.fullmatch(r"([\d.]+)(px|rem)", size)
+        if num:
+            return f"{float(num[1]) * scale:.4f}".rstrip("0").rstrip(".") + num[2]
+        if size.startswith(("clamp(", "min(", "max(", "calc(")):
+            return f"calc({size} * {scale})"
+        return None  # inherit, em, %: these follow their parent, which is already bigger
+
+    out = []
+    for media, selector, body in rules:
+        size = None
+        for decl in body.split(";"):
+            prop, _, value = decl.partition(":")
+            prop, value = prop.strip(), value.strip()
+            if prop == "font-size":
+                size = bigger(value)
+            elif prop == "font":
+                m = re.search(r"(?:^|\s)((?:clamp|min|max|calc)\([^;]*?\)|[\d.]+(?:px|rem))(?=/|\s)", value)
+                if m:
+                    size = bigger(m[1])
+        if size:
+            rule = f"{selector} {{ font-size: {size}; }}"
+            for m in reversed(media):
+                rule = f"{m} {{ {rule} }}"
+            out.append(rule)
+    return f"@media (min-width: {DESKTOP_MIN_WIDTH}px) {{\n" + "\n".join(out) + "\n}\n"
+
+
+CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
