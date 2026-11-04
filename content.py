@@ -167,6 +167,7 @@ ALTOS = {
         "title": "360° Accountability: Public Fiscal Administration in Philippine Local Treasuries",
         "subtitle": "The ALTOS Principles",
         "status": "Draft edition, October 2026",
+        "pages": 80,  # the full draft PDF
         "blurb": (
             "A book that joins public administration theory, from Wilson and Weber to New Public "
             "Governance, with Philippine treasury law and the lessons of building ALTOS. It ends "
