@@ -209,11 +209,6 @@ def tag_list(items):
     return t.div([t.span(item, class_="tag") for item in items], class_="tags") if items else None
 
 
-def ring(size_class=""):
-    """The ALTOS emblem: a 360° colour ring."""
-    return t.div(t.span("360°"), t.small("ALTOS"), class_=f"ring {size_class}".strip(), aria_hidden="true")
-
-
 def wordmark(word="ALTOS"):
     """ALTOS in its five letter colours, as on the book cover."""
     return [t.span(ch, class_=f"l{i}") for i, ch in enumerate(word)]
@@ -346,12 +341,11 @@ def projects():
         t.div(
             t.div(
                 t.p("Mother system", class_="eyebrow"),
-                t.h1(wordmark(), class_="wordmark", aria_label="ALTOS"),
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
             ),
-            t.div(ring(), t.a(cover_img("altos-book"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"), class_="altos-art"),
+            t.div(t.a(cover_img("altos-book"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"), class_="altos-art"),
             class_="altos-hero",
         ),
         t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),

@@ -221,9 +221,8 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 
 /* ALTOS page */
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
-.altos-hero h1.wordmark { font-size: clamp(3.485rem, 11.275vw, 6.355rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.1992rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
-/* the 360° ring with the ALTOS book beside it; one solid navy, top to bottom */
+/* the ALTOS book on the right; one solid navy, top to bottom */
 .altos-hero { background: var(--navy-deep); }
 .altos-art { display: flex; align-items: center; gap: 28px; }
 .altos-book { display: block; width: calc(var(--ring, 230px) * .62); height: auto; border-radius: 4px 9px 9px 4px; transform: rotate(3deg);
@@ -231,14 +230,6 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 @media (max-width: 1024px) { .altos-hero { grid-template-columns: 1fr; gap: 32px; } .altos-art { --ring: 170px; gap: 24px; justify-content: center; } }
 @media (max-width: 640px) { .altos-hero { grid-template-columns: 1fr; gap: 28px; } .altos-art { --ring: 150px; justify-content: center; gap: 18px; } .altos-book { transform: none; } }
 @media (min-width: 641px) and (max-width: 1024px) { .altos-hero { gap: 32px; } }
-.ring { --size: 230px; width: var(--size); height: var(--size); flex: none; border-radius: 50%; display: grid; place-content: center; text-align: center;
-        background: radial-gradient(circle, var(--navy-deep) 60%, transparent 61%),
-                    conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg);
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, .04); }
-.ring span { font: 800 calc(var(--size) * .23575)/1 var(--font-display); color: var(--green); }
-.ring small { font-weight: 700; letter-spacing: .32em; color: var(--on-navy-muted); font-size: calc(var(--size) * .0615); margin-top: 6px; padding-left: .32em; }
-@media (max-width: 1024px) { .ring { --size: 170px; } }
-@media (max-width: 640px) { .ring { --size: 150px; } }
 
 blockquote { margin: 28px 0 0; padding: 16px 20px 16px 52px; }
 blockquote::before { content: "\\201C"; position: absolute; left: 16px; top: 10px; font: 800 2.3062rem/1 var(--font-display); color: var(--gold); }
