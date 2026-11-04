@@ -228,7 +228,7 @@ def altos_feature_card():
             t.p(ALTOS["where"], class_="eyebrow"),
             t.h3(t.span(wordmark(), class_="wordmark"), " ", ALTOS["full_name"]),
             tag_list(ALTOS["stack"]),
-            t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn primary"), class_="foot"),
+            t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn white"), class_="foot"),
             class_="feature-body",
         ),
         class_="card feature",
