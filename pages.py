@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from urllib.parse import quote
 from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
@@ -74,6 +75,7 @@ SWIPE_SCRIPT = """
       var ox = getComputedStyle(el).overflowX;
       if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+      if (el.hasAttribute("data-noswipe")) return true;  // the book reader turns its own pages
     }
     return false;
   }
@@ -349,7 +351,7 @@ def projects():
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
             ),
-            t.div(ring(), cover_img("altos-book"), class_="altos-art"),
+            t.div(ring(), t.a(cover_img("altos-book"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"), class_="altos-art"),
             class_="altos-hero",
         ),
         t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
@@ -371,17 +373,99 @@ def projects():
         t.ol([t.li(t.b(name), t.span(desc)) for name, desc in ALTOS["principles"]], class_="principles"),
         t.h2("The book"),
         t.div(
-            cover_img("book-cover"),
+            t.a(cover_img("book-cover"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"),
             t.div(
                 t.span(book["status"], class_="badge spec"),
                 t.h3(book["title"]),
                 t.p(book["subtitle"], class_="muted"),
                 t.p(book["blurb"]),
+                t.a("Read a preview →", href=BOOK_URL, class_="btn white"),
             ),
             class_="card book",
         ),
         t.p(t.em(ALTOS["motto"]), class_="motto"),
         description=f"{ALTOS['name']}, the {ALTOS['full_name']}, built by {SITE['name']}",
+    )
+
+
+BOOK_PREVIEW_PAGES = 9  # cover, title, copyright, contents, Part I and Chapter 1 (preface left out at Butch's request) (static/book/page-NN.jpg)
+BOOK_URL = "/projects/altos-book/"
+# visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
+BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
+    "Hello Butch,\n\nI would like to read the full book, 360° Accountability: The ALTOS Principles.\n\n"
+    "Name:\nGoogle (Gmail) address to share it with:\nOffice or school:\nWhy I want to read it:\n\nThank you."))
+
+# The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
+# Saving is made harder (no download link, no right-click or long-press save, no dragging),
+# but no website can block the phone's or computer's own screenshot keys.
+BOOK_SCRIPT = """
+(function () {
+  var r = document.getElementById("reader");
+  if (!r) return;
+  var pages = JSON.parse(r.getAttribute("data-pages")), i = 0;
+  var img = r.querySelector(".page img"), count = r.querySelector(".count");
+  var prev = r.querySelector(".prev"), next = r.querySelector(".next");
+  function show(n) {
+    i = Math.max(0, Math.min(pages.length - 1, n));
+    img.src = pages[i];
+    img.alt = "Page " + (i + 1) + " of the preview";
+    count.textContent = "Page " + (i + 1) + " of " + pages.length;
+    prev.disabled = i === 0; next.disabled = i === pages.length - 1;
+    if (i + 1 < pages.length) (new Image()).src = pages[i + 1];  // load the next page ahead
+  }
+  prev.addEventListener("click", function () { show(i - 1); });
+  next.addEventListener("click", function () { show(i + 1); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") show(i + 1);
+    if (e.key === "ArrowLeft") show(i - 1);
+  });
+  var x0, y0;
+  var stage = r.querySelector(".page");
+  stage.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener("touchend", function (e) {
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > 2 * Math.abs(dy)) show(i + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  r.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  r.addEventListener("dragstart", function (e) { e.preventDefault(); });
+  show(0);
+})();
+"""
+
+
+def book_reader():
+    book = ALTOS["book"]
+    pages = [asset_url(f"book/page-{n:02d}.jpg") for n in range(1, BOOK_PREVIEW_PAGES + 1)]
+    return part(
+        "ALTOS book preview", "/projects/",
+        t.a("← Back to Projects", href="/projects/", class_="crumb"),
+        t.p("Book preview", class_="eyebrow"),
+        t.h1(book["title"]),
+        t.p(f"{book['subtitle']} · {book['status']}. Read the opening pages here: the contents and Chapter 1.", class_="lead"),
+        t.div(
+            t.div(
+                t.button("← Previous", type="button", class_="btn prev"),
+                t.span(class_="count", aria_live="polite"),
+                t.button("Next →", type="button", class_="btn next"),
+                class_="controls",
+            ),
+            t.div(
+                t.img(src=pages[0], alt="Page 1 of the preview", width="900", height="1350", draggable="false"),
+                t.div(class_="shield"),  # sits on top of the page, so a long-press or right-click finds no picture to save
+                class_="page",
+            ),
+            id="reader", class_="reader", data_pages=json.dumps(pages), data_noswipe="",
+        ),
+        t.div(
+            t.h2("Want to read the whole book?"),
+            t.p("This is a preview of the draft edition. To read all of it, send a request. Once I approve it, "
+                "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
+            t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
+            class_="reader-request",
+        ),
+        t.script(Raw(BOOK_SCRIPT)),
+        description=f"Read a preview of {book['title']} by {SITE['name']}.",
+        url=BOOK_URL,
     )
 
 
@@ -859,6 +943,7 @@ def _full_page(build):
 
 
 ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}.items()}
+ROUTES[BOOK_URL] = _full_page(book_reader)
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
 
