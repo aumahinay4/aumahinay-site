@@ -341,6 +341,7 @@ def projects():
         t.div(
             t.div(
                 t.p("Mother system", class_="eyebrow"),
+                t.h1(wordmark(), class_="wordmark", aria_label="ALTOS"),
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),

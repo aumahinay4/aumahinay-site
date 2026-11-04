@@ -221,8 +221,9 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 
 /* ALTOS page */
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
+.altos-hero h1.wordmark { font-size: clamp(3.485rem, 11.275vw, 6.355rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.1992rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
-/* one solid navy, top to bottom; text only (no ring or book) */
+/* one solid navy, top to bottom; ALTOS title and text (no ring or book) */
 .altos-hero { background: var(--navy-deep); grid-template-columns: 1fr; }
 
 blockquote { margin: 28px 0 0; padding: 16px 20px 16px 52px; }
