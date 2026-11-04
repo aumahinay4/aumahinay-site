@@ -527,3 +527,23 @@ main.swipe-next { transform: translateX(-28%); opacity: 0; }
 main.swipe-prev { transform: translateX(28%); opacity: 0; }
 @media (prefers-reduced-motion: reduce) { main.swipe-next, main.swipe-prev { transform: none; } }
 """
+
+# ALTOS book preview reader (/projects/altos-book/)
+CSS += """
+.book-link { display: block; flex: none; }
+.book-link:hover img { filter: brightness(1.05); }
+.card.book .btn { margin-top: 6px; }
+.crumb { display: inline-block; margin-bottom: 16px; font-size: 13.8375px; }
+.reader { margin: 22px auto 0; max-width: min(560px, calc((100vh - 150px) * 2 / 3)); max-width: min(560px, calc((100dvh - 150px) * 2 / 3)); -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.reader .page { position: relative; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 22, 48, .45); touch-action: pan-y pinch-zoom; }
+.reader .page img { display: block; width: 100%; height: auto; pointer-events: none; -webkit-user-drag: none; }
+.reader .shield { position: absolute; inset: 0; }
+.reader .controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }  /* above the page, so Next stays in the same spot */
+.reader .controls .btn { background: var(--surface); color: var(--text); border-color: var(--line); cursor: pointer; font-family: inherit; }
+.reader .controls .btn:hover:not(:disabled) { border-color: var(--gold); }
+.reader .controls .btn:disabled { opacity: .4; cursor: default; transform: none; }
+.reader .count { font-size: 13.8375px; font-weight: 600; color: var(--muted); }
+.reader-note { text-align: center; max-width: 560px; margin-left: auto; margin-right: auto; }
+@media (max-width: 640px) { .reader { max-width: none; } .reader .controls .btn { padding: 10px 14px; } }
+@media print { .reader { display: none; } }  /* printing the page leaves out the book */
+"""
