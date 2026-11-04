@@ -174,7 +174,7 @@ h3 { font-size: 1.0609rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .feature-body h3 { font-size: 1.3376rem; }
 .feature .foot { padding-top: 22px; }
 .feature-art.wide { width: 23%; max-width: 220px; }
-.feature-shot { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .5); }
+.feature-shot { display: block; width: 100%; height: auto; border-radius: 0;  /* square (90-degree) corners, Butch 2026-11-04 */  border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .5); }
 @media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } .feature-art.wide { display: block; width: 50%; max-width: none; } .card.feature { gap: 14px; } }  /* phones: label sits half as far under the ALTOS picture */
 
 /* The ALTOS wordmark: one colour per letter, as on the cover */
