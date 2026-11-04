@@ -1730,8 +1730,8 @@ BLOG = [
             "palms. I could not help counting what those five years had cost me: mulawin trees that grew old while I "
             "was away, harvests I never saw, and quiet afternoons in the shade that I could have spent with my wife. "
             "Work will always keep me busy, but the farm reminded me that some things cannot wait for a free weekend. "
-            "The new coconut seedlings we plant will need someone to watch over them as they grow, and I want that "
-            "someone to be me.",
+            "Our caretaker will look after the new coconut seedlings we plant, but I want to be there to see them "
+            "grow.",
             "One thing is for sure: I won't wait another five years for my next visit.",
             ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
              "story."),
