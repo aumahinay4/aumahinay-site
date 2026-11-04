@@ -385,9 +385,10 @@ def projects():
 BOOK_PREVIEW_PAGES = 9  # cover, title, copyright, contents, Part I and Chapter 1 (preface left out at Butch's request) (static/book/page-NN.jpg)
 BOOK_URL = "/projects/altos-book/"
 # visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
+BOOK_FIRST_DAYS, BOOK_MORE_DAYS = 3, 2  # reading time per approved request (Butch, 2026-11-04)
 BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
     "Hello Butch,\n\nI would like to read the full book, 360° Accountability: The ALTOS Principles.\n\n"
-    "Name:\nGoogle (Gmail) address to share it with:\nOffice or school:\nWhy I want to read it:\n\nThank you."))
+    "Name:\nGoogle (Gmail) address to share it with:\nOffice or school:\nWhy I want to read it:\nFirst request or more time:\n\nThank you."))
 
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
 # Saving is made harder (no download link, no right-click or long-press save, no dragging),
@@ -454,6 +455,9 @@ def book_reader():
             t.h2("Want to read the whole book?"),
             t.p(f"This is a preview of the draft edition. The full book has {book['pages']} pages. To read all of it, send a request. Once I approve it, "
                 "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
+            t.p(f"Reading time: once your request is approved, you can read the whole book for {BOOK_FIRST_DAYS} days. "
+                f"Need more time? Send another request; each one after that gives you {BOOK_MORE_DAYS} more days. "
+                "There is no limit on requests."),
             t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
             class_="reader-request",
         ),
