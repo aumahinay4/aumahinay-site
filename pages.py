@@ -382,7 +382,7 @@ def projects():
     )
 
 
-BOOK_PREVIEW_PAGES = 9  # cover, title, copyright, contents, Part I and Chapter 1 (preface left out at Butch's request) (static/book/page-NN.jpg)
+BOOK_PREVIEW_PAGES = 20  # cover, title, copyright, contents, Part I, Chapters 1-3 and start of Chapter 4 = PDF pp. 1-4, 9-24 (preface left out at Butch's request) (static/book/page-NN.jpg)
 BOOK_URL = "/projects/altos-book/"
 # visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
 BOOK_FIRST_DAYS, BOOK_MORE_DAYS = 3, 2  # reading time per approved request (Butch, 2026-11-04)
@@ -436,7 +436,7 @@ def book_reader():
         t.a("← Back to Projects", href="/projects/", class_="crumb"),
         t.p("Book preview", class_="eyebrow"),
         t.h1(book["title"]),
-        t.p(f"{book['subtitle']} · {book['status']} · {book['pages']} pages. Read the opening pages here: the contents and Chapter 1.", class_="lead"),
+        t.p(f"{book['subtitle']} · {book['status']} · {book['pages']} pages. Read the first 20 pages here: the contents, Chapters 1 to 3 and the start of Chapter 4.", class_="lead"),
         t.div(
             t.div(
                 t.button("← Previous", type="button", class_="btn prev"),
