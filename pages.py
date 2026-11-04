@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from urllib.parse import quote
 from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
@@ -389,6 +390,10 @@ def projects():
 
 BOOK_PREVIEW_PAGES = 9  # cover, title, copyright, contents, Part I and Chapter 1 (preface left out at Butch's request) (static/book/page-NN.jpg)
 BOOK_URL = "/projects/altos-book/"
+# visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
+BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
+    "Hello Butch,\n\nI would like to read the full book, 360° Accountability: The ALTOS Principles.\n\n"
+    "Name:\nGoogle (Gmail) address to share it with:\nOffice or school:\nWhy I want to read it:\n\nThank you."))
 
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
 # Saving is made harder (no download link, no right-click or long-press save, no dragging),
@@ -451,8 +456,13 @@ def book_reader():
             ),
             id="reader", class_="reader", data_pages=json.dumps(pages), data_noswipe="",
         ),
-        t.p("This is a preview of the draft edition. For the full book, email me at ",
-            t.a(SITE["email"], href=f"mailto:{SITE['email']}"), ".", class_="note reader-note"),
+        t.div(
+            t.h2("Want to read the whole book?"),
+            t.p("This is a preview of the draft edition. To read all of it, send a request. Once I approve it, "
+                "I'll share the full book with your email address as read-only."),
+            t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
+            class_="reader-request",
+        ),
         t.script(Raw(BOOK_SCRIPT)),
         description=f"Read a preview of {book['title']} by {SITE['name']}.",
         url=BOOK_URL,

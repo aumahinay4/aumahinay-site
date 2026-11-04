@@ -547,3 +547,10 @@ CSS += """
 @media (max-width: 640px) { .reader { max-width: none; } .reader .controls .btn { padding: 10px 14px; } }
 @media print { .reader { display: none; } }  /* printing the page leaves out the book */
 """
+
+CSS += """
+.reader-request { max-width: 560px; margin: 26px auto 0; text-align: center; }
+.reader-request h2 { margin-top: 0; }
+.reader-request h2::after { margin-left: auto; margin-right: auto; }
+.reader-request p { text-align: center; }
+"""
