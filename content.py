@@ -1726,6 +1726,10 @@ BLOG = [
             "I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five "
             "decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier "
             "generation, and now it is my turn to plant for the next.",
+            "As we walked the nearly 700 steps back to the main road, I looked back at the young "
+            "mulawin one last time. Five years had slipped by without my noticing. In that time the young mulawin trees had "
+            "grown old, and season after season of harvests had come and gone without me. If I am going to plant "
+            "new coconut trees, I also want to be there to watch them grow.",
             "One thing is for sure: I won't wait another five years for my next visit.",
             ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
              "story."),
