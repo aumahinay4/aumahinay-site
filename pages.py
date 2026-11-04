@@ -345,7 +345,6 @@ def projects():
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
             ),
-            t.div(t.a(cover_img("altos-book"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"), class_="altos-art"),
             class_="altos-hero",
         ),
         t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
