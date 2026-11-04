@@ -371,7 +371,7 @@ def projects():
             t.div(
                 t.span(book["status"], class_="badge spec"),
                 t.h3(book["title"]),
-                t.p(book["subtitle"], class_="muted"),
+                t.p(book["subtitle"], t.br(), f"{book['pages']} pages", class_="muted"),
                 t.p(book["blurb"]),
                 t.a("Read a preview →", href=BOOK_URL, class_="btn white"),
             ),
@@ -435,7 +435,7 @@ def book_reader():
         t.a("← Back to Projects", href="/projects/", class_="crumb"),
         t.p("Book preview", class_="eyebrow"),
         t.h1(book["title"]),
-        t.p(f"{book['subtitle']} · {book['status']}. Read the opening pages here: the contents and Chapter 1.", class_="lead"),
+        t.p(f"{book['subtitle']} · {book['status']} · {book['pages']} pages. Read the opening pages here: the contents and Chapter 1.", class_="lead"),
         t.div(
             t.div(
                 t.button("← Previous", type="button", class_="btn prev"),
@@ -452,7 +452,7 @@ def book_reader():
         ),
         t.div(
             t.h2("Want to read the whole book?"),
-            t.p("This is a preview of the draft edition. To read all of it, send a request. Once I approve it, "
+            t.p(f"This is a preview of the draft edition. The full book has {book['pages']} pages. To read all of it, send a request. Once I approve it, "
                 "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
             t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
             class_="reader-request",
