@@ -459,7 +459,7 @@ def book_reader():
         t.div(
             t.h2("Want to read the whole book?"),
             t.p("This is a preview of the draft edition. To read all of it, send a request. Once I approve it, "
-                "I'll share the full book with your email address as read-only."),
+                "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
             t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
             class_="reader-request",
         ),
