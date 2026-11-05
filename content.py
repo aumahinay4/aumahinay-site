@@ -402,9 +402,7 @@ BLOG = [
             "dot, is called the top-level domain, or TLD. In aumahinay.dev, the TLD is .dev. In google.com, it is .com.",
             "Each TLD is run by an organization called a registry, which keeps the master list of every name under it. "
             "Verisign runs .com. Google Registry runs .dev. You do not buy a name from the registry directly. You buy "
-            "it through a registrar, a kind of store that sells names from many registries. I used Cloudflare.",
-            "One more thing that surprises beginners: you never own a domain forever. You rent it, usually one year at "
-            "a time, and it stays yours as long as you keep renewing. Miss the renewal, and someone else may take it.",
+            "it through a registrar, a kind of store that sells names from many registries.",
             ("h", "The Crowded Neighborhood Called .com"),
             ".com is the oldest and best-known TLD, and it is very crowded. According to Verisign's Domain Name "
             "Industry Brief, there were 166.6 million .com names registered as of June 30, 2026, out of 401.6 million "
@@ -415,8 +413,7 @@ BLOG = [
             ("h", "What .dev Says Before You Even Open the Page"),
             "Google Registry opened .dev to the public in early 2019, after an Early Access period that began on "
             "February 19 of that year. Google described it as a home \"dedicated to developers and technology.\" Big "
-            "names use it too: GitHub has github.dev, Slack has slack.dev, and Cloudflare runs its developer platform "
-            "on workers.dev.",
+            "names use it too: GitHub has github.dev, Slack has slack.dev, and Codecademy has codecademy.dev.",
             "This website exists to show the software I build, mainly ALTOS and its two subsystems for local treasuries. "
             "The site itself is written in Python. So .dev is an honest label. In four letters it tells you what kind "
             "of work you will find here.",
@@ -462,11 +459,12 @@ BLOG = [
             ("h", "The Catch: You Need a Certificate"),
             "Because HTTPS is required, every .dev website needs an SSL/TLS certificate, a kind of digital ID that proves "
             "the website really is who it claims to be. Years ago, getting one cost money and paperwork. Today many "
-            "hosts do it for free and automatically. My site runs on Cloudflare Pages, which issued the certificate "
-            "and keeps renewing it for me. All I had to do was connect the domain.",
-            "Cost was a factor too. Cloudflare says it offers .dev registrations and renewals \"at wholesale prices, "
-            "with no additional markups.\" Many registrars advertise a cheap first year and then raise the price on "
-            "renewal. With at-cost pricing, what I pay each year follows the registry's own price.",
+            "hosts do it for free and automatically. My web host set up the certificate for this site, and all I "
+            "had to do was connect the domain.",
+            "You can check this yourself on any website. Tap or click the small icon at the left of the address bar. "
+            "Your browser will tell you whether the connection is secure, and it can show you the certificate: who it "
+            "was issued to, who issued it, and until when it is valid. It is a good habit, especially before you type "
+            "a password or pay for anything online.",
             ("h", "Will .dev Hurt My Google Ranking?"),
             "This was my biggest worry, so I checked. Google's answer is clear: \"Overall, our systems treat new gTLDs "
             "like other gTLDs (like .com and .org).\" It also says that keywords in a TLD \"do not give any advantage or "
@@ -491,8 +489,8 @@ BLOG = [
             ("point", "Pick a TLD that tells the truth", ".com for a business, .org for an organization, .ph to show "
              "you are in the Philippines, and .dev for software and technology. A personal site should never look like "
              "an official one; .gov.ph is for government offices."),
-            ("point", "Check the renewal price, not just the first year", "You will pay the renewal price every year after."),
-            ("point", "Turn on auto-renew", "Losing a domain because a renewal slipped is painful and sometimes permanent."),
+            ("point", "Do not use someone else's name or brand", "An address that looks like a company or an office you do "
+             "not represent invites confusion, and sometimes legal trouble."),
             ("point", "Use HTTPS everywhere", "With .dev you have no choice. With any other TLD, make it your choice."),
             "A domain name is only a few letters, but it speaks before your website does. Mine says: this is where I "
             "build, and it is locked by default. That is what I want people to expect from me, both in software and "
@@ -503,7 +501,6 @@ BLOG = [
             ("source", "", "HSTS Preload List", "https://hstspreload.org/", ""),
             ("source", "", "Verisign, Domain Name Industry Brief, Q2 2026", "https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name", ""),
             ("source", "", "Google Search Central, \"Google's handling of new top level domains\" (2015)", "https://developers.google.com/search/blog/2015/07/googles-handling-of-new-top-level", ""),
-            ("source", "", "Cloudflare, Buy .dev domains", "https://www.cloudflare.com/application-services/products/registrar/buy-dev-domains/", ""),
         ],
 },
     {
