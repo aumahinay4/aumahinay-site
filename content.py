@@ -393,8 +393,8 @@ BLOG = [
         "publish_on": None,  # hidden until Butch says go
         "body": [
             "When I bought the address for this website on October 25, 2026, I did not pick a .com. I picked "
-            "aumahinay.dev. A few people have asked me why. Isn't .com the \"real\" internet? Won't visitors get "
-            "confused? These are fair questions. The answer says a lot about how I like to build things, so I want "
+            "aumahinay.dev. Most people expect a website to end in .com, so you may wonder why mine does not. Isn't .com "
+            "the \"real\" internet? Won't visitors get confused? These are fair questions. The answer says a lot about how I like to build things, so I want "
             "to explain it here in plain words, especially for anyone who is about to choose an address of their own.",
             ("h", "First, What Is a Domain Name?"),
             "A domain name is the address people type to reach a website. Think of the municipal hall. The building "
