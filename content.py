@@ -385,6 +385,123 @@ BLOG_CATEGORIES = [
 
 BLOG = [
     {
+        "date": "November 2026",
+        "title": "Why .dev and Not .com: How I Chose My Website's Address",
+        "slug": "why-dev-and-not-com",
+        "category": "software",
+        "summary": "Most people expect a .com. I chose aumahinay.dev. Here is why, in plain words, and what it taught me about building things that are safe by default.",
+        "publish_on": None,  # hidden until Butch says go
+        "body": [
+            "When I bought the address for this website on October 25, 2026, I did not pick a .com. I picked "
+            "aumahinay.dev. A few people have asked me why. Isn't .com the \"real\" internet? Won't visitors get "
+            "confused? These are fair questions. The answer says a lot about how I like to build things, so I want "
+            "to explain it here in plain words, especially for anyone who is about to choose an address of their own.",
+            ("h", "First, What Is a Domain Name?"),
+            "A domain name is the address people type to reach a website. Think of the municipal hall. The building "
+            "is the website, and the address tells people how to find it. The last part of a domain, after the final "
+            "dot, is called the top-level domain, or TLD. In aumahinay.dev, the TLD is .dev. In google.com, it is .com.",
+            "Each TLD is run by an organization called a registry, which keeps the master list of every name under it. "
+            "Verisign runs .com. Google Registry runs .dev. You do not buy a name from the registry directly. You buy "
+            "it through a registrar, a kind of store that sells names from many registries. I used Cloudflare.",
+            "One more thing that surprises beginners: you never own a domain forever. You rent it, usually one year at "
+            "a time, and it stays yours as long as you keep renewing. Miss the renewal, and someone else may take it.",
+            ("h", "The Crowded Neighborhood Called .com"),
+            ".com is the oldest and best-known TLD, and it is very crowded. According to Verisign's Domain Name "
+            "Industry Brief, there were 166.6 million .com names registered as of June 30, 2026, out of 401.6 million "
+            "domain names across all TLDs. That is more than four out of every ten domains on the internet.",
+            "With so many names taken, finding a short, clean .com that matches your own name is hard. People end up "
+            "adding hyphens, numbers, or words like \"official\" to get something that is still free. There is nothing "
+            "wrong with .com. It is simply full, and on its own it tells a visitor nothing about what you do.",
+            ("h", "What .dev Says Before You Even Open the Page"),
+            "Google Registry opened .dev to the public in early 2019, after an Early Access period that began on "
+            "February 19 of that year. Google described it as a home \"dedicated to developers and technology.\" Big "
+            "names use it too: GitHub has github.dev, Slack has slack.dev, and Cloudflare runs its developer platform "
+            "on workers.dev.",
+            "This website exists to show the software I build, mainly ALTOS and its two subsystems for local treasuries. "
+            "The site itself is written in Python. So .dev is an honest label. In four letters it tells you what kind "
+            "of work you will find here.",
+            "I am a treasurer by profession. Writing software is not part of my official duties. I do it on my own time "
+            "because I believe Philippine local treasuries deserve better tools. The .dev marks this website as the "
+            "place where that side of my work lives.",
+            ("h", "Secure by Default: The Part I Like Most"),
+            "This is the real reason, and it needs a short explanation. When your phone opens a website, the "
+            "information passes through many machines along the way: your Wi-Fi router, your internet provider, and "
+            "others you never see. With plain HTTP, that information travels like a postcard. Anyone who handles it "
+            "can read it, and can even change it.",
+            "HTTPS puts the postcard inside a sealed envelope. The message is encrypted, so others cannot read it, and "
+            "it is checked on arrival, so nobody can quietly change it along the way. The small padlock beside the "
+            "address in your browser means HTTPS is on.",
+            "Most websites can choose whether to use HTTPS. A .dev website cannot. Google's own announcement says .dev "
+            "is \"secure by default because it requires HTTPS\" on all .dev websites. There is no switch to turn it off.",
+            "How is that enforced? Through something called the HSTS preload list. HSTS stands for HTTP Strict "
+            "Transport Security. It is a rule that tells the browser: only ever talk to this website over HTTPS. "
+            "Normally, each website owner has to apply to be put on that list, one site at a time. With .dev, the "
+            "whole TLD is on the list. Chrome added .dev in version 63, in December 2017, together with .app, .page, "
+            ".foo and .chrome. According to the people who run the list, Firefox, Safari and Edge also keep preload "
+            "lists based on Chrome's.",
+            "What does this mean for you as a visitor? If you type http://aumahinay.dev, your browser does not even try "
+            "the unsafe way. It goes straight to the secure version. And if a .dev website ever loses its valid "
+            "security certificate, the browser refuses to open it instead of falling back to an unprotected connection.",
+            ("quote", "Safety should be the starting point, not a setting you have to remember to switch on."),
+            "In treasury work, we do not leave the cash box open and hope people behave. It is locked by default, and "
+            "every opening is recorded. ALTOS follows the same idea: receipts are numbered in strict sequence, and the "
+            "activity log is chained so that tampering shows. The .dev domain applies that same thinking to a website.",
+            "To be fair, a .com website can be just as secure if its owner sets up HTTPS properly, and most good "
+            "websites do. The difference is that with .dev, I cannot forget, and nobody can switch it off by mistake. "
+            "The rule is built into the address itself.",
+            ("h", "But This Site Has No Passwords. Why Care?"),
+            "It is true that this website has no login, no forms and no payments. But HTTPS protects more than "
+            "passwords. It also protects what you read. On public Wi-Fi, an unprotected page can be altered on its way "
+            "to you: an ad slipped in, or a link swapped for a bad one. Google's announcement mentions exactly this, "
+            "protection from ad malware and from tracking code injected by internet providers.",
+            "I write here about public finance, accountability and the law. When you read a post on this site, I want "
+            "you to be sure that the words on your screen are the words I wrote.",
+            ("h", "The Catch: You Need a Certificate"),
+            "Because HTTPS is required, every .dev website needs an SSL/TLS certificate, a kind of digital ID that proves "
+            "the website really is who it claims to be. Years ago, getting one cost money and paperwork. Today many "
+            "hosts do it for free and automatically. My site runs on Cloudflare Pages, which issued the certificate "
+            "and keeps renewing it for me. All I had to do was connect the domain.",
+            "Cost was a factor too. Cloudflare says it offers .dev registrations and renewals \"at wholesale prices, "
+            "with no additional markups.\" Many registrars advertise a cheap first year and then raise the price on "
+            "renewal. With at-cost pricing, what I pay each year follows the registry's own price.",
+            ("h", "Will .dev Hurt My Google Ranking?"),
+            "This was my biggest worry, so I checked. Google's answer is clear: \"Overall, our systems treat new gTLDs "
+            "like other gTLDs (like .com and .org).\" It also says that keywords in a TLD \"do not give any advantage or "
+            "disadvantage in search.\" In other words, .dev neither helps nor hurts. What matters is useful content, "
+            "written for people.",
+            ("h", "Why aumahinay and Not Just mahinay"),
+            "My first plan was mahinay.dev. In the end I chose aumahinay.dev. The \"au\" comes from my initials, A. U., "
+            "and the name is close to the one I already use for my email and my GitHub account, so people see one "
+            "consistent name wherever they find my work.",
+            ("h", "The Honest Downsides"),
+            "No choice is perfect. Some people type .com out of habit, so when I share the address I spell it out: "
+            "aumahinay dot dev.",
+            "There is also a small lesson from history. Before 2019, many programmers used made-up .dev addresses for "
+            "testing websites on their own computers. When browsers began requiring HTTPS for .dev, those setups "
+            "suddenly stopped working. The lesson for any builder: do not borrow a name that belongs to someone else, "
+            "even when it seems unused.",
+            ("h", "If You Are Choosing Your Own Address"),
+            ("point", "Make it about you or your work", "Your name, or a short name for what you do, ages better than a "
+             "clever word."),
+            ("point", "Keep it short and easy to say", "If you have to spell it twice over the phone, it is too long."),
+            ("point", "Pick a TLD that tells the truth", ".com for a business, .org for an organization, .ph to show "
+             "you are in the Philippines, and .dev for software and technology. A personal site should never look like "
+             "an official one; .gov.ph is for government offices."),
+            ("point", "Check the renewal price, not just the first year", "You will pay the renewal price every year after."),
+            ("point", "Turn on auto-renew", "Losing a domain because a renewal slipped is painful and sometimes permanent."),
+            ("point", "Use HTTPS everywhere", "With .dev you have no choice. With any other TLD, make it your choice."),
+            "A domain name is only a few letters, but it speaks before your website does. Mine says: this is where I "
+            "build, and it is locked by default. That is what I want people to expect from me, both in software and "
+            "in public finance.",
+            ("source", "Sources: ", "Google, \"hello dev\" (2019)", "https://developers.googleblog.com/2019/02/hello-dev.html", "; "),
+            ("source", "", "Eric Lawrence, \"Strict-Transport-Security for *.dev, *.app and more\"", "https://textslashplain.com/2017/12/05/strict-transport-security-for-dev/", "; "),
+            ("source", "", "HSTS Preload List", "https://hstspreload.org/", "; "),
+            ("source", "", "Verisign, Domain Name Industry Brief, Q2 2026", "https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name", "; "),
+            ("source", "", "Google Search Central, \"Google's handling of new top level domains\" (2015)", "https://developers.google.com/search/blog/2015/07/googles-handling-of-new-top-level", "; "),
+            ("source", "", "Cloudflare, Buy .dev domains", "https://www.cloudflare.com/application-services/products/registrar/buy-dev-domains/", "."),
+        ],
+},
+    {
         "date": "December 27, 2026",
         "title": "The ALTOS Framework, Principle 10: Build to Outlast the Builder",
         "publish_on": "2026-12-27",  # goes live on this date (Philippine time)
