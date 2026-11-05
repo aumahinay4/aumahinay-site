@@ -390,25 +390,25 @@ BLOG = [
         "slug": "so-close-to-alibijaban",
         "category": "personal",
         "summary": "On Hermano Puli Day, I sat alone on someone else's bangka in San Andres, Quezon, and looked out at an "
-                   "island I have loved for almost a decade. This time, I could not cross.",
+                   "island I have loved for almost three decades. This time, I could not cross.",
         "publish_on": None,  # hidden until Butch picks a date and says go
         "body": [
             ("photo", "blog/alibijaban-bangka.jpg", "Nine o'clock in the morning, November 4, 2026, on the shore of San Andres, Quezon", "half"),
             ("h", "Sitting on a Small Bangka"),
             "It was nine o'clock in the morning of November 4, 2026, and I was sitting on the edge of a motor bangka on "
             "the shore of San Andres, Quezon. The tide was low and the wet sand under my feet was rippled like a "
-            "washboard. Far across the water, I could see the low green line I had been missing for years: Alibijaban "
+            "washboard. Far across the water, I could see the low green line I had been missing for so many years: Alibijaban "
             "Island.",
             "The bangka was not mine. It belonged to someone in the village, resting on the sand with its long red "
             "outriggers stretched out like arms. I sat on it anyway, alone, looking out to sea and imagining that I was "
-            "about to push off. I knew I could not go that day, because I had to return to work. In my mind, I was "
+            "about to push off. I knew I could not go that day, because I had to head home that morning. In my mind, I was "
             "already on the other side, walking on white sand and wading into clear water.",
             "Behind me, a few people waded near the fish corrals and children played in the shallows. The sky was heavy "
             "with grey clouds, but the sea was quiet. On any other day, it would have been the perfect day to cross.",
             ("h", "A Holiday for Hermano Puli"),
             "November 4 is Hermano Puli Day, a special non-working day in our province of Quezon, declared by "
             "Malacañang each year. It marks the day we lost Apolinario de la Cruz, better known as Hermano Puli, a son "
-            "of Lucban who founded the Cofradía de San José. As a young man he wanted to become a priest, but the "
+            "of Lucban who founded the Cofradía de San José. As a young man, he wanted to become a priest, but the "
             "Spanish friars turned him away because he was an indio, a native of the islands. So he built a brotherhood "
             "of his own.",
             "The Spanish authorities saw his growing following as a threat. On November 1, 1841, Spanish soldiers "
@@ -418,7 +418,7 @@ BLOG = [
             "For many of us in Quezon, the holiday is a day of rest, a day with family, or a day to visit a place we "
             "love. For me, it was a chance to see again, even from afar, a place full of good memories. A free morning, "
             "a calm sea, and an island just across the water. If only I had one more day.",
-            ("h", "Too Late to Cross"),
+            ("h", "No Time to Cross"),
             "But the clock was not on my side. The island trip was never part of my plan this time. I had come for the "
             "farm. Every morning I went out to the farm, and every evening I came back to sleep at my father-in-law's "
             "house, just a short walk from where that bangka rested on the sand. By the time I sat on it on my last "
@@ -431,15 +431,14 @@ BLOG = [
             "Still, I was not really disappointed. Sometimes just being near a place you love reminds you why you love "
             "it. Sitting there, my mind drifted back to the many times I had already made that crossing.",
             ("h", "Memories of Alibijaban"),
-            "Almost a decade ago, I went to Alibijaban many times, and every trip felt like discovering it again. The "
+            "Almost three decades ago, I went to Alibijaban many times, and every trip felt like discovering it again. The "
             "sand is white and fine. The water is so clear that you can see the bottom as the bangka nears the shore. "
             "Along the beach stood beautiful cottages where you could rest in the shade, listen to the sea, and simply "
             "do nothing for a while.",
-            "What I loved most were the mangroves. Alibijaban has at least 22 kinds of mangrove trees, and the island "
-            "and its waters are now a protected area. Some are tall, with tangled roots rising out of the water. Others "
+            "What I loved most were the mangroves. Alibijaban has at least 22 kinds of mangrove trees. Some are tall, with tangled roots rising out of the water. Others "
             "are small and bushy along the edge of the shore. Walking near them felt like being in a quiet green forest "
             "standing in the sea. They are not only beautiful; they also protect the island and give shelter to fish, "
-            "crabs and shells.",
+            "crabs and shells. Today, the island and its waters are protected by law.",
             "And of course, there was the seafood. The island always seemed to have plenty, fresh from the water and "
             "cooked simply, best eaten with rice and good company by the beach. Even now, I can almost taste it, with "
             "the sea breeze on my face and sand between my toes.",
@@ -460,7 +459,7 @@ BLOG = [
             "and eat seafood until I cannot eat any more.",
             "Until then, I will keep this photo as a promise to myself. A man sitting on someone else's bangka, looking "
             "out at the sea, waiting for the right day.",
-            ("quote", "The island has waited almost ten years for me to come back. It can wait a little longer."),
+            ("quote", "The island has waited almost thirty years for me to come back. It can wait a little longer."),
             "If you are ever in Quezon, put Alibijaban on your list. Check the weather, choose a calm day, leave early, "
             "and go. And if you see a man staring out at the sea from a bangka in San Andres, that might just be me, "
             "still planning my return.",
