@@ -420,9 +420,11 @@ BLOG = [
             "This website exists to show the software I build, mainly ALTOS and its two subsystems for local treasuries. "
             "The site itself is written in Python. So .dev is an honest label. In four letters it tells you what kind "
             "of work you will find here.",
-            "I am a treasurer by profession. Writing software is not part of my official duties. I do it on my own time "
-            "because I believe Philippine local treasuries deserve better tools. The .dev marks this website as the "
-            "place where that side of my work lives.",
+            "Still, I should be clear about who I am. I am not a full-time developer. I am a certified local treasurer, "
+            "and my career is in the treasury service. Writing software is not part of my official duties. I do it on "
+            "my own time because I have seen, from the inside, how much paperwork a local treasury carries, and I "
+            "believe our offices deserve better tools. The .dev marks this website as the place where that side of my "
+            "work lives: a treasurer who builds.",
             ("h", "Secure by Default: The Part I Like Most"),
             "This is the real reason, and it needs a short explanation. When your phone opens a website, the "
             "information passes through many machines along the way: your Wi-Fi router, your internet provider, and "
@@ -492,13 +494,14 @@ BLOG = [
             ("point", "Use HTTPS everywhere", "With .dev you have no choice. With any other TLD, make it your choice."),
             "A domain name is only a few letters, but it speaks before your website does. Mine says: this is where I "
             "build, and it is locked by default. That is what I want people to expect from me, both in software and "
-            "in public finance.",
-            ("source", "Sources: ", "Google, \"hello dev\" (2019)", "https://developers.googleblog.com/2019/02/hello-dev.html", "; "),
-            ("source", "", "Eric Lawrence, \"Strict-Transport-Security for *.dev, *.app and more\"", "https://textslashplain.com/2017/12/05/strict-transport-security-for-dev/", "; "),
-            ("source", "", "HSTS Preload List", "https://hstspreload.org/", "; "),
-            ("source", "", "Verisign, Domain Name Industry Brief, Q2 2026", "https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name", "; "),
-            ("source", "", "Google Search Central, \"Google's handling of new top level domains\" (2015)", "https://developers.google.com/search/blog/2015/07/googles-handling-of-new-top-level", "; "),
-            ("source", "", "Cloudflare, Buy .dev domains", "https://www.cloudflare.com/application-services/products/registrar/buy-dev-domains/", "."),
+            "in the treasury service.",
+            ("h", "Sources"),
+            ("source", "", "Google, \"hello dev\" (2019)", "https://developers.googleblog.com/2019/02/hello-dev.html", ""),
+            ("source", "", "Eric Lawrence, \"Strict-Transport-Security for *.dev, *.app and more\"", "https://textslashplain.com/2017/12/05/strict-transport-security-for-dev/", ""),
+            ("source", "", "HSTS Preload List", "https://hstspreload.org/", ""),
+            ("source", "", "Verisign, Domain Name Industry Brief, Q2 2026", "https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name", ""),
+            ("source", "", "Google Search Central, \"Google's handling of new top level domains\" (2015)", "https://developers.google.com/search/blog/2015/07/googles-handling-of-new-top-level", ""),
+            ("source", "", "Cloudflare, Buy .dev domains", "https://www.cloudflare.com/application-services/products/registrar/buy-dev-domains/", ""),
         ],
 },
     {
