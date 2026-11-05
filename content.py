@@ -385,13 +385,13 @@ BLOG_CATEGORIES = [
 
 BLOG = [
     {
-        "date": "November 5, 2026",  # set to the publish date Butch picks
+        "date": "November 5, 2026",
         "title": "So Close to Alibijaban",
         "slug": "so-close-to-alibijaban",
         "category": "personal",
         "summary": "On Hermano Puli Day, I sat alone on someone else's bangka in San Andres, Quezon, and looked out at an "
                    "island I have loved for almost two decades. This time, I could not cross.",
-        "publish_on": None,  # hidden until Butch picks a date and says go
+        "publish_on": "2026-11-05",  # Butch said go, 2026-11-05 10:44 pm PH
         "body": [
             ("photo", "blog/alibijaban-bangka.jpg", "Nine o'clock in the morning, November 4, 2026, on the shore of San Andres, Quezon", "half"),
             ("h", "Sitting on a Small Bangka"),
