@@ -403,7 +403,7 @@ BLOG = [
             "outriggers stretched out like arms. I sat on it anyway, alone, looking out to sea and imagining that I was "
             "about to push off. I knew I could not go that day, because I had to head home that morning. In my mind, I was "
             "already on the other side, walking on white sand and wading into clear water.",
-            "Behind me, a few people waded near the fish corrals and children played in the shallows. The sky was heavy "
+            "Not far from me, a few people waded near the fish corrals and children played in the shallows. The sky was heavy "
             "with grey clouds, but the sea was quiet. On any other day, it would have been the perfect day to cross.",
             ("h", "A Holiday for Hermano Puli"),
             "November 4 is Hermano Puli Day, a special non-working day in our province of Quezon, declared by "
