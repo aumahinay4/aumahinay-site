@@ -386,6 +386,97 @@ BLOG_CATEGORIES = [
 BLOG = [
     {
         "date": "November 5, 2026",
+        "title": "So Close to Alibijaban",
+        "slug": "so-close-to-alibijaban",
+        "category": "personal",
+        "summary": "On Hermano Puli Day, I sat alone on someone else's bangka in San Andres, Quezon, and looked out at an "
+                   "island I have loved for almost two decades. This time, I could not cross.",
+        "publish_on": "2026-11-05",  # Butch said go, 2026-11-05 10:44 pm PH
+        "body": [
+            ("photo", "blog/alibijaban-bangka.jpg", "Nine o'clock in the morning, November 4, 2026, on the shore of San Andres, Quezon", "half"),
+            ("h", "Sitting on a Small Bangka"),
+            "It was nine o'clock in the morning of November 4, 2026, and I was sitting on the edge of a motor bangka on "
+            "the shore of San Andres, Quezon. The tide was low and the wet sand under my feet was rippled like a "
+            "washboard. Far across the water, I could see the low green line I had been missing for so many years: Alibijaban "
+            "Island.",
+            "The bangka was not mine. It belonged to someone in the village, resting on the sand with its long red "
+            "outriggers stretched out like arms. I sat on it anyway, alone, looking out to sea and imagining that I was "
+            "about to push off. I knew I could not go that day, because I had to head home that morning. In my mind, I was "
+            "already on the other side, walking on white sand and wading into clear water.",
+            "Not far from me, a few people waded near the fish corrals and children played in the shallows. The sky was heavy "
+            "with grey clouds, but the sea was quiet. On any other day, it would have been the perfect day to cross.",
+            ("h", "A Holiday for Hermano Puli"),
+            "November 4 is Hermano Puli Day, a special non-working day in our province of Quezon, declared by "
+            "Malacañang each year. It marks the day we lost Apolinario de la Cruz, better known as Hermano Puli, a son "
+            "of Lucban who founded the Cofradía de San José. As a young man, he wanted to become a priest, but the "
+            "Spanish friars turned him away because he was an indio, a native of the islands. So he built a brotherhood "
+            "of his own.",
+            "The Spanish authorities saw his growing following as a threat. On November 1, 1841, Spanish soldiers "
+            "attacked him and his followers. He escaped, but he was caught a few days later and executed in Tayabas on "
+            "November 4, 1841. Today we remember him as a hero who stood up for the dignity and faith of ordinary "
+            "Filipinos.",
+            "For many of us in Quezon, the holiday is a day of rest, a day with family, or a day to visit a place we "
+            "love. For me, it was a chance to see again, even from afar, a place full of good memories. A free morning, "
+            "a calm sea, and an island just across the water. If only I had one more day.",
+            ("h", "No Time to Cross"),
+            "But the clock was not on my side. The island trip was never part of my plan this time. I had come for the "
+            "farm. Every morning I went out to the farm, and every evening I came back to sleep at my father-in-law's "
+            "house, just a short walk from where that bangka rested on the sand. By the time I sat on it on my last "
+            "morning, it was nine o'clock, and I had to leave for home by eleven. Two hours is not enough for "
+            "Alibijaban. A trip there is not something you rush. You need time for the boat ride, time to walk the "
+            "beach, time to eat, and time to come back. And the next morning, I had to be back at the office.",
+            "So I stayed on the sand. I watched the small waves roll in and the faraway boats rock gently at anchor. I "
+            "admit it was a little sad. The island was right there, close enough to see, but not close enough for that "
+            "day.",
+            "Still, I was not really disappointed. Sometimes just being near a place you love reminds you why you love "
+            "it. Sitting there, my mind drifted back to the many times I had already made that crossing.",
+            ("h", "Memories of Alibijaban"),
+            "Almost two decades ago, I went to Alibijaban many times, and every trip felt like discovering it again. The "
+            "sand is white and fine. The water is so clear that you can see the bottom as the bangka nears the shore. "
+            "Along the beach stood beautiful cottages where you could rest in the shade, listen to the sea, and simply "
+            "do nothing for a while.",
+            "What I loved most were the mangroves. Alibijaban has many kinds of mangrove trees. Some are tall, with tangled roots rising out of the water. Others "
+            "are small and bushy along the edge of the shore. Walking near them felt like being in a quiet green forest "
+            "standing in the sea. They are not only beautiful; they also protect the island and give shelter to fish, "
+            "crabs and shells. Since 2025, a national law has protected the island and its waters as the Alibijaban Protected Landscape and Seascape.",
+            "And of course, there was the seafood. The island always seemed to have plenty, fresh from the water and "
+            "cooked simply, best eaten with rice and good company by the beach. Even now, I can almost taste it, with "
+            "the sea breeze on my face and sand between my toes.",
+            ("h", "Four Days in San Andres"),
+            "My four free days came together almost by chance. Undas gave me the first two: All Saints' Day on "
+            "Sunday, November 1, and All Souls' Day on Monday, November 2, a special non-working day this year. On "
+            "Tuesday, November 3, I was on wellness leave. Some employees were asked to attend the flower offering "
+            "for Hermano Puli, but because I was on leave, I was not one of them. Then came the holiday itself on "
+            "Wednesday, November 4. My Undas break simply kept going.",
+            "I stayed in San Andres, Quezon, for four days, and the sea could not have been kinder. The waves were very "
+            "calm, exactly the kind of sea you hope for when you plan to ride a small bangka across open water. The sea "
+            "is not always this kind, so a stretch of calm days feels like a gift.",
+            "Those four days reminded me how much I enjoy the slow pace of the coast. Mornings start early. Fishermen "
+            "come and go, and the shore changes with every tide. When the water pulls back, the sand shows its ripples "
+            "and the bamboo poles of the fish corrals stand out in long lines. When the water returns, the bangkas "
+            "float again and everything seems ready for a trip.",
+            "It is the kind of place where you stop checking the time, until you remember that you have work waiting "
+            "for you back home.",
+            ("h", "Next Time, I Will Plan Early"),
+            "This trip taught me a simple lesson: the island deserves a day of its own. Next time, I will plan ahead. I "
+            "will arrange a bangka the day before, leave in the morning while the sea is calm, and give myself a whole "
+            "day on Alibijaban. I want to walk among the mangroves again, swim in that clear water, rest in a cottage, "
+            "and eat seafood until I cannot eat any more.",
+            "Until then, I will keep this photo as a promise to myself. A man sitting on someone else's bangka, looking "
+            "out at the sea, waiting for the right day.",
+            ("quote", "The island has waited almost twenty years for me to come back. It can wait a little longer."),
+            "If you are ever in Quezon, put Alibijaban on your list. Check the weather, choose a calm day, leave early, "
+            "and go. And if you see a man staring out at the sea from a bangka in San Andres, that might just be me, "
+            "still planning my return.",
+            ("ask", "Is there a place you can see from afar but have not visited in years? I'd love to hear about it."),
+            ("h", "Sources"),
+            ("source", "", "Proclamation No. 1051, s. 2025: November 4 special non-working day in Quezon", "https://lawphil.net/executive/proc/proc2025/proc_1051_2025.html", ""),
+            ("source", "", "Inquirer, \"Nov. 4 a special day in Quezon province to remember hero 'Hermano Puli'\" (2022)", "https://newsinfo.inquirer.net/1681344/nov-4-a-special-day-in-quezon-province-to-remember-hero-hermano-puli", ""),
+            ("source", "", "Republic Act No. 12226 (2025): Alibijaban Protected Landscape and Seascape Act", "https://lawphil.net/statutes/repacts/ra2025/ra_12226_2025.html", ""),
+        ],
+    },
+    {
+        "date": "November 5, 2026",
         "title": "Why .dev and Not .com: How I Chose My Website's Address",
         "slug": "why-dev-and-not-com",
         "category": "software",
