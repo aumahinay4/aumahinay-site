@@ -385,12 +385,12 @@ BLOG_CATEGORIES = [
 
 BLOG = [
     {
-        "date": "November 2026",
+        "date": "November 5, 2026",
         "title": "Why .dev and Not .com: How I Chose My Website's Address",
         "slug": "why-dev-and-not-com",
         "category": "software",
         "summary": "Most people expect a .com. I chose aumahinay.dev. Here is why, in plain words, and what it taught me about building things that are safe by default.",
-        "publish_on": None,  # hidden until Butch says go
+        "publish_on": "2026-11-05",  # Butch said go, 2026-11-05 8 pm PH
         "body": [
             "When I bought the address for this website on October 25, 2026, I did not pick a .com. I picked "
             "aumahinay.dev. Most people expect a website to end in .com, so you may wonder why mine does not. Isn't .com "
