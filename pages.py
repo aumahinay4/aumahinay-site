@@ -116,7 +116,9 @@ def person_json_ld():
                 "@type": "WebSite",
                 "@id": url + "#website",
                 "url": url,
+                # Google shows this site name beside the photo in search results
                 "name": SITE["short_name"],
+                "alternateName": [SITE["name"], SITE["domain"]],
                 "inLanguage": "en",
             },
             {
@@ -148,15 +150,15 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.meta(name="theme-color", content="#0b1630", media="(prefers-color-scheme: light)"),
             t.meta(name="theme-color", content="#0e1c3d", media="(prefers-color-scheme: dark)"),
             t.title(page_title),
-            # aumahinay.dev is the only address: test copies on *.pages.dev jump to it
-            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname)) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
+            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{url}") if url else None,
             t.meta(name="description", content=description or SITE["tagline"]),
             t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
             t.script(Raw(person_json_ld()), type="application/ld+json") if active == "/" else None,
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
             t.meta(property="og:type", content=og_type),
-            t.meta(property="og:site_name", content=SITE["domain"]),
+            t.meta(property="og:site_name", content=SITE["short_name"]),  # his name, not the domain
             t.meta(property="og:title", content=page_title),
             t.meta(property="og:description", content=description or SITE["tagline"]),
             t.meta(property="og:url", content=f"https://{SITE['domain']}{url}"),
