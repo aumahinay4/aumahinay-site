@@ -473,9 +473,10 @@ BLOG = [
             "disadvantage in search.\" In other words, .dev neither helps nor hurts. What matters is useful content, "
             "written for people.",
             ("h", "Why aumahinay and Not Just mahinay"),
-            "My first plan was mahinay.dev. In the end I chose aumahinay.dev. The \"au\" comes from my initials, A.\u00a0U., "
-            "and the name is close to the one I already use for my email and my GitHub account, so people see one "
-            "consistent name wherever they find my work.",
+            "My first plan was mahinay.dev. In the end I chose aumahinay.dev. The \"au\" comes from my initials: A for my "
+            "first name, Ambrosio, and U for my mother's surname, which, as is the custom in the Philippines, I carry "
+            "as my middle name. The name is also close to the one I already use for my email and my GitHub account, so "
+            "people see one consistent name wherever they find my work.",
             ("h", "The Honest Downsides"),
             "No choice is perfect. Some people type .com out of habit, so when I share the address I spell it out: "
             "aumahinay dot dev.",
