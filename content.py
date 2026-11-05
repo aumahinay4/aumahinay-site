@@ -443,6 +443,11 @@ BLOG = [
             "cooked simply, best eaten with rice and good company by the beach. Even now, I can almost taste it, with "
             "the sea breeze on my face and sand between my toes.",
             ("h", "Four Days in San Andres"),
+            "My four free days came together almost by chance. Undas gave me the first two: All Saints' Day on "
+            "Sunday, November 1, and All Souls' Day on Monday, November 2, a special non-working day this year. On "
+            "Tuesday, November 3, I was on wellness leave. Some employees were asked to attend the flower offering "
+            "for Hermano Puli, but because I was on leave, I was not one of them. Then came the holiday itself on "
+            "Wednesday, November 4. My Undas break simply kept going.",
             "I stayed in San Andres, Quezon, for four days, and the sea could not have been kinder. The waves were very "
             "calm, exactly the kind of sea you hope for when you plan to ride a small bangka across open water. The sea "
             "is not always this kind, so a stretch of calm days feels like a gift.",
