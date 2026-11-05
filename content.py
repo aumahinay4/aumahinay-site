@@ -410,7 +410,7 @@ BLOG = [
             "Industry Brief, there were 166.6 million .com names registered as of June 30, 2026, out of 401.6 million "
             "domain names across all TLDs. That is more than four out of every ten domains on the internet.",
             "With so many names taken, finding a short, clean .com that matches your own name is hard. People end up "
-            "adding hyphens, numbers, or words like \"official\" to get something that is still free. There is nothing "
+            "adding hyphens, numbers, or words like \"official\" to get something that is still available. There is nothing "
             "wrong with .com. It is simply full, and on its own it tells a visitor nothing about what you do.",
             ("h", "What .dev Says Before You Even Open the Page"),
             "Google Registry opened .dev to the public in early 2019, after an Early Access period that began on "
@@ -420,13 +420,13 @@ BLOG = [
             "This website exists to show the software I build, mainly ALTOS and its two subsystems for local treasuries. "
             "The site itself is written in Python. So .dev is an honest label. In four letters it tells you what kind "
             "of work you will find here.",
-            "Still, I should be clear about who I am. I am not a full-time developer. I am a certified local treasurer, "
-            "and my career is in the treasury service. Writing software is not part of my official duties. I do it on "
-            "my own time because I have seen, from the inside, how much paperwork a local treasury carries, and I "
-            "believe our offices deserve better tools. The .dev marks this website as the place where that side of my "
-            "work lives: a treasurer who builds.",
+            "Still, I should be clear about who I am. I am not a full-time developer. I work in the treasury service, "
+            "and that is where my career is. Writing software is not part of my official duties. I do it on my own "
+            "time because I have seen, from the inside, how much paperwork a local treasury carries, and I believe our "
+            "offices deserve better tools. The .dev marks this website as the place where that side of my work lives: "
+            "a treasury worker who builds.",
             ("h", "Secure by Default: The Part I Like Most"),
-            "This is the real reason, and it needs a short explanation. When your phone opens a website, the "
+            "This is my main reason, and it needs a short explanation. When your phone opens a website, the "
             "information passes through many machines along the way: your Wi-Fi router, your internet provider, and "
             "others you never see. With plain HTTP, that information travels like a postcard. Anyone who handles it "
             "can read it, and can even change it.",
@@ -434,16 +434,17 @@ BLOG = [
             "it is checked on arrival, so nobody can quietly change it along the way. The small padlock beside the "
             "address in your browser means HTTPS is on.",
             "Most websites can choose whether to use HTTPS. A .dev website cannot. Google's own announcement says .dev "
-            "is \"secure by default because it requires HTTPS\" on all .dev websites. There is no switch to turn it off.",
-            "How is that enforced? Through something called the HSTS preload list. HSTS stands for HTTP Strict "
+            "is \"secure by default because it requires HTTPS\" for every .dev website. There is no switch to turn it off.",
+            "How is that enforced? Through a list called the HSTS preload list. HSTS stands for HTTP Strict "
             "Transport Security. It is a rule that tells the browser: only ever talk to this website over HTTPS. "
             "Normally, each website owner has to apply to be put on that list, one site at a time. With .dev, the "
             "whole TLD is on the list. Chrome added .dev in version 63, in December 2017, together with .app, .page, "
             ".foo and .chrome. According to the people who run the list, Firefox, Safari and Edge also keep preload "
             "lists based on Chrome's.",
             "What does this mean for you as a visitor? If you type http://aumahinay.dev, your browser does not even try "
-            "the unsafe way. It goes straight to the secure version. And if a .dev website ever loses its valid "
-            "security certificate, the browser refuses to open it instead of falling back to an unprotected connection.",
+            "the unsafe way. It goes straight to the secure version. And if a .dev website ever has a problem with its "
+            "security certificate, the browser shows a warning and does not let visitors click past it to an unprotected "
+            "connection.",
             ("quote", "Safety should be the starting point, not a setting you have to remember to switch on."),
             "In treasury work, we do not leave the cash box open and hope people behave. It is locked by default, and "
             "every opening is recorded. ALTOS follows the same idea: receipts are numbered in strict sequence, and the "
@@ -472,7 +473,7 @@ BLOG = [
             "disadvantage in search.\" In other words, .dev neither helps nor hurts. What matters is useful content, "
             "written for people.",
             ("h", "Why aumahinay and Not Just mahinay"),
-            "My first plan was mahinay.dev. In the end I chose aumahinay.dev. The \"au\" comes from my initials, A. U., "
+            "My first plan was mahinay.dev. In the end I chose aumahinay.dev. The \"au\" comes from my initials, A.\u00a0U., "
             "and the name is close to the one I already use for my email and my GitHub account, so people see one "
             "consistent name wherever they find my work.",
             ("h", "The Honest Downsides"),
