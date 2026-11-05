@@ -390,7 +390,7 @@ BLOG = [
         "slug": "so-close-to-alibijaban",
         "category": "personal",
         "summary": "On Hermano Puli Day, I sat alone on someone else's bangka in San Andres, Quezon, and looked out at an "
-                   "island I have loved for almost three decades. This time, I could not cross.",
+                   "island I have loved for almost two decades. This time, I could not cross.",
         "publish_on": None,  # hidden until Butch picks a date and says go
         "body": [
             ("photo", "blog/alibijaban-bangka.jpg", "Nine o'clock in the morning, November 4, 2026, on the shore of San Andres, Quezon", "half"),
@@ -431,7 +431,7 @@ BLOG = [
             "Still, I was not really disappointed. Sometimes just being near a place you love reminds you why you love "
             "it. Sitting there, my mind drifted back to the many times I had already made that crossing.",
             ("h", "Memories of Alibijaban"),
-            "Almost three decades ago, I went to Alibijaban many times, and every trip felt like discovering it again. The "
+            "Almost two decades ago, I went to Alibijaban many times, and every trip felt like discovering it again. The "
             "sand is white and fine. The water is so clear that you can see the bottom as the bangka nears the shore. "
             "Along the beach stood beautiful cottages where you could rest in the shade, listen to the sea, and simply "
             "do nothing for a while.",
@@ -459,7 +459,7 @@ BLOG = [
             "and eat seafood until I cannot eat any more.",
             "Until then, I will keep this photo as a promise to myself. A man sitting on someone else's bangka, looking "
             "out at the sea, waiting for the right day.",
-            ("quote", "The island has waited almost thirty years for me to come back. It can wait a little longer."),
+            ("quote", "The island has waited almost twenty years for me to come back. It can wait a little longer."),
             "If you are ever in Quezon, put Alibijaban on your list. Check the weather, choose a calm day, leave early, "
             "and go. And if you see a man staring out at the sea from a bangka in San Andres, that might just be me, "
             "still planning my return.",
