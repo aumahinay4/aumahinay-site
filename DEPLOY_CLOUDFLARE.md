@@ -30,3 +30,18 @@ Never paste the token anywhere else, including chats.
 pip install -r requirements.txt
 python app.py        # open http://127.0.0.1:5000
 ```
+
+## Heart and Like buttons (one-time setup)
+
+The Heart and Like buttons under blog posts and lessons count taps with a small
+Cloudflare Pages Function (`functions/api/likes.js`, deployed together with
+`dist/`). It needs a place to keep the counts:
+
+1. Cloudflare dashboard > Storage & Databases > Workers KV > Create namespace,
+   name it `aumahinay-likes`.
+2. Workers & Pages > aumahinay > Settings > Bindings > Add > KV namespace:
+   variable name `LIKES`, namespace `aumahinay-likes`. Save.
+3. Run the deploy again (GitHub > Actions > Deploy > Run workflow).
+
+Until this is done the Heart and Like buttons stay hidden (Share still shows); nothing else breaks.
+Free plan limit: 1,000 KV writes a day; each tap uses 2, so about 500 taps a day.

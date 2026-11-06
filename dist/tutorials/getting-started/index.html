@@ -486,6 +486,22 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15.375px; }
 @media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
 
+/* Heart, Like and Share buttons under each blog post and lesson */
+.react { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+.react-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px 9px 13px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 14.35px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s; --c: var(--blue-ink); --f: var(--blue); }
+.react-btn[hidden] { display: none; }
+.react-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.react-heart { --c: var(--coral-ink); --f: var(--coral); }
+.react-share { --c: var(--muted); }
+.react-btn:hover { border-color: var(--c); }
+.react-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.react-btn[aria-pressed="true"] { border-color: var(--c); background: color-mix(in srgb, var(--f) 14%, var(--surface)); }
+.react-btn[aria-pressed="true"] svg { fill: var(--c); transform: scale(1.1); }
+.react-count { color: var(--muted); font-weight: 500; }
+.react-count:empty { display: none; }
+.react-btn:disabled { cursor: progress; }
+.lesson-page .react ~ .lesson-nav { margin-top: 26px; }
+
 /* Newer / older post links under a post */
 .post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
 .post-steps a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
@@ -592,6 +608,7 @@ figure.screenshot figcaption { font-size: 13.2379px; }
 .post-card .meta { font-size: 14.7087px; }
 .post-card h2 { font-size: calc(clamp(1.2812rem, 2.665vw, 1.5375rem) * 1.025); }
 .post-card .more { font-size: 15.7594px; }
+.react-btn { font-size: 14.7087px; }
 .post-steps .muted { font-size: 13.6581px; }
 .crumb { font-size: 14.1834px; }
 .reader .count { font-size: 14.1834px; }
@@ -616,7 +633,61 @@ Receipts today: 3
 First amount: 1250.75
 Python can do arithmetic: 14
 </pre></figure><p>Each print line in the code produced one line of output. Notice that 2 + 3 * 4 gives 14, not 20: Python multiplies before it adds, just like a calculator in scientific mode.</p><h2>5. Install extra libraries with pip</h2><p>Python comes with many modules built in. Others, such as pandas for Lesson 4, are installed once with pip:</p><figure class="codebox terminal"><figcaption><span class="fname">Command Prompt / Terminal</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>py -m pip install pandas openpyxl          (Windows)
-python3 -m pip install pandas openpyxl     (Mac)</code></pre></figure><h2>When something goes wrong</h2><p class="point"><code>&#x27;python&#x27; is not recognized</code> On Windows, close Command Prompt, open a new one and try again, or use py instead of python. If neither works, press the Windows key, type Manage app execution aliases, open it and make sure the Python entries are switched on. The same fix applies if typing python opens the Microsoft Store. If you used the older .exe installer, run it again, choose Modify, and tick Add Python to environment variables.</p><p class="point"><code>No such file or directory</code> Command Prompt is looking in a different folder. Use cd to move into the folder where you saved the file, and type dir (Windows) or ls (Mac) to see the files there.</p><p class="point"><code>SyntaxError</code> Something in the code was typed differently, often a missing quote, bracket or colon. Python shows the line number; compare that line with the lesson.</p><p class="point"><code>IndentationError</code> Python uses the spaces at the start of a line to group code. Lines inside a for or with block must be indented by the same amount, usually four spaces.</p><p class="point"><code>ModuleNotFoundError: No module named &#x27;pandas&#x27;</code> The library is not installed yet. Run the pip command above.</p><p class="tip"><b>Note: </b>Copying the code from this page with the Copy button is the safest way to start. Once a script runs, change one thing at a time and run it again to see what happens.</p><div class="lesson-nav"><span></span><span class="muted">Lesson 1 comes out November 7, 2026</span></div><script>
+python3 -m pip install pandas openpyxl     (Mac)</code></pre></figure><h2>When something goes wrong</h2><p class="point"><code>&#x27;python&#x27; is not recognized</code> On Windows, close Command Prompt, open a new one and try again, or use py instead of python. If neither works, press the Windows key, type Manage app execution aliases, open it and make sure the Python entries are switched on. The same fix applies if typing python opens the Microsoft Store. If you used the older .exe installer, run it again, choose Modify, and tick Add Python to environment variables.</p><p class="point"><code>No such file or directory</code> Command Prompt is looking in a different folder. Use cd to move into the folder where you saved the file, and type dir (Windows) or ls (Mac) to see the files there.</p><p class="point"><code>SyntaxError</code> Something in the code was typed differently, often a missing quote, bracket or colon. Python shows the line number; compare that line with the lesson.</p><p class="point"><code>IndentationError</code> Python uses the spaces at the start of a line to group code. Lines inside a for or with block must be indented by the same amount, usually four spaces.</p><p class="point"><code>ModuleNotFoundError: No module named &#x27;pandas&#x27;</code> The library is not installed yet. Run the pip command above.</p><p class="tip"><b>Note: </b>Copying the code from this page with the Copy button is the safest way to start. Once a script runs, change one thing at a time and run it again to see what happens.</p><div class="react" data-page="/tutorials/getting-started/"><button type="button" class="react-btn react-heart" aria-pressed="false" aria-label="Heart this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="react-word">Heart</span><span class="react-count"></span></button><button type="button" class="react-btn react-like" aria-pressed="false" aria-label="Like this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg><span class="react-word">Like</span><span class="react-count"></span></button><button type="button" class="react-btn react-share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="react-word" aria-live="polite">Share</span></button></div><script>
+(function () {
+  var box = document.querySelector(".react");
+  if (!box) return;
+  var page = box.getAttribute("data-page");
+  var share = box.querySelector(".react-share"), shareWord = share.querySelector(".react-word");
+  share.addEventListener("click", function () {
+    var c = document.querySelector('link[rel="canonical"]');
+    var url = c ? c.href : location.href, title = document.title;
+    function copied(ok) {
+      shareWord.textContent = ok ? "Link copied" : "Share";
+      if (ok) setTimeout(function () { shareWord.textContent = "Share"; }, 2000);
+    }
+    if (navigator.share) { navigator.share({ title: title, url: url }).catch(function () {}); return; }
+    if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function () { copied(true); }, function () { prompt("Copy this link:", url); }); return; }
+    prompt("Copy this link:", url);
+  });
+  if (!window.fetch) return;
+  var v;
+  try { v = localStorage.getItem("visitor"); } catch (e) {}
+  if (!/^[a-f0-9]{32}$/.test(v || "")) {
+    var a = new Uint8Array(16);
+    crypto.getRandomValues(a);
+    v = Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+    try { localStorage.setItem("visitor", v); } catch (e) {}
+  }
+  var now, btns = { heart: box.querySelector(".react-heart"), like: box.querySelector(".react-like") };
+  function show(kind, s) {
+    var b = btns[kind];
+    b.setAttribute("aria-pressed", s.on);
+    b.querySelector(".react-count").textContent = s.count ? s.count.toLocaleString("en") : "";
+    b.hidden = false;
+  }
+  function showAll(s) { show("heart", s.heart); show("like", s.like); }
+  fetch("/api/likes?page=" + encodeURIComponent(page) + "&v=" + v)
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (s) { if (s && s.heart && s.like) { now = s; showAll(s); } })
+    .catch(function () {});
+  Object.keys(btns).forEach(function (kind) {
+    var b = btns[kind];
+    b.addEventListener("click", function () {
+      if (!now || b.disabled) return;
+      var want = !now[kind].on;
+      show(kind, { on: want, count: Math.max(0, now[kind].count + (want ? 1 : -1)) });  // answer the tap right away
+      b.disabled = true;
+      fetch("/api/likes", { method: "POST", headers: { "content-type": "application/json" },
+                            body: JSON.stringify({ page: page, v: v, kind: kind, on: want }) })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (s) { if (s && s.heart) now = s; showAll(now); })
+        .catch(function () { showAll(now); })
+        .then(function () { b.disabled = false; });
+    });
+  });
+})();
+</script><div class="lesson-nav"><span></span><span class="muted">Lesson 1 comes out November 7, 2026</span></div><script>
 document.addEventListener("click", function (e) {
   var b = e.target.closest("button[data-copy]");
   if (!b) return;

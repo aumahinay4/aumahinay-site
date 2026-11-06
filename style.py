@@ -491,6 +491,22 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15.375px; }
 @media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
 
+/* Heart, Like and Share buttons under each blog post and lesson */
+.react { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+.react-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px 9px 13px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 14.35px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s; --c: var(--blue-ink); --f: var(--blue); }
+.react-btn[hidden] { display: none; }
+.react-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.react-heart { --c: var(--coral-ink); --f: var(--coral); }
+.react-share { --c: var(--muted); }
+.react-btn:hover { border-color: var(--c); }
+.react-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.react-btn[aria-pressed="true"] { border-color: var(--c); background: color-mix(in srgb, var(--f) 14%, var(--surface)); }
+.react-btn[aria-pressed="true"] svg { fill: var(--c); transform: scale(1.1); }
+.react-count { color: var(--muted); font-weight: 500; }
+.react-count:empty { display: none; }
+.react-btn:disabled { cursor: progress; }
+.lesson-page .react ~ .lesson-nav { margin-top: 26px; }
+
 /* Newer / older post links under a post */
 .post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
 .post-steps a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }

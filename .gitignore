@@ -5,3 +5,4 @@ preview.html
 *.zip
 tutorials/**/*.xlsx
 tutorials/**/audit_log.json
+.wrangler/
