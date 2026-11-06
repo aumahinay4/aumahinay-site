@@ -491,6 +491,19 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15.375px; }
 @media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
 
+/* Heart (Like) button under each blog post and lesson */
+.like { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+.like[hidden] { display: none; }
+.like-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px 9px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 14.35px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s, transform .15s; }
+.like-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--coral-ink); stroke-width: 2; stroke-linejoin: round; transition: transform .2s; }
+.like-btn:hover { border-color: var(--coral-ink); }
+.like-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.like-btn[aria-pressed="true"] { border-color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 14%, var(--surface)); }
+.like-btn[aria-pressed="true"] svg { fill: var(--coral-ink); transform: scale(1.12); }
+.like-btn:disabled { cursor: progress; }
+.like-count { color: var(--muted); font-size: 13.8375px; }
+.lesson-page .like ~ .lesson-nav { margin-top: 26px; }
+
 /* Newer / older post links under a post */
 .post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
 .post-steps a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }

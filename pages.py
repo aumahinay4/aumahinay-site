@@ -672,6 +672,7 @@ def lesson_page(x):
             tag_list(x["topics"]),
             t.div(t.p("In this lesson", class_="eyebrow"), t.ul([t.li(item) for item in x["learn"]]), class_="card learn"),
             [lesson_block(x, b) for b in x["body"]],
+            like_box(lesson_url(x)),
             t.div(
                 t.a("← Lesson " + str(prev["number"]), href=lesson_url(prev)) if prev else t.span(),
                 (t.a("Lesson " + str(nxt["number"]) + " →", href=lesson_url(nxt)) if nxt_open
@@ -818,6 +819,61 @@ def blog():
     )
 
 
+# The heart (Like) button under each blog post and lesson. The counts are kept by
+# functions/api/likes.js on Cloudflare. The button only appears once that answers,
+# so it stays hidden when previewing locally or if likes are switched off.
+LIKE_SCRIPT = """
+(function () {
+  var box = document.querySelector(".like");
+  if (!box || !window.fetch) return;
+  var btn = box.querySelector("button"), count = box.querySelector(".like-count"), page = box.getAttribute("data-page");
+  var v;
+  try { v = localStorage.getItem("visitor"); } catch (e) {}
+  if (!/^[a-f0-9]{32}$/.test(v || "")) {
+    var a = new Uint8Array(16);
+    (window.crypto || window.msCrypto).getRandomValues(a);
+    v = Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+    try { localStorage.setItem("visitor", v); } catch (e) {}
+  }
+  function show(s) {
+    btn.setAttribute("aria-pressed", s.liked);
+    btn.querySelector(".like-word").textContent = s.liked ? "Liked" : "Like";
+    count.textContent = s.count === 0 ? "Be the first to like this" : s.count === 1 ? "1 like" : s.count.toLocaleString("en") + " likes";
+    box.hidden = false;
+  }
+  var now;
+  fetch("/api/likes?page=" + encodeURIComponent(page) + "&v=" + v)
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (s) { if (s && typeof s.count === "number") { now = s; show(s); } })
+    .catch(function () {});
+  btn.addEventListener("click", function () {
+    if (!now || btn.disabled) return;
+    var want = !now.liked;
+    show({ liked: want, count: Math.max(0, now.count + (want ? 1 : -1)) });  // answer the tap right away
+    btn.disabled = true;
+    fetch("/api/likes", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ page: page, v: v, like: want }) })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (s) { if (s) now = s; show(now); })
+      .catch(function () { show(now); })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+"""
+
+HEART = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>')
+
+
+def like_box(url):
+    return [
+        t.div(
+            t.button(HEART, t.span("Like", class_="like-word"), type="button", class_="like-btn", aria_pressed="false"),
+            t.span(class_="like-count", aria_live="polite"),
+            class_="like", data_page=url, hidden=True,
+        ),
+        t.script(Raw(LIKE_SCRIPT)),
+    ]
+
+
 def post_page(b):
     """One blog post on its own page, with links to the newer and older posts."""
     posts = live_posts()
@@ -833,6 +889,7 @@ def post_page(b):
         t.div(
             t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
             blog_post(b),
+            like_box(post_url(b)),
             t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
                   aria_label="More posts"),
             t.p("Views here are my own and do not represent any government office.", class_="muted note"),
