@@ -125,6 +125,21 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 }
 @media (max-width: 640px) { .hero { --bgap: 8px; } }
 
+/* Photo inside the home hero: same size and ALTOS colour ring as the top-bar photo (31px), beside the name, all screens */
+.hero-photo { width: 31px; height: 31px; border-radius: 50%; display: block; object-fit: cover; box-sizing: border-box; padding: 3px;
+  background: radial-gradient(closest-side, var(--navy-deep) 86%, transparent 87%),
+              conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg); }
+.hero { grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 0; }
+.hero-text { display: contents; }
+.hero-name { display: contents; }
+.hero-photo { grid-column: 1; grid-row: 1; align-self: center; margin-block: -8px; }  /* centred on the name line itself; negative margin keeps the colour bar nearly touching the name */
+.hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
+.hero .rule { grid-column: 2; grid-row: 2; margin-bottom: 26.35px; }  /* intro moved up 25% then 15% more (gap was ~41px) */
+.hero .lead { margin-top: 0; }
+.hero .lead { grid-column: 1 / -1; grid-row: 3; }
+.hero .btns { grid-column: 1 / -1; grid-row: 4; }
+.hero .lead { margin-bottom: 0; }  /* keeps the same gap above the buttons as before (grid margins do not overlap) */
+
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15.127px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
@@ -318,7 +333,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 @media (max-width: 640px) {
   main { padding: 12px 0 64px; }
   main .wrap { padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }  /* phones, all pages: less empty space at the sides (was 20px) */
-  .hero .rule { margin-bottom: 14px; }  /* phones: intro sits a little closer under the colour bar */
+  .hero .rule { margin-bottom: 21.25px; }  /* phones: intro moved up 25% then 15% more (gap was 33px) */
   main h2 + p, h2 + .muted { margin-top: 10px; }  /* phones: text a little closer under each heading bar */
   main h2 + :not(p, .muted) { margin-top: 16px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */

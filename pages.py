@@ -180,7 +180,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
         t.body(
             t.header(
                 t.div(
-                    t.a(t.img(src=asset_url("avatar.png"), alt="", width="31", height="31", class_="avatar"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand"),
+                    t.a(t.img(src=asset_url("avatar.png"), alt="", width="31", height="31", class_="avatar"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand") if active != "/" else None,  # Home shows the photo and name in the banner instead
                     t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
                     t.button(FULLSCREEN_ICON, type="button", id="fs", class_="fs", title="Full screen", aria_label="Full screen", aria_pressed="false", hidden=True),
                     class_="wrap",
@@ -280,9 +280,9 @@ def home():
     return part(
         "Home", "/",
         t.div(
+            t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
             t.div(
-                t.h1(SITE["title"]),
-                t.div(class_="rule"),
+                t.div(t.h1(SITE["title"]), t.div(class_="rule"), class_="hero-name"),
                 t.p(SITE["tagline"] + " My tools make treasury work faster, more accurate, and easier to audit.", class_="lead"),
                 t.div(
                     t.a("See ALTOS", href="/projects/", class_="btn ghost"),
