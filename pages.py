@@ -180,7 +180,6 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
         t.body(
             t.header(
                 t.div(
-                    t.a(t.img(src=asset_url("avatar.png"), alt="", width="31", height="31", class_="avatar"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand") if active != "/" else None,  # Home shows the photo and name in the banner instead
                     t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
                     t.button(FULLSCREEN_ICON, type="button", id="fs", class_="fs", title="Full screen", aria_label="Full screen", aria_pressed="false", hidden=True),
                     class_="wrap",
@@ -271,6 +270,12 @@ def cert_card(c):
     )
 
 
+def photo_title(*h1_args, **h1_kw):
+    """Page title with Butch's ringed photo beside it (photo only here, not in the top bar)."""
+    return t.div(t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
+                 t.h1(*h1_args, **h1_kw), class_="about-hello")
+
+
 def section_head(title, link_text, href):
     return t.div(t.h2(title), t.a(f"{link_text} →", href=href, class_="more"), class_="section-head")
 
@@ -334,7 +339,7 @@ def projects():
     return part(
         "Projects", "/projects/",
         t.p("Software", class_="eyebrow"),
-        t.h1("Projects"),
+        photo_title("Projects"),
         t.p(
             "ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections "
             "and the Treasury Disbursement System for disbursements, each with its own reports.",
@@ -477,7 +482,7 @@ def courses():
     return part(
         "Courses", "/courses/",
         t.p("Learning", class_="eyebrow"),
-        t.h1("Completed courses"),
+        photo_title("Completed courses"),
         t.p(
             "I began learning on Coursera through Google Career Certificates (GCC) in 2020, during the pandemic, "
             "while serving as Acting Municipal Treasurer of Mulanay, Quezon. In 2024 I committed to the GCC "
@@ -643,7 +648,7 @@ def tutorials():
     return part(
         "Tutorials", "/tutorials/",
         t.p("Tutorials", class_="eyebrow"),
-        t.h1(TUTORIAL["title"]),
+        photo_title(TUTORIAL["title"]),
         t.p(TUTORIAL["intro"], class_="lead"),
         t.div(t.p(t.b("Where to begin. "), TUTORIAL["setup"]), class_="card setup"),
         t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
@@ -807,7 +812,7 @@ def blog():
         "Blog", "/blog/",
         t.div(
             t.p("Writing", class_="eyebrow"),
-            t.h1("Blog"),
+            photo_title("Blog"),
             t.p(
                 "My own stories and thoughts, from treasury work and building software to life beyond the office.",
                 class_="lead",
@@ -992,7 +997,7 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        t.h1("Hello, I'm Butch."),
+        photo_title("Hello, I'm Butch."),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
         # Experience to Skills hide together with the story's rest; "Get in touch" always shows
