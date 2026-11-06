@@ -125,6 +125,22 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 }
 @media (max-width: 640px) { .hero { --bgap: 8px; } }
 
+/* Photo inside the home hero, with the same ALTOS colour ring as the top-bar photo */
+.hero-photo { width: var(--hp); height: var(--hp); border-radius: 50%; display: block; object-fit: cover; box-sizing: border-box;
+  padding: calc(var(--hp) * .045); justify-self: end;
+  background: radial-gradient(closest-side, var(--navy-deep) 90%, transparent 91%),
+              conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35); }
+.hero { --hp: clamp(150px, 17vw, 220px); grid-template-columns: minmax(0, 1fr) auto; gap: clamp(20px, 4vw, 48px); }
+/* Phones: small photo beside the name; intro and buttons run full width below */
+@media (max-width: 640px) {
+  .hero { --hp: clamp(72px, 22vw, 92px); grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; row-gap: 0; align-items: center; }
+  .hero-text { display: contents; }
+  .hero-name { grid-column: 1; grid-row: 1; }
+  .hero-photo { grid-column: 2; grid-row: 1; }
+  .hero .lead, .hero .btns { grid-column: 1 / -1; }
+}
+
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15.127px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }

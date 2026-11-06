@@ -281,8 +281,7 @@ def home():
         "Home", "/",
         t.div(
             t.div(
-                t.h1(SITE["title"]),
-                t.div(class_="rule"),
+                t.div(t.h1(SITE["title"]), t.div(class_="rule"), class_="hero-name"),
                 t.p(SITE["tagline"] + " My tools make treasury work faster, more accurate, and easier to audit.", class_="lead"),
                 t.div(
                     t.a("See ALTOS", href="/projects/", class_="btn ghost"),
@@ -292,6 +291,7 @@ def home():
                 ),
                 class_="hero-text",
             ),
+            t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
             class_="hero",
         ),
         t.div(
