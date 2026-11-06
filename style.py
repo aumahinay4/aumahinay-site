@@ -134,6 +134,7 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .hero-name { display: contents; }
 .hero-photo { grid-column: 1; grid-row: 1; align-self: center; margin-block: -8px; }  /* centred on the name line itself; negative margin keeps the colour bar nearly touching the name */
 .hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
+@media (max-width: 640px) { .hero h1 { font-size: min(1.2325rem, calc((100vw - 96px) / 15.6)); } }  /* phones: name shrinks just enough to stay on one line */
 .hero .rule { grid-column: 2; grid-row: 2; margin-bottom: 26.35px; }  /* intro moved up 25% then 15% more (gap was ~41px) */
 .hero .lead { margin-top: 0; }
 .hero .lead { grid-column: 1 / -1; grid-row: 3; }
