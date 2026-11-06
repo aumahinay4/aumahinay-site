@@ -474,8 +474,8 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .blog-filters { flex-wrap: nowrap; }  /* all the pills stay on one line on every screen */
 .blog-filters label { white-space: nowrap; flex: 0 1 auto; }
 @media (max-width: 640px) {  /* phones: smaller pills so All, Software & ALTOS, Public Finance and Personal fit one line */
-  .blog-filters { gap: 4px; margin-top: 22px; }
-  .blog-filters label { font-size: min(11.5px, 3.05vw); padding: 6px min(8px, 2vw); }
+  .blog-filters { gap: 2px; margin-top: 22px; }
+  .blog-filters label { font-size: min(13.3px, 3.3vw); padding: 6px min(6px, 1.5vw); }
   .blog-filters .count { margin-left: 1px; }
 }
 .post > .meta .dot { margin: 0 -4px; }
