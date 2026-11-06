@@ -519,6 +519,8 @@ details.answer[open] > summary { margin-bottom: 4px; }
   .react-btn[aria-pressed="true"] svg { transform: none; border-color: var(--c); background: color-mix(in srgb, var(--f) 16%, var(--surface)); }
   .react-word, .react-count { text-align: center; }
   .react-count { font-size: 10.4px; }
+  .react ~ .post-steps { margin-top: 12px; }  /* Older/Newer post box close under the circles (Butch, 2026-11-06) */
+  .lesson-page .react ~ .lesson-nav { margin-top: 12px; padding-top: 12px; }
 }
 
 /* Newer / older post links under a post */
@@ -528,7 +530,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-steps .muted { font-size: 13.325px; }
 .post-steps b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
 .post-steps .older { text-align: right; }
-@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } .post-steps a { white-space: normal; padding: 14px 16px; font-size: inherit; line-height: inherit; } }  /* the top-menu phone rules for nav links made these one long line that ran off the screen */
+@media (max-width: 640px) { .post-steps { grid-template-columns: 1fr; } .post-steps .older { text-align: left; } .post-steps > span:empty { display: none; } .post-steps a { white-space: normal; padding: 14px 16px; font-size: inherit; line-height: inherit; } }  /* the top-menu phone rules for nav links made these one long line that ran off the screen */
 """
 
 # One hide rule per category: when its pill is picked, cards from other categories hide.
