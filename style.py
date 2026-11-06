@@ -510,6 +510,14 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .react-count:empty { display: none; }
 .react-btn:disabled { cursor: progress; }
 .lesson-page .react ~ .lesson-nav { margin-top: 26px; }
+/* Phones: the four buttons share one line, each with its icon above the word, and the count under the word (Butch, 2026-11-06) */
+@media (max-width: 640px) {
+  .react { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; align-items: stretch; }
+  .react-btn { flex-wrap: wrap; justify-content: center; align-content: center; row-gap: 3px; padding: 9px 2px 8px; border-radius: 14px; font-size: 12.6px; line-height: 1.2; white-space: nowrap; }
+  .react-btn svg { flex: 0 0 100%; height: 21px; }
+  .react-word, .react-count { flex: 0 0 100%; text-align: center; }  /* icon, then the word, then the count, so "Following 128" fits narrow phones */
+  .react-count { font-size: 11.8px; }
+}
 
 /* Newer / older post links under a post */
 .post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
