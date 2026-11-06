@@ -386,7 +386,7 @@ BLOG_CATEGORIES = [
 BLOG = [
     {
         "date": "November 5, 2026",
-        "title": "So Close to Alibijaban",
+        "title": "So Close to Alibijaban Island",
         "slug": "so-close-to-alibijaban",
         "category": "personal",
         "summary": "On Hermano Puli Day, I sat alone on someone else's bangka in San Andres, Quezon, and looked out at an "
