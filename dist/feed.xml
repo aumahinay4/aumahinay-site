@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Butch Mahinay</title>
+    <link>https://aumahinay.dev/</link>
+    <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>So Close to Alibijaban Island</title>
+      <link>https://aumahinay.dev/blog/so-close-to-alibijaban/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/so-close-to-alibijaban/</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0800</pubDate>
+      <description>On Hermano Puli Day, I sat alone on someone else&#x27;s bangka in San Andres, Quezon, and looked out at an island I have loved for almost two decades. This time, I could not cross.</description>
+    </item>
+    <item>
+      <title>Why .dev and Not .com: How I Chose My Website&#x27;s Address</title>
+      <link>https://aumahinay.dev/blog/why-dev-and-not-com/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/why-dev-and-not-com/</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Most people expect a .com. I chose aumahinay.dev. Here is why, in plain words, and what it taught me about building things that are safe by default.</description>
+    </item>
+    <item>
+      <title>200 Kilometers and Five Years Later: Coming Home to the Farm</title>
+      <link>https://aumahinay.dev/blog/coming-home-to-the-farm/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/coming-home-to-the-farm/</guid>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Five years. That is how long it had been since I last set foot on my 3-hectare farm.</description>
+    </item>
+    <item>
+      <title>Lesson 0: Getting started: install Python and run your first script</title>
+      <link>https://aumahinay.dev/tutorials/getting-started/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/tutorials/getting-started/</guid>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.</description>
+    </item>
+    <item>
+      <title>The ALTOS Framework, Principle 2: Every Peso Has a Document</title>
+      <link>https://aumahinay.dev/blog/altos-framework-every-peso-has-a-document/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-every-peso-has-a-document/</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0800</pubDate>
+      <description>No collection without an accountable form, no release without a voucher. A peso that leaves no paper behind cannot be accounted for.</description>
+    </item>
+    <item>
+      <title>360 Degrees: My First Post as Acting Municipal Treasurer</title>
+      <link>https://aumahinay.dev/blog/first-post-as-acting-treasurer/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/first-post-as-acting-treasurer/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0800</pubDate>
+      <description>Two years, two Mayors, a pandemic, a typhoon and an election: what my first post as Acting Municipal Treasurer of Mulanay, Quezon, taught me.</description>
+    </item>
+    <item>
+      <title>The ALTOS Framework, Principle 1: Legality First</title>
+      <link>https://aumahinay.dev/blog/altos-framework-legality-first/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-legality-first/</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0800</pubDate>
+      <description>Before we ask how a peso was handled, we should ask whether the law allowed it at all.</description>
+    </item>
+    <item>
+      <title>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</title>
+      <link>https://aumahinay.dev/blog/why-i-built-altos/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/why-i-built-altos/</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0800</pubDate>
+      <description>A treasury system built around one idea: every peso should be accounted for from the moment it arrives to the moment it is reported.</description>
+    </item>
+  </channel>
+</rss>

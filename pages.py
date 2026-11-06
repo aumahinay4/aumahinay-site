@@ -152,6 +152,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.title(page_title),
             # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            t.link(rel="alternate", type="application/rss+xml", title=f"{SITE['short_name']}: new posts and lessons", href="/feed.xml"),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{url}") if url else None,
             t.meta(name="description", content=description or SITE["tagline"]),
             t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
@@ -509,8 +510,11 @@ def courses():
 
 # ---- Python for Treasury Work (tutorials) ----
 
+PH = timezone(timedelta(hours=8))  # Philippine time
+
+
 def ph_today():
-    return datetime.now(timezone(timedelta(hours=8))).date().isoformat()
+    return datetime.now(PH).date().isoformat()
 
 
 def nice_date(iso):
