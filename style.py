@@ -513,8 +513,8 @@ details.answer[open] > summary { margin-bottom: 4px; }
 /* Phones: the four buttons share one line; each icon sits in a circle with the word and count under it (Butch, 2026-11-06) */
 @media (max-width: 640px) {
   .react { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; align-items: start; }
-  .react-btn, .react-btn[aria-pressed="true"] { flex-direction: column; align-items: center; gap: 0; padding: 2px 0; border: 0; border-radius: 0; background: none; font-size: 11.3px; line-height: 1.2; white-space: nowrap; }
-  .react-btn svg { box-sizing: border-box; width: 42px; height: 42px; padding: 10px; margin-bottom: 4px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--surface); transition: border-color .15s, background .15s; }
+  .react-btn, .react-btn[aria-pressed="true"] { flex-direction: column; align-items: center; gap: 0; padding: 2px 0; border: 0; border-radius: 0; background: none; font-size: 11.3px; line-height: 1.08; white-space: nowrap; }
+  .react-btn svg { box-sizing: border-box; width: 42px; height: 42px; padding: 10px; margin-bottom: 1px; border-radius: 50%;  /* circle nearly touching its word (Butch, 2026-11-06) */ border: 1.5px solid var(--line); background: var(--surface); transition: border-color .15s, background .15s; }
   .react-btn:hover svg { border-color: var(--c); }
   .react-btn[aria-pressed="true"] svg { transform: none; border-color: var(--c); background: color-mix(in srgb, var(--f) 16%, var(--surface)); }
   .react-word, .react-count { text-align: center; }
