@@ -31,7 +31,7 @@ pip install -r requirements.txt
 python app.py        # open http://127.0.0.1:5000
 ```
 
-## Heart and Like buttons (one-time setup)
+## Follow, Heart and Like buttons (one-time setup, done 2026-11-06)
 
 The Heart and Like buttons under blog posts and lessons count taps with a small
 Cloudflare Pages Function (`functions/api/likes.js`, deployed together with
@@ -43,5 +43,5 @@ Cloudflare Pages Function (`functions/api/likes.js`, deployed together with
    variable name `LIKES`, namespace `aumahinay-likes`. Save.
 3. Run the deploy again (GitHub > Actions > Deploy > Run workflow).
 
-Until this is done the Heart and Like buttons stay hidden (Share still shows); nothing else breaks.
+Until this is done the Follow, Heart and Like buttons stay hidden (Share still shows); nothing else breaks.
 Free plan limit: 1,000 KV writes a day; each tap uses 2, so about 500 taps a day.

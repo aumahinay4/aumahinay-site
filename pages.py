@@ -152,6 +152,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.title(page_title),
             # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            t.link(rel="alternate", type="application/rss+xml", title=f"{SITE['short_name']}: new posts and lessons", href="/feed.xml"),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{url}") if url else None,
             t.meta(name="description", content=description or SITE["tagline"]),
             t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
@@ -509,8 +510,11 @@ def courses():
 
 # ---- Python for Treasury Work (tutorials) ----
 
+PH = timezone(timedelta(hours=8))  # Philippine time
+
+
 def ph_today():
-    return datetime.now(timezone(timedelta(hours=8))).date().isoformat()
+    return datetime.now(PH).date().isoformat()
 
 
 def nice_date(iso):
@@ -819,8 +823,8 @@ def blog():
     )
 
 
-# Heart, Like and Share buttons under each blog post and lesson. The Heart and Like
-# counts are kept by functions/api/likes.js on Cloudflare; those two buttons only
+# Follow, Heart, Like and Share buttons under each blog post and lesson. The Follow
+# (one count for the whole site), Heart and Like counts are kept by functions/api/likes.js on Cloudflare; those three buttons only
 # appear once it answers, so they stay hidden when previewing locally or if the
 # counter is switched off. Share always works: the phone's share menu, or on
 # computers without one, it copies the page link.
@@ -850,17 +854,18 @@ REACT_SCRIPT = """
     v = Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
     try { localStorage.setItem("visitor", v); } catch (e) {}
   }
-  var now, btns = { heart: box.querySelector(".react-heart"), like: box.querySelector(".react-like") };
+  var now, btns = { follow: box.querySelector(".react-follow"), heart: box.querySelector(".react-heart"), like: box.querySelector(".react-like") };
   function show(kind, s) {
     var b = btns[kind];
     b.setAttribute("aria-pressed", s.on);
+    if (kind === "follow") b.querySelector(".react-word").textContent = s.on ? "Following" : "Follow";
     b.querySelector(".react-count").textContent = s.count ? s.count.toLocaleString("en") : "";
     b.hidden = false;
   }
-  function showAll(s) { show("heart", s.heart); show("like", s.like); }
+  function showAll(s) { Object.keys(btns).forEach(function (k) { if (s[k]) show(k, s[k]); }); }
   fetch("/api/likes?page=" + encodeURIComponent(page) + "&v=" + v)
     .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (s) { if (s && s.heart && s.like) { now = s; showAll(s); } })
+    .then(function (s) { if (s && s.heart && s.like && s.follow) { now = s; showAll(s); } })
     .catch(function () {});
   Object.keys(btns).forEach(function (kind) {
     var b = btns[kind];
@@ -882,6 +887,7 @@ REACT_SCRIPT = """
 
 HEART_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>')
 LIKE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg>')
+FOLLOW_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2.5 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path class="plus" d="M19 8v6M16 11h6"/></svg>')
 SHARE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>')
 
 
@@ -891,6 +897,7 @@ def react_box(url):
                         class_=f"react-btn react-{kind}", aria_pressed="false", aria_label=label, hidden=True)
     return [
         t.div(
+            btn(FOLLOW_ICON, "Follow", "follow", f"Follow {SITE['short_name']}"),
             btn(HEART_ICON, "Heart", "heart", "Heart this"),
             btn(LIKE_ICON, "Like", "like", "Like this"),
             t.button(SHARE_ICON, t.span("Share", class_="react-word", aria_live="polite"), type="button",
