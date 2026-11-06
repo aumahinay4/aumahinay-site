@@ -1889,7 +1889,7 @@ BLOG = [
         "publish_on": "2026-11-04",  # goes live on this date (Philippine time)
         "slug": "coming-home-to-the-farm",
         "body": [
-            ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms", "half"),
+            ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms (October\u00a031,\u00a02026)", "half"),
             "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
             "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
             "the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer "
@@ -1908,7 +1908,7 @@ BLOG = [
             "The trees had grown tall and full while I was away. It was not the season for the mango, santol, and "
             "langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take "
             "a season off.",
-            ("photo", "blog/farm-2.jpg", "Mature coconuts gathered for copra", "half"),
+            ("photo", "blog/farm-2.jpg", "Mature coconuts gathered for copra (October\u00a031,\u00a02026)", "half"),
             "Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be gathered for copra. "
             "For a farm in our part of Quezon, copra is the steady crop, the one that keeps working through every "
             "season while the other trees wait for their turn.",
