@@ -834,7 +834,17 @@ REACT_SCRIPT = """
   if (!box) return;
   var page = box.getAttribute("data-page");
   var share = box.querySelector(".react-share"), shareWord = share.querySelector(".react-word");
+  var shareCount = share.querySelector(".react-count"), now, v;
+  function showShare(s) { if (s && s.share) shareCount.textContent = s.share.count ? s.share.count.toLocaleString("en") : ""; }
   share.addEventListener("click", function () {
+    if (now && now.share && v) {  // every tap of Share adds one
+      now.share.count += 1; showShare(now);
+      fetch("/api/likes", { method: "POST", headers: { "content-type": "application/json" },
+                            body: JSON.stringify({ page: page, v: v, kind: "share" }) })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (s) { if (s && s.share) { now.share = s.share; showShare(now); } })
+        .catch(function () {});
+    }
     var c = document.querySelector('link[rel="canonical"]');
     var url = c ? c.href : location.href, title = document.title;
     function copied(ok) {
@@ -846,7 +856,6 @@ REACT_SCRIPT = """
     prompt("Copy this link:", url);
   });
   if (!window.fetch) return;
-  var v;
   try { v = localStorage.getItem("visitor"); } catch (e) {}
   if (!/^[a-f0-9]{32}$/.test(v || "")) {
     var a = new Uint8Array(16);
@@ -854,7 +863,7 @@ REACT_SCRIPT = """
     v = Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
     try { localStorage.setItem("visitor", v); } catch (e) {}
   }
-  var now, btns = { follow: box.querySelector(".react-follow"), heart: box.querySelector(".react-heart"), like: box.querySelector(".react-like") };
+  var btns = { follow: box.querySelector(".react-follow"), heart: box.querySelector(".react-heart"), like: box.querySelector(".react-like") };
   function show(kind, s) {
     var b = btns[kind];
     b.setAttribute("aria-pressed", s.on);
@@ -862,7 +871,7 @@ REACT_SCRIPT = """
     b.querySelector(".react-count").textContent = s.count ? s.count.toLocaleString("en") : "";
     b.hidden = false;
   }
-  function showAll(s) { Object.keys(btns).forEach(function (k) { if (s[k]) show(k, s[k]); }); }
+  function showAll(s) { Object.keys(btns).forEach(function (k) { if (s[k]) show(k, s[k]); }); showShare(s); }
   fetch("/api/likes?page=" + encodeURIComponent(page) + "&v=" + v)
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (s) { if (s && s.heart && s.like && s.follow) { now = s; showAll(s); } })
@@ -900,7 +909,7 @@ def react_box(url):
             btn(FOLLOW_ICON, "Follow", "follow", f"Follow {SITE['short_name']}"),
             btn(HEART_ICON, "Heart", "heart", "Heart this"),
             btn(LIKE_ICON, "Like", "like", "Like this"),
-            t.button(SHARE_ICON, t.span("Share", class_="react-word", aria_live="polite"), type="button",
+            t.button(SHARE_ICON, t.span("Share", class_="react-word", aria_live="polite"), t.span(class_="react-count"), type="button",
                      class_="react-btn react-share"),
             class_="react", data_page=url,
         ),
