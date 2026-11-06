@@ -180,7 +180,6 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
         t.body(
             t.header(
                 t.div(
-                    t.a(t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand") if active != "/" else None,  # no photo in the top bar (Butch); Home shows the name in the banner instead
                     t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
                     t.button(FULLSCREEN_ICON, type="button", id="fs", class_="fs", title="Full screen", aria_label="Full screen", aria_pressed="false", hidden=True),
                     class_="wrap",
