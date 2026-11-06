@@ -486,18 +486,21 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15.375px; }
 @media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
 
-/* Heart (Like) button under each blog post and lesson */
-.like { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-.like[hidden] { display: none; }
-.like-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px 9px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 14.35px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s, transform .15s; }
-.like-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--coral-ink); stroke-width: 2; stroke-linejoin: round; transition: transform .2s; }
-.like-btn:hover { border-color: var(--coral-ink); }
-.like-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-.like-btn[aria-pressed="true"] { border-color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 14%, var(--surface)); }
-.like-btn[aria-pressed="true"] svg { fill: var(--coral-ink); transform: scale(1.12); }
-.like-btn:disabled { cursor: progress; }
-.like-count { color: var(--muted); font-size: 13.8375px; }
-.lesson-page .like ~ .lesson-nav { margin-top: 26px; }
+/* Heart, Like and Share buttons under each blog post and lesson */
+.react { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+.react-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px 9px 13px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 14.35px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s; --c: var(--blue-ink); --f: var(--blue); }
+.react-btn[hidden] { display: none; }
+.react-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.react-heart { --c: var(--coral-ink); --f: var(--coral); }
+.react-share { --c: var(--muted); }
+.react-btn:hover { border-color: var(--c); }
+.react-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.react-btn[aria-pressed="true"] { border-color: var(--c); background: color-mix(in srgb, var(--f) 14%, var(--surface)); }
+.react-btn[aria-pressed="true"] svg { fill: var(--c); transform: scale(1.1); }
+.react-count { color: var(--muted); font-weight: 500; }
+.react-count:empty { display: none; }
+.react-btn:disabled { cursor: progress; }
+.lesson-page .react ~ .lesson-nav { margin-top: 26px; }
 
 /* Newer / older post links under a post */
 .post-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
@@ -605,8 +608,7 @@ figure.screenshot figcaption { font-size: 13.2379px; }
 .post-card .meta { font-size: 14.7087px; }
 .post-card h2 { font-size: calc(clamp(1.2812rem, 2.665vw, 1.5375rem) * 1.025); }
 .post-card .more { font-size: 15.7594px; }
-.like-btn { font-size: 14.7087px; }
-.like-count { font-size: 14.1834px; }
+.react-btn { font-size: 14.7087px; }
 .post-steps .muted { font-size: 13.6581px; }
 .crumb { font-size: 14.1834px; }
 .reader .count { font-size: 14.1834px; }

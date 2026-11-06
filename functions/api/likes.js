@@ -1,16 +1,19 @@
-// Like counts for blog posts and tutorial lessons (Cloudflare Pages Function).
+// Heart and Like counts for blog posts and tutorial lessons (Cloudflare Pages Function).
 // Lives at https://aumahinay.dev/api/likes. Needs a Workers KV namespace bound
-// to the Pages project as LIKES (Settings > Bindings). Without it, the heart
-// button simply stays hidden on the site.
+// to the Pages project as LIKES (Settings > Bindings). Without it, the Heart and
+// Like buttons simply stay hidden on the site (Share still works).
 //
-//   GET  /api/likes?page=/blog/<slug>/&v=<visitor id>  -> {"count": 3, "liked": false}
-//   POST /api/likes  {"page": "...", "v": "...", "like": true|false}  -> same answer
+//   GET  /api/likes?page=/blog/<slug>/&v=<visitor id>
+//        -> {"heart": {"count": 3, "on": false}, "like": {"count": 5, "on": true}}
+//   POST /api/likes  {"page": "...", "v": "...", "kind": "heart"|"like", "on": true|false}
+//        -> same answer
 //
 // Each browser gets a random visitor id (kept in its own storage), so one
-// browser counts once per page. Nobody signs in and no names or emails are kept.
+// browser counts once per button per page. Nobody signs in and no names or emails are kept.
 
 const PAGE = /^\/(blog|tutorials)\/[a-z0-9-]+\/$/;
 const VISITOR = /^[a-f0-9]{32}$/;
+const KINDS = ["heart", "like"];
 
 function answer(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -19,24 +22,29 @@ function answer(body, status = 200) {
   });
 }
 
-// only real, published posts and lessons can be liked: they are listed in the sitemap
+// only real, published posts and lessons count: they are listed in the sitemap
 async function isRealPage(env, request, page) {
   if (!PAGE.test(page)) return false;
   const res = await env.ASSETS.fetch(new URL("/sitemap.xml", request.url));
   return res.ok && (await res.text()).includes(`${page}</loc>`);
 }
 
-async function state(env, page, v) {
+async function one(env, kind, page, v) {
   const [count, mine] = await Promise.all([
-    env.LIKES.get("count:" + page),
-    v ? env.LIKES.get(`liked:${page}:${v}`) : null,
+    env.LIKES.get(`count:${kind}:${page}`),
+    v ? env.LIKES.get(`on:${kind}:${page}:${v}`) : null,
   ]);
-  return { count: Math.max(0, parseInt(count || "0", 10)), liked: mine !== null };
+  return { count: Math.max(0, parseInt(count || "0", 10)), on: mine !== null };
+}
+
+async function state(env, page, v) {
+  const [heart, like] = await Promise.all(KINDS.map((k) => one(env, k, page, v)));
+  return { heart, like };
 }
 
 export async function onRequest({ request, env }) {
   if (!env.LIKES) return answer({ error: "likes are not switched on" }, 503);
-  let page, v, like;
+  let page, v, kind, on;
   if (request.method === "GET") {
     const q = new URL(request.url).searchParams;
     page = q.get("page") || "";
@@ -46,7 +54,9 @@ export async function onRequest({ request, env }) {
     try { data = await request.json(); } catch { return answer({ error: "bad request" }, 400); }
     page = String(data.page || "");
     v = String(data.v || "");
-    like = data.like === true;
+    kind = String(data.kind || "");
+    on = data.on === true;
+    if (!KINDS.includes(kind) || !v) return answer({ error: "bad request" }, 400);
   } else {
     return answer({ error: "method not allowed" }, 405);
   }
@@ -54,14 +64,14 @@ export async function onRequest({ request, env }) {
   if (!(await isRealPage(env, request, page))) return answer({ error: "unknown page" }, 404);
 
   const now = await state(env, page, v);
-  if (request.method === "POST" && v && like !== now.liked) {
-    const key = `liked:${page}:${v}`;
-    const count = Math.max(0, now.count + (like ? 1 : -1));
+  if (request.method === "POST" && on !== now[kind].on) {
+    const count = Math.max(0, now[kind].count + (on ? 1 : -1));
+    const key = `on:${kind}:${page}:${v}`;
     await Promise.all([
-      like ? env.LIKES.put(key, "1") : env.LIKES.delete(key),
-      env.LIKES.put("count:" + page, String(count)),
+      on ? env.LIKES.put(key, "1") : env.LIKES.delete(key),
+      env.LIKES.put(`count:${kind}:${page}`, String(count)),
     ]);
-    return answer({ count, liked: like });
+    now[kind] = { count, on };
   }
   return answer(now);
 }

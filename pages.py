@@ -672,7 +672,7 @@ def lesson_page(x):
             tag_list(x["topics"]),
             t.div(t.p("In this lesson", class_="eyebrow"), t.ul([t.li(item) for item in x["learn"]]), class_="card learn"),
             [lesson_block(x, b) for b in x["body"]],
-            like_box(lesson_url(x)),
+            react_box(lesson_url(x)),
             t.div(
                 t.a("← Lesson " + str(prev["number"]), href=lesson_url(prev)) if prev else t.span(),
                 (t.a("Lesson " + str(nxt["number"]) + " →", href=lesson_url(nxt)) if nxt_open
@@ -819,60 +819,86 @@ def blog():
     )
 
 
-# The heart (Like) button under each blog post and lesson. The counts are kept by
-# functions/api/likes.js on Cloudflare. The button only appears once that answers,
-# so it stays hidden when previewing locally or if likes are switched off.
-LIKE_SCRIPT = """
+# Heart, Like and Share buttons under each blog post and lesson. The Heart and Like
+# counts are kept by functions/api/likes.js on Cloudflare; those two buttons only
+# appear once it answers, so they stay hidden when previewing locally or if the
+# counter is switched off. Share always works: the phone's share menu, or on
+# computers without one, it copies the page link.
+REACT_SCRIPT = """
 (function () {
-  var box = document.querySelector(".like");
-  if (!box || !window.fetch) return;
-  var btn = box.querySelector("button"), count = box.querySelector(".like-count"), page = box.getAttribute("data-page");
+  var box = document.querySelector(".react");
+  if (!box) return;
+  var page = box.getAttribute("data-page");
+  var share = box.querySelector(".react-share"), shareWord = share.querySelector(".react-word");
+  share.addEventListener("click", function () {
+    var c = document.querySelector('link[rel="canonical"]');
+    var url = c ? c.href : location.href, title = document.title;
+    function copied(ok) {
+      shareWord.textContent = ok ? "Link copied" : "Share";
+      if (ok) setTimeout(function () { shareWord.textContent = "Share"; }, 2000);
+    }
+    if (navigator.share) { navigator.share({ title: title, url: url }).catch(function () {}); return; }
+    if (navigator.clipboard) { navigator.clipboard.writeText(url).then(function () { copied(true); }, function () { prompt("Copy this link:", url); }); return; }
+    prompt("Copy this link:", url);
+  });
+  if (!window.fetch) return;
   var v;
   try { v = localStorage.getItem("visitor"); } catch (e) {}
   if (!/^[a-f0-9]{32}$/.test(v || "")) {
     var a = new Uint8Array(16);
-    (window.crypto || window.msCrypto).getRandomValues(a);
+    crypto.getRandomValues(a);
     v = Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
     try { localStorage.setItem("visitor", v); } catch (e) {}
   }
-  function show(s) {
-    btn.setAttribute("aria-pressed", s.liked);
-    btn.querySelector(".like-word").textContent = s.liked ? "Liked" : "Like";
-    count.textContent = s.count === 0 ? "Be the first to like this" : s.count === 1 ? "1 like" : s.count.toLocaleString("en") + " likes";
-    box.hidden = false;
+  var now, btns = { heart: box.querySelector(".react-heart"), like: box.querySelector(".react-like") };
+  function show(kind, s) {
+    var b = btns[kind];
+    b.setAttribute("aria-pressed", s.on);
+    b.querySelector(".react-count").textContent = s.count ? s.count.toLocaleString("en") : "";
+    b.hidden = false;
   }
-  var now;
+  function showAll(s) { show("heart", s.heart); show("like", s.like); }
   fetch("/api/likes?page=" + encodeURIComponent(page) + "&v=" + v)
     .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (s) { if (s && typeof s.count === "number") { now = s; show(s); } })
+    .then(function (s) { if (s && s.heart && s.like) { now = s; showAll(s); } })
     .catch(function () {});
-  btn.addEventListener("click", function () {
-    if (!now || btn.disabled) return;
-    var want = !now.liked;
-    show({ liked: want, count: Math.max(0, now.count + (want ? 1 : -1)) });  // answer the tap right away
-    btn.disabled = true;
-    fetch("/api/likes", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ page: page, v: v, like: want }) })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (s) { if (s) now = s; show(now); })
-      .catch(function () { show(now); })
-      .then(function () { btn.disabled = false; });
+  Object.keys(btns).forEach(function (kind) {
+    var b = btns[kind];
+    b.addEventListener("click", function () {
+      if (!now || b.disabled) return;
+      var want = !now[kind].on;
+      show(kind, { on: want, count: Math.max(0, now[kind].count + (want ? 1 : -1)) });  // answer the tap right away
+      b.disabled = true;
+      fetch("/api/likes", { method: "POST", headers: { "content-type": "application/json" },
+                            body: JSON.stringify({ page: page, v: v, kind: kind, on: want }) })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (s) { if (s && s.heart) now = s; showAll(now); })
+        .catch(function () { showAll(now); })
+        .then(function () { b.disabled = false; });
+    });
   });
 })();
 """
 
-HEART = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>')
+HEART_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>')
+LIKE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg>')
+SHARE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>')
 
 
-def like_box(url):
+def react_box(url):
+    def btn(icon, word, kind, label):
+        return t.button(icon, t.span(word, class_="react-word"), t.span(class_="react-count"), type="button",
+                        class_=f"react-btn react-{kind}", aria_pressed="false", aria_label=label, hidden=True)
     return [
         t.div(
-            t.button(HEART, t.span("Like", class_="like-word"), type="button", class_="like-btn", aria_pressed="false"),
-            t.span(class_="like-count", aria_live="polite"),
-            class_="like", data_page=url, hidden=True,
+            btn(HEART_ICON, "Heart", "heart", "Heart this"),
+            btn(LIKE_ICON, "Like", "like", "Like this"),
+            t.button(SHARE_ICON, t.span("Share", class_="react-word", aria_live="polite"), type="button",
+                     class_="react-btn react-share"),
+            class_="react", data_page=url,
         ),
-        t.script(Raw(LIKE_SCRIPT)),
+        t.script(Raw(REACT_SCRIPT)),
     ]
-
 
 def post_page(b):
     """One blog post on its own page, with links to the newer and older posts."""
@@ -889,7 +915,7 @@ def post_page(b):
         t.div(
             t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
             blog_post(b),
-            like_box(post_url(b)),
+            react_box(post_url(b)),
             t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
                   aria_label="More posts"),
             t.p("Views here are my own and do not represent any government office.", class_="muted note"),
