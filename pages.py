@@ -180,7 +180,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
         t.body(
             t.header(
                 t.div(
-                    t.a(t.img(src=asset_url("avatar.png"), alt="", width="31", height="31", class_="avatar"), t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand") if active != "/" else None,  # Home shows the photo and name in the banner instead
+                    t.a(t.span(SITE["short_name"].split()[0], " ", t.b(SITE["short_name"].split()[1])), href="/", class_="brand") if active != "/" else None,  # no photo in the top bar (Butch); Home shows the name in the banner instead
                     t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
                     t.button(FULLSCREEN_ICON, type="button", id="fs", class_="fs", title="Full screen", aria_label="Full screen", aria_pressed="false", hidden=True),
                     class_="wrap",
@@ -992,7 +992,8 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        t.h1("Hello, I'm Butch."),
+        t.div(t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
+              t.h1("Hello, I'm Butch."), class_="about-hello"),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
         # Experience to Skills hide together with the story's rest; "Get in touch" always shows

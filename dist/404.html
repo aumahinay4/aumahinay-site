@@ -127,6 +127,9 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .hero-text { display: contents; }
 .hero-name { display: contents; }
 .hero-photo { grid-column: 1; grid-row: 1; align-self: center; margin-block: -8px; }  /* centred on the name line itself; negative margin keeps the colour bar nearly touching the name */
+/* About: same ringed photo, nearly touching "Hello, I'm Butch." */
+.about-hello { display: flex; align-items: center; gap: 4px; margin: 0 0 12px; }
+.about-hello h1 { margin: 0; }
 .hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
 @media (max-width: 640px) { .hero h1 { font-size: min(1.2325rem, calc((100vw - 90px) / 15.6)); } }  /* phones: name shrinks just enough to stay on one line */
 .hero .lead { margin-top: 34.35px; }  /* no colour bar under the name; intro stays where it was */
@@ -659,7 +662,7 @@ figure.screenshot figcaption { font-size: 14.4715px; }
 .crumb { font-size: 15.5052px; }
 .reader .count { font-size: 15.5052px; }
 }
-</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><img src="/static/avatar.png?v=96d8fd7d" alt="" width="31" height="31" class="avatar"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
+</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand"><span>Butch <b>Mahinay</b></span></a><nav><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav><button type="button" id="fs" class="fs" title="Full screen" aria-label="Full screen" aria-pressed="false" hidden><svg class="enter" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg><svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="site"><div class="wrap">Built in Python</div></footer><script>
 (function () {
   var d = document, b = d.getElementById("fs");
   var on = d.fullscreenEnabled || d.webkitFullscreenEnabled;
