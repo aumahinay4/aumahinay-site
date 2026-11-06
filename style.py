@@ -132,7 +132,7 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .hero-text { display: contents; }
 .hero-name { display: contents; }
 .hero-photo { grid-column: 1; grid-row: 1; align-self: center; margin-block: -8px; }  /* centred on the name line itself; negative margin keeps the colour bar nearly touching the name */
-/* About: same ringed photo, nearly touching "Hello, I'm Butch." */
+/* Page titles (About, Projects, Courses, Tutorials, Blog): ringed photo nearly touching the title */
 .about-hello { display: flex; align-items: center; gap: 4px; margin: 0 0 12px; }
 .about-hello h1 { margin: 0; }
 .hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
