@@ -162,7 +162,8 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.meta(property="og:title", content=page_title),
             t.meta(property="og:description", content=description or SITE["tagline"]),
             t.meta(property="og:url", content=f"https://{SITE['domain']}{url}"),
-            t.meta(property="og:image", content=f"https://{SITE['domain']}/static/share.jpg"),
+            t.meta(property="og:image", content=f"https://{SITE['domain']}/static/share.jpg?v="
+                   + hashlib.sha1((STATIC / "share.jpg").read_bytes()).hexdigest()[:8]),  # new picture = new link, so Facebook fetches it again
             t.meta(property="og:image:width", content="1200"),
             t.meta(property="og:image:height", content="630"),
             t.meta(property="og:image:alt", content=f"{SITE['short_name']}, {SITE['domain']}"),
