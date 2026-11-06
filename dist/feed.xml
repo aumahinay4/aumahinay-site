@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Lesson 1: Add up a day&#x27;s collections from a CSV file</title>
+      <link>https://aumahinay.dev/tutorials/add-up-daily-collections/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/tutorials/add-up-daily-collections/</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Read the day&#x27;s official receipts from a spreadsheet export and total them per fund, to the centavo.</description>
+    </item>
     <item>
       <title>So Close to Alibijaban Island</title>
       <link>https://aumahinay.dev/blog/so-close-to-alibijaban/</link>
