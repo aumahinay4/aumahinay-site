@@ -492,12 +492,15 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 15.375px; }
 @media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
 
-/* Heart, Like and Share buttons under each blog post and lesson */
+/* Follow, Heart, Like and Share buttons under each blog post and lesson */
 .react { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
 .react-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px 9px 13px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 14.35px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s; --c: var(--blue-ink); --f: var(--blue); }
 .react-btn[hidden] { display: none; }
 .react-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
 .react-heart { --c: var(--coral-ink); --f: var(--coral); }
+.react-follow { --c: var(--green-ink); --f: var(--green); }
+.react-follow[aria-pressed="true"] svg { fill: none; }
+.react-follow[aria-pressed="true"] svg path:first-child { fill: var(--c); }
 .react-share { --c: var(--muted); }
 .react-btn:hover { border-color: var(--c); }
 .react-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }

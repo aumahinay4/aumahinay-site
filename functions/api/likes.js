@@ -1,11 +1,13 @@
-// Heart and Like counts for blog posts and tutorial lessons (Cloudflare Pages Function).
+// Heart, Like and Follow counts for blog posts and tutorial lessons (Cloudflare Pages Function).
+// Heart and Like are counted per page; Follow is one count for the whole site.
 // Lives at https://aumahinay.dev/api/likes. Needs a Workers KV namespace bound
 // to the Pages project as LIKES (Settings > Bindings). Without it, the Heart and
 // Like buttons simply stay hidden on the site (Share still works).
 //
 //   GET  /api/likes?page=/blog/<slug>/&v=<visitor id>
-//        -> {"heart": {"count": 3, "on": false}, "like": {"count": 5, "on": true}}
-//   POST /api/likes  {"page": "...", "v": "...", "kind": "heart"|"like", "on": true|false}
+//        -> {"heart": {"count": 3, "on": false}, "like": {"count": 5, "on": true},
+//            "follow": {"count": 12, "on": false}}
+//   POST /api/likes  {"page": "...", "v": "...", "kind": "heart"|"like"|"follow", "on": true|false}
 //        -> same answer
 //
 // Each browser gets a random visitor id (kept in its own storage), so one
@@ -13,7 +15,8 @@
 
 const PAGE = /^\/(blog|tutorials)\/[a-z0-9-]+\/$/;
 const VISITOR = /^[a-f0-9]{32}$/;
-const KINDS = ["heart", "like"];
+const KINDS = ["heart", "like", "follow"];
+const SITE_WIDE = { follow: true };  // one follower count for the whole site, whatever page it is tapped on
 
 function answer(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -30,6 +33,7 @@ async function isRealPage(env, request, page) {
 }
 
 async function one(env, kind, page, v) {
+  if (SITE_WIDE[kind]) page = "site";
   const [count, mine] = await Promise.all([
     env.LIKES.get(`count:${kind}:${page}`),
     v ? env.LIKES.get(`on:${kind}:${page}:${v}`) : null,
@@ -38,8 +42,8 @@ async function one(env, kind, page, v) {
 }
 
 async function state(env, page, v) {
-  const [heart, like] = await Promise.all(KINDS.map((k) => one(env, k, page, v)));
-  return { heart, like };
+  const [heart, like, follow] = await Promise.all(KINDS.map((k) => one(env, k, page, v)));
+  return { heart, like, follow };
 }
 
 export async function onRequest({ request, env }) {
@@ -66,10 +70,11 @@ export async function onRequest({ request, env }) {
   const now = await state(env, page, v);
   if (request.method === "POST" && on !== now[kind].on) {
     const count = Math.max(0, now[kind].count + (on ? 1 : -1));
-    const key = `on:${kind}:${page}:${v}`;
+    const where = SITE_WIDE[kind] ? "site" : page;
+    const key = `on:${kind}:${where}:${v}`;
     await Promise.all([
       on ? env.LIKES.put(key, "1") : env.LIKES.delete(key),
-      env.LIKES.put(`count:${kind}:${page}`, String(count)),
+      env.LIKES.put(`count:${kind}:${where}`, String(count)),
     ]);
     now[kind] = { count, on };
   }
