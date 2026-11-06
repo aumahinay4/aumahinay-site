@@ -512,11 +512,11 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .lesson-page .react ~ .lesson-nav { margin-top: 26px; }
 /* Phones: the four buttons share one line, each with its icon above the word, and the count under the word (Butch, 2026-11-06) */
 @media (max-width: 640px) {
-  .react { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; align-items: stretch; }
-  .react-btn { flex-wrap: wrap; justify-content: center; align-content: center; row-gap: 1px; padding: 5px 2px 4px; border-radius: 0; font-size: 12px; line-height: 1.15; white-space: nowrap; }  /* square 90-degree corners and tighter (Butch, 2026-11-06) */
-  .react-btn svg { flex: 0 0 100%; height: 18px; margin-bottom: 1px; }
+  .react { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; align-items: stretch; }
+  .react-btn { flex-wrap: wrap; justify-content: center; align-content: center; row-gap: 1px; padding: 3px 2px; border-radius: 0; border-width: 1px; font-size: 10.6px; line-height: 1.12; white-space: nowrap; }  /* square 90-degree corners, then 20% smaller again (Butch, 2026-11-06) */
+  .react-btn svg { flex: 0 0 100%; height: 14.5px; margin-bottom: 1px; }
   .react-word, .react-count { flex: 0 0 100%; text-align: center; }  /* icon, then the word, then the count, so "Following 128" fits narrow phones */
-  .react-count { font-size: 11.2px; }
+  .react-count { font-size: 9.9px; }
 }
 
 /* Newer / older post links under a post */
