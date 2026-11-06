@@ -131,9 +131,12 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
               conic-gradient(var(--gold) 0 72deg, var(--blue) 0 144deg, var(--green) 0 216deg, var(--coral) 0 288deg, var(--violet) 0 360deg); }
 .hero { grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; row-gap: 0; }
 .hero-text { display: contents; }
-.hero-photo { grid-column: 1; grid-row: 1; align-self: center; }
-.hero-name { grid-column: 2; grid-row: 1; }
-.hero .lead, .hero .btns { grid-column: 1 / -1; }
+.hero-name { display: contents; }
+.hero-photo { grid-column: 1; grid-row: 1; align-self: center; margin-block: -8px; }  /* centred on the name line itself; negative margin keeps the colour bar nearly touching the name */
+.hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
+.hero .rule { grid-column: 2; grid-row: 2; }
+.hero .lead { grid-column: 1 / -1; grid-row: 3; }
+.hero .btns { grid-column: 1 / -1; grid-row: 4; }
 .hero .lead { margin-bottom: 0; }  /* keeps the same gap above the buttons as before (grid margins do not overlap) */
 
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
