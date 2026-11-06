@@ -510,13 +510,15 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .react-count:empty { display: none; }
 .react-btn:disabled { cursor: progress; }
 .lesson-page .react ~ .lesson-nav { margin-top: 26px; }
-/* Phones: the four buttons share one line, each with its icon above the word, and the count under the word (Butch, 2026-11-06) */
+/* Phones: the four buttons share one line; each icon sits in a circle with the word and count under it (Butch, 2026-11-06) */
 @media (max-width: 640px) {
-  .react { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; align-items: stretch; }
-  .react-btn { flex-wrap: wrap; justify-content: center; align-content: center; row-gap: 1px; padding: 3px 2px; border-radius: 0; border-width: 1px; font-size: 10.6px; line-height: 1.12; white-space: nowrap; }  /* square 90-degree corners, then 20% smaller again (Butch, 2026-11-06) */
-  .react-btn svg { flex: 0 0 100%; height: 14.5px; margin-bottom: 1px; }
-  .react-word, .react-count { flex: 0 0 100%; text-align: center; }  /* icon, then the word, then the count, so "Following 128" fits narrow phones */
-  .react-count { font-size: 9.9px; }
+  .react { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; align-items: start; }
+  .react-btn, .react-btn[aria-pressed="true"] { flex-direction: column; align-items: center; gap: 0; padding: 2px 0; border: 0; border-radius: 0; background: none; font-size: 11.3px; line-height: 1.2; white-space: nowrap; }
+  .react-btn svg { box-sizing: border-box; width: 42px; height: 42px; padding: 10px; margin-bottom: 4px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--surface); transition: border-color .15s, background .15s; }
+  .react-btn:hover svg { border-color: var(--c); }
+  .react-btn[aria-pressed="true"] svg { transform: none; border-color: var(--c); background: color-mix(in srgb, var(--f) 16%, var(--surface)); }
+  .react-word, .react-count { text-align: center; }
+  .react-count { font-size: 10.4px; }
 }
 
 /* Newer / older post links under a post */
