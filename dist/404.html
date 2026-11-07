@@ -132,7 +132,8 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .about-hello h1 { margin: 0; }
 .hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
 @media (max-width: 640px) { .hero h1 { font-size: min(1.2325rem, calc((100vw - 90px) / 15.6)); } }  /* phones: name shrinks just enough to stay on one line */
-.hero .lead { margin-top: 34.35px; }  /* no colour bar under the name; intro stays where it was */
+.hero .lead { margin-top: 34.35px; }
+.hero { border-bottom: 3px solid transparent; border-image: var(--rainbow) 1; }  /* rainbow line across the bottom of the Home navy box, like the one under the top bar */  /* no colour bar under the name; intro stays where it was */
 .hero .lead { grid-column: 1 / -1; grid-row: 3; }
 .hero .btns { grid-column: 1 / -1; grid-row: 4; }
 .hero .lead { margin-bottom: 0; }  /* keeps the same gap above the buttons as before (grid margins do not overlap) */
