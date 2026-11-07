@@ -20,6 +20,15 @@ const VISITOR = /^[a-f0-9]{32}$/;
 const KINDS = ["heart", "like", "follow"];  // on/off buttons, one per browser
 const TAPS = ["share"];                      // every tap counts
 const SITE_WIDE = { follow: true };  // one follower count for the whole site, whatever page it is tapped on
+// Starting numbers shown on every post and lesson; real taps are added on top.
+// Only the shown number changes: what is saved on Cloudflare stays the real taps.
+const START = { heart: 100, like: 60 };
+
+function withStart(now) {
+  const shown = { ...now };
+  for (const k of Object.keys(START)) shown[k] = { ...now[k], count: now[k].count + START[k] };
+  return shown;
+}
 
 function answer(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -88,5 +97,5 @@ export async function onRequest({ request, env }) {
     ]);
     now[kind] = { count, on };
   }
-  return answer(now);
+  return answer(withStart(now));
 }
