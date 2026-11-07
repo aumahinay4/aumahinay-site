@@ -613,6 +613,22 @@ main.swipe-prev { transform: translateX(28%); opacity: 0; }
 .reader-request h2 { margin-top: 0; }
 .reader-request h2::after { margin-left: auto; margin-right: auto; }
 .reader-request p { text-align: center; }
+
+header.site .wrap { min-height: 0; padding-top: 0; padding-bottom: 0; }
+header.site nav { margin: 0; width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; overflow: visible;
+                  border-left: 1px solid rgba(238, 243, 255, .12); border-right: 1px solid rgba(238, 243, 255, .12); }
+header.site nav a { display: flex; align-items: center; justify-content: center; text-align: center; white-space: nowrap;
+                    min-height: 54px; padding: 0 4px; line-height: 1.2; border-radius: 0;
+                    border-bottom: 3px solid transparent; padding-top: 3px; }
+header.site nav a + a { border-left: 1px solid rgba(238, 243, 255, .12); }
+header.site nav a:hover { background: rgba(255, 255, 255, .06); }
+header.site nav a.active { background: rgba(255, 255, 255, .10); border-bottom-color: var(--gold); font-weight: 600; }
+@media (max-width: 640px) {
+  header.site .wrap { padding-left: 0; padding-right: 0; }
+  header.site nav { border-left: 0; border-right: 0; }
+  header.site nav { display: flex; }  /* phones: each tab as wide as its word, so Tutorials fits */
+  header.site nav a { flex: 1 1 auto; min-height: 44px; padding: 3px 3px 0; }
+}
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
