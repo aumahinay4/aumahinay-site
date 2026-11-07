@@ -60,6 +60,36 @@ FULLSCREEN_ICON = Raw(
 
 NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
+CERT_SCRIPT = """
+(function () {
+  var dlg = document.getElementById("cert-view");
+  if (!dlg || !dlg.showModal) return;  // very old browsers just open the picture
+  var img = dlg.querySelector("img"), ver = dlg.querySelector(".cert-verify");
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.cert-thumb");
+    if (!a) return;
+    e.preventDefault();
+    img.src = a.getAttribute("data-cert");
+    img.alt = a.getAttribute("data-name") + " certificate";
+    ver.href = a.getAttribute("data-verify");
+    dlg.showModal();
+  });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest(".cert-close")) dlg.close(); });
+})();
+"""
+
+# One full-screen certificate viewer per page that lists certificates
+CERT_VIEWER = [
+    t.dialog(
+        t.button("×", type="button", class_="cert-close", aria_label="Close"),
+        t.img(src="", alt=""),
+        t.div(t.a("Verify on Coursera →", href="#", class_="cert-verify", target="_blank", rel="noopener"),
+              t.button("Close", type="button", class_="cert-close btn ghost"), class_="cert-bar"),
+        id="cert-view", class_="cert-view", aria_label="Certificate",
+    ),
+    t.script(Raw(CERT_SCRIPT)),
+]
+
 SWIPE_SCRIPT = """
 (function () {
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
@@ -196,6 +226,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             ),
             t.script(Raw(FULLSCREEN_SCRIPT)),
             t.script(Raw(SWIPE_SCRIPT)),
+            CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
     )
@@ -259,8 +290,18 @@ def family():
     )
 
 
+def cert_image(c):
+    """static/certs/<Coursera id>.jpg, the certificate itself (from Coursera's own share image)."""
+    return "certs/" + c["verify"].rstrip("/").split("/")[-1] + ".jpg"
+
+
 def cert_card(c):
+    img = cert_image(c)
     return t.div(
+        # the certificate picture; tapping it opens it full screen (CERT_SCRIPT); without JS the link opens the picture
+        t.a(t.img(src=asset_url(img), alt=f"{c['name']} certificate", loading="lazy", width="1164", height="928"),
+            href=asset_url(img), class_="cert-thumb", data_cert=asset_url(img), data_name=c["name"], data_verify=c["verify"],
+            aria_label=f"View the {c['name']} certificate"),
         t.div(t.span(c["kind"], class_="badge" if c["kind"].startswith("Prof") else "badge spec"), class_="meta"),
         t.h3(c["name"]),
         t.div(f"Completed {c['date']} · {c['courses']} courses · Coursera", class_="meta"),
