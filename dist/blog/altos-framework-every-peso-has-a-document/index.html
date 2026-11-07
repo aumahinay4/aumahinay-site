@@ -152,13 +152,13 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 
 /* Figures strip */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-.stat { padding: 18px 22px 14px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 5px; }
+.stat { padding: 18px 22px 14px; border-left: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; }
 .stat:first-child { border-left: 0; }
 .stat b { display: block; font: 700 1.5733rem/.82 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .stat b small { font-size: .6em; font-weight: 700; margin-left: 2px; vertical-align: .55em; }
 .stat:nth-child(1) b { color: var(--gold-ink); } .stat:nth-child(2) b { color: var(--blue-ink); }
 .stat:nth-child(3) b { color: var(--green-ink); } .stat:nth-child(4) b { color: var(--coral-ink); }
-.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin-top: 3px; background: currentColor; opacity: .55; }
+.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin: 3px auto 0; background: currentColor; opacity: .55; }
 .stat span { font-size: 14.6227px; line-height: 1.35; font-weight: 500; color: var(--muted); max-width: 18ch; }
 @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(3) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid var(--line); } }
 
