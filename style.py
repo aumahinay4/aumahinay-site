@@ -261,7 +261,7 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 
 /* ALTOS page */
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
-.altos-hero h1.wordmark { font-size: clamp(3.8098rem, 12.3257vw, 6.9473rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
+.altos-hero h1.wordmark { font-size: clamp(1.9049rem, 6.1629vw, 3.4737rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.3109rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
 /* one solid navy, top to bottom; ALTOS title and text (no ring or book) */
 .altos-hero { background: var(--navy-deep); grid-template-columns: 1fr; }
@@ -316,7 +316,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 .status.live { color: var(--navy-deep); background: var(--green); border: 0; }
 .node.mother { max-width: 620px; margin: 0 auto; border: 0; color: var(--on-navy);
                background: radial-gradient(120% 120% at 15% 0%, #23407c 0%, var(--navy) 50%, var(--navy-deep) 100%); }
-.node.mother .code { font-size: 2.0169rem; }
+.node.mother .code { font-size: 1.6135rem; }
 .node.mother { padding-top: 17.6px; }
 .node.mother h3 { color: var(--on-navy); margin-top: 6px; }
 .node.mother p { color: var(--on-navy-muted); }
