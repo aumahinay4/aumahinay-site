@@ -177,6 +177,17 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .card li { margin: 4px 0; }
 .card li::marker { color: var(--ci, var(--muted)); }
 .card .foot { margin-top: auto; padding-top: 18px; }
+/* Certificate picture on each certificate card; tap to see it full screen */
+.cert-thumb { display: block; margin: 4px 0 14px; border: 1px solid var(--line); line-height: 0; overflow: hidden; cursor: zoom-in; }
+.cert-thumb img { width: 100%; height: auto; display: block; transition: transform .2s; }
+.cert-thumb:hover img { transform: scale(1.03); }
+.cert-view { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); width: 100%; overflow: visible; }
+.cert-view::backdrop { background: rgba(8, 14, 32, .95); }
+.cert-view img { width: 100%; height: auto; display: block; background: #fff; max-height: 82vh; object-fit: contain; }
+.cert-view .cert-close:not(.btn) { position: absolute; top: -40px; right: 0; background: none; border: 0; color: #fff; font-size: 30px; line-height: 1; cursor: pointer; padding: 4px 8px; }
+.cert-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 10px; }
+.cert-bar a { color: #fff; font-weight: 600; }
+.cert-bar .btn.ghost { color: #fff; border-color: rgba(255,255,255,.4); background: transparent; cursor: pointer; font-family: inherit; }
 .card .foot a:not(.btn) { color: var(--ci, var(--blue-ink)); }
 
 /* Home: ALTOS feature */
@@ -610,6 +621,7 @@ h3 { font-size: 1.1887rem; }
 .stat b { font-size: 1.6126rem; }
 .stat span { font-size: 14.9883px; }
 .card .meta { font-size: 14.4715px; }
+.cert-view .cert-close:not(.btn) { font-size: 30.75px; }
 .feature-body h3 { font-size: 1.4989rem; }
 .tag { font-size: 13.4379px; }
 details { font-size: 15.5052px; }
