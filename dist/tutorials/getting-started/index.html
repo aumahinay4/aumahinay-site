@@ -132,7 +132,7 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .about-hello h1 { margin: 0; }
 .hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
 @media (max-width: 640px) { .hero h1 { font-size: min(1.2325rem, calc((100vw - 90px) / 15.6)); } }  /* phones: name shrinks just enough to stay on one line */
-.hero .lead { margin-top: 34.35px; }
+.hero .lead { margin-top: 21.07px; }  /* photo-to-intro gap cut 40% (33.2 -> 19.9px) */
 .hero { border-bottom: 3px solid transparent; border-image: var(--rainbow) 1; }  /* rainbow line across the bottom of the Home navy box, like the one under the top bar */  /* no colour bar under the name; intro stays where it was */
 .hero .lead { grid-column: 1 / -1; grid-row: 3; }
 .hero .btns { grid-column: 1 / -1; grid-row: 4; }
@@ -342,7 +342,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 @media (max-width: 640px) {
   main { padding: 12px 0 64px; }
   main .wrap { padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }  /* phones, all pages: less empty space at the sides (was 20px) */
-  .hero .lead { margin-top: 29.25px; }  /* phones: intro stays where it was */
+  .hero .lead { margin-top: 19.6px; }  /* phones: photo-to-intro gap cut 40% (24.1 -> 14.5px) */
   main h2 + p, h2 + .muted { margin-top: 10px; }  /* phones: text a little closer under each heading bar */
   main h2 + :not(p, .muted) { margin-top: 16px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
@@ -359,11 +359,11 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .card.feature { padding: 22px 12px; }
   .btns { margin-top: 24px; }
   .btn { padding: 13px 20px; }
-  .hero { padding: 8px 6px 26px; }  /* phones: name nearly touches the top of the navy box; text 6px from its sides */
+  .hero { padding: 11px 6px 26px; }  /* phones: name nearly touches the top of the navy box; text 6px from its sides */
   main .wrap > .hero:first-child { margin: -12px -10px 0; padding-left: 12px; padding-right: 12px; }  /* phones: Home navy box right under the top bar and edge to edge (Butch) */
   /* the three hero buttons share one line */
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(11.0931px, 3.3279vw, 15.127px); }
-  @media (max-width: 360px) { .hero { padding: 8px 6px 24px; } .hero { --bgap: 6px; } }
+  @media (max-width: 360px) { .hero { padding: 11px 6px 24px; } .hero { --bgap: 6px; } }
   td { padding: 12px 14px; }
   .stat { padding: 10px 14px 8px; gap: 4px; }
   .stat b { font-size: 1.3312rem; }
