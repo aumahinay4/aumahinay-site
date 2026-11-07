@@ -132,7 +132,10 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .about-hello h1 { margin: 0; }
 .hero h1 { grid-column: 2; grid-row: 1; align-self: center; }
 @media (max-width: 640px) { .hero h1 { font-size: min(1.2325rem, calc((100vw - 90px) / 15.6)); } }  /* phones: name shrinks just enough to stay on one line */
-.hero .lead { margin-top: 34.35px; }  /* no colour bar under the name; intro stays where it was */
+.hero .lead { margin-top: 19.08px; }
+.hero .btns { margin-top: 21.87px; }  /* navy above the buttons 10% less, three times (was 30px) */
+.hero { padding-bottom: clamp(20.41px, 4.01vw, 46.66px); }  /* navy below the buttons 10% less, three times */  /* photo-to-intro gap cut 40%, then 10% more (33.2 -> 17.9px) */
+.hero { border-bottom: 3px solid transparent; border-image: var(--rainbow) 1; }  /* rainbow line across the bottom of the Home navy box, like the one under the top bar */  /* no colour bar under the name; intro stays where it was */
 .hero .lead { grid-column: 1 / -1; grid-row: 3; }
 .hero .btns { grid-column: 1 / -1; grid-row: 4; }
 .hero .lead { margin-bottom: 0; }  /* keeps the same gap above the buttons as before (grid margins do not overlap) */
@@ -149,13 +152,13 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 
 /* Figures strip */
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-.stat { padding: 18px 22px 14px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 5px; }
+.stat { padding: 18px 22px 14px; border-left: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; }
 .stat:first-child { border-left: 0; }
 .stat b { display: block; font: 700 1.5733rem/.82 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .stat b small { font-size: .6em; font-weight: 700; margin-left: 2px; vertical-align: .55em; }
 .stat:nth-child(1) b { color: var(--gold-ink); } .stat:nth-child(2) b { color: var(--blue-ink); }
 .stat:nth-child(3) b { color: var(--green-ink); } .stat:nth-child(4) b { color: var(--coral-ink); }
-.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin-top: 3px; background: currentColor; opacity: .55; }
+.stat b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 3px; margin: 3px auto 0; background: currentColor; opacity: .55; }
 .stat span { font-size: 14.6227px; line-height: 1.35; font-weight: 500; color: var(--muted); max-width: 18ch; }
 @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(3) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid var(--line); } }
 
@@ -341,7 +344,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 @media (max-width: 640px) {
   main { padding: 12px 0 64px; }
   main .wrap { padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }  /* phones, all pages: less empty space at the sides (was 20px) */
-  .hero .lead { margin-top: 29.25px; }  /* phones: intro stays where it was */
+  .hero .lead { margin-top: 18.15px; }  /* phones: photo-to-intro gap cut 40%, then 10% more (24.1 -> 13px) */
   main h2 + p, h2 + .muted { margin-top: 10px; }  /* phones: text a little closer under each heading bar */
   main h2 + :not(p, .muted) { margin-top: 16px; }
   main .post p { text-align: justify; }  /* stronger than a later left-align rule for blog posts: keep them justified on phones */
@@ -358,10 +361,12 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .card.feature { padding: 22px 12px; }
   .btns { margin-top: 24px; }
   .btn { padding: 13px 20px; }
-  .hero { padding: 26px 12px; }
+  .hero { padding: 20px 6px 18.95px; }
+  .hero .btns { margin-top: 17.5px; }  /* phones: navy above and below the buttons 10% less, three times (24 -> 17.5, 26 -> 18.95) */  /* phones: name nearly touches the top of the navy box; text 6px from its sides */
+  main .wrap > .hero:first-child { margin: -12px -10px 0; padding-left: 12px; padding-right: 12px; }  /* phones: Home navy box right under the top bar and edge to edge (Butch) */
   /* the three hero buttons share one line */
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(11.0931px, 3.3279vw, 15.127px); }
-  @media (max-width: 360px) { .hero { padding: 24px 16px; } .hero { --bgap: 6px; } }
+  @media (max-width: 360px) { .hero { padding: 20px 6px 17.5px; } .hero { --bgap: 6px; } }
   td { padding: 12px 14px; }
   .stat { padding: 10px 14px 8px; gap: 4px; }
   .stat b { font-size: 1.3312rem; }
