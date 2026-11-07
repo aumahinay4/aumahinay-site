@@ -359,6 +359,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
   .btns { margin-top: 24px; }
   .btn { padding: 13px 20px; }
   .hero { padding: 8px 6px 26px; }  /* phones: name nearly touches the top of the navy box; text 6px from its sides */
+  main .wrap > .hero:first-child { margin-top: -12px; }  /* phones: Home navy box sits right under the top bar (Butch's screenshot) */
   /* the three hero buttons share one line */
   .hero .btn { flex: 0 0 auto; text-align: center; white-space: nowrap; padding: 11px 2.3vw; font-size: clamp(11.0931px, 3.3279vw, 15.127px); }
   @media (max-width: 360px) { .hero { padding: 8px 6px 24px; } .hero { --bgap: 6px; } }
