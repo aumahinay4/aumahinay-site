@@ -11,7 +11,7 @@ CSS = """
   --gold: #f6c453; --blue: #7cc4ff; --green: #3ddc97; --coral: #ff8a80; --violet: #c9a7ff;
   /* the same colours, deep enough to read as text on white */
   --gold-ink: #9a6500; --blue-ink: #1d6bc4; --green-ink: #0b7d55; --coral-ink: #c43d33; --violet-ink: #6f45c7;
-  --navy: #12397f; --navy-deep: #0b2a63; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
+  --navy: #12397f; --navy-deep: #0b2a63; --bar-ink: #12397f; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
   --bg: #f4f6fb; --surface: #ffffff; --text: #0f1a33; --muted: #56627c; --line: #dfe5ef;
   --shadow: 0 1px 2px rgba(15, 26, 51, .06), 0 12px 32px -18px rgba(15, 26, 51, .28);
   --rainbow: linear-gradient(90deg, var(--gold), var(--blue) 25%, var(--green) 50%, var(--coral) 75%, var(--violet));
@@ -22,7 +22,7 @@ CSS = """
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --gold-ink: #f6c453; --blue-ink: #7cc4ff; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
-    --navy: #123272; --navy-deep: #0a2458;
+    --navy: #123272; --navy-deep: #0a2458; --bar-ink: #e8edf7;
     --bg: #081025; --surface: #0f1a36; --text: #e8edf7; --muted: #9aa7c2; --line: #1f2d4f;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
     color-scheme: dark;
@@ -30,7 +30,7 @@ CSS = """
 }
 :root[data-theme="dark"] {
   --gold-ink: #f6c453; --blue-ink: #7cc4ff; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
-  --navy: #123272; --navy-deep: #0a2458;
+  --navy: #123272; --navy-deep: #0a2458; --bar-ink: #e8edf7;
   --bg: #081025; --surface: #0f1a36; --text: #e8edf7; --muted: #9aa7c2; --line: #1f2d4f;
   --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
   color-scheme: dark;
@@ -46,8 +46,8 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline
 img { max-width: 100%; height: auto; }
 .wrap { max-width: var(--max); margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 
-/* Header: navy bar with the five-colour rule from the cover */
-header.site { background: var(--navy-deep); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+/* Header: white bar like the page below it, navy blue three-bar button (Butch 2026-11-09, like Malaya) */
+header.site { background: var(--bg); box-shadow: 0 1px 0 var(--line), 0 6px 16px -12px rgba(11, 42, 99, .35); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
 header.site::after { content: none; }  /* plain navy top bar, no rainbow line (Butch 2026-11-09) */
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 66px; flex-wrap: wrap; }
 .brand { font: 700 1.2101rem var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
@@ -698,9 +698,11 @@ def _desktop_text_rules(css, scale):
 CSS += """
 header.site .wrap { min-height: 52px; padding-top: 0; padding-bottom: 0; justify-content: flex-start; flex-wrap: nowrap; }
 .menu-btn { display: none; width: 44px; height: 44px; margin-left: -8px; padding: 0; place-content: center; cursor: pointer;
-            background: transparent; border: 0; color: var(--on-navy); }
+            background: transparent; border: 0; color: var(--bar-ink); }
+html:not(.menu-js) header.site nav a { color: var(--text); }
 .menu-btn svg, .menu-close svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-.menu-btn:hover, .menu-btn:focus-visible, .menu-close:hover, .menu-close:focus-visible { color: var(--gold); }
+.menu-btn:hover, .menu-btn:focus-visible { color: var(--gold-ink); }
+.menu-close:hover, .menu-close:focus-visible { color: var(--gold); }
 .menu-close { display: none; }
 html.menu-js .menu-btn { display: grid; }
 html.menu-js header.site #site-menu { display: none; }
