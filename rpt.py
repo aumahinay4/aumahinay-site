@@ -339,6 +339,10 @@ def rpt_page():
                      "or on time; the rates are in the local ordinance (Sec. 251)."),
                 t.li(t.b("Interest. "), "Unpaid tax earns interest of 2% a month, up to 36 months, until it is paid in full "
                      "(Sec. 255). In Quezon Province, a part of a month counts as a full month."),
+                t.li(t.b("Older unpaid taxes first. "), "Payments are applied first to unpaid taxes, interest and penalties of "
+                     "earlier years, and only then to the current year (Sec. 250). This calculator works out one tax year at a time."),
+                t.li(t.b("Not included. "), "The idle land tax (3% in Quezon Province), special levies, and the lower SEF rate for "
+                     "renewable energy property (0.5% in Quezon Province, under RA 9513) are not covered here."),
                 t.li(t.b("New property values. "), "Under the Real Property Valuation and Assessment Reform Act (RA 12001, 2024), "
                      "the increase in real property tax in the first year of a new schedule of market values is capped at 6%."),
                 t.li(t.b("Metro Manila. "), "Municipalities in Metro Manila follow a different sharing rule, so this "
@@ -349,7 +353,7 @@ def rpt_page():
                 "250, 251, 255, 271 and 272; ",
                 t.a("RA 12001", href="https://lawphil.net/statutes/repacts/ra2024/ra_12001_2024.html", rel="noopener"),
                 ", Sec. 29; Province of Quezon, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022), "
-                "Secs. 25, 39, 40, 43, 44, 45 and 47. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
+                "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
             t.p("This calculator is a study aid, not an official assessment. Your actual tax depends on your local "
                 "ordinances and the tax declaration; your municipal, city or provincial treasurer's office has the final "
                 "figures. Figures are worked out in your browser and nothing you type is sent or saved.",
