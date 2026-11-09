@@ -808,6 +808,11 @@ ol.coming li { margin: 4px 0; text-align: left; }
 
 /* About: name title on ONE line on phones (Butch 2026-11-10); shrinks with the screen width */
 @media (max-width: 640px) { .about-hello h1.name-title { white-space: nowrap; font-size: min(1.5rem, calc((100vw - 64px) / 15.6)); } }
+
+/* Menu panel see-through (Butch 2026-11-10): navy at 72% with a soft blur so the page shows faintly behind */
+html.menu-js.menu-open header.site #site-menu {
+  background: color-mix(in srgb, var(--navy) 72%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }

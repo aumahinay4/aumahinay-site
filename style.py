@@ -906,4 +906,11 @@ CSS += """
 @media (max-width: 640px) { .about-hello h1.name-title { white-space: nowrap; font-size: min(1.5rem, calc((100vw - 64px) / 15.6)); } }
 """
 
+CSS += """
+/* Menu panel see-through (Butch 2026-11-10): navy at 72% with a soft blur so the page shows faintly behind */
+html.menu-js.menu-open header.site #site-menu {
+  background: color-mix(in srgb, var(--navy) 72%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+"""
+
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
