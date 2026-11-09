@@ -624,9 +624,7 @@ def note_card(n):
 
 
 def courses():
-    """Study Notes (was Courses, Butch 2026-11-10): treasury notes first, then my learning."""
-    pro = [c for c in CERTIFICATES if c["kind"].startswith("Prof")]
-    spec = [c for c in CERTIFICATES if not c["kind"].startswith("Prof")]
+    """Study Notes (was Courses, Butch 2026-11-10): treasury notes only (My learning and trainings removed)."""
     live = live_notes()
     upcoming = [title for i, title in enumerate(OUTLINE, 1) if i > len(live)]
     nxt = next((n for n in NOTES if n not in live), None)
@@ -640,32 +638,6 @@ def courses():
         t.p(f"Note 1 comes out {module_when(nxt)}." if nxt else "The first note is coming soon.", class_="checked"),
         [t.h2("Coming next"),
          t.ol([t.li(title) for title in upcoming], start=str(len(live) + 1), class_="coming")] if upcoming else None,
-        t.h2("My learning"),
-        t.p(
-            "I began learning on Coursera through Google Career Certificates (GCC) in 2020, during the pandemic, "
-            "while serving as Acting Municipal Treasurer of Mulanay, Quezon. In 2024 I committed to the GCC "
-            "program fully, and I have since earned "
-            f"{len(pro)} Google Professional Certificates and {len(spec)} Specializations, "
-            f"{sum(c['courses'] for c in CERTIFICATES)} courses in total. "
-            +
-            ("Every credential links to its Coursera verification page." if SHOW_CERTIFICATES else ""),
-        ),
-        t.div(
-            t.p("With gratitude", class_="thanks-label"),
-            t.p(
-                "Since April 2026, my Google Career Certificates have been sponsored by the "
-                "Local Government Unit (LGU) of Sampaloc, Quezon and the Department of Trade and "
-                "Industry (DTI) Quezon. Their support made my studies free and let me keep learning "
-                "without interruption. I am deeply grateful to both."
-            ),
-            class_="thanks",
-        ),
-        # certificate cards hidden for now (Butch 2026-11-09); set SHOW_CERTIFICATES = True to bring them back
-        [t.h2("Google Professional Certificates"), t.div([cert_card(c) for c in pro], class_="grid"),
-         t.h2("Google Specializations"), t.div([cert_card(c) for c in spec], class_="grid")] if SHOW_CERTIFICATES else None,
-        t.h2("Government & professional training"),
-        t.p("A selection of the government and professional trainings I have completed over the years. The full list is longer than what is shown here.", class_="muted"),
-        t.table([t.tr(t.td(t.b(name), t.br(), t.span(org, class_="muted")), t.td(when)) for name, org, when in TRAININGS]),
         description=f"Free study notes on local treasury work in the Philippines: local revenue, "
                     f"real property and business taxes, collections and disbursements, by {SITE['short_name']}.",
     )
