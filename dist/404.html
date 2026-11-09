@@ -748,17 +748,17 @@ blockquote::before { color: var(--gold-ink); }
 .sources-line { text-align: left; }
 @media (max-width: 640px) { .rpt-table th, .rpt-table td { padding: 7px 4px; } .rpt-table { font-size: .86em; } }
 
-/* Smaller navigation bar (Butch 2026-11-10): bar, three-bar button and menu about 20% smaller */
-header.site .wrap { min-height: 42px; }
-@media (max-width: 640px) { header.site .wrap { min-height: 40px; } }
-.menu-btn { width: 36px; height: 36px; margin-left: -6px; }
-.menu-btn svg { width: 22px; height: 22px; }
-html.menu-js.menu-open header.site #site-menu { padding-top: calc(68px + env(safe-area-inset-top, 0px)); }
-html.menu-js.menu-open header.site #site-menu a { padding: 10px 0; font-size: clamp(1.2rem, 5.4vw, 1.55rem); }
+/* Smaller navigation bar (Butch 2026-11-10): 20% smaller, then another 20% */
+header.site .wrap { min-height: 34px; }
+@media (max-width: 640px) { header.site .wrap { min-height: 32px; } }
+.menu-btn { width: 29px; height: 29px; margin-left: -5px; }
+.menu-btn svg { width: 18px; height: 18px; }
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(54px + env(safe-area-inset-top, 0px)); }
+html.menu-js.menu-open header.site #site-menu a { padding: 8px 0; font-size: clamp(.96rem, 4.32vw, 1.24rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 6px 0; font-size: clamp(.9rem, 3.9vw, 1.05rem); }
-html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 14px; padding-top: 18px; }
-html.menu-js.menu-open .menu-close svg { width: 28px; height: 28px; }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 5px 0; font-size: clamp(.8rem, 3.4vw, .9rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 11px; padding-top: 14px; }
+html.menu-js.menu-open .menu-close svg { width: 22px; height: 22px; }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -836,9 +836,9 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .rpt-form input[type=number] { font-size: 17.425px; }
 .rpt-form input[type=date], .rpt-form select { font-size: 17.425px; }
 .rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
-html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.2rem, 5.4vw, 1.55rem) * 1.025); }
+html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(.96rem, 4.32vw, 1.24rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(.9rem, 3.9vw, 1.05rem) * 1.025); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(.8rem, 3.4vw, .9rem) * 1.025); }
 }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><script>
 (function () {

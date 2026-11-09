@@ -836,17 +836,17 @@ CSS += """
 """
 
 CSS += """
-/* Smaller navigation bar (Butch 2026-11-10): bar, three-bar button and menu about 20% smaller */
-header.site .wrap { min-height: 42px; }
-@media (max-width: 640px) { header.site .wrap { min-height: 40px; } }
-.menu-btn { width: 36px; height: 36px; margin-left: -6px; }
-.menu-btn svg { width: 22px; height: 22px; }
-html.menu-js.menu-open header.site #site-menu { padding-top: calc(68px + env(safe-area-inset-top, 0px)); }
-html.menu-js.menu-open header.site #site-menu a { padding: 10px 0; font-size: clamp(1.2rem, 5.4vw, 1.55rem); }
+/* Smaller navigation bar (Butch 2026-11-10): 20% smaller, then another 20% */
+header.site .wrap { min-height: 34px; }
+@media (max-width: 640px) { header.site .wrap { min-height: 32px; } }
+.menu-btn { width: 29px; height: 29px; margin-left: -5px; }
+.menu-btn svg { width: 18px; height: 18px; }
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(54px + env(safe-area-inset-top, 0px)); }
+html.menu-js.menu-open header.site #site-menu a { padding: 8px 0; font-size: clamp(.96rem, 4.32vw, 1.24rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 6px 0; font-size: clamp(.9rem, 3.9vw, 1.05rem); }
-html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 14px; padding-top: 18px; }
-html.menu-js.menu-open .menu-close svg { width: 28px; height: 28px; }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 5px 0; font-size: clamp(.8rem, 3.4vw, .9rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 11px; padding-top: 14px; }
+html.menu-js.menu-open .menu-close svg { width: 22px; height: 22px; }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
