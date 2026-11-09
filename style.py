@@ -908,7 +908,8 @@ CSS += """
 
 CSS += """
 /* Menu panel PLAIN WHITE (Butch 2026-11-10; dark mode uses the dark card colour): navy words, gold-ink for the current page */
-html.menu-js.menu-open header.site #site-menu { background: var(--surface); }
+html.menu-js.menu-open header.site #site-menu { background: color-mix(in srgb, var(--surface) 50%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }  /* white, 50% see-through (Butch 2026-11-10) */
 html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
