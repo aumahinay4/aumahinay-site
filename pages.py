@@ -11,6 +11,7 @@ import tags as t
 from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TRAININGS
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
+from vocab import MODULES, VOCAB, module_url, word_source
 from style import CSS
 from tags import Raw
 
@@ -764,6 +765,7 @@ def tutorials():
         t.div(t.p(t.b("Where to begin. "), TUTORIAL["setup"]), class_="card setup"),
         t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
         t.div([lesson_card(x) for x in shown], class_="lesson-list"),  # lessons not yet published stay hidden
+        vocab_section(),
         t.h2("Words to know"),
         t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
         t.p(
@@ -772,6 +774,90 @@ def tutorials():
             class_="muted note",
         ),
         description=f"Free, beginner-friendly Python lessons for local treasury work: collections, disbursements and reports, by {SITE['short_name']}.",
+    )
+
+
+# ---- Civil Service Exam Vocabulary (second tutorial series, Butch 2026-11-09) ----
+
+VOCAB_CHECKED = "November 2026"
+
+
+def module_is_live(m):
+    return m.get("publish_on") is None or m["publish_on"] <= ph_today()
+
+
+def live_modules():
+    return [m for m in MODULES if SHOW_SCHEDULED or module_is_live(m)]
+
+
+def module_card(m):
+    return t.a(
+        t.div(t.span(f"Module {m['number']}", class_="badge"), t.span(f"{len(m['words'])} words · practice", class_="muted"), class_="meta"),
+        t.h3(m["title"][:1].upper() + m["title"][1:]),
+        t.p(m["summary"]),
+        t.span("Start the module →", class_="go"),
+        href=module_url(m), class_="card lesson",
+    )
+
+
+def vocab_section():
+    mods = live_modules()
+    if not mods:
+        return None
+    return [
+        t.h2(VOCAB["title"], id=VOCAB["slug"]),
+        t.p(VOCAB["intro"]),
+        t.div([module_card(m) for m in mods], class_="lesson-list"),
+    ]
+
+
+def word_card(w):
+    word, pos, meaning, example, syn, ant, note = w
+    return t.div(
+        t.h2(word, t.span(" " + pos, class_="pos")),
+        t.p(meaning, class_="meaning"),
+        t.p(t.b("Example: "), t.i(example)),
+        t.p(t.b("Same meaning: "), ", ".join(syn)) if syn else None,
+        t.p(t.b("Opposite: "), ", ".join(ant)) if ant else None,
+        t.p(t.b("Exam tip: "), note, class_="tip") if note else None,
+        t.p(t.a("Check the meaning in Merriam-Webster", href=word_source(word), target="_blank", rel="noopener"), class_="source"),
+        class_="card word",
+    )
+
+
+def module_page(m):
+    i = MODULES.index(m)
+    nxt = MODULES[i + 1] if i + 1 < len(MODULES) else None
+    letters = "ABCD"
+    return part(
+        f"Civil Service Exam Vocabulary, Module {m['number']}: {m['title']}", module_url(m),
+        t.div(
+            t.a("← " + VOCAB["title"], href=f"/tutorials/#{VOCAB['slug']}", class_="crumb"),
+            t.p(f"{VOCAB['title']} · Module {m['number']}", class_="eyebrow"),
+            t.h1(m["title"][:1].upper() + m["title"][1:], class_="lesson-title"),
+            t.p(m["summary"], class_="lead"),
+            t.p("✓ Last checked: " + VOCAB_CHECKED + " · meanings checked against Merriam-Webster", class_="checked"),
+            t.p(VOCAB["note"].replace("Civil Service Commission.", ""), t.a("Civil Service Commission", href=VOCAB["csc_url"], target="_blank", rel="noopener"), ".", class_="muted"),
+            [word_card(w) for w in m["words"]],
+            t.h2("Practice"),
+            t.p("Answer first, then open the answer to check yourself."),
+            t.ol([
+                t.li(
+                    t.p(q),
+                    t.ol([t.li(c) for c in choices], class_="choices", type="A"),
+                    t.details(t.summary("Show answer"), t.p(t.b(f"{letters[ans]}. {choices[ans]}"), " ", why), class_="answer"),
+                )
+                for q, choices, ans, why in m["practice"]
+            ], class_="practice"),
+            react_box(module_url(m)),
+            t.div(
+                t.span(),
+                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span("Next module coming soon", class_="muted"),
+                class_="lesson-nav",
+            ),
+            class_="lesson-page vocab-page",
+        ),
+        description=f"{VOCAB['title']}, Module {m['number']}: {m['summary']}",
     )
 
 
@@ -1225,6 +1311,7 @@ ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}
 ROUTES[BOOK_URL] = _full_page(book_reader)
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
+ROUTES.update({module_url(m): _full_page(lambda m=m: module_page(m)) for m in MODULES if module_is_live(m)})
 
 
 def not_found():

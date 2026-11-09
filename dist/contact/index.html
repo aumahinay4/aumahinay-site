@@ -660,6 +660,18 @@ footer.site .sep { opacity: .6; }
 .disclaimer h3 { margin: 0 0 6px; font-size: 1rem; }
 .disclaimer p { margin: 0; font-style: italic; font-size: .94em; }
 .policy-meta { text-align: left; }
+/* Civil Service Exam Vocabulary pages */
+.vocab-page .card.word { margin-top: 16px; }
+.vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
+.vocab-page .card.word h2::after { display: none; }
+.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body, inherit); color: var(--muted); }
+.vocab-page .card.word p, .practice p, .practice li { margin: 6px 0; text-align: left; hyphens: manual; }  /* short lines: left-aligned so words are not stretched apart */
+.vocab-page .card.word .meaning { font-weight: 600; }
+.vocab-page .card.word .source { font-size: .9em; text-align: left; }
+.practice > li { margin: 0 0 18px; }
+.practice > li > p { margin: 0 0 6px; }
+.practice .choices { margin: 0 0 8px; padding-left: 26px; }
+.practice .answer summary { cursor: pointer; font-weight: 700; color: var(--blue-ink); }
 /* Home (2026-11-09): link cards, author box */
 a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
@@ -740,6 +752,8 @@ html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(1.05rem, 4.6vw, 1.25rem) * 1.025); }
 .roles { font-size: 1.0762rem; }
 .disclaimer h3 { font-size: 1.025rem; }
+.vocab-page .card.word h2 { font-size: 1.4862rem; }
+.vocab-page .card.word .pos { font-size: 0.9737rem; }
 }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/" class="active" aria-current="page">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Contact</p><div class="about-hello"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="Photo of Ambrosio “Butch” U. Mahinay" width="400" height="400" class="hero-photo"><h1>Get in touch</h1></div><p class="lead">For questions about a blog post or lesson, feedback on the ALTOS book, speaking inquiries, or technical discussions on civic tech and data analytics, email me.</p><ul class="plain-list"><li><b>Email: </b><a href="mailto:hello@aumahinay.dev">hello@aumahinay.dev</a></li><li><b>Website: </b><a href="/">https://aumahinay.dev</a></li></ul><p>Please don&#x27;t send personal data you don&#x27;t want me to keep. How I handle what you send is explained in the <a href="/privacy/">Privacy Policy</a>.</p><p class="muted note">Views on this site are my own, written in my personal capacity, and do not represent any government office.</p></div></main><script>
 (function () {

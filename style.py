@@ -742,6 +742,18 @@ footer.site .sep { opacity: .6; }
 .disclaimer h3 { margin: 0 0 6px; font-size: 1rem; }
 .disclaimer p { margin: 0; font-style: italic; font-size: .94em; }
 .policy-meta { text-align: left; }
+/* Civil Service Exam Vocabulary pages */
+.vocab-page .card.word { margin-top: 16px; }
+.vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
+.vocab-page .card.word h2::after { display: none; }
+.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body, inherit); color: var(--muted); }
+.vocab-page .card.word p, .practice p, .practice li { margin: 6px 0; text-align: left; hyphens: manual; }  /* short lines: left-aligned so words are not stretched apart */
+.vocab-page .card.word .meaning { font-weight: 600; }
+.vocab-page .card.word .source { font-size: .9em; text-align: left; }
+.practice > li { margin: 0 0 18px; }
+.practice > li > p { margin: 0 0 6px; }
+.practice .choices { margin: 0 0 8px; padding-left: 26px; }
+.practice .answer summary { cursor: pointer; font-weight: 700; color: var(--blue-ink); }
 /* Home (2026-11-09): link cards, author box */
 a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
