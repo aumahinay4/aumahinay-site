@@ -1,4 +1,4 @@
-"""Study Notes: treasury and assessor topics, one note every Friday at 9 pm (Philippine time).
+"""Study Notes: local treasury topics, one note every Friday at 9 pm (Philippine time).
 
 Butch chose this for the old Courses page (2026-11-10). Each note explains one part of local
 revenue and treasury work in plain words, cites the law it explains, gives a worked example
@@ -14,7 +14,7 @@ NOTES_INFO = {
     "title": "Study Notes",
     "url": "/study-notes/",
     "intro": (
-        "Plain-language notes on local treasury and assessment work: where local revenue comes from, how "
+        "Plain-language notes on local treasury work: where local revenue comes from, how "
         "real property and business taxes are computed, and how money is collected, kept and paid out. "
         "Each note explains the law in everyday words, works through an example and ends with a 10-question "
         "quiz. A new note comes out every Friday at 9 pm."
@@ -55,7 +55,7 @@ NOTES = [
             "(Article X, Section 5) gives each local government the power to create its own sources of revenue "
             "and to levy taxes, fees and charges, subject to limits set by Congress. Congress set those limits in "
             "the Local Government Code of 1991, Republic Act No. 7160. Book II of the Code is the part every "
-            "treasurer and assessor should know well.",
+            "treasury worker should know well.",
             ("h", "The four main sources"),
             ("list", [
                 "Local taxes: real property tax, business taxes, the community tax and the other taxes the Code "
@@ -121,7 +121,7 @@ NOTES = [
             ("tip", "For most municipalities, the NTA is still the largest source of income. That is why "
                     "raising local collections matters: it gives the town money it can plan for on its own."),
             ("h", "Why this matters at the counter"),
-            "A treasurer or assessor who knows these limits can answer a taxpayer's \"Why am I paying this?\" "
+            "A treasury worker who knows these limits can answer a taxpayer's \"Why am I paying this?\" "
             "with the law, and can spot an ordinance that charges something the Code does not allow. An unlawful "
             "tax can be challenged: a taxpayer may appeal a tax ordinance to the Secretary of Justice within 30 "
             "days of its effectivity (Section 187).",

@@ -624,7 +624,7 @@ def note_card(n):
 
 
 def courses():
-    """Study Notes (was Courses, Butch 2026-11-10): treasury and assessor notes first, then my learning."""
+    """Study Notes (was Courses, Butch 2026-11-10): treasury notes first, then my learning."""
     pro = [c for c in CERTIFICATES if c["kind"].startswith("Prof")]
     spec = [c for c in CERTIFICATES if not c["kind"].startswith("Prof")]
     live = live_notes()
@@ -632,7 +632,7 @@ def courses():
     nxt = next((n for n in NOTES if n not in live), None)
     return part(
         "Study Notes", NOTES_INFO["url"],
-        t.p("Treasury and assessor", class_="eyebrow"),
+        t.p("Local treasury", class_="eyebrow"),
         photo_title(NOTES_INFO["title"]),
         t.p(NOTES_INFO["intro"], class_="lead"),
         t.p(NOTES_INFO["disclaimer"], class_="muted"),
@@ -666,7 +666,7 @@ def courses():
         t.h2("Government & professional training"),
         t.p("A selection of the government and professional trainings I have completed over the years. The full list is longer than what is shown here.", class_="muted"),
         t.table([t.tr(t.td(t.b(name), t.br(), t.span(org, class_="muted")), t.td(when)) for name, org, when in TRAININGS]),
-        description=f"Free study notes on local treasury and assessment work in the Philippines: local revenue, "
+        description=f"Free study notes on local treasury work in the Philippines: local revenue, "
                     f"real property and business taxes, collections and disbursements, by {SITE['short_name']}.",
     )
 
