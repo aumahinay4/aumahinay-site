@@ -550,11 +550,11 @@ BLOG = [
             "property. A ₱1.5 million house in Quezon has an assessed value of ₱375,000 and a yearly tax of ₱7,500. "
             "Paid two years ahead, it costs ₱6,000. Paid as late as in the third example, it costs ₱8,062.50. That is "
             "a difference of more than ₱2,000, every year, for the same house.",
-            ("quote", "The tax is the same for everyone. What you finally pay depends on when you pay."),
+            ("quote", "The law sets the tax. When you pay decides what it finally costs."),
             ("h", "Where Your Money Goes"),
             "The \"Who gets what\" table is the part I most want people to see. Take the on-time payment of ₱450. The "
             "basic tax portion, ₱225, is shared by law: 35% (₱78.75) to the province, 40% (₱90) to the municipality, "
-            "and 25% (₱56.25) to the barangay where the property is. Any interest you pay is shared the same way. The "
+            "and 25% (₱56.25) to the barangay where the property is. Interest on the basic tax is shared the same way. The "
             "SEF portion, another ₱225, goes to the local school boards and is split equally between the provincial "
             "and municipal boards, ₱112.50 each.",
             "In a city, the city keeps 70% of the basic tax and the barangays get 30%. Half of that 30% goes to the "
@@ -583,7 +583,7 @@ BLOG = [
             "No tool covers everything, and I would rather tell you its limits now. The calculator does not include "
             "the idle land tax, special levies, or the lower SEF rate for renewable energy property. It does not "
             "cover municipalities in Metro Manila, which follow a different sharing rule. It also assumes the "
-            "property is taxable; exemptions are decided by the assessor's office.",
+            "property is taxable; exemption claims go to the assessor's office.",
             "Most important, it is a study aid, not an official assessment. Your treasurer's office has the final "
             "figure, so use the calculator to understand and plan, then confirm the amount when you pay.",
             ("h", "Why I Built It"),
