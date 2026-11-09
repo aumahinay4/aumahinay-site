@@ -341,8 +341,10 @@ def cert_card(c):
     )
 
 
-def photo_title(*h1_args, **h1_kw):
-    """Page title with Butch's ringed photo beside it (photo only here, not in the top bar)."""
+def photo_title(*h1_args, photo=False, **h1_kw):
+    """Page title. Butch's ringed photo shows only on About (Butch 2026-11-10: no photo elsewhere)."""
+    if not photo:
+        return t.h1(*h1_args, **h1_kw)
     return t.div(t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
                  t.h1(*h1_args, **h1_kw), class_="about-hello")
 
@@ -366,7 +368,6 @@ def home():
     return part(
         "Home", "/",
         t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
             t.div(
                 t.div(t.h1("Where public finance meets Python"), class_="hero-name"),
                 t.p("Plain-language writing on local treasury work and public finance, free Python lessons "
@@ -1219,7 +1220,8 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title(ABOUT["title"]),
+        photo_title("About", photo=True),
+        t.p("Ambrosio “Butch” U. Mahinay", class_="about-name"),  # on its own line below the photo (Butch 2026-11-10)
         t.p(ABOUT["roles"], class_="roles"),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
