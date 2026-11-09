@@ -1039,6 +1039,8 @@ def blog_block(x):
     if kind == "source":
         before, label, url, after = rest
         return t.p(before, t.a(label, href=url, target="_blank", rel="noopener"), after, class_="muted source")
+    if kind == "cta":  # a button link inside a post, e.g. ("cta", "Open the RPT Calculator", "/tools/rpt-calculator/")
+        return t.p(t.a(rest[0], href=rest[1], class_="btn primary"), class_="cta")
     if kind == "ask":
         return t.p(rest[0], " ", t.a("Email me", href=f"mailto:{SITE['email']}"), ".", class_="ask")
     raise ValueError(f"unknown blog block {kind!r}")

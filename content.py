@@ -475,6 +475,131 @@ BLOG_CATEGORIES = [
 
 BLOG = [
     {
+        "date": "November 10, 2026",
+        "title": "How to Use the RPT Calculator: Know Your Amilyar Before You Pay",
+        "slug": "how-to-use-the-rpt-calculator",
+        "category": "finance",
+        "summary": "A step-by-step guide to the free Real Property Tax Calculator on this site, with worked examples, "
+                   "and the lessons every property owner should know about discounts, interest and where the money goes.",
+        "publish_on": "2026-11-10",  # waiting for Butch's go; goes live when merged on or after this date
+        "body": [
+            "Every January, the same question reaches the treasury counter: \"Magkano po ang amilyar ko?\" How much "
+            "is my real property tax? The answer usually ends up as one number on an official receipt. Behind that "
+            "number, though, are rules that most property owners never see: how the tax is computed, why paying early "
+            "saves money, why paying late costs more every month, and where each peso goes after you pay.",
+            "I built the Real Property Tax Calculator on this website to put those rules in plain view. It is free, it "
+            "works on a phone, and nothing you type leaves your browser. This guide walks you through it step by step, "
+            "with three worked examples and the lessons every property owner should know.",
+            ("h", "What the Calculator Does"),
+            "On a single screen, the calculator works out four things:",
+            ("point", "The tax for the year", "The basic real property tax plus the Special Education Fund (SEF) tax."),
+            ("point", "The discount or the interest", "Based on the date you pay, worked out quarter by quarter."),
+            ("point", "The amount to pay", "The figure you would bring to the treasurer's office."),
+            ("point", "Who gets what", "How your payment is shared by the province, the municipality, the barangay "
+             "and the local school boards."),
+            "It follows the Local Government Code of 1991 (Republic Act No. 7160) and has the Quezon Provincial Revenue "
+            "Code of 2022 built in. For a property in a Quezon municipality, it fills in the assessment level and the "
+            "discount for you. Elsewhere, you type in the rates from your local ordinance.",
+            ("cta", "Open the RPT Calculator", "/tools/rpt-calculator/"),
+            ("h", "Before You Start: Find Your Tax Declaration"),
+            "The most useful paper for this exercise is your tax declaration, often called the TD. The assessor's "
+            "office issues one for each piece of land, building or machinery. It shows the property's class "
+            "(residential, agricultural, commercial or industrial), its market value and its assessed value. If you "
+            "do not have a copy, ask the assessor's office how to get one.",
+            "The number that matters most is the assessed value. Real property tax is not charged on what your "
+            "property would sell for. It is charged on the assessed value, which is the market value multiplied by an "
+            "assessment level that the local ordinance sets for each class of property. For a residential lot in Quezon "
+            "Province, the assessment level is 5%. So a lot with a market value of ₱500,000 has an assessed value of "
+            "only ₱25,000, and that smaller figure is the one that gets taxed.",
+            ("h", "Step 1: Tell It Where the Property Is"),
+            "Choose one of three: a municipality in Quezon Province, a municipality in another province, or a city. "
+            "This choice sets the highest basic rate allowed (1% in a province, 2% in a city) and decides how the money "
+            "is shared. If you choose a city, you can also type its number of barangays to see each one's share.",
+            ("h", "Step 2: Enter the Assessed Value"),
+            "If your tax declaration shows the assessed value, choose \"I know the assessed value\" and type it in. "
+            "That is the most accurate route.",
+            "If you only know the market value, choose \"Compute it from the market value.\" For Quezon Province, "
+            "pick the kind of property (land, building, machinery or special class) and its use, and the calculator "
+            "fills in the assessment level from Section 25 of the provincial code. Buildings deserve a closer look, "
+            "because their level rises with their value. In Quezon, a residential building worth ₱175,000 or less has "
+            "an assessment level of 0%, while one worth ₱1.5 million falls in the 25% bracket. You can always change "
+            "the level by hand if your own ordinance says something different.",
+            ("h", "Step 3: Check the Tax Rates"),
+            "The calculator starts with a basic rate of 1% for municipalities and 2% for cities, plus 1% for the "
+            "Special Education Fund. These are the highest rates the Local Government Code allows. Quezon Province "
+            "charges the full 1% basic tax and the 1% SEF. Each city sets its own basic rate, up to 2%, so if your "
+            "city charges less, type the lower rate.",
+            "For our ₱25,000 lot in Quezon, that means a basic tax of ₱250 and an SEF tax of ₱250, or ₱500 for the year.",
+            ("h", "Step 4: Enter the Tax Year and the Date of Payment"),
+            "This is where the calculator does its best work. The year's tax is split into four equal quarters, due on "
+            "or before March 31, June 30, September 30 and December 31. The calculator compares your payment date "
+            "with each due date and decides, quarter by quarter, whether you earn a discount or owe interest.",
+            ("h", "Three Ways to Pay the Same ₱500"),
+            "Let us take the same residential lot in a Quezon municipality: market value ₱500,000, assessed value "
+            "₱25,000, yearly tax ₱500. Here is what the calculator shows for three different payment habits.",
+            ("point", "Paid on time", "Tax year 2027, all four quarters paid on March 15, 2027. Every quarter is paid "
+             "on time, so the 10% discount applies. You pay ₱450."),
+            ("point", "Paid in advance", "Tax year 2027, paid in full on September 30, 2026. In Quezon, paying the "
+             "whole of next year on or before September 30 earns a 15% discount, so you pay ₱425. Pay two or more "
+             "years ahead and the discount reaches 20%: ₱400 for the year."),
+            ("point", "Paid late", "Tax year 2026, nothing paid until November 20, 2026. The first quarter is eight "
+             "months late (in Quezon, a part of a month counts as a whole month), so it carries 16% interest. The second "
+             "quarter is five months late (10%) and the third is two months late (4%). The fourth quarter is not yet "
+             "due, but there is no discount while the other quarters are late. You pay ₱537.50."),
+            "On this small lot, the gap between the best habit and the worst is ₱137.50 a year. It grows with the "
+            "property. A ₱1.5 million house in Quezon has an assessed value of ₱375,000 and a yearly tax of ₱7,500. "
+            "Paid two years ahead, it costs ₱6,000. Paid as late as in the third example, it costs ₱8,062.50. That is "
+            "a difference of more than ₱2,000, every year, for the same house.",
+            ("quote", "The law sets the tax. When you pay decides what it finally costs."),
+            ("h", "Where Your Money Goes"),
+            "The \"Who gets what\" table is the part I most want people to see. Take the on-time payment of ₱450. The "
+            "basic tax portion, ₱225, is shared by law: 35% (₱78.75) to the province, 40% (₱90) to the municipality, "
+            "and 25% (₱56.25) to the barangay where the property is. Interest on the basic tax is shared the same way. The "
+            "SEF portion, another ₱225, goes to the local school boards and is split equally between the provincial "
+            "and municipal boards, ₱112.50 each.",
+            "In a city, the city keeps 70% of the basic tax and the barangays get 30%. Half of that 30% goes to the "
+            "barangay where the property is, and the other half is shared equally by all the barangays of the city. "
+            "The city school board keeps the whole SEF.",
+            "Your amilyar does not vanish into one big pot. A quarter of the basic tax goes straight to your own "
+            "barangay, and the SEF supports public schools, from school buildings to books and sports.",
+            ("h", "Five Lessons Worth Remembering"),
+            ("point", "Early payment pays you back", "The law allows a discount of up to 20% for paying early or on "
+             "time, and each province or city sets its own rates. In Quezon, it is 10% for paying on time, 15% for "
+             "paying next year's tax by September 30, and 20% for paying two or more years ahead."),
+            ("point", "Late payment grows every month", "Unpaid tax earns interest of 2% a month, for up to 36 months. "
+             "Left long enough, a tax can grow by as much as 72%."),
+            ("point", "Older balances are paid first", "When you pay, the treasurer applies the money first to unpaid "
+             "taxes, interest and penalties of earlier years, and only then to the current year. A payment you meant "
+             "for this year may cover an old balance first. The calculator works out one tax year at a time, so if "
+             "you have older unpaid years, check each year separately."),
+            ("point", "The tax is due on January 1", "Real property tax falls due on the first day of January, and an "
+             "unpaid tax stays attached to the property as a lien. If it stays unpaid, the local government can "
+             "eventually sell the property at public auction to collect it. Paying in installments is allowed; "
+             "ignoring the bill is not."),
+            ("point", "New values come with a cap", "Under the Real Property Valuation and Assessment Reform Act "
+             "(Republic Act No. 12001 of 2024), when a new schedule of market values takes effect, the increase in real "
+             "property tax in the first year is limited to 6%."),
+            ("h", "What the Calculator Does Not Cover"),
+            "No tool covers everything, and I would rather tell you its limits now. The calculator does not include "
+            "the idle land tax, special levies, or the lower SEF rate for renewable energy property. It does not "
+            "cover municipalities in Metro Manila, which follow a different sharing rule. It also assumes the "
+            "property is taxable; exemption claims go to the assessor's office.",
+            "Most important, it is a study aid, not an official assessment. Your treasurer's office has the final "
+            "figure, so use the calculator to understand and plan, then confirm the amount when you pay.",
+            ("h", "Why I Built It"),
+            "In more than thirteen years of public finance work, I have seen a few minutes of explanation change "
+            "a taxpayer's habits. A property owner who understands the bill is more likely to pay on time. A "
+            "barangay official who knows the barangay's share can plan better. A young couple buying their first lot "
+            "can budget for the amilyar before it surprises them.",
+            "The calculator is my small contribution to that. Try it with your own tax declaration, then "
+            "try a different payment date. The difference may convince you to visit the treasurer's office a little "
+            "earlier next year.",
+            ("cta", "Try the RPT Calculator", "/tools/rpt-calculator/"),
+            ("ask", "Did the calculator match the amount on your last official receipt? If not, tell me what was "
+             "different so I can improve it."),
+        ],
+    },
+    {
         "date": "November 5, 2026",
         "title": "So Close to Alibijaban Island",
         "slug": "so-close-to-alibijaban",
