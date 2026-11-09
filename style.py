@@ -48,7 +48,7 @@ img { max-width: 100%; height: auto; }
 
 /* Header: navy bar with the five-colour rule from the cover */
 header.site { background: var(--navy-deep); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
-header.site::after { content: ""; display: block; height: 3px; background: var(--rainbow); }
+header.site::after { content: none; }  /* plain navy top bar, no rainbow line (Butch 2026-11-09) */
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 66px; flex-wrap: wrap; }
 .brand { font: 700 1.2101rem var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
 .brand b { color: var(--gold); font-weight: inherit; }
@@ -382,7 +382,7 @@ main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; text-wrap: p
 @media (min-width: 1440px) { :root { --max: 1200px; } }
 
 footer.site { padding: 32px 0; color: var(--on-navy-muted); font-size: 15.6873px; background: var(--navy-deep); }
-footer.site::before { content: ""; display: block; height: 3px; background: var(--rainbow); margin-top: -32px; margin-bottom: 29px; }
+footer.site::before { content: none; }  /* plain navy footer, no rainbow line (Butch 2026-11-09) */
 footer.site a { color: var(--on-navy); }
 /* Product screenshot */
 figure.screenshot { margin: 28px 0 8px; }
