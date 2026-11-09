@@ -341,8 +341,10 @@ def cert_card(c):
     )
 
 
-def photo_title(*h1_args, **h1_kw):
-    """Page title with Butch's ringed photo beside it (photo only here, not in the top bar)."""
+def photo_title(*h1_args, photo=False, **h1_kw):
+    """Page title. Butch's ringed photo shows only on About (Butch 2026-11-10: no photo elsewhere)."""
+    if not photo:
+        return t.h1(*h1_args, **h1_kw)
     return t.div(t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
                  t.h1(*h1_args, **h1_kw), class_="about-hello")
 
@@ -366,7 +368,6 @@ def home():
     return part(
         "Home", "/",
         t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
             t.div(
                 t.div(t.h1("Where public finance meets Python"), class_="hero-name"),
                 t.p("Plain-language writing on local treasury work and public finance, free Python lessons "
@@ -423,7 +424,6 @@ def home():
         t.div(altos_feature_card(), class_="grid one"),
         t.h2("About the author"),
         t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
             t.div(
                 t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
                     "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
@@ -1219,7 +1219,7 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title(ABOUT["title"]),
+        photo_title("About", t.br(), t.span(ABOUT["title"].removeprefix("About "), class_="about-name"), photo=True),
         t.p(ABOUT["roles"], class_="roles"),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),

@@ -854,4 +854,13 @@ html.menu-js.menu-open .menu-close svg { width: 25px; height: 25px; }
 html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-inset-top, 0px)); }
 """
 
+CSS += """
+/* No photo except on About (Butch 2026-11-10) */
+.hero h1 { grid-column: 1 / -1; }
+.about-hello h1 .about-name { display: inline-block; }
+.card.author { grid-template-columns: 1fr !important; }
+.about-hello { align-items: flex-start; }
+.about-hello .hero-photo { margin-top: 4px; }
+"""
+
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)

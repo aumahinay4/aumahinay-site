@@ -764,6 +764,13 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 5px
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 13px; padding-top: 16px; }
 html.menu-js.menu-open .menu-close svg { width: 25px; height: 25px; }
 html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-inset-top, 0px)); }
+
+/* No photo except on About (Butch 2026-11-10) */
+.hero h1 { grid-column: 1 / -1; }
+.about-hello h1 .about-name { display: inline-block; }
+.card.author { grid-template-columns: 1fr !important; }
+.about-hello { align-items: flex-start; }
+.about-hello .hero-photo { margin-top: 4px; }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }

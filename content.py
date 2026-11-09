@@ -559,10 +559,6 @@ BLOG = [
             "and go. And if you see a man staring out at the sea from a bangka in San Andres, that might just be me, "
             "still planning my return.",
             ("ask", "Is there a place you can see from afar but have not visited in years? I'd love to hear about it."),
-            ("h", "Sources"),
-            ("source", "", "Proclamation No. 1051, s. 2025: November 4 special non-working day in Quezon", "https://lawphil.net/executive/proc/proc2025/proc_1051_2025.html", ""),
-            ("source", "", "Inquirer, \"Nov. 4 a special day in Quezon province to remember hero 'Hermano Puli'\" (2022)", "https://newsinfo.inquirer.net/1681344/nov-4-a-special-day-in-quezon-province-to-remember-hero-hermano-puli", ""),
-            ("source", "", "Republic Act No. 12226 (2025): Alibijaban Protected Landscape and Seascape Act", "https://lawphil.net/statutes/repacts/ra2025/ra_12226_2025.html", ""),
         ],
     },
     {
@@ -676,12 +672,6 @@ BLOG = [
             "A domain name is only a few letters, but it speaks before your website does. Mine says: this is where I "
             "build, and it is locked by default. That is what I want people to expect from me, both in software and "
             "in the treasury service.",
-            ("h", "Sources"),
-            ("source", "", "Google, \"hello dev\" (2019)", "https://developers.googleblog.com/2019/02/hello-dev.html", ""),
-            ("source", "", "Eric Lawrence, \"Strict-Transport-Security for *.dev, *.app and more\"", "https://textslashplain.com/2017/12/05/strict-transport-security-for-dev/", ""),
-            ("source", "", "HSTS Preload List", "https://hstspreload.org/", ""),
-            ("source", "", "Verisign, Domain Name Industry Brief, Q2 2026", "https://investor.verisign.com/news-releases/news-release-details/dnibcom-reports-internet-has-4016-million-domain-name", ""),
-            ("source", "", "Google Search Central, \"Google's handling of new top level domains\" (2015)", "https://developers.google.com/search/blog/2015/07/googles-handling-of-new-top-level", ""),
         ],
 },
     {
@@ -1747,8 +1737,6 @@ BLOG = [
             "San Andres and making me one of your own.",
             "And to anyone receiving a first designation today: say yes to the challenge. The comfort zone is "
             "safe, but the growth is out there, all 360 degrees of it.",
-            ("source", "Population and barangay figures: ", "PhilAtlas, Mulanay, Province of Quezon",
-             "https://philatlas.com/luzon/r04a/quezon/mulanay.html", ", based on the 2020 Census."),
         ],
     },
     {
