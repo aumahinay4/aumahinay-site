@@ -94,14 +94,13 @@ CERT_VIEWER = [
 ]
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
-# phone menu; X, Esc, or tapping a link closes it. Privacy is in the menu but not in the swipe order.
+# phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Privacy is in the menu but not in the swipe order.
 MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
-CLOSE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>')
 MENU_SCRIPT = """
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
-      close = document.getElementById("menu-close"), menu = document.getElementById("site-menu");
+      menu = document.getElementById("site-menu");
   if (!btn || !menu) return;
   root.classList.add("menu-js");
   function set(open) {
@@ -111,7 +110,6 @@ MENU_SCRIPT = """
     else btn.focus({ preventScroll: true });
   }
   btn.addEventListener("click", function () { set(true); });
-  close.addEventListener("click", function () { set(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
   // tap anywhere outside the half-screen menu to close it
   document.addEventListener("click", function (e) {
@@ -245,7 +243,6 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
                     t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
                              aria_controls="site-menu", aria_expanded="false"),
                     t.nav(
-                        t.button(CLOSE_ICON, type="button", id="menu-close", class_="menu-close", aria_label="Close menu"),
                         [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
                          for href, label in MENU],
                         id="site-menu", aria_label="Main menu",
