@@ -836,17 +836,22 @@ CSS += """
 """
 
 CSS += """
-/* Smaller navigation bar (Butch 2026-11-10): bar, three-bar button and menu about 20% smaller */
-header.site .wrap { min-height: 42px; }
-@media (max-width: 640px) { header.site .wrap { min-height: 40px; } }
-.menu-btn { width: 36px; height: 36px; margin-left: -6px; }
-.menu-btn svg { width: 22px; height: 22px; }
-html.menu-js.menu-open header.site #site-menu { padding-top: calc(68px + env(safe-area-inset-top, 0px)); }
-html.menu-js.menu-open header.site #site-menu a { padding: 10px 0; font-size: clamp(1.2rem, 5.4vw, 1.55rem); }
+/* Smaller navigation bar (Butch 2026-11-10): 20% smaller, then 10% more; menu is a half-screen navy panel */
+header.site .wrap { min-height: 38px; }
+@media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
+.menu-btn { width: 32px; height: 32px; margin-left: -5px; }
+.menu-btn svg { width: 20px; height: 20px; }
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(61px + env(safe-area-inset-top, 0px));
+  inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
+  padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
+html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset: 0; z-index: -1; background: rgba(7, 22, 49, .35); }  /* dims the page and the top bar beside the menu */
+html.menu-js.menu-open header.site { z-index: 60; }
+html.menu-js.menu-open header.site #site-menu a { padding: 9px 0; font-size: clamp(1.08rem, 4.86vw, 1.395rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 6px 0; font-size: clamp(.9rem, 3.9vw, 1.05rem); }
-html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 14px; padding-top: 18px; }
-html.menu-js.menu-open .menu-close svg { width: 28px; height: 28px; }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 13px; padding-top: 16px; }
+html.menu-js.menu-open .menu-close svg { width: 25px; height: 25px; }
+html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-inset-top, 0px)); }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
