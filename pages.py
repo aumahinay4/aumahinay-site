@@ -632,7 +632,7 @@ def courses():
     nxt = next((n for n in NOTES if n not in live), None)
     return part(
         "Study Notes", NOTES_INFO["url"],
-        t.p("Local treasury", class_="eyebrow"),
+        t.p("Treasury", class_="eyebrow"),
         photo_title(NOTES_INFO["title"]),
         t.p(NOTES_INFO["intro"], class_="lead"),
         t.p(NOTES_INFO["disclaimer"], class_="muted"),
