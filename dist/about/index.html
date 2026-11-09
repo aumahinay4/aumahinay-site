@@ -786,6 +786,10 @@ html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-i
 /* No photo except on About (Butch 2026-11-10) */
 .hero h1 { grid-column: 1 / -1; }
 .about-name { margin: -4px 0 10px; font: 700 clamp(1.2rem, 4.6vw, 1.55rem)/1.25 var(--font-display); color: var(--text); text-align: left; }
+
+/* Home headline twice as big (Butch 2026-11-10) */
+.hero h1 { font-size: clamp(2.465rem, 4.9078vw, 3.1822rem); line-height: 1.12; text-wrap: balance; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.465rem, 9.6vw); } }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -867,6 +871,7 @@ html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.08rem,
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
+.hero h1 { font-size: calc(clamp(2.465rem, 4.9078vw, 3.1822rem) * 1.025); }
 }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/" class="active" aria-current="page">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">About me</p><div class="about-hello"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="Photo of Ambrosio “Butch” U. Mahinay" width="400" height="400" class="hero-photo"><h1>About</h1></div><p class="about-name">Ambrosio “Butch” U. Mahinay</p><p class="roles">Public Administration Specialist · Local Treasury Practitioner · Civic Tech Developer</p><p class="lead">I am a public administration practitioner, author, and self-taught software developer in Quezon Province, Philippines, with over 15 years of dedicated experience in local government revenue operations, fiscal management, and public sector modernization.</p><div id="story" class="story"><p>Through aumahinay.dev, I write about public finance workflows, publish educational tutorials on civil service and treasury competencies, build practical software utilities using Python and modern web technologies, and share reflections from my three-hectare fruit farm in Quezon. <button type="button" id="story-more-btn" class="story-toggle" aria-controls="story-rest" aria-expanded="true">View more</button></p><div id="story-rest"><p>My career sits at the intersection of local treasury administration and digital transformation. Rather than viewing public administration and software engineering as separate disciplines, I focus on how simple, deterministic code and well-structured relational databases can eliminate repetitive spreadsheet work, prevent manual transposition errors, and strengthen 360-degree public accountability. <button type="button" id="story-less-btn" class="story-toggle" aria-controls="story-rest" aria-expanded="true">View less</button></p></div><script>
 (function () {

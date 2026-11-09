@@ -878,4 +878,9 @@ CSS += """
 .about-name { margin: -4px 0 10px; font: 700 clamp(1.2rem, 4.6vw, 1.55rem)/1.25 var(--font-display); color: var(--text); text-align: left; }
 """
 
+CSS += """
+/* Home headline twice as big (Butch 2026-11-10) */
+.hero h1 { font-size: clamp(2.465rem, 4.9078vw, 3.1822rem); line-height: 1.12; text-wrap: balance; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.465rem, 9.6vw); } }
+"""
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
