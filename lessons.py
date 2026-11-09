@@ -137,7 +137,7 @@ LESSONS = [
                 "key, type cmd, open Command Prompt, and type the command shown below the steps. It downloads "
                 "the latest Python 3 for you. If it asks any setup questions, pressing Enter to accept the "
                 "suggested answer is fine.",
-                "Mac: download the latest Python 3 macOS installer, open the downloaded .pkg file and follow "
+                "Mac: download the latest Python 3 installer for Mac from python.org, open the downloaded .pkg file and follow "
                 "the steps.",
             ]),
             ("terminal", "py install default      (Windows only)"),

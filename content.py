@@ -96,7 +96,7 @@ ABOUT = {
     "stack": [
         ("Technologies & Databases", ["Python (Tkinter, Pandas, ReportLab)", "SQLite", "SQL"]),
         ("Frontend & Web", ["React", "Vite", "Tailwind CSS"]),
-        ("Cloud & Deployment", ["Firebase/Firestore", "Cloudflare Pages (macOS environment)"]),
+        ("Cloud & Deployment", ["Firebase/Firestore", "Cloudflare Pages"]),
     ],
     "certifications": [
         "Google Advanced Data Analytics Professional Certificate",
