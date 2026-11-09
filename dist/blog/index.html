@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#081025" media="(prefers-color-scheme: dark)"><title>Blog · Butch Mahinay</title><script>if (/\.pages\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "aumahinay.dev")) location.replace("https://aumahinay.dev" + location.pathname + location.search + location.hash);</script><link rel="alternate" type="application/rss+xml" title="Butch Mahinay: new posts and lessons" href="/feed.xml"><link rel="canonical" href="https://aumahinay.dev/blog/"><meta name="description" content="Stories and notes by Butch Mahinay on local treasury work, public finance, building the ALTOS system, and life beyond the office."><meta property="og:type" content="website"><meta property="og:site_name" content="Butch Mahinay"><meta property="og:title" content="Blog · Butch Mahinay"><meta property="og:description" content="Stories and notes by Butch Mahinay on local treasury work, public finance, building the ALTOS system, and life beyond the office."><meta property="og:url" content="https://aumahinay.dev/blog/"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg?v=fb8166f6"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=221bd77e"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=759581ee"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f3f6fc" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#071631" media="(prefers-color-scheme: dark)"><title>Blog · Butch Mahinay</title><script>if (/\.pages\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "aumahinay.dev")) location.replace("https://aumahinay.dev" + location.pathname + location.search + location.hash);</script><link rel="alternate" type="application/rss+xml" title="Butch Mahinay: new posts and lessons" href="/feed.xml"><link rel="canonical" href="https://aumahinay.dev/blog/"><meta name="description" content="Stories and notes by Butch Mahinay on local treasury work, public finance, building the ALTOS system, and life beyond the office."><meta property="og:type" content="website"><meta property="og:site_name" content="Butch Mahinay"><meta property="og:title" content="Blog · Butch Mahinay"><meta property="og:description" content="Stories and notes by Butch Mahinay on local treasury work, public finance, building the ALTOS system, and life beyond the office."><meta property="og:url" content="https://aumahinay.dev/blog/"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg?v=fb8166f6"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=221bd77e"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=759581ee"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
 /* Layout: navy cover-style panels for the big moments, quiet white pages for reading; the five ALTOS colours mark sequence and emphasis. */
 :root {
   /* ALTOS colours, bright (fills, on navy) */
-  --gold: #f6c453; --blue: #7cc4ff; --green: #3ddc97; --coral: #ff8a80; --violet: #c9a7ff;
+  --gold: #f6c453; --blue: #6fa8f0; --green: #3ddc97; --coral: #ff8a80; --violet: #c9a7ff;
   /* the same colours, deep enough to read as text on white */
-  --gold-ink: #9a6500; --blue-ink: #1d6bc4; --green-ink: #0b7d55; --coral-ink: #c43d33; --violet-ink: #6f45c7;
+  --gold-ink: #9a6500; --blue-ink: #1d58b8; --green-ink: #0b7d55; --coral-ink: #c43d33; --violet-ink: #6f45c7;
   --navy: #12397f; --navy-deep: #0b2a63; --bar-ink: #12397f; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
-  --bg: #f4f6fb; --surface: #ffffff; --text: #0f1a33; --muted: #56627c; --line: #dfe5ef;
-  --shadow: 0 1px 2px rgba(15, 26, 51, .06), 0 12px 32px -18px rgba(15, 26, 51, .28);
+  --bg: #f3f6fc; --surface: #ffffff; --text: #0d1d3d; --muted: #50617f; --line: #dbe3f0;
+  --shadow: 0 1px 2px rgba(11, 42, 99, .06), 0 12px 32px -18px rgba(11, 42, 99, .28);
   --rainbow: linear-gradient(90deg, var(--gold), var(--blue) 25%, var(--green) 50%, var(--coral) 75%, var(--violet));
   --font-display: "Outfit", "Figtree", system-ui, sans-serif;
   --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -16,17 +16,17 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --gold-ink: #f6c453; --blue-ink: #7cc4ff; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
+    --gold-ink: #f6c453; --blue-ink: #8fbaf5; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
     --navy: #123272; --navy-deep: #0a2458; --bar-ink: #e8edf7;
-    --bg: #081025; --surface: #0f1a36; --text: #e8edf7; --muted: #9aa7c2; --line: #1f2d4f;
+    --bg: #071631; --surface: #0d2147; --text: #e8eef9; --muted: #a0b0cf; --line: #1c3566;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --gold-ink: #f6c453; --blue-ink: #7cc4ff; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
+  --gold-ink: #f6c453; --blue-ink: #8fbaf5; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
   --navy: #123272; --navy-deep: #0a2458; --bar-ink: #e8edf7;
-  --bg: #081025; --surface: #0f1a36; --text: #e8edf7; --muted: #9aa7c2; --line: #1f2d4f;
+  --bg: #071631; --surface: #0d2147; --text: #e8eef9; --muted: #a0b0cf; --line: #1c3566;
   --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
   color-scheme: dark;
 }
@@ -61,7 +61,7 @@ nav a.active { color: var(--on-navy); border-bottom-color: var(--gold); }
 header.site nav { margin-left: auto; }
 .fs { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(2px + env(safe-area-inset-bottom, 0px)); z-index: 20;
       width: 36px; height: 36px; display: grid; place-content: center; padding: 0; cursor: pointer;
-      color: #0b1630; background: transparent; border: 0; border-radius: 50%;
+      color: #12397f; background: transparent; border: 0; border-radius: 50%;
       box-shadow: none; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, .9)); }  /* full-screen button floats at the bottom left on every screen */
 .fs[hidden] { display: none; }
 .fs:hover, .fs:focus-visible { color: var(--gold); }
@@ -91,17 +91,17 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 /* Cover-style navy panel, used for the home hero, ALTOS hero and the principle */
 .hero, .altos-hero, blockquote {
   position: relative; overflow: hidden; border-radius: var(--radius); color: var(--on-navy);
-  background: radial-gradient(120% 90% at 15% 0%, #2a57a8 0%, var(--navy) 45%, var(--navy-deep) 100%);
+  background: radial-gradient(130% 100% at 15% 0%, #1d4b98 0%, var(--navy) 50%, var(--navy-deep) 100%);
   box-shadow: var(--shadow);
 }
 /* the two arches from the cover */
 .hero::before, .altos-hero::before {
   content: ""; position: absolute; right: -60px; bottom: -220px; width: 460px; height: 520px; pointer-events: none;
-  border: 34px solid rgba(61, 220, 151, .10); border-bottom: 0; border-radius: 230px 230px 0 0;
+  border: 34px solid rgba(111, 168, 240, .10); border-bottom: 0; border-radius: 230px 230px 0 0;
 }
 .hero::after, .altos-hero::after {
   content: ""; position: absolute; right: -10px; bottom: -260px; width: 330px; height: 470px; pointer-events: none;
-  border: 22px solid rgba(246, 196, 83, .10); border-bottom: 0; border-radius: 165px 165px 0 0;
+  border: 22px solid rgba(255, 255, 255, .05); border-bottom: 0; border-radius: 165px 165px 0 0;
 }
 .hero > *, .altos-hero > * { position: relative; z-index: 1; min-width: 0; }
 .hero h1, .altos-hero h1, .hero h3 { color: var(--on-navy); }
@@ -185,7 +185,7 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .cert-thumb img { width: 100%; height: auto; display: block; transition: transform .2s; }
 .cert-thumb:hover img { transform: scale(1.03); }
 .cert-view { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); width: 100%; overflow: visible; }
-.cert-view::backdrop { background: rgba(8, 14, 32, .95); }
+.cert-view::backdrop { background: rgba(7, 22, 49, .95); }
 .cert-view img { width: 100%; height: auto; display: block; background: #fff; max-height: 82vh; object-fit: contain; }
 .cert-view .cert-close:not(.btn) { position: absolute; top: -40px; right: 0; background: none; border: 0; color: #fff; font-size: 30px; line-height: 1; cursor: pointer; padding: 4px 8px; }
 .cert-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 10px; }
@@ -197,12 +197,12 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .card.feature { flex-direction: row; gap: 18px; padding: 32px; align-items: center; }
 .card.feature::before { background: var(--rainbow); }
 .feature-art { flex: none; width: 190px; }
-.feature-cover { display: block; width: 100%; border-radius: 4px 10px 10px 4px; box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .6); }
+.feature-cover { display: block; width: 100%; border-radius: 4px 10px 10px 4px; box-shadow: 0 18px 36px -18px rgba(11, 42, 99, .6); }
 .feature-body { min-width: 0; display: flex; flex-direction: column; }
 .feature-body h3 { font-size: 1.4623rem; }
 .feature .foot { padding-top: 22px; }
 .feature-art.wide { width: 23%; max-width: 220px; }
-.feature-shot { display: block; width: 100%; height: auto; border-radius: 0;  /* square (90-degree) corners, Butch 2026-11-04 */  border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 22, 48, .5); }
+.feature-shot { display: block; width: 100%; height: auto; border-radius: 0;  /* square (90-degree) corners, Butch 2026-11-04 */  border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 42, 99, .5); }
 @media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } .feature-art.wide { display: block; width: 50%; max-width: none; } .card.feature { gap: 14px; } }  /* phones: label sits half as far under the ALTOS picture */
 @media (max-width: 640px) {  /* phones: ALTOS picture on the left, only the label beside it on the right; tags and button below (Butch 2026-11-07) */
   .card.feature { display: grid; grid-template-columns: 46% 1fr; grid-template-areas: "art eye" "tags tags" "foot foot"; column-gap: 12px; row-gap: 0; align-items: start; }
@@ -283,7 +283,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 .card.book::before { background: var(--rainbow); }
 .card.book > div:last-child { min-width: 0; }
 .card.book h3 { margin-top: 12px; font-size: 1.4118rem; }
-.book-cover { flex: none; width: 230px; border-radius: 4px 10px 10px 4px; box-shadow: 0 24px 44px -20px rgba(11, 22, 48, .65); }
+.book-cover { flex: none; width: 230px; border-radius: 4px 10px 10px 4px; box-shadow: 0 24px 44px -20px rgba(11, 42, 99, .65); }
 /* phones: small cover on the left, badge + title + subtitle on its right; blurb and button below, full width */
 @media (max-width: 640px) {
   .card.book { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 14px; row-gap: 0; align-items: start; padding: 20px 12px; }
@@ -310,7 +310,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 .status { font-size: 12.1016px; font-weight: 600; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; color: var(--muted); border: 1.5px dashed var(--line); }
 .status.live { color: var(--navy-deep); background: var(--green); border: 0; }
 .node.mother { max-width: 620px; margin: 0 auto; border: 0; color: var(--on-navy);
-               background: radial-gradient(120% 120% at 15% 0%, #2a57a8 0%, var(--navy) 50%, var(--navy-deep) 100%); }
+               background: radial-gradient(130% 120% at 15% 0%, #1d4b98 0%, var(--navy) 55%, var(--navy-deep) 100%); }
 .node.mother .code { font-size: 1.6135rem; }
 .node.mother { padding-top: 17.6px; }
 .node.mother h3 { color: var(--on-navy); margin-top: 6px; }
@@ -381,7 +381,7 @@ footer.site::before { content: none; }  /* plain navy footer, no rainbow line (B
 footer.site a { color: var(--on-navy); }
 /* Product screenshot */
 figure.screenshot { margin: 28px 0 8px; }
-figure.screenshot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 22, 48, .45); }
+figure.screenshot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 42, 99, .45); }
 figure.screenshot figcaption { margin-top: 10px; font-size: 14.1185px; color: var(--muted); text-align: center; }
 .note { margin-top: 28px; font-size: 14.1185px; }
 .thanks { margin: 18px 0 0; padding: 14px 18px; border-left: 4px solid var(--gold); border-radius: var(--radius); background: color-mix(in srgb, var(--gold) 12%, transparent); }
@@ -461,19 +461,19 @@ a.card.lesson:hover { text-decoration: none; transform: translateY(-2px); }
 .lesson-nav { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15.127px; }
 
 /* Code boxes: navy like the ALTOS screens, ALTOS colours for the syntax */
-.codebox { margin: 18px 0; border-radius: var(--radius); overflow: hidden; background: #0b1630; border: 1px solid #1f2d4f; box-shadow: var(--shadow); }
-.codebox figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px 8px 16px; background: #13244b; color: #a9b6d3; font-size: 13.1101px; }
+.codebox { margin: 18px 0; border-radius: var(--radius); overflow: hidden; background: #0b2149; border: 1px solid #1b3a72; box-shadow: var(--shadow); }
+.codebox figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px 8px 16px; background: #12397f; color: #b9c8e6; font-size: 13.1101px; }
 .codebox .fname { font: 600 13.1101px ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: #eef3ff; overflow-wrap: anywhere; }
 .codebox .actions { display: flex; gap: 6px; flex: none; }
 .codebox button, .codebox .actions a { font: 600 12.6058px var(--font-body); color: #eef3ff; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .18); border-radius: 7px; padding: 4px 11px; cursor: pointer; }
 .codebox button:hover, .codebox .actions a:hover { background: rgba(255, 255, 255, .16); text-decoration: none; }
 .codebox pre { margin: 0; padding: 16px 18px; overflow-x: auto; color: #e8edf7; font: 15.127px/1.6 ui-monospace, "SF Mono", Menlo, Consolas, monospace; tab-size: 4; }
 .codebox code { font: inherit; }
-.codebox .k { color: #c9a7ff; font-weight: 600; } .codebox .s { color: #3ddc97; } .codebox .c { color: #8592b3; font-style: italic; }
-.codebox .n { color: #f6c453; } .codebox .b { color: #7cc4ff; } .codebox .f { color: #ff8a80; }
+.codebox .k { color: #c9a7ff; font-weight: 600; } .codebox .s { color: #3ddc97; } .codebox .c { color: #8ea3c9; font-style: italic; }
+.codebox .n { color: #f6c453; } .codebox .b { color: #6fa8f0; } .codebox .f { color: #ff8a80; }
 .codebox.data pre { color: #f6e3b0; }
-.codebox.output { background: #050b1a; }
-.codebox.output figcaption { background: #0b1630; border-bottom: 1px solid #1f2d4f; }
+.codebox.output { background: #071936; }
+.codebox.output figcaption { background: #0b2a63; border-bottom: 1px solid #1b3a72; }
 .codebox.output pre { color: #cfe8d9; }
 @media (max-width: 640px) { .codebox pre { font-size: 13.4462px; padding: 14px; } .lesson-nav { font-size: 14.1185px; } }
 /* Lesson extras: line by line, steps, terminal, answers, glossary */
@@ -597,7 +597,7 @@ main.swipe-prev { transform: translateX(28%); opacity: 0; }
 .card.book .btn { margin-top: 6px; }
 .crumb { display: inline-block; margin-bottom: 16px; font-size: 15.127px; }
 .reader { margin: 22px auto 0; max-width: min(560px, calc((100vh - 150px) * 2 / 3)); max-width: min(560px, calc((100dvh - 150px) * 2 / 3)); -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
-.reader .page { position: relative; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 22, 48, .45); touch-action: pan-y pinch-zoom; }
+.reader .page { position: relative; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 42, 99, .45); touch-action: pan-y pinch-zoom; }
 .reader .page img { display: block; width: 100%; height: auto; pointer-events: none; -webkit-user-drag: none; }
 .reader .shield { position: absolute; inset: 0; }
 .reader .controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }  /* above the page, so Next stays in the same spot */

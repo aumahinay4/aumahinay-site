@@ -203,8 +203,8 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.meta(charset="utf-8"),
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
             # paint the phone's browser bars in the top bar's navy, so the site looks full-screen
-            t.meta(name="theme-color", content="#f4f6fb", media="(prefers-color-scheme: light)"),
-            t.meta(name="theme-color", content="#081025", media="(prefers-color-scheme: dark)"),
+            t.meta(name="theme-color", content="#f3f6fc", media="(prefers-color-scheme: light)"),
+            t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
             t.title(page_title),
             # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
