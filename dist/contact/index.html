@@ -790,6 +790,17 @@ html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-i
 /* Home headline twice as big (Butch 2026-11-10) */
 .hero h1 { font-size: clamp(2.465rem, 4.9078vw, 3.1822rem); line-height: 1.12; text-wrap: balance; }
 @media (max-width: 640px) { .hero h1 { font-size: min(2.465rem, 9.6vw); } }
+
+/* Study Notes (Butch 2026-11-10) */
+.notes-page .tip { padding: 10px 14px; background: color-mix(in srgb, var(--gold) 16%, var(--surface)); border-left: 4px solid var(--gold); text-align: left; }
+.notes-page .card.example { margin: 22px 0 8px; border-left: 5px solid var(--green-ink); }
+.notes-page .card.example h3 { margin: 0 0 6px; }
+.notes-page .card.example li, .notes-page ul li { text-align: left; margin: 4px 0; }
+.notes-page .level-rows { display: grid; gap: 8px; margin: 10px 0; }
+.notes-page .level-row { background: var(--surface); border-left: 4px solid var(--blue-ink); padding: 8px 14px; }
+.notes-page .level-row p { margin: 2px 0; text-align: left; }
+.notes-page .level-row .row-label { color: var(--blue-ink); }
+ol.coming li { margin: 4px 0; text-align: left; }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -873,7 +884,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.465rem, 4.9078vw, 3.1822rem) * 1.025); }
 }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/" class="active" aria-current="page">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Contact</p><h1>Get in touch</h1><p class="lead">For questions about a blog post or lesson, feedback on the ALTOS book, speaking inquiries, or technical discussions on civic tech and data analytics, email me.</p><ul class="plain-list"><li><b>Email: </b><a href="mailto:hello@aumahinay.dev">hello@aumahinay.dev</a></li><li><b>Website: </b><a href="/">https://aumahinay.dev</a></li></ul><p>Please don&#x27;t send personal data you don&#x27;t want me to keep. How I handle what you send is explained in the <a href="/privacy/">Privacy Policy</a>.</p><p class="muted note">Views on this site are my own, written in my personal capacity, and do not represent any government office.</p></div></main><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/" class="active" aria-current="page">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Contact</p><h1>Get in touch</h1><p class="lead">For questions about a blog post or lesson, feedback on the ALTOS book, speaking inquiries, or technical discussions on civic tech and data analytics, email me.</p><ul class="plain-list"><li><b>Email: </b><a href="mailto:hello@aumahinay.dev">hello@aumahinay.dev</a></li><li><b>Website: </b><a href="/">https://aumahinay.dev</a></li></ul><p>Please don&#x27;t send personal data you don&#x27;t want me to keep. How I handle what you send is explained in the <a href="/privacy/">Privacy Policy</a>.</p><p class="muted note">Views on this site are my own, written in my personal capacity, and do not represent any government office.</p></div></main><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       close = document.getElementById("menu-close"), menu = document.getElementById("site-menu");
@@ -899,7 +910,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
   // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
-  var pages = ["/", "/projects/", "/courses/", "/tutorials/", "/blog/", "/about/"];
+  var pages = ["/", "/projects/", "/study-notes/", "/tutorials/", "/blog/", "/about/"];
   var path = location.pathname, here = -1;
   pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
   if (here < 0) return;  // e.g. the "page not found" page

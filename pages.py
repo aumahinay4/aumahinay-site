@@ -12,6 +12,7 @@ from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, 
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
+from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
 from style import CSS
 from tags import Raw
@@ -60,7 +61,7 @@ FULLSCREEN_ICON = Raw(
     '<svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>'
 )
 
-NAV = [("/", "Home"), ("/projects/", "Projects"), ("/courses/", "Courses"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
+NAV = [("/", "Home"), ("/projects/", "Projects"), ("/study-notes/", "Study Notes"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
 CERT_SCRIPT = """
 (function () {
@@ -604,40 +605,91 @@ def book_reader():
     )
 
 
+def note_is_live(n):
+    return n.get("publish_on") is None or n["publish_on"] <= ph_now()
+
+
+def live_notes():
+    return [n for n in NOTES if SHOW_SCHEDULED or note_is_live(n)]
+
+
+def note_card(n):
+    return t.a(
+        t.div(t.span(f"Note {n['number']}", class_="badge"), t.span("explainer · example · 10-question quiz", class_="muted"), class_="meta"),
+        t.h3(n["title"]),
+        t.p(n["summary"]),
+        t.span("Read the note →", class_="go"),
+        href=note_url(n), class_="card lesson",
+    )
+
+
 def courses():
-    pro = [c for c in CERTIFICATES if c["kind"].startswith("Prof")]
-    spec = [c for c in CERTIFICATES if not c["kind"].startswith("Prof")]
+    """Study Notes (was Courses, Butch 2026-11-10): treasury notes only (My learning and trainings removed)."""
+    live = live_notes()
+    upcoming = [title for i, title in enumerate(OUTLINE, 1) if i > len(live)]
+    nxt = next((n for n in NOTES if n not in live), None)
     return part(
-        "Courses", "/courses/",
-        t.p("Learning", class_="eyebrow"),
-        photo_title("Completed courses"),
-        t.p(
-            "I began learning on Coursera through Google Career Certificates (GCC) in 2020, during the pandemic, "
-            "while serving as Acting Municipal Treasurer of Mulanay, Quezon. In 2024 I committed to the GCC "
-            "program fully, and I have since earned "
-            f"{len(pro)} Google Professional Certificates and {len(spec)} Specializations, "
-            f"{sum(c['courses'] for c in CERTIFICATES)} courses in total. "
-            +
-            ("Every credential links to its Coursera verification page." if SHOW_CERTIFICATES else ""),
-            class_="lead",
-        ),
+        "Study Notes", NOTES_INFO["url"],
+        t.p("Treasury", class_="eyebrow"),
+        photo_title(NOTES_INFO["title"]),
+        t.p(NOTES_INFO["intro"], class_="lead"),
+        t.p(NOTES_INFO["disclaimer"], class_="muted"),
+        t.div([note_card(n) for n in live], class_="lesson-list") if live else
+        t.p(f"Note 1 comes out {module_when(nxt)}." if nxt else "The first note is coming soon.", class_="checked"),
+        [t.h2("Coming next"),
+         t.ol([t.li(title) for title in upcoming], start=str(len(live) + 1), class_="coming")] if upcoming else None,
+        description=f"Free study notes on local treasury work in the Philippines: local revenue, "
+                    f"real property and business taxes, collections and disbursements, by {SITE['short_name']}.",
+    )
+
+
+def note_block(b):
+    if isinstance(b, str):
+        return t.p(b)
+    kind = b[0]
+    if kind == "h":
+        return t.h2(b[1])
+    if kind == "list":
+        return t.ul([t.li(x) for x in b[1]])
+    if kind == "tip":
+        return t.p(t.b("Tip: "), b[1], class_="tip")
+    if kind == "table":
+        # shown as stacked rows (label, then text) so it reads well on phones
+        return t.div([t.div(t.p(t.b(row[0]), class_="row-label"), t.p(row[1]), class_="level-row") for row in b[2]], class_="level-rows")
+    raise ValueError(kind)
+
+
+def note_page(n):
+    i = NOTES.index(n)
+    nxt = NOTES[i + 1] if i + 1 < len(NOTES) else None
+    letters = "ABCD"
+    ex_title, steps, ex_answer = n["example"]
+    return part(
+        f"Study Note {n['number']}: {n['title']}", NOTES_INFO["url"],
         t.div(
-            t.p("With gratitude", class_="thanks-label"),
-            t.p(
-                "Since April 2026, my Google Career Certificates have been sponsored by the "
-                "Local Government Unit (LGU) of Sampaloc, Quezon and the Department of Trade and "
-                "Industry (DTI) Quezon. Their support made my studies free and let me keep learning "
-                "without interruption. I am deeply grateful to both."
+            t.a("← " + NOTES_INFO["title"], href=NOTES_INFO["url"], class_="crumb"),
+            t.p(f"{NOTES_INFO['title']} · Note {n['number']}", class_="eyebrow"),
+            t.h1(n["title"], class_="lesson-title"),
+            t.p(n["summary"], class_="lead"),
+            t.p("✓ Last checked: " + NOTES_INFO["checked"] + " · against RA 7160 (Local Government Code) and its amendments", class_="checked"),
+            [note_block(b) for b in n["body"]],
+            t.div(t.h3(ex_title), t.ol([t.li(s_) for s_ in steps]), t.p(t.b("Answer: "), ex_answer), class_="card example"),
+            t.h2("Practice"),
+            t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
+            practice_list(n["practice"]),
+            t.p(NOTES_INFO["disclaimer"], class_="muted"),
+            react_box(note_url(n)),
+            t.div(
+                t.span(),
+                t.a(f"Note {nxt['number']} →", href=note_url(nxt)) if nxt and (SHOW_SCHEDULED or note_is_live(nxt))
+                else t.span(f"Note {nxt['number']} comes out {module_when(nxt)}", class_="muted") if nxt
+                else t.span(f"Note {n['number'] + 1} comes out next Friday at 9 pm", class_="muted") if n["number"] < len(OUTLINE)
+                else t.span(),
+                class_="lesson-nav",
             ),
-            class_="thanks",
+            class_="lesson-page vocab-page notes-page",
         ),
-        # certificate cards hidden for now (Butch 2026-11-09); set SHOW_CERTIFICATES = True to bring them back
-        [t.h2("Google Professional Certificates"), t.div([cert_card(c) for c in pro], class_="grid"),
-         t.h2("Google Specializations"), t.div([cert_card(c) for c in spec], class_="grid")] if SHOW_CERTIFICATES else None,
-        t.h2("Government & professional training"),
-        t.p("A selection of the government and professional trainings I have completed over the years. The full list is longer than what is shown here.", class_="muted"),
-        t.table([t.tr(t.td(t.b(name), t.br(), t.span(org, class_="muted")), t.td(when)) for name, org, when in TRAININGS]),
-        description=f"Google Career Certificates and Coursera specializations completed by {SITE['short_name']}, a public finance professional learning data, IT and software.",
+        description=f"Study Note {n['number']}: {n['summary']}",
     )
 
 
@@ -853,7 +905,7 @@ def word_card(w):
 
 QUIZ_SCRIPT = """
 (function () {
-  var list = document.querySelector('.vocab-page .practice'); if (!list) return;
+  var list = document.querySelector('.lesson-page .practice'); if (!list) return;
   var qs = [].slice.call(list.children), line = document.querySelector('.quiz-score .score-line'),
       reset = document.querySelector('.quiz-score .quiz-reset'), total = qs.length;
   function update() {
@@ -885,6 +937,27 @@ QUIZ_SCRIPT = """
 """
 
 
+def practice_list(practice):
+    letters = "ABCD"
+    return [
+        t.ol([
+            t.li(
+                t.p(q),
+                t.ol([t.li(t.button(c, type="button", class_="choice", data_ok="1" if i == ans else "0"))
+                      for i, c in enumerate(choices)], class_="choices", type="A"),
+                t.details(t.summary("Show answer"), t.p(t.b(f"{letters[ans]}. {choices[ans]}"), " ", why), class_="answer"),
+            )
+            for q, choices, ans, why in practice
+        ], class_="practice"),
+        t.div(
+            t.p(f"Score: 0 correct, 0 of {len(practice)} answered", class_="score-line", aria_live="polite"),
+            t.button("Try again", type="button", class_="quiz-reset", hidden=True),
+            class_="quiz-score",
+        ),
+        t.script(Raw(QUIZ_SCRIPT)),
+    ]
+
+
 def module_page(m):
     i = MODULES.index(m)
     nxt = MODULES[i + 1] if i + 1 < len(MODULES) else None
@@ -901,21 +974,7 @@ def module_page(m):
             [word_card(w) for w in m["words"]],
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
-            t.ol([
-                t.li(
-                    t.p(q),
-                    t.ol([t.li(t.button(c, type="button", class_="choice", data_ok="1" if i == ans else "0"))
-                          for i, c in enumerate(choices)], class_="choices", type="A"),
-                    t.details(t.summary("Show answer"), t.p(t.b(f"{letters[ans]}. {choices[ans]}"), " ", why), class_="answer"),
-                )
-                for q, choices, ans, why in m["practice"]
-            ], class_="practice"),
-            t.div(
-                t.p(f"Score: 0 correct, 0 of {len(m['practice'])} answered", class_="score-line", aria_live="polite"),
-                t.button("Try again", type="button", class_="quiz-reset", hidden=True),
-                class_="quiz-score",
-            ),
-            t.script(Raw(QUIZ_SCRIPT)),
+            practice_list(m["practice"]),
             react_box(module_url(m)),
             t.div(
                 t.span(),
@@ -1365,7 +1424,7 @@ def privacy():
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, RPT_URL: rpt_page}
+PARTS = {"/": home, "/projects/": projects, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, RPT_URL: rpt_page}
 
 
 def _full_page(build):
@@ -1381,6 +1440,7 @@ ROUTES[BOOK_URL] = _full_page(book_reader)
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
 ROUTES.update({module_url(m): _full_page(lambda m=m: module_page(m)) for m in MODULES if module_is_live(m)})
+ROUTES.update({note_url(n): _full_page(lambda n=n: note_page(n)) for n in NOTES if note_is_live(n)})
 
 
 def not_found():
