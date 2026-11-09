@@ -908,7 +908,13 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.2185rem, 4.417vw, 2.864rem) * 1.025); }
 }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><script>
+
+/* Privacy Policy link at the bottom of every page (Butch 2026-11-10): plain, small, no navy footer */
+footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
+footer.legal a { color: var(--muted); }
+footer.legal a:hover { color: var(--gold-ink); }
+main:has(+ footer.legal) { padding-bottom: 28px; }
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
