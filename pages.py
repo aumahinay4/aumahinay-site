@@ -363,7 +363,7 @@ def home():
         t.div(
             t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
             t.div(
-                t.div(t.h1(SITE["title"]), class_="hero-name"),
+                t.div(t.h1("Where public finance meets Python"), class_="hero-name"),
                 t.p("Plain-language writing on local treasury work and public finance, free Python lessons "
                     "for treasury staff, and notes from building ALTOS, by a treasury worker who builds software.",
                     class_="lead"),
