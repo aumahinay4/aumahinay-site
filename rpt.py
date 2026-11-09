@@ -125,7 +125,7 @@ RPT_SCRIPT = r"""
         var advYears = year - pd[0];
         if (advYears >= 2) { disc = 20; discNote = 'paid two or more years in advance'; }
         else if (advYears === 1 && (pd[1] < 9 || (pd[1] === 9 && pd[2] <= 30))) { disc = 15; discNote = 'paid on or before September 30, one year in advance'; }
-        else { disc = 10; discNote = 'paid on or before the deadlines'; }
+        else { disc = 10; discNote = 'paid on or before the Sec. 43 deadlines'; }
       } else { disc = Math.min(num('disc'), 20); discNote = 'paid on time'; }
     }
     var tb = 0, ts = 0, tbAdj = 0, tsAdj = 0;
@@ -272,7 +272,7 @@ def rpt_page():
                     _field("Discount for paying on time (%)", _num("disc", "10", maximum="20"),
                            "Set by your local ordinance, up to 20%.", row_id="disc-row", hidden=True),
                     t.p("Quezon Province discount (Sec. 44), worked out from the date: 10% if paid on or before the "
-                        "deadlines, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
+                        "installment deadlines of Sec. 43, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
                         "if paid two or more years in advance. No discount while any quarter is late.",
                         id="qz-disc", class_="hint block-hint"),
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
