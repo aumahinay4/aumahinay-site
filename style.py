@@ -858,7 +858,6 @@ CSS += """
 /* No photo except on About (Butch 2026-11-10) */
 .hero h1 { grid-column: 1 / -1; }
 .about-name { margin: -4px 0 10px; font: 700 clamp(1.2rem, 4.6vw, 1.55rem)/1.25 var(--font-display); color: var(--text); text-align: left; }
-.card.author { grid-template-columns: 1fr !important; }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
