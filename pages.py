@@ -393,7 +393,7 @@ def home():
                      "New posts every Sunday.", "Read the blog →", "/blog/"),
                     ("Tutorials",
                      "Free, beginner-friendly lessons: Python for treasury work, with new lessons on Saturdays, "
-                     "and vocabulary for the Civil Service exam.", "Start learning →", "/tutorials/"),
+                     "and Civil Service exam vocabulary every Wednesday.", "Start learning →", "/tutorials/"),
                     ("ALTOS",
                      "The Automated Local Treasury Operations System, a working treasury system for "
                      "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
@@ -797,8 +797,18 @@ def tutorials():
 VOCAB_CHECKED = "November 2026"
 
 
+def ph_now():
+    return datetime.now(PH).strftime("%Y-%m-%d %H:%M")
+
+
 def module_is_live(m):
-    return m.get("publish_on") is None or m["publish_on"] <= ph_today()
+    """Modules go live at their publish_on time, "YYYY-MM-DD HH:MM" Philippine time (Wednesdays 9 pm)."""
+    return m.get("publish_on") is None or m["publish_on"] <= ph_now()
+
+
+def module_when(m):
+    d = datetime.strptime(m["publish_on"], "%Y-%m-%d %H:%M")
+    return f"{d:%A}, {d:%B} {d.day}, {d:%-I} {d:%p}".replace("PM", "pm").replace("AM", "am")
 
 
 def live_modules():
@@ -867,7 +877,8 @@ def module_page(m):
             react_box(module_url(m)),
             t.div(
                 t.span(),
-                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span("Next module coming soon", class_="muted"),
+                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span(f"Module {nxt['number']} comes out {module_when(nxt)}", class_="muted") if nxt
+                else t.span("This is the last module. Good luck on the exam!", class_="muted"),
                 class_="lesson-nav",
             ),
             class_="lesson-page vocab-page",
