@@ -430,6 +430,7 @@ def home():
             t.div(
                 t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
                     "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
+                    "He has also earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
                     "He writes, teaches and builds software in his personal capacity, outside official working hours."),
                 t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
                     t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
@@ -1364,6 +1365,16 @@ def about():
                 ),
                 class_="two",
             ),
+            # Microcredentials list right under Eligibilities (Butch 2026-11-10); certificate pictures stay hidden
+            t.h2("Microcredentials"),
+            t.p("Google Career Certificates earned on Coursera. Each one links to its Coursera verification page.",
+                class_="muted"),
+            t.ul([t.li(t.b(f"{c['name']} {c['kind']}"), t.br(),
+                       t.span(f"Coursera · {c['date'].split()[0]} {c['date'].split()[-1]} · "
+                              f"{c['courses']} courses · ", t.a("Verify", href=c["verify"], target="_blank", rel="noopener"),
+                              class_="muted"))
+                  for c in sorted(CERTIFICATES, key=lambda c: not c["kind"].startswith("Prof"))],
+                 class_="plain-list edu"),
             t.h2("Independent Technical Work"),
             t.p(ABOUT["technical"]),
             t.h3("Development stack"),
