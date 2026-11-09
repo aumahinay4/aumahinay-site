@@ -18,101 +18,191 @@ SITE = {
     "coursera": "",
 }
 
+# About page, from Butch's Google Doc "About Ambrosio U. Mahinay - aumahinay.dev" (2026-11-07).
+# Home town left out on purpose (no address or location on the site).
 ABOUT = {
+    "title": "About Ambrosio U. Mahinay",
+    "roles": "Public Administration Specialist · Local Treasury Practitioner · Civic Tech Developer",
     "intro": (
-        "I am a public administration professional with over 15 years in "
-        "government service, more than 13 of them in local government fiscal "
-        "administration and treasury operations. I designed and built "
-        "ALTOS, the Automated Local Treasury Operations System."
+        "I am a public administration practitioner, author, and self-taught software developer "
+        "in Quezon Province, Philippines, with over 15 years of dedicated experience in local "
+        "government revenue operations, fiscal management, and public sector modernization."
     ),
     "paragraphs": [
         (
-            "I currently serve as Acting Municipal Treasurer of Sampaloc, Quezon, "
-            "where I lead fiscal management, revenue forecasting, fund custody, and "
-            "disbursement under RA 7160."
+            "Through aumahinay.dev, I write about public finance workflows, publish educational "
+            "tutorials on civil service and treasury competencies, build practical software utilities "
+            "using Python and modern web technologies, and share reflections from my three-hectare "
+            "fruit farm in Quezon."
         ),
         (
-            "My grounding is in public administration, studied at both levels at Manuel S. "
-            "Enverga University Foundation. I earned my Bachelor of Science in "
-            "Public Administration through ETEEAP in 2008, while already working in government, "
-            "and completed my Master in Public Administration in 2014. These studies gave me the "
-            "theory behind my daily work: how local government is organized, how public money is "
-            "planned, collected and accounted for, and why accountability must come first."
-        ),
-        (
-            "My technical background started with Computer System Design & "
-            "Programming at AMA Computer Learning Center. I began learning on "
-            "Coursera through Google Career Certificates (GCC) in 2020, during the pandemic, in Mulanay, Quezon, where I was "
-            "first designated Acting Municipal Treasurer and served for two years. "
-            "In 2024 I committed to the GCC program fully, and I have since completed seven Google Professional Certificates and "
-            "three Google Specializations, covering data analytics, AI, cybersecurity, "
-            "IT support, business intelligence, and project management."
-        ),
-        (
-            "ALTOS is where both worlds meet: a working treasury system for "
-            "Philippine local treasuries, where every rule of collecting, disbursing and "
-            "reporting public money is written into the software."
+            "My career sits at the intersection of local treasury administration and digital "
+            "transformation. Rather than viewing public administration and software engineering as "
+            "separate disciplines, I focus on how simple, deterministic code and well-structured "
+            "relational databases can eliminate repetitive spreadsheet work, prevent manual "
+            "transposition errors, and strengthen 360-degree public accountability."
         ),
     ],
-    "experience": [
+    "background": [
         {
-            "role": "Acting Municipal Treasurer",
-            "org": "Municipality of Sampaloc, Quezon",
-            "period": "Sep 2024 – Present",
-            "points": [
-                "Lead municipal fiscal management, revenue forecasting, fund custody and disbursement.",
-                "Sign disbursement vouchers and checks.",
-            ],
-        },
-        {
-            "role": "Local Revenue Collection Officer III",
-            "org": "Provincial Treasurer's Office, Province of Quezon",
+            "title": "Local Treasury & Revenue Administration",
             "period": "2019 – Present",
-            "points": [
-                "Performed LRCO IV supervisory duties (Sep 2022 – Sep 2024) over provincial cash receipts.",
-                "Supervised Cash Receipt Division collectors and audited collection reports.",
-            ],
+            "role": "Career Local Treasury & Revenue Practitioner · Quezon Province",
+            "focus": (
+                "Local revenue collection rules, Real Property Tax (RPT) compliance, accountable forms "
+                "tracking, and statutory financial reporting. I specialize in streamlining treasury "
+                "reconciliation, cashbook verification, and regulatory compliance through structured "
+                "data systems."
+            ),
         },
         {
-            "role": "Acting Municipal Treasurer",
-            "org": "Municipality of Mulanay, Quezon",
-            "period": "Aug 2020 – Aug 2022",
-            "points": [
-                "Directed treasury operations and managed LGU depository funds under DOF-BLGF designation.",
-                "Maintained the day-to-day treasury operations of the municipality.",
-            ],
+            "title": "Municipal Treasury Leadership",
+            "period": "2020 – 2022 and 2024 – Present",
+            "role": "Designated Acting Municipal Treasurer (Various Assignments) · Quezon Province",
+            "focus": (
+                "Led municipal treasury operations across multiple local government assignments, "
+                "overseeing revenue generation strategies, cash flow management, fiscal reporting, and "
+                "taxpayer service delivery in accordance with the Local Government Code of 1991 "
+                "(RA 7160) and BLGF standards."
+            ),
         },
         {
-            "role": "Part-Time Lecturer",
-            "org": "Manuel S. Enverga University Foundation, Catanauan, Quezon",
-            "period": "2010",
-            "points": [
-                "Taught college courses as a part-time lecturer.",
-            ],
-        },
-        {
-            "role": "Punong Barangay",
-            "org": "Barangay government",
-            "period": "2002 – 2010",
-            "points": [
-                "Served as the elected head of the barangay government.",
-            ],
+            "title": "Academic Instruction & National Capacity Building",
+            "period": "Prior roles",
+            "role": "Part-Time College Lecturer & National Gender and Development (GAD) Trainer",
+            "focus": (
+                "Taught public administration courses at the collegiate level for one semester and "
+                "served for three years as a National GAD Trainer, facilitating policy and "
+                "capacity-building workshops for public sector institutions."
+            ),
         },
     ],
     "education": [
-        ("Master in Public Administration (MPA)", "Manuel S. Enverga University Foundation", "2014"),
-        ("Bachelor of Science in Public Administration (ETEEAP)", "Manuel S. Enverga University Foundation", "2008"),
-        ("Computer System Design & Programming", "AMA Computer Learning Center", "2000"),
+        ("Master in Public Administration (MPA)", "Manuel S. Enverga University Foundation, Lucena City"),
+        ("Bachelor of Science in Public Administration (BSPA)", ""),
     ],
     "eligibilities": [
-        "Intermediate Competency on Local Treasury Examination (ICLTE) – 2018",
-        "Basic Competency on Local Treasury Examination (BCLTE) – 2017",
+        "Intermediate Competency in Local Treasury Examination (ICLTE) – 2019",
+        "Basic Competency in Local Treasury Examination (BCLTE) – 2018",
         "Career Service Professional Eligibility – 2012",
     ],
-    "skills": [
-        "Python", "Flask", "SQLite / SQL", "pandas", "Tkinter", "openpyxl", "ReportLab",
-        "React + TypeScript", "Tableau", "Spreadsheets", "Linux", "AI-assisted development",
-        "Public fiscal administration", "Project management",
+    "technical": (
+        "Outside of official working hours, I design and maintain independent software projects, "
+        "including the Automated Local Treasury Operations System (ALTOS), and author practical guides "
+        "such as 360° Accountability. My technical work automates the preparation and verification of "
+        "Reports of Collections and Deposits (RCD), RAAF, CRAAF, and Real Property Tax tracking using "
+        "offline-first, audit-ready architectures."
+    ),
+    "stack": [
+        ("Technologies & Databases", ["Python (Tkinter, Pandas, ReportLab)", "SQLite", "SQL"]),
+        ("Frontend & Web", ["React", "Vite", "Tailwind CSS"]),
+        ("Cloud & Deployment", ["Firebase/Firestore", "Cloudflare Pages (macOS environment)"]),
+    ],
+    "certifications": [
+        "Google Advanced Data Analytics Professional Certificate",
+        "Google Business Intelligence Professional Certificate",
+        "Google Data Analytics Professional Certificate",
+        "Google Project Management Professional Certificate",
+        "Google Cybersecurity Professional Certificate",
+        "Google AI Professional Certificate",
+    ],
+    "writing": (
+        "I publish weekly Sunday articles on aumahinay.dev and produce English-language educational "
+        "topics covering public administration, Real Property Tax compliance, local treasury operations, "
+        "and Python automation for public finance learners and civil service examinees."
+    ),
+    "beyond": (
+        "When I am not writing code or reviewing public finance frameworks, I take time whenever my "
+        "schedule allows to ride my motorcycle through the backroads of Quezon Province and manage my "
+        "three-hectare farm, planted with coconut, banana, mango, santol, and jackfruit (langka), "
+        "alongside stands of native mulawin (molave) trees."
+    ),
+    "contact": "For speaking inquiries, book feedback, or technical discussions on civic tech and data analytics:",
+    "disclaimer_title": "Personal Capacity & Ethics Disclaimer (RA 6713 & RA 8293 Notice)",
+    "disclaimer": (
+        "All articles, tutorials, books, and software architectures published on aumahinay.dev are "
+        "created strictly in the author's personal and independent capacity outside of official "
+        "government hours and without the use of government resources. Academic credentials, civil "
+        "service eligibilities, and career history are provided solely for biographical context. "
+        "Nothing on this website represents the official views, policies, or endorsements of the "
+        "Provincial Government of Quezon, the Department of Finance (BLGF), the Civil Service "
+        "Commission (CSC), or any local government unit."
+    ),
+}
+
+# Privacy Policy page (/privacy/), from Butch's Google Doc "Privacy Policy & Courses Copy" (Part 1).
+# Each section: (heading, [paragraphs or ("list", [(bold label, text), ...])]).
+PRIVACY = {
+    "effective": "November 7, 2026",
+    "intro": (
+        "Welcome to aumahinay.dev (\u201cWebsite\u201d), operated by Ambrosio U. Mahinay (\u201cI\u201d, "
+        "\u201cme\u201d, or \u201cmy\u201d). This Privacy Policy explains how information is collected, used, "
+        "and safeguarded when you visit this Website, in compliance with the Philippine Data Privacy Act "
+        "of 2012 (Republic Act No. 10173) and global advertising standards."
+    ),
+    "sections": [
+        ("1. Information I Collect", [("list", [
+            ("Voluntary Information:", "When you contact me directly via email (hello@aumahinay.dev) or "
+             "subscribe to updates, I collect your name, email address, and the contents of your message "
+             "solely to respond to your inquiry."),
+            ("Log Files and Analytics:", "Like most standard websites hosted via Cloudflare, this Website "
+             "automatically collects non-personally identifiable information inside server log files. This "
+             "includes your Internet Protocol (IP) address, browser type, Internet Service Provider (ISP), "
+             "date and time stamp, referring/exit pages, and click activity to analyze trends, administer "
+             "the site, and maintain security."),
+        ])]),
+        ("2. Cookies and Web Beacons", [
+            "This Website uses \u201ccookies\u201d to store information about visitors' preferences and to "
+            "optimize the user experience by customizing web page content based on visitors' browser types "
+            "or other information that the visitor sends via their browser. You can choose to disable "
+            "cookies through your individual browser options.",
+        ]),
+        ("3. Google AdSense and Third-Party Advertising", [
+            "This Website may use Google AdSense and other third-party advertising networks to serve "
+            "advertisements when you visit.",
+            ("list", [
+                ("Third-Party Vendors:", "Third-party vendors, including Google, use cookies to serve ads "
+                 "based on a user's prior visits to this Website or other websites on the internet."),
+                ("Google Advertising Cookies:", "Google's use of advertising cookies enables it and its "
+                 "partners to serve ads to users based on their visit to aumahinay.dev and/or other sites "
+                 "on the Internet."),
+                ("Opting Out:", ["Users may opt out of personalized advertising by visiting ",
+                 ("Google Ads Settings", "https://myadcenter.google.com/"),
+                 ". Alternatively, you can opt out of a third-party vendor's use of cookies for personalized "
+                 "advertising by visiting ", ("www.aboutads.info", "https://www.aboutads.info/choices/"), "."]),
+            ]),
+        ]),
+        ("4. External Links", [
+            "This Website contains links to external websites (such as GitHub, YouTube, or government "
+            "portals). I have no control over and assume no responsibility for the content, privacy "
+            "policies, or practices of any third-party sites or services.",
+        ]),
+        ("5. Data Protection Rights", [
+            "Under the Philippine Data Privacy Act of 2012 (RA 10173) and applicable international privacy "
+            "laws, you have the right to request access to, correction of, or deletion of any personal data "
+            "you have voluntarily shared with me, as well as the right to object to data processing. To "
+            "exercise these rights, please contact me directly.",
+        ]),
+        ("6. Children's Information", [
+            "This Website does not knowingly collect any Personal Identifiable Information from children "
+            "under the age of 13. If you believe that your child provided this kind of information on this "
+            "Website, please contact me immediately so I can promptly remove it from my records.",
+        ]),
+        ("7. Personal Capacity Disclaimer", [
+            "All articles, tutorials, software projects, and views published on aumahinay.dev are created "
+            "strictly in the author's personal and independent capacity outside of official government "
+            "hours and do not represent the official views, policies, or positions of any local government "
+            "unit or national government agency.",
+        ]),
+        ("8. Changes to This Privacy Policy", [
+            "I may update this Privacy Policy from time to time. Any changes will be posted on this page "
+            "with an updated effective date.",
+        ]),
+        ("9. Contact Information", [
+            "If you have any questions or require more information about this Privacy Policy, please "
+            "contact me at:",
+            ("contact",),
+        ]),
     ],
 }
 

@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>The ALTOS Framework, Principle 3: Every Document Has an Owner</title>
+      <link>https://aumahinay.dev/blog/altos-framework-every-document-has-an-owner/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-every-document-has-an-owner/</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0800</pubDate>
+      <description>A receipt that belongs to everyone belongs to no one. Every form in custody and every peso in hand needs a named, bonded officer who answers for it.</description>
+    </item>
     <item>
       <title>Lesson 1: Add up a day&#x27;s collections from a CSV file</title>
       <link>https://aumahinay.dev/tutorials/add-up-daily-collections/</link>
