@@ -20,8 +20,8 @@ VOCAB = {
         "and the opposite, and practice questions in the exam's style."
     ),
     "note": (
-        "I passed the Career Service Professional Eligibility in 2012 and have worked in local government "
-        "ever since. These are study notes, not official exam material: for the exam schedule, rules and "
+        "I earned my Career Service Professional eligibility in 2012 and have spent more than 15 years in "
+        "government service. These are study notes, not official exam material: for the exam schedule, rules and "
         "coverage, always check the Civil Service Commission."
     ),
     "csc_url": "https://csc.gov.ph/",
@@ -71,7 +71,7 @@ MODULES = [
              "Able to govern itself or act on its own, without outside control.",
              "Under the 1987 Constitution, local governments enjoy local autonomy, though they remain under the "
              "general supervision of the President.",
-             ["self-governing", "independent", "sovereign"], ["dependent", "subordinate", "controlled"],
+             ["self-governing", "self-ruling", "independent"], ["dependent", "subordinate", "controlled"],
              "Noun: autonomy. \"Local autonomy\" is a key phrase in the Local Government Code of 1991 (RA 7160)."),
             ("bureaucracy", "noun",
              "A system of government offices run by appointed officials who follow set rules and procedures; "
@@ -86,7 +86,7 @@ MODULES = [
              "Usually followed by \"of\": cognizant of the rules."),
             ("compliance", "noun",
              "The act of following a rule, law, order or standard.",
-             "The office reached full compliance with the deadline for submitting the monthly reports.",
+             "This quarter, the office was in full compliance with the deadlines for its monthly reports.",
              ["adherence", "conformity", "obedience"], ["violation", "breach", "defiance"],
              "\"In compliance with\" is a common opening in official letters: \"In compliance with your memo...\""),
         ],
@@ -109,8 +109,8 @@ MODULES = [
               "After a short discussion, the supplier acquiesced to the new delivery schedule.",
               "The auditor acquiesced loudly against the findings.",
               "The office was acquiesced by the new rules."], 1,
-             "Acquiesce means to agree quietly, and it is followed by \"to\". The other choices use it as if it "
-             "meant \"to store\", \"to protest\" or \"to cover\"."),
+             "Acquiesce means to agree quietly and is followed by \"to\" or \"in\". Choice A uses it to mean "
+             "\"put away\", C to mean \"protest\", and D wrongly makes it passive."),
         ],
     },
 ]

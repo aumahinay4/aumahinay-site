@@ -385,9 +385,9 @@ def home():
                     ("Blog",
                      "Stories and notes on public finance, treasury work and building software. "
                      "New posts every Sunday.", "Read the blog →", "/blog/"),
-                    (TUTORIAL["title"],
-                     "Free, beginner-friendly lessons that use everyday treasury tasks as examples. "
-                     "New lessons on Saturdays.", "Start learning →", "/tutorials/"),
+                    ("Tutorials",
+                     "Free, beginner-friendly lessons: Python for treasury work, with new lessons on Saturdays, "
+                     "and vocabulary for the Civil Service exam.", "Start learning →", "/tutorials/"),
                     ("ALTOS",
                      "The Automated Local Treasury Operations System, a working treasury system for "
                      "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
@@ -412,7 +412,7 @@ def home():
             t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
             t.div(
                 t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
-                    "15 years in local government revenue operations and fiscal management in Quezon Province. "
+                    "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
                     "He writes, teaches and builds software in his personal capacity, outside official working hours."),
                 t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
                     t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
