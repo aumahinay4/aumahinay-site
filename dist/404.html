@@ -767,10 +767,8 @@ html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-i
 
 /* No photo except on About (Butch 2026-11-10) */
 .hero h1 { grid-column: 1 / -1; }
-.about-hello h1 .about-name { display: inline-block; }
+.about-name { margin: -4px 0 10px; font: 700 clamp(1.2rem, 4.6vw, 1.55rem)/1.25 var(--font-display); color: var(--text); text-align: left; }
 .card.author { grid-template-columns: 1fr !important; }
-.about-hello { align-items: flex-start; }
-.about-hello .hero-photo { margin-top: 4px; }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -851,6 +849,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.08rem, 4.86vw, 1.395rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
+.about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><script>
 (function () {

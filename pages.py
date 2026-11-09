@@ -1219,7 +1219,8 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title("About", t.br(), t.span(ABOUT["title"].removeprefix("About "), class_="about-name"), photo=True),
+        photo_title("About", photo=True),
+        t.p("Ambrosio “Butch” U. Mahinay", class_="about-name"),  # on its own line below the photo (Butch 2026-11-10)
         t.p(ABOUT["roles"], class_="roles"),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),

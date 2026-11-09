@@ -857,10 +857,8 @@ html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-i
 CSS += """
 /* No photo except on About (Butch 2026-11-10) */
 .hero h1 { grid-column: 1 / -1; }
-.about-hello h1 .about-name { display: inline-block; }
+.about-name { margin: -4px 0 10px; font: 700 clamp(1.2rem, 4.6vw, 1.55rem)/1.25 var(--font-display); color: var(--text); text-align: left; }
 .card.author { grid-template-columns: 1fr !important; }
-.about-hello { align-items: flex-start; }
-.about-hello .hero-photo { margin-top: 4px; }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
