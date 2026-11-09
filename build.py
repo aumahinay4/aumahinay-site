@@ -78,7 +78,7 @@ def build():
                 if f.suffix in (".py", ".csv"):
                     shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
-    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n")
+    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n/courses/ /study-notes/ 301\n/courses /study-notes/ 301\n")
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")

@@ -883,4 +883,16 @@ CSS += """
 .hero h1 { font-size: clamp(2.465rem, 4.9078vw, 3.1822rem); line-height: 1.12; text-wrap: balance; }
 @media (max-width: 640px) { .hero h1 { font-size: min(2.465rem, 9.6vw); } }
 """
+CSS += """
+/* Study Notes (Butch 2026-11-10) */
+.notes-page .tip { padding: 10px 14px; background: color-mix(in srgb, var(--gold) 16%, var(--surface)); border-left: 4px solid var(--gold); text-align: left; }
+.notes-page .card.example { margin: 22px 0 8px; border-left: 5px solid var(--green-ink); }
+.notes-page .card.example h3 { margin: 0 0 6px; }
+.notes-page .card.example li, .notes-page ul li { text-align: left; margin: 4px 0; }
+.notes-page .level-rows { display: grid; gap: 8px; margin: 10px 0; }
+.notes-page .level-row { background: var(--surface); border-left: 4px solid var(--blue-ink); padding: 8px 14px; }
+.notes-page .level-row p { margin: 2px 0; text-align: left; }
+.notes-page .level-row .row-label { color: var(--blue-ink); }
+ol.coming li { margin: 4px 0; text-align: left; }
+"""
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
