@@ -11,7 +11,7 @@ CSS = """
   --gold: #f6c453; --blue: #7cc4ff; --green: #3ddc97; --coral: #ff8a80; --violet: #c9a7ff;
   /* the same colours, deep enough to read as text on white */
   --gold-ink: #9a6500; --blue-ink: #1d6bc4; --green-ink: #0b7d55; --coral-ink: #c43d33; --violet-ink: #6f45c7;
-  --navy: #13244b; --navy-deep: #0b1630; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
+  --navy: #12397f; --navy-deep: #0b2a63; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
   --bg: #f4f6fb; --surface: #ffffff; --text: #0f1a33; --muted: #56627c; --line: #dfe5ef;
   --shadow: 0 1px 2px rgba(15, 26, 51, .06), 0 12px 32px -18px rgba(15, 26, 51, .28);
   --rainbow: linear-gradient(90deg, var(--gold), var(--blue) 25%, var(--green) 50%, var(--coral) 75%, var(--violet));
@@ -22,7 +22,7 @@ CSS = """
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --gold-ink: #f6c453; --blue-ink: #7cc4ff; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
-    --navy: #15295a; --navy-deep: #0e1c3d;
+    --navy: #123272; --navy-deep: #0a2458;
     --bg: #081025; --surface: #0f1a36; --text: #e8edf7; --muted: #9aa7c2; --line: #1f2d4f;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
     color-scheme: dark;
@@ -30,7 +30,7 @@ CSS = """
 }
 :root[data-theme="dark"] {
   --gold-ink: #f6c453; --blue-ink: #7cc4ff; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
-  --navy: #15295a; --navy-deep: #0e1c3d;
+  --navy: #123272; --navy-deep: #0a2458;
   --bg: #081025; --surface: #0f1a36; --text: #e8edf7; --muted: #9aa7c2; --line: #1f2d4f;
   --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
   color-scheme: dark;
@@ -96,7 +96,7 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 /* Cover-style navy panel, used for the home hero, ALTOS hero and the principle */
 .hero, .altos-hero, blockquote {
   position: relative; overflow: hidden; border-radius: var(--radius); color: var(--on-navy);
-  background: radial-gradient(120% 90% at 15% 0%, #23407c 0%, var(--navy) 45%, var(--navy-deep) 100%);
+  background: radial-gradient(120% 90% at 15% 0%, #2a57a8 0%, var(--navy) 45%, var(--navy-deep) 100%);
   box-shadow: var(--shadow);
 }
 /* the two arches from the cover */
@@ -315,7 +315,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 .status { font-size: 12.1016px; font-weight: 600; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; color: var(--muted); border: 1.5px dashed var(--line); }
 .status.live { color: var(--navy-deep); background: var(--green); border: 0; }
 .node.mother { max-width: 620px; margin: 0 auto; border: 0; color: var(--on-navy);
-               background: radial-gradient(120% 120% at 15% 0%, #23407c 0%, var(--navy) 50%, var(--navy-deep) 100%); }
+               background: radial-gradient(120% 120% at 15% 0%, #2a57a8 0%, var(--navy) 50%, var(--navy-deep) 100%); }
 .node.mother .code { font-size: 1.6135rem; }
 .node.mother { padding-top: 17.6px; }
 .node.mother h3 { color: var(--on-navy); margin-top: 6px; }
