@@ -908,8 +908,8 @@ CSS += """
 
 CSS += """
 /* Menu panel PLAIN WHITE (Butch 2026-11-10; dark mode uses the dark card colour): navy words, gold-ink for the current page */
-html.menu-js.menu-open header.site #site-menu { background: color-mix(in srgb, var(--surface) 50%, transparent);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }  /* white, 50% see-through (Butch 2026-11-10) */
+html.menu-js.menu-open header.site #site-menu { background: color-mix(in srgb, var(--surface) 25%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }  /* white, 75% see-through (Butch 2026-11-10: 50%, then 25% more) */
 /* Panel ends just below Privacy Policy (Butch 2026-11-10: "uncover below privacy"); the page shows below it */
 html.menu-js.menu-open header.site #site-menu { inset: 0 auto auto 0; height: auto; max-height: 100dvh; padding-bottom: 22px; }
 html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
