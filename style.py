@@ -895,4 +895,9 @@ CSS += """
 .notes-page .level-row .row-label { color: var(--blue-ink); }
 ol.coming li { margin: 4px 0; text-align: left; }
 """
+CSS += """
+/* Home banner: no navy stripe on the left (Butch 2026-11-10); plain thin border like the cards. */
+.hero { border-left: 1px solid var(--line); }
+"""
+
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
