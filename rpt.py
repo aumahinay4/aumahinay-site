@@ -132,14 +132,16 @@ RPT_SCRIPT = r"""
     var qbody = $('q-body'); qbody.innerHTML = '';
     quarters.forEach(function (x) {
       var bAdj, sAdj, label;
-      if (x.months) { bAdj = r2(x.b * x.months * 2 / 100); sAdj = r2(x.s * x.months * 2 / 100); label = x.months + ' mo late +' + (x.months * 2) + '%'; }
-      else { bAdj = -r2(x.b * disc / 100); sAdj = -r2(x.s * disc / 100); label = disc ? 'on time −' + disc + '%' : 'on time'; }
-      tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj = r2(tbAdj + bAdj); tsAdj = r2(tsAdj + sAdj);
+      // keep centavos unrounded until the totals, so 15% of ₱500 is exactly ₱75 (not ₱75.04 from rounding each part)
+      if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = x.months + ' mo late +' + (x.months * 2) + '%'; }
+      else { bAdj = -x.b * disc / 100; sAdj = -x.s * disc / 100; label = disc ? 'on time −' + disc + '%' : 'on time'; }
+      tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj += bAdj; tsAdj += sAdj;
       var tr = document.createElement('tr');
       ['Q' + x.q + ', due ' + x.due, label, peso(r2(x.b + x.s)), peso(r2(bAdj + sAdj)), peso(r2(x.b + x.s + bAdj + sAdj))].forEach(function (c, i) {
         var td = document.createElement(i === 0 ? 'th' : 'td'); td.textContent = c; if (i === 0) td.scope = 'row'; tr.appendChild(td); });
       qbody.appendChild(tr);
     });
+    tbAdj = r2(tbAdj); tsAdj = r2(tsAdj);
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
     var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     $('out-note').textContent = anyLate && quarters.some(function (x) { return !x.months; }) ? 'No discount while any quarter is late.' : '';
