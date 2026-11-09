@@ -252,6 +252,9 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
                 class_="site",
             ),
             t.main(t.div(body, class_="wrap")),
+            # small Privacy Policy link at the bottom of every page (Butch 2026-11-10; AdSense)
+            t.footer(t.div(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+                           class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
             t.script(Raw(SWIPE_SCRIPT)),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
