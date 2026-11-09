@@ -67,14 +67,16 @@ NOTES = [
                 "Shares in national wealth: a share of what the national government earns from mining, forestry, "
                 "fishery and energy resources found in the area.",
             ]),
-            "Local governments may also borrow and receive grants, but those are not revenue that the "
-            "community pays. This note covers the first three.",
+            "Local governments may also borrow money and receive grants, but loans must be paid back and grants "
+            "are not regular income. This note covers the first three sources; the share in national wealth "
+            "goes only to places where those resources are found.",
             ("h", "Rules every local tax must follow"),
             "Section 130 of the Code lists the fundamental principles. A local tax, fee or charge must be "
-            "uniform within the local government, must not be unjust, excessive, oppressive or confiscatory, "
-            "must be for a public purpose, and must be collected by public officers. The power to collect "
-            "cannot be contracted out to a private person. A tax can only be imposed by an ordinance passed by "
-            "the sanggunian after a public hearing (Sections 132 and 186 to 187).",
+            "uniform within the local government, must be fair and based as far as practicable on the "
+            "taxpayer's ability to pay, must be levied only for a public purpose, and must not be unjust, "
+            "excessive, oppressive or confiscatory. The collection of a local tax can never be given to a "
+            "private person. A tax can only be imposed by an ordinance passed by the sanggunian, after a public "
+            "hearing (Sections 132 and 187).",
             ("h", "What no local government may tax"),
             "Section 133 lists what is off-limits to every province, city, municipality and barangay. Among "
             "them:",
@@ -176,8 +178,8 @@ NOTES = [
               "The tax must be uniform within the local government.",
               "The tax may be set by the mayor without an ordinance.",
               "The tax may be confiscatory if revenue is low."], 1,
-             "Taxes must be uniform, not unjust or confiscatory, collected by public officers, and imposed by "
-             "ordinance; collection cannot be given to a private person."),
+             "Taxes must be uniform, fair, for a public purpose and not unjust or confiscatory, and they are "
+             "imposed by ordinance (Section 132). Collection can never be given to a private person."),
         ],
     },
 ]
