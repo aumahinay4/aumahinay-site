@@ -907,10 +907,18 @@ CSS += """
 """
 
 CSS += """
-/* Menu panel see-through (Butch 2026-11-10): navy at 72% with a soft blur so the page shows faintly behind */
-html.menu-js.menu-open header.site #site-menu {
-  background: color-mix(in srgb, var(--navy) 72%, transparent);
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+/* Menu panel PLAIN WHITE (Butch 2026-11-10; dark mode uses the dark card colour): navy words, gold-ink for the current page */
+html.menu-js.menu-open header.site #site-menu { background: var(--surface); }
+html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
+html.menu-js.menu-open header.site #site-menu a:hover,
+html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { color: var(--muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { border-top-color: var(--line); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold-ink); }
+html.menu-js.menu-open .menu-close { color: var(--text); }
+html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
