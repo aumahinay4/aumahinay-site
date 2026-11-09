@@ -901,4 +901,9 @@ CSS += """
 .hero { border-left: 1px solid var(--line); }
 """
 
+CSS += """
+/* About: name title on ONE line on phones (Butch 2026-11-10); shrinks with the screen width */
+@media (max-width: 640px) { .about-hello h1.name-title { white-space: nowrap; font-size: min(1.5rem, calc((100vw - 64px) / 15.6)); } }
+"""
+
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)

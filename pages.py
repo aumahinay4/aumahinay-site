@@ -1333,7 +1333,7 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title("Ambrosio “Butch” U. Mahinay, MPA", photo=True),  # name beside the photo instead of "About" (Butch 2026-11-10)
+        photo_title("Ambrosio “Butch” U. Mahinay, MPA", photo=True, class_="name-title"),  # name beside the photo instead of "About" (Butch 2026-11-10)
         t.p(ABOUT["roles"], class_="roles"),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),

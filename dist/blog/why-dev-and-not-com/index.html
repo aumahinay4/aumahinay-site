@@ -805,6 +805,9 @@ ol.coming li { margin: 4px 0; text-align: left; }
 
 /* Home banner: no navy stripe on the left (Butch 2026-11-10); plain thin border like the cards. */
 .hero { border-left: 1px solid var(--line); }
+
+/* About: name title on ONE line on phones (Butch 2026-11-10); shrinks with the screen width */
+@media (max-width: 640px) { .about-hello h1.name-title { white-space: nowrap; font-size: min(1.5rem, calc((100vw - 64px) / 15.6)); } }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
