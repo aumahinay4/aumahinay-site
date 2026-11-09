@@ -717,8 +717,10 @@ html.menu-js.menu-open header.site #site-menu a {
   font: 700 clamp(1.45rem, 6.6vw, 1.9rem)/1.25 var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
 html.menu-js.menu-open header.site #site-menu a:hover { color: var(--gold); text-decoration: none; }
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold); }
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { margin-top: 18px; padding-top: 22px; border-top: 1px solid rgba(238, 243, 255, .16);
-  font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 8px 0; font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 18px; padding-top: 22px; border-top: 1px solid rgba(238, 243, 255, .16); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold); }
 html.menu-js.menu-open .menu-close { display: grid; place-content: center; position: absolute; top: calc(14px + env(safe-area-inset-top, 0px));
   right: max(18px, env(safe-area-inset-right, 0px)); width: 48px; height: 48px; padding: 0; cursor: pointer; background: transparent; border: 0; color: var(--on-navy); }
@@ -740,6 +742,27 @@ footer.site .sep { opacity: .6; }
 .disclaimer h3 { margin: 0 0 6px; font-size: 1rem; }
 .disclaimer p { margin: 0; font-style: italic; font-size: .94em; }
 .policy-meta { text-align: left; }
+/* Civil Service Exam Vocabulary pages */
+.vocab-page .card.word { margin-top: 16px; }
+.vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
+.vocab-page .card.word h2::after { display: none; }
+.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body, inherit); color: var(--muted); }
+.vocab-page .card.word p, .practice p, .practice li { margin: 6px 0; text-align: left; hyphens: manual; }  /* short lines: left-aligned so words are not stretched apart */
+.vocab-page .card.word .meaning { font-weight: 600; }
+.vocab-page .card.word .source { font-size: .9em; text-align: left; }
+.practice > li { margin: 0 0 18px; }
+.practice > li > p { margin: 0 0 6px; }
+.practice .choices { margin: 0 0 8px; padding-left: 26px; }
+.practice .answer summary { cursor: pointer; font-weight: 700; color: var(--blue-ink); }
+/* Home (2026-11-09): link cards, author box */
+a.card.focus { display: block; color: inherit; text-decoration: none; }
+a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; color: var(--blue-ink); }
+.card.author { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: start; margin-top: 14px; }
+.card.author .author-photo { width: 72px; height: 72px; margin: 0; }
+.card.author p { margin: 0 0 8px; }
+.author-links { text-align: left; }
+@media (max-width: 640px) { .card.author { grid-template-columns: 56px 1fr; gap: 12px; } .card.author .author-photo { width: 56px; height: 56px; } }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)

@@ -11,6 +11,7 @@ import tags as t
 from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TRAININGS
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
+from vocab import MODULES, VOCAB, module_url, word_source
 from style import CSS
 from tags import Raw
 
@@ -92,7 +93,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; X, Esc, or tapping a link closes it. Privacy is in the menu but not in the swipe order.
-MENU = NAV + [("/privacy/", "Privacy Policy")]
+MENU = NAV + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
 CLOSE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>')
 MENU_SCRIPT = """
@@ -346,57 +347,102 @@ def section_head(title, link_text, href):
 
 
 def home():
-    pro = [c for c in CERTIFICATES if c["kind"].startswith("Prof")]
+    """Home: what the site offers (blog, free Python lessons, ALTOS), the newest writing first,
+    then topics, lessons, the project and a short note about the author (Butch 2026-11-09:
+    make Home relevant to the whole site and ready for an AdSense review)."""
+    posts = sorted(live_posts(), key=post_day, reverse=True)
+    lessons = [x for x in LESSONS if lesson_is_live(x)]
+    topics = [(key, label, sum(b["category"] == key for b in posts)) for key, label, _ in BLOG_CATEGORIES]
+    topic_text = {
+        "software": "Building ALTOS, Python, and software that keeps public money accountable.",
+        "finance": "Local treasury work, collections, disbursements and the rules behind them.",
+        "personal": "The farm, the province, and life beyond the office.",
+    }
     return part(
         "Home", "/",
         t.div(
             t.img(src=asset_url("hero-photo.jpg"), alt="Photo of Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo"),
             t.div(
                 t.div(t.h1(SITE["title"]), class_="hero-name"),
-                t.p(SITE["tagline"] + " My tools make treasury work faster, more accurate, and easier to audit.", class_="lead"),
+                t.p("Plain-language writing on local treasury work and public finance, free Python lessons "
+                    "for treasury staff, and notes from building ALTOS, by a treasury worker who builds software.",
+                    class_="lead"),
                 t.div(
-                    t.a("See ALTOS", href="/projects/", class_="btn ghost"),
                     t.a("Read the blog", href="/blog/", class_="btn ghost"),
-                    t.a("Contact me", href=f"mailto:{SITE['email']}", class_="btn ghost"),
+                    t.a("Start the Python lessons", href="/tutorials/", class_="btn ghost"),
+                    t.a("About me", href="/about/", class_="btn ghost"),
                     class_="btns",
                 ),
                 class_="hero-text",
             ),
             class_="hero",
         ),
-        t.div(
-            t.div(t.b("15", t.small("+")), t.span("Years in government service"), class_="stat"),
-            t.div(t.b("13", t.small("+")), t.span("Years in public finance"), class_="stat"),
-            t.div(t.b(len([x for x in LESSONS if lesson_is_live(x)])), t.span("Python lessons published"), class_="stat"),
-            t.div(t.b(len(live_posts())), t.span("Blog posts"), class_="stat"),
-            class_="stats",
-        ),
-        t.h2("What I do"),
+        t.h2("What you'll find here"),
         t.div(
             [
-                t.div(t.h3(title), t.p(text), class_="card focus")
-                for title, text in (
-                    ("Treasury operations",
-                     "More than 13 years in local government fiscal administration: collections, "
-                     "disbursements, deposits and the reports that keep them accountable."),
-                    ("Software for local treasuries",
-                     "I design and build ALTOS in Python, with tamper-evident audit logs and encrypted "
-                     "backups, to bring automation to treasury offices."),
-                    ("Writing and teaching",
-                     "Free, beginner-friendly Python lessons for treasury work, and blog posts on public "
-                     "finance, software and life beyond the office."),
+                t.a(t.h3(title), t.p(text), t.span(go, class_="go"), href=href, class_="card focus")
+                for title, text, go, href in (
+                    ("Blog",
+                     "Stories and notes on public finance, treasury work and building software. "
+                     "New posts every Sunday.", "Read the blog →", "/blog/"),
+                    ("Tutorials",
+                     "Free, beginner-friendly lessons: Python for treasury work, with new lessons on Saturdays, "
+                     "and vocabulary for the Civil Service exam.", "Start learning →", "/tutorials/"),
+                    ("ALTOS",
+                     "The Automated Local Treasury Operations System, a working treasury system for "
+                     "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
                 )
             ],
             class_="grid three",
         ),
-        section_head("Projects", "All about ALTOS", "/projects/"),
-        t.div(altos_feature_card(), class_="grid one"),
-        t.div([subsystem_node(sub, summary=False) for sub in SUBSYSTEMS], class_="children compact"),
-        # certificates hidden for now (Butch 2026-11-09); Home shows tutorials and the blog instead
+        section_head("Latest posts", f"All {len(posts)} posts", "/blog/"),
+        t.div([post_card(b) for b in posts[:4]], class_="post-list home-posts"),
+        t.h2("Browse by topic"),
+        t.div(
+            [t.a(t.h3(label), t.p(topic_text.get(key, "")), t.span(f"{n} post{'s' if n != 1 else ''} →", class_="go"),
+                 href=f"/blog/#cat-{key}", class_="card focus topic") for key, label, n in topics if n],
+            class_="grid three",
+        ),
         section_head(TUTORIAL["title"], "All lessons", "/tutorials/"),
-        t.div([lesson_card(x, mini=True) for x in home_lessons()], class_="grid three"),
-        section_head("Latest from the blog", "All posts", "/blog/"),
-        t.div([post_card(b) for b in sorted(live_posts(), key=post_day, reverse=True)[:3]], class_="post-list home-posts"),
+        t.div([lesson_card(x, mini=True) for x in lessons[::-1][:3]], class_="grid three"),
+        section_head("Project", "All about ALTOS", "/projects/"),
+        t.div(altos_feature_card(), class_="grid one"),
+        t.h2("About the author"),
+        t.div(
+            t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
+            t.div(
+                t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
+                    "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
+                    "He writes, teaches and builds software in his personal capacity, outside official working hours."),
+                t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
+                    t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
+                    t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
+            ),
+            class_="card author",
+        ),
+        description=f"{SITE['short_name']}: plain-language writing on local treasury work and public finance, "
+                    "free Python lessons for treasury staff, and the ALTOS treasury system.",
+    )
+
+
+def contact():
+    return part(
+        "Contact", "/contact/",
+        t.p("Contact", class_="eyebrow"),
+        photo_title("Get in touch"),
+        t.p("For questions about a blog post or lesson, feedback on the ALTOS book, speaking inquiries, "
+            "or technical discussions on civic tech and data analytics, email me.", class_="lead"),
+        t.ul(
+            t.li(t.b("Email: "), t.a(SITE["email"], href=f"mailto:{SITE['email']}")),
+            t.li(t.b("Website: "), t.a(f"https://{SITE['domain']}", href="/")),
+            class_="plain-list",
+        ),
+        t.p("Please don't send personal data you don't want me to keep. How I handle what you send is explained "
+            "in the ", t.a("Privacy Policy", href="/privacy/"), "."),
+        t.p("Views on this site are my own, written in my personal capacity, and do not represent any government office.",
+            class_="muted note"),
+        description=f"Contact {SITE['short_name']} by email about the blog, the Python lessons, or the ALTOS book.",
+        url="/contact/",
     )
 
 
@@ -719,6 +765,7 @@ def tutorials():
         t.div(t.p(t.b("Where to begin. "), TUTORIAL["setup"]), class_="card setup"),
         t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
         t.div([lesson_card(x) for x in shown], class_="lesson-list"),  # lessons not yet published stay hidden
+        vocab_section(),
         t.h2("Words to know"),
         t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
         t.p(
@@ -727,6 +774,90 @@ def tutorials():
             class_="muted note",
         ),
         description=f"Free, beginner-friendly Python lessons for local treasury work: collections, disbursements and reports, by {SITE['short_name']}.",
+    )
+
+
+# ---- Civil Service Exam Vocabulary (second tutorial series, Butch 2026-11-09) ----
+
+VOCAB_CHECKED = "November 2026"
+
+
+def module_is_live(m):
+    return m.get("publish_on") is None or m["publish_on"] <= ph_today()
+
+
+def live_modules():
+    return [m for m in MODULES if SHOW_SCHEDULED or module_is_live(m)]
+
+
+def module_card(m):
+    return t.a(
+        t.div(t.span(f"Module {m['number']}", class_="badge"), t.span(f"{len(m['words'])} words · practice", class_="muted"), class_="meta"),
+        t.h3(m["title"][:1].upper() + m["title"][1:]),
+        t.p(m["summary"]),
+        t.span("Start the module →", class_="go"),
+        href=module_url(m), class_="card lesson",
+    )
+
+
+def vocab_section():
+    mods = live_modules()
+    if not mods:
+        return None
+    return [
+        t.h2(VOCAB["title"], id=VOCAB["slug"]),
+        t.p(VOCAB["intro"]),
+        t.div([module_card(m) for m in mods], class_="lesson-list"),
+    ]
+
+
+def word_card(w):
+    word, pos, meaning, example, syn, ant, note = w
+    return t.div(
+        t.h2(word, t.span(" " + pos, class_="pos")),
+        t.p(meaning, class_="meaning"),
+        t.p(t.b("Example: "), t.i(example)),
+        t.p(t.b("Same meaning: "), ", ".join(syn)) if syn else None,
+        t.p(t.b("Opposite: "), ", ".join(ant)) if ant else None,
+        t.p(t.b("Exam tip: "), note, class_="tip") if note else None,
+        t.p(t.a("Check the meaning in Merriam-Webster", href=word_source(word), target="_blank", rel="noopener"), class_="source"),
+        class_="card word",
+    )
+
+
+def module_page(m):
+    i = MODULES.index(m)
+    nxt = MODULES[i + 1] if i + 1 < len(MODULES) else None
+    letters = "ABCD"
+    return part(
+        f"Civil Service Exam Vocabulary, Module {m['number']}: {m['title']}", module_url(m),
+        t.div(
+            t.a("← " + VOCAB["title"], href=f"/tutorials/#{VOCAB['slug']}", class_="crumb"),
+            t.p(f"{VOCAB['title']} · Module {m['number']}", class_="eyebrow"),
+            t.h1(m["title"][:1].upper() + m["title"][1:], class_="lesson-title"),
+            t.p(m["summary"], class_="lead"),
+            t.p("✓ Last checked: " + VOCAB_CHECKED + " · meanings checked against Merriam-Webster", class_="checked"),
+            t.p(VOCAB["note"].replace("Civil Service Commission.", ""), t.a("Civil Service Commission", href=VOCAB["csc_url"], target="_blank", rel="noopener"), ".", class_="muted"),
+            [word_card(w) for w in m["words"]],
+            t.h2("Practice"),
+            t.p("Answer first, then open the answer to check yourself."),
+            t.ol([
+                t.li(
+                    t.p(q),
+                    t.ol([t.li(c) for c in choices], class_="choices", type="A"),
+                    t.details(t.summary("Show answer"), t.p(t.b(f"{letters[ans]}. {choices[ans]}"), " ", why), class_="answer"),
+                )
+                for q, choices, ans, why in m["practice"]
+            ], class_="practice"),
+            react_box(module_url(m)),
+            t.div(
+                t.span(),
+                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span("Next module coming soon", class_="muted"),
+                class_="lesson-nav",
+            ),
+            class_="lesson-page vocab-page",
+        ),
+        description=f"{VOCAB['title']}, Module {m['number']}: {m['summary']}",
     )
 
 
@@ -889,6 +1020,7 @@ def blog():
                 class_="lead",
             ),
             posts,
+            t.script(Raw('(function(){var m=/^#cat-(\\w+)$/.exec(location.hash);var r=m&&document.getElementById("cat-"+m[1]);if(r)r.checked=true;})();')),
             t.p(
                 "Views here are my own and do not represent any government office.",
                 class_="muted note",
@@ -1164,7 +1296,7 @@ def privacy():
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, PRIVACY_URL: privacy}
+PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy}
 
 
 def _full_page(build):
@@ -1179,6 +1311,7 @@ ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}
 ROUTES[BOOK_URL] = _full_page(book_reader)
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
+ROUTES.update({module_url(m): _full_page(lambda m=m: module_page(m)) for m in MODULES if module_is_live(m)})
 
 
 def not_found():
