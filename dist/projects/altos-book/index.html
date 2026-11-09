@@ -709,6 +709,44 @@ blockquote::before { color: var(--gold-ink); }
 .altos-hero .wordmark .l2, .node.mother .wordmark .l2 { color: var(--green-ink); } .altos-hero .wordmark .l3, .node.mother .wordmark .l3 { color: var(--coral-ink); }
 .altos-hero .wordmark .l4, .node.mother .wordmark .l4 { color: var(--violet-ink); }
 @media (max-width: 640px) { main .wrap > .hero:first-child { border-top: 0; border-right: 0; } }
+
+/* RPT calculator (Butch 2026-11-09) */
+.rpt-form { margin-top: 22px; gap: 4px; }
+.rpt-form fieldset { border: 0; margin: 0; padding: 0 0 14px; min-width: 0; }
+.rpt-form fieldset + fieldset { border-top: 1px solid var(--line); padding-top: 14px; }
+.rpt-form legend { font: 700 1.05rem var(--font-display); color: var(--text); padding: 0; margin-bottom: 8px; }
+.rpt-form .choices { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.rpt-form .choice { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-weight: 500; }
+.rpt-form .choice input { accent-color: var(--panel-ink); width: 18px; height: 18px; margin: 0; }
+.rpt-form .field { margin-top: 10px; }
+.rpt-form .field[hidden], .rpt-form .field-pair[hidden] { display: none; }
+.rpt-form .field label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: .93em; }
+.rpt-form input[type=number] { font: 500 17px var(--font-body); color: var(--text); background: var(--bg); border: 1.5px solid var(--line);
+  border-radius: 8px; padding: 10px 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
+.rpt-form input[type=date], .rpt-form select { font: 500 17px var(--font-body); color: var(--text); background: var(--bg); border: 1.5px solid var(--line);
+  border-radius: 8px; padding: 9px 12px; width: 100%; max-width: 320px; box-sizing: border-box; min-height: 46px; }
+.rpt-form input[type=number]:focus, .rpt-form input[type=date]:focus, .rpt-form select:focus { outline: none; border-color: var(--panel-ink); }
+.rpt-form .block-hint { display: block; margin: 10px 0 0; font-size: .86em; max-width: 60ch; }
+.rpt-form [hidden] { display: none !important; }
+.rpt-table.quarters td:nth-child(2) { white-space: normal; text-align: left; color: var(--muted); }
+.rpt-form .hint { font-weight: 400; color: var(--muted); text-align: left; }
+.field-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 18px; }
+.rpt-result { margin-top: 18px; border-left: 5px solid var(--panel-ink); }
+.rpt-av { margin: 0; color: var(--muted); }
+.rpt-av b { color: var(--text); }
+.rpt-due-label { margin: 10px 0 0; font-weight: 600; color: var(--muted); }
+.rpt-due { margin: 0; font: 800 clamp(1.8rem, 6vw, 2.4rem)/1.15 var(--font-display); color: var(--panel-ink); }
+.rpt-result h3 { margin-top: 22px; }
+.table-scroll { overflow-x: auto; margin-top: 12px; }
+.rpt-table { width: 100%; border-collapse: collapse; font-size: .93em; font-variant-numeric: tabular-nums; }
+.rpt-table th, .rpt-table td { padding: 8px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+.rpt-table th:first-child { text-align: left; white-space: normal; font-weight: 600; }
+.rpt-table thead th { color: var(--muted); font-weight: 600; font-size: .9em; }
+.rpt-table tr.total th, .rpt-table tr.total td { font-weight: 800; border-bottom: 0; border-top: 2px solid var(--text); }
+.rpt-table small { font-weight: 400; color: var(--muted); }
+.rpt-notes li { margin-bottom: 8px; }
+.sources-line { text-align: left; }
+@media (max-width: 640px) { .rpt-table th, .rpt-table td { padding: 7px 4px; } .rpt-table { font-size: .86em; } }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -782,8 +820,12 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .disclaimer h3 { font-size: 1.025rem; }
 .vocab-page .card.word h2 { font-size: 1.4862rem; }
 .vocab-page .card.word .pos { font-size: 0.9737rem; }
+.rpt-form legend { font-size: 1.0762rem; }
+.rpt-form input[type=number] { font-size: 17.425px; }
+.rpt-form input[type=date], .rpt-form select { font-size: 17.425px; }
+.rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
 }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/" class="active" aria-current="page">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><a href="/projects/" class="crumb">← Back to Projects</a><p class="eyebrow">Book preview</p><h1>360° Accountability: Public Fiscal Administration in Philippine Local Treasuries</h1><p class="lead">The ALTOS Principles · Draft edition, October 2026 · 80 pages. Read the first 20 pages here: the contents, Chapters 1 to 3 and the start of Chapter 4.</p><div id="reader" class="reader" data-pages="[&quot;/static/book/page-01.jpg?v=5ca102b9&quot;, &quot;/static/book/page-02.jpg?v=75474b02&quot;, &quot;/static/book/page-03.jpg?v=ab92522c&quot;, &quot;/static/book/page-04.jpg?v=2f4e5b27&quot;, &quot;/static/book/page-05.jpg?v=9da849e1&quot;, &quot;/static/book/page-06.jpg?v=17ff54bf&quot;, &quot;/static/book/page-07.jpg?v=7477bd1f&quot;, &quot;/static/book/page-08.jpg?v=e7c0b800&quot;, &quot;/static/book/page-09.jpg?v=c997eec4&quot;, &quot;/static/book/page-10.jpg?v=d2bbc8e0&quot;, &quot;/static/book/page-11.jpg?v=392780e9&quot;, &quot;/static/book/page-12.jpg?v=47f5ec2f&quot;, &quot;/static/book/page-13.jpg?v=f9910570&quot;, &quot;/static/book/page-14.jpg?v=1f966992&quot;, &quot;/static/book/page-15.jpg?v=87caa2f2&quot;, &quot;/static/book/page-16.jpg?v=0476c2e6&quot;, &quot;/static/book/page-17.jpg?v=6b2178df&quot;, &quot;/static/book/page-18.jpg?v=8f111ac9&quot;, &quot;/static/book/page-19.jpg?v=25ae6f9c&quot;, &quot;/static/book/page-20.jpg?v=626bcf5c&quot;]" data-noswipe=""><div class="controls"><button type="button" class="btn prev">← Previous</button><span class="count" aria-live="polite"></span><button type="button" class="btn next">Next →</button></div><div class="page"><img src="/static/book/page-01.jpg?v=5ca102b9" alt="Page 1 of the preview" width="900" height="1350" draggable="false"><div class="shield"></div></div></div><div class="reader-request"><h2>Want to read the whole book?</h2><p>This is a preview of the draft edition. The full book has 80 pages. To read all of it, send a request. Once I approve it, I&#x27;ll share the full book with your Gmail address to read online only: no download, print or copy.</p><p>Reading time: once your request is approved, you can read the whole book for 3 days. Need more time? Send another request; each one after that gives you 2 more days. Access ends automatically when the time is up. There is no limit on requests.</p><a href="mailto:hello@aumahinay.dev?subject=Request%3A%20full%20ALTOS%20book&amp;body=Hello%20Butch%2C%0A%0AI%20would%20like%20to%20read%20the%20full%20book%2C%20360%C2%B0%20Accountability%3A%20The%20ALTOS%20Principles.%0A%0AName%3A%0AGoogle%20%28Gmail%29%20address%20to%20share%20it%20with%3A%0AOffice%20or%20school%3A%0AWhy%20I%20want%20to%20read%20it%3A%0AFirst%20request%20or%20more%20time%3A%0A%0AThank%20you." class="btn white">Request the full book →</a></div><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/" class="active" aria-current="page">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><a href="/projects/" class="crumb">← Back to Projects</a><p class="eyebrow">Book preview</p><h1>360° Accountability: Public Fiscal Administration in Philippine Local Treasuries</h1><p class="lead">The ALTOS Principles · Draft edition, October 2026 · 80 pages. Read the first 20 pages here: the contents, Chapters 1 to 3 and the start of Chapter 4.</p><div id="reader" class="reader" data-pages="[&quot;/static/book/page-01.jpg?v=5ca102b9&quot;, &quot;/static/book/page-02.jpg?v=75474b02&quot;, &quot;/static/book/page-03.jpg?v=ab92522c&quot;, &quot;/static/book/page-04.jpg?v=2f4e5b27&quot;, &quot;/static/book/page-05.jpg?v=9da849e1&quot;, &quot;/static/book/page-06.jpg?v=17ff54bf&quot;, &quot;/static/book/page-07.jpg?v=7477bd1f&quot;, &quot;/static/book/page-08.jpg?v=e7c0b800&quot;, &quot;/static/book/page-09.jpg?v=c997eec4&quot;, &quot;/static/book/page-10.jpg?v=d2bbc8e0&quot;, &quot;/static/book/page-11.jpg?v=392780e9&quot;, &quot;/static/book/page-12.jpg?v=47f5ec2f&quot;, &quot;/static/book/page-13.jpg?v=f9910570&quot;, &quot;/static/book/page-14.jpg?v=1f966992&quot;, &quot;/static/book/page-15.jpg?v=87caa2f2&quot;, &quot;/static/book/page-16.jpg?v=0476c2e6&quot;, &quot;/static/book/page-17.jpg?v=6b2178df&quot;, &quot;/static/book/page-18.jpg?v=8f111ac9&quot;, &quot;/static/book/page-19.jpg?v=25ae6f9c&quot;, &quot;/static/book/page-20.jpg?v=626bcf5c&quot;]" data-noswipe=""><div class="controls"><button type="button" class="btn prev">← Previous</button><span class="count" aria-live="polite"></span><button type="button" class="btn next">Next →</button></div><div class="page"><img src="/static/book/page-01.jpg?v=5ca102b9" alt="Page 1 of the preview" width="900" height="1350" draggable="false"><div class="shield"></div></div></div><div class="reader-request"><h2>Want to read the whole book?</h2><p>This is a preview of the draft edition. The full book has 80 pages. To read all of it, send a request. Once I approve it, I&#x27;ll share the full book with your Gmail address to read online only: no download, print or copy.</p><p>Reading time: once your request is approved, you can read the whole book for 3 days. Need more time? Send another request; each one after that gives you 2 more days. Access ends automatically when the time is up. There is no limit on requests.</p><a href="mailto:hello@aumahinay.dev?subject=Request%3A%20full%20ALTOS%20book&amp;body=Hello%20Butch%2C%0A%0AI%20would%20like%20to%20read%20the%20full%20book%2C%20360%C2%B0%20Accountability%3A%20The%20ALTOS%20Principles.%0A%0AName%3A%0AGoogle%20%28Gmail%29%20address%20to%20share%20it%20with%3A%0AOffice%20or%20school%3A%0AWhy%20I%20want%20to%20read%20it%3A%0AFirst%20request%20or%20more%20time%3A%0A%0AThank%20you." class="btn white">Request the full book →</a></div><script>
 (function () {
   var r = document.getElementById("reader");
   if (!r) return;

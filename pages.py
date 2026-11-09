@@ -12,6 +12,7 @@ from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, 
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
+from rpt import RPT_URL, rpt_page
 from style import CSS
 from tags import Raw
 
@@ -93,7 +94,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; X, Esc, or tapping a link closes it. Privacy is in the menu but not in the swipe order.
-MENU = NAV + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
+MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
 CLOSE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>')
 MENU_SCRIPT = """
@@ -394,6 +395,15 @@ def home():
                 )
             ],
             class_="grid three",
+        ),
+        t.h2("Free tool"),
+        t.div(
+            t.a(t.h3("Real Property Tax Calculator"),
+                t.p("Work out the basic real property tax and the Special Education Fund on any assessed value, "
+                    "with the discount or interest, and see how much goes to the province, municipality, "
+                    "barangay and school boards."),
+                t.span("Open the calculator →", class_="go"), href=RPT_URL, class_="card focus tool"),
+            class_="grid one",
         ),
         section_head("Latest posts", f"All {len(posts)} posts", "/blog/"),
         t.div([post_card(b) for b in posts[:4]], class_="post-list home-posts"),
@@ -1296,7 +1306,7 @@ def privacy():
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy}
+PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, RPT_URL: rpt_page}
 
 
 def _full_page(build):
