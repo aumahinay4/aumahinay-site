@@ -393,7 +393,7 @@ def home():
                      "New posts every Sunday.", "Read the blog →", "/blog/"),
                     ("Tutorials",
                      "Free, beginner-friendly lessons: Python for treasury work, with new lessons on Saturdays, "
-                     "and vocabulary for the Civil Service exam.", "Start learning →", "/tutorials/"),
+                     "and Civil Service exam vocabulary every Wednesday.", "Start learning →", "/tutorials/"),
                     ("ALTOS",
                      "The Automated Local Treasury Operations System, a working treasury system for "
                      "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
@@ -797,8 +797,18 @@ def tutorials():
 VOCAB_CHECKED = "November 2026"
 
 
+def ph_now():
+    return datetime.now(PH).strftime("%Y-%m-%d %H:%M")
+
+
 def module_is_live(m):
-    return m.get("publish_on") is None or m["publish_on"] <= ph_today()
+    """Modules go live at their publish_on time, "YYYY-MM-DD HH:MM" Philippine time (Wednesdays 9 pm)."""
+    return m.get("publish_on") is None or m["publish_on"] <= ph_now()
+
+
+def module_when(m):
+    d = datetime.strptime(m["publish_on"], "%Y-%m-%d %H:%M")
+    return f"{d:%A}, {d:%B} {d.day}, {d:%-I} {d:%p}".replace("PM", "pm").replace("AM", "am")
 
 
 def live_modules():
@@ -840,6 +850,40 @@ def word_card(w):
     )
 
 
+QUIZ_SCRIPT = """
+(function () {
+  var list = document.querySelector('.vocab-page .practice'); if (!list) return;
+  var qs = [].slice.call(list.children), line = document.querySelector('.quiz-score .score-line'),
+      reset = document.querySelector('.quiz-score .quiz-reset'), total = qs.length;
+  function update() {
+    var done = list.querySelectorAll('li.done').length, right = list.querySelectorAll('li.done.got-it').length;
+    line.textContent = done < total ? 'Score: ' + right + ' correct, ' + done + ' of ' + total + ' answered'
+      : 'You got ' + right + ' of ' + total + ' correct.' + (right === total ? ' Perfect!' : right >= 8 ? ' Very good!' : ' Review the words and try again.');
+    reset.hidden = done === 0;
+  }
+  list.addEventListener('click', function (ev) {
+    var b = ev.target.closest('button.choice'); if (!b) return;
+    var li = b.closest('.practice > li'); if (li.classList.contains('done')) return;
+    li.classList.add('done'); var ok = b.dataset.ok === '1';
+    if (ok) li.classList.add('got-it');
+    b.classList.add(ok ? 'right' : 'wrong'); b.setAttribute('aria-label', b.textContent + (ok ? ', correct' : ', wrong'));
+    li.querySelectorAll('button.choice').forEach(function (c) { c.disabled = true; if (c.dataset.ok === '1') c.classList.add('right'); });
+    var d = li.querySelector('details.answer'); if (d) d.open = true;
+    update();
+  });
+  reset.addEventListener('click', function () {
+    qs.forEach(function (li) {
+      li.classList.remove('done', 'got-it');
+      li.querySelectorAll('button.choice').forEach(function (c) { c.disabled = false; c.classList.remove('right', 'wrong'); c.removeAttribute('aria-label'); });
+      var d = li.querySelector('details.answer'); if (d) d.open = false;
+    });
+    update(); list.scrollIntoView({behavior: 'smooth', block: 'start'});
+  });
+  document.documentElement.classList.add('quiz-js');
+})();
+"""
+
+
 def module_page(m):
     i = MODULES.index(m)
     nxt = MODULES[i + 1] if i + 1 < len(MODULES) else None
@@ -855,19 +899,27 @@ def module_page(m):
             t.p(VOCAB["note"].replace("Civil Service Commission.", ""), t.a("Civil Service Commission", href=VOCAB["csc_url"], target="_blank", rel="noopener"), ".", class_="muted"),
             [word_card(w) for w in m["words"]],
             t.h2("Practice"),
-            t.p("Answer first, then open the answer to check yourself."),
+            t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
             t.ol([
                 t.li(
                     t.p(q),
-                    t.ol([t.li(c) for c in choices], class_="choices", type="A"),
+                    t.ol([t.li(t.button(c, type="button", class_="choice", data_ok="1" if i == ans else "0"))
+                          for i, c in enumerate(choices)], class_="choices", type="A"),
                     t.details(t.summary("Show answer"), t.p(t.b(f"{letters[ans]}. {choices[ans]}"), " ", why), class_="answer"),
                 )
                 for q, choices, ans, why in m["practice"]
             ], class_="practice"),
+            t.div(
+                t.p(f"Score: 0 correct, 0 of {len(m['practice'])} answered", class_="score-line", aria_live="polite"),
+                t.button("Try again", type="button", class_="quiz-reset", hidden=True),
+                class_="quiz-score",
+            ),
+            t.script(Raw(QUIZ_SCRIPT)),
             react_box(module_url(m)),
             t.div(
                 t.span(),
-                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span("Next module coming soon", class_="muted"),
+                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span(f"Module {nxt['number']} comes out {module_when(nxt)}", class_="muted") if nxt
+                else t.span("This is the last module. Good luck on the exam!", class_="muted"),
                 class_="lesson-nav",
             ),
             class_="lesson-page vocab-page",
