@@ -366,7 +366,7 @@ def home():
                 t.p(SITE["tagline"] + " My tools make treasury work faster, more accurate, and easier to audit.", class_="lead"),
                 t.div(
                     t.a("See ALTOS", href="/projects/", class_="btn ghost"),
-                    t.a("Certificates", href="/courses/", class_="btn ghost"),
+                    t.a("Read the blog", href="/blog/", class_="btn ghost"),
                     t.a("Contact me", href=f"mailto:{SITE['email']}", class_="btn ghost"),
                     class_="btns",
                 ),
@@ -377,8 +377,8 @@ def home():
         t.div(
             t.div(t.b("15", t.small("+")), t.span("Years in government service"), class_="stat"),
             t.div(t.b("13", t.small("+")), t.span("Years in public finance"), class_="stat"),
-            t.div(t.b(len(pro)), t.span("Google Professional Certificates"), class_="stat"),
-            t.div(t.b(sum(c["courses"] for c in CERTIFICATES)), t.span("Coursera courses completed"), class_="stat"),
+            t.div(t.b(len([x for x in LESSONS if lesson_is_live(x)])), t.span("Python lessons published"), class_="stat"),
+            t.div(t.b(len(live_posts())), t.span("Blog posts"), class_="stat"),
             class_="stats",
         ),
         t.h2("What I do"),
@@ -392,9 +392,9 @@ def home():
                     ("Software for local treasuries",
                      "I design and build ALTOS in Python, with tamper-evident audit logs and encrypted "
                      "backups, to bring automation to treasury offices."),
-                    ("Continuous learning",
-                     f"{len(pro)} Google Professional Certificates and {len(CERTIFICATES) - len(pro)} Specializations "
-                     "in data analytics, AI, cybersecurity, IT support and project management."),
+                    ("Writing and teaching",
+                     "Free, beginner-friendly Python lessons for treasury work, and blog posts on public "
+                     "finance, software and life beyond the office."),
                 )
             ],
             class_="grid three",
@@ -402,10 +402,11 @@ def home():
         section_head("Projects", "All about ALTOS", "/projects/"),
         t.div(altos_feature_card(), class_="grid one"),
         t.div([subsystem_node(sub, summary=False) for sub in SUBSYSTEMS], class_="children compact"),
-        section_head("Latest certificates", f"All {len(CERTIFICATES)} credentials", "/courses/"),
-        t.div([cert_card(c) for c in CERTIFICATES[:3]], class_="grid"),
+        # certificates hidden for now (Butch 2026-11-09); Home shows tutorials and the blog instead
         section_head(TUTORIAL["title"], "All lessons", "/tutorials/"),
         t.div([lesson_card(x, mini=True) for x in home_lessons()], class_="grid three"),
+        section_head("Latest from the blog", "All posts", "/blog/"),
+        t.div([post_card(b) for b in sorted(live_posts(), key=post_day, reverse=True)[:3]], class_="post-list home-posts"),
     )
 
 
@@ -564,7 +565,8 @@ def courses():
             "program fully, and I have since earned "
             f"{len(pro)} Google Professional Certificates and {len(spec)} Specializations, "
             f"{sum(c['courses'] for c in CERTIFICATES)} courses in total. "
-            "Every credential links to its Coursera verification page.",
+            +
+            ("Every credential links to its Coursera verification page." if SHOW_CERTIFICATES else ""),
             class_="lead",
         ),
         t.div(
@@ -577,10 +579,9 @@ def courses():
             ),
             class_="thanks",
         ),
-        t.h2("Google Professional Certificates"),
-        t.div([cert_card(c) for c in pro], class_="grid"),
-        t.h2("Google Specializations"),
-        t.div([cert_card(c) for c in spec], class_="grid"),
+        # certificate cards hidden for now (Butch 2026-11-09); set SHOW_CERTIFICATES = True to bring them back
+        [t.h2("Google Professional Certificates"), t.div([cert_card(c) for c in pro], class_="grid"),
+         t.h2("Google Specializations"), t.div([cert_card(c) for c in spec], class_="grid")] if SHOW_CERTIFICATES else None,
         t.h2("Government & professional training"),
         t.p("A selection of the government and professional trainings I have completed over the years. The full list is longer than what is shown here.", class_="muted"),
         t.table([t.tr(t.td(t.b(name), t.br(), t.span(org, class_="muted")), t.td(when)) for name, org, when in TRAININGS]),
@@ -609,6 +610,7 @@ def lesson_is_live(x):
 # preview.py sets SHOW_SCHEDULED so lessons can be reviewed before their date,
 # and turns DOWNLOADS off because the one-file preview has no files to download
 SHOW_SCHEDULED = False
+SHOW_CERTIFICATES = False  # Butch 2026-11-09: hide all certificates (Home, Courses, About)
 DOWNLOADS = True
 
 
@@ -623,8 +625,7 @@ def visible_lessons():
 def home_lessons():
     """Newest live lessons first, then the next ones coming; three in all."""
     live = [x for x in LESSONS if lesson_is_live(x)]
-    soon = [x for x in LESSONS if not lesson_is_live(x)]
-    return (live[::-1] + soon)[:3]
+    return live[::-1][:3]  # only published lessons (Butch 2026-11-09)
 
 
 def lesson_meta(x):
@@ -727,11 +728,11 @@ def tutorials():
         t.p(TUTORIAL["intro"], class_="lead"),
         t.div(t.p(t.b("Where to begin. "), TUTORIAL["setup"]), class_="card setup"),
         t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
-        t.div([lesson_card(x) for x in LESSONS], class_="lesson-list"),
+        t.div([lesson_card(x) for x in shown], class_="lesson-list"),  # lessons not yet published stay hidden
         t.h2("Words to know"),
         t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
         t.p(
-            f"{len(shown)} of {len(LESSONS)} lessons published. New lessons are added regularly. "
+            "New lessons are added regularly. "
             "All names, receipt numbers and amounts in the examples are made up.",
             class_="muted note",
         ),
@@ -856,6 +857,11 @@ def live_posts():
     """Posts without publish_on, or whose publish_on date has arrived (Philippine time)."""
     today = datetime.now(timezone(timedelta(hours=8))).date().isoformat()
     return [b for b in BLOG if "publish_on" not in b or (b["publish_on"] and b["publish_on"] <= today)]
+
+
+def post_day(b):
+    """A post's date as YYYY-MM-DD, for newest-first lists."""
+    return b.get("publish_on") or datetime.strptime(b["date"], "%B %d, %Y").date().isoformat()
 
 
 def blog_filters(posts):
@@ -1113,9 +1119,7 @@ def about():
             t.h3("Development stack"),
             t.div([t.div(t.div(label, class_="stack-label"), tag_list(items), class_="stack-row")
                    for label, items in ABOUT["stack"]], class_="stack"),
-            t.h3("Professional certifications"),
-            t.ul([t.li(x) for x in ABOUT["certifications"]]),
-            t.p(t.a("See all certificates on the Courses page", href="/courses/")),
+            [t.h3("Professional certifications"), t.ul([t.li(x) for x in ABOUT["certifications"]])] if SHOW_CERTIFICATES else None,
             t.h2("Writing, Tutorials & Knowledge Sharing"),
             t.p(ABOUT["writing"]),
             t.h2("Beyond the Desk"),
