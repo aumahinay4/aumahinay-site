@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TRAININGS
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from style import CSS
@@ -90,6 +90,30 @@ CERT_VIEWER = [
     t.script(Raw(CERT_SCRIPT)),
 ]
 
+# The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
+# phone menu; X, Esc, or tapping a link closes it. Privacy is in the menu but not in the swipe order.
+MENU = NAV + [("/privacy/", "Privacy Policy")]
+MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
+CLOSE_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>')
+MENU_SCRIPT = """
+(function () {
+  var root = document.documentElement, btn = document.getElementById("menu-open"),
+      close = document.getElementById("menu-close"), menu = document.getElementById("site-menu");
+  if (!btn || !menu) return;
+  root.classList.add("menu-js");
+  function set(open) {
+    root.classList.toggle("menu-open", open);
+    btn.setAttribute("aria-expanded", open);
+    if (open) { var a = menu.querySelector("a.active") || menu.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
+    else btn.focus({ preventScroll: true });
+  }
+  btn.addEventListener("click", function () { set(true); });
+  close.addEventListener("click", function () { set(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
+  addEventListener("pageshow", function () { root.classList.remove("menu-open"); btn.setAttribute("aria-expanded", "false"); });
+})();
+"""
+
 SWIPE_SCRIPT = """
 (function () {
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
@@ -110,6 +134,7 @@ SWIPE_SCRIPT = """
     return false;
   }
   document.addEventListener("touchstart", function (e) {
+    if (document.documentElement.classList.contains("menu-open")) { ok = false; return; }
     var p = e.touches[0], edge = 24;
     ok = e.touches.length === 1 && p.clientX > edge && p.clientX < innerWidth - edge &&
          !(window.visualViewport && visualViewport.scale > 1.05) && !scrollsSideways(e.target);
@@ -210,7 +235,14 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
         t.body(
             t.header(
                 t.div(
-                    t.nav([t.a(label, href=href, class_="active" if href == active else None) for href, label in NAV]),
+                    t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
+                             aria_controls="site-menu", aria_expanded="false"),
+                    t.nav(
+                        t.button(CLOSE_ICON, type="button", id="menu-close", class_="menu-close", aria_label="Close menu"),
+                        [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
+                         for href, label in MENU],
+                        id="site-menu", aria_label="Main menu",
+                    ),
                     t.button(FULLSCREEN_ICON, type="button", id="fs", class_="fs", title="Full screen", aria_label="Full screen", aria_pressed="false", hidden=True),
                     class_="wrap",
                 ),
@@ -220,10 +252,12 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.footer(
                 t.div(
                     "Built in Python",
+                    t.span(" · ", class_="sep"), t.a("Privacy Policy", href="/privacy/"),
                     class_="wrap",
                 ),
                 class_="site",
             ),
+            t.script(Raw(MENU_SCRIPT)),
             t.script(Raw(FULLSCREEN_SCRIPT)),
             t.script(Raw(SWIPE_SCRIPT)),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
@@ -1035,49 +1069,108 @@ def about_story(paragraphs):
 
 
 def about():
+    contact = t.ul(
+        t.li(t.b("Email: "), t.a(SITE["email"], href=f"mailto:{SITE['email']}")),
+        t.li(t.b("Website: "), t.a(f"https://{SITE['domain']}", href="/")),
+        class_="plain-list",
+    )
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title("Hello, I'm Butch."),
+        photo_title(ABOUT["title"]),
+        t.p(ABOUT["roles"], class_="roles"),
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
-        # Experience to Skills hide together with the story's rest; "Get in touch" always shows
+        # everything below hides together with the story's rest; Contact and the disclaimer always show
         t.div(
-        t.h2("Experience"),
-        t.div(
-            [
+            t.h2("Professional Background"),
+            t.div(
+                [
+                    t.div(
+                        t.h3(x["title"]),
+                        t.div(x["period"], class_="muted"),
+                        t.ul(t.li(t.b("Role: "), x["role"]), t.li(t.b("Focus areas: "), x["focus"])),
+                        class_="item",
+                    )
+                    for x in ABOUT["background"]
+                ],
+                class_="timeline",
+            ),
+            t.div(
                 t.div(
-                    t.h3(e["role"]),
-                    t.div(f"{e['org']} · {e['period']}", class_="muted"),
-                    t.ul([t.li(x) for x in e["points"]]),
-                    class_="item",
-                )
-                for e in ABOUT["experience"]
-            ],
-            class_="timeline",
-        ),
-        t.div(
-            t.div(
-                t.h2("Education"),
-                t.table([t.tr(t.td(t.b(d), t.br(), t.span(s, class_="muted")), t.td(y)) for d, s, y in ABOUT["education"]]),
+                    t.h2("Education"),
+                    t.ul([t.li(t.b(d), [t.br(), t.span(sch, class_="muted")] if sch else None)
+                          for d, sch in ABOUT["education"]], class_="plain-list edu"),
+                ),
+                t.div(
+                    t.h2("Eligibilities"),
+                    t.ul([t.li(x) for x in ABOUT["eligibilities"]]),
+                ),
+                class_="two",
             ),
-            t.div(
-                t.h2("Eligibilities"),
-                t.ul([t.li(x) for x in ABOUT["eligibilities"]]),
-            ),
-            class_="two",
+            t.h2("Independent Technical Work"),
+            t.p(ABOUT["technical"]),
+            t.h3("Development stack"),
+            t.div([t.div(t.div(label, class_="stack-label"), tag_list(items), class_="stack-row")
+                   for label, items in ABOUT["stack"]], class_="stack"),
+            t.h3("Professional certifications"),
+            t.ul([t.li(x) for x in ABOUT["certifications"]]),
+            t.p(t.a("See all certificates on the Courses page", href="/courses/")),
+            t.h2("Writing, Tutorials & Knowledge Sharing"),
+            t.p(ABOUT["writing"]),
+            t.h2("Beyond the Desk"),
+            t.p(ABOUT["beyond"]),
+            class_="story-extra",
         ),
-        t.h2("Skills"),
-        tag_list(ABOUT["skills"]),
-        class_="story-extra",
-        ),
-        t.h2("Get in touch"),
-        t.p("Email me at ", t.a(SITE["email"], href=f"mailto:{SITE['email']}"), "."),
-        description=f"About {SITE['name']} (Butch): Acting Municipal Treasurer with 15+ years in government service and 13+ years in public finance, and builder of ALTOS.",
+        t.h2("Contact"),
+        t.p(ABOUT["contact"]),
+        contact,
+        t.aside(t.h3(ABOUT["disclaimer_title"]), t.p(ABOUT["disclaimer"]), class_="disclaimer"),
+        t.p(t.a("Privacy Policy", href=PRIVACY_URL)),
+        description=f"About {SITE['name']} (Butch): public administration practitioner with 15+ years in local "
+                    "government revenue operations, author, and self-taught software developer.",
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about}
+PRIVACY_URL = "/privacy/"
+
+
+def _privacy_text(x):
+    """One run of policy text: a plain string, or a list mixing strings and (label, link) pairs."""
+    if isinstance(x, str):
+        return x
+    return [t.a(p[0], href=p[1], target="_blank", rel="noopener") if isinstance(p, tuple) else p for p in x]
+
+
+def privacy():
+    body = []
+    for heading, blocks in PRIVACY["sections"]:
+        body.append(t.h2(heading))
+        for blk in blocks:
+            if isinstance(blk, str):
+                body.append(t.p(blk))
+            elif blk[0] == "list":
+                body.append(t.ul([t.li(t.b(label), " ", _privacy_text(text)) for label, text in blk[1]]))
+            elif blk[0] == "contact":
+                body.append(t.ul(
+                    t.li(t.b("Email: "), t.a(SITE["email"], href=f"mailto:{SITE['email']}")),
+                    t.li(t.b("Website: "), t.a(f"https://{SITE['domain']}", href="/")),
+                    class_="plain-list"))
+    return part(
+        "Privacy Policy", PRIVACY_URL,
+        t.p("Privacy", class_="eyebrow"),
+        t.h1("Privacy Policy"),
+        t.p(t.b("Effective date: "), PRIVACY["effective"], t.br(), t.b("Website: "),
+            t.a(f"https://{SITE['domain']}", href="/"), class_="muted policy-meta"),
+        t.p(PRIVACY["intro"], class_="lead"),
+        *body,
+        description=f"Privacy Policy of {SITE['domain']}: what information is collected, how it is used, "
+                    "and your rights under the Philippine Data Privacy Act of 2012 (RA 10173).",
+        url=PRIVACY_URL,
+    )
+
+
+PARTS = {"/": home, "/projects/": projects, "/courses/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, PRIVACY_URL: privacy}
 
 
 def _full_page(build):

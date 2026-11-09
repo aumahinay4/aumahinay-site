@@ -692,25 +692,52 @@ def _desktop_text_rules(css, scale):
     return f"@media (min-width: {DESKTOP_MIN_WIDTH}px) {{\n" + "\n".join(out) + "\n}\n"
 
 
-# Navigation bar (Butch 2026-11-07): the six menu links sit in one bar of equal tabs across the
-# full width of the top bar, on every screen; thin dividers between tabs, the open page is a
-# lighter navy tab with the gold line under it. Square corners like every box on the site.
+# Three-bar menu (Butch 2026-11-09, like a news site's phone menu): the top bar shows only the
+# three-bar button; tapping it fills the screen with the navy menu, big links one under another,
+# X at the top right. All screens. Without JavaScript the links simply show in the top bar.
 CSS += """
-header.site .wrap { min-height: 0; padding-top: 0; padding-bottom: 0; }
-header.site nav { margin: 0; width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; overflow: visible;
-                  border-left: 1px solid rgba(238, 243, 255, .12); border-right: 1px solid rgba(238, 243, 255, .12); }
-header.site nav a { display: flex; align-items: center; justify-content: center; text-align: center; white-space: nowrap;
-                    min-height: 54px; padding: 0 4px; line-height: 1.2; border-radius: 0;
-                    border-bottom: 3px solid transparent; padding-top: 3px; }
-header.site nav a + a { border-left: 1px solid rgba(238, 243, 255, .12); }
-header.site nav a:hover { background: rgba(255, 255, 255, .06); }
-header.site nav a.active { background: rgba(255, 255, 255, .10); border-bottom-color: var(--gold); font-weight: 600; }
-@media (max-width: 640px) {
-  header.site .wrap { padding-left: 0; padding-right: 0; }
-  header.site nav { border-left: 0; border-right: 0; }
-  header.site nav { display: flex; }  /* phones: each tab as wide as its word, so Tutorials fits */
-  header.site nav a { flex: 1 1 auto; min-height: 44px; padding: 3px 3px 0; }
-}
+header.site .wrap { min-height: 52px; padding-top: 0; padding-bottom: 0; justify-content: flex-start; flex-wrap: nowrap; }
+.menu-btn { display: none; width: 44px; height: 44px; margin-left: -8px; padding: 0; place-content: center; cursor: pointer;
+            background: transparent; border: 0; color: var(--on-navy); }
+.menu-btn svg, .menu-close svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.menu-btn:hover, .menu-btn:focus-visible, .menu-close:hover, .menu-close:focus-visible { color: var(--gold); }
+.menu-close { display: none; }
+html.menu-js .menu-btn { display: grid; }
+html.menu-js header.site #site-menu { display: none; }
+html.menu-js.menu-open header.site #site-menu {
+  display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; flex-wrap: nowrap;
+  position: fixed; inset: 0; z-index: 50; margin: 0; width: auto; overflow-y: auto; overscroll-behavior: contain;
+  padding: calc(84px + env(safe-area-inset-top, 0px)) max(28px, env(safe-area-inset-right, 0px)) 40px max(28px, env(safe-area-inset-left, 0px));
+  background: var(--navy); }
+html.menu-open, html.menu-open body { overflow: hidden; }
+html.menu-js.menu-open header.site #site-menu a {
+  display: block; padding: 13px 0; margin: 0; border: 0; border-radius: 0; text-align: left; white-space: normal;
+  font: 700 clamp(1.45rem, 6.6vw, 1.9rem)/1.25 var(--font-display); color: var(--on-navy); letter-spacing: -0.01em; }
+html.menu-js.menu-open header.site #site-menu a:hover { color: var(--gold); text-decoration: none; }
+html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { margin-top: 18px; padding-top: 22px; border-top: 1px solid rgba(238, 243, 255, .16);
+  font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold); }
+html.menu-js.menu-open .menu-close { display: grid; place-content: center; position: absolute; top: calc(14px + env(safe-area-inset-top, 0px));
+  right: max(18px, env(safe-area-inset-right, 0px)); width: 48px; height: 48px; padding: 0; cursor: pointer; background: transparent; border: 0; color: var(--on-navy); }
+html.menu-js.menu-open .menu-close svg { width: 34px; height: 34px; stroke-width: 1.6; }
+@media (min-width: 1025px) { html.menu-js.menu-open header.site #site-menu { padding-left: max(28px, calc((100vw - 1100px) / 2)); } }
+@media (max-width: 640px) { header.site .wrap { min-height: 48px; } }
+footer.site .sep { opacity: .6; }
+/* About page (from Butch's Google Doc) and Privacy Policy */
+.roles { margin: 6px 0 0; font: 600 1.05rem/1.4 var(--font-display); color: var(--violet-ink); text-align: left; }
+.plain-list { list-style: none; padding-left: 0; }
+.plain-list li { margin: 4px 0; }
+.plain-list.edu li { margin: 0 0 12px; }
+.stack { display: grid; gap: 10px; margin-top: 10px; }
+.stack-row { display: grid; grid-template-columns: 200px 1fr; gap: 8px 14px; align-items: start; }
+.stack-label { font-weight: 700; padding-top: 4px; }
+.stack .tags { margin: 0; }
+@media (max-width: 640px) { .stack-row { grid-template-columns: 1fr; } }
+.disclaimer { margin-top: 26px; padding: 16px 18px; border: 1px solid var(--line); border-left: 4px solid var(--gold); background: var(--surface, #fff); }
+.disclaimer h3 { margin: 0 0 6px; font-size: 1rem; }
+.disclaimer p { margin: 0; font-style: italic; font-size: .94em; }
+.policy-meta { text-align: left; }
 """
 
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
