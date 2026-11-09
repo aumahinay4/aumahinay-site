@@ -112,6 +112,10 @@ MENU_SCRIPT = """
   btn.addEventListener("click", function () { set(true); });
   close.addEventListener("click", function () { set(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
+  // tap anywhere outside the half-screen menu to close it
+  document.addEventListener("click", function (e) {
+    if (root.classList.contains("menu-open") && !menu.contains(e.target) && !btn.contains(e.target)) set(false);
+  });
   addEventListener("pageshow", function () { root.classList.remove("menu-open"); btn.setAttribute("aria-expanded", "false"); });
 })();
 """
