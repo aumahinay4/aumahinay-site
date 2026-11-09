@@ -860,7 +860,7 @@ header.site .wrap { min-height: 38px; }
 @media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
 .menu-btn svg { width: 20px; height: 20px; }
-html.menu-js.menu-open header.site #site-menu { padding-top: calc(61px + env(safe-area-inset-top, 0px));
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
 html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset: 0; z-index: -1; background: rgba(7, 22, 49, .35); }  /* dims the page and the top bar beside the menu */

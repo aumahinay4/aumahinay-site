@@ -772,7 +772,7 @@ header.site .wrap { min-height: 38px; }
 @media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
 .menu-btn svg { width: 20px; height: 20px; }
-html.menu-js.menu-open header.site #site-menu { padding-top: calc(61px + env(safe-area-inset-top, 0px));
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
 html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset: 0; z-index: -1; background: rgba(7, 22, 49, .35); }  /* dims the page and the top bar beside the menu */
@@ -908,10 +908,10 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.2185rem, 4.417vw, 2.864rem) * 1.025); }
 }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
-      close = document.getElementById("menu-close"), menu = document.getElementById("site-menu");
+      menu = document.getElementById("site-menu");
   if (!btn || !menu) return;
   root.classList.add("menu-js");
   function set(open) {
@@ -921,7 +921,6 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
     else btn.focus({ preventScroll: true });
   }
   btn.addEventListener("click", function () { set(true); });
-  close.addEventListener("click", function () { set(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
   // tap anywhere outside the half-screen menu to close it
   document.addEventListener("click", function (e) {
