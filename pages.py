@@ -370,13 +370,14 @@ def home():
         t.div(
             t.div(
                 t.div(t.h1("Where public finance meets Python"), class_="hero-name"),
-                t.p("Plain-language writing on local treasury work and public finance, free Python lessons "
-                    "for treasury staff, and notes from building ALTOS, by a treasury worker who builds software.",
+                t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
+                    "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
+                    "and notes from building ALTOS, by a treasury worker who builds software.",
                     class_="lead"),
                 t.div(
-                    t.a("Read the blog", href="/blog/", class_="btn ghost"),
-                    t.a("Start the Python lessons", href="/tutorials/", class_="btn ghost"),
-                    t.a("About me", href="/about/", class_="btn ghost"),
+                    t.a("RPT Calculator", href=RPT_URL, class_="btn ghost"),
+                    t.a("Tutorials", href="/tutorials/", class_="btn ghost"),
+                    t.a("Blog", href="/blog/", class_="btn ghost"),
                     class_="btns",
                 ),
                 class_="hero-text",
