@@ -880,8 +880,9 @@ CSS += """
 
 CSS += """
 /* Home headline twice as big (Butch 2026-11-10) */
-.hero h1 { font-size: clamp(2.465rem, 4.9078vw, 3.1822rem); line-height: 1.12; text-wrap: balance; }
-@media (max-width: 640px) { .hero h1 { font-size: min(2.465rem, 9.6vw); } }
+/* Butch 2026-11-10: hero title 10% smaller */
+.hero h1 { font-size: clamp(2.2185rem, 4.417vw, 2.864rem); line-height: 1.12; text-wrap: balance; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.2185rem, 8.64vw); } }
 """
 CSS += """
 /* Study Notes (Butch 2026-11-10) */
