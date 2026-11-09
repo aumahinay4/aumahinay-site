@@ -94,7 +94,7 @@ CERT_VIEWER = [
 ]
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
-# phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Privacy is in the menu but not in the swipe order.
+# phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
 MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
 MENU_SCRIPT = """
@@ -133,7 +133,7 @@ SWIPE_SCRIPT = """
     for (; el && el !== document.body; el = el.parentElement) {
       var ox = getComputedStyle(el).overflowX;
       if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
-      if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+      if (/^(TEXTAREA|SELECT)$/.test(el.tagName) || (el.tagName === "INPUT" && !/^(radio|checkbox)$/.test(el.type))) return true;
       if (el.hasAttribute("data-noswipe")) return true;  // the book reader turns its own pages
     }
     return false;
@@ -160,7 +160,7 @@ SWIPE_SCRIPT = """
   // coming back with the Back button: undo the slide-out
   addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
-""" % json.dumps([href for href, _ in NAV])
+""" % json.dumps([href for href, _ in MENU if href not in ("/contact/", "/privacy/")])  # same order as the menu, incl. RPT Calculator
 
 
 

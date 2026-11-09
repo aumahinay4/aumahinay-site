@@ -1034,7 +1034,7 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
   // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
-  var pages = ["/", "/projects/", "/study-notes/", "/tutorials/", "/blog/", "/about/"];
+  var pages = ["/", "/projects/", "/study-notes/", "/tutorials/", "/tools/rpt-calculator/", "/blog/", "/about/"];
   var path = location.pathname, here = -1;
   pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
   if (here < 0) return;  // e.g. the "page not found" page
@@ -1043,7 +1043,7 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
     for (; el && el !== document.body; el = el.parentElement) {
       var ox = getComputedStyle(el).overflowX;
       if ((ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 1) return true;
-      if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return true;
+      if (/^(TEXTAREA|SELECT)$/.test(el.tagName) || (el.tagName === "INPUT" && !/^(radio|checkbox)$/.test(el.type))) return true;
       if (el.hasAttribute("data-noswipe")) return true;  // the book reader turns its own pages
     }
     return false;
