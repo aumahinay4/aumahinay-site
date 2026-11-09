@@ -835,4 +835,18 @@ CSS += """
 @media (max-width: 640px) { .rpt-table th, .rpt-table td { padding: 7px 4px; } .rpt-table { font-size: .86em; } }
 """
 
+CSS += """
+/* Smaller navigation bar (Butch 2026-11-10): bar, three-bar button and menu about 20% smaller */
+header.site .wrap { min-height: 42px; }
+@media (max-width: 640px) { header.site .wrap { min-height: 40px; } }
+.menu-btn { width: 36px; height: 36px; margin-left: -6px; }
+.menu-btn svg { width: 22px; height: 22px; }
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(68px + env(safe-area-inset-top, 0px)); }
+html.menu-js.menu-open header.site #site-menu a { padding: 10px 0; font-size: clamp(1.2rem, 5.4vw, 1.55rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 6px 0; font-size: clamp(.9rem, 3.9vw, 1.05rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 14px; padding-top: 18px; }
+html.menu-js.menu-open .menu-close svg { width: 28px; height: 28px; }
+"""
+
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
