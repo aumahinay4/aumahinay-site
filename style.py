@@ -37,7 +37,7 @@ CSS = """
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--navy-deep); }  /* navy above the top bar and below the footer when a phone over-scrolls */
+html { scroll-behavior: smooth; background: var(--bg); }  /* no navy footer any more (Butch 2026-11-09) */  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--text); font: 17.144px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
 a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
@@ -75,7 +75,7 @@ header.site nav { margin-left: auto; }
 .fs[aria-pressed="true"] .exit { display: block; }
 @media (max-width: 480px) { nav { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } nav a { padding: 8px 6px; font-size: 15.127px; white-space: nowrap; } }
 
-main { flex: 1 0 auto; min-height: 100vh; min-height: 100dvh; padding: 20px 0 88px; }  /* gap under the top bar 20px (phones 12px); the light page reaches the bottom of the screen; the navy footer shows only after scrolling, like on long pages */
+main { flex: 1 0 auto; padding: 20px 0 48px; }  /* gap under the top bar 20px (phones 12px); no footer or full-screen button below (Butch 2026-11-09) */
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; color: var(--text); }
 h2 { line-height: 1.2; } h3 { line-height: 1.3; }  /* headings that wrap stay one block, not spaced like body text */
 h1 { font-size: clamp(1.5128rem, 3.4064vw, 2.2074rem);  /* page titles: another 25% smaller (phones floor at the section-heading size), same on every page */ line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 12px; font-weight: 700; }
