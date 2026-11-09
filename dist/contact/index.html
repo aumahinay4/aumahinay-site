@@ -723,7 +723,12 @@ blockquote::before { color: var(--gold-ink); }
 .rpt-form .field label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: .93em; }
 .rpt-form input[type=number] { font: 500 17px var(--font-body); color: var(--text); background: var(--bg); border: 1.5px solid var(--line);
   border-radius: 8px; padding: 10px 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
-.rpt-form input[type=number]:focus { outline: none; border-color: var(--panel-ink); }
+.rpt-form input[type=date], .rpt-form select { font: 500 17px var(--font-body); color: var(--text); background: var(--bg); border: 1.5px solid var(--line);
+  border-radius: 8px; padding: 9px 12px; width: 100%; max-width: 320px; box-sizing: border-box; min-height: 46px; }
+.rpt-form input[type=number]:focus, .rpt-form input[type=date]:focus, .rpt-form select:focus { outline: none; border-color: var(--panel-ink); }
+.rpt-form .block-hint { display: block; margin: 10px 0 0; font-size: .86em; max-width: 60ch; }
+.rpt-form [hidden] { display: none !important; }
+.rpt-table.quarters td:nth-child(2) { white-space: normal; text-align: left; color: var(--muted); }
 .rpt-form .hint { font-weight: 400; color: var(--muted); text-align: left; }
 .field-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 18px; }
 .rpt-result { margin-top: 18px; border-left: 5px solid var(--panel-ink); }
@@ -817,6 +822,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .vocab-page .card.word .pos { font-size: 0.9737rem; }
 .rpt-form legend { font-size: 1.0762rem; }
 .rpt-form input[type=number] { font-size: 17.425px; }
+.rpt-form input[type=date], .rpt-form select { font-size: 17.425px; }
 .rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
 }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><button type="button" id="menu-close" class="menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><a href="/">Home</a><a href="/projects/">Projects</a><a href="/courses/">Courses</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/" class="active" aria-current="page">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Contact</p><div class="about-hello"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="Photo of Ambrosio “Butch” U. Mahinay" width="400" height="400" class="hero-photo"><h1>Get in touch</h1></div><p class="lead">For questions about a blog post or lesson, feedback on the ALTOS book, speaking inquiries, or technical discussions on civic tech and data analytics, email me.</p><ul class="plain-list"><li><b>Email: </b><a href="mailto:hello@aumahinay.dev">hello@aumahinay.dev</a></li><li><b>Website: </b><a href="/">https://aumahinay.dev</a></li></ul><p>Please don&#x27;t send personal data you don&#x27;t want me to keep. How I handle what you send is explained in the <a href="/privacy/">Privacy Policy</a>.</p><p class="muted note">Views on this site are my own, written in my personal capacity, and do not represent any government office.</p></div></main><script>

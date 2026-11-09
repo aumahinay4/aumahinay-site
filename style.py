@@ -809,7 +809,12 @@ CSS += """
 .rpt-form .field label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: .93em; }
 .rpt-form input[type=number] { font: 500 17px var(--font-body); color: var(--text); background: var(--bg); border: 1.5px solid var(--line);
   border-radius: 8px; padding: 10px 12px; width: 100%; max-width: 320px; box-sizing: border-box; }
-.rpt-form input[type=number]:focus { outline: none; border-color: var(--panel-ink); }
+.rpt-form input[type=date], .rpt-form select { font: 500 17px var(--font-body); color: var(--text); background: var(--bg); border: 1.5px solid var(--line);
+  border-radius: 8px; padding: 9px 12px; width: 100%; max-width: 320px; box-sizing: border-box; min-height: 46px; }
+.rpt-form input[type=number]:focus, .rpt-form input[type=date]:focus, .rpt-form select:focus { outline: none; border-color: var(--panel-ink); }
+.rpt-form .block-hint { display: block; margin: 10px 0 0; font-size: .86em; max-width: 60ch; }
+.rpt-form [hidden] { display: none !important; }
+.rpt-table.quarters td:nth-child(2) { white-space: normal; text-align: left; color: var(--muted); }
 .rpt-form .hint { font-weight: 400; color: var(--muted); text-align: left; }
 .field-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 18px; }
 .rpt-result { margin-top: 18px; border-left: 5px solid var(--panel-ink); }

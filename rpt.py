@@ -1,23 +1,33 @@
 """Real Property Tax (RPT) calculator: /tools/rpt-calculator/ (Butch 2026-11-09).
 
-Computes the basic RPT and the Special Education Fund (SEF) tax on a property's assessed value,
-with the advance-payment discount or the interest on late payment, and shows how the money is
-shared among the province, municipality and barangay (or city and barangays) and the school boards.
+Computes the basic RPT and the Special Education Fund (SEF) tax, the discount or the interest by
+date of payment (quarter by quarter), and how the money is shared among the province, municipality
+and barangay (or city and barangays) and the school boards.
 
-Rules (Republic Act No. 7160, the Local Government Code of 1991):
+National rules, Republic Act No. 7160 (Local Government Code of 1991):
 - Sec. 218: assessed value = market value x assessment level (levels set by ordinance).
 - Sec. 233: basic RPT rate, province up to 1%, city or Metro Manila municipality up to 2%.
 - Sec. 235: additional 1% for the Special Education Fund.
+- Sec. 250: may be paid in four quarterly installments, due March 31, June 30, Sept. 30, Dec. 31.
 - Sec. 251: discount of up to 20% for advance or prompt payment, as set by ordinance.
 - Sec. 255: interest of 2% a month on unpaid tax, for at most 36 months (72%).
 - Sec. 271: basic RPT including interest: province 35%, municipality 40%, barangay 25%;
             city 70%, barangays 30% (half to the barangay where the property is, half shared
             equally by all barangays of the city).
-- Sec. 272: SEF goes to the local school boards; in provinces, split equally between the
+- Sec. 272: SEF to the local school boards; in provinces, split equally between the
             provincial and municipal school boards.
-RA 12001 (2024) caps the first-year increase after a new schedule of market values at 6%;
-it does not change the rates or the sharing.
+RA 12001 (2024), Sec. 29: first-year increase after a new schedule of market values capped at 6%.
+
+Quezon Province, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022), from Butch's Drive:
+- Sec. 25 assessment levels; Sec. 39 basic 1%; Sec. 40 SEF 1%; Sec. 43 four equal installments;
+- Sec. 44 discounts: 10% if paid on or before the deadlines; 15% if paid in full on or before
+  September 30 for one year in advance; 20% for two or more years in advance; only for properties
+  without any delinquency;
+- Sec. 45 sharing 35/40/25 and SEF split equally; Sec. 47 interest 2% a month "on the unpaid amount
+  or a fraction thereof" (a part of a month counts as a month), at most 36 months.
 """
+
+import json
 
 import tags as t
 from tags import Raw
@@ -25,40 +35,122 @@ from tags import Raw
 RPT_URL = "/tools/rpt-calculator/"
 RPT_CHECKED = "November 2026"
 
+# Quezon Provincial Revenue Code of 2022, Sec. 25 (levels in %; building brackets: [up to market value, level])
+QUEZON_LEVELS = {
+    "land": {"Residential": 5, "Agricultural": 15, "Commercial": 17, "Industrial": 30},
+    "building": {
+        "Residential": [[175000, 0], [300000, 5], [500000, 10], [750000, 15], [1000000, 20], [2000000, 25],
+                        [5000000, 30], [10000000, 35], [None, 40]],
+        "Agricultural": [[300000, 20], [500000, 25], [750000, 30], [1000000, 35], [2000000, 40], [None, 45]],
+        "Commercial or industrial": [[300000, 25], [500000, 30], [750000, 35], [1000000, 40], [2000000, 45],
+                                     [5000000, 50], [10000000, 55], [None, 60]],
+    },
+    "machinery": {"Agricultural": 40, "Residential": 50, "Commercial": 80, "Industrial": 80},
+    "special": {"Cultural": 15, "Scientific": 15, "Hospital": 15, "Local water district": 10,
+                "Government water or power corporation": 10},
+}
+
 RPT_SCRIPT = r"""
 (function () {
   var f = document.getElementById('rpt');
   if (!f) return;
+  var LEVELS = __LEVELS__;
   var $ = function (id) { return document.getElementById(id); };
   var peso = function (n) { return (n < 0 ? '−' : '') + '₱' + Math.abs(n).toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
   var r2 = function (n) { return Math.round((n + Number.EPSILON) * 100) / 100; };
   var num = function (id) { var v = parseFloat(String($(id).value).replace(/,/g, '')); return isFinite(v) && v > 0 ? v : 0; };
-  var lastLgu = null;
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var DUE = [[2, 31], [5, 30], [8, 30], [11, 31]];  // March 31, June 30, September 30, December 31
+
+  // today's date in the Philippines, as the default payment date
+  var ph = new Date(Date.now() + 8 * 3600 * 1000);
+  var today = ph.toISOString().slice(0, 10);
+  if (!$('paydate').value) $('paydate').value = today;
+  if (!$('taxyear').value) $('taxyear').value = ph.getUTCFullYear();
+
+  function fillClasses() {
+    var kind = $('kind').value, sel = $('klass'), keep = sel.value;
+    sel.innerHTML = '';
+    Object.keys(LEVELS[kind]).forEach(function (k) { var o = document.createElement('option'); o.value = k; o.textContent = k; sel.appendChild(o); });
+    if (LEVELS[kind][keep] !== undefined) sel.value = keep;
+  }
+  function quezonLevel(mv) {
+    var v = LEVELS[$('kind').value][$('klass').value];
+    if (typeof v === 'number') return v;
+    for (var i = 0; i < v.length; i++) if (v[i][0] === null || mv <= v[i][0]) return v[i][1];
+    return 0;
+  }
+  var lastLgu = null, lastLevelKey = null;
 
   function calc() {
-    var lgu = f.lgu.value, city = lgu === 'city';
+    var lgu = f.lgu.value, city = lgu === 'city', qz = lgu === 'quezon';
     if (lgu !== lastLgu) { $('basic-rate').value = city ? '2' : '1'; lastLgu = lgu; }
     $('brgy-count-row').hidden = !city;
     var useMv = f.basis.value === 'mv';
     $('mv-rows').hidden = !useMv; $('av-row').hidden = useMv;
-    var av = useMv ? r2(num('mv') * Math.min(num('level'), 100) / 100) : num('av');
+    $('qz-class').hidden = !(useMv && qz);
+    var mv = num('mv');
+    if (useMv && qz) {
+      var key = $('kind').value + '|' + $('klass').value + '|' + mv;
+      if (key !== lastLevelKey) { $('level').value = quezonLevel(mv); lastLevelKey = key; }
+    }
+    var av = useMv ? r2(mv * Math.min(num('level'), 100) / 100) : num('av');
     var bRate = Math.min(num('basic-rate'), city ? 2 : 1), sRate = Math.min(num('sef-rate'), 1);
     var basic = r2(av * bRate / 100), sef = r2(av * sRate / 100);
-    var when = f.when.value, disc = 0, months = 0;
-    $('disc-row').hidden = when !== 'early'; $('late-row').hidden = when !== 'late';
-    if (when === 'early') disc = Math.min(num('disc'), 20);
-    if (when === 'late') months = Math.min(Math.floor(num('months')), 36);
-    var bAdj = when === 'early' ? -r2(basic * disc / 100) : r2(basic * months * 2 / 100);
-    var sAdj = when === 'early' ? -r2(sef * disc / 100) : r2(sef * months * 2 / 100);
-    var bDue = r2(basic + bAdj), sDue = r2(sef + sAdj);
-    var adjLabel = when === 'early' ? 'Discount (' + disc + '%)' : when === 'late' ? 'Interest (2% × ' + months + ' month' + (months === 1 ? '' : 's') + ' = ' + (months * 2) + '%)' : 'Discount or interest';
+
+    // payment date and tax year
+    $('disc-row').hidden = qz; $('qz-disc').hidden = !qz;
+    var year = Math.floor(num('taxyear')) || ph.getUTCFullYear();
+    var pd = ($('paydate').value || today).split('-').map(Number);  // [y, m, d]
+    var payIdx = pd[0] * 12 + (pd[1] - 1);
+    var payNum = pd[0] * 10000 + pd[1] * 100 + pd[2];
+    // each quarter is one fourth of the year's tax; the last quarter takes any centavo left over
+    var qb = r2(basic / 4), qs = r2(sef / 4);
+    var quarters = [], anyLate = false;
+    for (var q = 0; q < 4; q++) {
+      var dueNum = year * 10000 + (DUE[q][0] + 1) * 100 + DUE[q][1];
+      var b = q < 3 ? qb : r2(basic - 3 * qb), s = q < 3 ? qs : r2(sef - 3 * qs);
+      var months = 0;
+      if (payNum > dueNum) {  // late: every month or part of a month after the due date counts, up to 36
+        months = Math.min(payIdx - (year * 12 + DUE[q][0]), 36);
+        if (months < 1) months = 1;
+        anyLate = true;
+      }
+      quarters.push({ q: q + 1, due: MONTHS[DUE[q][0]] + ' ' + DUE[q][1], b: b, s: s, months: months });
+    }
+    // discount: only when nothing is late
+    var disc = 0, discNote = '';
+    if (!anyLate) {
+      if (qz) {
+        var advYears = year - pd[0];
+        if (advYears >= 2) { disc = 20; discNote = 'paid two or more years in advance'; }
+        else if (advYears === 1 && (pd[1] < 9 || (pd[1] === 9 && pd[2] <= 30))) { disc = 15; discNote = 'paid on or before September 30, one year in advance'; }
+        else { disc = 10; discNote = 'paid on or before the deadlines'; }
+      } else { disc = Math.min(num('disc'), 20); discNote = 'paid on time'; }
+    }
+    var tb = 0, ts = 0, tbAdj = 0, tsAdj = 0;
+    var qbody = $('q-body'); qbody.innerHTML = '';
+    quarters.forEach(function (x) {
+      var bAdj, sAdj, label;
+      if (x.months) { bAdj = r2(x.b * x.months * 2 / 100); sAdj = r2(x.s * x.months * 2 / 100); label = x.months + ' mo late +' + (x.months * 2) + '%'; }
+      else { bAdj = -r2(x.b * disc / 100); sAdj = -r2(x.s * disc / 100); label = disc ? 'on time −' + disc + '%' : 'on time'; }
+      tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj = r2(tbAdj + bAdj); tsAdj = r2(tsAdj + sAdj);
+      var tr = document.createElement('tr');
+      ['Q' + x.q + ', due ' + x.due, label, peso(r2(x.b + x.s)), peso(r2(bAdj + sAdj)), peso(r2(x.b + x.s + bAdj + sAdj))].forEach(function (c, i) {
+        var td = document.createElement(i === 0 ? 'th' : 'td'); td.textContent = c; if (i === 0) td.scope = 'row'; tr.appendChild(td); });
+      qbody.appendChild(tr);
+    });
+    var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
+    var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
+    $('out-note').textContent = anyLate && quarters.some(function (x) { return !x.months; }) ? 'No discount while any quarter is late.' : '';
 
     $('out-av').textContent = peso(av);
     $('t-basic').textContent = peso(basic); $('t-sef').textContent = peso(sef); $('t-tax').textContent = peso(r2(basic + sef));
     $('t-adj-label').textContent = adjLabel;
-    $('t-badj').textContent = peso(bAdj); $('t-sadj').textContent = peso(sAdj); $('t-adj').textContent = peso(r2(bAdj + sAdj));
+    $('t-badj').textContent = peso(tbAdj); $('t-sadj').textContent = peso(tsAdj); $('t-adj').textContent = peso(r2(tbAdj + tsAdj));
     $('t-bdue').textContent = peso(bDue); $('t-sdue').textContent = peso(sDue); $('t-due').textContent = peso(r2(bDue + sDue));
     $('out-due').textContent = peso(r2(bDue + sDue));
+    $('out-when').textContent = 'Tax year ' + year + ', paid on ' + MONTHS[pd[1] - 1] + ' ' + pd[2] + ', ' + pd[0];
 
     var rows = [], sum = 0;
     function add(who, base, pct, note) { var a = r2(base * pct / 100); sum = r2(sum + a); rows.push([who, pct + '%', a, note || '']); }
@@ -68,7 +160,7 @@ RPT_SCRIPT = r"""
       var n = Math.floor(num('brgy-count'));
       var pool = r2(bDue * 15 / 100);
       add('All barangays of the city, shared equally', bDue, 15, n > 0 ? peso(r2(pool / n)) + ' each for ' + n + ' barangays' : 'enter the number of barangays to see each one');
-      var sefRow = ['City school board', '100%', sDue, 'all of the SEF']; rows.push(sefRow); sum = r2(sum + sDue);
+      rows.push(['City school board', '100%', sDue, 'all of the SEF']); sum = r2(sum + sDue);
     } else {
       add('Province general fund', bDue, 35);
       add('Municipality general fund', bDue, 40);
@@ -88,12 +180,15 @@ RPT_SCRIPT = r"""
     });
     $('share-total').textContent = peso(total);
   }
+  $('kind').addEventListener('change', function () { fillClasses(); lastLevelKey = null; });
+  $('klass').addEventListener('change', function () { lastLevelKey = null; });
   f.addEventListener('input', calc);
   f.addEventListener('change', calc);
   f.addEventListener('submit', function (e) { e.preventDefault(); calc(); });
+  fillClasses();
   calc();
 })();
-"""
+""".replace("__LEVELS__", json.dumps(QUEZON_LEVELS))
 
 
 def _field(label, control, hint=None, row_id=None, hidden=False):
@@ -115,17 +210,20 @@ def rpt_page():
     return {
         "title": "RPT Calculator", "active": RPT_URL, "url": RPT_URL, "og_type": "website",
         "description": "Free real property tax (RPT) calculator for the Philippines: basic tax, SEF, discount or "
-                       "interest, and how the tax is shared among the province, municipality, barangay and school boards.",
+                       "interest by date of payment, and how the tax is shared among the province, municipality, "
+                       "barangay and school boards. Includes the Quezon Province rules.",
         "body": [
             t.p("Free tool", class_="eyebrow"),
             t.h1("Real Property Tax Calculator"),
             t.p("Work out the yearly real property tax (amilyar) on a piece of land or a building, then see where "
                 "every peso goes: the province, the municipality, the barangay and the school boards. "
-                "Based on the Local Government Code of 1991 (RA 7160).", class_="lead"),
+                "Based on the Local Government Code of 1991 (RA 7160), with the rules of the Quezon Provincial "
+                "Revenue Code built in.", class_="lead"),
             t.form(
                 t.fieldset(
                     t.legend("1. Where is the property?"),
-                    t.div(_radio("lgu", "mun", "In a municipality of a province", True),
+                    t.div(_radio("lgu", "quezon", "In a municipality of Quezon Province", True),
+                          _radio("lgu", "mun", "In a municipality of another province"),
                           _radio("lgu", "city", "In a city"), class_="choices"),
                     _field("Number of barangays in the city (optional)", _num("brgy-count", step="1", placeholder="e.g. 33"),
                            "Used to show each barangay's equal share.", row_id="brgy-count-row", hidden=True),
@@ -137,11 +235,21 @@ def rpt_page():
                     _field("Assessed value (₱)", _num("av", "100000", placeholder="e.g. 100000"),
                            "Shown on the tax declaration.", row_id="av-row"),
                     t.div(
-                        _field("Market value (₱)", _num("mv", "500000")),
-                        _field("Assessment level (%)", _num("level", "20", maximum="100"),
-                               "Set by ordinance for each class of property, e.g. 20% for residential land.",
-                               ),
-                        id="mv-rows", hidden=True, class_="field-pair",
+                        t.div(
+                            _field("Property", t.select(t.option("Land", value="land"), t.option("Building", value="building"),
+                                                        t.option("Machinery", value="machinery"),
+                                                        t.option("Special class", value="special"), id="kind", name="kind")),
+                            _field("Class or use", t.select(id="klass", name="klass"),
+                                   "Fills in the assessment level from the Quezon Provincial Revenue Code (Sec. 25)."),
+                            id="qz-class", class_="field-pair",
+                        ),
+                        t.div(
+                            _field("Market value (₱)", _num("mv", "500000")),
+                            _field("Assessment level (%)", _num("level", "5", maximum="100"),
+                                   "Set by ordinance for each class of property; you can change it."),
+                            class_="field-pair",
+                        ),
+                        id="mv-rows", hidden=True,
                     ),
                 ),
                 t.fieldset(
@@ -156,20 +264,29 @@ def rpt_page():
                 ),
                 t.fieldset(
                     t.legend("4. When is it paid?"),
-                    t.div(_radio("when", "early", "In advance, with discount", True),
-                          _radio("when", "due", "On time, no discount"),
-                          _radio("when", "late", "Late, with interest"), class_="choices"),
-                    _field("Discount (%)", _num("disc", "10", maximum="20"),
-                           "Set by your local ordinance, up to 20%.", row_id="disc-row"),
-                    _field("Months late", _num("months", "3", step="1", maximum="36"),
-                           "Interest is 2% a month, up to 36 months (72%).", row_id="late-row", hidden=True),
+                    t.div(
+                        _field("Tax year", _num("taxyear", step="1", minimum="1992", maximum="2100")),
+                        _field("Date of payment", t.input(type="date", id="paydate", name="paydate")),
+                        class_="field-pair",
+                    ),
+                    _field("Discount for paying on time (%)", _num("disc", "10", maximum="20"),
+                           "Set by your local ordinance, up to 20%.", row_id="disc-row", hidden=True),
+                    t.p("Quezon Province discount (Sec. 44), worked out from the date: 10% if paid on or before the "
+                        "deadlines, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
+                        "if paid two or more years in advance. No discount while any quarter is late.",
+                        id="qz-disc", class_="hint block-hint"),
+                    t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
+                        "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
+                        "a month, up to 36 months.", class_="hint block-hint"),
                 ),
                 id="rpt", class_="card rpt-form", novalidate=True,
             ),
             t.div(
                 t.p("Assessed value ", t.b("—", id="out-av"), class_="rpt-av"),
+                t.p("—", id="out-when", class_="rpt-av"),
                 t.p("Amount to pay", class_="rpt-due-label"),
                 t.p("—", id="out-due", class_="rpt-due"),
+                t.p("", id="out-note", class_="rpt-av"),
                 t.div(
                     t.table(
                         t.thead(t.tr(t.th(""), t.th("Basic RPT"), t.th("SEF"), t.th("Total"))),
@@ -179,6 +296,15 @@ def rpt_page():
                             t.tr(t.th("To pay", scope="row"), t.td(id="t-bdue"), t.td(id="t-sdue"), t.td(id="t-due"), class_="total"),
                         ),
                         class_="rpt-table",
+                    ),
+                    class_="table-scroll",
+                ),
+                t.h3("Quarter by quarter"),
+                t.div(
+                    t.table(
+                        t.thead(t.tr(t.th("Quarter"), t.th("Status"), t.th("Tax"), t.th("+/−"), t.th("To pay"))),
+                        t.tbody(id="q-body"),
+                        class_="rpt-table quarters",
                     ),
                     class_="table-scroll",
                 ),
@@ -205,12 +331,14 @@ def rpt_page():
             t.h2("Good to know"),
             t.ul(
                 t.li(t.b("Assessed value. "), "Tax is charged on the assessed value, not the market value. Assessed value "
-                     "is the market value times the assessment level set by ordinance for the property's class and use (Sec. 218)."),
-                t.li(t.b("Discount. "), "Your province or city may give a discount of up to 20% for paying in advance "
-                     "or on time; the rate and deadline are in the local ordinance (Sec. 251)."),
-                t.li(t.b("Interest. "), "Unpaid tax earns interest of 2% a month, up to 36 months, until it is paid in full (Sec. 255)."),
-                t.li(t.b("Installments. "), "The tax may be paid in four quarterly installments, due on or before "
+                     "is the market value times the assessment level set by ordinance for the property's class and use "
+                     "(Sec. 218). For buildings in Quezon Province, the level depends on the market value bracket."),
+                t.li(t.b("Installments. "), "The tax may be paid in four equal quarterly installments, due on or before "
                      "March 31, June 30, September 30 and December 31 (Sec. 250)."),
+                t.li(t.b("Discount. "), "A province or city may give a discount of up to 20% for paying in advance "
+                     "or on time; the rates are in the local ordinance (Sec. 251)."),
+                t.li(t.b("Interest. "), "Unpaid tax earns interest of 2% a month, up to 36 months, until it is paid in full "
+                     "(Sec. 255). In Quezon Province, a part of a month counts as a full month."),
                 t.li(t.b("New property values. "), "Under the Real Property Valuation and Assessment Reform Act (RA 12001, 2024), "
                      "the increase in real property tax in the first year of a new schedule of market values is capped at 6%."),
                 t.li(t.b("Metro Manila. "), "Municipalities in Metro Manila follow a different sharing rule, so this "
@@ -220,7 +348,8 @@ def rpt_page():
             t.p("Sources: ", t.a("Local Government Code of 1991 (RA 7160)", href=law, rel="noopener"), ", Secs. 218, 233, 235, "
                 "250, 251, 255, 271 and 272; ",
                 t.a("RA 12001", href="https://lawphil.net/statutes/repacts/ra2024/ra_12001_2024.html", rel="noopener"),
-                ", Sec. 29. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
+                ", Sec. 29; Province of Quezon, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022), "
+                "Secs. 25, 39, 40, 43, 44, 45 and 47. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
             t.p("This calculator is a study aid, not an official assessment. Your actual tax depends on your local "
                 "ordinances and the tax declaration; your municipal, city or provincial treasurer's office has the final "
                 "figures. Figures are worked out in your browser and nothing you type is sent or saved.",
