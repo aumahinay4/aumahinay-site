@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TRAININGS
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
@@ -1188,6 +1188,7 @@ def blog_post(b):
         post_meta(b),
         t.h1(b["title"]),
         t.p("By ", t.a("Ambrosio “Butch” U. Mahinay", href="/about/"), class_="byline"),
+        series_line(b),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
         [blog_block(x) for x in b["body"]],
         class_="post",
@@ -1206,7 +1207,7 @@ def live_posts():
 
 def post_is_live(url):
     """True when url is a blog post that is live now (or not a blog post at all)."""
-    if not url.startswith("/blog/") or url == "/blog/":
+    if not url.startswith("/blog/") or url in ("/blog/", SERIES_URL):
         return True
     return any(post_url(b) == url for b in live_posts())
 
@@ -1262,6 +1263,7 @@ def blog():
                 "My own stories and thoughts, from treasury work and building software to life beyond the office.",
                 class_="lead",
             ),
+            series_banner() if posts_live else "",
             posts,
             t.script(Raw('(function(){var m=/^#cat-(\\w+)$/.exec(location.hash);var r=m&&document.getElementById("cat-"+m[1]);if(r)r.checked=true;'
                          'var d=document.getElementById("blog-cats");if(d)d.addEventListener("change",function(){d.open=false;});})();')),
@@ -1385,6 +1387,7 @@ def post_page(b):
         t.div(
             t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
             blog_post(b),
+            series_steps(b),
             react_box(post_url(b)),
             t.h2("About the author", class_="post-section"),
             author_card(),
@@ -1415,6 +1418,150 @@ def related_posts(b, posts, skip=()):
                    t.b(p["title"]), href=post_url(p), class_="related-card") for p in picks],
               class_="related"),
         class_="keep-reading",
+    )
+
+
+# ---- The ALTOS Framework series page (Butch 2026-11-11) ----
+SERIES_URL = f"/blog/{ALTOS_SERIES['slug']}/"
+
+
+def series_posts():
+    """The series in reading order: (part label, short title, post, is it live now)."""
+    live = live_posts()
+    out = []
+    for i, slug in enumerate(ALTOS_SERIES["parts"]):
+        b = next(x for x in BLOG if x["slug"] == slug)
+        label = "Start here" if i == 0 else f"Principle {i}"
+        short = b["title"].split(": ", 1)[1] if i else b["title"].split(": ", 1)[0]
+        out.append((label, short, b, b in live))
+    return out
+
+
+def series_count():
+    parts = series_posts()
+    return sum(p[3] for p in parts), len(parts)
+
+
+def series_line(b):
+    """Small line under a series post's byline: which part it is, linking to the series page."""
+    parts = series_posts()
+    i = next((n for n, p in enumerate(parts) if p[2] is b), None)
+    if i is None:
+        return ""
+    where = "The introduction to" if i == 0 else f"Principle {i} of 10 in"
+    return t.p(where, " the series ", t.a(ALTOS_SERIES["title"], href=SERIES_URL), class_="series-line")
+
+
+def series_steps(b):
+    """Box under a series post: the previous and next parts, and a link to the whole series.
+    A next part that is not out yet shows its date instead of a link."""
+    parts = series_posts()
+    i = next((n for n, p in enumerate(parts) if p[2] is b), None)
+    if i is None:
+        return ""
+
+    def step(n, word):
+        if not 0 <= n < len(parts):
+            return t.span()
+        label, short, p, live = parts[n]
+        inner = [t.span(f"{word} · {label}", class_="muted"), t.b(short)]
+        if live:
+            return t.a(inner, href=post_url(p), class_=word.lower())
+        return t.span(inner, t.span(f"Coming {p['date']}", class_="badge soon"), class_=f"{word.lower()} later")
+
+    done, total = series_count()
+    return t.section(
+        t.div(t.p("Series", class_="eyebrow"), t.a(ALTOS_SERIES["title"], href=SERIES_URL, class_="series-name"),
+              t.span(f"{done} of {total} parts out", class_="muted"), class_="series-head"),
+        t.div(step(i - 1, "Previous"), step(i + 1, "Next"), class_="series-pn"),
+        t.a("See all parts of the series", Raw(" &rarr;"), href=SERIES_URL, class_="more"),
+        class_="series-box",
+        aria_label="The ALTOS Framework series",
+    )
+
+
+def series_banner():
+    """Card on the Blog page that leads to the series page."""
+    done, total = series_count()
+    return t.a(
+        t.p("Blog series", class_="eyebrow"),
+        t.b(ALTOS_SERIES["title"], class_="series-name"),
+        t.span(ALTOS_SERIES["tagline"] + ".", class_="series-tag"),
+        t.span(f"{done} of {total} parts out · read them in order", Raw(" &rarr;"), class_="more"),
+        href=SERIES_URL,
+        class_="series-banner",
+    )
+
+
+def series_page():
+    parts = series_posts()
+    done, total = series_count()
+    coming = next((p for p in parts if not p[3]), None)
+    if coming:
+        status = (f"{done} of {total} parts are out. Next: {coming[0]}, {coming[1]}, on "
+                  f"{datetime.strptime(coming[2]['publish_on'][:10], '%Y-%m-%d'):%A}, {coming[2]['date']}.")
+    else:
+        status = f"All {total} parts are out. Read them in order from the top."
+
+    def row(n, label, short, p, live):
+        inner = [
+            t.span(n or Raw("&#9733;"), class_="num", aria_hidden="true"),
+            t.div(
+                t.div(t.span(label, class_="badge"),
+                      t.span(p["date"], class_="muted") if live else t.span(f"Coming {p['date']}", class_="badge soon"),
+                      t.span(f"{reading_minutes(p)} min read", class_="muted") if live else None,
+                      class_="meta"),
+                t.h3(t.a(short, href=post_url(p)) if live else short),
+                t.p(p.get("summary") or post_teaser(p)),
+                class_="body",
+            ),
+        ]
+        return t.li(inner, class_="" if live else "upcoming")
+
+    site = f"https://{SITE['domain']}"
+    live_parts = [p for p in parts if p[3]]
+    return part(
+        ALTOS_SERIES["title"], "/blog/",
+        t.div(
+            t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
+            t.p("Blog series", class_="eyebrow"),
+            t.h1(ALTOS_SERIES["title"]),
+            t.p(ALTOS_SERIES["tagline"] + ".", class_="lead"),
+            [t.p(x) for x in ALTOS_SERIES["intro"]],
+            t.p(status, class_="series-status"),
+            t.ol([row(n, *p) for n, p in enumerate(parts)], class_="series-list"),
+            t.div(
+                t.h2("Want to go deeper?"),
+                t.p("The ten principles also form the closing part of my book, ",
+                    t.i(ALTOS["book"]["title"].split(":")[0]), ". You can read its first pages for free, or see what "
+                    "the ALTOS software does for collections and disbursements."),
+                t.div(t.a("Preview the book", href=BOOK_URL, class_="btn primary"),
+                      t.a("About ALTOS", href="/projects/", class_="btn white"), class_="actions"),
+                class_="card series-more",
+            ),
+            t.p("Views here are my own and do not represent any government office.", class_="muted note"),
+            class_="blog-col series-page",
+        ),
+        description=f"{ALTOS_SERIES['title']}: {ALTOS_SERIES['tagline'].lower()}. All parts of the blog series by "
+                    f"{SITE['short_name']}, in reading order.",
+        url=SERIES_URL,
+        seo_title=f"{ALTOS_SERIES['title']}: Blog Series on Local Treasury Accountability · {SITE['short_name']}",
+        json_ld={
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": ALTOS_SERIES["title"],
+            "description": ALTOS_SERIES["tagline"],
+            "url": site + SERIES_URL,
+            "inLanguage": "en",
+            "author": {"@type": "Person", "name": SITE["name"], "url": site + "/about/"},
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListOrder": "https://schema.org/ItemListOrderAscending",
+                "numberOfItems": len(live_parts),
+                "itemListElement": [{"@type": "ListItem", "position": n + 1, "name": p[2]["title"],
+                                     "url": site + post_url(p[2])} for n, p in enumerate(live_parts)],
+            },
+        },
     )
 
 
@@ -1586,6 +1733,7 @@ def _full_page(build):
 
 ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}.items()}
 ROUTES[BOOK_URL] = _full_page(book_reader)
+ROUTES[SERIES_URL] = _full_page(series_page)
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
 ROUTES.update({module_url(m): _full_page(lambda m=m: module_page(m)) for m in MODULES if module_is_live(m)})

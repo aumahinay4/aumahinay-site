@@ -479,6 +479,41 @@ BLOG_CATEGORIES = [
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
 
+# The ALTOS Framework series page (Butch 2026-11-11): one page at /blog/altos-framework/ that lists the
+# series in reading order. Parts that are not live yet show as "Coming" with their date and turn into
+# links on their own, with the hourly build. Wording is the blog's own, not the book's.
+ALTOS_SERIES = {
+    "slug": "altos-framework",
+    "title": "The ALTOS Framework",
+    "tagline": "Ten principles for keeping public money accountable in a Philippine local treasury",
+    "intro": [
+        "This series takes one principle at a time and explains it in plain words: what the rule is, which law "
+        "or idea stands behind it, and how it looks on an ordinary working day at the treasury counter. "
+        "A new principle comes out every Sunday until December 27, 2026, and this page keeps all of them in "
+        "reading order.",
+        "The ten principles came from years of handling collections, disbursements and reports, and from the "
+        "questions I had to answer while writing ALTOS, my treasury software. None of them needs a computer, "
+        "though. A treasury that still runs on paper forms and logbooks can follow every one, and each principle "
+        "comes with a question or a test you can put to your own office.",
+        "If you are new to the series, start with the story of why ALTOS exists, then read the principles in "
+        "order. Each one builds on the ones before it.",
+    ],
+    # reading order: the introduction, then Principles 1 to 10
+    "parts": [
+        "why-i-built-altos",
+        "altos-framework-legality-first",
+        "altos-framework-every-peso-has-a-document",
+        "altos-framework-every-document-has-an-owner",
+        "altos-framework-every-owner-has-a-deadline",
+        "altos-framework-every-record-has-a-seal",
+        "altos-framework-separate-the-hands",
+        "altos-framework-keep-money-in-its-fund",
+        "altos-framework-the-taxpayer-is-a-citizen",
+        "altos-framework-evidence-before-decision",
+        "altos-framework-build-to-outlast-the-builder",
+    ],
+}
+
 BLOG = [
     {
         "date": "November 10, 2026",
