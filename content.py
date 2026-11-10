@@ -11,9 +11,9 @@ SITE = {
     "tagline_short": "Public finance and software for local treasuries",  # home page title
     "email": "hello@aumahinay.dev",
     "domain": "aumahinay.dev",
-    # Google AdSense publisher ID, e.g. "ca-pub-1234567890123456". Leave as None until Butch's AdSense
+    # Google AdSense publisher ID (None turns it off). Butch's AdSense
     # account gives one; once set, every page gets the AdSense code in <head> and ads.txt is published.
-    "adsense_client": None,
+    "adsense_client": "ca-pub-7687029622758059",  # Butch, 2026-11-10
     "brand": "aumahinay",  # shown in the browser tab
     # TODO: add real profile links (or leave empty to hide them)
     "github": "",
