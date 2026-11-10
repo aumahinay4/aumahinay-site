@@ -825,6 +825,12 @@ html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold-ink); }
 html.menu-js.menu-open .menu-close { color: var(--text); }
 html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
+
+/* Section name in bold beside the three-bar menu (Butch 2026-11-10: "HOME", as big as fits in the bar) */
+header.site .bar-title { font: 800 1.5rem/1 var(--font-display); letter-spacing: .02em; color: var(--bar-ink, var(--navy));
+  text-decoration: none; margin-left: 2px; white-space: nowrap; }
+header.site .bar-title:hover { color: var(--gold-ink); text-decoration: none; }
+html:not(.menu-js) header.site .bar-title { display: none; }  /* without JavaScript the full menu shows instead */
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -907,6 +913,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.2185rem, 4.417vw, 2.864rem) * 1.025); }
+header.site .bar-title { font-size: 1.5375rem; }
 }
 
 /* Privacy Policy link at the bottom of every page (Butch 2026-11-10): plain, small, no navy footer */
@@ -914,7 +921,7 @@ footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
 footer.legal a { color: var(--muted); }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/" class="active" aria-current="page">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Treasury</p><h1>Study Notes</h1><p class="lead">Plain-language notes on local treasury work: where local revenue comes from, how real property and business taxes are computed, and how money is collected, kept and paid out. Each note explains the law in everyday words, works through an example and ends with a 10-question quiz. A new note comes out every Friday at 9 pm.</p><p class="muted">These are independent study notes written from the law and from years of treasury work. They are not official materials of the Bureau of Local Government Finance (BLGF), the Civil Service Commission or any office, and they do not contain actual exam questions. Always check the law and your local revenue code.</p><div class="lesson-list"><a href="/study-notes/sources-of-local-revenue/" class="card lesson"><div class="meta"><span class="badge">Note 1</span><span class="muted">explainer · example · 10-question quiz</span></div><h3>Sources of local revenue</h3><p>Where a province, city, municipality or barangay gets its money, what each level may tax, and what no local government may tax at all.</p><span class="go">Read the note →</span></a></div></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><a href="/study-notes/" class="bar-title">STUDY NOTES</a><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/" class="active" aria-current="page">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Treasury</p><h1>Study Notes</h1><p class="lead">Plain-language notes on local treasury work: where local revenue comes from, how real property and business taxes are computed, and how money is collected, kept and paid out. Each note explains the law in everyday words, works through an example and ends with a 10-question quiz. A new note comes out every Friday at 9 pm.</p><p class="muted">These are independent study notes written from the law and from years of treasury work. They are not official materials of the Bureau of Local Government Finance (BLGF), the Civil Service Commission or any office, and they do not contain actual exam questions. Always check the law and your local revenue code.</p><div class="lesson-list"><a href="/study-notes/sources-of-local-revenue/" class="card lesson"><div class="meta"><span class="badge">Note 1</span><span class="muted">explainer · example · 10-question quiz</span></div><h3>Sources of local revenue</h3><p>Where a province, city, municipality or barangay gets its money, what each level may tax, and what no local government may tax at all.</p><span class="go">Read the note →</span></a></div></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
