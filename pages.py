@@ -96,6 +96,15 @@ CERT_VIEWER = [
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
 MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
+
+
+def menu_items():
+    """The menu as built today. Study Notes appears only once a note is live, so the menu never leads to an
+    empty hub page (AdSense "under construction" risk, Butch's audit 2026-11-10). The hourly build adds it on
+    the first note's publish time."""
+    return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
+
+
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
 MENU_SCRIPT = """
 (function () {
@@ -160,7 +169,7 @@ SWIPE_SCRIPT = """
   // coming back with the Back button: undo the slide-out
   addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
-""" % json.dumps([href for href, _ in MENU if href not in ("/contact/", "/privacy/")])  # same order as the menu, incl. RPT Calculator
+"""  # filled in at build time with the menu order (incl. RPT Calculator), see layout()
 
 
 
@@ -206,6 +215,9 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
         t.head(
             t.meta(charset="utf-8"),
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
+            # Google AdSense code, only once SITE["adsense_client"] is set (Butch applies; see content.py)
+            t.script(src=f"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE['adsense_client']}",
+                     crossorigin="anonymous", **{"async": "async"}) if SITE.get("adsense_client") else None,
             # paint the phone's browser bars in the top bar's navy, so the site looks full-screen
             t.meta(name="theme-color", content="#f3f6fc", media="(prefers-color-scheme: light)"),
             t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
@@ -244,7 +256,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
                              aria_controls="site-menu", aria_expanded="false"),
                     t.nav(
                         [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
-                         for href, label in MENU],
+                         for href, label in menu_items()],
                         id="site-menu", aria_label="Main menu",
                     ),
                     class_="wrap",
@@ -256,7 +268,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.footer(t.div(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT)),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/")]))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
@@ -636,9 +648,7 @@ def courses():
         t.p(NOTES_INFO["intro"], class_="lead"),
         t.p(NOTES_INFO["disclaimer"], class_="muted"),
         t.div([note_card(n) for n in live], class_="lesson-list") if live else
-        t.p(f"Note 1 comes out {module_when(nxt)}." if nxt else "The first note is coming soon.", class_="checked"),
-        [t.h2("Coming next"),
-         t.ol([t.li(title) for title in upcoming], start=str(len(live) + 1), class_="coming")] if upcoming else None,
+        None,  # no "comes out" banner or "Coming next" list: AdSense treats upcoming rosters as unfinished pages
         description=f"Free study notes on local treasury work in the Philippines: local revenue, "
                     f"real property and business taxes, collections and disbursements, by {SITE['short_name']}.",
     )
@@ -683,9 +693,7 @@ def note_page(n):
             t.div(
                 t.span(),
                 t.a(f"Note {nxt['number']} →", href=note_url(nxt)) if nxt and (SHOW_SCHEDULED or note_is_live(nxt))
-                else t.span(f"Note {nxt['number']} comes out {module_when(nxt)}", class_="muted") if nxt
-                else t.span(f"Note {n['number'] + 1} comes out next Friday at 9 pm", class_="muted") if n["number"] < len(OUTLINE)
-                else t.span(),
+                else t.span(),  # no "comes out" line for unpublished notes (AdSense)
                 class_="lesson-nav",
             ),
             class_="lesson-page vocab-page notes-page",
@@ -979,7 +987,8 @@ def module_page(m):
             react_box(module_url(m)),
             t.div(
                 t.span(),
-                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt)) else t.span(f"Module {nxt['number']} comes out {module_when(nxt)}", class_="muted") if nxt
+                t.a(f"Module {nxt['number']} →", href=module_url(nxt)) if nxt and (SHOW_SCHEDULED or module_is_live(nxt))
+                else t.span() if nxt  # no "comes out" line for unpublished modules (AdSense)
                 else t.span("This is the last module. Good luck on the exam!", class_="muted"),
                 class_="lesson-nav",
             ),
@@ -1010,7 +1019,7 @@ def lesson_page(x):
             t.div(
                 t.a("← Lesson " + str(prev["number"]), href=lesson_url(prev)) if prev else t.span(),
                 (t.a("Lesson " + str(nxt["number"]) + " →", href=lesson_url(nxt)) if nxt_open
-                 else t.span(f"Lesson {nxt['number']} comes out {nice_date(nxt['publish_on'])}", class_="muted") if nxt else t.span()),
+                 else t.span()),  # no "comes out" line for unpublished lessons (AdSense)
                 class_="lesson-nav",
             ),
             t.script(Raw(COPY_SCRIPT)),

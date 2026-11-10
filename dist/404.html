@@ -914,7 +914,7 @@ footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
 footer.legal a { color: var(--muted); }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
@@ -939,7 +939,7 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
   // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
-  var pages = ["/", "/projects/", "/study-notes/", "/tutorials/", "/tools/rpt-calculator/", "/blog/", "/about/"];
+  var pages = ["/", "/projects/", "/tutorials/", "/tools/rpt-calculator/", "/blog/", "/about/"];
   var path = location.pathname, here = -1;
   pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
   if (here < 0) return;  // e.g. the "page not found" page
