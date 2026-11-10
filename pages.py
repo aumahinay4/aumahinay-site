@@ -453,23 +453,24 @@ def home():
 
 def author_card():
     """Short author box: on Home and at the end of every blog post (Butch 2026-11-10: look like a complete,
-    professional blog)."""
+    professional blog). Redesigned 2026-11-10: ringed photo with the name (MPA, one line) and a gold role line
+    beside it, a thin rule, then the bio and the links as small buttons."""
     return t.div(
-        t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
-        # beside the photo: the name on one line, then "is a public administration practi-" on one line; the
-        # sentence carries on below the photo from "tioner", nearly touching the photo (Butch 2026-11-10)
-        t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"), " ",
-            t.span("is a public administration practi-", class_="author-role"), class_="author-head"),
         t.div(
-            t.p("tioner with over "
-                "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
-                "He has also earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
-                "He writes, teaches and builds software in his personal capacity, outside official working hours."),
-            t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
-                t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
-                t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
-            class_="author-text",
+            t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
+            t.div(
+                t.p("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"),
+                t.p("Public administration practitioner", class_="author-role"),
+                t.p("Local treasury · Quezon Province", class_="author-meta"),
+            ),
+            class_="author-top",
         ),
+        t.p("He has served over 15 years in government, more than 13 of them in local treasury and fiscal work "
+            "in Quezon Province. He has also earned 7 Google Professional Certificates and 3 Specializations on "
+            "Coursera. He writes, teaches and builds software in his personal capacity, outside official working hours.",
+            class_="author-bio"),
+        t.p(t.a("More about me", href="/about/"), t.a("Contact", href="/contact/"),
+            t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
         class_="card author",
     )
 
