@@ -975,6 +975,10 @@ CSS += """
 footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
 footer.legal a { color: var(--muted); }
 footer.legal span { color: var(--muted); }
+/* "Built in Python" at the far left, Privacy Policy stays centred */
+footer.legal .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; }
+footer.legal .built { white-space: nowrap; }
+footer.legal .built { justify-self: start; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
 """

@@ -961,6 +961,10 @@ header.site .bar-title { font-size: 1.5375rem; }
 footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
 footer.legal a { color: var(--muted); }
 footer.legal span { color: var(--muted); }
+/* "Built in Python" at the far left, Privacy Policy stays centred */
+footer.legal .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; }
+footer.legal .built { white-space: nowrap; }
+footer.legal .built { justify-self: start; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 5 · Intermediate · 25 min</p><h1 class="lesson-title">Make a tamper-evident log with HMAC</h1><p class="lead">Seal each log entry with a keyed hash chained to the one before it, so any later edit or deletion shows.</p><p class="checked">✓ Last checked: November 2026 · code run, output real, facts checked</p><div class="tags"><span class="tag">hmac</span><span class="tag">hashlib</span><span class="tag">json</span><span class="tag">security</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>What a hash and an HMAC are, in plain terms</li><li>Chain records so that removing one breaks the next</li><li>Compare secrets safely with hmac.compare_digest</li><li>Keep keys out of the code</li></ul></div><p>A log of who did what, and when, is only useful if no one can quietly change it afterwards. Python&#x27;s standard library has what you need to make a log that shows tampering: hashlib and hmac.</p><p>A hash turns any text into a fixed-length fingerprint; change one character and the fingerprint changes completely. An HMAC is a hash mixed with a secret key, so only someone who holds the key can produce a valid fingerprint. Here each entry&#x27;s fingerprint, its seal, also includes the seal of the entry before it. That chain is what makes a deleted entry visible too.</p><h2>The code</h2><figure class="codebox code"><figcaption><span class="fname">audit_log.py</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button><a href="/tutorials/tamper-evident-log-with-hmac/audit_log.py" download>Download</a></span></figcaption><pre><code><span class="s">"""A tamper-evident log: each entry is sealed with an HMAC that also covers the entry before it."""</span>
@@ -1151,7 +1155,7 @@ document.addEventListener("click", function (e) {
   if (!navigator.clipboard) return select();
   navigator.clipboard.writeText(code).then(function () { done("Copied"); }, select);
 });
-</script></div></div></main><footer class="legal"><div class="wrap"><span>Built in Python</span><span class="sep"> · </span><a href="/privacy/">Privacy Policy</a></div></footer><script>
+</script></div></div></main><footer class="legal"><div class="wrap"><span class="built">Built in Python</span><a href="/privacy/">Privacy Policy</a></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");

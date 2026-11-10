@@ -272,7 +272,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             ),
             t.main(t.div(body, class_="wrap")),
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
-            t.footer(t.div(t.span("Built in Python"), t.span(" · ", class_="sep"),
+            t.footer(t.div(t.span("Built in Python", class_="built"),  # far left (Butch 2026-11-10)
                            t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
