@@ -974,6 +974,7 @@ CSS += """
 /* Privacy Policy link at the bottom of every page (Butch 2026-11-10): plain, small, no navy footer */
 footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
 footer.legal a { color: var(--muted); }
+footer.legal span { color: var(--muted); }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
 """
