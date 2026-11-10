@@ -789,25 +789,17 @@ html.quiz-js .practice details.answer > summary { display: none; }
 .card.author { margin-top: 14px; }
 .card.author .author-top { display: flex; align-items: center; gap: 16px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
 .card.author .author-photo { width: 76px; height: 76px; margin: 0; flex: none; }
-.card.author .author-top p { margin: 0; text-align: left; white-space: nowrap; }
+.card.author .author-top p { margin: 0; text-align: left; }
+.card.author .author-roles { margin-top: 4px !important; font: 600 15.2px/1.4 var(--font-display); color: var(--violet-ink); }  /* same style as the About page roles line */
+.card.author .author-roles span { display: block; white-space: nowrap; }
 .card.author .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); white-space: nowrap; }
-.card.author .author-role { margin-top: 4px !important; font: 700 12.6px/1.3 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); white-space: nowrap; }
-.card.author .author-meta { margin-top: 2px !important; font-size: 14.5px; color: var(--muted); }
 .card.author .author-bio { margin: 0 0 14px; }
 .card.author .author-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; text-align: left; }
 .card.author .author-links a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14.5px; font-weight: 600; color: var(--blue-ink); text-decoration: none; }
 .card.author .author-links a:hover { border-color: var(--gold); text-decoration: none; }
-/* option B: centred */
-.card.author.centered .author-top { flex-direction: column; text-align: center; gap: 10px; }
-.card.author.centered .author-photo { width: 96px; height: 96px; }
-.card.author.centered .author-links { justify-content: center; }
-.card.author.centered .author-top p { text-align: center; text-align-last: center; }
 @media (max-width: 640px) { .card.author .author-photo { width: 60px; height: 60px; } .card.author .author-top { gap: 12px; }
   .card.author .author-name { font-size: min(1.12em, calc((100vw - 120px) / 16.5)); }
-  .card.author .author-role { font-size: min(12px, calc((100vw - 120px) / 26)); letter-spacing: .08em; }
-  .card.author.centered .author-photo { width: 84px; height: 84px; }
-  .card.author.centered .author-name { font-size: min(1.12em, calc((100vw - 60px) / 16.5)); }
-  .card.author .author-meta { font-size: min(14.5px, calc((100vw - 120px) / 15)); }
+  .card.author .author-roles { font-size: min(15.2px, calc((100vw - 120px) / 14.5)); }
   .card.author .author-links a { padding: 5px 12px; font-size: 14px; } }
 a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }

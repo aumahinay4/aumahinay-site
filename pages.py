@@ -452,22 +452,21 @@ def home():
 
 
 def author_card():
-    """Short author box: on Home and at the end of every blog post (Butch 2026-11-10: look like a complete,
-    professional blog). Redesigned 2026-11-10: ringed photo with the name (MPA, one line) and a gold role line
-    beside it, a thin rule, then the bio and the links as small buttons."""
+    """Short author box: on Home and at the end of every blog post. Matches the About page (Butch 2026-11-10:
+    "be consistent"): same name, same violet roles line, first person, and the same facts as the About intro."""
     return t.div(
         t.div(
             t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
             t.div(
                 t.p("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"),
-                t.p("Public administration practitioner", class_="author-role"),
-                t.p("Local treasury · Quezon Province", class_="author-meta"),
+                t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
             ),
             class_="author-top",
         ),
-        t.p("He has served over 15 years in government, more than 13 of them in local treasury and fiscal work "
-            "in Quezon Province. He has also earned 7 Google Professional Certificates and 3 Specializations on "
-            "Coursera. He writes, teaches and builds software in his personal capacity, outside official working hours.",
+        t.p("I am a public administration practitioner, author, and self-taught software developer in Quezon "
+            "Province, Philippines, with over 15 years of experience in local government revenue operations and "
+            "fiscal management. I have earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
+            "I write, teach and build software in my personal capacity, outside official working hours.",
             class_="author-bio"),
         t.p(t.a("More about me", href="/about/"), t.a("Contact", href="/contact/"),
             t.a("Privacy Policy", href="/privacy/"), class_="author-links"),

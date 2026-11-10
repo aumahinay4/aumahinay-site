@@ -708,25 +708,17 @@ html.quiz-js .practice details.answer > summary { display: none; }
 .card.author { margin-top: 14px; }
 .card.author .author-top { display: flex; align-items: center; gap: 16px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
 .card.author .author-photo { width: 76px; height: 76px; margin: 0; flex: none; }
-.card.author .author-top p { margin: 0; text-align: left; white-space: nowrap; }
+.card.author .author-top p { margin: 0; text-align: left; }
+.card.author .author-roles { margin-top: 4px !important; font: 600 15.2px/1.4 var(--font-display); color: var(--violet-ink); }  /* same style as the About page roles line */
+.card.author .author-roles span { display: block; white-space: nowrap; }
 .card.author .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); white-space: nowrap; }
-.card.author .author-role { margin-top: 4px !important; font: 700 12.6px/1.3 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); white-space: nowrap; }
-.card.author .author-meta { margin-top: 2px !important; font-size: 14.5px; color: var(--muted); }
 .card.author .author-bio { margin: 0 0 14px; }
 .card.author .author-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; text-align: left; }
 .card.author .author-links a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14.5px; font-weight: 600; color: var(--blue-ink); text-decoration: none; }
 .card.author .author-links a:hover { border-color: var(--gold); text-decoration: none; }
-/* option B: centred */
-.card.author.centered .author-top { flex-direction: column; text-align: center; gap: 10px; }
-.card.author.centered .author-photo { width: 96px; height: 96px; }
-.card.author.centered .author-links { justify-content: center; }
-.card.author.centered .author-top p { text-align: center; text-align-last: center; }
 @media (max-width: 640px) { .card.author .author-photo { width: 60px; height: 60px; } .card.author .author-top { gap: 12px; }
   .card.author .author-name { font-size: min(1.12em, calc((100vw - 120px) / 16.5)); }
-  .card.author .author-role { font-size: min(12px, calc((100vw - 120px) / 26)); letter-spacing: .08em; }
-  .card.author.centered .author-photo { width: 84px; height: 84px; }
-  .card.author.centered .author-name { font-size: min(1.12em, calc((100vw - 60px) / 16.5)); }
-  .card.author .author-meta { font-size: min(14.5px, calc((100vw - 120px) / 15)); }
+  .card.author .author-roles { font-size: min(15.2px, calc((100vw - 120px) / 14.5)); }
   .card.author .author-links a { padding: 5px 12px; font-size: 14px; } }
 a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
@@ -949,8 +941,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .disclaimer h3 { font-size: 1.025rem; }
 .vocab-page .card.word h2 { font-size: 1.4862rem; }
 .vocab-page .card.word .pos { font-size: 0.9737rem; }
-.card.author .author-role { font-size: 12.915px; }
-.card.author .author-meta { font-size: 14.8625px; }
+.card.author .author-roles { font-size: 15.58px; }
 .card.author .author-links a { font-size: 14.8625px; }
 .post .byline { font-size: 16.0795px; }
 .related-card > span { font-size: 14.9309px; }
@@ -1035,7 +1026,7 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
     });
   });
 })();
-</script><h2 class="post-section">About the author</h2><div class="card author"><div class="author-top"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="" width="400" height="400" class="hero-photo author-photo"><div><p class="author-name">Ambrosio “Butch” U. Mahinay, MPA</p><p class="author-role">Public administration practitioner</p><p class="author-meta">Local treasury · Quezon Province</p></div></div><p class="author-bio">He has served over 15 years in government, more than 13 of them in local treasury and fiscal work in Quezon Province. He has also earned 7 Google Professional Certificates and 3 Specializations on Coursera. He writes, teaches and builds software in his personal capacity, outside official working hours.</p><p class="author-links"><a href="/about/">More about me</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p></div><section class="keep-reading"><h2 class="post-section">Keep reading</h2><div class="related"><a href="/blog/altos-framework-every-document-has-an-owner/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">6 min read</span></span><b>The ALTOS Framework, Principle 3: Every Document Has an Owner</b></a><a href="/blog/why-dev-and-not-com/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">8 min read</span></span><b>Why .dev and Not .com: How I Chose My Website&#x27;s Address</b></a><a href="/blog/altos-framework-every-peso-has-a-document/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">7 min read</span></span><b>The ALTOS Framework, Principle 2: Every Peso Has a Document</b></a></div></section><nav class="post-steps" aria-label="More posts"><a href="/blog/first-post-as-acting-treasurer/" class="newer"><span class="muted">Newer post</span><b>360 Degrees: My First Post as Acting Municipal Treasurer</b></a><a href="/blog/why-i-built-altos/" class="older"><span class="muted">Older post</span><b>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</b></a></nav><p class="muted note">Views here are my own and do not represent any government office.</p></div></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
+</script><h2 class="post-section">About the author</h2><div class="card author"><div class="author-top"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="" width="400" height="400" class="hero-photo author-photo"><div><p class="author-name">Ambrosio “Butch” U. Mahinay, MPA</p><p class="author-roles"><span>Public Administration Specialist</span><span>Local Treasury Practitioner</span><span>Civic Tech Developer</span></p></div></div><p class="author-bio">I am a public administration practitioner, author, and self-taught software developer in Quezon Province, Philippines, with over 15 years of experience in local government revenue operations and fiscal management. I have earned 7 Google Professional Certificates and 3 Specializations on Coursera. I write, teach and build software in my personal capacity, outside official working hours.</p><p class="author-links"><a href="/about/">More about me</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></p></div><section class="keep-reading"><h2 class="post-section">Keep reading</h2><div class="related"><a href="/blog/altos-framework-every-document-has-an-owner/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">6 min read</span></span><b>The ALTOS Framework, Principle 3: Every Document Has an Owner</b></a><a href="/blog/why-dev-and-not-com/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">8 min read</span></span><b>Why .dev and Not .com: How I Chose My Website&#x27;s Address</b></a><a href="/blog/altos-framework-every-peso-has-a-document/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">7 min read</span></span><b>The ALTOS Framework, Principle 2: Every Peso Has a Document</b></a></div></section><nav class="post-steps" aria-label="More posts"><a href="/blog/first-post-as-acting-treasurer/" class="newer"><span class="muted">Newer post</span><b>360 Degrees: My First Post as Acting Municipal Treasurer</b></a><a href="/blog/why-i-built-altos/" class="older"><span class="muted">Older post</span><b>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</b></a></nav><p class="muted note">Views here are my own and do not represent any government office.</p></div></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
