@@ -261,7 +261,7 @@ td:last-child { white-space: nowrap; color: var(--muted); text-align: right; fon
 
 /* ALTOS page */
 .altos-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; padding: clamp(28px, 5.5vw, 64px); }
-.altos-hero h1.wordmark { font-size: clamp(1.9049rem, 6.1629vw, 3.4737rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
+.altos-hero .big-wordmark { font-size: clamp(1.9049rem, 6.1629vw, 3.4737rem); line-height: 1; margin: 0; letter-spacing: 0.02em; }
 .subtitle { font: 600 1.3109rem/1.35 var(--font-display); margin: 10px 0 18px; color: var(--on-navy); text-align: left; }  /* a title line: never stretched by justify */
 /* one solid navy, top to bottom; ALTOS title and text (no ring or book) */
 .altos-hero { background: var(--navy-deep); grid-template-columns: 1fr; }

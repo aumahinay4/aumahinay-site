@@ -211,9 +211,9 @@ def rpt_page():
     law = "https://lawphil.net/statutes/repacts/ra1991/ra_7160_1991.html"
     return {
         "title": "RPT Calculator", "active": RPT_URL, "url": RPT_URL, "og_type": "website",
-        "description": "Free real property tax (RPT) calculator for the Philippines: basic tax, SEF, discount or "
-                       "interest by date of payment, and how the tax is shared among the province, municipality, "
-                       "barangay and school boards. Includes the Quezon Province rules.",
+        "seo_title": "Real Property Tax (Amilyar) Calculator, Philippines · Butch Mahinay",
+        "description": "Free real property tax (amilyar) calculator for the Philippines: basic tax, SEF, discount or "
+                       "interest by date of payment, and each share for the province, town and barangay.",
         "body": [
             t.p("Free tool", class_="eyebrow"),
             t.h1("Real Property Tax Calculator"),
