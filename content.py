@@ -29,8 +29,8 @@ ABOUT = {
     "intro": (
         "I am a public administration practitioner, author, and self-taught software developer "
         "in Quezon Province, Philippines, with over 15 years in government service, more than 13 of "
-        "them in local treasury work since April 2013: revenue operations, fiscal management, and "
-        "public sector modernization."
+        "them in local treasury work since April 2013, covering disbursement, collection, supervision, "
+        "treasury operations, and fiscal management."
     ),
     "paragraphs": [
         (
@@ -49,14 +49,15 @@ ABOUT = {
     ],
     "background": [
         {
-            "title": "Local Treasury & Revenue Administration",
+            "title": "Local Treasury Administration",
             "period": "April 2013 – Present",
-            "role": "Career Local Treasury & Revenue Practitioner · Quezon Province",
+            "role": "Career Local Treasury Practitioner · Quezon Province",
             "focus": (
-                "Local revenue collection rules, Real Property Tax (RPT) compliance, accountable forms "
-                "tracking, and statutory financial reporting. I specialize in streamlining treasury "
-                "reconciliation, cashbook verification, and regulatory compliance through structured "
-                "data systems."
+                "Disbursement, collection, supervision, treasury operations, and fiscal management. "
+                "I handle public money from both sides: receiving and accounting for collections, and "
+                "paying out disbursements correctly and on time. I also supervise treasury staff and "
+                "keep the daily work of the office running smoothly, all in support of sound fiscal "
+                "management for the local government."
             ),
         },
         {
@@ -65,9 +66,9 @@ ABOUT = {
             "role": "Designated Acting Municipal Treasurer (Various Assignments) · Quezon Province",
             "focus": (
                 "Led municipal treasury operations across multiple local government assignments, "
-                "overseeing revenue generation strategies, cash flow management, fiscal reporting, and "
-                "taxpayer service delivery in accordance with the Local Government Code of 1991 "
-                "(RA 7160) and BLGF standards."
+                "overseeing disbursement, collection, supervision of treasury staff, and fiscal "
+                "management in accordance with the Local Government Code of 1991 (RA 7160) and BLGF "
+                "standards."
             ),
         },
         {
