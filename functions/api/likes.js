@@ -20,9 +20,9 @@ const VISITOR = /^[a-f0-9]{32}$/;
 const KINDS = ["heart", "like", "follow"];  // on/off buttons, one per browser
 const TAPS = ["share"];                      // every tap counts
 const SITE_WIDE = { follow: true };  // one follower count for the whole site, whatever page it is tapped on
-// Starting numbers shown on every post and lesson; real taps are added on top.
-// Only the shown number changes: what is saved on Cloudflare stays the real taps.
-const START = { heart: 100, like: 60 };
+// Counts shown are the real taps only (Butch, 2026-11-10: remove the
+// starting numbers so nothing looks made up, AdSense policy).
+const START = {};
 
 function withStart(now) {
   const shown = { ...now };
