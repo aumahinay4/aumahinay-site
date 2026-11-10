@@ -520,8 +520,8 @@ details.answer[open] > summary { margin-bottom: 4px; }
   font-weight: 600; font-size: 16.0795px; color: var(--text); border-top: 1px solid var(--line); }
 .blog-filters input:first-child + label { border-top: 0; }
 .blog-filters label:hover { background: color-mix(in srgb, var(--navy) 6%, var(--surface)); }
-.blog-filters input:checked + label { background: var(--navy); color: var(--on-navy); box-shadow: inset 4px 0 0 var(--gold); }
-.blog-filters input:checked + label .count { color: var(--on-navy-muted); }
+.blog-filters input:checked + label { background: var(--surface); color: var(--bar-ink); font-weight: 700; box-shadow: inset 4px 0 0 var(--gold); }  /* white, not navy (Butch 2026-11-10) */
+.blog-filters input:checked + label .count { color: var(--bar-ink); }
 .blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: -2px; }
 @media (max-width: 640px) { .blog-filters { margin-top: 22px; max-width: none; } }
 .post > .meta .dot { margin: 0 -4px; }
