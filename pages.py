@@ -464,8 +464,8 @@ def author_card():
             class_="author-top",
         ),
         t.p("I am a public administration practitioner, author, and self-taught software developer in Quezon "
-            "Province, Philippines, with over 15 years of experience in local government revenue operations and "
-            "fiscal management. I have earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
+            "Province, Philippines, with over 15 years in government service, more than 13 of them in local treasury "
+            "work since April 2013. I have earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
             "I write, teach and build software in my personal capacity, outside official working hours.",
             class_="author-bio"),
         t.p(t.a("More about me", href="/about/"), t.a("Contact", href="/contact/"),
