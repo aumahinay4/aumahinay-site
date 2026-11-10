@@ -49,7 +49,7 @@ NOTES = [
         "title": "Sources of local revenue",
         "summary": "Where a province, city, municipality or barangay gets its money, what each level may tax, "
                    "and what no local government may tax at all.",
-        "publish_on": "2026-11-13 21:00",
+        "publish_on": "2026-11-10 17:00",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "body": [
             "Every peso a local government spends must first come from somewhere. The 1987 Constitution "
             "(Article X, Section 5) gives each local government the power to create its own sources of revenue "
