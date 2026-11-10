@@ -1877,6 +1877,9 @@ BLOG = [
         "slug": "altos-framework-legality-first",
         "category": "software",
         "summary": "Before we ask how a peso was handled, we should ask whether the law allowed it at all.",
+        # search-result text only (not shown on the page)
+        "description": "Principle 1 of the ALTOS Framework for Philippine local treasuries: before we ask how a "
+                       "peso was handled, we should ask whether the law allowed it at all.",
         "body": [
             "Ask any treasury clerk what their job is, and most will say they receive payments and release checks. "
             "That is true, but it skips a step. Behind every peso that crosses the counter, in or out, there should be "
@@ -2097,6 +2100,9 @@ BLOG = [
         "title": "200 Kilometers and Five Years Later: Coming Home to the Farm",
         "publish_on": "2026-11-04",  # goes live on this date (Philippine time)
         "slug": "coming-home-to-the-farm",
+        # search-result text only (not shown on the page)
+        "description": "After five years away, my wife and I made the 200-kilometer trip back to our 3-hectare "
+                       "coconut farm in Quezon: copra, old mulawin trees, and a plan to plant again.",
         "body": [
             ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms (October\u00a031,\u00a02026)", "half"),
             "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",

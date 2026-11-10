@@ -203,7 +203,6 @@ def person_json_ld():
                 "url": url,
                 "image": url + "static/avatar.png",
                 "description": SITE["tagline"],
-                "jobTitle": "Acting Municipal Treasurer",
                 "knowsAbout": ["Public finance", "Local government treasury operations", "Python", "Software development"],
                 **({"sameAs": profiles} if profiles else {}),
             },
@@ -212,10 +211,18 @@ def person_json_ld():
     return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
 
-def layout(title, active, body, description=None, url=None, og_type="website"):
+def layout(title, active, body, description=None, url=None, og_type="website", seo_title=None, json_ld=None):
     url = url or active
-    # his name in every title, so a search for "Butch Mahinay" finds the site
-    page_title = f"{SITE['short_name']} · {SITE['tagline_short']}" if active == "/" else f"{title} · {SITE['short_name']}"
+    # his name in every title, so a search for "Butch Mahinay" finds the site; a page may give its own search
+    # title (seo_title), and a long title drops the name so search results don't cut off its key words
+    if seo_title:
+        page_title = seo_title
+    elif active == "/":
+        page_title = f"{SITE['short_name']} · {SITE['tagline_short']}"
+    else:
+        page_title = f"{title} · {SITE['short_name']}"
+        if len(page_title) > 70:
+            page_title = title
     doc = t.html(
         t.head(
             t.meta(charset="utf-8"),
@@ -234,6 +241,7 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
             t.meta(name="description", content=description or SITE["tagline"]),
             t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
             t.script(Raw(person_json_ld()), type="application/ld+json") if active == "/" else None,
+            t.script(Raw(json.dumps(json_ld, ensure_ascii=False).replace("</", "<\\/")), type="application/ld+json") if json_ld else None,
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
             t.meta(property="og:type", content=og_type),
             t.meta(property="og:site_name", content=SITE["short_name"]),  # his name, not the domain
@@ -284,10 +292,31 @@ def layout(title, active, body, description=None, url=None, og_type="website"):
     return "<!doctype html>\n" + doc
 
 
-def part(title, active, *body, description=None, url=None, og_type="website"):
-    """The pieces of one page, before it is wrapped in the site layout."""
+def article_ld(headline, description, url, day=None, image=None, kind="BlogPosting"):
+    """Structured data for a post, lesson or note: tells search engines its title, author and date."""
+    site = f"https://{SITE['domain']}"
+    data = {
+        "@context": "https://schema.org",
+        "@type": kind,
+        "headline": headline,
+        "description": description,
+        "url": site + url,
+        "mainEntityOfPage": site + url,
+        "inLanguage": "en",
+        "image": site + "/static/" + (image or "share.jpg"),
+        "author": {"@type": "Person", "name": SITE["name"], "alternateName": SITE["short_name"], "url": site + "/about/"},
+        "publisher": {"@type": "Person", "name": SITE["name"], "url": site + "/"},
+    }
+    if day:
+        data["datePublished"] = day
+    return data
+
+
+def part(title, active, *body, description=None, url=None, og_type="website", seo_title=None, json_ld=None):
+    """The pieces of one page, before it is wrapped in the site layout. seo_title (optional) is the full
+    browser and search-result title; json_ld (optional) is structured data for search engines."""
     return {"title": title, "active": active, "body": list(body), "description": description, "url": url,
-            "og_type": og_type}
+            "og_type": og_type, "seo_title": seo_title, "json_ld": json_ld}
 
 
 def tag_list(items):
@@ -447,8 +476,8 @@ def home():
         t.div(altos_feature_card(), class_="grid one"),
         t.h2("About the author"),
         author_card(),
-        description=f"{SITE['short_name']}: plain-language writing on local treasury work and public finance, "
-                    "free Python lessons for treasury staff, and the ALTOS treasury system.",
+        description="Plain-language writing on Philippine local treasury work and public finance, free Python "
+                    "lessons, Civil Service exam vocabulary and a real property tax calculator.",
     )
 
 
@@ -457,7 +486,7 @@ def author_card():
     "be consistent"): same name, same violet roles line and the same facts, in third person ("he", Butch 2026-11-10) as the About intro."""
     return t.div(
         t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
+            t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo"),
             t.div(
                 t.p("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"),
                 t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
@@ -502,7 +531,9 @@ def contact():
             "in the ", t.a("Privacy Policy", href="/privacy/"), "."),
         t.p("Views on this site are my own, written in my personal capacity, and do not represent any government office.",
             class_="muted note"),
-        description=f"Contact {SITE['short_name']} by email about the blog, the Python lessons, or the ALTOS book.",
+        description=f"Email {SITE['short_name']} about the blog, the free Python lessons, the ALTOS book, speaking "
+                    "invitations, or civic tech and data analytics.",
+        seo_title=f"Contact {SITE['short_name']}",
         url="/contact/",
     )
 
@@ -523,7 +554,7 @@ def projects():
         t.div(
             t.div(
                 t.p("Mother system", class_="eyebrow"),
-                t.h1(wordmark(), class_="wordmark", aria_label="ALTOS"),
+                t.p(wordmark(), class_="wordmark big-wordmark", aria_label="ALTOS"),  # a p, so the page keeps one h1
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
@@ -560,7 +591,9 @@ def projects():
             class_="card book",
         ),
         t.p(t.em(ALTOS["motto"]), class_="motto"),
-        description=f"{ALTOS['name']}, the {ALTOS['full_name']}: software for Philippine local treasuries, built by {SITE['name']}",
+        description=f"{ALTOS['name']}, the {ALTOS['full_name']}: software for Philippine local treasuries that "
+                    "handles collections, official receipts, the RCD, disbursements, vouchers, checks and reports.",
+        seo_title=f"ALTOS: Treasury Software for Philippine LGUs · {SITE['short_name']}",
     )
 
 
@@ -644,7 +677,8 @@ def book_reader():
             class_="reader-request",
         ),
         t.script(Raw(BOOK_SCRIPT)),
-        description=f"Read a preview of {book['title']} by {SITE['name']}.",
+        description=f"Read the first 20 pages of {book['title']}, a book by {SITE['name']}.",
+        seo_title=f"ALTOS Book Preview: 360° Accountability · {SITE['short_name']}",
         url=BOOK_URL,
     )
 
@@ -682,6 +716,7 @@ def courses():
         None,  # no "comes out" banner or "Coming next" list: AdSense treats upcoming rosters as unfinished pages
         description=f"Free study notes on local treasury work in the Philippines: local revenue, "
                     f"real property and business taxes, collections and disbursements, by {SITE['short_name']}.",
+        seo_title=f"Local Treasury Study Notes (Philippines) · {SITE['short_name']}",
     )
 
 
@@ -730,7 +765,10 @@ def note_page(n):
             class_="lesson-page vocab-page notes-page",
         ),
         description=f"Study Note {n['number']}: {n['summary']}",
-        url=note_url(n),  # its own address, so Share and Google point to the note, not the Study Notes page
+        url=note_url(n),
+        seo_title=f"{n['title'][:1].upper() + n['title'][1:]} in the Philippines · Study Note {n['number']}",
+        og_type="article",
+        json_ld=article_ld(n["title"], n["summary"], note_url(n), kind="Article"),  # its own address, so Share and Google point to the note, not the Study Notes page
     )
 
 
@@ -882,7 +920,9 @@ def tutorials():
             "All names, receipt numbers and amounts in the examples are made up.",
             class_="muted note",
         ),
-        description=f"Free, beginner-friendly Python lessons for local treasury work: collections, disbursements and reports, by {SITE['short_name']}.",
+        description="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury "
+                    "examples, plus Civil Service exam vocabulary modules with practice questions.",
+        seo_title=f"Free Python Lessons for Treasury Work · {SITE['short_name']}",
     )
 
 
@@ -1027,6 +1067,10 @@ def module_page(m):
             class_="lesson-page vocab-page",
         ),
         description=f"{VOCAB['title']}, Module {m['number']}: {m['summary']}",
+        seo_title=f"{m['title'][:1].upper() + m['title'][1:]} · Civil Service Exam Vocabulary",
+        og_type="article",
+        json_ld=article_ld(f"{VOCAB['title']}, Module {m['number']}: {m['title']}", m["summary"], module_url(m),
+                           kind="LearningResource"),
     )
 
 
@@ -1057,7 +1101,10 @@ def lesson_page(x):
             t.script(Raw(COPY_SCRIPT)),
             class_="lesson-page",
         ),
-        description=x["summary"],
+        description=f"Free Python lesson for treasury staff: {x['summary'][:1].lower() + x['summary'][1:]}",
+        seo_title=f"{x['title']} (Python Lesson {x['number']})" if len(x["title"]) <= 50 else x["title"],
+        og_type="article",
+        json_ld=article_ld(x["title"], x["summary"], lesson_url(x), x.get("publish_on"), kind="LearningResource"),
     )
 
 
@@ -1224,7 +1271,9 @@ def blog():
             ),
             class_="blog-col",
         ),
-        description=f"Stories and notes by {SITE['short_name']} on local treasury work, public finance, building the ALTOS system, and life beyond the office.",
+        description=f"Stories and notes by {SITE['short_name']} on Philippine local treasury work, public finance, "
+                    "cybersecurity, building the ALTOS system, and life beyond the office.",
+        seo_title=f"Blog on Local Treasury and Public Finance · {SITE['short_name']}",
     )
 
 
@@ -1345,9 +1394,11 @@ def post_page(b):
             t.p("Views here are my own and do not represent any government office.", class_="muted note"),
             class_="blog-col",
         ),
-        description=b.get("summary") or post_teaser(b),
+        description=b.get("description") or b.get("summary") or post_teaser(b),
         url=post_url(b),
         og_type="article",
+        json_ld=article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
+                           post_day(b), next((x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "photo"), None)),
     )
 
 
@@ -1478,8 +1529,9 @@ def about():
         t.p(ABOUT["contact"]),
         contact,
         t.aside(t.h3(ABOUT["disclaimer_title"]), t.p(ABOUT["disclaimer"]), class_="disclaimer"),
-        description=f"About {SITE['name']} (Butch): public administration practitioner with 15+ years in local "
-                    "government revenue operations, author, and self-taught software developer.",
+        description=f"About {SITE['name']} (Butch), MPA: a treasury worker who builds software, with 15+ years in "
+                    "Philippine local government, author of the ALTOS book and creator of the ALTOS treasury system.",
+        seo_title=f"About Ambrosio “Butch” U. Mahinay, MPA",
     )
 
 
@@ -1528,7 +1580,7 @@ def _full_page(build):
     def render():
         p = build()
         return layout(p["title"], p["active"], p["body"], description=p["description"], url=p["url"],
-                      og_type=p["og_type"])
+                      og_type=p["og_type"], seo_title=p.get("seo_title"), json_ld=p.get("json_ld"))
     return render
 
 
