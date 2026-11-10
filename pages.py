@@ -1370,6 +1370,24 @@ def react_box(url):
         t.script(Raw(REACT_SCRIPT)),
     ]
 
+KIT_FORM = None  # Kit form number (Butch's free Kit account); None = preview only, the form posts nowhere
+
+def subscribe_box():
+    """Email subscribe box under posts and lessons (Butch, 2026-11-10). Kit handles the confirm email and unsubscribe."""
+    action = f"https://app.kit.com/forms/{KIT_FORM}/subscriptions" if KIT_FORM else "#"
+    return t.form(
+        t.h2("Get new posts by email", class_="sub-title"),
+        t.p("One short email when a new blog post or Python lesson is out. No spam. Unsubscribe anytime.", class_="sub-text"),
+        t.div(
+            t.input(type="email", name="email_address", placeholder="Your email address", required=True,
+                    aria_label="Your email address", autocomplete="email"),
+            t.button("Subscribe", type="submit", class_="btn sub-btn"),
+            class_="sub-row",
+        ),
+        t.p("By subscribing you agree to the ", t.a("Privacy Policy", href="/privacy/"), ".", class_="sub-fine muted"),
+        class_="subscribe", action=action, method="post",
+    )
+
 def post_page(b):
     """One blog post on its own page, with links to the newer and older posts."""
     posts = live_posts()
@@ -1386,6 +1404,7 @@ def post_page(b):
             t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
             blog_post(b),
             react_box(post_url(b)),
+            subscribe_box(),
             t.h2("About the author", class_="post-section"),
             author_card(),
             related_posts(b, posts, skip=(newer, older)),  # the Newer/Older links below already show those two

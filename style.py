@@ -554,6 +554,16 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .react { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12.24px; }  /* 25%, 15%, then 40% closer to the post above (Butch, 2026-11-06) */
 .react-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px 9px 13px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 15.6873px var(--font-body); cursor: pointer; transition: border-color .15s, background .15s; --c: var(--blue-ink); --f: var(--blue); }
 .react-btn[hidden] { display: none; }
+.subscribe { margin-top: 20px; padding: 18px 20px; background: var(--surface); border: 1.5px solid var(--line); border-left: 4px solid var(--green); }
+.subscribe .sub-title { margin: 0 0 4px; font-size: 1.15rem; }
+.subscribe .sub-text { margin: 0 0 12px; text-align: left; }
+.subscribe .sub-row { display: flex; gap: 8px; }
+.subscribe input[type=email] { flex: 1; min-width: 0; padding: 10px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--text); font: inherit; }
+.subscribe input[type=email]:focus { outline: none; border-color: var(--green-ink); }
+.subscribe .sub-btn { background: var(--green-ink); color: #fff; border: 0; padding: 10px 20px; border-radius: 999px; font: 700 1rem var(--font-body); cursor: pointer; }
+.subscribe .sub-btn:hover { background: var(--navy); }
+.subscribe .sub-fine { margin: 8px 0 0; font-size: .82rem; text-align: left; }
+@media (max-width: 640px) { .subscribe { padding: 14px 12px; } .subscribe .sub-row { flex-direction: column; } .subscribe .sub-btn { width: 100%; } }
 .react-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--c); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
 .react-heart { --c: var(--coral-ink); --f: var(--coral); }
 .react-follow { --c: var(--green-ink); --f: var(--green); }
