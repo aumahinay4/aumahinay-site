@@ -785,18 +785,26 @@ html.quiz-js .practice details.answer > summary { display: none; }
 .quiz-score .quiz-reset:hover { border-color: var(--gold); }
 .quiz-score .quiz-reset:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .quiz-score .quiz-reset[hidden] { display: none; }
-/* Home (2026-11-09): link cards, author box */
+/* Home (2026-11-09): link cards, author box (redesigned 2026-11-10) */
+.card.author { margin-top: 14px; }
+.card.author .author-top { display: flex; align-items: center; gap: 16px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.card.author .author-photo { width: 76px; height: 76px; margin: 0; flex: none; }
+.card.author .author-top p { margin: 0; text-align: left; }
+.card.author .author-roles { margin-top: 4px !important; font: 600 15.2px/1.4 var(--font-display); color: var(--violet-ink); }  /* same style as the About page roles line */
+.card.author .author-roles span { display: block; white-space: nowrap; }
+.card.author .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); white-space: nowrap; }
+.card.author .author-bio { margin: 0 0 14px; }
+.card.author .author-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; text-align: left; }
+.card.author .author-links a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14.5px; font-weight: 600; color: var(--blue-ink); text-decoration: none; }
+.card.author .author-links a:hover { border-color: var(--gold); text-decoration: none; }
+@media (max-width: 640px) { .card.author .author-photo { width: 60px; height: 60px; } .card.author .author-top { gap: 12px; }
+  .card.author .author-name { font-size: min(1.12em, calc((100vw - 120px) / 16.5)); }
+  .card.author .author-roles { font-size: min(15.2px, calc((100vw - 120px) / 14.5)); }
+  .card.author .author-links a { padding: 5px 12px; font-size: 14px; } }
 a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
 a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; color: var(--blue-ink); }
-.card.author { display: grid; grid-template-columns: 72px 1fr; gap: 12px 16px; align-items: center; margin-top: 14px; }
-.card.author .author-photo { width: 72px; height: 72px; margin: 0; }
 /* name + MPA on ONE line beside the photo, the rest below the photo (Butch 2026-11-10) */
-.card.author p.author-head { margin: 0; line-height: 1.35; }
-.card.author .author-name { display: block; white-space: nowrap; font-family: var(--font-display); font-size: 1.15em; line-height: 1.2; margin-bottom: 4px; }
-.card.author .author-text { grid-column: 1 / -1; }
-.card.author p { margin: 0 0 8px; }
-.author-links { text-align: left; }
 .post .byline { margin: 6px 0 0; font-size: 15.6873px; color: var(--muted); }  /* "By ..." under a post title */
 .post .byline a { font-weight: 600; }
 .blog-col h2.post-section { margin-top: 30px; }
@@ -808,8 +816,7 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 @media (min-width: 900px) { .related { grid-template-columns: repeat(3, 1fr); } }
 .reasons { padding-left: 1.1em; }
 .reasons li { margin: 0 0 8px; }
-@media (max-width: 640px) { .card.author { grid-template-columns: 56px 1fr; gap: 10px 10px; } .card.author .author-photo { width: 56px; height: 56px; }
-  .card.author .author-name { font-size: min(1.1em, calc((100vw - 110px) / 17)); } }
+
 """
 
 CSS += """

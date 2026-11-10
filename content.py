@@ -28,8 +28,9 @@ ABOUT = {
     "roles": "Public Administration Specialist · Local Treasury Practitioner · Civic Tech Developer",
     "intro": (
         "I am a public administration practitioner, author, and self-taught software developer "
-        "in Quezon Province, Philippines, with over 15 years of dedicated experience in local "
-        "government revenue operations, fiscal management, and public sector modernization."
+        "in Quezon Province, Philippines, with over 15 years in government service, more than 13 of "
+        "them in local treasury work since April 2013: revenue operations, fiscal management, and "
+        "public sector modernization."
     ),
     "paragraphs": [
         (
@@ -49,7 +50,7 @@ ABOUT = {
     "background": [
         {
             "title": "Local Treasury & Revenue Administration",
-            "period": "2019 – Present",
+            "period": "April 2013 – Present",
             "role": "Career Local Treasury & Revenue Practitioner · Quezon Province",
             "focus": (
                 "Local revenue collection rules, Real Property Tax (RPT) compliance, accountable forms "
