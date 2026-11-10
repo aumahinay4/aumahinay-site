@@ -34,6 +34,7 @@ from tags import Raw
 
 RPT_URL = "/tools/rpt-calculator/"
 RPT_CHECKED = "November 2026"
+RPT_GUIDE_URL = "/blog/how-to-use-the-rpt-calculator/"  # step-by-step guide post (Butch 2026-11-11)
 
 # Quezon Provincial Revenue Code of 2022, Sec. 25 (levels in %; building brackets: [up to market value, level])
 QUEZON_LEVELS = {
@@ -207,6 +208,15 @@ def _radio(name, value, label, checked=False):
     return t.label(t.input(type="radio", name=name, value=value, checked=checked), " ", label, class_="choice")
 
 
+def _guide_link():
+    """Box under the intro pointing to the how-to post; shown only once that post is live."""
+    from pages import post_is_live  # imported here: pages.py imports this module
+    if not post_is_live(RPT_GUIDE_URL):
+        return ""
+    return t.p(t.b("New to the calculator? "), "Read the step-by-step guide with worked examples: ",
+               t.a("How to Use the RPT Calculator", href=RPT_GUIDE_URL), ".", class_="rpt-guide")
+
+
 def rpt_page():
     law = "https://lawphil.net/statutes/repacts/ra1991/ra_7160_1991.html"
     return {
@@ -221,6 +231,7 @@ def rpt_page():
                 "every peso goes: the province, the municipality, the barangay and the school boards. "
                 "Based on the Local Government Code of 1991 (RA 7160), with the rules of the Quezon Provincial "
                 "Revenue Code built in.", class_="lead"),
+            _guide_link(),
             t.form(
                 t.fieldset(
                     t.legend("1. Where is the property?"),
