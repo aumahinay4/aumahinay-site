@@ -906,6 +906,8 @@ blockquote::before { color: var(--gold-ink); }
 
 CSS += """
 /* RPT calculator (Butch 2026-11-09) */
+.rpt-guide { margin: 14px 0 0; padding: 10px 14px; background: color-mix(in srgb, var(--gold) 16%, var(--surface)); border-left: 4px solid var(--gold); text-align: left; }
+.rpt-guide a { font-weight: 600; }
 .rpt-form { margin-top: 22px; gap: 4px; }
 .rpt-form fieldset { border: 0; margin: 0; padding: 0 0 14px; min-width: 0; }
 .rpt-form fieldset + fieldset { border-top: 1px solid var(--line); padding-top: 14px; }
