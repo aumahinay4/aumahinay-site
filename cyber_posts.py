@@ -1,13 +1,635 @@
 # Cybersecurity blog series (Season 1: Cyber Hygiene and Personal Defense).
 # Planned from Butch's Google Doc "10-Week Cybersecurity Blog Series Roadmap & Drafts"
 # (Drive 1cqfvL885e80Hj7cjLE5YWEC392nrzD2ZkZmSLoHgwRE), written in original words and
-# fact-checked on 2026-11-10. Butch (2026-11-10): Part 1 goes live on Nov 10, then one part every Saturday at
+# fact-checked on 2026-11-10 (Parts 6-10 the same day). Butch (2026-11-10): Part 1 goes live on Nov 10, then one part every Saturday at
 # 10 pm PH ("YYYY-MM-DD 22:00"). A "cta" button to a later part shows only once that part is live.
 # Newest first, like BLOG in content.py, which puts these posts at the top of its list.
 
 SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
+    {
+        "date": "January 9, 2027",
+        "title": "Cybersecurity Series, Part 10: AI, Quantum Computers and the Next Wave of Threats",
+        "slug": "cybersecurity-part-10-future-threats",
+        "category": "security",
+        "summary": "How artificial intelligence helps both scammers and defenders, why quantum computers are already "
+                   "changing the way the internet is locked, what billions of smart gadgets mean for your home, and the "
+                   "habits that will still protect you ten years from now.",
+        "publish_on": "2027-01-09 22:00",
+        "body": [
+            "Every few years, a new technology arrives with two promises at once. It will make life easier, and it "
+            "will make crime easier too. Email gave us faster letters and phishing. Online banking gave us "
+            "convenience and account takeovers. Mobile wallets let a vendor in the public market accept payment "
+            "with a phone, and they also gave scammers a new way to ask for money.",
+            "In this tenth part of the series, we look ahead at three changes already underway: artificial "
+            "intelligence, quantum computing and the flood of smart devices in our homes and offices. None of them "
+            "is a reason to panic. Each one is a reason to understand a little more, so that you can enjoy the "
+            "benefits without becoming the easy target.",
+            ("h", "Artificial Intelligence in the Hands of Scammers"),
+            "Not long ago, the easiest way to spot a scam email was its language. The grammar was clumsy, the "
+            "greeting was strange and the tone did not match the supposed sender. Generative AI tools have removed "
+            "much of that warning sign. A scammer who barely speaks English can now produce a polished, polite "
+            "message in English, Filipino or any other language in seconds, and tailor it to your job or your "
+            "town using details from your public posts.",
+            "Voices and faces can be copied too. With a short recording taken from a video online, tools can "
+            "produce speech that sounds like a particular person. We saw in Part 3 how an employee in Hong Kong was "
+            "tricked into sending about HK$200 million after a video call with what appeared to be senior "
+            "colleagues, all of them fakes. The same trick works at a smaller scale: a voice message that "
+            "sounds like your child, your boss or your mayor, asking for an urgent transfer or a load of "
+            "e-wallet credits.",
+            "The defense is not a better eye for fakes. The fakes will keep improving, and trying to judge them by "
+            "how real they look is a contest we will lose. The defense is a habit: when a message asks for money, "
+            "passwords or one-time PINs, verify it through a channel you already trust. Call back on the number you "
+            "have saved, not the number in the message. Some families agree on a private code word for "
+            "emergencies, something an impostor would not know. It sounds old-fashioned, and that is exactly why it "
+            "works.",
+            ("quote", "When anything can be faked, verification becomes a daily habit, not a special event."),
+            ("h", "When the AI Itself Is the Target"),
+            "AI tools are now built into email, office software, search engines and customer service. That makes "
+            "the tools themselves a target. The OWASP Foundation, which we met in Part 7, publishes a separate "
+            "list of the top risks for applications built on large language models. Its 2025 edition places "
+            "prompt injection first, followed by sensitive information disclosure. In plain words, these are two "
+            "of the biggest worries:",
+            ("point", "Hidden instructions", "An AI assistant reads a web page, a document or an email that "
+             "contains instructions written for the AI, not for you. If the assistant obeys, it might reveal "
+             "information or take an action you never asked for. This is called prompt injection."),
+            ("point", "Leaked information", "Whatever you paste into an AI tool may be stored, reviewed or used "
+             "according to that service's terms. Pasting a list of taxpayers, a payroll file or a confidential "
+             "memo into a public chatbot can be a data leak, even if nobody meant harm."),
+            ("point", "Too much power", "An assistant connected to your email, files and accounts can do a lot of "
+             "good, and a lot of damage if it is tricked. The more an AI tool is allowed to do on its own, the "
+             "more carefully its permissions should be limited."),
+            "For ordinary users, the practical rules are simple. Do not paste personal or confidential data into an AI "
+            "tool unless your office has approved that tool for that kind of data. Read what an AI assistant "
+            "is about to send or delete before you confirm it. And treat its answers the way you would treat advice "
+            "from a confident stranger: useful, but worth checking, especially on law, health and money.",
+            ("h", "AI on the Defenders' Side"),
+            "The same technology also works for the good side. Email providers use machine learning to filter "
+            "billions of spam and phishing messages. Banks use it to notice a transaction that does not fit your "
+            "usual pattern and pause it for a check. Security teams use it to sort through mountains of logs and "
+            "find the one login that looks wrong. The contest between attackers and defenders is not new. AI "
+            "simply speeds up both sides, which makes the basic controls from earlier parts, such as multi-factor "
+            "authentication, updates and backups, even more important.",
+            ("h", "Quantum Computers and the Locks of the Internet"),
+            "Every time you see the padlock in your browser, your connection is protected by mathematics. Some of "
+            "that mathematics relies on problems that ordinary computers would need an impossibly long time to "
+            "solve. A large and reliable quantum computer, which works on very different principles, could solve "
+            "some of those problems much faster. That would weaken several of the methods that protect online "
+            "banking, government websites and digital signatures today.",
+            "Such a machine does not exist yet, and experts disagree on when it might. So why worry now? Because "
+            "of a strategy often called \"harvest now, decrypt later.\" An attacker can record encrypted data today "
+            "and store it, hoping to unlock it years from now. For most messages that hardly matters. For records "
+            "that must stay confidential for decades, such as land records, tax files, health information or "
+            "state secrets, it matters a great deal.",
+            "The good news is that the work to replace these locks is well underway. On August 13, 2024, the "
+            "United States National Institute of Standards and Technology (NIST) published its first three "
+            "post-quantum cryptography standards, known as FIPS 203, FIPS 204 and FIPS 205. They describe new "
+            "methods for exchanging keys and making digital signatures that are designed to resist quantum attacks. "
+            "In March 2025, NIST chose another method, called HQC, as a backup, and more standards are in "
+            "progress. Major web browsers, including Google Chrome, have already begun using a post-quantum key "
+            "exchange on many secure connections, mostly without users noticing.",
+            "For individuals, the action is almost boring: keep your browser, phone and computer updated, because "
+            "that is how the new locks reach you. For organizations, the work is bigger. They need to know where "
+            "they use encryption, which systems are too old to be updated, and which records must stay secret the "
+            "longest, so that those are moved to the new methods first.",
+            ("h", "Billions of Small Computers in Our Homes"),
+            "A smart TV, a Wi-Fi camera, a voice speaker, a smart plug and even some rice cookers and air "
+            "conditioners are all small computers connected to the internet. They are convenient, often cheap, "
+            "and frequently forgotten once installed. Many never receive a security update.",
+            "The danger was made clear in October 2016. A piece of malware called Mirai had spread to a huge number "
+            "of internet cameras and video recorders, mostly by trying factory-default usernames and passwords. On "
+            "October 21, that army of hijacked gadgets flooded Dyn, a company that helps direct internet "
+            "traffic, and many popular websites, including Twitter, Netflix and Reddit, became unreachable for "
+            "parts of the day. The owners of those cameras had no idea their devices were taking part.",
+            "Smart devices can also be a privacy risk in their own right. A camera that faces the inside of your "
+            "home, a speaker that listens for a wake word, or a baby monitor with a weak password can expose the "
+            "most private parts of family life. Before buying a smart device, ask a few questions:",
+            ("point", "Does the maker provide updates?", "Choose brands that publish security updates and say how "
+             "long they will support the product."),
+            ("point", "Can I change the default password?", "If a device has a fixed password you cannot change, "
+             "do not connect it to the internet."),
+            ("point", "Does it need to be online at all?", "Turn off remote access and cloud features you do not "
+             "use. A camera that only records to a memory card is harder to reach from outside."),
+            ("point", "Where does it sit on my network?", "Put smart gadgets on your guest network, as we "
+             "described in Part 4, so that a hacked TV cannot reach your work laptop."),
+            ("h", "What Will Not Change"),
+            "It is easy to feel that security is a race we can never win. But look back at the attacks in this "
+            "series. Most of them, old or new, still depend on a handful of weaknesses: a stolen or guessed "
+            "password, a person rushed into acting, a missing update, a setting left open, or data with no "
+            "backup. The tools change. The weak points stay remarkably familiar.",
+            "That means the habits you have built through these ten parts will keep paying off. A passkey or "
+            "an authenticator app defeats much of what AI-written phishing can do. A habit of verifying requests "
+            "defeats the cloned voice. Automatic updates bring you the new post-quantum locks. A guest network "
+            "contains the hacked gadget. An offline backup turns ransomware into a bad day instead of a "
+            "catastrophe.",
+            ("h", "Looking Back on Season One"),
+            "Over ten weeks, we have walked from the basics to the frontier. We learned how attacks unfold, then "
+            "protected our accounts with strong passwords, passkeys and multi-factor authentication. We studied "
+            "how scammers play on emotion, secured the home router and survived a ransomware scenario. We "
+            "tidied up our cloud accounts, looked at how apps get hacked, met the idea of zero trust and wrote "
+            "a plan for when things go wrong. Today we looked ahead.",
+            "If you followed the action plans, your digital life is already far safer than most. If you skipped "
+            "a few, that is fine. Pick one part, do its action plan this week, and come back for the next one later.",
+            ("h", "Your Part 10 Action Plan"),
+            ("point", "Agree on a family or office code word", "Choose a word or question that only your circle "
+             "knows, to use whenever a voice or video call asks for money urgently."),
+            ("point", "Set an AI rule for yourself", "Decide which information you will never paste into an AI "
+             "tool, such as IDs, client lists and anything marked confidential, and follow your office policy."),
+            ("point", "Audit one smart device", "Change its default password, update its software, turn off "
+             "features you do not use and move it to your guest network."),
+            "Thank you for reading the first season of this series. Share it with one person who would benefit, "
+            "especially someone who handles money, records or the accounts of an elderly parent.",
+            ("cta", "Start again with Part 1", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
+            ("ask", "Which part of this series helped you most, and what topic should Season Two cover? I would "
+             "love to hear from you."),
+        ],
+    },
+    {
+        "date": "January 2, 2027",
+        "title": "Cybersecurity Series, Part 9: Incident Response, or What to Do When Something Goes Wrong",
+        "slug": "cybersecurity-part-9-incident-response",
+        "category": "security",
+        "summary": "What to do in the first hour after a hacked account, a lost phone, a scam transfer or an office "
+                   "breach, how to keep evidence intact, where to report in the Philippines, and how to write a "
+                   "one-page response plan before you need it.",
+        "publish_on": "2027-01-02 22:00",
+        "body": [
+            "Most offices hold fire drills. People know where the exits are, who carries the logbook and where to "
+            "gather outside. Very few offices, and even fewer families, have ever practiced what to do when a "
+            "computer is hacked, an account is taken over or money is sent to a scammer. When it happens, people "
+            "improvise, and under stress, improvising often makes things worse.",
+            "Part 9 of this series is about incident response: the calm, ordered steps that limit the damage when "
+            "something goes wrong. You do not need to be a technical expert to follow them. You need a plan that "
+            "is written down before the bad day arrives.",
+            ("h", "What Counts as an Incident?"),
+            "A security incident is any event that threatens the confidentiality, integrity or availability of "
+            "information or systems. Put more simply: someone saw what they should not see, changed what they "
+            "should not change, or stopped you from using what you need. Examples include:",
+            ("point", "For individuals", "A hacked email or social media account, a lost or stolen phone, a "
+             "transfer to a scammer, or a strange login alert you did not cause."),
+            ("point", "For offices", "Malware on a work computer, a ransomware note, a misdirected email containing "
+             "personal data, a lost laptop or flash drive, or a staff account used from an unknown place."),
+            "Not every alert is an incident. A login warning might be you on a new phone. But every alert deserves "
+            "a quick check, because the cost of ignoring a real one is far higher than the cost of checking a "
+            "false one.",
+            ("h", "How the Professionals Think About It"),
+            "The United States National Institute of Standards and Technology (NIST) publishes one of the most "
+            "widely used guides on this subject, Special Publication 800-61. Its third revision, released in April "
+            "2025, links incident response to the six functions of the NIST Cybersecurity Framework 2.0: Govern, "
+            "Identify, Protect, Detect, Respond and Recover. The message is that response does not start when the "
+            "alarm rings. It starts with preparation and ends with lessons that make the next incident less likely.",
+            "For everyday use, I find it easier to think in six plain steps:",
+            ("point", "Prepare", "Know your important accounts and systems, keep backups, and write down who to call."),
+            ("point", "Notice", "Pay attention to warnings, odd behavior and reports from others."),
+            ("point", "Contain", "Stop the damage from spreading: disconnect, lock, freeze."),
+            ("point", "Clean up", "Remove the attacker's access, such as changed passwords, removed malware and closed doors."),
+            ("point", "Recover", "Restore services and data from trusted sources, then watch closely for a while."),
+            ("point", "Learn", "Ask what happened and what would have stopped it, then fix that."),
+            ("h", "The First Hour: Personal Emergencies"),
+            "Here is what to do in the first hour for the situations people meet most often.",
+            ("point", "Your email or social media account was taken over", "Use the service's official recovery "
+             "page to regain access. Change the password to a new, unique one, sign out all other sessions and "
+             "turn on multi-factor authentication. Check recovery email, phone numbers and forwarding rules, "
+             "because attackers often change these to come back later. Warn your contacts not to act on messages "
+             "sent while you were locked out."),
+            ("point", "Your phone was lost or stolen", "Use Find My on iPhone or Find My Device on Android to lock "
+             "or erase it. Call your mobile network to block the SIM so that one-time PINs cannot be received. "
+             "Contact your bank and e-wallet providers to secure your accounts from another device."),
+            ("point", "You sent money to a scammer", "Call your bank or e-wallet provider immediately through its "
+             "official hotline or app, and ask them to flag and hold the transaction. Speed matters. The "
+             "Anti-Financial Account Scamming Act (Republic Act No. 12010) allows financial institutions to "
+             "temporarily hold funds involved in a suspected scam while it is checked. Then report it to the "
+             "authorities."),
+            ("point", "You clicked a bad link or opened a bad file", "Disconnect from the internet, run a full "
+             "security scan, and change the passwords of any account you typed in after clicking, using a "
+             "different, clean device."),
+            ("h", "The First Hour: Office Incidents"),
+            "In an office, the most important rule is to report quickly and avoid the urge to clean up quietly. "
+            "Staff sometimes hide a mistake out of embarrassment, and every hour of silence gives an attacker more "
+            "time. A healthy office treats an honest early report as a good deed, not a confession.",
+            ("point", "Isolate, do not destroy", "Unplug the network cable or turn off Wi-Fi on the affected "
+             "computer. If possible, leave it switched on, because evidence in its memory disappears when it is "
+             "turned off."),
+            ("point", "Call the right people", "Tell your IT team or provider and your supervisor at once. If "
+             "personal data may be involved, alert your Data Protection Officer."),
+            ("point", "Write things down", "Note the time, what you saw, what you clicked and who you told. "
+             "Photograph error messages or ransom notes with a phone."),
+            ("point", "Do not contact the attacker", "Do not reply to ransom notes or extortion messages on your own."),
+            ("h", "A Little About Digital Forensics"),
+            "Digital forensics is the careful collection and study of electronic evidence. It answers questions "
+            "such as how the attacker got in, what they touched and whether data left the building. You do not have "
+            "to be an investigator, but you can avoid destroying the clues that investigators need.",
+            "Think of a crime scene. Moving things around, wiping surfaces or throwing away items makes the "
+            "investigation harder. The same is true for computers. Reinstalling the operating system, deleting "
+            "suspicious files or clearing browser history may feel like fixing the problem, but it can erase the "
+            "evidence of how it happened. Professionals copy the data first, record a digital fingerprint of each "
+            "copy, called a hash, to prove nothing was changed, and keep a record of who handled the evidence and "
+            "when. This record is known as the chain of custody, and it matters if the case reaches a court.",
+            "Two simple habits make any investigation easier: keep the clocks of your computers and devices set to "
+            "the correct time automatically, and make sure important systems keep logs of logins and changes. "
+            "Without accurate times and logs, reconstructing what happened is like auditing a cashbook with "
+            "missing pages.",
+            ("quote", "The worst time to look for the fire exit is when the room is already full of smoke."),
+            ("h", "Where to Report in the Philippines"),
+            "Reporting helps you, and it helps authorities connect cases and warn others. These are the main "
+            "channels:",
+            ("point", "Cybercrime Investigation and Coordinating Center (CICC)", "Call the Inter-Agency Response "
+             "Center hotline 1326 for scams and other cybercrimes."),
+            ("point", "PNP Anti-Cybercrime Group and NBI Cybercrime Division", "Both investigate cybercrimes and "
+             "accept complaints from the public."),
+            ("point", "Your bank or e-wallet provider", "Report fraud on your account through official channels "
+             "only, never through links in a message."),
+            ("point", "The National Privacy Commission (NPC)", "Organizations that handle personal data have "
+             "specific duties. Under the NPC's breach rules, a personal information controller must notify the "
+             "Commission within 72 hours of learning of a breach that requires notification, such as one "
+             "involving sensitive personal information that could lead to identity fraud, and must also inform "
+             "the affected people."),
+            ("h", "Talking About It Honestly"),
+            "How an organization communicates after an incident shapes how much trust it keeps. People forgive "
+            "mistakes more readily than they forgive silence or spin. A good notice explains what happened in "
+            "plain language, what information was involved, what the organization is doing about it, and what "
+            "affected people should do to protect themselves. It gives a contact person and promises updates, "
+            "then keeps that promise.",
+            ("h", "Learning Without Blame"),
+            "After the incident is closed, hold a short review. The goal is not to find someone to punish. It is to "
+            "find the weak point that let the incident happen and fix it. Ask four questions: What happened? Why "
+            "did it work? What helped us respond? What would we change? Then assign each improvement to a person "
+            "with a date, just as you would follow up on audit findings.",
+            "A useful way to practice is a tabletop exercise. Gather the key people for an hour, describe a made-up "
+            "scenario, such as \"the collection system shows a ransom note at 8 am on a Monday,\" and walk through "
+            "what each person would do. The gaps appear quickly: nobody knows the IT provider's after-hours "
+            "number, or the backups are kept on the same network. Finding those gaps in a meeting room is much "
+            "cheaper than finding them during a real attack.",
+            ("h", "Your Part 9 Action Plan"),
+            ("point", "Write a one-page plan", "List your important accounts or systems, where the backups are, "
+             "and who to call, with phone numbers for your bank, mobile network, IT support and the CICC hotline 1326."),
+            ("point", "Store it where you can reach it", "Keep a printed copy, because a hacked computer or a "
+             "lost phone may be exactly what you cannot use."),
+            ("point", "Run a 30-minute drill", "Pick one scenario from this post and talk through it with your "
+             "family or team. Fix the first gap you find."),
+            ("cta", "Read Part 10: AI, Quantum and What Comes Next", "/blog/cybersecurity-part-10-future-threats/"),
+            ("ask", "Has your office ever run a cybersecurity drill? Tell me what surprised you most."),
+        ],
+    },
+    {
+        "date": "December 26, 2026",
+        "title": "Cybersecurity Series, Part 8: Zero Trust, or Why Every Door Gets Checked",
+        "slug": "cybersecurity-part-8-zero-trust",
+        "category": "security",
+        "summary": "Why the old idea of a safe inside network no longer works, what zero trust really means in "
+                   "plain language, how it echoes the internal controls of a well-run treasury, and simple ways to "
+                   "apply it at home and in a small office.",
+        "publish_on": "2026-12-26 22:00",
+        "body": [
+            "For a long time, computer security was built like an old fortress. There was a strong wall around "
+            "the office network, with firewalls at the gate. Anyone outside was suspicious. Anyone inside, connected "
+            "to the office network, was trusted. If you were at your desk, you could reach almost every shared "
+            "folder and system in the building.",
+            "That model has two problems. First, the wall has too many openings now. People work from home, "
+            "use phones, log in to cloud services and connect from coffee shops. Second, and more serious, once "
+            "an attacker gets inside the wall, through one phished password or one infected laptop, the fortress "
+            "model lets them walk freely from room to room. Many of the ransomware attacks we discussed in Part 5 "
+            "spread exactly this way.",
+            "Part 8 of this series is about the answer that security experts have worked toward for more than a "
+            "decade: zero trust.",
+            ("h", "What Zero Trust Means"),
+            "Zero trust is often summed up as \"never trust, always verify.\" It does not mean distrusting your "
+            "colleagues or your family. It means that a system should not grant access just because a request comes "
+            "from a familiar place. Every request to use something important, whether it comes from inside the "
+            "office or outside, should be checked: who is asking, from what device, for what, and does it make sense "
+            "right now?",
+            "The term was popularized around 2010 by John Kindervag, then an analyst at the research firm Forrester. "
+            "Google described its own version, called BeyondCorp, in 2014, after moving its employees away from "
+            "relying on the internal network for trust. In August 2020, NIST published Special Publication 800-207, "
+            "Zero Trust Architecture, which has become a common reference. In 2021, a United States executive order "
+            "directed federal agencies to move toward zero trust, and the idea has since spread to governments and "
+            "companies around the world.",
+            ("h", "The Core Ideas in Plain Words"),
+            "NIST lists seven tenets of zero trust. Stripped of technical terms, they come down to a few ideas "
+            "that anyone can understand:",
+            ("point", "Location is not proof", "Being on the office Wi-Fi or inside the building does not make a "
+             "request safe. Every connection is treated as if it could be hostile, and data is protected wherever "
+             "it travels."),
+            ("point", "Check every time it matters", "Access is granted for one session or task, not forever. When "
+             "you return tomorrow, or ask for something more sensitive, you are checked again."),
+            ("point", "Give the least access needed", "A person or program gets only what it needs to do its job, "
+             "for as long as it needs it. A clerk who encodes payments does not need to approve them."),
+            ("point", "Look at the whole picture", "The decision considers who you are, the health of your device, "
+             "the time, the place and whether the request fits your normal pattern."),
+            ("point", "Assume a breach is possible", "Design systems so that if one account or computer is "
+             "compromised, the damage stays small and is noticed quickly."),
+            ("point", "Watch and improve", "Collect information about devices, logins and traffic, and use it to "
+             "catch problems and tighten the rules over time."),
+            ("h", "Treasury Work Already Knows This Idea"),
+            "When I first studied zero trust, it felt familiar. Good public financial management has followed a "
+            "similar philosophy for a long time, under the name of internal control.",
+            "Consider how a well-run treasury handles money. The person who collects payments is not the same "
+            "person who records them in the books, and neither is the person who approves disbursements. This is "
+            "segregation of duties. The vault does not open just because someone works in the building. Access is "
+            "limited to specific people, often requires two of them together, and every opening is logged. Cash "
+            "counts happen regularly and sometimes without warning. Nobody takes these controls as an insult. "
+            "They protect honest employees as much as they protect public funds.",
+            "Zero trust applies the same discipline to digital systems. It replaces \"she works here, so she can see "
+            "everything\" with \"she can see what her job requires, and the system confirms it is really her.\"",
+            ("quote", "Trust is not a feeling we give to a network. It is a decision the system makes again "
+             "every time it matters."),
+            ("h", "What It Looks Like in Practice"),
+            "Large organizations build zero trust with identity platforms, device management and careful network "
+            "design. The United States Cybersecurity and Infrastructure Security Agency (CISA) describes the work "
+            "in five areas, which it calls pillars: identity, devices, networks, applications and workloads, and "
+            "data. Translated into everyday terms, it often looks like this:",
+            ("point", "Identity", "Every person has their own account, protected by multi-factor authentication, "
+             "ideally a phishing-resistant method such as a passkey or security key. No shared logins."),
+            ("point", "Devices", "Only devices that are updated, protected and known to the organization can reach "
+             "sensitive systems."),
+            ("point", "Networks", "The network is divided into smaller zones, so that a problem in one area cannot "
+             "easily spread to another."),
+            ("point", "Applications", "Each application checks permissions on its own, every time, instead of "
+             "trusting anyone who reaches it."),
+            ("point", "Data", "Sensitive files are labeled, encrypted and shared only with the people who need them, "
+             "with a record of who opened what."),
+            ("h", "Zero Trust for a Small Office"),
+            "You do not need a big budget to start. Many of the most valuable steps cost little or nothing:",
+            ("point", "One person, one account", "Stop sharing a single login for the office computer, the email "
+             "or a government portal. Individual accounts make actions traceable and access easy to remove."),
+            ("point", "MFA everywhere", "Turn on multi-factor authentication for email, cloud storage, banking and "
+             "every system that holds money or personal data."),
+            ("point", "Separate daily and admin accounts", "Do everyday work with an ordinary account. Use an "
+             "administrator account only when installing or changing something."),
+            ("point", "Review access when people move", "When an employee transfers, retires or resigns, remove or "
+             "change their access on the same day. Old accounts are favorite doors for attackers."),
+            ("point", "Separate the networks", "Keep guests, personal phones and smart devices off the network that "
+             "holds your financial and records systems."),
+            ("point", "Approve money in two steps", "Any change in payment details or any unusual transfer should "
+             "require confirmation by a second person through a separate channel."),
+            ("h", "Zero Trust at Home"),
+            "Families can borrow the same thinking. Give each family member their own user account on shared "
+            "computers, so a child's game download cannot touch a parent's work files. Use the guest network from "
+            "Part 4 for visitors and smart gadgets. Check which apps can see your location, contacts and photos, and "
+            "remove access that is not needed. And treat every unexpected request for money or codes the same way, "
+            "even when it seems to come from someone you love: verify it through a channel you already trust.",
+            ("h", "Common Myths"),
+            ("point", "\"Zero trust is a product you can buy\"", "Vendors sell tools that help, but zero trust is "
+             "an approach. No single box or app makes an organization zero trust."),
+            ("point", "\"It means we do not trust our people\"", "It means systems stop assuming. Clear rules and "
+             "checks actually protect staff from being blamed for an attacker's actions."),
+            ("point", "\"It is all or nothing\"", "It is a journey. Most organizations start with identity and "
+             "multi-factor authentication, then improve step by step."),
+            ("point", "\"It makes work slower\"", "Done well, it can make work smoother. Signing in once with a "
+             "passkey on a trusted device is faster than juggling many passwords and a VPN."),
+            ("h", "Your Part 8 Action Plan"),
+            ("point", "Count your shared logins", "List every account that more than one person uses. Plan to "
+             "replace each one with individual accounts."),
+            ("point", "Do an access review", "For your email, cloud folders or office systems, check who has "
+             "access. Remove anyone who no longer needs it."),
+            ("point", "Add a second check for money", "Agree with your family or team that changes to bank details "
+             "or urgent transfers always need a call-back on a known number."),
+            ("cta", "Read Part 9: Incident Response", "/blog/cybersecurity-part-9-incident-response/"),
+            ("ask", "Does your office still use a shared login for any important system? What makes it hard to "
+             "change? I would like to know."),
+        ],
+    },
+    {
+        "date": "December 19, 2026",
+        "title": "Cybersecurity Series, Part 7: Why Apps Get Hacked, Explained with the OWASP Top 10",
+        "slug": "cybersecurity-part-7-why-apps-get-hacked",
+        "category": "security",
+        "summary": "A plain-language tour of the ten most serious risks in web applications, as listed in the OWASP "
+                   "Top 10:2025, with everyday examples, questions to ask before your office buys a system, and "
+                   "habits for anyone who builds software.",
+        "publish_on": "2026-12-19 22:00",
+        "body": [
+            "Every app you use was written by people. Your bank's mobile app, the online payment page of your "
+            "local government, the school portal and the delivery app all started as lines of code typed by "
+            "developers working under deadlines. People make mistakes, and some of those mistakes become doors "
+            "that attackers can open.",
+            "You do not need to be a programmer to understand where those doors usually are. In Part 7 of this "
+            "series, we take a guided tour of the most common weaknesses in web applications. If you use apps, this "
+            "will help you understand the news. If your office buys or runs a system, it will help you ask better "
+            "questions. And if you build software, as I do for treasury work, it is a checklist worth keeping close.",
+            ("h", "What Is OWASP?"),
+            "The OWASP Foundation, whose name stands for Open Worldwide Application Security Project, is a "
+            "nonprofit community that produces free guides and tools for building safer software. Its best-known "
+            "work is the OWASP Top 10, an awareness document that ranks the most critical security risks in web "
+            "applications. It is updated every few years based on data from real applications and a survey of "
+            "practitioners. The current edition is the OWASP Top 10:2025.",
+            "Here are the ten risks, explained with everyday examples.",
+            ("h", "1. Broken Access Control"),
+            "This is the top risk, and it is about permissions. The app checks who you are, but forgets to check "
+            "what you are allowed to see or do. A classic example: you view your own receipt at an address that "
+            "ends in a number, such as receipt 1045. You change it to 1046 and see a stranger's receipt, with their "
+            "name and address. The system should have refused. It is like a records room where the clerk checks your "
+            "ID at the door, but then lets you open any cabinet inside.",
+            ("h", "2. Security Misconfiguration"),
+            "The software may be fine, but it was set up badly. Default administrator passwords are left unchanged, "
+            "detailed error messages reveal how the system works inside, unnecessary features are switched on, or a "
+            "storage folder full of documents is left open to the internet. Many data leaks reported in the news "
+            "come not from clever hacking but from a setting nobody checked.",
+            ("h", "3. Software Supply Chain Failures"),
+            "Modern apps are built from many ready-made parts, called libraries or packages, written by other "
+            "people. That saves time, but every part is a dependency you must trust. If one of those parts has a "
+            "flaw, is outdated or is secretly replaced with a malicious version, every app that uses it is at risk. "
+            "It is like a treasury buying accountable forms from a supplier: if the supplier is careless or "
+            "dishonest, your controls are weakened before you even begin.",
+            ("h", "4. Cryptographic Failures"),
+            "This is about protecting data with encryption, or failing to. Examples include a site that does not use "
+            "HTTPS, passwords stored in a form that can be read or easily reversed, or sensitive records saved "
+            "without encryption. When such a database is stolen, the attacker can read everything at once.",
+            ("h", "5. Injection"),
+            "An app takes what you type into a form and passes it to a database or another program. If it does not "
+            "handle that input carefully, an attacker can type something that the program mistakes for a command. "
+            "The best-known type is SQL injection, where carefully crafted text in a search box or login form tricks "
+            "the database into revealing or changing records. Developers prevent it by keeping data and commands "
+            "strictly separate, using what are called parameterized queries.",
+            ("h", "6. Insecure Design"),
+            "Some weaknesses are not coding mistakes but planning mistakes. Imagine a password-reset page that lets "
+            "anyone guess a six-digit code as many times as they like. Every line of code may work exactly as "
+            "written, yet the design is unsafe because nobody asked, \"How would someone abuse this?\" Thinking "
+            "about abuse early, sometimes called threat modeling, is far cheaper than fixing a design later.",
+            ("h", "7. Authentication Failures"),
+            "These are weaknesses in how an app confirms who you are. It might allow very weak passwords, never "
+            "lock out repeated guesses, fail to offer multi-factor authentication, or keep you signed in long after "
+            "you should have been logged out. Part 2 of this series explained why strong sign-in matters. This "
+            "category is the developer's side of the same story.",
+            ("h", "8. Software or Data Integrity Failures"),
+            "An app trusts updates, files or data without checking that they are genuine and unaltered. A program "
+            "that downloads updates without verifying their digital signature, for example, could be tricked into "
+            "installing malware. In financial terms, it is like accepting a check without verifying the signature.",
+            ("h", "9. Security Logging and Alerting Failures"),
+            "If an app does not record important events, such as logins, failed attempts and changes to records, or "
+            "if nobody is alerted when something suspicious happens, attacks can continue for weeks unnoticed. An "
+            "unlogged system is like a vault without a logbook: when money goes missing, there is no trail to "
+            "follow.",
+            ("h", "10. Mishandling of Exceptional Conditions"),
+            "This new category covers what happens when things go wrong: a network error, a missing value, an "
+            "unexpected input. A well-built app fails safely. It shows a polite message, keeps the data consistent "
+            "and denies access when in doubt. A poorly built one might crash and show internal details, leave a "
+            "transaction half done, or, worst of all, let the user through because the check itself failed.",
+            ("quote", "Most security failures are not genius attacks. They are ordinary mistakes that nobody "
+             "checked for."),
+            ("h", "What App Users Can Do"),
+            "You cannot fix an app's code, but you can lower your risk:",
+            ("point", "Install apps only from official stores", "Use Google Play, the App Store or the official "
+             "website of the bank or agency. Avoid installing app files sent through chat."),
+            ("point", "Keep apps updated", "Updates often fix exactly the kinds of flaws described above."),
+            ("point", "Give each app the least it needs", "A flashlight app does not need your contacts or "
+             "location."),
+            ("point", "Report what looks wrong", "If an app ever shows you someone else's information, stop, take a "
+             "screenshot and report it to the provider through official channels. Do not explore further."),
+            "That last point matters. Testing or probing systems you do not own, without permission, can be illegal "
+            "under the Cybercrime Prevention Act of 2012 (Republic Act No. 10175), even if your intentions are good. "
+            "Report it and let the owner fix it.",
+            ("h", "Questions to Ask Before Your Office Buys a System"),
+            "Offices that buy software, whether for collections, payroll or records, can use the OWASP Top 10 as a "
+            "checklist. Before signing, ask the supplier:",
+            ("point", "Access control", "Can each user be limited to only the functions and records their job needs? "
+             "Can we see who did what, and when?"),
+            ("point", "Sign-in", "Does the system support multi-factor authentication? How are passwords stored?"),
+            ("point", "Updates and components", "How often do you release security updates, and how do you keep "
+             "third-party components current?"),
+            ("point", "Testing", "Has the system been tested for security by an independent party? Can you share a "
+             "summary of the results?"),
+            ("point", "Data protection", "Is data encrypted when stored and when sent? Where are the backups, and how "
+             "fast can we restore?"),
+            ("point", "Logging and support", "Are important actions logged and kept? Who do we call if we suspect a "
+             "breach, and how fast will you respond?"),
+            ("h", "For Those Who Build"),
+            "If you write code, even small tools for your own office, a few habits prevent most of these problems. "
+            "Check permissions on the server for every request, not only by hiding buttons on the screen. Use "
+            "parameterized queries for every database call. Store passwords only with a modern password-hashing "
+            "method designed for the purpose, such as bcrypt or Argon2. Keep your dependencies updated and remove the ones you do not "
+            "use. Log important events, and decide in advance what the system should do when something fails. "
+            "Most of all, ask \"How could this be abused?\" before you write the first line.",
+            ("h", "Your Part 7 Action Plan"),
+            ("point", "Review your app permissions", "On your phone, open the permission settings and remove "
+             "location, contacts, camera and microphone access from apps that do not need them."),
+            ("point", "Delete apps you no longer use", "Every unused app is old code that may never be updated again."),
+            ("point", "Share the checklist", "If your office is planning to buy or upgrade a system, pass the six "
+             "questions above to the people handling the procurement."),
+            ("cta", "Read Part 8: Zero Trust", "/blog/cybersecurity-part-8-zero-trust/"),
+            ("ask", "Has an app ever shown you information that clearly was not yours? How did the provider respond?"),
+        ],
+    },
+    {
+        "date": "December 12, 2026",
+        "title": "Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private",
+        "slug": "cybersecurity-part-6-cloud-and-privacy",
+        "category": "security",
+        "summary": "Who is responsible for keeping your cloud files safe, why a single \"anyone with the link\" "
+                   "setting can expose a whole office, how to check which apps can reach your accounts, and the "
+                   "privacy rights every Filipino has under the Data Privacy Act.",
+        "publish_on": "2026-12-12 22:00",
+        "body": [
+            "Your family photos, your scanned IDs, the spreadsheets from work and years of messages probably live "
+            "somewhere you have never seen: in the cloud. There is a well-known joke among IT people that \"the "
+            "cloud is just someone else's computer.\" It is a joke, but it carries a useful truth. When you store "
+            "something online, you are trusting a company's computers, and you are also trusting your own settings "
+            "and habits.",
+            "In Part 6 of this series, we look at how to keep your cloud accounts secure and how to protect your "
+            "privacy in a world where so much of our lives is stored, shared and analyzed online.",
+            ("h", "What \"the Cloud\" Really Means"),
+            "When you save a file to Google Drive, OneDrive, iCloud or Dropbox, it is copied to large data "
+            "centers owned by those companies. The same is true when you post on social media, back up your phone "
+            "or use an online accounting tool. The benefits are real: your files survive a lost phone, you can "
+            "work from anywhere and you can share a document in seconds.",
+            "The big providers invest heavily in security. Their data centers have guards, redundant power, "
+            "specialist staff and constant monitoring, far beyond what a small office could afford. So why do "
+            "cloud accounts get breached at all? The answer lies in a principle called shared responsibility.",
+            ("h", "Shared Responsibility: Their Part and Your Part"),
+            "Cloud security is divided between the provider and the customer. The provider is responsible for the "
+            "security of the cloud: the buildings, the servers, the networks and the software that runs the service. "
+            "You are responsible for security in the cloud: who can sign in to your account, what you upload, how "
+            "you share it and which apps you connect to it.",
+            "Think of a bank's safety deposit box. The bank guards the vault, the walls and the doors. But if you "
+            "hand a copy of your key to a stranger, or leave the box open while you step out, the bank's strong "
+            "vault will not help you.",
+            "Most cloud breaches happen on the customer's side of that line. The research firm Gartner once "
+            "predicted that through 2025, 99% of cloud security failures would be the customer's fault. Whatever the "
+            "exact number, the lesson holds: the weak point is usually not the provider's data center. It is a "
+            "weak password, a missing second factor or a careless sharing setting.",
+            ("h", "The Most Common Cloud Mistakes"),
+            ("point", "A weak account", "If your cloud account uses a reused password without multi-factor "
+             "authentication, everything in it is one leaked password away from a stranger. Part 2 showed how to "
+             "fix this with a password manager and passkeys."),
+            ("point", "\"Anyone with the link\" sharing", "This setting lets anyone who has the link open the file, "
+             "with no sign-in. Links get forwarded, pasted into group chats and posted by mistake. A spreadsheet "
+             "of names, addresses and ID numbers shared this way is effectively public."),
+            ("point", "Sharing that never ends", "Files shared years ago with former colleagues, old suppliers or "
+             "a personal email address often stay shared forever unless someone removes the access."),
+            ("point", "Connected apps you forgot", "Quizzes, photo editors, browser add-ons and productivity tools "
+             "often ask to \"sign in with Google\" or Facebook and request access to your files or contacts. Many "
+             "keep that access long after you stop using them."),
+            ("point", "Thinking sync is a backup", "Syncing copies changes everywhere, including deletions and files "
+             "scrambled by ransomware. A synced folder is convenient, but it is not a separate backup."),
+            ("h", "Share Like a Careful Records Officer"),
+            "Good records management never hands out original documents to anyone who asks. Copies go to the "
+            "people who have a right to them, each release is logged, and confidential records stay locked. "
+            "Sharing files online deserves the same care.",
+            ("point", "Share with names, not links", "Choose \"Restricted\" or its equivalent and add the specific "
+             "people who need the file. Use public links only for material you would be comfortable posting on a "
+             "bulletin board."),
+            ("point", "Give the lowest access that works", "If someone only needs to read, give view access, not edit. "
+             "Many services also let you turn off downloading, printing and copying for viewers."),
+            ("point", "Set an expiry date", "Several services let you make access expire automatically. When I share "
+             "a document for review, I give view-only access to the named person and let the access end on its own "
+             "after a few days."),
+            ("point", "Review shared files every few months", "Look for files shared with \"anyone with the link\" "
+             "or with people outside your office, and remove what is no longer needed."),
+            ("h", "Check Which Apps Can Reach Your Accounts"),
+            "Over the years, most of us have clicked \"Allow\" for many apps. It is worth reviewing them. In a "
+            "Google Account, open the Security section and look for \"Your connections to third-party apps and "
+            "services.\" There you can see which apps can access your account and what each one can do, and remove "
+            "any you do not recognize or no longer use. Microsoft, Apple and Facebook accounts have similar pages "
+            "in their security or privacy settings.",
+            "Pay special attention to any app that can read your email or your files. Email access is the master "
+            "key to most of your accounts, because password reset links usually arrive there.",
+            ("quote", "Every \"Allow\" you click is a key you hand out. Count your keys once in a while."),
+            ("h", "Your Phone Knows a Lot About You"),
+            "Privacy is not only about files in the cloud. The apps on your phone can collect your location, "
+            "contacts, photos and even what you say near the microphone, depending on the permissions you give "
+            "them. Much of this data is used to show targeted advertising, and some may be shared with partners.",
+            "On an iPhone, open Settings, then Privacy and Security, to see which apps can use your location, "
+            "contacts, photos, camera and microphone. On Android, look for the Permission manager in the Security "
+            "and privacy settings; the exact menu differs by phone brand. Ask a simple question for each app: does "
+            "it really need this to do its job? A calculator does not need your location. A messaging app may need "
+            "your microphone, but only while you are recording.",
+            ("h", "Think Before You Post"),
+            "Small details in posts can add up to a full profile for a scammer or stalker:",
+            ("point", "IDs and documents", "Never post photos of your IDs, passports, boarding passes or receipts "
+             "with barcodes or QR codes. They contain more information than you might think."),
+            ("point", "Location and routine", "Posting \"on vacation for two weeks\" while you are away tells "
+             "people your house is empty. Consider posting travel photos after you return."),
+            ("point", "Children's details", "School uniforms, school names and daily routines can reveal where a "
+             "child can be found. Keep those posts to a private circle, or skip them."),
+            ("point", "Answers to security questions", "Your first pet, your mother's maiden name and your first "
+             "school are common security questions. Fun quizzes that ask for them deserve suspicion."),
+            ("h", "Your Rights Under the Data Privacy Act"),
+            "In the Philippines, the Data Privacy Act of 2012 (Republic Act No. 10173) protects personal "
+            "information held by government offices and private companies alike. It is enforced by the National "
+            "Privacy Commission (NPC). As a data subject, you have rights that many people never use, including:",
+            ("point", "The right to be informed", "You should be told when your personal data is being collected "
+             "and processed, and for what purpose."),
+            ("point", "The right to access and correct", "You can ask an organization what personal data it holds "
+             "about you, and ask it to correct mistakes."),
+            ("point", "The right to object and to erasure", "In certain cases, you can object to processing and ask "
+             "that your data be blocked or removed, such as when it is no longer needed or was collected unlawfully."),
+            ("point", "The right to complain and claim damages", "You can file a complaint with the NPC and may be "
+             "entitled to damages if your data is misused."),
+            "These rights also remind those of us who handle other people's data at work of our duty. Every "
+            "taxpayer list, payroll file and application form is someone's personal information, entrusted to us "
+            "for a specific purpose.",
+            ("h", "Your Part 6 Action Plan"),
+            ("point", "Secure your main cloud account", "Make sure it has a unique password and multi-factor "
+             "authentication, ideally a passkey."),
+            ("point", "Hunt for public links", "Search your cloud storage for files shared with \"anyone with the "
+             "link\" and switch them to named people, or stop sharing them."),
+            ("point", "Remove one forgotten app", "Open the third-party connections page of your Google, Microsoft "
+             "or Facebook account and remove at least one app you no longer use."),
+            ("cta", "Read Part 7: Why Apps Get Hacked", "/blog/cybersecurity-part-7-why-apps-get-hacked/"),
+            ("ask", "How many forgotten apps did you find connected to your accounts? Tell me the oldest one."),
+        ],
+    },
     {
         "date": "December 5, 2026",
         "title": "Cybersecurity Series, Part 5: Inside a Ransomware Attack",
@@ -138,11 +760,11 @@ CYBER_POSTS = [
              "the backup before you need it."),
             ("point", "Turn on ransomware protection", "On Windows, open Windows Security, go to Virus and threat "
              "protection, then Ransomware protection, and turn on Controlled Folder Access. Allow your trusted apps when asked."),
-            "With this post, the series has covered the basics most people need: how attacks work, how to protect "
+            "With these first five parts, the series has covered the basics most people need: how attacks work, how to protect "
             "your accounts, how to spot a scam, how to secure your home network and how to survive ransomware. "
             "Share these posts with someone who handles money or records, and come back to the action plans every few "
             "months.",
-            ("cta", "Start again with Part 1", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
+            ("cta", "Read Part 6: Cloud Security and Privacy", "/blog/cybersecurity-part-6-cloud-and-privacy/"),
             ("ask", "Has your office ever tested restoring its backups? I would like to hear how it went."),
         ],
     },
