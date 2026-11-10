@@ -960,9 +960,14 @@ header.site .bar-title { font-size: 1.5375rem; }
 /* Privacy Policy link at the bottom of every page (Butch 2026-11-10): plain, small, no navy footer */
 footer.legal { padding: 0 0 28px; text-align: center; font-size: 14px; }
 footer.legal a { color: var(--muted); }
+footer.legal span { color: var(--muted); }
+/* "Built in Python" at the far left, Privacy Policy stays centred */
+footer.legal .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; }
+footer.legal .built { white-space: nowrap; }
+footer.legal .built { justify-self: start; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="legal"><div class="wrap"><a href="/privacy/">Privacy Policy</a></div></footer><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lead">The page you are looking for doesn&#x27;t exist or has moved.</p><a href="/" class="btn primary">Back to home</a></div></main><footer class="legal"><div class="wrap"><span class="built">Built in Python</span><a href="/privacy/">Privacy Policy</a></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
