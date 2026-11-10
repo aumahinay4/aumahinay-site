@@ -17,8 +17,7 @@ VOCAB = {
         "Ten words at a time for the Career Service Examination (Professional and Subprofessional). "
         "The exam's verbal part tests vocabulary, analogies and how words are used in a sentence, so each "
         "word comes with a plain meaning, an example from government work, words that mean the same "
-        "and the opposite, and practice questions in the exam's style. A new module comes out every Wednesday "
-        "at 9 pm."
+        "and the opposite, and practice questions in the exam's style."
     ),
     "note": (
         "I earned my Career Service Professional eligibility in 2012 and have spent more than 15 years in "

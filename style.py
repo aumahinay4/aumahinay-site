@@ -790,9 +790,20 @@ a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
 a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; color: var(--blue-ink); }
 .card.author { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: start; margin-top: 14px; }
-.card.author .author-photo { width: 72px; height: 72px; margin: 0; }
+.card.author .author-photo { width: 72px; height: 72px; margin: 0; align-self: start; }
 .card.author p { margin: 0 0 8px; }
 .author-links { text-align: left; }
+.post .byline { margin: 6px 0 0; font-size: 15.6873px; color: var(--muted); }  /* "By ..." under a post title */
+.post .byline a { font-weight: 600; }
+.blog-col h2.post-section { margin-top: 30px; }
+.related { display: grid; gap: 10px; margin-top: 12px; }
+.related-card { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.related-card > span { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14.5667px; }
+.related-card b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+.related-card:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+@media (min-width: 900px) { .related { grid-template-columns: repeat(3, 1fr); } }
+.reasons { padding-left: 1.1em; }
+.reasons li { margin: 0 0 8px; }
 @media (max-width: 640px) { .card.author { grid-template-columns: 56px 1fr; gap: 12px; } .card.author .author-photo { width: 56px; height: 56px; } }
 """
 

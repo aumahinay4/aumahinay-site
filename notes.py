@@ -17,7 +17,7 @@ NOTES_INFO = {
         "Plain-language notes on local treasury work: where local revenue comes from, how "
         "real property and business taxes are computed, and how money is collected, kept and paid out. "
         "Each note explains the law in everyday words, works through an example and ends with a 10-question "
-        "quiz. A new note comes out every Friday at 9 pm."
+        "quiz."
     ),
     "disclaimer": (
         "These are independent study notes written from the law and from years of treasury work. They are "
