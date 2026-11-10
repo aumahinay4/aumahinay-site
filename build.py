@@ -17,6 +17,10 @@ from pages import ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, liv
 DIST = Path(__file__).parent / "dist"
 
 
+# IndexNow (Butch, 2026-11-10): the deploy tells Bing about new pages; the key is public by design
+INDEXNOW_KEY = "b555a2cf9c5446677189c26e434c02e7"
+
+
 def sitemap(site):
     """Every live page (scheduled posts and lessons appear on their date, with the nightly build)."""
     # Study Notes stays out of the sitemap until its first note is live (no empty hub pages for AdSense)
@@ -90,6 +94,8 @@ def build():
         (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
     (DIST / "sitemap.xml").write_text(sitemap(site), encoding="utf-8")
     (DIST / "feed.xml").write_text(feed(site), encoding="utf-8")
+    # IndexNow key file: proves to Bing and other IndexNow engines that this site sends the pings
+    (DIST / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY + "\n")
     # GitHub Pages custom domain file
     (DIST / "CNAME").write_text(SITE["domain"] + "\n")
 

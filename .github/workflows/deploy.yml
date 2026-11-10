@@ -37,12 +37,13 @@ jobs:
       - name: Anything new to publish?
         id: check
         run: |
+          # the live sitemap is kept to find new pages for IndexNow after publishing
+          curl -fsS --max-time 30 https://aumahinay.dev/sitemap.xml -o live-sitemap.xml || rm -f live-sitemap.xml
           if [ "${{ github.event_name }}" != "schedule" ]; then
             echo "deploy=true" >> "$GITHUB_OUTPUT"; exit 0
           fi
           # dated posts and lessons add a page to the sitemap on their date
-          if curl -fsS --max-time 30 https://aumahinay.dev/sitemap.xml -o live-sitemap.xml \
-             && cmp -s live-sitemap.xml dist/sitemap.xml; then
+          if [ -f live-sitemap.xml ] && cmp -s live-sitemap.xml dist/sitemap.xml; then
             echo "Nothing new today; the live site is up to date."
             echo "deploy=false" >> "$GITHUB_OUTPUT"
           else
@@ -55,3 +56,11 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e523875678b6bea173fd8e84c1c53ba1
           command: pages deploy dist --project-name=aumahinay --branch=main
+      # Tell Bing (and Yandex, Naver, Seznam) about new pages at once. Google does not use
+      # IndexNow; it reads the sitemap. A manual run sends every page once.
+      - name: Ping IndexNow
+        if: env.HAS_TOKEN == 'true' && steps.check.outputs.deploy == 'true'
+        continue-on-error: true
+        env:
+          EVENT: ${{ github.event_name }}
+        run: python indexnow.py
