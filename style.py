@@ -950,9 +950,9 @@ html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:foc
 
 CSS += """
 /* HOME in bold beside the three-bar menu, Home page only (Butch 2026-11-10), as big as fits in the bar */
-header.site .bar-title { font: 800 1.5rem/1 var(--font-display); letter-spacing: .02em; color: var(--bar-ink, var(--navy));
-  text-decoration: none; margin-left: 2px; white-space: nowrap; }
-header.site .bar-title:hover { color: var(--gold-ink); text-decoration: none; }
+header.site .bar-title { font: 800 1.5rem/1 var(--font-display); letter-spacing: .02em; color: var(--gold-ink);
+  text-decoration: none; margin-left: 2px; white-space: nowrap; }  /* gold, Butch's pick 2026-11-10 */
+header.site .bar-title:hover { color: var(--bar-ink, var(--navy)); text-decoration: none; }
 html:not(.menu-js) header.site .bar-title { display: none; }  /* without JavaScript the full menu shows instead */
 """
 
