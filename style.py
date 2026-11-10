@@ -681,17 +681,18 @@ CSS += """
 .book-link:hover img { filter: brightness(1.05); }
 .card.book .btn { margin-top: 6px; }
 .crumb { display: inline-block; margin-bottom: 16px; font-size: 15.127px; }
-.reader { margin: 22px auto 0; max-width: min(560px, calc((100vh - 150px) * 2 / 3)); max-width: min(560px, calc((100dvh - 150px) * 2 / 3)); -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.reader { margin: 22px auto 0; max-width: 580px; scroll-margin-top: 64px; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 .reader .page { position: relative; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -18px rgba(11, 42, 99, .45); touch-action: pan-y pinch-zoom; }
 .reader .page img { display: block; width: 100%; height: auto; pointer-events: none; -webkit-user-drag: none; }
 .reader .shield { position: absolute; inset: 0; }
 .reader .controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }  /* above the page, so Next stays in the same spot */
+.reader .controls.bottom { margin: 14px 0 0; }  /* a second Previous/Next under the page, so a reader at the bottom of a page need not scroll back up */
 .reader .controls .btn { background: var(--surface); color: var(--text); border-color: var(--line); cursor: pointer; font-family: inherit; }
 .reader .controls .btn:hover:not(:disabled) { border-color: var(--gold); }
 .reader .controls .btn:disabled { opacity: .4; cursor: default; transform: none; }
 .reader .count { font-size: 15.127px; font-weight: 600; color: var(--muted); }
 .reader-note { text-align: center; max-width: 560px; margin-left: auto; margin-right: auto; }
-@media (max-width: 640px) { .reader { max-width: none; } .reader .controls .btn { padding: 10px 14px; } }
+@media (max-width: 640px) { .reader { max-width: none; margin-left: -10px; margin-right: -10px; } .reader .page { border-left: 0; border-right: 0; } .reader .controls { padding: 0 10px; } .reader .controls .btn { padding: 10px 14px; } }  /* phones: page runs edge to edge, so the book text is as big as the screen allows */
 @media print { .reader { display: none; } }  /* printing the page leaves out the book */
 """
 
