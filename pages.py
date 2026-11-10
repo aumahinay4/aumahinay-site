@@ -699,6 +699,7 @@ def note_page(n):
             class_="lesson-page vocab-page notes-page",
         ),
         description=f"Study Note {n['number']}: {n['summary']}",
+        url=note_url(n),  # its own address, so Share and Google point to the note, not the Study Notes page
     )
 
 

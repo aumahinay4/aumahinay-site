@@ -132,7 +132,7 @@ MODULES = [
     },
     {
         "number": 2,
-        "publish_on": "2026-11-11 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-11-10 17:00",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "slug": "ethics-integrity-and-professional-conduct",
         "title": "Ethics, integrity and professional conduct",
         "summary": "Ten words about honesty and good conduct in public office: candor, capricious, collusion, "
@@ -231,7 +231,7 @@ MODULES = [
     },
     {
         "number": 3,
-        "publish_on": "2026-11-18 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-11-10 17:00",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "slug": "analysis-planning-and-operations",
         "title": "Analysis, planning and operations",
         "summary": "Ten words for reports, audits and planning: aggregate, corroborate, disseminate, empirical, "
@@ -330,7 +330,7 @@ MODULES = [
     },
     {
         "number": 4,
-        "publish_on": "2026-11-25 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-11-10 17:00",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "slug": "public-finance-and-local-government",
         "title": "Public finance and local government",
         "summary": "Ten words from budgets, taxes and local councils: amortization, appropriation, biennial, "
@@ -429,7 +429,7 @@ MODULES = [
     },
     {
         "number": 5,
-        "publish_on": "2026-12-02 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-11-18 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "power-law-and-oversight",
         "title": "Power, law and oversight",
         "summary": "Ten words about authority, laws and how they are carried out: despotism, devolution, dissent, "
@@ -537,7 +537,7 @@ MODULES = [
     },
     {
         "number": 6,
-        "publish_on": "2026-12-09 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-11-25 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "honesty-records-and-careful-work",
         "title": "Honesty, records and careful work",
         "summary": "Ten exam words for good and bad work: fabrication, facile, fallacy, fastidious, fealty, "
@@ -633,7 +633,7 @@ MODULES = [
     },
     {
         "number": 7,
-        "publish_on": "2026-12-16 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-12-02 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "character-under-pressure",
         "title": "Character under pressure",
         "summary": "Ten words about how people act when things get hard: forbearance, forestall, fortitude, "
@@ -728,7 +728,7 @@ MODULES = [
     },
     {
         "number": 8,
-        "publish_on": "2026-12-23 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-12-09 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "communication-and-records",
         "title": "Communication and records",
         "summary": "Ten words for how people speak, write and keep records: furtive, futile, gainful, gainsay, "
@@ -828,7 +828,7 @@ MODULES = [
     },
     {
         "number": 9,
-        "publish_on": "2026-12-30 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-12-16 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "ideas-origins-and-arguments",
         "title": "Ideas, origins and arguments",
         "summary": "Ten words for reading passages and debates: generic, genesis, genial, germane, gesticulate, "
@@ -922,7 +922,7 @@ MODULES = [
     },
     {
         "number": 10,
-        "publish_on": "2027-01-06 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-12-23 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "money-favors-and-public-goods",
         "title": "Money, favors and public goods",
         "summary": "Ten words about money, gifts and honest dealing: gloss, glut, graft, grandeur, gratify, gratis, "
@@ -1024,7 +1024,7 @@ MODULES = [
     },
     {
         "number": 11,
-        "publish_on": "2027-01-13 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2026-12-30 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "complaints-and-conduct",
         "title": "Complaints and conduct",
         "summary": "Ten words for complaints, rules and behavior at work: grievance, grueling, guarantee, "
@@ -1120,7 +1120,7 @@ MODULES = [
     },
     {
         "number": 12,
-        "publish_on": "2027-01-20 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-01-06 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "leadership-and-standards",
         "title": "Leadership and standards",
         "summary": "Ten words about leading people and keeping standards: halcyon, hallmark, hallowed, halting, "
@@ -1218,7 +1218,7 @@ MODULES = [
     },
     {
         "number": 13,
-        "publish_on": "2027-01-27 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-01-13 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "risk-and-judgment",
         "title": "Risk and judgment",
         "summary": "Ten words about risks, decisions and attitudes: hasty, haughty, hazard, heed, hegemony, heinous, "
@@ -1312,7 +1312,7 @@ MODULES = [
     },
     {
         "number": 14,
-        "publish_on": "2027-02-03 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-01-20 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "organization-and-structure",
         "title": "Organization and structure",
         "summary": "Ten words about how offices are organized and run: hierarchy, hindrance, histrionic, hitherto, "
@@ -1410,7 +1410,7 @@ MODULES = [
     },
     {
         "number": 15,
-        "publish_on": "2027-02-10 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-01-27 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "public-service-and-people",
         "title": "Public service and people",
         "summary": "Ten words about serving and dealing with people: hospitality, hostility, hubris, humane, "
@@ -1508,7 +1508,7 @@ MODULES = [
     },
     {
         "number": 16,
-        "publish_on": "2027-02-17 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-02-03 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "reasoning-and-reputation",
         "title": "Reasoning and reputation",
         "summary": "Ten words about thinking clearly and standing in public life: iconoclast, idiosyncrasy, "
@@ -1600,7 +1600,7 @@ MODULES = [
     },
     {
         "number": 17,
-        "publish_on": "2027-02-24 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-02-10 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "change-time-and-property",
         "title": "Change, time and property",
         "summary": "Ten words often confused or tested in pairs: immense, imminent, immovable, immune, immutable, "
@@ -1699,7 +1699,7 @@ MODULES = [
     },
     {
         "number": 18,
-        "publish_on": "2027-03-03 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-02-17 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "getting-things-done",
         "title": "Getting things done",
         "summary": "Ten words about pushing work forward or holding it back: impede, impel, impending, imperative, "
@@ -1797,7 +1797,7 @@ MODULES = [
     },
     {
         "number": 19,
-        "publish_on": "2027-03-10 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-02-24 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "authority-and-accountability",
         "title": "Authority and accountability",
         "summary": "Ten words about power and being answerable for it: implicit, implore, import, importunate, "
@@ -1893,7 +1893,7 @@ MODULES = [
     },
     {
         "number": 20,
-        "publish_on": "2027-03-17 21:00",  # Wednesday 9 pm PH (Butch, 2026-11-10)
+        "publish_on": "2027-03-03 21:00",  # Wednesday 9 pm PH (moved 2 weeks earlier after the batch, Butch 2026-11-10)
         "slug": "final-review-office-and-service",
         "title": "Final review: office and service",
         "summary": "The last ten words, all common in government work: inadvertent, incessant, incumbent, indigent, "

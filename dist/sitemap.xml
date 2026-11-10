@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://aumahinay.dev/</loc></url>
   <url><loc>https://aumahinay.dev/projects/</loc></url>
+  <url><loc>https://aumahinay.dev/study-notes/</loc></url>
   <url><loc>https://aumahinay.dev/tutorials/</loc></url>
   <url><loc>https://aumahinay.dev/blog/</loc></url>
   <url><loc>https://aumahinay.dev/about/</loc></url>
@@ -20,5 +21,13 @@
   <url><loc>https://aumahinay.dev/projects/altos-book/</loc></url>
   <url><loc>https://aumahinay.dev/tutorials/getting-started/</loc></url>
   <url><loc>https://aumahinay.dev/tutorials/add-up-daily-collections/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/check-or-series/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/rpt-penalty-with-decimal/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/rcd-summary-with-pandas/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/tamper-evident-log-with-hmac/</loc></url>
   <url><loc>https://aumahinay.dev/tutorials/civil-service-vocabulary/governance-law-and-public-administration/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/civil-service-vocabulary/ethics-integrity-and-professional-conduct/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/civil-service-vocabulary/analysis-planning-and-operations/</loc></url>
+  <url><loc>https://aumahinay.dev/tutorials/civil-service-vocabulary/public-finance-and-local-government/</loc></url>
+  <url><loc>https://aumahinay.dev/study-notes/sources-of-local-revenue/</loc></url>
 </urlset>

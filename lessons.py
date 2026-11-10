@@ -282,7 +282,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["sets", "range", "Counter", "list comprehensions"],
-        "publish_on": "2026-11-14",
+        "publish_on": "2026-11-10",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "learn": [
             "Use a set to compare what was expected with what was recorded",
             "Find repeated values with collections.Counter",
@@ -331,7 +331,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["Decimal", "functions", "rounding", "min()"],
-        "publish_on": "2026-11-21",
+        "publish_on": "2026-11-10",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "learn": [
             "See the rounding errors that floats introduce",
             "Write a small, reusable function",
@@ -386,7 +386,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["pandas", "groupby", "pivot_table", "join"],
-        "publish_on": "2026-11-28",
+        "publish_on": "2026-11-10",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "learn": [
             "Load CSV files into pandas DataFrames",
             "Summarize data with groupby and named aggregations",
@@ -440,7 +440,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["hmac", "hashlib", "json", "security"],
-        "publish_on": "2026-12-05",
+        "publish_on": "2026-11-10",  # published early in a batch for AdSense readiness (Butch, 2026-11-10)
         "learn": [
             "What a hash and an HMAC are, in plain terms",
             "Chain records so that removing one breaks the next",
