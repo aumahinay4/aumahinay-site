@@ -12,14 +12,16 @@ from datetime import datetime
 from email.utils import format_datetime
 from html import escape
 
-from pages import ROUTES, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
+from pages import ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
 
 DIST = Path(__file__).parent / "dist"
 
 
 def sitemap(site):
     """Every live page (scheduled posts and lessons appear on their date, with the nightly build)."""
-    urls = "".join(f"  <url><loc>{site}{route}</loc></url>\n" for route in ROUTES)
+    # Study Notes stays out of the sitemap until its first note is live (no empty hub pages for AdSense)
+    urls = "".join(f"  <url><loc>{site}{route}</loc></url>\n" for route in ROUTES
+                   if route != "/study-notes/" or live_notes())
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
 
@@ -82,6 +84,9 @@ def build():
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")
+    if SITE.get("adsense_client"):  # ads.txt names Google as the site's only authorised ad seller
+        pub = SITE["adsense_client"].removeprefix("ca-")
+        (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
     (DIST / "sitemap.xml").write_text(sitemap(site), encoding="utf-8")
     (DIST / "feed.xml").write_text(feed(site), encoding="utf-8")
     # GitHub Pages custom domain file
