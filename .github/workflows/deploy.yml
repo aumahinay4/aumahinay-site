@@ -17,6 +17,8 @@ on:
     - cron: "17 * * * *"
     # Civil Service vocabulary modules go live Wednesdays at 9 pm PH (13:00 UTC).
     - cron: "2 13 * * 3"
+    # Cybersecurity series posts go live Saturdays at 10 pm PH (14:00 UTC).
+    - cron: "2 14 * * 6"
 
 jobs:
   deploy:

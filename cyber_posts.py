@@ -1,20 +1,21 @@
 # Cybersecurity blog series (Season 1: Cyber Hygiene and Personal Defense).
 # Planned from Butch's Google Doc "10-Week Cybersecurity Blog Series Roadmap & Drafts"
 # (Drive 1cqfvL885e80Hj7cjLE5YWEC392nrzD2ZkZmSLoHgwRE), written in original words and
-# fact-checked on 2026-11-10. Parts 1-5 go live together (Butch, 2026-11-10: "post today at least 5").
+# fact-checked on 2026-11-10. Butch (2026-11-10): Part 1 goes live on Nov 10, then one part every Saturday at
+# 10 pm PH ("YYYY-MM-DD 22:00"). A "cta" button to a later part shows only once that part is live.
 # Newest first, like BLOG in content.py, which puts these posts at the top of its list.
 
 SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
-        "date": "November 10, 2026",
+        "date": "December 5, 2026",
         "title": "Cybersecurity Series, Part 5: Inside a Ransomware Attack",
         "slug": "cybersecurity-part-5-ransomware",
         "category": "security",
         "summary": "How ransomware gangs break in, steal before they lock, and pressure victims to pay, what the "
                    "PhilHealth attack of 2023 taught the country, and the backup habit that takes away their leverage.",
-        "publish_on": "2026-11-10",
+        "publish_on": "2026-12-05 22:00",
         "body": [
             "Imagine coming to the office on a Monday and finding every computer showing the same message: your files "
             "are encrypted, your records have been copied, and you have a few days to pay before everything is "
@@ -124,8 +125,8 @@ CYBER_POSTS = [
              "off, or large data transfers at odd hours deserve immediate attention."),
             ("h", "If It Happens to You"),
             "If a ransom note appears, do not panic, and do not start deleting things. Disconnect the affected "
-            "computer from the network by turning off Wi-Fi or unplugging the network cable, but do not switch "
-            "it off, because the evidence in its memory can help investigators. Photograph the ransom note. Tell "
+            "computer from the network by turning off Wi-Fi or unplugging the network cable. If you can, leave it "
+            "switched on, because the evidence in its memory can help investigators. Photograph the ransom note. Tell "
             "your IT team or provider at once. In the Philippines, you can report cybercrime to the Cybercrime "
             "Investigation and Coordinating Center through its hotline 1326, or to the PNP Anti-Cybercrime Group. "
             "If personal data was involved, an organization may also have to notify the National Privacy "
@@ -137,23 +138,23 @@ CYBER_POSTS = [
              "the backup before you need it."),
             ("point", "Turn on ransomware protection", "On Windows, open Windows Security, go to Virus and threat "
              "protection, then Ransomware protection, and turn on Controlled Folder Access. Allow your trusted apps when asked."),
-            "This ends the first five parts of the series. Together, they cover the basics most people need: how "
-            "attacks work, how to protect your accounts, how to spot a scam, how to secure your home network and "
-            "how to survive ransomware. Bookmark them, share them with someone who handles money or records, and "
-            "come back to the action plans every few months.",
+            "With this post, the series has covered the basics most people need: how attacks work, how to protect "
+            "your accounts, how to spot a scam, how to secure your home network and how to survive ransomware. "
+            "Share these posts with someone who handles money or records, and come back to the action plans every few "
+            "months.",
             ("cta", "Start again with Part 1", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
             ("ask", "Has your office ever tested restoring its backups? I would like to hear how it went."),
         ],
     },
     {
-        "date": "November 10, 2026",
+        "date": "November 28, 2026",
         "title": "Cybersecurity Series, Part 4: Securing Your Home and Remote Network",
         "slug": "cybersecurity-part-4-home-network",
         "category": "security",
         "summary": "Your Wi-Fi router is the front door of your digital home. Here is how to lock it, separate your "
                    "smart devices from your work laptop, filter dangerous websites, and understand what a VPN can "
                    "and cannot do.",
-        "publish_on": "2026-11-10",
+        "publish_on": "2026-11-28 22:00",
         "body": [
             "In most homes, the internet arrives through one small box with blinking lights. The technician installs "
             "it, writes the Wi-Fi password on a piece of paper, and leaves. Years later, the same box is still "
@@ -214,8 +215,8 @@ CYBER_POSTS = [
             "at 9.9.9.9. Cloudflare's 1.1.1.1 for Families blocks malware at 1.1.1.2. (The plain 1.1.1.1 address is "
             "fast and private but does not block anything.) You can set these on your router, so every device at "
             "home benefits, or on a single phone or computer.",
-            "Modern phones and browsers also support encrypted DNS, often called DNS over HTTPS or Private DNS on "
-            "Android. Encryption keeps people on the same network from seeing or tampering with the names you look "
+            "Modern browsers and phones also support encrypted DNS, called DNS over HTTPS in browsers and Private "
+            "DNS on Android. Encryption keeps people on the same network from seeing or tampering with the names you look "
             "up. DNS filtering is not a complete defense, but it quietly stops many bad links before the page even "
             "loads.",
             ("h", "Step 4: The Truth About VPNs"),
@@ -263,20 +264,19 @@ CYBER_POSTS = [
              "something you do not recognize, change the Wi-Fi password and reconnect your own devices."),
             ("point", "Try a filtering DNS", "Set 9.9.9.9 or 1.1.1.2 on your router or on your phone, then browse "
              "normally for a week."),
-            "Part 5 closes this first set with the threat that worries offices most: ransomware, and the backup "
-            "habit that defeats it.",
+            "An hour spent on your router protects every person and every device in your home, every day.",
             ("cta", "Read Part 5: Ransomware", "/blog/cybersecurity-part-5-ransomware/"),
             ("ask", "Did you find an old admin password or an unknown device on your router? Tell me what you found."),
         ],
     },
     {
-        "date": "November 10, 2026",
+        "date": "November 21, 2026",
         "title": "Cybersecurity Series, Part 3: The Art of Human Hacking",
         "slug": "cybersecurity-part-3-human-hacking",
         "category": "security",
         "summary": "Most scams do not break into computers; they persuade people. Learn the pressure tricks behind "
                    "phishing, smishing, fake bosses and deepfake calls, and the simple rules that stop them.",
-        "publish_on": "2026-11-10",
+        "publish_on": "2026-11-21 22:00",
         "body": [
             "Why would a criminal spend months looking for a flaw in a well-protected system when a convincing message "
             "can get someone inside to open the door? That is the idea behind social engineering, or human hacking. "
@@ -380,27 +380,27 @@ CYBER_POSTS = [
              "files based only on an email, text or chat. Call back on a number you already know."),
             ("point", "Agree on a family safe word", "Choose a word or question that only your family knows, to "
              "check any emergency call asking for money."),
-            ("point", "Show file extensions", "On Windows, open File Explorer, choose View, then Show, and turn on "
+            ("point", "Show file extensions", "On Windows 11, open File Explorer, choose View, then Show, and turn on "
              "File name extensions. On a Mac, open Finder Settings, then Advanced, and tick Show all filename "
              "extensions."),
             ("point", "Save 1326", "Add the hotline to your contacts, and share it with your parents and older "
              "relatives, who are often targeted."),
-            "In Part 4, we move from people to places: the home network that connects your family and, often, "
-            "your work.",
+            "Technology catches many scams, but the last line of defense is a person who pauses, checks and asks. "
+            "Share these habits with the people around you, especially those who handle money.",
             ("cta", "Read Part 4: Your Home Network", "/blog/cybersecurity-part-4-home-network/"),
             ("ask", "What is the most convincing scam message you have received? Send it to me (remove your personal "
              "details first), and it may help someone else."),
         ],
     },
     {
-        "date": "November 10, 2026",
+        "date": "November 14, 2026",
         "title": "Cybersecurity Series, Part 2: Identity Is the New Perimeter",
         "slug": "cybersecurity-part-2-passwords-and-mfa",
         "category": "security",
         "summary": "Attackers no longer break in; they log in. Here is why long passphrases beat complex passwords, "
                    "how a password manager works, which kinds of two-step login are strongest, and why passkeys "
                    "are the future.",
-        "publish_on": "2026-11-10",
+        "publish_on": "2026-11-14 22:00",
         "body": [
             "A firewall cannot stop someone who walks in with your username and password. That is why many security "
             "people now say that identity is the new perimeter. Your work systems, your bank, your e-wallet and your "
@@ -431,8 +431,7 @@ CYBER_POSTS = [
             ("point", "Reused passwords", "When one website is breached, attackers try the same email and password on "
              "banks, email and social media. This is called credential stuffing, and it works because so many "
              "people reuse passwords."),
-            ("point", "Phishing", "A fake login page collects your password as you type it. We will look at this "
-             "closely in Part 3."),
+            ("point", "Phishing", "A fake login page collects your password as you type it."),
             ("point", "Infostealer malware", "Malicious programs, often hidden in pirated software or fake "
              "downloads, copy the passwords saved in your browser and send them to criminals, who sell them in bulk."),
             "Verizon's 2025 Data Breach Investigations Report found that the abuse of stolen credentials was the "
@@ -503,8 +502,8 @@ CYBER_POSTS = [
              "keep them somewhere safe at home, not in a photo on your phone."),
             ("point", "Stop saving passwords in random places", "Delete passwords stored in notes apps, chats or "
              "unprotected spreadsheets once they are in your password manager."),
-            "Next, in Part 3, we look at the weakest and strongest link in every system: people, and the scams "
-            "designed to fool them.",
+            "None of this takes a computer expert. A password manager, a second factor and a passkey on your email "
+            "will protect you better than any rule about symbols and numbers ever did.",
             ("cta", "Read Part 3: Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
             ("ask", "Have you tried passkeys yet? Tell me which account you switched first."),
         ],
@@ -600,7 +599,7 @@ CYBER_POSTS = [
             ("quote", "You do not need to be impossible to hack. You need to be too costly, too slow and too noisy to "
                       "be worth the trouble."),
             ("h", "Four Myths That Help Attackers"),
-            "Before we go further, let us clear away a few beliefs that make attackers' work easier.",
+            "Let us also clear away a few beliefs that make attackers' work easier.",
             ("point", "Myth: I am not important enough to be targeted", "Most attacks are automated. A program that "
              "tries leaked passwords or scans for unpatched devices does not care who you are. Your account, your "
              "phone number and your computer's power are all worth something to a criminal."),
@@ -625,8 +624,8 @@ CYBER_POSTS = [
              "were fixed months earlier, betting that people keep pressing \"Remind me later.\""),
             ("point", "Name your three most important accounts", "Usually your main email, your bank or e-wallet, and "
              "your work login. Your email matters most, because it can reset the passwords of almost everything else."),
-            "In Part 2, we will protect those accounts with the tools that make the biggest difference: long "
-            "passphrases, password managers, multi-factor authentication and passkeys.",
+            "Start with these three steps this week. They take less than an hour, and they close the doors that "
+            "attackers try first.",
             ("cta", "Read Part 2: Identity", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
             ("ask", "Which cybersecurity topic would you like this series to explain next?"),
         ],

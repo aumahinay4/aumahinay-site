@@ -46,7 +46,8 @@ def feed_items():
 def feed(site):
     """RSS news feed of new posts and lessons, for reading apps and follow-by-email services."""
     def when(day):
-        return format_datetime(datetime.strptime(day, "%Y-%m-%d").replace(tzinfo=PH))
+        fmt = "%Y-%m-%d %H:%M" if len(day) > 10 else "%Y-%m-%d"  # posts may go live at a set time
+        return format_datetime(datetime.strptime(day, fmt).replace(tzinfo=PH))
     items = feed_items()
     rows = "".join(
         f"    <item>\n      <title>{escape(title)}</title>\n      <link>{site}{url}</link>\n"
