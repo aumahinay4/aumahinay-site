@@ -515,15 +515,18 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .blog-filters input:checked + label { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
 .blog-filters input:checked + label .count { color: var(--on-navy-muted); }
 .blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
-.blog-filters { flex-wrap: nowrap; }  /* all the pills stay on one line on every screen */
-.blog-filters label { white-space: nowrap; flex: 0 1 auto; }
-.blog-filters { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }  /* one line; slides sideways when the pills are wider than the screen (5 categories on phones) */
-.blog-filters::-webkit-scrollbar { display: none; }
-.blog-filters label { flex-shrink: 0; }
-@media (max-width: 640px) {  /* phones: smaller pills so All, Software & ALTOS, Public Finance and Personal fit one line */
-  .blog-filters { gap: 2px; margin-top: 22px; }
-  .blog-filters label { font-size: min(14.5394px, 3.232vw); padding: 6px min(4px, 1.5vw); }
-  .blog-filters .count { margin-left: 1px; }
+/* Blog categories as one full-width tab bar, like a navigation bar: every tab shares the width, so all
+   categories show on every screen without sliding (Butch 2026-11-10). Long names wrap to two lines on phones. */
+.blog-filters { display: flex; flex-wrap: nowrap; gap: 0; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.blog-filters label { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; line-height: 1.2; border: 0; border-radius: 0; border-left: 1px solid var(--line); padding: 9px 6px; }
+.blog-filters input:first-child + label { border-left: 0; }
+.blog-filters label:hover { background: color-mix(in srgb, var(--navy) 6%, var(--surface)); }
+.blog-filters .count { display: block; margin: 2px 0 0; font-size: .82em; }
+.blog-filters input:checked + label { box-shadow: inset 0 -3px 0 var(--gold); }
+@media (max-width: 640px) {  /* phones: smaller words so each name fits its tab in at most two lines */
+  .blog-filters { margin-top: 22px; }
+  .blog-filters label { flex: 1 0 min-content; font-size: min(13.5px, 3.4vw); padding: 7px 3px; hyphens: none; overflow-wrap: normal; }  /* each tab as wide as its longest word, the rest shared */
 }
 .post > .meta .dot { margin: 0 -4px; }
 .post > .meta { font-size: 15.6873px; }
