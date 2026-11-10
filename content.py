@@ -473,8 +473,8 @@ TRAININGS = [
 BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
-    ("personal", "Personal", "coral"),
     ("security", "Cybersecurity", "violet"),
+    ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
 
 BLOG = [

@@ -1146,17 +1146,29 @@ def post_day(b):
 
 
 def blog_filters(posts):
-    """Category buttons. Plain radio buttons styled as pills; CSS hides the other posts, no JavaScript."""
+    """Category menu (Butch 2026-11-10): a three-bar button showing the chosen category and its post count;
+    tap it and the categories open as a vertical list. Plain radio buttons inside a <details>; CSS hides the
+    other posts and shows the chosen name on the button, so it works without JavaScript. A tiny script only
+    closes the list after a pick."""
     used = [(key, label) for key, label, _ in BLOG_CATEGORIES if any(b["category"] == key for b in posts)]
     if len(used) < 2:
         return ""
-    choices = [("all", "All", len(posts))] + [(k, l, sum(b["category"] == k for b in posts)) for k, l in used]
-    return t.div(
-        [[t.input(type="radio", name="blog-cat", id=f"cat-{k}", value=k, checked=(k == "all")),
-          t.label(l, " ", t.span(n, class_="count"), for_=f"cat-{k}")] for k, l, n in choices],
+    choices = [("all", "All posts", len(posts))] + [(k, l, sum(b["category"] == k for b in posts)) for k, l in used]
+    return t.details(
+        t.summary(
+            MENU_ICON,
+            [t.span(l, " ", t.span(n, class_="count"), class_="cat-now", data_k=k) for k, l, n in choices],
+            t.span(Raw("&#9662;"), class_="cat-caret", aria_hidden="true"),
+        ),
+        t.div(
+            [[t.input(type="radio", name="blog-cat", id=f"cat-{k}", value=k, checked=(k == "all")),
+              t.label(l, t.span(n, class_="count"), for_=f"cat-{k}")] for k, l, n in choices],
+            class_="cat-list",
+            role="radiogroup",
+            aria_label="Show posts by category",
+        ),
         class_="blog-filters",
-        role="radiogroup",
-        aria_label="Show posts by category",
+        id="blog-cats",
     )
 
 
@@ -1180,7 +1192,8 @@ def blog():
                 class_="lead",
             ),
             posts,
-            t.script(Raw('(function(){var m=/^#cat-(\\w+)$/.exec(location.hash);var r=m&&document.getElementById("cat-"+m[1]);if(r)r.checked=true;})();')),
+            t.script(Raw('(function(){var m=/^#cat-(\\w+)$/.exec(location.hash);var r=m&&document.getElementById("cat-"+m[1]);if(r)r.checked=true;'
+                         'var d=document.getElementById("blog-cats");if(d)d.addEventListener("change",function(){d.open=false;});})();')),
             t.p(
                 "Views here are my own and do not represent any government office.",
                 class_="muted note",

@@ -507,24 +507,28 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
 .cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
 .cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
-.blog-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+/* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
+.blog-filters { margin-top: 26px; position: relative; max-width: 340px; }
+.blog-filters > summary { list-style: none; display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 14px;
+  background: var(--surface); border: 1px solid var(--line); color: var(--text); font-weight: 600; font-size: 16.0795px; }
+.blog-filters > summary::-webkit-details-marker { display: none; }
+.blog-filters > summary svg { width: 22px; height: 22px; flex: none; fill: none; stroke: var(--bar-ink); stroke-width: 2; stroke-linecap: round; }
+.blog-filters > summary:hover, .blog-filters[open] > summary { border-color: var(--navy); }
+.blog-filters > summary:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
+.blog-filters .cat-now { display: none; }
+.blog-filters .count { font-weight: 500; color: var(--muted); margin-left: 6px; }
+.blog-filters .cat-caret { margin-left: auto; color: var(--muted); transition: transform .15s; }
+.blog-filters[open] .cat-caret { transform: rotate(180deg); }
+.blog-filters .cat-list { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-top: 0; }
 .blog-filters input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-.blog-filters label { cursor: pointer; font-size: 15.6873px; font-weight: 600; padding: 8px 16px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--line); transition: background .15s, color .15s, border-color .15s; }
-.blog-filters label:hover { border-color: var(--muted); }
-.blog-filters .count { font-weight: 500; color: var(--muted); margin-left: 2px; }
-.blog-filters input:checked + label { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
+.blog-filters label { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 11px 14px;
+  font-weight: 600; font-size: 16.0795px; color: var(--text); border-top: 1px solid var(--line); }
+.blog-filters input:first-child + label { border-top: 0; }
+.blog-filters label:hover { background: color-mix(in srgb, var(--navy) 6%, var(--surface)); }
+.blog-filters input:checked + label { background: var(--navy); color: var(--on-navy); box-shadow: inset 4px 0 0 var(--gold); }
 .blog-filters input:checked + label .count { color: var(--on-navy-muted); }
-.blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
-.blog-filters { flex-wrap: nowrap; }  /* all the pills stay on one line on every screen */
-.blog-filters label { white-space: nowrap; flex: 0 1 auto; }
-.blog-filters { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }  /* one line; slides sideways when the pills are wider than the screen (5 categories on phones) */
-.blog-filters::-webkit-scrollbar { display: none; }
-.blog-filters label { flex-shrink: 0; }
-@media (max-width: 640px) {  /* phones: smaller pills so All, Software & ALTOS, Public Finance and Personal fit one line */
-  .blog-filters { gap: 2px; margin-top: 22px; }
-  .blog-filters label { font-size: min(14.5394px, 3.232vw); padding: 6px min(4px, 1.5vw); }
-  .blog-filters .count { margin-left: 1px; }
-}
+.blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: -2px; }
+@media (max-width: 640px) { .blog-filters { margin-top: 22px; max-width: none; } }
 .post > .meta .dot { margin: 0 -4px; }
 .post > .meta { font-size: 15.6873px; }
 .post h1 { font-size: clamp(1.5128rem, 3.4064vw, 2.2074rem); line-height: 1.15; margin: 18px 0 0; }
@@ -593,6 +597,11 @@ from content import BLOG_CATEGORIES  # noqa: E402
 CSS += "".join(
     f'.blog-col:has(#cat-{key}:checked)  .post-card:not([data-cat="{key}"]) {{ display: none; }}\n'
     for key, _, _ in BLOG_CATEGORIES
+)
+# The menu button names the chosen category ("All posts" until one is picked).
+CSS += "".join(
+    f'.blog-col:has(#cat-{key}:checked) .cat-now[data-k="{key}"] {{ display: inline; }}\n'
+    for key in ["all"] + [k for k, _, _ in BLOG_CATEGORIES]
 )
 
 # About story: "View more" / "View less" read like links in the ALTOS violet, gold on hover
