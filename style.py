@@ -517,6 +517,9 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .blog-filters input:focus-visible + label { outline: 2px solid var(--blue-ink); outline-offset: 2px; }
 .blog-filters { flex-wrap: nowrap; }  /* all the pills stay on one line on every screen */
 .blog-filters label { white-space: nowrap; flex: 0 1 auto; }
+.blog-filters { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }  /* one line; slides sideways when the pills are wider than the screen (5 categories on phones) */
+.blog-filters::-webkit-scrollbar { display: none; }
+.blog-filters label { flex-shrink: 0; }
 @media (max-width: 640px) {  /* phones: smaller pills so All, Software & ALTOS, Public Finance and Personal fit one line */
   .blog-filters { gap: 2px; margin-top: 22px; }
   .blog-filters label { font-size: min(14.5394px, 3.232vw); padding: 6px min(4px, 1.5vw); }

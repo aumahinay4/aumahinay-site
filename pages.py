@@ -384,6 +384,7 @@ def home():
         "software": "Building ALTOS, Python, and software that keeps public money accountable.",
         "finance": "Local treasury work, collections, disbursements and the rules behind them.",
         "personal": "The farm, the province, and life beyond the office.",
+        "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
     }
     return part(
         "Home", "/",
@@ -1057,6 +1058,8 @@ def blog_block(x):
         before, label, url, after = rest
         return t.p(before, t.a(label, href=url, target="_blank", rel="noopener"), after, class_="muted source")
     if kind == "cta":  # a button link inside a post, e.g. ("cta", "Open the RPT Calculator", "/tools/rpt-calculator/")
+        if not post_is_live(rest[1]):  # a button to a scheduled post appears only once that post is live
+            return ""
         return t.p(t.a(rest[0], href=rest[1], class_="btn primary"), class_="cta")
     if kind == "ask":
         return t.p(rest[0], " ", t.a("Email me", href=f"mailto:{SITE['email']}"), ".", class_="ask")
@@ -1122,9 +1125,19 @@ def blog_post(b):
 
 
 def live_posts():
-    """Posts without publish_on, or whose publish_on date has arrived (Philippine time)."""
-    today = datetime.now(timezone(timedelta(hours=8))).date().isoformat()
-    return [b for b in BLOG if "publish_on" not in b or (b["publish_on"] and b["publish_on"] <= today)]
+    """Posts without publish_on, or whose publish_on has arrived (Philippine time). publish_on is a date
+    ("2026-11-03", live from midnight) or a date and time ("2026-11-14 22:00", live from that minute)."""
+    now = datetime.now(timezone(timedelta(hours=8)))
+    today, minute = now.date().isoformat(), now.strftime("%Y-%m-%d %H:%M")
+    return [b for b in BLOG if "publish_on" not in b
+            or (b["publish_on"] and b["publish_on"] <= (minute if len(b["publish_on"]) > 10 else today))]
+
+
+def post_is_live(url):
+    """True when url is a blog post that is live now (or not a blog post at all)."""
+    if not url.startswith("/blog/") or url == "/blog/":
+        return True
+    return any(post_url(b) == url for b in live_posts())
 
 
 def post_day(b):
