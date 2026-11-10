@@ -926,7 +926,7 @@ html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:foc
 """
 
 CSS += """
-/* Section name in bold beside the three-bar menu (Butch 2026-11-10: "HOME", as big as fits in the bar) */
+/* HOME in bold beside the three-bar menu, Home page only (Butch 2026-11-10), as big as fits in the bar */
 header.site .bar-title { font: 800 1.5rem/1 var(--font-display); letter-spacing: .02em; color: var(--bar-ink, var(--navy));
   text-decoration: none; margin-left: 2px; white-space: nowrap; }
 header.site .bar-title:hover { color: var(--gold-ink); text-decoration: none; }

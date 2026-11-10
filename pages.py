@@ -106,14 +106,8 @@ def menu_items():
 
 
 def _bar_title(active):
-    """The page's section name in bold beside the three bars, e.g. HOME (Butch 2026-11-10). Lessons, notes and
-    posts show their section (TUTORIALS, STUDY NOTES, BLOG)."""
-    active = active or ""
-    hits = [(href, label) for href, label in MENU if active == href or (href != "/" and active.startswith(href))]
-    if not hits:
-        return None
-    href, label = max(hits, key=lambda h: len(h[0]))
-    return t.a(label.upper(), href=href, class_="bar-title")
+    """HOME in bold beside the three bars, on the Home page only, so it is clear you are home (Butch 2026-11-10)."""
+    return t.a("HOME", href="/", class_="bar-title") if active == "/" else None
 
 
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
