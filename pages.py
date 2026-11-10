@@ -456,14 +456,16 @@ def author_card():
     professional blog)."""
     return t.div(
         t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
+        t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), class_="author-name"),  # one line beside the photo (Butch 2026-11-10)
         t.div(
-            t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
+            t.p("He is a public administration practitioner with over "
                 "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
                 "He has also earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
                 "He writes, teaches and builds software in his personal capacity, outside official working hours."),
             t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
                 t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
                 t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
+            class_="author-text",
         ),
         class_="card author",
     )
