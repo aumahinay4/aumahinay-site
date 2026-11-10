@@ -8,6 +8,41 @@
     <language>en</language>
     <lastBuildDate>Tue, 10 Nov 2026 00:00:00 +0800</lastBuildDate>
     <item>
+      <title>Cybersecurity Series, Part 5: Inside a Ransomware Attack</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-5-ransomware/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-5-ransomware/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0800</pubDate>
+      <description>How ransomware gangs break in, steal before they lock, and pressure victims to pay, what the PhilHealth attack of 2023 taught the country, and the backup habit that takes away their leverage.</description>
+    </item>
+    <item>
+      <title>Cybersecurity Series, Part 4: Securing Your Home and Remote Network</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-4-home-network/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-4-home-network/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Your Wi-Fi router is the front door of your digital home. Here is how to lock it, separate your smart devices from your work laptop, filter dangerous websites, and understand what a VPN can and cannot do.</description>
+    </item>
+    <item>
+      <title>Cybersecurity Series, Part 3: The Art of Human Hacking</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-3-human-hacking/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-3-human-hacking/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Most scams do not break into computers; they persuade people. Learn the pressure tricks behind phishing, smishing, fake bosses and deepfake calls, and the simple rules that stop them.</description>
+    </item>
+    <item>
+      <title>Cybersecurity Series, Part 2: Identity Is the New Perimeter</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Attackers no longer break in; they log in. Here is why long passphrases beat complex passwords, how a password manager works, which kinds of two-step login are strongest, and why passkeys are the future.</description>
+    </item>
+    <item>
+      <title>Cybersecurity Series, Part 1: How Modern Cyberattacks Really Work</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-1-how-cyberattacks-work/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-1-how-cyberattacks-work/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Forget the hoodie-wearing genius. Today&#x27;s cyberattacks are run like businesses. Learn what security protects, who the attackers are, how a breach unfolds step by step, and why layered defenses work.</description>
+    </item>
+    <item>
       <title>How to Use the RPT Calculator: Know Your Amilyar Before You Pay</title>
       <link>https://aumahinay.dev/blog/how-to-use-the-rpt-calculator/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/how-to-use-the-rpt-calculator/</guid>

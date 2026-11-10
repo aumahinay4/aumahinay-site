@@ -474,6 +474,7 @@ BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
     ("personal", "Personal", "coral"),
+    ("security", "Cybersecurity", "violet"),
 ]
 
 BLOG = [
@@ -2153,3 +2154,8 @@ BLOG = [
         "category": "personal",
     },
 ]
+
+# Cybersecurity series posts live in cyber_posts.py; they go at the top of the newest-first list.
+from cyber_posts import CYBER_POSTS  # noqa: E402
+
+BLOG[:0] = CYBER_POSTS

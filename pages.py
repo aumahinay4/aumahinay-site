@@ -384,6 +384,7 @@ def home():
         "software": "Building ALTOS, Python, and software that keeps public money accountable.",
         "finance": "Local treasury work, collections, disbursements and the rules behind them.",
         "personal": "The farm, the province, and life beyond the office.",
+        "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
     }
     return part(
         "Home", "/",
