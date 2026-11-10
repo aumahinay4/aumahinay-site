@@ -751,9 +751,11 @@ def note_page(n):
             t.p("✓ Last checked: " + NOTES_INFO["checked"] + " · against RA 7160 (Local Government Code) and its amendments", class_="checked"),
             [note_block(b) for b in n["body"]],
             t.div(t.h3(ex_title), t.ol([t.li(s_) for s_ in steps]), t.p(t.b("Answer: "), ex_answer), class_="card example"),
+            t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") else None,
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
             practice_list(n["practice"]),
+            [t.h2("Laws and rules cited"), t.ul([t.li(x) for x in n["sources"]], class_="note-sources")] if n.get("sources") else None,
             t.p(NOTES_INFO["disclaimer"], class_="muted"),
             react_box(note_url(n)),
             t.div(
