@@ -411,11 +411,11 @@ def home():
                 t.a(t.h3(title), t.p(text), t.span(go, class_="go"), href=href, class_="card focus")
                 for title, text, go, href in (
                     ("Blog",
-                     "Stories and notes on public finance, treasury work and building software. "
-                     "New posts every Sunday.", "Read the blog →", "/blog/"),
+                     "Stories and notes on public finance, treasury work, cybersecurity and building software.",
+                     "Read the blog →", "/blog/"),
                     ("Tutorials",
-                     "Free, beginner-friendly lessons: Python for treasury work, with new lessons on Saturdays, "
-                     "and Civil Service exam vocabulary every Wednesday.", "Start learning →", "/tutorials/"),
+                     "Free, beginner-friendly lessons: Python for treasury work and Civil Service exam "
+                     "vocabulary with practice questions.", "Start learning →", "/tutorials/"),
                     ("ALTOS",
                      "The Automated Local Treasury Operations System, a working treasury system for "
                      "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
@@ -445,21 +445,27 @@ def home():
         section_head("Project", "All about ALTOS", "/projects/"),
         t.div(altos_feature_card(), class_="grid one"),
         t.h2("About the author"),
-        t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
-            t.div(
-                t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
-                    "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
-                    "He has also earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
-                    "He writes, teaches and builds software in his personal capacity, outside official working hours."),
-                t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
-                    t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
-                    t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
-            ),
-            class_="card author",
-        ),
+        author_card(),
         description=f"{SITE['short_name']}: plain-language writing on local treasury work and public finance, "
                     "free Python lessons for treasury staff, and the ALTOS treasury system.",
+    )
+
+
+def author_card():
+    """Short author box: on Home and at the end of every blog post (Butch 2026-11-10: look like a complete,
+    professional blog)."""
+    return t.div(
+        t.img(src=asset_url("hero-photo.jpg"), alt="", width="400", height="400", class_="hero-photo author-photo"),
+        t.div(
+            t.p(t.b("Ambrosio “Butch” U. Mahinay, MPA"), " is a public administration practitioner with over "
+                "15 years in government service, more than 13 of them in local treasury and fiscal work in Quezon Province. "
+                "He has also earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
+                "He writes, teaches and builds software in his personal capacity, outside official working hours."),
+            t.p(t.a("More about me", href="/about/"), t.span(" · ", class_="muted"),
+                t.a("Contact", href="/contact/"), t.span(" · ", class_="muted"),
+                t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
+        ),
+        class_="card author",
     )
 
 
@@ -474,6 +480,17 @@ def contact():
             t.li(t.b("Email: "), t.a(SITE["email"], href=f"mailto:{SITE['email']}")),
             t.li(t.b("Website: "), t.a(f"https://{SITE['domain']}", href="/")),
             class_="plain-list",
+        ),
+        t.h2("Good reasons to write"),
+        t.ul(
+            t.li(t.b("A question about a post, lesson or study note. "), "If something is unclear, others are "
+                 "probably wondering too, and I may answer it in a future post."),
+            t.li(t.b("A correction. "), "Laws, rates and procedures change. If you spot an error or an outdated "
+                 "rule, tell me and I will check it and fix it."),
+            t.li(t.b("The ALTOS book. "), "Requests to read the full book and feedback on the preview."),
+            t.li(t.b("Talks and trainings. "), "Invitations to speak about treasury work, Python for government "
+                 "offices or staying safe online."),
+            class_="reasons",
         ),
         t.p("Please don't send personal data you don't want me to keep. How I handle what you send is explained "
             "in the ", t.a("Privacy Policy", href="/privacy/"), "."),
@@ -1117,6 +1134,7 @@ def blog_post(b):
     return t.article(
         post_meta(b),
         t.h1(b["title"]),
+        t.p("By ", t.a("Ambrosio “Butch” U. Mahinay", href="/about/"), class_="byline"),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
         [blog_block(x) for x in b["body"]],
         class_="post",
@@ -1313,6 +1331,9 @@ def post_page(b):
             t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
             blog_post(b),
             react_box(post_url(b)),
+            t.h2("About the author", class_="post-section"),
+            author_card(),
+            related_posts(b, posts, skip=(newer, older)),  # the Newer/Older links below already show those two
             t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
                   aria_label="More posts"),
             t.p("Views here are my own and do not represent any government office.", class_="muted note"),
@@ -1321,6 +1342,22 @@ def post_page(b):
         description=b.get("summary") or post_teaser(b),
         url=post_url(b),
         og_type="article",
+    )
+
+
+def related_posts(b, posts, skip=()):
+    """'Keep reading': up to three other live posts, same category first (newest first), then the newest others."""
+    others = sorted((p for p in posts if p is not b and p not in skip), key=post_day, reverse=True)
+    picks = [p for p in others if p["category"] == b["category"]][:3]
+    picks += [p for p in others if p not in picks][:3 - len(picks)]
+    if not picks:
+        return ""
+    return t.section(
+        t.h2("Keep reading", class_="post-section"),
+        t.div([t.a(t.span(category_label(p), t.span(f"{reading_minutes(p)} min read", class_="muted")),
+                   t.b(p["title"]), href=post_url(p), class_="related-card") for p in picks],
+              class_="related"),
+        class_="keep-reading",
     )
 
 
@@ -1435,7 +1472,6 @@ def about():
         t.p(ABOUT["contact"]),
         contact,
         t.aside(t.h3(ABOUT["disclaimer_title"]), t.p(ABOUT["disclaimer"]), class_="disclaimer"),
-        t.p(t.a("Privacy Policy", href=PRIVACY_URL)),
         description=f"About {SITE['name']} (Butch): public administration practitioner with 15+ years in local "
                     "government revenue operations, author, and self-taught software developer.",
     )
