@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TRAININGS
+from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
 from highlight import highlight
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
@@ -95,7 +95,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
-MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy")]
+MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
 
 
 def menu_items():
@@ -281,10 +281,13 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             t.main(t.div(body, class_="wrap")),
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
             t.footer(t.div(t.span("Built in Python", class_="built"),  # far left (Butch 2026-11-10)
-                           t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+                           t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+                                  " · ",
+                                  t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
+                                  class_="legal-links"),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/")]))),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/")]))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
@@ -486,7 +489,7 @@ def author_card():
     "be consistent"): same name, same violet roles line and the same facts, in third person ("he", Butch 2026-11-10) as the About intro."""
     return t.div(
         t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo"),
+            t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo", loading="lazy"),
             t.div(
                 t.p("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"),
                 t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
@@ -1703,16 +1706,18 @@ def _privacy_text(x):
     """One run of policy text: a plain string, or a list mixing strings and (label, link) pairs."""
     if isinstance(x, str):
         return x
-    return [t.a(p[0], href=p[1], target="_blank", rel="noopener") if isinstance(p, tuple) else p for p in x]
+    return [(t.a(p[0], href=p[1], target="_blank", rel="noopener") if p[1].startswith("http") else t.a(p[0], href=p[1]))
+            if isinstance(p, tuple) else p for p in x]
 
 
-def privacy():
+def _policy_body(sections):
+    """Headings, paragraphs, labelled lists and the contact block of a policy page (Privacy, Terms)."""
     body = []
-    for heading, blocks in PRIVACY["sections"]:
+    for heading, blocks in sections:
         body.append(t.h2(heading))
         for blk in blocks:
-            if isinstance(blk, str):
-                body.append(t.p(blk))
+            if isinstance(blk, (str, list)):
+                body.append(t.p(_privacy_text(blk)))
             elif blk[0] == "list":
                 body.append(t.ul([t.li(t.b(label), " ", _privacy_text(text)) for label, text in blk[1]]))
             elif blk[0] == "contact":
@@ -1720,21 +1725,41 @@ def privacy():
                     t.li(t.b("Email: "), t.a(SITE["email"], href=f"mailto:{SITE['email']}")),
                     t.li(t.b("Website: "), t.a(f"https://{SITE['domain']}", href="/")),
                     class_="plain-list"))
+    return body
+
+
+def _policy_page(title, url, eyebrow, policy, description):
     return part(
-        "Privacy Policy", PRIVACY_URL,
-        t.p("Privacy", class_="eyebrow"),
-        t.h1("Privacy Policy"),
-        t.p(t.b("Effective date: "), PRIVACY["effective"], t.br(), t.b("Website: "),
+        title, url,
+        t.p(eyebrow, class_="eyebrow"),
+        t.h1(title),
+        t.p(t.b("Effective date: "), policy["effective"], t.br(), t.b("Website: "),
             t.a(f"https://{SITE['domain']}", href="/"), class_="muted policy-meta"),
-        t.p(PRIVACY["intro"], class_="lead"),
-        *body,
-        description=f"Privacy Policy of {SITE['domain']}: what information is collected, how it is used, "
-                    "and your rights under the Philippine Data Privacy Act of 2012 (RA 10173).",
-        url=PRIVACY_URL,
+        t.p(policy["intro"], class_="lead"),
+        *_policy_body(policy["sections"]),
+        description=description,
+        url=url,
     )
 
 
-PARTS = {"/": home, "/projects/": projects, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, RPT_URL: rpt_page}
+def privacy():
+    return _policy_page(
+        "Privacy Policy", PRIVACY_URL, "Privacy", PRIVACY,
+        f"Privacy Policy of {SITE['domain']}: what information is collected, how it is used, "
+        "and your rights under the Philippine Data Privacy Act of 2012 (RA 10173).")
+
+
+TERMS_URL = "/terms/"
+
+
+def terms():
+    return _policy_page(
+        "Terms of Use", TERMS_URL, "Terms & disclaimer", TERMS,
+        f"Terms of Use and disclaimer of {SITE['domain']}: the posts, study notes, tutorials and RPT "
+        "calculator are for learning, not legal or financial advice, and are written in a personal capacity.")
+
+
+PARTS = {"/": home, "/projects/": projects, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, RPT_URL: rpt_page}
 
 
 def _full_page(build):

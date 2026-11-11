@@ -705,10 +705,12 @@ html.menu-js.menu-open header.site #site-menu a {
 html.menu-js.menu-open header.site #site-menu a:hover { color: var(--gold); text-decoration: none; }
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 8px 0; font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 8px 0; font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 18px; padding-top: 22px; border-top: 1px solid rgba(238, 243, 255, .16); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active,
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"].active { color: var(--gold); }
 html.menu-js.menu-open .menu-close { display: grid; place-content: center; position: absolute; top: calc(14px + env(safe-area-inset-top, 0px));
   right: max(18px, env(safe-area-inset-right, 0px)); width: 48px; height: 48px; padding: 0; cursor: pointer; background: transparent; border: 0; color: var(--on-navy); }
 html.menu-js.menu-open .menu-close svg { width: 34px; height: 34px; stroke-width: 1.6; }
@@ -872,7 +874,8 @@ html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset
 html.menu-js.menu-open header.site { z-index: 60; }
 html.menu-js.menu-open header.site #site-menu a { padding: 9px 0; font-size: clamp(1.08rem, 4.86vw, 1.395rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 13px; padding-top: 16px; }
 html.menu-js.menu-open .menu-close svg { width: 25px; height: 25px; }
 html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-inset-top, 0px)); }
@@ -912,10 +915,12 @@ html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { color: var(--muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { color: var(--muted); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { border-top-color: var(--line); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold-ink); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active,
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"].active { color: var(--gold-ink); }
 html.menu-js.menu-open .menu-close { color: var(--text); }
 html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
 
@@ -1002,7 +1007,8 @@ ol.series-list h3 { font-size: 1.1787rem; }
 .reader .count { font-size: 15.5052px; }
 html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.45rem, 6.6vw, 1.9rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(1.05rem, 4.6vw, 1.25rem) * 1.025); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(1.05rem, 4.6vw, 1.25rem) * 1.025); }
 .roles { font-size: 1.0762rem; }
 .disclaimer h3 { font-size: 1.025rem; }
 .vocab-page .card.word h2 { font-size: 1.4862rem; }
@@ -1017,7 +1023,8 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: c
 .rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.08rem, 4.86vw, 1.395rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.2185rem, 4.417vw, 2.864rem) * 1.025); }
 header.site .bar-title { font-size: 1.5375rem; }
@@ -1031,9 +1038,11 @@ footer.legal span { color: var(--muted); }
 footer.legal .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; }
 footer.legal .built { white-space: nowrap; }
 footer.legal .built { justify-self: start; }
+footer.legal .legal-links { white-space: nowrap; }
+@media (max-width: 640px) { footer.legal .wrap { grid-template-columns: minmax(0,1fr); row-gap: 6px; } }  /* phones: links centred on their own line under "Built in Python" (no overlap) */
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/" class="active" aria-current="page">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Treasury</p><h1>Study Notes</h1><p class="lead">Plain-language notes on local treasury work: where local revenue comes from, how real property and business taxes are computed, and how money is collected, kept and paid out. Each note explains the law in everyday words, works through an example and ends with a 10-question quiz.</p><p class="muted">These are independent study notes written from the law and from years of treasury work. They are not official materials of the Bureau of Local Government Finance (BLGF), the Civil Service Commission or any office, and they do not contain actual exam questions. Always check the law and your local revenue code.</p><div class="lesson-list"><a href="/study-notes/sources-of-local-revenue/" class="card lesson"><div class="meta"><span class="badge">Note 1</span><span class="muted">explainer · example · 10-question quiz</span></div><h3>Sources of local revenue</h3><p>Where a province, city, municipality or barangay gets its money, what each level may tax, and what no local government may tax at all.</p><span class="go">Read the note →</span></a></div></div></main><footer class="legal"><div class="wrap"><span class="built">Built in Python</span><a href="/privacy/">Privacy Policy</a></div></footer><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/" class="active" aria-current="page">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Treasury</p><h1>Study Notes</h1><p class="lead">Plain-language notes on local treasury work: where local revenue comes from, how real property and business taxes are computed, and how money is collected, kept and paid out. Each note explains the law in everyday words, works through an example and ends with a 10-question quiz.</p><p class="muted">These are independent study notes written from the law and from years of treasury work. They are not official materials of the Bureau of Local Government Finance (BLGF), the Civil Service Commission or any office, and they do not contain actual exam questions. Always check the law and your local revenue code.</p><div class="lesson-list"><a href="/study-notes/sources-of-local-revenue/" class="card lesson"><div class="meta"><span class="badge">Note 1</span><span class="muted">explainer · example · 10-question quiz</span></div><h3>Sources of local revenue</h3><p>Where a province, city, municipality or barangay gets its money, what each level may tax, and what no local government may tax at all.</p><span class="go">Read the note →</span></a></div></div></main><footer class="legal"><div class="wrap"><span class="built">Built in Python</span><span class="legal-links"><a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms of Use</a></span></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
