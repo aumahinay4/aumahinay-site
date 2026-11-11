@@ -40,7 +40,7 @@ CSS = """
 html { scroll-behavior: smooth; background: var(--bg); }  /* no navy footer any more (Butch 2026-11-09) */  /* navy above the top bar and below the footer when a phone over-scrolls */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--text); font: 17.144px/1.5 var(--font-body);  /* line spacing 1.5 on every screen */ -webkit-font-smoothing: antialiased; }
-a { color: var(--blue-ink); text-decoration: none; font-weight: 600; }
+a { color: var(--gold-ink); text-decoration: none; font-weight: 600; }  /* links gold like the active menu word (Butch 2026-11-11) */
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 img { max-width: 100%; height: auto; }
@@ -148,7 +148,7 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15.127px; border: 1.5px solid transparent; transition: transform .15s, background .15s; }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
-.btn.primary { background: var(--gold); color: var(--navy-deep); }
+.btn.primary { background: color-mix(in srgb, var(--gold) 85%, #fff); color: var(--navy-deep); }  /* gold 15% lighter (Butch 2026-11-11) */
 .btn.primary:hover { background: #ffd472; }
 .btn.white { background: #fff; color: var(--navy-deep); border-color: var(--line); }  /* Home ALTOS card button: white instead of gold (Butch 2026-11-04) */
 .btn.white:hover { border-color: var(--gold); }
@@ -545,7 +545,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .post-card h2::after { display: none; }
 .post-card h2 a { color: var(--text); }
 .post-card h2 a::before { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }  /* whole card is clickable */
-.post-card h2 a:hover { color: var(--blue-ink); }
+.post-card h2 a:hover { color: var(--gold-ink); }
 .post-card .teaser { margin: 10px 0 0; color: var(--muted); text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 .post-card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: 16.8078px; }
 @media (max-width: 640px) { .post-card { padding: 20px 20px 18px; } }
@@ -627,7 +627,7 @@ ol.series-list .meta { display: flex; flex-wrap: wrap; align-items: center; gap:
 ol.series-list h3 { margin: 8px 0 0; font-size: 1.15rem; line-height: 1.3; }
 ol.series-list h3 a { color: var(--text); }
 ol.series-list h3 a::before { content: ""; position: absolute; inset: 0; }  /* whole row is clickable */
-ol.series-list h3 a:hover { color: var(--blue-ink); }
+ol.series-list h3 a:hover { color: var(--gold-ink); }
 ol.series-list li p { margin: 6px 0 0; color: var(--muted); }
 ol.series-list li.upcoming { background: color-mix(in srgb, var(--surface) 55%, var(--bg)); box-shadow: none; }
 ol.series-list li.upcoming h3 { color: var(--muted); }
@@ -852,7 +852,7 @@ html.quiz-js .practice details.answer > summary { display: none; }
 .card.author .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); white-space: nowrap; }
 .card.author .author-bio { margin: 0 0 14px; }
 .card.author .author-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; text-align: left; }
-.card.author .author-links a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14.5px; font-weight: 600; color: var(--blue-ink); text-decoration: none; }
+.card.author .author-links a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14.5px; font-weight: 600; color: var(--gold-ink); text-decoration: none; }
 .card.author .author-links a:hover { border-color: var(--gold); text-decoration: none; }
 @media (max-width: 640px) { .card.author .author-photo { width: 60px; height: 60px; } .card.author .author-top { gap: 12px; }
   .card.author .author-name { font-size: min(1.12em, calc((100vw - 120px) / 16.5)); }
@@ -860,7 +860,7 @@ html.quiz-js .practice details.answer > summary { display: none; }
   .card.author .author-links a { padding: 5px 12px; font-size: 14px; } }
 a.card.focus { display: block; color: inherit; text-decoration: none; }
 a.card.focus:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
-a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; color: var(--blue-ink); }
+a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; color: var(--gold-ink); }
 /* name + MPA on ONE line beside the photo, the rest below the photo (Butch 2026-11-10) */
 .post .byline { margin: 6px 0 0; font-size: 15.6873px; color: var(--muted); }  /* "By ..." under a post title */
 .post .byline a { font-weight: 600; }
