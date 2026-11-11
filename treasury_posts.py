@@ -7,6 +7,93 @@ sources listed at the end of each post.
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 2: The January Rush and Your Business Permit",
+        "date": "January 10, 2027",
+        "publish_on": "2027-01-10",
+        "slug": "january-rush-business-permit",
+        "category": "finance",
+        "summary": "Every January the line for business permits stretches out the door, and some owners still "
+                   "miss the deadline by a day. Here is why the rush happens, what being late really costs, "
+                   "and how to get through it in one visit.",
+        "body": [
+            "One morning in late January, the owner of a small bakery reached the treasury window with a "
+            "folder of papers and a tired smile. She had been in line since seven. When the clerk computed her "
+            "business tax, there was an extra line on the bill: a surcharge. Her deadline had passed two days "
+            "earlier. \u201cAkala ko katapusan pa ng Enero,\u201d she said. She thought it was the end of the "
+            "month.",
+            "(As in every part of this series, the case is a composite. No real person, business or amount is "
+            "described.)",
+            "Scenes like this repeat in town halls every January. Most of them can be avoided with three things: "
+            "knowing the real deadline, knowing what you are paying for, and bringing the right papers.",
+            ("h", "Why Everything Happens in January"),
+            "The local business tax is a yearly tax, and under the Local Government Code it becomes due on the "
+            "first day of the year. It is paid within the first 20 days of January. An owner who prefers to pay "
+            "by quarter can do that too, with each installment due within the first 20 days of its quarter.",
+            "So the real deadline is January 20, not January 31. Because almost every business in town renews at "
+            "the same time, the line is longest in the last few days before the 20th.",
+            "The tax is computed on what the business sold the year before. That is why the treasury asks for "
+            "last year\u2019s gross sales or receipts at renewal. My study note on business tax and the "
+            "mayor\u2019s permit walks through the rates and rules in detail.",
+            ("cta", "Read the study note: Business tax and the mayor's permit",
+             "/study-notes/business-tax-and-mayors-permit/"),
+            ("h", "Two Payments, One Visit"),
+            "Renewal involves two different payments, and owners often mix them up:",
+            ("point", "The business tax", "A tax on the privilege of doing business, based on gross sales. It goes "
+             "to the town\u2019s general fund like any other tax."),
+            ("point", "The regulatory fees", "Fees for the mayor\u2019s permit and the inspections behind it. The "
+             "law says these must be reasonable and in line with the actual cost of regulating."),
+            "The Ease of Doing Business Act (RA 11032) pushed towns to handle both in one place. It requires a "
+            "single unified application form and a Business One Stop Shop, where the treasury, the permit "
+            "office and other offices work side by side. The Bureau of Fire Protection is also meant to sit in "
+            "the same area, and barangay clearances can now be issued at the city or municipal hall.",
+            ("h", "What Being Late Really Costs"),
+            "The Code allows the sanggunian to charge a surcharge of up to 25% of the unpaid tax, plus interest of "
+            "up to 2% a month, for no more than 36 months. Your town\u2019s revenue code sets the actual rates.",
+            "In our bakery\u2019s case, say its first-quarter installment was \u20b12,000. At the maximum rate, "
+            "paying two days late added a surcharge of \u20b1500, and interest was added on top. That is "
+            "money the owner could have kept just by coming a week earlier.",
+            "The sanggunian may extend the deadline for a good reason, but by no more than six months. If your "
+            "town announces an extension, it will be by ordinance or resolution, so check the town\u2019s "
+            "official page or the treasury before you rely on a rumor in the line.",
+            ("h", "Declare Sales Honestly"),
+            "It can be tempting to report lower sales to pay a lower tax. It is a poor bet. The treasurer may "
+            "examine a business\u2019s books once every tax period, and unpaid taxes can be assessed for up to "
+            "five years after they fell due, or ten years when there was fraud. An underpayment found later "
+            "comes back with surcharge and interest attached.",
+            "Keeping simple records, such as your official receipts, sales book and bank deposits, also makes the "
+            "declaration quick to prepare and easy to defend.",
+            ("h", "What to Bring"),
+            "Each town sets its own list, so check with your treasury or Business One Stop Shop. Most renewals "
+            "ask for these:",
+            ("point", "Last year\u2019s permit and official receipts", "They show what you paid and help the "
+             "clerk find your record."),
+            ("point", "Your gross sales for last year", "Usually a written declaration, supported by your records or "
+             "your filed tax returns."),
+            ("point", "The unified application form", "Filled in, signed, and with any changes to your address, "
+             "owner or line of business."),
+            ("point", "Clearances your town requires", "Such as the barangay clearance and the fire safety "
+             "inspection, which can often be handled at the same one-stop shop."),
+            ("h", "How to Beat the Line"),
+            "Go in the first two weeks of January, not the last three days before the 20th. Ask whether your town "
+            "accepts applications online, since the law requires towns to automate the process. If cash is "
+            "tight after the holidays, pay by quarter instead of risking a late annual payment. The law also "
+            "sets processing times for government offices: three working days for a simple application and "
+            "seven for a complex one.",
+            ("h", "The Question to Ask"),
+            "When is your business tax actually due, and do you have last year\u2019s sales ready today? If you "
+            "work in a treasury, a good question for your office is this: does our town announce the January "
+            "20 deadline early and clearly, before the line forms?",
+            ("ask", "Have you ever been caught by the January deadline? I'd be glad to hear how your town handles "
+                    "the rush."),
+            ("h", "Sources"),
+            ("source", "", "Republic Act No. 7160, the Local Government Code of 1991",
+             "https://www.lawphil.net/statutes/repacts/ra1991/ra_7160_1991.html",
+             ", Sections 143, 147, 165, 167, 168, 171 and 194."),
+            ("source", "Anti-Red Tape Authority, ", "Primer on Republic Act No. 11032 (Ease of Doing Business Act)",
+             "https://www.philhealth.gov.ph/arta/eodb/EODB_PrimerRA11032.pdf", "."),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
         "date": "January 3, 2027",
         "publish_on": "2027-01-03",
