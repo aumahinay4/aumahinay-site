@@ -7,6 +7,89 @@ sources listed at the end of each post.
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 3: The Cedula, a Spanish-Era Tax That Never Left",
+        "date": "January 17, 2027",
+        "publish_on": "2027-01-17",
+        "slug": "the-cedula-explained",
+        "category": "finance",
+        "summary": "The cedula began under Spain, was torn up by the Katipunan, and is still asked for at offices "
+                   "today. Here is what it really is, why the clerk asks about your income, and where paying it "
+                   "helps your barangay most.",
+        "body": [
+            "A young woman fresh out of college stood at the treasury window holding a list of requirements for "
+            "her first job. Near the top was one word: cedula. The clerk asked for her name, address and "
+            "birthday, then one more thing. \u201cMagkano po ang kita ninyo?\u201d How much do you earn? She "
+            "looked puzzled. Why would a small piece of paper need her income?",
+            "(As in every part of this series, the case is a composite. No real person or amount is described.)",
+            "It is a fair question, and the answer goes back almost a century and a half.",
+            ("h", "A Tax Older Than the Republic"),
+            "Under Spain, Filipinos paid a head tax called the tribute. Historian Filomeno V. Aguilar Jr. writes "
+            "that Spain abolished it in 1884 and introduced the c\u00e9dula personal in 1885, a tax whose rate "
+            "depended on a person\u2019s economic capacity. The paper itself was the proof that you had paid.",
+            "That is why it became a symbol. In the last week of August 1896, Andr\u00e9s Bonifacio and members "
+            "of the Katipunan tore up their cedulas as a sign of revolt against Spanish rule. The exact date and "
+            "place are still debated, but the act itself is taught in every Philippine history class.",
+            "More than a century later, the name has survived. The law now calls it the community tax, and the "
+            "paper is the community tax certificate, but most of us still say cedula.",
+            ("h", "What You Actually Pay"),
+            "The community tax is levied by cities and municipalities under Sections 156 to 164 of the Local "
+            "Government Code. For an individual, it has two parts: a basic tax of \u20b15, and an additional "
+            "\u20b11 for every \u20b11,000 of income from salary, business, profession or property. The "
+            "additional part is capped at \u20b15,000.",
+            "So our new graduate, if she expects to earn \u20b1300,000 in a year, pays \u20b15 plus \u20b1300, "
+            "or \u20b1305. My study note on the community tax covers the full rules, including corporations, "
+            "exemptions and the deadlines for people who turn 18 during the year.",
+            ("cta", "Read the study note: Community tax (cedula)", "/study-notes/community-tax-cedula/"),
+            ("h", "Why the Clerk Asks About Your Income"),
+            "Like Spain\u2019s c\u00e9dula personal, today\u2019s community tax still grows with what a "
+            "person earns or owns. That is the reason for the question at the window. The amount is based on what "
+            "you declare, and the clerk does not check your payslip.",
+            "That makes it tempting to say a smaller number. But a cedula is a tax receipt with your name on it, "
+            "and the honest amount for most workers is a few hundred pesos. Declaring it properly is a small, "
+            "real way of doing your share for the town you live in.",
+            ("h", "Where and When to Pay"),
+            "You pay in the city or municipality where you live. The tax for the year falls due on January 1 and "
+            "should be paid by the last day of February. After that, unpaid community tax earns interest of 24% a "
+            "year.",
+            "Here is a detail few people know. The city or municipal treasurer may deputize bonded barangay "
+            "treasurers to collect the community tax. What is collected through the barangay is split 50-50 "
+            "between the town and the barangay where it was paid. If your barangay collects it, getting your "
+            "cedula there leaves half of what you pay in your own barangay.",
+            ("h", "What the Cedula Is Not"),
+            ("point", "It is not an ID", "It shows that the tax for the year was paid. It does not prove who you "
+             "are, since anyone can buy one by giving a name."),
+            ("point", "It is not needed to vote", "The Code says plainly that no certificate may be required to "
+             "register as a voter."),
+            ("point", "It is not a national tax", "The money stays with the city or municipality, and with the "
+             "barangay when it helps collect."),
+            ("h", "Should It Still Exist?"),
+            "People have asked this for years. In 2013, the Commissioner of Internal Revenue said in a news report "
+            "that the cedula was no longer needed and was ripe for reform. On the other side, the community tax "
+            "is steady local income, and for many barangays their half of the collection is money they can count "
+            "on every January.",
+            "That debate belongs to Congress. Until the law changes, the cedula remains a tax, and the Code still "
+            "lets offices ask for it when you sign a notarized document, take an oath of office, get a permit or "
+            "license, or receive money from public funds.",
+            ("h", "The Question to Ask"),
+            "Does your barangay treasurer collect the community tax, and do residents know that paying there "
+            "keeps half of it in the barangay? If you work in a treasury, it is worth asking whether your "
+            "barangay treasurers are deputized and bonded before the January rush begins.",
+            ("ask", "Do you still keep your old cedulas? I'd like to hear when you last needed one."),
+            ("h", "Sources"),
+            ("source", "Filomeno V. Aguilar Jr., ", "The Termination of Tribute in the Spanish Philippines in "
+             "1884", "https://archium.ateneo.edu/history-faculty-pubs/114",
+             ", Philippine Studies: Historical and Ethnographic Viewpoints 71, no. 3 (2023)."),
+            ("source", "Daily Tribune, ", "Cry of Pugad Lawin marks 130th anniversary",
+             "https://tribune.net.ph/2026/08/23/cry-of-pugad-lawin-marks-130th-anniversary",
+             " (August 23, 2026)."),
+            ("source", "GMA News, ", "Do we still need Spanish-era cedulas? BIR chief says no",
+             "https://www.gmanetwork.com/news/money/personalfinance/302423/do-we-still-need-spanish-era-cedulas-"
+             "bir-chief-says-no/story", " (April 4, 2013)."),
+            ("source", "", "Republic Act No. 7160, the Local Government Code of 1991",
+             "https://www.lawphil.net/statutes/repacts/ra1991/ra_7160_1991.html", ", Sections 156 to 164."),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 2: The January Rush and Your Business Permit",
         "date": "January 10, 2027",
         "publish_on": "2027-01-10",
