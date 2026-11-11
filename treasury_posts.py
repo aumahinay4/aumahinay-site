@@ -108,9 +108,7 @@ TREASURY_POSTS = [
             "that the cedula was no longer needed and was ripe for reform. On the other side, the community tax "
             "is steady local income, and for many barangays their half of the collection is money they can count "
             "on every January.",
-            "That debate belongs to Congress. Until the law changes, the cedula remains a tax, and the Code still "
-            "lets offices ask for it when you sign a notarized document, take an oath of office, get a permit or "
-            "license, or receive money from public funds.",
+            "That debate belongs to Congress. Until the law changes, the cedula remains a tax. The Code still lets offices ask for it when you sign a notarized document, take an oath of office, get a permit or license, or receive money from public funds.",
             ("h", "The Question to Ask"),
             "Does your barangay treasurer collect the community tax, and do residents know that paying there "
             "keeps half of it in the barangay? If you work in a treasury, it is worth asking whether your "
@@ -253,10 +251,7 @@ TREASURY_POSTS = [
             "(The cases in this series are composites of situations that come up in many treasury offices. Names, "
             "places and amounts are changed or left out.)",
             ("h", "Two Kinds of Money"),
-            "Every local government has two broad kinds of income. The first is money it raises itself. The Bureau "
-            "of Local Government Finance (BLGF) calls this locally sourced revenue: real property tax, business tax, "
-            "other local taxes, regulatory fees, service charges, and income from economic enterprises such as a "
-            "public market or a slaughterhouse.",
+            "Every local government has two broad kinds of income. The first is money it raises itself. The Bureau of Local Government Finance (BLGF) calls this locally sourced revenue. It includes real property tax, business tax, other local taxes, regulatory fees and service charges. It also includes income from economic enterprises, such as a public market or a slaughterhouse.",
             "The second is money that comes from outside. The biggest part is the town's share in national taxes, "
             "now called the National Tax Allotment (NTA). Smaller amounts may come from a share in national wealth, "
             "such as mining or energy found in the area, and from grants and transfers.",
@@ -291,9 +286,7 @@ TREASURY_POSTS = [
             "Government Code, provinces as a group get 23%, cities 23%, municipalities 34% and barangays 20%. "
             "Within each group, a province, city or municipality\u2019s slice depends on three things: its "
             "population (50%), its land area (25%), and an equal share for everyone (25%).",
-            "Barangays follow their own rule. In its 2022 guide to the Mandanas-Garcia ruling, the Department of "
-            "Budget and Management explained that each barangay with at least 100 residents first receives a "
-            "flat \u20b180,000, and the rest is shared 60% by population and 40% equally.",
+            "Barangays follow their own rule. The Department of Budget and Management explained the rule in its 2022 guide to the Mandanas-Garcia ruling. Each barangay with at least 100 residents first receives a flat ₱80,000. The rest is shared 60% by population and 40% equally.",
             "This is why two towns of similar size can receive very different amounts. Population counts for half "
             "of the formula, and it comes from the census. For 2022, DBM used the 2020 census for population and "
             "a 2001 master list for land area. A town that grows will see a bigger share only after a new census "

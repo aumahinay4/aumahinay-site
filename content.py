@@ -559,9 +559,7 @@ BLOG = [
             ("h", "Step 2: Enter the Assessed Value"),
             "If your tax declaration shows the assessed value, choose \"I know the assessed value\" and type it in. "
             "That is the most accurate route.",
-            "If you only know the market value, choose \"Compute it from the market value.\" For Quezon Province, "
-            "pick the kind of property (land, building, machinery or special class) and its use, and the calculator "
-            "fills in the assessment level from Section 25 of the provincial code. Buildings deserve a closer look, "
+            "If you only know the market value, choose \"Compute it from the market value.\" For Quezon Province, pick the kind of property (land, building, machinery or special class) and its use. The calculator then fills in the assessment level from Section 25 of the provincial code. Buildings deserve a closer look, "
             "because their level rises with their value. In Quezon, a residential building worth ₱175,000 or less has "
             "an assessment level of 0%, while one worth ₱1.5 million falls in the 25% bracket. You can always change "
             "the level by hand if your own ordinance says something different.",
@@ -858,9 +856,7 @@ BLOG = [
             "We have met Max Weber several times in this series, and he belongs at the end too. His point that the "
             "file outlives the official is the institutional heart of the treasury. Treasurers, mayors and collectors "
             "change. The obligations of the local government and the rights of taxpayers do not.",
-            "Our system already leans this way. The Local Treasury Operations Manual, 2nd Edition, issued under DOF "
-            "Department Order No. 085-2019 of December 3, 2019, writes down standard procedures and forms so that every office does the "
-            "work the same way, and so that a newly assigned treasurer does not have to start from zero. It is to "
+            "Our system already leans this way. The Local Treasury Operations Manual, 2nd Edition, was issued under DOF Department Order No. 085-2019 of December 3, 2019. It writes down standard procedures and forms so that every office does the work the same way. A newly assigned treasurer does not have to start from zero. It is to "
             "the treasury what Frederick Taylor's instruction cards were to the factory. And because the treasurer "
             "is appointed by the Secretary of Finance, the office is meant to carry on professionally from one "
             "administration to the next.",
@@ -1041,9 +1037,7 @@ BLOG = [
             "their annual tax as an estimate, so the office can see how complete its picture really is. A ratio that "
             "hides how much it covers invites false confidence.",
             "Forecasts follow the same spirit. Every budget season, someone asks the treasurer what the year will "
-            "bring. ALTOS forecasts year-end collections from the seasonal pattern of up to three past years, or "
-            "from a straight-line trend when there is not enough history, and it reports an 80% range along with the "
-            "chance of reaching the target. A forecast with a range is honest about uncertainty. A single number "
+            "bring. ALTOS forecasts year-end collections from the seasonal pattern of up to three past years, or from a straight-line trend when there is not enough history. It reports an 80% range along with the chance of reaching the target. A forecast with a range is honest about uncertainty. A single number "
             "pretends to know.",
             ("h", "What Deeper Analysis Can Show"),
             "The Google Advanced Data Analytics Professional Certificate taught hypothesis testing, regression and clustering. In "
@@ -1072,9 +1066,7 @@ BLOG = [
             "the Data Privacy Act. Its operational capacity was the hardest test of all: one laptop, one office "
             "network, and a small staff.",
             ("h", "Why Good Records Matter Beyond the Audit"),
-            "Evidence also shapes how a local government is seen from outside. Under the Automatic Income Classification "
-            "Act (RA 11964), signed on October 26, 2023, provinces, cities and municipalities are sorted into five income classes based on their average regular "
-            "income over three years, with a general reclassification every three years. That class affects "
+            "Evidence also shapes how a local government is seen from outside. The Automatic Income Classification Act (RA 11964) was signed on October 26, 2023. Under it, provinces, cities and municipalities are sorted into five income classes based on their average regular income over three years. A general reclassification follows every three years. That class affects "
             "salaries, borrowing capacity and eligibility for programs. Accurate treasury records are therefore not "
             "only an audit matter. They help decide the local government's class. The Seal of Good Local Governance, "
             "institutionalized by RA 11292 in 2019, likewise looks at financial administration and sustainability. "
@@ -1197,6 +1189,13 @@ BLOG = [
             "real. Even with a larger National Tax Allotment, I see local revenue effort as a measure of a community's "
             "fiscal citizenship. People who pay are entitled to a say, and to an account of what was done with their "
             "money.",
+            ("h", "What Every Taxpayer Should Get"),
+            ("point", "An official receipt", "For every payment, every time, with the legal basis of each charge."),
+            ("point", "A clear computation", "Shown on request, so the taxpayer can check the figure."),
+            ("point", "The same treatment", "The same rate and the same procedure as everyone else, whoever they "
+             "know."),
+            "None of these costs much. A receipt, a clear computation and equal treatment are the everyday proof "
+            "that the office sees the person at the window as a citizen, not as a source of collections.",
             ("h", "The Question to Ask"),
             "Is it fair, easy and public? The evidence is several ways to pay, including ones that reach the far "
             "barangays, and a statement of receipts and expenditures that is actually posted where people can see "
@@ -1228,10 +1227,7 @@ BLOG = [
             "budget, the 20% Development Fund is set aside for development projects. Each fund should have its own "
             "accounts in the books and, where required, its own bank account.",
             ("h", "Why Funds Exist at All"),
-            "The economist Richard Musgrave, in The Theory of Public Finance (1959), divided the fiscal role of "
-            "government into three branches: allocation, which means providing public goods; distribution, which "
-            "means adjusting how income is shared; and stabilization, which means smoothing the ups and downs of the "
-            "economy. Local governments mostly do allocation: roads, health centers, markets, waste collection. "
+            "The economist Richard Musgrave, in The Theory of Public Finance (1959), divided the fiscal role of government into three branches. Allocation means providing public goods. Distribution means adjusting how income is shared. Stabilization means smoothing the ups and downs of the economy. Local governments mostly do allocation: roads, health centers, markets, waste collection. "
             "Distribution and stabilization belong mainly to the national government.",
             "Funds are how allocation is kept honest. When a law says a certain tax must pay for schools, or a "
             "certain share must go to development, a separate fund is the bookkeeping that keeps that promise "
@@ -1291,6 +1287,22 @@ BLOG = [
             "so it is always visible in collections, disbursements and reports. Check booklets are recorded by bank "
             "account, so every check is tied to the account it is drawn on. In the ALTOS Framework self-assessment, the system lists any fund that has no bank account and any "
             "bank account not yet reconciled.",
+            ("h", "Three Common Fund Mistakes"),
+            ("point", "Borrowing \u201cjust for now\u201d", "Using one fund's cash to pay another fund's bills, "
+             "planning to put it back later. Later often never comes, and the records stop matching the bank."),
+            ("point", "One line for two funds", "Recording the basic real property tax and the Special Education "
+             "Fund levy together, then splitting them by estimate at month's end."),
+            ("point", "The wrong account for a deposit", "Depositing a fund's collections in another fund's bank "
+             "account because it is the one the messenger knows."),
+            "Each of these starts as a shortcut, and each makes the monthly reconciliation harder until no one can "
+            "say for sure which peso belongs where.",
+            "The fix is the same in all three cases: record each fund's portion at the moment of payment, deposit "
+            "it in its own account, and reconcile each account every month. Small habits, done daily, keep the "
+            "year-end report from becoming a puzzle.",
+            "One daily check makes this easy. At the end of each day, add up the collections per fund on the "
+            "receipts and compare each total with the deposit slip for that fund's bank account. If the "
+            "two numbers match, the day is clean. If they do not, the difference is found while the "
+            "receipts are still fresh, not months later during the audit.",
             ("h", "The Question to Ask"),
             "Is each peso in the right fund and the right bank account? Or, put as a monthly check: is every fund "
             "kept in its own account and shown separately in our reports? The evidence is the Special Education Fund "
@@ -1343,9 +1355,7 @@ BLOG = [
             ("point", "Monitoring", "Ongoing and separate checks, such as surprise cash counts, the COA audit and the "
              "review of exception reports."),
             ("h", "Four Signatures on Every Payment"),
-            "The Local Government Code builds separation directly into spending. Under Section 344, no money may be "
-            "paid unless the budget officer certifies that an appropriation exists, the accountant certifies that it "
-            "has been obligated and the papers are complete, and the treasurer certifies that the cash is available. "
+            "The Local Government Code builds separation directly into spending. Under Section 344, no money may be paid without three certifications. The budget officer certifies that an appropriation exists. The accountant certifies that it has been obligated and the papers are complete. The treasurer certifies that the cash is available. "
             "The local chief executive then approves the payment. Four officers, four different questions, and no "
             "single one of them can both authorize and release the money.",
             ("h", "What Must Be Kept Apart"),
@@ -1385,6 +1395,30 @@ BLOG = [
             "recorded as the administrator acting for that user.",
             ("quote", "Power and visibility should grow together. The audit trail exists first for the person who "
              "could most easily do without it."),
+            ("h", "Warning Signs to Watch For"),
+            "Weak separation rarely announces itself. It shows up in small habits that feel normal:",
+            ("point", "The same name on both sides", "One person collects the cash and also writes the record of "
+             "what was collected."),
+            ("point", "Prepared and approved by one person", "The same signature appears on a voucher as both the "
+             "preparer and the approver."),
+            ("point", "The cashier reconciles the bank", "The person who handles the money is also the one who "
+             "checks it against the bank statement."),
+            ("point", "Cash counts that are always expected", "A count announced days ahead tests the schedule, not "
+             "the cash."),
+            ("point", "An officer who never takes leave", "When nobody else ever does a person's work, nobody else "
+             "ever sees it."),
+            ("h", "Draw a Simple Duty Map"),
+            "Take one sheet of paper. List every step that money goes through in your office, from the receipt to "
+            "the bank, and from the voucher to the released check. Beside each step, write the name of the person "
+            "who does it.",
+            "Then look for any name that appears on two steps that should check each other. Each of those is a "
+            "place to add a second pair of eyes, or a compensating control if the staff is small. It takes less "
+            "than an hour, and it often shows a gap that years of routine had hidden.",
+            "Share the map with the whole staff. People are usually relieved to see their duties written down, "
+            "because a clear line also protects them when something goes wrong elsewhere.",
+            "Repeat the exercise once a year, or whenever someone transfers, retires or takes on new duties. Staff "
+            "changes are exactly when two steps quietly end up in the same hands, and a fresh map catches it "
+            "before an auditor does. A duty map that is a year old describes an office that no longer exists.",
             ("h", "The Question to Ask"),
             "Did anyone act alone? In an office review the question becomes: where in my office does one person act "
             "alone, and what makes up for it? The evidence is four certifications on every voucher and a bank "
@@ -1478,6 +1512,24 @@ BLOG = [
             "the digital form of the fidelity bond we discussed under the third principle. The bond guarantees that "
             "public money will be made whole. Security guarantees that the public's money and the public's records "
             "will still be there, unchanged, tomorrow.",
+            ("h", "Seals Without a Computer"),
+            "Long before digital logs, treasuries had their own seals, and they still work:",
+            ("point", "Bound books with numbered pages", "A missing page is obvious, and a page cannot be quietly "
+             "replaced."),
+            ("point", "One clean line through an error", "The wrong entry stays readable, with the correction, the "
+             "initials of the person who made it, and the date beside it. Never erasures, never correction fluid."),
+            ("point", "Every copy kept", "Spoiled receipts stay in the booklet with all their copies, so the series "
+             "remains complete."),
+            ("point", "Signatures that mean something", "Whoever signs a report confirms it. A report signed without "
+             "reading is a seal with nothing behind it."),
+            ("h", "A Quick Test You Can Run"),
+            "Pick any correction made in your office last month, on paper or on screen. Can you tell who made it, "
+            "when, and why, without asking anyone? If the answer is yes, your records already carry a seal. If "
+            "the answer is \u201cwe would have to ask around,\u201d that is where the work begins.",
+            "The same test works for a system. Ask it to show you every change made to one receipt. A good system "
+            "answers in seconds, and the answer includes the reason.",
+            "If it cannot, the system is only a faster typewriter, and the old paper habits are still your best "
+            "protection.",
             ("h", "The Question to Ask"),
             "Could anyone change this without leaving a trace? Or, as a treasurer might put it at the start of the "
             "day: if someone changed a posted record last night, how would I know? The evidence of this principle is "
@@ -1560,10 +1612,7 @@ BLOG = [
             "The system also gathers the office's recurring deadlines into one compliance calendar. Some items come "
             "straight from the records and clear themselves once done: RAAFs and CRAAFs for each officer and month, "
             "fidelity bonds expiring or missing, official receipts not yet included in an RCD, and cash advances not "
-            "yet liquidated. Others are standing deadlines the System Administrator can edit, such as the last day "
-            "to pay the quarter's real property tax without interest, the posting of the notice of delinquency, "
-            "business permit renewals and quarterly business tax installments, the SRE to the Bureau of Local "
-            "Government Finance, and the monthly bank reconciliation.",
+            "yet liquidated. Others are standing deadlines the System Administrator can edit. Examples are the last day to pay the quarter's real property tax without interest and the posting of the notice of delinquency. Others are business permit renewals, quarterly business tax installments, the SRE to the Bureau of Local Government Finance, and the monthly bank reconciliation.",
             "Each default deadline names its legal basis. Where a date depends on a circular that may have changed, "
             "the calendar says so and asks the user to verify it. I think that honesty matters. A calendar that "
             "admits it might be out of date is safer than one that pretends to know everything.",
@@ -1576,6 +1625,21 @@ BLOG = [
             "Reports feed the next round of targets and budgets, which shape the next round of collections. An "
             "office that collects well but reports late breaks the loop just as surely as one that reports on time "
             "but collects poorly.",
+            ("h", "Build Your Office's Deadline Calendar"),
+            "A simple calendar on the wall, or in a shared spreadsheet, makes deadlines visible to everyone. It can "
+            "be grouped by how often each report falls due:",
+            ("point", "Every day", "Each collector's Report of Collections and Deposits, and the deposit of the "
+             "day's collections as the rules require."),
+            ("point", "Every month", "Each collector's report of accountable forms, consolidated by the liquidating "
+             "officer and submitted by the fifth day of the following month, plus the monthly bank "
+             "reconciliation."),
+            ("point", "Every quarter", "The Statement of Receipts and Expenditures, due to the Bureau of Local "
+             "Government Finance by the 20th of the month after the quarter."),
+            ("point", "Every year", "The year-end Statement of Receipts and Expenditures by February 28, and a "
+             "review of every officer's bond before it lapses."),
+            "Put a name beside every line. A deadline without an owner is only a date, and a calendar nobody "
+            "checks is only decoration. Review it in the first staff meeting of each month.",
+            "Late reports are rarely about laziness. Usually the work piled up without anyone seeing it.",
             ("h", "The Question to Ask"),
             "What is due, and by when? And the harder follow-up: which report is due next, and who is likely to be "
             "late? The evidence of this principle in practice is RAAFs and CRAAFs submitted on time and RCDs prepared "
@@ -1671,6 +1735,21 @@ BLOG = [
             "bond lapses. It compares each bond with the cash the officer actually handled and flags any bond that "
             "is missing, expired or too low. A rule that used to live in a filing cabinet has become a daily reminder "
             "on the screen.",
+            ("h", "A Simple Ownership Check for Any Office"),
+            "None of this needs software. A logbook, a cabinet that locks and a monthly review are enough to start. "
+            "Here is a short check any treasury can run this week:",
+            ("point", "A register of forms", "Every booklet of receipts is recorded when it arrives, when it is "
+             "issued to a named collector, and when it comes back, used or unused."),
+            ("point", "One booklet, one collector", "A booklet is never shared. If two people need to collect, each "
+             "gets a separate series."),
+            ("point", "Handover in writing", "When a collector goes on leave, the unused receipts and the cash are "
+             "counted and turned over, with both people signing."),
+            ("point", "Bonds on a calendar", "Each officer's bond amount and expiry date are listed in one place and "
+             "reviewed whenever duties change."),
+            ("point", "A named alternate", "Every accountable role has a designated, bonded backup, so absence never "
+             "means \u201cno one is in charge.\u201d"),
+            "If any of these is missing, the gap is not a sign of bad people. It is a sign that ownership has not "
+            "yet been written down, and that is the easiest kind of problem to fix.",
             ("h", "The Question to Ask"),
             "Who is answerable, and are they bonded? Put more sharply: is every accountable officer bonded today, for "
             "the right amount? The evidence is a current bond for every accountable officer, matched to what each "
@@ -1945,16 +2024,10 @@ BLOG = [
             "council never funded, however reasonable it may seem at the time.",
             "Woodrow Wilson, writing even earlier, in 1887, observed that running a constitution is harder than "
             "framing one, and argued that administration deserves to be studied as a business-like field of its own, "
-            "apart from the making of policy. Our law reflects that view too. Under Section 470 of the Local "
-            "Government Code, the treasurer is appointed by the Secretary of Finance from a list of at least three nominees of the governor or mayor, and "
-            "works under the administrative supervision of the governor or mayor. The arrangement keeps the collection of revenue "
+            "apart from the making of policy. Our law reflects that view too. Under Section 470 of the Local Government Code, the treasurer is appointed by the Secretary of Finance from a list of at least three nominees of the governor or mayor. The treasurer then works under the administrative supervision of the governor or mayor. The arrangement keeps the collection of revenue "
             "professional and uniform from one local government to the next, and it lets the treasurer serve each administration "
             "the same way. The tax ordinance is applied identically to every taxpayer, whoever is in office.",
-            "The Code also spells out the treasurer's duties: taking custody of and managing local funds; taking "
-            "charge of their disbursement; collecting taxes, fees and charges, and inspecting businesses for "
-            "compliance with tax ordinances; keeping tax information up to date; advising the governor or mayor and the "
-            "Sanggunian on fiscal matters, including the income estimates used for the budget; and certifying "
-            "whether cash is available for an obligation. Every one of these duties carries out decisions that "
+            "The Code also spells out the treasurer's duties. The treasurer takes custody of local funds, manages them and takes charge of their disbursement. The treasurer collects taxes, fees and charges, inspects businesses for compliance with tax ordinances, and keeps tax information up to date. The treasurer also advises the governor or mayor and the Sanggunian on fiscal matters, including the income estimates used for the budget, and certifies whether cash is available for an obligation. Every one of these duties carries out decisions that "
             "others wrote into law. None of them gives the power to make new ones.",
             ("h", "Where the Authority Comes From"),
             "It helps to picture legal authority as a chain with several links. At the top is the 1987 Constitution. "
@@ -2018,9 +2091,7 @@ BLOG = [
             ("h", "Rules Change, So Keep Checking"),
             "Legality is not a box ticked once. Laws, circulars and manuals change often. The Local Treasury "
             "Operations Manual, the rules of the Commission on Audit, and the issuances of the Bureau of Local "
-            "Government Finance (BLGF) are all revised from time to time. The Real Property Valuation and Assessment Reform "
-            "Act (RA 12001) of 2024, for example, requires a single Schedule of Market Values in each local "
-            "government, prepared by the assessor and approved by the Department of Finance through the BLGF. Many "
+            "Government Finance (BLGF) are all revised from time to time. The Real Property Valuation and Assessment Reform Act (RA 12001) of 2024 is one example. It requires a single Schedule of Market Values in each local government, prepared by the assessor and approved by the Department of Finance through the BLGF. Many "
             "local governments are now preparing revised schedules, which will change the very base the treasurer "
             "collects on. An office that is legal today can drift out of line next year without "
             "changing a thing. Before relying on any procedure, confirm that the text you are following is still "
@@ -2083,6 +2154,23 @@ BLOG = [
             "Disbursement System covers the paying side: vouchers, checks, cash advances and their liquidation, "
             "the check register, and disbursement reports. Both share one database, which can be used from a desktop "
             "application or a web browser anywhere on the office network.",
+            ("h", "What Changes at the Counter"),
+            "For a collector, the biggest change is the end of the day. Instead of adding up a stack of receipts "
+            "by hand and copying the totals into a report, the daily report is built from the receipts already "
+            "issued. The numbers match because they come from the same records.",
+            "For the treasurer, the change is visibility. Who holds which receipt series, which reports are due, "
+            "which bond is about to lapse: these no longer live in someone's memory or a drawer. They are on a "
+            "screen, the same for everyone who is allowed to see them.",
+            "For the taxpayer, it means a clear computation and a proper receipt, the same way every time.",
+            ("h", "What It Does Not Replace"),
+            "ALTOS does not replace people, and it was never meant to. The officers still review, sign and submit "
+            "the reports. The treasurer still decides, and the auditor still audits. What the system removes is "
+            "the repetitive copying and adding that takes time away from checking.",
+            "It also does not replace the rules. It follows them. If a rule changes, the right response is to "
+            "change the system to match the law, never to bend the law to fit the system.",
+            "In short, ALTOS gives people back the time to do the part of the job that only people can do: look "
+            "closely, ask questions and decide.",
+            "That is the whole point of the tool.",
             ("h", "A Record You Can Trust"),
             "A treasury's records are only as good as their protection against tampering. In ALTOS, each entry in "
             "the activity log is digitally linked to the one before it, much like links in a chain. If anyone "
