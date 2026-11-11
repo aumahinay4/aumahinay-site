@@ -864,6 +864,26 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 /* name + MPA on ONE line beside the photo, the rest below the photo (Butch 2026-11-10) */
 .post .byline { margin: 6px 0 0; font-size: 15.6873px; color: var(--muted); }  /* "By ..." under a post title */
 .post .byline a { font-weight: 600; }
+/* Listen bar under the byline (Butch, 2026-11-12): the phone's own voice reads the post */
+.listen { display: flex; align-items: center; gap: 8px; margin: 12px 0 2px; flex-wrap: nowrap; }
+.listen[hidden], .listen [hidden] { display: none; }
+.listen button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 15.6873px var(--font-body); border-radius: 999px; cursor: pointer; transition: border-color .15s, background .15s; }
+.listen button:hover { border-color: var(--blue-ink); }
+.listen button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.listen-play { padding: 7px 16px 7px 11px; }
+.listen-play svg, .listen-stop svg { width: 20px; height: 20px; fill: var(--blue-ink); stroke: var(--blue-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.listen-play .i-pause { fill: none; display: none; }
+.listen[data-state="playing"] .listen-play { border-color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 14%, var(--surface)); }
+.listen[data-state="playing"] .i-play { display: none; }
+.listen[data-state="playing"] .i-pause { display: block; }
+.listen-speed { min-width: 52px; padding: 7px 10px; font-variant-numeric: tabular-nums; }
+.listen-stop { width: 38px; height: 38px; padding: 0; }
+.listen-stop svg { width: 16px; height: 16px; stroke-width: 0; }
+.listen-time { font-size: 14.1186px; white-space: nowrap; }
+.listen:not([data-state="idle"]) .listen-time { display: none; }  /* while reading: Pause, speed and Stop on one line */
+/* While reading, the bar stays just under the top bar so Pause and Stop are always in reach */
+.listen:not([data-state="idle"]) { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--listen-top, 58px)); z-index: 4; background: var(--surface); padding: 6px 0; margin-block: 6px 0; box-shadow: 0 8px 10px -10px rgba(11, 42, 99, .35); }
+.post .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
 .blog-col h2.post-section { margin-top: 30px; }
 .related { display: grid; gap: 10px; margin-top: 12px; }
 .related-card { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }

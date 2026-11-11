@@ -783,6 +783,26 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 /* name + MPA on ONE line beside the photo, the rest below the photo (Butch 2026-11-10) */
 .post .byline { margin: 6px 0 0; font-size: 15.6873px; color: var(--muted); }  /* "By ..." under a post title */
 .post .byline a { font-weight: 600; }
+/* Listen bar under the byline (Butch, 2026-11-12): the phone's own voice reads the post */
+.listen { display: flex; align-items: center; gap: 8px; margin: 12px 0 2px; flex-wrap: nowrap; }
+.listen[hidden], .listen [hidden] { display: none; }
+.listen button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 600 15.6873px var(--font-body); border-radius: 999px; cursor: pointer; transition: border-color .15s, background .15s; }
+.listen button:hover { border-color: var(--blue-ink); }
+.listen button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.listen-play { padding: 7px 16px 7px 11px; }
+.listen-play svg, .listen-stop svg { width: 20px; height: 20px; fill: var(--blue-ink); stroke: var(--blue-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.listen-play .i-pause { fill: none; display: none; }
+.listen[data-state="playing"] .listen-play { border-color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 14%, var(--surface)); }
+.listen[data-state="playing"] .i-play { display: none; }
+.listen[data-state="playing"] .i-pause { display: block; }
+.listen-speed { min-width: 52px; padding: 7px 10px; font-variant-numeric: tabular-nums; }
+.listen-stop { width: 38px; height: 38px; padding: 0; }
+.listen-stop svg { width: 16px; height: 16px; stroke-width: 0; }
+.listen-time { font-size: 14.1186px; white-space: nowrap; }
+.listen:not([data-state="idle"]) .listen-time { display: none; }  /* while reading: Pause, speed and Stop on one line */
+/* While reading, the bar stays just under the top bar so Pause and Stop are always in reach */
+.listen:not([data-state="idle"]) { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--listen-top, 58px)); z-index: 4; background: var(--surface); padding: 6px 0; margin-block: 6px 0; box-shadow: 0 8px 10px -10px rgba(11, 42, 99, .35); }
+.post .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
 .blog-col h2.post-section { margin-top: 30px; }
 .related { display: grid; gap: 10px; margin-top: 12px; }
 .related-card { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }
@@ -1016,6 +1036,8 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 .card.author .author-roles { font-size: 15.58px; }
 .card.author .author-links a { font-size: 14.8625px; }
 .post .byline { font-size: 16.0795px; }
+.listen button { font-size: 16.0795px; }
+.listen-time { font-size: 14.4716px; }
 .related-card > span { font-size: 14.9309px; }
 .rpt-form legend { font-size: 1.0762rem; }
 .rpt-form input[type=number] { font-size: 17.425px; }
@@ -1040,7 +1062,93 @@ footer.legal .built { white-space: nowrap; }
 footer.legal .legal-links { white-space: nowrap; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/" class="active" aria-current="page">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="personal"><div class="meta"><span class="cat cat-coral">Personal</span><span class="muted">November 4, 2026</span><span class="muted dot">·</span><span class="muted">4 min read</span></div><h1>200 Kilometers and Five Years Later: Coming Home to the Farm</h1><p class="byline">By <a href="/about/">Ambrosio “Butch” U. Mahinay</a></p><figure class="screenshot half"><img src="/static/blog/farm-1.jpg?v=f0a09f62" alt="Back on the farm, under the coconut palms (October 31, 2026)" loading="lazy"><figcaption>Back on the farm, under the coconut palms (October 31, 2026)</figcaption></figure><p>Five years. That is how long it had been since I last set foot on my 3-hectare farm.</p><p>Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer journey back.</p><h3>The Long Road Home</h3><p>A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads and greener horizons, I found myself wondering how much the land had changed.</p><p>When you are away from a place for five years, you hold on to a mental picture of how you left it: the young trees, the wide open spaces, the quiet promise of what it could become.</p><p>Nothing quite prepared me for the moment I arrived.</p><p>The first thing that caught my eye was the mulawin (molave) tree standing behind me in the photo above. I remembered it as a young tree, and I was surprised to see how old it looks now, its trunk and crown weathered by the years. There are many mulawin trees on the farm, and all of them have grown into sturdy, seasoned hardwoods while I was away.</p><h3>Coconuts for Copra</h3><p>The trees had grown tall and full while I was away. It was not the season for the mango, santol, and langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take a season off.</p><figure class="screenshot half"><img src="/static/blog/farm-2.jpg?v=de58298b" alt="Mature coconuts gathered for copra (October 31, 2026)" loading="lazy"><figcaption>Mature coconuts gathered for copra (October 31, 2026)</figcaption></figure><p>Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be gathered for copra. For a farm in our part of Quezon, copra is the steady crop, the one that keeps working through every season while the other trees wait for their turn.</p><p>Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.</p><p>None of this happens on its own. Our caretaker looks after the farm while I am away, and the copra piled under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.</p><p>Before walking on, my wife and I sat down in the shade and drank fresh coconut water straight from our own trees. After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was the most refreshing drink we had tasted in a long time.</p><h3>Shade, Breeze, and Childhood Memories</h3><p>Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze rustled through the coconut leaves above.</p><p>As I looked out across the wide spaces beneath the trees, old memories came rushing back: my childhood days raising carabaos, cows, and goats, and the familiar sight and sound of native chickens roaming freely across the yard.</p><p>There was a special rhythm and joy to that way of life, caring for the animals all day. Being back on the farm made me realize how much I missed those simpler days.</p><h3>What Five Years Taught Me</h3><p>Visiting the farm after five years taught me something simple but important:</p><blockquote><p>Not every season is a season of fruit, but the land keeps working, and our roots are always waiting for us if we are willing to make the journey back.</p></blockquote><p>I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier generation, and now it is my turn to plant for the next.</p><p>As we walked the nearly 700 steps back to the main road, I looked back at the young mulawin one last time. Five years had slipped by without my noticing. In that time the young mulawin trees had grown old, and season after season of harvests had come and gone without me. If I am going to plant new coconut trees, I also want to be there to watch them grow.</p><p>One thing is for sure: I won&#x27;t wait another five years for my next visit.</p><p class="ask">Have you ever returned to a place after years away and found it changed? I&#x27;d love to hear your story. <a href="mailto:hello@aumahinay.dev">Email me</a>.</p></article><div class="react" data-page="/blog/coming-home-to-the-farm/"><button type="button" class="react-btn react-follow" aria-pressed="false" aria-label="Follow Butch Mahinay" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2.5 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path class="plus" d="M19 8v6M16 11h6"/></svg><span class="react-word">Follow</span><span class="react-count"></span></button><button type="button" class="react-btn react-heart" aria-pressed="false" aria-label="Heart this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="react-word">Heart</span><span class="react-count"></span></button><button type="button" class="react-btn react-like" aria-pressed="false" aria-label="Like this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg><span class="react-word">Like</span><span class="react-count"></span></button><button type="button" class="react-btn react-share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="react-word" aria-live="polite">Share</span><span class="react-count"></span></button></div><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/" class="active" aria-current="page">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="personal"><div class="meta"><span class="cat cat-coral">Personal</span><span class="muted">November 4, 2026</span><span class="muted dot">·</span><span class="muted">4 min read</span></div><h1>200 Kilometers and Five Years Later: Coming Home to the Farm</h1><p class="byline">By <a href="/about/">Ambrosio “Butch” U. Mahinay</a></p><div class="listen" data-state="idle" hidden role="group" aria-label="Listen to this post"><button type="button" class="listen-play" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13M16 5.5v13"/></svg><span class="listen-word">Listen</span></button><span class="listen-time muted">5 min listen</span><button type="button" class="listen-speed" aria-label="Reading speed" title="Reading speed">1×</button><button type="button" class="listen-stop" aria-label="Stop reading" title="Stop" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg></button></div><script>
+(function () {
+  var box = document.querySelector(".listen"), post = box && box.closest(".post"), say = window.speechSynthesis;
+  if (!box || !post || !say || !window.SpeechSynthesisUtterance) return;
+  var play = box.querySelector(".listen-play"), word = play.querySelector(".listen-word");
+  var stopBtn = box.querySelector(".listen-stop"), speedBtn = box.querySelector(".listen-speed");
+  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, chunks = [], at = 0, on = false, voice = null, lit = null;
+  try { sp = Math.max(0, speeds.indexOf(+localStorage.getItem("listenSpeed"))); } catch (e) {}
+  speedBtn.textContent = speeds[sp] + "\u00d7";
+  function pickVoice() {
+    var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
+    var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
+    all.sort(function (a, b) {
+      function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
+      return r(a) - r(b);
+    });
+    voice = all[0] || null;
+  }
+  pickVoice();
+  if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
+  // The words to read, in page order: title, summary, paragraphs, headings, quotes and lists.
+  // Not read: date line, byline, photos, sources, buttons.
+  function build() {
+    chunks = [];
+    var parts = post.querySelectorAll(":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
+                                      + ":scope > h3, :scope > blockquote, :scope > ul > li, :scope > ol > li");
+    Array.prototype.forEach.call(parts, function (el) {
+      var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
+      if (!text) return;
+      (text.match(/[^.!?]+[.!?]+["\u201d\u2019)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
+        if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
+        cur += s;
+      });
+      if (cur.trim()) chunks.push({ el: el, text: cur });
+    });
+  }
+  var bar = document.querySelector("header.site");
+  function fitUnderBar() { if (bar) box.style.setProperty("--listen-top", bar.offsetHeight + "px"); }
+  fitUnderBar(); addEventListener("resize", fitUnderBar);
+  function light(el) {
+    if (lit === el) return;
+    if (lit) lit.classList.remove("reading");
+    lit = el;
+    if (!el) return;
+    el.classList.add("reading");
+    var r = el.getBoundingClientRect();
+    if (r.top < box.getBoundingClientRect().bottom || r.top > innerHeight * 0.7) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  function show(state) {
+    box.setAttribute("data-state", state);
+    word.textContent = state === "playing" ? "Pause" : state === "paused" ? "Resume" : "Listen";
+    play.setAttribute("aria-pressed", state === "playing");
+    stopBtn.hidden = state === "idle";
+  }
+  function speak() {
+    if (at >= chunks.length) { done(); return; }
+    var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+    if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
+    u.rate = speeds[sp];
+    u.onend = function () { if (on && u === current) { at += 1; speak(); } };
+    u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
+    current = u;
+    light(c.el);
+    say.speak(u);
+  }
+  var current = null;
+  function halt() { on = false; current = null; say.cancel(); }
+  function done() { halt(); at = 0; light(null); show("idle"); }
+  play.addEventListener("click", function () {
+    if (on) { halt(); show("paused"); return; }  // pause: remember the sentence
+    if (!chunks.length) build();
+    if (!chunks.length) return;
+    say.cancel();
+    on = true; show("playing"); speak();
+  });
+  stopBtn.addEventListener("click", done);
+  speedBtn.addEventListener("click", function () {
+    sp = (sp + 1) % speeds.length;
+    speedBtn.textContent = speeds[sp] + "\u00d7";
+    try { localStorage.setItem("listenSpeed", speeds[sp]); } catch (e) {}
+    if (on) { halt(); on = true; speak(); }  // new speed from the current sentence
+  });
+  addEventListener("pagehide", function () { say.cancel(); });
+  say.cancel();  // nothing left over from another page
+  box.hidden = false;
+})();
+</script><figure class="screenshot half"><img src="/static/blog/farm-1.jpg?v=f0a09f62" alt="Back on the farm, under the coconut palms (October 31, 2026)" loading="lazy"><figcaption>Back on the farm, under the coconut palms (October 31, 2026)</figcaption></figure><p>Five years. That is how long it had been since I last set foot on my 3-hectare farm.</p><p>Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer journey back.</p><h3>The Long Road Home</h3><p>A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads and greener horizons, I found myself wondering how much the land had changed.</p><p>When you are away from a place for five years, you hold on to a mental picture of how you left it: the young trees, the wide open spaces, the quiet promise of what it could become.</p><p>Nothing quite prepared me for the moment I arrived.</p><p>The first thing that caught my eye was the mulawin (molave) tree standing behind me in the photo above. I remembered it as a young tree, and I was surprised to see how old it looks now, its trunk and crown weathered by the years. There are many mulawin trees on the farm, and all of them have grown into sturdy, seasoned hardwoods while I was away.</p><h3>Coconuts for Copra</h3><p>The trees had grown tall and full while I was away. It was not the season for the mango, santol, and langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take a season off.</p><figure class="screenshot half"><img src="/static/blog/farm-2.jpg?v=de58298b" alt="Mature coconuts gathered for copra (October 31, 2026)" loading="lazy"><figcaption>Mature coconuts gathered for copra (October 31, 2026)</figcaption></figure><p>Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be gathered for copra. For a farm in our part of Quezon, copra is the steady crop, the one that keeps working through every season while the other trees wait for their turn.</p><p>Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.</p><p>None of this happens on its own. Our caretaker looks after the farm while I am away, and the copra piled under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.</p><p>Before walking on, my wife and I sat down in the shade and drank fresh coconut water straight from our own trees. After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was the most refreshing drink we had tasted in a long time.</p><h3>Shade, Breeze, and Childhood Memories</h3><p>Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze rustled through the coconut leaves above.</p><p>As I looked out across the wide spaces beneath the trees, old memories came rushing back: my childhood days raising carabaos, cows, and goats, and the familiar sight and sound of native chickens roaming freely across the yard.</p><p>There was a special rhythm and joy to that way of life, caring for the animals all day. Being back on the farm made me realize how much I missed those simpler days.</p><h3>What Five Years Taught Me</h3><p>Visiting the farm after five years taught me something simple but important:</p><blockquote><p>Not every season is a season of fruit, but the land keeps working, and our roots are always waiting for us if we are willing to make the journey back.</p></blockquote><p>I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier generation, and now it is my turn to plant for the next.</p><p>As we walked the nearly 700 steps back to the main road, I looked back at the young mulawin one last time. Five years had slipped by without my noticing. In that time the young mulawin trees had grown old, and season after season of harvests had come and gone without me. If I am going to plant new coconut trees, I also want to be there to watch them grow.</p><p>One thing is for sure: I won&#x27;t wait another five years for my next visit.</p><p class="ask">Have you ever returned to a place after years away and found it changed? I&#x27;d love to hear your story. <a href="mailto:hello@aumahinay.dev">Email me</a>.</p></article><div class="react" data-page="/blog/coming-home-to-the-farm/"><button type="button" class="react-btn react-follow" aria-pressed="false" aria-label="Follow Butch Mahinay" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2.5 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path class="plus" d="M19 8v6M16 11h6"/></svg><span class="react-word">Follow</span><span class="react-count"></span></button><button type="button" class="react-btn react-heart" aria-pressed="false" aria-label="Heart this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="react-word">Heart</span><span class="react-count"></span></button><button type="button" class="react-btn react-like" aria-pressed="false" aria-label="Like this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg><span class="react-word">Like</span><span class="react-count"></span></button><button type="button" class="react-btn react-share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="react-word" aria-live="polite">Share</span><span class="react-count"></span></button></div><script>
 (function () {
   var box = document.querySelector(".react");
   if (!box) return;

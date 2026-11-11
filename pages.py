@@ -1200,12 +1200,130 @@ def post_card(b):
     )
 
 
+# Listen (Butch, 2026-11-12): the reader's own phone or computer reads the post aloud with its
+# built-in voice (Web Speech API). Free: no audio files, no outside service, nothing to pay or keep up.
+# The bar stays hidden on browsers without a voice. Pause works by stopping and starting again from the
+# same sentence, because pause() is unreliable on Android phones.
+LISTEN_SCRIPT = """
+(function () {
+  var box = document.querySelector(".listen"), post = box && box.closest(".post"), say = window.speechSynthesis;
+  if (!box || !post || !say || !window.SpeechSynthesisUtterance) return;
+  var play = box.querySelector(".listen-play"), word = play.querySelector(".listen-word");
+  var stopBtn = box.querySelector(".listen-stop"), speedBtn = box.querySelector(".listen-speed");
+  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, chunks = [], at = 0, on = false, voice = null, lit = null;
+  try { sp = Math.max(0, speeds.indexOf(+localStorage.getItem("listenSpeed"))); } catch (e) {}
+  speedBtn.textContent = speeds[sp] + "\\u00d7";
+  function pickVoice() {
+    var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
+    var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
+    all.sort(function (a, b) {
+      function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
+      return r(a) - r(b);
+    });
+    voice = all[0] || null;
+  }
+  pickVoice();
+  if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
+  // The words to read, in page order: title, summary, paragraphs, headings, quotes and lists.
+  // Not read: date line, byline, photos, sources, buttons.
+  function build() {
+    chunks = [];
+    var parts = post.querySelectorAll(":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
+                                      + ":scope > h3, :scope > blockquote, :scope > ul > li, :scope > ol > li");
+    Array.prototype.forEach.call(parts, function (el) {
+      var text = el.textContent.replace(/\\s+/g, " ").trim(), cur = "";
+      if (!text) return;
+      (text.match(/[^.!?]+[.!?]+["\\u201d\\u2019)]*\\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
+        if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
+        cur += s;
+      });
+      if (cur.trim()) chunks.push({ el: el, text: cur });
+    });
+  }
+  var bar = document.querySelector("header.site");
+  function fitUnderBar() { if (bar) box.style.setProperty("--listen-top", bar.offsetHeight + "px"); }
+  fitUnderBar(); addEventListener("resize", fitUnderBar);
+  function light(el) {
+    if (lit === el) return;
+    if (lit) lit.classList.remove("reading");
+    lit = el;
+    if (!el) return;
+    el.classList.add("reading");
+    var r = el.getBoundingClientRect();
+    if (r.top < box.getBoundingClientRect().bottom || r.top > innerHeight * 0.7) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  function show(state) {
+    box.setAttribute("data-state", state);
+    word.textContent = state === "playing" ? "Pause" : state === "paused" ? "Resume" : "Listen";
+    play.setAttribute("aria-pressed", state === "playing");
+    stopBtn.hidden = state === "idle";
+  }
+  function speak() {
+    if (at >= chunks.length) { done(); return; }
+    var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+    if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
+    u.rate = speeds[sp];
+    u.onend = function () { if (on && u === current) { at += 1; speak(); } };
+    u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
+    current = u;
+    light(c.el);
+    say.speak(u);
+  }
+  var current = null;
+  function halt() { on = false; current = null; say.cancel(); }
+  function done() { halt(); at = 0; light(null); show("idle"); }
+  play.addEventListener("click", function () {
+    if (on) { halt(); show("paused"); return; }  // pause: remember the sentence
+    if (!chunks.length) build();
+    if (!chunks.length) return;
+    say.cancel();
+    on = true; show("playing"); speak();
+  });
+  stopBtn.addEventListener("click", done);
+  speedBtn.addEventListener("click", function () {
+    sp = (sp + 1) % speeds.length;
+    speedBtn.textContent = speeds[sp] + "\\u00d7";
+    try { localStorage.setItem("listenSpeed", speeds[sp]); } catch (e) {}
+    if (on) { halt(); on = true; speak(); }  // new speed from the current sentence
+  });
+  addEventListener("pagehide", function () { say.cancel(); });
+  say.cancel();  // nothing left over from another page
+  box.hidden = false;
+})();
+"""
+
+LISTEN_ICON = Raw('<svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>'
+                  '<svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13M16 5.5v13"/></svg>')
+STOP_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg>')
+
+
+def listen_minutes(b):
+    """Reading aloud is slower than reading with the eyes: about 160 words a minute at normal speed."""
+    return max(1, round(reading_minutes(b) * 200 / 160))
+
+
+def listen_box(b):
+    """Listen bar under a post's byline (hidden until the script finds a voice)."""
+    return [
+        t.div(
+            t.button(LISTEN_ICON, t.span("Listen", class_="listen-word"), type="button", class_="listen-play",
+                     aria_pressed="false"),
+            t.span(f"{listen_minutes(b)} min listen", class_="listen-time muted"),
+            t.button("1×", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
+            t.button(STOP_ICON, type="button", class_="listen-stop", aria_label="Stop reading", title="Stop", hidden=True),
+            class_="listen", data_state="idle", hidden=True, role="group", aria_label="Listen to this post",
+        ),
+        t.script(Raw(LISTEN_SCRIPT)),
+    ]
+
+
 def blog_post(b):
     return t.article(
         post_meta(b),
         t.h1(b["title"]),
         t.p("By ", t.a("Ambrosio “Butch” U. Mahinay", href="/about/"), class_="byline"),
         series_line(b),
+        listen_box(b),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
         [blog_block(x) for x in b["body"]],
         class_="post",
