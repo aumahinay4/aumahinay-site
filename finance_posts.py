@@ -52,6 +52,7 @@ FINANCE_POSTS = [
             "must be cash to pay it. Missing one of the three means the voucher waits, no matter how close "
             "Christmas is. This is the part of disbursement work that people outside rarely see. The check is "
             "the last step, not the first.",
+            ("cta", "Read: ALTOS Principle 2, Every Peso Has a Document", "/blog/altos-framework-every-peso-has-a-document/"),
             ("h", "Bonuses, Payroll and the Cash Plan"),
             "Government workers receive a year-end bonus and a cash gift, which are released in November."
             " For a treasury, that means one of the largest payrolls of the year lands right "
@@ -111,6 +112,7 @@ FINANCE_POSTS = [
             "the counters, computers and printers working? Are the new tax tables, if any, already loaded? Has "
             "everyone been told the schedule of the January rush, including any weekend or extended hours? A "
             "few hours of preparation in December can save many hours of long lines in January.",
+            ("cta", "Read: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
             ("h", "Common Year-End Mistakes"),
             ("point", "Waiting until the last week", "Vouchers that arrive on the last working days leave no "
              "time to fix missing papers. Send them early."),
@@ -245,12 +247,14 @@ FINANCE_POSTS = [
              "letter and a copy of your ID, so the office can verify them."),
             ("point", "Beware of fake collectors", "Treasury staff do not ask for payments through personal "
              "accounts. Pay at the office or through the channels your town has announced."),
+            ("cta", "Read: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
             ("h", "Privacy and Systems"),
             "When I design treasury software, privacy is part of the plan from the start, not something added at "
             "the end. Each user should see only what their job needs. Every view and change should leave a "
             "record. Backups must be protected as carefully as the main system.",
             "A system that protects data well also protects the people who use it. When questions come, the "
             "logs show who did what, and honest workers have nothing to fear.",
+            ("cta", "Read: ALTOS Principle 5, Every Record Has a Seal", "/blog/altos-framework-every-record-has-a-seal/"),
             ("h", "Back to the Counter"),
             "So what should the clerk in our story have done? Exactly what she did, with one more step. She can "
             "explain kindly that the account belongs to the owner, and that the owner, or someone with the "
