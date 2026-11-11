@@ -280,11 +280,11 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             ),
             t.main(t.div(body, class_="wrap")),
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
-            t.footer(t.div(t.span("Built in Python", class_="built"),  # far left (Butch 2026-11-10)
-                           t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+            t.footer(t.div(t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
                                   " · ",
                                   t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
                                   class_="legal-links"),
+                           t.span("Built in Python", class_="built"),  # below the Privacy Policy line (Butch 2026-11-12)
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
             t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/")]))),
