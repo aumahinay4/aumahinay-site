@@ -2287,8 +2287,9 @@ BLOG[:0] = CYBER_POSTS
 # Public Finance Sunday series posts live in treasury_posts.py; each goes in date order among the
 # newest-first posts at the top of the list.
 from treasury_posts import TREASURY_POSTS  # noqa: E402
+from finance_posts import FINANCE_POSTS  # noqa: E402
 
-for _p in TREASURY_POSTS:
+for _p in TREASURY_POSTS + FINANCE_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)
