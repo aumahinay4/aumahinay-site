@@ -43,7 +43,7 @@ FINANCE_POSTS = [
             "purchase requests and vouchers together. My view is simple. The rule is not there to push people to "
             "spend. It is there so that money is not quietly kept aside for purposes the council never approved. "
             "Good planning spreads the work across the year, so December does not turn into a scramble.",
-            ("h", "Three Signatures Before a Check"),
+            ("h", "Three Certifications Before a Check"),
             "Even in a rush, no shortcut is allowed. Section 344 of the Code says no money may be paid out unless "
             "three things are certified. The budget officer certifies that an appropriation exists for the "
             "purpose. The accountant certifies that it has been obligated. And the treasurer certifies that the "
@@ -53,19 +53,19 @@ FINANCE_POSTS = [
             "Christmas is. This is the part of disbursement work that people outside rarely see. The check is "
             "the last step, not the first.",
             ("h", "Bonuses, Payroll and the Cash Plan"),
-            "Government workers receive a year-end bonus and a cash gift, which are usually released from the "
-            "middle of November. For a treasury, that means one of the largest payrolls of the year lands right "
+            "Government workers receive a year-end bonus and a cash gift, which are released in November."
+            " For a treasury, that means one of the largest payrolls of the year lands right "
             "when suppliers and contractors are also asking to be paid.",
             "This is where fiscal management becomes real. The treasury has to know how much cash is in each "
             "bank account, which payments are due first, and what collections are still expected before the "
-            "year ends. Salaries and statutory obligations come first. A good cash plan, made weeks earlier, "
+            "year ends. Salaries and obligations required by law usually come first. A good cash plan, made weeks earlier, "
             "keeps December from becoming a guessing game.",
             ("h", "Cash Advances Must Come Home"),
             "Through the year, some employees receive cash advances for travel, special activities or small "
             "operating needs. Under the long-standing rules of the Commission on Audit, these must be fully "
-            "liquidated at the end of each year. Any unused balance is returned to the treasury, and a petty "
-            "cash fund is counted and replenished.",
-            "In practice, this means many reminders in December. An advance that stays open past the year end "
+            "liquidated at the end of each year. Any unused balance is returned to the treasury. The one "
+            "exception is a petty cash fund, which is not refunded at year-end.",
+            "In practice, this means many reminders in December. An advance that stays open past year-end "
             "shows up in the audit and in the books as money still in someone’s hands. It is far easier to "
             "settle it now than to explain it in March.",
             ("h", "Closing the Collection Side"),
@@ -88,12 +88,14 @@ FINANCE_POSTS = [
             "the money can show that they did their job right.",
             ("h", "What If the Budget Is Not Passed?"),
             "Sometimes the town’s budget for next year is still not approved when December ends. The Code "
-            "has an answer for this in Section 323. The previous year’s appropriation ordinance is deemed "
-            "reenacted until the new one passes.",
+            "has an answer for this in Section 323. The sanggunian must keep holding sessions on the budget, "
+            "and it may take up no other business in those sessions. If 90 days pass and the budget is still "
+            "not passed, the previous year’s appropriation ordinance is deemed reenacted until the new one "
+            "passes.",
             "But not everything carries over. Only salaries and wages of existing positions, statutory and "
             "contractual obligations, and essential operating expenses continue. New projects must wait. For a "
-            "treasury, this changes how January payments are checked, so it helps to know early whether the "
-            "new budget will be ready on time.",
+            "treasury, a late budget means checking every early-year payment for its legal basis, so it helps "
+            "to know early whether the new budget will be ready on time.",
             ("h", "The Reports That Follow"),
             "December ends, but the work does not. The books for the year are closed, and the financial "
             "statements are prepared for the auditor early in the new year. The treasury’s part is to make "
@@ -103,8 +105,8 @@ FINANCE_POSTS = [
             "audit. Every clean, complete record makes the next step easier for everyone.",
             ("h", "Getting Ready for January"),
             "While closing one year, the treasury is also preparing for the next. January is the busiest "
-            "collection month. Business permits are renewed, the first payments of real property tax come in, "
-            "and many people buy their cedula for the year.",
+            "collection month. Business permits are renewed, many owners pay their real property tax early to "
+            "get the discount, and many people buy their cedula for the year.",
             "So December is also about readiness. Are there enough accountable forms for every collector? Are "
             "the counters, computers and printers working? Are the new tax tables, if any, already loaded? Has "
             "everyone been told the schedule of the January rush, including any weekend or extended hours? A "
@@ -176,15 +178,15 @@ FINANCE_POSTS = [
             ("h", "Some Information Is Extra Sensitive"),
             "The Act places some kinds of information in a stricter group called sensitive personal "
             "information. It includes a person’s age, marital status, health and education. It also "
-            "includes numbers and records that government agencies issue to a person, such as social security "
-            "numbers, licenses, and tax returns.",
-            "In a treasury, much of what passes through the counter falls in this group. That is why the "
-            "clerk in our story was right. A taxpayer’s account is not something to share with a neighbor, "
+            "covers information issued by government agencies that is peculiar to a person. The law names "
+            "examples such as social security numbers, licenses, and tax returns.",
+            "Some of what passes through the counter falls in this group, and the rest is still personal "
+            "information that the Act protects. That is why the clerk in our story was right. A taxpayer’s account is not something to share with a neighbor, "
             "even a kind one, even a relative.",
             ("h", "So Is the Treasury Being Secretive?"),
             "No. Privacy protects people, not spending. The Data Privacy Act itself says it does not cover "
-            "information about a government official’s position and official work, such as their name, "
-            "title and salary range. It also does not cover information about the work a contractor does for "
+            "information about a government officer or employee’s position and official work, such as their "
+            "name, title and salary range. It also does not cover information about the work a contractor does for "
             "the government.",
             "So the budget, the list of projects, how much was spent and who was paid for public contracts "
             "remain public matters. Local governments are expected to post their budgets, financial reports "
@@ -194,7 +196,7 @@ FINANCE_POSTS = [
             ("h", "When the Law Says Something Must Be Posted"),
             "There are cases where the law itself requires names to be made public. When real property tax "
             "stays unpaid, the Local Government Code requires the treasurer to post a notice of delinquency in "
-            "the town hall and the barangays. If the property is later advertised for public auction, the notice "
+            "the town hall and the barangays, and to publish it in a newspaper. If the property is later advertised for public auction, the notice "
             "names the owner and describes the property.",
             "The Data Privacy Act allows this, because processing that is needed to comply with a legal "
             "obligation, or to carry out a public office’s functions, is lawful. The key words are "
@@ -223,7 +225,7 @@ FINANCE_POSTS = [
             "Mistakes happen. A laptop is stolen. A file is sent to the wrong email. A cabinet is left open "
             "overnight. What matters is what the office does next.",
             "Under the rules of the National Privacy Commission, a serious breach involving sensitive personal "
-            "information must be reported to the Commission, and the affected people informed, within 72 hours "
+            "information, or data that could be used for identity fraud, must be reported to the Commission, and the affected people informed, within 72 hours "
             "of the office knowing about it. Each office should have a data protection officer who knows what "
             "to do.",
             "This connects with what I wrote in my cybersecurity series. Most attacks begin with ordinary "
