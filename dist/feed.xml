@@ -6,7 +6,21 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Year-End in the Treasury: What Really Happens in December</title>
+      <link>https://aumahinay.dev/blog/year-end-in-the-treasury/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/year-end-in-the-treasury/</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0800</pubDate>
+      <description>While most offices slow down for Christmas, the local treasury speeds up. Here is what happens in December, from bonuses and last-minute vouchers to unspent budgets, cash counts and getting ready for the January rush.</description>
+    </item>
+    <item>
+      <title>Your Data at the Treasury Counter: What an Office May Share, and What It Must Protect</title>
+      <link>https://aumahinay.dev/blog/your-data-at-the-treasury-counter/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/your-data-at-the-treasury-counter/</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Every payment at the town hall leaves a trail of personal information. Here is what the Data Privacy Act means at the treasury counter, what an office may share, what it must protect, and simple habits that keep taxpayers safe.</description>
+    </item>
     <item>
       <title>Cybersecurity Series, Part 1: How Modern Cyberattacks Really Work</title>
       <link>https://aumahinay.dev/blog/cybersecurity-part-1-how-cyberattacks-work/</link>
