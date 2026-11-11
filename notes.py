@@ -6,7 +6,8 @@ and ends with a 10-question tap quiz (the same quiz as the vocabulary modules).
 
 Each note: number, slug, title, summary, publish_on ("YYYY-MM-DD HH:MM" PH time),
 body [str paragraph | ("h", heading) | ("list", [items]) | ("table", [header], [[cells]]) | ("tip", text)],
-example (title, [steps], answer), practice [(question, [choices], index of right choice, why)].
+example (title, [steps], answer), practice [(question, [choices], index of right choice, why)],
+optional sources [str] (laws cited, shown at the end) and link (lead-in, label, href).
 Facts checked against RA 7160 (Book II) and RA 9640; see "checked" below.
 """
 
@@ -183,6 +184,12 @@ NOTES = [
         ],
     },
 ]
+
+
+# Notes 2 to 10 live in their own file to keep this one short (Butch asked for them 2026-11-10).
+from notes_2_10 import NOTES_2_TO_10  # noqa: E402
+
+NOTES += NOTES_2_TO_10
 
 
 def note_url(n):

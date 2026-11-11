@@ -613,18 +613,24 @@ BOOK_SCRIPT = """
   var r = document.getElementById("reader");
   if (!r) return;
   var pages = JSON.parse(r.getAttribute("data-pages")), i = 0;
-  var img = r.querySelector(".page img"), count = r.querySelector(".count");
-  var prev = r.querySelector(".prev"), next = r.querySelector(".next");
+  var img = r.querySelector(".page img"), counts = r.querySelectorAll(".count");
+  var prevs = r.querySelectorAll(".prev"), nexts = r.querySelectorAll(".next");
+  function each(list, f) { for (var k = 0; k < list.length; k++) f(list[k]); }
   function show(n) {
     i = Math.max(0, Math.min(pages.length - 1, n));
     img.src = pages[i];
     img.alt = "Page " + (i + 1) + " of the preview";
-    count.textContent = "Page " + (i + 1) + " of " + pages.length;
-    prev.disabled = i === 0; next.disabled = i === pages.length - 1;
+    each(counts, function (c) { c.textContent = "Page " + (i + 1) + " of " + pages.length; });
+    each(prevs, function (b) { b.disabled = i === 0; });
+    each(nexts, function (b) { b.disabled = i === pages.length - 1; });
     if (i + 1 < pages.length) (new Image()).src = pages[i + 1];  // load the next page ahead
   }
-  prev.addEventListener("click", function () { show(i - 1); });
-  next.addEventListener("click", function () { show(i + 1); });
+  function turn(d) {  // a new page starts at its top line
+    show(i + d);
+    if (r.getBoundingClientRect().top < 0) r.scrollIntoView({ block: "start" });
+  }
+  each(prevs, function (b) { b.addEventListener("click", function () { turn(-1); }); });
+  each(nexts, function (b) { b.addEventListener("click", function () { turn(1); }); });
   document.addEventListener("keydown", function (e) {
     if (e.key === "ArrowRight") show(i + 1);
     if (e.key === "ArrowLeft") show(i - 1);
@@ -634,7 +640,7 @@ BOOK_SCRIPT = """
   stage.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
   stage.addEventListener("touchend", function (e) {
     var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > 2 * Math.abs(dy)) show(i + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 50 && Math.abs(dx) > 2 * Math.abs(dy)) turn(dx < 0 ? 1 : -1);
   }, { passive: true });
   r.addEventListener("contextmenu", function (e) { e.preventDefault(); });
   r.addEventListener("dragstart", function (e) { e.preventDefault(); });
@@ -663,6 +669,12 @@ def book_reader():
                 t.img(src=pages[0], alt="Page 1 of the preview", width="900", height="1350", draggable="false"),
                 t.div(class_="shield"),  # sits on top of the page, so a long-press or right-click finds no picture to save
                 class_="page",
+            ),
+            t.div(
+                t.button("← Previous", type="button", class_="btn prev"),
+                t.span(class_="count"),
+                t.button("Next →", type="button", class_="btn next"),
+                class_="controls bottom",
             ),
             id="reader", class_="reader", data_pages=json.dumps(pages), data_noswipe="",
         ),
@@ -751,9 +763,11 @@ def note_page(n):
             t.p("✓ Last checked: " + NOTES_INFO["checked"] + " · against RA 7160 (Local Government Code) and its amendments", class_="checked"),
             [note_block(b) for b in n["body"]],
             t.div(t.h3(ex_title), t.ol([t.li(s_) for s_ in steps]), t.p(t.b("Answer: "), ex_answer), class_="card example"),
+            t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") else None,
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
             practice_list(n["practice"]),
+            [t.h2("Laws and rules cited"), t.ul([t.li(x) for x in n["sources"]], class_="note-sources")] if n.get("sources") else None,
             t.p(NOTES_INFO["disclaimer"], class_="muted"),
             react_box(note_url(n)),
             t.div(
