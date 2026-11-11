@@ -938,8 +938,10 @@ NOTES_2_TO_10 = [
                 ["Ending balance", "Forms still on hand at the end of the period"],
             ]),
             "The arithmetic must always hold: beginning balance plus receipts, minus issued, equals ending "
-            "balance. The RAAF is prepared monthly and goes to the accountant, who checks it against the "
-            "collections recorded; the same section appears in each Report of Collections and Deposits (Note 7). "
+            "balance. Each collector prepares a RAAF every month. The liquidating officer then combines them "
+            "into a Consolidated RAAF (CRAAF), which is submitted on or before the 5th day of the following "
+            "month. The same accountability section also appears in each Report of Collections and Deposits "
+            "(Note 7). "
             "COA auditors match the serial numbers on the RAAF against the receipts, the RCDs and the deposits.",
             ("tip", "Gaps and repeats are what auditors look for first. If receipt 4517 appears in no RCD and is "
                     "not marked cancelled, someone must explain where it went."),
@@ -1010,7 +1012,8 @@ NOTES_2_TO_10 = [
              "A missing or repeated number signals collections that may not have reached the treasury."),
             ("How often is the RAAF usually prepared?",
              ["daily", "monthly", "every six months", "once a year"], 1,
-             "It is prepared monthly, and the same accountability section appears in each RCD."),
+             "Each collector prepares one every month; the liquidating officer consolidates them into a CRAAF, "
+             "submitted on or before the 5th day of the following month."),
         ],
         "sources": [
             "Presidential Decree No. 1445, Government Auditing Code of the Philippines, Sections 68 and 73",
