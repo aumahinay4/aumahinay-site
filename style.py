@@ -786,10 +786,12 @@ html.menu-js.menu-open header.site #site-menu a {
 html.menu-js.menu-open header.site #site-menu a:hover { color: var(--gold); text-decoration: none; }
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 8px 0; font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 8px 0; font-size: clamp(1.05rem, 4.6vw, 1.25rem); font-weight: 600; color: var(--on-navy-muted); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 18px; padding-top: 22px; border-top: 1px solid rgba(238, 243, 255, .16); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active,
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"].active { color: var(--gold); }
 html.menu-js.menu-open .menu-close { display: grid; place-content: center; position: absolute; top: calc(14px + env(safe-area-inset-top, 0px));
   right: max(18px, env(safe-area-inset-right, 0px)); width: 48px; height: 48px; padding: 0; cursor: pointer; background: transparent; border: 0; color: var(--on-navy); }
 html.menu-js.menu-open .menu-close svg { width: 34px; height: 34px; stroke-width: 1.6; }
@@ -959,7 +961,8 @@ html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset
 html.menu-js.menu-open header.site { z-index: 60; }
 html.menu-js.menu-open header.site #site-menu a { padding: 9px 0; font-size: clamp(1.08rem, 4.86vw, 1.395rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 13px; padding-top: 16px; }
 html.menu-js.menu-open .menu-close svg { width: 25px; height: 25px; }
 html.menu-js.menu-open .menu-close { right: 8px; top: calc(8px + env(safe-area-inset-top, 0px)); }
@@ -1009,10 +1012,12 @@ html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"] { color: var(--muted); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { color: var(--muted); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { border-top-color: var(--line); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"].active,
-html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active { color: var(--gold-ink); }
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active,
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"].active { color: var(--gold-ink); }
 html.menu-js.menu-open .menu-close { color: var(--text); }
 html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
 """
@@ -1036,6 +1041,8 @@ footer.legal span { color: var(--muted); }
 footer.legal .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; }
 footer.legal .built { white-space: nowrap; }
 footer.legal .built { justify-self: start; }
+footer.legal .legal-links { white-space: nowrap; }
+@media (max-width: 640px) { footer.legal .wrap { grid-template-columns: minmax(0,1fr); row-gap: 6px; } }  /* phones: links centred on their own line under "Built in Python" (no overlap) */
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
 """

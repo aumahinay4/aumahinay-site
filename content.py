@@ -138,7 +138,7 @@ ABOUT = {
 # Privacy Policy page (/privacy/), from Butch's Google Doc "Privacy Policy & Courses Copy" (Part 1).
 # Each section: (heading, [paragraphs or ("list", [(bold label, text), ...])]).
 PRIVACY = {
-    "effective": "November 7, 2026",
+    "effective": "November 11, 2026",  # updated for AdSense review (accuracy fixes, 2026-11-11)
     "intro": (
         "Welcome to aumahinay.dev (\u201cWebsite\u201d), operated by Ambrosio U. Mahinay (\u201cI\u201d, "
         "\u201cme\u201d, or \u201cmy\u201d). This Privacy Policy explains how information is collected, used, "
@@ -147,14 +147,21 @@ PRIVACY = {
     ),
     "sections": [
         ("1. Information I Collect", [("list", [
-            ("Voluntary Information:", "When you contact me directly via email (hello@aumahinay.dev) or "
-             "subscribe to updates, I collect your name, email address, and the contents of your message "
-             "solely to respond to your inquiry."),
+            ("Voluntary Information:", "When you contact me directly via email (hello@aumahinay.dev), I "
+             "receive your name, email address, and the contents of your message and use them solely to "
+             "respond to your inquiry."),
             ("Log Files and Analytics:", "Like most standard websites hosted via Cloudflare, this Website "
              "automatically collects non-personally identifiable information inside server log files. This "
              "includes your Internet Protocol (IP) address, browser type, Internet Service Provider (ISP), "
              "date and time stamp, referring/exit pages, and click activity to analyze trends, administer "
-             "the site, and maintain security."),
+             "the site, and maintain security. Visitor statistics come from Cloudflare Web Analytics, which "
+             "does not use cookies."),
+            ("Reactions:", "When you tap Follow, Heart or Like under a post or lesson, your browser keeps a "
+             "random code in its own storage so that your tap is counted only once. Only that code and the "
+             "totals are stored. They do not include your name, email address or IP address. Share taps are "
+             "counted as a simple total."),
+            ("Fonts:", "Page fonts are loaded from Google Fonts, so your browser connects to Google's servers "
+             "when a page opens."),
         ])]),
         ("2. Cookies and Web Beacons", [
             "This Website uses \u201ccookies\u201d to store information about visitors' preferences and to "
@@ -175,11 +182,17 @@ PRIVACY = {
                  ("Google Ads Settings", "https://myadcenter.google.com/"),
                  ". Alternatively, you can opt out of a third-party vendor's use of cookies for personalized "
                  "advertising by visiting ", ("www.aboutads.info", "https://www.aboutads.info/choices/"), "."]),
+                ("How Google Uses Data:", ["To learn how Google uses information from websites that use its "
+                 "services, see ", ("How Google uses information from sites or apps that use our services",
+                 "https://policies.google.com/technologies/partner-sites"), "."]),
+                ("Consent:", "Visitors from regions that require consent for advertising cookies, such as the "
+                 "European Economic Area, the United Kingdom and Switzerland, will be asked for their choice "
+                 "before personalized ads are shown."),
             ]),
         ]),
         ("4. External Links", [
-            "This Website contains links to external websites (such as GitHub, YouTube, or government "
-            "portals). I have no control over and assume no responsibility for the content, privacy "
+            "This Website contains links to external websites (such as Coursera, dictionaries, or "
+            "government portals). I have no control over and assume no responsibility for the content, privacy "
             "policies, or practices of any third-party sites or services.",
         ]),
         ("5. Data Protection Rights", [
@@ -206,6 +219,74 @@ PRIVACY = {
         ("9. Contact Information", [
             "If you have any questions or require more information about this Privacy Policy, please "
             "contact me at:",
+            ("contact",),
+        ]),
+    ],
+}
+
+# Terms of Use & Disclaimer page (/terms/), added for the AdSense review (2026-11-11).
+# Same shape as PRIVACY: (heading, [paragraphs or ("list", [(bold label, text), ...])]).
+TERMS = {
+    "effective": "November 11, 2026",
+    "intro": (
+        "These terms explain how you may use aumahinay.dev (\u201cWebsite\u201d) and what its content is, "
+        "and is not, meant for. By using the Website, you agree to them."
+    ),
+    "sections": [
+        ("1. For Learning Only", [
+            "The blog posts, study notes, tutorials and tools on this Website are written to help readers "
+            "understand local treasury work, public finance, Python programming and online safety. They are "
+            "general information for learning. They are not legal, tax, accounting or financial advice, and "
+            "they are not an official ruling or opinion of any government office.",
+            "Laws, rates and procedures change, and local ordinances differ from place to place. Always check "
+            "the current law, your local revenue code and the office concerned before you act on anything you "
+            "read here.",
+        ]),
+        ("2. The RPT Calculator", [
+            "The real property tax calculator is a study aid. Its results are estimates based on the rules "
+            "described on its page. Your actual tax depends on your tax declaration and your local "
+            "ordinances, and your municipal, city or provincial treasurer's office has the final figures.",
+        ]),
+        ("3. Exam Reviewers and Study Notes", [
+            "The vocabulary modules and study notes are independent material written by the author. They are "
+            "not official materials of the Civil Service Commission, the Bureau of Local Government Finance or "
+            "any other office, they do not contain actual exam questions, and they do not guarantee any exam "
+            "result.",
+        ]),
+        ("4. Personal Capacity", [
+            "Everything on this Website is written in the author's personal capacity, outside official "
+            "working hours. It does not represent the views, policies or positions of any local government "
+            "unit or national government agency.",
+        ]),
+        ("5. Accuracy and Corrections", [
+            "I check the facts before publishing and update pages when I learn of a change, but I cannot "
+            "promise that every page is complete or current. If you spot an error, please write to me and I "
+            "will check it and correct it.",
+        ]),
+        ("6. Copyright", [
+            "The writing, pictures and the ALTOS book preview on this Website belong to Ambrosio U. Mahinay "
+            "unless stated otherwise. You may quote short parts with a link back to the page. Please don't "
+            "copy or republish whole posts, notes or book pages without written permission.",
+            "The example code in the Python tutorials is there for you to learn from: you are welcome to use "
+            "and adapt it in your own work.",
+        ]),
+        ("7. Advertising and Links", [
+            ["This Website may show ads served by Google AdSense. Ads are chosen by Google, not by me, and an "
+             "ad is not an endorsement. Links to other websites are given for your convenience; I am not "
+             "responsible for their content. How ads and cookies work here is explained in the ",
+             ("Privacy Policy", "/privacy/"), "."],
+        ]),
+        ("8. Limitation of Liability", [
+            "The Website and its tools are provided \u201cas is\u201d, free of charge. I am not liable for any "
+            "loss or damage that comes from relying on its content or tools.",
+        ]),
+        ("9. Changes to These Terms", [
+            "I may update these terms from time to time. Any changes will be posted on this page with an "
+            "updated effective date. These terms are governed by the laws of the Republic of the "
+            "Philippines.",
+        ]),
+        ("10. Contact Information", [
+            "If you have any questions about these terms, please contact me at:",
             ("contact",),
         ]),
     ],
