@@ -913,9 +913,11 @@ NOTES_2_TO_10 = [
             "can mean a liability for its face value.",
             ("h", "The life of a booklet"),
             ("list", [
-                "Supply. A municipal treasurer usually requests stocks from the provincial treasurer. One "
-                "provincial office, for example, issues accountable forms on a Requisition and Issue Voucher "
-                "with an Invoice and Receipt of Accountable Forms.",
+                "Supply. The treasurer buys the forms either from the provincial treasurer's office, using a "
+                "requisition and issue slip, or directly from the National Printing Office, which needs a "
+                "complete set of documents such as a disbursement voucher and the requisition. Forms bought "
+                "through the provincial office usually cost a little more than the National Printing Office "
+                "price.",
                 "Custody. The treasurer keeps the stock in a safe place and records every booklet received, by "
                 "form number and serial numbers.",
                 "Issue. Booklets are issued to collectors in serial order, and the collector signs for them. "
