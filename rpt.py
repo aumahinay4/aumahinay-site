@@ -143,7 +143,7 @@ RPT_SCRIPT = r"""
     quarters.forEach(function (x) {
       var cells;
       if (x.st !== 'now') {
-        var lbl = x.st === 'paid' ? 'paid before' : x.past ? 'unpaid, late' : 'not now';
+        var lbl = x.st === 'paid' ? 'paid' : x.past ? 'unpaid, late' : 'not now';
         cells = ['Q' + x.q + ', due ' + x.due, lbl, peso(r2(x.b + x.s)), '—', '—'];
       } else {
         var bAdj, sAdj, label;
@@ -165,8 +165,9 @@ RPT_SCRIPT = r"""
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
     var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     var notes = [];
-    if (!anyNow) notes.push('Choose "Pay now" for at least one quarter.');
+    if (!anyNow) notes.push('All four quarters are marked "Paid": nothing to pay for this tax year.');
     if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
+    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Not paid" and past the due date. If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
     var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.months; });
     if (onTimeNow && delinquent) {
       var isAre = function (l) { return l.join(', ') + (l.length > 1 ? ' are' : ' is'); };
@@ -237,8 +238,7 @@ def _radio(name, value, label, checked=False):
 
 
 def _quarter_select(q):
-    return t.select(t.option("Pay now", value="now"), t.option("Paid before", value="paid"),
-                    t.option("Not now", value="later"), id="qs%d" % q, name="qs%d" % q)
+    return t.select(t.option("Not paid", value="now"), t.option("Paid", value="paid"), id="qs%d" % q, name="qs%d" % q)
 
 
 def _guide_link():
@@ -315,7 +315,7 @@ def rpt_page():
                         _field("Date of payment", t.input(type="date", id="paydate", name="paydate")),
                         class_="field-pair",
                     ),
-                    t.p("Which quarters are you paying now?", class_="field-title"),
+                    t.p("Which quarters of this tax year are already paid?", class_="field-title"),
                     t.div(*[_field("Q%d, due %s" % (i + 1, d), _quarter_select(i + 1))
                             for i, d in enumerate(["Mar 31", "Jun 30", "Sep 30", "Dec 31"])],
                           class_="quarter-grid"),
@@ -331,8 +331,8 @@ def rpt_page():
                         id="qz-disc", class_="hint block-hint"),
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
                         "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
-                        "a month, up to 36 months; in Quezon Province it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters you paid before as \"Paid before\"; only the "
-                        "quarters marked \"Pay now\" are added to the amount to pay.", class_="hint block-hint"),
+                        "a month, up to 36 months; in Quezon Province it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters already paid as \"Paid\"; every quarter "
+                        "marked \"Not paid\" is added to the amount to pay: 10% off if paid on time, 6% more for each quarter late.", class_="hint block-hint"),
                 ),
                 id="rpt", class_="card rpt-form", novalidate=True,
             ),
@@ -346,7 +346,7 @@ def rpt_page():
                     t.table(
                         t.thead(t.tr(t.th(""), t.th("Basic RPT"), t.th("SEF"), t.th("Total"))),
                         t.tbody(
-                            t.tr(t.th("Tax for the quarters paid now", scope="row"), t.td(id="t-basic"), t.td(id="t-sef"), t.td(id="t-tax")),
+                            t.tr(t.th("Tax for the unpaid quarters", scope="row"), t.td(id="t-basic"), t.td(id="t-sef"), t.td(id="t-tax")),
                             t.tr(t.th("Discount or interest", scope="row", id="t-adj-label"), t.td(id="t-badj"), t.td(id="t-sadj"), t.td(id="t-adj")),
                             t.tr(t.th("To pay", scope="row"), t.td(id="t-bdue"), t.td(id="t-sdue"), t.td(id="t-due"), class_="total"),
                         ),
