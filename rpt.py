@@ -87,6 +87,15 @@ RPT_SCRIPT = r"""
   var lastLgu = null, lastLevelKey = null;
 
   function calc() {
+    // a payment is never ₱0.00 (Butch 2026-11-12): when all four quarters of the tax year are paid, the next payment
+    // is for the following year, so move to it and start its quarters as "Not paid"
+    var rolled = '';
+    if ([1, 2, 3, 4].every(function (q) { return $('qs' + q).value === 'paid'; })) {
+      var y0 = Math.floor(num('taxyear')) || ph.getUTCFullYear();
+      $('taxyear').value = y0 + 1;
+      [1, 2, 3, 4].forEach(function (q) { $('qs' + q).value = 'now'; });
+      rolled = 'Tax year ' + y0 + ' is fully paid, so this shows the next payment: tax year ' + (y0 + 1) + '.';
+    }
     var lgu = f.lgu.value, city = lgu === 'city', qz = lgu === 'quezon';
     if (lgu !== lastLgu) { $('basic-rate').value = city ? '2' : '1'; lastLgu = lgu; }
     $('brgy-count-row').hidden = !city;
@@ -167,7 +176,7 @@ RPT_SCRIPT = r"""
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
     var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     var notes = [];
-    if (!anyNow) notes.push('All four quarters are marked "Paid": nothing to pay for this tax year.');
+    if (rolled) notes.push(rolled);
     if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
     if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Not paid" and past the due date. If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
     var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.months; });
