@@ -1153,7 +1153,9 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
         var td = document.createElement(i === 0 ? 'th' : 'td'); td.textContent = c; if (i === 0) td.scope = 'row'; tr.appendChild(td); });
       qbody.appendChild(tr);
     });
-    tbAdj = r2(tbAdj); tsAdj = r2(tsAdj);
+    // round the whole discount or interest once, then give the SEF what is left, so 15% of ₱375 is ₱56.25
+    // exactly and the amount to pay is ₱318.75 (Butch 2026-11-12), not ₱318.76 from rounding basic and SEF apart
+    var tAdj = r2(tbAdj + tsAdj); tbAdj = r2(tbAdj); tsAdj = r2(tAdj - tbAdj);
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
     var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     var notes = [];
