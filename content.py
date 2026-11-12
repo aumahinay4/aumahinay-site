@@ -557,6 +557,7 @@ BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
     ("security", "Cybersecurity", "violet"),
+    ("data", "Data Analytics", "gold"),  # Data Analytics series, Tuesdays (Butch 2026-11-13)
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
 
@@ -2382,8 +2383,9 @@ BLOG[:0] = CYBER_POSTS
 # newest-first posts at the top of the list.
 from treasury_posts import TREASURY_POSTS  # noqa: E402
 from finance_posts import FINANCE_POSTS  # noqa: E402
+from data_posts import DATA_POSTS  # noqa: E402
 
-for _p in TREASURY_POSTS + FINANCE_POSTS:
+for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)
