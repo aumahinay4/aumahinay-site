@@ -16,7 +16,7 @@ DATA_POSTS = [
         "slug": "data-analytics-part-1-what-it-is",
         "category": "data",
         "summary": "Data analytics is the craft of turning everyday records into answers people can act on. "
-                   "Here is what it means, the four kinds of questions it can answer, a famous map from 1854, "
+                   "Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, "
                    "and why a local treasury is already sitting on a mountain of useful data.",
         "publish_on": "2026-11-17 21:00",
         "body": [
@@ -31,8 +31,8 @@ DATA_POSTS = [
             "records into something the mayor could decide on. That way has a name. It is data analytics, and "
             "this post starts a long series about it.",
             ("h", "Why I Am Writing This Series"),
-            "I completed the Google Data Analytics Professional Certificate on Coursera, and later the advanced "
-            "course that followed it. What I learned there did not stay in the classroom. It shaped how I think "
+            "I completed the Google Data Analytics Professional Certificate on Coursera, and later the Google "
+            "Advanced Data Analytics Professional Certificate. What I learned there did not stay in the classroom. It shaped how I think "
             "about treasury records, and it became one of the foundations of ALTOS, the system I built for "
             "Philippine local treasuries.",
             "Most data analytics lessons online use examples from online shops, streaming apps or bike rentals. "
@@ -65,29 +65,34 @@ DATA_POSTS = [
             "tools, the habits and the people. Data science is a wider field still. It includes building new "
             "statistical models and machine learning systems. A good analyst borrows from it, but most "
             "everyday questions in an office can be answered without it.",
-            ("h", "A Map That Saved Lives"),
+            ("h", "A Cholera Outbreak and a Famous Map"),
             "One of the most famous stories in this field happened long before computers. On August 31, 1854, "
             "cholera broke out in Soho, a crowded neighborhood in London. Hundreds of people died within days. "
             "Most doctors at the time believed the disease spread through foul air.",
-            "A physician named John Snow suspected the water instead. He gathered the addresses of the people "
-            "who had died and marked each death on a street map. The marks crowded around one public water pump "
-            "on Broad Street. He also checked the exceptions. Workers at a nearby brewery, who drank beer and "
-            "water from the brewery's own well, were largely spared.",
+            "A physician named John Snow suspected the water instead. He went through the records of who had "
+            "died and where they had lived, and he asked families where they drew their water. Again and again, "
+            "the answer led to one public pump on Broad Street. He also studied the exceptions. A brewery stood "
+            "nearby, but none of its workers was recorded as dying of cholera. They drank the beer they were "
+            "given, and the brewery had its own deep well.",
             "On September 7, Snow presented his findings to the local parish board. The next day, the handle of "
             "the pump was removed so no one could use it. Snow himself noted that the outbreak was already "
-            "slowing by then, partly because many residents had fled. That honesty is part of the lesson. His "
+            "slowing by then, and that many residents had fled. That honesty is part of the lesson. His "
             "evidence was strong enough to act on, and he did not claim more than it showed.",
+            "A few months later, Snow drew the picture that made the case famous. On a street map of the area, "
+            "he placed a small mark for each death at its address. The marks pile up around the Broad Street "
+            "pump and thin out farther away. Anyone could see the pattern in seconds, even without reading his "
+            "tables.",
             "Snow had no spreadsheet, no database and no software. He had a clear question, carefully collected "
-            "records, a simple picture that made the pattern obvious, and the courage to bring it to the people "
-            "who could act. Those four things are still the heart of data analytics today.",
+            "records, the courage to bring his evidence to the people who could act, and a simple picture that "
+            "made the pattern plain to everyone. Those four things are still the heart of data analytics today.",
             ("h", "Four Kinds of Questions"),
             "Analysts often sort their work into four types, each answering a different question. Here they are "
             "with treasury examples.",
             ("point", "Descriptive: What happened?", "Total collections last month by revenue source. This is "
              "the most common kind of analysis, and the base for everything else."),
             ("point", "Diagnostic: Why did it happen?", "Business tax collections fell 12% compared with last "
-             "January. Was it fewer businesses, smaller declared sales, or simply that the deadline fell on a "
-             "weekend and payments slipped into February?"),
+             "January. Was it fewer businesses, smaller declared sales, or simply that more owners chose to pay "
+             "in quarterly installments instead of the full year at once?"),
             ("point", "Predictive: What is likely to happen?", "Based on the pattern of the past three years, "
              "where will real property tax collections probably end by December, and how wide is the range of "
              "likely results?"),
