@@ -1,0 +1,12 @@
+Receipts in the register: 10
+
+Total per fund
+  General Fund                 21,986.15
+  Special Education Fund        2,231.15
+  Trust Fund                    2,350.50
+
+Receipts of Rosa Mendoza
+  7650108  Real property tax (basic)       980.40
+  7650109  Real property tax (SEF)         980.40
+
+Refused OR 7650104 again: UNIQUE constraint failed: receipts.or_number

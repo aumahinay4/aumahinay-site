@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+collecting ... collected 10 items
+
+test_rpt.py::test_ten_months_late PASSED                                 [ 10%]
+test_rpt.py::test_no_penalty_when_paid_on_time PASSED                    [ 20%]
+test_rpt.py::test_penalty_stops_at_36_months[36] PASSED                  [ 30%]
+test_rpt.py::test_penalty_stops_at_36_months[37] PASSED                  [ 40%]
+test_rpt.py::test_penalty_stops_at_36_months[58] PASSED                  [ 50%]
+test_rpt.py::test_penalty_stops_at_36_months[120] PASSED                 [ 60%]
+test_rpt.py::test_half_centavo_rounds_up PASSED                          [ 70%]
+test_rpt.py::test_negative_months_are_refused PASSED                     [ 80%]
+test_rpt.py::test_discount_of_ten_percent PASSED                         [ 90%]
+test_rpt.py::test_discount_above_twenty_percent_is_refused PASSED        [100%]
+
+============================== 10 passed in 0.01s ==============================
