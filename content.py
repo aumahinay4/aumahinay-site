@@ -29,7 +29,7 @@ ABOUT = {
     "intro": (
         "I am a public administration practitioner, author, and self-taught software developer "
         "in Quezon Province, Philippines, with over 15 years in government service, more than 13 of "
-        "them in local treasury work since April 2013, covering disbursement, collection, supervision, "
+        "them in local treasury work, covering disbursement, collection, supervision, "
         "treasury operations, and fiscal management."
     ),
     "paragraphs": [
@@ -84,7 +84,7 @@ ABOUT = {
     ],
     "education": [
         ("Master in Public Administration (MPA)", "Manuel S. Enverga University Foundation, Lucena City"),
-        ("Bachelor of Science in Public Administration (BSPA)", ""),
+        ("Bachelor of Science in Public Administration (BSPA-ETEEAP)", ""),
     ],
     "eligibilities": [
         "Intermediate Competency in Local Treasury Examination (ICLTE) – 2019",
