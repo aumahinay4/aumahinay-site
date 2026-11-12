@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data</title>
+      <link>https://aumahinay.dev/blog/data-analytics-part-1-what-it-is/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/data-analytics-part-1-what-it-is/</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Data analytics is the craft of turning everyday records into answers people can act on. Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, and why a local treasury is already sitting on a mountain of useful data.</description>
+    </item>
     <item>
       <title>Lesson 6: Make a formatted Excel report with openpyxl</title>
       <link>https://aumahinay.dev/tutorials/excel-report-with-openpyxl/</link>

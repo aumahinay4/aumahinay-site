@@ -1,4 +1,5 @@
-"""Data Analytics blog series (Butch 2026-11-13 PH): one part every Tuesday at 9 pm PH, a year or more.
+"""Data Analytics blog series (Butch 2026-11-13 PH): Part 1 live Nov 13, 2026 (Butch: "post this first part today"),
+then one part every Tuesday at 9 pm PH ("YYYY-MM-DD 21:00"), a year or more.
 
 The series teaches the whole craft in plain words, from asking a good question to acting on the answer,
 with examples from local treasury work. Every number, office and taxpayer in an example is made up.
@@ -11,14 +12,14 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
-        "date": "November 17, 2026",
+        "date": "November 13, 2026",
         "title": "Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data",
         "slug": "data-analytics-part-1-what-it-is",
         "category": "data",
         "summary": "Data analytics is the craft of turning everyday records into answers people can act on. "
                    "Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, "
                    "and why a local treasury is already sitting on a mountain of useful data.",
-        "publish_on": "2026-11-17 21:00",
+        "publish_on": "2026-11-13",
         "body": [
             "Picture a Monday morning in a municipal treasury office. The mayor calls and asks a simple "
             "question: “Will we reach our real property tax target this year?” Someone opens a "
