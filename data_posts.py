@@ -27,7 +27,8 @@ DATA_POSTS = [
             "Most of the time, the problem is not the math. It is the order of the work. The person started with "
             "the data and hoped a question would appear. Good analysis runs the other way around, and it follows "
             "a set of steps that experienced analysts repeat almost without thinking.",
-            "In Part 1, we defined data analytics as turning records into answers people can act on. This part "
+            "In Part 1, we described data analytics as the craft of turning everyday records into answers people "
+            "can act on. This part "
             "lays out the road from the first question to the final decision. The rest of the series walks down "
             "that road one step at a time.",
             ("h", "Six Steps, in Plain Words"),
@@ -118,7 +119,8 @@ DATA_POSTS = [
             ("h", "Step 6: Act"),
             "The head of office approves a second window on peak mornings and posts the schedule at the "
             "entrance and on the town's page. That is the decision. But the process is not finished.",
-            "After the next January, the analyst checks the new numbers. Did waits drop below 30 minutes? Did "
+            "After the next January, the office keeps the two-week waiting log again, and the analyst compares "
+            "the new numbers with the old ones. Did waits drop below 30 minutes? Did "
             "the second window get used? If the answer is yes, the change stays. If not, the office goes back to "
             "Step 1 with a sharper question. This loop is the quiet strength of the process. Every decision "
             "becomes a small experiment, and every experiment teaches the office something.",
