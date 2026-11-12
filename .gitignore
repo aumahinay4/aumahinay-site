@@ -6,3 +6,4 @@ preview.html
 tutorials/**/*.xlsx
 tutorials/**/audit_log.json
 .wrangler/
+tutorials/**/*.db

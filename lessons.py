@@ -62,6 +62,17 @@ GLOSSARY = [
     ("pip", "Python's installer for extra libraries: pip install pandas."),
     ("Hash", "A short fingerprint of some data. Change one character and the fingerprint changes completely."),
     ("HMAC", "A hash made with a secret key. Only someone with the key can make a matching one."),
+    ("Workbook", "An Excel file. It holds one or more sheets, which openpyxl calls worksheets."),
+    ("Formula", "A calculation stored in a cell, such as =SUM(E2:E11). Excel or another spreadsheet app works out its value when the file is opened."),
+    ("Database", "An organised store of records that a program can search, add to and total quickly. SQLite keeps a whole database in one file."),
+    ("SQL", "Structured Query Language: short commands such as SELECT, INSERT and GROUP BY that ask a database for data or change it."),
+    ("Placeholder", "A ? in an SQL command that the database fills in with a value you pass separately. It keeps typed-in text from being run as a command."),
+    ("Exception", "Python's way of reporting an error while a script runs. try and except let the script catch it and carry on."),
+    ("Validation", "Checking that data follows the rules (right format, allowed values, sensible amounts) before using it."),
+    ("Test", "A small function that runs your code with a known input and checks the answer. pytest runs all of them at once."),
+    ("assert", "A Python statement that stops with an error if something is not true: assert total == 100."),
+    ("Web app", "A program that answers a browser's requests with web pages. Flask is a library for writing one in Python."),
+    ("Route", "In Flask, the link between an address such as /receipt/7650101 and the function that makes that page."),
 ]
 
 LESSONS = [
@@ -483,6 +494,368 @@ LESSONS = [
             ("answer", "answer_json.py"),
         ],
     },
+    {
+        "number": 6,
+        "slug": "excel-report-with-openpyxl",
+        "folder": "06-excel-report",
+        "title": "Make a formatted Excel report with openpyxl",
+        "summary": "Turn the day's receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.",
+        "level": "Beginner",
+        "minutes": 20,
+        "topics": ["openpyxl", "Excel", "formulas", "number formats"],
+        "publish_on": "2026-11-14",
+        "learn": [
+            "Create an Excel workbook and fill it row by row",
+            "Make the header bold, set column widths and freeze the top row",
+            "Show amounts with a thousands separator and two decimals",
+            "Write Excel formulas such as SUM and SUMIF from Python",
+            "Open a saved Excel file again and read what is inside",
+        ],
+        "body": [
+            "Most treasury reports end up in Excel. Someone exports the receipts, pastes them into a "
+            "template, fixes the column widths, formats the amounts and types the total formula, every "
+            "single day. The openpyxl library lets a script do all of that in a second, and the file it "
+            "makes is an ordinary Excel file that anyone can open, print or forward.",
+            ("tip", "openpyxl is not part of standard Python. If you skipped step 5 of Lesson 0, install it "
+                    "once with: py -m pip install openpyxl (Windows) or python3 -m pip install openpyxl (Mac). "
+                    "It works with the modern .xlsx format, not the old .xls files."),
+            ("h", "The data"),
+            "This is the same collections.csv from Lesson 1. Save it in a new folder for this lesson.",
+            ("file", "collections.csv"),
+            ("h", "The code"),
+            "Save this as make_report.py in the same folder and run it. It saves daily_report.xlsx next to "
+            "the script, then opens that file again to show what was saved.",
+            ("code", "make_report.py"),
+            ("h", "Output"),
+            ("output", "make_report.py"),
+            "Now open daily_report.xlsx in Excel. The header is bold, the amounts read 4,500.00 and "
+            "1,250.75, the columns are wide enough to read, and the TOTAL cell shows 26,567.80, the same "
+            "figure Lesson 1 printed (21,986.15 + 2,231.15 + 2,350.50).",
+            ("h", "How it works"),
+            ("point", "Workbook() and wb.active",
+             "a new workbook starts with one empty sheet. wb.active is that sheet, and ws.title renames it."),
+            ("point", "ws.append([...])",
+             "adds one row at the bottom of the sheet. Each item in the list goes into the next column, A, B, "
+             "C and so on."),
+            ("point", "Font(bold=True)",
+             "ws[1] is the whole first row, so the loop makes every header cell bold."),
+            ("point", "f\"=SUM(E2:E{last})\"",
+             "any text that starts with = is saved as a formula. With 10 receipts, last is 11, so the cell "
+             "holds =SUM(E2:E11). If someone corrects an amount later, Excel updates the total by itself."),
+            ("point", "number_format = \"#,##0.00\"",
+             "the same format code you would pick in Excel's Format Cells: a comma for thousands and "
+             "always two decimal places. It changes how the number looks, not the number itself."),
+            ("point", "freeze_panes = \"A2\"",
+             "freezes everything above cell A2, so the header row stays in view while you scroll down a "
+             "long list."),
+            ("point", "load_workbook(...)",
+             "opens an existing Excel file. values_only=True gives plain values instead of cell objects, "
+             "which is handy for reading."),
+            "Look at the last line of the output: the TOTAL cell comes back as the formula text, not as "
+            "26,567.80. openpyxl writes formulas but never calculates them; Excel calculates when the file "
+            "is opened. Notice also that 4500.00 came back as 4500: Excel stores numbers, and the two "
+            "decimal places are only part of the display format.",
+            ("tip", "Excel stores amounts as ordinary floating-point numbers, the kind Lesson 3 warned about. "
+                    "That is fine for showing and printing figures. When the total itself matters, compute it "
+                    "in Python with Decimal, as in Lesson 1, and compare it with the Excel total."),
+            ("h", "Try it yourself"),
+            ("try", "Open daily_report.xlsx with load_workbook and add a second sheet named \"By fund\" with one "
+                    "row per fund. Instead of typing the amounts, give each row a SUMIF formula that adds up "
+                    "that fund's receipts from the Collections sheet, then a TOTAL row. Hint: "
+                    "wb.create_sheet(\"By fund\"), and a formula can point at another sheet as "
+                    "Collections!E2:E11."),
+            ("answer", "answer_by_fund.py"),
+            "Open the file in Excel and the By fund sheet shows General Fund 21,986.15, Special Education "
+            "Fund 2,231.15 and Trust Fund 2,350.50, the same totals as Lesson 1.",
+        ],
+    },
+    {
+        "number": 7,
+        "slug": "receipts-register-with-sqlite",
+        "folder": "07-sqlite-register",
+        "title": "Keep a receipts register in SQLite",
+        "summary": "Save official receipts in a small database file, total them with SQL, and let the database itself refuse a duplicate OR number.",
+        "level": "Intermediate",
+        "minutes": 25,
+        "topics": ["sqlite3", "SQL", "placeholders", "IntegrityError"],
+        "publish_on": "2026-11-21",
+        "learn": [
+            "Create a database table with sqlite3, which comes with Python",
+            "Store peso amounts safely as whole centavos",
+            "Add many rows at once with executemany and ? placeholders",
+            "Ask questions with SELECT, SUM and GROUP BY",
+            "Let a PRIMARY KEY stop the same receipt number from being saved twice",
+        ],
+        "body": [
+            "A CSV file is fine for one day's receipts. After a year there are thousands of them, spread "
+            "over many files, and questions like \"how much did this taxpayer pay this year?\" mean opening "
+            "file after file. A database keeps every record in one place and answers such questions in "
+            "a moment. SQLite is a small database that lives in a single file on your computer, needs no "
+            "server and no password, and is built into Python.",
+            ("h", "The data"),
+            "The same collections.csv as Lessons 1 and 6. Save it in a new folder for this lesson.",
+            ("file", "collections.csv"),
+            ("h", "The code"),
+            "Save this as register.py and run it. It creates register.db in the same folder.",
+            ("code", "register.py"),
+            ("h", "Output"),
+            ("output", "register.py"),
+            "Run it a second time and the count stays at 10. The receipts are not saved twice.",
+            ("h", "How it works"),
+            ("point", "sqlite3.connect(\"register.db\")",
+             "opens the database file, and creates it if it does not exist yet. Everything is kept in that "
+             "one file, so you can back it up like any document."),
+            ("point", "CREATE TABLE IF NOT EXISTS",
+             "describes the table once: its columns and what each one holds. IF NOT EXISTS means running "
+             "the script again does not cause an error."),
+            ("point", "or_number INTEGER PRIMARY KEY",
+             "makes the receipt number the key of each record. A key must be unique, so the database "
+             "itself refuses a second receipt with the same number, the problem Lesson 2 looked for."),
+            ("point", "centavos INTEGER",
+             "SQLite has no exact decimal type; a REAL column is a float, with the rounding problems from "
+             "Lesson 3. So each amount is stored as whole centavos: 1,250.75 pesos is saved as 125075, and "
+             "divided by 100 again only when it is shown."),
+            ("point", "VALUES (?, ?, ?, ?, ?, ?)",
+             "each ? is a placeholder. sqlite3 fills them in from the values you pass, in order. Never build "
+             "an SQL command by pasting text into it with an f-string: a payor name with a quote mark in it "
+             "would break the command, and someone could slip in a command of their own (this is called "
+             "SQL injection)."),
+            ("point", "INSERT OR IGNORE",
+             "adds each receipt unless its number is already in the table, in which case it skips it quietly."),
+            ("point", "GROUP BY fund",
+             "SUM(centavos) with GROUP BY fund gives one total per fund, the same totals Lesson 1 worked out "
+             "with a dictionary."),
+            ("point", "db.commit() and db.close()",
+             "commit saves the changes for good; without it, the new rows are lost when the script ends. "
+             "close lets go of the file."),
+            ("point", "except sqlite3.IntegrityError",
+             "the last INSERT tries to save OR 7650104 again. The database refuses, Python raises an "
+             "IntegrityError, and the script catches it and prints the reason instead of stopping."),
+            ("tip", "The database is a file like any other. Keep backup copies, and remember it holds "
+                    "taxpayers' names and payments: under the Data Privacy Act, keep it where only the people "
+                    "who need it can open it."),
+            ("h", "Try it yourself"),
+            ("try", "Write a query that lists each nature of collection with the number of receipts and the "
+                    "total, biggest total first. Hint: COUNT(*), SUM(centavos), GROUP BY nature and "
+                    "ORDER BY ... DESC."),
+            ("answer", "answer_by_nature.py"),
+        ],
+    },
+    {
+        "number": 8,
+        "slug": "check-data-before-you-trust-it",
+        "folder": "08-check-data",
+        "title": "Check a collections file before you trust it",
+        "summary": "Catch blank payors, impossible dates, mistyped funds, commas in amounts and extra decimals, and list every problem by line.",
+        "level": "Beginner",
+        "minutes": 20,
+        "topics": ["validation", "try and except", "datetime", "functions"],
+        "publish_on": "2026-11-28",
+        "learn": [
+            "Write a function that checks one row and returns its problems",
+            "Catch errors with try and except instead of letting the script stop",
+            "Check dates, amounts, receipt numbers and allowed values",
+            "Report each problem with its line number so it is easy to fix",
+        ],
+        "body": [
+            "The scripts in the earlier lessons trusted their data. Real files are not so kind: a cashier "
+            "types 1,050.00 with a comma, a letter O slips into a receipt number, a date reads November 31, "
+            "or a fund is spelled Trust Fnd. Some of these stop a script with an error. Worse, some do not: "
+            "the misspelled fund simply becomes a fourth fund in the totals and nobody notices. Checking the "
+            "data first, and listing every problem at once, saves a lot of trouble later.",
+            ("h", "The data"),
+            "Save this as collections.csv. Seven of its ten rows have one problem each, planted on purpose.",
+            ("file", "collections.csv"),
+            ("h", "The code"),
+            ("code", "check_rows.py"),
+            ("h", "Output"),
+            ("output", "check_rows.py"),
+            "Every problem is listed with the line it is on, so the person who prepared the file can fix "
+            "them all in one go. Line 5 is the comma: Python's Decimal reads 1050.00, but not 1,050.00.",
+            ("h", "How it works"),
+            ("point", "def check(row) -> list",
+             "keeps all the rules in one function. It returns a list of problems, and an empty list means "
+             "the row passed. Adding a rule later means adding a few lines here and nowhere else."),
+            ("point", "number.isdigit() and len(number) == 7",
+             "the receipt number must be seven digits. 76502O5 has the letter O instead of a zero, so "
+             "isdigit() is false. (Use the length your own receipts have.)"),
+            ("point", "try: ... except ValueError:",
+             "date.fromisoformat(\"2026-11-31\") raises a ValueError, because November has 30 days. Instead "
+             "of stopping, the except part runs and the problem is written down."),
+            ("point", "row[\"fund\"] not in FUNDS",
+             "FUNDS is a set of the allowed names. Anything else, such as Trust Fnd, is reported instead of "
+             "becoming a new fund."),
+            ("point", "except InvalidOperation: ... else:",
+             "Decimal raises InvalidOperation for text that is not a number. The else part runs only when "
+             "there was no error, so the amount is checked for zero, negative values and extra decimals "
+             "only when it was read correctly."),
+            ("point", "amount != amount.quantize(Decimal(\"0.01\"))",
+             "980.405 changes when it is rounded to the centavo, so it has more than two decimal places."),
+            ("point", "enumerate(..., start=2)",
+             "counts the rows as it reads them. It starts at 2 because line 1 of the file is the header, so "
+             "the numbers match what you see when you open the file."),
+            ("tip", "The script lists the problems and leaves the file alone. It does not guess that Trust Fnd "
+                    "means Trust Fund or remove the comma by itself. In treasury records it is safer for a "
+                    "person to correct the source and run the check again than for a script to change "
+                    "figures quietly."),
+            ("h", "Try it yourself"),
+            ("try", "Add a check that every date is the date of the report being prepared, 2026-11-03. Hint: "
+                    "compare the date you read with date(2026, 11, 3), and remember that line 7 has a date "
+                    "that cannot be read at all."),
+            ("answer", "answer_date.py"),
+        ],
+    },
+    {
+        "number": 9,
+        "slug": "test-your-code-with-pytest",
+        "folder": "09-test-with-pytest",
+        "title": "Test your treasury code with pytest",
+        "summary": "Write short tests for the penalty and discount rules, run them all with one command, and see how a failing test points to the bug.",
+        "level": "Intermediate",
+        "minutes": 25,
+        "topics": ["pytest", "assert", "parametrize", "testing"],
+        "publish_on": "2026-12-05",
+        "learn": [
+            "Keep the rules in their own file so they can be tested",
+            "Write a test as a function with assert",
+            "Run many cases at once with pytest.mark.parametrize",
+            "Check that bad input is refused with pytest.raises",
+            "Read a failing test and find the mistake",
+        ],
+        "body": [
+            "When you change a script, how do you know you did not break something that used to work? "
+            "Checking by hand every time is slow and easy to skip. A test is a small function that runs your "
+            "code with an input whose answer you already know, and complains if the answer is different. "
+            "Once written, hundreds of tests run in a second, every time you change the code. pytest is "
+            "the most widely used tool for this in Python.",
+            ("tip", "Install pytest once with: py -m pip install pytest (Windows) or python3 -m pip install "
+                    "pytest (Mac)."),
+            ("h", "The code to test"),
+            "These are the penalty rule from Lesson 3 and the discount from its practice answer, moved into a "
+            "file of their own. Two checks were added: a negative amount or month count, and a discount rate "
+            "above 20%, are refused. (RA 7160 allows a discount of up to 20% for paying in advance; the "
+            "actual rate is set by each local ordinance.) Save this as rpt.py. It prints nothing by itself.",
+            ("code", "rpt.py"),
+            ("h", "The tests"),
+            "Save this as test_rpt.py in the same folder. pytest looks for files whose names start with "
+            "test_, and runs every function in them whose name starts with test_.",
+            ("code", "test_rpt.py"),
+            ("h", "Run the tests"),
+            ("terminal", "py -m pytest -v test_rpt.py          (Windows)\npython3 -m pytest -v test_rpt.py     (Mac)"),
+            ("output", "test_rpt.py"),
+            ("tip", "On your computer, pytest also prints a line or two at the top with your Python and pytest "
+                    "versions, and the time at the end will differ. -v (verbose) lists each test by name."),
+            ("h", "How it works"),
+            ("point", "from rpt import discount, penalty",
+             "the tests use the real functions from rpt.py. That is why the rules were moved out of the report "
+             "script: a test can use them without running the whole report."),
+            ("point", "assert penalty(...) == Decimal(\"916.07\")",
+             "assert means \"this must be true\". 2% of 4,580.33 for 10 months is 916.066, which rounds to "
+             "916.07, the same figure Lesson 3 printed for TD-2024-01130."),
+            ("point", "@pytest.mark.parametrize",
+             "runs one test with several inputs. Here the same check, that the penalty stops at 72% of the "
+             "tax, runs for 36, 37, 58 and 120 months. That is why 7 test functions became 10 tests."),
+            ("point", "test_half_centavo_rounds_up",
+             "2% of 0.25 is exactly 0.005. With ROUND_HALF_UP it must become 0.01. Small edge cases like "
+             "this are where money code usually goes wrong."),
+            ("point", "with pytest.raises(ValueError):",
+             "this test passes only if the code inside raises a ValueError. It proves that bad input is "
+             "refused instead of quietly producing a wrong penalty."),
+            ("h", "What a failing test looks like"),
+            "Tests are most useful when something breaks. This file has a copy of the penalty function that "
+            "forgot the 36-month cap, and the same kind of test. Save it as test_forgot_cap.py and run it.",
+            ("code", "test_forgot_cap.py"),
+            ("terminal", "py -m pytest -v --tb=short test_forgot_cap.py          (Windows)\npython3 -m pytest -v --tb=short test_forgot_cap.py     (Mac)"),
+            ("output", "test_forgot_cap.py"),
+            "pytest shows the line that failed and both values: the function returned 1,160.00 (58 months at "
+            "2%) where 720.00 was expected. That points straight at the missing cap. --tb=short keeps the "
+            "report brief.",
+            ("tip", "A good habit: when you find a bug, first write a test that fails because of it, then fix "
+                    "the code until the test passes. The test stays, so the same bug cannot come back unnoticed."),
+            ("h", "Try it yourself"),
+            ("try", "Save the missing_numbers() function below as series.py, then write tests for it in "
+                    "test_series.py: a complete series, a series with a gap, a duplicate that hides a gap, "
+                    "and an empty list."),
+            ("code", "series.py"),
+            ("answer", "test_answer_series.py"),
+        ],
+    },
+    {
+        "number": 10,
+        "slug": "web-page-with-flask",
+        "folder": "10-flask-web-page",
+        "title": "Show the day's collections on a web page with Flask",
+        "summary": "Turn the collections script into a small web app with a totals page, a page per receipt and a JSON address, all in one Python file.",
+        "level": "Intermediate",
+        "minutes": 30,
+        "topics": ["Flask", "routes", "templates", "JSON"],
+        "publish_on": "2026-12-12",
+        "learn": [
+            "Write a Flask app with two routes",
+            "Fill an HTML page with values using a template",
+            "Take a receipt number from the address and answer 404 when it does not exist",
+            "Run the app on your own computer and open it in a browser",
+            "Check every page from a script with Flask's test client",
+        ],
+        "body": [
+            "So far every script has printed its results in Command Prompt. A web app shows them in a "
+            "browser instead, so a cashier or a supervisor can look at the day's totals without running "
+            "anything. Flask is a small Python library for making web apps; this website and ALTOS are "
+            "written in Python too. In this lesson the whole app is one file.",
+            ("tip", "Install Flask once with: py -m pip install flask (Windows) or python3 -m pip install flask "
+                    "(Mac)."),
+            ("h", "The data"),
+            "The same collections.csv as Lessons 1, 6 and 7, in a new folder.",
+            ("file", "collections.csv"),
+            ("h", "The app"),
+            "Save this as app.py in the same folder.",
+            ("code", "app.py"),
+            ("h", "Run it"),
+            ("terminal", "py app.py          (Windows)\npython3 app.py     (Mac)"),
+            "Flask answers that it is running on http://127.0.0.1:5000. Open that address in your browser and "
+            "you will see a table of the three fund totals. Add /receipt/7650106 to the address to see one "
+            "receipt. Flask also prints a warning that this is a development server; that is expected, "
+            "and the note on safety below explains it. Press Ctrl + C in Command Prompt or Terminal to stop "
+            "the app.",
+            ("h", "Check every page from a script"),
+            "Clicking through pages by hand is slow. Flask has a test client that visits the pages from "
+            "Python, without a browser or a running server. Save this as try_app.py and run it.",
+            ("code", "try_app.py"),
+            ("output", "try_app.py"),
+            "The totals page shows the same figures as Lesson 1, the receipt page finds OR 7650106, and a "
+            "receipt number that does not exist gets 404 Not Found, just as on any website.",
+            ("h", "How it works"),
+            ("point", "app = Flask(__name__)",
+             "creates the web app. __name__ tells Flask where the app's file is."),
+            ("point", "@app.route(\"/\")",
+             "the line above a function says which address it answers. When a browser asks for /, Flask runs "
+             "totals_page() and sends back what it returns."),
+            ("point", "/receipt/<int:or_number>",
+             "the part in angle brackets is taken from the address. For /receipt/7650106, Flask calls "
+             "receipt_page(7650106). int: means only whole numbers are accepted."),
+            ("point", "render_template_string(PAGE, ...)",
+             "fills the HTML in PAGE with values. {{ fund }} is replaced by the fund name, and the {% for %} "
+             "line repeats the table row for each fund. Flask escapes these values, so a payor name with < or "
+             "& in it is shown as text and cannot break the page."),
+            ("point", "abort(404)",
+             "stops and answers \"404 Not Found\" when no receipt has that number."),
+            ("point", "if __name__ == \"__main__\":",
+             "app.run() starts the server only when you run app.py yourself, not when another script, such "
+             "as try_app.py, imports it."),
+            ("tip", "Safety: app.run() starts Flask's development server, meant only for trying things on your "
+                    "own computer. It listens on 127.0.0.1, which only your computer can reach. Do not put it "
+                    "on the office network or the internet as it is, never switch on debug mode on a shared "
+                    "network, and add a login before any real taxpayer data goes into a web app."),
+            ("h", "Try it yourself"),
+            ("try", "Add an address /api/totals that returns the fund totals as JSON, so that another program "
+                    "can read them. Hint: in Flask, a route that returns a Python dictionary is sent as JSON. "
+                    "JSON has no Decimal type, so send each amount as text with two decimals."),
+            ("answer", "answer_json.py"),
+            "That is the end of this series for now. With these ten lessons you can read files, keep amounts "
+            "exact, check and test your work, save it to Excel or a database, and show it on a web page: the "
+            "same building blocks that larger treasury systems are made of.",
+        ],
+    },
 ]
 
 # Month each lesson was last fully checked (code run, facts sourced, phone and computer view).
@@ -494,4 +867,9 @@ LAST_CHECKED = {
     3: "November 2026",
     4: "November 2026",
     5: "November 2026",
+    6: "November 2026",
+    7: "November 2026",
+    8: "November 2026",
+    9: "November 2026",
+    10: "November 2026",
 }

@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+collecting ... collected 1 item
+
+test_forgot_cap.py::test_penalty_stops_at_36_months FAILED               [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_penalty_stops_at_36_months ________________________
+test_forgot_cap.py:11: in test_penalty_stops_at_36_months
+    assert penalty(Decimal("1000.00"), 58) == Decimal("720.00")
+E   AssertionError: assert Decimal('1160.00') == Decimal('720.00')
+E    +  where Decimal('1160.00') = penalty(Decimal('1000.00'), 58)
+E    +    where Decimal('1000.00') = Decimal('1000.00')
+E    +  and   Decimal('720.00') = Decimal('720.00')
+=========================== short test summary info ============================
+FAILED test_forgot_cap.py::test_penalty_stops_at_36_months - AssertionError: ...
+============================== 1 failed in 0.01s ===============================
