@@ -652,7 +652,7 @@ BLOG = [
             "charges the full 1% basic tax and the 1% SEF. Each city sets its own basic rate, up to 2%, so if your "
             "city charges less, type the lower rate.",
             "For our ₱25,000 lot in Quezon, that means a basic tax of ₱250 and an SEF tax of ₱250, or ₱500 for the year.",
-            ("h", "Step 4: Enter the Tax Year and the Date of Payment"),
+            ("h", "Step 4: Enter the Tax Year and the Target Date of Payment"),
             "This is where the calculator does its best work. The year's tax is split into four equal quarters, due on "
             "or before March 31, June 30, September 30 and December 31. The calculator compares your payment date "
             "with each due date and decides, quarter by quarter, whether you earn a discount or owe interest.",

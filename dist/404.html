@@ -842,6 +842,8 @@ blockquote::before { color: var(--gold-ink); }
 .rpt-form input[type=number]:focus, .rpt-form input[type=date]:focus, .rpt-form select:focus { outline: none; border-color: var(--panel-ink); }
 .rpt-form .block-hint { display: block; margin: 10px 0 0; font-size: .86em; max-width: 60ch; }
 .rpt-form [hidden] { display: none !important; }
+.rpt-form input[readonly] { font: 500 17px var(--font-body); color: var(--text); background: var(--line); border: 1.5px solid var(--line);
+  border-radius: 8px; padding: 10px 12px; width: 100%; max-width: 320px; box-sizing: border-box; cursor: default; }
 .rpt-form .field-title { margin: 14px 0 0; font-weight: 600; font-size: .93em; }
 .rpt-form .quarter-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 12px; }
 .rpt-form .quarter-grid .field { margin-top: 6px; }
@@ -1027,6 +1029,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 .rpt-form legend { font-size: 1.0762rem; }
 .rpt-form input[type=number] { font-size: 17.425px; }
 .rpt-form input[type=date], .rpt-form select { font-size: 17.425px; }
+.rpt-form input[readonly] { font-size: 17.425px; }
 .rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.08rem, 4.86vw, 1.395rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
