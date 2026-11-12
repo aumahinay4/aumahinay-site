@@ -579,8 +579,7 @@ CYBER_POSTS = [
             ("h", "Check Which Apps Can Reach Your Accounts"),
             "Over the years, most of us have clicked \"Allow\" for many apps. It is worth reviewing them. In a "
             "Google Account, open the Security section and look for \"Your connections to third-party apps and "
-            "services.\" There you can see which apps can access your account and what each one can do, and remove "
-            "any you do not recognize or no longer use. Microsoft, Apple and Facebook accounts have similar pages "
+            "services.\" There you can see which apps can access your account and what each one can do. Remove any you do not recognize or no longer use. Microsoft, Apple and Facebook accounts have similar pages "
             "in their security or privacy settings.",
             "Pay special attention to any app that can read your email or your files. Email access is the master "
             "key to most of your accounts, because password reset links usually arrive there.",
@@ -644,9 +643,7 @@ CYBER_POSTS = [
             "published online. Nothing opens. The collection system is down. The queue at the counter grows, and "
             "nobody can issue a receipt.",
             "This is not a scene from a movie. In September 2023, the Philippine Health Insurance Corporation "
-            "(PhilHealth) went through a version of it. In Part 5 of this series, we look inside a modern ransomware "
-            "attack: how it starts, why it is built to make you pay, and what ordinary people and offices can do so "
-            "that a ransom note becomes an inconvenience instead of a disaster.",
+            "(PhilHealth) went through a version of it. In Part 5 of this series, we look inside a modern ransomware attack: how it starts and why it is built to make you pay. We also look at what ordinary people and offices can do, so that a ransom note becomes an inconvenience instead of a disaster.",
             ("h", "From Locked Screens to a Criminal Industry"),
             "Early ransomware was crude. A virus scrambled the files on one computer and asked for a few hundred "
             "dollars. If you paid, you might get a key. If you had a copy of your files somewhere else, you could "
@@ -1083,9 +1080,7 @@ CYBER_POSTS = [
              "produce a new six-digit code every 30 seconds on your phone, without using the mobile network."),
             ("point", "Passkeys and security keys (strongest)", "These use cryptography tied to the real website's "
              "address. A fake site cannot use them, so they resist phishing by design."),
-            "Our regulators are moving the same way. Under Circular No. 1213 of the Bangko Sentral ng Pilipinas, "
-            "banks and e-wallets with large online transaction volumes had until June 25, 2026 to stop relying on SMS and email one-time PINs for "
-            "high-risk transactions and to use stronger methods such as biometrics or passwordless login. If your "
+            "Our regulators are moving the same way. Under Circular No. 1213 of the Bangko Sentral ng Pilipinas, banks and e-wallets with large online transaction volumes had until June 25, 2026 to act. By then they had to stop relying on SMS and email one-time PINs for high-risk transactions, and use stronger methods such as biometrics or passwordless login. If your "
             "bank app now asks for a face scan for large transfers, this is why.",
             ("h", "Tool 3: Passkeys"),
             "Passkeys are designed to replace passwords altogether. When you create a passkey, your device makes a "
