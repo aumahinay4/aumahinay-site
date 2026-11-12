@@ -49,6 +49,9 @@ DATA_POSTS = [
              "quickly."),
             ("point", "Act", "Make the decision, carry it out, and measure again to see whether it worked."),
             ("quote", "Start with the question, not the spreadsheet."),
+            ("photo", "blog/data-six-steps.jpg", "The six steps of an analysis form a loop: after Act, you measure "
+             "again and, if needed, start over with a sharper question. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
             "The best way to understand the six steps is to watch them at work. So let us follow one ordinary "
             "office problem from beginning to end.",
             ("h", "A Worked Example: Do We Need a Second Window?"),
