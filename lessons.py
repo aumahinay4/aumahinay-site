@@ -503,7 +503,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["openpyxl", "Excel", "formulas", "number formats"],
-        "publish_on": "2026-11-14",
+        "publish_on": "2026-11-12",  # published at once after re-check (Butch, 2026-11-12)
         "learn": [
             "Create an Excel workbook and fill it row by row",
             "Make the header bold, set column widths and freeze the top row",
@@ -578,7 +578,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["sqlite3", "SQL", "placeholders", "IntegrityError"],
-        "publish_on": "2026-11-21",
+        "publish_on": "2026-11-14",
         "learn": [
             "Create a database table with sqlite3, which comes with Python",
             "Store peso amounts safely as whole centavos",
@@ -650,7 +650,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["validation", "try and except", "datetime", "functions"],
-        "publish_on": "2026-11-28",
+        "publish_on": "2026-11-21",
         "learn": [
             "Write a function that checks one row and returns its problems",
             "Catch errors with try and except instead of letting the script stop",
@@ -714,7 +714,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["pytest", "assert", "parametrize", "testing"],
-        "publish_on": "2026-12-05",
+        "publish_on": "2026-11-28",
         "learn": [
             "Keep the rules in their own file so they can be tested",
             "Write a test as a function with assert",
@@ -789,7 +789,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 30,
         "topics": ["Flask", "routes", "templates", "JSON"],
-        "publish_on": "2026-12-12",
+        "publish_on": "2026-12-05",
         "learn": [
             "Write a Flask app with two routes",
             "Fill an HTML page with values using a template",
