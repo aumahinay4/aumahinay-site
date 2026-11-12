@@ -68,6 +68,8 @@ RPT_SCRIPT = r"""
   var ph = new Date(Date.now() + 8 * 3600 * 1000);
   var today = ph.toISOString().slice(0, 10);
   if (!$('paydate').value) $('paydate').value = today;
+  $('todaydate').value = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+    'November', 'December'][ph.getUTCMonth()] + ' ' + ph.getUTCDate() + ', ' + ph.getUTCFullYear();
   if (!$('taxyear').value) $('taxyear').value = ph.getUTCFullYear();
 
   function fillClasses() {
@@ -182,7 +184,7 @@ RPT_SCRIPT = r"""
     $('t-badj').textContent = peso(tbAdj); $('t-sadj').textContent = peso(tsAdj); $('t-adj').textContent = peso(r2(tbAdj + tsAdj));
     $('t-bdue').textContent = peso(bDue); $('t-sdue').textContent = peso(sDue); $('t-due').textContent = peso(r2(bDue + sDue));
     $('out-due').textContent = peso(r2(bDue + sDue));
-    $('out-when').textContent = 'Tax year ' + year + ' (whole year ' + peso(r2(basic + sef)) + '), paid on ' + MONTHS[pd[1] - 1] + ' ' + pd[2] + ', ' + pd[0];
+    $('out-when').textContent = 'Tax year ' + year + ' (whole year ' + peso(r2(basic + sef)) + '), target date of payment ' + MONTHS[pd[1] - 1] + ' ' + pd[2] + ', ' + pd[0];
 
     var rows = [], sum = 0;
     function add(who, base, pct, note) { var a = r2(base * pct / 100); sum = r2(sum + a); rows.push([who, pct + '%', a, note || '']); }
@@ -311,10 +313,13 @@ def rpt_page():
                 t.fieldset(
                     t.legend("4. When is it paid?"),
                     t.div(
+                        _field("Today's date", t.input(type="text", id="todaydate", readonly=True, tabindex="-1"),
+                               "Fixed: today in the Philippines."),
                         _field("Tax year", _num("taxyear", step="1", minimum="1992", maximum="2100")),
-                        _field("Date of payment", t.input(type="date", id="paydate", name="paydate")),
                         class_="field-pair",
                     ),
+                    _field("Target date of payment", t.input(type="date", id="paydate", name="paydate"),
+                           "Starts as today. Change it to see what you would pay on another day."),
                     t.p("Which quarters of this tax year are already paid?", class_="field-title"),
                     t.div(*[_field("Q%d, due %s" % (i + 1, d), _quarter_select(i + 1))
                             for i, d in enumerate(["Mar 31", "Jun 30", "Sep 30", "Dec 31"])],

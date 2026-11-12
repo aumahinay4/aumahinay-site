@@ -927,6 +927,8 @@ CSS += """
 .rpt-form input[type=number]:focus, .rpt-form input[type=date]:focus, .rpt-form select:focus { outline: none; border-color: var(--panel-ink); }
 .rpt-form .block-hint { display: block; margin: 10px 0 0; font-size: .86em; max-width: 60ch; }
 .rpt-form [hidden] { display: none !important; }
+.rpt-form input[readonly] { font: 500 17px var(--font-body); color: var(--text); background: var(--line); border: 1.5px solid var(--line);
+  border-radius: 8px; padding: 10px 12px; width: 100%; max-width: 320px; box-sizing: border-box; cursor: default; }
 .rpt-form .field-title { margin: 14px 0 0; font-weight: 600; font-size: .93em; }
 .rpt-form .quarter-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 12px; }
 .rpt-form .quarter-grid .field { margin-top: 6px; }
