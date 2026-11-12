@@ -24,7 +24,8 @@ Quezon Province, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022
   September 30 for one year in advance; 20% for two or more years in advance; only for properties
   without any delinquency;
 - Sec. 45 sharing 35/40/25 and SEF split equally; Sec. 47 interest 2% a month "on the unpaid amount
-  or a fraction thereof" (a part of a month counts as a month), at most 36 months.
+  or a fraction thereof", at most 36 months. Quezon practice (Butch 2026-11-12): counted BY QUARTER, each quarter
+  or part of a quarter after the due date = 3 months = 6%; e.g. Q3 paid any day Oct 1 - Dec 31 carries 6%.
 """
 
 import json
@@ -117,8 +118,9 @@ RPT_SCRIPT = r"""
       if (st === 'later') fullYear = false;
       if (st === 'now') anyNow = true;
       if (st === 'now' && past) {  // late: every month or part of a month after the due date counts, up to 36
-        months = Math.min(payIdx - (year * 12 + DUE[q][0]), 36);
-        if (months < 1) months = 1;
+        months = Math.max(payIdx - (year * 12 + DUE[q][0]), 1);
+        if (qz) months = Math.ceil(months / 3) * 3;  // Quezon practice: by quarter, a part of a quarter counts as a whole quarter (6%)
+        months = Math.min(months, 36);
         anyLate = true; lateNow.push('Q' + (q + 1));
       }
       if (st === 'later' && past) unpaidLate.push('Q' + (q + 1));
@@ -146,7 +148,7 @@ RPT_SCRIPT = r"""
       } else {
         var bAdj, sAdj, label;
         // keep centavos unrounded until the totals, so 15% of ₱500 is exactly ₱75 (not ₱75.04 from rounding each part)
-        if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = x.months + ' mo late +' + (x.months * 2) + '%'; }
+        if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = (qz ? (x.months / 3) + ' qtr late +' : x.months + ' mo late +') + (x.months * 2) + '%'; }
         else { bAdj = -x.b * disc / 100; sAdj = -x.s * disc / 100; label = disc ? 'on time −' + disc + '%' : 'on time, no discount'; }
         tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj += bAdj; tsAdj += sAdj;
         cells = ['Q' + x.q + ', due ' + x.due, label, peso(r2(x.b + x.s)), peso(r2(bAdj + sAdj)), peso(r2(x.b + x.s + bAdj + sAdj))];
@@ -329,7 +331,7 @@ def rpt_page():
                         id="qz-disc", class_="hint block-hint"),
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
                         "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
-                        "a month, up to 36 months. Mark the quarters you paid before as \"Paid before\"; only the "
+                        "a month, up to 36 months; in Quezon Province it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters you paid before as \"Paid before\"; only the "
                         "quarters marked \"Pay now\" are added to the amount to pay.", class_="hint block-hint"),
                 ),
                 id="rpt", class_="card rpt-form", novalidate=True,
@@ -392,7 +394,8 @@ def rpt_page():
                      "or on time; the rates are in the local ordinance (Sec. 251). Each quarter paid on or before its due date "
                      "earns the discount, so a taxpayer who pays quarter by quarter on time gets it on every quarter."),
                 t.li(t.b("Interest. "), "Unpaid tax earns interest of 2% a month, up to 36 months, until it is paid in full "
-                     "(Sec. 255). In Quezon Province, a part of a month counts as a full month."),
+                     "(Sec. 255). In Quezon Province, interest is counted by quarter: each quarter or part of a quarter after "
+                     "the due date counts as three months, or 6%."),
                 t.li(t.b("Older unpaid taxes first. "), "Payments are applied first to unpaid taxes, interest and penalties of "
                      "earlier years, and only then to the current year (Sec. 250). This calculator works out one tax year at a time."),
                 t.li(t.b("Not included. "), "The idle land tax (3% in Quezon Province), special levies, and the lower SEF rate for "
