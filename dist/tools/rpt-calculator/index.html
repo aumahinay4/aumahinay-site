@@ -1084,15 +1084,15 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
   }
   var lastLgu = null, lastLevelKey = null;
 
+  var rolledNote = '';
   function calc() {
     // a payment is never ₱0.00 (Butch 2026-11-12): when all four quarters of the tax year are paid, the next payment
     // is for the following year, so move to it and start its quarters as "Not paid"
-    var rolled = '';
     if ([1, 2, 3, 4].every(function (q) { return $('qs' + q).value === 'paid'; })) {
       var y0 = Math.floor(num('taxyear')) || ph.getUTCFullYear();
       $('taxyear').value = y0 + 1;
       [1, 2, 3, 4].forEach(function (q) { $('qs' + q).value = 'now'; });
-      rolled = 'Tax year ' + y0 + ' is fully paid, so this shows the next payment: tax year ' + (y0 + 1) + '.';
+      rolledNote = 'Tax year ' + y0 + ' is fully paid, so this shows the next payment: tax year ' + (y0 + 1) + '.';
     }
     var lgu = f.lgu.value, city = lgu === 'city', qz = lgu === 'quezon';
     if (lgu !== lastLgu) { $('basic-rate').value = city ? '2' : '1'; lastLgu = lgu; }
@@ -1174,7 +1174,7 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
     var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     var notes = [];
-    if (rolled) notes.push(rolled);
+    if (rolledNote) notes.push(rolledNote);
     if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
     if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Not paid" and past the due date. If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
     var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.months; });
@@ -1223,8 +1223,13 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
   }
   $('kind').addEventListener('change', function () { fillClasses(); lastLevelKey = null; });
   $('klass').addEventListener('change', function () { lastLevelKey = null; });
-  f.addEventListener('input', calc);
-  f.addEventListener('change', calc);
+  function onEdit(e) {  // the "fully paid, next year" note stays until the year or a quarter is changed again
+    var t = e.target;
+    if (t.id === 'taxyear' || (/^qs/.test(t.id) && t.value === 'paid')) rolledNote = '';
+    calc();
+  }
+  f.addEventListener('input', onEdit);
+  f.addEventListener('change', onEdit);
   f.addEventListener('submit', function (e) { e.preventDefault(); calc(); });
   fillClasses();
   calc();
