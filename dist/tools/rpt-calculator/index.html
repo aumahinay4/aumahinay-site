@@ -1162,6 +1162,7 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
     var notes = [];
     if (!anyNow) notes.push('Choose "Pay now" for at least one quarter.');
     if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
+    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Pay now" after the due date. If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid before" in step 4.');
     var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.months; });
     if (onTimeNow && delinquent) {
       var isAre = function (l) { return l.join(', ') + (l.length > 1 ? ' are' : ' is'); };

@@ -656,6 +656,11 @@ BLOG = [
             "This is where the calculator does its best work. The year's tax is split into four equal quarters, due on "
             "or before March 31, June 30, September 30 and December 31. The calculator compares your payment date "
             "with each due date and decides, quarter by quarter, whether you earn a discount or owe interest.",
+            "Below the dates, tell it which quarters you are paying. Each quarter starts as \"Pay now\". If you "
+            "already paid some quarters this year, set them to \"Paid before\"; otherwise the calculator treats them "
+            "as unpaid and late, and adds interest instead of the discount. For example, if you paid the first three "
+            "quarters on time and now pay the fourth by December 31, mark Q1 to Q3 \"Paid before\" and the 10% "
+            "discount applies to Q4.",
             ("h", "Three Ways to Pay the Same ₱500"),
             "Let us take the same residential lot in a Quezon municipality: market value ₱500,000, assessed value "
             "₱25,000, yearly tax ₱500. Here is what the calculator shows for three different payment habits.",
