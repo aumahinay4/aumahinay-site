@@ -664,13 +664,14 @@ BLOG = [
             ("point", "Paid in advance", "Tax year 2027, paid in full on September 30, 2026. In Quezon, paying the "
              "whole of next year on or before September 30 earns a 15% discount, so you pay ₱425. Pay two or more "
              "years ahead and the discount reaches 20%: ₱400 for the year."),
-            ("point", "Paid late", "Tax year 2026, nothing paid until November 20, 2026. The first quarter is eight "
-             "months late (in Quezon, a part of a month counts as a whole month), so it carries 16% interest. The second "
-             "quarter is five months late (10%) and the third is two months late (4%). The fourth quarter is not yet "
-             "due, but there is no discount while the other quarters are late. You pay ₱537.50."),
-            "On this small lot, the gap between the best habit and the worst is ₱137.50 a year. It grows with the "
+            ("point", "Paid late", "Tax year 2026, nothing paid until November 20, 2026. In Quezon, interest is "
+             "counted by quarter: each quarter or part of a quarter after the due date adds 6%. The first quarter is "
+             "three quarters late, so it carries 18% interest. The second is two quarters late (12%) and the third is "
+             "one quarter late (6%). The fourth quarter is not yet due, but there is no discount while the other "
+             "quarters are late. You pay ₱545."),
+            "On this small lot, the gap between the best habit and the worst is ₱145 a year. It grows with the "
             "property. A ₱1.5 million house in Quezon has an assessed value of ₱375,000 and a yearly tax of ₱7,500. "
-            "Paid two years ahead, it costs ₱6,000. Paid as late as in the third example, it costs ₱8,062.50. That is "
+            "Paid two years ahead, it costs ₱6,000. Paid as late as in the third example, it costs ₱8,175. That is "
             "a difference of more than ₱2,000, every year, for the same house.",
             ("quote", "The law sets the tax. When you pay decides what it finally costs."),
             ("h", "Where Your Money Goes"),
