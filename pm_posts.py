@@ -37,10 +37,11 @@ PM_POSTS = [
             "applies for it.",
             ("h", "Why I Am Writing This Series"),
             "I completed the Google Project Management Professional Certificate on Coursera, along with its "
-            "companion course on working with stakeholders. Long before that, though, I had already been running "
-            "projects without the name: collection campaigns, office moves, audits, and later ALTOS, the treasury "
-            "system I built for Philippine local treasuries, which I carried alongside the daily work of the "
-            "office.",
+            "companion course on working with stakeholders. My own biggest project so far is ALTOS, a treasury "
+            "system for Philippine local treasuries. It has been built and tested on the developer side only. "
+            "Building software is not part of my official duties, so before any office can put it to real use, the "
+            "documents must come first, beginning with a memorandum of agreement. That order, paperwork before "
+            "launch, is itself a project management lesson, and we will come back to it later in this series.",
             "Most project management lessons online talk about product launches, marketing campaigns and "
             "software companies. The ideas are good, but the examples feel far from a municipal hall. In this "
             "series, I will explain the same ideas in plain words, with examples from treasury work: tax "
