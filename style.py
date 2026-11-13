@@ -963,7 +963,7 @@ CSS += """
 header.site .wrap { min-height: 38px; }
 @media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
-.menu-btn svg { width: 20px; height: 20px; }
+.menu-btn svg { width: 15px; height: 15px; }  /* three bars 25% smaller, 20px -> 15px, all screens (Butch 2026-11-14); tap area stays 32px */
 html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
