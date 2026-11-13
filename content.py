@@ -2384,8 +2384,9 @@ BLOG[:0] = CYBER_POSTS
 from treasury_posts import TREASURY_POSTS  # noqa: E402
 from finance_posts import FINANCE_POSTS  # noqa: E402
 from data_posts import DATA_POSTS  # noqa: E402
+from bi_posts import BI_POSTS  # noqa: E402
 
-for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS:
+for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + BI_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)
