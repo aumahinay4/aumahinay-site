@@ -425,6 +425,8 @@ def home():
         t.div(
             t.div(
                 t.div(t.h1("Where public finance meets Python"), class_="hero-name"),
+                t.img(src=asset_url("home-banner.svg"), alt="Coins, a rising bar chart and a receipt flowing into "
+                      "a short Python program that adds up the fees", width="1200", height="470", class_="hero-art"),
                 t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
                     "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
                     "and notes from building ALTOS, by a treasury worker who builds software.",

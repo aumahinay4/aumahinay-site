@@ -1052,4 +1052,8 @@ footer.legal .built { white-space: nowrap; }
 footer.legal .legal-links { white-space: nowrap; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
+
+/* Home banner picture (Butch 2026-11-13): original artwork, free to use, between the title and the intro. */
+.hero-art { grid-column: 1 / -1; grid-row: 2; display: block; width: 100%; max-width: 820px; height: auto; margin: 14px 0 0; }
+@media (max-width: 640px) { .hero-art { margin-top: 10px; } }
 """
