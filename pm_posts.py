@@ -18,7 +18,7 @@ PM_POSTS = [
         "title": "Project Management Series, Part 1: The Accidental Project Manager in the Treasury",
         "slug": "project-management-part-1-accidental-project-manager",
         "category": "finance",
-        "summary": "Nobody in a local treasury applies to be a project manager, yet most of us end up as one. "
+        "summary": "Nobody in a local treasury applies to be a project manager, yet many of us end up as one. "
                    "Here is how a project differs from daily work, the three limits every project lives with, "
                    "and four moves to make in your first two weeks.",
         "publish_on": "2026-11-13",
@@ -33,11 +33,11 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town or employee is described.)",
             "If that scene feels familiar, welcome. You have just become what people in the field call an "
-            "accidental project manager. It is one of the most common jobs in government, and almost nobody "
-            "applies for it.",
+            "accidental project manager. It happens all the time in government offices, and almost nobody "
+            "applies for the role.",
             ("h", "Why I Am Writing This Series"),
-            "I completed the Google Project Management Professional Certificate on Coursera, along with its "
-            "companion course on working with stakeholders. My own biggest project so far is ALTOS, a treasury "
+            "I completed the Google Project Management Professional Certificate on Coursera, and later the Google "
+            "Stakeholder Management specialization. My own biggest project so far is ALTOS, a treasury "
             "system for Philippine local treasuries. It has been built and tested on the developer side only. "
             "Building software is not part of my official duties, so before any office can put it to real use, the "
             "documents must come first, beginning with a memorandum of agreement. That order, paperwork before "
@@ -57,7 +57,7 @@ PM_POSTS = [
             ("point", "A project", "Work with a start, an end and a result that did not exist before. Encoding "
              "the ledger cards, setting up a new collection system, holding a one-month tax campaign in the "
              "far barangays, or moving the records room. When the result is delivered, the project is over."),
-            "The Project Management Institute, which publishes the best-known guide in the field, puts it "
+            "The Project Management Institute, the group behind the widely used PMBOK Guide, puts it "
             "simply: a project is a temporary effort to create a unique product, service or result. Two words "
             "matter there. Temporary means it ends. Unique means the office has not done this exact thing "
             "before, so there is no routine to follow.",
@@ -98,8 +98,9 @@ PM_POSTS = [
             ("quote", "You cannot add to a project for free. Something always pays: time, people, or quality."),
             ("h", "The Life of a Project, From Start to Finish"),
             "Projects move through stages. The Google course teaches four: initiate, plan, execute and close. "
-            "The Project Management Institute adds a fifth that runs alongside the doing: monitoring and "
-            "controlling. Here are all five in plain words, using our ledger project.",
+            "The PMBOK Guide also names a fifth kind of work, monitoring and controlling, which is not a "
+            "separate stage but runs alongside the doing. Here are all five in plain words, using our ledger "
+            "project.",
             ("point", "Initiate", "Agree on why the project exists and what success looks like. For example: "
              "all active property accounts encoded and checked, so bills print from the system by January."),
             ("point", "Plan", "Break the work into tasks, decide who does each one and in what order, and list "
@@ -110,7 +111,7 @@ PM_POSTS = [
              "Are we on pace? Are new requests sneaking in? Adjust early, while problems are still small."),
             ("point", "Close", "Hand the result to the people who will use it every day, store the records, "
              "and sit down for half an hour to talk about what to keep and what to change next time."),
-            "Most failed projects in government do not fail at the doing. They fail at the very beginning, "
+            "Many projects do not fail at the doing. They fail at the very beginning, "
             "because nobody agreed on what “done” means, or at the very end, because the work was never "
             "handed over properly and slowly slid back to the old way.",
             ("h", "Your First Two Weeks: Four Moves"),
