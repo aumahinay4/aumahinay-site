@@ -558,6 +558,7 @@ BLOG_CATEGORIES = [
     ("finance", "Public Finance", "green"),
     ("security", "Cybersecurity", "violet"),
     ("data", "Data Analytics", "gold"),  # Data Analytics series, Tuesdays (Butch 2026-11-13)
+    ("pm", "Project Management", "navy"),  # Project Management series, Thursdays (Butch 2026-11-13: separate from Public Finance)
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
 
