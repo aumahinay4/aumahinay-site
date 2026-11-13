@@ -17,7 +17,7 @@ PM_POSTS = [
         "date": "November 13, 2026",
         "title": "Project Management Series, Part 1: The Accidental Project Manager in the Treasury",
         "slug": "project-management-part-1-accidental-project-manager",
-        "category": "finance",
+        "category": "pm",
         "summary": "Nobody in a local treasury applies to be a project manager, yet many of us end up as one. "
                    "Here is how a project differs from daily work, the three limits every project lives with, "
                    "and four moves to make in your first two weeks.",
