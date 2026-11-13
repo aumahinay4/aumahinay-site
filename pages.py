@@ -105,11 +105,6 @@ def menu_items():
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
 
 
-def _bar_title(active):
-    """HOME in bold beside the three bars, on the Home page only, so it is clear you are home (Butch 2026-11-10)."""
-    return t.a("HOME", href="/", class_="bar-title") if active == "/" else None
-
-
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
 MENU_SCRIPT = """
 (function () {
@@ -267,8 +262,6 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                 t.div(
                     t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
                              aria_controls="site-menu", aria_expanded="false"),
-                    # the page's section name in bold beside the three bars, e.g. HOME (Butch 2026-11-10)
-                    _bar_title(active),
                     t.nav(
                         [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
                          for href, label in menu_items()],
