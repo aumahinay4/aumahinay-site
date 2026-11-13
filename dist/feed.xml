@@ -6,13 +6,27 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Lesson 7: Keep a receipts register in SQLite</title>
+      <link>https://aumahinay.dev/tutorials/receipts-register-with-sqlite/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/tutorials/receipts-register-with-sqlite/</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Save official receipts in a small database file, total them with SQL, and let the database itself refuse a duplicate OR number.</description>
+    </item>
     <item>
       <title>Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data</title>
       <link>https://aumahinay.dev/blog/data-analytics-part-1-what-it-is/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/data-analytics-part-1-what-it-is/</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0800</pubDate>
       <description>Data analytics is the craft of turning everyday records into answers people can act on. Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, and why a local treasury is already sitting on a mountain of useful data.</description>
+    </item>
+    <item>
+      <title>Project Management Series, Part 1: The Accidental Project Manager in the Treasury</title>
+      <link>https://aumahinay.dev/blog/project-management-part-1-accidental-project-manager/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/project-management-part-1-accidental-project-manager/</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0800</pubDate>
+      <description>Nobody in a local treasury applies to be a project manager, yet many of us end up as one. Here is how a project differs from daily work, the three limits every project lives with, and four moves to make in your first two weeks.</description>
     </item>
     <item>
       <title>Lesson 6: Make a formatted Excel report with openpyxl</title>
