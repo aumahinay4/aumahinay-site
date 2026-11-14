@@ -27,9 +27,7 @@ BI_POSTS = [
             "the head of office prints one page of it, signs it and files it. Nobody opens the dashboard "
             "again.",
             "The work was good. The format was wrong. A year-end report is a record that must stay exactly "
-            "as it was signed. A live dashboard is built to change every time the data does. Choosing between "
-            "them is one of the first decisions in any BI request, and it is easy to get wrong when everything "
-            "is called “a dashboard.”",
+            "as it was signed. A live dashboard is built to change every time the data does. Choosing between them is a decision worth making at the start of a BI request, and it can go wrong when everything is called “a dashboard.”",
             "(As always in this series, the office, the people and the numbers are made up. No real town or "
             "taxpayer is described.)",
             "Parts 6 and 7 built the warehouse and the pipeline that fills it. This part is about the views "
@@ -115,11 +113,10 @@ BI_POSTS = [
             "request specific enough to build.",
             ("h", "Mistakes to Avoid"),
             ("point", "Live screens for signed reports", "If a number appears in a signed document, the "
-             "document must keep its own copy. A dashboard will show a different number tomorrow."),
+             "document must keep its own copy. A dashboard may show a different number tomorrow."),
             ("point", "Dashboards with no owner", "Every live view needs someone who checks that it "
              "refreshed and who answers questions about it."),
-            ("point", "Self-service without definitions", "Filters invite comparisons. If readers do not know "
-             "how each measure is defined, they will compare the wrong things. Put the definitions from the "
+            ("point", "Self-service without definitions", "Filters invite comparisons. If readers do not know how each measure is defined, they may compare the wrong things. Put the definitions from the "
              "BI brief in Part 4 on the screen."),
             ("point", "No date on the screen", "Every view, of every kind, should say when its data was "
              "current."),

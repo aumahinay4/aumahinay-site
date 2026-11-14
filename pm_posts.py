@@ -18,9 +18,9 @@ PM_POSTS = [
         "title": "Project Management Series, Part 8: Who Does What? Building a RACI Matrix",
         "slug": "project-management-part-8-raci-matrix",
         "category": "pm",
-        "summary": "When everyone thinks someone else is handling a task, nobody handles it. This part explains "
+        "summary": "When everyone thinks someone else is handling a task, it can go undone. This part explains "
                    "the four RACI roles, walks through a RACI matrix for the treasury encoding project, and "
-                   "gives four checks that catch gaps before they cost a week.",
+                   "gives four checks that help catch gaps early.",
         "publish_on": "2026-12-18 21:00",
         "body": [
             "Two weeks into the encoding project, the revenue clerk asks for the list of records that did not "
@@ -40,8 +40,7 @@ PM_POSTS = [
              "owns the result, Consulted gives input before, and Informed is told after. (Illustration: "
              "Butch Mahinay, aumahinay.dev)", "medium"),
             ("h", "The Four Roles"),
-            "RACI is named after the four roles a person can have on a task. The Project Management "
-            "Institute describes them this way.",
+            "RACI is named after the four roles a person can have on a task. The descriptions below follow the Project Management Institute’s definitions, with the encoding project as the example.",
             ("point", "R: Responsible", "The person who does the work. A task can have more than one, such as "
              "the two collectors who share the encoding."),
             ("point", "A: Accountable", "The one person who owns the result and answers for it. Each task has "
@@ -50,9 +49,8 @@ PM_POSTS = [
              "asked first, while their answer can still change the work."),
             ("point", "I: Informed", "People who are kept up to date after decisions are made or "
              "progress happens. The work does not wait for them."),
-            "The difference between C and I is the difference between “ask before” and “tell after.” Getting "
-            "it wrong costs time in both directions. Too many Cs means every step waits for someone’s "
-            "opinion. Too few means someone with needed knowledge finds out when it is too late to help.",
+            "The difference between C and I is the difference between “ask before” and “tell after.” Getting it wrong can cost time in both directions. Too many Cs can make every step wait for someone’s "
+            "opinion. Too few can mean someone with needed knowledge finds out when it is too late to help.",
             ("quote", "Many hands can share the work. Only one person can own the result."),
             ("h", "Why Only One A?"),
             "When no one, or more than one person, is named as accountable for a task, each person can reasonably "
@@ -98,8 +96,7 @@ PM_POSTS = [
             "Read the finished grid down each column and across each row, and run these four checks.",
             ("point", "Every row has exactly one A", "No A means nobody owns the result. Two As means each one "
              "may wait for the other."),
-            ("point", "Every row has at least one R", "A task with an owner but no doer will sit still until "
-             "the owner notices."),
+            ("point", "Every row has at least one R", "A task with an owner but no doer can sit still until the owner notices."),
             ("point", "No column is full of Rs and As", "If one person carries most of the work and most of "
              "the accountability, the project depends on that person never being absent. Look for a task "
              "that someone else could take."),
@@ -123,7 +120,7 @@ PM_POSTS = [
             ("point", "Rows that are too large", "“Do the project” is not a task. If a row needs more than one "
              "A, split it into smaller tasks."),
             ("point", "Writing it without the team", "A matrix filled in alone is a guess about other people’s "
-             "time. Agreement in the room is what makes the letters stick."),
+             "time. Agreement in the room helps the letters stick."),
             ("h", "Key Takeaways"),
             ("point", "Four roles", "Responsible does, Accountable owns, Consulted is asked before, and "
              "Informed is told after."),

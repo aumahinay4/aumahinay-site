@@ -126,7 +126,7 @@ DATA_POSTS = [
             "If they do not, mark the break clearly on every report, with the date the new definition began, "
             "so no one reads a jump in the number as a jump in performance.",
             ("h", "Key Takeaways"),
-            ("point", "Few KPIs, many metrics", "A KPI is a metric tied to a goal that someone will act on."),
+            ("point", "Keep KPIs few", "A KPI is a metric tied to a goal that someone will act on."),
             ("point", "Write the definition", "Name, numerator, denominator, period and source, every time."),
             ("point", "Same name is not same measure", "Always say what a percentage is divided by."),
             ("point", "Pair and lead", "Pair measures that check each other, and keep a leading measure "
