@@ -1203,46 +1203,25 @@ def post_card(b):
     )
 
 
-# Listen (Butch, 2026-11-12): the reader's own phone or computer reads the post aloud with its
-# built-in voice (Web Speech API). Free: no audio files, no outside service, nothing to pay or keep up.
-# The bar stays hidden on browsers without a voice. Pause works by stopping and starting again from the
-# same sentence, because pause() is unreliable on Android phones.
-LISTEN_SCRIPT = """
-(function () {
-  var box = document.querySelector(".listen"), post = box && box.closest(".post"), say = window.speechSynthesis;
-  if (!box || !post || !say || !window.SpeechSynthesisUtterance) return;
+# Listen (Butch, 2026-11-12; male Voice 1 from 2026-11-15): a post with a recording in static/audio/
+# (made by audio.py with the free Kokoro voice "am_michael") plays it and highlights each paragraph as it
+# is read. A post without one falls back to the reader's own phone voice (Web Speech API).
+LISTEN_SCRIPT = r"""
+(function start() {
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", start); return; }  // the paragraphs come after this script
+  var box = document.querySelector(".listen"), post = box && box.closest(".post");
+  if (!box || !post) return;
   var play = box.querySelector(".listen-play"), word = play.querySelector(".listen-word");
   var stopBtn = box.querySelector(".listen-stop"), speedBtn = box.querySelector(".listen-speed");
-  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, chunks = [], at = 0, on = false, voice = null, lit = null;
+  var clock = box.querySelector(".listen-clock"), track = box.querySelector(".listen-progress");
+  var fill = track.querySelector(".listen-fill");
+  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, lit = null;
   try { sp = Math.max(0, speeds.indexOf(+localStorage.getItem("listenSpeed"))); } catch (e) {}
-  speedBtn.textContent = speeds[sp] + "\\u00d7";
-  function pickVoice() {
-    var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
-    var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
-    all.sort(function (a, b) {
-      function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
-      return r(a) - r(b);
-    });
-    voice = all[0] || null;
-  }
-  pickVoice();
-  if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
-  // The words to read, in page order: title, summary, paragraphs, headings, quotes and lists.
-  // Not read: date line, byline, photos, sources, buttons.
-  function build() {
-    chunks = [];
-    var parts = post.querySelectorAll(":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
-                                      + ":scope > h3, :scope > blockquote, :scope > ul > li, :scope > ol > li");
-    Array.prototype.forEach.call(parts, function (el) {
-      var text = el.textContent.replace(/\\s+/g, " ").trim(), cur = "";
-      if (!text) return;
-      (text.match(/[^.!?]+[.!?]+["\\u201d\\u2019)]*\\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
-        if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
-        cur += s;
-      });
-      if (cur.trim()) chunks.push({ el: el, text: cur });
-    });
-  }
+  speedBtn.textContent = speeds[sp] + "×";
+  // The parts that are read aloud, in page order (audio.py reads the same parts).
+  var parts = Array.prototype.slice.call(post.querySelectorAll(
+    ":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
+    + ":scope > h3, :scope > blockquote"));
   var bar = document.querySelector("header.site");
   function fitUnderBar() { if (bar) box.style.setProperty("--listen-top", bar.offsetHeight + "px"); }
   fitUnderBar(); addEventListener("resize", fitUnderBar);
@@ -1261,37 +1240,123 @@ LISTEN_SCRIPT = """
     play.setAttribute("aria-pressed", state === "playing");
     stopBtn.hidden = state === "idle";
   }
-  function speak() {
-    if (at >= chunks.length) { done(); return; }
-    var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
-    if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
-    u.rate = speeds[sp];
-    u.onend = function () { if (on && u === current) { at += 1; speak(); } };
-    u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
-    current = u;
-    light(c.el);
-    say.speak(u);
-  }
-  var current = null;
-  function halt() { on = false; current = null; say.cancel(); }
-  function done() { halt(); at = 0; light(null); show("idle"); }
-  play.addEventListener("click", function () {
-    if (on) { halt(); show("paused"); return; }  // pause: remember the sentence
-    if (!chunks.length) build();
-    if (!chunks.length) return;
-    say.cancel();
-    on = true; show("playing"); speak();
-  });
-  stopBtn.addEventListener("click", done);
-  speedBtn.addEventListener("click", function () {
-    sp = (sp + 1) % speeds.length;
-    speedBtn.textContent = speeds[sp] + "\\u00d7";
+  function saveSpeed() {
+    speedBtn.textContent = speeds[sp] + "×";
     try { localStorage.setItem("listenSpeed", speeds[sp]); } catch (e) {}
-    if (on) { halt(); on = true; speak(); }  // new speed from the current sentence
-  });
-  addEventListener("pagehide", function () { say.cancel(); });
-  say.cancel();  // nothing left over from another page
-  box.hidden = false;
+  }
+  if (box.getAttribute("data-audio")) recording(); else phoneVoice();
+
+  // A recording of the post (Voice 1). Keeps playing with the screen off, and the phone's
+  // lock screen shows play and pause.
+  function recording() {
+    var a = new Audio(), started = false, total = +box.getAttribute("data-duration") || 0;
+    var starts = (box.getAttribute("data-starts") || "").split(",").map(Number);
+    if (starts.length !== parts.length) starts = null;  // words changed: play without highlighting
+    a.preload = "none";
+    a.src = box.getAttribute("data-audio");
+    function mmss(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
+    function tick() {
+      var d = a.duration && isFinite(a.duration) ? a.duration : total, now = a.currentTime;
+      clock.textContent = mmss(now) + " / " + mmss(d);
+      fill.style.width = d ? Math.min(100, now / d * 100) + "%" : "0";
+      if (starts) {
+        var i = 0;
+        while (i + 1 < starts.length && starts[i + 1] <= now + 0.1) i += 1;
+        light(parts[i]);
+      }
+    }
+    function rate() { a.defaultPlaybackRate = a.playbackRate = speeds[sp]; }
+    play.addEventListener("click", function () {
+      if (!a.paused) { a.pause(); return; }
+      rate();
+      if (!started) { started = true; show("playing"); tick(); }
+      var p = a.play();
+      if (p && p.catch) p.catch(function () { if (a.paused) show(a.currentTime ? "paused" : "idle"); });
+    });
+    a.addEventListener("play", function () { show("playing"); });
+    a.addEventListener("pause", function () { if (started && !a.ended) show("paused"); });
+    a.addEventListener("timeupdate", tick);
+    a.addEventListener("ended", done);
+    function done() { a.pause(); try { a.currentTime = 0; } catch (e) {} started = false; light(null); fill.style.width = "0"; show("idle"); }
+    stopBtn.addEventListener("click", done);
+    speedBtn.addEventListener("click", function () { sp = (sp + 1) % speeds.length; saveSpeed(); rate(); });
+    track.addEventListener("click", function (e) {  // tap the line to jump
+      var r = track.getBoundingClientRect(), d = a.duration && isFinite(a.duration) ? a.duration : total;
+      if (!d) return;
+      a.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * d; tick();
+    });
+    if ("mediaSession" in navigator) {
+      try {
+        var img = document.querySelector('meta[property="og:image"]');
+        navigator.mediaSession.metadata = new MediaMetadata({ title: post.querySelector("h1").textContent,
+          artist: "Butch Mahinay", album: "aumahinay.dev", artwork: img ? [{ src: img.content, sizes: "1200x630", type: "image/jpeg" }] : [] });
+        navigator.mediaSession.setActionHandler("play", function () { play.click(); });
+        navigator.mediaSession.setActionHandler("pause", function () { a.pause(); });
+        navigator.mediaSession.setActionHandler("seekbackward", function () { a.currentTime = Math.max(0, a.currentTime - 10); });
+        navigator.mediaSession.setActionHandler("seekforward", function () { a.currentTime = a.currentTime + 10; });
+      } catch (e) {}
+    }
+    box.hidden = false;
+  }
+
+  // No recording yet: the phone's own voice reads it (Web Speech API). Pause stops and starts
+  // again from the same sentence, because pause() is unreliable on Android phones.
+  function phoneVoice() {
+    var say = window.speechSynthesis;
+    if (!say || !window.SpeechSynthesisUtterance) return;
+    var chunks = [], at = 0, on = false, voice = null, current = null;
+    function pickVoice() {
+      var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
+      var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
+      all.sort(function (a, b) {
+        function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
+        return r(a) - r(b);
+      });
+      voice = all[0] || null;
+    }
+    pickVoice();
+    if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
+    function build() {
+      chunks = [];
+      parts.forEach(function (el) {
+        var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
+        if (!text) return;
+        (text.match(/[^.!?]+[.!?]+["”’)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
+          if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
+          cur += s;
+        });
+        if (cur.trim()) chunks.push({ el: el, text: cur });
+      });
+    }
+    function speak() {
+      if (at >= chunks.length) { done(); return; }
+      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+      if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
+      u.rate = speeds[sp];
+      u.onend = function () { if (on && u === current) { at += 1; speak(); } };
+      u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
+      current = u;
+      light(c.el);
+      say.speak(u);
+    }
+    function halt() { on = false; current = null; say.cancel(); }
+    function done() { halt(); at = 0; light(null); show("idle"); }
+    play.addEventListener("click", function () {
+      if (on) { halt(); show("paused"); return; }
+      if (!chunks.length) build();
+      if (!chunks.length) return;
+      say.cancel();
+      on = true; show("playing"); speak();
+    });
+    stopBtn.addEventListener("click", done);
+    speedBtn.addEventListener("click", function () {
+      sp = (sp + 1) % speeds.length; saveSpeed();
+      if (on) { halt(); on = true; speak(); }
+    });
+    addEventListener("pagehide", function () { say.cancel(); });
+    say.cancel();
+    box.hidden = false;
+  }
 })();
 """
 
@@ -1300,21 +1365,38 @@ LISTEN_ICON = Raw('<svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><p
 STOP_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg>')
 
 
-def listen_minutes(b):
-    """Reading aloud is slower than reading with the eyes: about 160 words a minute at normal speed."""
+def recording(b):
+    """The post's recording from audio.py as (mp3 url, info), or None if it has none or its words changed since."""
+    import audio
+    j = STATIC / "audio" / f"{b['slug']}.json"
+    if not j.exists() or not (STATIC / "audio" / f"{b['slug']}.mp3").exists():
+        return None
+    info = json.loads(j.read_text())
+    return (asset_url(f"audio/{b['slug']}.mp3"), info) if info["hash"] == audio.words_hash(b) else None
+
+
+def listen_minutes(b, rec=None):
+    """Minutes the recording runs; without one, reading aloud at about 160 words a minute."""
+    if rec:
+        return max(1, round(rec[1]["duration"] / 60))
     return max(1, round(reading_minutes(b) * 200 / 160))
 
 
 def listen_box(b):
-    """Listen bar under a post's byline (hidden until the script finds a voice)."""
+    """Listen bar under a post's byline (hidden until the script knows it can play)."""
+    rec = recording(b)
+    data = {"data_audio": rec[0], "data_starts": ",".join(str(x) for x in rec[1]["starts"]),
+            "data_duration": rec[1]["duration"]} if rec else {}
     return [
         t.div(
             t.button(LISTEN_ICON, t.span("Listen", class_="listen-word"), type="button", class_="listen-play",
                      aria_pressed="false"),
-            t.span(f"{listen_minutes(b)} min listen", class_="listen-time muted"),
-            t.button("1×", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
+            t.span(f"{listen_minutes(b, rec)} min listen", class_="listen-time muted"),
+            t.span(class_="listen-clock muted", aria_hidden="true"),
+            t.button("1\u00d7", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
             t.button(STOP_ICON, type="button", class_="listen-stop", aria_label="Stop reading", title="Stop", hidden=True),
-            class_="listen", data_state="idle", hidden=True, role="group", aria_label="Listen to this post",
+            t.div(t.span(class_="listen-fill"), class_="listen-progress", aria_hidden="true"),
+            class_="listen", data_state="idle", hidden=True, role="group", aria_label="Listen to this post", **data,
         ),
         t.script(Raw(LISTEN_SCRIPT)),
     ]

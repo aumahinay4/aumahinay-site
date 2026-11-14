@@ -882,11 +882,19 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 .listen[data-state="playing"] .listen-play { border-color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 14%, var(--surface)); }
 .listen[data-state="playing"] .i-play { display: none; }
 .listen[data-state="playing"] .i-pause { display: block; }
-.listen-speed { min-width: 52px; padding: 7px 10px; font-variant-numeric: tabular-nums; }
+.listen-speed { min-width: 48px; padding: 7px 8px; font-variant-numeric: tabular-nums; }
 .listen-stop { width: 38px; height: 38px; padding: 0; }
+.listen button { flex-shrink: 0; }
 .listen-stop svg { width: 16px; height: 16px; stroke-width: 0; }
 .listen-time { font-size: 14.1186px; white-space: nowrap; }
 .listen:not([data-state="idle"]) .listen-time { display: none; }  /* while reading: Pause, speed and Stop on one line */
+.listen-clock { order: 5; margin-left: auto; font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.listen[data-state="idle"] .listen-clock, .listen-clock:empty { display: none; }
+.listen-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--line); border-radius: 2px; cursor: pointer; display: none; }
+.listen-progress::before { content: ""; position: absolute; inset: -10px 0; }  /* bigger area to tap */
+.listen-fill { display: block; height: 100%; width: 0; background: var(--blue-ink); border-radius: 2px; }
+.listen[data-audio]:not([data-state="idle"]) .listen-progress { display: block; }
+.listen[data-audio]:not([data-state="idle"]) { padding-bottom: 14px; gap: 6px; }
 /* While reading, the bar stays just under the top bar so Pause and Stop are always in reach */
 .listen:not([data-state="idle"]) { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--listen-top, 58px)); z-index: 4; background: var(--surface); padding: 6px 0; margin-block: 6px 0; box-shadow: 0 8px 10px -10px rgba(11, 42, 99, .35); }
 .post .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
