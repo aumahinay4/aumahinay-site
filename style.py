@@ -1030,7 +1030,7 @@ html.menu-js.menu-open header.site #site-menu { background: var(--surface);
 html.menu-js.menu-open header.site #site-menu { inset: 0 auto auto 0; height: auto; max-height: 100dvh; padding-bottom: 22px; }
 html.menu-js.menu-open header.site #site-menu { width: max-content; min-width: 0; padding-right: 6px; }
 /* Everything hugs (Butch 2026-11-14 "tight also the others"): rows nearly touching, smaller panel edges */
-html.menu-js.menu-open header.site #site-menu { padding-top: calc(12px + env(safe-area-inset-top, 0px)); padding-left: max(12px, env(safe-area-inset-left, 0px)); padding-bottom: 12px; }
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(6px + env(safe-area-inset-top, 0px)); padding-left: max(6px, env(safe-area-inset-left, 0px)); padding-bottom: 6px; }  /* every edge 6px (Butch: "every edge tight") */
 html.menu-js.menu-open header.site #site-menu a { padding: 2px 0; }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
