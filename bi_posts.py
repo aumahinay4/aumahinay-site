@@ -30,9 +30,7 @@ BI_POSTS = [
             "because nobody asked what the dashboard was for.",
             "(As always in this series, the office, the people and the numbers are made up. No real town or "
             "taxpayer is described.)",
-            "In Part 3, I listed six measures a treasury could watch every day. This part steps back one stage. "
-            "Before choosing any measure, you need to know who will use the dashboard and what they will do "
-            "with it. That knowledge goes into a short document I will call the BI brief.",
+            "In Part 3, I listed six measures a treasury could watch every day. This part goes one step earlier. Before you choose a single measure, find out who will use the dashboard and what they will decide with it, then write it down on one page. I call that page the BI brief. By the end of this post you will have five interview questions, a six-line template and a filled-in example you can copy.",
             ("h", "Ask About Decisions, Not Charts"),
             "Asking people which charts they want to see is the wrong starting point, because a chart is only "
             "useful if it changes what someone does.",
@@ -47,15 +45,14 @@ BI_POSTS = [
              "This sets how often the data must be updated."),
             ("point", "What would you do if the number looked wrong?", "This tells you who should be alerted "
              "and what the limit should be."),
-            "Notice that none of these questions mentions software. The conversation is about the work, and the "
-            "tools come later.",
+            "Notice that none of these questions mentions software. The conversation is about the work, and the tools come later.",
+            "If you are not sure how to begin, try this opening: “I am not here to ask what charts you want. I want to understand what you decide each week, and what you wish you knew sooner.” It keeps the conversation on their own work, which they know better than anyone.",
             ("h", "Talk to More Than One Person"),
             "The person who asked for the dashboard is not the only person who will use it. In a treasury, the "
             "head of office, the revenue unit, the cashier and the collectors may all open the same screen for "
             "different reasons.",
             "Talk to each group separately, even for ten minutes. The head of office may want totals against "
-            "target. The cashier may want undeposited collections by day. A collector may simply want to see "
-            "his own receipts for the week. If all three needs are known at the start, the dashboard can be "
+            "target. The cashier may want undeposited collections by day. A collector may simply want to see their own receipts for the week. If all three needs are known at the start, the dashboard can be "
             "designed with separate views instead of one crowded page.",
             "Write down each answer in the person’s own words. Later, when someone asks why a chart exists, you "
             "can point to the conversation that asked for it.",
@@ -87,8 +84,7 @@ BI_POSTS = [
             ("point", "Refresh", "Every evening after the cashier closes the day."),
             ("point", "Access", "All three measures show totals by collector only. No taxpayer names appear "
              "on any screen."),
-            "This brief is shorter than the first dashboard had charts. It is also far more useful, because "
-            "every line answers something a real person asked.",
+            "The brief has fewer lines than the first dashboard had charts, and it is far more useful, because every line answers something a real person asked.",
             ("quote", "A dashboard built from a brief answers the reader’s questions. A dashboard built without "
              "one answers the builder’s."),
             ("h", "Defining Each Measure"),
@@ -104,8 +100,7 @@ BI_POSTS = [
             "handling of personal information is governed by the Data Privacy Act of 2012 (Republic Act No. "
             "10173). The access line of the brief is where you decide, in advance, which screens show only "
             "totals and which, if any, show individual records.",
-            "A simple rule helps: if a decision can be made from totals, the screen shows totals. Decide this "
-            "with the people who use the dashboard and with whoever handles data privacy in your office.",
+            "A simple rule helps: if a decision can be made from totals, the screen shows totals. Decide this with the people who use the dashboard and with your office’s data protection officer. The National Privacy Commission’s Advisory No. 2017-01 asks every local government unit to designate one, so there should be someone to ask.",
             ("h", "Mistakes to Avoid"),
             ("point", "Building before asking", "Charts made before the conversations can end up showing what was easy "
              "to count, not what anyone needed. Ask first, then build."),
@@ -120,6 +115,10 @@ BI_POSTS = [
             "to be less useful than expected. When that happens, update the brief first, confirm it with the "
             "readers, and only then change the dashboard. The brief stays the single place where everyone can "
             "see what the dashboard is meant to do.",
+            ("h", "Key Takeaways"),
+            ("point", "Ask about decisions, not charts", "A dashboard is only worth building if it changes what someone does."),
+            ("point", "Talk to every kind of reader", "The head of office, the cashier and the collectors need different views of the same data."),
+            ("point", "Put it on one page and get it confirmed", "Decisions, readers, measures, sources, refresh and access, agreed before anything is built."),
             ("h", "Your Part 4 Exercise"),
             "Pick one person in your office who receives a regular report. This week, ask them three questions:",
             ("point", "Decision", "What do you decide with this report?"),

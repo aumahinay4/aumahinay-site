@@ -33,8 +33,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town or employee is described.)",
             "That clear way is the scope statement. In Part 2, the charter gave a short list of what was in and "
-            "out. The scope statement goes one level deeper and becomes the reference everyone uses when a new "
-            "idea arrives.",
+            "out. The scope statement goes one level deeper: it names each deliverable, says how everyone will know it is done, and becomes the page everyone checks when a new idea arrives. By the end of this post you will have a five-part template, a filled-in example and a calm way to answer extra requests.",
             ("h", "Two Kinds of Scope"),
             "Project management guides separate two ideas that are easy to mix up.",
             ("point", "Product scope", "The features and functions of the result. For the encoding project: "
@@ -47,6 +46,7 @@ PM_POSTS = [
             "but they affect different things. The first changes what the office receives at the end. The "
             "second changes how much work the team must do to get there, and who must be available to do it.",
             ("h", "The Five Parts of a Scope Statement"),
+            "Guides list the contents in slightly different ways, but a practical scope statement usually opens with a short description of the result and then covers these five parts.",
             ("photo", "blog/pm-scope-statement.jpg", "A scope statement in five parts: the deliverables, the "
              "acceptance criteria, the exclusions, the assumptions and the constraints. (Illustration: Butch "
              "Mahinay, aumahinay.dev)", "medium"),
@@ -62,7 +62,7 @@ PM_POSTS = [
             ("h", "The Encoding Project’s Scope Statement"),
             ("point", "Deliverables", "Property records for the four poblacion barangays in the new system. A "
              "list of records that did not match the assessor’s tax declarations, with the reason for each. "
-             "Fifty printed sample bills. A one-hour briefing for the counter staff."),
+             "Fifty printed sample bills. A hands-on session for the counter staff on printing and checking a bill."),
             ("point", "Acceptance criteria", "Every record matches the assessor’s tax declaration or appears "
              "on the mismatch list. The head of office checks twenty sample bills chosen at random against the "
              "ledger cards and finds no error in the amount due. The counter staff can print a bill without "
@@ -99,6 +99,7 @@ PM_POSTS = [
              "another round of checking. Added to the later list."),
             ("point", "Properties never visited", "Excluded from this project, but a useful question. It "
              "could become a report once all barangays are encoded."),
+            "When someone asks in person, the clerk uses the same few sentences each time: “That is a good idea. It is not in the scope we agreed, so I have added it to the list for the next phase. If you need it now, the January 4 date would move or we would need another encoder. Shall I ask the head of office?”",
             "The clerk does not say no to anyone. She says “not in this project,” writes each idea down, and "
             "lets the sponsor decide whether any of them is worth moving the deadline for.",
             ("h", "Who Signs Off on the Scope"),
@@ -119,6 +120,10 @@ PM_POSTS = [
             "such as a team member adding a feature they think would be nice.",
             "Both have the same cost: time and effort spent outside the agreed scope, which puts the agreed "
             "work at risk. The scope statement is the reference that makes both visible.",
+            ("h", "Key Takeaways"),
+            ("point", "Write what is out as clearly as what is in", "A plain list of what is out settles many requests before they become arguments."),
+            ("point", "Make acceptance checkable by someone else", "If nobody can test it, nobody can agree it is finished."),
+            ("point", "Answer extra requests with the scope, not your opinion", "Log the idea, state the cost, and let the sponsor decide."),
             ("h", "Your Part 4 Exercise"),
             "Take the project from your charter and write a short scope statement:",
             ("point", "Three deliverables", "Name each one so that anyone could check whether it exists."),

@@ -21,19 +21,15 @@ DATA_POSTS = [
                    "shown, so you can see how each answer builds on the last.",
         "publish_on": "2026-11-27 21:00",
         "body": [
-            "In Part 1, I introduced four kinds of analysis: descriptive, diagnostic, predictive and "
-            "prescriptive. Definitions are easy to remember and hard to use. So this part does something "
-            "different. It takes one small set of records and answers all four questions in order, the way an "
-            "analyst would in a real office at the start of November.",
+            "“How are we doing, and what should we do in the last two months?” The head of office asks it at the November meeting, and the room goes quiet. Everyone has a feeling about the answer. Nobody has the answer.",
+            "In Part 1, I introduced four kinds of analysis: descriptive, diagnostic, predictive and prescriptive. Definitions are easy to remember and hard to use, so this part puts them to work. It takes one small set of records and answers all four questions in order, with every number shown. By the end you will see how each answer feeds the next, and you will have a four-line routine to try on your own reports.",
             "(As always in this series, the office, the people and every number below are made up. No real "
             "town or taxpayer is described. The arithmetic, however, is real, so you can check every step.)",
             ("photo", "blog/data-four-questions.jpg", "Four questions asked of one data set, in order: describe "
              "what happened, diagnose why, predict what is likely, and prescribe what to do. (Illustration: "
              "Butch Mahinay, aumahinay.dev)", "medium"),
             ("h", "The Situation"),
-            "A municipal treasury has a real property tax collection target of ₱12,000,000 for the year. It is "
-            "early November. The head of office asks a simple question at the monthly meeting: “How are we "
-            "doing, and what should we do in the last two months?”",
+            "A municipal treasury has a real property tax collection target of ₱12,000,000 for the year. It is early November, and the question from the meeting is waiting for an answer.",
             "The analyst has the office’s collection records from January to October of this year and the same "
             "records for the past three years. That is all. No new survey, no special software. A spreadsheet "
             "is enough.",
@@ -88,8 +84,7 @@ DATA_POSTS = [
              "letters to 40 accounts led about one in four to pay, at an average of ₱15,000 each. The same "
              "result this year would be about 10 payments, or ₱150,000."),
             ("point", "Both together", "About ₱510,000, if the past results hold."),
-            "Then comes the uncomfortable part, which a good analyst does not hide. Even both options together "
-            "would close only about a third of a ₱1.5 million gap. The recommendation therefore has three "
+            "Then comes the uncomfortable part, which a good analyst does not hide. Even both options together would close only about a third of the smaller ₱1.5 million gap. The recommendation therefore has three "
             "lines: restore the roving days, send the letters, and tell the local chief executive and the "
             "budget office now that the year is likely to end below target, so they can plan for it.",
             ("quote", "A good recommendation tells people what to do and what it will not fix."),
@@ -120,6 +115,10 @@ DATA_POSTS = [
              "with a full year."),
             ("point", "Is the cause confirmed or only likely?", "Say which one, in plain words."),
             ("point", "Is the forecast a range?", "A single number suggests more certainty than the data gives."),
+            ("h", "Key Takeaways"),
+            ("point", "Each answer feeds the next", "Describe the gap, find where it is, size it, then choose what to do."),
+            ("point", "Say how sure you are", "A likely cause is not a proven one, and a forecast is a range, not a single number."),
+            ("point", "Tell people what will not be fixed", "An honest recommendation lets the office plan for the shortfall early."),
             ("h", "Your Part 4 Exercise"),
             "Take any total your office reports every month. Then try the four questions on it, one line each:",
             ("point", "Describe", "What was the total, and how does it compare with the same period last year?"),
