@@ -36,7 +36,7 @@ TREASURY_POSTS = [
             "Spanish rule. The exact date and place are still debated, but the act itself is "
             "taught in every Philippine history class.",
             "More than a century later, the name has survived. The law now calls it the community"
-            " tax, and the paper is the community tax certificate, but most of us still say "
+            " tax, and the paper is the community tax certificate, but people still call it the "
             "cedula.",
             ("h", "What You Actually Pay"),
             "The community tax is levied by cities and municipalities under Sections 156 to 164 "
@@ -127,8 +127,8 @@ TREASURY_POSTS = [
             ("h", "Should It Still Exist?"),
             "People have asked this for years. In 2013, the Commissioner of Internal Revenue said"
             " in a news report that the cedula was no longer needed and was ripe for reform. On "
-            "the other side, the community tax is steady local income, and for many barangays "
-            "their half of the collection is money they can count on every January.",
+            "the other side, the community tax is steady local income, and a barangay's share of "
+            "what is collected there is money it can count on every January.",
             "That debate belongs to Congress. Until the law changes, the cedula remains a tax. "
             "The Code still lets offices ask for it when you sign a notarized document, take an "
             "oath of office, get a permit or license, or receive money from public funds.",
@@ -186,9 +186,9 @@ TREASURY_POSTS = [
             "becomes due on the first day of the year. It is paid within the first 20 days of "
             "January. An owner who prefers to pay by quarter can do that too, with each "
             "installment due within the first 20 days of its quarter.",
-            "So the real deadline is January 20, not January 31. Because almost every business in"
-            " town renews at the same time, the line is longest in the last few days before the "
-            "20th.",
+            "So the real deadline is January 20, not January 31. Because renewals for the whole "
+            "town fall due in the same twenty days, the line is longest in the last few days "
+            "before the 20th.",
             "The tax is computed on what the business sold the year before. That is why the "
             "treasury asks for last year’s gross sales or receipts at renewal. My study note on "
             "business tax and the mayor’s permit walks through the rates and rules in detail.",
@@ -196,7 +196,7 @@ TREASURY_POSTS = [
              "Read the study note: Business tax and the mayor's permit",
              "/study-notes/business-tax-and-mayors-permit/"),
             ("h", "Two Payments, One Visit"),
-            "Renewal involves two different payments, and owners often mix them up:",
+            "Renewal involves two different payments, and it helps to keep them apart:",
             ("point",
              "The business tax",
              "A tax on the privilege of doing business, based on gross sales. It goes to the "
@@ -342,8 +342,8 @@ TREASURY_POSTS = [
             " actually comes from. By the end of this post, you will be able to read the one "
             "ratio that explains much of the answer, see why the national share can fall without "
             "warning, and know what actually raises a town's own income.",
-            "(The cases in this series are composites of situations that come up in many treasury"
-            " offices. Names, places and amounts are changed or left out.)",
+            "(The cases in this series are composites, not records of any real office. Names, "
+            "places and amounts are changed or left out.)",
             ("h", "Two Kinds of Money"),
             "Every local government has two broad kinds of income. The first is money it raises "
             "itself. The Bureau of Local Government Finance (BLGF) calls this locally sourced "
@@ -372,8 +372,7 @@ TREASURY_POSTS = [
             ("point", "Other receipts", "₱5 million, such as interest and miscellaneous income"),
             "In this example, the allotment is 75% of everything the town receives. Only about 23"
             " centavos of every peso comes from the town's own taxpayers. The numbers are "
-            "invented, but the shape is familiar: for many municipalities, the allotment is the "
-            "largest single source of income.",
+            "invented.",
             ("h", "Why the Allotment Can Fall"),
             "A town's allotment does not depend on how well the town collects. Under Section 284 "
             "of the Local Government Code, it is based on national tax collections in the third "
@@ -423,7 +422,7 @@ TREASURY_POSTS = [
             "the town's investment program and its annual budget, not for a good day of "
             "collections.",
             ("h", "What Actually Raises Local Income"),
-            "Raising local income does not have to mean a new tax. Often it means doing the basics well:",
+            "Raising local income does not have to mean a new tax. It can come from doing the basics well:",
             ("point",
              "Records that match reality",
              "Tax declarations should show what is actually on the land, including new buildings "

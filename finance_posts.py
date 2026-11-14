@@ -23,10 +23,10 @@ FINANCE_POSTS = [
             "question: “Is the check ready?”",
             "(As in my other treasury posts, the scenes here are composites. No real person, "
             "office or amount is described.)",
-            "For most people, December is the season of parties and bonuses. For a local "
-            "treasury, it is the busiest closing month of the year. By the end of this post, you "
-            "will know the rules that drive December, from unspent budgets to cash advances, and "
-            "a short checklist any office or supplier can use before the year closes.",
+            "December is the season of parties and bonuses. For a local treasury, it is the "
+            "busiest closing month of the year. By the end of this post, you will know the rules "
+            "that drive December, from unspent budgets to cash advances, and a short checklist "
+            "any office or supplier can use before the year closes.",
             ("h", "Why December Matters So Much"),
             "Local governments in the Philippines follow a fiscal year that runs with the "
             "calendar, from January 1 to December 31. Every peso the town plans to spend is "
@@ -261,8 +261,7 @@ FINANCE_POSTS = [
             " list of “pasaway” taxpayers shared on social media to shame them is something else "
             "entirely. It goes beyond the purpose and can expose the office to a complaint.",
             ("h", "Habits That Protect Taxpayers"),
-            "Many privacy problems can be prevented with small daily habits. Here are some that "
-            "every treasury can practice.",
+            "Small daily habits protect personal data. Here are some that every treasury can practice.",
             ("point",
              "Turn the screen away",
              "Position monitors so that the person in line cannot read the account of the person ahead."),
@@ -298,9 +297,9 @@ FINANCE_POSTS = [
             "be reported to the Commission, and the affected people informed, within 72 hours of "
             "the office knowing about it. Each office should have a data protection officer who "
             "knows what to do.",
-            "This connects with what I wrote in my cybersecurity series. Many attacks begin with "
-            "ordinary mistakes, like a clicked link or a weak password. Treasury data is "
-            "valuable, so treasury offices must expect to be targeted.",
+            "This connects with what I wrote in my cybersecurity series. A clicked link or a weak"
+            " password can open the door to an attack. Treasury data is valuable, so treasury "
+            "offices must expect to be targeted.",
             ("cta",
              "Read: How Modern Cyberattacks Really Work",
              "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
@@ -359,8 +358,8 @@ FINANCE_POSTS = [
              "within 72 hours."),
             ("h", "The Question to Ask"),
             "If you work in a local treasury, look at your counter tomorrow from the taxpayer’s "
-            "side. What can a person in line see that is not theirs? Fixing that is often the "
-            "cheapest privacy measure there is.",
+            "side. What can a person in line see that is not theirs? Fixing that costs little and"
+            " protects a lot.",
             ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula", "/blog/the-cedula-explained/"),
             ("ask",
              "Has a privacy question ever come up at your counter? I'd like to hear how you handled it."),

@@ -96,9 +96,8 @@ CYBER_POSTS = [
             "Such a machine does not exist yet, and experts disagree on when it might. So why "
             "worry now? Because of a strategy often called \"harvest now, decrypt later.\" An "
             "attacker can record encrypted data today and store it, hoping to unlock it years "
-            "from now. For most messages that hardly matters. For records that must stay "
-            "confidential for decades, such as land records, tax files, health information or "
-            "state secrets, it matters a great deal.",
+            "from now. For records that must stay confidential for decades, such as land records,"
+            " tax files, health information or state secrets, it matters a great deal.",
             "The good news is that the work to replace these locks is well underway. On August "
             "13, 2024, the United States National Institute of Standards and Technology (NIST) "
             "published its first three post-quantum cryptography standards, known as FIPS 203, "
@@ -115,8 +114,7 @@ CYBER_POSTS = [
             ("h", "Billions of Small Computers in Our Homes"),
             "A smart TV, a Wi-Fi camera, a voice speaker, a smart plug and even some rice cookers"
             " and air conditioners are all small computers connected to the internet. They are "
-            "convenient, often cheap, and frequently forgotten once installed. Many never receive"
-            " a security update.",
+            "convenient and often cheap, and some never receive a security update.",
             "The danger was made clear in October 2016. A piece of malware called Mirai had "
             "spread to a huge number of internet cameras and video recorders, mostly by trying "
             "factory-default usernames and passwords. On October 21, that army of hijacked "
@@ -143,7 +141,7 @@ CYBER_POSTS = [
              "hacked TV cannot reach your work laptop."),
             ("h", "What Will Not Change"),
             "It is easy to feel that security is a race we can never win. But look back at the "
-            "attacks in this series. Most of them, old or new, still depend on a handful of "
+            "attacks in this series. Old or new, the threats in this series lean on a handful of "
             "weaknesses: a stolen or guessed password, a person rushed into acting, a missing "
             "update, a setting left open, or data with no backup. The tools change. The weak "
             "points stay remarkably familiar.",
@@ -159,9 +157,9 @@ CYBER_POSTS = [
             "home router and survived a ransomware scenario. We tidied up our cloud accounts, "
             "looked at how apps get hacked, met the idea of zero trust and wrote a plan for when "
             "things go wrong. Today we looked ahead.",
-            "If you followed the action plans, your digital life is already far safer than most. "
-            "If you skipped a few, that is fine. Pick one part, do its action plan this week, and"
-            " come back to the others when you can.",
+            "If you followed the action plans, your digital life is already far safer than "
+            "before. If you skipped a few, that is fine. Pick one part, do its action plan this "
+            "week, and come back to the others when you can.",
             ("h", "Key Takeaways"),
             ("point",
              "Verify, do not judge by looks",
@@ -208,11 +206,11 @@ CYBER_POSTS = [
                    "one-page response plan before you need it.",
         "publish_on": "2026-12-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
-            "Many offices hold fire drills. People know where the exits are, who carries the "
-            "logbook and where to gather outside. But how many offices, or families, have ever "
-            "practiced what to do when a computer is hacked, an account is taken over or money is"
-            " sent to a scammer? When it happens, people improvise, and under stress, improvising"
-            " often makes things worse.",
+            "Offices hold fire drills. People know where the exits are, who carries the logbook "
+            "and where to gather outside. But how many offices, or families, have ever practiced "
+            "what to do when a computer is hacked, an account is taken over or money is sent to a"
+            " scammer? When it happens, people improvise, and under stress, improvising can make "
+            "things worse.",
             "Part 9 of this series is about incident response: the calm, ordered steps that limit"
             " the damage when something goes wrong. You do not need to be a technical expert to "
             "follow them. You need a plan that is written down before the bad day arrives. By the"
@@ -237,13 +235,12 @@ CYBER_POSTS = [
             "every alert deserves a quick check, because the cost of ignoring a real one is far "
             "higher than the cost of checking a false one.",
             ("h", "How the Professionals Think About It"),
-            "The United States National Institute of Standards and Technology (NIST) publishes "
-            "one of the most widely used guides on this subject, Special Publication 800-61. Its "
-            "third revision, released in April 2025, links incident response to the six functions"
-            " of the NIST Cybersecurity Framework 2.0: Govern, Identify, Protect, Detect, Respond"
-            " and Recover. The message is that response does not start when the alarm rings. It "
-            "starts with preparation and ends with lessons that make the next incident less "
-            "likely.",
+            "The United States National Institute of Standards and Technology (NIST) publishes a "
+            "guide on this subject, Special Publication 800-61. Its third revision, released in "
+            "April 2025, links incident response to the six functions of the NIST Cybersecurity "
+            "Framework 2.0: Govern, Identify, Protect, Detect, Respond and Recover. The message "
+            "is that response does not start when the alarm rings. It starts with preparation and"
+            " ends with lessons that make the next incident less likely.",
             "For everyday use, I find it easier to think in six plain steps:",
             ("point",
              "Prepare",
@@ -258,13 +255,13 @@ CYBER_POSTS = [
              "Restore services and data from trusted sources, then watch closely for a while."),
             ("point", "Learn", "Ask what happened and what would have stopped it, then fix that."),
             ("h", "The First Hour: Personal Emergencies"),
-            "Here is what to do in the first hour for situations people commonly face.",
+            "Here is what to do in the first hour for these situations.",
             ("point",
              "Your email or social media account was taken over",
              "Use the service's official recovery page to regain access. Change the password to a"
              " new, unique one, sign out all other sessions and turn on multi-factor "
              "authentication. Check recovery email, phone numbers and forwarding rules, because "
-             "attackers often change these to come back later. Warn your contacts not to act on "
+             "attackers can change these to come back later. Warn your contacts not to act on "
              "messages sent while you were locked out."),
             ("point",
              "Your phone was lost or stolen",
@@ -341,11 +338,11 @@ CYBER_POSTS = [
              "sensitive personal information that could lead to identity fraud, and must also "
              "inform the affected people."),
             ("h", "Talking About It Honestly"),
-            "How an organization communicates after an incident shapes how much trust it keeps. "
-            "In my experience, people forgive mistakes more readily than silence or spin. A good "
-            "notice explains what happened in plain language, what information was involved, what"
-            " the organization is doing about it, and what affected people should do to protect "
-            "themselves. It gives a contact person and promises updates, then keeps that promise.",
+            "How an organization communicates after an incident shapes how much trust it keeps. A"
+            " good notice explains what happened in plain language, what information was "
+            "involved, what the organization is doing about it, and what affected people should "
+            "do to protect themselves. It gives a contact person and promises updates, then keeps"
+            " that promise.",
             ("h", "Learning Without Blame"),
             "After the incident is closed, hold a short review. The goal is not to find someone "
             "to punish. It is to find the weak point that let the incident happen and fix it. Ask"
@@ -410,8 +407,7 @@ CYBER_POSTS = [
             "from home, use phones, log in to cloud services and connect from coffee shops. "
             "Second, and more serious, once an attacker gets inside the wall, through one phished"
             " password or one infected laptop, the fortress model lets them walk freely from room"
-            " to room. Many of the ransomware attacks we discussed in Part 5 spread exactly this "
-            "way.",
+            " to room. Ransomware, which we discussed in Part 5, can spread exactly this way.",
             "Part 8 of this series is about the answer that security experts have worked toward "
             "for more than a decade: zero trust. By the end of this post, you will know what it "
             "really means, why it echoes the internal controls of a well-run treasury, and "
@@ -427,9 +423,9 @@ CYBER_POSTS = [
             "research firm Forrester. Google described its own version, called BeyondCorp, in "
             "2014, after moving its employees away from relying on the internal network for "
             "trust. In August 2020, NIST published Special Publication 800-207, Zero Trust "
-            "Architecture, which has become a common reference. In 2021, a United States "
-            "executive order directed federal agencies to move toward zero trust, and the idea "
-            "has since spread to governments and companies around the world.",
+            "Architecture. In 2021, a United States executive order directed federal agencies to "
+            "move toward zero trust, and the idea has since spread to governments and companies "
+            "around the world.",
             ("h", "The Core Ideas in Plain Words"),
             "NIST lists seven tenets of zero trust. Stripped of technical terms, they come down "
             "to a few ideas that anyone can understand:",
@@ -547,8 +543,8 @@ CYBER_POSTS = [
              "being blamed for an attacker's actions."),
             ("point",
              "\"It is all or nothing\"",
-             "It is a journey. Many organizations start with identity and multi-factor "
-             "authentication, then improve step by step."),
+             "It is a journey. A sensible first step is identity and multi-factor authentication,"
+             " then improve step by step."),
             ("point",
              "\"It makes work slower\"",
              "Done well, it can make work smoother. Signing in once with a passkey on a trusted "
@@ -630,8 +626,8 @@ CYBER_POSTS = [
             "The software may be fine, but it was set up badly. Default administrator passwords "
             "are left unchanged, detailed error messages reveal how the system works inside, "
             "unnecessary features are switched on, or a storage folder full of documents is left "
-            "open to the internet. Many data leaks reported in the news come not from clever "
-            "hacking but from a setting nobody checked.",
+            "open to the internet. A data leak can come not from clever hacking but from a "
+            "setting nobody checked.",
             ("h", "3. Software Supply Chain Failures"),
             "Modern apps are built from many ready-made parts, called libraries or packages, "
             "written by other people. That saves time, but every part is a dependency you must "
@@ -680,7 +676,7 @@ CYBER_POSTS = [
             "one might crash and show internal details, leave a transaction half done, or, worst "
             "of all, let the user through because the check itself failed.",
             ("quote",
-             "Many security failures are not genius attacks. They are ordinary mistakes that "
+             "The risks on this list are not genius attacks. They are ordinary mistakes that "
              "nobody checked for."),
             ("h", "What App Users Can Do"),
             "You cannot fix an app's code, but you can lower your risk:",
@@ -725,8 +721,8 @@ CYBER_POSTS = [
              "Are important actions logged and kept? Who do we call if we suspect a breach, and "
              "how fast will you respond?"),
             ("h", "For Those Who Build"),
-            "If you write code, even small tools for your own office, a few habits prevent many "
-            "of these problems. Check permissions on the server for every request, not only by "
+            "If you write code, even small tools for your own office, a few habits help prevent "
+            "these problems. Check permissions on the server for every request, not only by "
             "hiding buttons on the screen. Use parameterized queries for every database call. "
             "Store passwords only with a modern password-hashing method designed for the purpose,"
             " such as bcrypt or Argon2. Keep your dependencies updated and remove the ones you do"
@@ -810,12 +806,9 @@ CYBER_POSTS = [
             "Think of a bank's safety deposit box. The bank guards the vault, the walls and the "
             "doors. But if you hand a copy of your key to a stranger, or leave the box open while"
             " you step out, the bank's strong vault will not help you.",
-            "Many cloud breaches happen on the customer's side of that line. The research firm "
-            "Gartner once predicted that through 2025, 99% of cloud security failures would be "
-            "the customer's fault. Whatever the exact number, the lesson holds: the weak point is"
-            " usually not the provider's data center. It is a weak password, a missing second "
-            "factor or a careless sharing setting.",
-            ("h", "The Most Common Cloud Mistakes"),
+            "Your side of that line is yours to protect. The risk there is a weak password, a "
+            "missing second factor or a careless sharing setting.",
+            ("h", "Cloud Mistakes to Avoid"),
             ("point",
              "A weak account",
              "If your cloud account uses a reused password without multi-factor authentication, "
@@ -829,12 +822,12 @@ CYBER_POSTS = [
             ("point",
              "Sharing that never ends",
              "Files shared years ago with former colleagues, old suppliers or a personal email "
-             "address often stay shared forever unless someone removes the access."),
+             "address stay shared until someone removes the access."),
             ("point",
              "Connected apps you forgot",
              "Quizzes, photo editors, browser add-ons and productivity tools often ask to \"sign "
-             "in with Google\" or Facebook and request access to your files or contacts. Many keep"
-             " that access long after you stop using them."),
+             "in with Google\" or Facebook and request access to your files or contacts. That "
+             "access can remain long after you stop using them."),
             ("point",
              "Thinking sync is a backup",
              "Syncing copies changes everywhere, including deletions and files scrambled by "
@@ -850,8 +843,8 @@ CYBER_POSTS = [
              "bulletin board."),
             ("point",
              "Give the lowest access that works",
-             "If someone only needs to read, give view access, not edit. Many services also let "
-             "you turn off downloading, printing and copying for viewers."),
+             "If someone only needs to read, give view access, not edit. Google Drive, for "
+             "example, lets you turn off downloading, printing and copying for viewers."),
             ("point",
              "Set an expiry date",
              "Several services let you make access expire automatically. When I share a document "
@@ -862,15 +855,14 @@ CYBER_POSTS = [
              "Look for files shared with \"anyone with the link\" or with people outside your "
              "office, and remove what is no longer needed."),
             ("h", "Check Which Apps Can Reach Your Accounts"),
-            "Over the years, most of us have clicked \"Allow\" for many apps. It is worth reviewing"
-            " them. In a Google Account, open the Security section and look for \"Your connections"
-            " to third-party apps and services.\" There you can see which apps can access your "
+            "Over the years, you may have clicked \"Allow\" for many apps. It is worth reviewing "
+            "them. In a Google Account, open the Security section and look for \"Your connections "
+            "to third-party apps and services.\" There you can see which apps can access your "
             "account and what each one can do. Remove any you do not recognize or no longer use. "
             "Microsoft, Apple and Facebook accounts have similar pages in their security or "
             "privacy settings.",
             "Pay special attention to any app that can read your email or your files. Email "
-            "access is the master key to most of your accounts, because password reset links "
-            "usually arrive there.",
+            "access is a master key, because password reset links arrive there.",
             ("quote", "Every \"Allow\" you click is a key you hand out. Count your keys once in a while."),
             ("h", "Your Phone Knows a Lot About You"),
             "Privacy is not only about files in the cloud. The apps on your phone can collect "
@@ -905,7 +897,7 @@ CYBER_POSTS = [
             "In the Philippines, the Data Privacy Act of 2012 (Republic Act No. 10173) protects "
             "personal information held by government offices and private companies alike. It is "
             "enforced by the National Privacy Commission (NPC). As a data subject, you have "
-            "rights that many people never use, including:",
+            "rights, including:",
             ("point",
              "The right to be informed",
              "You should be told when your personal data is being collected and processed, and "
@@ -979,7 +971,7 @@ CYBER_POSTS = [
             "Early ransomware was crude. A virus scrambled the files on one computer and asked "
             "for a few hundred dollars. If you paid, you might get a key. If you had a copy of "
             "your files somewhere else, you could ignore the note and start over.",
-            "Criminals learned from that. Today, many ransomware groups run like businesses. One "
+            "Criminals learned from that. Today, some ransomware groups run like businesses. One "
             "group writes and maintains the malware, runs the payment sites and even handles "
             "\"customer service\" with victims. Other criminals, called affiliates, rent the "
             "malware, break into targets, and share the ransom with the developers. This model is"
@@ -998,8 +990,8 @@ CYBER_POSTS = [
             "with traffic to add pressure. The goal is always the same: make paying feel like the"
             " fastest way to make the pain stop.",
             ("h", "How an Attack Unfolds"),
-            "A ransomware attack is rarely a single click that locks everything a minute later. "
-            "Many follow the pattern we mapped in Part 1, and they often take days or weeks.",
+            "A ransomware attack is not always a single click that locks everything a minute "
+            "later. It can follow the pattern we mapped in Part 1, over days or weeks.",
             ("point",
              "Getting in",
              "The usual doors are a phishing email, a stolen password for remote access or a VPN,"
@@ -1007,8 +999,8 @@ CYBER_POSTS = [
              "server."),
             ("point",
              "Settling in",
-             "The attacker installs remote-control tools so they can come back at will, often "
-             "using software that looks like ordinary IT administration."),
+             "The attacker installs remote-control tools so they can come back at will, sometimes"
+             " using software that looks like ordinary IT administration."),
             ("point",
              "Spreading out",
              "They collect more passwords, especially those of administrators, and move from the "
@@ -1023,9 +1015,9 @@ CYBER_POSTS = [
              "the recovery copies that the operating system keeps."),
             ("point",
              "Striking",
-             "Only then do they launch the encryption, often at night, on a weekend or before a "
-             "holiday, when fewer people are watching. Thousands of files can be locked within "
-             "hours."),
+             "Only then do they launch the encryption, sometimes at night, on a weekend or before"
+             " a holiday, when fewer people are watching. Thousands of files can be locked within"
+             " hours."),
             "Notice that the actual encryption is the last step. Every step before it is a chance"
             " to catch the attacker: an alert on a strange login, a warning about a new "
             "administrator account, or a large upload at midnight.",
@@ -1156,10 +1148,10 @@ CYBER_POSTS = [
              "On Windows, open Windows Security, go to Virus and threat protection, then "
              "Ransomware protection, and turn on Controlled Folder Access. Allow your trusted "
              "apps when asked."),
-            "With these first five parts, the series has covered the basics most people need: how"
-            " attacks work, how to protect your accounts, how to spot a scam, how to secure your "
-            "home network and how to survive ransomware. Share these posts with someone who "
-            "handles money or records, and come back to the action plans every few months.",
+            "With these first five parts, the series has covered the basics: how attacks work, "
+            "how to protect your accounts, how to spot a scam, how to secure your home network "
+            "and how to survive ransomware. Share these posts with someone who handles money or "
+            "records, and come back to the action plans every few months.",
             ("cta",
              "Read Part 6: Cloud Security and Privacy",
              "/blog/cybersecurity-part-6-cloud-and-privacy/"),
@@ -1182,27 +1174,26 @@ CYBER_POSTS = [
                    "and cannot do.",
         "publish_on": "2026-11-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
-            "In most homes, the internet arrives through one small box with blinking lights. The "
+            "At home, the internet may arrive through one small box with blinking lights. The "
             "technician installs it, writes the Wi-Fi password on a piece of paper, and leaves. "
             "Years later, the same box is still there, running the same software, with the same "
             "admin password printed on its sticker. Behind it are our phones, our children's "
             "tablets, the smart TV, a CCTV camera and the laptop we use for work or for online "
             "banking.",
-            "Since the pandemic, many of us also work from home at least part of the time. That "
-            "means the home router now protects not only family photos but sometimes office "
-            "documents, government systems and money. In Part 4 of this series, we will lock that"
-            " front door, divide the house into safer rooms, and clear up some common myths about"
-            " VPNs. By the end of this post, you will be able to secure your router in under an "
-            "hour, separate risky gadgets from your work laptop, and judge when a VPN actually "
-            "helps.",
+            "If you work from home even part of the time, the home router now protects not only "
+            "family photos but sometimes office documents, government systems and money. In Part "
+            "4 of this series, we will lock that front door, divide the house into safer rooms, "
+            "and clear up some common myths about VPNs. By the end of this post, you will be able"
+            " to secure your router in under an hour, separate risky gadgets from your work "
+            "laptop, and judge when a VPN actually helps.",
             ("h", "Why the Router Matters"),
             "Your router does three jobs at once. It connects your home to your internet "
             "provider, it creates the Wi-Fi network your devices join, and it decides which "
             "traffic may come in from the internet. If an attacker controls it, they can watch or"
             " redirect your traffic, send you to fake websites, or use your connection for their "
-            "own attacks. Routers are also attractive because many are never updated. Security "
-            "agencies have repeatedly warned about criminal and state-backed groups taking over "
-            "old home and small-office routers to hide their activities.",
+            "own attacks. Security agencies have repeatedly warned about criminal and "
+            "state-backed groups taking over old home and small-office routers to hide their "
+            "activities.",
             ("h", "Step 1: Lock the Front Door"),
             "Start with the settings page of your router. Its address and default login are "
             "usually printed on the sticker on the device, often an address like 192.168.1.1 or "
@@ -1241,8 +1232,8 @@ CYBER_POSTS = [
             "Not every device deserves the same trust. A cheap smart plug or an old CCTV camera "
             "may never receive a security update. If it shares a network with your work laptop, a"
             " compromised gadget becomes a foothold next to your most important files. The fix is"
-            " to separate them, an idea security people call segmentation. At home, most routers "
-            "make this easy with a guest network.",
+            " to separate them, an idea security people call segmentation. If your router offers "
+            "a guest network, use it for this.",
             ("point",
              "Main network",
              "Only for the devices you use and trust every day: your phones, laptops and tablets,"
@@ -1272,7 +1263,7 @@ CYBER_POSTS = [
             "Modern browsers and phones also support encrypted DNS, called DNS over HTTPS in "
             "browsers and Private DNS on Android. Encryption keeps people on the same network "
             "from seeing or tampering with the names you look up. DNS filtering is not a complete"
-            " defense, but it quietly stops many bad links before the page even loads.",
+            " defense, but it can stop known bad links before the page even loads.",
             ("h", "Step 4: The Truth About VPNs"),
             "VPN advertisements promise privacy, safety and anonymity in one click. The reality "
             "is narrower. A VPN creates an encrypted tunnel between your device and the VPN "
@@ -1294,8 +1285,8 @@ CYBER_POSTS = [
             "careful with free VPN apps: running a VPN costs money, and some free ones pay for it"
             " with your data.",
             ("h", "Smart Gadgets Need Care Too"),
-            "CCTV cameras, smart TVs, baby monitors and Wi-Fi plugs are small computers. Many are"
-            " sold cheaply, set up once and forgotten. A few habits reduce their risk:",
+            "CCTV cameras, smart TVs, baby monitors and Wi-Fi plugs are small computers. A few "
+            "habits reduce their risk:",
             ("point",
              "Change default passwords",
              "If a camera or gadget came with a password like admin or 12345, change it during setup."),
@@ -1333,7 +1324,7 @@ CYBER_POSTS = [
             ("point", "Separate by trust", "Put smart gadgets and visitors on the guest network."),
             ("point",
              "Let DNS filter for you",
-             "A filtering DNS such as 9.9.9.9 blocks many known bad sites."),
+             "A filtering DNS such as 9.9.9.9 blocks known malicious sites."),
             ("point",
              "Know what a VPN is for",
              "It protects you on untrusted networks; it does not stop malware or phishing."),
@@ -1376,17 +1367,15 @@ CYBER_POSTS = [
             "behind social engineering, or human hacking. Instead of attacking the machine, the "
             "attacker works on the person using it, through trust, fear, kindness or simple "
             "hurry.",
-            "Filipinos know this threat well. Many of us have received a text saying a package is"
-            " on hold, an account will be suspended, or we have won a prize we never joined. In "
-            "Part 3 of this series, we look at how these tricks work, why smart people fall for "
-            "them, and the habits that defeat them, including scams that now use artificial "
-            "intelligence to copy voices and faces. By the end of this post, you will be able to "
-            "spot the pressure tricks in a message within seconds and know exactly what to do if "
-            "you already clicked.",
+            "You may have received a text saying a package is on hold, an account will be "
+            "suspended, or we have won a prize we never joined. In Part 3 of this series, we look"
+            " at how these tricks work, why smart people fall for them, and the habits that "
+            "defeat them, including scams that now use artificial intelligence to copy voices and"
+            " faces. By the end of this post, you will be able to spot the pressure tricks in a "
+            "message within seconds and know exactly what to do if you already clicked.",
             ("h", "Why Smart People Get Fooled"),
             "Falling for a scam is not a sign of low intelligence. Scammers design messages to "
-            "push us into acting before we think. Scams commonly lean on one or more of these "
-            "levers:",
+            "push us into acting before we think. Scams lean on levers like these:",
             ("point",
              "Urgency",
              "\"Your account will be locked in 30 minutes.\" A deadline leaves no time to check."),
@@ -1543,9 +1532,8 @@ CYBER_POSTS = [
              "filename extensions."),
             ("point",
              "Save 1326",
-             "Add the hotline to your contacts, and share it with your parents and older "
-             "relatives, who are often targeted."),
-            "Technology catches many scams, but the last line of defense is a person who pauses, "
+             "Add the hotline to your contacts, and share it with your parents and older relatives."),
+            "Technology can catch scams, but the last line of defense is a person who pauses, "
             "checks and asks. Share these habits with the people around you, especially those who"
             " handle money.",
             ("cta", "Read Part 4: Your Home Network", "/blog/cybersecurity-part-4-home-network/"),
@@ -1571,8 +1559,8 @@ CYBER_POSTS = [
         "publish_on": "2026-11-14 22:00",
         "body": [
             "A firewall cannot stop someone who walks in with your username and password. That is"
-            " why many security people now say that identity is the new perimeter. Your work "
-            "systems, your bank, your e-wallet and your social media accounts are all reachable "
+            " why you will hear security people say that identity is the new perimeter. Your work"
+            " systems, your bank, your e-wallet and your social media accounts are all reachable "
             "from anywhere in the world. The only thing standing between an attacker and your "
             "account is how well you prove that you are you.",
             "In Part 2 of this series, we look at passwords, why the old rules failed, and the "
@@ -1605,12 +1593,12 @@ CYBER_POSTS = [
             "verses, birthdays and your children's names are all among the first things attackers"
             " try.",
             ("h", "How Accounts Really Get Stolen"),
-            "Many stolen accounts are not cracked by guessing at all. They are stolen in other ways:",
+            "Guessing is not the only way in. They are stolen in other ways:",
             ("point",
              "Reused passwords",
              "When one website is breached, attackers try the same email and password on banks, "
-             "email and social media. This is called credential stuffing, and it works because so"
-             " many people reuse passwords."),
+             "email and social media. This is called credential stuffing, and it works because "
+             "people reuse passwords."),
             ("point", "Phishing", "A fake login page collects your password as you type it."),
             ("point",
              "Infostealer malware",
@@ -1669,10 +1657,10 @@ CYBER_POSTS = [
             "social media and banking services, now support passkeys. Look for \"Passkeys\" or "
             "\"Sign in without a password\" in your account's security settings.",
             ("h", "Protect the Master Key: Your Email"),
-            "If you secure only one account today, make it your main email. Nearly every other "
-            "account lets you reset its password through email. Whoever controls your inbox can "
-            "take over the rest. Give it a unique long password, your strongest form of MFA and "
-            "an up-to-date recovery phone number.",
+            "If you secure only one account today, make it your main email. Other accounts let "
+            "you reset their passwords through email. Whoever controls your inbox can take over "
+            "the rest. Give it a unique long password, your strongest form of MFA and an "
+            "up-to-date recovery phone number.",
             ("quote", "Whoever controls your email can reset almost everything else. Guard it first."),
             ("h", "Signs Your Account Has Been Taken Over"),
             "Even careful people get caught. The sooner you notice, the less damage is done. "
@@ -1692,10 +1680,10 @@ CYBER_POSTS = [
              "If your phone loses signal for no clear reason and you cannot make calls, contact "
              "your telco at once. It may be a SIM swap."),
             "If you see these signs, act quickly. From a device you trust, change the password, "
-            "sign out of all other sessions (most services have a \"sign out everywhere\" option), "
-            "check the recovery details and MFA settings, and remove anything you did not add. If"
-            " money is involved, call your bank or e-wallet right away using the number on its "
-            "official website or on the back of your card.",
+            "sign out of all other sessions (look for a \"sign out everywhere\" option), check the "
+            "recovery details and MFA settings, and remove anything you did not add. If money is "
+            "involved, call your bank or e-wallet right away using the number on its official "
+            "website or on the back of your card.",
             ("h", "Key Takeaways"),
             ("point",
              "Length beats complexity",
@@ -1751,8 +1739,7 @@ CYBER_POSTS = [
             "Much of today's cybercrime looks less like a heist and more like a business. "
             "Criminal groups divide the work, rent out their tools, buy stolen passwords in bulk "
             "and use automated programs that scan the internet for weak devices day and night. "
-            "Many victims are not chosen because they are important. They are chosen because they"
-            " were easy.",
+            "You do not have to be important to become a victim. You only have to be easy.",
             "This post opens a cybersecurity series on this blog. I work in the treasury service "
             "and build software on the side, and both jobs have taught me the same lesson: what "
             "protects public money and public records is not one strong lock but many good "
@@ -1785,7 +1772,7 @@ CYBER_POSTS = [
             ("point",
              "Cybercriminals",
              "Motivated by money. They steal passwords, card numbers and bank details, run scams "
-             "and deploy ransomware. Many use ransomware-as-a-service, renting ready-made malware"
+             "and deploy ransomware. Some use ransomware-as-a-service, renting ready-made malware"
              " from its developers and sharing the ransom with them."),
             ("point",
              "State-sponsored groups",
@@ -1798,14 +1785,14 @@ CYBER_POSTS = [
              "or flood a site with traffic to take it offline, aiming for attention."),
             ("point",
              "Insiders",
-             "People who already have access. Some act out of anger or greed, but many insider "
-             "incidents are honest mistakes: an email sent to the wrong person, or a shared "
-             "folder left open to anyone with the link."),
+             "People who already have access. Some act out of anger or greed, and others make "
+             "honest mistakes: an email sent to the wrong person, or a shared folder left open to"
+             " anyone with the link."),
             ("h", "How a Breach Unfolds"),
             "A serious attack is rarely a single event. It is a chain of steps, and each step is "
             "a chance to stop it. Security teams describe this chain with models such as Lockheed"
             " Martin's Cyber Kill Chain and the MITRE ATT&CK knowledge base, which catalogs the "
-            "techniques real attackers use. In plain terms, most intrusions follow a path like "
+            "techniques real attackers use. In plain terms, an intrusion can follow a path like "
             "this:",
             ("point",
              "1. Reconnaissance",
@@ -1840,7 +1827,7 @@ CYBER_POSTS = [
             "wall, a firewall, around the office network and trusted everyone inside. That model "
             "has aged badly. Our data now lives in cloud services, our staff work from home and "
             "from their phones, and a single stolen password can carry an attacker across the "
-            "drawbridge. Once inside a flat, trusting network, they can often move freely.",
+            "drawbridge. Once inside a flat, trusting network, they can move freely.",
             "This does not mean firewalls are useless. It means they cannot be the only defense.",
             ("h", "How We Fight Back: Layers"),
             "The answer is defense in depth. Safety experts often explain it with the Swiss "
@@ -1865,7 +1852,7 @@ CYBER_POSTS = [
             "Let us also clear away a few beliefs that make attackers' work easier.",
             ("point",
              "Myth: I am not important enough to be targeted",
-             "Many attacks are automated. A program that tries leaked passwords or scans for "
+             "Attacks can be automated. A program that tries leaked passwords or scans for "
              "unpatched devices does not care who you are. Your account, your phone number and "
              "your computer's power are all worth something to a criminal."),
             ("point",
@@ -1909,7 +1896,7 @@ CYBER_POSTS = [
              "exposed, change it."),
             ("point",
              "Turn on automatic updates",
-             "On your phone, computer and browser. Many attacks use flaws that were fixed months "
+             "On your phone, computer and browser. Some attacks use flaws that were fixed months "
              "earlier, betting that people keep pressing \"Remind me later.\""),
             ("point",
              "Name your three most important accounts",

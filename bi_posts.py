@@ -343,8 +343,8 @@ BI_POSTS = [
             "(As always in this series, the office, the people and the numbers are made up. No "
             "real town or taxpayer is described.)",
             "In a large organization, three different people might take that call. In a small "
-            "treasury, it is often one person. Either way, it helps to know the three jobs apart,"
-            " because each one fails in its own way and each one is fixed in its own way. By the "
+            "treasury, it may be one person. Either way, it helps to know the three jobs apart, "
+            "because each one fails in its own way and each one is fixed in its own way. By the "
             "end of this post, you will know the three kinds of BI work, how each one fails, and "
             "how one person in a small office can do all three.",
             ("photo",
@@ -396,8 +396,8 @@ BI_POSTS = [
              "What the work looks like",
              "Deciding which measures go on the screen and how each one is calculated. Choosing "
              "the right chart for each measure. Adding date controls and filters so users can ask"
-             " follow-up questions. Making sure the layout still works on a phone, because that "
-             "is where many busy officials will see it."),
+             " follow-up questions. Making sure the layout still works on a phone, because a busy"
+             " official may see it there."),
             ("point",
              "The tools",
              "Dashboard tools such as Looker Studio, Power BI or Tableau, plus a good working "
@@ -439,7 +439,7 @@ BI_POSTS = [
             ("h", "Titles Vary, the Work Does Not"),
             "Job titles in BI are not standard. One organization’s BI engineer is another’s data "
             "engineer. Some companies call the dashboard builder a BI analyst, others a report "
-            "developer. In smaller teams, one person often does the analyst and developer work "
+            "developer. In a small team, one person may do the analyst and developer work "
             "together. Do not worry about the labels. Look at the three kinds of work, because "
             "those stay the same everywhere.",
             "BI work also connects with nearby roles. Database administrators keep the systems "
@@ -449,7 +449,7 @@ BI_POSTS = [
             " who may see what, which matters a great deal when the data includes taxpayers’ "
             "names and properties.",
             ("h", "One Person, Three Hats"),
-            "Many local treasuries will never hire a BI team. That is fine. What matters is that "
+            "A small treasury may never hire a BI team. That is fine. What matters is that "
             "someone in the office knows when to switch hats.",
             ("point",
              "Monday morning: engineer hat",
@@ -637,8 +637,8 @@ BI_POSTS = [
             "Three misunderstandings are worth clearing up early.",
             ("point",
              "It is not just pretty charts",
-             "A dashboard built on messy data spreads wrong numbers faster. Much of the real work"
-             " in BI happens before anything is drawn."),
+             "A dashboard built on messy data spreads wrong numbers faster. The real work in BI "
+             "starts before anything is drawn."),
             ("point",
              "It is not expensive software",
              "Commercial tools exist, but a treasury can start with a spreadsheet, a small "

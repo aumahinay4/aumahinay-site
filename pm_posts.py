@@ -160,14 +160,13 @@ PM_POSTS = [
             "up. No real town or employee is described.)",
             "This part is about avoiding that day. It is about stakeholders: the people and "
             "groups who can affect a project or are affected by it. Finding them early, and "
-            "deciding how to work with each one, is one of the most valuable hours a project "
-            "manager will ever spend. By the end of this post, you will be able to list a "
-            "project's stakeholders, place them on a power and interest grid, and plan how each "
-            "one hears from you.",
+            "deciding how to work with each one, is time well spent. By the end of this post, you"
+            " will be able to list a project's stakeholders, place them on a power and interest "
+            "grid, and plan how each one hears from you.",
             ("h", "Who Counts as a Stakeholder"),
-            "Many people think stakeholders are only the people who approve or pay for a project."
-            " The real list is wider. A stakeholder is anyone who can help the project, block it,"
-            " or feel its results.",
+            "It is tempting to think stakeholders are only the people who approve or pay for a "
+            "project. The real list is wider. A stakeholder is anyone who can help the project, "
+            "block it, or feel its results.",
             "For the encoding project, a first list might look like this:",
             ("point",
              "Inside the treasury",
@@ -359,9 +358,9 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made "
             "up. No real town or employee is described.)",
             "This is the problem a project charter solves. It is the first document of a project,"
-            " and in small offices it is often the only one that matters. By the end of this "
-            "post, you will know the six parts of a one-page charter, see one written for a "
-            "treasury project, and know how to handle changes without arguments.",
+            " and in a small office it may be the only one you need. By the end of this post, you"
+            " will know the six parts of a one-page charter, see one written for a treasury "
+            "project, and know how to handle changes without arguments.",
             ("h", "What a Project Charter Is"),
             "A project charter is a short, signed document that officially starts a project. It "
             "records why the project exists, what it will deliver, when, with what money and "
@@ -529,9 +528,11 @@ PM_POSTS = [
         "slug": "project-management-part-1-accidental-project-manager",
         "category": "pm",
         "summary": (
-            "Few people in a local treasury apply to be project managers, yet many end up as one."
-            " Here is how a project differs from daily work, the three limits every project lives"
-            " with, and four moves to make in your first two weeks."
+            (
+                "A project can land on your desk without the title. Here is how a project differs"
+                " from daily work, the three limits every project lives with, and four moves to "
+                "make in your first two weeks."
+            )
         ),
         "publish_on": "2026-11-13",
         "body": [
@@ -546,8 +547,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made "
             "up. No real town or employee is described.)",
             "If that scene feels familiar, welcome. You have just become what people in the field"
-            " call an accidental project manager. Many people in every kind of office become "
-            "project managers this way, without ever applying for the role.",
+            " call an accidental project manager.",
             ("h", "Why I Am Writing This Series"),
             "I completed the Google Project Management Professional Certificate on Coursera, and "
             "later the Google Stakeholder Management specialization. My own biggest project so "
@@ -556,10 +556,10 @@ PM_POSTS = [
             "duties, so before any office can put it to real use, the documents must come first, "
             "beginning with a memorandum of agreement. That order, paperwork before launch, is "
             "itself a project management lesson.",
-            "Most project management lessons online talk about product launches, marketing "
-            "campaigns and software companies. The ideas are good, but the examples feel far from"
-            " a municipal hall. This series explains the same ideas in plain words, with examples"
-            " from treasury work: tax campaigns, new systems, year-end closing, audits and the "
+            "Project management lessons online can lean on product launches, marketing campaigns "
+            "and software companies. The ideas are good, but those examples can feel far from a "
+            "municipal hall. This series explains the same ideas in plain words, with examples "
+            "from treasury work: tax campaigns, new systems, year-end closing, audits and the "
             "people at the counter. By the end of this post, you will be able to tell a project "
             "from daily work, explain the three limits every project lives with, and make four "
             "moves that set up your first two weeks.",
@@ -656,9 +656,9 @@ PM_POSTS = [
              "Close",
              "Hand the result to the people who will use it every day, store the records, and sit"
              " down for half an hour to talk about what to keep and what to change next time."),
-            "Many projects do not fail at the doing. They fail at the very beginning, because "
-            "nobody agreed on what “done” means, or at the very end, because the work was never "
-            "handed over properly and slowly slid back to the old way.",
+            "A project can fail before the doing even starts, because nobody agreed on what "
+            "“done” means, or at the very end, because the work was never handed over properly "
+            "and slowly slid back to the old way.",
             ("h", "Your First Two Weeks: Four Moves"),
             "When a project lands on your desk, the temptation is to start working right away. "
             "Resist it for a few days. These four moves will save you weeks later.",
@@ -685,10 +685,10 @@ PM_POSTS = [
              "five chat groups, three notebooks and a stack of memos. Agree on a simple rule: if "
              "a decision is not written there, it was not made."),
             ("h", "The Dispatcher, Not the Driver"),
-            "Capable people often fall into the same trap when they lead their first project. "
-            "When an encoder falls behind, they stay late and encode the cards themselves. When "
-            "the system shows an error, they spend two days fixing it alone. Meanwhile, nobody is"
-            " watching the schedule, the sponsor hears nothing, and the project quietly stalls.",
+            "Capable people can fall into a trap when they lead their first project. When an "
+            "encoder falls behind, they stay late and encode the cards themselves. When the "
+            "system shows an error, they spend two days fixing it alone. Meanwhile, nobody is "
+            "watching the schedule, the sponsor hears nothing, and the project quietly stalls.",
             "Think of a jeepney dispatcher at a busy terminal. The dispatcher does not drive any "
             "of the jeeps. Yet without someone keeping the line moving, calling the next trip and"
             " sorting out the jam at the gate, the whole terminal grinds to a halt. That is the "

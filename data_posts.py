@@ -164,9 +164,9 @@ DATA_POSTS = [
             "Some practitioners prefer the phrase data-inspired, and the difference is useful. A "
             "data-driven choice follows closely from a clear analysis. A data-inspired choice "
             "uses data to spark ideas or test a hunch, while leaving room for things the numbers "
-            "cannot measure, such as goodwill with taxpayers or the morale of a tired staff. Many"
-            " decisions in a treasury land somewhere in between, and that is fine as long as "
-            "everyone knows which is which.",
+            "cannot measure, such as goodwill with taxpayers or the morale of a tired staff. A "
+            "decision can land somewhere in between, and that is fine as long as everyone knows "
+            "which is which.",
             ("h", "Experience Is Data Too"),
             "The senior collector’s hunch is not worthless. Years at the counter are a kind of "
             "data, stored in a person instead of a table. The trouble is that one person sees "
@@ -269,9 +269,8 @@ DATA_POSTS = [
             ("point", "The check", "What will be measured afterwards, and on what date someone will look."),
             "Next December, when the same meeting comes around, nobody has to rely on memory. The"
             " office opens the note, compares the prediction with what actually happened, and "
-            "decides again with better information. Over a few years, these notes become one of "
-            "the most valuable records an office keeps, because they show not only what was done "
-            "but why.",
+            "decides again with better information. Over a few years, these notes become a "
+            "valuable record, because they show not only what was done but why.",
             ("h", "When the Data Is Not Enough"),
             "Sometimes the records simply cannot answer the question. A new kind of fee has no "
             "history. A change in the law makes old patterns useless. A decision must be made "
@@ -304,8 +303,8 @@ DATA_POSTS = [
             ("point",
              "What would change your mind",
              "Before looking, write the result that would make you drop your own hunch."),
-            "If you can, spend thirty minutes pulling that record. Even a rough count by day is "
-            "often enough to move the conversation from memories to facts.",
+            "If you can, spend thirty minutes pulling that record. Even a rough count by day can "
+            "be enough to move the conversation from memories to facts.",
             ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
             ("cta", "Read: Data Analytics Series, Part 1", "/blog/data-analytics-part-1-what-it-is/"),
             ("cta",
@@ -333,10 +332,10 @@ DATA_POSTS = [
             "few thousand rows, makes a chart and sends it to the boss. Sometimes it helps. Often"
             " it does not, and nobody can say exactly why. The chart was correct. The numbers "
             "added up. Yet no decision came out of it.",
-            "Often, the problem is not the math. It is the order of the work. The person started "
-            "with the data and hoped a question would appear. Good analysis runs the other way "
-            "around, and it follows a set of steps that experienced analysts repeat almost "
-            "without thinking.",
+            "In a case like this, the problem is not the math. It is the order of the work. The "
+            "person started with the data and hoped a question would appear. Good analysis runs "
+            "the other way around, and it follows a set of steps that experienced analysts repeat"
+            " almost without thinking.",
             "In Part 1, we described data analytics as the craft of turning everyday records into"
             " answers people can act on. This part lays out the road from the first question to "
             "the final decision. By the end of this post, you will know the six steps of every "
@@ -424,8 +423,8 @@ DATA_POSTS = [
             "Cleaning means removing the duplicates, leaving out cancelled receipts, writing "
             "every time in one format and marking the afternoon with no entries as missing "
             "instead of pretending it was quiet. Each change is written down, so anyone can see "
-            "what was done and why. This step is rarely exciting, but it is where many analyses "
-            "are won or lost.",
+            "what was done and why. This step is rarely exciting, but it is where an analysis can"
+            " be won or lost.",
             ("h", "Step 4: Analyze"),
             "With clean data, the analyst can finally count and compare. The two-week log shows "
             "how long each person waited, and it reveals a simple link: once one window gets more"
@@ -578,12 +577,12 @@ DATA_POSTS = [
             "there did not stay in the classroom. It shaped how I think about treasury records, "
             "and it became one of the foundations of ALTOS, the system I built for Philippine "
             "local treasuries.",
-            "Most data analytics lessons online use examples from online shops, streaming apps or"
-            " bike rentals. Those are fine, but they can feel far from a town hall in the "
-            "province. This series explains the same ideas in plain words, with examples from the"
-            " work I know: collections, disbursements, targets, deadlines and the people at the "
-            "counter. By the end of this post, you will know what data analytics is, the four "
-            "kinds of questions it answers, and why your office already holds the data to start.",
+            "Data analytics lessons online can use examples such as online shops or bike rentals."
+            " Those are fine, but they can feel far from a town hall in the province. This series"
+            " explains the same ideas in plain words, with examples from the work I know: "
+            "collections, disbursements, targets, deadlines and the people at the counter. By the"
+            " end of this post, you will know what data analytics is, the four kinds of questions"
+            " it answers, and why your office already holds the data to start.",
             ("h", "Data, Information and Insight"),
             "Three words are often mixed up, so let us start there. Think of them as three steps "
             "on a ladder.",
@@ -617,13 +616,11 @@ DATA_POSTS = [
             "checking why collections dropped in May. Data analytics is the whole discipline "
             "around it: the process, the tools, the habits and the people. Data science is a "
             "wider field still. It includes building new statistical models and machine learning "
-            "systems. A good analyst borrows from it, but most everyday questions in an office "
-            "can be answered without it.",
+            "systems. A good analyst borrows from it, but you do not need it to begin.",
             ("h", "A Cholera Outbreak and a Famous Map"),
-            "One of the most famous stories in this field happened long before computers. On "
-            "August 31, 1854, cholera broke out in Soho, a crowded neighborhood in London. "
-            "Hundreds of people died within days. Most doctors at the time believed the disease "
-            "spread through foul air.",
+            "A famous story in this field happened long before computers. On August 31, 1854, "
+            "cholera broke out in Soho, a crowded neighborhood in London. Hundreds of people died"
+            " within days. Most doctors at the time believed the disease spread through foul air.",
             "A physician named John Snow suspected the water instead. He went through the records"
             " of who had died and where they had lived, and he asked families where they drew "
             "their water. Again and again, the answer led to one public pump on Broad Street. He "
@@ -664,11 +661,11 @@ DATA_POSTS = [
              "delinquent accounts deserve a personal visit rather than a letter?"),
             "Each type builds on the one before it. You cannot explain a drop you have not "
             "measured, and you cannot plan around a forecast you do not trust. That is why the "
-            "first steps deserve care, even though many people rush through them.",
+            "first steps deserve care.",
             ("h", "You Do Not Need Expensive Software"),
             "A common worry is that analytics needs costly tools or a degree in mathematics. It "
-            "does not. Much useful analysis in a small office can be done with tools that are "
-            "free or already installed:",
+            "does not. Useful analysis in a small office can start with tools that are free or "
+            "already installed:",
             ("point",
              "A spreadsheet",
              "Google Sheets, LibreOffice Calc or Excel. Sorting, filtering, formulas and pivot "
