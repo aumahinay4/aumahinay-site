@@ -790,82 +790,124 @@ BLOG = [
                    "island I have loved for almost two decades. This time, I could not cross.",
         "publish_on": "2026-11-05",  # Butch said go, 2026-11-05 10:44 pm PH
         "body": [
-            ("photo", "blog/alibijaban-bangka.jpg", "Nine o'clock in the morning, November 4, 2026, on the shore of San Andres, Quezon", "half"),
+            ("photo",
+             "blog/alibijaban-bangka.jpg",
+             "Nine o'clock in the morning, November 4, 2026, on the shore of San Andres, Quezon",
+             "half"),
             ("h", "Sitting on a Small Bangka"),
-            "It was nine o'clock in the morning of November 4, 2026, and I was sitting on the edge of a motor bangka on "
-            "the shore of San Andres, Quezon. The tide was low and the wet sand under my feet was rippled like a "
-            "washboard. Far across the water, I could see the low green line I had been missing for so many years: Alibijaban "
-            "Island.",
-            "The bangka was not mine. It belonged to someone in the village, resting on the sand with its long red "
-            "outriggers stretched out like arms. I sat on it anyway, alone, looking out to sea and imagining that I was "
-            "about to push off. I knew I could not go that day, because I had to head home that morning. In my mind, I was "
-            "already on the other side, walking on white sand and wading into clear water.",
-            "Not far from me, a few people waded near the fish corrals and children played in the shallows. The sky was heavy "
-            "with grey clouds, but the sea was quiet. On any other day, it would have been the perfect day to cross.",
+            "It was nine o'clock in the morning of November 4, 2026, and I was sitting on the "
+            "edge of a motor bangka on the shore of San Andres, Quezon. The tide was low and the "
+            "wet sand under my feet was rippled like a washboard. Far across the water, I could "
+            "see the low green line I had been missing for so many years: Alibijaban Island.",
+            "The bangka was not mine. It belonged to someone in the village, resting on the sand "
+            "with its long red outriggers stretched out like arms. I sat on it anyway, alone, "
+            "looking out to sea and imagining that I was about to push off. I knew I could not go"
+            " that day, because I had to head home that morning. In my mind, I was already on the"
+            " other side, walking on white sand and wading into clear water.",
+            "Not far from me, a few people waded near the fish corrals and children played in the"
+            " shallows. The sky was heavy with grey clouds, but the sea was quiet. On any other "
+            "day, it would have been the perfect day to cross.",
             ("h", "A Holiday for Hermano Puli"),
-            "November 4 is Hermano Puli Day, a special non-working day in our province of Quezon, declared by "
-            "Malacañang each year. It marks the day we lost Apolinario de la Cruz, better known as Hermano Puli, a son "
-            "of Lucban who founded the Cofradía de San José. As a young man, he wanted to become a priest, but the "
-            "Spanish friars turned him away because he was an indio, a native of the islands. So he built a brotherhood "
-            "of his own.",
-            "The Spanish authorities saw his growing following as a threat. On November 1, 1841, Spanish soldiers "
-            "attacked him and his followers. He escaped, but he was caught a few days later and executed in Tayabas on "
-            "November 4, 1841. Today we remember him as a hero who stood up for the dignity and faith of ordinary "
-            "Filipinos.",
-            "For many of us in Quezon, the holiday is a day of rest, a day with family, or a day to visit a place we "
-            "love. For me, it was a chance to see again, even from afar, a place full of good memories. A free morning, "
-            "a calm sea, and an island just across the water. If only I had one more day.",
+            "November 4 is Hermano Puli Day, a special non-working day in our province of Quezon,"
+            " declared by Malacañang each year. It marks the day we lost Apolinario de la Cruz, "
+            "better known as Hermano Puli, a son of Lucban who founded the Cofradía de San José. "
+            "As a young man, he wanted to become a priest, but the Spanish friars turned him away"
+            " because he was an indio, a native of the islands. So he built a brotherhood of his "
+            "own.",
+            "The Spanish authorities saw his growing following as a threat. On November 1, 1841, "
+            "Spanish soldiers attacked him and his followers. He escaped, but he was caught a few"
+            " days later and executed in Tayabas on November 4, 1841. Today we remember him as a "
+            "hero who stood up for the dignity and faith of ordinary Filipinos.",
+            "For many of us in Quezon, the holiday is a day of rest, a day with family, or a day "
+            "to visit a place we love. For me, it was a chance to see again, even from afar, a "
+            "place full of good memories. A free morning, a calm sea, and an island just across "
+            "the water. If only I had one more day.",
             ("h", "No Time to Cross"),
-            "But the clock was not on my side. The island trip was never part of my plan this time. I had come for the "
-            "farm. Every morning I went out to the farm, and every evening I came back to sleep at my father-in-law's "
-            "house, just a short walk from where that bangka rested on the sand. By the time I sat on it on my last "
-            "morning, it was nine o'clock, and I had to leave for home by eleven. Two hours is not enough for "
-            "Alibijaban. A trip there is not something you rush. You need time for the boat ride, time to walk the "
-            "beach, time to eat, and time to come back. And the next morning, I had to be back at the office.",
-            "So I stayed on the sand. I watched the small waves roll in and the faraway boats rock gently at anchor. I "
-            "admit it was a little sad. The island was right there, close enough to see, but not close enough for that "
-            "day.",
-            "Still, I was not really disappointed. Sometimes just being near a place you love reminds you why you love "
-            "it. Sitting there, my mind drifted back to the many times I had already made that crossing.",
+            "But the clock was not on my side. The island trip was never part of my plan this "
+            "time. I had come for the farm. Every morning I went out to the farm, and every "
+            "evening I came back to sleep at my father-in-law's house, just a short walk from "
+            "where that bangka rested on the sand. By the time I sat on it on my last morning, it"
+            " was nine o'clock, and I had to leave for home by eleven. Two hours is not enough "
+            "for Alibijaban. A trip there is not something you rush. You need time for the boat "
+            "ride, time to walk the beach, time to eat, and time to come back. And the next "
+            "morning, I had to be back at the office.",
+            "So I stayed on the sand. I watched the small waves roll in and the faraway boats "
+            "rock gently at anchor. I admit it was a little sad. The island was right there, "
+            "close enough to see, but not close enough for that day.",
+            "Still, I was not really disappointed. Sometimes just being near a place you love "
+            "reminds you why you love it. Sitting there, my mind drifted back to the many times I"
+            " had already made that crossing.",
             ("h", "Memories of Alibijaban"),
-            "Almost two decades ago, I went to Alibijaban many times, and every trip felt like discovering it again. The "
-            "sand is white and fine. The water is so clear that you can see the bottom as the bangka nears the shore. "
-            "Along the beach stood beautiful cottages where you could rest in the shade, listen to the sea, and simply "
-            "do nothing for a while.",
-            "What I loved most were the mangroves. Alibijaban has many kinds of mangrove trees. Some are tall, with tangled roots rising out of the water. Others "
-            "are small and bushy along the edge of the shore. Walking near them felt like being in a quiet green forest "
-            "standing in the sea. They are not only beautiful; they also protect the island and give shelter to fish, "
-            "crabs and shells. Since 2025, a national law has protected the island and its waters as the Alibijaban Protected Landscape and Seascape.",
-            "And of course, there was the seafood. The island always seemed to have plenty, fresh from the water and "
-            "cooked simply, best eaten with rice and good company by the beach. Even now, I can almost taste it, with "
-            "the sea breeze on my face and sand between my toes.",
+            "Almost two decades ago, I went to Alibijaban many times, and every trip felt like "
+            "discovering it again. The sand is white and fine. The water is so clear that you can"
+            " see the bottom as the bangka nears the shore. Along the beach stood beautiful "
+            "cottages where you could rest in the shade, listen to the sea, and simply do nothing"
+            " for a while.",
+            "What I loved most were the mangroves. Alibijaban has many kinds of mangrove trees. "
+            "Some are tall, with tangled roots rising out of the water. Others are small and "
+            "bushy along the edge of the shore. Walking near them felt like being in a quiet "
+            "green forest standing in the sea. They are not only beautiful; they also protect the"
+            " island and give shelter to fish, crabs and shells. Since 2025, a national law has "
+            "protected the island and its waters as the Alibijaban Protected Landscape and "
+            "Seascape.",
+            "And of course, there was the seafood. The island always seemed to have plenty, fresh"
+            " from the water and cooked simply, best eaten with rice and good company by the "
+            "beach. Even now, I can almost taste it, with the sea breeze on my face and sand "
+            "between my toes.",
             ("h", "Four Days in San Andres"),
-            "My four free days came together almost by chance. Undas gave me the first two: All Saints' Day on "
-            "Sunday, November 1, and All Souls' Day on Monday, November 2, a special non-working day this year. On "
-            "Tuesday, November 3, I was on wellness leave. Some employees were asked to attend the flower offering "
-            "for Hermano Puli, but because I was on leave, I was not one of them. Then came the holiday itself on "
+            "My four free days came together almost by chance. Undas gave me the first two: All "
+            "Saints' Day on Sunday, November 1, and All Souls' Day on Monday, November 2, a "
+            "special non-working day this year. On Tuesday, November 3, I was on wellness leave. "
+            "Some employees were asked to attend the flower offering for Hermano Puli, but "
+            "because I was on leave, I was not one of them. Then came the holiday itself on "
             "Wednesday, November 4. My Undas break simply kept going.",
-            "I stayed in San Andres, Quezon, for four days, and the sea could not have been kinder. The waves were very "
-            "calm, exactly the kind of sea you hope for when you plan to ride a small bangka across open water. The sea "
-            "is not always this kind, so a stretch of calm days feels like a gift.",
-            "Those four days reminded me how much I enjoy the slow pace of the coast. Mornings start early. Fishermen "
-            "come and go, and the shore changes with every tide. When the water pulls back, the sand shows its ripples "
-            "and the bamboo poles of the fish corrals stand out in long lines. When the water returns, the bangkas "
-            "float again and everything seems ready for a trip.",
-            "It is the kind of place where you stop checking the time, until you remember that you have work waiting "
-            "for you back home.",
+            "I stayed in San Andres, Quezon, for four days, and the sea could not have been "
+            "kinder. The waves were very calm, exactly the kind of sea you hope for when you plan"
+            " to ride a small bangka across open water. The sea is not always this kind, so a "
+            "stretch of calm days feels like a gift.",
+            "Those four days reminded me how much I enjoy the slow pace of the coast. Mornings "
+            "start early. Fishermen come and go, and the shore changes with every tide. When the "
+            "water pulls back, the sand shows its ripples and the bamboo poles of the fish "
+            "corrals stand out in long lines. When the water returns, the bangkas float again and"
+            " everything seems ready for a trip.",
+            "It is the kind of place where you stop checking the time, until you remember that "
+            "you have work waiting for you back home.",
             ("h", "Next Time, I Will Plan Early"),
-            "This trip taught me a simple lesson: the island deserves a day of its own. Next time, I will plan ahead. I "
-            "will arrange a bangka the day before, leave in the morning while the sea is calm, and give myself a whole "
-            "day on Alibijaban. I want to walk among the mangroves again, swim in that clear water, rest in a cottage, "
-            "and eat seafood until I cannot eat any more.",
-            "Until then, I will keep this photo as a promise to myself. A man sitting on someone else's bangka, looking "
-            "out at the sea, waiting for the right day.",
-            ("quote", "The island has waited almost twenty years for me to come back. It can wait a little longer."),
-            "If you are ever in Quezon, put Alibijaban on your list. Check the weather, choose a calm day, leave early, "
-            "and go. And if you see a man staring out at the sea from a bangka in San Andres, that might just be me, "
-            "still planning my return.",
-            ("ask", "Is there a place you can see from afar but have not visited in years? I'd love to hear about it."),
+            "This trip taught me a simple lesson: the island deserves a day of its own. Next "
+            "time, I will plan ahead. I will arrange a bangka the day before, leave in the "
+            "morning while the sea is calm, and give myself a whole day on Alibijaban. I want to "
+            "walk among the mangroves again, swim in that clear water, rest in a cottage, and eat"
+            " seafood until I cannot eat any more.",
+            "Until then, I will keep this photo as a promise to myself. A man sitting on someone "
+            "else's bangka, looking out at the sea, waiting for the right day.",
+            ("quote",
+             "The island has waited almost twenty years for me to come back. It can wait a little longer."),
+            ("h", "Key Takeaways"),
+            ("point",
+             "Give special places a day of their own",
+             "Some trips cannot be squeezed into two hours. Plan them like they matter."),
+            ("point",
+             "Plan around the sea",
+             "Arrange the bangka the day before, check the weather, and leave early while the water is calm."),
+            ("point",
+             "Slow days count too",
+             "A few quiet days by the coast can restore you, even without the trip you hoped for."),
+            ("point",
+             "Know the story behind the holiday",
+             "Hermano Puli Day honors a son of Quezon who stood up for the dignity and faith of "
+             "ordinary Filipinos."),
+            "If you are ever in Quezon, put Alibijaban on your list. Check the weather, choose a "
+            "calm day, leave early, and go. And if you see a man staring out at the sea from a "
+            "bangka in San Andres, that might just be me, still planning my return.",
+            ("cta",
+             "Read: 200 Kilometers and Five Years Later: Coming Home to the Farm",
+             "/blog/coming-home-to-the-farm/"),
+            ("cta",
+             "Read: 360 Degrees: My First Post as Acting Municipal Treasurer",
+             "/blog/first-post-as-acting-treasurer/"),
+            ("ask",
+             "Is there a place you can see from afar but have not visited in years? I'd love to "
+             "hear about it."),
         ],
     },
     {
@@ -2629,111 +2671,132 @@ BLOG = [
         "summary": "Two years, two Mayors, a pandemic, a typhoon and an election: what my first post as Acting "
                    "Municipal Treasurer of a municipality in Quezon taught me.",
         "body": [
-            "Some assignments arrive with a job description. Mine arrived with a microphone, a restaurant full of "
-            "masked faces, and a turnover that took two full days.",
-            "I received my first designation as Acting Municipal Treasurer of a municipality in Quezon at a time when I was "
-            "the only ICLTE passer in the Provincial Treasurer's Office. An Acting Municipal Treasurer must have "
-            "passed the Basic Competency on Local Treasury Examination (BCLTE); the Intermediate Competency on "
-            "Local Treasury Examination (ICLTE) is the higher of the two. That credential opened a door I had not "
-            "expected to walk through so soon. On the road to my new post, one quiet question kept me company: am I "
-            "ready for this?",
-            "The town was not new "
-            "to me, but the office was. What followed, from 2020 to 2022, were two of the most demanding and "
-            "meaningful years of my career, spent in the middle of the COVID-19 pandemic. This is the story of "
-            "that first post.",
+            "Some assignments arrive with a job description. Mine arrived with a microphone, a "
+            "restaurant full of masked faces, and a turnover that took two full days.",
+            "I received my first designation as Acting Municipal Treasurer of a municipality in "
+            "Quezon at a time when I was the only ICLTE passer in the Provincial Treasurer's "
+            "Office. An Acting Municipal Treasurer must have passed the Basic Competency on Local"
+            " Treasury Examination (BCLTE); the Intermediate Competency on Local Treasury "
+            "Examination (ICLTE) is the higher of the two. That credential opened a door I had "
+            "not expected to walk through so soon. On the road to my new post, one quiet question"
+            " kept me company: am I ready for this?",
+            "The town was not new to me, but the office was. What followed, from 2020 to 2022, "
+            "were two of the most demanding and meaningful years of my career, spent in the "
+            "middle of the COVID-19 pandemic. This is the story of that first post.",
             ("h", "A Welcome I Did Not Expect"),
-            "I arrived in town at around two in the afternoon, ready for paperwork. I was not ready for the "
-            "warmth that waited for me that evening.",
-            "We gathered at a local restaurant for a dinner with two purposes: to thank the outgoing Municipal "
-            "Treasurer for the service given to the town, and to welcome me as the new one. We practiced social "
-            "distancing, so the tables were set well apart. Seated at them were the Municipal Mayor, the Vice "
-            "Mayor, every member of the Sangguniang Bayan, the Municipal Administrator, the department heads and "
-            "a few employees of the municipality. I sat with my new group from the Municipal Treasurer's Office, "
-            "joined by two employees from the Provincial Treasurer's Office who had come to conduct the turnover.",
-            "Every face around the tables was half hidden behind a mask. It was the pandemic, and I learned "
-            "to read smiles in people's eyes. Among them was a familiar one: the Municipal Assessor, my friend and "
-            "former co-worker at the Provincial Treasurer's Office. In a room full of new colleagues, one friendly "
-            "face made all the difference.",
-            "Then someone handed me the microphone. I thanked everyone for receiving me, and I told them the truth:",
-            ("quote", "This is a challenge for me. My comfort zone has always been one division. Here, I will have "
-             "to work and decide in 360 degrees."),
-            "The next two days belonged to the turnover, formally conducted by those two employees from the "
-            "Provincial Treasurer's Office. In treasury work, a turnover is more than a handshake. It is the moment "
-            "accountability changes hands, as cash, records and responsibility pass from one officer to the next.",
+            "I arrived in town at around two in the afternoon, ready for paperwork. I was not "
+            "ready for the warmth that waited for me that evening.",
+            "We gathered at a local restaurant for a dinner with two purposes: to thank the "
+            "outgoing Municipal Treasurer for the service given to the town, and to welcome me as"
+            " the new one. We practiced social distancing, so the tables were set well apart. "
+            "Seated at them were the Municipal Mayor, the Vice Mayor, every member of the "
+            "Sangguniang Bayan, the Municipal Administrator, the department heads and a few "
+            "employees of the municipality. I sat with my new group from the Municipal "
+            "Treasurer's Office, joined by two employees from the Provincial Treasurer's Office "
+            "who had come to conduct the turnover.",
+            "Every face around the tables was half hidden behind a mask. It was the pandemic, and"
+            " I learned to read smiles in people's eyes. Among them was a familiar one: the "
+            "Municipal Assessor, my friend and former co-worker at the Provincial Treasurer's "
+            "Office. In a room full of new colleagues, one friendly face made all the difference.",
+            "Then someone handed me the microphone. I thanked everyone for receiving me, and I "
+            "told them the truth:",
+            ("quote",
+             "This is a challenge for me. My comfort zone has always been one division. Here, I "
+             "will have to work and decide in 360 degrees."),
+            "The next two days belonged to the turnover, formally conducted by those two "
+            "employees from the Provincial Treasurer's Office. In treasury work, a turnover is "
+            "more than a handshake. It is the moment accountability changes hands, as cash, "
+            "records and responsibility pass from one officer to the next.",
             ("h", "From One Division to 360 Degrees"),
-            "Until then, my work had clear borders. I belonged to a single division with a defined set of tasks, "
-            "and I knew that ground well.",
-            "My new post erased those borders. As head of the treasury office, I suddenly owned the whole circle: "
-            "collections, disbursements, cash management, reports, people, and the decisions that tie them "
-            "together. Problems no longer came from one direction. They came from every side, often at once, and "
-            "the final call was mine.",
-            "That shift is the real test of a first designation. It is not about knowing more rules. It is about "
-            "seeing the whole office at once and still deciding with care.",
+            "Until then, my work had clear borders. I belonged to a single division with a "
+            "defined set of tasks, and I knew that ground well.",
+            "My new post erased those borders. As head of the treasury office, I suddenly owned "
+            "the whole circle: collections, disbursements, cash management, reports, people, and "
+            "the decisions that tie them together. Problems no longer came from one direction. "
+            "They came from every side, often at once, and the final call was mine.",
+            "That shift is the real test of a first designation. It is not about knowing more "
+            "rules. It is about seeing the whole office at once and still deciding with care.",
             ("h", "Home Was a Container House"),
-            "The pandemic shaped every part of those years. Travel was restricted, offices ran on skeleton "
-            "schedules, and going home was rarely an option.",
-            "For two years, my home was the municipal container house. It was small and simple, but it "
-            "kept me close to the office and the work. It stood near the sea, and every night I fell asleep to the "
-            "sound of the waves. I wore a face mask every working day, until it felt as much a part of my uniform "
-            "as my ID.",
-            ("photo", "blog/container-house.jpg",
-             "The container houses, my home from September\u00a02020 to September\u00a02022",
+            "The pandemic shaped every part of those years. Travel was restricted, offices ran on"
+            " skeleton schedules, and going home was rarely an option.",
+            "For two years, my home was the municipal container house. It was small and simple, "
+            "but it kept me close to the office and the work. It stood near the sea, and every "
+            "night I fell asleep to the sound of the waves. I wore a face mask every working day,"
+            " until it felt as much a part of my uniform as my ID.",
+            ("photo",
+             "blog/container-house.jpg",
+             "The container houses, my home from September 2020 to September 2022",
              "medium"),
-            "They were hard to miss, painted bright colours and lined up under old shade trees behind a white "
-            "picket fence. I lived in the blue one for most of my stay and moved to the red one for my last six "
-            "months. After a long "
-            "day of collections and reports, that splash of colour was a cheerful thing to come home to.",
-            "Those nights by the sea taught me something about public service: you cannot always choose your "
-            "conditions, but you can choose how you show up in them. I am deeply grateful to the people of "
-            "the town who made those years easier. They checked on me, helped me settle in, and treated the new "
-            "treasurer like one of their own.",
+            "They were hard to miss, painted bright colours and lined up under old shade trees "
+            "behind a white picket fence. I lived in the blue one for most of my stay and moved "
+            "to the red one for my last six months. After a long day of collections and reports, "
+            "that splash of colour was a cheerful thing to come home to.",
+            "Those nights by the sea taught me something about public service: you cannot always "
+            "choose your conditions, but you can choose how you show up in them. I am deeply "
+            "grateful to the people of the town who made those years easier. They checked on me, "
+            "helped me settle in, and treated the new treasurer like one of their own.",
             ("h", "Three Days in Boracay"),
-            "In those years we could hardly go anywhere. Lockdowns and travel restrictions kept most of us within "
-            "town limits for months at a time.",
-            "So when the first Mayor I served approved my travel to Boracay for a three-day official training, it "
-            "felt like a rare gift. The training sharpened my skills as a new treasurer, and the short change of "
-            "scenery sent me back to work with fresh energy. I remain thankful for that trust, at a time when "
-            "every trip had to be justified.",
+            "In those years we could hardly go anywhere. Lockdowns and travel restrictions kept "
+            "most of us within town limits for months at a time.",
+            "So when the first Mayor I served approved my travel to Boracay for a three-day "
+            "official training, it felt like a rare gift. The training sharpened my skills as a "
+            "new treasurer, and the short change of scenery sent me back to work with fresh "
+            "energy. I remain thankful for that trust, at a time when every trip had to be "
+            "justified.",
             ("h", "When the Typhoon Came"),
-            "As if a pandemic were not enough, a strong typhoon struck the town during my term. Homes were damaged, "
-            "livelihoods were lost, and families waited for help.",
-            "In a disaster, the treasury is where help becomes cash in people's hands. Together with the municipal "
-            "officials, headed by the Municipal Mayor, my staff and I visited every barangay to distribute "
-            "financial assistance to the affected families. It took about a week, and I could not have done it "
-            "without the responsible, hardworking team beside me.",
-            "I came to know the town not from behind a desk, but from its roads, its coastline and its upland "
-            "villages. Those trips changed how I understand my job.",
-            ("quote", "Every peso we safeguard in the government account exists for moments like that: a family receiving help "
-             "when they need it most."),
+            "As if a pandemic were not enough, a strong typhoon struck the town during my term. "
+            "Homes were damaged, livelihoods were lost, and families waited for help.",
+            "In a disaster, the treasury is where help becomes cash in people's hands. Together "
+            "with the municipal officials, headed by the Municipal Mayor, my staff and I visited "
+            "every barangay to distribute financial assistance to the affected families. It took "
+            "about a week, and I could not have done it without the responsible, hardworking team"
+            " beside me.",
+            "I came to know the town not from behind a desk, but from its roads, its coastline "
+            "and its upland villages. Those trips changed how I understand my job.",
+            ("quote",
+             "Every peso we safeguard in the government account exists for moments like that: a "
+             "family receiving help when they need it most."),
             ("h", "Election Duty: Neutral by Mandate"),
-            "I also served through an election there. I will leave the politics to others; that is not my "
-            "place, and it never should be.",
-            "What I can say is this: the law gives the municipal treasurer a role in the election, including the "
-            "counting and canvassing of votes. It is one of the least visible parts of the job, and one of the "
-            "most serious. On those days, neutrality is not just good manners. It is the duty itself.",
+            "I also served through an election there. I will leave the politics to others; that "
+            "is not my place, and it never should be.",
+            "What I can say is this: the law gives the municipal treasurer a role in the "
+            "election, including a seat on the municipal board of canvassers. It is one of the "
+            "least visible parts of the job, and one of the most serious. On those days, "
+            "neutrality is not just good manners. It is the duty itself.",
             ("h", "Two Mayors, One Team"),
-            "During my term I served under two Mayors: the first for one year and ten months, and the second for "
-            "my final two months. Leadership changed, but the work never paused.",
-            "What made that possible was the people. We worked well together across the whole municipality, from "
-            "the department heads to the frontline staff. In the middle of a pandemic, that kind of teamwork is "
-            "not a bonus. It is how a town keeps running.",
-            ("h", "What the Job Taught Me"),
-            "The work of a municipal treasurer is not easy, and the accountability is high. Every collection, "
-            "every disbursement and every signature carries your name, and you answer for all of it. That post "
-            "taught me three lessons I still carry:",
-            ("point", "Leadership begins outside your comfort zone", "I grew the most when I had to see the whole "
-             "office, not just one division."),
-            ("point", "Public money has a human face", "A week on the road to every barangay after the typhoon "
-             "made that real for me."),
-            ("point", "No one serves alone", "A pandemic, a typhoon and an election were easier to face because of "
-             "the people beside me."),
+            "During my term I served under two Mayors: the first for one year and ten months, and"
+            " the second for my final two months. Leadership changed, but the work never paused.",
+            "What made that possible was the people. We worked well together across the whole "
+            "municipality, from the department heads to the frontline staff. In the middle of a "
+            "pandemic, that kind of teamwork is not a bonus. It is how a town keeps running.",
+            ("h", "Key Takeaways"),
+            "The work of a municipal treasurer is not easy, and the accountability is high. Every"
+            " collection, every disbursement and every signature carries your name, and you "
+            "answer for all of it. That post taught me three lessons I still carry:",
+            ("point",
+             "Leadership begins outside your comfort zone",
+             "I grew the most when I had to see the whole office, not just one division."),
+            ("point",
+             "Public money has a human face",
+             "A week on the road to every barangay after the typhoon made that real for me."),
+            ("point",
+             "No one serves alone",
+             "A pandemic, a typhoon and an election were easier to face because of the people beside me."),
             ("h", "Thank You"),
-            "Looking back, I am truly happy for the experience and the work. To the two Mayors I served, the Vice "
-            "Mayor, the Sangguniang Bayan, the Municipal Administrator, the department heads, my treasury staff, "
-            "my friend the Municipal Assessor, and the people of the town: thank you for welcoming a newcomer "
-            "and making me one of your own.",
-            "And to anyone receiving a first designation today: say yes to the challenge. The comfort zone is "
-            "safe, but the growth is out there, all 360 degrees of it.",
+            "Looking back, I am truly happy for the experience and the work. To the two Mayors I "
+            "served, the Vice Mayor, the Sangguniang Bayan, the Municipal Administrator, the "
+            "department heads, my treasury staff, my friend the Municipal Assessor, and the "
+            "people of the town: thank you for welcoming a newcomer and making me one of your "
+            "own.",
+            "And to anyone receiving a first designation today: say yes to the challenge. The "
+            "comfort zone is safe, but the growth is out there, all 360 degrees of it.",
+            ("cta",
+             "Read: 200 Kilometers and Five Years Later: Coming Home to the Farm",
+             "/blog/coming-home-to-the-farm/"),
+            ("cta", "Read: So Close to Alibijaban Island", "/blog/so-close-to-alibijaban/"),
+            ("cta",
+             "Read: ALTOS Principle 10, Build to Outlast the Builder",
+             "/blog/altos-framework-build-to-outlast-the-builder/"),
         ],
     },
     {
@@ -3104,60 +3167,90 @@ BLOG = [
         "description": "After five years away, my wife and I made the 200-kilometer trip back to our 3-hectare "
                        "coconut farm in Quezon: copra, old mulawin trees, and a plan to plant again.",
         "body": [
-            ("photo", "blog/farm-1.jpg", "Back on the farm, under the coconut palms (October\u00a031,\u00a02026)", "half"),
+            ("photo",
+             "blog/farm-1.jpg",
+             "Back on the farm, under the coconut palms (October 31, 2026)",
+             "half"),
             "Five years. That is how long it had been since I last set foot on my 3-hectare farm.",
-            "Life has a way of keeping us busy. Between work, daily responsibilities, and the constant rush of routine, "
-            "the years slip by faster than we realize. Recently, my wife and I finally made the time to take the 200-kilometer "
-            "journey back.",
+            "Life has a way of keeping us busy. Between work, daily responsibilities, and the "
+            "constant rush of routine, the years slip by faster than we realize. Recently, my "
+            "wife and I finally made the time to take the 200-kilometer journey back.",
             ("h", "The Long Road Home"),
-            "A trip that long gives you plenty of time to think. As the busy town centers slowly gave way to open roads "
-            "and greener horizons, I found myself wondering how much the land had changed.",
-            "When you are away from a place for five years, you hold on to a mental picture of how you left it: the "
-            "young trees, the wide open spaces, the quiet promise of what it could become.",
+            "A trip that long gives you plenty of time to think. As the busy town centers slowly "
+            "gave way to open roads and greener horizons, I found myself wondering how much the "
+            "land had changed.",
+            "When you are away from a place for five years, you hold on to a mental picture of "
+            "how you left it: the young trees, the wide open spaces, the quiet promise of what it"
+            " could become.",
             "Nothing quite prepared me for the moment I arrived.",
-            "The first thing that caught my eye was the mulawin (molave) tree standing behind me in the photo above. "
-            "I remembered it as a young tree, and I was surprised to see how old it looks now, its trunk and crown "
-            "weathered by the years. There are many mulawin trees on the farm, and all of them have grown into "
-            "sturdy, seasoned hardwoods while I was away.",
+            "The first thing that caught my eye was the mulawin (molave) tree standing behind me "
+            "in the photo above. I remembered it as a young tree, and I was surprised to see how "
+            "old it looks now, its trunk and crown weathered by the years. There are many mulawin"
+            " trees on the farm, and all of them have grown into sturdy, seasoned hardwoods while"
+            " I was away.",
             ("h", "Coconuts for Copra"),
-            "The trees had grown tall and full while I was away. It was not the season for the mango, santol, and "
-            "langka (jackfruit) trees, so their branches were bare of fruit for now. The coconuts, though, never take "
-            "a season off.",
-            ("photo", "blog/farm-2.jpg", "Mature coconuts gathered for copra (October\u00a031,\u00a02026)", "half"),
-            "Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be gathered for copra. "
-            "For a farm in our part of Quezon, copra is the steady crop, the one that keeps working through every "
-            "season while the other trees wait for their turn.",
-            "Seeing them reminded me that a farm does not have to be in full bloom to be productive. Some harvests are "
-            "loud and colorful. Others are quiet and dependable, and those are often the ones a family can count on.",
-            "None of this happens on its own. Our caretaker looks after the farm while I am away, and the copra piled "
-            "under the trees is the fruit of his work. Seeing the land in such good hands, I am truly grateful.",
-            "Before walking on, my wife and I sat down in the shade and drank fresh coconut water straight from our own trees. "
-            "After a walk of nearly 700 steps from the main road, that first sip, cool and naturally sweet, was "
-            "the most "
-            "refreshing drink we had tasted in a long time.",
+            "The trees had grown tall and full while I was away. It was not the season for the "
+            "mango, santol, and langka (jackfruit) trees, so their branches were bare of fruit "
+            "for now. The coconuts, though, never take a season off.",
+            ("photo", "blog/farm-2.jpg", "Mature coconuts gathered for copra (October 31, 2026)", "half"),
+            "Heavy clusters hung high beneath the swaying fronds, and mature nuts lay ready to be"
+            " gathered for copra. For a farm in our part of Quezon, copra is the steady crop, the"
+            " one that keeps working through every season while the other trees wait for their "
+            "turn.",
+            "Seeing them reminded me that a farm does not have to be in full bloom to be "
+            "productive. Some harvests are loud and colorful. Others are quiet and dependable, "
+            "and those are often the ones a family can count on.",
+            "None of this happens on its own. Our caretaker looks after the farm while I am away,"
+            " and the copra piled under the trees is the fruit of his work. Seeing the land in "
+            "such good hands, I am truly grateful.",
+            "Before walking on, my wife and I sat down in the shade and drank fresh coconut water"
+            " straight from our own trees. After a walk of nearly 700 steps from the main road, "
+            "that first sip, cool and naturally sweet, was the most refreshing drink we had "
+            "tasted in a long time.",
             ("h", "Shade, Breeze, and Childhood Memories"),
-            "Standing among the trees, I was struck by how beautiful and deeply relaxing the place had become. The "
-            "thick canopy filtered the harsh sunlight into soft patches of gold on the ground, while a gentle breeze "
-            "rustled through the coconut leaves above.",
-            "As I looked out across the wide spaces beneath the trees, old memories came rushing back: my childhood "
-            "days raising carabaos, cows, and goats, and the familiar "
-            "sight and sound of native chickens roaming freely across the yard.",
-            "There was a special rhythm and joy to that way of life, caring for the animals all day. "
-            "Being back on the farm made me realize how much I missed those simpler days.",
+            "Standing among the trees, I was struck by how beautiful and deeply relaxing the "
+            "place had become. The thick canopy filtered the harsh sunlight into soft patches of "
+            "gold on the ground, while a gentle breeze rustled through the coconut leaves above.",
+            "As I looked out across the wide spaces beneath the trees, old memories came rushing "
+            "back: my childhood days raising carabaos, cows, and goats, and the familiar sight "
+            "and sound of native chickens roaming freely across the yard.",
+            "There was a special rhythm and joy to that way of life, caring for the animals all "
+            "day. Being back on the farm made me realize how much I missed those simpler days.",
             ("h", "What Five Years Taught Me"),
             "Visiting the farm after five years taught me something simple but important:",
-            ("quote", "Not every season is a season of fruit, but the land keeps working, and our roots are always "
-             "waiting for us if we are willing to make the journey back."),
-            "I left with a full heart and a refreshed mind, and with a plan. Our coconut trees are now more than five "
-            "decades old, so it is time to plant new ones. The trees that feed us today were planted by an earlier "
-            "generation, and now it is my turn to plant for the next.",
+            ("quote",
+             "Not every season is a season of fruit, but the land keeps working, and our roots "
+             "are always waiting for us if we are willing to make the journey back."),
+            "I left with a full heart and a refreshed mind, and with a plan. Our coconut trees "
+            "are now more than five decades old, so it is time to plant new ones. The trees that "
+            "feed us today were planted by an earlier generation, and now it is my turn to plant "
+            "for the next.",
             "As we walked the nearly 700 steps back to the main road, I looked back at the young "
-            "mulawin one last time. Five years had slipped by without my noticing. In that time the young mulawin trees had "
-            "grown old, and season after season of harvests had come and gone without me. If I am going to plant "
-            "new coconut trees, I also want to be there to watch them grow.",
+            "mulawin one last time. Five years had slipped by without my noticing. In that time "
+            "the young mulawin trees had grown old, and season after season of harvests had come "
+            "and gone without me. If I am going to plant new coconut trees, I also want to be "
+            "there to watch them grow.",
             "One thing is for sure: I won't wait another five years for my next visit.",
-            ("ask", "Have you ever returned to a place after years away and found it changed? I'd love to hear your "
-             "story."),
+            ("h", "Key Takeaways"),
+            ("point",
+             "Go back to your roots",
+             "Five years can slip by unnoticed. Make the trip before more seasons pass."),
+            ("point",
+             "Value the steady harvest",
+             "Some crops, like copra, are quiet and dependable, and a family can count on them."),
+            ("point",
+             "Thank the people who keep things going",
+             "A caretaker's daily work is why the land stayed productive while I was away."),
+            ("point",
+             "Plant for the next generation",
+             "The trees that feed us today were planted by others. Now it is our turn."),
+            ("cta", "Read: So Close to Alibijaban Island", "/blog/so-close-to-alibijaban/"),
+            ("cta",
+             "Read: 360 Degrees: My First Post as Acting Municipal Treasurer",
+             "/blog/first-post-as-acting-treasurer/"),
+            ("ask",
+             "Have you ever returned to a place after years away and found it changed? I'd love "
+             "to hear your story."),
         ],
         "category": "personal",
     },
