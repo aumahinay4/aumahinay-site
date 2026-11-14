@@ -1,6 +1,6 @@
 """Project Management blog series (Butch 2026-11-13 PH): Part 1 live Nov 13, 2026 (Butch: "post part 1 of the
-series today"), then one part every Thursday at 9 pm PH ("YYYY-MM-DD 21:00"), 52 parts in all (last part
-November 11, 2027).
+series today"), then one part every few days at 9 pm PH ("YYYY-MM-DD 21:00") in the daily blog rotation
+(Butch 2026-11-14), 52 parts in all.
 
 The outline follows Butch's own 52-week plan in Google Drive (four quarters of 13: starting a project; time and
 money; people and problems; delivery and closing). Every part is told through local treasury work: real property
@@ -13,6 +13,128 @@ Newest first, like BLOG in content.py.
 SERIES = "Project Management Series"
 
 PM_POSTS = [
+    {
+        "date": "November 18, 2026",
+        "title": "Project Management Series, Part 2: The Project Charter on One Page",
+        "slug": "project-management-part-2-project-charter",
+        "category": "pm",
+        "summary": "A project charter is a short document that says why a project exists, what it will deliver, "
+                   "who is in charge and who approved it. Here is how to write one on a single page, using a "
+                   "treasury encoding project as the example.",
+        "publish_on": "2026-11-18 21:00",
+        "body": [
+            "Three weeks into the real property tax encoding project from Part 1, the revenue clerk is called "
+            "into a meeting she did not expect. The assessor’s office says its staff cannot spare two "
+            "afternoons a week after all. One collector asks why he was never told he would be helping. The "
+            "head of office asks whether the bills for January will include unpaid taxes from past years, with "
+            "their interest, or only the current year’s tax.",
+            "Nobody in the room is being difficult. Each person simply remembers the assignment differently, "
+            "because nobody ever wrote it down. The clerk now spends an hour defending decisions that were "
+            "never really made.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "This is the problem a project charter solves. It is the first document of a project, and in "
+            "small offices it is often the only one that matters.",
+            ("h", "What a Project Charter Is"),
+            "A project charter is a short, signed document that officially starts a project. It records why the "
+            "project exists, what it will deliver, when, with what money and people, and who is in charge. Most "
+            "importantly, it is approved by the person with the authority to start the project, often called "
+            "the sponsor. The same signature gives the project manager the authority to use the office’s "
+            "people and resources for the work.",
+            "That approval is what gives the charter its power. In Part 1, the clerk discovered that nobody on "
+            "her list reported to her. A signed charter does not change the organization chart, but it does "
+            "show everyone that the head of office has given the project a goal, a deadline and a leader. "
+            "When the assessor’s staff are asked for time, the request is no longer a favor to the clerk. It "
+            "is part of a project the head of office approved.",
+            "Large organizations use long charters with many sections. A small office does not need that. One "
+            "page, read in five minutes, is enough if it answers the right questions.",
+            ("photo", "blog/pm-charter.jpg", "A one-page project charter answers six things before work begins: "
+             "why, what, when, who, money and risks, and who signed. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Six Parts of a One-Page Charter"),
+            ("point", "1. Why: the purpose", "One or two sentences on the problem the project solves and the "
+             "result it should bring. Write it so a taxpayer could understand it."),
+            ("point", "2. What: the scope, in and out", "The main things the project will deliver, followed by "
+             "a short list of what it will not do. The “not included” list prevents more arguments than "
+             "any other line on the page."),
+            ("point", "3. When: the milestones", "Three to five dates that mark real progress, ending with the "
+             "date the project is finished. Not every task, only the checkpoints."),
+            ("point", "4. Who: the roles", "The sponsor, the project manager, the team members and the "
+             "offices whose help is needed. Name the people, not only the units."),
+            ("point", "5. Money and risks", "The budget, even if it is small, where it comes from, and the "
+             "three biggest things that could go wrong."),
+            ("point", "6. Sign: the approval", "The sponsor’s name, signature and date, and the date the "
+             "charter will next be reviewed."),
+            ("h", "The Encoding Project, Written as a Charter"),
+            "Here is how the clerk’s project could look on one page. Notice how many of the questions from "
+            "that difficult meeting are answered before anyone asks them.",
+            ("point", "Why", "Bills for real property tax are still written by hand from ledger cards, which "
+             "is slow and leads to errors at the counter. This project puts the ledger records into the "
+             "office’s new system, so bills can be printed and checked before the January rush."),
+            ("point", "What is included", "Encoding the ledger records of all taxable properties in the "
+             "four poblacion (town center) barangays, checking each record against the assessor’s tax "
+             "declarations, and printing "
+             "a sample of bills for review."),
+            ("point", "What is not included", "Unpaid taxes from past years and their interest (a separate project in "
+             "February), the remaining barangays (next phase), and any change to how payments are received at "
+             "the counter."),
+            ("point", "Milestones", "Records of the first two barangays encoded and checked by November 27. All "
+             "four barangays by December 11. Sample bills reviewed by the head of office by December 18. "
+             "System ready at the counter on January 4."),
+            ("point", "Who", "Sponsor: the head of office. Project manager: the revenue clerk. Team: two "
+             "collectors for encoding, two afternoons a week. Support: the assessor’s office, one staff "
+             "member for checking, Tuesday and Thursday afternoons."),
+            ("point", "Money and risks", "₱18,000 from the office budget for paper, toner and a backup "
+             "drive, bought through the usual procurement steps. Risks: the assessor’s staff may be pulled away by year-end work; old ledger cards may "
+             "be hard to read; the system may slow down when many records are added at once."),
+            ("point", "Sign", "Approved by the head of office, with a review set for December 11."),
+            "Now the assessor’s time is written down and approved. The collector can be shown the page. And the "
+            "question about past-year taxes has a clear answer: not in this project. None of these lines is "
+            "complicated. Each one prevents a meeting.",
+            ("h", "Five Mistakes That Weaken a Charter"),
+            ("point", "Writing it alone", "A charter written by the project manager and simply handed out is a "
+             "wish list. Draft it with the sponsor, then show it to the people whose time it asks for."),
+            ("point", "Leaving out what is not included", "If the page lists only what the project will do, "
+             "people will assume it does everything they hoped for."),
+            ("point", "Vague success", "“Improve billing” cannot be checked. “Bills for the four "
+             "poblacion barangays printed from the system by January 4” can."),
+            ("point", "No real signature", "A charter nobody signed is just a note. In a government office, "
+             "the head’s signature or a short office order is what turns the page into a commitment."),
+            ("point", "Filing it and forgetting it", "Read the charter again at each milestone. If the project "
+             "has changed, update the page and have it signed again."),
+            ("h", "When the Plan Changes"),
+            "A charter is not a promise that nothing will change. Projects meet surprises. The value of the "
+            "charter is that every change becomes a clear decision instead of a slow drift.",
+            "Suppose in December the head of office decides that past-year taxes must be included after "
+            "all. With a charter, the clerk can answer calmly: “We can add them. That means more records "
+            "to check, so either the January 4 date moves, or we get one more encoder, or we do the poblacion "
+            "now and the past years in February. Which would you prefer?” This is the triangle of scope, "
+            "time and cost from Part 1, now written on paper where everyone can see it.",
+            ("quote", "A charter does not stop change. It makes every change a decision."),
+            ("h", "A Note for Software Projects"),
+            "The same page works when the project is a piece of software. Before building a tool, even a small "
+            "collection app, write down what it will do, what it will not do, and who decides when it is "
+            "ready. Software invites endless small additions, and the “not included” list is what lets "
+            "the first version ever be finished. Everything else can wait for the next version, with its own "
+            "page.",
+            ("h", "Your Part 2 Exercise"),
+            "Take the assignment you looked at in Part 1. On one sheet of paper or one screen, write:",
+            ("point", "One sentence of purpose", "Why does this project exist?"),
+            ("point", "Three things in, three things out", "What it delivers, and what it will not touch."),
+            ("point", "Three dates", "Two checkpoints and a finish line."),
+            ("point", "Names", "The sponsor, yourself and everyone whose time you need."),
+            "Then take it to your sponsor and ask one question: “Is this what you meant?” Their answer "
+            "is worth more than a week of work done in the wrong direction.",
+            ("cta", "Read: Project Management Series, Part 1", "/blog/project-management-part-1-accidental-project-manager/"),
+            ("cta", "Read: The ALTOS Framework, Principle 3: Every Document Has an Owner",
+             "/blog/altos-framework-every-document-has-an-owner/"),
+            ("cta", "Read: The ALTOS Framework, Principle 4: Every Owner Has a Deadline",
+             "/blog/altos-framework-every-owner-has-a-deadline/"),
+            ("cta", "Read: Business Intelligence Series, Part 2", "/blog/business-intelligence-part-2-the-bi-team/"),
+            ("ask", "Have you ever worked on a project where everyone remembered the goal differently? What "
+             "would a one-page charter have changed?"),
+        ],
+    },
     {
         "date": "November 13, 2026",
         "title": "Project Management Series, Part 1: The Accidental Project Manager in the Treasury",
