@@ -41,13 +41,12 @@ PM_POSTS = [
             "system for Philippine local treasuries. It has been built and tested on the developer side only. "
             "Building software is not part of my official duties, so before any office can put it to real use, the "
             "documents must come first, beginning with a memorandum of agreement. That order, paperwork before "
-            "launch, is itself a project management lesson, and we will come back to it later in this series.",
+            "launch, is itself a project management lesson.",
             "Most project management lessons online talk about product launches, marketing campaigns and "
             "software companies. The ideas are good, but the examples feel far from a municipal hall. In this "
             "series, I will explain the same ideas in plain words, with examples from treasury work: tax "
-            "campaigns, new systems, year-end closing, audits and the people at the counter. A new part comes "
-            "out every Thursday for a year. By the end, you should be able to take any assignment like the one "
-            "above and run it with confidence.",
+            "campaigns, new systems, year-end closing, audits and the people at the counter. The goal is simple: "
+            "to help you take any assignment like the one above and run it with confidence.",
             ("h", "Is It a Project, or Is It Just Work?"),
             "Start with the most useful question in the whole field. Not everything you do at work is a project, "
             "and mixing the two up causes a lot of stress.",
@@ -144,7 +143,7 @@ PM_POSTS = [
             "You may still do some of the work, especially in a small office. Just know which hat you are "
             "wearing at any moment, and never let the doing crowd out the steering.",
             ("h", "Your Part 1 Exercise"),
-            "Pick one assignment you are carrying now, big or small. Before next Thursday, write one line for "
+            "Pick one assignment you are carrying now, big or small. This week, write one line for "
             "each of these:",
             ("point", "Project or operations?", "Does it have a finish line and a new result at the end?"),
             ("point", "Who decides it is done?", "Name the one person whose approval ends the project."),
