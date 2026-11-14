@@ -13,6 +13,127 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "November 26, 2026",
+        "title": "Business Intelligence Series, Part 4: Start With the People, Then Write the Brief",
+        "slug": "business-intelligence-part-4-the-bi-brief",
+        "category": "bi",
+        "summary": "Before anyone builds a dashboard, someone has to ask the people who will use it what they "
+                   "need to decide. Here is how to run those conversations and turn the answers into a "
+                   "one-page BI brief that everyone can agree on.",
+        "publish_on": "2026-11-26 21:00",
+        "body": [
+            "The head of office calls the clerk who is good with spreadsheets. “I want a dashboard for "
+            "collections. Can you have it ready by the end of the month?” The clerk says yes, goes back to her "
+            "desk, and starts building charts of everything she can find.",
+            "Three weeks later she shows the result. The head of office looks at it politely and asks, “Where "
+            "can I see which collectors have not yet turned in their reports?” That was never on the screen, "
+            "because nobody asked what the dashboard was for.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "In Part 3, I listed six measures a treasury could watch every day. This part goes one step earlier. Before you choose a single measure, find out who will use the dashboard and what they will decide with it, then write it down on one page. I call that page the BI brief. By the end of this post you will have five interview questions, a six-line template and a filled-in example you can copy.",
+            ("h", "Ask About Decisions, Not Charts"),
+            "Asking people which charts they want to see is the wrong starting point, because a chart is only "
+            "useful if it changes what someone does.",
+            "Ask instead about the decisions they make. A good first conversation sounds like this:",
+            ("point", "What do you decide every week?", "For example: which barangays get a collection visit, "
+             "whether to request more official receipts, when to remind collectors about late reports."),
+            ("point", "What do you need to know to make that decision?", "The answer to this question is the "
+             "first draft of your measures."),
+            ("point", "How do you find out now?", "Phone calls, printed reports, asking the cashier. This shows "
+             "you where the data already lives and how much time the dashboard can save."),
+            ("point", "When do you need to know it?", "Every morning, every Friday, before the monthly meeting. "
+             "This sets how often the data must be updated."),
+            ("point", "What would you do if the number looked wrong?", "This tells you who should be alerted "
+             "and what the limit should be."),
+            "Notice that none of these questions mentions software. The conversation is about the work, and the tools come later.",
+            "If you are not sure how to begin, try this opening: “I am not here to ask what charts you want. I want to understand what you decide each week, and what you wish you knew sooner.” It keeps the conversation on their own work, which they know better than anyone.",
+            ("h", "Talk to More Than One Person"),
+            "The person who asked for the dashboard is not the only person who will use it. In a treasury, the "
+            "head of office, the revenue unit, the cashier and the collectors may all open the same screen for "
+            "different reasons.",
+            "Talk to each group separately, even for ten minutes. The head of office may want totals against "
+            "target. The cashier may want undeposited collections by day. A collector may simply want to see their own receipts for the week. If all three needs are known at the start, the dashboard can be "
+            "designed with separate views instead of one crowded page.",
+            "Write down each answer in the person’s own words. Later, when someone asks why a chart exists, you "
+            "can point to the conversation that asked for it.",
+            ("h", "The One-Page BI Brief"),
+            "When the conversations are done, put what you learned on one page. Show it to the people you "
+            "talked to and ask them to confirm it before you build anything.",
+            ("photo", "blog/bi-brief.jpg", "A one-page BI brief covers six things: the decisions it supports, "
+             "its readers, the measures and how each is defined, the data sources, how often it refreshes, and "
+             "who may see what. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("point", "1. Decisions", "The two or three decisions the dashboard will support, in one sentence each."),
+            ("point", "2. Readers", "Who will use it, when and on what device. If most readers will use a phone, "
+             "say so here."),
+            ("point", "3. Measures", "Each measure with a plain definition: what is counted, what is left out, "
+             "and over which period."),
+            ("point", "4. Sources", "Where each measure comes from: which record, kept by which unit."),
+            ("point", "5. Refresh", "How often the data is updated and what time of day it is complete."),
+            ("point", "6. Access", "Who may see what. Totals may be open to all staff, while anything with "
+             "names or property details is limited to those who need it for their work."),
+            ("h", "A Sample Brief"),
+            "Here is how the clerk’s brief might look after a second try.",
+            ("point", "Decisions", "Whether to follow up with a collector about a late report. Whether to "
+             "request more official receipts. Whether collections are on track for the month."),
+            ("point", "Readers", "The head of office, on a phone, each morning before 9. The cashier and the "
+             "revenue unit, on a computer, during the day."),
+            ("point", "Measures", "Reports not yet submitted, by collector, as of yesterday. Official receipts "
+             "left, by collector. Collections this month against the monthly target."),
+            ("point", "Sources", "The daily report of collections and deposits, the register of accountable "
+             "forms, and the monthly target set by the office."),
+            ("point", "Refresh", "Every evening after the cashier closes the day."),
+            ("point", "Access", "All three measures show totals by collector only. No taxpayer names appear "
+             "on any screen."),
+            "The brief has fewer lines than the first dashboard had charts, and it is far more useful, because every line answers something a real person asked.",
+            ("quote", "A dashboard built from a brief answers the reader’s questions. A dashboard built without "
+             "one answers the builder’s."),
+            ("h", "Defining Each Measure"),
+            "The measures line deserves extra care. Two people can use the same word and mean different things. "
+            "Does “collections this month” include payments received on the last day but deposited the next "
+            "morning? Does it include fees collected for other offices? Is it counted by the date on the "
+            "official receipt or by the date of encoding?",
+            "Agree on these answers before building. Write each definition in one or two sentences, and put "
+            "the same definition in a small note on the dashboard itself. When someone compares the dashboard "
+            "with a printed report and finds a difference, the definition is the first thing to check.",
+            ("h", "Privacy Belongs in the Brief"),
+            "Treasury records hold taxpayers’ names, addresses and property details. In the Philippines, the "
+            "handling of personal information is governed by the Data Privacy Act of 2012 (Republic Act No. "
+            "10173). The access line of the brief is where you decide, in advance, which screens show only "
+            "totals and which, if any, show individual records.",
+            "A simple rule helps: if a decision can be made from totals, the screen shows totals. Decide this with the people who use the dashboard and with your office’s data protection officer. The National Privacy Commission’s Advisory No. 2017-01 asks every local government unit to designate one, so there should be someone to ask.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Building before asking", "Charts made before the conversations can end up showing what was easy "
+             "to count, not what anyone needed. Ask first, then build."),
+            ("point", "Asking only the boss", "The head of office matters most, but the people who use the "
+             "screen every day often know which numbers are missing or confusing."),
+            ("point", "Promising everything", "If five people ask for twenty measures, the brief should still "
+             "choose the few that support real decisions. Keep the rest on a list for later."),
+            ("point", "Skipping the sign-off", "A brief that nobody confirmed is just the builder’s guess. Ask "
+             "each reader to say, in writing or in a short message, that it matches what they need."),
+            ("h", "When the Brief Changes"),
+            "Needs change. A new head of office arrives, a new revenue source is added, or a measure turns out "
+            "to be less useful than expected. When that happens, update the brief first, confirm it with the "
+            "readers, and only then change the dashboard. The brief stays the single place where everyone can "
+            "see what the dashboard is meant to do.",
+            ("h", "Key Takeaways"),
+            ("point", "Ask about decisions, not charts", "A dashboard is only worth building if it changes what someone does."),
+            ("point", "Talk to every kind of reader", "The head of office, the cashier and the collectors need different views of the same data."),
+            ("point", "Put it on one page and get it confirmed", "Decisions, readers, measures, sources, refresh and access, agreed before anything is built."),
+            ("h", "Your Part 4 Exercise"),
+            "Pick one person in your office who receives a regular report. This week, ask them three questions:",
+            ("point", "Decision", "What do you decide with this report?"),
+            ("point", "Timing", "When do you need it, and how old can the numbers be?"),
+            ("point", "Gaps", "What do you still have to ask someone about after reading it?"),
+            "Write their answers on half a page. You now have the start of a BI brief, and very likely an idea "
+            "for making that report shorter and more useful.",
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Business Intelligence Series, Part 2", "/blog/business-intelligence-part-2-the-bi-team/"),
+            ("cta", "Read: Project Management Series, Part 3", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Your Data at the Treasury Counter", "/blog/your-data-at-the-treasury-counter/"),
+            ("ask", "What is one question your current reports never answer?"),
+        ],
+    },
+    {
         "date": "November 21, 2026",
         "title": "Business Intelligence Series, Part 3: What a Treasury Should Watch Every Day",
         "slug": "business-intelligence-part-3-what-to-watch",

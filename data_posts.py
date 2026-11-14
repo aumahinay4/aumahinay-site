@@ -12,6 +12,127 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "November 27, 2026",
+        "title": "Data Analytics Series, Part 4: Four Questions, One Data Set, Worked End to End",
+        "slug": "data-analytics-part-4-four-questions-worked",
+        "category": "data",
+        "summary": "What happened, why, what is likely and what should we do? This part takes one made-up set of "
+                   "real property tax records and answers all four questions in order, with every number "
+                   "shown, so you can see how each answer builds on the last.",
+        "publish_on": "2026-11-27 21:00",
+        "body": [
+            "“How are we doing, and what should we do in the last two months?” The head of office asks it at the November meeting, and the room goes quiet. Everyone has a feeling about the answer. Nobody has the answer.",
+            "In Part 1, I introduced four kinds of analysis: descriptive, diagnostic, predictive and prescriptive. Definitions are easy to remember and hard to use, so this part puts them to work. It takes one small set of records and answers all four questions in order, with every number shown. By the end you will see how each answer feeds the next, and you will have a four-line routine to try on your own reports.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described. The arithmetic, however, is real, so you can check every step.)",
+            ("photo", "blog/data-four-questions.jpg", "Four questions asked of one data set, in order: describe "
+             "what happened, diagnose why, predict what is likely, and prescribe what to do. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Situation"),
+            "A municipal treasury has a real property tax collection target of ₱12,000,000 for the year. It is early November, and the question from the meeting is waiting for an answer.",
+            "The analyst has the office’s collection records from January to October of this year and the same "
+            "records for the past three years. That is all. No new survey, no special software. A spreadsheet "
+            "is enough.",
+            ("h", "Question 1, Descriptive: What Happened?"),
+            "Start by adding up what was collected, by period, and compare it with the same period last year.",
+            ("point", "This year, January to October", "First quarter ₱4,200,000; second quarter ₱1,900,000; "
+             "third quarter ₱1,500,000; October ₱800,000. Total ₱8,400,000."),
+            ("point", "Against the target", "₱8,400,000 is 70% of the ₱12,000,000 target."),
+            ("point", "Against last year", "The same ten months last year brought in ₱8,900,000. This year is "
+             "₱500,000 lower, a drop of about 5.6%."),
+            "That is the descriptive answer, and it is already useful. The office is behind last year, and it "
+            "has 30% of its target left to collect in two months. But a total does not say where the money went "
+            "missing, so the next question follows naturally.",
+            ("h", "Question 2, Diagnostic: Why Did It Happen?"),
+            "A drop in a total can come from anywhere. The analyst breaks the same numbers down by area and "
+            "compares each part with last year.",
+            ("point", "Town-center barangays", "₱5,600,000 this year against ₱5,550,000 last year. Up ₱50,000."),
+            ("point", "Coastal barangays", "₱1,450,000 against ₱2,000,000. Down ₱550,000, or 27.5%."),
+            ("point", "Upland barangays", "₱1,350,000 against ₱1,350,000. No change."),
+            "The parts add up: ₱5,600,000 plus ₱1,450,000 plus ₱1,350,000 is ₱8,400,000, and the changes, plus "
+            "₱50,000, minus ₱550,000 and zero, explain the whole ₱500,000 drop. Almost all of it is in the "
+            "coastal barangays.",
+            "Now the analyst asks the people who know the ground. The collectors explain that last year the "
+            "office held six roving collection days in the coastal barangays during the third quarter. This "
+            "year it held only two, because the service vehicle was under repair.",
+            "Is that the cause? It is a strong lead, not yet proof. The timing fits, the place fits and the "
+            "size is plausible. A careful analyst says exactly that: “The drop is concentrated in the coastal "
+            "barangays, and it matches the reduced roving collection days. Other causes are possible, but this "
+            "one fits the evidence best.”",
+            ("h", "Question 3, Predictive: What Is Likely to Happen?"),
+            "The head of office now wants to know where the year will end. The analyst looks at the past three "
+            "years and asks: by the end of October, what share of the full year’s collection had usually come "
+            "in?",
+            ("point", "The past three years", "81%, 80% and 82% of each year’s total had been collected by the "
+             "end of October."),
+            ("point", "The projection", "If this year follows the same pattern, the full-year total is "
+             "₱8,400,000 divided by that share. At 82%, that is about ₱10,240,000. At 80%, about ₱10,500,000. "
+             "At the middle value of 81%, about ₱10,370,000."),
+            ("point", "Against the target", "The likely year-end range of ₱10.2 to ₱10.5 million leaves a "
+             "shortfall of roughly ₱1.5 to ₱1.8 million against the ₱12,000,000 target."),
+            "Notice two things. First, the forecast is a range, not a single number. Three years of history is "
+            "not much, and an honest forecast shows its uncertainty. Second, the forecast assumes nothing "
+            "changes. Its real value is to show what will happen if the office does nothing different, which "
+            "is exactly what the last question is about.",
+            ("h", "Question 4, Prescriptive: What Should We Do?"),
+            "Prescriptive analysis compares possible actions by their likely effect. The analyst lists two "
+            "options, using the office’s own past results.",
+            ("point", "Option A: restore roving days", "Last year, each roving collection day in the coastal "
+             "barangays brought in about ₱90,000 on average. Four extra days in November and December could "
+             "bring in about ₱360,000."),
+            ("point", "Option B: letters to the largest delinquent accounts", "Last year, a similar round of "
+             "letters to 40 accounts led about one in four to pay, at an average of ₱15,000 each. The same "
+             "result this year would be about 10 payments, or ₱150,000."),
+            ("point", "Both together", "About ₱510,000, if the past results hold."),
+            "Then comes the uncomfortable part, which a good analyst does not hide. Even both options together would close only about a third of the smaller ₱1.5 million gap. The recommendation therefore has three "
+            "lines: restore the roving days, send the letters, and tell the local chief executive and the "
+            "budget office now that the year is likely to end below target, so they can plan for it.",
+            ("quote", "A good recommendation tells people what to do and what it will not fix."),
+            ("h", "How the Four Answers Fit Together"),
+            "Look back at the chain. The descriptive answer showed a gap. The diagnostic answer found where it "
+            "was. The predictive answer showed how big it would become if nothing changed. The prescriptive "
+            "answer compared actions and was honest about their limits.",
+            "Skip any link and the chain breaks. Without the diagnosis, the office might have sent letters "
+            "everywhere instead of fixing the coastal schedule. Without the forecast, nobody would have known "
+            "that the gap was too big to close, and the shortfall would have been a surprise in January.",
+            ("h", "Doing It in a Spreadsheet"),
+            "None of this needs special software. With one table of payments, where each row has a date, an "
+            "area and an amount, the whole analysis takes four small steps.",
+            ("point", "Totals by period", "Use SUMIFS to add the amounts between two dates, once for this year "
+             "and once for last year."),
+            ("point", "Totals by area", "Use SUMIFS again, with the area as a second condition. A pivot table "
+             "does the same job in a few clicks."),
+            ("point", "The projection", "Divide this year’s total so far by each past year’s October share. "
+             "Show the smallest and largest results as the range."),
+            ("point", "The options", "Multiply each past result by the planned number of days or letters, "
+             "and write the assumption next to the answer."),
+            "Keep each step on its own sheet, with a short note at the top saying what it does. Anyone in the "
+            "office can then follow the work and check it, which matters as much as the result.",
+            ("h", "What to Check Before You Present"),
+            ("point", "Do the parts add up to the whole?", "Here, the three areas add up to ₱8,400,000 and the "
+             "changes add up to the ₱500,000 drop. If they do not, something is missing or counted twice."),
+            ("point", "Are the periods the same?", "Compare January to October with January to October, not "
+             "with a full year."),
+            ("point", "Is the cause confirmed or only likely?", "Say which one, in plain words."),
+            ("point", "Is the forecast a range?", "A single number suggests more certainty than the data gives."),
+            ("h", "Key Takeaways"),
+            ("point", "Each answer feeds the next", "Describe the gap, find where it is, size it, then choose what to do."),
+            ("point", "Say how sure you are", "A likely cause is not a proven one, and a forecast is a range, not a single number."),
+            ("point", "Tell people what will not be fixed", "An honest recommendation lets the office plan for the shortfall early."),
+            ("h", "Your Part 4 Exercise"),
+            "Take any total your office reports every month. Then try the four questions on it, one line each:",
+            ("point", "Describe", "What was the total, and how does it compare with the same period last year?"),
+            ("point", "Diagnose", "Break it into two or three parts. Which part explains most of the change?"),
+            ("point", "Predict", "Using past years, where is it likely to end, as a range?"),
+            ("point", "Prescribe", "Name one action, its likely effect, and what it will not fix."),
+            ("cta", "Read: Data Analytics Series, Part 3", "/blog/data-analytics-part-3-deciding-with-data/"),
+            ("cta", "Read: Data Analytics Series, Part 1", "/blog/data-analytics-part-1-what-it-is/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
+            ("ask", "Which of the four questions does your office usually skip?"),
+        ],
+    },
+    {
         "date": "November 22, 2026",
         "title": "Data Analytics Series, Part 3: Deciding With Data, Not Hunches",
         "slug": "data-analytics-part-3-deciding-with-data",
