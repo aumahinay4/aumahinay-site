@@ -2023,7 +2023,8 @@ BLOG = [
              "The container houses in Mulanay, Quezon, my home from September\u00a02020 to September\u00a02022",
              "medium"),
             "They were hard to miss, painted bright colours and lined up under old shade trees behind a white "
-            "picket fence. I spent my first year in the blue one and my second year in the red one. After a long "
+            "picket fence. I lived in the blue one for most of my stay and moved to the red one for my last six "
+            "months. After a long "
             "day of collections and reports, that splash of colour was a cheerful thing to come home to.",
             "Those nights by the sea taught me something about public service: you cannot always choose your "
             "conditions, but you can choose how you show up in them. I am deeply grateful to the people of "
