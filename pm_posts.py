@@ -14,6 +14,136 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "December 8, 2026",
+        "title": "Project Management Series, Part 6: Writing Objectives That Actually Mean Something",
+        "slug": "project-management-part-6-writing-objectives",
+        "category": "pm",
+        "summary": "“Improve billing” is a wish, not an objective. This part shows where the SMART idea came "
+                   "from, why a SMART objective can still miss the point, and how to write objectives that "
+                   "name a real outcome, a starting point and a target everyone can check.",
+        "publish_on": "2026-12-08 21:00",
+        "body": [
+            "At the end of the encoding project, the team reports success. Every record in the four poblacion "
+            "barangays is in the system. Fifty sample bills were printed and checked. The deadline was met. "
+            "By every line of the plan, the project is done.",
+            "Then January comes, and the line at the real property tax window is as long as last year’s. "
+            "The bills print faster, but taxpayers still wait while staff look up past payments on ledger "
+            "cards. The project delivered exactly what it promised. It just never promised the thing the "
+            "head of office actually wanted: shorter waiting time at the counter.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "This part is about closing that gap. By the end of this post you will know where the SMART "
+            "checklist came from, the difference between an output and an outcome, and a five-part pattern "
+            "for objectives that tell everyone what success looks like before the work begins.",
+            ("photo", "blog/pm-objective-parts.jpg", "A useful objective has five parts: the outcome, how it "
+             "is measured, where it starts, the target, and the date. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Where SMART Came From"),
+            "The SMART checklist is often traced to a 1981 article by George T. Doran in Management Review, "
+            "titled “There’s a S.M.A.R.T. way to write management’s goals and objectives.” In Doran’s "
+            "version, the letters stood for Specific, Measurable, Assignable, Realistic and Time-related.",
+            "Other versions use different words for some letters, such as Attainable, Relevant or Timely, "
+            "which is why lists differ from one book to another. The idea is the same: an objective should be clear enough that two "
+            "people would agree on whether it was met.",
+            "Notice the A in the original. Assignable means someone specific is responsible. An objective that "
+            "nobody owns is easy to forget when the work gets busy.",
+            ("h", "Output or Outcome?"),
+            "The encoding project shows the gap clearly. Its objective was about "
+            "an output, not an outcome.",
+            ("point", "Output", "What the project produces: records encoded, bills printed, staff trained. "
+             "Outputs are within the team’s control and easy to count."),
+            ("point", "Outcome", "The change that should happen because of those outputs: shorter waiting "
+             "time, fewer billing errors, more taxpayers paying on time. Outcomes are what the sponsor really "
+             "wants."),
+            "An objective can be perfectly SMART and still be about the wrong thing. “Encode all records in "
+            "four barangays by December 11” is specific, measurable, assigned, realistic and dated. It says "
+            "nothing about whether anyone will wait less.",
+            ("quote", "Outputs are what you deliver. Outcomes are why anyone asked you to deliver them."),
+            ("h", "A Five-Part Pattern"),
+            "A useful objective answers five questions. Writing them as separate lines makes gaps easy to "
+            "spot.",
+            ("point", "1. Outcome", "What should be different for the people the project serves?"),
+            ("point", "2. Measure", "How will the change be counted, and from which record?"),
+            ("point", "3. Baseline", "Where does the measure stand today? Without a starting point, no one "
+             "can tell whether it improved."),
+            ("point", "4. Target", "What value will count as success?"),
+            ("point", "5. Date", "By when, and when will it be checked?"),
+            "Add an owner to the whole objective, the A from Doran’s list, and you have something a sponsor "
+            "can approve and a team can aim at.",
+            ("h", "The Encoding Project, Rewritten"),
+            ("point", "Outcome", "Taxpayers paying real property tax at the counter wait less."),
+            ("point", "Measure", "Minutes from joining the line to receiving an official receipt, timed for "
+             "a sample of taxpayers at the real property tax window."),
+            ("point", "Baseline", "Timed on five busy mornings during last year’s January rush: an "
+             "average of 38 minutes."),
+            ("point", "Target", "An average of 20 minutes or less."),
+            ("point", "Date", "Measured again on five busy mornings during the January rush after the new "
+             "system is in use."),
+            ("point", "Owner", "The revenue clerk, reporting to the head of office."),
+            "With this objective, the team would have seen early that encoding alone was not enough. Looking "
+            "up past payments was part of the wait, so bringing past-year records into the system, or "
+            "printing them on the bill, belonged in the plan too.",
+            ("h", "Keep Outputs Too, as Milestones"),
+            "Outputs still matter. They are the steps that lead to the outcome, and they are easier to track "
+            "week by week. Keep them in the plan as milestones under the objective.",
+            ("point", "Objective (outcome)", "Average waiting time at the real property tax window down from "
+             "38 to 20 minutes or less."),
+            ("point", "Milestones (outputs)", "Records encoded by December 11. Sample bills approved by "
+             "December 18. System at the counter by January 4."),
+            "When a milestone slips, the team can ask the right question: does this still lead to the "
+            "outcome, or do we need a different step?",
+            ("h", "Choosing a Good Measure"),
+            "The measure needs the most care of the five parts. Before agreeing to one, test it against four "
+            "questions.",
+            ("point", "Is it tied to the outcome?", "Waiting time is the outcome itself. The number of records "
+             "encoded is only a step toward it."),
+            ("point", "Does a record exist, or can one be made cheaply?", "Timing a sample of taxpayers with a "
+             "stopwatch costs a few mornings. A measure that needs a new system before it can be counted may never "
+             "be counted at all."),
+            ("point", "Can it be checked by someone else?", "A clear method, written down, lets another person "
+             "repeat the count and get the same answer."),
+            ("point", "Is it hard to game?", "If the number can improve without the work improving, pair it with a "
+             "second measure, such as billing errors alongside waiting time."),
+            ("h", "Agree on It Before the Work Starts"),
+            "An objective only guides the work if the sponsor has agreed to it. Put the five parts and the owner in "
+            "the charter, show them to the head of office, and ask one direct question: “If we hit this target by "
+            "this date, will you consider the project a success?”",
+            "If the answer is “not quite,” the conversation that follows is the most useful one in the whole "
+            "project. It is far cheaper to change an objective on paper in November than to discover in January "
+            "that the team was aiming at the wrong thing.",
+            "Once agreed, review progress against the objective at every milestone, not only at the end. Check the "
+            "measure partway through if you can. A small sample in the middle of the project tells you early "
+            "whether the outputs are moving the outcome at all.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "No baseline", "“Reduce waiting time” cannot be judged if nobody measured it before. "
+             "Time it first, even with a stopwatch and a notebook."),
+            ("point", "Targets nobody can measure", "If the office has no record of a measure, either plan "
+             "how to collect it or choose a measure it already keeps."),
+            ("point", "Too many objectives", "Three clear objectives are easier to steer by than ten. If "
+             "everything is a priority, nothing is."),
+            ("point", "Objectives that punish honesty", "A target that staff can meet by recording numbers "
+             "differently, rather than by improving the work, invites exactly that. Part 3 of the Business "
+             "Intelligence series covered the same trap for dashboards."),
+            ("h", "Key Takeaways"),
+            ("point", "SMART is a start, not the finish", "A SMART objective can still describe the wrong "
+             "thing."),
+            ("point", "Aim at outcomes", "Write the change people should feel, then list the outputs as "
+             "milestones."),
+            ("point", "Measure the starting point", "No baseline, no proof of improvement."),
+            ("point", "Name one owner", "Doran’s original A, assignable, is worth keeping."),
+            ("h", "Your Part 6 Exercise"),
+            "Take one objective from your project charter and rewrite it in the five-part pattern: outcome, "
+            "measure, baseline, target and date, plus one owner.",
+            "If you cannot fill in the baseline, your first task is clear. Spend one week measuring where "
+            "things stand today. That number will make every later report about the project more honest.",
+            ("cta", "Read: Project Management Series, Part 5", "/blog/project-management-part-5-waterfall-agile-hybrid/"),
+            ("cta", "Read: Project Management Series, Part 2", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Data Analytics Series, Part 3", "/blog/data-analytics-part-3-deciding-with-data/"),
+            ("ask", "What is one objective in your current project that describes an output instead of an outcome?"),
+        ],
+    },
+    {
         "date": "December 3, 2026",
         "title": "Project Management Series, Part 5: Waterfall, Agile or Hybrid? Choosing How to Run the Work",
         "slug": "project-management-part-5-waterfall-agile-hybrid",

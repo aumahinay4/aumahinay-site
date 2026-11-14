@@ -12,6 +12,133 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "December 7, 2026",
+        "title": "Data Analytics Series, Part 6: Data Ethics and the Data Privacy Act for Analysts",
+        "slug": "data-analytics-part-6-data-ethics-privacy",
+        "category": "data",
+        "summary": "Analysts handle other people’s information every day. This part explains the three privacy "
+                   "principles of the Data Privacy Act in plain words, shows how a harmless-looking chart can "
+                   "still reveal a person, and gives a checklist to run before any analysis leaves your desk.",
+        "publish_on": "2026-12-07 21:00",
+        "body": [
+            "The analyst is proud of the new chart: business tax collections by barangay, by type of "
+            "business, for the whole year. It goes into the monthly report and onto the bulletin board.",
+            "A week later, a store owner comes to the office, upset. In her barangay there is only one "
+            "hardware store, hers. The chart shows exactly how much the hardware stores in that barangay paid. "
+            "Anyone who reads the bulletin board now knows what her business paid, and from that, roughly how much it sells, since business tax is based on gross sales. No name appeared on the chart. It still pointed to one person.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 5 touched on privacy when choosing tools. This part goes further, because analysts make "
+            "privacy decisions every time they choose what to collect, what to keep and what to show. By the "
+            "end of this post you will know the three principles the Data Privacy Act asks every analysis to "
+            "follow, the ways a report can expose a person without naming them, and a short checklist to run "
+            "before you share any result.",
+            ("photo", "blog/data-privacy-principles.jpg", "The three general privacy principles of the Data "
+             "Privacy Act: transparency, legitimate purpose and proportionality. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Ethics Comes Before the Law"),
+            "Data ethics asks a simple question: is this use of other people’s information fair to them? The "
+            "law sets the minimum. Ethics asks whether you would be comfortable if the people in your data "
+            "saw exactly what you did with it.",
+            "In the Philippines, the minimum is the Data Privacy Act of 2012 (Republic Act No. 10173) and its "
+            "implementing rules, overseen by the National Privacy Commission. It applies to government offices "
+            "as well as private companies.",
+            ("h", "The Three Principles in Plain Words"),
+            "The law says that processing personal information must follow three general principles. Its "
+            "implementing rules explain each one.",
+            ("point", "Transparency", "The people in the data should know the nature, purpose and extent of "
+             "what is done with their information. For an analyst, this means not using data in ways the "
+             "office never told people about."),
+            ("point", "Legitimate purpose", "Processing must fit a declared and specified purpose that is not "
+             "against the law, morals or public policy. Data collected to issue a business permit is not "
+             "automatically fair to use for something unrelated."),
+            ("point", "Proportionality", "Processing must be adequate, relevant, suitable, necessary and not "
+             "excessive for that purpose. If totals answer the question, use totals, not names."),
+            "Put together, the three principles give an analyst a daily habit: before using a column, ask "
+            "whether people were told, whether this use fits the reason it was collected, and whether you "
+            "need it at all.",
+            ("h", "Some Information Needs Extra Care"),
+            "The law treats some information as sensitive personal information. It includes a person’s age, "
+            "marital status, health, education, religious or political affiliations, and numbers issued by "
+            "the government that are specific to the person, such as social security numbers and tax "
+            "returns.",
+            "Treasury records can contain some of these, especially government-issued numbers and details "
+            "drawn from tax filings. Treat any column like that as off limits for analysis unless the purpose "
+            "truly needs it and your office has approved its use.",
+            ("h", "How a Report Can Point to One Person"),
+            "The story at the start shows the trap. Removing names is not always enough. A report can still "
+            "point to a person when:",
+            ("point", "A group is very small", "If a category has only one or two members, its total is "
+             "really their total. Merge small groups into a larger one, or show “fewer than five” instead of "
+             "the exact figure."),
+            ("point", "Details can be combined", "A barangay, a type of business and a year may each seem "
+             "harmless. Together they can narrow a list down to one taxpayer."),
+            ("point", "Rows are shared instead of results", "Sending a spreadsheet of individual records "
+             "when only a summary was asked for exposes more than the question needed."),
+            "The law itself recognizes the difference. Its rules allow personal data to be kept longer when it "
+            "is aggregated or kept in a form that does not permit identification of the people in it. Shaping "
+            "results so no one can be singled out protects people, and the rules treat such data differently.",
+            ("quote", "Ask not only “Did I remove the names?” but “Could anyone still find the person?”"),
+            ("h", "Ethics Beyond Privacy"),
+            "Privacy is the part the law spells out. Ethical analysis also covers how results are presented.",
+            ("point", "Honest charts", "Start bar charts at zero, label every axis, and do not hide a bad "
+             "month by choosing a flattering time range."),
+            ("point", "Fair comparisons", "Before ranking barangays or collectors, check whether they faced "
+             "the same conditions. A low number may reflect a smaller area, not a weaker effort."),
+            ("point", "Clear uncertainty", "Say when a cause is only likely, as Part 4 did, and show forecasts "
+             "as ranges."),
+            ("h", "People Have Rights Over Their Data"),
+            "The implementing rules list rights that every data subject holds. Among them: the right to be "
+            "informed, to object, to access their data, to have errors corrected, to have data blocked or "
+            "erased on certain grounds, to damages, and, where data is processed electronically, to get a copy "
+            "in a commonly used format.",
+            "For an analyst, the right to correction has the most direct effect on daily work. If a taxpayer proves that a record is "
+            "wrong, the fix must reach every copy, including the data you pulled for analysis last month.",
+            ("h", "When Something Goes Wrong"),
+            "Mistakes happen: a file is emailed to the wrong person, a laptop is lost, a shared folder is left "
+            "open. Report it to your data protection officer at once.",
+            "Under NPC Circular 16-03, when a reportable personal data breach happens, the office must notify "
+            "the National Privacy Commission, and the affected people, within 72 hours of knowing about it. "
+            "That clock only works if staff speak up quickly, so a culture where people report mistakes "
+            "without fear is part of good data practice.",
+            ("h", "Keep Working Copies Under Control"),
+            "Analysis creates copies: an export for this report, a cleaned version, a version emailed for checking. "
+            "Each copy is one more place where personal data can leak.",
+            ("point", "Work from one approved location", "Keep working files in the folder or system your office has "
+             "approved, not on a personal laptop, phone or private email."),
+            ("point", "Strip what you do not need early", "Remove names, addresses and identification numbers in the "
+             "first step if the question does not need them. Later copies are then safer by default."),
+            ("point", "Delete when done", "When the report is final, delete the extra working copies and note in "
+             "your notes file that you did."),
+            ("h", "Before You Share: A Checklist"),
+            ("point", "Purpose", "Does this analysis fit the reason the data was collected?"),
+            ("point", "Minimum data", "Did I use only the columns the question needs?"),
+            ("point", "Small groups", "Does any figure describe fewer than five people or businesses?"),
+            ("point", "Combinations", "Could two or three details together point to one person?"),
+            ("point", "Format", "Am I sharing results, not raw rows?"),
+            ("point", "Storage", "Is my working copy saved only where the office allows, and will I delete "
+             "it when the work is done?"),
+            ("h", "Key Takeaways"),
+            ("point", "Three principles", "Transparency, legitimate purpose and proportionality guide every "
+             "use of personal data."),
+            ("point", "No names is not enough", "Small groups and combined details can still identify a "
+             "person."),
+            ("point", "Share results, not rows", "Aggregated data protects people, and the rules allow it to be kept longer."),
+            ("point", "Report mistakes fast", "Breach notice to the National Privacy Commission runs on a "
+             "72-hour clock."),
+            ("h", "Your Part 6 Exercise"),
+            "Take the last report you shared and run the checklist above on it, line by line.",
+            "Mark any figure that describes fewer than five people or businesses, and any table that could be "
+            "a summary instead of a list. Fix one of them in the next edition. That single change is a real "
+            "improvement in how your office treats the people behind its numbers.",
+            ("cta", "Read: Your Data at the Treasury Counter", "/blog/your-data-at-the-treasury-counter/"),
+            ("cta", "Read: Data Analytics Series, Part 5", "/blog/data-analytics-part-5-zero-budget-toolkit/"),
+            ("cta", "Read: Data Analytics Series, Part 4", "/blog/data-analytics-part-4-four-questions-worked/"),
+            ("cta", "Read: Cybersecurity Series, Part 6", "/blog/cybersecurity-part-6-cloud-and-privacy/"),
+            ("ask", "Which figure in your office’s reports describes a group so small it could point to one person?"),
+        ],
+    },
+    {
         "date": "December 2, 2026",
         "title": "Data Analytics Series, Part 5: The Analyst’s Toolkit on a Zero Budget",
         "slug": "data-analytics-part-5-zero-budget-toolkit",
