@@ -13,6 +13,139 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 16, 2026",
+        "title": "Business Intelligence Series, Part 8: Report or Dashboard? Static, Live and Self-Service Views",
+        "slug": "business-intelligence-part-8-report-or-dashboard",
+        "category": "bi",
+        "summary": "Not every question needs a live dashboard. This part explains the three kinds of BI views, "
+                   "static reports, live dashboards and self-service views, with a treasury example of each, "
+                   "and a simple test for choosing the right one.",
+        "publish_on": "2026-12-16 21:00",
+        "body": [
+            "The head of office asks for “a dashboard for the year-end report.” The analyst spends two weeks "
+            "building a live screen with filters, date pickers and twelve charts. On the day of the meeting, "
+            "the head of office prints one page of it, signs it and files it. Nobody opens the dashboard "
+            "again.",
+            "The work was good. The format was wrong. A year-end report is a record that must stay exactly "
+            "as it was signed. A live dashboard is built to change every time the data does. Choosing between "
+            "them is one of the first decisions in any BI request, and it is easy to get wrong when everything "
+            "is called “a dashboard.”",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Parts 6 and 7 built the warehouse and the pipeline that fills it. This part is about the views "
+            "people actually look at. By the end of this post you will know the three kinds of BI views, what "
+            "each one is for, how to choose between them, and how often each should refresh.",
+            ("photo", "blog/bi-three-views.jpg", "Three kinds of BI views: a static report fixed at a point in "
+             "time, a live dashboard that refreshes on a schedule, and a self-service view that readers can "
+             "filter themselves. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "1. The Static Report: A Snapshot You Can Sign"),
+            "A static report shows data as of one moment and never changes after that. The monthly report of "
+            "collections, the year-end summary and anything submitted to another office belong here.",
+            ("point", "Use it when", "The numbers must be signed, filed, audited or compared later exactly "
+             "as they were. If someone asks next year what the office reported in December, the answer must "
+             "be the same."),
+            ("point", "Make it trustworthy", "Print the “data as of” date and time on every page, name the "
+             "source, and keep the file. A static report without a date is a guess about when it was true."),
+            ("h", "2. The Live Dashboard: Watching What Is Happening"),
+            "A live dashboard reads from the warehouse on a schedule and shows the current state of things. "
+            "It is built for monitoring: the daily measures from Part 3, such as collections against target, "
+            "undeposited cash and forms in stock.",
+            ("point", "Use it when", "Someone needs to check the same few numbers often and act when one "
+             "crosses a limit."),
+            ("point", "Keep it small", "Aim for a short list of always-on questions that fit on one screen. Everything else belongs in a report or a self-service view."),
+            "“Live” does not have to mean “every second.” It means “as fresh as the decision needs.” Data Studio, "
+            "Google’s free report builder, refreshes data from Google Sheets every 15 minutes by default, and "
+            "the report editor can change that to every hour, every 4 hours or every 12 hours. For a treasury "
+            "dashboard fed by a nightly pipeline, a refresh after the pipeline runs is fresh enough.",
+            ("h", "3. The Self-Service View: Letting Readers Ask"),
+            "A self-service view gives readers the controls: filters for barangay, collector, account and "
+            "date, so they can answer their own follow-up questions without asking the analyst each time.",
+            ("point", "Use it when", "Different readers keep asking variations of the same question, such as "
+             "collections by barangay for different months."),
+            ("point", "Set the limits", "Self-service works on top of a clean, well-defined model, like the "
+             "star from Part 5. It also needs access rules, so each reader can filter only the data they are "
+             "allowed to see."),
+            ("quote", "A report records. A dashboard watches. A self-service view answers the next question."),
+            ("h", "A Simple Test for Choosing"),
+            "Ask three questions about the request.",
+            ("point", "Must the numbers stay fixed?", "If yes, it is a static report, even if it is built "
+             "from the same data as a dashboard."),
+            ("point", "Will someone check it often and act on it?", "If yes, it is a live dashboard. Keep it "
+             "to the few measures that lead to action."),
+            ("point", "Do readers keep asking follow-up questions?", "If yes, add a self-service view with "
+             "filters, built on the same model."),
+            "A request can need two of the three. The year-end meeting needed a static report. The weekly "
+            "check on arrears might need a live dashboard. The revenue unit’s questions about each barangay "
+            "might need a self-service view. They can all read from the same warehouse.",
+            ("h", "The Treasury Year, Three Ways"),
+            ("point", "Static", "The monthly report of collections and deposits, signed and filed. The "
+             "year-end collection summary. Reports submitted to other offices."),
+            ("point", "Live", "Collections today against the daily average, undeposited collections, "
+             "official receipts left with each collector, and business permit renewals during January."),
+            ("point", "Self-service", "Collections by barangay, account and month, with filters, for the "
+             "revenue unit and the head of office."),
+            ("h", "Refresh Rules That Match the Decision"),
+            "Each view needs a refresh rule written down, so nobody wonders whether the numbers are current.",
+            ("point", "Static", "Never refreshes. Produce a new edition instead, with a new date."),
+            ("point", "Live", "Refreshes after each pipeline run. Show the “data as of” time at the top of the "
+             "screen."),
+            ("point", "Self-service", "Same as live, plus a note on the earliest and latest dates included."),
+            "In Data Studio, viewers can also refresh a report themselves, but only if the editor turns on "
+            "the setting that allows it. Decide this on purpose: allowing it helps impatient readers, but it "
+            "does not make the warehouse any fresher than the last pipeline run.",
+            ("h", "One Number, Three Places"),
+            "Suppose November collections appear in all three views. The monthly report was signed on "
+            "December 3 and shows ₱4,210,000. On December 5, a cancelled receipt from November 28 is corrected "
+            "in the collection system. After the next pipeline run, the live dashboard and the self-service "
+            "view show ₱4,195,000.",
+            "Nothing is broken. The signed report is correct as of December 3, and the other two are correct "
+            "as of the latest run. Trouble starts only when a reader sees both numbers without their dates "
+            "and concludes that one of them is wrong.",
+            ("point", "Label every number with its date", "“November collections, as of December 3” and "
+             "“November collections, as of December 6” can sit side by side without confusing anyone."),
+            ("point", "Record corrections after signing", "When a signed report changes after the fact, note the "
+             "correction in the next edition rather than editing the old file."),
+            ("h", "Write Each View Down in One Line"),
+            "Before building any view, write one line that answers six questions: what is it for, who reads "
+            "it, which kind is it, how often does it refresh, who owns it, and where is its date shown. For "
+            "example: “Undeposited collections, for the cashier and head of office, live, refreshed after the "
+            "nightly run, owned by the cashier, date at the top.”",
+            "Keep these lines together in one list. When someone asks for a new dashboard, the list shows "
+            "whether an existing view already answers the question, and the one-line format makes the "
+            "request specific enough to build.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Live screens for signed reports", "If a number appears in a signed document, the "
+             "document must keep its own copy. A dashboard will show a different number tomorrow."),
+            ("point", "Dashboards with no owner", "Every live view needs someone who checks that it "
+             "refreshed and who answers questions about it."),
+            ("point", "Self-service without definitions", "Filters invite comparisons. If readers do not know "
+             "how each measure is defined, they will compare the wrong things. Put the definitions from the "
+             "BI brief in Part 4 on the screen."),
+            ("point", "No date on the screen", "Every view, of every kind, should say when its data was "
+             "current."),
+            ("h", "Key Takeaways"),
+            ("point", "Three kinds of views", "Static reports record, live dashboards watch, and "
+             "self-service views answer follow-up questions."),
+            ("point", "Fixed numbers need a static report", "Anything signed or filed must not change after "
+             "the fact."),
+            ("point", "Fresh enough, not fastest", "Refresh to match the decision, and show the “data as of” "
+             "time."),
+            ("point", "One model, many views", "All three can read from the same warehouse and the same "
+             "definitions."),
+            ("h", "Your Part 8 Exercise"),
+            "List every regular report and screen your office uses, and label each one:",
+            ("point", "Static, live or self-service?", "Which kind is it today?"),
+            ("point", "Which should it be?", "Run the three-question test above."),
+            ("point", "Does it show a date?", "If not, add one this week."),
+            "Any view where today’s label and the right label differ is the next thing worth fixing.",
+            ("cta", "Read: Business Intelligence Series, Part 7", "/blog/business-intelligence-part-7-etl-or-elt/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Data Analytics Series, Part 5", "/blog/data-analytics-part-5-zero-budget-toolkit/"),
+            ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
+            ("ask", "Which report in your office is called a dashboard but is really a signed snapshot?"),
+        ],
+    },
+    {
         "date": "December 11, 2026",
         "title": "Business Intelligence Series, Part 7: ETL or ELT? Moving Data From the Counter to the Report",
         "slug": "business-intelligence-part-7-etl-or-elt",
