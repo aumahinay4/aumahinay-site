@@ -13,6 +13,128 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 11, 2026",
+        "title": "Business Intelligence Series, Part 7: ETL or ELT? Moving Data From the Counter to the Report",
+        "slug": "business-intelligence-part-7-etl-or-elt",
+        "category": "bi",
+        "summary": "Data has to travel from the system that records it to the warehouse that reports on it. "
+                   "This part explains the two ways to make that trip, ETL and ELT, with a worked treasury "
+                   "example of each, and a checklist for deciding which fits your office.",
+        "publish_on": "2026-12-11 21:00",
+        "body": [
+            "Every evening, the analyst downloads the day’s collections from the counter system, opens the "
+            "file, fixes the date format, replaces barangay names with codes, deletes the cancelled receipts "
+            "and pastes the result into the warehouse workbook. It takes forty minutes. On the night she is "
+            "on leave, nobody does it, and the next morning’s dashboard shows a day with no collections.",
+            "Every step she does by hand has a name. Together they are a data pipeline, and the order in "
+            "which they happen has a name too. Getting that order right, and making it run without her, is "
+            "what this part is about.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 6 introduced the nightly copy from the working database to the warehouse. By the end of this "
+            "post you will know the two main patterns for that copy, ETL and ELT, what each does well, which "
+            "one suits a small treasury, and the checks every pipeline needs whichever pattern you choose.",
+            ("photo", "blog/bi-etl-elt.jpg", "Two orders for the same three steps: ETL transforms data before "
+             "loading it, while ELT loads raw data first and transforms it inside the warehouse. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Three Steps, Two Orders"),
+            "Both patterns use the same three steps.",
+            ("point", "Extract", "Read data out of the system where it was recorded, without changing the "
+             "source."),
+            ("point", "Transform", "Clean and reshape it: fix formats, turn names into codes, remove "
+             "duplicates, apply business rules such as leaving out cancelled receipts."),
+            ("point", "Load", "Write it into the warehouse, where reports will read it."),
+            "The difference is only where the transform step sits.",
+            ("h", "ETL: Clean First, Then Load"),
+            "In ETL, data is extracted, transformed on the way, and only then loaded. The warehouse receives "
+            "data that is already clean and in its final shape. AWS describes ETL as the older of the two "
+            "approaches, in use since the 1970s, and tied to the rise of data warehouses.",
+            "The analyst’s evening routine is ETL done by hand. The file is cleaned before it touches the "
+            "warehouse workbook.",
+            ("point", "Strength", "The warehouse only ever holds checked data. Readers cannot stumble on a raw "
+             "or half-cleaned row."),
+            ("point", "Weakness", "If a cleaning rule turns out to be wrong, the original rows are no longer "
+             "in the warehouse. You must go back to the source and extract them again."),
+            ("h", "ELT: Load First, Clean Inside"),
+            "In ELT, data is extracted and loaded as it is, into a raw area of the warehouse. The transform "
+            "step then runs inside the warehouse, producing clean tables from the raw ones. AWS calls ELT "
+            "the standard choice for modern analytics, made practical by cloud storage that can hold large "
+            "amounts of raw data.",
+            ("point", "Strength", "The raw rows stay available. If a rule changes, for example how a "
+             "cancelled receipt is handled, you rerun the transform on the raw data without touching the "
+             "source system again."),
+            ("point", "Weakness", "Raw data now sits in the warehouse too. It needs the same access controls "
+             "as the clean tables, and readers must be pointed only at the clean ones."),
+            ("quote", "ETL protects the warehouse from messy data. ELT protects you from your own cleaning "
+             "mistakes. Choose the risk you can manage better."),
+            ("h", "A Treasury Example, Both Ways"),
+            "Take the same nightly job: the day’s official receipts, including two cancelled ones and a "
+            "barangay typed as “Pob. 1” instead of its code.",
+            ("point", "ETL version", "A script reads the day’s receipts, drops the cancelled ones, replaces "
+             "“Pob. 1” with the barangay code, and appends the clean rows to the collections fact table."),
+            ("point", "ELT version", "A script copies the day’s receipts, untouched, into a raw receipts table. "
+             "A saved SQL query then builds the collections fact table from the raw table, dropping cancelled "
+             "receipts and mapping names to codes."),
+            "A month later, the head of office asks for a report of cancelled receipts by collector. In the "
+            "ETL version, the cancelled rows were never kept, so someone must extract them again from the "
+            "counter system. In the ELT version, they are already in the raw table, and the report is one "
+            "query away.",
+            ("h", "Which Fits a Small Treasury?"),
+            "There is no single right answer. These questions point the way.",
+            ("point", "Where will transforms run?", "If your warehouse is a spreadsheet, transforms are easiest to do before loading, so ETL is the natural fit. If it is a database such as SQLite, it can run "
+             "SQL itself, and ELT becomes easy."),
+            ("point", "Will the rules change?", "If the office is still deciding how to count things, keeping "
+             "raw data makes changes cheaper. That favors ELT."),
+            ("point", "How sensitive is the raw data?", "If raw rows contain personal details you do not need "
+             "for reporting, removing them before loading, ETL style, keeps them out of the warehouse "
+             "altogether."),
+            "You can also mix the two: personal details are removed on the way in, as in ETL, while "
+            "everything else is loaded raw and shaped inside, as in ELT. That is a sound, deliberate choice, "
+            "not a compromise.",
+            ("h", "Checks Every Pipeline Needs"),
+            "Whichever pattern you pick, a pipeline that runs without someone watching needs to check itself "
+            "and leave a record.",
+            ("point", "Count check", "The number of receipts loaded should match the number recorded in the "
+             "source for that day."),
+            ("point", "Total check", "The sum of amounts loaded should match the day’s total in the "
+             "collection report."),
+            ("point", "Completeness check", "Every row must have a date, a collector code, a barangay code "
+             "and an account code. Rows that fail go to a review list, not into the reports."),
+            ("point", "Run log", "Each run writes one line: date, time, rows read, rows loaded, rows set "
+             "aside. If last night’s line is missing, the pipeline did not run."),
+            "These four checks turn a silent failure, like the empty day in the opening story, into a visible "
+            "one that someone can fix before the morning meeting.",
+            ("h", "Making It Run Without You"),
+            "A pipeline only removes the evening chore if it starts by itself. Desktop computers have built-in schedulers for this: Task Scheduler on Windows, and cron on Linux and macOS. Either can start a script at a fixed time every day. After setting it up, read the run log for the first few mornings to confirm it really runs.",
+            ("point", "Pick a time after the day closes", "Schedule the run after the cashier’s closing, so the day’s "
+             "records are complete. Write that time on the dashboard as “data as of.”"),
+            ("point", "Make reruns safe", "If the job runs twice for the same day, it should replace that day’s rows, "
+             "not add them again. Otherwise one accidental rerun doubles a day’s collections."),
+            ("point", "Name an owner", "Someone must read the run log each morning and act when a check fails. A "
+             "pipeline nobody watches only fails more quietly."),
+            ("h", "Key Takeaways"),
+            ("point", "Same steps, different order", "ETL transforms before loading; ELT loads raw data and "
+             "transforms inside the warehouse."),
+            ("point", "ETL keeps the warehouse clean", "Good when the warehouse cannot run transforms, or "
+             "when sensitive details should never enter it."),
+            ("point", "ELT keeps the raw data", "Good when rules may change and the warehouse can run SQL."),
+            ("point", "Every pipeline checks itself", "Counts, totals, completeness and a run log catch "
+             "problems before readers do."),
+            ("h", "Your Part 7 Exercise"),
+            "Write down, step by step, how one daily or monthly report in your office gets its data today. "
+            "Then mark each step:",
+            ("point", "E, T or L", "Is this step extracting, transforming or loading?"),
+            ("point", "Manual or automatic", "Does a person do it, or does it run by itself?"),
+            ("point", "Checked or unchecked", "Is there any count or total that proves it worked?"),
+            "The first manual, unchecked step on your list is the best place to start automating.",
+            ("cta", "Read: Business Intelligence Series, Part 6", "/blog/business-intelligence-part-6-warehouses-marts-lakes/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("cta", "Read: Keep a receipts register in SQLite", "/tutorials/receipts-register-with-sqlite/"),
+            ("ask", "Which step in your office’s reporting still depends on one person remembering to do it?"),
+        ],
+    },
+    {
         "date": "December 6, 2026",
         "title": "Business Intelligence Series, Part 6: Databases, Warehouses, Marts and Lakes, in Plain Words",
         "slug": "business-intelligence-part-6-warehouses-marts-lakes",
