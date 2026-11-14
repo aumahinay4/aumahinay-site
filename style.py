@@ -1074,11 +1074,12 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
 CSS += """
 /* Blog category bar: the chosen category name ("All posts") in gold, same gold as the Home title (Butch 2026-11-14) */
 .blog-filters .cat-now, .blog-filters input:checked + label,
-.blog-filters .cat-now .count, .blog-filters input:checked + label .count { color: #b98200; }  /* number gold too (Butch 2026-11-14) */
+.blog-filters .cat-now .count, .blog-filters input:checked + label .count, .blog-filters .cat-caret { color: #b98200; }  /* number gold too (Butch 2026-11-14) */
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .blog-filters .cat-now,
   :root:not([data-theme="light"]) .blog-filters input:checked + label,
   :root:not([data-theme="light"]) .blog-filters .cat-now .count,
-  :root:not([data-theme="light"]) .blog-filters input:checked + label .count { color: var(--gold); } }
+  :root:not([data-theme="light"]) .blog-filters input:checked + label .count,
+  :root:not([data-theme="light"]) .blog-filters .cat-caret { color: var(--gold); } }
 :root[data-theme="dark"] .blog-filters .cat-now, :root[data-theme="dark"] .blog-filters input:checked + label,
-:root[data-theme="dark"] .blog-filters .cat-now .count, :root[data-theme="dark"] .blog-filters input:checked + label .count { color: var(--gold); }
+:root[data-theme="dark"] .blog-filters .cat-now .count, :root[data-theme="dark"] .blog-filters input:checked + label .count, :root[data-theme="dark"] .blog-filters .cat-caret { color: var(--gold); }
 """
