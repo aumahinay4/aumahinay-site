@@ -292,7 +292,7 @@ TERMS = {
     ],
 }
 
-# The one featured project. Source: "360° Accountability – The ALTOS Principles" (draft, Oct 2026).
+# The one featured project. Source: "360° Accountability – The ALTOS Principles" (1st Edition, Oct 2026).
 ALTOS = {
     "name": "ALTOS",
     "full_name": "Automated Local Treasury Operations System",
@@ -342,8 +342,8 @@ ALTOS = {
     "book": {
         "title": "360° Accountability: Public Fiscal Administration in Philippine Local Treasuries",
         "subtitle": "The ALTOS Principles",
-        "status": "Draft edition, October 2026",
-        "pages": 80,  # the full draft PDF
+        "status": "1st Edition, October 2026",
+        "pages": 80,  # the full PDF, 1st Edition
         "blurb": (
             "A book that joins public administration theory, from Wilson and Weber to New Public "
             "Governance, with Philippine treasury law and the lessons of building ALTOS. It ends "
