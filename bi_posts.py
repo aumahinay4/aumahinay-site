@@ -1,5 +1,5 @@
-"""Business Intelligence Sunday series (Butch 2026-11-13 PH): 20 parts, one every Sunday from
-March 14 to July 25, 2027, after "Inside the Local Treasury" ends on March 7.
+"""Business Intelligence series (Butch 2026-11-13 PH): 20 parts. Part 1 published Nov 14, 2026
+(Butch: "Publish it today"); dates of later parts to be confirmed by Butch.
 
 The series follows what Butch learned in the Google Business Intelligence certificate, retold in the
 blog's own words with made-up treasury examples. It links to the Tuesday Data Analytics series for
@@ -13,14 +13,14 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
-        "date": "March 14, 2027",
+        "date": "November 14, 2026",
         "title": "Business Intelligence Series, Part 1: Same Data, Different Jobs",
         "slug": "business-intelligence-part-1-same-data-different-jobs",
         "category": "data",
         "summary": "Business intelligence and data analytics use the same records but do different jobs. "
                    "Here is what BI really means, where the name came from, what a BI system is made of, "
                    "and how a monthly treasury report can stop being rebuilt by hand.",
-        "publish_on": "2027-03-14",
+        "publish_on": "2026-11-14",
         "body": [
             "On the first working day of every month, a clerk in a municipal treasury starts the same task. "
             "She opens last month's file, copies in the new receipts, fixes the formulas that broke, and "
