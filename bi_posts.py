@@ -67,8 +67,7 @@ BI_POSTS = [
             ("point", "Example", "Real property tax collected: sum of amounts on official receipts for the basic "
              "tax account and the interest account, excluding cancelled "
              "receipts, by receipt date, from the collections table."),
-            "With that entry on the screen, the head of office in the opening story would have seen at once "
-            "that the two views counted different accounts.",
+            "With that entry on the screen, the head of office in the opening story could have seen quickly that the two views counted different accounts.",
             ("h", "2. Owners"),
             "Every important piece of a BI setup needs a person who answers for it. In a small office, one "
             "person may hold several of these roles, but each role should have a name.",
@@ -121,8 +120,7 @@ BI_POSTS = [
             ("point", "Week 3", "Start the change log. Write down every change from today, and any past change "
              "you know about."),
             ("h", "Mistakes to Avoid"),
-            ("point", "Definitions only in the builder’s head", "If the builder is on leave, nobody can answer "
-             "what a number means."),
+            ("point", "Definitions only in the builder’s head", "If the builder is on leave, it can be hard to find out what a number means."),
             ("point", "A dictionary nobody can find", "Link it from every dashboard."),
             ("point", "Logging the change but not its effect", "Name every view that must be checked."),
             ("point", "Owners in name only", "An owner who never reviews changes is not an owner. Ask them to "

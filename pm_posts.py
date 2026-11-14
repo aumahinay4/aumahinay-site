@@ -91,7 +91,7 @@ PM_POSTS = [
              "cost is about one sixth of the collections that would otherwise arrive late, plus the staff time "
              "saved on follow-up."),
             "Being honest about what a benefit is, earlier money rather than new money, makes the case "
-            "stronger. A reader who catches an inflated number stops trusting the rest of the page.",
+            "stronger. A reader who catches an inflated number may stop trusting the rest of the page.",
             ("h", "Risks and the Recommendation"),
             ("point", "Risks", "The encoder may not be hired in time. The printer may arrive late. Mitigation: "
              "start hiring as soon as the case is approved, and order the printer the same week."),
@@ -111,9 +111,8 @@ PM_POSTS = [
             ("point", "Keep it short", "Move details to an attachment. The main page should be readable in "
              "five minutes."),
             ("h", "Mistakes to Avoid"),
-            ("point", "Leaving out “do nothing”", "Without it, the reader cannot see what the project changes."),
-            ("point", "Only one real option", "A case with one sensible option and two weak ones looks like a "
-             "sales pitch."),
+            ("point", "Leaving out “do nothing”", "Without it, the reader has nothing to compare the project against."),
+            ("point", "Only one real option", "A case with one sensible option and two weak ones can look like a sales pitch."),
             ("point", "Counting the same benefit twice", "Earlier collections and fewer follow-up visits may "
              "be the same taxpayers. Count them once."),
             ("point", "No check afterward", "Say how you will know, after the project, whether the benefit "
