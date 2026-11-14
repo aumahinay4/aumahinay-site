@@ -12,6 +12,129 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "December 22, 2026",
+        "title": "Data Analytics Series, Part 9: Where Data Comes From, First-, Second- and Third-Party",
+        "slug": "data-analytics-part-9-where-data-comes-from",
+        "category": "data",
+        "summary": "Every data set has a history: who collected it, how, when and why. This part explains "
+                   "first-, second- and third-party data with treasury examples, gives six questions to ask "
+                   "any source, and shows how to record a source so the next analyst can trust it.",
+        "publish_on": "2026-12-22 21:00",
+        "body": [
+            "The revenue unit wants a list of businesses that may be operating without a permit. The analyst "
+            "gathers three files: the office’s own list of permits issued this year, a list of barangay "
+            "clearances shared by the barangays, and a business directory downloaded from a website. Any "
+            "business in the second or third file but missing from the first goes on the list.",
+            "The list has 140 names. In the first week of visits, the team finds that 30 of them closed years "
+            "ago, 12 are the same business spelled two ways, and several are branches of businesses that "
+            "already hold a permit under the main office’s name. The analysis was done correctly. The trouble "
+            "was that the three files were treated as equally reliable, when each had a very different "
+            "history.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town, business or taxpayer is described.)",
+            "This part begins the Prepare step from Part 2. By the end of this post you will know the three "
+            "kinds of data by who collected them, six questions to ask any source, how to combine sources "
+            "without creating false matches, and how to write a source note that keeps the history with the "
+            "data.",
+            ("photo", "blog/data-three-sources.jpg", "Three kinds of data by who collected it: first-party "
+             "from your own office, second-party shared by the one who collected it, and third-party "
+             "gathered by someone else from other sources. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Three Kinds of Data, by Who Collected It"),
+            "One useful way to sort data is by who collected it and how it reached you.",
+            ("point", "First-party data", "Data your own office collected from the people it serves, through "
+             "its own work. Official receipts, the permits you issued and the taxpayer records you keep are all "
+             "first-party data for the treasury."),
+            ("point", "Second-party data", "Data another organization collected directly from its own people, "
+             "then shared with you. The barangay clearance list in the opening story is an example: the "
+             "barangays collected it from businesses and passed it on."),
+            ("point", "Third-party data", "Data compiled by someone who did not collect it at the source, "
+             "such as a list put together from many other lists. The downloaded business directory is an "
+             "example: whoever built it compiled listings from many places, at different times."),
+            "The further data travels from the people who collected it, the more questions you need to ask "
+            "before relying on it. That is not because second- and third-party data are bad. It is because "
+            "you know less about how they were made.",
+            ("quote", "Data does not arrive from nowhere. Every file has a history, and the history decides "
+             "how far you can trust it."),
+            ("h", "Where the Lines Blur"),
+            "Inside a local government, the labels can depend on where you stand. The assessor’s office "
+            "collects property information directly from owners and keeps the assessment roll. From the "
+            "whole local government’s point of view, that is its own data. From the treasury’s desk, it is "
+            "data another office collected and shared.",
+            "Do not spend long arguing over the label. The label is only a reminder to ask the real question: "
+            "who collected this, how, and how much do I know about the way it was made?",
+            ("h", "Six Questions to Ask Any Source"),
+            ("point", "1. Who collected it?", "An office, a barangay, a private website, a person? Write the "
+             "name of the unit and a contact, not just “from the province.”"),
+            ("point", "2. How was it collected?", "A form filled in by the taxpayer, encoding by staff, an "
+             "inspection, a copy of another list? Each method can introduce different kinds of errors."),
+            ("point", "3. When, and how often is it updated?", "A list from January says nothing about "
+             "businesses that closed in June. Note the date of the data, not just the date you received it."),
+            ("point", "4. Why was it collected?", "Data collected for one purpose may not fit another. A "
+             "clearance list shows who asked for a clearance, which is not the same as who is operating "
+             "today."),
+            ("point", "5. What does each field mean?", "Does “address” mean the business location or the "
+             "owner’s home? Does “date” mean the date of application or of approval? Ask before you compare."),
+            ("point", "6. May we use it this way?", "Check that sharing and using the data for this purpose is "
+             "allowed, especially when it holds personal information. Part 6 covers the Data Privacy Act "
+             "principles that apply."),
+            "If you cannot answer a question, write that down too. “Collection method unknown” is useful "
+            "information for whoever reads the results.",
+            ("h", "The Opening Story, Source by Source"),
+            ("point", "Permits issued (first-party)", "Collected by the office, at the counter, for this year. "
+             "Reliable for who holds a permit, recorded under the name on the application."),
+            ("point", "Barangay clearances (second-party)", "Collected by each barangay when a business asked "
+             "for a clearance. Shows who applied, not who is still open, and spellings follow each barangay’s "
+             "own encoding."),
+            ("point", "Business directory (third-party)", "Compiled by an outside website from sources it does "
+             "not name, updated at unknown times. Useful for leads, not for conclusions."),
+            "Seen this way, the right result was not one list of 140 names. It was a short list of businesses "
+            "found in both the barangay list and the directory but not in the permits, to check first, and a "
+            "longer list of directory-only names to treat as leads.",
+            ("h", "Combining Sources Without False Matches"),
+            "Two of the three problems in the opening story came from matching names. Names can change, be "
+            "abbreviated or be spelled differently by different people.",
+            ("point", "Use a shared code when one exists", "A permit number, a tax declaration number or a "
+             "barangay clearance number matches more safely than a business name."),
+            ("point", "Clean names the same way on both sides", "When names are all you have, make both lists "
+             "uppercase, remove extra spaces and write common words the same way, such as “Sto.” and “Store,” before comparing. Then review close matches by hand."),
+            ("point", "Keep the source on every row", "Add a column that says which file each row came from. "
+             "When a result looks odd, you can trace it back quickly."),
+            ("h", "Write a Source Note"),
+            "Keep a short note beside every data set you receive. It keeps the history with the data, so the "
+            "next analyst does not have to rediscover it.",
+            ("point", "What to write", "Name of the data set, who collected it, the contact person, how it was "
+             "collected, the period it covers, the date received, what each unclear field means, and what "
+             "it may be used for."),
+            ("point", "Where to keep it", "In the same folder as the file, with a matching name, or on the "
+             "first sheet of the workbook."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating every file as equally reliable", "Give more weight to sources you know more "
+             "about, and say so in the results."),
+            ("point", "Forgetting the date of the data", "The date you downloaded a file is not the date its "
+             "information was true."),
+            ("point", "Reporting leads as findings", "A name in a third-party directory is a reason to check, "
+             "not proof that a business is operating."),
+            ("h", "Key Takeaways"),
+            ("point", "Three kinds by who collected it", "First-party is your own, second-party is shared by "
+             "the collector, and third-party is compiled by someone else."),
+            ("point", "Ask six questions", "Who, how, when, why, what each field means, and whether you may "
+             "use it."),
+            ("point", "Match on codes, not names", "And keep the source of every row."),
+            ("point", "Keep a source note", "The history of the data belongs beside the data."),
+            ("h", "Your Part 9 Exercise"),
+            "Pick one data set your office received from outside your own unit. Answer the six questions for "
+            "it, and write the answers as a source note.",
+            "Then mark each answer as known or unknown. If more than two are unknown, ask the person who sent "
+            "it before you use the data in a report.",
+            ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("cta", "Read: Business Intelligence Series, Part 6", "/blog/business-intelligence-part-6-warehouses-marts-lakes/"),
+            ("ask", "Which data set in your office has the least-known history?"),
+        ],
+    },
+    {
         "date": "December 17, 2026",
         "title": "Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth",
         "slug": "data-analytics-part-8-metrics-and-kpis",
