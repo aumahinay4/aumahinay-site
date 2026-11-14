@@ -97,10 +97,9 @@ DATA_POSTS = [
             ("point", "Use a shared code when one exists", "A permit number, a tax declaration number or a "
              "barangay clearance number matches more safely than a business name."),
             ("point", "Clean names the same way on both sides", "When names are all you have, make both lists "
-             "uppercase, remove extra spaces and standardize words such as “Store” and “Sari-Sari Store” "
-             "before comparing. Then review close matches by hand."),
+             "uppercase, remove extra spaces and write common words the same way, such as “Sto.” and “Store,” before comparing. Then review close matches by hand."),
             ("point", "Keep the source on every row", "Add a column that says which file each row came from. "
-             "When a result looks odd, you can trace it back in seconds."),
+             "When a result looks odd, you can trace it back quickly."),
             ("h", "Write a Source Note"),
             "Keep a short note beside every data set you receive. It keeps the history with the data, so the "
             "next analyst does not have to rediscover it.",

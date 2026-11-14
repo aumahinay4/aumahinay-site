@@ -100,8 +100,7 @@ PM_POSTS = [
             "R1 is the need the first spreadsheet missed. R3 is the part it did well. R4 came from someone "
             "who never asked for anything, which is why the workshop matters.",
             ("h", "Sorting What Matters Most"),
-            "When the requirements do not all fit the time and budget, sort them into four groups, a method "
-            "known as MoSCoW from the first letters of each group.",
+            "When the requirements do not all fit the time and budget, sort them into four groups, a method known as MoSCoW. The capital letters come from Must, Should, Could and Won’t; the two o’s are added so it reads as a word.",
             ("point", "Must have", "Without it, the result fails. R1 and R4."),
             ("point", "Should have", "Important, but the result still works without it for a while. R2."),
             ("point", "Could have", "Nice if time allows. A chart of mismatches by week."),

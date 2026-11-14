@@ -37,8 +37,7 @@ BI_POSTS = [
              "schema, uniqueness, validity, consistency and freshness. (Illustration: Butch Mahinay, "
              "aumahinay.dev)", "medium"),
             ("h", "Why a Clean Run Is Not Enough"),
-            "A pipeline can fail in two ways. A loud failure stops the run with an error, and someone notices "
-            "the missing data. A quiet failure finishes normally but loads something wrong. The opening story "
+            "A pipeline can fail in two ways. A loud failure stops the run with an error, so the missing data is easy to notice. A quiet failure finishes normally but loads something wrong. The opening story "
             "was a quiet failure, and those are the ones a test plan exists to catch.",
             "The rule behind every test below is simple: the pipeline should prove that the data looks right "
             "before it replaces what readers saw yesterday.",
