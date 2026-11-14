@@ -30,10 +30,10 @@ BI_POSTS = [
             "taxpayer is described.)",
             "Nothing is wrong with the clerk's work. The totals are correct. The problem is that the same "
             "questions are asked every month, and every month the answers are built from scratch. Business "
-            "intelligence, or BI, is the discipline that fixes exactly this kind of problem. This post starts "
-            "a twenty-part series about it, one part every Sunday.",
+            "intelligence, or BI, is the discipline that fixes exactly this kind of problem, and it is the "
+            "subject of this series.",
             ("h", "Why a Second Series?"),
-            "Every Tuesday, my Data Analytics series walks through the full craft of analysis: asking a good "
+            "My Data Analytics series walks through the full craft of analysis: asking a good "
             "question, preparing and cleaning data, analyzing it and sharing what you found. That series already "
             "covers spreadsheet formulas, pivot tables, SQL basics and choosing the right chart.",
             "After finishing the Google Data Analytics certificate, I went on to the Google Business "
@@ -87,8 +87,8 @@ BI_POSTS = [
              "usually with filters so they can ask their own follow-up questions."),
             ("point", "People", "The head of office, the collectors and the budget officer who read the numbers "
              "and decide what to do. Without this last step, the rest is decoration."),
-            "Each of these parts gets its own module in this series. By the end, you will be able to build a "
-            "small version of every one of them with free tools.",
+            "Each of these parts can be built in a small version with free tools, which is what makes BI "
+            "practical even for a small office.",
             ("h", "Back to the Monthly Report"),
             "Let us return to the clerk and her two-day report. Here is how the same work looks with even a "
             "very simple BI setup.",
@@ -113,22 +113,21 @@ BI_POSTS = [
             "That last point is the same one I made when I built ALTOS: every number the system produces is a "
             "prompt for a person to look and decide, never an automatic action.",
             ("h", "How This Series Works"),
-            "There are twenty parts, one every Sunday until July 25, 2027, in five modules. The first module "
-            "explains what BI is and who does it. The second covers data models, the way tables are arranged so "
-            "totals are fast and always agree. The third covers pipelines, which move data from the counter to "
-            "the report and test it along the way. The fourth builds dashboards and reports people actually use. "
-            "The fifth covers privacy, keeping a BI system honest over time, presenting to executives, and a "
-            "final project that puts everything together.",
-            "Where a topic is already explained in the Tuesday series, I will link to it instead of repeating "
-            "it. All examples use made-up data, and every tool used is free.",
+            "The series has five modules. The first explains what BI is and who does it. The second covers "
+            "data models, the way tables are arranged so totals are fast and always agree. The third covers "
+            "pipelines, which move data from the counter to the report and test it along the way. The fourth "
+            "builds dashboards and reports people actually use. The fifth covers privacy, keeping a BI system "
+            "honest over time, presenting to executives, and a final project that puts everything together.",
+            "Where a topic is already explained in the Data Analytics series, the posts link to it instead of "
+            "repeating it. All examples use made-up data, and every tool used is free.",
             ("h", "Your Part 1 Exercise"),
-            "Before next Sunday, take ten minutes and do this:",
+            "Take ten minutes and do this:",
             ("point", "List your repeated reports", "Write down every report your office prepares again and "
              "again, daily, weekly, monthly or quarterly."),
             ("point", "Time them", "Next to each one, estimate how many hours it takes to prepare and how old "
              "the numbers are by the time someone reads them."),
             ("point", "Circle one", "Pick the report that costs the most time and is read most often. That is "
-             "your first BI candidate, and we will keep coming back to it in this series."),
+             "your first BI candidate: the place where a simple BI setup would save the most time."),
             ("cta", "Read: Data Analytics Series, Part 1", "/blog/data-analytics-part-1-what-it-is/"),
             ("cta", "Read: Why I Built ALTOS", "/blog/why-i-built-altos/"),
             ("cta", "Read: The ALTOS Framework, Principle 9: Evidence Before Decision",
