@@ -27,8 +27,7 @@ BI_POSTS = [
             "opens it twice, scrolls for a minute, and goes back to asking the cashier for the total over the "
             "phone.",
             "Nothing on the dashboard is wrong. There is simply too much of it, and none of it says what needs "
-            "attention today. This is a common way for a BI project to fail: it answers every question "
-            "except the one the reader actually has.",
+            "attention today. It answers every question except the one the reader actually has.",
             "(As always in this series, the office, the people and the numbers are made up. No real town or "
             "taxpayer is described.)",
             "In Part 1, I described BI as a service that keeps answers coming. This part is about choosing which "
@@ -57,12 +56,10 @@ BI_POSTS = [
              "daily or by the next banking day. A measure that compares what was collected with what reached "
              "the bank, by date, shows at once when cash is staying in a drawer longer than it should."),
             ("point", "3. Accountable forms in stock", "How many official receipts, by form type, are left in "
-             "stock and with each collector. Without official receipts a collector cannot accept "
-             "payments, so running out during the January rush stops collection at that window. This measure "
-             "looks ahead."),
+             "stock and with each collector. This measure looks ahead, so new forms can be issued before "
+             "anyone runs out during the January rush."),
             ("point", "4. Arrears by age", "Unpaid real property tax grouped by how long it has been unpaid: "
-             "this year, one to two years, three years or more. Older debts are usually harder to collect, so the "
-             "shape of this measure matters as much as the total."),
+             "this year, one to two years, three years or more."),
             ("point", "5. Permit renewals", "In January, how many businesses from last year’s list have renewed "
              "so far, compared with the same day last year. A slow start in the second week is still fixable."),
             ("point", "6. Cash on hand", "How much is in the vault and in the bank accounts, by fund, against "
@@ -92,13 +89,13 @@ BI_POSTS = [
              "day, the cashier explains why before noon."),
             ("point", "Collections against target", "If the month is past its halfway point and less than 40% "
              "of the target is in, the revenue unit reviews which sources are behind."),
-            "Many dashboard tools can color a number red when it crosses its limit, or send an email when it "
-            "does. Even without that, a simple rule written next to each chart turns watching into acting.",
-            "Be careful with limits that are too tight. If a measure turns red every second day, people learn "
-            "to ignore it. Start with limits that catch real problems, then adjust them after a month of "
+            "Dashboard tools such as Power BI can send an alert when a number crosses a limit you set."
+            " Even without that, a simple rule written next to each chart turns watching into acting.",
+            "Be careful with limits that are too tight. A warning that goes off every second day stops "
+            "telling you anything. Start with limits that catch real problems, then adjust them after a month of "
             "watching.",
             ("h", "Watching Without Gaming"),
-            "Any measure that people are judged by will start to change their behavior, and not always in the "
+            "Any measure that people are judged by can start to change their behavior, and not always in the "
             "way you hoped. If collectors are praised only for the amount they collect, they may chase the easy "
             "payments and avoid the hard delinquent accounts. If the office is praised only for fast deposits, "
             "someone may be tempted to deposit before counting carefully.",
@@ -116,8 +113,8 @@ BI_POSTS = [
              "wait until it is encoded."),
             ("point", "Arrears and renewals", "From the real property tax records and the business permit list. "
              "These change slowly, so updating them once a day is enough."),
-            ("point", "Cash on hand", "From the cashbook and the bank balances. Bank figures can lag behind "
-             "the cashbook, so show the date of each figure clearly on the screen."),
+            ("point", "Cash on hand", "From the cashbook and the bank balances. Show the date of each figure "
+             "clearly on the screen."),
             "Writing this list also shows you which measures are ready now and which need better record keeping "
             "first. That is useful on its own, even before any chart is drawn.",
             ("h", "Start Small, With One Screen"),

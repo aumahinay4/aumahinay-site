@@ -50,7 +50,7 @@ PM_POSTS = [
              "around them."),
             ("point", "The public", "Property owners who will receive the new bills and bring questions to the "
              "counter."),
-            "Write the list with the team, not alone. The collectors will remember people the clerk would never "
+            "Write the list with the team, not alone. The collectors may remember people the clerk would never "
             "think of, such as the staff at the information desk who hear taxpayers’ questions first.",
             ("h", "The Power and Interest Grid"),
             "Once the list is written, place each stakeholder on a simple grid. One side asks how much power they "
@@ -102,21 +102,19 @@ PM_POSTS = [
              "printed memo, others a two-minute talk in the hallway. Match their habit, not yours."),
             ("point", "Who else should we talk to?", "This question finds the stakeholders your list missed. "
              "It is how the clerk would have learned that the mayor’s office wanted to be told first."),
-            "These conversations also build trust. People support projects they were asked about, and they "
-            "forgive small delays from a project manager who listened to them at the start.",
             ("h", "Influence Without Authority"),
             "In Part 1, the clerk discovered that nobody on her list reported to her. The grid does not change "
             "that, but it shows her where her influence will come from.",
             "With high-power stakeholders, influence comes through the sponsor. A request from the head of "
             "office carries weight that a request from the clerk does not. With high-interest stakeholders, "
-            "influence comes from listening. Collectors who were asked how to make the encoding easier will "
-            "defend the schedule, because part of it is theirs.",
+            "influence comes from listening. Collectors who were asked how to make the encoding easier have "
+            "helped shape the schedule, so part of it is theirs.",
             ("quote", "You cannot command the people on your map. You can make sure none of them is surprised."),
             ("h", "Common Mistakes"),
             ("point", "Mapping once and filing it", "People move around the grid. A new head of office or an "
              "election can change everything."),
-            ("point", "Forgetting the quiet ones", "The people with low power and high interest rarely complain "
-             "loudly until something has gone wrong for them. Ask them early."),
+            ("point", "Forgetting the quiet ones", "Ask the people with low power and high interest early. "
+             "They may not speak up until something has gone wrong for them."),
             ("point", "Treating everyone the same", "Sending every stakeholder the same long weekly report "
              "wastes their time and hides the message that matters to each."),
             ("point", "Leaving the map lying around", "A stakeholder map is a working "

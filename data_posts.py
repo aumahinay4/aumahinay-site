@@ -44,9 +44,8 @@ DATA_POSTS = [
             "and that is fine as long as everyone knows which is which.",
             ("h", "Experience Is Data Too"),
             "The senior collector’s hunch is not worthless. Years at the counter are a kind of data, stored in a "
-            "person instead of a table. The trouble is that memory is selective. We remember the busy Saturday "
-            "and forget the quiet one. We remember the angry taxpayer and forget the hundred who paid without a "
-            "word.",
+            "person instead of a table. The trouble is that one person sees only part of the picture, and "
+            "a single memorable day can stand in for many ordinary ones.",
             "The best decisions use both. Experience suggests what to look at and what might explain it. "
             "Records show whether the pattern is real, how big it is and whether it has changed. When the two "
             "disagree, that is not a crisis. It is the most interesting moment in the whole analysis.",
@@ -55,8 +54,8 @@ DATA_POSTS = [
             ("point", "Ask the real question", "Not “Do people come on Saturdays?” but “Would a Saturday "
              "opening in mid-January serve enough taxpayers to justify the cost, and would it shorten the "
              "lines on the last weekdays?”"),
-            ("point", "Look at the records", "Every official receipt carries a date. The office pulls the "
-             "business tax receipts from the past three Januaries and counts them by day. In the one year "
+            ("point", "Look at the records", "The office pulls the business tax receipts from the past three "
+             "Januaries and counts them by date of payment. In the one year "
              "it opened on a Saturday, it has that day’s count too."),
             ("point", "Read the pattern", "Suppose the counts show that the Saturday opening served 140 "
              "taxpayers, almost all before eleven, and that the following Monday was about 20% lighter than "
@@ -83,8 +82,8 @@ DATA_POSTS = [
             ("point", "Zoom in and out", "Move between the big picture and the details. The total for January "
              "matters, and so does the single day when the system was down."),
             ("h", "Traps That Spoil Good Data"),
-            "Data does not protect you from bad decisions on its own. These traps catch experienced people "
-            "all the time.",
+            "Data does not protect you from bad decisions on its own. These traps can catch even "
+            "experienced people.",
             ("point", "Looking only for support", "If you already believe Saturdays are busy, you will notice the "
              "one busy Saturday and stop looking. Decide what evidence would change your mind before you look."),
             ("point", "Trusting the loudest story", "One angry complaint can feel bigger than a hundred quiet "
