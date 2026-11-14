@@ -1391,7 +1391,8 @@ def listen_box(b):
         t.div(
             t.button(LISTEN_ICON, t.span("Listen", class_="listen-word"), type="button", class_="listen-play",
                      aria_pressed="false"),
-            t.span(f"{listen_minutes(b, rec)} min listen", class_="listen-time muted"),
+            t.span(f"{listen_minutes(b, rec)} min · AI voice", class_="listen-time muted",
+                   title="Read aloud by a computer voice, not by the author"),  # be open that it is not Butch reading (Butch, 2026-11-15)
             t.span(class_="listen-clock muted", aria_hidden="true"),
             t.button("1\u00d7", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
             t.button(STOP_ICON, type="button", class_="listen-stop", aria_label="Stop reading", title="Stop", hidden=True),
