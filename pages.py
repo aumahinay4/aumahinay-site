@@ -105,7 +105,7 @@ def menu_items():
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
 
 
-MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h14M3 18h10"/></svg>')  # bars long, medium, short, left-aligned (Butch 2026-11-14)
+MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg>')  # bars long, medium, short, left-aligned (Butch 2026-11-14)
 MENU_SCRIPT = """
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),

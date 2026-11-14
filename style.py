@@ -1092,3 +1092,11 @@ header.site { box-shadow: 0 1px 0 var(--line); }
 .menu-btn svg { stroke-width: 2.6; }
 .blog-filters > summary svg { stroke: var(--text); stroke-width: 2.6; }
 """
+
+CSS += """
+/* Menu bars in different ALTOS colours (Butch 2026-11-14): gold, blue, green, like the A, L, T of ALTOS.
+   The -ink colours turn brighter in dark mode so the bars stay easy to see. */
+.menu-btn svg .b1, .blog-filters > summary svg .b1 { stroke: var(--gold-ink); }
+.menu-btn svg .b2, .blog-filters > summary svg .b2 { stroke: var(--blue-ink); }
+.menu-btn svg .b3, .blog-filters > summary svg .b3 { stroke: var(--green-ink); }
+"""
