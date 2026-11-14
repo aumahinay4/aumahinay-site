@@ -1028,7 +1028,7 @@ html.menu-js.menu-open header.site #site-menu { background: var(--surface);
   -webkit-backdrop-filter: none; backdrop-filter: none; }  /* SOLID, not see-through (Butch 2026-11-14) */
 /* Panel ends just below Privacy Policy (Butch 2026-11-10: "uncover below privacy"); the page shows below it */
 html.menu-js.menu-open header.site #site-menu { inset: 0 auto auto 0; height: auto; max-height: 100dvh; padding-bottom: 22px; }
-html.menu-js.menu-open header.site #site-menu { width: max-content; min-width: 0; padding-right: 22px; }  /* panel ends just past "RPT Calculator", the longest link (Butch 2026-11-14) */
+html.menu-js.menu-open header.site #site-menu { width: max-content; min-width: 0; padding-right: 6px; }  /* panel ends just past "RPT Calculator", the longest link (Butch 2026-11-14) */
 html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
