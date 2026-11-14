@@ -51,7 +51,7 @@ PM_POSTS = [
             ("point", "The public", "Property owners who will receive the new bills and bring questions to the "
              "counter."),
             "Write the list with the team, not alone. The collectors will remember people the clerk would never "
-            "think of, such as the barangay officials who help deliver notices.",
+            "think of, such as the staff at the information desk who hear taxpayers’ questions first.",
             ("h", "The Power and Interest Grid"),
             "Once the list is written, place each stakeholder on a simple grid. One side asks how much power they "
             "have over the project: can they approve, stop, fund or slow it? The other asks how much interest "
@@ -88,8 +88,8 @@ PM_POSTS = [
              "the new bill looks like and how to answer the three most common questions."),
             ("point", "Taxpayers", "A plain notice at the counter and on the office’s page explaining that bills "
              "are now printed, and who to ask if something looks wrong."),
-            "Notice that the plan respects the chain of command. The project manager does not write to the "
-            "mayor directly; the head of office does. Knowing who should speak to whom is part of stakeholder "
+            "Notice that the plan respects the chain of command. In this example, the clerk does not "
+            "write to the mayor directly; the head of office does. Knowing who should speak to whom is part of stakeholder "
             "work, especially in government.",
             ("h", "Four Questions for Each Key Stakeholder"),
             "For the people in the top two boxes, a short conversation early in the project is worth more than "
