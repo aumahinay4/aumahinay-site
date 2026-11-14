@@ -447,12 +447,16 @@ def home():
                     ("Tutorials",
                      "Free, beginner-friendly lessons: Python for treasury work and Civil Service exam "
                      "vocabulary with practice questions.", "Start learning →", "/tutorials/"),
+                    *([("Treasury Study Notes",
+                        "Local treasury work in plain words: revenue, taxes, collections and payments, "
+                        "each note with a short quiz.",
+                        "Read the notes →", NOTES_INFO["url"])] if live_notes() else []),  # Butch 2026-11-14: right after Tutorials
                     ("ALTOS",
                      "The Automated Local Treasury Operations System, a working treasury system for "
                      "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
                 )
             ],
-            class_="grid three",
+            class_="grid three find",
         ),
         t.h2("Free tool"),
         t.div(

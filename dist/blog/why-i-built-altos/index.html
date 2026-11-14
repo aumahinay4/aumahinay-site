@@ -167,6 +167,10 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .grid.one { grid-template-columns: 1fr; }
 .grid.three { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid.four { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+/* Home "What you'll find here" (4 cards since Treasury Study Notes, 2026-11-14): 4 across on computers, 2 x 2 on tablets, never a lonely card */
+.grid.three.find { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1024px) { .grid.three.find { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .grid.three.find { grid-template-columns: 1fr; } }
 .grid > *:nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
 .grid > *:nth-child(5n+2) { --c: var(--blue); --ci: var(--blue-ink); }
 .grid > *:nth-child(5n+3) { --c: var(--green); --ci: var(--green-ink); }
