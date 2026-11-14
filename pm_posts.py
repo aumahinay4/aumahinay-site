@@ -14,6 +14,126 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "November 28, 2026",
+        "title": "Project Management Series, Part 4: Drawing the Line Before Work Begins",
+        "slug": "project-management-part-4-defining-scope",
+        "category": "pm",
+        "summary": "The charter says what a project is for. The scope statement says exactly what it will deliver, "
+                   "how everyone will know it is done, and what it will not do. Here is how to write one, using "
+                   "the treasury encoding project as the example.",
+        "publish_on": "2026-11-28 21:00",
+        "body": [
+            "The encoding project has a charter and a stakeholder map. The work is under way. Then, in the same "
+            "week, three small requests arrive. The assessor’s office asks whether the team could also add the "
+            "owners’ mobile numbers. A collector suggests printing the bills in two languages. The head of office "
+            "wonders aloud whether the system could also show which properties have never been visited.",
+            "Each idea is reasonable. Each would take only “a little extra time.” Together, they could push the "
+            "January deadline into March. The revenue clerk needs a clear way to say what the project includes, "
+            "and a calm way to handle everything else.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "That clear way is the scope statement. In Part 2, the charter gave a short list of what was in and "
+            "out. The scope statement goes one level deeper and becomes the reference everyone uses when a new "
+            "idea arrives.",
+            ("h", "Two Kinds of Scope"),
+            "Project management guides separate two ideas that are easy to mix up.",
+            ("point", "Product scope", "The features and functions of the result. For the encoding project: "
+             "a record for each taxable property in the four poblacion barangays, with the details needed to "
+             "print a bill."),
+            ("point", "Project scope", "The work needed to deliver that result. Encoding, checking against the "
+             "assessor’s tax declarations, printing sample bills, training the counter staff."),
+            "Keeping them apart helps. A request to add mobile numbers changes the product scope. A request to "
+            "train the collectors as well as the counter staff changes the project scope. Both need a decision, "
+            "but they affect different things. The first changes what the office receives at the end. The "
+            "second changes how much work the team must do to get there, and who must be available to do it.",
+            ("h", "The Five Parts of a Scope Statement"),
+            ("photo", "blog/pm-scope-statement.jpg", "A scope statement in five parts: the deliverables, the "
+             "acceptance criteria, the exclusions, the assumptions and the constraints. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("point", "1. Deliverables", "What the project will hand over at the end, named so that anyone "
+             "could check whether it exists."),
+            ("point", "2. Acceptance criteria", "How the sponsor will judge that each deliverable is finished "
+             "and good enough."),
+            ("point", "3. Exclusions", "What the project will not do, written plainly."),
+            ("point", "4. Assumptions", "What the plan takes for granted. If an assumption turns out to be "
+             "wrong, the plan has to change."),
+            ("point", "5. Constraints", "The fixed limits: deadlines, budget, people and rules that cannot be "
+             "moved."),
+            ("h", "The Encoding Project’s Scope Statement"),
+            ("point", "Deliverables", "Property records for the four poblacion barangays in the new system. A "
+             "list of records that did not match the assessor’s tax declarations, with the reason for each. "
+             "Fifty printed sample bills. A one-hour briefing for the counter staff."),
+            ("point", "Acceptance criteria", "Every record matches the assessor’s tax declaration or appears "
+             "on the mismatch list. The head of office checks twenty sample bills chosen at random against the "
+             "ledger cards and finds no error in the amount due. The counter staff can print a bill without "
+             "help."),
+            ("point", "Exclusions", "Unpaid taxes from past years and their interest. The remaining barangays. "
+             "Owners’ contact details. Bills in a second language. Any change to how payments are received."),
+            ("point", "Assumptions", "The assessor’s office can spare one person on Tuesday and Thursday "
+             "afternoons. The ledger cards for the four barangays are complete. The system can print bills on "
+             "the office’s current printer."),
+            ("point", "Constraints", "Ready at the counter on January 4. A budget of ₱18,000. Only two "
+             "collectors available, two afternoons a week. Personal data handled under the office’s data "
+             "privacy rules."),
+            ("h", "Acceptance Criteria Do the Heavy Lifting"),
+            "Of the five parts, acceptance criteria deserve the most care, because they decide when the "
+            "project is finished. “Records are encoded correctly” sounds clear until someone asks how anyone would know.",
+            "Good criteria can be checked by someone other than the person who did the work. Twenty bills chosen "
+            "at random and compared with the ledger cards is a test anyone can run. It also tells the team, "
+            "from the first day, what standard their work will be held to.",
+            ("quote", "If you cannot say how you will know it is done, you do not yet know what you are building."),
+            ("h", "Write Assumptions Down, Then Watch Them"),
+            "Assumptions feel obvious when you write them, which is exactly why they are worth writing. Suppose "
+            "that in the third week the team finds that one barangay’s ledger cards are incomplete. Because "
+            "“the ledger cards are complete” was written as an assumption, nobody has to argue about whether "
+            "the problem is serious. A written assumption has failed, so the plan must be reviewed with the "
+            "sponsor.",
+            "Read the assumptions again at each milestone. Finding a wrong one early leaves more time "
+            "to adjust the plan.",
+            ("h", "Handling the Three Requests"),
+            "Now go back to the three ideas from the start. With a scope statement, each one gets the same calm "
+            "answer: it is a good idea, it is not in the current scope, and here is what adding it would cost.",
+            ("point", "Mobile numbers", "Excluded. Collecting contact details raises data privacy questions "
+             "that need their own decision. Added to a list for a later phase."),
+            ("point", "Bills in two languages", "Excluded. It would need a translation, a new bill layout and "
+             "another round of checking. Added to the later list."),
+            ("point", "Properties never visited", "Excluded from this project, but a useful question. It "
+             "could become a report once all barangays are encoded."),
+            "The clerk does not say no to anyone. She says “not in this project,” writes each idea down, and "
+            "lets the sponsor decide whether any of them is worth moving the deadline for.",
+            ("h", "Who Signs Off on the Scope"),
+            "A scope statement only works if the sponsor has agreed to it. The clerk drafts it, shows it to the "
+            "people whose work it describes, and then asks the head of office to approve it in writing, the same "
+            "way the charter was approved.",
+            "This step can feel like paperwork, but it changes every later conversation. When a new request "
+            "arrives, the clerk is no longer defending her own opinion. She is pointing to a page the head of "
+            "office signed. If the head of office decides to add something, that is a decision the sponsor is "
+            "entitled to make, and the scope statement is updated, along with the deadline or the budget if "
+            "they need to change.",
+            "Keep each version of the scope statement, with its date. At the end of the project, the versions "
+            "show exactly how the work grew and why, which is useful for the lessons-learned meeting and for "
+            "planning the next phase.",
+            ("h", "Scope Creep and Gold Plating"),
+            "Two terms are worth knowing. Scope creep is work added to a project while it is under way, often one "
+            "small request at a time. Gold plating is giving the customer extras that were never asked for, "
+            "such as a team member adding a feature they think would be nice.",
+            "Both have the same cost: time and effort spent outside the agreed scope, which puts the agreed "
+            "work at risk. The scope statement is the reference that makes both visible.",
+            ("h", "Your Part 4 Exercise"),
+            "Take the project from your charter and write a short scope statement:",
+            ("point", "Three deliverables", "Name each one so that anyone could check whether it exists."),
+            ("point", "One acceptance test for each", "How would someone else confirm it is done?"),
+            ("point", "Three assumptions", "What are you taking for granted about people, data and tools?"),
+            "Then look at the last request someone made about your project. Is it inside the scope you just "
+            "wrote? If not, put it on a list and let your sponsor decide.",
+            ("cta", "Read: Project Management Series, Part 3", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Project Management Series, Part 2", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Your Data at the Treasury Counter", "/blog/your-data-at-the-treasury-counter/"),
+            ("ask", "What was the last “small extra” that ended up costing your project more than expected?"),
+        ],
+    },
+    {
         "date": "November 23, 2026",
         "title": "Project Management Series, Part 3: Mapping Who Holds the Power",
         "slug": "project-management-part-3-stakeholder-mapping",
