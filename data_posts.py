@@ -12,6 +12,139 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "December 17, 2026",
+        "title": "Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth",
+        "slug": "data-analytics-part-8-metrics-and-kpis",
+        "category": "data",
+        "summary": "Two offices can both report 90% collection efficiency and mean completely different things. "
+                   "This part explains the difference between a metric and a KPI, shows how one definition "
+                   "can flatter or expose performance, and gives a template for measures that tell the truth.",
+        "publish_on": "2026-12-17 21:00",
+        "body": [
+            "At a provincial meeting, two treasurers compare notes. Both report a real property tax "
+            "collection efficiency of 90%. One is quietly proud. The other is worried. They are both right, "
+            "because they are not measuring the same thing.",
+            "The first divided this year’s collections by this year’s collection target. The second divided "
+            "this year’s collections by everything that was actually due, including unpaid taxes from past "
+            "years. Same name, same percentage, very different stories about how each office is doing.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 7 showed how to name the type of problem behind a request. This part is about the numbers "
+            "that answer it. By the end of this post you will know the difference between a metric and a "
+            "KPI, the questions that expose a misleading measure, and a template for writing measures that "
+            "tell the same truth to everyone who reads them.",
+            ("photo", "blog/data-kpi-parts.jpg", "A measure that tells the truth has five parts written down: "
+             "its name, numerator, denominator, period and source. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Metric or KPI?"),
+            ("point", "Metric", "Any number that measures something: collections today, receipts issued, "
+             "taxpayers served, average waiting time. An office can track as many as it finds useful."),
+            ("point", "KPI", "A key performance indicator is a metric chosen because it shows progress toward "
+             "a goal that matters. Keep the list short, and tie each one to an objective, like the "
+             "objectives from the Project Management series."),
+            "Every KPI is a metric, but not every metric is a KPI. The test is simple: if this number moved, "
+            "would someone change what they do? If not, it is a metric worth keeping, but not a key one.",
+            ("h", "One Name, Two Definitions"),
+            "Here are the two treasurers’ numbers, worked out.",
+            ("point", "Office A: collections against target", "Target for current-year real property tax: "
+             "₱10,000,000. Collected: ₱9,000,000. Efficiency: 9,000,000 ÷ 10,000,000 = 90%."),
+            ("point", "Office B: collections against amount due", "Current-year tax due: ₱8,000,000. Unpaid "
+             "taxes from past years still due: ₱2,000,000. Total due: ₱10,000,000. Collected against all of "
+             "it: ₱9,000,000. Efficiency: 90%."),
+            "Now look underneath. If Office A’s target was set low, its 90% may hide a large unpaid balance. "
+            "Office B’s 90% already counts the old debts, so it says more about how much of what taxpayers "
+            "owe is actually coming in.",
+            "Neither definition is wrong. Each answers a different question. The danger is reporting either "
+            "one under the same name without saying which it is.",
+            ("quote", "A percentage without its definition is not a fact. It is half of one."),
+            ("h", "Five Parts Every Measure Needs"),
+            "Write each KPI down with these five parts, and put the same text wherever the number appears.",
+            ("point", "1. Name", "A plain name that says what it is, such as “Current-year RPT collected "
+             "against amount due.”"),
+            ("point", "2. Numerator", "What is counted on top. For example: current-year real property tax "
+             "collected, by official receipt date, excluding cancelled receipts."),
+            ("point", "3. Denominator", "What it is divided by. For example: current-year real property tax "
+             "due, from the assessment roll as of January 1."),
+            ("point", "4. Period", "The time it covers: January to the end of the reporting month."),
+            ("point", "5. Source", "Where each part comes from: the collection system for the numerator, the "
+             "assessment roll for the denominator."),
+            "With these five parts written, two offices, or two people in the same office, can compare their "
+            "numbers honestly.",
+            ("h", "The Two Treasurers, Rewritten"),
+            "Apply the five parts to the opening example, and the confusion disappears before anyone "
+            "compares a single percentage.",
+            ("point", "Office A", "Name: current-year RPT collected against collection target. Numerator: "
+             "current-year tax collected, January to November. Denominator: the target set at the start of the "
+             "year. Source: the collection system and the approved target."),
+            ("point", "Office B", "Name: RPT collected against total amount due. Numerator: current-year and "
+             "past-year tax collected, January to November. Denominator: current-year tax due plus unpaid taxes "
+             "from past years. Source: the collection system and the assessment roll."),
+            "Side by side, the two names already say that the measures cannot be compared directly. The "
+            "provincial meeting could still discuss both, but no one would mistake one office’s 90% for the "
+            "other’s.",
+            ("h", "Questions That Expose a Misleading Measure"),
+            ("point", "Who set the denominator?", "A target is a choice. An amount due is a record. Measures "
+             "built on targets can look better simply because the target was modest."),
+            ("point", "What is left out?", "Excluding past-year balances, or certain accounts, changes the "
+             "story. Say what is excluded."),
+            ("point", "Can it improve without real improvement?", "If a number can rise because records "
+             "changed rather than because work improved, pair it with a second measure that would catch "
+             "that."),
+            ("point", "Is the period fair?", "Comparing January to March with a full year, or a month with a "
+             "holiday break with one without, can mislead."),
+            ("h", "Pairing Measures"),
+            "A single number can rise for the wrong reasons. Two measures that pull in different directions "
+            "check each other, so a gain in one that hides a loss in the other is easier to spot.",
+            ("point", "Collections with arrears", "Collections against amount due, paired with the total of "
+             "unpaid balances older than one year. One rises when work improves; the other should fall."),
+            ("point", "Speed with accuracy", "Average waiting time at the window, paired with the number of "
+             "receipts cancelled for errors. Faster service should not mean more mistakes."),
+            "Part 3 of the Business Intelligence series made the same point for dashboards: watch amounts "
+            "with arrears, and speed with shortages.",
+            ("h", "Leading and Lagging KPIs"),
+            "A lagging KPI reports a result after it has happened, such as collection efficiency for the year. "
+            "A leading KPI moves earlier and gives time to act, such as the number of large accounts not yet "
+            "reminded by the end of the first quarter.",
+            "Keep at least one leading measure beside each lagging one. The lagging number tells you how you "
+            "did. The leading one tells you whether you can still change it.",
+            ("h", "Showing a KPI on a Report"),
+            "A KPI on a page needs more than its value. Show four things together, so the reader does not "
+            "have to guess.",
+            ("point", "The full name", "Use the written name, not a short label like “efficiency.”"),
+            ("point", "The period", "For example: January to November 2026."),
+            ("point", "A comparison", "The same measure for the same period last year, computed with the same "
+             "definition."),
+            ("point", "The definition", "A one-line note under the number, or a link to the written five "
+             "parts."),
+            "A line such as “Current-year RPT collected against amount due, January to November 2026: 82% "
+            "(same period in 2025: 78%)” can be read correctly by someone who was not in the room when the "
+            "measure was designed.",
+            ("h", "When a Definition Changes"),
+            "Sometimes an office decides to change a measure, such as switching from a target to the amount "
+            "due. The change may be right, but it breaks the comparison with past reports.",
+            "When that happens, recompute the past periods with the new definition if the records allow it. "
+            "If they do not, mark the break clearly on every report, with the date the new definition began, "
+            "so no one reads a jump in the number as a jump in performance.",
+            ("h", "Key Takeaways"),
+            ("point", "Keep KPIs few", "A KPI is a metric tied to a goal that someone will act on."),
+            ("point", "Write the definition", "Name, numerator, denominator, period and source, every time."),
+            ("point", "Same name is not same measure", "Always say what a percentage is divided by."),
+            ("point", "Pair and lead", "Pair measures that check each other, and keep a leading measure "
+             "beside each lagging one."),
+            ("h", "Your Part 8 Exercise"),
+            "Pick one percentage your office reports regularly. Write its five parts: name, numerator, "
+            "denominator, period and source.",
+            "Then ask a colleague to compute it from the same records, using only what you wrote. If their "
+            "answer differs from yours, the definition still has a gap. Fix the wording until two people "
+            "get the same number.",
+            ("cta", "Read: Data Analytics Series, Part 7", "/blog/data-analytics-part-7-six-problem-types/"),
+            ("cta", "Read: Data Analytics Series, Part 4", "/blog/data-analytics-part-4-four-questions-worked/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Project Management Series, Part 6", "/blog/project-management-part-6-writing-objectives/"),
+            ("ask", "What does your office divide by when it reports collection efficiency?"),
+        ],
+    },
+    {
         "date": "December 12, 2026",
         "title": "Data Analytics Series, Part 7: Six Kinds of Problems Data Can Solve",
         "slug": "data-analytics-part-7-six-problem-types",

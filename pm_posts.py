@@ -14,6 +14,137 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "December 18, 2026",
+        "title": "Project Management Series, Part 8: Who Does What? Building a RACI Matrix",
+        "slug": "project-management-part-8-raci-matrix",
+        "category": "pm",
+        "summary": "When everyone thinks someone else is handling a task, it can go undone. This part explains "
+                   "the four RACI roles, walks through a RACI matrix for the treasury encoding project, and "
+                   "gives four checks that help catch gaps early.",
+        "publish_on": "2026-12-18 21:00",
+        "body": [
+            "Two weeks into the encoding project, the revenue clerk asks for the list of records that did not "
+            "match the assessor’s tax declarations. One collector thought the assessor’s staff member was "
+            "keeping it. The assessor’s staff member thought the collectors were writing it down as they "
+            "encoded. Each had done careful work on their own part. Nobody had kept the list.",
+            "The kickoff had named who works on which afternoons. What it had not settled was who owns each "
+            "task: who does it, who answers for it, who must be asked first and who only needs to be told. "
+            "A simple grid called a RACI matrix settles exactly that.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "Part 7 ran the kickoff. This part turns its decisions into a written map of roles. By the end of "
+            "this post you will know the four RACI roles, how to build a matrix for a small office project, "
+            "four checks that expose gaps and overlaps, and how to keep the matrix useful after the first "
+            "week.",
+            ("photo", "blog/pm-raci-roles.jpg", "The four RACI roles: Responsible does the work, Accountable "
+             "owns the result, Consulted gives input before, and Informed is told after. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Four Roles"),
+            "RACI is named after the four roles a person can have on a task. The descriptions below follow the Project Management Institute’s definitions, with the encoding project as the example.",
+            ("point", "R: Responsible", "The person who does the work. A task can have more than one, such as "
+             "the two collectors who share the encoding."),
+            ("point", "A: Accountable", "The one person who owns the result and answers for it. Each task has "
+             "exactly one, even when several people share the work."),
+            ("point", "C: Consulted", "People whose input is needed before the work is finished. They are "
+             "asked first, while their answer can still change the work."),
+            ("point", "I: Informed", "People who are kept up to date after decisions are made or "
+             "progress happens. The work does not wait for them."),
+            "The difference between C and I is the difference between “ask before” and “tell after.” Getting it wrong can cost time in both directions. Too many Cs can make every step wait for someone’s "
+            "opinion. Too few can mean someone with needed knowledge finds out when it is too late to help.",
+            ("quote", "Many hands can share the work. Only one person can own the result."),
+            ("h", "Why Only One A?"),
+            "When no one, or more than one person, is named as accountable for a task, each person can reasonably "
+            "assume someone else is watching it. That is how the mismatch list went missing. Naming one person does not mean that "
+            "person does the work alone. It means there is always one name to ask, “Is this done, and is it "
+            "right?”",
+            "The accountable person and the responsible person can be the same, especially on a small team. "
+            "The revenue clerk may both run the training session for the counter staff and answer for it. "
+            "What matters is that every task has an A, and only one.",
+            ("h", "Building the Matrix in Five Steps"),
+            ("point", "1. List the tasks", "Use the deliverables from the scope statement and the milestones "
+             "under the objective. Write each task as a verb and a thing: “encode the records,” not "
+             "“encoding.”"),
+            ("point", "2. List the people", "Put each person or role across the top. Use the stakeholder map "
+             "from Part 3 so nobody who matters is left off."),
+            ("point", "3. Fill in A first", "For each task, decide the single person who answers for it. If the "
+             "team cannot agree, the sponsor decides."),
+            ("point", "4. Fill in R, then C and I", "Name who does the work, who must be asked first and who "
+             "only needs to be told."),
+            ("point", "5. Review it with the team", "Walk through the grid row by row, the way the kickoff "
+             "walked through the schedule. Each person confirms their letters, or says plainly that they "
+             "cannot do what is written."),
+            ("h", "The Encoding Project’s RACI Matrix"),
+            "Here is the matrix for the encoding project, written one task at a time. The people are the "
+            "head of office (the sponsor), the revenue clerk (the project manager), the two collectors, the "
+            "cashier and the assessor’s staff member.",
+            ("point", "Encode the property records", "R: the two collectors. A: the revenue clerk. C: the "
+             "assessor’s staff member, when a record is unclear. I: the head of office, through the weekly "
+             "check-in."),
+            ("point", "Check records against tax declarations", "R: the assessor’s staff member. A: the revenue "
+             "clerk. C: the collectors who encoded the record. I: the head of office."),
+            ("point", "Keep the mismatch list", "R: the assessor’s staff member, who writes each mismatch and "
+             "its reason on the same afternoon it is found. A: the revenue clerk. I: the collectors."),
+            ("point", "Approve the sample bills", "R: the revenue clerk, who prints them. A: the head of "
+             "office, who checks twenty against the ledger cards. C: the cashier. I: the collectors."),
+            ("point", "Train the counter staff", "R and A: the revenue clerk. C: the cashier, on how the "
+             "counter runs today. I: the head of office."),
+            ("point", "Start using the system at the counter", "R: the revenue clerk and the cashier. A: the "
+             "head of office. C: the collectors. I: the assessor’s staff member."),
+            "The missing list from the opening now has an owner on paper: one person writes it, one person "
+            "answers for it, and the people who need it know where it lives.",
+            ("h", "Four Checks Before You Share It"),
+            "Read the finished grid down each column and across each row, and run these four checks.",
+            ("point", "Every row has exactly one A", "No A means nobody owns the result. Two As means each one "
+             "may wait for the other."),
+            ("point", "Every row has at least one R", "A task with an owner but no doer can sit still until the owner notices."),
+            ("point", "No column is full of Rs and As", "If one person carries most of the work and most of "
+             "the accountability, the project depends on that person never being absent. Look for a task "
+             "that someone else could take."),
+            ("point", "Cs are few and real", "For each C, ask what decision their input changes. If the answer "
+             "is none, make them an I and save everyone a wait."),
+            ("h", "Keeping the Matrix Alive"),
+            "A matrix written at the start and never opened again can drift away from the project as tasks "
+            "and people change. Three habits keep it current.",
+            ("point", "Bring it to the weekly check-in", "When a new task appears, add a row and fill in its "
+             "letters before anyone starts on it."),
+            ("point", "Change it when people change", "If a collector is moved to another assignment, every R "
+             "in their column needs a new name that same week."),
+            ("point", "Use it to settle confusion", "When two people disagree about who should do something, "
+             "open the matrix instead of arguing from memory. If the matrix does not answer it, the row needs "
+             "to be clearer."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Giving the A to a group", "“The treasury” or “the team” cannot answer for a task. Write a "
+             "person’s role."),
+            ("point", "Making the sponsor the A for everything", "Keep the sponsor’s A for the decisions only the sponsor "
+             "can make, such as approving the sample bills. Give the other tasks to the person closest to the work."),
+            ("point", "Rows that are too large", "“Do the project” is not a task. If a row needs more than one "
+             "A, split it into smaller tasks."),
+            ("point", "Writing it without the team", "A matrix filled in alone is a guess about other people’s "
+             "time. Agreement in the room helps the letters stick."),
+            ("h", "Key Takeaways"),
+            ("point", "Four roles", "Responsible does, Accountable owns, Consulted is asked before, and "
+             "Informed is told after."),
+            ("point", "One A per task", "Many people can share the work, but exactly one person answers for "
+             "each result."),
+            ("point", "Check the grid", "Look for rows with no A or no R, overloaded columns and Cs that change "
+             "nothing."),
+            ("point", "Keep it current", "Review the matrix at each check-in and update it when tasks or "
+             "people change."),
+            ("h", "Your Part 8 Exercise"),
+            "Build a RACI matrix for your own project on one page:",
+            ("point", "Rows", "List six to ten tasks, each written as a verb and a thing."),
+            ("point", "Columns", "List every person or role who touches those tasks."),
+            ("point", "Letters", "Fill in one A per row first, then the Rs, Cs and Is."),
+            "Then run the four checks. If any row fails, fix it before you show the matrix to the team, and "
+            "ask each person to confirm their column.",
+            ("cta", "Read: Project Management Series, Part 7", "/blog/project-management-part-7-kickoff-meeting/"),
+            ("cta", "Read: Project Management Series, Part 3", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Project Management Series, Part 4", "/blog/project-management-part-4-defining-scope/"),
+            ("cta", "Read: Business Intelligence Series, Part 2", "/blog/business-intelligence-part-2-the-bi-team/"),
+            ("ask", "Which task in your office has two people who each think the other one owns it?"),
+        ],
+    },
+    {
         "date": "December 13, 2026",
         "title": "Project Management Series, Part 7: The Kickoff Meeting Blueprint",
         "slug": "project-management-part-7-kickoff-meeting",
