@@ -95,7 +95,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
-MENU = NAV[:4] + [(RPT_URL, "RPT Calculator")] + NAV[4:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
+MENU = NAV[:3] + [(RPT_URL, "RPT Calculator")] + NAV[3:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
 
 
 def menu_items():
@@ -105,12 +105,7 @@ def menu_items():
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
 
 
-def _bar_title(active):
-    """HOME in bold beside the three bars, on the Home page only, so it is clear you are home (Butch 2026-11-10)."""
-    return t.a("HOME", href="/", class_="bar-title") if active == "/" else None
-
-
-MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>')
+MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg>')  # bars long, medium, short, left-aligned (Butch 2026-11-14)
 MENU_SCRIPT = """
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
@@ -267,8 +262,6 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                 t.div(
                     t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
                              aria_controls="site-menu", aria_expanded="false"),
-                    # the page's section name in bold beside the three bars, e.g. HOME (Butch 2026-11-10)
-                    _bar_title(active),
                     t.nav(
                         [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
                          for href, label in menu_items()],
@@ -418,15 +411,21 @@ def home():
         "finance": "Local treasury work, collections, disbursements and the rules behind them.",
         "personal": "The farm, the province, and life beyond the office.",
         "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
+        "data": "A series on data analytics, from asking the right question to acting on the answer.",
+        "bi": "A series on business intelligence: data models, pipelines and dashboards that keep answers coming.",
+        "pm": "A series on running projects in a local treasury, from the first assignment to the handover.",
     }
     return part(
         "Home", "/",
         t.div(
             t.div(
-                t.div(t.h1("Where public finance meets Python"), class_="hero-name"),
+                t.div(t.h1(t.span("Where ", t.span("public finance", class_="k1"), " meets", class_="l1"), " ", t.span("Python", class_="l2")), class_="hero-name"),
+                t.img(src=asset_url("home-banner.svg"), alt="Coins, a rising bar chart and a receipt flowing into "
+                      "a short Python program that adds up the fees", width="1200", height="470", class_="hero-art"),
                 t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
                     "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
-                    "and notes from building ALTOS, by a treasury worker who builds software.",
+                    "and notes from building ALTOS. Everything here, this website included, is the work of a "
+                    "treasury worker who builds software and websites.",
                     class_="lead"),
                 t.div(
                     t.a("RPT Calculator", href=RPT_URL, class_="btn ghost"),
@@ -449,12 +448,16 @@ def home():
                     ("Tutorials",
                      "Free, beginner-friendly lessons: Python for treasury work and Civil Service exam "
                      "vocabulary with practice questions.", "Start learning →", "/tutorials/"),
+                    *([("Treasury Study Notes",
+                        "Local treasury work in plain words: revenue, taxes, collections and payments, "
+                        "each note with a short quiz.",
+                        "Read the notes →", NOTES_INFO["url"])] if live_notes() else []),  # Butch 2026-11-14: right after Tutorials
                     ("ALTOS",
                      "The Automated Local Treasury Operations System, a working treasury system for "
                      "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
                 )
             ],
-            class_="grid three",
+            class_="grid three find",
         ),
         t.h2("Free tool"),
         t.div(
@@ -498,7 +501,7 @@ def author_card():
         ),
         t.p("He is a public administration practitioner, author, and self-taught software developer in Quezon "
             "Province, Philippines, with over 15 years in government service, more than 13 of them in local treasury "
-            "work since April 2013. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
+            "work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
             "He writes, teaches and builds software in his personal capacity, outside official working hours.",
             class_="author-bio"),
         t.p(t.a("Full profile", href="/about/"), t.a("Contact", href="/contact/"),
@@ -683,7 +686,7 @@ def book_reader():
         ),
         t.div(
             t.h2("Want to read the whole book?"),
-            t.p(f"This is a preview of the draft edition. The full book has {book['pages']} pages. To read all of it, send a request. Once I approve it, "
+            t.p(f"This is a preview of the 1st Edition. The full book has {book['pages']} pages. To read all of it, send a request. Once I approve it, "
                 "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
             t.p(f"Reading time: once your request is approved, you can read the whole book for {BOOK_FIRST_DAYS} days. "
                 f"Need more time? Send another request; each one after that gives you {BOOK_MORE_DAYS} more days. "
@@ -1602,12 +1605,12 @@ def series_steps(b):
         inner = [t.span(f"{word} · {label}", class_="muted"), t.b(short)]
         if live:
             return t.a(inner, href=post_url(p), class_=word.lower())
-        return t.span(inner, t.span(f"Coming {p['date']}", class_="badge soon"), class_=f"{word.lower()} later")
+        return t.span()  # a part not out yet stays hidden until its day (no "Coming" dates, for AdSense; Butch 2026-11-14)
 
     done, total = series_count()
     return t.section(
         t.div(t.p("Series", class_="eyebrow"), t.a(ALTOS_SERIES["title"], href=SERIES_URL, class_="series-name"),
-              t.span(f"{done} of {total} parts out", class_="muted"), class_="series-head"),
+              t.span(f"{done} parts", class_="muted"), class_="series-head"),
         t.div(step(i - 1, "Previous"), step(i + 1, "Next"), class_="series-pn"),
         t.a("See all parts of the series", Raw(" &rarr;"), href=SERIES_URL, class_="more"),
         class_="series-box",
@@ -1622,7 +1625,7 @@ def series_banner():
         t.p("Blog series", class_="eyebrow"),
         t.b(ALTOS_SERIES["title"], class_="series-name"),
         t.span(ALTOS_SERIES["tagline"] + ".", class_="series-tag"),
-        t.span(f"{done} of {total} parts out · read them in order", Raw(" &rarr;"), class_="more"),
+        t.span(f"{done} parts · read them in order", Raw(" &rarr;"), class_="more"),
         href=SERIES_URL,
         class_="series-banner",
     )
@@ -1631,12 +1634,8 @@ def series_banner():
 def series_page():
     parts = series_posts()
     done, total = series_count()
-    coming = next((p for p in parts if not p[3]), None)
-    if coming:
-        status = (f"{done} of {total} parts are out. Next: {coming[0]}, {coming[1]}, on "
-                  f"{datetime.strptime(coming[2]['publish_on'][:10], '%Y-%m-%d'):%A}, {coming[2]['date']}.")
-    else:
-        status = f"All {total} parts are out. Read them in order from the top."
+    # only published parts are listed; each new part appears on its own day (no "Coming" dates, Butch 2026-11-14)
+    status = "Read them in order from the top."
 
     def row(n, label, short, p, live):
         inner = [
@@ -1664,7 +1663,7 @@ def series_page():
             t.p(ALTOS_SERIES["tagline"] + ".", class_="lead"),
             [t.p(x) for x in ALTOS_SERIES["intro"]],
             t.p(status, class_="series-status"),
-            t.ol([row(n, *p) for n, p in enumerate(parts)], class_="series-list"),
+            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="series-list"),
             t.div(
                 t.h2("Want to go deeper?"),
                 t.p("The ten principles also form the closing part of my book, ",

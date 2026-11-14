@@ -1,0 +1,6 @@
+Sheets: ['Collections', 'By fund']
+('Fund', 'Amount')
+('General Fund', '=SUMIF(Collections!D2:D11,A2,Collections!E2:E11)')
+('Special Education Fund', '=SUMIF(Collections!D2:D11,A3,Collections!E2:E11)')
+('Trust Fund', '=SUMIF(Collections!D2:D11,A4,Collections!E2:E11)')
+('TOTAL', '=SUM(B2:B4)')

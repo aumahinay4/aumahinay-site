@@ -24,7 +24,8 @@ Quezon Province, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022
   September 30 for one year in advance; 20% for two or more years in advance; only for properties
   without any delinquency;
 - Sec. 45 sharing 35/40/25 and SEF split equally; Sec. 47 interest 2% a month "on the unpaid amount
-  or a fraction thereof" (a part of a month counts as a month), at most 36 months.
+  or a fraction thereof", at most 36 months. Quezon practice (Butch 2026-11-12): counted BY QUARTER, each quarter
+  or part of a quarter after the due date = 3 months = 6%; e.g. Q3 paid any day Oct 1 - Dec 31 carries 6%.
 """
 
 import json
@@ -67,6 +68,8 @@ RPT_SCRIPT = r"""
   var ph = new Date(Date.now() + 8 * 3600 * 1000);
   var today = ph.toISOString().slice(0, 10);
   if (!$('paydate').value) $('paydate').value = today;
+  $('todaydate').value = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+    'November', 'December'][ph.getUTCMonth()] + ' ' + ph.getUTCDate() + ', ' + ph.getUTCFullYear();
   if (!$('taxyear').value) $('taxyear').value = ph.getUTCFullYear();
 
   function fillClasses() {
@@ -83,7 +86,16 @@ RPT_SCRIPT = r"""
   }
   var lastLgu = null, lastLevelKey = null;
 
+  var rolledNote = '';
   function calc() {
+    // a payment is never ₱0.00 (Butch 2026-11-12): when all four quarters of the tax year are paid, the next payment
+    // is for the following year, so move to it and start its quarters as "Not paid"
+    if ([1, 2, 3, 4].every(function (q) { return $('qs' + q).value === 'paid'; })) {
+      var y0 = Math.floor(num('taxyear')) || ph.getUTCFullYear();
+      $('taxyear').value = y0 + 1;
+      [1, 2, 3, 4].forEach(function (q) { $('qs' + q).value = 'now'; });
+      rolledNote = 'Tax year ' + y0 + ' is fully paid, so this shows the next payment: tax year ' + (y0 + 1) + '.';
+    }
     var lgu = f.lgu.value, city = lgu === 'city', qz = lgu === 'quezon';
     if (lgu !== lastLgu) { $('basic-rate').value = city ? '2' : '1'; lastLgu = lgu; }
     $('brgy-count-row').hidden = !city;
@@ -107,53 +119,81 @@ RPT_SCRIPT = r"""
     var payNum = pd[0] * 10000 + pd[1] * 100 + pd[2];
     // each quarter is one fourth of the year's tax; the last quarter takes any centavo left over
     var qb = r2(basic / 4), qs = r2(sef / 4);
-    var quarters = [], anyLate = false;
+    var priorClear = $('prior-paid').checked;
+    var quarters = [], anyLate = false, unpaidLate = [], lateNow = [], fullYear = true, anyNow = false;
     for (var q = 0; q < 4; q++) {
       var dueNum = year * 10000 + (DUE[q][0] + 1) * 100 + DUE[q][1];
       var b = q < 3 ? qb : r2(basic - 3 * qb), s = q < 3 ? qs : r2(sef - 3 * qs);
-      var months = 0;
-      if (payNum > dueNum) {  // late: every month or part of a month after the due date counts, up to 36
-        months = Math.min(payIdx - (year * 12 + DUE[q][0]), 36);
-        if (months < 1) months = 1;
-        anyLate = true;
+      var st = $('qs' + (q + 1)).value;  // now = paying now, paid = paid already, later = not paying now
+      var past = payNum > dueNum, months = 0;
+      if (st === 'later') fullYear = false;
+      if (st === 'now') anyNow = true;
+      if (st === 'now' && past) {  // late: every month or part of a month after the due date counts, up to 36
+        months = Math.max(payIdx - (year * 12 + DUE[q][0]), 1);
+        if (qz) months = Math.ceil(months / 3) * 3;  // Quezon practice: by quarter, a part of a quarter counts as a whole quarter (6%)
+        months = Math.min(months, 36);
+        anyLate = true; lateNow.push('Q' + (q + 1));
       }
-      quarters.push({ q: q + 1, due: MONTHS[DUE[q][0]] + ' ' + DUE[q][1], b: b, s: s, months: months });
+      if (st === 'later' && past) unpaidLate.push('Q' + (q + 1));
+      quarters.push({ q: q + 1, due: MONTHS[DUE[q][0]] + ' ' + DUE[q][1], b: b, s: s, months: months, st: st, past: past });
     }
-    // discount: only when nothing is late
+    // discount: only for quarters paid now on or before their due date, and only when the property has no
+    // delinquency: no unpaid earlier year and no quarter of this year past due before this payment (Quezon Sec. 44)
+    var delinquent = !priorClear || anyLate || unpaidLate.length > 0;
     var disc = 0, discNote = '';
-    if (!anyLate) {
+    if (!delinquent) {
       if (qz) {
         var advYears = year - pd[0];
         if (advYears >= 2) { disc = 20; discNote = 'paid two or more years in advance'; }
-        else if (advYears === 1 && (pd[1] < 9 || (pd[1] === 9 && pd[2] <= 30))) { disc = 15; discNote = 'paid on or before September 30, one year in advance'; }
+        else if (advYears === 1 && fullYear && (pd[1] < 9 || (pd[1] === 9 && pd[2] <= 30))) { disc = 15; discNote = 'whole year paid on or before September 30, one year in advance'; }
         else { disc = 10; discNote = 'paid on or before the Sec. 43 deadlines'; }
       } else { disc = Math.min(num('disc'), 20); discNote = 'paid on time'; }
     }
     var tb = 0, ts = 0, tbAdj = 0, tsAdj = 0;
     var qbody = $('q-body'); qbody.innerHTML = '';
     quarters.forEach(function (x) {
-      var bAdj, sAdj, label;
-      // keep centavos unrounded until the totals, so 15% of ₱500 is exactly ₱75 (not ₱75.04 from rounding each part)
-      if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = x.months + ' mo late +' + (x.months * 2) + '%'; }
-      else { bAdj = -x.b * disc / 100; sAdj = -x.s * disc / 100; label = disc ? 'on time −' + disc + '%' : 'on time'; }
-      tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj += bAdj; tsAdj += sAdj;
+      var cells;
+      if (x.st !== 'now') {
+        var lbl = x.st === 'paid' ? 'paid' : x.past ? 'unpaid, late' : 'not now';
+        cells = ['Q' + x.q + ', due ' + x.due, lbl, peso(r2(x.b + x.s)), '—', '—'];
+      } else {
+        var bAdj, sAdj, label;
+        // keep centavos unrounded until the totals, so 15% of ₱500 is exactly ₱75 (not ₱75.04 from rounding each part)
+        if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = (qz ? (x.months / 3) + ' qtr late +' : x.months + ' mo late +') + (x.months * 2) + '%'; }
+        else { bAdj = -x.b * disc / 100; sAdj = -x.s * disc / 100; label = disc ? 'on time −' + disc + '%' : 'on time, no discount'; }
+        tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj += bAdj; tsAdj += sAdj;
+        cells = ['Q' + x.q + ', due ' + x.due, label, peso(r2(x.b + x.s)), peso(r2(bAdj + sAdj)), peso(r2(x.b + x.s + bAdj + sAdj))];
+      }
       var tr = document.createElement('tr');
-      ['Q' + x.q + ', due ' + x.due, label, peso(r2(x.b + x.s)), peso(r2(bAdj + sAdj)), peso(r2(x.b + x.s + bAdj + sAdj))].forEach(function (c, i) {
+      if (x.st !== 'now') tr.className = 'not-now';
+      cells.forEach(function (c, i) {
         var td = document.createElement(i === 0 ? 'th' : 'td'); td.textContent = c; if (i === 0) td.scope = 'row'; tr.appendChild(td); });
       qbody.appendChild(tr);
     });
-    tbAdj = r2(tbAdj); tsAdj = r2(tsAdj);
+    // round the whole discount or interest once, then give the SEF what is left, so 15% of ₱375 is ₱56.25
+    // exactly and the amount to pay is ₱318.75 (Butch 2026-11-12), not ₱318.76 from rounding basic and SEF apart
+    var tAdj = r2(tbAdj + tsAdj); tbAdj = r2(tbAdj); tsAdj = r2(tAdj - tbAdj);
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
     var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
-    $('out-note').textContent = anyLate && quarters.some(function (x) { return !x.months; }) ? 'No discount while any quarter is late.' : '';
+    var notes = [];
+    if (rolledNote) notes.push(rolledNote);
+    if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
+    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Not paid" and past the due date. If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
+    var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.months; });
+    if (onTimeNow && delinquent) {
+      var isAre = function (l) { return l.join(', ') + (l.length > 1 ? ' are' : ' is'); };
+      var why = !priorClear ? 'an earlier year is unpaid' : anyLate ? isAre(lateNow) + ' paid late' : isAre(unpaidLate) + ' unpaid';
+      notes.push('No discount, because ' + why + '. The discount is only for properties without any delinquency.');
+    }
+    $('out-note').textContent = notes.join(' ');
 
     $('out-av').textContent = peso(av);
-    $('t-basic').textContent = peso(basic); $('t-sef').textContent = peso(sef); $('t-tax').textContent = peso(r2(basic + sef));
+    $('t-basic').textContent = peso(tb); $('t-sef').textContent = peso(ts); $('t-tax').textContent = peso(r2(tb + ts));
     $('t-adj-label').textContent = adjLabel;
     $('t-badj').textContent = peso(tbAdj); $('t-sadj').textContent = peso(tsAdj); $('t-adj').textContent = peso(r2(tbAdj + tsAdj));
     $('t-bdue').textContent = peso(bDue); $('t-sdue').textContent = peso(sDue); $('t-due').textContent = peso(r2(bDue + sDue));
     $('out-due').textContent = peso(r2(bDue + sDue));
-    $('out-when').textContent = 'Tax year ' + year + ', paid on ' + MONTHS[pd[1] - 1] + ' ' + pd[2] + ', ' + pd[0];
+    $('out-when').textContent = 'Tax year ' + year + ' (whole year ' + peso(r2(basic + sef)) + '), target date of payment ' + MONTHS[pd[1] - 1] + ' ' + pd[2] + ', ' + pd[0];
 
     var rows = [], sum = 0;
     function add(who, base, pct, note) { var a = r2(base * pct / 100); sum = r2(sum + a); rows.push([who, pct + '%', a, note || '']); }
@@ -185,8 +225,13 @@ RPT_SCRIPT = r"""
   }
   $('kind').addEventListener('change', function () { fillClasses(); lastLevelKey = null; });
   $('klass').addEventListener('change', function () { lastLevelKey = null; });
-  f.addEventListener('input', calc);
-  f.addEventListener('change', calc);
+  function onEdit(e) {  // the "fully paid, next year" note stays until the year or a quarter is changed again
+    var t = e.target;
+    if (t.id === 'taxyear' || (/^qs/.test(t.id) && t.value === 'paid')) rolledNote = '';
+    calc();
+  }
+  f.addEventListener('input', onEdit);
+  f.addEventListener('change', onEdit);
   f.addEventListener('submit', function (e) { e.preventDefault(); calc(); });
   fillClasses();
   calc();
@@ -206,6 +251,10 @@ def _num(id_, value="", step="any", minimum="0", maximum=None, placeholder=None)
 
 def _radio(name, value, label, checked=False):
     return t.label(t.input(type="radio", name=name, value=value, checked=checked), " ", label, class_="choice")
+
+
+def _quarter_select(q):
+    return t.select(t.option("Not paid", value="now"), t.option("Paid", value="paid"), id="qs%d" % q, name="qs%d" % q)
 
 
 def _guide_link():
@@ -278,19 +327,31 @@ def rpt_page():
                 t.fieldset(
                     t.legend("4. When is it paid?"),
                     t.div(
+                        _field("Today's date", t.input(type="text", id="todaydate", readonly=True, tabindex="-1"),
+                               "Fixed: today in the Philippines."),
                         _field("Tax year", _num("taxyear", step="1", minimum="1992", maximum="2100")),
-                        _field("Date of payment", t.input(type="date", id="paydate", name="paydate")),
                         class_="field-pair",
                     ),
+                    _field("Target date of payment", t.input(type="date", id="paydate", name="paydate"),
+                           "Starts as today. Change it to see what you would pay on another day."),
+                    t.p("Which quarters of this tax year are already paid?", class_="field-title"),
+                    t.div(*[_field("Q%d, due %s" % (i + 1, d), _quarter_select(i + 1))
+                            for i, d in enumerate(["Mar 31", "Jun 30", "Sep 30", "Dec 31"])],
+                          class_="quarter-grid"),
+                    t.label(t.input(type="checkbox", id="prior-paid", name="prior-paid", checked=True), " ",
+                            "Taxes of earlier years are fully paid", class_="choice prior-paid"),
                     _field("Discount for paying on time (%)", _num("disc", "10", maximum="20"),
                            "Set by your local ordinance, up to 20%.", row_id="disc-row", hidden=True),
                     t.p("Quezon Province discount (Sec. 44), worked out from the date: 10% if paid on or before the "
                         "installment deadlines of Sec. 43, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
-                        "if paid two or more years in advance. No discount while any quarter is late.",
+                        "if paid two or more years in advance. The discount is only for quarters paid now on or before their due "
+                        "date, and only when the property has no delinquency: no unpaid earlier year and no quarter "
+                        "of this year past due and unpaid.",
                         id="qz-disc", class_="hint block-hint"),
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
                         "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
-                        "a month, up to 36 months.", class_="hint block-hint"),
+                        "a month, up to 36 months; in Quezon Province it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters already paid as \"Paid\"; every quarter "
+                        "marked \"Not paid\" is added to the amount to pay: 10% off if paid on time, 6% more for each quarter late.", class_="hint block-hint"),
                 ),
                 id="rpt", class_="card rpt-form", novalidate=True,
             ),
@@ -304,7 +365,7 @@ def rpt_page():
                     t.table(
                         t.thead(t.tr(t.th(""), t.th("Basic RPT"), t.th("SEF"), t.th("Total"))),
                         t.tbody(
-                            t.tr(t.th("Tax for the year", scope="row"), t.td(id="t-basic"), t.td(id="t-sef"), t.td(id="t-tax")),
+                            t.tr(t.th("Tax for the unpaid quarters", scope="row"), t.td(id="t-basic"), t.td(id="t-sef"), t.td(id="t-tax")),
                             t.tr(t.th("Discount or interest", scope="row", id="t-adj-label"), t.td(id="t-badj"), t.td(id="t-sadj"), t.td(id="t-adj")),
                             t.tr(t.th("To pay", scope="row"), t.td(id="t-bdue"), t.td(id="t-sdue"), t.td(id="t-due"), class_="total"),
                         ),
@@ -349,9 +410,11 @@ def rpt_page():
                 t.li(t.b("Installments. "), "The tax may be paid in four equal quarterly installments, due on or before "
                      "March 31, June 30, September 30 and December 31 (Sec. 250)."),
                 t.li(t.b("Discount. "), "A province or city may give a discount of up to 20% for paying in advance "
-                     "or on time; the rates are in the local ordinance (Sec. 251)."),
+                     "or on time; the rates are in the local ordinance (Sec. 251). Each quarter paid on or before its due date "
+                     "earns the discount, so a taxpayer who pays quarter by quarter on time gets it on every quarter."),
                 t.li(t.b("Interest. "), "Unpaid tax earns interest of 2% a month, up to 36 months, until it is paid in full "
-                     "(Sec. 255). In Quezon Province, a part of a month counts as a full month."),
+                     "(Sec. 255). In Quezon Province, interest is counted by quarter: each quarter or part of a quarter after "
+                     "the due date counts as three months, or 6%."),
                 t.li(t.b("Older unpaid taxes first. "), "Payments are applied first to unpaid taxes, interest and penalties of "
                      "earlier years, and only then to the current year (Sec. 250). This calculator works out one tax year at a time."),
                 t.li(t.b("Not included. "), "The idle land tax (3% in Quezon Province), special levies, and the lower SEF rate for "

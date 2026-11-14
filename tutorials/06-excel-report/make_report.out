@@ -1,0 +1,7 @@
+Saved daily_report.xlsx: 12 rows, 5 columns
+('OR number', 'Payor', 'Nature of collection', 'Fund', 'Amount')
+(7650101, 'Santos Bakery', 'Business tax', 'General Fund', 4500)
+(7650102, 'Juan Dela Cruz', 'Real property tax (basic)', 'General Fund', 1250.75)
+...
+Last row: (None, None, None, 'TOTAL', '=SUM(E2:E11)')
+Amount format: #,##0.00

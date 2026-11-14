@@ -1,0 +1,14 @@
+GET /  ->  200 OK
+    <tr><td>General Fund</td><td align="right">21,986.15</td></tr>
+    <tr><td>Special Education Fund</td><td align="right">2,231.15</td></tr>
+    <tr><td>Trust Fund</td><td align="right">2,350.50</td></tr>
+    <tr><th>TOTAL</th><th align="right">26,567.80</th></tr>
+    <p>10 official receipts. Open /receipt/7650101 to see one receipt.</p>
+
+GET /receipt/7650106  ->  200 OK
+    <p>2026-11-02 · Ana Lopez · Building permit fee · Trust Fund · 2350.50</p>
+    <p><a href="/">Back to the totals</a></p>
+
+GET /receipt/9999999  ->  404 NOT FOUND
+    <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
