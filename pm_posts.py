@@ -14,6 +14,135 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "December 3, 2026",
+        "title": "Project Management Series, Part 5: Waterfall, Agile or Hybrid? Choosing How to Run the Work",
+        "slug": "project-management-part-5-waterfall-agile-hybrid",
+        "category": "pm",
+        "summary": "Some projects should be planned in full before work begins. Others should be built in short "
+                   "cycles and shown to users early. Some need a little of both. Here is how "
+                   "to tell which is which, with two treasury projects as examples.",
+        "publish_on": "2026-12-03 21:00",
+        "body": [
+            "Two projects land on the revenue clerk’s desk in the same month. The first is the encoding "
+            "project from earlier parts: a fixed deadline of January 4, a signed scope statement, and rules "
+            "for computing the tax that will not change before then. The second is new. The head of office "
+            "wants a simple screen where counter staff can tell a taxpayer, in one glance, whether a "
+            "property has unpaid balances. Nobody is sure yet what that screen should show.",
+            "The clerk plans both the same way, with every task written out in advance. The first project "
+            "runs smoothly. The second produces a carefully built screen that the counter staff find "
+            "confusing on the first morning they use it, and most of the plan has to be redone.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "The problem was not the plan. It was the choice of approach. By the end of this post you will "
+            "know the difference between the predictive, adaptive and hybrid ways of running a project, the "
+            "questions that tell you which one fits, and how to mix them on a real office project.",
+            ("photo", "blog/pm-three-approaches.jpg", "Three ways to run a project: predictive (plan, then "
+             "build), adaptive (build, show, adjust) and hybrid (choose by part). (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Predictive: Plan First, Then Build"),
+            "In a predictive approach, often called waterfall, the work moves through stages in order: "
+            "define what is needed, design it, build it, test it and hand it over. Scope, schedule and cost "
+            "are set early, and changes go through a formal decision, the way Part 4 handled the three extra "
+            "requests.",
+            "The name has a curious history. A 1970 paper by Winston Royce, “Managing the Development of "
+            "Large Software Systems,” is often cited as the origin of the waterfall picture. Royce never used "
+            "the word waterfall in that paper, and he warned about the risks of a strictly one-way sequence. "
+            "The label came later.",
+            ("point", "It fits when", "The requirements are clear and stable, the rules are fixed, the "
+             "deadline cannot move, and the result must work completely on the first day it is used."),
+            ("point", "It struggles when", "Users cannot say what they need until they see something, or "
+             "when the goal is likely to change while the work is under way."),
+            ("h", "Adaptive: Build a Little, Show It, Adjust"),
+            "An adaptive approach, the family that includes agile methods, delivers the work in short "
+            "cycles. Each cycle produces something people can try. Their reaction shapes the next cycle.",
+            "The word agile comes from the Manifesto for Agile Software Development, written in February "
+            "2001 by seventeen software practitioners who met at the Snowbird ski resort in Utah. It states "
+            "four values:",
+            ("point", "Individuals and interactions", "over processes and tools."),
+            ("point", "Working software", "over comprehensive documentation."),
+            ("point", "Customer collaboration", "over contract negotiation."),
+            ("point", "Responding to change", "over following a plan."),
+            "Read the word “over” carefully. The manifesto itself says the items on the right still have "
+            "value; the items on the left are valued more. Agile does not mean no plan and no documents. It "
+            "means the plan is expected to change as people learn.",
+            "Scrum, one widely known agile framework, organizes work into sprints. The Scrum Guide sets the "
+            "longest sprint at one month, and each sprint aims to produce a usable piece of the product that "
+            "can be shown and discussed.",
+            ("point", "It fits when", "Users can try partial results, the best answer is not known at the "
+             "start, and changing direction midway is cheap."),
+            ("point", "It struggles when", "Nothing useful can be delivered in parts, or the people who must "
+             "give feedback cannot spare time for it every few weeks."),
+            ("h", "Hybrid: Choose by Part"),
+            "A project does not have to be purely one or the other. A hybrid approach "
+            "uses a predictive frame for the parts that are fixed and short adaptive cycles for the parts "
+            "that are uncertain.",
+            "Public offices have good reasons to keep a predictive frame. Budgets are approved ahead of time, "
+            "purchases follow procurement rules, and records must be ready for audit. Inside that frame, "
+            "the parts that people will see and use every day can still be built in cycles.",
+            ("quote", "Plan in detail what you already know. Build in short cycles what you can only learn "
+             "by trying."),
+            ("h", "Five Questions That Point the Way"),
+            "Before choosing, answer these five questions about the project, or about each part of it.",
+            ("point", "1. How clear are the requirements?", "Clear and written down points to predictive. "
+             "“We will know it when we see it” points to adaptive."),
+            ("point", "2. Are the rules fixed?", "Work governed by a law, an ordinance or a set formula is "
+             "best planned in full. Its requirements are already written."),
+            ("point", "3. Can people try part of it?", "If a first version can be put in front of users "
+             "within a few weeks, short cycles will show problems early."),
+            ("point", "4. How costly is a late change?", "If a change near the end would mean redoing most "
+             "of the work, invest more in planning up front."),
+            ("point", "5. Who can give feedback, and how often?", "Adaptive work needs users who will look at "
+             "each version. Without them, the cycles have nothing to learn from."),
+            ("h", "The Two Treasury Projects, Revisited"),
+            ("point", "The encoding project: predictive", "The rules for the bill are fixed, the deliverables "
+             "and acceptance tests are written, and the January 4 date cannot move. Planning it in full was "
+             "the right call."),
+            ("point", "The balance screen: adaptive", "Nobody knew what the counter staff needed to see. A "
+             "better plan would have been two-week cycles: a paper sketch first, then a rough screen with "
+             "real records from one barangay, each shown to two counter staff for a morning and adjusted "
+             "before the next cycle."),
+            ("point", "The two together: hybrid", "If the balance screen is treated as part of the larger "
+             "billing program, the program keeps a fixed budget and a fixed go-live date, while the screen "
+             "itself is shaped in short cycles inside that frame."),
+            "Run this way, the counter staff would have seen the confusing screen in week two, on paper, "
+            "instead of on the first busy morning at the counter.",
+            ("h", "Running Your First Short Cycle"),
+            "If you have never worked in cycles, keep the first one small and simple.",
+            ("point", "Pick something you can show", "One screen, one form or one report, not the whole system."),
+            ("point", "Set a fixed end date", "Two weeks is a reasonable length to start with. The Scrum Guide’s "
+             "upper limit for a sprint is one month."),
+            ("point", "Show it to real users", "Sit with two people who will use it and watch them try it. Note "
+             "where they hesitate or ask a question."),
+            ("point", "Decide what changes", "End the cycle with a short list of what to keep, change and drop. "
+             "That list becomes the plan for the next cycle."),
+            ("h", "Common Myths"),
+            ("point", "“Agile means no planning.”", "Agile teams plan constantly, in smaller pieces. The "
+             "manifesto values responding to change more than following a plan, not instead of having one."),
+            ("point", "“Waterfall means no feedback.”", "A predictive project can and should check its work "
+             "at each milestone, as Part 4’s acceptance tests did."),
+            ("point", "“We must pick one for the whole office.”", "The approach is chosen per project, and "
+             "often per part of a project."),
+            ("h", "Key Takeaways"),
+            ("point", "Match the approach to what is known", "Predictive for fixed, clear work; adaptive for "
+             "work that must be discovered."),
+            ("point", "Hybrid is a deliberate choice", "Keep a predictive frame for budget, deadline and "
+             "audit, and build the uncertain parts in short cycles."),
+            ("point", "Agile still plans", "It plans in smaller pieces and expects to adjust."),
+            ("point", "Show early, fix cheaply", "A problem found on paper in week two is cheaper to fix than "
+             "one found at the counter on launch day."),
+            ("h", "Your Part 5 Exercise"),
+            "Take the project from your charter and scope statement and split it into its main parts. For "
+            "each part, answer the five questions above and mark it predictive or adaptive.",
+            "Then pick one adaptive part and plan just its first cycle: what you will show, to whom, and on "
+            "what date. If you can name the date, you have already started working in a hybrid way.",
+            ("cta", "Read: Project Management Series, Part 4", "/blog/project-management-part-4-defining-scope/"),
+            ("cta", "Read: Project Management Series, Part 1", "/blog/project-management-part-1-accidental-project-manager/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
+            ("ask", "Which part of your current project would you rather show on paper first?"),
+        ],
+    },
+    {
         "date": "November 28, 2026",
         "title": "Project Management Series, Part 4: Drawing the Line Before Work Begins",
         "slug": "project-management-part-4-defining-scope",

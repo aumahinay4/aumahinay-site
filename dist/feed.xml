@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Nov 2026 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>The ALTOS Framework, Principle 4: Every Owner Has a Deadline</title>
+      <link>https://aumahinay.dev/blog/altos-framework-every-owner-has-a-deadline/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-every-owner-has-a-deadline/</guid>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0800</pubDate>
+      <description>A deadline is not paperwork. It sets a limit on how long a mistake or a shortage can stay hidden.</description>
+    </item>
     <item>
       <title>Cybersecurity Series, Part 2: Identity Is the New Perimeter</title>
       <link>https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</link>
@@ -40,7 +47,7 @@
       <link>https://aumahinay.dev/blog/project-management-part-1-accidental-project-manager/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/project-management-part-1-accidental-project-manager/</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0800</pubDate>
-      <description>Nobody in a local treasury applies to be a project manager, yet many of us end up as one. Here is how a project differs from daily work, the three limits every project lives with, and four moves to make in your first two weeks.</description>
+      <description>A project can land on your desk without the title. Here is how a project differs from daily work, the three limits every project lives with, and four moves to make in your first two weeks.</description>
     </item>
     <item>
       <title>Lesson 6: Make a formatted Excel report with openpyxl</title>

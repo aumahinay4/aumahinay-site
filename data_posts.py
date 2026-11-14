@@ -12,6 +12,138 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "December 2, 2026",
+        "title": "Data Analytics Series, Part 5: The Analyst’s Toolkit on a Zero Budget",
+        "slug": "data-analytics-part-5-zero-budget-toolkit",
+        "category": "data",
+        "summary": "No software budget is no excuse. This part lays out a complete analytics toolkit that costs "
+                   "nothing to start: spreadsheets, a small database, Python, a free dashboard builder and a "
+                   "plain notes file, with what each is good for and where each stops.",
+        "publish_on": "2026-12-02 21:00",
+        "body": [
+            "The revenue clerk finishes an online course in data analytics and comes back to the office full "
+            "of ideas. Then she checks the budget. There is no line for analytics software, and the next "
+            "chance to add one is a year away. She decides the ideas will have to wait.",
+            "They do not have to wait. Every step of the analysis process in this series can be done with "
+            "tools that cost nothing to start. What they ask for instead is time to learn and care in how "
+            "they are used.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "In Part 4, a whole analysis was done in a spreadsheet. This part widens the view to five kinds "
+            "of free tools, what each one is good for, and where each one stops. By the end of this post you "
+            "will be able to pick the right free tool for a task, know the limits to watch for, and set up a "
+            "starter kit on your own computer this week.",
+            ("photo", "blog/data-zero-budget-toolkit.jpg", "Five kinds of free tools cover the whole analysis: "
+             "spreadsheets, a small database, Python, a dashboard builder and a notes file. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "First, the Question"),
+            "A tool cannot rescue a vague question. Part 2 started every analysis with the Ask step for a "
+            "reason. Before opening any program, write the question in one sentence, name who will use the "
+            "answer, and name the decision it supports. The cheapest tool that answers that question well is "
+            "the right tool.",
+            ("h", "1. Spreadsheets: Where Most Analysis Starts"),
+            "A spreadsheet is a quick way to look at a few thousand rows, add them up and spot "
+            "something odd. Two free options are worth knowing.",
+            ("point", "Google Sheets", "Free with a Google account and runs in a web browser. A single "
+             "spreadsheet can hold up to 10 million cells."),
+            ("point", "LibreOffice Calc", "Part of the free, open-source LibreOffice suite. It runs on the "
+             "computer itself, so it works without an internet connection. Recent versions allow 1,048,576 "
+             "rows in a sheet."),
+            "Both have the tools used in Part 4: SUMIFS for totals with conditions, sorting and filtering, "
+            "and pivot tables for quick summaries.",
+            ("point", "Where it stops", "When the file gets slow, when the same cleaning steps must be "
+             "repeated by hand every month, or when several people edit the same copy and nobody knows which "
+             "version is right."),
+            ("h", "2. A Small Database: SQLite"),
+            "When the records outgrow a spreadsheet, the next step does not need a server. SQLite keeps a "
+            "whole database in one ordinary file. Its authors have dedicated the code to the public domain, "
+            "so anyone may use it for free.",
+            "Python already includes a module for SQLite, so if Python is installed, so is SQLite. For "
+            "people who prefer clicking to typing, DB Browser for SQLite is a free, open-source program that "
+            "lets you open the file, browse the tables and run SQL queries in a window.",
+            "SQL is worth learning for one reason above all: a query is written down. Next month you run the "
+            "same query on new data and get an answer built exactly the same way.",
+            ("point", "Where it stops", "SQLite allows only one writer at a time per database file. That suits "
+             "one analyst well. When many staff must enter records at the same moment all day, a server-based "
+             "database is the better fit."),
+            ("h", "3. Python: For Work You Repeat"),
+            "Python is free to download and use. With the pandas library, which is also free and open source, "
+            "a monthly report that takes an afternoon of copying and pasting can become a script that runs in "
+            "seconds and gives the same result every time.",
+            "The real gain is not speed. It is that every step is recorded. Anyone can read the script and "
+            "see exactly how a number was produced, which makes the work easier to check and easier to hand "
+            "over.",
+            ("point", "Where it stops", "It takes practice before it saves time. Start with one "
+             "report you prepare every month, not with the hardest problem in the office."),
+            ("h", "4. Dashboards: Sharing the View"),
+            "When the same numbers are needed by several people every week, a dashboard saves everyone from "
+            "asking. Two free options are worth knowing.",
+            ("point", "Data Studio", "Google’s web-based report builder, called Looker Studio until April "
+             "2026. It has a no-cost tier, reads directly from Google Sheets, and shares a report through a "
+             "link, the same way a document is shared."),
+            ("point", "Power BI Desktop", "A free download from Microsoft for Windows computers. It is strong "
+             "at linking several tables into one model, the topic of the Business Intelligence series. "
+             "Building is free; sharing reports with others through Microsoft’s online service needs a paid "
+             "license."),
+            ("point", "Where it stops", "A dashboard only repeats what the data says. If the source sheet is "
+             "wrong or late, the dashboard is wrong or late too, just in a nicer layout."),
+            ("h", "5. A Notes File: The Tool Everyone Skips"),
+            "The most useful free tool is a plain text file or a simple document kept beside the data. For "
+            "each analysis, write the question, where the data came from and on what date, every cleaning "
+            "step, and any assumption you made.",
+            "This file is what lets someone else check your work, and it is what lets you repeat the "
+            "analysis next year without starting over. It costs nothing, and it is the first thing to reach "
+            "for when someone questions a number.",
+            ("quote", "Free tools lower the cost of starting. They do not lower the standard of the work."),
+            ("h", "Free Is Not the Same as Safe"),
+            "Free cloud tools keep your files on another company’s computers. Treasury records hold "
+            "taxpayers’ names, addresses and payment details, which are protected under the Data Privacy Act "
+            "of 2012 (Republic Act No. 10173).",
+            "Before you upload anything, check your office’s rules on cloud services and ask your data "
+            "protection officer. A safe habit is to work with totals, or to replace names with codes, before "
+            "the data leaves the office computer. The collection analysis in Part 4, for example, needed only "
+            "the amounts, the dates and the areas, not anyone’s name.",
+            ("h", "What Free Tools Still Cost"),
+            "Free software saves the license fee, not the effort. Three costs remain, and it helps to name them "
+            "before you begin.",
+            ("point", "Learning time", "Set aside a regular hour each week, with your head of office’s approval, "
+             "so learning is part of the job rather than an after-hours hobby."),
+            ("point", "A connection", "Browser-based tools need a working internet connection. Keep an offline "
+             "copy of anything you need at the counter or in a meeting."),
+            ("point", "Continuity", "If only one person knows how a script or a dashboard works, the office "
+             "depends on that person. The notes file and a short handover session protect the work when people "
+             "move to other posts."),
+            ("h", "Which Tool for Which Job"),
+            ("point", "A one-time total or a quick check", "A spreadsheet."),
+            ("point", "Many months of records, asked the same questions again and again", "SQLite with saved "
+             "queries."),
+            ("point", "A monthly report built the same way every time", "A Python script."),
+            ("point", "Numbers several people need to see every week", "A free dashboard builder."),
+            ("point", "Every analysis, without exception", "A notes file."),
+            ("h", "Key Takeaways"),
+            ("point", "Start with the question", "The right tool is the cheapest one that answers it well."),
+            ("point", "Know where each tool stops", "Move to the next tool when the current one gets slow, "
+             "manual or confusing, not before."),
+            ("point", "Write every step down", "A query, a script or a notes file makes your work checkable and "
+             "repeatable."),
+            ("point", "Protect personal data", "Use totals or codes before anything goes to a cloud service."),
+            ("h", "Your Part 5 Exercise"),
+            "Set up a starter kit this week:",
+            ("point", "Install one offline tool", "LibreOffice, or Python if your office allows it."),
+            ("point", "Rebuild one report", "Take a report you already prepare by hand and rebuild it once, "
+             "using totals only, with no names."),
+            ("point", "Start the notes file", "Write the question, the source, the date and each step. Keep it "
+             "next to the data."),
+            "Next month, run the same report again and compare how long it took. That difference is the first "
+            "return on a toolkit that cost nothing.",
+            ("cta", "Read: Data Analytics Series, Part 4", "/blog/data-analytics-part-4-four-questions-worked/"),
+            ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Keep a receipts register in SQLite", "/tutorials/receipts-register-with-sqlite/"),
+            ("ask", "Which report in your office would you rebuild first with free tools?"),
+        ],
+    },
+    {
         "date": "November 27, 2026",
         "title": "Data Analytics Series, Part 4: Four Questions, One Data Set, Worked End to End",
         "slug": "data-analytics-part-4-four-questions-worked",

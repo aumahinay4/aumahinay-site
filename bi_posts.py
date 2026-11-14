@@ -13,6 +13,140 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 1, 2026",
+        "title": "Business Intelligence Series, Part 5: Data Modeling 101, Facts, Dimensions and the Star",
+        "slug": "business-intelligence-part-5-data-modeling",
+        "category": "bi",
+        "summary": "A dashboard can only be as right as the tables behind it. This part explains facts, "
+                   "dimensions, grain and keys in plain words, and shows how one star-shaped model turns a "
+                   "messy collections spreadsheet into numbers everyone can trust.",
+        "publish_on": "2026-12-01 21:00",
+        "body": [
+            "The new dashboard says Barangay 1 collected ₱412,000 last month. The cashier’s report says "
+            "₱356,500. Both people are sure they are right, and the meeting turns into an argument about "
+            "who made a mistake.",
+            "Nobody made a typing mistake. The spreadsheet behind the dashboard listed every official receipt "
+            "with its total, and also listed each revenue line on that receipt with the same total beside it. "
+            "Some receipts were counted twice. The same barangay was also spelled three ways, so part of its "
+            "money landed in rows the chart never picked up. The fix was not a better chart. It was a better "
+            "shape for the data.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "In Part 4, the BI brief defined each measure in plain words. This part is about the tables that "
+            "hold those measures. That design is called the data model, and it decides whether a dashboard "
+            "gives the same answer as the cashier. By the end of this post you will know the four ideas "
+            "behind a sound model, facts, dimensions, grain and keys, and you will be able to sketch one for "
+            "your own office on a single sheet of paper.",
+            ("h", "What a Data Model Is"),
+            "A data model is the set of tables a report reads, the columns in each table, and the links "
+            "between them. You can build one in a spreadsheet with a few tabs, in a small database, or in a "
+            "BI tool. The tool matters less than the design.",
+            "Many offices start with one wide table: every receipt on its own row, with the collector’s name, "
+            "the barangay, the revenue account and the amount typed in full each time. It works for a month. "
+            "Then the problems pile up.",
+            ("point", "Repeated text drifts", "A barangay typed by hand a thousand times will be typed "
+             "differently some of those times, and each spelling becomes its own group in a chart."),
+            ("point", "Totals get mixed with details", "When a receipt total and its line amounts sit in the "
+             "same column, adding the column counts the money twice."),
+            ("point", "Changes are hard", "If a collector’s name or a revenue account title changes, "
+             "every past row has to be edited, and some always get missed."),
+            ("h", "Facts and Dimensions"),
+            "A well-known way to fix this is to split the data into two kinds of tables. Microsoft’s own "
+            "guidance for Power BI is built on this idea, and so are many data warehouses.",
+            ("point", "Fact tables", "Each row records an event or an observation, such as one revenue line "
+             "on an official receipt. A fact table holds numbers to add up, like the amount, plus key columns "
+             "that point to the dimensions. It has many rows and keeps growing every day."),
+            ("point", "Dimension tables", "Each row describes one thing you want to filter or group by: one "
+             "date, one collector, one barangay, one revenue account. A dimension table has a unique key and "
+             "descriptive columns. It has far fewer rows and changes slowly."),
+            "A simple test helps. If you would add it up, it belongs in a fact table. If you would filter, "
+            "sort or group by it, it belongs in a dimension.",
+            ("h", "The Star Shape"),
+            ("photo", "blog/bi-star-schema.jpg", "A star-shaped model for treasury collections: one fact "
+             "table in the middle, with the date, collector, barangay and revenue account tables around it. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            "Draw the fact table in the middle and the dimensions around it, and the picture looks like a "
+            "star. That is why this design is called a star schema.",
+            "Each line in the picture is a one-to-many link. One barangay appears once in the barangay table "
+            "but on many rows of the collections table. One collector appears once in the collector table but "
+            "on every receipt line that collector issued.",
+            "When someone asks for collections by barangay for October, the work is split cleanly. The date "
+            "table filters to October. The barangay table groups the rows. The fact table adds up the "
+            "amounts. Dimensions filter and group, and facts are summarized. Charts by "
+            "barangay, by collector or by month all follow that same pattern.",
+            ("h", "A Treasury Example"),
+            "Here is a small model for collections. Every table fits on one spreadsheet tab.",
+            ("point", "Collections (fact)", "One row per revenue line on an official receipt: receipt "
+             "number, date key, collector key, barangay key, account key and amount. Nothing else."),
+            ("point", "Date (dimension)", "One row per calendar day, with the month, the quarter and the "
+             "year already worked out, so nobody has to calculate them in every chart."),
+            ("point", "Collector (dimension)", "One row per collector: a code, the name and the unit."),
+            ("point", "Barangay (dimension)", "One row per barangay: a code and the official name, spelled "
+             "correctly once."),
+            ("point", "Revenue account (dimension)", "One row per account: a code, the account title and the "
+             "group it belongs to, such as real property tax or business tax."),
+            "Notice what is missing from the fact table: names. The fact row carries only codes and the "
+            "amount. The names live in one place each, so a misspelling can be fixed once and every chart "
+            "picks up the correction.",
+            ("h", "Grain: Decide What One Row Means"),
+            "Before a single row goes into a fact table, write one sentence: “One row in this table is "
+            "one ...” That sentence is the grain.",
+            "For collections, the grain could be one receipt, or one revenue line on a receipt. Either can "
+            "work. Mixing them cannot. Suppose receipt 1201 has two lines, ₱1,000 for one account and ₱500 "
+            "for another, so the receipt total is ₱1,500. If the fact table stores the line amounts, the "
+            "receipt adds up to ₱1,500. If it also stores the ₱1,500 total on each line, the same receipt "
+            "adds up to ₱3,000 on the dashboard. That is exactly the kind of error from the opening story.",
+            "Choose the finest grain your reports need. Line-level rows can always be added up to receipt "
+            "totals, but receipt totals can never be split back into accounts.",
+            ("quote", "Write down what one row means before you load the first row. A grain nobody "
+             "wrote down is a double count waiting to happen."),
+            ("h", "Keys: Link With Codes, Not Names"),
+            "A key is the column that links a fact row to its dimension row. Every key in a dimension table "
+            "must be unique, or the link breaks.",
+            "Use codes, not names. Two collectors can share a surname. A barangay can be renamed. A code that "
+            "never changes keeps every past row linked correctly.",
+            "If the source records have no code, make one. A running number added to the dimension table "
+            "works. Microsoft calls this a surrogate key: a unique identifier that you add to support the "
+            "model, even though it does not exist in the original data.",
+            ("h", "Building It Without Special Software"),
+            "You can build this model in any spreadsheet. Put each table on its own tab. In the collections "
+            "tab, type only codes, and use a lookup formula to show the names beside them when you need to "
+            "read a row. A pivot table can then sum the amounts by any column from the dimension tabs.",
+            "BI tools make the links visible. In Power BI Desktop, which Microsoft offers as a free download "
+            "for Windows, you load each tab as a table and draw the one-to-many links between them. The same "
+            "design then works for every chart you add.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "One giant table", "Easy to start, hard to trust. Split it into facts and dimensions as "
+             "soon as more than one person reads the reports."),
+            ("point", "Mixed grain", "Receipt totals and line amounts in the same fact table will double "
+             "count. Keep one grain per fact table."),
+            ("point", "Names as keys", "Spellings drift and names change. Link with codes."),
+            ("point", "Calculating dates in every chart", "Put month, quarter and year in the date table "
+             "once, so every chart groups dates the same way."),
+            ("h", "Key Takeaways"),
+            ("point", "Shape before charts", "A dashboard can only be as accurate as the tables behind it."),
+            ("point", "Facts are added, dimensions describe", "Amounts go in the fact table; dates, people, "
+             "places and accounts go in dimensions."),
+            ("point", "Write the grain down", "One sentence about what a row means keeps totals and details "
+             "from being counted twice."),
+            ("point", "Link with codes", "Unique codes keep every row connected when names change."),
+            ("h", "Your Part 5 Exercise"),
+            "Take one report your office prepares every month and sketch its model on paper:",
+            ("point", "The fact", "What event does each row record? Write the grain in one sentence."),
+            ("point", "The dimensions", "List every column people filter or group by. Each is a candidate "
+             "dimension table."),
+            ("point", "The keys", "For each dimension, what code will link it to the facts? If there is none, "
+             "plan a running number."),
+            "If your sketch looks like a star, you are ready to build. If it looks like one long table, you "
+            "have just found the reason your totals sometimes disagree.",
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Data Analytics Series, Part 4", "/blog/data-analytics-part-4-four-questions-worked/"),
+            ("cta", "Read: Keep a receipts register in SQLite", "/tutorials/receipts-register-with-sqlite/"),
+            ("ask", "Which report in your office would give a different total if you rebuilt it as a star?"),
+        ],
+    },
+    {
         "date": "November 26, 2026",
         "title": "Business Intelligence Series, Part 4: Start With the People, Then Write the Brief",
         "slug": "business-intelligence-part-4-the-bi-brief",
