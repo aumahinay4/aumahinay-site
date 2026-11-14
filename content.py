@@ -572,8 +572,7 @@ ALTOS_SERIES = {
     "intro": [
         "This series takes one principle at a time and explains it in plain words: what the rule is, which law "
         "or idea stands behind it, and how it looks on an ordinary working day at the treasury counter. "
-        "A new principle comes out every Sunday until December 27, 2026, and this page keeps all of them in "
-        "reading order.",
+        "This page keeps all of them in reading order.",
         "The ten principles came from years of handling collections, disbursements and reports, and from the "
         "questions I had to answer while writing ALTOS, my treasury software. None of them needs a computer, "
         "though. A treasury that still runs on paper forms and logbooks can follow every one, and each principle "
