@@ -1482,12 +1482,12 @@ def series_steps(b):
         inner = [t.span(f"{word} · {label}", class_="muted"), t.b(short)]
         if live:
             return t.a(inner, href=post_url(p), class_=word.lower())
-        return t.span(inner, t.span(f"Coming {p['date']}", class_="badge soon"), class_=f"{word.lower()} later")
+        return t.span()  # a part not out yet stays hidden until its day (no "Coming" dates, for AdSense; Butch 2026-11-14)
 
     done, total = series_count()
     return t.section(
         t.div(t.p("Series", class_="eyebrow"), t.a(ALTOS_SERIES["title"], href=SERIES_URL, class_="series-name"),
-              t.span(f"{done} of {total} parts out", class_="muted"), class_="series-head"),
+              t.span(f"{done} parts", class_="muted"), class_="series-head"),
         t.div(step(i - 1, "Previous"), step(i + 1, "Next"), class_="series-pn"),
         t.a("See all parts of the series", Raw(" &rarr;"), href=SERIES_URL, class_="more"),
         class_="series-box",
@@ -1502,7 +1502,7 @@ def series_banner():
         t.p("Blog series", class_="eyebrow"),
         t.b(ALTOS_SERIES["title"], class_="series-name"),
         t.span(ALTOS_SERIES["tagline"] + ".", class_="series-tag"),
-        t.span(f"{done} of {total} parts out · read them in order", Raw(" &rarr;"), class_="more"),
+        t.span(f"{done} parts · read them in order", Raw(" &rarr;"), class_="more"),
         href=SERIES_URL,
         class_="series-banner",
     )
@@ -1511,12 +1511,8 @@ def series_banner():
 def series_page():
     parts = series_posts()
     done, total = series_count()
-    coming = next((p for p in parts if not p[3]), None)
-    if coming:
-        status = (f"{done} of {total} parts are out. Next: {coming[0]}, {coming[1]}, on "
-                  f"{datetime.strptime(coming[2]['publish_on'][:10], '%Y-%m-%d'):%A}, {coming[2]['date']}.")
-    else:
-        status = f"All {total} parts are out. Read them in order from the top."
+    # only published parts are listed; each new part appears on its own day (no "Coming" dates, Butch 2026-11-14)
+    status = "Read them in order from the top."
 
     def row(n, label, short, p, live):
         inner = [
@@ -1544,7 +1540,7 @@ def series_page():
             t.p(ALTOS_SERIES["tagline"] + ".", class_="lead"),
             [t.p(x) for x in ALTOS_SERIES["intro"]],
             t.p(status, class_="series-status"),
-            t.ol([row(n, *p) for n, p in enumerate(parts)], class_="series-list"),
+            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="series-list"),
             t.div(
                 t.h2("Want to go deeper?"),
                 t.p("The ten principles also form the closing part of my book, ",
