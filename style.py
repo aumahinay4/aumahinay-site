@@ -965,10 +965,11 @@ header.site .wrap { min-height: 38px; }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
 .menu-btn svg { width: 15px; height: 15px; }  /* three bars 25% smaller, 20px -> 15px, all screens (Butch 2026-11-14); tap area stays 32px */
 /* Blog category bar same size as the top bar (Butch 2026-11-14): 38px tall (36px phones), 15px three bars, smaller text */
-.blog-filters > summary { min-height: 38px; box-sizing: border-box; padding: 0 12px; gap: 8px; font-size: 14.5px; }
+.blog-filters > summary { min-height: 38px; box-sizing: border-box; padding: 0 12px; gap: 8px; font-size: 15.5px; }
+.blog-filters label { min-height: 38px; box-sizing: border-box; padding: 0 12px; font-size: 15.5px; }  /* list rows match the bar: one text size (Butch 2026-11-14) */
 .blog-filters > summary svg { width: 15px; height: 15px; }
 .blog-filters .cat-caret { font-size: .8em; }
-@media (max-width: 640px) { .blog-filters > summary { min-height: 36px; } }
+@media (max-width: 640px) { .blog-filters > summary, .blog-filters label { min-height: 36px; } }
 html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
