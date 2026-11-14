@@ -32,7 +32,7 @@ BI_POSTS = [
             "a question of meaning, and somebody has to go and find out what it was.",
             "(As always in this series, the office, the people and the numbers are made up. No real town or "
             "taxpayer is described.)",
-            "In a large organization, three different people would take that call. In a small treasury, it is "
+            "In a large organization, three different people might take that call. In a small treasury, it is "
             "often one person. Either way, it helps to know the three jobs apart, because each one fails in its "
             "own way and each one is fixed in its own way.",
             ("photo", "blog/bi-roles.jpg", "The BI loop: people bring questions, an engineer builds the pipes, a "
@@ -41,7 +41,7 @@ BI_POSTS = [
             ("h", "Start With the People Who Ask"),
             "Every BI system exists because somebody needs to know something, again and again. In BI language, "
             "these people are the stakeholders. In a local treasury, they include the head of office, the "
-            "revenue and cash divisions, the collectors in the field, the budget and accounting offices, and the "
+            "revenue and cash units, the collectors in the field, the budget and accounting offices, and the "
             "local chief executive who asks how the town is doing against its revenue target.",
             "Stakeholders do not need to know how the data moves. They need to say clearly what they want to "
             "watch and what they will do when the number changes. A head of office who says “I want to see "
@@ -77,7 +77,7 @@ BI_POSTS = [
              "working knowledge of SQL so the developer can shape the data the screens need."),
             ("point", "How it fails", "Loudly but misleadingly. A chart that sums when it should count, a "
              "filter that silently hides half the data, or two screens that define “collections” in "
-             "two different ways. Each looks fine on its own, and together they start arguments."),
+             "two different ways. Each looks fine on its own, but together they start arguments."),
             "In the market fee example, the developer checks that the chart is reading the right field, that no "
             "filter is left on, and that “this week” on the dashboard means the same days as "
             "“this week” in the head of office’s mind.",
@@ -106,8 +106,8 @@ BI_POSTS = [
             "the labels. Look at the three kinds of work, because those stay the same everywhere.",
             "BI work also connects with nearby roles. Database administrators keep the systems that hold the "
             "data running and secure. Data analysts, the subject of my other series, take on one-time questions "
-            "that may later grow into something a dashboard should watch every day. Records officers and data "
-            "protection officers decide who may see what, which matters a great deal when the data includes "
+            "that may later grow into something a dashboard should watch every day. Records officers and the data "
+            "protection officer help decide who may see what, which matters a great deal when the data includes "
             "taxpayers’ names and properties.",
             ("h", "One Person, Three Hats"),
             "Most local treasuries will never hire a BI team. That is fine. What matters is that someone in the "

@@ -26,8 +26,8 @@ PM_POSTS = [
             "Three weeks into the real property tax encoding project from Part 1, the revenue clerk is called "
             "into a meeting she did not expect. The assessor’s office says its staff cannot spare two "
             "afternoons a week after all. One collector asks why he was never told he would be helping. The "
-            "head of office asks whether the bills for January will include penalties for past years or only "
-            "the current year’s tax.",
+            "head of office asks whether the bills for January will include unpaid taxes from past years, with "
+            "their interest, or only the current year’s tax.",
             "Nobody in the room is being difficult. Each person simply remembers the assignment differently, "
             "because nobody ever wrote it down. The clerk now spends an hour defending decisions that were "
             "never really made.",
@@ -39,7 +39,8 @@ PM_POSTS = [
             "A project charter is a short, signed document that officially starts a project. It records why the "
             "project exists, what it will deliver, when, with what money and people, and who is in charge. Most "
             "importantly, it is approved by the person with the authority to start the project, often called "
-            "the sponsor.",
+            "the sponsor. The same signature gives the project manager the authority to use the office’s "
+            "people and resources for the work.",
             "That approval is what gives the charter its power. In Part 1, the clerk discovered that nobody on "
             "her list reported to her. A signed charter does not change the organization chart, but it does "
             "show everyone that the head of office has given the project a goal, a deadline and a leader. "
@@ -71,9 +72,10 @@ PM_POSTS = [
              "is slow and leads to errors at the counter. This project puts the ledger records into the "
              "office’s new system, so bills can be printed and checked before the January rush."),
             ("point", "What is included", "Encoding the ledger records of all taxable properties in the "
-             "four town-centre barangays, checking each record against the assessor’s list, and printing "
+             "four poblacion (town center) barangays, checking each record against the assessor’s tax "
+             "declarations, and printing "
              "a sample of bills for review."),
-            ("point", "What is not included", "Past-year delinquencies and penalties (a separate project in "
+            ("point", "What is not included", "Unpaid taxes from past years and their interest (a separate project in "
              "February), the remaining barangays (next phase), and any change to how payments are received at "
              "the counter."),
             ("point", "Milestones", "Records of the first two barangays encoded and checked by November 27. All "
@@ -83,11 +85,11 @@ PM_POSTS = [
              "collectors for encoding, two afternoons a week. Support: the assessor’s office, one staff "
              "member for checking, Tuesday and Thursday afternoons."),
             ("point", "Money and risks", "₱18,000 from the office budget for paper, toner and a backup "
-             "drive. Risks: the assessor’s staff may be pulled away by year-end work; old ledger cards may "
+             "drive, bought through the usual procurement steps. Risks: the assessor’s staff may be pulled away by year-end work; old ledger cards may "
              "be hard to read; the system may slow down when many records are added at once."),
             ("point", "Sign", "Approved by the head of office, with a review set for December 11."),
             "Now the assessor’s time is written down and approved. The collector can be shown the page. And the "
-            "question about penalties has a clear answer: not in this project. None of these lines is "
+            "question about past-year taxes has a clear answer: not in this project. None of these lines is "
             "complicated. Each one prevents a meeting.",
             ("h", "Five Mistakes That Weaken a Charter"),
             ("point", "Writing it alone", "A charter written by the project manager and simply handed out is a "
@@ -95,7 +97,7 @@ PM_POSTS = [
             ("point", "Leaving out what is not included", "If the page lists only what the project will do, "
              "people will assume it does everything they hoped for."),
             ("point", "Vague success", "“Improve billing” cannot be checked. “Bills for the four "
-             "town-centre barangays printed from the system by January 4” can."),
+             "poblacion barangays printed from the system by January 4” can."),
             ("point", "No real signature", "A charter nobody signed is just a note. In a government office, "
              "the head’s signature or a short office order is what turns the page into a commitment."),
             ("point", "Filing it and forgetting it", "Read the charter again at each milestone. If the project "
@@ -103,15 +105,15 @@ PM_POSTS = [
             ("h", "When the Plan Changes"),
             "A charter is not a promise that nothing will change. Projects meet surprises. The value of the "
             "charter is that every change becomes a clear decision instead of a slow drift.",
-            "Suppose in December the head of office decides that past-year penalties must be included after "
+            "Suppose in December the head of office decides that past-year taxes must be included after "
             "all. With a charter, the clerk can answer calmly: “We can add them. That means more records "
-            "to check, so either the January 4 date moves, or we get one more encoder, or we do the town centre "
-            "now and the penalties in February. Which would you prefer?” This is the triangle of scope, "
+            "to check, so either the January 4 date moves, or we get one more encoder, or we do the poblacion "
+            "now and the past years in February. Which would you prefer?” This is the triangle of scope, "
             "time and cost from Part 1, now written on paper where everyone can see it.",
             ("quote", "A charter does not stop change. It makes every change a decision."),
             ("h", "A Note for Software Projects"),
-            "The same page works when the project is a piece of software. When I build a tool such as ALTOS, the "
-            "first thing I write is what the tool will do, what it will not do, and who decides when it is "
+            "The same page works when the project is a piece of software. Before building a tool, even a small "
+            "collection app, write down what it will do, what it will not do, and who decides when it is "
             "ready. Software invites endless small additions, and the “not included” list is what lets "
             "the first version ever be finished. Everything else can wait for the next version, with its own "
             "page.",
