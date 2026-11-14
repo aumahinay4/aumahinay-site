@@ -979,7 +979,7 @@ html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(saf
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
 html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset: 0; z-index: -1; background: rgba(7, 22, 49, .35); }  /* dims the page and the top bar beside the menu */
 html.menu-js.menu-open header.site { z-index: 60; }
-html.menu-js.menu-open header.site #site-menu a { padding: 9px 0; font-size: clamp(1.08rem, 4.86vw, 1.395rem); }
+html.menu-js.menu-open header.site #site-menu a { padding: 5px 0; font-size: clamp(16px, 4vw, 17px); }  /* Home to About: one tidy size, rows closer (Butch 2026-11-14; was 20px text, 9px padding) */
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
 html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
@@ -1024,10 +1024,11 @@ CSS += """
 
 CSS += """
 /* Menu panel PLAIN WHITE (Butch 2026-11-10; dark mode uses the dark card colour): navy words, gold-ink for the current page */
-html.menu-js.menu-open header.site #site-menu { background: color-mix(in srgb, var(--surface) 10%, transparent);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }  /* white, 90% see-through (Butch 2026-11-10: 50%, +25%, then +15%) */
+html.menu-js.menu-open header.site #site-menu { background: var(--surface);
+  -webkit-backdrop-filter: none; backdrop-filter: none; }  /* SOLID, not see-through (Butch 2026-11-14) */
 /* Panel ends just below Privacy Policy (Butch 2026-11-10: "uncover below privacy"); the page shows below it */
 html.menu-js.menu-open header.site #site-menu { inset: 0 auto auto 0; height: auto; max-height: 100dvh; padding-bottom: 22px; }
+html.menu-js.menu-open header.site #site-menu { width: max-content; min-width: 0; padding-right: 22px; }  /* panel ends just past "RPT Calculator", the longest link (Butch 2026-11-14) */
 html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
