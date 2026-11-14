@@ -823,8 +823,8 @@ BLOG = [
         "publish_on": "2026-11-05",  # Butch said go, 2026-11-05 8 pm PH
         "body": [
             "When I bought the address for this website on October 25, 2026, I did not pick a "
-            ".com. I picked aumahinay.dev. Most people expect a website to end in .com, so you "
-            "may wonder why mine does not. Isn't .com the \"real\" internet? Won't visitors get "
+            ".com. I picked aumahinay.dev. You might expect a website to end in .com, so you may "
+            "wonder why mine does not. Isn't .com the \"real\" internet? Won't visitors get "
             "confused? These are fair questions. The answer says a lot about how I like to build "
             "things, so I want to explain it here in plain words, especially for anyone who is "
             "about to choose an address of their own. By the end of this post, you will know what"
@@ -872,7 +872,7 @@ BLOG = [
             "others cannot read it, and it is checked on arrival, so nobody can quietly change it"
             " along the way. The small padlock beside the address in your browser means HTTPS is "
             "on.",
-            "Most websites can choose whether to use HTTPS. A .dev website cannot. Google's own "
+            "A .com website can choose whether to use HTTPS. A .dev website cannot. Google's own "
             "announcement says .dev is \"secure by default because it requires HTTPS\" for every "
             ".dev website. There is no switch to turn it off.",
             "How is that enforced? Through a list called the HSTS preload list. HSTS stands for "
@@ -894,9 +894,8 @@ BLOG = [
             "receipts are numbered in strict sequence, and the activity log is chained so that "
             "tampering shows. The .dev domain applies that same thinking to a website.",
             "To be fair, a .com website can be just as secure if its owner sets up HTTPS "
-            "properly, and most good websites do. The difference is that with .dev, I cannot "
-            "forget, and nobody can switch it off by mistake. The rule is built into the address "
-            "itself.",
+            "properly. The difference is that with .dev, I cannot forget, and nobody can switch "
+            "it off by mistake. The rule is built into the address itself.",
             ("h", "But This Site Has No Passwords. Why Care?"),
             "It is true that this website has no login, no forms and no payments. But HTTPS "
             "protects more than passwords. It also protects what you read. On public Wi-Fi, an "
@@ -909,9 +908,9 @@ BLOG = [
             ("h", "The Catch: You Need a Certificate"),
             "Because HTTPS is required, every .dev website needs an SSL/TLS certificate, a kind "
             "of digital ID that proves the website really is who it claims to be. Years ago, "
-            "getting one cost money and paperwork. Today many hosts do it for free and "
-            "automatically. My web host set up the certificate for this site, and all I had to do"
-            " was connect the domain.",
+            "getting one cost money and paperwork. Today, free services such as Let's Encrypt can"
+            " issue one automatically. My web host set up the certificate for this site, and all "
+            "I had to do was connect the domain.",
             "You can check this yourself on any website. Tap or click the small icon at the left "
             "of the address bar. Your browser will tell you whether the connection is secure, and"
             " it can show you the certificate: who it was issued to, who issued it, and until "
@@ -1456,10 +1455,10 @@ BLOG = [
             ("h", "Going Digital Without Leaving Anyone Behind"),
             "Executive Order 170 of 2022 urges local governments to adopt digital payments, and "
             "it states that the order does not rule out cash and other traditional ways of "
-            "paying. Both halves matter. E-payment is a real convenience for many taxpayers, but "
-            "an elderly landowner in a remote barangay may still prefer to pay in cash on "
-            "collection day. Whether digital channels widen or narrow access for rural and "
-            "elderly taxpayers is a question I hope researchers will study closely.",
+            "paying. Both halves matter. E-payment is a real convenience, but an elderly "
+            "landowner in a remote barangay may still prefer to pay in cash on collection day. "
+            "Whether digital channels widen or narrow access for rural and elderly taxpayers is a"
+            " question I hope researchers will study closely.",
             "Stephen Osborne's New Public Governance (2006) describes a state that delivers "
             "services through networks of public, private and civic partners, and Patrick "
             "Dunleavy's digital-era governance asks that services be rebuilt around what citizens"
@@ -1627,7 +1626,7 @@ BLOG = [
             ("point",
              "Borrowing “just for now”",
              "Using one fund's cash to pay another fund's bills, planning to put it back later. "
-             "Later often never comes, and the records stop matching the bank."),
+             "If later never comes, the records stop matching the bank."),
             ("point",
              "One line for two funds",
              "Recording the basic real property tax and the Special Education Fund levy together,"
@@ -1693,11 +1692,11 @@ BLOG = [
                    "Trust in a treasury has to be designed, not assumed.",
         "body": [
             "Segregation of duties sounds like a phrase from an auditor's checklist, and in a way"
-            " it is. It is also one of the most basic internal controls in public finance, and "
-            "one of the kindest. The rule is simple: no single person should be able to start a "
-            "transaction, approve it, record it and then hide it. By the end of this post, you "
-            "will know which duties must never sit in the same hands, how a small office can make"
-            " up for a thin staff, and how to draw a duty map in under an hour.",
+            " it is. It is also a basic internal control in public finance, and one of the "
+            "kindest. The rule is simple: no single person should be able to start a transaction,"
+            " approve it, record it and then hide it. By the end of this post, you will know "
+            "which duties must never sit in the same hands, how a small office can make up for a "
+            "thin staff, and how to draw a duty map in under an hour.",
             ("quote", "When every step has a second pair of eyes, no one has to carry suspicion alone."),
             ("h", "Why Trust Must Be Designed"),
             "Under the third principle we met principal–agent theory: the idea that the person "
@@ -1782,7 +1781,7 @@ BLOG = [
             "Administrator changes data that has already been encoded. Everyone else asks for a "
             "correction, and the request, the reason and the author are all recorded.",
             ("h", "The Small-Office Problem"),
-            "Here is the honest difficulty. Many local treasuries have only a handful of people. "
+            "Here is the honest difficulty. A small treasury may have only a handful of people. "
             "Perfect separation is not always possible, and sometimes one person must wear two "
             "hats.",
             "When that happens, compensating controls take over. The treasurer reviews that "
@@ -1822,11 +1821,10 @@ BLOG = [
             "each step, write the name of the person who does it.",
             "Then look for any name that appears on two steps that should check each other. Each "
             "of those is a place to add a second pair of eyes, or a compensating control if the "
-            "staff is small. It takes less than an hour, and it often shows a gap that years of "
+            "staff is small. It takes less than an hour, and it can show a gap that years of "
             "routine had hidden.",
-            "Share the map with the whole staff. People are usually relieved to see their duties "
-            "written down, because a clear line also protects them when something goes wrong "
-            "elsewhere.",
+            "Share the map with the whole staff. A clear written line also protects people when "
+            "something goes wrong elsewhere.",
             "Repeat the exercise once a year, or whenever someone transfers, retires or takes on "
             "new duties. Staff changes are exactly when two steps quietly end up in the same "
             "hands, and a fresh map catches it before an auditor does. A duty map that is a year "
@@ -2180,7 +2178,8 @@ BLOG = [
             "Put a name beside every line. A deadline without an owner is only a date, and a "
             "calendar nobody checks is only decoration. Review it in the first staff meeting of "
             "each month.",
-            "Late reports are rarely about laziness. Usually the work piled up without anyone seeing it.",
+            "A late report is not always about laziness. The work may have piled up without "
+            "anyone seeing it.",
             ("h", "Key Takeaways"),
             ("point",
              "A deadline limits hidden mistakes",
@@ -2363,8 +2362,8 @@ BLOG = [
              "allowed to lapse."),
             ("point",
              "Write it down",
-             "A forms register, written handovers and a named alternate cost little and close "
-             "most ownership gaps."),
+             "A forms register, written handovers and a named alternate cost little and help "
+             "close ownership gaps."),
             ("h", "The Question to Ask"),
             "Who is answerable, and are they bonded? Put more sharply: is every accountable "
             "officer bonded today, for the right amount? The evidence is a current bond for every"
@@ -2420,9 +2419,9 @@ BLOG = [
             ("h", "Accountable Forms: Paper That Counts Itself"),
             "Not every form is equal. An accountable form is a serially numbered form, such as an"
             " official receipt or a community tax certificate, for which the person holding it "
-            "must answer. Real property tax is receipted on Accountable Form 56. Business taxes "
-            "and most fees and charges go on Accountable Form 51. The community tax has its own "
-            "certificates for individuals and corporations.",
+            "must answer. Real property tax is receipted on Accountable Form 56. Business taxes, "
+            "and fees and charges that have no form of their own, go on Accountable Form 51. The "
+            "community tax has its own certificates for individuals and corporations.",
             "Serial numbers are what make these forms powerful. Because every receipt has a place"
             " in a sequence, a missing one is noticed. A gap in the series is a question someone "
             "must answer.",
@@ -2472,10 +2471,9 @@ BLOG = [
             "allows.",
             ("h", "A Spoiled Receipt Is Never Thrown Away"),
             "Mistakes happen. A wrong amount is written, a name is misspelled, a carbon slips. "
-            "The rule for this is one of the oldest controls in public finance: the spoiled "
-            "receipt is never destroyed. It is marked cancelled, kept with all its copies, and "
-            "reported. A correction is a new and visible act with a stated reason, never an "
-            "erasure.",
+            "The rule for this is a basic control in public finance: the spoiled receipt is never"
+            " destroyed. It is marked cancelled, kept with all its copies, and reported. A "
+            "correction is a new and visible act with a stated reason, never an erasure.",
             "This is worth stressing because it runs against instinct. The natural reaction to a "
             "mistake is to make it disappear. In a treasury, a missing receipt is far more "
             "alarming than a cancelled one.",
@@ -2708,7 +2706,7 @@ BLOG = [
             "counter.",
             "Why principles, and not just another manual? The Philippines already has good "
             "manuals. Manuals tell an officer what to do when the case is ordinary. Principles "
-            "tell the officer what to do when the case is new. What is often missing is a shared "
+            "tell the officer what to do when the case is new. What can be missing is a shared "
             "understanding of why the manuals say what they say. Without it, procedures slowly "
             "turn into rituals, and rituals are the first thing dropped when the office gets "
             "busy. The emblem of ALTOS is a full 360° ring for the same reason: accountability "
@@ -2799,8 +2797,8 @@ BLOG = [
             ("point",
              "Local chief executive",
              "Does the head of the local government approve the payment and accept responsibility for it?"),
-            "Many large payments also follow a procurement. The New Government Procurement Act "
-            "(RA 12009), signed in July 2024, replaced RA 9184. The treasurer does not run the "
+            "Large payments may also follow a procurement. The New Government Procurement Act (RA"
+            " 12009), signed in July 2024, replaced RA 9184. The treasurer does not run the "
             "bidding, but a contract that skipped the required procurement is a payment the "
             "treasurer should not make.",
             ("h", "Why Spending Needs Extra Care"),
@@ -2817,22 +2815,22 @@ BLOG = [
             ("quote", "Which ordinance or appropriation allows this?"),
             "If the answer is a specific section of the revenue code or a specific line in the "
             "approved budget, go ahead. If the answer is “we have always done it this way,” stop "
-            "and look it up. Old habits are often right, but they are not a legal basis.",
+            "and look it up. Old habits may be right, but they are not a legal basis.",
             "For the office as a whole, the question is a little bigger: can I name the law or "
             "ordinance behind every account that appears on our receipts? The proof that an "
             "office lives by this principle is simple to describe. The revenue code and the "
             "appropriation for every account are on file, and anyone who asks can be shown them.",
             ("h", "Rules Change, So Keep Checking"),
-            "Legality is not a box ticked once. Laws, circulars and manuals change often. The "
-            "Local Treasury Operations Manual, the rules of the Commission on Audit, and the "
-            "issuances of the Bureau of Local Government Finance (BLGF) are all revised from time"
-            " to time. The Real Property Valuation and Assessment Reform Act (RA 12001) of 2024 "
-            "is one example. Under it, local assessors prepare the Schedule of Market Values, the"
-            " BLGF reviews it, and the Secretary of Finance certifies it before it takes effect. "
-            "A new schedule changes the very values on which real property tax is computed. An "
-            "office that is legal today can drift out of line next year without changing a thing."
-            " Before relying on any procedure, confirm that the text you are following is still "
-            "the current one.",
+            "Legality is not a box ticked once. Laws, circulars and manuals change. The Local "
+            "Treasury Operations Manual, the rules of the Commission on Audit, and the issuances "
+            "of the Bureau of Local Government Finance (BLGF) are all revised from time to time. "
+            "The Real Property Valuation and Assessment Reform Act (RA 12001) of 2024 is one "
+            "example. Under it, local assessors prepare the Schedule of Market Values, the BLGF "
+            "reviews it, and the Secretary of Finance certifies it before it takes effect. A new "
+            "schedule changes the very values on which real property tax is computed. An office "
+            "that is legal today can drift out of line next year without changing a thing. Before"
+            " relying on any procedure, confirm that the text you are following is still the "
+            "current one.",
             ("h", "Where ALTOS Helps"),
             "In ALTOS, an official receipt cannot be issued for an item that is not linked to an "
             "income account in the office's chart of accounts, so every amount collected has a "
@@ -2885,7 +2883,7 @@ BLOG = [
         "summary": "A treasury system built around one idea: every peso should be accounted for from the moment it arrives to the moment it is reported.",
         "body": [
             ("photo", "altos-screen.jpg", "ALTOS sign-in page", "small"),
-            "Walk into many local treasury offices in the Philippines and you will still see "
+            "Walk into some local treasury offices in the Philippines and you will still see "
             "stacks of receipts, hand-ruled cash books and monthly reports added up with a "
             "calculator. The people doing this work are careful and dedicated, but paper has "
             "limits. Reports take days to prepare, and a single wrong figure can hide for months "
