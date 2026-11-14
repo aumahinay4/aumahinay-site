@@ -5,7 +5,7 @@ The series follows what Butch learned in the Google Business Intelligence certif
 blog's own words with made-up treasury examples. It links to the Tuesday Data Analytics series for
 spreadsheet formulas, pivot tables, SQL basics and chart choice instead of teaching them again.
 Facts are checked privately before each part is approved; per Butch, posts show no Sources section
-and no "coming next" teaser. Category "data" so the Blog filter pills stay on one line on phones.
+and no "coming next" teaser. Own category "bi" (Business Intelligence), separate from Data Analytics (Butch 2026-11-14).
 Newest first, like BLOG in content.py.
 """
 
@@ -16,7 +16,7 @@ BI_POSTS = [
         "date": "November 14, 2026",
         "title": "Business Intelligence Series, Part 1: Same Data, Different Jobs",
         "slug": "business-intelligence-part-1-same-data-different-jobs",
-        "category": "data",
+        "category": "bi",
         "summary": "Business intelligence and data analytics use the same records but do different jobs. "
                    "Here is what BI really means, where the name came from, what a BI system is made of, "
                    "and how a monthly treasury report can stop being rebuilt by hand.",
