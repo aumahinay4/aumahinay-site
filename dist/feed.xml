@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 22:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Cybersecurity Series, Part 2: Identity Is the New Perimeter</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</guid>
+      <pubDate>Sat, 14 Nov 2026 22:00:00 +0800</pubDate>
+      <description>Attackers no longer break in; they log in. Here is why long passphrases beat complex passwords, how a password manager works, which kinds of two-step login are strongest, and why passkeys are the future.</description>
+    </item>
     <item>
       <title>Business Intelligence Series, Part 1: Same Data, Different Jobs</title>
       <link>https://aumahinay.dev/blog/business-intelligence-part-1-same-data-different-jobs/</link>

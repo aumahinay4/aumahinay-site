@@ -1,4 +1,4 @@
-"""Public Finance Sunday series (Butch 2026-11-11): one post every Sunday from January 3, 2027.
+"""Public Finance series (Butch 2026-11-11), "Inside the Local Treasury"; dates follow the daily blog rotation (Butch 2026-11-14).
 
 Each post takes a typical treasury situation and explains it in plain words. Cases are composites:
 no real taxpayer, employee, office or amount is named. Facts are checked against official sources
@@ -8,8 +8,8 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 3: The Cedula, a Spanish-Era Tax That Never Left",
-        "date": "January 17, 2027",
-        "publish_on": "2027-01-17",
+        "date": "December 30, 2026",
+        "publish_on": "2026-12-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "the-cedula-explained",
         "category": "finance",
         "summary": "The cedula began under Spain, was torn up by the Katipunan, and is still asked for at offices "
@@ -118,8 +118,8 @@ TREASURY_POSTS = [
     },
     {
         "title": "Inside the Local Treasury, Part 2: The January Rush and Your Business Permit",
-        "date": "January 10, 2027",
-        "publish_on": "2027-01-10",
+        "date": "December 25, 2026",
+        "publish_on": "2026-12-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "january-rush-business-permit",
         "category": "finance",
         "summary": "Every January the line for business permits stretches out the door, and some owners still "
@@ -236,8 +236,8 @@ TREASURY_POSTS = [
     },
     {
         "title": "Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
-        "date": "January 3, 2027",
-        "publish_on": "2027-01-03",
+        "date": "December 20, 2026",
+        "publish_on": "2026-12-20 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "where-your-towns-money-comes-from",
         "category": "finance",
         "summary": "Taxes are collected at the town hall every day, yet the money never seems enough. The reason "
