@@ -1083,3 +1083,12 @@ CSS += """
 :root[data-theme="dark"] .blog-filters .cat-now, :root[data-theme="dark"] .blog-filters input:checked + label,
 :root[data-theme="dark"] .blog-filters .cat-now .count, :root[data-theme="dark"] .blog-filters input:checked + label .count, :root[data-theme="dark"] .blog-filters .cat-caret { color: var(--gold); }
 """
+
+CSS += """
+/* Top bar like Butch's picture (2026-11-14): three bars long, medium, short, left-aligned, near-black and a bit bolder;
+   plain bar with only a thin light-grey line under it (no shadow). Same bars on the blog's All posts button. */
+header.site { box-shadow: 0 1px 0 var(--line); }
+.menu-btn { color: var(--text); }
+.menu-btn svg { stroke-width: 2.6; }
+.blog-filters > summary svg { stroke: var(--text); stroke-width: 2.6; }
+"""
