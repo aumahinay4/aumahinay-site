@@ -511,6 +511,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
 .cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
 .cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
+.cat-teal { color: var(--green-ink); background: color-mix(in srgb, var(--blue) 12%, color-mix(in srgb, var(--green) 14%, transparent)); }  /* Business Intelligence */
 .cat-navy { color: var(--bar-ink); background: color-mix(in srgb, var(--blue) 14%, transparent); }  /* Project Management */
 /* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
 .blog-filters { margin-top: 26px; position: relative; max-width: 340px; }

@@ -412,6 +412,7 @@ def home():
         "personal": "The farm, the province, and life beyond the office.",
         "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
         "data": "A weekly series on data analytics, from asking the right question to acting on the answer.",
+        "bi": "A series on business intelligence: data models, pipelines and dashboards that keep answers coming.",
         "pm": "A weekly series on running projects in a local treasury, from the first assignment to the handover.",
     }
     return part(

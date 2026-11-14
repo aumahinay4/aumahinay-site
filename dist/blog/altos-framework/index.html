@@ -506,6 +506,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
 .cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
 .cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
+.cat-teal { color: var(--green-ink); background: color-mix(in srgb, var(--blue) 12%, color-mix(in srgb, var(--green) 14%, transparent)); }  /* Business Intelligence */
 .cat-navy { color: var(--bar-ink); background: color-mix(in srgb, var(--blue) 14%, transparent); }  /* Project Management */
 /* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
 .blog-filters { margin-top: 26px; position: relative; max-width: 340px; }
@@ -648,6 +649,7 @@ ol.series-list li.upcoming .num { filter: grayscale(.6); opacity: .75; }
 .blog-col:has(#cat-security:checked)  .post-card:not([data-cat="security"]) { display: none; }
 .blog-col:has(#cat-data:checked)  .post-card:not([data-cat="data"]) { display: none; }
 .blog-col:has(#cat-pm:checked)  .post-card:not([data-cat="pm"]) { display: none; }
+.blog-col:has(#cat-bi:checked)  .post-card:not([data-cat="bi"]) { display: none; }
 .blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
 .blog-col:has(#cat-all:checked) .cat-now[data-k="all"] { display: inline; }
 .blog-col:has(#cat-software:checked) .cat-now[data-k="software"] { display: inline; }
@@ -655,6 +657,7 @@ ol.series-list li.upcoming .num { filter: grayscale(.6); opacity: .75; }
 .blog-col:has(#cat-security:checked) .cat-now[data-k="security"] { display: inline; }
 .blog-col:has(#cat-data:checked) .cat-now[data-k="data"] { display: inline; }
 .blog-col:has(#cat-pm:checked) .cat-now[data-k="pm"] { display: inline; }
+.blog-col:has(#cat-bi:checked) .cat-now[data-k="bi"] { display: inline; }
 .blog-col:has(#cat-personal:checked) .cat-now[data-k="personal"] { display: inline; }
 
 .story-toggle { display: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--violet-ink); cursor: pointer; white-space: nowrap; }
