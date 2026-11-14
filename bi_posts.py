@@ -89,8 +89,7 @@ BI_POSTS = [
              "for reporting, removing them before loading, ETL style, keeps them out of the warehouse "
              "altogether."),
             "You can also mix the two: personal details are removed on the way in, as in ETL, while "
-            "everything else is loaded raw and shaped inside, as in ELT. That is a sound, deliberate choice, "
-            "not a compromise.",
+            "everything else is loaded raw and shaped inside, as in ELT. That is a deliberate choice, made for a clear reason.",
             ("h", "Checks Every Pipeline Needs"),
             "Whichever pattern you pick, a pipeline that runs without someone watching needs to check itself "
             "and leave a record.",

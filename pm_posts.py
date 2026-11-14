@@ -53,7 +53,7 @@ PM_POSTS = [
             ("point", "Send the documents two days ahead", "The one-page charter, the scope statement and the "
              "objective. Ask people to read them and bring one question each."),
             ("point", "Brief the sponsor", "Agree on the five minutes the sponsor will speak and the one "
-             "message they will give. A sponsor who knows their part keeps the opening short."),
+             "message they will give. A sponsor who knows their part can keep the opening short."),
             ("point", "Prepare a draft schedule", "Bring a draft of who works when, so the meeting can correct "
              "it rather than build it from nothing."),
             ("h", "The One-Hour Agenda"),
@@ -74,7 +74,7 @@ PM_POSTS = [
              "Ask each person to repeat their first task. End on time."),
             ("quote", "If a kickoff ends without names and dates, it was a briefing, not a kickoff."),
             ("h", "A Sample Opening for the Sponsor"),
-            "Sponsors are busy, and a short script helps them keep to five minutes. The project manager can draft "
+            "A short script helps the sponsor keep to five minutes. The project manager can draft "
             "it for them to adjust:",
             "“Every January, taxpayers wait too long at the real property tax window. This project puts the ledger "
             "records of the four poblacion barangays into our system so bills can be printed and checked quickly. "
