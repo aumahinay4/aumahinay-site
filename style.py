@@ -1039,6 +1039,13 @@ CSS += """
 .hero h1 .l1, .hero h1 .l2 { display: block; white-space: nowrap; }
 @media (max-width: 640px) { .hero h1 { font-size: min(2.2185rem, 7.4vw); } }
 """
+CSS += """
+/* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
+.hero h1 .k1 { color: #b98200; }
+.hero h1 .l2 { color: var(--blue-ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
+:root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
+"""
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
 
 CSS += """
