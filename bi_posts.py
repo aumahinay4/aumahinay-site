@@ -34,14 +34,13 @@ BI_POSTS = [
             "taxpayer is described.)",
             "In Part 4, the BI brief defined each measure in plain words. This part is about the tables that "
             "hold those measures. That design is called the data model, and it decides whether a dashboard "
-            "gives the same answer as the cashier. By the end of this post you will know the four ideas "
-            "behind a sound model, facts, dimensions, grain and keys, and you will be able to sketch one for "
+            "gives the same answer as the cashier. By the end of this post you will know the four ideas behind a sound model (facts, dimensions, grain and keys), and you will be able to sketch one for "
             "your own office on a single sheet of paper.",
             ("h", "What a Data Model Is"),
             "A data model is the set of tables a report reads, the columns in each table, and the links "
             "between them. You can build one in a spreadsheet with a few tabs, in a small database, or in a "
             "BI tool. The tool matters less than the design.",
-            "Many offices start with one wide table: every receipt on its own row, with the collector’s name, "
+            "Suppose the office starts with one wide table: every receipt on its own row, with the collector’s name, "
             "the barangay, the revenue account and the amount typed in full each time. It works for a month. "
             "Then the problems pile up.",
             ("point", "Repeated text drifts", "A barangay typed by hand a thousand times will be typed "
@@ -49,16 +48,15 @@ BI_POSTS = [
             ("point", "Totals get mixed with details", "When a receipt total and its line amounts sit in the "
              "same column, adding the column counts the money twice."),
             ("point", "Changes are hard", "If a collector’s name or a revenue account title changes, "
-             "every past row has to be edited, and some always get missed."),
+             "every past row has to be edited, and it is easy to miss some."),
             ("h", "Facts and Dimensions"),
-            "A well-known way to fix this is to split the data into two kinds of tables. Microsoft’s own "
-            "guidance for Power BI is built on this idea, and so are many data warehouses.",
+            "A well-known way to fix this is to split the data into two kinds of tables. Microsoft describes it as a mature approach widely adopted by data warehouses, and its guidance for Power BI is built on it.",
             ("point", "Fact tables", "Each row records an event or an observation, such as one revenue line "
              "on an official receipt. A fact table holds numbers to add up, like the amount, plus key columns "
-             "that point to the dimensions. It has many rows and keeps growing every day."),
+             "that point to the dimensions. It has many rows and keeps growing over time."),
             ("point", "Dimension tables", "Each row describes one thing you want to filter or group by: one "
              "date, one collector, one barangay, one revenue account. A dimension table has a unique key and "
-             "descriptive columns. It has far fewer rows and changes slowly."),
+             "descriptive columns. It has far fewer rows."),
             "A simple test helps. If you would add it up, it belongs in a fact table. If you would filter, "
             "sort or group by it, it belongs in a dimension.",
             ("h", "The Star Shape"),

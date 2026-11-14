@@ -46,7 +46,7 @@ PM_POSTS = [
             "requests.",
             "The name has a curious history. A 1970 paper by Winston Royce, “Managing the Development of "
             "Large Software Systems,” is often cited as the origin of the waterfall picture. Royce never used "
-            "the word waterfall in that paper, and he warned about the risks of a strictly one-way sequence. "
+            "the word waterfall in that paper, and the paper itself called the simple step-by-step version risky. "
             "The label came later.",
             ("point", "It fits when", "The requirements are clear and stable, the rules are fixed, the "
              "deadline cannot move, and the result must work completely on the first day it is used."),
@@ -116,7 +116,7 @@ PM_POSTS = [
             ("point", "Decide what changes", "End the cycle with a short list of what to keep, change and drop. "
              "That list becomes the plan for the next cycle."),
             ("h", "Common Myths"),
-            ("point", "“Agile means no planning.”", "Agile teams plan constantly, in smaller pieces. The "
+            ("point", "“Agile means no planning.”", "Agile teams plan in smaller pieces, at the start of every cycle. The "
              "manifesto values responding to change more than following a plan, not instead of having one."),
             ("point", "“Waterfall means no feedback.”", "A predictive project can and should check its work "
              "at each milestone, as Part 4’s acceptance tests did."),

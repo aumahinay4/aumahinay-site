@@ -41,7 +41,7 @@ DATA_POSTS = [
             "reason. Before opening any program, write the question in one sentence, name who will use the "
             "answer, and name the decision it supports. The cheapest tool that answers that question well is "
             "the right tool.",
-            ("h", "1. Spreadsheets: Where Most Analysis Starts"),
+            ("h", "1. Spreadsheets: The Place to Start"),
             "A spreadsheet is a quick way to look at a few thousand rows, add them up and spot "
             "something odd. Two free options are worth knowing.",
             ("point", "Google Sheets", "Free with a Google account and runs in a web browser. A single "
@@ -58,7 +58,7 @@ DATA_POSTS = [
             "When the records outgrow a spreadsheet, the next step does not need a server. SQLite keeps a "
             "whole database in one ordinary file. Its authors have dedicated the code to the public domain, "
             "so anyone may use it for free.",
-            "Python already includes a module for SQLite, so if Python is installed, so is SQLite. For "
+            "Python’s standard library includes a module for SQLite, so a standard Python installation can use it with nothing extra to install. For "
             "people who prefer clicking to typing, DB Browser for SQLite is a free, open-source program that "
             "lets you open the file, browse the tables and run SQL queries in a window.",
             "SQL is worth learning for one reason above all: a query is written down. Next month you run the "
@@ -68,8 +68,7 @@ DATA_POSTS = [
              "database is the better fit."),
             ("h", "3. Python: For Work You Repeat"),
             "Python is free to download and use. With the pandas library, which is also free and open source, "
-            "a monthly report that takes an afternoon of copying and pasting can become a script that runs in "
-            "seconds and gives the same result every time.",
+            "a monthly report that takes an afternoon of copying and pasting can become a script that you run with one command and that gives the same result every time.",
             "The real gain is not speed. It is that every step is recorded. Anyone can read the script and "
             "see exactly how a number was produced, which makes the work easier to check and easier to hand "
             "over.",
@@ -87,8 +86,8 @@ DATA_POSTS = [
              "license."),
             ("point", "Where it stops", "A dashboard only repeats what the data says. If the source sheet is "
              "wrong or late, the dashboard is wrong or late too, just in a nicer layout."),
-            ("h", "5. A Notes File: The Tool Everyone Skips"),
-            "The most useful free tool is a plain text file or a simple document kept beside the data. For "
+            ("h", "5. A Notes File: The Tool That Makes Work Checkable"),
+            "The last tool costs nothing and matters as much as the others: a plain text file or a simple document kept beside the data. For "
             "each analysis, write the question, where the data came from and on what date, every cleaning "
             "step, and any assumption you made.",
             "This file is what lets someone else check your work, and it is what lets you repeat the "
