@@ -25,8 +25,7 @@ DATA_POSTS = [
             "business, for the whole year. It goes into the monthly report and onto the bulletin board.",
             "A week later, a store owner comes to the office, upset. In her barangay there is only one "
             "hardware store, hers. The chart shows exactly how much the hardware stores in that barangay paid. "
-            "Anyone who reads the bulletin board now knows what her business paid, and from that, roughly how "
-            "much it earns. No name appeared on the chart. It still pointed to one person.",
+            "Anyone who reads the bulletin board now knows what her business paid, and from that, roughly how much it sells, since business tax is based on gross sales. No name appeared on the chart. It still pointed to one person.",
             "(As always in this series, the office, the people and the numbers are made up. No real town or "
             "taxpayer is described.)",
             "Part 5 touched on privacy when choosing tools. This part goes further, because analysts make "

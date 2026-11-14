@@ -64,8 +64,7 @@ BI_POSTS = [
             "The star model from Part 5 is a common shape inside a warehouse. The dashboard reads from the "
             "warehouse, never from the cashier’s system, so a chart no longer slows down the counter.",
             ("h", "The Data Mart: One Unit’s Slice"),
-            "A data mart is a smaller store built for one unit or one subject. It can be a slice of the "
-            "warehouse, or it can stand alone when only one unit needs it.",
+            "A data mart is a smaller store built for one unit or one subject. It can be built as a slice of the warehouse.",
             "For example, the revenue unit may need only collections and delinquencies, while the cash unit "
             "needs deposits and disbursements. Each mart holds only what its users need, which keeps it simple "
             "and makes it easier to control who sees what.",
