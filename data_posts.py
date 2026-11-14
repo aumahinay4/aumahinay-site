@@ -1,5 +1,5 @@
 """Data Analytics blog series (Butch 2026-11-13 PH): Part 1 live Nov 13, 2026 (Butch: "post this first part today"),
-then one part every Tuesday at 9 pm PH ("YYYY-MM-DD 21:00"), a year or more.
+then one part every few days at 9 pm PH ("YYYY-MM-DD 21:00") in the daily blog rotation (Butch 2026-11-14).
 
 The series teaches the whole craft in plain words, from asking a good question to acting on the answer,
 with examples from local treasury work. Every number, office and taxpayer in an example is made up.
@@ -11,6 +11,130 @@ Newest first, like BLOG in content.py.
 SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
+    {
+        "date": "November 22, 2026",
+        "title": "Data Analytics Series, Part 3: Deciding With Data, Not Hunches",
+        "slug": "data-analytics-part-3-deciding-with-data",
+        "category": "data",
+        "summary": "Experience and data are not rivals. Here is what a data-driven decision really looks like in a "
+                   "local treasury, five ways analysts think before they touch a formula, and the traps that turn "
+                   "good numbers into bad choices.",
+        "publish_on": "2026-11-22 21:00",
+        "body": [
+            "Every December, a treasury holds the same short meeting. Should the office open on the Saturday "
+            "before the business tax deadline? Business taxes are due within the first twenty days of January, "
+            "and every year the last few days bring long lines.",
+            "One senior collector is sure it is worth it. “People always come on Saturdays.” A clerk is just as "
+            "sure it is not. “Last time we opened, the room was half empty by ten.” The head of office has to "
+            "approve overtime and keep the vault staffed either way. Two experienced people, two opposite "
+            "hunches, one decision.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "This part is about what happens next in an office that thinks like an analyst. It is not about "
+            "fancy tools. It is about a habit: checking what the records say before deciding, and being honest "
+            "about what they cannot say.",
+            ("h", "What “Data-Driven” Really Means"),
+            "A data-driven decision is one where evidence, gathered and checked with care, carries real weight "
+            "in the choice. It does not mean the spreadsheet decides. People still decide. The data simply "
+            "makes sure they are arguing about facts instead of memories.",
+            "Some practitioners prefer the phrase data-inspired, and the difference is useful. A data-driven "
+            "choice follows closely from a clear analysis. A data-inspired choice uses data to spark ideas or "
+            "test a hunch, while leaving room for things the numbers cannot measure, such as goodwill with "
+            "taxpayers or the morale of a tired staff. Most decisions in a treasury land somewhere in between, "
+            "and that is fine as long as everyone knows which is which.",
+            ("h", "Experience Is Data Too"),
+            "The senior collector’s hunch is not worthless. Years at the counter are a kind of data, stored in a "
+            "person instead of a table. The trouble is that one person sees only part of the picture, and "
+            "a single memorable day can stand in for many ordinary ones.",
+            "The best decisions use both. Experience suggests what to look at and what might explain it. "
+            "Records show whether the pattern is real, how big it is and whether it has changed. When the two "
+            "disagree, that is not a crisis. It is the most interesting moment in the whole analysis.",
+            ("h", "Back to the Saturday Question"),
+            "Here is how the office could settle it in an afternoon.",
+            ("point", "Ask the real question", "Not “Do people come on Saturdays?” but “Would a Saturday "
+             "opening in mid-January serve enough taxpayers to justify the cost, and would it shorten the "
+             "lines on the last weekdays?”"),
+            ("point", "Look at the records", "The office pulls the business tax receipts from the past three "
+             "Januaries and counts them by date of payment. In the one year "
+             "it opened on a Saturday, it has that day’s count too."),
+            ("point", "Read the pattern", "Suppose the counts show that the Saturday opening served 140 "
+             "taxpayers, almost all before eleven, and that the following Monday was about 20% lighter than "
+             "the same Monday in other years. Both hunches were partly right: people did come, but only in "
+             "the morning."),
+            ("point", "Decide, then measure again", "Open on that Saturday, but only from eight to noon, and "
+             "count again next January to see whether the result holds."),
+            "Neither the collector nor the clerk lost the argument. The decision is better than either hunch, "
+            "and it costs less than a full day.",
+            ("h", "Five Ways an Analyst Thinks"),
+            "Before typing a single formula, good analysts use a handful of thinking habits. You may already use "
+            "some of them without naming them.",
+            ("photo", "blog/data-analyst-thinking.jpg", "Five thinking habits that come before any formula: "
+             "see it, plan it, frame it, connect it, and zoom between the whole and the part. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("point", "See it", "Picture the data before you calculate. A quick chart of receipts by day often "
+             "answers the question faster than a table."),
+            ("point", "Plan it", "Decide what you will do and in what order: which records, which period, which "
+             "comparison. A plan keeps you from wandering."),
+            ("point", "Frame it", "Keep the problem at the center. Every step should help answer the question "
+             "that was asked, not a more interesting one."),
+            ("point", "Connect it", "Look for links between things. Do long lines on the last day go with a "
+             "slow first week? Remember that a link is not proof that one causes the other."),
+            ("point", "Zoom in and out", "Move between the big picture and the details. The total for January "
+             "matters, and so does the single day when the system was down."),
+            ("h", "Traps That Spoil Good Data"),
+            "Data does not protect you from bad decisions on its own. These traps can catch even "
+            "experienced people.",
+            ("point", "Looking only for support", "If you already believe Saturdays are busy, you will notice the "
+             "one busy Saturday and stop looking. Decide what evidence would change your mind before you look."),
+            ("point", "Trusting the loudest story", "One angry complaint can feel bigger than a hundred quiet "
+             "payments. Count before you conclude."),
+            ("point", "Forgetting the context", "A day with few receipts may have been a typhoon day, a holiday "
+             "or a day the system was down. Numbers without notes can lie by accident."),
+            ("point", "Measuring what is easy", "Receipts are easy to count. Waiting time is not, because no "
+             "record shows when a person joined the line. Be honest about what your data cannot see, and "
+             "find another way to check it, even if that means standing in the room with a notebook for an "
+             "hour."),
+            ("point", "Stopping at the decision", "A data-driven choice is a test. If you never measure the "
+             "result, you will never learn whether it worked."),
+            ("quote", "Data does not make the decision. It makes sure the decision is about the right facts."),
+            ("h", "Write the Decision Down"),
+            "One small habit makes every data-driven decision easier to learn from: a short decision note. It "
+            "takes five minutes and fits on half a page.",
+            ("point", "The question", "What exactly was being decided, in one sentence."),
+            ("point", "The evidence", "Which records were used, for which period, and what they showed. Include "
+             "the numbers, not just the conclusion."),
+            ("point", "The choice and the reason", "What was decided, and which part of the evidence or "
+             "experience tipped it."),
+            ("point", "The check", "What will be measured afterwards, and on what date someone will look."),
+            "Next December, when the same meeting comes around, nobody has to rely on memory. The office opens "
+            "the note, compares the prediction with what actually happened, and decides again with better "
+            "information. Over a few years, these notes become one of the most valuable records an office "
+            "keeps, because they show not only what was done but why.",
+            ("h", "When the Data Is Not Enough"),
+            "Sometimes the records simply cannot answer the question. A new kind of fee has no history. A "
+            "change in the law makes old patterns useless. A decision must be made today and the data will "
+            "take a week to clean.",
+            "In those cases, a good analyst says so plainly. “We do not have enough data to know. Here is our "
+            "best judgment, here is what it rests on, and here is how we will check it in a month.” That "
+            "sentence is more useful, and more honest, than a confident number built on weak ground.",
+            ("h", "Your Part 3 Exercise"),
+            "Think of one recurring decision in your office that is usually settled by opinion. Then write:",
+            ("point", "The two hunches", "What do the different sides believe, and why?"),
+            ("point", "The record that could settle it", "Which existing record, with a date on it, would show "
+             "who is right?"),
+            ("point", "What would change your mind", "Before looking, write the result that would make you "
+             "drop your own hunch."),
+            "If you can, spend thirty minutes pulling that record. Even a rough count by day is often enough to "
+            "move the conversation from memories to facts.",
+            ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
+            ("cta", "Read: Data Analytics Series, Part 1", "/blog/data-analytics-part-1-what-it-is/"),
+            ("cta", "Read: The ALTOS Framework, Principle 9: Evidence Before Decision",
+             "/blog/altos-framework-evidence-before-decision/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("ask", "What decision in your office is still settled by whoever argues longest? What record could "
+             "settle it instead?"),
+        ],
+    },
     {
         "date": "November 17, 2026",
         "title": "Data Analytics Series, Part 2: The Six Steps of Every Analysis",

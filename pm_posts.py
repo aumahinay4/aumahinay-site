@@ -14,6 +14,130 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "November 23, 2026",
+        "title": "Project Management Series, Part 3: Mapping Who Holds the Power",
+        "slug": "project-management-part-3-stakeholder-mapping",
+        "category": "pm",
+        "summary": "Every project has people who can help it, stop it or simply be affected by it. Here is how to "
+                   "list them, place them on a power and interest grid, and decide how to work with each one, "
+                   "using the treasury encoding project as the example.",
+        "publish_on": "2026-11-23 21:00",
+        "body": [
+            "The real property tax encoding project now has a signed one-page charter. The revenue clerk feels "
+            "ready. Then, a week later, a message arrives from the office of the local chief executive. "
+            "The mayor heard that “the treasury is changing the tax bills” and wants to know why nobody told "
+            "the mayor’s office before taxpayers started asking.",
+            "Nothing has gone wrong with the work. The encoding is on schedule. But someone with a great deal "
+            "of power over the project was not on the clerk’s list, and now she must spend a day explaining "
+            "instead of a minute informing.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "This part is about avoiding that day. It is about stakeholders: the people and groups who can "
+            "affect a project or are affected by it. Finding them early, and deciding how to work with each "
+            "one, is one of the most valuable hours a project manager will ever spend.",
+            ("h", "Who Counts as a Stakeholder"),
+            "Many people think stakeholders are only the people who approve or pay for a project. The real list "
+            "is wider. A stakeholder is anyone who can help the project, block it, or feel its results.",
+            "For the encoding project, a first list might look like this:",
+            ("point", "Inside the treasury", "The head of office as sponsor, the collectors doing the encoding, "
+             "the cashier, and the staff at the counter who will use the new bills."),
+            ("point", "Other offices", "The assessor’s office, whose tax declarations are the source of truth; "
+             "the information technology staff who keep the system running; the accounting office, which "
+             "relies on correct collection reports."),
+            ("point", "Leadership", "The local chief executive and, depending on the town, members of the "
+             "local council who field complaints from residents."),
+            ("point", "Oversight", "The government auditors, who will later examine the records and the controls "
+             "around them."),
+            ("point", "The public", "Property owners who will receive the new bills and bring questions to the "
+             "counter."),
+            "Write the list with the team, not alone. The collectors may remember people the clerk would never "
+            "think of, such as the staff at the information desk who hear taxpayers’ questions first.",
+            ("h", "The Power and Interest Grid"),
+            "Once the list is written, place each stakeholder on a simple grid. One side asks how much power they "
+            "have over the project: can they approve, stop, fund or slow it? The other asks how much interest "
+            "they have: how much do they care, or how much will the result affect them?",
+            ("photo", "blog/pm-power-interest.jpg", "The power and interest grid: place each stakeholder by how "
+             "much power they have over the project and how much they care about it, then engage them to "
+             "match. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("point", "High power, high interest: manage closely", "These are the key players. Involve them in "
+             "decisions, meet them regularly and never let them be surprised. For the encoding project, this is "
+             "the head of office and the assessor."),
+            ("point", "High power, lower interest: keep satisfied", "They can stop the project but are not "
+             "following it day to day. Give them short, timely updates before they hear news from someone "
+             "else. The local chief executive belongs here, which is exactly the clerk’s missed step."),
+            ("point", "Lower power, high interest: keep informed", "They care a great deal and will feel the "
+             "results, but cannot approve or stop the work. Tell them what is changing and listen to their "
+             "concerns. The collectors and counter staff belong here, and so, in a different way, do the "
+             "taxpayers."),
+            ("point", "Lower power, lower interest: monitor", "Check now and then whether their position has "
+             "changed. A bank where the office deposits collections may sit here unless the project changes "
+             "how deposits are recorded."),
+            "Positions are not fixed. The auditors may show little interest while the encoding is under way, then "
+            "a great deal once the new records are used to produce official reports. Look at the grid again at "
+            "each milestone in the charter.",
+            ("h", "From Grid to Plan"),
+            "The grid is only useful if it changes what you do. For each stakeholder, write one line: what they "
+            "need to know, how they will hear it, and how often.",
+            ("point", "Head of office", "A ten-minute update every Friday, plus a call the same day if a "
+             "milestone is at risk."),
+            ("point", "Local chief executive", "A short memo from the head of office before the project starts "
+             "showing on bills, and a one-paragraph note when the system goes live."),
+            ("point", "Assessor’s office", "A shared list of records with questions, checked on the agreed "
+             "Tuesday and Thursday afternoons."),
+            ("point", "Collectors and counter staff", "A fifteen-minute briefing before the January rush on what "
+             "the new bill looks like and how to answer the three most common questions."),
+            ("point", "Taxpayers", "A plain notice at the counter and on the office’s page explaining that bills "
+             "are now printed, and who to ask if something looks wrong."),
+            "Notice that the plan respects the chain of command. In this example, the clerk does not "
+            "write to the mayor directly; the head of office does. Knowing who should speak to whom is part of stakeholder "
+            "work, especially in government.",
+            ("h", "Four Questions for Each Key Stakeholder"),
+            "For the people in the top two boxes, a short conversation early in the project is worth more than "
+            "any document. Ask each of them four questions, and write down the answers.",
+            ("point", "What does success look like to you?", "The assessor may care most about matching "
+             "records; the head of office about shorter lines in January. Both answers matter."),
+            ("point", "What worries you about this project?", "Worries spoken early become risks you can plan "
+             "for. Worries kept quiet become objections later."),
+            ("point", "How would you like to hear from us?", "Some people want a short message, others a "
+             "printed memo, others a two-minute talk in the hallway. Match their habit, not yours."),
+            ("point", "Who else should we talk to?", "This question finds the stakeholders your list missed. "
+             "It is how the clerk would have learned that the mayor’s office wanted to be told first."),
+            ("h", "Influence Without Authority"),
+            "In Part 1, the clerk discovered that nobody on her list reported to her. The grid does not change "
+            "that, but it shows her where her influence will come from.",
+            "With high-power stakeholders, influence comes through the sponsor. A request from the head of "
+            "office carries weight that a request from the clerk does not. With high-interest stakeholders, "
+            "influence comes from listening. Collectors who were asked how to make the encoding easier have "
+            "helped shape the schedule, so part of it is theirs.",
+            ("quote", "You cannot command the people on your map. You can make sure none of them is surprised."),
+            ("h", "Common Mistakes"),
+            ("point", "Mapping once and filing it", "People move around the grid. A new head of office or an "
+             "election can change everything."),
+            ("point", "Forgetting the quiet ones", "Ask the people with low power and high interest early. "
+             "They may not speak up until something has gone wrong for them."),
+            ("point", "Treating everyone the same", "Sending every stakeholder the same long weekly report "
+             "wastes their time and hides the message that matters to each."),
+            ("point", "Leaving the map lying around", "A stakeholder map is a working "
+             "note. Keep it respectful and factual, and share it only with the project team."),
+            ("h", "Your Part 3 Exercise"),
+            "Take the project from your one-page charter and do this:",
+            ("point", "List", "Write every person or group who can help, block or feel the project. Aim for at "
+             "least ten."),
+            ("point", "Place", "Put each one in a box of the grid: manage closely, keep satisfied, keep "
+             "informed or monitor."),
+            ("point", "Plan", "For the people in the top two boxes, write what they need to hear, from whom "
+             "and how often."),
+            "Then ask yourself one question: who would be most upset to hear about this project from someone "
+            "other than you? Inform that person this week.",
+            ("cta", "Read: Project Management Series, Part 2", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 1", "/blog/project-management-part-1-accidental-project-manager/"),
+            ("cta", "Read: Business Intelligence Series, Part 2", "/blog/business-intelligence-part-2-the-bi-team/"),
+            ("cta", "Read: The ALTOS Framework, Principle 3: Every Document Has an Owner",
+             "/blog/altos-framework-every-document-has-an-owner/"),
+            ("ask", "Who is the stakeholder you are most likely to forget on your next project?"),
+        ],
+    },
+    {
         "date": "November 18, 2026",
         "title": "Project Management Series, Part 2: The Project Charter on One Page",
         "slug": "project-management-part-2-project-charter",

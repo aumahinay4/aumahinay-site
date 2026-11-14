@@ -13,6 +13,131 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "November 21, 2026",
+        "title": "Business Intelligence Series, Part 3: What a Treasury Should Watch Every Day",
+        "slug": "business-intelligence-part-3-what-to-watch",
+        "category": "bi",
+        "summary": "A dashboard that shows everything helps no one. Here are six measures worth watching every day "
+                   "in a local treasury, how to tell an early warning from an after-the-fact report, and how to "
+                   "set limits that tell you when to act.",
+        "publish_on": "2026-11-21 21:00",
+        "body": [
+            "A newly built treasury dashboard has forty-two charts. There are collections by every revenue "
+            "account, by every collector, by every barangay, by week, by month and by year. The head of office "
+            "opens it twice, scrolls for a minute, and goes back to asking the cashier for the total over the "
+            "phone.",
+            "Nothing on the dashboard is wrong. There is simply too much of it, and none of it says what needs "
+            "attention today. It answers every question except the one the reader actually has.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "In Part 1, I described BI as a service that keeps answers coming. This part is about choosing which "
+            "answers deserve that treatment. The secret is to move from one-time questions to a short list of "
+            "measures that are watched every day, each with a clear limit that tells you when to act.",
+            ("h", "One-Time Questions and Always-On Questions"),
+            "Some questions are asked once. Should the office open a second payment window? Did last year’s "
+            "tax amnesty bring in more than it cost? These are perfect for an analysis: gather the data, study "
+            "it, report a finding and move on.",
+            "Other questions come back every single day. Did we deposit everything we collected? Are we on track "
+            "for this month’s target? Are we about to run out of official receipts? Answering these by hand every "
+            "morning wastes time and invites mistakes. These are the questions a BI system should answer on its "
+            "own.",
+            "A simple test helps. If the same person asks the same question more than once a week, and the answer "
+            "can change what they do that day, it belongs on the dashboard. If not, it is probably better as a "
+            "report or a one-time study.",
+            ("h", "Six Measures Worth Watching"),
+            "Every office is different, but most local treasuries would benefit from watching these six.",
+            ("photo", "blog/bi-watch.jpg", "Six measures a treasury BI system can check every day: collections "
+             "against target, deposits against collections, accountable forms in stock, arrears by age, permit "
+             "renewals and cash on hand. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("point", "1. Collections against target", "How much has come in so far this month and this year, "
+             "compared with what was expected by this date. A month that is 60% over with only 40% of its target "
+             "collected is worth a question today, not at month-end."),
+            ("point", "2. Deposits against collections", "Audit rules expect collections to be deposited intact, "
+             "daily or by the next banking day. A measure that compares what was collected with what reached "
+             "the bank, by date, shows at once when cash is staying in a drawer longer than it should."),
+            ("point", "3. Accountable forms in stock", "How many official receipts, by form type, are left in "
+             "stock and with each collector. This measure looks ahead, so new forms can be issued before "
+             "anyone runs out during the January rush."),
+            ("point", "4. Arrears by age", "Unpaid real property tax grouped by how long it has been unpaid: "
+             "this year, one to two years, three years or more."),
+            ("point", "5. Permit renewals", "In January, how many businesses from last year’s list have renewed "
+             "so far, compared with the same day last year. A slow start in the second week is still fixable."),
+            ("point", "6. Cash on hand", "How much is in the vault and in the bank accounts, by fund, against "
+             "the payments due this week. This one is for the head of office and the budget office together."),
+            "Six is not a magic number. The point is to keep the list short enough that someone can read all of "
+            "it in under a minute. If a measure has not changed anyone’s decision in three months, take it off "
+            "the main screen.",
+            ("h", "Early Warnings and After-the-Fact Reports"),
+            "Measures come in two kinds. Some tell you what already happened. Others warn you about what is "
+            "about to happen. These are often called lagging and leading indicators.",
+            ("point", "Lagging: the score", "Total collections last month. Collection efficiency for the year. "
+             "These are important, and they are what higher offices and auditors will look at, but by the time "
+             "you see them, it is too late to change them."),
+            ("point", "Leading: the warning", "Forms left in stock. Renewals in the first week of January. "
+             "Undeposited collections older than one day. These move before the score does, so they give you "
+             "time to act."),
+            "A good dashboard has both, but it puts the leading measures where the eye lands first. The head of "
+            "office cannot change last month. She can still send more forms to a collector before he runs out.",
+            ("quote", "A lagging measure tells you how the game ended. A leading measure tells you while you can "
+             "still play."),
+            ("h", "Give Every Measure a Limit"),
+            "A number on a screen does not tell anyone whether to worry. A limit does. For each measure, agree in "
+            "advance on the point where someone must act, and on who that someone is.",
+            ("point", "Forms in stock", "If any collector has fewer than two booklets of official receipts left, "
+             "the accountable forms custodian issues more that day."),
+            ("point", "Undeposited collections", "If any collection is still undeposited after the next banking "
+             "day, the cashier explains why before noon."),
+            ("point", "Collections against target", "If the month is past its halfway point and less than 40% "
+             "of the target is in, the revenue unit reviews which sources are behind."),
+            "Dashboard tools such as Power BI can send an alert when a number crosses a limit you set."
+            " Even without that, a simple rule written next to each chart turns watching into acting.",
+            "Be careful with limits that are too tight. A warning that goes off every second day stops "
+            "telling you anything. Start with limits that catch real problems, then adjust them after a month of "
+            "watching.",
+            ("h", "Watching Without Gaming"),
+            "Any measure that people are judged by can start to change their behavior, and not always in the "
+            "way you hoped. If collectors are praised only for the amount they collect, they may chase the easy "
+            "payments and avoid the hard delinquent accounts. If the office is praised only for fast deposits, "
+            "someone may be tempted to deposit before counting carefully.",
+            "The cure is to pair measures that keep each other honest. Watch the amount collected and the arrears "
+            "by age together. Watch deposit speed and cash shortages together. When one improves at the cost of "
+            "the other, the dashboard shows it.",
+            ("h", "Where Each Number Comes From"),
+            "A measure is only as good as the record behind it. Before putting any of the six on a screen, write "
+            "down where its data is born and how often it is updated.",
+            ("point", "Collections and deposits", "From the official receipts and the daily report of collections "
+             "and deposits. If receipts are encoded only at the end of the day, the dashboard will always be "
+             "a few hours behind, and everyone should know that."),
+            ("point", "Forms in stock", "From the register of accountable forms kept by the custodian, and from "
+             "each collector’s report of forms used. If that register is still on paper, this measure has to "
+             "wait until it is encoded."),
+            ("point", "Arrears and renewals", "From the real property tax records and the business permit list. "
+             "These change slowly, so updating them once a day is enough."),
+            ("point", "Cash on hand", "From the cashbook and the bank balances. Show the date of each figure "
+             "clearly on the screen."),
+            "Writing this list also shows you which measures are ready now and which need better record keeping "
+            "first. That is useful on its own, even before any chart is drawn.",
+            ("h", "Start Small, With One Screen"),
+            "You do not need all six measures on the first day. Pick the one that causes the most phone calls in "
+            "your office and build it well. Make sure the data behind it is complete and checked every morning, "
+            "as described in Part 2. Agree on its limit and its owner. Then add the next one.",
+            "A single trusted measure does more good than forty-two charts nobody reads.",
+            ("h", "Your Part 3 Exercise"),
+            "Take ten minutes and list the questions your head of office asks most often. For each one, write:",
+            ("point", "How often", "Daily, weekly, monthly or only once?"),
+            ("point", "Leading or lagging", "Does it warn you early, or report what already happened?"),
+            ("point", "The limit", "At what number should someone act, and who is that person?"),
+            "The questions that are asked daily, give early warning and have a clear limit are your first "
+            "dashboard. Everything else can wait.",
+            ("cta", "Read: Business Intelligence Series, Part 2", "/blog/business-intelligence-part-2-the-bi-team/"),
+            ("cta", "Read: Business Intelligence Series, Part 1", "/blog/business-intelligence-part-1-same-data-different-jobs/"),
+            ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
+            ("cta", "Read: The ALTOS Framework, Principle 9: Evidence Before Decision",
+             "/blog/altos-framework-evidence-before-decision/"),
+            ("ask", "If your office could watch only one number every morning, which would it be?"),
+        ],
+    },
+    {
         "date": "November 16, 2026",
         "title": "Business Intelligence Series, Part 2: The BI Team, Role by Role",
         "slug": "business-intelligence-part-2-the-bi-team",
