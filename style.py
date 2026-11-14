@@ -1070,3 +1070,11 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
 .hero-art { grid-column: 1 / -1; grid-row: 2; display: block; width: 100%; max-width: 820px; height: auto; margin: 14px 0 0; }
 @media (max-width: 640px) { .hero-art { margin-top: 10px; } }
 """
+
+CSS += """
+/* Blog category bar: the chosen category name ("All posts") in gold, same gold as the Home title (Butch 2026-11-14) */
+.blog-filters .cat-now, .blog-filters input:checked + label { color: #b98200; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .blog-filters .cat-now,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label { color: var(--gold); } }
+:root[data-theme="dark"] .blog-filters .cat-now, :root[data-theme="dark"] .blog-filters input:checked + label { color: var(--gold); }
+"""
