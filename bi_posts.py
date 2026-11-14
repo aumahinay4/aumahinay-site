@@ -13,6 +13,133 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 6, 2026",
+        "title": "Business Intelligence Series, Part 6: Databases, Warehouses, Marts and Lakes, in Plain Words",
+        "slug": "business-intelligence-part-6-warehouses-marts-lakes",
+        "category": "bi",
+        "summary": "Where should the data behind a dashboard live? This part explains the difference between a "
+                   "database, a data warehouse, a data mart and a data lake, with a treasury example for each, "
+                   "and shows how a small office can start without buying anything.",
+        "publish_on": "2026-12-06 21:00",
+        "body": [
+            "The cashier is closing the day. At the same moment, the head of office opens the collections "
+            "dashboard, and the dashboard asks the collection system to add up every receipt of the year by "
+            "barangay and by account. The cashier’s screen freezes for a minute. Two taxpayers at the window "
+            "wait while a chart loads in another room.",
+            "Nothing is broken. The same system is simply being asked to do two very different jobs at once: "
+            "record each payment quickly and correctly, and answer big questions about thousands of past "
+            "payments. Business intelligence works better when those two jobs are kept apart.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "In Part 5, we shaped the data into a star: facts in the middle, dimensions around them. This part "
+            "is about where that star should live. By the end of this post you will know the difference "
+            "between a database, a data warehouse, a data mart and a data lake, which one a treasury needs "
+            "first, and how to set up a small, free version to practice on.",
+            ("photo", "blog/bi-data-homes.jpg", "Four homes for data: the database runs the day, the warehouse "
+             "keeps the history, the mart serves one unit, and the lake holds raw files for later. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Database: Built to Run the Day"),
+            "A system that records transactions keeps them in a database. In a treasury, it is the "
+            "database of the collection system: each official receipt, each payment line, each cancellation, "
+            "saved the moment it happens.",
+            "This kind of database is designed for many small, fast actions: add one receipt, look up one "
+            "taxpayer, correct one entry. It holds the current state of things, and it must stay quick for the "
+            "people at the counter.",
+            ("point", "Good at", "Recording and finding single transactions, all day, without errors."),
+            ("point", "Not built for", "Adding up a whole year of receipts every time someone opens a chart. "
+             "Heavy reporting queries compete with the counter for the same system."),
+            ("h", "The Data Warehouse: Built to Answer Questions"),
+            "A data warehouse is a separate store, copied from the working systems and arranged for analysis. "
+            "Bill Inmon, one of the early writers on the subject, described it as a subject-oriented, "
+            "integrated, time-variant and non-volatile collection of data that supports management’s "
+            "decisions. Each of those four words is worth unpacking.",
+            ("point", "Subject-oriented", "Organized around the things the office asks about, such as "
+             "collections, taxpayers and accounts, rather than around the screens of each system."),
+            ("point", "Integrated", "Data from several sources is brought together and made consistent. The "
+             "barangay codes from the collection system and from the assessor’s records match."),
+            ("point", "Time-variant", "It keeps history, so you can compare this month with the same month "
+             "in past years."),
+            ("point", "Non-volatile", "Once loaded, records are not changed by daily work. New data is added; "
+             "old data stays as it was, so last year’s report gives the same answer next year."),
+            "The star model from Part 5 is a common shape inside a warehouse. The dashboard reads from the "
+            "warehouse, never from the cashier’s system, so a chart no longer slows down the counter.",
+            ("h", "The Data Mart: One Unit’s Slice"),
+            "A data mart is a smaller store built for one unit or one subject. It can be a slice of the "
+            "warehouse, or it can stand alone when only one unit needs it.",
+            "For example, the revenue unit may need only collections and delinquencies, while the cash unit "
+            "needs deposits and disbursements. Each mart holds only what its users need, which keeps it simple "
+            "and makes it easier to control who sees what.",
+            ("h", "The Data Lake: Keep Everything Now, Shape It Later"),
+            "A data lake is a central store for data in its original form: spreadsheets, exported files, "
+            "scanned documents, system logs. Nothing has to be cleaned or modeled before it goes in. The "
+            "structure is decided only when someone reads the data for a particular analysis.",
+            "That flexibility is the lake’s strength and its risk. A lake without a clear list of what is in "
+            "it, who owns each file and who may open it becomes very hard to use and very hard to protect. "
+            "For an office that holds taxpayers’ personal data, that is a serious concern.",
+            ("quote", "A warehouse answers the questions you planned for. A lake keeps the data for questions "
+             "you have not asked yet, but only if someone keeps track of what is in it."),
+            ("h", "How Data Moves From the Counter to the Warehouse"),
+            "Data does not jump into a warehouse by itself. A small, regular job copies it, usually after the day "
+            "is closed. This job is often called ETL, short for extract, transform and load.",
+            ("point", "Extract", "Read the day’s receipts, cancellations and deposits from the working database "
+             "without changing anything there."),
+            ("point", "Transform", "Turn names into codes, check that every receipt has a date, a collector and an "
+             "account, and set aside anything that fails a check for someone to review."),
+            ("point", "Load", "Add the checked rows to the warehouse tables, and record how many rows were added and "
+             "when, so anyone can see whether last night’s copy ran."),
+            "Run it at the same time every day. A dashboard that says “data as of last night, 8:00 p.m.” is "
+            "easier to trust than one that leaves readers guessing.",
+            ("h", "Side by Side"),
+            ("point", "Database", "Purpose: run daily work. Data: current, detailed, changing all day. Users: "
+             "counter staff and the system itself."),
+            ("point", "Warehouse", "Purpose: analysis across the office. Data: cleaned, integrated, with "
+             "history. Users: analysts, dashboards, management."),
+            ("point", "Mart", "Purpose: one unit’s reports. Data: a cleaned subset. Users: one team."),
+            ("point", "Lake", "Purpose: keep raw data for later use. Data: any format, as received. Users: "
+             "analysts who know how to shape it."),
+            ("h", "What a Small Treasury Needs First"),
+            "A small office does not need all four. A sensible order is:",
+            ("point", "1. Keep the working database clean", "Everything starts here. If receipts are encoded "
+             "late or wrongly, no warehouse can fix it."),
+            ("point", "2. Build a small warehouse", "A nightly copy of the day’s transactions into a separate "
+             "file or database, arranged as a star. Even a separate SQLite file works for a start."),
+            ("point", "3. Add marts only when units need different views", "Begin with one warehouse that "
+             "everyone reads. Split it only when access or performance requires it."),
+            ("point", "4. Treat a lake with caution", "Collecting files “just in case” is easy. Knowing what "
+             "they contain, and protecting them, is the hard part."),
+            ("h", "Practicing for Free"),
+            "You can practice building a warehouse without spending anything. On your own computer, a SQLite "
+            "file can hold a small star model with made-up data. In the cloud, Google offers a BigQuery "
+            "sandbox that needs no credit card. It allows 10 GiB of storage and 1 TiB of query processing a "
+            "month, and tables in the sandbox expire automatically after 60 days, so it is a place to learn, "
+            "not to keep records.",
+            "Use made-up or fully aggregated data for practice. Real taxpayer records should stay inside the "
+            "systems and rules your office has approved.",
+            ("h", "Key Takeaways"),
+            ("point", "Separate running from reporting", "The counter’s database records the day; the "
+             "warehouse answers questions about it."),
+            ("point", "A warehouse keeps history", "It is integrated, organized by subject and not changed by "
+             "daily work."),
+            ("point", "Marts serve one unit", "Smaller, simpler and easier to control."),
+            ("point", "Lakes need a catalog", "Raw data without a list of what is in it is hard to use and "
+             "hard to protect."),
+            ("h", "Your Part 6 Exercise"),
+            "Make a short inventory of where your office’s data lives today:",
+            ("point", "Working systems", "Which systems record transactions every day?"),
+            ("point", "Report sources", "When a report is prepared, does it read from those systems directly, "
+             "or from a copy?"),
+            ("point", "Loose files", "Which spreadsheets and exports sit on shared drives or personal "
+             "computers, and who owns each one?"),
+            "If every report reads straight from the working system, a simple nightly copy is your first "
+            "warehouse project.",
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Data Analytics Series, Part 5", "/blog/data-analytics-part-5-zero-budget-toolkit/"),
+            ("cta", "Read: Keep a receipts register in SQLite", "/tutorials/receipts-register-with-sqlite/"),
+            ("ask", "Where does the data behind your office’s monthly report actually come from?"),
+        ],
+    },
+    {
         "date": "December 1, 2026",
         "title": "Business Intelligence Series, Part 5: Data Modeling 101, Facts, Dimensions and the Star",
         "slug": "business-intelligence-part-5-data-modeling",
