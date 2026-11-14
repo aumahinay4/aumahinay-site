@@ -14,6 +14,136 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "December 23, 2026",
+        "title": "Project Management Series, Part 9: Gathering Requirements When Nobody Knows What They Want",
+        "slug": "project-management-part-9-gathering-requirements",
+        "category": "pm",
+        "summary": "“Make the daily report faster” is a wish, not a requirement. This part shows five ways to "
+                   "find out what people really need, the questions that get useful answers, and how to write "
+                   "requirements that can be checked and agreed on.",
+        "publish_on": "2026-12-23 21:00",
+        "body": [
+            "The cashier stops the revenue clerk in the hallway. “Can you make something that makes the daily "
+            "report faster? It takes me forever every afternoon.” The clerk says yes, and two weeks later "
+            "shows a spreadsheet that totals the day’s receipts by account in one click.",
+            "The cashier looks at it politely and says it is nice. The totals were never the slow part. The "
+            "slow part was finding the three or four receipts each day that did not match the cash count, and "
+            "the spreadsheet does nothing about that.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "The cashier did know what the problem was. What nobody had done was ask the questions that would "
+            "bring it out. By the end of this post you will know five ways to gather requirements, the "
+            "questions that get past the first answer, how to write a requirement that can be tested, and how "
+            "to get it agreed before the work begins.",
+            ("photo", "blog/pm-requirements-methods.jpg", "Five ways to gather requirements: interview, "
+             "observe, read the documents, hold a workshop and show a prototype. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Requirement Is"),
+            "A requirement is a statement of what the finished result must do, or how well it must do it, "
+            "written so that someone can check whether it was met.",
+            ("point", "Functional requirements", "What the result must do. For example: “The sheet lists every "
+             "receipt whose amount differs from the cash count for that receipt.”"),
+            ("point", "Quality requirements", "How well it must do it: speed, accuracy, security, ease of "
+             "use. These are also called non-functional requirements. For example: “The cashier can finish "
+             "the daily report within 15 minutes after the last receipt.”"),
+            "“Make the report faster” is neither. It is a wish. Turning wishes into requirements is the work "
+            "this part is about.",
+            ("h", "Why People Ask for Solutions"),
+            "A request can arrive as a solution instead of a problem. “Make it faster” and “put it in a spreadsheet” are guesses at a "
+            "solution. The project manager’s job is to work backward from the guess to the need.",
+            ("quote", "Listen to the request, then ask about the work. Look for the need in the work."),
+            ("h", "Five Ways to Gather Requirements"),
+            ("point", "1. Interview", "Sit with one person and ask about their work, not about the system. "
+             "Ask them to walk you through the last time they did the task, step by step."),
+            ("point", "2. Observe", "Watch the task being done on a real day. In the opening story, ten "
+             "minutes beside the cashier at closing time would have shown where the time really went."),
+            ("point", "3. Read the documents", "Look at the forms, reports and rules the work must follow, "
+             "such as the daily report of collections and deposits and the office’s cash-handling rules. "
+             "Documents can show requirements that people take for granted and forget to mention."),
+            ("point", "4. Hold a workshop", "Bring the people who share a process into one room, such as the "
+             "collectors, the cashier and the revenue clerk, and map the steps together on a board. "
+             "A workshop can bring out disagreements that one-on-one interviews miss."),
+            ("point", "5. Show a prototype", "Sketch the screen or report on paper, or build a rough version, "
+             "and ask people to try it. Reacting to something visible can be easier than "
+             "describing something that does not exist yet."),
+            "Use more than one. Interviews tell you what people say they do. Observation shows what they "
+            "actually do. Documents show what they are required to do. The requirements sit where all three "
+            "agree, and the risks sit where they do not.",
+            ("h", "Questions That Get Past the First Answer"),
+            ("point", "“Walk me through the last time.”", "A real example gives details that a general "
+             "description leaves out."),
+            ("point", "“Which part takes the longest?”", "In the opening story, this question would have pointed "
+             "straight to the mismatched receipts."),
+            ("point", "“What goes wrong?”", "Problems and workarounds point straight at needs."),
+            ("point", "“What happens if it is late or wrong?”", "The answer tells you how much each need "
+             "matters."),
+            ("point", "“Who else uses what you produce?”", "The daily report is used by other people too. "
+             "Their needs may become requirements."),
+            ("h", "Writing Requirements That Can Be Tested"),
+            "A good requirement passes four checks.",
+            ("point", "One idea", "Each requirement says one thing. Split “fast and accurate” into two."),
+            ("point", "Specific", "Name the user, the action and the result. Avoid words like “easy,” “quick” "
+             "and “user-friendly” unless you say how they will be measured."),
+            ("point", "Testable", "Someone can check it with a yes or no. “Within 15 minutes after the last "
+             "receipt” can be timed. “Faster” cannot."),
+            ("point", "Traceable", "Note who asked for it and why, so that when it is questioned later, you "
+             "know whom to ask."),
+            ("h", "The Cashier’s Requirements, Rewritten"),
+            ("point", "R1", "The sheet lists every receipt whose recorded amount differs from the cash count "
+             "for that receipt, with the receipt number and the collector. Source: interview with the cashier."),
+            ("point", "R2", "The daily report can be finished within 15 minutes after the last receipt on an "
+             "ordinary day. Source: interview with the cashier."),
+            ("point", "R3", "The day’s totals by account match the official receipts issued, with no manual "
+             "retyping. Source: interview with the cashier."),
+            ("point", "R4", "Only the cashier and the head of office can change a recorded amount, and every "
+             "change is logged. Source: the workshop, raised by the head of office."),
+            "R1 is the need the first spreadsheet missed. R3 is the part it did well. R4 came from someone "
+            "who never asked for anything, which is why the workshop matters.",
+            ("h", "Sorting What Matters Most"),
+            "When the requirements do not all fit the time and budget, sort them into four groups, a method "
+            "known as MoSCoW from the first letters of each group.",
+            ("point", "Must have", "Without it, the result fails. R1 and R4."),
+            ("point", "Should have", "Important, but the result still works without it for a while. R2."),
+            ("point", "Could have", "Nice if time allows. A chart of mismatches by week."),
+            ("point", "Won’t have this time", "Agreed and written down as out of scope, as in the scope "
+             "statement from Part 4."),
+            ("h", "Getting Agreement"),
+            "Read the list back to everyone who gave input. Ask each person whether it says what they need "
+            "and whether anything is missing. Then ask the sponsor to approve it.",
+            "The approved list becomes the base for the scope statement and its acceptance tests. When "
+            "someone later asks for something new, you can point to the list and offer the same choice as in "
+            "Part 4: move the date, add people, or plan it for the next phase.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Asking only the boss", "The head of office knows the goal. The people at the counter "
+             "know the work. You need both."),
+            ("point", "Writing solutions as requirements", "“Use a spreadsheet” is a design choice. Write the "
+             "need first, then choose the tool."),
+            ("point", "Gathering once", "New needs appear as people see the work take shape. Plan a short "
+             "check-in to review the list."),
+            ("h", "Key Takeaways"),
+            ("point", "A wish is not a requirement", "A requirement says what or how well, and can be checked."),
+            ("point", "Use several methods", "Interview, observe, read the documents, hold a workshop and "
+             "show a prototype."),
+            ("point", "Ask about the work", "Ask “Which part takes the longest?” as well as “What do you want?”"),
+            ("point", "Sort and agree", "Group requirements by priority, read them back and get the sponsor’s "
+             "approval."),
+            ("h", "Your Part 9 Exercise"),
+            "Pick one request someone made to you recently that sounded like “make it better” or “make it "
+            "faster.”",
+            ("point", "Ask", "Spend ten minutes with the person and ask the five questions above."),
+            ("point", "Watch", "If you can, watch them do the task once."),
+            ("point", "Write", "Write three requirements that pass the four checks, and sort them into must, "
+             "should and could."),
+            "Then show the list to the person. If they say, “Yes, that is exactly it,” you have found the "
+            "need. If they say, “Well, not really,” you have saved yourself two weeks.",
+            ("cta", "Read: Project Management Series, Part 4", "/blog/project-management-part-4-defining-scope/"),
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 3", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("ask", "What is the vaguest request you have ever received, and what was the real need behind it?"),
+        ],
+    },
+    {
         "date": "December 18, 2026",
         "title": "Project Management Series, Part 8: Who Does What? Building a RACI Matrix",
         "slug": "project-management-part-8-raci-matrix",

@@ -13,6 +13,130 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 21, 2026",
+        "title": "Business Intelligence Series, Part 9: Testing the Pipeline Before Anyone Sees a Number",
+        "slug": "business-intelligence-part-9-testing-the-pipeline",
+        "category": "bi",
+        "summary": "A pipeline can run without errors and still load wrong numbers. This part gives a test plan "
+                   "for a small treasury pipeline: schema, uniqueness, validity, consistency and freshness "
+                   "checks, what to do when one fails, and how to test a change before it goes live.",
+        "publish_on": "2026-12-21 21:00",
+        "body": [
+            "On Tuesday morning, the head of office opens the collections dashboard and sees that Monday’s collections were zero. The cashier is sure that was not true and remembers a "
+            "busy day at the window.",
+            "The pipeline had run on time. The run log showed the right number of receipts. But the week "
+            "before, the counter system had been updated, and the column once called “amount” was now called "
+            "“amount_paid.” The script could not find the old column, filled the amounts with zero, and "
+            "carried on. Every count matched. Every peso was missing.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 7 added four basic checks to the nightly pipeline: count, total, completeness and a run log. "
+            "This part turns them into a full test plan. By the end of this post you will know five more kinds of tests, how to respond when a test fails, and how to try a "
+            "change safely before it reaches the dashboard.",
+            ("photo", "blog/bi-pipeline-tests.jpg", "Five tests a pipeline runs before anyone sees a number: "
+             "schema, uniqueness, validity, consistency and freshness. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why a Clean Run Is Not Enough"),
+            "A pipeline can fail in two ways. A loud failure stops the run with an error, and someone notices "
+            "the missing data. A quiet failure finishes normally but loads something wrong. The opening story "
+            "was a quiet failure, and those are the ones a test plan exists to catch.",
+            "The rule behind every test below is simple: the pipeline should prove that the data looks right "
+            "before it replaces what readers saw yesterday.",
+            ("quote", "A pipeline that runs is not the same as a pipeline that is right."),
+            ("h", "1. Schema Tests: Is the Shape What We Expect?"),
+            "The schema is the list of columns and the kind of value each one holds. Before reading any row, "
+            "the pipeline should compare what arrived with what it expects.",
+            ("point", "Columns present", "Every expected column exists, with the expected name: receipt "
+             "number, date, collector code, account code, barangay code and amount."),
+            ("point", "Types correct", "Dates are dates, amounts are numbers, and codes are text. An amount "
+             "that arrives as text, such as “1,250.00” with a comma, may be read wrongly or not at all."),
+            ("point", "Stop on a mismatch", "If a column is missing or renamed, stop the run and leave "
+             "yesterday’s data in place. This single test would have caught the opening story."),
+            ("h", "2. Uniqueness Tests: Does Anything Appear Twice?"),
+            "Official receipts are pre-numbered accountable forms, so a receipt number from the same series should "
+            "never appear twice in the collections table. A duplicate is a sign that something went wrong upstream: a file copied twice, a "
+            "rerun that added instead of replaced, or two collectors encoding the same receipt.",
+            ("point", "What to test", "Count the rows for each series and receipt number. Any number with a count above "
+             "one fails."),
+            ("point", "What to do", "Set the duplicates aside on a review list and load the rest. One "
+             "duplicate receipt should not hold back a day of correct ones."),
+            ("h", "3. Validity Tests: Is Each Value Possible?"),
+            "A value can be present and still be impossible. Validity tests set the limits of what can be "
+            "true.",
+            ("point", "Amounts", "Above zero for a regular receipt. A cancelled receipt is marked as "
+             "cancelled, not entered as a negative amount, unless that is how your system records it."),
+            ("point", "Dates", "Within the day being loaded. A receipt dated next month, or ten years ago, is "
+             "a typing error until proven otherwise."),
+            ("point", "Codes", "From the official list. A barangay code that is not on the barangay list fails, "
+             "even if it looks close."),
+            "Write each limit down with a short reason, so the next person can tell a real rule from a "
+            "guess.",
+            ("h", "4. Consistency Tests: Do the Tables Agree?"),
+            "Consistency tests compare one part of the data with another. They catch mistakes that look fine "
+            "row by row.",
+            ("point", "Every code has a match", "Each collector code in the collections table exists in the "
+             "collector table, and each account code exists in the account table. A receipt pointing to a "
+             "code nobody knows can drop out of reports that join the two tables."),
+            ("point", "Totals agree across levels", "The day’s total by collector, added up, equals the day’s "
+             "total for the office. The month’s total in the warehouse equals the sum of its days."),
+            ("point", "Warehouse agrees with the signed report", "Once a month’s collections report is signed, "
+             "the warehouse total for that month should match it. A difference is either a correction made "
+             "after signing, which should be on record, or a problem to find."),
+            ("h", "5. Freshness Tests: Is the Data Current?"),
+            "A dashboard can show perfectly correct numbers from three days ago. Freshness tests make sure "
+            "the latest data is really the latest.",
+            ("point", "Latest date", "After the nightly run, the newest receipt date should be the last working "
+             "day. If it is older, a source file did not arrive."),
+            ("point", "Show it", "Put the latest date on the dashboard as “data as of,” so readers can see "
+             "freshness for themselves."),
+            ("h", "Stop, Set Aside or Warn"),
+            "Not every failure deserves the same response. Decide in advance which tests stop the run, which "
+            "set rows aside and which only send a warning.",
+            ("point", "Stop the run", "Schema failures and totals that do not match the source. Loading "
+             "anything would make the dashboard wrong."),
+            ("point", "Set rows aside", "Duplicates, impossible values and unknown codes. Load the good rows, "
+             "put the rest on a review list and show how many were set aside."),
+            ("point", "Warn only", "Unusual but possible results, such as a day’s total far above the daily "
+             "average. Someone should look, but the numbers may be real."),
+            "Whatever the response, every failure goes into the run log with the test’s name, so the person "
+            "who reads it in the morning knows where to start.",
+            ("h", "Testing a Change Before It Goes Live"),
+            "Tests also protect you when you change the pipeline yourself, such as adding a new revenue "
+            "account or a new column.",
+            ("point", "Keep a test day", "Save one small, made-up day of receipts with answers you worked out "
+             "by hand: the total, the count by collector and the rows that should be set aside."),
+            ("point", "Run the change on the test day first", "If the new version gives the same answers, try "
+             "it on a copy of the warehouse. Only then let it run on the real one."),
+            ("point", "Add a test for every mistake", "When a new kind of error slips through, add a test that "
+             "would have caught it. The test plan grows from experience."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Testing only the count", "Rows can all arrive with the wrong amounts, as the opening "
+             "story shows. Test values, not just rows."),
+            ("point", "Silent set-asides", "Rows set aside and never reviewed are collections missing from the reports. Show the count on the dashboard and review the list daily."),
+            ("point", "Tests nobody reads", "A failed test only helps if someone sees it. Name the person who "
+             "reads the run log each morning."),
+            ("h", "Key Takeaways"),
+            ("point", "Quiet failures are the danger", "A run that finishes can still load wrong data."),
+            ("point", "Five more tests", "Schema, uniqueness, validity, consistency and freshness, on top of "
+             "count, total and completeness."),
+            ("point", "Decide the response in advance", "Stop, set aside or warn, and log every failure."),
+            ("point", "Test changes on a known day", "Use a small test day with answers worked out by hand."),
+            ("h", "Your Part 9 Exercise"),
+            "Take one table your office reports from, even if it is a spreadsheet, and write a test plan for "
+            "it:",
+            ("point", "Schema", "List each column and the kind of value it should hold."),
+            ("point", "Limits", "Write one validity rule for each column, with a reason."),
+            ("point", "Response", "For each rule, decide whether a failure stops, sets aside or warns."),
+            "Then run your rules by hand on last week’s data. If a rule fails on data you know is correct, the "
+            "rule needs fixing. If nothing fails at all, look again at the limits.",
+            ("cta", "Read: Business Intelligence Series, Part 7", "/blog/business-intelligence-part-7-etl-or-elt/"),
+            ("cta", "Read: Business Intelligence Series, Part 8", "/blog/business-intelligence-part-8-report-or-dashboard/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "What is the quietest data mistake your office has ever found, and how long did it hide?"),
+        ],
+    },
+    {
         "date": "December 16, 2026",
         "title": "Business Intelligence Series, Part 8: Report or Dashboard? Static, Live and Self-Service Views",
         "slug": "business-intelligence-part-8-report-or-dashboard",
