@@ -1033,6 +1033,12 @@ html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:foc
 """
 
 
+CSS += """
+/* Home title: "Where public finance meets" on one line, "Python" centred below (Butch 2026-11-14) */
+.hero h1 { text-align: center; text-wrap: nowrap; }
+.hero h1 .l1, .hero h1 .l2 { display: block; white-space: nowrap; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.2185rem, 7.4vw); } }
+"""
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
 
 CSS += """
