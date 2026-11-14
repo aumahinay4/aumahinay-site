@@ -807,11 +807,19 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 .listen[data-state="playing"] .listen-play { border-color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 14%, var(--surface)); }
 .listen[data-state="playing"] .i-play { display: none; }
 .listen[data-state="playing"] .i-pause { display: block; }
-.listen-speed { min-width: 52px; padding: 7px 10px; font-variant-numeric: tabular-nums; }
+.listen-speed { min-width: 48px; padding: 7px 8px; font-variant-numeric: tabular-nums; }
 .listen-stop { width: 38px; height: 38px; padding: 0; }
+.listen button { flex-shrink: 0; }
 .listen-stop svg { width: 16px; height: 16px; stroke-width: 0; }
 .listen-time { font-size: 14.1186px; white-space: nowrap; }
 .listen:not([data-state="idle"]) .listen-time { display: none; }  /* while reading: Pause, speed and Stop on one line */
+.listen-clock { order: 5; margin-left: auto; font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.listen[data-state="idle"] .listen-clock, .listen-clock:empty { display: none; }
+.listen-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--line); border-radius: 2px; cursor: pointer; display: none; }
+.listen-progress::before { content: ""; position: absolute; inset: -10px 0; }  /* bigger area to tap */
+.listen-fill { display: block; height: 100%; width: 0; background: var(--blue-ink); border-radius: 2px; }
+.listen[data-audio]:not([data-state="idle"]) .listen-progress { display: block; }
+.listen[data-audio]:not([data-state="idle"]) { padding-bottom: 14px; gap: 6px; }
 /* While reading, the bar stays just under the top bar so Pause and Stop are always in reach */
 .listen:not([data-state="idle"]) { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--listen-top, 58px)); z-index: 4; background: var(--surface); padding: 6px 0; margin-block: 6px 0; box-shadow: 0 8px 10px -10px rgba(11, 42, 99, .35); }
 .post .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
@@ -1078,6 +1086,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 .post .byline { font-size: 16.0795px; }
 .listen button { font-size: 16.0795px; }
 .listen-time { font-size: 14.4716px; }
+.listen-clock { font-size: 13.8375px; }
 .related-card > span { font-size: 14.9309px; }
 .rpt-form legend { font-size: 1.0762rem; }
 .rpt-form input[type=number] { font-size: 17.425px; }
@@ -1132,42 +1141,22 @@ header.site { box-shadow: 0 1px 0 var(--line); }
 .menu-btn svg .b1, .blog-filters > summary svg .b1 { stroke: var(--gold-ink); }
 .menu-btn svg .b2, .blog-filters > summary svg .b2 { stroke: var(--blue-ink); }
 .menu-btn svg .b3, .blog-filters > summary svg .b3 { stroke: var(--green-ink); }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/" class="active" aria-current="page">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="data"><div class="meta"><span class="cat cat-gold">Data Analytics</span><span class="muted">November 13, 2026</span><span class="muted dot">·</span><span class="muted">9 min read</span></div><h1>Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data</h1><p class="byline">By <a href="/about/">Ambrosio “Butch” U. Mahinay</a></p><div class="listen" data-state="idle" hidden role="group" aria-label="Listen to this post"><button type="button" class="listen-play" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13M16 5.5v13"/></svg><span class="listen-word">Listen</span></button><span class="listen-time muted">11 min listen</span><button type="button" class="listen-speed" aria-label="Reading speed" title="Reading speed">1×</button><button type="button" class="listen-stop" aria-label="Stop reading" title="Stop" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg></button></div><script>
-(function () {
-  var box = document.querySelector(".listen"), post = box && box.closest(".post"), say = window.speechSynthesis;
-  if (!box || !post || !say || !window.SpeechSynthesisUtterance) return;
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/" class="active" aria-current="page">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="data"><div class="meta"><span class="cat cat-gold">Data Analytics</span><span class="muted">November 13, 2026</span><span class="muted dot">·</span><span class="muted">9 min read</span></div><h1>Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data</h1><p class="byline">By <a href="/about/">Ambrosio “Butch” U. Mahinay</a></p><div class="listen" data-state="idle" hidden role="group" aria-label="Listen to this post" data-audio="/static/audio/data-analytics-part-1-what-it-is.mp3?v=352924b0" data-starts="0.0,8.43,27.89,48.52,56.14,78.56,80.9,103.36,136.59,139.13,145.51,170.38,186.71,201.98,212.67,217.41,219.88,233.0,250.6,277.88,280.57,300.64,327.8,352.17,371.39,391.4,393.63,402.02,410.04,427.5,440.75,451.93,465.04,467.92,481.64,491.92,505.43,516.33,528.3,538.56,540.73,565.97,602.02,603.95,630.62,648.77,650.5,660.29,670.34,678.68,688.37,690.65,697.58,711.6,723.18,732.32" data-duration="736.0"><button type="button" class="listen-play" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13M16 5.5v13"/></svg><span class="listen-word">Listen</span></button><span class="listen-time muted">12 min listen</span><span class="listen-clock muted" aria-hidden="true"></span><button type="button" class="listen-speed" aria-label="Reading speed" title="Reading speed">1×</button><button type="button" class="listen-stop" aria-label="Stop reading" title="Stop" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg></button><div class="listen-progress" aria-hidden="true"><span class="listen-fill"></span></div></div><script>
+(function start() {
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", start); return; }  // the paragraphs come after this script
+  var box = document.querySelector(".listen"), post = box && box.closest(".post");
+  if (!box || !post) return;
   var play = box.querySelector(".listen-play"), word = play.querySelector(".listen-word");
   var stopBtn = box.querySelector(".listen-stop"), speedBtn = box.querySelector(".listen-speed");
-  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, chunks = [], at = 0, on = false, voice = null, lit = null;
+  var clock = box.querySelector(".listen-clock"), track = box.querySelector(".listen-progress");
+  var fill = track.querySelector(".listen-fill");
+  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, lit = null;
   try { sp = Math.max(0, speeds.indexOf(+localStorage.getItem("listenSpeed"))); } catch (e) {}
-  speedBtn.textContent = speeds[sp] + "\u00d7";
-  function pickVoice() {
-    var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
-    var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
-    all.sort(function (a, b) {
-      function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
-      return r(a) - r(b);
-    });
-    voice = all[0] || null;
-  }
-  pickVoice();
-  if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
-  // The words to read, in page order: title, summary, paragraphs, headings, quotes and lists.
-  // Not read: date line, byline, photos, sources, buttons.
-  function build() {
-    chunks = [];
-    var parts = post.querySelectorAll(":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
-                                      + ":scope > h3, :scope > blockquote, :scope > ul > li, :scope > ol > li");
-    Array.prototype.forEach.call(parts, function (el) {
-      var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
-      if (!text) return;
-      (text.match(/[^.!?]+[.!?]+["\u201d\u2019)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
-        if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
-        cur += s;
-      });
-      if (cur.trim()) chunks.push({ el: el, text: cur });
-    });
-  }
+  speedBtn.textContent = speeds[sp] + "×";
+  // The parts that are read aloud, in page order (audio.py reads the same parts).
+  var parts = Array.prototype.slice.call(post.querySelectorAll(
+    ":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
+    + ":scope > h3, :scope > blockquote"));
   var bar = document.querySelector("header.site");
   function fitUnderBar() { if (bar) box.style.setProperty("--listen-top", bar.offsetHeight + "px"); }
   fitUnderBar(); addEventListener("resize", fitUnderBar);
@@ -1186,37 +1175,123 @@ header.site { box-shadow: 0 1px 0 var(--line); }
     play.setAttribute("aria-pressed", state === "playing");
     stopBtn.hidden = state === "idle";
   }
-  function speak() {
-    if (at >= chunks.length) { done(); return; }
-    var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
-    if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
-    u.rate = speeds[sp];
-    u.onend = function () { if (on && u === current) { at += 1; speak(); } };
-    u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
-    current = u;
-    light(c.el);
-    say.speak(u);
-  }
-  var current = null;
-  function halt() { on = false; current = null; say.cancel(); }
-  function done() { halt(); at = 0; light(null); show("idle"); }
-  play.addEventListener("click", function () {
-    if (on) { halt(); show("paused"); return; }  // pause: remember the sentence
-    if (!chunks.length) build();
-    if (!chunks.length) return;
-    say.cancel();
-    on = true; show("playing"); speak();
-  });
-  stopBtn.addEventListener("click", done);
-  speedBtn.addEventListener("click", function () {
-    sp = (sp + 1) % speeds.length;
-    speedBtn.textContent = speeds[sp] + "\u00d7";
+  function saveSpeed() {
+    speedBtn.textContent = speeds[sp] + "×";
     try { localStorage.setItem("listenSpeed", speeds[sp]); } catch (e) {}
-    if (on) { halt(); on = true; speak(); }  // new speed from the current sentence
-  });
-  addEventListener("pagehide", function () { say.cancel(); });
-  say.cancel();  // nothing left over from another page
-  box.hidden = false;
+  }
+  if (box.getAttribute("data-audio")) recording(); else phoneVoice();
+
+  // A recording of the post (Voice 1). Keeps playing with the screen off, and the phone's
+  // lock screen shows play and pause.
+  function recording() {
+    var a = new Audio(), started = false, total = +box.getAttribute("data-duration") || 0;
+    var starts = (box.getAttribute("data-starts") || "").split(",").map(Number);
+    if (starts.length !== parts.length) starts = null;  // words changed: play without highlighting
+    a.preload = "none";
+    a.src = box.getAttribute("data-audio");
+    function mmss(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
+    function tick() {
+      var d = a.duration && isFinite(a.duration) ? a.duration : total, now = a.currentTime;
+      clock.textContent = mmss(now) + " / " + mmss(d);
+      fill.style.width = d ? Math.min(100, now / d * 100) + "%" : "0";
+      if (starts) {
+        var i = 0;
+        while (i + 1 < starts.length && starts[i + 1] <= now + 0.1) i += 1;
+        light(parts[i]);
+      }
+    }
+    function rate() { a.defaultPlaybackRate = a.playbackRate = speeds[sp]; }
+    play.addEventListener("click", function () {
+      if (!a.paused) { a.pause(); return; }
+      rate();
+      if (!started) { started = true; show("playing"); tick(); }
+      var p = a.play();
+      if (p && p.catch) p.catch(function () { if (a.paused) show(a.currentTime ? "paused" : "idle"); });
+    });
+    a.addEventListener("play", function () { show("playing"); });
+    a.addEventListener("pause", function () { if (started && !a.ended) show("paused"); });
+    a.addEventListener("timeupdate", tick);
+    a.addEventListener("ended", done);
+    function done() { a.pause(); try { a.currentTime = 0; } catch (e) {} started = false; light(null); fill.style.width = "0"; show("idle"); }
+    stopBtn.addEventListener("click", done);
+    speedBtn.addEventListener("click", function () { sp = (sp + 1) % speeds.length; saveSpeed(); rate(); });
+    track.addEventListener("click", function (e) {  // tap the line to jump
+      var r = track.getBoundingClientRect(), d = a.duration && isFinite(a.duration) ? a.duration : total;
+      if (!d) return;
+      a.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * d; tick();
+    });
+    if ("mediaSession" in navigator) {
+      try {
+        var img = document.querySelector('meta[property="og:image"]');
+        navigator.mediaSession.metadata = new MediaMetadata({ title: post.querySelector("h1").textContent,
+          artist: "Butch Mahinay", album: "aumahinay.dev", artwork: img ? [{ src: img.content, sizes: "1200x630", type: "image/jpeg" }] : [] });
+        navigator.mediaSession.setActionHandler("play", function () { play.click(); });
+        navigator.mediaSession.setActionHandler("pause", function () { a.pause(); });
+        navigator.mediaSession.setActionHandler("seekbackward", function () { a.currentTime = Math.max(0, a.currentTime - 10); });
+        navigator.mediaSession.setActionHandler("seekforward", function () { a.currentTime = a.currentTime + 10; });
+      } catch (e) {}
+    }
+    box.hidden = false;
+  }
+
+  // No recording yet: the phone's own voice reads it (Web Speech API). Pause stops and starts
+  // again from the same sentence, because pause() is unreliable on Android phones.
+  function phoneVoice() {
+    var say = window.speechSynthesis;
+    if (!say || !window.SpeechSynthesisUtterance) return;
+    var chunks = [], at = 0, on = false, voice = null, current = null;
+    function pickVoice() {
+      var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
+      var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
+      all.sort(function (a, b) {
+        function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
+        return r(a) - r(b);
+      });
+      voice = all[0] || null;
+    }
+    pickVoice();
+    if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
+    function build() {
+      chunks = [];
+      parts.forEach(function (el) {
+        var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
+        if (!text) return;
+        (text.match(/[^.!?]+[.!?]+["”’)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
+          if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
+          cur += s;
+        });
+        if (cur.trim()) chunks.push({ el: el, text: cur });
+      });
+    }
+    function speak() {
+      if (at >= chunks.length) { done(); return; }
+      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+      if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
+      u.rate = speeds[sp];
+      u.onend = function () { if (on && u === current) { at += 1; speak(); } };
+      u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
+      current = u;
+      light(c.el);
+      say.speak(u);
+    }
+    function halt() { on = false; current = null; say.cancel(); }
+    function done() { halt(); at = 0; light(null); show("idle"); }
+    play.addEventListener("click", function () {
+      if (on) { halt(); show("paused"); return; }
+      if (!chunks.length) build();
+      if (!chunks.length) return;
+      say.cancel();
+      on = true; show("playing"); speak();
+    });
+    stopBtn.addEventListener("click", done);
+    speedBtn.addEventListener("click", function () {
+      sp = (sp + 1) % speeds.length; saveSpeed();
+      if (on) { halt(); on = true; speak(); }
+    });
+    addEventListener("pagehide", function () { say.cancel(); });
+    say.cancel();
+    box.hidden = false;
+  }
 })();
 </script><p class="lead">Data analytics is the craft of turning everyday records into answers people can act on. Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, and why a local treasury is already sitting on a mountain of useful data.</p><p>Picture a Monday morning in a municipal treasury office. The mayor calls and asks a simple question: “Will we reach our real property tax target this year?” Someone opens a logbook. Someone else starts adding up receipt stubs from the past months. By lunchtime, the office has a total, but not yet an answer.</p><p>(As in all my examples, the office and the numbers are made up. No real taxpayer or town is described.)</p><p>The answer was in the office all along. It was written, line by line, on thousands of official receipts: who paid, how much, for what, and on which day. What was missing was a way to turn those records into something the mayor could decide on. That way has a name. It is data analytics, and this post is the first in a series about it.</p><h3>Why I Am Writing This Series</h3><p>I completed the Google Data Analytics Professional Certificate on Coursera, and later the Google Advanced Data Analytics Professional Certificate. What I learned there did not stay in the classroom. It shaped how I think about treasury records, and it became one of the foundations of ALTOS, the system I built for Philippine local treasuries.</p><p>Data analytics lessons online can use examples such as online shops or bike rentals. Those are fine, but they can feel far from a town hall in the province. This series explains the same ideas in plain words, with examples from the work I know: collections, disbursements, targets, deadlines and the people at the counter. By the end of this post, you will know what data analytics is, the four kinds of questions it answers, and why your office already holds the data to start.</p><h3>Data, Information and Insight</h3><p>Three words are often mixed up, so let us start there. Think of them as three steps on a ladder.</p><p class="point"><b>Data.</b> Raw facts, recorded one at a time. A single official receipt is data: receipt number 1234567, dated March 3, ₱2,450.00, real property tax, paid by a named owner, received by a named collector. On its own, one receipt tells you very little.</p><p class="point"><b>Information.</b> Data that has been organized so it means something. “We collected ₱1.8 million in real property tax in the first quarter” is information. It came from hundreds of receipts, added up and grouped by period.</p><p class="point"><b>Insight.</b> Information that explains something and points to an action. “Most of the shortfall comes from three barangays where no collection day was held this year” is an insight. It tells the office where to look and what to do next.</p><p>Data analytics is the work of climbing that ladder on purpose: from scattered records, to organized information, to an insight that someone can act on.</p><blockquote><p>Data is what happened. Insight is what you can do about it.</p></blockquote><h3>So What Is Data Analytics?</h3><p>Here is a working definition in plain words. Data analytics is the practice of collecting, cleaning, organizing and examining data in order to answer questions and support decisions.</p><p>Notice the last part. Analytics is not about producing more reports or prettier charts. It exists to help a person decide something: where to send collectors, when to open an extra window, which accounts to follow up first, or whether a new procedure is working.</p><p>You will also hear two related terms. A data analysis is one investigation, such as checking why collections dropped in May. Data analytics is the whole discipline around it: the process, the tools, the habits and the people. Data science is a wider field still. It includes building new statistical models and machine learning systems. A good analyst borrows from it, but you do not need it to begin.</p><h3>A Cholera Outbreak and a Famous Map</h3><p>A famous story in this field happened long before computers. On August 31, 1854, cholera broke out in Soho, a crowded neighborhood in London. Hundreds of people died within days. Most doctors at the time believed the disease spread through foul air.</p><p>A physician named John Snow suspected the water instead. He went through the records of who had died and where they had lived, and he asked families where they drew their water. Again and again, the answer led to one public pump on Broad Street. He also studied the exceptions. A brewery stood nearby, but none of its workers was recorded as dying of cholera. They drank the beer they were given, and the brewery had its own deep well.</p><p>On September 7, Snow presented his findings to the local parish board. The next day, the handle of the pump was removed so no one could use it. Snow himself noted that the outbreak was already slowing by then, and that many residents had fled. That honesty is part of the lesson. His evidence was strong enough to act on, and he did not claim more than it showed.</p><p>A few months later, Snow drew the picture that made the case famous. On a street map of the area, he placed a small mark for each death at its address. The marks pile up around the Broad Street pump and thin out farther away. Anyone could see the pattern in seconds, even without reading his tables.</p><p>Snow had no spreadsheet, no database and no software. He had a clear question, carefully collected records, the courage to bring his evidence to the people who could act, and a simple picture that made the pattern plain to everyone. Those four things are still the heart of data analytics today.</p><h3>Four Kinds of Questions</h3><p>Analysts often sort their work into four types, each answering a different question. Here they are with treasury examples.</p><p class="point"><b>Descriptive: What happened?.</b> Total collections last month by revenue source. This is the base for everything else.</p><p class="point"><b>Diagnostic: Why did it happen?.</b> Business tax collections fell 12% compared with last January. Was it fewer businesses, smaller declared sales, or simply that more owners chose to pay in quarterly installments instead of the full year at once?</p><p class="point"><b>Predictive: What is likely to happen?.</b> Based on the pattern of the past three years, where will real property tax collections probably end by December, and how wide is the range of likely results?</p><p class="point"><b>Prescriptive: What should we do?.</b> Given the forecast, which barangays should get a collection day first, and which delinquent accounts deserve a personal visit rather than a letter?</p><p>Each type builds on the one before it. You cannot explain a drop you have not measured, and you cannot plan around a forecast you do not trust. That is why the first steps deserve care.</p><h3>You Do Not Need Expensive Software</h3><p>A common worry is that analytics needs costly tools or a degree in mathematics. It does not. Useful analysis in a small office can start with tools that are free or already installed:</p><p class="point"><b>A spreadsheet.</b> Google Sheets, LibreOffice Calc or Excel. Sorting, filtering, formulas and pivot tables will take you remarkably far.</p><p class="point"><b>A database and SQL.</b> When records grow into tens of thousands of rows, a database such as SQLite keeps them organized, and SQL is the language for asking it questions.</p><p class="point"><b>A charting tool.</b> A good chart can make a pattern obvious in seconds, as Snow&#x27;s map did. Spreadsheets and free tools such as Looker Studio can do this.</p><p class="point"><b>A programming language.</b> Python, later on, for work that is repeated every month or is too large for a spreadsheet. My free Python tutorials already cover some of this.</p><p>The tool matters less than the thinking. A clear question answered with a simple spreadsheet is worth more than a beautiful dashboard that answers nothing.</p><h3>The Analyst&#x27;s Mindset</h3><p>Good analysts share a few habits. They are curious and keep asking why. They learn the context, because a number means nothing until you know how it was recorded. A dip in collections may be a real problem, or it may be a week of encoding that has not been posted yet. They are healthy skeptics who check their own results before trusting them. And they remember that behind every row there is a person.</p><p>That last habit matters a great deal in government. Treasury records hold names, addresses, property details and amounts paid. In the Philippines, the Data Privacy Act of 2012 (Republic Act No. 10173) sets the rules for handling personal information. An analyst should work with the least personal data the question needs. Totals by barangay, for example, rarely need anyone&#x27;s name. I wrote about this in more detail in a separate post on data at the treasury counter.</p><h3>Where ALTOS Fits</h3><p>When I built ALTOS, I kept one lesson from analytics in front of me: an answer is only as good as the records behind it. So ALTOS records each receipt and each deposit as the transaction happens, instead of copying figures later from paper. Collections can then be compared with targets by month and by revenue source, and year-end results can be forecast with an honest range rather than a single hopeful number.</p><p>Just as important, every result in ALTOS is treated as a prompt for a person to decide, never as an automatic action. Data can point to where a problem might be. People still have to look, judge and act. That idea runs through this whole series.</p><h3>Key Takeaways</h3><p class="point"><b>Data, information, insight.</b> Raw records become organized information, and information becomes insight when it points to an action.</p><p class="point"><b>Analytics serves a decision.</b> If no one will decide anything with the answer, the analysis is not finished, no matter how good the chart looks.</p><p class="point"><b>Four kinds of questions.</b> What happened, why, what is likely next, and what should we do. Each one rests on the one before it.</p><p class="point"><b>Start with what you have.</b> Official receipts, registers and a free spreadsheet are enough to begin. The thinking matters more than the tool.</p><h3>Your Part 1 Exercise</h3><p>Analytics is learned by doing. Before you read any further in this series, try these three small steps:</p><p class="point"><b>Write down one question.</b> Pick a real question from your work that you wish you could answer with numbers. For example: Which month brings in the most collections? Or: How many days does it take for a voucher to be paid?</p><p class="point"><b>List the records that already exist.</b> Write down every logbook, register, report or file that holds part of the answer. You will probably find more than you expect.</p><p class="point"><b>Name the decision.</b> Write down who would use the answer and what they would do differently. If no one would act on it, choose a better question.</p><p>Keep that page. You will use it again in Part 2.</p><p class="cta"><a href="/blog/your-data-at-the-treasury-counter/" class="btn primary">Read: Your Data at the Treasury Counter</a></p><p class="cta"><a href="/blog/why-i-built-altos/" class="btn primary">Read: Why I Built ALTOS</a></p><p class="cta"><a href="/tutorials/add-up-daily-collections/" class="btn primary">Try the free Python lesson: Add up a day&#x27;s collections</a></p><p class="ask">What question at your office would you most like to answer with data? Tell me, and it may become an example in this series. <a href="mailto:hello@aumahinay.dev">Email me</a>.</p></article><div class="react" data-page="/blog/data-analytics-part-1-what-it-is/"><button type="button" class="react-btn react-follow" aria-pressed="false" aria-label="Follow Butch Mahinay" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2.5 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path class="plus" d="M19 8v6M16 11h6"/></svg><span class="react-word">Follow</span><span class="react-count"></span></button><button type="button" class="react-btn react-heart" aria-pressed="false" aria-label="Heart this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="react-word">Heart</span><span class="react-count"></span></button><button type="button" class="react-btn react-like" aria-pressed="false" aria-label="Like this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg><span class="react-word">Like</span><span class="react-count"></span></button><button type="button" class="react-btn react-share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="react-word" aria-live="polite">Share</span><span class="react-count"></span></button></div><script>
 (function () {

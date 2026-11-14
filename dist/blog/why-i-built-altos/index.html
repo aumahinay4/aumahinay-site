@@ -807,11 +807,19 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 .listen[data-state="playing"] .listen-play { border-color: var(--blue-ink); background: color-mix(in srgb, var(--blue) 14%, var(--surface)); }
 .listen[data-state="playing"] .i-play { display: none; }
 .listen[data-state="playing"] .i-pause { display: block; }
-.listen-speed { min-width: 52px; padding: 7px 10px; font-variant-numeric: tabular-nums; }
+.listen-speed { min-width: 48px; padding: 7px 8px; font-variant-numeric: tabular-nums; }
 .listen-stop { width: 38px; height: 38px; padding: 0; }
+.listen button { flex-shrink: 0; }
 .listen-stop svg { width: 16px; height: 16px; stroke-width: 0; }
 .listen-time { font-size: 14.1186px; white-space: nowrap; }
 .listen:not([data-state="idle"]) .listen-time { display: none; }  /* while reading: Pause, speed and Stop on one line */
+.listen-clock { order: 5; margin-left: auto; font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.listen[data-state="idle"] .listen-clock, .listen-clock:empty { display: none; }
+.listen-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--line); border-radius: 2px; cursor: pointer; display: none; }
+.listen-progress::before { content: ""; position: absolute; inset: -10px 0; }  /* bigger area to tap */
+.listen-fill { display: block; height: 100%; width: 0; background: var(--blue-ink); border-radius: 2px; }
+.listen[data-audio]:not([data-state="idle"]) .listen-progress { display: block; }
+.listen[data-audio]:not([data-state="idle"]) { padding-bottom: 14px; gap: 6px; }
 /* While reading, the bar stays just under the top bar so Pause and Stop are always in reach */
 .listen:not([data-state="idle"]) { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--listen-top, 58px)); z-index: 4; background: var(--surface); padding: 6px 0; margin-block: 6px 0; box-shadow: 0 8px 10px -10px rgba(11, 42, 99, .35); }
 .post .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
@@ -1078,6 +1086,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 .post .byline { font-size: 16.0795px; }
 .listen button { font-size: 16.0795px; }
 .listen-time { font-size: 14.4716px; }
+.listen-clock { font-size: 13.8375px; }
 .related-card > span { font-size: 14.9309px; }
 .rpt-form legend { font-size: 1.0762rem; }
 .rpt-form input[type=number] { font-size: 17.425px; }
@@ -1132,42 +1141,22 @@ header.site { box-shadow: 0 1px 0 var(--line); }
 .menu-btn svg .b1, .blog-filters > summary svg .b1 { stroke: var(--gold-ink); }
 .menu-btn svg .b2, .blog-filters > summary svg .b2 { stroke: var(--blue-ink); }
 .menu-btn svg .b3, .blog-filters > summary svg .b3 { stroke: var(--green-ink); }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/" class="active" aria-current="page">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">October 27, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h1>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</h1><p class="byline">By <a href="/about/">Ambrosio “Butch” U. Mahinay</a></p><p class="series-line">The introduction to the series <a href="/blog/altos-framework/">The ALTOS Framework</a></p><div class="listen" data-state="idle" hidden role="group" aria-label="Listen to this post"><button type="button" class="listen-play" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13M16 5.5v13"/></svg><span class="listen-word">Listen</span></button><span class="listen-time muted">9 min listen</span><button type="button" class="listen-speed" aria-label="Reading speed" title="Reading speed">1×</button><button type="button" class="listen-stop" aria-label="Stop reading" title="Stop" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg></button></div><script>
-(function () {
-  var box = document.querySelector(".listen"), post = box && box.closest(".post"), say = window.speechSynthesis;
-  if (!box || !post || !say || !window.SpeechSynthesisUtterance) return;
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/" class="active" aria-current="page">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="blog-col"><a href="/blog/" class="back">&larr; All posts</a><article class="post" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">October 27, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h1>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</h1><p class="byline">By <a href="/about/">Ambrosio “Butch” U. Mahinay</a></p><p class="series-line">The introduction to the series <a href="/blog/altos-framework/">The ALTOS Framework</a></p><div class="listen" data-state="idle" hidden role="group" aria-label="Listen to this post"><button type="button" class="listen-play" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13M16 5.5v13"/></svg><span class="listen-word">Listen</span></button><span class="listen-time muted">9 min listen</span><span class="listen-clock muted" aria-hidden="true"></span><button type="button" class="listen-speed" aria-label="Reading speed" title="Reading speed">1×</button><button type="button" class="listen-stop" aria-label="Stop reading" title="Stop" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/></svg></button><div class="listen-progress" aria-hidden="true"><span class="listen-fill"></span></div></div><script>
+(function start() {
+  if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", start); return; }  // the paragraphs come after this script
+  var box = document.querySelector(".listen"), post = box && box.closest(".post");
+  if (!box || !post) return;
   var play = box.querySelector(".listen-play"), word = play.querySelector(".listen-word");
   var stopBtn = box.querySelector(".listen-stop"), speedBtn = box.querySelector(".listen-speed");
-  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, chunks = [], at = 0, on = false, voice = null, lit = null;
+  var clock = box.querySelector(".listen-clock"), track = box.querySelector(".listen-progress");
+  var fill = track.querySelector(".listen-fill");
+  var speeds = [1, 1.25, 1.5, 0.75], sp = 0, lit = null;
   try { sp = Math.max(0, speeds.indexOf(+localStorage.getItem("listenSpeed"))); } catch (e) {}
-  speedBtn.textContent = speeds[sp] + "\u00d7";
-  function pickVoice() {
-    var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
-    var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
-    all.sort(function (a, b) {
-      function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
-      return r(a) - r(b);
-    });
-    voice = all[0] || null;
-  }
-  pickVoice();
-  if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
-  // The words to read, in page order: title, summary, paragraphs, headings, quotes and lists.
-  // Not read: date line, byline, photos, sources, buttons.
-  function build() {
-    chunks = [];
-    var parts = post.querySelectorAll(":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
-                                      + ":scope > h3, :scope > blockquote, :scope > ul > li, :scope > ol > li");
-    Array.prototype.forEach.call(parts, function (el) {
-      var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
-      if (!text) return;
-      (text.match(/[^.!?]+[.!?]+["\u201d\u2019)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
-        if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
-        cur += s;
-      });
-      if (cur.trim()) chunks.push({ el: el, text: cur });
-    });
-  }
+  speedBtn.textContent = speeds[sp] + "×";
+  // The parts that are read aloud, in page order (audio.py reads the same parts).
+  var parts = Array.prototype.slice.call(post.querySelectorAll(
+    ":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
+    + ":scope > h3, :scope > blockquote"));
   var bar = document.querySelector("header.site");
   function fitUnderBar() { if (bar) box.style.setProperty("--listen-top", bar.offsetHeight + "px"); }
   fitUnderBar(); addEventListener("resize", fitUnderBar);
@@ -1186,37 +1175,123 @@ header.site { box-shadow: 0 1px 0 var(--line); }
     play.setAttribute("aria-pressed", state === "playing");
     stopBtn.hidden = state === "idle";
   }
-  function speak() {
-    if (at >= chunks.length) { done(); return; }
-    var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
-    if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
-    u.rate = speeds[sp];
-    u.onend = function () { if (on && u === current) { at += 1; speak(); } };
-    u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
-    current = u;
-    light(c.el);
-    say.speak(u);
-  }
-  var current = null;
-  function halt() { on = false; current = null; say.cancel(); }
-  function done() { halt(); at = 0; light(null); show("idle"); }
-  play.addEventListener("click", function () {
-    if (on) { halt(); show("paused"); return; }  // pause: remember the sentence
-    if (!chunks.length) build();
-    if (!chunks.length) return;
-    say.cancel();
-    on = true; show("playing"); speak();
-  });
-  stopBtn.addEventListener("click", done);
-  speedBtn.addEventListener("click", function () {
-    sp = (sp + 1) % speeds.length;
-    speedBtn.textContent = speeds[sp] + "\u00d7";
+  function saveSpeed() {
+    speedBtn.textContent = speeds[sp] + "×";
     try { localStorage.setItem("listenSpeed", speeds[sp]); } catch (e) {}
-    if (on) { halt(); on = true; speak(); }  // new speed from the current sentence
-  });
-  addEventListener("pagehide", function () { say.cancel(); });
-  say.cancel();  // nothing left over from another page
-  box.hidden = false;
+  }
+  if (box.getAttribute("data-audio")) recording(); else phoneVoice();
+
+  // A recording of the post (Voice 1). Keeps playing with the screen off, and the phone's
+  // lock screen shows play and pause.
+  function recording() {
+    var a = new Audio(), started = false, total = +box.getAttribute("data-duration") || 0;
+    var starts = (box.getAttribute("data-starts") || "").split(",").map(Number);
+    if (starts.length !== parts.length) starts = null;  // words changed: play without highlighting
+    a.preload = "none";
+    a.src = box.getAttribute("data-audio");
+    function mmss(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
+    function tick() {
+      var d = a.duration && isFinite(a.duration) ? a.duration : total, now = a.currentTime;
+      clock.textContent = mmss(now) + " / " + mmss(d);
+      fill.style.width = d ? Math.min(100, now / d * 100) + "%" : "0";
+      if (starts) {
+        var i = 0;
+        while (i + 1 < starts.length && starts[i + 1] <= now + 0.1) i += 1;
+        light(parts[i]);
+      }
+    }
+    function rate() { a.defaultPlaybackRate = a.playbackRate = speeds[sp]; }
+    play.addEventListener("click", function () {
+      if (!a.paused) { a.pause(); return; }
+      rate();
+      if (!started) { started = true; show("playing"); tick(); }
+      var p = a.play();
+      if (p && p.catch) p.catch(function () { if (a.paused) show(a.currentTime ? "paused" : "idle"); });
+    });
+    a.addEventListener("play", function () { show("playing"); });
+    a.addEventListener("pause", function () { if (started && !a.ended) show("paused"); });
+    a.addEventListener("timeupdate", tick);
+    a.addEventListener("ended", done);
+    function done() { a.pause(); try { a.currentTime = 0; } catch (e) {} started = false; light(null); fill.style.width = "0"; show("idle"); }
+    stopBtn.addEventListener("click", done);
+    speedBtn.addEventListener("click", function () { sp = (sp + 1) % speeds.length; saveSpeed(); rate(); });
+    track.addEventListener("click", function (e) {  // tap the line to jump
+      var r = track.getBoundingClientRect(), d = a.duration && isFinite(a.duration) ? a.duration : total;
+      if (!d) return;
+      a.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * d; tick();
+    });
+    if ("mediaSession" in navigator) {
+      try {
+        var img = document.querySelector('meta[property="og:image"]');
+        navigator.mediaSession.metadata = new MediaMetadata({ title: post.querySelector("h1").textContent,
+          artist: "Butch Mahinay", album: "aumahinay.dev", artwork: img ? [{ src: img.content, sizes: "1200x630", type: "image/jpeg" }] : [] });
+        navigator.mediaSession.setActionHandler("play", function () { play.click(); });
+        navigator.mediaSession.setActionHandler("pause", function () { a.pause(); });
+        navigator.mediaSession.setActionHandler("seekbackward", function () { a.currentTime = Math.max(0, a.currentTime - 10); });
+        navigator.mediaSession.setActionHandler("seekforward", function () { a.currentTime = a.currentTime + 10; });
+      } catch (e) {}
+    }
+    box.hidden = false;
+  }
+
+  // No recording yet: the phone's own voice reads it (Web Speech API). Pause stops and starts
+  // again from the same sentence, because pause() is unreliable on Android phones.
+  function phoneVoice() {
+    var say = window.speechSynthesis;
+    if (!say || !window.SpeechSynthesisUtterance) return;
+    var chunks = [], at = 0, on = false, voice = null, current = null;
+    function pickVoice() {
+      var all = say.getVoices().filter(function (x) { return /^en[-_]/i.test(x.lang); });
+      var rank = ["en-PH", "en-US", "en-GB", "en-AU"];
+      all.sort(function (a, b) {
+        function r(x) { var i = rank.indexOf(x.lang.replace("_", "-")); return (i < 0 ? 9 : i) - (x.localService ? 0.5 : 0); }
+        return r(a) - r(b);
+      });
+      voice = all[0] || null;
+    }
+    pickVoice();
+    if ("onvoiceschanged" in say) say.addEventListener("voiceschanged", pickVoice);
+    function build() {
+      chunks = [];
+      parts.forEach(function (el) {
+        var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
+        if (!text) return;
+        (text.match(/[^.!?]+[.!?]+["”’)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
+          if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
+          cur += s;
+        });
+        if (cur.trim()) chunks.push({ el: el, text: cur });
+      });
+    }
+    function speak() {
+      if (at >= chunks.length) { done(); return; }
+      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+      if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
+      u.rate = speeds[sp];
+      u.onend = function () { if (on && u === current) { at += 1; speak(); } };
+      u.onerror = function (e) { if (on && u === current && e.error !== "interrupted" && e.error !== "canceled") { at += 1; speak(); } };
+      current = u;
+      light(c.el);
+      say.speak(u);
+    }
+    function halt() { on = false; current = null; say.cancel(); }
+    function done() { halt(); at = 0; light(null); show("idle"); }
+    play.addEventListener("click", function () {
+      if (on) { halt(); show("paused"); return; }
+      if (!chunks.length) build();
+      if (!chunks.length) return;
+      say.cancel();
+      on = true; show("playing"); speak();
+    });
+    stopBtn.addEventListener("click", done);
+    speedBtn.addEventListener("click", function () {
+      sp = (sp + 1) % speeds.length; saveSpeed();
+      if (on) { halt(); on = true; speak(); }
+    });
+    addEventListener("pagehide", function () { say.cancel(); });
+    say.cancel();
+    box.hidden = false;
+  }
 })();
 </script><p class="lead">A treasury system built around one idea: every peso should be accounted for from the moment it arrives to the moment it is reported.</p><figure class="screenshot small"><img src="/static/altos-screen.jpg?v=98e81e40" alt="ALTOS sign-in page" loading="lazy"><figcaption>ALTOS sign-in page</figcaption></figure><p>Walk into some local treasury offices in the Philippines and you will still see stacks of receipts, hand-ruled cash books and monthly reports added up with a calculator. The people doing this work are careful and dedicated, but paper has limits. Reports take days to prepare, and a single wrong figure can hide for months before anyone notices.</p><p>I have spent more than 13 years in local government fiscal administration, and I kept asking the same question: what if the office&#x27;s own rules were built into the tools it uses every day? That question became ALTOS, the Automated Local Treasury Operations System. By the end of this post, you will know the problem it was built to solve, the design choices behind it, and why an office should put a written agreement in place before it adopts software built by one of its own people.</p><h3>The Idea Behind It: Close the Circle</h3><p>Picture the life of a single peso in a local treasury. It is received, recorded, deposited, perhaps paid out, and finally reported. At each of those stops, someone should be responsible for it. If even one stop has no clear owner, that is where errors and losses tend to happen.</p><blockquote><p>Accountability has to go all the way around. A circle with a missing piece is not a circle, and public money slips out through the missing piece.</p></blockquote><p>This is why I describe ALTOS as 360° accountability. Treasury work moves in a cycle of three steps: money comes in, money goes out, and both are reported. The reports then guide next year&#x27;s targets and budget, and the cycle begins again.</p><figure class="screenshot medium"><img src="/static/altos-loop.png?v=9b98ae94" alt="The ALTOS loop: collect, disburse, report" loading="lazy"><figcaption>The ALTOS loop: collect, disburse, report</figcaption></figure><h3>Starting From Forms People Already Know</h3><p>I did not want treasury staff to learn a strange new way of working. So every screen in ALTOS follows an official form they already fill out, from the LTOM and the COA. An auditor looking at the system sees the same documents they would see on paper.</p><p>The system also enforces the rules quietly in the background. Receipts are numbered strictly in sequence, so none can go missing. A check cannot carry a date earlier than its checkbook. Money for the 20% Development Fund and for trust funds is always kept in its own fund. And because the RAAF and CRAAF are due on the 5th of each month, ALTOS shows a countdown so the officer and the supervisor both know how many days are left.</p><h3>Two Subsystems, Both Ready</h3><p>ALTOS is the main system, and it has two subsystems, both complete and tested on the developer side. The Treasury Collection System covers everything on the receiving side: official receipts, collectors and their receipt series, remittances, bank deposits, the daily report of collections, and the monthly accountability reports. The Treasury Disbursement System covers the paying side: vouchers, checks, cash advances and their liquidation, the check register, and disbursement reports. Both share one database, which can be used from a desktop application or a web browser anywhere on the office network.</p><h3>What Would Change at the Counter</h3><p>For a collector, the biggest change would come at the end of the day. Instead of adding up a stack of receipts by hand and copying the totals into a report, the daily report is built from the receipts already issued. The numbers match because they come from the same records.</p><p>For the treasurer, the change would be visibility. Who holds which receipt series, which reports are due, which bond is about to lapse: these no longer live in someone&#x27;s memory or a drawer. They are on a screen, the same for everyone who is allowed to see them.</p><p>For the taxpayer, it would mean a clear computation and a proper receipt, the same way every time.</p><h3>What It Does Not Replace</h3><p>ALTOS does not replace people, and it was never meant to. The officers still review, sign and submit the reports. The treasurer still decides, and the auditor still audits. What the system removes is the repetitive copying and adding that takes time away from checking.</p><p>It also does not replace the rules. It follows them. If a rule changes, the right response is to change the system to match the law, never to bend the law to fit the system.</p><p>In short, ALTOS gives people back the time to do the part of the job that only people can do: look closely, ask questions and decide.</p><p>That is the whole point of the tool.</p><h3>A Record You Can Trust</h3><p>A treasury&#x27;s records are only as good as their protection against tampering. In ALTOS, each entry in the activity log is digitally linked to the one before it, much like links in a chain. If anyone deletes or alters an entry, the break in the chain shows. Mistakes can still be fixed, but only through a recorded correction that states who made it and why.</p><p>Security follows the NIST Cybersecurity Framework, an internationally used guide. Passwords are stored in scrambled form, accounts lock after repeated wrong attempts, idle sessions close on their own, and backups are encrypted and tested to make sure they can actually be restored.</p><h3>Made to Last Beyond Its Builder</h3><p>Treasurers are transferred, retire or move on. A good system should keep working after they leave. That is why ALTOS has a turnover feature that gathers and checks the office&#x27;s records and prepares a certificate for the next treasurer.</p><h3>Adoption Needs a Policy That Protects the Builder</h3><p>ALTOS is not a school project. It was built to produce the same reports an office signs and submits, and so far it has been tested only on the developer side. Before any office uses a system like this for real collections and disbursements, the terms have to be on paper, because from that day the system becomes part of how public money is handled.</p><p>Without those rules, the builder carries risks that nobody else sees. The system can be copied or changed without the builder&#x27;s knowledge. The builder can be expected to fix problems at any hour, for free, long after leaving the office. Credit for the work can quietly disappear. And if something goes wrong because of a change someone else made, the builder can still be the one blamed.</p><p>There is also a legal question. Under the Intellectual Property Code (RA 8293), there is no copyright in a work of the Government, meaning a work an official creates as part of regularly prescribed duties. Writing software is not among a treasurer&#x27;s duties under the law, but the answer in each case depends on the facts and on what the parties agree in writing. That is exactly why the agreement has to come first.</p><h3>What a Good Adoption Policy Covers</h3><p class="point"><b>Proof of authorship.</b> A dated record of the source files, design notes and versions that shows who built the system and when.</p><p class="point"><b>Registration.</b> Where appropriate, registration or deposit of the work with the Intellectual Property Office of the Philippines (IPOPHL).</p><p class="point"><b>A written agreement.</b> A memorandum of agreement or license that states what the office may and may not do with the system: how it may be used, who maintains and hosts it, who may change it, and what happens when the builder is transferred, retires or resigns.</p><p class="point"><b>Clear ownership of the data.</b> The office&#x27;s records belong to the office and must always be available to it and to auditors, while the software itself remains the builder&#x27;s work.</p><p class="point"><b>Fair responsibility.</b> The builder answers for the system as delivered, not for changes made by others or for how it is operated after turnover.</p><p class="point"><b>Legal review.</b> Advice from legal counsel before signing, and before any commercial use.</p><blockquote><p>A clear agreement is not a sign of distrust. It is how both sides keep their promises: the office keeps a working system and its records, the builder keeps the authorship, and taxpayers keep uninterrupted service.</p></blockquote><h3>Key Takeaways</h3><p class="point"><b>Build the rules into the tool.</b> A system that follows the office&#x27;s own forms and rules catches mistakes as they happen, not months later.</p><p class="point"><b>Keep people in charge.</b> Software should remove the copying and adding, so officers have more time to check, ask and decide.</p><p class="point"><b>Protect the record.</b> A chained activity log, tested backups and basic security habits keep treasury records trustworthy.</p><p class="point"><b>Put adoption in writing.</b> Before an office uses software built by its own staff, a written agreement should settle use, upkeep, data and authorship.</p><p>The thinking behind ALTOS is in my book, 360° Accountability: Public Fiscal Administration in Philippine Local Treasuries (first edition, October 2026). It closes with ten principles that any local treasury can follow, whether or not it uses software.</p><blockquote><p>Every peso, every step, every officer: 360°.</p></blockquote><p class="cta"><a href="/blog/altos-framework-legality-first/" class="btn primary">Read: The ALTOS Framework, Principle 1: Legality First</a></p><p class="cta"><a href="/blog/why-dev-and-not-com/" class="btn primary">Read: Why .dev and Not .com</a></p></article><section class="series-box" aria-label="The ALTOS Framework series"><div class="series-head"><p class="eyebrow">Series</p><a href="/blog/altos-framework/" class="series-name">The ALTOS Framework</a><span class="muted">5 parts</span></div><div class="series-pn"><span></span><a href="/blog/altos-framework-legality-first/" class="next"><span class="muted">Next · Principle 1</span><b>Legality First</b></a></div><a href="/blog/altos-framework/" class="more">See all parts of the series &rarr;</a></section><div class="react" data-page="/blog/why-i-built-altos/"><button type="button" class="react-btn react-follow" aria-pressed="false" aria-label="Follow Butch Mahinay" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2.5 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path class="plus" d="M19 8v6M16 11h6"/></svg><span class="react-word">Follow</span><span class="react-count"></span></button><button type="button" class="react-btn react-heart" aria-pressed="false" aria-label="Heart this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.5 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="react-word">Heart</span><span class="react-count"></span></button><button type="button" class="react-btn react-like" aria-pressed="false" aria-label="Like this" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v9.5H4a1 1 0 0 1-1-1v-7.5a1 1 0 0 1 1-1zM7.5 10.5l3.6-7a2.2 2.2 0 0 1 3.9 1.9l-1 3.6h5.2a2 2 0 0 1 2 2.4l-1.4 6.9a2 2 0 0 1-2 1.7H7.5"/></svg><span class="react-word">Like</span><span class="react-count"></span></button><button type="button" class="react-btn react-share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="react-word" aria-live="polite">Share</span><span class="react-count"></span></button></div><script>
 (function () {
