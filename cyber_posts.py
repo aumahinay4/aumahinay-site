@@ -9,14 +9,14 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
-        "date": "January 9, 2027",
+        "date": "December 24, 2026",
         "title": "Cybersecurity Series, Part 10: AI, Quantum Computers and the Next Wave of Threats",
         "slug": "cybersecurity-part-10-future-threats",
         "category": "security",
         "summary": "How artificial intelligence helps both scammers and defenders, why quantum computers are already "
                    "changing the way the internet is locked, what billions of smart gadgets mean for your home, and the "
                    "habits that will still protect you ten years from now.",
-        "publish_on": "2027-01-09 22:00",
+        "publish_on": "2026-12-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Every few years, a new technology arrives with two promises at once. It will make life easier, and it "
             "will make crime easier too. Email gave us faster letters and phishing. Online banking gave us "
@@ -146,14 +146,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 2, 2027",
+        "date": "December 19, 2026",
         "title": "Cybersecurity Series, Part 9: Incident Response, or What to Do When Something Goes Wrong",
         "slug": "cybersecurity-part-9-incident-response",
         "category": "security",
         "summary": "What to do in the first hour after a hacked account, a lost phone, a scam transfer or an office "
                    "breach, how to keep evidence intact, where to report in the Philippines, and how to write a "
                    "one-page response plan before you need it.",
-        "publish_on": "2027-01-02 22:00",
+        "publish_on": "2026-12-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Most offices hold fire drills. People know where the exits are, who carries the logbook and where to "
             "gather outside. Very few offices, and even fewer families, have ever practiced what to do when a "
@@ -273,14 +273,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 26, 2026",
+        "date": "December 14, 2026",
         "title": "Cybersecurity Series, Part 8: Zero Trust, or Why Every Door Gets Checked",
         "slug": "cybersecurity-part-8-zero-trust",
         "category": "security",
         "summary": "Why the old idea of a safe inside network no longer works, what zero trust really means in "
                    "plain language, how it echoes the internal controls of a well-run treasury, and simple ways to "
                    "apply it at home and in a small office.",
-        "publish_on": "2026-12-26 22:00",
+        "publish_on": "2026-12-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "For a long time, computer security was built like an old fortress. There was a strong wall around "
             "the office network, with firewalls at the gate. Anyone outside was suspicious. Anyone inside, connected "
@@ -391,14 +391,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 19, 2026",
+        "date": "December 9, 2026",
         "title": "Cybersecurity Series, Part 7: Why Apps Get Hacked, Explained with the OWASP Top 10",
         "slug": "cybersecurity-part-7-why-apps-get-hacked",
         "category": "security",
         "summary": "A plain-language tour of the ten most serious risks in web applications, as listed in the OWASP "
                    "Top 10:2025, with everyday examples, questions to ask before your office buys a system, and "
                    "habits for anyone who builds software.",
-        "publish_on": "2026-12-19 22:00",
+        "publish_on": "2026-12-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Every app you use was written by people. Your bank's mobile app, the online payment page of your "
             "local government, the school portal and the delivery app all started as lines of code typed by "
@@ -512,14 +512,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 12, 2026",
+        "date": "December 4, 2026",
         "title": "Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private",
         "slug": "cybersecurity-part-6-cloud-and-privacy",
         "category": "security",
         "summary": "Who is responsible for keeping your cloud files safe, why a single \"anyone with the link\" "
                    "setting can expose a whole office, how to check which apps can reach your accounts, and the "
                    "privacy rights every Filipino has under the Data Privacy Act.",
-        "publish_on": "2026-12-12 22:00",
+        "publish_on": "2026-12-04 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Your family photos, your scanned IDs, the spreadsheets from work and years of messages probably live "
             "somewhere you have never seen: in the cloud. There is a well-known joke among IT people that \"the "
@@ -630,13 +630,13 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 5, 2026",
+        "date": "November 29, 2026",
         "title": "Cybersecurity Series, Part 5: Inside a Ransomware Attack",
         "slug": "cybersecurity-part-5-ransomware",
         "category": "security",
         "summary": "How ransomware gangs break in, steal before they lock, and pressure victims to pay, what the "
                    "PhilHealth attack of 2023 taught the country, and the backup habit that takes away their leverage.",
-        "publish_on": "2026-12-05 22:00",
+        "publish_on": "2026-11-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Imagine coming to the office on a Monday and finding every computer showing the same message: your files "
             "are encrypted, your records have been copied, and you have a few days to pay before everything is "
@@ -766,14 +766,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "November 28, 2026",
+        "date": "November 24, 2026",
         "title": "Cybersecurity Series, Part 4: Securing Your Home and Remote Network",
         "slug": "cybersecurity-part-4-home-network",
         "category": "security",
         "summary": "Your Wi-Fi router is the front door of your digital home. Here is how to lock it, separate your "
                    "smart devices from your work laptop, filter dangerous websites, and understand what a VPN can "
                    "and cannot do.",
-        "publish_on": "2026-11-28 22:00",
+        "publish_on": "2026-11-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "In most homes, the internet arrives through one small box with blinking lights. The technician installs "
             "it, writes the Wi-Fi password on a piece of paper, and leaves. Years later, the same box is still "
@@ -889,13 +889,13 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "November 21, 2026",
+        "date": "November 19, 2026",
         "title": "Cybersecurity Series, Part 3: The Art of Human Hacking",
         "slug": "cybersecurity-part-3-human-hacking",
         "category": "security",
         "summary": "Most scams do not break into computers; they persuade people. Learn the pressure tricks behind "
                    "phishing, smishing, fake bosses and deepfake calls, and the simple rules that stop them.",
-        "publish_on": "2026-11-21 22:00",
+        "publish_on": "2026-11-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Why would a criminal spend months looking for a flaw in a well-protected system when a convincing message "
             "can get someone inside to open the door? That is the idea behind social engineering, or human hacking. "

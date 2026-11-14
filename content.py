@@ -112,7 +112,7 @@ ABOUT = {
         "Google AI Professional Certificate",
     ],
     "writing": (
-        "I publish weekly Sunday articles on aumahinay.dev and produce English-language educational "
+        "I publish new articles on aumahinay.dev every day and produce English-language educational "
         "topics covering public administration, Real Property Tax compliance, local treasury operations, "
         "and Python automation for public finance learners and civil service examinees."
     ),
@@ -557,8 +557,8 @@ BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
     ("security", "Cybersecurity", "violet"),
-    ("data", "Data Analytics", "gold"),  # Data Analytics series, Tuesdays (Butch 2026-11-13)
-    ("pm", "Project Management", "navy"),  # Project Management series, Thursdays (Butch 2026-11-13: separate from Public Finance)
+    ("data", "Data Analytics", "gold"),  # Data Analytics series (blog rotation, Butch 2026-11-14)
+    ("pm", "Project Management", "navy"),  # Project Management series (Butch 2026-11-13: separate from Public Finance)
     ("bi", "Business Intelligence", "teal"),  # Business Intelligence series, separate from Data Analytics (Butch 2026-11-14)
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
@@ -928,9 +928,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 27, 2026",
+        "date": "December 15, 2026",
         "title": "The ALTOS Framework, Principle 10: Build to Outlast the Builder",
-        "publish_on": "2026-12-27",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-15 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-build-to-outlast-the-builder",
         "category": "software",
         "summary": "Records, rules and systems must keep working after the person who set them up has left. A reform "
@@ -1060,9 +1060,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 20, 2026",
+        "date": "December 10, 2026",
         "title": "The ALTOS Framework, Principle 9: Evidence Before Decision",
-        "publish_on": "2026-12-20",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-10 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-evidence-before-decision",
         "category": "software",
         "summary": "Targets, forecasts and control checks should inform the treasurer's judgment, never replace it. "
@@ -1182,9 +1182,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 13, 2026",
+        "date": "December 5, 2026",
         "title": "The ALTOS Framework, Principle 8: The Taxpayer Is a Citizen",
-        "publish_on": "2026-12-13",  # goes live on this date (Philippine time)
+        "publish_on": "2026-12-05 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-the-taxpayer-is-a-citizen",
         "category": "software",
         "summary": "Assess fairly, collect conveniently and disclose fully. The person at the counter is not a "
@@ -1297,9 +1297,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 6, 2026",
+        "date": "November 30, 2026",
         "title": "The ALTOS Framework, Principle 7: Keep Money in Its Fund",
-        "publish_on": "2026-12-06",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-keep-money-in-its-fund",
         "category": "software",
         "summary": "A peso raised for schools should reach schools. Each peso belongs to the fund the law assigns it, "
@@ -1404,9 +1404,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 29, 2026",
+        "date": "November 25, 2026",
         "title": "The ALTOS Framework, Principle 6: Separate the Hands",
-        "publish_on": "2026-11-29",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-separate-the-hands",
         "category": "software",
         "summary": "No one person should both approve and release public money, or both hold it and record it. "
@@ -1520,9 +1520,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 22, 2026",
+        "date": "November 20, 2026",
         "title": "The ALTOS Framework, Principle 5: Every Record Has a Seal",
-        "publish_on": "2026-11-22",  # goes live on this date (Philippine time)
+        "publish_on": "2026-11-20 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-every-record-has-a-seal",
         "category": "software",
         "summary": "Once a record is posted, it can be corrected, but only in the open: with a reason, a name and a "
@@ -2386,7 +2386,7 @@ from cyber_posts import CYBER_POSTS  # noqa: E402
 
 BLOG[:0] = CYBER_POSTS
 
-# Public Finance Sunday series posts live in treasury_posts.py; each goes in date order among the
+# Public Finance series posts live in treasury_posts.py; each goes in date order among the
 # newest-first posts at the top of the list.
 from treasury_posts import TREASURY_POSTS  # noqa: E402
 from finance_posts import FINANCE_POSTS  # noqa: E402
@@ -2398,3 +2398,15 @@ for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + PM_POSTS + BI_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)
+
+# Blog series take turns, one a day (Butch 2026-11-14), so dates of different series interleave: keep the
+# whole list newest first by day (same-day posts keep their order) so the blog list and Newer/Older links
+# follow the calendar.
+def _blog_day(b):
+    if b.get("publish_on"):
+        return b["publish_on"]
+    from datetime import datetime as _dt
+    return _dt.strptime(b["date"], "%B %d, %Y").date().isoformat()
+
+
+BLOG.sort(key=_blog_day, reverse=True)
