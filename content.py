@@ -292,7 +292,7 @@ TERMS = {
     ],
 }
 
-# The one featured project. Source: "360° Accountability – The ALTOS Principles" (draft, Oct 2026).
+# The one featured project. Source: "360° Accountability – The ALTOS Principles" (1st Edition, Oct 2026).
 ALTOS = {
     "name": "ALTOS",
     "full_name": "Automated Local Treasury Operations System",
@@ -342,8 +342,8 @@ ALTOS = {
     "book": {
         "title": "360° Accountability: Public Fiscal Administration in Philippine Local Treasuries",
         "subtitle": "The ALTOS Principles",
-        "status": "Draft edition, October 2026",
-        "pages": 80,  # the full draft PDF
+        "status": "1st Edition, October 2026",
+        "pages": 80,  # the full PDF, 1st Edition
         "blurb": (
             "A book that joins public administration theory, from Wilson and Weber to New Public "
             "Governance, with Philippine treasury law and the lessons of building ALTOS. It ends "
@@ -558,6 +558,7 @@ BLOG_CATEGORIES = [
     ("finance", "Public Finance", "green"),
     ("security", "Cybersecurity", "violet"),
     ("data", "Data Analytics", "gold"),  # Data Analytics series, Tuesdays (Butch 2026-11-13)
+    ("pm", "Project Management", "navy"),  # Project Management series, Thursdays (Butch 2026-11-13: separate from Public Finance)
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
 
@@ -571,8 +572,7 @@ ALTOS_SERIES = {
     "intro": [
         "This series takes one principle at a time and explains it in plain words: what the rule is, which law "
         "or idea stands behind it, and how it looks on an ordinary working day at the treasury counter. "
-        "A new principle comes out every Sunday until December 27, 2026, and this page keeps all of them in "
-        "reading order.",
+        "This page keeps all of them in reading order.",
         "The ten principles came from years of handling collections, disbursements and reports, and from the "
         "questions I had to answer while writing ALTOS, my treasury software. None of them needs a computer, "
         "though. A treasury that still runs on paper forms and logbooks can follow every one, and each principle "
@@ -1969,23 +1969,22 @@ BLOG = [
         "slug": "first-post-as-acting-treasurer",
         "category": "finance",
         "summary": "Two years, two Mayors, a pandemic, a typhoon and an election: what my first post as Acting "
-                   "Municipal Treasurer of Mulanay, Quezon, taught me.",
+                   "Municipal Treasurer of a municipality in Quezon taught me.",
         "body": [
             "Some assignments arrive with a job description. Mine arrived with a microphone, a restaurant full of "
             "masked faces, and a turnover that took two full days.",
-            "I received my first designation as Acting Municipal Treasurer of Mulanay, Quezon, at a time when I was "
+            "I received my first designation as Acting Municipal Treasurer of a municipality in Quezon at a time when I was "
             "the only ICLTE passer in the Provincial Treasurer's Office. An Acting Municipal Treasurer must have "
             "passed the Basic Competency on Local Treasury Examination (BCLTE); the Intermediate Competency on "
             "Local Treasury Examination (ICLTE) is the higher of the two. That credential opened a door I had not "
-            "expected to walk through so soon. On the road to Mulanay, one quiet question kept me company: am I "
+            "expected to walk through so soon. On the road to my new post, one quiet question kept me company: am I "
             "ready for this?",
-            "Mulanay sits on the Bondoc Peninsula in southern Quezon, a short trip from my hometown of San Andres. "
-            "It is a town of 28 barangays and 55,576 people, according to the 2020 Census. The place was not new "
+            "The town was not new "
             "to me, but the office was. What followed, from 2020 to 2022, were two of the most demanding and "
             "meaningful years of my career, spent in the middle of the COVID-19 pandemic. This is the story of "
             "that first post.",
             ("h", "A Welcome I Did Not Expect"),
-            "I arrived in Mulanay at around two in the afternoon, ready for paperwork. I was not ready for the "
+            "I arrived in town at around two in the afternoon, ready for paperwork. I was not ready for the "
             "warmth that waited for me that evening.",
             "We gathered at a local restaurant for a dinner with two purposes: to thank the outgoing Municipal "
             "Treasurer for the service given to the town, and to welcome me as the new one. We practiced social "
@@ -2006,7 +2005,7 @@ BLOG = [
             ("h", "From One Division to 360 Degrees"),
             "Until then, my work had clear borders. I belonged to a single division with a defined set of tasks, "
             "and I knew that ground well.",
-            "Mulanay erased those borders. As head of the treasury office, I suddenly owned the whole circle: "
+            "My new post erased those borders. As head of the treasury office, I suddenly owned the whole circle: "
             "collections, disbursements, cash management, reports, people, and the decisions that tie them "
             "together. Problems no longer came from one direction. They came from every side, often at once, and "
             "the final call was mine.",
@@ -2015,26 +2014,33 @@ BLOG = [
             ("h", "Home Was a Container House"),
             "The pandemic shaped every part of those years. Travel was restricted, offices ran on skeleton "
             "schedules, and going home was rarely an option.",
-            "For two years, my home was the municipal container house in Mulanay. It was small and simple, but it "
+            "For two years, my home was the municipal container house. It was small and simple, but it "
             "kept me close to the office and the work. It stood near the sea, and every night I fell asleep to the "
             "sound of the waves. I wore a face mask every working day, until it felt as much a part of my uniform "
             "as my ID.",
+            ("photo", "blog/container-house.jpg",
+             "The container houses, my home from September\u00a02020 to September\u00a02022",
+             "medium"),
+            "They were hard to miss, painted bright colours and lined up under old shade trees behind a white "
+            "picket fence. I lived in the blue one for most of my stay and moved to the red one for my last six "
+            "months. After a long "
+            "day of collections and reports, that splash of colour was a cheerful thing to come home to.",
             "Those nights by the sea taught me something about public service: you cannot always choose your "
             "conditions, but you can choose how you show up in them. I am deeply grateful to the people of "
-            "Mulanay who made those years easier. They checked on me, helped me settle in, and treated the new "
+            "the town who made those years easier. They checked on me, helped me settle in, and treated the new "
             "treasurer like one of their own.",
             ("h", "Three Days in Boracay"),
             "In those years we could hardly go anywhere. Lockdowns and travel restrictions kept most of us within "
             "town limits for months at a time.",
             "So when the first Mayor I served approved my travel to Boracay for a three-day official training, it "
             "felt like a rare gift. The training sharpened my skills as a new treasurer, and the short change of "
-            "scenery sent me back to Mulanay with fresh energy. I remain thankful for that trust, at a time when "
+            "scenery sent me back to work with fresh energy. I remain thankful for that trust, at a time when "
             "every trip had to be justified.",
             ("h", "When the Typhoon Came"),
-            "As if a pandemic were not enough, a strong typhoon struck Mulanay during my term. Homes were damaged, "
+            "As if a pandemic were not enough, a strong typhoon struck the town during my term. Homes were damaged, "
             "livelihoods were lost, and families waited for help.",
             "In a disaster, the treasury is where help becomes cash in people's hands. Together with the municipal "
-            "officials, headed by the Municipal Mayor, my staff and I visited all 28 barangays to distribute "
+            "officials, headed by the Municipal Mayor, my staff and I visited every barangay to distribute "
             "financial assistance to the affected families. It took about a week, and I could not have done it "
             "without the responsible, hardworking team beside me.",
             "I came to know the town not from behind a desk, but from its roads, its coastline and its upland "
@@ -2042,7 +2048,7 @@ BLOG = [
             ("quote", "Every peso we safeguard in the government account exists for moments like that: a family receiving help "
              "when they need it most."),
             ("h", "Election Duty: Neutral by Mandate"),
-            "I also served through an election in Mulanay. I will leave the politics to others; that is not my "
+            "I also served through an election there. I will leave the politics to others; that is not my "
             "place, and it never should be.",
             "What I can say is this: the law gives the municipal treasurer a role in the election, including the "
             "counting and canvassing of votes. It is one of the least visible parts of the job, and one of the "
@@ -2055,19 +2061,19 @@ BLOG = [
             "not a bonus. It is how a town keeps running.",
             ("h", "What the Job Taught Me"),
             "The work of a municipal treasurer is not easy, and the accountability is high. Every collection, "
-            "every disbursement and every signature carries your name, and you answer for all of it. Mulanay "
+            "every disbursement and every signature carries your name, and you answer for all of it. That post "
             "taught me three lessons I still carry:",
             ("point", "Leadership begins outside your comfort zone", "I grew the most when I had to see the whole "
              "office, not just one division."),
-            ("point", "Public money has a human face", "A week on the road to all 28 barangays after the typhoon "
+            ("point", "Public money has a human face", "A week on the road to every barangay after the typhoon "
              "made that real for me."),
             ("point", "No one serves alone", "A pandemic, a typhoon and an election were easier to face because of "
              "the people beside me."),
-            ("h", "Thank You, Mulanay"),
+            ("h", "Thank You"),
             "Looking back, I am truly happy for the experience and the work. To the two Mayors I served, the Vice "
             "Mayor, the Sangguniang Bayan, the Municipal Administrator, the department heads, my treasury staff, "
-            "my friend the Municipal Assessor, and the people of Mulanay: thank you for welcoming a neighbor from "
-            "San Andres and making me one of your own.",
+            "my friend the Municipal Assessor, and the people of the town: thank you for welcoming a newcomer "
+            "and making me one of your own.",
             "And to anyone receiving a first designation today: say yes to the challenge. The comfort zone is "
             "safe, but the growth is out there, all 360 degrees of it.",
         ],
@@ -2302,7 +2308,7 @@ BLOG = [
              "uninterrupted service."),
             "I am also putting the thinking behind ALTOS into a book, 360° Accountability: Public Fiscal "
             "Administration in Philippine Local Treasuries. It closes with ten principles that any local treasury "
-            "can follow, whether or not it uses software. I will write about each of them here.",
+            "can follow, whether or not it uses software.",
             ("quote", "Every peso, every step, every officer: 360°."),
         ],
     },
@@ -2384,9 +2390,10 @@ BLOG[:0] = CYBER_POSTS
 from treasury_posts import TREASURY_POSTS  # noqa: E402
 from finance_posts import FINANCE_POSTS  # noqa: E402
 from data_posts import DATA_POSTS  # noqa: E402
+from pm_posts import PM_POSTS  # noqa: E402
 from bi_posts import BI_POSTS  # noqa: E402
 
-for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + BI_POSTS:
+for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + PM_POSTS + BI_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)

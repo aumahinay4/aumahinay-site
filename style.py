@@ -172,6 +172,10 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .grid.one { grid-template-columns: 1fr; }
 .grid.three { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid.four { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+/* Home "What you'll find here" (4 cards since Treasury Study Notes, 2026-11-14): 4 across on computers, 2 x 2 on tablets, never a lonely card */
+.grid.three.find { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1024px) { .grid.three.find { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .grid.three.find { grid-template-columns: 1fr; } }
 .grid > *:nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
 .grid > *:nth-child(5n+2) { --c: var(--blue); --ci: var(--blue-ink); }
 .grid > *:nth-child(5n+3) { --c: var(--green); --ci: var(--green-ink); }
@@ -507,6 +511,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
 .cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
 .cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
+.cat-navy { color: var(--bar-ink); background: color-mix(in srgb, var(--blue) 14%, transparent); }  /* Project Management */
 /* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
 .blog-filters { margin-top: 26px; position: relative; max-width: 340px; }
 .blog-filters > summary { list-style: none; display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 14px;
@@ -962,13 +967,19 @@ CSS += """
 header.site .wrap { min-height: 38px; }
 @media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
-.menu-btn svg { width: 20px; height: 20px; }
+.menu-btn svg { width: 15px; height: 15px; }  /* three bars 25% smaller, 20px -> 15px, all screens (Butch 2026-11-14); tap area stays 32px */
+/* Blog category bar same size as the top bar (Butch 2026-11-14): 38px tall (36px phones), 15px three bars, smaller text */
+.blog-filters > summary { min-height: 38px; box-sizing: border-box; padding: 0 12px; gap: 8px; font-size: 15.5px; }
+.blog-filters label { min-height: 38px; box-sizing: border-box; padding: 0 12px; font-size: 15.5px; }  /* list rows match the bar: one text size (Butch 2026-11-14) */
+.blog-filters > summary svg { width: 15px; height: 15px; }
+.blog-filters .cat-caret { font-size: .8em; }
+@media (max-width: 640px) { .blog-filters > summary, .blog-filters label { min-height: 36px; } }
 html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
 html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset: 0; z-index: -1; background: rgba(7, 22, 49, .35); }  /* dims the page and the top bar beside the menu */
 html.menu-js.menu-open header.site { z-index: 60; }
-html.menu-js.menu-open header.site #site-menu a { padding: 9px 0; font-size: clamp(1.08rem, 4.86vw, 1.395rem); }
+html.menu-js.menu-open header.site #site-menu a { padding: 5px 0; font-size: clamp(16px, 4vw, 17px); }  /* Home to About: one tidy size, rows closer (Butch 2026-11-14; was 20px text, 9px padding) */
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
 html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
@@ -1013,10 +1024,18 @@ CSS += """
 
 CSS += """
 /* Menu panel PLAIN WHITE (Butch 2026-11-10; dark mode uses the dark card colour): navy words, gold-ink for the current page */
-html.menu-js.menu-open header.site #site-menu { background: color-mix(in srgb, var(--surface) 10%, transparent);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }  /* white, 90% see-through (Butch 2026-11-10: 50%, +25%, then +15%) */
+html.menu-js.menu-open header.site #site-menu { background: var(--surface);
+  -webkit-backdrop-filter: none; backdrop-filter: none; }  /* SOLID, not see-through (Butch 2026-11-14) */
 /* Panel ends just below Privacy Policy (Butch 2026-11-10: "uncover below privacy"); the page shows below it */
 html.menu-js.menu-open header.site #site-menu { inset: 0 auto auto 0; height: auto; max-height: 100dvh; padding-bottom: 22px; }
+html.menu-js.menu-open header.site #site-menu { width: max-content; min-width: 0; padding-right: 6px; }
+/* Everything hugs (Butch 2026-11-14 "tight also the others"): rows nearly touching, smaller panel edges */
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(6px + env(safe-area-inset-top, 0px)); padding-left: max(6px, env(safe-area-inset-left, 0px)); padding-bottom: 6px; }  /* every edge 6px (Butch: "every edge tight") */
+html.menu-js.menu-open header.site #site-menu a { padding: 2px 0; }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 2px 0; }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 8px; padding-top: 8px; }  /* panel ends just past "RPT Calculator", the longest link (Butch 2026-11-14) */
 html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
@@ -1031,14 +1050,20 @@ html.menu-js.menu-open .menu-close { color: var(--text); }
 html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
 """
 
-CSS += """
-/* HOME in bold beside the three-bar menu, Home page only (Butch 2026-11-10), as big as fits in the bar */
-header.site .bar-title { font: 800 1.5rem/1 var(--font-display); letter-spacing: .02em; color: var(--gold-ink);
-  text-decoration: none; margin-left: 2px; white-space: nowrap; }  /* gold, Butch's pick 2026-11-10 */
-header.site .bar-title:hover { color: var(--bar-ink, var(--navy)); text-decoration: none; }
-html:not(.menu-js) header.site .bar-title { display: none; }  /* without JavaScript the full menu shows instead */
-"""
 
+CSS += """
+/* Home title: "Where public finance meets" on one line, "Python" centred below (Butch 2026-11-14) */
+.hero h1 { text-align: center; text-wrap: nowrap; }
+.hero h1 .l1, .hero h1 .l2 { display: block; white-space: nowrap; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.2185rem, 7.4vw); } }
+"""
+CSS += """
+/* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
+.hero h1 .k1 { color: #b98200; }
+.hero h1 .l2 { color: var(--blue-ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
+:root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
+"""
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
 
 CSS += """
@@ -1052,4 +1077,38 @@ footer.legal .built { white-space: nowrap; }
 footer.legal .legal-links { white-space: nowrap; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
+
+/* Home banner picture (Butch 2026-11-13): original artwork, free to use, between the title and the intro. */
+.hero-art { grid-column: 1 / -1; grid-row: 2; display: block; width: 100%; max-width: 820px; height: auto; margin: 14px 0 0; }
+@media (max-width: 640px) { .hero-art { margin-top: 10px; } }
+"""
+
+CSS += """
+/* Blog category bar: the chosen category name ("All posts") in gold, same gold as the Home title (Butch 2026-11-14) */
+.blog-filters .cat-now, .blog-filters input:checked + label,
+.blog-filters .cat-now .count, .blog-filters input:checked + label .count, .blog-filters .cat-caret { color: #b98200; }  /* number gold too (Butch 2026-11-14) */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .blog-filters .cat-now,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label,
+  :root:not([data-theme="light"]) .blog-filters .cat-now .count,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label .count,
+  :root:not([data-theme="light"]) .blog-filters .cat-caret { color: var(--gold); } }
+:root[data-theme="dark"] .blog-filters .cat-now, :root[data-theme="dark"] .blog-filters input:checked + label,
+:root[data-theme="dark"] .blog-filters .cat-now .count, :root[data-theme="dark"] .blog-filters input:checked + label .count, :root[data-theme="dark"] .blog-filters .cat-caret { color: var(--gold); }
+"""
+
+CSS += """
+/* Top bar like Butch's picture (2026-11-14): three bars long, medium, short, left-aligned, near-black and a bit bolder;
+   plain bar with only a thin light-grey line under it (no shadow). Same bars on the blog's All posts button. */
+header.site { box-shadow: 0 1px 0 var(--line); }
+.menu-btn { color: var(--text); }
+.menu-btn svg { stroke-width: 2.6; }
+.blog-filters > summary svg { stroke: var(--text); stroke-width: 2.6; }
+"""
+
+CSS += """
+/* Menu bars in different ALTOS colours (Butch 2026-11-14): gold, blue, green, like the A, L, T of ALTOS.
+   The -ink colours turn brighter in dark mode so the bars stay easy to see. */
+.menu-btn svg .b1, .blog-filters > summary svg .b1 { stroke: var(--gold-ink); }
+.menu-btn svg .b2, .blog-filters > summary svg .b2 { stroke: var(--blue-ink); }
+.menu-btn svg .b3, .blog-filters > summary svg .b3 { stroke: var(--green-ink); }
 """

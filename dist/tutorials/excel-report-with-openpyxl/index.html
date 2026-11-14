@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7687029622758059" crossorigin="anonymous" async="async"></script><meta name="theme-color" content="#f3f6fc" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#071631" media="(prefers-color-scheme: dark)"><title>Make a formatted Excel report with openpyxl (Python Lesson 6)</title><script>if (/\.pages\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "aumahinay.dev")) location.replace("https://aumahinay.dev" + location.pathname + location.search + location.hash);</script><link rel="alternate" type="application/rss+xml" title="Butch Mahinay: new posts and lessons" href="/feed.xml"><link rel="canonical" href="https://aumahinay.dev/tutorials/excel-report-with-openpyxl/"><meta name="description" content="Free Python lesson for treasury staff: turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row."><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "headline": "Make a formatted Excel report with openpyxl", "description": "Turn the day's receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.", "url": "https://aumahinay.dev/tutorials/excel-report-with-openpyxl/", "mainEntityOfPage": "https://aumahinay.dev/tutorials/excel-report-with-openpyxl/", "inLanguage": "en", "image": "https://aumahinay.dev/static/share.jpg", "author": {"@type": "Person", "name": "Ambrosio U. Mahinay", "alternateName": "Butch Mahinay", "url": "https://aumahinay.dev/about/"}, "publisher": {"@type": "Person", "name": "Ambrosio U. Mahinay", "url": "https://aumahinay.dev/"}, "datePublished": "2026-11-12"}</script><meta property="og:type" content="article"><meta property="og:site_name" content="Butch Mahinay"><meta property="og:title" content="Make a formatted Excel report with openpyxl (Python Lesson 6)"><meta property="og:description" content="Free Python lesson for treasury staff: turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row."><meta property="og:url" content="https://aumahinay.dev/tutorials/excel-report-with-openpyxl/"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg?v=f3e6adcf"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=0a5a5302"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=f3f18bbe"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7687029622758059" crossorigin="anonymous" async="async"></script><meta name="theme-color" content="#f3f6fc" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#071631" media="(prefers-color-scheme: dark)"><title>Make a formatted Excel report with openpyxl (Python Lesson 6)</title><script>if (/\.pages\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "aumahinay.dev")) location.replace("https://aumahinay.dev" + location.pathname + location.search + location.hash);</script><link rel="alternate" type="application/rss+xml" title="Butch Mahinay: new posts and lessons" href="/feed.xml"><link rel="canonical" href="https://aumahinay.dev/tutorials/excel-report-with-openpyxl/"><meta name="description" content="Free Python lesson for treasury staff: turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row."><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "headline": "Make a formatted Excel report with openpyxl", "description": "Turn the day's receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.", "url": "https://aumahinay.dev/tutorials/excel-report-with-openpyxl/", "mainEntityOfPage": "https://aumahinay.dev/tutorials/excel-report-with-openpyxl/", "inLanguage": "en", "image": "https://aumahinay.dev/static/share.jpg", "author": {"@type": "Person", "name": "Ambrosio U. Mahinay", "alternateName": "Butch Mahinay", "url": "https://aumahinay.dev/about/"}, "publisher": {"@type": "Person", "name": "Ambrosio U. Mahinay", "url": "https://aumahinay.dev/"}, "datePublished": "2026-11-12"}</script><meta property="og:type" content="article"><meta property="og:site_name" content="Butch Mahinay"><meta property="og:title" content="Make a formatted Excel report with openpyxl (Python Lesson 6)"><meta property="og:description" content="Free Python lesson for treasury staff: turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row."><meta property="og:url" content="https://aumahinay.dev/tutorials/excel-report-with-openpyxl/"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg?v=5460c4f7"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=0a5a5302"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=f3f18bbe"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
 /* Layout: navy cover-style panels for the big moments, quiet white pages for reading; the five ALTOS colours mark sequence and emphasis. */
 :root {
   /* ALTOS colours, bright (fills, on navy) */
@@ -167,6 +167,10 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .grid.one { grid-template-columns: 1fr; }
 .grid.three { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid.four { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+/* Home "What you'll find here" (4 cards since Treasury Study Notes, 2026-11-14): 4 across on computers, 2 x 2 on tablets, never a lonely card */
+.grid.three.find { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1024px) { .grid.three.find { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .grid.three.find { grid-template-columns: 1fr; } }
 .grid > *:nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
 .grid > *:nth-child(5n+2) { --c: var(--blue); --ci: var(--blue-ink); }
 .grid > *:nth-child(5n+3) { --c: var(--green); --ci: var(--green-ink); }
@@ -502,6 +506,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-coral { color: var(--coral-ink); background: color-mix(in srgb, var(--coral) 18%, transparent); }
 .cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
 .cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
+.cat-navy { color: var(--bar-ink); background: color-mix(in srgb, var(--blue) 14%, transparent); }  /* Project Management */
 /* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
 .blog-filters { margin-top: 26px; position: relative; max-width: 340px; }
 .blog-filters > summary { list-style: none; display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 14px;
@@ -642,12 +647,14 @@ ol.series-list li.upcoming .num { filter: grayscale(.6); opacity: .75; }
 .blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
 .blog-col:has(#cat-security:checked)  .post-card:not([data-cat="security"]) { display: none; }
 .blog-col:has(#cat-data:checked)  .post-card:not([data-cat="data"]) { display: none; }
+.blog-col:has(#cat-pm:checked)  .post-card:not([data-cat="pm"]) { display: none; }
 .blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
 .blog-col:has(#cat-all:checked) .cat-now[data-k="all"] { display: inline; }
 .blog-col:has(#cat-software:checked) .cat-now[data-k="software"] { display: inline; }
 .blog-col:has(#cat-finance:checked) .cat-now[data-k="finance"] { display: inline; }
 .blog-col:has(#cat-security:checked) .cat-now[data-k="security"] { display: inline; }
 .blog-col:has(#cat-data:checked) .cat-now[data-k="data"] { display: inline; }
+.blog-col:has(#cat-pm:checked) .cat-now[data-k="pm"] { display: inline; }
 .blog-col:has(#cat-personal:checked) .cat-now[data-k="personal"] { display: inline; }
 
 .story-toggle { display: none; background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--violet-ink); cursor: pointer; white-space: nowrap; }
@@ -877,13 +884,19 @@ blockquote::before { color: var(--gold-ink); }
 header.site .wrap { min-height: 38px; }
 @media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
-.menu-btn svg { width: 20px; height: 20px; }
+.menu-btn svg { width: 15px; height: 15px; }  /* three bars 25% smaller, 20px -> 15px, all screens (Butch 2026-11-14); tap area stays 32px */
+/* Blog category bar same size as the top bar (Butch 2026-11-14): 38px tall (36px phones), 15px three bars, smaller text */
+.blog-filters > summary { min-height: 38px; box-sizing: border-box; padding: 0 12px; gap: 8px; font-size: 15.5px; }
+.blog-filters label { min-height: 38px; box-sizing: border-box; padding: 0 12px; font-size: 15.5px; }  /* list rows match the bar: one text size (Butch 2026-11-14) */
+.blog-filters > summary svg { width: 15px; height: 15px; }
+.blog-filters .cat-caret { font-size: .8em; }
+@media (max-width: 640px) { .blog-filters > summary, .blog-filters label { min-height: 36px; } }
 html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
 html.menu-js.menu-open header.site::before { content: ""; position: fixed; inset: 0; z-index: -1; background: rgba(7, 22, 49, .35); }  /* dims the page and the top bar beside the menu */
 html.menu-js.menu-open header.site { z-index: 60; }
-html.menu-js.menu-open header.site #site-menu a { padding: 9px 0; font-size: clamp(1.08rem, 4.86vw, 1.395rem); }
+html.menu-js.menu-open header.site #site-menu a { padding: 5px 0; font-size: clamp(16px, 4vw, 17px); }  /* Home to About: one tidy size, rows closer (Butch 2026-11-14; was 20px text, 9px padding) */
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
 html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 5px 0; font-size: clamp(.81rem, 3.51vw, .945rem); }
@@ -918,10 +931,18 @@ ol.coming li { margin: 4px 0; text-align: left; }
 @media (max-width: 640px) { .about-hello h1.name-title { white-space: nowrap; font-size: min(1.5rem, calc((100vw - 64px) / 15.6)); } }
 
 /* Menu panel PLAIN WHITE (Butch 2026-11-10; dark mode uses the dark card colour): navy words, gold-ink for the current page */
-html.menu-js.menu-open header.site #site-menu { background: color-mix(in srgb, var(--surface) 10%, transparent);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }  /* white, 90% see-through (Butch 2026-11-10: 50%, +25%, then +15%) */
+html.menu-js.menu-open header.site #site-menu { background: var(--surface);
+  -webkit-backdrop-filter: none; backdrop-filter: none; }  /* SOLID, not see-through (Butch 2026-11-14) */
 /* Panel ends just below Privacy Policy (Butch 2026-11-10: "uncover below privacy"); the page shows below it */
 html.menu-js.menu-open header.site #site-menu { inset: 0 auto auto 0; height: auto; max-height: 100dvh; padding-bottom: 22px; }
+html.menu-js.menu-open header.site #site-menu { width: max-content; min-width: 0; padding-right: 6px; }
+/* Everything hugs (Butch 2026-11-14 "tight also the others"): rows nearly touching, smaller panel edges */
+html.menu-js.menu-open header.site #site-menu { padding-top: calc(6px + env(safe-area-inset-top, 0px)); padding-left: max(6px, env(safe-area-inset-left, 0px)); padding-bottom: 6px; }  /* every edge 6px (Butch: "every edge tight") */
+html.menu-js.menu-open header.site #site-menu a { padding: 2px 0; }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { padding: 2px 0; }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"] { margin-top: 8px; padding-top: 8px; }  /* panel ends just past "RPT Calculator", the longest link (Butch 2026-11-14) */
 html.menu-js.menu-open header.site #site-menu a { color: var(--text); }
 html.menu-js.menu-open header.site #site-menu a:hover,
 html.menu-js.menu-open header.site #site-menu a.active { color: var(--gold-ink); }
@@ -935,11 +956,16 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"].active { color: 
 html.menu-js.menu-open .menu-close { color: var(--text); }
 html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
 
-/* HOME in bold beside the three-bar menu, Home page only (Butch 2026-11-10), as big as fits in the bar */
-header.site .bar-title { font: 800 1.5rem/1 var(--font-display); letter-spacing: .02em; color: var(--gold-ink);
-  text-decoration: none; margin-left: 2px; white-space: nowrap; }  /* gold, Butch's pick 2026-11-10 */
-header.site .bar-title:hover { color: var(--bar-ink, var(--navy)); text-decoration: none; }
-html:not(.menu-js) header.site .bar-title { display: none; }  /* without JavaScript the full menu shows instead */
+/* Home title: "Where public finance meets" on one line, "Python" centred below (Butch 2026-11-14) */
+.hero h1 { text-align: center; text-wrap: nowrap; }
+.hero h1 .l1, .hero h1 .l2 { display: block; white-space: nowrap; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.2185rem, 7.4vw); } }
+
+/* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
+.hero h1 .k1 { color: #b98200; }
+.hero h1 .l2 { color: var(--blue-ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
+:root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -1033,13 +1059,14 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 .rpt-form input[type=date], .rpt-form select { font-size: 17.425px; }
 .rpt-form input[readonly] { font-size: 17.425px; }
 .rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
-html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.08rem, 4.86vw, 1.395rem) * 1.025); }
+.blog-filters > summary { font-size: 15.8875px; }
+.blog-filters label { font-size: 15.8875px; }
+html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(16px, 4vw, 17px) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
 html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.2185rem, 4.417vw, 2.864rem) * 1.025); }
-header.site .bar-title { font-size: 1.5375rem; }
 }
 
 /* Privacy Policy link at the bottom of every page (Butch 2026-11-10): plain, small, no navy footer */
@@ -1052,7 +1079,35 @@ footer.legal .built { white-space: nowrap; }
 footer.legal .legal-links { white-space: nowrap; }
 footer.legal a:hover { color: var(--gold-ink); }
 main:has(+ footer.legal) { padding-bottom: 28px; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tutorials/">Tutorials</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 6 · Beginner · 20 min</p><h1 class="lesson-title">Make a formatted Excel report with openpyxl</h1><p class="lead">Turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.</p><p class="checked">✓ Last checked: November 2026 · code run, output real, facts checked</p><div class="tags"><span class="tag">openpyxl</span><span class="tag">Excel</span><span class="tag">formulas</span><span class="tag">number formats</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>Create an Excel workbook and fill it row by row</li><li>Make the header bold, set column widths and freeze the top row</li><li>Show amounts with a thousands separator and two decimals</li><li>Write Excel formulas such as SUM and SUMIF from Python</li><li>Open a saved Excel file again and read what is inside</li></ul></div><p>Most treasury reports end up in Excel. Someone exports the receipts, pastes them into a template, fixes the column widths, formats the amounts and types the total formula, every single day. The openpyxl library lets a script do all of that in a second, and the file it makes is an ordinary Excel file that anyone can open, print or forward.</p><p class="tip"><b>Note: </b>openpyxl is not part of standard Python. If you skipped step 5 of Lesson 0, install it once with: py -m pip install openpyxl (Windows) or python3 -m pip install openpyxl (Mac). It works with the modern .xlsx format, not the old .xls files.</p><h2>The data</h2><p>This is the same collections.csv from Lesson 1. Save it in a new folder for this lesson.</p><figure class="codebox data"><figcaption><span class="fname">collections.csv</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button><a href="/tutorials/excel-report-with-openpyxl/collections.csv" download>Download</a></span></figcaption><pre><code>or_number,date,payor,nature,fund,amount
+
+/* Home banner picture (Butch 2026-11-13): original artwork, free to use, between the title and the intro. */
+.hero-art { grid-column: 1 / -1; grid-row: 2; display: block; width: 100%; max-width: 820px; height: auto; margin: 14px 0 0; }
+@media (max-width: 640px) { .hero-art { margin-top: 10px; } }
+
+/* Blog category bar: the chosen category name ("All posts") in gold, same gold as the Home title (Butch 2026-11-14) */
+.blog-filters .cat-now, .blog-filters input:checked + label,
+.blog-filters .cat-now .count, .blog-filters input:checked + label .count, .blog-filters .cat-caret { color: #b98200; }  /* number gold too (Butch 2026-11-14) */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .blog-filters .cat-now,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label,
+  :root:not([data-theme="light"]) .blog-filters .cat-now .count,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label .count,
+  :root:not([data-theme="light"]) .blog-filters .cat-caret { color: var(--gold); } }
+:root[data-theme="dark"] .blog-filters .cat-now, :root[data-theme="dark"] .blog-filters input:checked + label,
+:root[data-theme="dark"] .blog-filters .cat-now .count, :root[data-theme="dark"] .blog-filters input:checked + label .count, :root[data-theme="dark"] .blog-filters .cat-caret { color: var(--gold); }
+
+/* Top bar like Butch's picture (2026-11-14): three bars long, medium, short, left-aligned, near-black and a bit bolder;
+   plain bar with only a thin light-grey line under it (no shadow). Same bars on the blog's All posts button. */
+header.site { box-shadow: 0 1px 0 var(--line); }
+.menu-btn { color: var(--text); }
+.menu-btn svg { stroke-width: 2.6; }
+.blog-filters > summary svg { stroke: var(--text); stroke-width: 2.6; }
+
+/* Menu bars in different ALTOS colours (Butch 2026-11-14): gold, blue, green, like the A, L, T of ALTOS.
+   The -ink colours turn brighter in dark mode so the bars stay easy to see. */
+.menu-btn svg .b1, .blog-filters > summary svg .b1 { stroke: var(--gold-ink); }
+.menu-btn svg .b2, .blog-filters > summary svg .b2 { stroke: var(--blue-ink); }
+.menu-btn svg .b3, .blog-filters > summary svg .b3 { stroke: var(--green-ink); }
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 6 · Beginner · 20 min</p><h1 class="lesson-title">Make a formatted Excel report with openpyxl</h1><p class="lead">Turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.</p><p class="checked">✓ Last checked: November 2026 · code run, output real, facts checked</p><div class="tags"><span class="tag">openpyxl</span><span class="tag">Excel</span><span class="tag">formulas</span><span class="tag">number formats</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>Create an Excel workbook and fill it row by row</li><li>Make the header bold, set column widths and freeze the top row</li><li>Show amounts with a thousands separator and two decimals</li><li>Write Excel formulas such as SUM and SUMIF from Python</li><li>Open a saved Excel file again and read what is inside</li></ul></div><p>Most treasury reports end up in Excel. Someone exports the receipts, pastes them into a template, fixes the column widths, formats the amounts and types the total formula, every single day. The openpyxl library lets a script do all of that in a second, and the file it makes is an ordinary Excel file that anyone can open, print or forward.</p><p class="tip"><b>Note: </b>openpyxl is not part of standard Python. If you skipped step 5 of Lesson 0, install it once with: py -m pip install openpyxl (Windows) or python3 -m pip install openpyxl (Mac). It works with the modern .xlsx format, not the old .xls files.</p><h2>The data</h2><p>This is the same collections.csv from Lesson 1. Save it in a new folder for this lesson.</p><figure class="codebox data"><figcaption><span class="fname">collections.csv</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button><a href="/tutorials/excel-report-with-openpyxl/collections.csv" download>Download</a></span></figcaption><pre><code>or_number,date,payor,nature,fund,amount
 7650101,2026-11-02,Santos Bakery,Business tax,General Fund,4500.00
 7650102,2026-11-02,Juan Dela Cruz,Real property tax (basic),General Fund,1250.75
 7650103,2026-11-02,Juan Dela Cruz,Real property tax (SEF),Special Education Fund,1250.75
@@ -1215,7 +1270,7 @@ wb.save(<span class="s">"daily_report.xlsx"</span>)
     });
   });
 })();
-</script><div class="lesson-nav"><a href="/tutorials/tamper-evident-log-with-hmac/">← Lesson 5</a><span></span></div><script>
+</script><div class="lesson-nav"><a href="/tutorials/tamper-evident-log-with-hmac/">← Lesson 5</a><a href="/tutorials/receipts-register-with-sqlite/">Lesson 7 →</a></div><script>
 document.addEventListener("click", function (e) {
   var b = e.target.closest("button[data-copy]");
   if (!b) return;
@@ -1254,7 +1309,7 @@ document.addEventListener("click", function (e) {
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
   // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
-  var pages = ["/", "/projects/", "/study-notes/", "/tutorials/", "/tools/rpt-calculator/", "/blog/", "/about/"];
+  var pages = ["/", "/projects/", "/study-notes/", "/tools/rpt-calculator/", "/tutorials/", "/blog/", "/about/"];
   var path = location.pathname, here = -1;
   pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
   if (here < 0) return;  // e.g. the "page not found" page
