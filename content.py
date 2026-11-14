@@ -2019,8 +2019,8 @@ BLOG = [
             "kept me close to the office and the work. It stood near the sea, and every night I fell asleep to the "
             "sound of the waves. I wore a face mask every working day, until it felt as much a part of my uniform "
             "as my ID.",
-            ("photo", "blog/mulanay-container-house.jpg",
-             "The container houses in Mulanay, Quezon, my home from September\u00a02020 to September\u00a02022",
+            ("photo", "blog/container-house.jpg",
+             "The container houses, my home from September\u00a02020 to September\u00a02022",
              "medium"),
             "They were hard to miss, painted bright colours and lined up under old shade trees behind a white "
             "picket fence. I lived in the blue one for most of my stay and moved to the red one for my last six "
