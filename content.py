@@ -2020,11 +2020,11 @@ BLOG = [
             "sound of the waves. I wore a face mask every working day, until it felt as much a part of my uniform "
             "as my ID.",
             ("photo", "blog/mulanay-container-house.jpg",
-             "The container house in Mulanay, Quezon, my home from September\u00a02020 to September\u00a02022",
+             "The container houses in Mulanay, Quezon, my home from September\u00a02020 to September\u00a02022",
              "medium"),
-            "It was hard to miss. The containers were painted bright blue, red and yellow, lined up under old "
-            "shade trees behind a white picket fence. After a long day of collections and reports, that splash of "
-            "colour was a cheerful thing to come home to.",
+            "They were hard to miss, painted bright colours and lined up under old shade trees behind a white "
+            "picket fence. I spent my first year in the blue one and my second year in the red one. After a long "
+            "day of collections and reports, that splash of colour was a cheerful thing to come home to.",
             "Those nights by the sea taught me something about public service: you cannot always choose your "
             "conditions, but you can choose how you show up in them. I am deeply grateful to the people of "
             "Mulanay who made those years easier. They checked on me, helped me settle in, and treated the new "
