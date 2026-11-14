@@ -1,5 +1,5 @@
 """Business Intelligence series (Butch 2026-11-13 PH): 20 parts. Part 1 published Nov 14, 2026
-(Butch: "Publish it today"); dates of later parts to be confirmed by Butch.
+(Butch: "Publish it today"); later parts follow the daily blog rotation at 9 pm PH (Butch 2026-11-14).
 
 The series follows what Butch learned in the Google Business Intelligence certificate, retold in the
 blog's own words with made-up treasury examples. It links to the Tuesday Data Analytics series for
@@ -12,6 +12,141 @@ Newest first, like BLOG in content.py.
 SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
+    {
+        "date": "November 16, 2026",
+        "title": "Business Intelligence Series, Part 2: The BI Team, Role by Role",
+        "slug": "business-intelligence-part-2-the-bi-team",
+        "category": "bi",
+        "summary": "Behind every dashboard that people trust are three kinds of work: building the pipes, building "
+                   "the screens and explaining what the numbers mean. Here is each BI role in plain words, and "
+                   "how one person in a small treasury can wear all three hats.",
+        "publish_on": "2026-11-16 21:00",
+        "body": [
+            "A head of office opens a collections dashboard on a Monday morning and sees that market fees are "
+            "down by a third compared with the same week last year. She calls the person who made the "
+            "dashboard. “Is this real?”",
+            "That question has three possible answers, and each one belongs to a different kind of work. Maybe "
+            "the data never arrived because the evening export failed. That is a pipeline problem. Maybe the "
+            "chart is adding the wrong field, or the filter is stuck on one barangay. That is a dashboard "
+            "problem. Or maybe the numbers are correct, and something really did happen at the market. That is "
+            "a question of meaning, and somebody has to go and find out what it was.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "In a large organization, three different people would take that call. In a small treasury, it is "
+            "often one person. Either way, it helps to know the three jobs apart, because each one fails in its "
+            "own way and each one is fixed in its own way.",
+            ("photo", "blog/bi-roles.jpg", "The BI loop: people bring questions, an engineer builds the pipes, a "
+             "developer builds the screens, and an analyst explains what the numbers mean. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Start With the People Who Ask"),
+            "Every BI system exists because somebody needs to know something, again and again. In BI language, "
+            "these people are the stakeholders. In a local treasury, they include the head of office, the "
+            "revenue and cash divisions, the collectors in the field, the budget and accounting offices, and the "
+            "local chief executive who asks how the town is doing against its revenue target.",
+            "Stakeholders do not need to know how the data moves. They need to say clearly what they want to "
+            "watch and what they will do when the number changes. A head of office who says “I want to see "
+            "everything” has not yet asked a question. One who says “I want to know by noon each day whether "
+            "yesterday’s collections were deposited in full” has asked a very good one.",
+            "That is why every BI role, whatever the title, begins by listening. The rest of the team turns "
+            "those questions into something that answers itself every day.",
+            ("h", "The BI Engineer: Building the Pipes"),
+            "The BI engineer makes sure the right data arrives in the right place, on time and in good shape. "
+            "If BI is a road from the payment counter to the decision maker, the engineer builds and maintains "
+            "the road.",
+            ("point", "What the work looks like", "Connecting to the sources, such as the collection system, "
+             "the cashbook or the list of business permits. Writing the steps that copy the data out on a "
+             "schedule. Combining it into clean tables. Setting up checks so that a missing day or a repeated "
+             "receipt number is caught before anyone builds a chart on top of it."),
+            ("point", "The tools", "Usually SQL, often a scripting language such as Python, and a database or "
+             "data warehouse. Small offices can do the same work with a spreadsheet, a free database such as "
+             "SQLite, and a scheduled task on one computer."),
+            ("point", "How it fails", "Quietly. The dashboard still shows numbers, but they are a day old, half "
+             "complete or counted twice. Nobody notices until a total does not match the official report."),
+            "When the head of office asks “Is this real?”, the engineer’s first move is to check that "
+            "yesterday’s data actually arrived and passed its checks. It is not glamorous work, but every "
+            "other role depends on it.",
+            ("h", "The BI Developer: Building the Screens"),
+            "The BI developer turns clean tables into something people can read and use: dashboards, reports, "
+            "filters and alerts. If the engineer builds the road, the developer builds the place where people "
+            "stop and look.",
+            ("point", "What the work looks like", "Deciding which measures go on the screen and how each one "
+             "is calculated. Choosing the right chart for each measure. Adding date controls and filters so "
+             "users can ask follow-up questions. Making sure the layout still works on a phone, because that is "
+             "where many busy officials will see it."),
+            ("point", "The tools", "Dashboard tools such as Looker Studio, Power BI or Tableau, plus a good "
+             "working knowledge of SQL so the developer can shape the data the screens need."),
+            ("point", "How it fails", "Loudly but misleadingly. A chart that sums when it should count, a "
+             "filter that silently hides half the data, or two screens that define “collections” in "
+             "two different ways. Each looks fine on its own, and together they start arguments."),
+            "In the market fee example, the developer checks that the chart is reading the right field, that no "
+            "filter is left on, and that “this week” on the dashboard means the same days as "
+            "“this week” in the head of office’s mind.",
+            ("h", "The BI Analyst: Explaining What It Means"),
+            "The BI analyst stands between the numbers and the people. The analyst helps stakeholders turn "
+            "vague worries into clear questions, decides with them which measures matter, and explains what a "
+            "change on the dashboard really means.",
+            ("point", "What the work looks like", "Interviewing stakeholders about the decisions they make. "
+             "Writing down each measure in plain words, so “collections” always means the same "
+             "thing. Spotting unusual patterns, digging into them and reporting the cause. Suggesting "
+             "improvements to the dashboard when people keep asking the same follow-up question."),
+            ("point", "The tools", "A spreadsheet, SQL, the dashboard tool itself and, most of all, good "
+             "conversation and clear writing."),
+            ("point", "How it fails", "By staying at the desk. An analyst who never asks the collectors or the "
+             "market supervisor what happened will report a drop without explaining it."),
+            "In our example, the engineer and the developer both confirm that the data is complete and the "
+            "chart is correct. So the analyst calls the market supervisor and learns that one row of stalls "
+            "was closed for repairs for two weeks. The drop is real, it has a cause, and it will end. The head "
+            "of office now knows not to send collectors out to chase payments that cannot happen yet.",
+            ("quote", "The engineer makes the number arrive. The developer makes it visible. The analyst makes "
+             "it mean something."),
+            ("h", "Titles Vary, the Work Does Not"),
+            "Job titles in BI are not standard. One organization’s BI engineer is another’s data "
+            "engineer. Some companies call the dashboard builder a BI analyst, others a report developer. In "
+            "smaller teams, one person often does the analyst and developer work together. Do not worry about "
+            "the labels. Look at the three kinds of work, because those stay the same everywhere.",
+            "BI work also connects with nearby roles. Database administrators keep the systems that hold the "
+            "data running and secure. Data analysts, the subject of my other series, take on one-time questions "
+            "that may later grow into something a dashboard should watch every day. Records officers and data "
+            "protection officers decide who may see what, which matters a great deal when the data includes "
+            "taxpayers’ names and properties.",
+            ("h", "One Person, Three Hats"),
+            "Most local treasuries will never hire a BI team. That is fine. What matters is that someone in the "
+            "office knows when to switch hats.",
+            ("point", "Monday morning: engineer hat", "Before opening the dashboard, check that the weekend’s "
+             "files arrived and the totals match the cashbook. Five minutes here saves an hour of confusion later."),
+            ("point", "Midweek: developer hat", "Fix the chart someone found confusing. Add the filter the "
+             "collectors keep asking for. Remove a measure nobody uses."),
+            ("point", "Any time a number moves: analyst hat", "Ask what happened before reporting that "
+             "something did. Talk to the people closest to the money."),
+            "Keeping the three hats separate also helps when something goes wrong. Instead of saying “the "
+            "dashboard is broken”, you can say which part failed: the data, the screen or the "
+            "explanation. That makes the fix faster and the conversation calmer.",
+            ("h", "Skills That Matter in Every Role"),
+            "Whatever hat you wear, a few skills carry across all three.",
+            ("point", "Curiosity about the work behind the data", "Knowing how an official receipt is issued, "
+             "cancelled or reported tells you more about the data than any tool can."),
+            ("point", "Care with definitions", "Agree in writing on what each measure means and keep that "
+             "list where everyone can see it."),
+            ("point", "Respect for privacy", "Show totals, not names, unless a person truly needs to see "
+             "individual records for their work."),
+            ("point", "Plain communication", "Explain what changed, why it matters and what to do, in words a "
+             "busy official can read in one minute."),
+            ("h", "Your Part 2 Exercise"),
+            "Take the repeated report you circled in Part 1, or pick one now. Then write three short lines:",
+            ("point", "Engineer", "Where does the data for this report come from, and how would you know if "
+             "one day’s data were missing?"),
+            ("point", "Developer", "If this report became a single screen, which three measures would go at "
+             "the top?"),
+            ("point", "Analyst", "Who reads this report, and what decision do they make with it?"),
+            "If you cannot answer the last line, talk to the reader before changing anything else. A report "
+            "that drives no decision is the first one to simplify.",
+            ("cta", "Read: Business Intelligence Series, Part 1", "/blog/business-intelligence-part-1-same-data-different-jobs/"),
+            ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
+            ("cta", "Read: Project Management Series, Part 1", "/blog/project-management-part-1-accidental-project-manager/"),
+            ("cta", "Read: Your Data at the Treasury Counter", "/blog/your-data-at-the-treasury-counter/"),
+            ("ask", "In your office, which hat do you wear most often: the pipes, the screens or the meaning?"),
+        ],
+    },
     {
         "date": "November 14, 2026",
         "title": "Business Intelligence Series, Part 1: Same Data, Different Jobs",
