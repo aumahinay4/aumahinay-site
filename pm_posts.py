@@ -14,6 +14,129 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "December 13, 2026",
+        "title": "Project Management Series, Part 7: The Kickoff Meeting Blueprint",
+        "slug": "project-management-part-7-kickoff-meeting",
+        "category": "pm",
+        "summary": "A kickoff meeting can launch a project or waste an hour. This part gives a one-hour "
+                   "agenda, what to prepare beforehand, how to run each segment, and what to send afterward, "
+                   "using the treasury encoding project as the example.",
+        "publish_on": "2026-12-13 21:00",
+        "body": [
+            "The revenue clerk calls the first meeting of the encoding project for 2 p.m. At 2:20, three of "
+            "the seven people have arrived. The head of office speaks for twenty minutes about how important "
+            "the project is. Someone asks who will be encoding on Thursdays. Nobody knows. The meeting ends "
+            "at 3:30 with no decisions, and two collectors leave unsure whether the project is starting this "
+            "week or next month.",
+            "The charter was signed. The scope was clear. The objective was measurable. What was missing was "
+            "one well-run hour that turned those documents into a shared plan that every person in the room "
+            "understood the same way.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "This part is about that hour. By the end of this post you will have a one-hour kickoff agenda, a "
+            "list of what to prepare beforehand, a way to run each segment so it ends in a decision, and a "
+            "short follow-up note you can send the same afternoon.",
+            ("photo", "blog/pm-kickoff-agenda.jpg", "A one-hour kickoff in five segments: why, what, who, how "
+             "and next. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Kickoff Is For"),
+            "A kickoff meeting has one job: everyone leaves knowing the same answers to five questions. Why "
+            "are we doing this? What exactly will we deliver? Who does what? How will we work together? What "
+            "happens next?",
+            "It is not the place to write the plan. The charter, the scope statement and the objective should "
+            "already exist. The kickoff explains them, tests them against the people who will do the work, "
+            "and fixes the gaps that only those people can see.",
+            ("h", "Before the Meeting"),
+            "Prepare these four things before anyone sits down.",
+            ("point", "Confirm the right people", "The sponsor, the project manager, every team member, and "
+             "one person from each office whose help is needed. For the encoding project: the head of office, "
+             "the revenue clerk, the two collectors, the cashier and the assessor’s staff member."),
+            ("point", "Send the documents two days ahead", "The one-page charter, the scope statement and the "
+             "objective. Ask people to read them and bring one question each."),
+            ("point", "Brief the sponsor", "Agree on the five minutes the sponsor will speak and the one "
+             "message they will give. A sponsor who knows their part can keep the opening short."),
+            ("point", "Prepare a draft schedule", "Bring a draft of who works when, so the meeting can correct "
+             "it rather than build it from nothing."),
+            ("h", "The One-Hour Agenda"),
+            ("point", "1. Why (10 minutes)", "The sponsor explains the problem and the outcome in plain "
+             "words: taxpayers wait too long at the real property tax window, and the goal is to bring the "
+             "average wait down. Then the sponsor says, in front of everyone, that the revenue clerk leads the "
+             "project. That one sentence makes the project manager’s role clear to everyone at once."),
+            ("point", "2. What (10 minutes)", "The project manager walks through the deliverables, the "
+             "acceptance tests and the exclusions. Read the exclusions out loud. Past-year taxes are not in "
+             "this project, and saying so now prevents a request in week three."),
+            ("point", "3. Who (15 minutes)", "Go through the draft schedule person by person. Each person "
+             "confirms their days and hours, or says plainly that they cannot. This is the segment that "
+             "would have answered “who encodes on Thursdays?”"),
+            ("point", "4. How (15 minutes)", "Agree on working rules: where files are saved, how mistakes are "
+             "reported, how progress is shared, and how often the team meets. For a small project, a "
+             "fifteen-minute weekly check-in can be enough."),
+            ("point", "5. Next (10 minutes)", "Read back every decision and every task with a name and a date. "
+             "Ask each person to repeat their first task. End on time."),
+            ("quote", "If a kickoff ends without names and dates, it was a briefing, not a kickoff."),
+            ("h", "A Sample Opening for the Sponsor"),
+            "A short script helps the sponsor keep to five minutes. The project manager can draft "
+            "it for them to adjust:",
+            "“Every January, taxpayers wait too long at the real property tax window. This project puts the ledger "
+            "records of the four poblacion barangays into our system so bills can be printed and checked quickly. "
+            "Our goal is to bring the average wait down from 38 minutes to 20 or less. The revenue clerk leads this "
+            "project, and I have approved the time each of you will give to it. Please bring problems to her early. "
+            "I would rather hear about a delay in week two than in December.”",
+            "In six sentences, the sponsor has named the problem, the outcome, the leader, the commitment of time "
+            "and the expected behavior. Everything after that builds on it.",
+            ("h", "Running the Room"),
+            ("point", "Start on time", "Start at the stated time even if someone is missing. Waiting can teach people that the time on the invitation is only a suggestion."),
+            ("point", "Keep a parking list", "When a question comes up that the meeting cannot settle, write "
+             "it on a visible list with a name beside it. Then move on."),
+            ("point", "Invite the quiet ones", "Ask the collectors directly: “What could stop this from "
+             "working?” The people closest to the work can see risks the planners missed."),
+            ("point", "Write as you go", "Keep notes on the screen or on a board where everyone can see them. "
+             "Disagreements about what was decided can then be settled in the room, not a week later."),
+            ("h", "The Follow-Up Note"),
+            "Send a short note the same day, while the meeting is fresh. It should fit on one screen.",
+            ("point", "Decisions", "For example: encoding happens Tuesday and Thursday afternoons; the "
+             "assessor’s staff member checks records on the same days."),
+            ("point", "Tasks", "Each with one name and one date."),
+            ("point", "Parking list", "Each open question with its owner and when an answer is due."),
+            ("point", "Next meeting", "Day, time and place of the first weekly check-in."),
+            "Ask everyone to reply within a day if anything in the note is wrong. Treat silence after that "
+            "as agreement, and keep the note as the record.",
+            ("h", "When One Meeting Is Not Enough"),
+            "A large project may need more than one kickoff: one for the sponsor and office heads, another for "
+            "the people doing the work, and a short new kickoff when a major phase begins. The five questions "
+            "stay the same. Only the level of detail changes.",
+            "For a small office project like the encoding work, one well-prepared hour can be enough, "
+            "followed by short weekly check-ins.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Speeches instead of decisions", "Keep the opening to the sponsor’s five minutes. Every "
+             "other segment should end in something agreed."),
+            ("point", "Inviting everyone", "Invite the people who must act or decide. Others can receive the "
+             "follow-up note."),
+            ("point", "No pre-reading", "If people see the scope for the first time in the meeting, the hour "
+             "goes to reading instead of discussing."),
+            ("point", "No follow-up", "Without a written note, each person remembers a slightly different "
+             "meeting."),
+            ("h", "Key Takeaways"),
+            ("point", "Five questions, one hour", "Why, what, who, how and next, each with a fixed time."),
+            ("point", "Prepare more than you present", "Send the documents early and bring a draft schedule "
+             "to correct."),
+            ("point", "Let the sponsor give authority", "One sentence from the sponsor in front of the team "
+             "settles who leads."),
+            ("point", "Close with names and dates", "Then put them in writing the same day."),
+            ("h", "Your Part 7 Exercise"),
+            "Plan the kickoff for your own project on one page:",
+            ("point", "Attendees", "Who must be there, and why each one?"),
+            ("point", "Pre-reading", "Which documents will you send, and on what date?"),
+            ("point", "Agenda", "Write the five segments with times and the decision each one should reach."),
+            "Then draft the follow-up note before the meeting, with blanks for the decisions. If you cannot "
+            "imagine what would go in a blank, that segment needs more preparation.",
+            ("cta", "Read: Project Management Series, Part 6", "/blog/project-management-part-6-writing-objectives/"),
+            ("cta", "Read: Project Management Series, Part 3", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Project Management Series, Part 2", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("ask", "What is the one thing your last project kickoff left unclear?"),
+        ],
+    },
+    {
         "date": "December 8, 2026",
         "title": "Project Management Series, Part 6: Writing Objectives That Actually Mean Something",
         "slug": "project-management-part-6-writing-objectives",

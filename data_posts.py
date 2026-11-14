@@ -12,6 +12,132 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "December 12, 2026",
+        "title": "Data Analytics Series, Part 7: Six Kinds of Problems Data Can Solve",
+        "slug": "data-analytics-part-7-six-problem-types",
+        "category": "data",
+        "summary": "A request for “a report” can hide one of several basic problem types. This part walks "
+                   "through six of them with treasury examples, so you can name the problem first and pick "
+                   "the right method before you open a spreadsheet.",
+        "publish_on": "2026-12-12 21:00",
+        "body": [
+            "Three requests reach the analyst in one morning. The head of office asks, “Will we hit the "
+            "target this year?” The cashier asks, “Why did yesterday’s deposit not match the collections?” "
+            "The revenue unit asks, “Can you group the businesses so we know who to visit first?”",
+            "All three are called “a report.” They are really three different kinds of problems, and each "
+            "needs a different approach. An analyst who treats them all the same can end up building three "
+            "tables and answering none of the questions.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "The Google Data Analytics Certificate groups the questions analysts meet into six common problem "
+            "types. Naming the type is the first move of the Ask step from Part 2, because the type tells you "
+            "what data you need and what method to use. By the end of this post you will be able to recognize "
+            "all six in your own office’s requests and know where to start with each.",
+            ("photo", "blog/data-six-problems.jpg", "Six common problem types: making predictions, categorizing "
+             "things, spotting something unusual, identifying themes, discovering connections and finding "
+             "patterns. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "1. Making Predictions"),
+            "The question is about the future: what is likely to happen? “Will we hit the collection target "
+            "this year?” is a prediction problem.",
+            ("point", "What you need", "Past data for the same measure over several periods, and a way to "
+             "describe how the current period compares."),
+            ("point", "Where to start", "Part 4 projected a year-end total from the share collected by "
+             "October in past years. Simple methods like that are a good first step, as long as the answer is "
+             "shown as a range."),
+            ("h", "2. Categorizing Things"),
+            "The question is about sorting items into groups by their features. “Group the businesses so we "
+            "know who to visit first” is a categorizing problem.",
+            ("point", "What you need", "A list of items, each with the features that matter: amount owed, "
+             "months overdue, type of business, barangay."),
+            ("point", "Where to start", "Agree on the groups and the rules first, for example: owes more than "
+             "₱10,000 and overdue more than six months goes to the first visit list. Write the rule down so "
+             "anyone can repeat it."),
+            ("h", "3. Spotting Something Unusual"),
+            "The question is about what does not fit the normal pattern. “Why did yesterday’s deposit not "
+            "match the collections?” starts as this kind of problem: first find what is unusual, then explain "
+            "it.",
+            ("point", "What you need", "A clear idea of normal: the usual daily range, the usual difference "
+             "between collections and deposits (ideally zero), the usual number of cancelled receipts."),
+            ("point", "Where to start", "Compare each day with that normal and list the days, collectors or "
+             "receipts that fall outside it. The list is not an accusation. It is where to look first."),
+            ("h", "4. Identifying Themes"),
+            "The question is about grouping categories into a few broader ideas. It fits comments and "
+            "complaints well.",
+            "Suppose the office has two hundred written comments from taxpayers at the counter. Reading them "
+            "one by one gives impressions. Sorting them first into categories, such as long line, no seats, "
+            "slow lookup of past payments, wrong amount and unclear wording, and then grouping those into "
+            "themes, such as the waiting experience and the bill itself, turns them into evidence.",
+            ("point", "How it differs from categorizing", "Categorizing places each item in a group. "
+             "Identifying themes goes one level up and groups the categories into broader ideas."),
+            ("h", "5. Discovering Connections"),
+            "The question is about finding links between things that are usually looked at separately, often "
+            "by combining data from different sources or offices.",
+            "For example, the treasury has payment records and the assessor’s office has the property "
+            "records. Joined by a common property number, they can show which properties have never had a "
+            "recorded payment. Neither office can see that from its own records alone.",
+            ("point", "What you need", "A shared key, such as a property number, and an agreement between "
+             "the offices on how the combined data may be used."),
+            ("h", "6. Finding Patterns"),
+            "The question is about what repeats over time. “When during the year do business tax payments "
+            "come in?” is a pattern problem.",
+            "Under the Local Government Code, business taxes may be paid in quarterly installments within the "
+            "first twenty days of January and of each following quarter. A chart of daily collections across "
+            "several years will show whether payments in your office bunch up near those dates, which is useful for planning staff at the windows. Put two or three past years side by side, so a one-time spike is not mistaken for a pattern.",
+            ("point", "How it differs from prediction", "Finding patterns describes what has repeated. "
+             "Prediction uses that knowledge to estimate a specific future value."),
+            ("quote", "Name the problem before you touch the data. The type of question decides the type of "
+             "answer."),
+            ("h", "When a Request Combines Types"),
+            "The cashier’s deposit question starts as spotting something unusual, then becomes a "
+            "connection problem when the analyst joins the receipts with the deposit slips to find which "
+            "receipts were not deposited. The head of office’s target question needs patterns first, then a "
+            "prediction.",
+            "Naming the types in order gives you a plan: first this, then that. It also helps you explain to "
+            "the person who asked why the answer will take two steps, not one.",
+            ("h", "Turning a Vague Request Into a Typed Question"),
+            "A request does not arrive with a type attached. Suppose the head of office says, “Give me some numbers on "
+            "business permits.” Before opening any file, the analyst asks three follow-up questions.",
+            ("point", "What decision is this for?", "“I want to know whether we need extra staff for the renewal "
+             "period.” That points to timing."),
+            ("point", "What would a useful answer look like?", "“Which weeks are busiest, and how busy.” That is a "
+             "pattern problem: what repeats each year."),
+            ("point", "Is anything else behind it?", "“Last January some renewals were very late.” That adds a second "
+             "type: spotting something unusual, namely which businesses renewed late and whether they share "
+             "features."),
+            "The vague request has become two typed questions in a clear order: find the weekly pattern of "
+            "renewals over past years, then list the late renewals and look at what they have in common. Each "
+            "has its own data and its own method, and the head of office can see exactly what will be delivered.",
+            "This short conversation also protects the analyst’s time. Without it, the result can be a long table of permit counts that answers nobody’s real question.",
+            ("h", "A Quick Guide"),
+            ("point", "“What will happen?”", "Making predictions."),
+            ("point", "“Which group does each one belong to?”", "Categorizing things."),
+            ("point", "“What doesn’t look right?”", "Spotting something unusual."),
+            ("point", "“What are people telling us, overall?”", "Identifying themes."),
+            ("point", "“How does this relate to that?”", "Discovering connections."),
+            ("point", "“What keeps happening?”", "Finding patterns."),
+            ("h", "Key Takeaways"),
+            ("point", "Name the type first", "The problem type tells you what data and method you need."),
+            ("point", "Categories versus themes", "Categories sort the items; themes group the categories "
+             "into bigger ideas."),
+            ("point", "Patterns versus predictions", "Patterns describe what repeats; predictions estimate "
+             "what comes next."),
+            ("point", "Some requests combine types", "Write the types in order and you have a plan."),
+            ("h", "Your Part 7 Exercise"),
+            "Collect the last five requests your office received for “a report” or “some numbers.” For each "
+            "one, write:",
+            ("point", "The question", "In one sentence, as the person asked it."),
+            ("point", "The type or types", "Which of the six does it belong to, and in what order?"),
+            ("point", "The data needed", "Which records would answer it, and does the office already keep "
+             "them?"),
+            "If a few types come up again and again, those are the ones worth building a routine for.",
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("cta", "Read: Data Analytics Series, Part 4", "/blog/data-analytics-part-4-four-questions-worked/"),
+            ("cta", "Read: Data Analytics Series, Part 2", "/blog/data-analytics-part-2-six-steps/"),
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("ask", "Which of the six problem types does your office ask about most often?"),
+        ],
+    },
+    {
         "date": "December 7, 2026",
         "title": "Data Analytics Series, Part 6: Data Ethics and the Data Privacy Act for Analysts",
         "slug": "data-analytics-part-6-data-ethics-privacy",
