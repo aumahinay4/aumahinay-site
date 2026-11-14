@@ -303,7 +303,7 @@ DATA_POSTS = [
             "an automatic action. Data can point to where a problem might be. People still have to look, judge "
             "and act. That idea runs through this whole series.",
             ("h", "How This Series Works"),
-            "This is a long series, with one part every Tuesday evening for a year and more. It follows the "
+            "The series follows the "
             "path of a complete analysis: asking the right question, finding and preparing the data, cleaning "
             "it, analyzing it, sharing what you found, and acting on it. Along the way it covers spreadsheets, "
             "SQL, charts, dashboards, basic statistics, forecasting and Python, always with examples you can "

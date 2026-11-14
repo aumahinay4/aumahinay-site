@@ -2302,7 +2302,7 @@ BLOG = [
              "uninterrupted service."),
             "I am also putting the thinking behind ALTOS into a book, 360° Accountability: Public Fiscal "
             "Administration in Philippine Local Treasuries. It closes with ten principles that any local treasury "
-            "can follow, whether or not it uses software. I will write about each of them here.",
+            "can follow, whether or not it uses software.",
             ("quote", "Every peso, every step, every officer: 360°."),
         ],
     },
