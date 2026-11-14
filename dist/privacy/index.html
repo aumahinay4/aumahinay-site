@@ -881,6 +881,11 @@ header.site .wrap { min-height: 38px; }
 @media (max-width: 640px) { header.site .wrap { min-height: 36px; } }
 .menu-btn { width: 32px; height: 32px; margin-left: -5px; }
 .menu-btn svg { width: 15px; height: 15px; }  /* three bars 25% smaller, 20px -> 15px, all screens (Butch 2026-11-14); tap area stays 32px */
+/* Blog category bar same size as the top bar (Butch 2026-11-14): 38px tall (36px phones), 15px three bars, smaller text */
+.blog-filters > summary { min-height: 38px; box-sizing: border-box; padding: 0 12px; gap: 8px; font-size: 14.5px; }
+.blog-filters > summary svg { width: 15px; height: 15px; }
+.blog-filters .cat-caret { font-size: .8em; }
+@media (max-width: 640px) { .blog-filters > summary { min-height: 36px; } }
 html.menu-js.menu-open header.site #site-menu { padding-top: calc(22px + env(safe-area-inset-top, 0px));  /* no X button any more (Butch 2026-11-10) */
   inset: 0 auto 0 0; width: 50vw; min-width: 200px; max-width: 100vw; box-sizing: border-box;
   padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: 18px; box-shadow: 8px 0 32px rgba(7, 22, 49, .35); }
@@ -937,6 +942,17 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"].active,
 html.menu-js.menu-open header.site #site-menu a[href="/terms/"].active { color: var(--gold-ink); }
 html.menu-js.menu-open .menu-close { color: var(--text); }
 html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:focus-visible { color: var(--gold-ink); }
+
+/* Home title: "Where public finance meets" on one line, "Python" centred below (Butch 2026-11-14) */
+.hero h1 { text-align: center; text-wrap: nowrap; }
+.hero h1 .l1, .hero h1 .l2 { display: block; white-space: nowrap; }
+@media (max-width: 640px) { .hero h1 { font-size: min(2.2185rem, 7.4vw); } }
+
+/* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
+.hero h1 .k1 { color: #b98200; }
+.hero h1 .l2 { color: var(--blue-ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
+:root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -1030,6 +1046,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 .rpt-form input[type=date], .rpt-form select { font-size: 17.425px; }
 .rpt-form input[readonly] { font-size: 17.425px; }
 .rpt-due { font-size: calc(clamp(1.8rem, 6vw, 2.4rem) * 1.025); }
+.blog-filters > summary { font-size: 14.8625px; }
 html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(1.08rem, 4.86vw, 1.395rem) * 1.025); }
 html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
 html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
