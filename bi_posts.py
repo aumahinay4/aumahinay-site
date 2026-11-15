@@ -13,6 +13,141 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 26, 2026",
+        "title": "Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log",
+        "slug": "business-intelligence-part-10-keeping-bi-honest",
+        "category": "bi",
+        "summary": "Dashboards stay trustworthy only if someone can say what each number means, who answers "
+                   "for it and what changed. This part shows how to write a data dictionary, name owners and "
+                   "keep a change log for a small treasury BI setup.",
+        "publish_on": "2026-12-26 21:00",
+        "body": [
+            "In March, the head of office compares two screens. The collections dashboard says real property "
+            "tax collected in February was ₱1.84 million. The revenue unit’s spreadsheet says ₱1.97 million. "
+            "Both people who built them are sure they are right.",
+            "After an afternoon of checking, the answer turns up. In January, someone gave interest on late "
+            "real property tax its own account code. The dashboard counted only the basic tax account. The "
+            "spreadsheet still counted both. Nobody had written the change down, so nobody "
+            "knew to update the other view.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Parts 7 to 9 made the pipeline reliable. This part is about keeping the meaning reliable. By the "
+            "end of this post you will know how to write a data dictionary, which owners a small BI setup "
+            "needs, how to keep a change log, and how these three habits work together.",
+            ("photo", "blog/bi-keeping-honest.jpg", "Three habits that keep BI honest: a data dictionary that "
+             "says what each field means, owners who answer for it, and a change log that records what "
+             "changed. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Correct Data Can Still Mislead"),
+            "In the opening story, no number was wrong. Each view added up its own data correctly. What "
+            "differed was the meaning of “real property tax collected,” and the meaning had changed without "
+            "anyone being told.",
+            "Pipelines and tests protect the data. They cannot protect a definition that lives only in "
+            "someone’s memory. That takes three plain documents: a dictionary, a list of owners and a log of "
+            "changes.",
+            ("quote", "A number is only as honest as the definition written beside it."),
+            ("h", "1. The Data Dictionary"),
+            "A data dictionary lists every field in your tables and says what it means. It is the reference "
+            "both the dashboard builder and the reader can check.",
+            ("point", "Field name", "Exactly as it appears in the table, such as “account_code.”"),
+            ("point", "Plain meaning", "One or two sentences anyone in the office can understand, such as "
+             "“The revenue account the receipt was credited to.”"),
+            ("point", "Type and format", "Text, number, date or yes/no, and the format, such as “amount in "
+             "pesos, two decimal places.”"),
+            ("point", "Allowed values", "The list or range a value must come from, or where that list is "
+             "kept, such as the office’s chart of revenue accounts."),
+            ("point", "Source", "Which system or form the field comes from."),
+            ("point", "Notes", "Anything a reader could misread. For the opening story: “Since January, "
+             "interest on late real property tax has its own account code.”"),
+            "Start with the fields that appear on a dashboard. A dictionary that covers the ten fields "
+            "people read every day is more useful than an unfinished one that tries to cover everything.",
+            ("h", "Measures Need Entries Too"),
+            "A measure is built from fields, and its definition belongs in the dictionary as well. Use the "
+            "five parts from Part 8 of the Data Analytics series: name, numerator, denominator, period and "
+            "source.",
+            ("point", "Example", "Real property tax collected: sum of amounts on official receipts for the basic "
+             "tax account and the interest account, excluding cancelled "
+             "receipts, by receipt date, from the collections table."),
+            "With that entry on the screen, the head of office in the opening story could have seen quickly that the two views counted different accounts.",
+            ("h", "2. Owners"),
+            "Every important piece of a BI setup needs a person who answers for it. In a small office, one "
+            "person may hold several of these roles, but each role should have a name.",
+            ("point", "Data owner", "Answers for what a field or measure means and approves changes to its "
+             "definition. Each office decides who this is, so write the name down."),
+            ("point", "Dashboard owner", "Answers for a view: that it refreshes, that it uses the agreed "
+             "definitions, and that questions about it get answered."),
+            ("point", "Pipeline owner", "Answers for the nightly run, reads the run log and fixes failed "
+             "tests, as in Part 9."),
+            "Put each owner’s name in the dictionary beside the fields and measures they answer for, and on "
+            "each dashboard beside the “data as of” date.",
+            ("h", "3. The Change Log"),
+            "A change log is a simple list of every change that could affect a number. Keep it in one place "
+            "that every owner can open.",
+            ("point", "Date", "When the change took effect, not just when it was written down."),
+            ("point", "What changed", "For example: “Interest on late real property tax moved to its own "
+             "account code.”"),
+            ("point", "Why", "The reason or the instruction behind it."),
+            ("point", "Who approved it", "The data owner’s name."),
+            ("point", "Effect on numbers", "Which measures and dashboards are affected, and whether past "
+             "periods were recomputed. For example: “Collections dashboard updated on January 12. Revenue "
+             "unit spreadsheet must also include the new account.”"),
+            "The last line is the one that would have prevented the opening story. A change is not finished "
+            "until every view that uses it has been checked.",
+            ("h", "How the Three Work Together"),
+            "Picture a new request: the office will start recording online payments through a separate "
+            "collection channel.",
+            ("point", "Owner decides", "The data owner decides whether online payments count in “real property "
+             "tax collected” and approves the definition."),
+            ("point", "Dictionary updated", "The new field for payment channel is added, with its allowed "
+             "values. The measure’s entry is updated to say that online payments are included."),
+            ("point", "Log entry written", "The change, its date, its approval and every affected view are "
+             "listed."),
+            ("point", "Views checked", "Each dashboard owner confirms the view uses the new definition and "
+             "ticks the log entry."),
+            "None of these steps is technical. They are habits, and each one can take only a few minutes per change.",
+            ("h", "When Two Views Disagree"),
+            "The three habits also give you a calm way to settle a difference like the one in the opening "
+            "story. Work through four steps before anyone argues about whose number is right.",
+            ("point", "1. Compare the definitions", "Open the dictionary entry each view claims to use. If the "
+             "two views count different accounts, periods or receipts, you have found the reason."),
+            ("point", "2. Read the change log", "Look for any change during the period in question. A change that only one view picked up can explain a gap that appears from a certain date onward."),
+            ("point", "3. Compare at the lowest level", "Total both views by account and by day. The first "
+             "account or day where they differ points to the cause."),
+            ("point", "4. Write down the answer", "Add a log entry that names the cause, the fix and the views "
+             "that were updated, so the same question does not take another afternoon."),
+            ("h", "Starting Small"),
+            ("point", "Week 1", "List the fields on your most-used dashboard and write a plain meaning for each."),
+            ("point", "Week 2", "Add the measures, using the five parts, and name an owner for each."),
+            ("point", "Week 3", "Start the change log. Write down every change from today, and any past change "
+             "you know about."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Definitions only in the builder’s head", "If the builder is on leave, it can be hard to find out what a number means."),
+            ("point", "A dictionary nobody can find", "Link it from every dashboard."),
+            ("point", "Logging the change but not its effect", "Name every view that must be checked."),
+            ("point", "Owners in name only", "An owner who never reviews changes is not an owner. Ask them to "
+             "approve each log entry."),
+            ("h", "Key Takeaways"),
+            ("point", "Meaning needs protecting too", "Correct data can still mislead when definitions drift."),
+            ("point", "Write the dictionary", "Field, meaning, type, allowed values, source and notes, plus the "
+             "five parts for each measure."),
+            ("point", "Name the owners", "Data, dashboard and pipeline, each with a person."),
+            ("point", "Log every change and its effect", "A change is done only when every affected view is "
+             "checked."),
+            ("h", "Your Part 10 Exercise"),
+            "Pick the dashboard or report your office looks at most often.",
+            ("point", "Dictionary", "Write a dictionary entry for its three most important numbers."),
+            ("point", "Owners", "Write one name for each: who decides what it means?"),
+            ("point", "Log", "Think back over the past year. Write down one change that affected those numbers, "
+             "with its date and effect."),
+            "If you could not name an owner or remember when something changed, that is the gap to close "
+            "first.",
+            ("cta", "Read: Business Intelligence Series, Part 9", "/blog/business-intelligence-part-9-testing-the-pipeline/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Data Analytics Series, Part 9", "/blog/data-analytics-part-9-where-data-comes-from/"),
+            ("ask", "Which number in your office has changed meaning at least once without anyone writing it down?"),
+        ],
+    },
+    {
         "date": "December 21, 2026",
         "title": "Business Intelligence Series, Part 9: Testing the Pipeline Before Anyone Sees a Number",
         "slug": "business-intelligence-part-9-testing-the-pipeline",

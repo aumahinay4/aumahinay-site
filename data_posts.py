@@ -12,6 +12,133 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "December 27, 2026",
+        "title": "Data Analytics Series, Part 10: Data Types, Structured Data and Wide vs Long Tables",
+        "slug": "data-analytics-part-10-data-types-and-table-shapes",
+        "category": "data",
+        "summary": "Before you can analyze data, you need to know what kind of data it is and what shape it "
+                   "is in. This part explains data types, structured and unstructured data, and wide and "
+                   "long tables, with treasury examples and the mistakes each one prevents.",
+        "publish_on": "2026-12-27 21:00",
+        "body": [
+            "An analyst opens a spreadsheet of business permits and asks for the total gross sales declared. "
+            "The answer comes back far too low. A quick look shows why: about a third of the amounts were typed "
+            "with letters in front, like “PHP 1,250,000,” and the spreadsheet treated them as text. The "
+            "SUM formula skipped every one of them without a warning.",
+            "In another column, the barangay codes “007” and “012” have become 7 and 12. The lookup that "
+            "matches codes to barangay names now fails for every barangay with a leading zero.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town, business or taxpayer is described.)",
+            "Part 9 asked where data comes from. This part asks what kind of data it is and what shape it is "
+            "in. By the end of this post you will know the basic data types, the difference between structured "
+            "and unstructured data, how wide and long tables differ, and when to use each shape.",
+            ("photo", "blog/data-wide-long.jpg", "The same collections in two shapes: a wide table with one "
+             "column per month, and a long table with one row per collector per month. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Data Types: What Kind of Value Is This?"),
+            "Every value in a column has a type. The type decides what you can do with it.",
+            ("point", "Number", "A value you can add, average or compare: amounts, counts, areas. Store "
+             "amounts as plain numbers, and let the cell format show the peso sign and commas."),
+            ("point", "Text", "Letters, or digits that are not meant for arithmetic: names, addresses, "
+             "receipt numbers and codes. A barangay code is text, even if it looks like a number, because "
+             "nobody adds codes together and the leading zeros matter."),
+            ("point", "Date", "A day on the calendar. Stored as a real date, it can be sorted, filtered by "
+             "month and used to count days late."),
+            ("point", "True or false", "A value with only two possible answers, such as whether a receipt was "
+             "cancelled. Analysts also call this a Boolean."),
+            ("quote", "Ask what you will do with a column before you decide its type."),
+            ("h", "How to Spot a Wrong Type in a Spreadsheet"),
+            ("point", "Look at the alignment", "In Google Sheets and Excel, numbers line up on the right of a "
+             "cell by default and text on the left. An amount sitting on the left may be stored as text."),
+            ("point", "Count before you sum", "Use COUNT, which counts only numbers, beside COUNTA, which "
+             "counts every filled cell. If the two differ in an amount column, some amounts are text."),
+            ("point", "Check the codes", "If codes lost their leading zeros, set the column format to plain "
+             "text and type or import them again."),
+            ("point", "Check the dates", "A date typed as “12/01/2026” can be read as December 1 or January "
+             "12, depending on the spreadsheet’s regional setting. Write dates as year-month-day, such as "
+             "2026-12-01, or check the setting first."),
+            ("h", "Structured and Unstructured Data"),
+            "The second question is how the data is organized.",
+            ("point", "Structured data", "Data in rows and columns, where every row follows the same layout: a "
+             "receipts table, a list of permits, an assessment roll. Spreadsheets and databases are built for "
+             "it."),
+            ("point", "Unstructured data", "Data without a fixed layout: scanned letters, photos of business "
+             "signs, recorded taxpayer complaints, free-written remarks. It holds real information, but it "
+             "must be read or sorted before it can be counted."),
+            "Some data falls in between. A permit form has fixed fields, such as name and address, and a "
+            "remarks field where anything can be written. Treat the fixed fields as structured and the remarks "
+            "as unstructured.",
+            "A practical rule: if you will need to count or total something, give it its own column with a "
+            "type. If a reason for cancellation is written only in remarks, nobody can count cancellations by "
+            "reason without reading every line.",
+            ("h", "Wide and Long Tables"),
+            "Structured data can still come in different shapes. Take the same numbers, collections by "
+            "collector for three months, arranged two ways.",
+            ("point", "Wide table", "One row per collector, one column per month: Collector, January, February, "
+             "March. Three rows of four columns."),
+            ("point", "Long table", "One row per collector per month: Collector, Month, Amount. Nine rows of "
+             "three columns."),
+            "Both hold exactly the same information. They differ in what is easy to do with them.",
+            ("point", "Wide is easier to read", "A person can scan across a row and compare months at a glance. "
+             "It suits a printed report or a summary for the head of office."),
+            ("point", "Long is easier to analyze", "Adding April means adding rows, not a new column, so "
+             "formulas and charts keep working. Filters and pivot tables work best with one row per "
+             "record."),
+            ("h", "When to Use Each Shape"),
+            ("point", "Store and analyze in long", "Keep the working data in long form: one row per "
+             "receipt, per collector per day, or per collector per month."),
+            ("point", "Present in wide", "Turn it into wide form at the end, for the report people will read. "
+             "A pivot table does this in a few clicks: put collectors in rows, months in columns and amounts "
+             "in values."),
+            ("point", "Watch for wide tables that grow", "A sheet that gains a new column every month is a "
+             "sign the data should be stored long."),
+            ("h", "Turning a Wide Table Into a Long One"),
+            "If you receive a wide table, you can reshape it by hand in a few minutes for a small sheet.",
+            ("point", "1. Set up the columns", "On a new sheet, type three headers: Collector, Month and Amount."),
+            ("point", "2. Copy the first month", "Paste the list of collectors under Collector, their January "
+             "amounts under Amount, and type “January” in the Month column beside each one."),
+            ("point", "3. Repeat below", "Paste the same collectors again under the January rows, with "
+             "February’s amounts and “February” as the month. Do the same for each remaining month."),
+            ("point", "4. Check the total", "The sum of the Amount column must equal the sum of all the month "
+             "columns in the wide table. If it does not, a row was missed or pasted twice."),
+            "For larger tables, Excel’s Power Query has an Unpivot Columns command that does the same "
+            "reshaping in one step. Whichever way you use, run the total check at the end.",
+            ("h", "A Quick Check Before Any Analysis"),
+            "Before you write a single formula, look at each column and answer three questions.",
+            ("point", "What type is it?", "Number, text, date or true/false."),
+            ("point", "Is it stored as that type?", "Use the alignment and COUNT checks."),
+            ("point", "Is the table long or wide?", "If you need to filter or pivot it, make it long first."),
+            "Write the answers in the source note from Part 9, so the next person knows the shape before they "
+            "start.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Typing letters into amounts", "Words like “PHP” turn a number into text. Let the cell "
+             "format show the currency."),
+            ("point", "Storing codes as numbers", "Leading zeros disappear, and matches fail."),
+            ("point", "Hiding countable facts in remarks", "Give anything you will count its own column."),
+            ("point", "Analyzing a wide table directly", "Reshape it to long first, or each new month can break your formulas."),
+            ("h", "Key Takeaways"),
+            ("point", "Type follows use", "Numbers are for arithmetic; codes and IDs are text."),
+            ("point", "Check before you sum", "Alignment and COUNT reveal values stored as the wrong type."),
+            ("point", "Structure what you will count", "Give countable facts their own typed column."),
+            ("point", "Long to analyze, wide to present", "Keep working data long and build wide views for "
+             "readers."),
+            ("h", "Your Part 10 Exercise"),
+            "Open one spreadsheet your office updates every month.",
+            ("point", "Types", "For each column, write the type it should be and check that it is stored that "
+             "way."),
+            ("point", "Shape", "Decide whether the table is wide or long. If a new column appears every month, "
+             "sketch the long version."),
+            ("point", "Fix one thing", "Correct one column stored as the wrong type, and note the fix."),
+            "Then rerun one total you report regularly. If it changes, you have found a number that was wrong "
+            "before today.",
+            ("cta", "Read: Data Analytics Series, Part 9", "/blog/data-analytics-part-9-where-data-comes-from/"),
+            ("cta", "Read: Data Analytics Series, Part 5", "/blog/data-analytics-part-5-zero-budget-toolkit/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Business Intelligence Series, Part 9", "/blog/business-intelligence-part-9-testing-the-pipeline/"),
+            ("ask", "Which column in your office’s spreadsheets is most often stored as the wrong type?"),
+        ],
+    },
+    {
         "date": "December 22, 2026",
         "title": "Data Analytics Series, Part 9: Where Data Comes From, First-, Second- and Third-Party",
         "slug": "data-analytics-part-9-where-data-comes-from",

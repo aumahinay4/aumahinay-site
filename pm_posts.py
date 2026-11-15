@@ -14,6 +14,131 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "December 28, 2026",
+        "title": "Project Management Series, Part 10: Writing a Business Case That Gets a Yes",
+        "slug": "project-management-part-10-business-case",
+        "category": "pm",
+        "summary": "A good idea still needs a reason to spend time and money on it. This part walks through "
+                   "the six parts of a business case, a worked treasury example with simple numbers, and how to present it so a decision maker can say yes or no quickly.",
+        "publish_on": "2026-12-28 21:00",
+        "body": [
+            "The revenue clerk asks the head of office for a second receipt printer and a part-time encoder "
+            "for the January rush. The answer is a polite no: “The budget is tight this year.” The clerk is "
+            "sure the request would pay for itself, but has nothing on paper to show it.",
+            "A month later, the clerk asks again, this time with one page. It shows how long taxpayers waited "
+            "last January, how many left the line without paying, what the printer and encoder would cost, and "
+            "three options side by side. The head of office reads it twice, asks two questions and approves the printer.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "The request did not change. The case for it did. By the end of this post you will know the six "
+            "parts of a business case, how to compare options honestly, including doing nothing, how to work "
+            "out a simple payback, and how to present it so a busy decision maker can say yes or no quickly.",
+            ("photo", "blog/pm-business-case.jpg", "Six parts of a business case: the problem, the options, "
+             "the costs, the benefits, the risks and the recommendation. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Business Case Is For"),
+            "A business case answers one question: is this worth doing, compared with the other ways we could "
+            "use the same time and money? It comes before the charter from Part 2. The charter authorizes a "
+            "project. The business case is the reason to authorize it.",
+            "It does not need to be long. For a small office request, one or two pages can be enough, as long "
+            "as every number in it can be traced to a record or a stated assumption.",
+            ("quote", "A business case does not argue for a project. It compares choices and lets the numbers "
+             "speak."),
+            ("h", "The Six Parts"),
+            ("point", "1. The problem", "What is wrong today, in measurable terms, and what it costs the office "
+             "or the public."),
+            ("point", "2. The options", "Two to four realistic ways to respond, always including “do nothing.”"),
+            ("point", "3. The costs", "For each option: money, staff time and anything else it uses up, "
+             "one-time and recurring."),
+            ("point", "4. The benefits", "For each option: what improves, by how much and by when. Separate "
+             "benefits you can count from those you can only describe."),
+            ("point", "5. The risks", "What could stop each option from working, and what the office would do "
+             "about it."),
+            ("point", "6. The recommendation", "Which option, why, and what decision you need from the reader."),
+            ("h", "The Clerk’s Case, Worked Through"),
+            ("point", "The problem", "Last January, the average wait at the real property tax window was 52 "
+             "minutes on the busiest days. Office counts show about 40 taxpayers a day left the line without "
+             "paying in the first two weeks. Some returned later; some did not return until interest had "
+             "started."),
+            ("point", "Option A: do nothing", "Cost: none. Result: the same lines next January."),
+            ("point", "Option B: second printer only", "One-time cost: ₱18,000 for the printer, plus "
+             "supplies. Result: a second window can print receipts, but only when a second staff member is "
+             "free."),
+            ("point", "Option C: printer and part-time encoder", "One-time cost: ₱18,000. Recurring cost: "
+             "₱16,000 a month for an encoder during January and February, or ₱32,000 a year. Result: a second "
+             "window open every day of the rush."),
+            "Every number above comes from the office’s own records or from a quoted price, and the page says "
+            "which is which.",
+            ("h", "Counting the Benefits Honestly"),
+            "The benefit the clerk can count is collections that arrive earlier instead of later or not at "
+            "all. The clerk estimates it carefully and says how.",
+            ("point", "The assumption", "If the second window cuts the busiest-day wait to about 25 minutes, "
+             "half of the taxpayers who used to leave the line will stay and pay."),
+            ("point", "The estimate", "20 taxpayers a day, for 10 busy days, at an average of ₱1,500 each, is "
+             "₱300,000 collected in January instead of later."),
+            ("point", "What it is not", "This is not new revenue. Some or all of it might have arrived later anyway. The "
+             "gain is that it arrives sooner, with less follow-up work, and with fewer taxpayers paying "
+             "interest for being late."),
+            "Some benefits cannot be counted in pesos: shorter lines, fewer complaints and staff who are not "
+            "exhausted by the end of January. List them, but do not turn them into made-up numbers.",
+            ("h", "A Simple Payback"),
+            "For a small request, a payback comparison can be enough: how long until the "
+            "benefit covers the cost?",
+            ("point", "Option B", "Cost ₱18,000. Without a second staff member, the clerk cannot claim much "
+             "benefit, so the payback is unclear."),
+            ("point", "Option C", "First-year cost ₱50,000. The counted benefit is earlier collection, not new "
+             "money, so the clerk does not claim the ₱300,000 as savings. Instead, the case shows that the "
+             "cost is about one sixth of the collections that would otherwise arrive late, plus the staff time "
+             "saved on follow-up."),
+            "Being honest about what a benefit is, earlier money rather than new money, makes the case "
+            "stronger. A reader who catches an inflated number may stop trusting the rest of the page.",
+            ("h", "Risks and the Recommendation"),
+            ("point", "Risks", "The encoder may not be hired in time. The printer may arrive late. Mitigation: "
+             "start hiring as soon as the case is approved, and order the printer the same week."),
+            ("point", "Recommendation", "Option C, with a check after January: if the busiest-day wait did not "
+             "fall below 30 minutes, do not renew the encoder for next year."),
+            ("point", "Decision needed", "Approval of ₱50,000 from the office’s budget by December 1."),
+            "In the opening story, the head of office approved Option B first, the cheaper one, and asked for "
+            "a staffing plan before deciding on the encoder. That is a good outcome too. A business case gives "
+            "the decision maker real choices, and sometimes they choose differently.",
+            ("h", "Presenting It"),
+            ("point", "Lead with the decision", "The first line says what you are asking for, how much it "
+             "costs and by when you need an answer."),
+            ("point", "Show the options in a table", "Options across, costs, benefits and risks down. The reader "
+             "can compare in one look."),
+            ("point", "Put the assumptions in writing", "Every estimate says what it is based on, so the reader "
+             "can disagree with a specific number instead of the whole page."),
+            ("point", "Keep it short", "Move details to an attachment. The main page should be readable in "
+             "five minutes."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Leaving out “do nothing”", "Without it, the reader has nothing to compare the project against."),
+            ("point", "Only one real option", "A case with one sensible option and two weak ones can look like a sales pitch."),
+            ("point", "Counting the same benefit twice", "Earlier collections and fewer follow-up visits may "
+             "be the same taxpayers. Count them once."),
+            ("point", "No check afterward", "Say how you will know, after the project, whether the benefit "
+             "really came."),
+            ("h", "Key Takeaways"),
+            ("point", "Compare, do not argue", "A business case weighs options, always including doing "
+             "nothing."),
+            ("point", "Six parts", "Problem, options, costs, benefits, risks and recommendation."),
+            ("point", "Be honest about benefits", "Say what is counted, how, and what is earlier money rather "
+             "than new money."),
+            ("point", "Ask for a clear decision", "Name the amount, the option and the date."),
+            ("h", "Your Part 10 Exercise"),
+            "Think of one request your office has turned down or postponed.",
+            ("point", "Problem", "Write the problem in one sentence with a number from your records."),
+            ("point", "Options", "List three options, including doing nothing, with a cost for each."),
+            ("point", "Benefit", "Estimate one benefit and write the assumption behind it."),
+            "Then read it as the decision maker would. If you would not say yes to your own page, find the "
+            "number or assumption that is holding it back.",
+            ("cta", "Read: Project Management Series, Part 2", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 9", "/blog/project-management-part-9-gathering-requirements/"),
+            ("cta", "Read: Project Management Series, Part 6", "/blog/project-management-part-6-writing-objectives/"),
+            ("cta", "Read: Data Analytics Series, Part 3", "/blog/data-analytics-part-3-deciding-with-data/"),
+            ("ask", "What request in your office deserves a second try with a one-page business case?"),
+        ],
+    },
+    {
         "date": "December 23, 2026",
         "title": "Project Management Series, Part 9: Gathering Requirements When Nobody Knows What They Want",
         "slug": "project-management-part-9-gathering-requirements",
