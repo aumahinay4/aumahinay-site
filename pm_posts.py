@@ -23,7 +23,7 @@ PM_POSTS = [
                    "treasury project, scores each risk, and explains the four classic ways to respond.",
         "publish_on": "2027-02-11 21:00",
         "body": [
-            "Halfway through the first round of notices, three things went wrong in the same week. The legal "
+            "During the first round of notices, three things went wrong. The legal "
             "review came back late. A batch of notices had to be reprinted. A collector was out sick during "
             "delivery. Each problem was handled, but each one was handled as a surprise, in a hurry, by "
             "whoever happened to be there.",
@@ -59,8 +59,7 @@ PM_POSTS = [
             ("h", "Finding the Risks"),
             ("point", "Ask the team", "The people doing the work know what has gone wrong before. Ask each "
              "of them, as in Part 15."),
-            ("point", "Read the last project", "The first round’s closing report and tracker show what "
-             "actually happened."),
+            ("point", "Read the last project", "Look at how the first round actually went, as Part 15 did."),
             ("point", "Walk the schedule", "Go through each package in the critical path from Part 16 and "
              "ask what could delay it."),
             ("point", "Check the people", "The resource grid from Part 18 shows who is overloaded or "
@@ -75,7 +74,7 @@ PM_POSTS = [
             "The score is a way to sort the list, not a precise measurement. Its main job is to start a "
             "conversation about which risks matter most.",
             ("h", "Four Ways to Respond to a Threat"),
-            "Among the responses to threats described in PMI’s PMBOK Guide, four are the classic ones.",
+            "PMI’s PMBOK Guide describes several responses to threats. This post uses these four.",
             ("point", "Avoid", "Change the plan so the risk cannot happen or cannot affect the project. If "
              "mailing notices risks delays in the post, delivering by hand avoids that risk."),
             ("point", "Mitigate", "Reduce the probability or the impact. Checking a sample of the first "
@@ -95,7 +94,7 @@ PM_POSTS = [
             ("h", "The Notices Project Risk Register"),
             ("point", "R1. Legal review runs late", "Because the legal adviser serves other offices, the review "
              "may take more than a week, which would delay the critical path. Probability 2, impact 3, score 6. "
-             "Response: mitigate by sending the draft on day 3, as planned in Part 18, and agreeing the review "
+             "Response: mitigate by having the clerk draft it on days 3 to 5 and send it on day 5, as planned in Part 18, and by agreeing the review "
              "date in advance. Owner: the clerk. Trigger: no comments by day 8."),
             ("point", "R2. Wrong amounts on printed notices", "Probability 2, impact 2, score 4. Response: "
              "mitigate by checking a random sample of the first printed batch before printing the rest, as "
@@ -120,11 +119,7 @@ PM_POSTS = [
             ("point", "Record the lessons", "At the end, note which risks happened and whether the responses "
              "worked. The next project’s register starts from that."),
             ("h", "The Second Round, With a Register"),
-            "This time, two risks did happen. The legal adviser was called away for two days, but the trigger "
-            "fired on day 8, the clerk called the adviser’s office the same morning, and the comments arrived "
-            "on day 10, still on time. A sample check of the first printed batch found two wrong amounts "
-            "before the rest were printed, so only that batch was reprinted, the ₱800 reprint described in "
-            "Part 17.",
+            "This time, the register was tested twice. The legal adviser was called away for two days, but the trigger fired on day 8, the clerk called the adviser’s office the same morning, and the comments arrived on day 10, still on time. Then a sample check of the first printed batch found wrong amounts before the rest were printed, so only part of that batch was reprinted: the ₱800 reprint described in Part 17, the one risk that drew on the budget.",
             "Neither problem became a surprise, and the project finished inside its schedule and its budget.",
             ("h", "Mistakes to Avoid"),
             ("point", "Vague risks", "Name the cause, the event and the effect."),

@@ -108,7 +108,7 @@ BI_POSTS = [
             ("point", "One-off payments", "A single large payment, such as a big business settling several "
              "years of tax at once, can make one month look unusual. Show the total with and without it, or "
              "add a note naming it."),
-            ("point", "Changed definitions", "If revenue accounts were regrouped, as in Part 15, restate last "
+            ("point", "Changed definitions", "If accounts were moved between the revenue groups from Part 15, restate last "
              "year’s figures under the new grouping before comparing. Otherwise part of the change is only a "
              "change in labels."),
             ("h", "Showing a Comparison Clearly"),
@@ -116,8 +116,7 @@ BI_POSTS = [
              "size of the money."),
             ("point", "Name both periods", "Exact dates for each side."),
             ("point", "Say what was adjusted", "“Per working day” or “excluding one large payment.”"),
-            ("point", "Use words with color", "As in Part 18, a word such as “Higher” or “Lower” beside an "
-             "arrow, not color alone."),
+            ("point", "Use words with color", "As in Part 18, write a word such as “Higher” or “Lower,” not color alone."),
             ("h", "The February Figure, Corrected"),
             "The dashboard now shows month-to-date figures against the same days last year, with the dates "
             "written out. A second line shows collections per working day. The comparison with January was "
