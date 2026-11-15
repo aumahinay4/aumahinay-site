@@ -12,6 +12,135 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 6, 2027",
+        "title": "Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record",
+        "slug": "data-analytics-part-12-one-row-per-record",
+        "category": "data",
+        "summary": "A spreadsheet can look neat to people and still be hard to sort, filter or total. This part "
+                   "gives seven layout rules for treasury spreadsheets, from one header row to no merged cells "
+                   "and dropdown lists, and shows a messy collections tracker fixed step by step.",
+        "publish_on": "2027-01-06 21:00",
+        "body": [
+            "The revenue unit keeps a collections tracker that everyone in the office has added to over the "
+            "years. It opens with a large title across the top, a merged heading that says “First Quarter,” "
+            "and the barangays listed in groups, each followed by a bold subtotal row. Paid accounts are "
+            "shaded green. A blank row separates each group so the sheet is easier on the eyes.",
+            "One afternoon the head of office asks a simple question: which ten accounts paid the most this "
+            "quarter? The analyst tries to sort the amounts. The spreadsheet refuses because of the merged "
+            "cells. After unmerging them, the sort runs, but now the subtotal rows are mixed in with the "
+            "accounts, and the biggest “account” on the list is a barangay subtotal. And no simple formula counts the green rows.",
+            "The sheet was built to be looked at. It was not built to be worked with.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town, barangay or taxpayer is described.)",
+            "Part 10 covered data types and the difference between wide and long tables. This part is about "
+            "the layout of the sheet itself. By the end of this post you will know seven rules that make a "
+            "spreadsheet easy to sort, filter and total, how to fix a messy tracker without losing data, and "
+            "how to keep it clean once it is fixed.",
+            ("photo", "blog/data-one-row.jpg", "A sheet you can work with: one row per record, one header row, facts in cells and the same codes every time. "
+             "(Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What “One Row per Record” Means"),
+            "A record is one thing you want to count: one receipt, one payment, one taxpayer, one permit. In a "
+            "working sheet, each record gets exactly one row, and each fact about it gets its own column. A "
+            "row for receipt 004512 holds its date, account, barangay, amount and collector, and nothing else "
+            "sits in that row.",
+            "Decide first what one row stands for, and write it down. “One row per official receipt” and “one "
+            "row per taxpayer” are both fine, but a sheet that mixes the two can count some things twice.",
+            ("quote", "Decide what one row stands for before you type the first row."),
+            ("h", "Seven Rules for a Sheet You Can Work With"),
+            ("point", "1. One header row", "Put the column names in the first row, one name per column, with "
+             "no title above them. Move the title to the file name or to a separate notes sheet. Filters, sorting and pivot tables use the top row of the data as the column names."),
+            ("point", "2. No merged cells", "Merged cells look tidy but get in the way of sorting, filtering "
+             "and copying. Microsoft’s support page notes that Excel will not sort a range where only some of "
+             "the cells are merged. If a heading needs to span columns, keep it in the printed report, not in "
+             "the data."),
+            ("point", "3. No blank rows or columns", "A blank row may be read as the end of the table, so a "
+             "filter or a selection can stop halfway through the data. Use formatting or a separate report "
+             "if you need space for the eyes."),
+            ("point", "4. No totals inside the data", "Subtotal rows look like records to a formula or a "
+             "sort. Keep the raw rows clean, and calculate totals in a separate summary or pivot table."),
+            ("point", "5. One table per sheet", "Two tables side by side on one sheet are easy to break when "
+             "one of them grows. Give each table its own sheet, with a clear sheet name."),
+            ("point", "6. Facts in cells, not in colors", "Green shading for “paid” cannot be counted or "
+             "filtered as easily as a column called Status with the word Paid in it. Color can still be "
+             "used, but only to highlight a fact that is already written in a cell."),
+            ("point", "7. The same code every time", "“Brgy. 1,” “Barangay 1” and “Poblacion 1” for the same "
+             "place become three different places in a count. Choose one code per item and keep a list of "
+             "the allowed codes."),
+            ("h", "Dropdown Lists: Stopping Errors at the Door"),
+            "Rule 7 is easier to keep when the spreadsheet does the checking. Both Google Sheets and Excel can "
+            "limit a cell to a list of allowed values, shown as a dropdown.",
+            ("point", "In Google Sheets", "Select the cells, then go to Data, Data validation, Add rule, and "
+             "choose “Dropdown” or “Dropdown (from a range).” Google’s help page explains that entries not on "
+             "the list are rejected unless you change the rule to show a warning instead."),
+            ("point", "In Excel", "Select the cells, then go to Data, Data Validation, and under Allow choose "
+             "List. Point the source to a range that holds the allowed values."),
+            ("point", "Keep the list on its own sheet", "Put the allowed barangays, revenue sources and "
+             "collectors on a sheet called Lists. When a new item is approved, add it there once. Then check that each dropdown’s source range includes the new row."),
+            "A dropdown does not make a value correct. It only makes sure the value is one of the allowed "
+            "choices. Someone can still pick the wrong barangay, so the checks in the next section still "
+            "matter.",
+            ("h", "Fixing the Collections Tracker, Step by Step"),
+            "Never fix the only copy. Save a copy of the original file first, with the date in its name, and "
+            "work on the copy.",
+            ("point", "1. Write down what a row is", "Here, one row per official receipt."),
+            ("point", "2. Move the title", "Delete the title rows above the headers and put the title in the "
+             "file name."),
+            ("point", "3. Unmerge and fill", "Unmerge every merged cell. Where a merged cell held a barangay "
+             "name for a group of rows, type that name into every row of the group, so each row carries its "
+             "own barangay."),
+            ("point", "4. Remove blanks and subtotals", "Delete the blank rows and the subtotal rows. Before "
+             "deleting the subtotals, write their values down; you will use them in step 7."),
+            ("point", "5. Turn colors into a column", "Add a Status column and type Paid or Unpaid for each "
+             "row, matching the old shading. Then clear the shading."),
+            ("point", "6. Standardize the codes", "Sort by barangay, read down the list and correct the "
+             "variations to one code each. Add dropdowns so the codes stay fixed."),
+            ("point", "7. Check the totals", "Build a pivot table of amounts by barangay and compare it with "
+             "the subtotals you wrote down in step 4. They must match. If one does not, find out why before "
+             "you go on."),
+            "Step 7 is the most important one. A cleanup that changes the totals has damaged the data, even "
+            "if the sheet looks better.",
+            ("h", "Keeping It Clean"),
+            ("point", "A notes sheet", "Add a sheet called Notes that says what one row stands for, what each "
+             "column means, where the data comes from and who maintains it."),
+            ("point", "Raw data and reports apart", "Keep the working data on one sheet and build reports, "
+             "charts and summaries on others. People can format the report sheet however they like without "
+             "touching the data."),
+            ("point", "Freeze the header", "Freeze the first row so the column names stay in view while "
+             "scrolling. In Google Sheets it is under View, Freeze; in Excel, under View, Freeze Panes."),
+            ("point", "A unique ID column", "Give each record a value that never repeats, such as the receipt "
+             "number with its series. It makes duplicates easy to find."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Fixing the only copy", "Always work on a dated copy."),
+            ("point", "Typing totals by hand", "A total typed into a cell does not update when a row changes. "
+             "Let a formula or pivot table calculate it."),
+            ("point", "Notes in the amount column", "Text such as “paid half, balance next week” turns an "
+             "amount into text. Put remarks in a separate Remarks column."),
+            ("point", "Hiding rows instead of deleting them", "Hidden rows still count in some formulas, so a "
+             "total can include rows nobody can see."),
+            ("h", "Key Takeaways"),
+            ("point", "One row, one record", "Decide what a row stands for and keep to it."),
+            ("point", "Clean layout", "One header row, no merged cells, no blank rows and no totals inside "
+             "the data."),
+            ("point", "Facts in cells", "Write the status in a column, and use dropdowns to keep codes the "
+             "same."),
+            ("point", "Prove the cleanup", "Totals before and after must match."),
+            ("h", "Your Part 12 Exercise"),
+            "Open one spreadsheet your office uses every month, and work on a copy.",
+            ("point", "Name the record", "Write one sentence: “One row in this sheet is one…”"),
+            ("point", "Check the seven rules", "Count how many of the seven rules the sheet breaks."),
+            ("point", "Fix one rule", "Pick the easiest one, fix it on the copy, and check that the totals "
+             "still match."),
+            "If you cannot finish the sentence “One row in this sheet is one…”, that is the first thing to "
+            "fix.",
+            ("cta", "Read: Data Analytics Series, Part 10", "/blog/data-analytics-part-10-data-types-and-table-shapes/"),
+            ("cta", "Read: Data Analytics Series, Part 11", "/blog/data-analytics-part-11-roccc-test/"),
+            ("cta", "Read: Data Analytics Series, Part 5", "/blog/data-analytics-part-5-zero-budget-toolkit/"),
+            ("cta", "Read: Business Intelligence Series, Part 9", "/blog/business-intelligence-part-9-testing-the-pipeline/"),
+            ("ask", "Which spreadsheet in your office would you clean up first, and which rule does it break most?"),
+        ],
+    },
+    {
         "date": "January 1, 2027",
         "title": "Data Analytics Series, Part 11: Good Data or Bad Data? The ROCCC Test",
         "slug": "data-analytics-part-11-roccc-test",
