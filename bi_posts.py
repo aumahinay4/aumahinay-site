@@ -13,6 +13,637 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "March 31, 2027",
+        "title": "Business Intelligence Series, Part 29: Retiring Reports, Turning Off What Nobody Uses",
+        "slug": "business-intelligence-part-29-retiring-reports",
+        "category": "bi",
+        "summary": "Every report an office keeps must be refreshed, checked and explained. This part shows "
+                   "how to decide which reports to retire, test the decision before acting, tell people "
+                   "ahead, keep a copy, remove the report in Data Studio safely, and update the records so "
+                   "nothing breaks later.",
+        "publish_on": "2027-03-31 21:00",
+        "body": [
+            "Every Monday morning, the analyst spent forty minutes on a report called “Weekly Collections "
+            "by Collector, Old Format.” It had been built two years earlier for a head of office who had "
+            "since retired. The new dashboard showed the same numbers, updated daily. Still, the old report "
+            "went out every week, because nobody had ever said it could stop.",
+            "Forty minutes a week is more than thirty hours a year, spent on a report that may have had no "
+            "readers.",
+            "(This office, its reports and the hours in this story are invented for teaching.)",
+            "Part 28 measured which pages of a dashboard are used. This part acts on what it found. You "
+            "will learn how to pick the reports to retire, how to test the choice before acting, how to "
+            "tell people, what to keep, how to remove a report in Data Studio without losing anything you "
+            "might need, and how to update the records so nothing breaks later.",
+            ("photo", "blog/bi-retire.jpg", "Retiring a report: find the candidates, test with a pause, "
+             "tell people, keep a copy, then remove it and update the records. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Retire Anything"),
+            "Reports can pile up. Each new request can add one, but nothing in a request says when "
+            "it should end.",
+            ("point", "Time", "Every report must be refreshed, checked and explained. Time spent on a report "
+             "nobody reads is time taken from one people do read."),
+            ("point", "Confusion", "Two reports that show the same figure in slightly different ways invite "
+             "the question “Which one is right?” Part 10 warned about this."),
+            ("point", "Risk", "An old report may still be shared with people who changed jobs, or still "
+             "connected to a sheet with personal data. Part 17 covered who should see what."),
+            ("point", "Trust", "A short list of reports that are all maintained is easier to trust than a "
+             "long list where some are quietly out of date."),
+            ("quote", "A report nobody reads still has a cost. It is just paid by the person who keeps it "
+             "running."),
+            ("h", "Step 1: Find the Candidates"),
+            "Start with the evidence from Part 28: usage counts, readers’ answers and the decision log. "
+            "A report is a candidate for retirement if one or more of these is true.",
+            ("point", "Low use, no decisions", "Few or no visits in three months, and no entry in the "
+             "decision log."),
+            ("point", "A duplicate", "Another report or dashboard page shows the same figures, kept more "
+             "up to date."),
+            ("point", "The question is gone", "The report answered a question for a project, a meeting "
+             "series or a person that has since ended."),
+            ("point", "The data is gone", "The source sheet is no longer updated, so the report shows old "
+             "numbers as if they were current."),
+            "Make a short list with each candidate, its owner, the people it is shared with, and the reason "
+            "it is on the list.",
+            ("h", "Step 2: Ask the Owner and the Readers"),
+            ("point", "The owner", "Every report should have an owner, as Part 10 recommended. Ask the "
+             "owner first: is this still needed, and by whom?"),
+            ("point", "The readers", "Ask the people it is shared with a direct question: “If this report "
+             "stopped next month, what would you use instead?” If the answer is “the dashboard,” you have "
+             "your answer."),
+            ("point", "Hidden users", "Ask whether any other report, sheet or office process reads from "
+             "this one. A report can feed a monthly summary that someone else prepares."),
+            ("h", "Step 3: Test With a Pause"),
+            "If the answers are unclear, pause the report before removing it.",
+            ("point", "Stop sending it", "For a report sent by email, stop the sending for one cycle. For a "
+             "shared report, add a note at the top: “This report will be retired on April 30. Please tell "
+             "the analyst if you still use it.”"),
+            ("point", "Wait one full cycle", "A weekly report needs at least one missed week. A monthly "
+             "report needs a full month, so that the people who use it at month’s end have a chance to "
+             "notice."),
+            ("point", "Write down who asks", "If someone asks for it, find out what they used it for. "
+             "The need may fit on a page of the main dashboard."),
+            ("h", "Step 4: Tell People Ahead"),
+            "Retiring a report without notice can leave someone without a figure they need on the day they "
+            "need it. Send a short notice to everyone with access.",
+            ("point", "What is retiring", "The report’s name and link."),
+            ("point", "When", "A date at least two weeks away."),
+            ("point", "What replaces it", "A link to the dashboard page that shows the same figures, if "
+             "there is one."),
+            ("point", "Whom to ask", "The analyst or the report’s owner."),
+            ("h", "Step 5: Keep a Copy"),
+            "Before removing anything, save what you might need later.",
+            ("point", "A snapshot", "Save a copy of the report’s last version, such as a PDF of each page, "
+             "in the folder where the office keeps its records, named with the report and the date."),
+            ("point", "The definitions", "Copy the report’s calculated fields and filters into the data "
+             "dictionary, so the logic is not lost if someone asks how a figure was made."),
+            ("point", "The data", "Leave the source data where it is unless the office’s records rules say "
+             "otherwise. Retiring a report is not the same as deleting the data it used."),
+            ("h", "Step 6: Remove It in Data Studio"),
+            "Google’s documentation for Data Studio describes how removing a report works.",
+            ("point", "Only the owner", "The page says you need to own the report to delete it."),
+            ("point", "Remove moves it to the trash", "From the report list, choose More options, then "
+             "Remove. While the report is in the trash, Google’s page says it is not accessible by you or "
+             "anyone else."),
+            ("point", "Restoring is possible", "Removed reports stay in the trash unless you delete them "
+             "permanently, and can be restored from the Trash tab. After a restore, the people it was shared "
+             "with have access again."),
+            ("point", "Delete forever cannot be undone", "The page warns that deleting a report "
+             "permanently cannot be undone. Leave retired reports in the trash for a while, until you are "
+             "sure no one needs them."),
+            ("point", "Check the data source", "A data source can be used by more than one report. Before "
+             "removing a data source, check that no other report depends on it."),
+            ("h", "Step 7: Update the Records"),
+            ("point", "Change log", "Add a line: the report, the date it was retired, the reason, and where "
+             "the copy is kept."),
+            ("point", "Data dictionary", "Mark the report’s fields as retired, or move them to the report "
+             "that replaced it."),
+            ("point", "Links", "Search the office’s shared documents and dashboard pages for links to the "
+             "old report, and point them to the replacement."),
+            ("point", "Calendar", "Remove the refresh task from your own weekly schedule. That is the time "
+             "you just won back."),
+            ("h", "The Analyst’s Spring Cleaning"),
+            "The analyst listed nine reports. Four were candidates. The owner of one asked to keep it, "
+            "because it fed a quarterly summary for the council. The other three were paused for a month. "
+            "Only one person asked about one of them, and that question was answered by a dashboard page "
+            "she had not known about.",
+            "The three reports went to the trash on April 30, with copies saved and the change log "
+            "updated. The Monday morning forty minutes went to checking the dashboard’s data instead.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Deleting without asking", "Ask the owner and readers, and test with a pause."),
+            ("point", "Deleting forever right away", "Leave the report in the trash until you are sure."),
+            ("point", "Forgetting hidden users", "Check for other reports and processes that depend on it."),
+            ("point", "Retiring the report and the data together", "Keep the data under the office’s records rules."),
+            ("h", "Key Takeaways"),
+            ("point", "Retire on evidence", "Usage, readers’ answers and the decision log."),
+            ("point", "Pause, then tell", "One full cycle of silence, then a notice with a date."),
+            ("point", "Keep a copy", "A snapshot and the definitions, before removing anything."),
+            ("point", "Trash first, delete later", "And update the change log and links."),
+            ("h", "Your Part 29 Action Plan"),
+            ("point", "Today", "List every report you maintain, with its owner and the hours it takes each "
+             "month."),
+            ("point", "This month", "Pick the two with the least use, ask their owners and readers, and "
+             "start a pause."),
+            ("point", "Next month", "Retire what nobody missed, save the copies, and record it in the "
+             "change log."),
+            "Then add up the hours the retired reports used to take. Write the number at the top of your "
+            "change log. It is the clearest argument for doing this again next year.",
+            ("cta", "Read: Business Intelligence Series, Part 28: Is Anyone Using the Dashboard? Measuring Views and Decisions", "/blog/business-intelligence-part-28-dashboard-usage/"),
+            ("cta", "Read: Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much", "/blog/business-intelligence-part-17-who-sees-what/"),
+            ("cta", "Read: Business Intelligence Series, Part 8: Report or Dashboard? Static, Live and Self-Service Views", "/blog/business-intelligence-part-8-report-or-dashboard/"),
+            ("ask", "Which report in your office would anyone miss if it stopped next Monday?"),
+        ],
+    },
+    {
+        "date": "March 26, 2027",
+        "title": "Business Intelligence Series, Part 28: Is Anyone Using the Dashboard? Measuring Views and Decisions",
+        "slug": "business-intelligence-part-28-dashboard-usage",
+        "category": "bi",
+        "summary": "A dashboard can be accurate, readable and still unused. This part shows how to find out "
+                   "who opens it and what they do with it: Google Analytics for usage counts, a short "
+                   "monthly question to readers, and a decision log that ties pages to actions.",
+        "publish_on": "2027-03-26 21:00",
+        "body": [
+            "The analyst had spent three months on the treasury dashboard. It had six pages, a date table, "
+            "fair comparisons, thresholds, annotations and colors everyone could read. At the monthly "
+            "meeting, the head of office asked a question about real property tax collections in San "
+            "Roque. The answer was on page four. Nobody in the room knew that page four existed.",
+            "Afterward, the analyst asked a simple question for the first time: of the six pages, which "
+            "ones does anyone actually open?",
+            "(The office, its dashboard and its people are invented. They stand for no real local "
+            "government.)",
+            "Parts 20 to 27 built a dashboard and made it accurate and readable. This part asks whether it "
+            "is used. When you are done reading, you will know why usage is worth measuring, how to connect "
+            "a Data Studio report to Google Analytics, what the numbers can and cannot tell you, how to ask "
+            "readers directly, and how to keep a small log that links each page to the decisions it "
+            "supports.",
+            ("photo", "blog/bi-usage.jpg", "Is anyone using the dashboard? Count the views, ask the "
+             "readers, log the decisions, then improve or retire each page. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Measure Usage at All"),
+            "A dashboard costs time every month: data has to be refreshed, checked and explained. A page "
+            "nobody reads still costs that time. Measuring usage tells you where to spend effort.",
+            ("point", "Pages to improve", "A page opened often but followed by questions by email may be "
+             "hard to read."),
+            ("point", "Pages to promote", "A useful page nobody opens may simply be hard to find, like page "
+             "four."),
+            ("point", "Pages to retire", "A page nobody opens and nobody misses can go, after checking with "
+             "the people who asked for it."),
+            ("point", "Proof of value", "When someone asks whether the dashboard is worth the analyst’s "
+             "time, usage and decisions are a better answer than “I think people like it.”"),
+            ("quote", "A dashboard is finished when people use it to decide something, not when the last "
+             "chart is placed."),
+            ("h", "Connecting a Report to Google Analytics"),
+            "Google’s documentation for Data Studio describes a way to measure report usage with Google "
+            "Analytics. In summary:",
+            ("point", "Create a property", "Set up a Google Analytics 4 property for the purpose. Google "
+             "Analytics 4 measurement IDs begin with “G-”."),
+            ("point", "Open the report settings", "Edit the report, then choose File, then Report settings."),
+            ("point", "Enter the ID", "At the bottom of the Report settings panel, enter the measurement ID."),
+            ("point", "Wait", "Google’s page says it may take up to 24 hours before data from the report "
+             "begins to show up in Google Analytics."),
+            "Google’s page adds a few limits worth knowing. A report can have only one Google Analytics 4 "
+            "measurement ID. The page describes the data as anonymous usage data. It also mentions one "
+            "named event, duplicate_report, which is sent when someone copies the report.",
+            ("point", "Checking that it works", "Google’s page points to two places in Google Analytics: "
+             "the Realtime report, to see activity as it happens, and the Reports snapshot, for a summary. "
+             "Open the dashboard yourself, then look at Realtime to confirm that the visit appears."),
+            ("point", "Seeing it in Data Studio", "The page also says you can create a Google Analytics "
+             "data source connected to that property, so usage can be charted in Data Studio itself."),
+            ("h", "What the Numbers Can Tell You"),
+            ("point", "Which pages are opened", "Where your Analytics property lists views by page, the count shows where attention goes. If page one "
+             "gets almost every view, readers may not be scrolling or clicking further."),
+            ("point", "When it is opened", "A spike in the days before the monthly meeting, and silence "
+             "after, tells you the dashboard is used for meetings, not daily work."),
+            ("point", "Whether a change worked", "If you move the San Roque chart to page one, the count "
+             "after the change can be compared with the count before."),
+            ("h", "What the Numbers Cannot Tell You"),
+            ("point", "Who opened it", "Google describes the data as anonymous. You will see that a page "
+             "was viewed, not which employee viewed it. That is a good thing for privacy, and it means "
+             "names must come from asking, not from tracking."),
+            ("point", "Whether it helped", "A view is not a decision. A reader may open a page, fail to "
+             "understand it, and close it."),
+            ("point", "Your own visits", "The analyst opens the dashboard more than anyone while building "
+             "and checking it. Keep that in mind before celebrating a high count, especially in a small "
+             "office."),
+            "A short line in the report footer, such as “Page visits to this report are counted "
+            "anonymously to improve it,” tells readers what is happening. Measuring openly builds more "
+            "trust than measuring quietly.",
+            ("h", "Ask the Readers, Once a Month"),
+            "Numbers show what happened. Readers can say why. A three-question message, sent once a "
+            "month to the people on the sharing list from Part 17, takes them two minutes.",
+            ("point", "Question 1", "Which page did you use this month, and for what?"),
+            ("point", "Question 2", "What did you look for and not find?"),
+            ("point", "Question 3", "If one page disappeared tomorrow, would you notice?"),
+            "Keep the answers short and in one sheet. Three months of answers show which pages people "
+            "rely on, and which questions the dashboard still does not answer.",
+            ("h", "The Decision Log"),
+            "Strong evidence that a dashboard works is a decision that changed because of it. A decision "
+            "log is a small table with four columns.",
+            ("point", "Date", "When the decision was made."),
+            ("point", "Decision", "What was decided, in one sentence: “Send a second notice to "
+             "business taxpayers in San Roque.”"),
+            ("point", "Page used", "Which dashboard page showed the problem or supported the choice."),
+            ("point", "Who decided", "The role, not necessarily the name: head of office, council "
+             "committee, collector."),
+            "Fill it in after each monthly meeting, using the minutes from Part 27 of the Project "
+            "Management series as a model. A page that appears in the log is earning its place. A page "
+            "that never appears after three months is a candidate for change or retirement.",
+            ("h", "Putting the Three Together"),
+            "Each source covers a gap in the others. Usage counts are steady and need no effort once set "
+            "up, but they say nothing about value. Reader answers explain the counts, but readers may "
+            "forget or be too polite to say a page is useless. The decision log shows value, but only for decisions someone wrote down.",
+            ("point", "High views, in the log", "Keep and protect the page. Check its data first each "
+             "month."),
+            ("point", "High views, not in the log", "Ask readers what they use it for. It may support "
+             "daily work that never reaches a meeting."),
+            ("point", "Low views, in the log", "Valuable but hard to find. Move it, link it from page one, "
+             "or mention it in the briefing."),
+            ("point", "Low views, not in the log", "Ask whether anyone would miss it. If not, retire it."),
+            ("h", "The Analyst’s First Month of Data"),
+            "The analyst added the measurement ID, put the footer line on every page, and sent the "
+            "three-question message. After a month, pages one and two had nearly all the visits. Page "
+            "four, San Roque included, had a handful, most of them the analyst’s own. Two readers said "
+            "they did not know there were more pages.",
+            "The analyst moved a small barangay summary onto page one, with a link to the full page four, "
+            "and started the decision log at the next meeting. The first entry was the second notice to "
+            "San Roque, decided while the head of office was looking at the new summary.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Building more pages before measuring", "Find out what is used first."),
+            ("point", "Reading views as value", "Pair counts with readers’ answers and the decision log."),
+            ("point", "Measuring quietly", "Tell readers in the footer that visits are counted."),
+            ("point", "Counting your own visits", "The builder may be the top viewer."),
+            ("h", "Key Takeaways"),
+            ("point", "Google Analytics 4", "One measurement ID per report, set in File, Report settings."),
+            ("point", "Counts show attention", "Which pages, and when."),
+            ("point", "Readers explain why", "Three questions, once a month."),
+            ("point", "The decision log shows value", "Pages that lead to action earn their place."),
+            ("h", "Your Part 28 Action Plan"),
+            ("point", "This week", "Create a Google Analytics 4 property, add its measurement ID to your "
+             "report, and add the footer line."),
+            ("point", "This month", "Send the three-question message and start the decision log at your "
+             "next meeting."),
+            ("point", "Next month", "Sort your pages into the four groups above, and choose one page to "
+             "move, one to improve and one to question."),
+            "Write down today’s guess about which page is used most. In a month, compare it with the "
+            "counts. The gap between the two is what this part is for.",
+            ("cta", "Read: Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("cta", "Read: Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much", "/blog/business-intelligence-part-17-who-sees-what/"),
+            ("cta", "Read: Business Intelligence Series, Part 11: The Five-Minute Briefing for Decision Makers", "/blog/business-intelligence-part-11-five-minute-briefing/"),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("ask", "Which page of your report do you think is opened most, and what would surprise you?"),
+        ],
+    },
+    {
+        "date": "March 21, 2027",
+        "title": "Business Intelligence Series, Part 27: Maps by Barangay, When Location Is the Point",
+        "slug": "business-intelligence-part-27-maps-by-barangay",
+        "category": "bi",
+        "summary": "A map can show at a glance which barangays collect more and which lag behind, if it is "
+                   "built carefully. This part covers when a map helps, which Data Studio map types fit "
+                   "barangay data, how to supply locations, the limits in Google’s documentation, and the "
+                   "privacy line a treasury map must not cross.",
+        "publish_on": "2027-03-21 21:00",
+        "body": [
+            "A councilor asked for “a map of collections,” so the analyst built one. Every barangay got a "
+            "bubble sized by its real property tax collections. The Poblacion bubble was enormous and covered "
+            "half the town. Three small upland barangays disappeared under it. The councilor looked for his "
+            "own barangay, could not find it, and asked for the table instead.",
+            "(The town, its barangays and the councilor’s request are invented to teach the technique.)",
+            "Part 26 made charts readable for every viewer. This part adds a different kind of chart, the "
+            "map. When you finish reading, you will know when a map is the right choice and when a sorted "
+            "bar chart is better, which map types Data Studio offers and which suit barangay data, how to "
+            "give each barangay a location, what limits to expect, and how to keep a treasury map from "
+            "exposing anyone’s private data.",
+            ("photo", "blog/bi-map.jpg", "Maps by barangay: use a map when location matters, a bubble for "
+             "each barangay center, size for amount, color for performance, and never a dot for a "
+             "taxpayer. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "When a Map Helps, and When It Does Not"),
+            "Google’s help for Sheets describes a geo chart as a way to show a map of a country, continent or "
+            "region. A map earns its place when the question is about where.",
+            ("point", "A map helps", "“Are the barangays behind target clustered in one area?” “Which "
+             "barangays along the highway grew fastest?” The pattern depends on location."),
+            ("point", "A bar chart is better", "“Which barangay collected the most?” “Rank them from highest to lowest.” A sorted bar chart answers these more directly, because the bars sit side by side on one baseline, while circles on a map are scattered and hard to line up."),
+            ("point", "Both, side by side", "A map for the pattern, with a sorted bar chart or table beside it for "
+             "the exact numbers."),
+            ("quote", "Use a map when the answer depends on where. Use a bar chart when it depends on how "
+             "much."),
+            ("h", "Map Types in Data Studio"),
+            "Google’s reference for its Google Maps charts in Data Studio lists bubble, filled area, heatmap, "
+            "line, connection and combo maps.",
+            ("point", "Bubble map", "A circle at each location, sized and colored by metrics."),
+            ("point", "Filled area map", "Shaded regions, such as countries or provinces."),
+            ("point", "Heatmap", "A color gradient showing density."),
+            ("point", "Line and connection maps", "Paths, or pairs of points joined by lines."),
+            "For barangays, the bubble map is the practical choice, for a reason explained next.",
+            ("h", "Giving Each Barangay a Location"),
+            "Google’s geo dimension reference lists the place types Data Studio recognizes, from continent "
+            "and country down to country subdivisions, city and postal code. It also accepts a field of "
+            "latitude and longitude.",
+            ("point", "Barangays are not on that list", "There is no barangay geo type, so Data Studio cannot "
+             "draw barangay boundaries from a name alone."),
+            ("point", "Use a center point", "Add a column to your barangay table with each barangay’s "
+             "latitude and longitude in one cell, separated by a comma, in the form 14.5995,120.9842 (an example only). In the data "
+             "source, set that field’s type to Latitude, Longitude."),
+            ("point", "Bubble maps only", "The reference says filled area maps do not support latitude and "
+             "longitude. Shaded barangay shapes would need boundary data, such as a BigQuery geography field, "
+             "which is beyond this series."),
+            "Take the center points from the official map your planning office uses, and record the source "
+            "in the data dictionary from Part 10, so the next analyst can check them.",
+            ("h", "Size and Color"),
+            "A bubble map has two channels: size and color. The reference says color can come from a "
+            "dimension or a metric, but not both.",
+            ("point", "Size for amount", "Collections in pesos. Larger bubbles, larger amounts."),
+            ("point", "Color for performance", "Percent of target, on a single-hue scale from Part 26, so "
+             "darker means further along."),
+            ("point", "Do not use both for the same thing", "If size and color both show collections, the "
+             "map says one thing twice and another thing not at all."),
+            "This answers the opening problem. With size for collections and color for percent of target, "
+            "a small upland barangay that reached 95 percent shows as a small, dark bubble: easy to see, and "
+            "fairly judged.",
+            ("h", "The Big-Bubble Problem"),
+            ("point", "Look at the scale", "When one barangay dwarfs the rest, its bubble can hide its "
+             "neighbors. Show percent of target or collections per taxpayer instead of raw totals, so the "
+             "large barangay is not the whole story."),
+            ("point", "Zoom in", "Set the default view to the town, not the province, so bubbles have room."),
+            ("point", "Add the table", "A table chart with the same data lets readers find their barangay "
+             "by name."),
+            ("h", "Why Not a Heatmap?"),
+            "A heatmap shows where points are dense. With one point per barangay, there is no density to show: every barangay is a single point, and the gradient would mainly reflect how close barangay centers are to each other. A heatmap suits many individual points, such as thousands of events, and that kind of point data is exactly what a treasury map should avoid, as the next section explains.",
+            ("h", "Explain the Map"),
+            "A map invites questions about why a cluster looks the way it does. Part 25’s advice applies here too: a short note under the map, with a date and a source, saves a round of guesses. “Upland barangays: collection days moved to the barangay hall from February” tells the reader why those bubbles darkened.",
+            ("h", "The Privacy Line"),
+            "A treasury map must show places, not people. A bubble for each taxpayer’s address would reveal "
+            "who owns what and who has not paid, which is personal information under the Data Privacy Act, "
+            "as Part 20 of the Cybersecurity series discussed.",
+            ("point", "Aggregate first", "Map totals by barangay, never individual records."),
+            ("point", "Watch small counts", "If a barangay has only two business taxpayers, its total may "
+             "reveal each one’s payment. Combine such barangays or leave them off the business tax map."),
+            ("point", "Check who can see it", "Part 17 set out who sees what. A map is a report, and the same "
+             "rules apply."),
+            ("h", "Check It Before Sharing"),
+            ("point", "Count the bubbles", "One per barangay, no more, no fewer."),
+            ("point", "Check three locations", "Pick three barangays and confirm each bubble sits where it "
+             "should."),
+            ("point", "Compare the totals", "The sum of the bubbles should match the dashboard’s grand "
+             "total."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "A map for a ranking question", "Use a sorted bar chart."),
+            ("point", "Raw totals only", "Large barangays hide small ones; add a rate or percent."),
+            ("point", "Mapping individuals", "Aggregate by barangay and watch small counts."),
+            ("point", "Unchecked coordinates", "One typo can put a barangay in the sea."),
+            ("h", "Key Takeaways"),
+            ("point", "Maps answer where", "Bar charts answer how much."),
+            ("point", "Bubbles for barangays", "Using a latitude and longitude field for each center."),
+            ("point", "Size and color mean different things", "Amount and performance."),
+            ("point", "Places, not people", "Aggregate, and protect small counts."),
+            ("h", "Your Part 27 Exercise"),
+            "Use the practice dashboard from your earlier exercises.",
+            ("point", "Add locations", "A latitude and longitude column for five practice barangays."),
+            ("point", "Build a bubble map", "Size by collections, color by percent of target."),
+            ("point", "Add the table", "Beside the map, sorted by percent of target."),
+            "Then ask a colleague one question about location and one about amount, and see which chart they "
+            "use to answer each.",
+            "The analyst rebuilt the map with color for percent of target and a table beside it. The "
+            "councilor found his barangay in the table, then on the map: a small, dark bubble in the hills, "
+            "at 95 percent. He asked for a printed copy to bring to his barangay assembly.",
+            ("cta", "Read: Business Intelligence Series, Part 26: Colors Everyone Can Read, Contrast, Labels and the Red-Green Trap", "/blog/business-intelligence-part-26-accessible-colors/"),
+            ("cta", "Read: Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much", "/blog/business-intelligence-part-17-who-sees-what/"),
+            ("cta", "Read: Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("ask", "Which question in your office is really about where, and still answered with a table?"),
+        ],
+    },
+    {
+        "date": "March 16, 2027",
+        "title": "Business Intelligence Series, Part 26: Colors Everyone Can Read, Contrast, Labels and the Red-Green Trap",
+        "slug": "business-intelligence-part-26-accessible-colors",
+        "category": "bi",
+        "summary": "A dashboard that depends on telling red from green leaves some readers guessing. This "
+                   "part covers how common color vision deficiency is, the contrast levels in the W3C’s "
+                   "accessibility guidelines, and practical ways to choose colors, labels and checks so "
+                   "every reader gets the same message.",
+        "publish_on": "2027-03-16 21:00",
+        "body": [
+            "The barangay status chart was the pride of the dashboard: green dots for barangays on target, "
+            "red dots for those behind. At the briefing, one councilor studied it for a long time, then "
+            "asked which barangays were behind. He could not tell the dots apart. Neither, it turned out, "
+            "could one of the clerks, who had never mentioned it because nobody had asked.",
+            "(The briefing, the councilor and the clerk are fictional, created for this lesson.)",
+            "Part 25 added lines and notes to explain a chart. This part makes sure every reader can see the "
+            "chart in the first place. Read to the end and you will know how common color vision deficiency "
+            "is, what the W3C’s guidelines say about color and contrast, how to choose colors that survive "
+            "it, how to add labels so color is never the only clue, and how to test a dashboard before it "
+            "goes out.",
+            ("photo", "blog/bi-colors.jpg", "Accessible colors: do not rely on color alone, keep enough "
+             "contrast, avoid red against green, and test before sharing. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "How Common Is It?"),
+            "Colour Blind Awareness, a UK organization, says color vision deficiency affects about 1 in 12 "
+            "men, or 8 percent, and about 1 in 200 women. It describes red-green deficiency as the most "
+            "common group of types.",
+            "Picture a council of ten men and two women. Using those rates, the chance that at least one of them has a color vision deficiency works out to about 58 percent. That person may see a red-green chart differently from the one who designed it, and may never say so.",
+            ("quote", "If the meaning is only in the color, part of your audience gets no meaning."),
+            ("h", "What the Guidelines Say"),
+            "The W3C’s Web Content Accessibility Guidelines, WCAG, are written for web content, and a "
+            "dashboard shared as a web page is web content. Three success criteria apply directly to charts.",
+            ("point", "1.4.1 Use of Color", "Color should not be the only visual means of conveying "
+             "information. Part 18 used this rule for alerts."),
+            ("point", "1.4.3 Contrast (Minimum)", "Text needs a contrast ratio of at least 4.5 to 1 against "
+             "its background, or 3 to 1 for large text."),
+            ("point", "1.4.11 Non-text Contrast", "Parts of graphics needed to understand the content, such "
+             "as each line in a graph or each slice of a pie chart, need a contrast of at least 3 to 1 "
+             "against adjacent colors."),
+            "The W3C’s explanation of 1.4.11 also names ways around the 3 to 1 rule for graphics: visible "
+            "labels and values that carry the same information, the same data in another form such as a "
+            "table, or darker borders that separate the shapes. Lines in a graph, it says, need to contrast "
+            "with the background but not necessarily with each other when they rarely cross.",
+            ("h", "Choosing Colors That Work"),
+            ("point", "Avoid red against green", "For “good” and “bad,” choose a pair that differs in both hue and lightness, such as dark blue and orange, and confirm it with the tests below."),
+            ("point", "Vary lightness, not just hue", "A dark color next to a light one stays distinct even "
+             "in grayscale. Two colors of the same lightness can merge."),
+            ("point", "Fewer colors", "The more series a chart has, the more colors a reader must tell apart. Group the small ones as “Others” or split the chart."),
+            ("point", "Keep meaning consistent", "If blue means collections on one chart, do not make it "
+             "mean expenses on the next."),
+            "In Data Studio, series colors are set in the Style tab of each chart, and a report theme can "
+            "set default colors for all charts at once. Setting them once in the theme keeps them consistent.",
+            ("h", "Color Scales for Amounts"),
+            "Maps and heat tables use color for amounts, such as collections by barangay. The choice of scale changes what readers see.",
+            ("point", "One hue, light to dark", "For amounts that only go up, such as collections, use a single color from light for small values to dark for large ones. Darker reads as more, even in grayscale."),
+            ("point", "Two hues for above and below", "For a figure that can be above or below a target, use one color for each side and a neutral middle, so the target itself stands out."),
+            ("point", "Avoid the rainbow", "A scale that runs through many hues has no natural order: readers cannot tell whether yellow means more than green without checking the legend."),
+            ("h", "Never Let Color Work Alone"),
+            ("point", "Direct labels", "Write the barangay name at the end of its line, instead of a legend "
+             "the reader must match by color."),
+            ("point", "Data labels", "Show the value on bars when there are only a few, so the number does "
+             "not depend on reading the color or the axis."),
+            ("point", "Words and symbols for status", "“On target” and “Behind” in a column, or a check mark "
+             "and a warning sign, carry the meaning without color."),
+            ("point", "A table beside the chart", "The W3C counts the same data in another form as a valid "
+             "alternative."),
+            ("h", "Test Before You Share"),
+            ("point", "Print it in grayscale", "If two series look the same in gray, they rely on hue alone."),
+            ("point", "Simulate color deficiency", "Chrome’s developer tools include a setting that emulates "
+             "several types of color vision deficiency on any page, including a dashboard."),
+            ("point", "Check the contrast ratio", "A free contrast checker takes two color codes and reports "
+             "the ratio, so you can confirm 4.5 to 1 for text and 3 to 1 for chart parts."),
+            ("point", "Ask a reader", "Show it to someone who did not build it and ask them to name what is "
+             "behind target, without hints."),
+            ("h", "A Worked Fix"),
+            "The analyst rebuilt the barangay status chart in four changes.",
+            ("point", "Colors", "Dark blue for on target, orange for behind, both checked against the white "
+             "background."),
+            ("point", "Words", "A status column next to each barangay: “On target” or “Behind.”"),
+            ("point", "Order", "Barangays behind target sorted to the top, so the answer to the councilor’s "
+             "question comes first."),
+            ("point", "Numbers", "Each bar labeled with its percentage of target."),
+            "In grayscale, the chart still worked. In the color deficiency simulation, it still worked. The "
+            "words alone would have been enough.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Red and green as the only signal", "Add words, symbols or position."),
+            ("point", "Pale text on pale backgrounds", "Check the 4.5 to 1 ratio for text."),
+            ("point", "A rainbow of series", "Fewer colors, more labels."),
+            ("point", "Skipping the test", "Grayscale and simulation take only a few minutes."),
+            ("h", "Key Takeaways"),
+            ("point", "It affects real readers", "About 1 in 12 men and 1 in 200 women, per Colour Blind "
+             "Awareness."),
+            ("point", "Three WCAG rules", "Not color alone, 4.5 to 1 for text, 3 to 1 for chart parts."),
+            ("point", "Labels carry the meaning", "Direct labels, values, words and tables."),
+            ("point", "Test it", "Grayscale, simulation, contrast checker and a fresh reader."),
+            ("h", "Your Part 26 Exercise"),
+            "Open the practice dashboard from your earlier exercises.",
+            ("point", "Find one chart that relies on color", "Status dots, a red-green scale, or a legend "
+             "with many series."),
+            ("point", "Fix it", "Change the colors, add words or values, and sort the important items first."),
+            ("point", "Test it", "Print it in grayscale and run the simulation in your browser."),
+            "If the chart still tells the same story with the color turned off, it is ready for every reader. If it does not, add a label before you change any color.",
+            "At the next briefing, the councilor read the status column aloud before the analyst could "
+            "explain it. Afterward, the clerk stopped by her desk. “That is the first time I could read that "
+            "chart,” he said. “I thought it was just me.”",
+            ("cta", "Read: Business Intelligence Series, Part 25: Annotating Charts, Lines, Bands and Notes That Explain the Bumps", "/blog/business-intelligence-part-25-annotating-charts/"),
+            ("cta", "Read: Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look", "/blog/business-intelligence-part-18-thresholds-and-alerts/"),
+            ("cta", "Read: Business Intelligence Series, Part 12: Fast and Readable on a Phone", "/blog/business-intelligence-part-12-fast-and-readable-on-a-phone/"),
+            ("cta", "Read: Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("ask", "Which chart in your office would still make sense if it were printed in black and white?"),
+        ],
+    },
+    {
+        "date": "March 11, 2027",
+        "title": "Business Intelligence Series, Part 25: Annotating Charts, Lines, Bands and Notes That Explain the Bumps",
+        "slug": "business-intelligence-part-25-annotating-charts",
+        "category": "bi",
+        "summary": "A chart shows what happened; a note tells the reader why. This part shows how to add "
+                   "reference lines and bands in Data Studio, which kind of line to use for a target or an "
+                   "average, the limits to know, and how to write short notes that keep a chart honest.",
+        "publish_on": "2027-03-11 21:00",
+        "body": [
+            "At the quarterly review, a councilor pointed at the collections chart. “What happened in the "
+            "second week of July? It nearly drops to nothing.” The analyst who built the chart had moved to "
+            "another office. Someone guessed a system problem. Someone else guessed a holiday. It took a "
+            "phone call to learn the truth: a typhoon had closed the office for three days. The chart had "
+            "shown the drop perfectly and explained none of it.",
+            "(The office, the review and every number below are made up for this lesson. No real town or "
+            "taxpayer is described.)",
+            "Part 24 drew a line through the noise to show direction. This part adds the lines, shaded "
+            "areas and words that tell a reader what they are looking at. You will finish knowing when a "
+            "reference line helps, how to add one in Data Studio, how to shade a period with a reference "
+            "band, the limits Google’s documentation lists, and how to write notes that a reader can trust "
+            "a year later.",
+            ("photo", "blog/bi-annotate.jpg", "Annotating charts: a line for the target, a band for the "
+             "period that matters, a label with the value, and a short note for the why. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Chart Needs Words"),
+            "A chart answers “what” well. It does not answer “compared with what?” or “why?” When a chart leaves those gaps open, readers may fill them with guesses. Three small additions close them, and none of them changes the data.",
+            ("point", "A reference line", "Shows a level to compare against: a target, an average, last "
+             "year’s figure."),
+            ("point", "A reference band", "Shades a range of values or a stretch of dates, such as a "
+             "deadline period."),
+            ("point", "A note", "One sentence of text that explains an event the data cannot."),
+            ("quote", "If the reader has to ask why, the chart is not finished."),
+            ("h", "Adding a Reference Line"),
+            "Google’s documentation for Data Studio gives the steps: edit the report, select the chart, open "
+            "the Style tab in the properties panel, and click Add a reference line. It lists three types.",
+            ("point", "Constant value", "A number you type, such as a daily collection target of ₱50,000. "
+             "For a percentage, the documentation says to enter a decimal, so 50 percent is 0.5."),
+            ("point", "Metric", "A metric in the chart combined with a calculation: Average, Median, "
+             "Percentile, Min, Max or Total. An average line shows at a glance which days were above or "
+             "below the usual level for the period shown."),
+            ("point", "Parameter", "A single numeric parameter, which lets a reader type a value, such as "
+             "their own target, and see the line move."),
+            "Each line can carry a label. Leave it blank and Data Studio uses a default, such as the name "
+            "of the calculation. A check box adds the line’s value to the label, so the reader sees "
+            "“Target ₱50,000” rather than a line with no number.",
+            ("h", "Target or Average?"),
+            ("point", "Use a constant for a promise", "A target set by the office, a budget estimate divided "
+             "by working days, a legal threshold. It stays the same whatever the data does."),
+            ("point", "Use a metric for context", "An average or median line moves with the data and the "
+             "filters. It answers “Was this day high or low for this period?”"),
+            ("point", "Prefer the median for lumpy data", "A few very large days, such as the deadline rush, can pull an average up. The median is the middle value, so it stays near the typical day."),
+            ("h", "Shading a Period With a Reference Band"),
+            "A reference band has a beginning value and an ending value, each with its own type. On a chart "
+            "whose x-axis is a date, the documentation says a date-range selector appears instead, so you "
+            "can shade a stretch of days.",
+            "For collections, the first twenty days of January are an obvious band. Under the Local "
+            "Government Code, business taxes are due within that period, as Part 24 noted. Shading those "
+            "days tells the reader that the high bars inside the band are expected, not a surprise.",
+            ("point", "Background color and opacity", "Keep the band light so the bars stay readable."),
+            ("point", "A label", "Write what the band is: “Business tax deadline, Jan 1–20.”"),
+            ("h", "Limits Worth Knowing"),
+            "Google’s documentation lists a few limits that can surprise a first-time user.",
+            ("point", "Up to 10 lines per chart", "Two or three are easier to read on a small chart. Ten is the hard limit, not a goal."),
+            ("point", "Numeric axes only for lines", "A reference line works on a numeric axis, not a date "
+             "axis. To mark a date, use a band with the date-range selector."),
+            ("point", "Stacked charts", "Stacked column and bar charts support fewer line types, and 100 "
+             "percent stacked charts support none."),
+            ("point", "What the chart shows", "A metric line is calculated only from the values currently "
+             "displayed. Change a filter, and the average line changes with it."),
+            "The last point matters most. If a reader filters the dashboard to one barangay, an average line "
+            "becomes that barangay’s average. Say so in the label, for example “Average for the selection,” so nobody mistakes one barangay’s average for the whole town’s.",
+            ("h", "Writing Notes That Last"),
+            "Lines and bands mark levels and periods. Events need words. A text box beside or under the "
+            "chart is enough.",
+            ("point", "Date and fact", "“July 12–14: office closed, typhoon signal.” Not “bad week.”"),
+            ("point", "Source", "Who confirmed it: the memo number, the advisory, the person."),
+            ("point", "Kept with the data", "Keep a short events list, with a date and a note per row, in the "
+             "same file as the data, so the next analyst finds it."),
+            ("point", "Short", "One line per event. If a note needs a paragraph, it belongs in the report "
+             "that goes with the dashboard."),
+            ("h", "Check It Before Sharing"),
+            ("point", "Read the line’s value", "Turn on the value in the label and compare it with the table "
+             "or with your own calculation."),
+            ("point", "Change a filter", "Watch which lines move. Constants should stay; metric lines should "
+             "move. Label them so the reader knows which is which."),
+            ("point", "Open it on a phone", "Part 12 showed how small screens crowd labels. Shorten any label "
+             "that wraps or overlaps."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Unlabeled lines", "A line without a name and value invites guesses."),
+            ("point", "Too many lines", "Two or three per chart is easier to read than ten."),
+            ("point", "Average lines that ignore filters", "Label them as calculated from the selection."),
+            ("point", "Notes without dates or sources", "A note no one can check is another guess."),
+            ("h", "Key Takeaways"),
+            ("point", "Lines compare", "A constant for a target, a metric for context."),
+            ("point", "Bands mark periods", "Use the date-range selector to shade deadlines and closures."),
+            ("point", "Know the limits", "Numeric axes only for lines, and metric lines follow filters."),
+            ("point", "Notes explain", "Date, fact and source, kept with the data."),
+            ("h", "Your Part 25 Exercise"),
+            "Open the practice dashboard from your earlier exercises.",
+            ("point", "Add a target", "A constant reference line on the daily collections chart, labeled "
+             "with its value."),
+            ("point", "Add a band", "Shade January 1 to 20 on a date chart and label it."),
+            ("point", "Write two notes", "Pick two unusual days in your data and write one line each: date, "
+             "fact and source."),
+            "Then hand the chart to someone who has not seen it and ask what happened on those two days. "
+            "If they can answer without asking you, the annotations work.",
+            "The analyst added a light band for July 12 to 14, labeled “Office closed, typhoon,” with the "
+            "memo number in a note below. At the next review, the councilor glanced at the dip, read the "
+            "label, and moved on to the next question.",
+            ("cta", "Read: Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing", "/blog/business-intelligence-part-24-trend-lines-and-moving-averages/"),
+            ("cta", "Read: Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look", "/blog/business-intelligence-part-18-thresholds-and-alerts/"),
+            ("cta", "Read: Business Intelligence Series, Part 12: Fast and Readable on a Phone", "/blog/business-intelligence-part-12-fast-and-readable-on-a-phone/"),
+            ("cta", "Read: Business Intelligence Series, Part 11: The Five-Minute Briefing for Decision Makers", "/blog/business-intelligence-part-11-five-minute-briefing/"),
+            ("ask", "Which bump in your office’s charts does everyone ask about, and nobody remembers?"),
+        ],
+    },
+    {
         "date": "March 6, 2027",
         "title": "Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing",
         "slug": "business-intelligence-part-24-trend-lines-and-moving-averages",

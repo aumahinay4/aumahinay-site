@@ -14,6 +14,642 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "March 28, 2027",
+        "title": "Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned",
+        "slug": "project-management-part-28-closing-the-project",
+        "category": "pm",
+        "summary": "A project that simply stops is not closed. This part shows how to finish properly: "
+                   "confirm the objectives against the charter, hand over what continues, close the logs "
+                   "and the budget, hold a lessons-learned review that changes the next project, and thank "
+                   "the people who did the work.",
+        "publish_on": "2027-03-28 21:00",
+        "body": [
+            "The last batch of notices went out on a Friday. On Monday, the runners were back at their "
+            "regular work, the clerk was at the counter, and the project folder sat on a shelf. Six "
+            "weeks later, a taxpayer came in with a notice in hand and asked to settle. Nobody could say "
+            "which list the notice came from, who had kept the returned envelopes, or whether the "
+            "eleven wrong addresses had ever been corrected in the records.",
+            "The work had been done. The project had never been closed.",
+            "(The project, the office and every number in this story are imagined for teaching. No real "
+            "office or taxpayer appears here.)",
+            "This series has followed one project, the round of delinquency notices, from its charter in "
+            "Part 2 through change requests, status reports, issues and meetings. This part is about the "
+            "end. You will learn how to check the results against the charter, hand over the work that "
+            "continues, close the logs and the budget, run a lessons-learned review, and write a short "
+            "closing report that the next project manager can actually use.",
+            ("photo", "blog/pm-closing.jpg", "Closing a project: check the objectives, hand over what "
+             "continues, close the logs, and learn from the work before the team moves on. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Closing Matters"),
+            "When the main work ends, people return to their usual jobs, and the project’s loose ends "
+            "become nobody’s job. Closing is a short set of steps that ties them off.",
+            ("point", "Someone owns what continues", "Payments arriving because of the notices, returned "
+             "envelopes, and corrections to addresses all need an owner after the project."),
+            ("point", "The records can be found", "The list used, the delivery log, and the decisions made "
+             "should be in one place, under a name anyone can search for."),
+            ("point", "The sponsor signs off", "A formal end tells the office the resources are free and "
+             "the objectives were met, or were not."),
+            ("point", "The next project starts smarter", "What went well and what did not is written down "
+             "while people still remember."),
+            ("quote", "A project ends twice: once when the work stops, and again when someone writes down "
+             "what it taught."),
+            ("h", "Step 1: Check the Results Against the Charter"),
+            "Take out the one-page charter from Part 2 and the objectives from Part 6. For each objective, "
+            "write what was planned, what happened, and the evidence.",
+            ("point", "Delivered on time?", "Planned: all 1,800 notices delivered by the end date in the "
+             "approved 45-working-day schedule from Part 18. Result: 1,789 delivered, two days after that "
+             "date because of the San Roque delay, and 11 listed as undelivered with a reason. Evidence: "
+             "the delivery log."),
+            ("point", "Within budget?", "Compare the budget from Part 17 with the actual spending, "
+             "including the overtime approved in the meeting from Part 27."),
+            ("point", "Quality met?", "Use the checks from Part 23. Here, eleven notices came back with "
+             "wrong addresses, and the quality plan’s limit decides whether that was acceptable."),
+            ("point", "Approved changes", "List every change from the change log in Part 24, so the "
+             "results are judged against the plan as it was finally approved, not the first draft."),
+            "Be honest where the result fell short. An objective missed by two days, with the reason "
+            "written down, is more useful to the next project than a report that says everything went "
+            "well.",
+            ("h", "Step 2: Hand Over What Continues"),
+            "Some work does not end with the project. It moves to the people who do it every day.",
+            ("point", "List it", "Payments that will arrive because of the notices, the eleven addresses "
+             "to correct, the returned envelopes to file, and taxpayers who asked for a payment plan."),
+            ("point", "Name an owner for each", "The cashier for payments, the records clerk for "
+             "addresses, and so on. Use the RACI matrix from Part 8 to check nobody was forgotten."),
+            ("point", "Hand over in writing", "A one-page note to each owner: what is left, where the "
+             "files are, and whom to ask. Ask each owner to confirm they received it."),
+            ("h", "Step 3: Close the Logs and the Budget"),
+            ("point", "Risk register", "Close the risks that can no longer happen. Any that still could, "
+             "such as complaints about the notices, go to the owner who will handle them."),
+            ("point", "Issue log", "Every open issue from Part 26 is either closed, with how it was "
+             "resolved, or handed over with a named owner."),
+            ("point", "Change log", "Mark it final. It explains why the project ended differently from "
+             "the first plan."),
+            ("point", "Budget", "Record the final cost, return or cancel what was not used, and make "
+             "sure all claims are settled under the office’s usual rules."),
+            ("point", "Files", "Put everything in one folder named with the project and the end date, "
+             "following the naming habits from Part 15 of the Data Analytics series. Taxpayer lists hold "
+             "personal data, so keep them only where access is limited."),
+            ("h", "Step 4: The Lessons-Learned Review"),
+            "A lessons-learned review is a short meeting, held soon after the work ends, while the details "
+            "are fresh. Invite the people who did the work, not only those who managed it. The runners "
+            "know things the clerk does not.",
+            ("point", "Three questions", "What went well and should be repeated? What went wrong, and why? "
+             "What would we do differently next time?"),
+            ("point", "Facts before opinions", "Start with the timeline: planned dates, actual dates, and "
+             "the issues that caused the gaps. Opinions are easier to agree on once the facts are on the "
+             "table."),
+            ("point", "Problems, not people", "Ask what in the plan, the process or the tools allowed a "
+             "problem to happen. If a runner fell sick, the lesson is about backup, not about the runner."),
+            ("point", "Turn each lesson into an action", "“Address data was poor” is a complaint. “Check "
+             "a sample of addresses against the assessor’s records before printing” is a lesson someone "
+             "can use."),
+            "Use the meeting habits from Part 27: an agenda written as questions, a timekeeper, and "
+            "minutes sent the same day. Keep the list of lessons short. Five that change the next project "
+            "are worth more than thirty that nobody reads.",
+            ("h", "Step 5: The Closing Report on One Page"),
+            ("point", "Objectives and results", "The table from Step 1, with evidence."),
+            ("point", "Cost and time", "Planned against actual."),
+            ("point", "Handover", "What continues, and who owns each item."),
+            ("point", "Top lessons", "Three to five, each written as an action."),
+            ("point", "Sign-off", "The sponsor’s signature and date, confirming the project is closed."),
+            "File it with the charter, so the next person who opens the folder sees the beginning and the "
+            "end side by side.",
+            ("h", "Step 6: Thank the People"),
+            "The runners walked to every barangay. The encoders corrected addresses. The cashier took the "
+            "extra payments. A short note from the sponsor naming what each group did costs nothing and "
+            "is remembered. If the office has a regular meeting, say it there too.",
+            ("h", "The Clerk’s Closing"),
+            "In this version of the story, the clerk closed the project properly. She checked the results "
+            "against the charter: 1,789 of 1,800 notices delivered, two days late, within the budget "
+            "after the approved overtime. She handed the eleven addresses to the records clerk and the "
+            "returned envelopes to the files. The lessons-learned review took forty minutes and produced "
+            "four lessons. The first one read: “Check addresses before printing, not after delivery.” "
+            "The head of office signed the one-page closing report the same week.",
+            "Six weeks later, when the taxpayer came in with a notice, the cashier opened the project "
+            "folder, found the list and the delivery date in a minute, and took the payment.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Letting the project fade out", "Set a closing date and a sign-off."),
+            ("point", "No owner for what continues", "Hand each item over in writing."),
+            ("point", "A review that blames people", "Look for causes in the process and the plan."),
+            ("point", "Lessons nobody reads", "Write them as actions, and read them at the next kickoff."),
+            ("h", "Key Takeaways"),
+            ("point", "Check against the charter", "Planned, actual and evidence, including approved changes."),
+            ("point", "Hand over in writing", "Every continuing task gets a named owner."),
+            ("point", "Close every log", "Risks, issues, changes, budget and files."),
+            ("point", "Learn and thank", "A short review, a one-page report, and credit to the people who did the work."),
+            ("h", "Your Part 28 Exercise"),
+            "Pick a project or task force your office finished in the last year, even an informal one.",
+            ("point", "Find the loose ends", "List anything still open from it, and who, if anyone, owns "
+             "each item."),
+            ("point", "Write three lessons", "Each as an action someone could take on the next project."),
+            ("point", "Draft the one-page report", "Objectives, results, handover and lessons."),
+            "Then put a closing step into the plan of your current project, with a date, so it is "
+            "scheduled before the work ends.",
+            ("cta", "Read: Project Management Series, Part 2: The Project Charter on One Page", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 6: Writing Objectives That Actually Mean Something", "/blog/project-management-part-6-writing-objectives/"),
+            ("ask", "What is still open from the last project your office finished, and who owns it?"),
+        ],
+    },
+    {
+        "date": "March 23, 2027",
+        "title": "Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items",
+        "slug": "project-management-part-27-meetings-that-decide",
+        "category": "pm",
+        "summary": "A project meeting is worth its hour only if something is decided or unblocked. This part "
+                   "shows how to decide whether to meet at all, write an agenda that ends in decisions, run "
+                   "the hour, and send short minutes with owners and dates the same day.",
+        "publish_on": "2027-03-23 21:00",
+        "body": [
+            "The weekly project meeting started at two and ended at four. Six people attended. Everyone gave "
+            "an update, the encoders described their week in detail, and a long discussion about envelope "
+            "colors went nowhere. As the room emptied, the head of office asked the clerk, “So, did we approve the overtime for the address corrections or not?” Nobody was sure. Two hours, six people, twelve "
+            "person-hours, and the one decision that mattered was still open.",
+            "(The office, the meeting and the people in it are invented. They stand for no real workplace.)",
+            "Part 26 kept problems in one log. This part is about the hour when people gather to deal with "
+            "them. By the end, you will know how to decide whether a meeting is needed, how to write an "
+            "agenda that leads to decisions, how to run the meeting so it ends on time, and how to write "
+            "minutes that people act on.",
+            ("photo", "blog/pm-meetings.jpg", "Meetings that decide: a reason to meet, an agenda of "
+             "questions, a timekeeper, and minutes with owners and dates sent the same day. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "First, Should You Meet?"),
+            "A meeting can be a costly way to share information, because everyone’s time is spent at once. Before calling one, ask what it is for.",
+            ("point", "To share status", "A written report can do this. The one-page status report from Part 25 shares status, and people read it when they can."),
+            ("point", "To decide", "A meeting can help when several people must weigh options together and "
+             "agree."),
+            ("point", "To solve a problem", "A meeting can help when an issue in the log from Part 26 needs "
+             "several people’s knowledge at once."),
+            ("point", "To start or close", "The kickoff from Part 7 and the closing review are worth meeting "
+             "for, because people need to hear the same thing at the same time."),
+            ("quote", "If nothing needs to be decided, it may not need to be a meeting."),
+            ("h", "An Agenda Written as Questions"),
+            "An agenda that lists topics invites discussion. An agenda that lists questions invites answers.",
+            ("point", "Topic", "“Delivery schedule.” People talk until the time runs out."),
+            ("point", "Question", "“Do we approve four hours of overtime for two encoders to finish the address corrections, yes or no?” The item ends when the question is answered."),
+            "For each item, write the question, who presents it, how many minutes it gets, and what the group "
+            "should leave with: a decision, a list of options, or an owner. Send the agenda at least a day "
+            "ahead, with any papers attached, so people arrive having read them.",
+            ("h", "Who Should Be There"),
+            ("point", "The decider", "If the meeting is for a decision, the person with the authority from "
+             "the charter must attend, or the decision waits."),
+            ("point", "The people with the facts", "For each item, whoever knows the numbers."),
+            ("point", "Not everyone", "People who only need the outcome can read the minutes. The RACI matrix "
+             "from Part 8 helps: those marked Informed can read the minutes instead."),
+            ("h", "Running the Hour"),
+            ("point", "Start on time", "Waiting for latecomers punishes the people who came on time."),
+            ("point", "Decisions first", "Put the items that need the decider at the top, in case they must "
+             "leave early."),
+            ("point", "A timekeeper", "One person watches the minutes per item and says when time is up."),
+            ("point", "A parking lot", "Good ideas that are off the agenda go on a list for later, not into "
+             "the current item. The envelope colors belonged there."),
+            ("point", "Say the decision aloud", "Before moving on, the chair states what was decided, who "
+             "owns it and by when. If nobody can say it in one sentence, it was not decided."),
+            ("point", "Read back the actions", "In the last five minutes, the note-taker reads every action item aloud with its owner and date. Owners confirm or correct on the spot."),
+            ("point", "End when you are done", "If the questions are answered in twenty minutes, end in twenty. The time returned goes to the action items."),
+            ("h", "Minutes People Act On"),
+            "Minutes do not need to record who said what. They need to record what was decided and what "
+            "happens next.",
+            ("point", "Header", "Meeting name, date, attendees and absences."),
+            ("point", "Decisions", "One line each, numbered: “D-07: Four hours of overtime for two encoders on Thursday. Approved by the head of office.”"),
+            ("point", "Action items", "What, who, by when: “Clerk to inform the two encoders and the personnel office by 4 p.m. today.”"),
+            ("point", "Parking lot", "Items moved to a later meeting, with the date."),
+            "Send the minutes the same day, while memories agree. Decisions that change the plan go to the "
+            "change log from Part 24; new problems go to the issue log from Part 26.",
+            ("h", "Online and Mixed Meetings"),
+            "Some meetings happen by video call, or with a few people in the room and others on a screen. The same rules apply, with three additions.",
+            ("point", "Share the agenda on screen", "Keep the current question visible, so remote attendees know where the discussion is."),
+            ("point", "Call on remote people by name", "Those on a screen can be drowned out by the room. The chair asks them directly before each decision."),
+            ("point", "Type the decision in the chat", "Writing it where everyone can see it confirms the wording before the meeting moves on."),
+            ("h", "Check Your Standing Meetings"),
+            "A weekly meeting set up at the start of a project can outlive its purpose. Once a month, look at the last four sets of minutes.",
+            ("point", "Count the decisions", "If three of the four ended without one, shorten the meeting, make it every two weeks, or replace it with the status report."),
+            ("point", "Count the attendees", "If some people never speak or own an action, ask whether they need to be there."),
+            ("point", "Check the parking lot", "Items that stay parked for a month need an owner or a decision to drop them."),
+            ("h", "The Clerk’s Rebuilt Meeting"),
+            "The next week, the clerk sent this agenda the afternoon before, for a thirty-minute meeting.",
+            ("point", "1. Five minutes", "Status: read the one-page report beforehand. Questions only."),
+            ("point", "2. Ten minutes", "Do we approve overtime for two encoders to clear the address "
+             "corrections by Friday? Decision needed from the head of office."),
+            ("point", "3. Ten minutes", "Which barangay goes first in the next round, and why? Options from "
+             "the clerk."),
+            ("point", "4. Five minutes", "Action items and parking lot."),
+            "It ended in twenty-eight minutes, with two decisions and five action items. Four people "
+            "attended; two others read the minutes.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Meeting to share status", "Send the report instead."),
+            ("point", "Topics instead of questions", "Write each item as a question to answer."),
+            ("point", "No decider in the room", "Reschedule, or the decision waits anyway."),
+            ("point", "Minutes a week later", "Send them the same day."),
+            ("h", "Key Takeaways"),
+            ("point", "Meet to decide or solve", "Not to read status aloud."),
+            ("point", "Questions, times and outcomes", "On an agenda sent a day ahead."),
+            ("point", "Say each decision aloud", "With an owner and a date."),
+            ("point", "Same-day minutes", "Decisions and actions, linked to the change and issue logs."),
+            ("h", "Your Part 27 Exercise"),
+            "Take your next project meeting.",
+            ("point", "Ask the first question", "What must be decided or solved? If nothing, send a report "
+             "instead."),
+            ("point", "Rewrite the agenda", "Each item as a question, with minutes and an expected outcome."),
+            ("point", "Write the minutes", "Decisions and action items only, sent before the end of the day."),
+            "Afterward, count the person-hours spent and the decisions made. Try to raise the second number "
+            "while lowering the first.",
+            "At the end of the thirty minutes, the head of office stood up and said, “That was the first "
+            "meeting this month where I knew what I had approved.” The clerk’s minutes were in everyone’s "
+            "inbox by three.",
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early", "/blog/project-management-part-25-status-reports/"),
+            ("cta", "Read: Project Management Series, Part 7: The Kickoff Meeting Blueprint", "/blog/project-management-part-7-kickoff-meeting/"),
+            ("cta", "Read: Project Management Series, Part 8: Who Does What? Building a RACI Matrix", "/blog/project-management-part-8-raci-matrix/"),
+            ("ask", "What was decided at the last meeting you attended? Could everyone in the room say it?"),
+        ],
+    },
+    {
+        "date": "March 18, 2027",
+        "title": "Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps",
+        "slug": "project-management-part-26-issue-log",
+        "category": "pm",
+        "summary": "Risks are what might happen; issues are what already did. This part shows how to keep an "
+                   "issue log on one page: what to record, how to rate urgency, who owns each issue, when to "
+                   "escalate to the sponsor, and how to close an issue so it stays closed.",
+        "publish_on": "2027-03-18 21:00",
+        "body": [
+            "By the second week of delivery, the clerk had problems written in four places. A sticky note on "
+            "her monitor said “San Roque runner sick.” A message in the team chat said two notices came back "
+            "with the wrong address. Her notebook had “ask assessor re: duplicate lots.” And the head of "
+            "office had told her, in passing, that a councilor wanted to know why one barangay got its "
+            "notices later. Each problem was known to someone. Nobody could see all of them at once.",
+            "(This project, its staff and its problems are fictional, drawn up to teach the method.)",
+            "Part 25 reported problems upward in a status report. This part is about where those problems "
+            "live between reports. When you finish, you will know the difference between a risk and an "
+            "issue, what an issue log records, how to set urgency and ownership, when an issue goes to the "
+            "sponsor, and how to close one properly.",
+            ("photo", "blog/pm-issues.jpg", "The issue log: one list, one owner per issue, a next step with a "
+             "date, and a clear line for when the sponsor must decide. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Risk or Issue?"),
+            "Part 19 drew the line. A risk is uncertain and in the future: “The legal review may take longer "
+            "than a week.” An issue has already happened: “The legal review is late.” A risk that happens "
+            "becomes an issue.",
+            "The risk register plans for what might happen. The issue log manages what is happening now. "
+            "Keeping them separate keeps each one short enough to read.",
+            ("quote", "A problem everyone knows about and nobody owns is still unsolved."),
+            ("h", "What the Issue Log Records"),
+            "One row per issue, with these columns.",
+            ("point", "Number and date raised", "I-01, I-02 and so on, with the date it was first reported."),
+            ("point", "Description", "What is wrong, in one or two sentences, with a number if there is one: "
+             "“Two notices returned, wrong address, San Isidro.”"),
+            ("point", "Impact", "What it affects: a milestone, the budget, quality or a stakeholder."),
+            ("point", "Urgency", "High, medium or low, by the rules below."),
+            ("point", "Owner", "One person who makes sure it is resolved. Not a team, not “all.”"),
+            ("point", "Next step and due date", "The very next action, not the whole solution."),
+            ("point", "Status", "Open, in progress, escalated or closed, with the closing date and how it "
+             "was resolved."),
+            ("h", "Setting Urgency"),
+            "As with the colors in Part 25, write the rules down before the first issue arrives.",
+            ("point", "High", "Will move a milestone or the budget within a week if nothing is done."),
+            ("point", "Medium", "Will affect a deliverable or a stakeholder, but there is more than a week "
+             "to act."),
+            ("point", "Low", "Worth fixing, but the project finishes on time and within budget even if it "
+             "waits."),
+            "Urgency decides the order of work and how often the issue is reviewed. High issues are looked at "
+            "daily; the rest at the weekly update.",
+            ("h", "One Owner Each"),
+            "The owner is not always the person who fixes the problem. The owner is the person who makes sure "
+            "it gets fixed, and who answers when someone asks about it.",
+            ("point", "Close to the work", "The runner problem was owned by the clerk, who assigns runners."),
+            ("point", "With the authority", "The duplicate lots belonged to the assessor’s office, so an "
+             "assessor’s clerk owned that issue, with the clerk as the contact."),
+            ("point", "Agreed, not assigned in absence", "Tell the owner and get a yes. An owner who does not "
+             "know is not an owner."),
+            ("h", "When to Escalate"),
+            "Some issues need a decision the project team cannot make. The charter from Part 2 and the change "
+            "limit from Part 24 already say what the clerk can decide alone.",
+            ("point", "Escalate when", "The fix needs more money, more people or a later date than the clerk "
+             "can approve, or it involves another office that has not responded."),
+            ("point", "How", "In the status report under “Decisions needed,” with the options and a date."),
+            ("point", "Not a complaint", "Escalating is a request for a decision. Bring the facts and a "
+             "recommendation."),
+            ("h", "The Clerk’s First Log"),
+            "She moved the four problems into one table that afternoon.",
+            ("point", "I-01, runner on sick leave", "High: San Roque delivery slipping. Owner: the clerk. Next "
+             "step: request a borrowed runner, decision by Wednesday. Escalated through the status report."),
+            ("point", "I-02, two notices with wrong addresses", "Medium. Owner: the encoder. Next step: check "
+             "the two records against the tax declarations by Friday."),
+            ("point", "I-03, duplicate lots in the list", "Medium. Owner: the assessor’s clerk. Next step: "
+             "confirm which entries are duplicates by next Tuesday."),
+            ("point", "I-04, councilor asking about timing", "Low. Owner: the clerk. Next step: send the "
+             "delivery schedule by barangay, with the reason for the order."),
+            "Four problems, four owners, four dates. For the first time, the head of office could see the "
+            "whole list in a minute.",
+            ("h", "Closing an Issue Properly"),
+            ("point", "Confirm the fix", "The wrong addresses are corrected and the notices delivered, not "
+             "just “sent to encoding.”"),
+            ("point", "Write how it was resolved", "One line. It becomes evidence for the lessons-learned "
+             "review."),
+            ("point", "Check for a cause", "Two wrong addresses may point to a problem in the source list. If "
+             "so, add it to the risk register for next time, or raise a change request."),
+            ("point", "Keep closed issues", "Move them to the bottom or a second tab. Do not delete them."),
+            ("h", "How the Log Connects to the Other Documents"),
+            "The issue log does not replace anything built earlier in this series. It feeds it.",
+            ("point", "To the status report", "The top three open issues, with owners and next steps, go straight into the report from Part 25."),
+            ("point", "To change control", "If fixing an issue changes scope, the finish date or the budget, it becomes a change request, as in Part 24."),
+            ("point", "To the risk register", "An issue that could happen again becomes a risk for the next round, with a response written in advance."),
+            ("point", "From the RACI matrix", "Part 8’s matrix already shows who is responsible for each task. Start there when choosing an issue’s owner."),
+            ("h", "Reviewing the Log"),
+            "Five minutes in the weekly update, in a fixed order: new issues, high issues, overdue next steps, "
+            "and issues ready to close. Any issue whose next step is overdue twice gets a new next step or a "
+            "new owner.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Problems in many places", "Chat, notes and memory all feed one log."),
+            ("point", "A team as owner", "One name per issue."),
+            ("point", "A solution instead of a next step", "Write the very next action and its date."),
+            ("point", "Closing without checking", "Confirm the fix, then record it."),
+            ("h", "Key Takeaways"),
+            ("point", "Issues have happened", "Risks might; keep them in separate lists."),
+            ("point", "One row, one owner, one next step", "With a due date and an urgency set by rules."),
+            ("point", "Escalate with options", "Through the status report, with a decision date."),
+            ("point", "Close with evidence", "And look for the cause, so it does not come back."),
+            ("h", "Your Part 26 Exercise"),
+            "Use the project from your earlier exercises.",
+            ("point", "Gather", "List every open problem you know about, from chats, notes and memory."),
+            ("point", "Log", "Give each one a number, an urgency, an owner and a next step with a date."),
+            ("point", "Escalate one", "If any needs the sponsor, write the decision request with options."),
+            "Then ask each owner to confirm. The log is real when every name on it has said yes.",
+            "Two weeks later, all four issues were closed. I-02 had led to one more line in the risk register: "
+            "addresses in the source list to be checked against the tax declarations before the next round. "
+            "The sticky note came off the clerk’s monitor, and nothing replaced it.",
+            ("cta", "Read: Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early", "/blog/project-management-part-25-status-reports/"),
+            ("cta", "Read: Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan", "/blog/project-management-part-24-change-control/"),
+            ("cta", "Read: Project Management Series, Part 8: Who Does What? Building a RACI Matrix", "/blog/project-management-part-8-raci-matrix/"),
+            ("ask", "Where do the problems in your current project live right now: one list, or many places?"),
+        ],
+    },
+    {
+        "date": "March 13, 2027",
+        "title": "Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early",
+        "slug": "project-management-part-25-status-reports",
+        "category": "pm",
+        "summary": "A status report should let the sponsor see a problem while there is still time to act. "
+                   "This part gives a one-page format, a green, amber and red rating with written rules, "
+                   "and a worked example from the notices project.",
+        "publish_on": "2027-03-13 21:00",
+        "body": [
+            "The clerk’s weekly update said what it had said for three weeks: “All on track.” Then a "
+            "councilor mentioned to the head of office that no notices had reached San Roque yet, though "
+            "two other barangays had theirs. The head of office called the clerk in. The clerk had known "
+            "about the delay for five days. She had expected to catch up, so she had not reported it.",
+            "(The project, its people and every figure here are invented for teaching. No real office, "
+            "employee or taxpayer is described.)",
+            "Part 24 handled changes that someone asks for. This part handles the news that nobody asks for. "
+            "Here you will learn what a status report is for, a one-page format, how to rate a project green, "
+            "amber or red with rules written in advance, and how to write the report so the sponsor can act "
+            "on it.",
+            ("photo", "blog/pm-status.jpg", "The status report: one page, the same format each time, a "
+             "rating backed by rules, and the decision the sponsor needs to make. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Status Report Is For"),
+            "A status report is not a diary of what the team did. It answers four questions for the people "
+            "who must make decisions.",
+            ("point", "Where are we?", "Against the plan: the schedule, the budget and the deliverables."),
+            ("point", "What changed?", "Since the last report, including approved changes from the change "
+             "log."),
+            ("point", "What could go wrong?", "The top risks and any problems already happening."),
+            ("point", "What do you need from me?", "The decision or help the sponsor must give, and by when."),
+            ("quote", "Bad news reported early is a problem. Bad news reported late is a crisis."),
+            ("h", "Green, Amber and Red"),
+            "Some organizations, governments among them, rate projects with three colors. The United Kingdom’s Infrastructure and "
+            "Projects Authority, which reviews that government’s major projects, defined its ratings in its "
+            "2022–23 annual report.",
+            ("point", "Green", "Successful delivery on time, budget and quality appears highly likely, with "
+             "no major unresolved issues that seem likely to threaten it."),
+            ("point", "Amber", "Successful delivery appears feasible, but significant issues already exist "
+             "and need management attention."),
+            ("point", "Red", "Successful delivery appears to be unachievable, with major problems that seem unmanageable at this stage. The project may need to be re-scoped or reviewed."),
+            "A treasury project of a few weeks can borrow the idea. The colors work only if everyone agrees "
+            "in advance what moves a project from one to the next.",
+            ("h", "Write the Rules Before You Need Them"),
+            "The clerk added a short table to the communication plan from Part 11, approved by the head of "
+            "office.",
+            ("point", "Green", "Every milestone on its planned date, or late by no more than half of its "
+             "buffer from Part 21; spending within the budget from Part 17."),
+            ("point", "Amber", "A milestone has used more than half of its buffer, or a risk in the register "
+             "from Part 19 has started to happen, or spending is above plan."),
+            ("point", "Red", "A milestone will miss its date even after using the whole buffer, or the "
+             "budget will be exceeded without a decision from the sponsor."),
+            "With rules like these, the color is not a feeling. Anyone reading the facts reaches the same "
+            "color, including the head of office.",
+            ("h", "The One-Page Format"),
+            ("point", "Header", "Project name, report date, period covered, prepared by."),
+            ("point", "Overall rating", "Green, amber or red, with one sentence saying why."),
+            ("point", "Milestones", "Each one with its planned date, its forecast date and its status. "
+             "Progress is counted in finished deliverables, not hours worked."),
+            ("point", "Budget", "Spent so far against the plan to date."),
+            ("point", "Changes", "Requests logged or decided this period, by number."),
+            ("point", "Top risks and issues", "No more than three, each with its owner and next step."),
+            ("point", "Decisions needed", "What, from whom, and the date after which it is too late."),
+            ("point", "Next period", "The two or three most important things that will happen."),
+            "Use the same layout every time. A reader who knows where to look can find the change from last "
+            "week in seconds.",
+            ("h", "A Worked Example"),
+            "Here is the report the clerk should have sent in week 3. Delivery to San Roque was planned to "
+            "finish on Friday. Its buffer was four working days.",
+            ("point", "Overall rating", "Amber. San Roque delivery is two days behind, using two of its four "
+             "buffer days."),
+            ("point", "Milestones", "Poblacion delivery: done, on plan. San Isidro: done, one day late, "
+             "inside its buffer. San Roque: forecast two days late."),
+            ("point", "Budget", "₱14,200 spent against ₱15,000 planned to date."),
+            ("point", "Top issue", "One of two runners for San Roque is on sick leave. Owner: the clerk. Next "
+             "step: borrow a runner from the assessor’s office for three days."),
+            ("point", "Decision needed", "Approval to borrow the runner, by Wednesday. After Wednesday, the "
+             "rest of the buffer is at risk."),
+            "That report takes ten minutes to write. Sent on time, it gives the head of office a choice "
+            "while there is still room to choose.",
+            ("h", "Writing It So It Gets Read"),
+            ("point", "Lead with the rating and the reason", "Put the most important line first, where a busy reader starts."),
+            ("point", "Use dates and numbers", "“Two days behind, two of four buffer days used,” not "
+             "“slightly delayed.”"),
+            ("point", "Ask clearly", "“Please approve X by Wednesday” is easier to act on than “for your "
+             "information.”"),
+            ("point", "Send it on schedule", "Even when nothing changed. A report that arrives every week is easier to trust when it finally says something new."),
+            ("h", "Same Facts, Different Readers"),
+            "The communication plan from Part 11 named who hears what. The status report follows it. The head of office receives the full page. The councilors who asked about the project receive three lines taken from it: the rating, the reason and the next milestone. The team sees the full page too, so nobody learns about a problem in their own work from someone else. Every version uses the same facts and the same color, so no reader hears a different story.",
+            ("h", "When the News Is Bad"),
+            "The hardest report to send is the first amber one. Hoping to catch up before anyone notices is a "
+            "gamble with the sponsor’s options. The clerk’s five days of silence took away the time the head "
+            "of office could have used.",
+            ("point", "Report the fact", "What happened, with the number."),
+            ("point", "Report the plan", "What you are doing about it."),
+            ("point", "Report the ask", "What you need, and by when."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Green by habit", "Check the rules each week before choosing the color."),
+            ("point", "Activity instead of progress", "Report finished deliverables, not busy days."),
+            ("point", "A long report", "One page, the same layout every time."),
+            ("point", "No decision requested", "If you need something, ask for it with a date."),
+            ("h", "Key Takeaways"),
+            ("point", "Four questions", "Where are we, what changed, what could go wrong, what do you need?"),
+            ("point", "Colors with rules", "Agree in advance what makes a project amber or red."),
+            ("point", "Numbers and dates", "Replace adjectives with facts."),
+            ("point", "Early beats perfect", "An amber report on time is worth more than a green one that "
+             "hides a problem."),
+            ("h", "Your Part 25 Exercise"),
+            "Use the project from your earlier exercises.",
+            ("point", "Write the rules", "One line each for green, amber and red, using your milestones, "
+             "buffers and budget."),
+            ("point", "Fill the page", "Write this week’s report in the one-page format."),
+            ("point", "Find the ask", "Name one decision you need from your sponsor, and the date after "
+             "which it is too late."),
+            "Send it, even if the rating is green. The habit is what makes the amber report possible when "
+            "it is needed.",
+            "The head of office approved the borrowed runner that afternoon. San Roque had its notices by "
+            "Tuesday, one buffer day to spare. The clerk’s next report was green, and this time the head of "
+            "office believed it.",
+            ("cta", "Read: Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan", "/blog/project-management-part-24-change-control/"),
+            ("cta", "Read: Project Management Series, Part 11: The Communication Plan, Who Hears What, When", "/blog/project-management-part-11-communication-plan/"),
+            ("cta", "Read: Project Management Series, Part 21: Buffers, Not Padding, Adding Safety to a Schedule Honestly", "/blog/project-management-part-21-buffers-not-padding/"),
+            ("cta", "Read: Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong", "/blog/project-management-part-19-risk-register/"),
+            ("ask", "When did a status report last tell you something early enough to act on it?"),
+        ],
+    },
+    {
+        "date": "March 8, 2027",
+        "title": "Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan",
+        "slug": "project-management-part-24-change-control",
+        "category": "pm",
+        "summary": "New requests can arrive at any point once a project starts. This part shows a simple way to "
+                   "handle them: write the request down, measure what it does to scope, time, cost, risk "
+                   "and quality, let the right person decide, and update the plan and the change log.",
+        "publish_on": "2027-03-08 21:00",
+        "body": [
+            "Two weeks into the round of notices from Part 23, a councilor stopped the clerk in the hallway. “Can you also "
+            "send a text message to every taxpayer before the notice arrives? It would only take a minute.” "
+            "The clerk said she would look into it. Back at her desk, she counted: 1,800 taxpayers, a phone "
+            "number on file for only some of them, and nobody in the plan assigned to send anything. It "
+            "would not take a minute.",
+            "(This case, its people and its numbers are made up for teaching. They do not describe any real "
+            "office or taxpayer.)",
+            "Part 23 decided what good enough means. This part deals with what happens when someone wants "
+            "the plan to change after it was approved. By the end, you will know what change control is, "
+            "how to write a change request, how to measure its impact, who should decide, and how to keep a "
+            "change log that shows how the project grew and why.",
+            ("photo", "blog/pm-change.jpg", "Change control: write the request down, measure its impact, "
+             "let the sponsor decide, then update the plan and the log. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Changes Need a Process"),
+            "Part 4 named the problem: scope creep, the work that gets added to a project one small request "
+            "at a time. A single request may be reasonable. The trouble starts when requests are accepted in "
+            "hallways and chat messages, and nobody adds up what they cost.",
+            "Change control is not a way to say no. It is a way to make sure that each yes is made by the "
+            "right person, with the cost in front of them, and written where the team can see it.",
+            ("point", "Without it", "The plan says one thing, the team does another, and the deadline slips "
+             "without anyone deciding that it should."),
+            ("point", "With it", "Every change has a record: who asked, what it costs, who approved it, and "
+             "what in the plan moved because of it."),
+            ("quote", "A change is not the problem. An unrecorded change is."),
+            ("h", "Who Decides"),
+            "The Project Management Institute’s glossary describes a change control board as a formally "
+            "constituted group of stakeholders responsible for reviewing, evaluating, approving, delaying or "
+            "rejecting changes to the project, with its decisions recorded.",
+            "A treasury project of a few weeks does not need a board with a schedule of meetings. It needs a "
+            "named person with the authority to accept a change, written down before the first request "
+            "arrives.",
+            ("point", "The sponsor", "In this series, the head of office signed the charter in Part 2, so the "
+             "head of office decides on changes to scope, deadline and budget."),
+            ("point", "The project lead", "The clerk can approve small changes that stay inside an agreed "
+             "limit, such as moving a task by a day within its buffer from Part 21."),
+            ("point", "Written in the charter", "Add one line: who approves changes, and up to what limit "
+             "the project lead may decide alone."),
+            ("h", "Step 1: Write the Request Down"),
+            "Every request starts the same way, no matter who asks or how important they are. It goes on a "
+            "one-page change request form.",
+            ("point", "What is asked", "In plain words: send a text reminder to each taxpayer three days "
+             "before the notice is delivered."),
+            ("point", "Who asked, and when", "The councilor, on the date of the hallway conversation."),
+            ("point", "Why", "The reason given: taxpayers would be ready for the notice and less likely to "
+             "ignore it."),
+            ("point", "A number", "CR-03, so it can be found and referred to later."),
+            "Writing it down does two things. It shows the person asking that the request was taken "
+            "seriously, and it turns a passing idea into something specific enough to measure.",
+            ("h", "Step 2: Measure the Impact"),
+            "The clerk then checked the request against each part of the plan built in this series. For "
+            "CR-03, she found the following.",
+            ("point", "Scope", "A new deliverable, text reminders, outside the scope statement from Part 4. "
+             "Phone numbers were on file for only part of the 1,800 taxpayers."),
+            ("point", "Time", "Cleaning and checking the phone numbers would take an encoder about four days. "
+             "That work would sit on the critical path from Part 16, before delivery could start."),
+            ("point", "Cost", "Four days of staff time, costed as in Part 17, plus the cost of sending the "
+             "messages."),
+            ("point", "Risk", "A new risk for the register from Part 19: a message sent to the wrong number, "
+             "with a taxpayer’s name and amount on it, which would raise a privacy concern."),
+            ("point", "Quality", "A new standard for Part 23’s quality plan: each message matches the record, "
+             "and goes only to the number on file."),
+            "She wrote the impact in a short paragraph at the bottom of the form, with two options. "
+            "Option A: approve as asked and move the delivery start by four days. Option B: approve a "
+            "smaller version, a general reminder posted on the office’s public page and read at barangay "
+            "assemblies, with no change to the dates.",
+            ("h", "Step 3: Decide, and Say Why"),
+            "The head of office read the form the next morning. The decision options are the ones the "
+            "glossary lists: approve, reject, or delay.",
+            ("point", "Approve", "The change goes into the plan, and the plan is updated."),
+            ("point", "Reject", "The request is closed, with the reason written down."),
+            ("point", "Delay", "The idea is kept for a later round or the next project, and the requester is "
+             "told when it will be looked at again."),
+            "The head of office chose Option B for this round and delayed the text reminders to next year, "
+            "when the phone numbers could be cleaned before the project started. The clerk told the "
+            "councilor the same day, with the reason.",
+            ("h", "Step 4: Update the Plan and the Log"),
+            "An approved change is not finished when it is approved. It is finished when every document it "
+            "touches says the same thing.",
+            ("point", "Scope statement", "Version 3, with the public reminder added and the date of the "
+             "change, as Part 4 advised."),
+            ("point", "Schedule and budget", "Only where the change moved them. Option B did not."),
+            ("point", "Communication plan", "From Part 11: who posts the reminder, and when."),
+            ("point", "Risk register", "Updated if the change adds or removes a risk."),
+            "Then the change log gets one line per request: number, date, requester, short description, "
+            "impact, decision, decided by, and date closed. CR-03 took one line. At the end of the project, "
+            "that log becomes one of the main inputs to the lessons-learned review.",
+            ("h", "Small Changes Still Count"),
+            "Not every request needs a meeting. A fixed limit keeps small changes moving.",
+            ("point", "Inside the limit", "A change that uses no more than the agreed buffer and adds no "
+             "deliverable: the project lead decides and logs it."),
+            ("point", "Outside the limit", "Anything that changes scope, the finish date or the budget goes "
+             "to the sponsor."),
+            ("point", "Always logged", "Even a one-day shift gets a line. Several small changes together can "
+             "add up to a large one."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Saying yes in the hallway", "Write it down first, then answer."),
+            ("point", "Measuring only the time", "Check scope, cost, risk and quality too."),
+            ("point", "Approving without updating the plan", "The documents must match the decision."),
+            ("point", "Rejecting without a reason", "The requester should hear why, and when it may come "
+             "back."),
+            ("h", "Key Takeaways"),
+            ("point", "Changes are normal", "Change control makes each one a decision, not an accident."),
+            ("point", "Four steps", "Write it down, measure the impact, decide, then update."),
+            ("point", "One named decider", "The sponsor, with a small limit for the project lead."),
+            ("point", "The change log", "One line per request, kept until the lessons-learned review."),
+            ("h", "Your Part 24 Exercise"),
+            "Take the project from your earlier exercises.",
+            ("point", "Name the decider", "Add a line to your charter: who approves changes, and the limit "
+             "for the project lead."),
+            ("point", "Make the form", "A one-page change request with the five fields from Step 1, plus a "
+             "space for impact and decision."),
+            ("point", "Log one request", "Take the last extra request your project received and run it "
+             "through the four steps."),
+            "If the request was already done without a decision, log it anyway. The point is to see what it "
+            "really cost, so the next one is decided with the numbers in front of you.",
+            "A week later, the councilor saw the reminder read out at a barangay assembly and sent the clerk "
+            "a short message: “That worked. Put my text messages on next year’s list.” She already had. It "
+            "was CR-03, marked delayed, with a date to look at it again.",
+            ("cta", "Read: Project Management Series, Part 23: Quality Planning, Deciding What Good Enough Means", "/blog/project-management-part-23-quality-planning/"),
+            ("cta", "Read: Project Management Series, Part 4: Drawing the Line Before Work Begins", "/blog/project-management-part-4-defining-scope/"),
+            ("cta", "Read: Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Project Management Series, Part 2: The Project Charter on One Page", "/blog/project-management-part-2-project-charter/"),
+            ("ask", "What was the last request that changed your project without anyone deciding it should?"),
+        ],
+    },
+    {
         "date": "March 3, 2027",
         "title": "Project Management Series, Part 23: Quality Planning, Deciding What Good Enough Means",
         "slug": "project-management-part-23-quality-planning",
