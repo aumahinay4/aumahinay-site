@@ -12,8 +12,7 @@ TREASURY_POSTS = [
         "publish_on": "2027-01-04 21:00",
         "slug": "selling-land-transfer-tax",
         "category": "finance",
-        "summary": "Every sale or donation of land passes through the local treasury before the title can "
-                   "change hands. Here is what the tax on transfer of real property is, who must pay it, how "
+        "summary": "Before a sale or donation of land can be registered, a local tax must be paid at the treasury. Here is what the tax on transfer of real property is, who must pay it, how "
                    "it is computed, the 60-day clock, and why the Register of Deeds will not move without "
                    "the receipt.",
         "body": [

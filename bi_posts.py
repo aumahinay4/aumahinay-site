@@ -87,7 +87,7 @@ BI_POSTS = [
             "Put the table you report on first, on the left, and join the reference list to it. Then a gap in "
             "the reference list shows up as a blank instead of a smaller total.",
             ("h", "Step 3: Mind the Grouping"),
-            "One detail surprises people. The documentation explains that before merging, Data Studio groups "
+            "One detail is easy to miss. The documentation explains that before merging, Data Studio groups "
             "and aggregates the rows in each table by that table’s dimensions. Metrics from the sources then "
             "become plain numbers in the blend, which the chart adds up again.",
             ("point", "What it means here", "If the collections table keeps both Date and Barangay as "

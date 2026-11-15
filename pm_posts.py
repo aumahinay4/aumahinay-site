@@ -95,11 +95,11 @@ PM_POSTS = [
              "receives a notice with the wrong amount, comes to the office to complain, and needs a corrected "
              "notice, plus the time of the staff who handle it and the trust that is lost."),
             "Prevention and appraisal are planned costs. The two failure costs are the price of skipping them, "
-            "and the external one is the hardest to see in any budget.",
+            "and the external one falls partly on the taxpayer, outside the project’s budget.",
             ("h", "Step 4: Put Quality Into the Plan"),
             ("point", "In the schedule", "The checks take time. The clerk placed the first-batch check inside "
              "the printing days, so the dates in the plan from Part 21 did not move."),
-            ("point", "In the budget", "Setting up the direct fill took two days of the analyst’s time, "
+            ("point", "In the budget", "Setting up the direct fill took two days of staff time, "
              "costed like any other staff time, as in Part 17."),
             ("point", "In the register", "R2, wrong amounts on printed notices, was updated. With the cause "
              "removed, its probability dropped, and the response now pointed to the new standard."),

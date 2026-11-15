@@ -70,7 +70,7 @@ DATA_POSTS = [
              "single character. \"SAN*\" matches San Isidro and San Roque. Google’s help for "
              "SUMIF and Microsoft’s help for SUMIFS both describe these wildcards."),
             ("h", "Dates Without Gaps"),
-            "Dates are where totals quietly go wrong. For January 2027, use two conditions on the same column: "
+            "Dates are one place where totals quietly go wrong. For January 2027, use two conditions on the same column: "
             "on or after the first day of the month, and before the first day of the next month.",
             ("point", "The formula", "=SUMIFS(E2:E500, A2:A500, \">=\"&DATE(2027,1,1), A2:A500, "
              "\"<\"&DATE(2027,2,1))"),
@@ -132,7 +132,7 @@ DATA_POSTS = [
             ("point", "One formula, many cells", "Dollar signs let one formula fill a whole table."),
             ("point", "Check the total", "The parts must add up to the whole."),
             ("h", "Your Part 23 Exercise"),
-            "Use your practice list from Part 22, with a date, barangay and amount for each row.",
+            "Use your practice list from Part 22, and add a Date column with made-up dates across two or three months.",
             ("point", "One total", "Write a SUMIFS for one barangay and one month."),
             ("point", "One table", "Build a barangay-by-month table from a single formula."),
             ("point", "One check", "Add the check row, then add a trailing space to one name and watch it fail."),

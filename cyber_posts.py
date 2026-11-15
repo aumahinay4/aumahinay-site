@@ -82,7 +82,7 @@ CYBER_POSTS = [
             ("point", "Keep the phone updated", "As Part 11 explained, updates close known flaws. Check for "
              "them under System, then Software updates, on Android, or Settings on an iPhone."),
             ("h", "Step 5: Set Up Remote Lock and Erase Today"),
-            "This is the step people skip, and it is the one they wish they had done when the phone is gone. "
+            "This step is easy to skip, and it is the one people wish they had done when the phone is gone. "
             "Both major phone systems can locate, lock and erase a lost phone from another device, but only if "
             "the feature was set up before the loss.",
             ("point", "Android: Find Hub", "Google’s help describes how Find Hub can show the phone’s "
@@ -158,8 +158,7 @@ CYBER_POSTS = [
                    "can keep every device current without stopping work.",
         "publish_on": "2026-12-29 21:00",
         "body": [
-            "Every office has one: the computer in the corner with a small message that has been waiting for "
-            "weeks. “Updates are ready. Restart now?” And every day, someone clicks “Remind me tomorrow,” "
+            "Picture the computer in the corner of the office, with a small message that has been waiting for weeks. “Updates are ready. Restart now?” And every day, someone clicks “Remind me tomorrow,” "
             "because there is a line at the window and the restart takes too long.",
             "That small button is a real security decision, even if it does not feel like one. "
             "In this part, we look at what an update actually does, what happens when it is skipped, and how "
@@ -193,8 +192,7 @@ CYBER_POSTS = [
             "that customers with Windows Update turned on were protected against attacks on this "
             "vulnerability. Microsoft also wrote that the exploit worked against unpatched Windows 7 and "
             "older systems, and that Windows 10 computers were not affected.",
-            "Microsoft also took the unusual step of making the "
-            "fix available for systems it no longer normally supported, including Windows XP. The lesson is "
+            "Microsoft then took the unusual step of making the fix available for systems it no longer normally supported, including Windows XP. The lesson is "
             "simple. The damage did not come from a flaw nobody knew about. It came from a fix that had not "
             "been installed.",
             ("h", "Known Flaws Are Enough"),
@@ -203,9 +201,7 @@ CYBER_POSTS = [
             "the computer in front of them.",
             "The United States Cybersecurity and Infrastructure Security Agency keeps a public list called the "
             "Known Exploited Vulnerabilities Catalog: flaws that attackers are known to have used in real "
-            "attacks. Each one on the list has a fix or a workaround. If a flaw is on that list and your "
-            "device has not been updated, you are not waiting for a rare event. You are on a list of targets "
-            "that already works.",
+            "attacks. CISA adds a flaw to the list only when there is reliable evidence it has been exploited and a clear fix exists, such as a vendor update, and it urges organizations to treat these as a high priority. If a flaw is on that list and your device has not been updated, you are not waiting for a rare event. You are exposed to a method that has already worked elsewhere.",
             ("h", "When the Updates Stop: End of Support"),
             "Every product has a last day of security updates. After that, new flaws are found, but no fixes "
             "arrive. The device still turns on and still looks fine, which is what makes this risk easy to "
@@ -228,9 +224,7 @@ CYBER_POSTS = [
             ("point", "Android", "Google’s help says to open Settings, tap About phone, then Android version, "
              "where the Android security update date is listed. Updates themselves are under System, then "
              "Software updates. Google advises connecting to Wi-Fi and charging to at least 75% first."),
-            ("point", "Browsers", "Chrome, Edge and Firefox update themselves, but the update finishes only "
-             "after the browser is closed and opened again. A browser left open for weeks may be running old "
-             "code."),
+            ("point", "Browsers", "Chrome, Edge and Firefox download updates on their own, but a downloaded update is applied when the browser is restarted. A browser left open for weeks may be running old code."),
             ("point", "Apps", "Turn on automatic updates in the app store, and remove apps you no longer use. "
              "An app you do not have cannot be attacked."),
             ("h", "Why Restarts Matter"),
@@ -238,8 +232,7 @@ CYBER_POSTS = [
             "restarted in a month may show that updates were downloaded, while still running the old, flawed "
             "code. That is why the restart button matters as much as the download.",
             "A simple office rule helps: every computer is restarted at the end of the working day "
-            "at least once a week. Ten minutes after closing, with no taxpayer waiting, is the cheapest "
-            "security work an office can do.",
+            "at least once a week. Ten minutes after closing, with no taxpayer waiting, is some of the cheapest security work an office can do.",
             ("h", "An Update Routine for a Small Office"),
             ("point", "Keep a list", "One sheet with every computer, phone, printer and router: who uses it, "
              "what system it runs, and when it was last updated. You cannot update what you have forgotten "
@@ -279,8 +272,7 @@ CYBER_POSTS = [
              "runs."),
             ("point", "Find the oldest", "Look up whether it still receives security updates. If it does "
              "not, decide this week how it will be replaced or kept offline."),
-            "Then press Restart on that computer in the corner, after closing time. It is the simplest "
-            "security fix in this whole series.",
+            "Then press Restart on that computer in the corner, after closing time. It is one of the simplest security fixes in this whole series.",
             ("cta", "Read: Cybersecurity Series, Part 5: Inside a Ransomware Attack", "/blog/cybersecurity-part-5-ransomware/"),
             ("cta", "Read: Cybersecurity Series, Part 4: Securing Your Home and Remote Network", "/blog/cybersecurity-part-4-home-network/"),
             ("cta", "Read: Cybersecurity Series, Part 10: AI, Quantum Computers and the Next Wave", "/blog/cybersecurity-part-10-future-threats/"),
