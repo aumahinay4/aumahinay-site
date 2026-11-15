@@ -13,6 +13,266 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "title": "Business Intelligence Series, Part 31: Scheduled Email Delivery, Sending the Report Before Anyone Asks",
+        "slug": "business-intelligence-part-31-scheduled-email-delivery",
+        "category": "bi",
+        "date": "April 10, 2027",
+        "summary": "A dashboard helps only the people who open it. This part shows how to schedule Data "
+                   "Studio to email a report as a PDF on a set day and time: the steps, the options, the "
+                   "limits on recipients and frequency, the privacy questions to ask first, and how to "
+                   "check that the email arrives with current data.",
+        "publish_on": "2027-04-10 21:00",
+        "body": [
+            "Every Monday at eight, the head of office asked the same question: “How did collections do "
+            "last week?” Every Monday, the analyst opened the dashboard, took screenshots, pasted them into "
+            "a message and sent them. It took twenty minutes. On the Monday the analyst was out sick, "
+            "nobody sent anything, and the head of office went into the council meeting without the "
+            "numbers.",
+            "The dashboard had the answer all along. It just did not leave the building on its own.",
+            "(The office and its Mondays are invented for this lesson. The Data Studio features and limits "
+            "below are from Google’s help page on scheduling report delivery, and they can change, so check "
+            "the current page before you rely on a number.)",
+            "Part 30 put a “data as of” date on every page. This part sends those pages to the people who "
+            "need them, on a schedule. By the end, you will know how to set up a scheduled email in Data "
+            "Studio, what the email contains, the limits on recipients and frequency, which reports should "
+            "not be emailed at all, and how to time the schedule so the PDF carries fresh data.",
+            ("photo", "blog/bi-schedule.jpg", "Scheduled delivery: choose the people, the pages and the time, "
+             "check the data first, and keep private details out. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Send the Report at All"),
+            "A dashboard is a pull tool. People have to remember to open it. A scheduled email is a push "
+            "tool. It arrives in the inbox whether anyone remembers or not.",
+            ("point", "It removes a manual task", "No screenshots, no copying, no dependence on one person "
+             "being at their desk."),
+            ("point", "It arrives at the same time", "A report that comes every Monday at 7:30 can become part of the week, like the morning flag ceremony."),
+            ("point", "It reaches people who will not log in", "Some readers who open every email "
+             "attachment may not bookmark a dashboard."),
+            ("quote", "The best time to send a report is a few minutes before someone would have asked "
+             "for it."),
+            ("h", "Setting Up the Schedule"),
+            "Open the report you want to send. You need to be its owner or an editor, or have permission "
+            "to schedule.",
+            ("point", "Step 1: Open the menu", "Click Share, then choose Schedule delivery."),
+            ("point", "Step 2: Add recipients", "Type individual addresses or a group email alias. You, as "
+             "the person creating the schedule, are always included."),
+            ("point", "Step 3: Choose the pages", "Select only the pages the readers need. The weekly "
+             "summary page may be enough."),
+            ("point", "Step 4: Set the start date and time", "The schedule follows the time zone of your "
+             "computer’s operating system. Data Studio does not let you change it inside the report."),
+            ("point", "Step 5: Choose how often", "Pick a repeat option, or Custom to choose specific days "
+             "or intervals. Then click Schedule."),
+            ("h", "What the Email Contains"),
+            ("point", "A PDF of the selected pages", "Built the same way as the PDF you get when you download "
+             "the report."),
+            ("point", "A preview and a link", "The email shows a preview of the report’s first page and a "
+             "link to view the complete report."),
+            ("point", "The default filters", "The PDF uses the report’s default filter and date range "
+             "settings. On the schedule’s Filters tab, you can change the values of existing controls for "
+             "that schedule, but you cannot add or remove controls there."),
+            "The filter point matters. If the report opens by default on “Last 28 days” and the head of "
+            "office wants last week, set the date range for the schedule or change the default before "
+            "relying on the email.",
+            ("h", "The Limits to Know"),
+            "The help page lists these limits. They differ between the regular version and Data Studio Pro.",
+            ("point", "Recipients per schedule", "No more than 50 addresses, and the person who created the "
+             "schedule must be among them."),
+            ("point", "Schedules per report", "Without Pro, one schedule per report, sent at most once a "
+             "day. With Pro, up to 200 schedules and hourly delivery."),
+            ("point", "Daily and monthly quotas", "Without Pro, a personal account can send scheduled "
+             "emails to 200 recipients a day and 800 a month; a Google Workspace account, 500 a day and "
+             "3,000 a month."),
+            ("point", "Preview length", "The preview inside the email shows no more than five pages. The "
+             "PDF itself includes all the selected pages."),
+            "For a small treasury office, one weekly schedule to a handful of people stays well inside "
+            "these limits. If you need one email for the treasurer and a different one for the market "
+            "supervisor, either use separate reports or check whether your office has Pro.",
+            ("h", "Ask the Privacy Question First"),
+            "A dashboard can limit who sees it. An email attachment cannot control where it goes after it "
+            "arrives. A PDF can be forwarded, printed and left on a desk.",
+            ("point", "Send summaries, not lists of people", "Totals by month, by barangay or by type of "
+             "tax are good candidates. Lists of taxpayers with names, addresses and amounts owed are not."),
+            ("point", "Check every page you select", "A summary page might include a small table of the "
+             "top ten delinquent accounts. Leave that page out of the schedule."),
+            ("point", "Use group aliases carefully", "Know who is on a group email list before you put it "
+             "in the recipient field."),
+            "Part 20 of the Cybersecurity Series covers the Data Privacy Act at work. The same questions "
+            "apply here: who needs this, and what is the least they need to see?",
+            ("h", "Time It After the Data, Not Before"),
+            "Part 30 separated two things: when the report refreshed, and when the data inside it was last "
+            "updated. A schedule makes this even more important, because a stale PDF can go out automatically without anyone checking it.",
+            ("point", "Know when the data lands", "If the encoder finishes Friday’s collections by Friday "
+             "evening, a Monday 7:30 schedule is safe."),
+            ("point", "Keep the “data as of” date on the page", "Then a stale PDF announces itself to the "
+             "reader."),
+            ("point", "Open the first email yourself", "You are on the recipient list. Read the first one "
+             "carefully, page by page, before anyone else depends on it."),
+            ("h", "Editing and Stopping a Schedule"),
+            ("point", "To edit", "Open Share, then Schedule delivery, click More, choose Edit, make your "
+             "changes and save."),
+            ("point", "To delete", "Click More, then Delete schedule. The help page warns that a deleted "
+             "schedule cannot be restored."),
+            ("point", "When people leave", "Remove recipients who have moved to another office. A schedule "
+             "keeps sending until someone changes it."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Emailing taxpayer-level details", "Send summaries; keep lists on the dashboard."),
+            ("point", "Ignoring the default date range", "The PDF follows the report’s defaults."),
+            ("point", "Scheduling before the data is in", "Set the time after the last update lands."),
+            ("point", "Forgetting the schedule exists", "Review recipients and pages every quarter."),
+            ("h", "Key Takeaways"),
+            ("point", "Share, then Schedule delivery", "Recipients, pages, start time and repeat."),
+            ("point", "A PDF, a preview and a link", "Using the report’s default filters."),
+            ("point", "Up to 50 recipients", "One schedule per report, at most daily, without Pro."),
+            ("point", "Privacy and freshness first", "Summaries only, sent after the data is current."),
+            ("h", "Your Part 31 Exercise"),
+            "Pick one report that someone asks you about every week.",
+            ("point", "Choose one page", "The page that answers that person’s usual question."),
+            ("point", "Check it", "No personal details, a clear “data as of” date, and the right default "
+             "date range."),
+            ("point", "Schedule it to yourself first", "Then add the real reader once the first email looks "
+             "right."),
+            "After a month, ask the reader whether the email helps, and whether they would change anything "
+            "in it.",
+            "The next Monday, the head of office found the weekly summary in her inbox at 7:30, before she "
+            "had finished her coffee. Beside the title on the first page was the line “Data as of April 9.” "
+            "The analyst was at her desk by eight, and for once, nobody asked her for screenshots.",
+            ("cta", "Read: Business Intelligence Series, Part 30: Showing When the Data Was Last Updated, Freshness Readers Can See", "/blog/business-intelligence-part-30-data-freshness/"),
+            ("cta", "Read: Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("cta", "Read: Business Intelligence Series, Part 28: Is Anyone Using the Dashboard? Measuring Views and Decisions", "/blog/business-intelligence-part-28-dashboard-usage/"),
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("ask", "Which report do you send by hand every week that could be sent on a schedule instead?"),
+        ],
+    },
+    {
+        "date": "April 5, 2027",
+        "title": "Business Intelligence Series, Part 30: Showing When the Data Was Last Updated, Freshness Readers Can See",
+        "slug": "business-intelligence-part-30-data-freshness",
+        "category": "bi",
+        "summary": "A dashboard that refreshes every 15 minutes can still show week-old data. This part "
+                   "explains Data Studio’s data freshness settings, the difference between a refreshed report "
+                   "and current data, and how to put a clear “data as of” date on every page.",
+        "publish_on": "2027-04-05 21:00",
+        "body": [
+            "On Monday, the head of office opened the collections dashboard and frowned. Real property tax "
+            "collections had not moved since the previous Tuesday. Six days of nothing, in a month when payments had been coming in steadily. She called the analyst, who checked the report: it had "
+            "refreshed that morning, as it did every fifteen minutes. The numbers were correct for the data "
+            "it had.",
+            "The problem was in the sheet behind it. The encoder who typed in the daily collections had been "
+            "on leave since Tuesday, and nobody had filled in for her. The dashboard was fresh. The data was "
+            "not.",
+            "(The office, the encoder and the dates are invented to explain the idea. They describe no real "
+            "office.)",
+            "Part 29 retired reports that nobody uses. This part keeps the ones people use honest about "
+            "time. When you finish, you will know what Data Studio’s data freshness setting does and does "
+            "not do, how to refresh by hand, the difference between when a report was refreshed and when its "
+            "data was last updated, and how to show readers a “data as of” date they can trust.",
+            ("photo", "blog/bi-fresh.jpg", "Showing freshness: the report’s refresh time, the latest date in the "
+             "data, a warning when it is stale, and an owner who updates it. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Two Different Times"),
+            "A dashboard has two times that matter, and they are easy to confuse.",
+            ("point", "When the report last read the data", "Data Studio checks the source on a schedule and "
+             "keeps recent results in memory. This is the refresh time."),
+            ("point", "When the data was last updated", "The date of the newest record in the source: the "
+             "last receipt typed in, the last file uploaded. This is the data’s real age."),
+            "A report can be refreshed every fifteen minutes and still show a sheet that nobody has touched "
+            "in a week. Readers need the second time more than the first.",
+            ("quote", "A dashboard is only as current as the last row someone typed."),
+            ("h", "Data Studio’s Data Freshness Setting"),
+            "Google’s documentation describes data freshness as a way to balance up-to-date information "
+            "against report performance. Data Studio stores recent queries and results in memory, and serves "
+            "repeat requests from memory until the freshness period runs out.",
+            ("point", "Google Sheets", "The default for a Sheets data source is every 15 minutes. The other "
+             "options are 1 hour, 4 hours and 12 hours."),
+            ("point", "Other sources", "Google Analytics defaults to every 12 hours. Database connectors such "
+             "as BigQuery and MySQL offer choices in minutes or hours."),
+            ("point", "How to change it", "Edit the data source, click Data freshness on its configuration "
+             "page, choose an option under Check for fresh data, then click Set Data Freshness."),
+            ("point", "Which to choose", "For daily collections typed in once a day, checking every 12 hours "
+             "is enough and makes the report faster. For a sheet updated through the day, 15 minutes keeps "
+             "it closer to the counter."),
+            ("h", "Refreshing by Hand"),
+            ("point", "Editors", "Google’s page says editors can refresh all the data sources in a report "
+             "from the More options menu, by clicking Refresh data."),
+            ("point", "Viewers", "Viewers can refresh only if the editor turns on the viewer data refresh "
+             "option in the report settings. Then they can right-click a chart and choose Refresh data."),
+            ("point", "A short wait", "The documentation says there is a one-minute cooldown between data "
+             "refreshes."),
+            "A manual refresh helps right after the encoder updates the sheet. It cannot help if the sheet "
+            "itself was never updated.",
+            ("h", "What the Report Already Shows"),
+            "Google’s page says the time and date of the last data refresh is displayed in the bottom left "
+            "corner of the report. It adds that if that time is earlier than your latest change to a filter "
+            "or date range, the charts are being served from memory.",
+            "That small line answers “When did the report last check?” It does not answer “How old is the "
+            "newest record?” For that, you need to build one more thing.",
+            ("h", "Build a “Data As Of” Date"),
+            "The simplest proof of freshness comes from the data itself: the latest date in the table.",
+            ("point", "A scorecard with the maximum date", "Add a scorecard chart using the payment date "
+             "field, with its aggregation set to Max. It shows the newest payment date in the data source, "
+             "such as “Data as of: April 2, 2027.”"),
+            ("point", "Place it at the top", "Put it beside the page title on every page, in the same spot, "
+             "so readers learn to look there first."),
+            ("point", "Label it plainly", "“Latest payment recorded” or “Data as of.” Avoid “Last updated,” "
+             "which readers may confuse with the report’s refresh time."),
+            ("point", "Watch the filters", "If the scorecard follows the page’s filters, a barangay with no "
+             "payment this week shows an older date. That can be useful, so say in the label that the "
+             "date follows the selection."),
+            ("h", "Add a Warning When Data Is Stale"),
+            "A date is easy to overlook. A warning is not.",
+            ("point", "Count the days", "In the source sheet, add a small summary cell: the number of days "
+             "between today and the newest payment date. Part 29 of the Data Analytics series showed DAYS and "
+             "NETWORKDAYS for this. Working days are fairer, so a weekend does not set off the alarm."),
+            ("point", "Set a rule", "If the data is more than one working day old, show “Data may be "
+             "incomplete: last update was 4 working days ago.”"),
+            ("point", "Use the same thresholds idea", "Part 18 built thresholds and alerts for collections. "
+             "Freshness deserves an alert of its own."),
+            ("h", "Give the Data an Owner and a Schedule"),
+            "In the opening story, the technology worked. What failed was that nobody was named to update "
+            "the sheet while the encoder was away.",
+            ("point", "Name the owner", "The data dictionary from Part 10 lists an owner for each source. "
+             "Add a backup person for leave and absences."),
+            ("point", "Write the schedule", "“Daily collections: entered by 10 a.m. the next working day.” A "
+             "schedule tells readers what “fresh” means for this data."),
+            ("point", "Show it in the footer", "One line under each page: the source, its owner, and how often "
+             "it is updated."),
+            ("h", "What to Tell Readers"),
+            ("point", "On the dashboard", "The data-as-of date, the update schedule, and a warning when it is "
+             "behind."),
+            ("point", "In a briefing", "Say the date out loud before the numbers: “These figures are as of "
+             "Friday.” Part 11’s five-minute briefing works better when the first line is the date."),
+            ("point", "In a printed copy", "Print the date on the page. A screenshot travels without the "
+             "dashboard’s context."),
+            ("h", "The Fix in the Treasury"),
+            "The analyst added a “Latest payment recorded” scorecard at the top of each page, and a red line "
+            "that appeared when the data was more than one working day old. The records clerk was named as "
+            "backup for the encoder. The next time the encoder took leave, the clerk entered the collections "
+            "by ten each morning, and the warning never appeared.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting the refresh time", "It tells you when the report checked, not how old the data is."),
+            ("point", "No date on the page", "Add a data-as-of scorecard to every page."),
+            ("point", "Alerts for amounts but not for age", "Stale data deserves a warning too."),
+            ("point", "No backup for the person who updates", "Name one in the data dictionary."),
+            ("h", "Key Takeaways"),
+            ("point", "Two times", "Refresh time and data age are different."),
+            ("point", "Freshness settings", "15 minutes by default for Sheets, up to 12 hours."),
+            ("point", "Data as of", "A Max-date scorecard shows the newest record."),
+            ("point", "Owners keep it fresh", "With a schedule and a backup."),
+            ("h", "Your Part 30 Exercise"),
+            "Open the practice dashboard from your earlier exercises.",
+            ("point", "Add the date", "A scorecard with the maximum payment date, labeled “Data as of.”"),
+            ("point", "Check the setting", "Look at the data source’s freshness and choose one that matches "
+             "how often the sheet is updated."),
+            ("point", "Write the line", "A footer with the source, owner, backup and update schedule."),
+            "Then stop updating your practice sheet for two days, open the dashboard, and see whether a "
+            "reader would notice. If they would not, add the warning.",
+            ("cta", "Read: Business Intelligence Series, Part 29: Retiring Reports, Turning Off What Nobody Uses", "/blog/business-intelligence-part-29-retiring-reports/"),
+            ("cta", "Read: Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look", "/blog/business-intelligence-part-18-thresholds-and-alerts/"),
+            ("cta", "Read: Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Data Analytics Series, Part 29: Counting Days in Google Sheets, Working Days, Due Dates and Days Late", "/blog/data-analytics-part-29-counting-days/"),
+            ("ask", "How old is the newest number on your office’s main report right now?"),
+        ],
+    },
+    {
         "date": "March 31, 2027",
         "title": "Business Intelligence Series, Part 29: Retiring Reports, Turning Off What Nobody Uses",
         "slug": "business-intelligence-part-29-retiring-reports",

@@ -12,6 +12,284 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "April 6, 2027",
+        "title": "Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion",
+        "slug": "data-analytics-part-30-percent-change",
+        "category": "data",
+        "summary": "Collection efficiency rose from 72 to 81 percent. Is that a 9 percent increase or a 12.5 "
+                   "percent one? This part separates percent change from percentage points, shows the "
+                   "formulas in Google Sheets, and covers the small-base, reverse-change and averaging traps "
+                   "that make honest numbers mislead.",
+        "publish_on": "2027-04-06 21:00",
+        "body": [
+            "The draft press release said: “Real property tax collection efficiency rose 9 percent this "
+            "year.” The budget officer read it and disagreed. “It went from 72 to 81. That is 12.5 percent.” "
+            "The analyst who wrote it said both were right. The head of office asked which one would be "
+            "printed, because a councilor would certainly check.",
+            "They were both right, about different things. The sentence was wrong because it did not say "
+            "which.",
+            "(The office, the press release and every figure below are invented for this lesson. No real "
+            "town is described.)",
+            "Part 29 counted days. This part counts change. When you finish, you will know the difference "
+            "between percent change and percentage points, how to compute each in Google Sheets, how to "
+            "write growth so nobody misreads it, how to avoid three traps: small bases, changes that do not "
+            "reverse evenly, and averages of percentages, and how to describe growth over several years.",
+            ("photo", "blog/data-percent.jpg", "Percent change or percentage points: change in an amount is a "
+             "percent, change in a rate is in points, and the base always matters. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Ways to Describe a Change"),
+            ("point", "Percent change", "How much an amount grew or shrank, relative to where it started. "
+             "Collections of ₱8,400,000 rising to ₱9,240,000 is a change of ₱840,000, which is 10 percent of "
+             "₱8,400,000."),
+            ("point", "Percentage points", "The plain difference between two percentages. Efficiency rising "
+             "from 72 percent to 81 percent is a rise of 9 percentage points."),
+            ("point", "Percent change of a percentage", "The same efficiency figures, treated as amounts: "
+             "9 divided by 72 is 0.125, a 12.5 percent increase."),
+            "So the press release could say “up 9 percentage points” or “up 12.5 percent.” It could not say "
+            "“up 9 percent,” which mixes the two.",
+            ("quote", "When the thing you measure is already a percentage, say “points.”"),
+            ("h", "The Formulas in Google Sheets"),
+            "Put last year’s figure in B2 and this year’s in C2.",
+            ("point", "Change in the amount", "=C2-B2. For collections, ₱840,000."),
+            ("point", "Percent change", "=(C2-B2)/B2, then format the cell as a percentage with Format, "
+             "Number, Percent. For collections, 10.0%."),
+            ("point", "Percentage points", "If B2 and C2 hold 72% and 81%, =C2-B2 returns 9%, which you "
+             "should label as 9 percentage points, not 9 percent."),
+            ("point", "Guard against zero", "If last year was zero, the percent change divides by zero. "
+             "=IFERROR((C2-B2)/B2, \"new\") shows “new” instead of an error."),
+            ("h", "When to Use Which"),
+            ("point", "Use percent change for amounts", "Pesos collected, number of taxpayers, receipts "
+             "issued, days taken."),
+            ("point", "Use percentage points for rates", "Collection efficiency, share of taxpayers who paid "
+             "on time, share of permits released within target."),
+            ("point", "Give both numbers when it matters", "“Efficiency rose from 72 percent to 81 percent, "
+             "up 9 percentage points.” The reader sees the start, the end and the change, and can compute "
+             "anything else."),
+            ("h", "Trap 1: The Small Base"),
+            "Percent change is relative to the start. When the start is small, the percent can be huge.",
+            ("point", "An example", "A barangay’s business tax collections went from ₱2,000 to ₱6,000. That "
+             "is a 200 percent increase, from one new store."),
+            ("point", "The comparison", "Poblacion went from ₱800,000 to ₱900,000, a 12.5 percent increase, "
+             "but ₱100,000 more in pesos, fifty times the small barangay’s ₱4,000 gain."),
+            ("point", "The fix", "Show the amounts beside the percentages. A ranking by percent change alone "
+             "will put the smallest base on top."),
+            ("h", "Trap 2: Changes Do Not Reverse Evenly"),
+            ("point", "Down, then up", "If a figure of ₱1,000 falls 50 percent, it becomes ₱500. If it then "
+             "rises 50 percent, it becomes ₱750, not ₱1,000. The second 50 percent is taken from a smaller "
+             "base."),
+            ("point", "Why it matters", "After a bad year, a “recovery of 50 percent” may still leave "
+             "collections below where they started. Compare with the original level, not only with last "
+             "year."),
+            ("h", "Trap 3: Averaging Percentages"),
+            "Three barangays had these real property tax results against their targets:",
+            ("point", "Poblacion", "Collected ₱1,800,000 of a ₱2,000,000 target: 90 percent."),
+            ("point", "San Isidro", "Collected ₱450,000 of ₱500,000: 90 percent."),
+            ("point", "San Roque", "Collected ₱40,000 of ₱100,000: 40 percent."),
+            ("point", "The simple average", "(90 + 90 + 40) ÷ 3 is about 73.3 percent. It gives the "
+             "smallest barangay the same weight as the largest."),
+            ("point", "The overall rate", "Total collected over total target: ₱2,290,000 ÷ ₱2,600,000, "
+             "about 88.1 percent. In Sheets, =SUM(collected)/SUM(target)."),
+            "For the town’s efficiency, the overall rate is the right number. The simple average answers a "
+            "different question: how a typical barangay did, regardless of size. Part 26 showed a similar "
+            "choice between the mean and the median. Name which one you used.",
+            ("h", "Growth Over Several Years"),
+            "Suppose collections were ₱8,000,000 in 2024 and ₱9,680,000 in 2026. The total change over the "
+            "two years is ₱1,680,000, or 21 percent.",
+            ("point", "Do not just divide by the years", "21 percent ÷ 2 = 10.5 percent a year sounds right, "
+             "but it ignores that the second year grew from a larger base."),
+            ("point", "The average yearly rate", "In Sheets: =(C2/B2)^(1/2)-1, where 2 is the number of years. "
+             "It returns 10 percent. Check it: ₱8,000,000 grown 10 percent is ₱8,800,000, and another 10 "
+             "percent is ₱9,680,000."),
+            ("point", "When to use it", "For a three- or five-year summary in a budget message or an annual "
+             "report, where readers want one yearly figure."),
+            "Say which one you report. “Up 21 percent over two years” and “up an average of 10 percent a "
+            "year” are both true and easy to confuse.",
+            ("h", "Writing Change Clearly"),
+            ("point", "Always give the start and the end", "“From ₱8.4 million to ₱9.24 million” before "
+             "“up 10 percent.”"),
+            ("point", "Name the period", "“Compared with 2026” or “compared with the same month last year.” "
+             "Part 19 of the Business Intelligence series covered fair comparisons."),
+            ("point", "Say points for rates", "“Up 9 percentage points,” or simply “up 9 points” after the "
+             "first mention."),
+            ("point", "Round sensibly", "One decimal place keeps a report readable: 12.5 percent, not "
+             "12.4999 percent."),
+            ("point", "Check the direction", "A fall in “days to release a permit” is good news. Write “down "
+             "from 4.2 to 2.6 working days,” and let the reader see it is an improvement."),
+            ("h", "A Quick Check Before Publishing"),
+            ("point", "Is it an amount or a rate?", "Percent change for amounts, points for rates."),
+            ("point", "What is the base?", "If it is small, show the amounts too."),
+            ("point", "Are percentages averaged?", "If so, compute the overall rate from totals instead, or "
+             "say clearly that it is a simple average."),
+            ("point", "Can a reader recompute it?", "Give the start, the end and the period."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Saying “percent” for a change in a rate", "Use percentage points."),
+            ("point", "Ranking by percent change alone", "Small bases jump to the top."),
+            ("point", "Expecting a rise to undo an equal fall", "Compare with the starting level."),
+            ("point", "Averaging rates of different sizes", "Use totals for the overall rate."),
+            ("h", "Key Takeaways"),
+            ("point", "Amounts change by percent", "=(new-old)/old."),
+            ("point", "Rates change by points", "=new rate minus old rate, labeled as points."),
+            ("point", "The base matters", "Show amounts beside percentages."),
+            ("point", "Overall rates come from totals", "Not from averaging the parts."),
+            ("h", "Your Part 30 Exercise"),
+            "Take two years of any figure your office reports, one amount and one rate.",
+            ("point", "Compute both", "Percent change for the amount, percentage points for the rate."),
+            ("point", "Rewrite one sentence", "Give the start, the end, the period and the change, with the "
+             "right unit."),
+            ("point", "Check an average", "Find one report that averages percentages, and recompute it from "
+             "totals."),
+            "Then read your sentence to a colleague and ask them to repeat the number back. If they say the "
+            "same unit you wrote, the sentence works.",
+            "The final press release read: “Real property tax collection efficiency rose from 72 percent "
+            "to 81 percent, up 9 percentage points from last year.” The councilor checked it, found nothing "
+            "to argue with, and asked about San Roque instead.",
+            ("cta", "Read: Data Analytics Series, Part 29: Counting Days in Google Sheets, Working Days, Due Dates and Days Late", "/blog/data-analytics-part-29-counting-days/"),
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("cta", "Read: Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("ask", "Which percentage in your office’s reports should really be written in points?"),
+        ],
+    },
+    {
+        "date": "April 1, 2027",
+        "title": "Data Analytics Series, Part 29: Counting Days in Google Sheets, Working Days, Due Dates and Days Late",
+        "slug": "data-analytics-part-29-counting-days",
+        "category": "data",
+        "summary": "How long did each application take, and when is the next one due? This part counts days "
+                   "in Google Sheets with DAYS, NETWORKDAYS and WORKDAY, adds months with EDATE and EOMONTH, "
+                   "handles holidays, and shows why calendar days and working days give different answers.",
+        "publish_on": "2027-04-01 21:00",
+        "body": [
+            "The head of office wanted one number for the quarterly report: how many days, on average, it "
+            "took to release a business permit after the papers came in. The clerk subtracted each received "
+            "date from each release date and got an average of 4.2 days. The office’s own target was three "
+            "working days. On paper, it looked late.",
+            "Then the clerk looked at application A-03. It came in on a Friday and was released on Monday, "
+            "the next working day. Her formula had counted Saturday and Sunday as three days of delay.",
+            "(The office, the applications and the dates in this post are invented for practice. No real "
+            "office or applicant is described.)",
+            "Part 28 joined tables in SQL. This part returns to Google Sheets for a question that comes up whenever an office tracks applications or payments: how many days? When you finish, you will know the difference between calendar days and "
+            "working days, how to count each in Sheets, how to add holidays, how to find a due date a number "
+            "of working days or months away, and how to compute days late without mistakes.",
+            ("photo", "blog/data-days.jpg", "Counting days in Sheets: DAYS for calendar days, NETWORKDAYS for "
+             "working days, WORKDAY for due dates, and a holiday list everyone uses. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Working Days Matter"),
+            "Government service targets can be written in working days. Republic Act No. 11032, the Ease "
+            "of Doing Business and Efficient Government Service Delivery Act of 2018, sets maximum processing "
+            "times of three working days for simple transactions, seven for complex ones and twenty for "
+            "highly technical ones, as summarized by the law firm NDV Law. A report that measures in calendar "
+            "days compares a working-day target with a number that includes weekends.",
+            ("point", "Calendar days", "Every day counts: Saturdays, Sundays and holidays included."),
+            ("point", "Working days", "Monday to Friday, minus the holidays you list."),
+            ("point", "Pick one, and say which", "Label every column and every report line with the kind of "
+             "day it counts."),
+            ("quote", "A Friday-to-Monday release is one working day, not three."),
+            ("h", "The Practice Data"),
+            "In a new sheet, put the application number in column A, the date received in column B and the "
+            "date released in column C, for five rows, A2 to C6. All dates are in January 2027.",
+            ("point", "A-01", "Received Monday, January 4. Released Wednesday, January 6."),
+            ("point", "A-02", "Received Thursday, January 7. Released Tuesday, January 12."),
+            ("point", "A-03", "Received Friday, January 8. Released Monday, January 11."),
+            ("point", "A-04", "Received Wednesday, January 13. Released Wednesday, January 20."),
+            ("point", "A-05", "Received Friday, January 15. Released Tuesday, January 19."),
+            "Type the dates as real dates, such as 2027-01-04, so Sheets stores them as dates and not as "
+            "text. Part 18 showed how to check.",
+            ("h", "Step 1: Calendar Days With DAYS"),
+            ("point", "The formula", "In D2: =DAYS(C2, B2), then copy down. Google’s help describes DAYS as "
+             "returning the number of days between two dates, with the end date first."),
+            ("point", "The results", "2, 5, 3, 7 and 4 days. The total is 21, and the average is 4.2."),
+            ("point", "Simple subtraction works too", "=C2-B2 gives the same answer, since Sheets stores "
+             "dates as numbers. DAYS makes the order of the dates clearer to the next reader."),
+            "These are the numbers that made the office look late. A-02 and A-04 each crossed a weekend, "
+            "and A-03 and A-05 started on a Friday.",
+            ("h", "Step 2: Working Days With NETWORKDAYS"),
+            ("point", "The formula", "In E2: =NETWORKDAYS(B2, C2). Google’s help says it returns the number "
+             "of net working days between two dates, and treats only Saturday and Sunday as the weekend."),
+            ("point", "Both ends are counted", "Google’s page does not say whether the start and end dates "
+             "count. Microsoft’s help for the same function in Excel gives an example: from October 1, 2012 "
+             "to March 1, 2013, it returns 110 working days, which is only possible if both ends are "
+             "counted. Check your own sheet with a test: =NETWORKDAYS of a Monday and the next Monday. If it "
+             "returns 6, both ends are counted."),
+            ("point", "Days taken, not days touched", "Counting both ends means a same-day release shows as "
+             "1. To measure working days after the day of receipt, subtract one: =NETWORKDAYS(B2, C2) - 1."),
+            ("point", "The results", "With the minus one: 2, 3, 1, 5 and 2 working days. The average is 2.6."),
+            "Same applications, same dates. The average fell from 4.2 calendar days to 2.6 working days, "
+            "and only A-04, at 5, missed a three-working-day target.",
+            ("h", "Step 3: Add the Holidays"),
+            "NETWORKDAYS takes an optional third argument: a range of dates to treat as holidays. Google’s "
+            "help says it can be a range or an array of dates.",
+            ("point", "Make a Holidays tab", "One column of dates, one per row, with a second column naming "
+             "each one. For this practice, add Monday, January 18, 2027, as an invented local holiday."),
+            ("point", "The formula", "=NETWORKDAYS(B2, C2, Holidays!A$2:A$20) - 1. The dollar signs keep the "
+             "range fixed when you copy down."),
+            ("point", "What changed", "A-04 drops from 5 to 4 working days, and A-05 from 2 to 1. The other "
+             "three did not cross January 18, so they stay the same."),
+            ("point", "One list for everyone", "Keep a single holiday list for the office, updated when "
+             "holidays are proclaimed, and point every formula to it. Two lists can give two different "
+             "answers."),
+            ("h", "Step 4: Due Dates With WORKDAY"),
+            "Counting backward from a release is half the job. The other half is knowing, on the day an "
+            "application arrives, when it is due.",
+            ("point", "The formula", "=WORKDAY(B2, 3, Holidays!A$2:A$20). Google’s help says WORKDAY "
+             "calculates the end date after a number of working days, and also uses only Saturday and Sunday "
+             "as the weekend."),
+            ("point", "The result for A-04", "Received Wednesday, January 13. Three working days later, "
+             "skipping the weekend and the January 18 holiday, is Tuesday, January 19."),
+            ("point", "Put it in the log", "A due-date column filled in when the application is received "
+             "lets the counter see, each morning, which ones are due today."),
+            ("point", "Other weekends", "Google’s help notes that NETWORKDAYS.INTL and WORKDAY.INTL let you "
+             "choose other weekend days, for an office that also works on Saturdays."),
+            ("h", "Step 5: Months With EDATE and EOMONTH"),
+            "Some deadlines are counted in months, not days.",
+            ("point", "EDATE", "Google’s help says it returns a date a number of months before or after "
+             "another date. =EDATE(DATE(2027,1,15), 3) returns April 15, 2027."),
+            ("point", "EOMONTH", "It returns the last day of a month a number of months before or after a "
+             "date. =EOMONTH(DATE(2027,1,15), 0) returns January 31, 2027, and with 2 instead of 0, March 31, "
+             "2027: the end of the first quarter."),
+            ("point", "A use in the treasury", "Monthly reports due on the last day of the month, quarter-end "
+             "cutoffs for a summary, or a follow-up letter three months after a notice."),
+            ("h", "Step 6: Days Late"),
+            "For a payment, the question is how many days after the due date it came in.",
+            ("point", "The formula", "=MAX(0, DAYS(paid_date, due_date)). A payment on or before the due "
+             "date returns 0, not a negative number."),
+            ("point", "An example", "Due January 20, 2027, paid February 8, 2027: =DAYS(DATE(2027,2,8), "
+             "DATE(2027,1,20)) returns 19 calendar days."),
+            ("point", "Follow the rule that applies", "Whether lateness is counted in days, working days or "
+             "months depends on the ordinance or rule behind the charge. The formula should follow that rule, "
+             "not the other way around."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Comparing calendar days with a working-day target", "Use NETWORKDAYS for working-day targets."),
+            ("point", "Forgetting that both ends count", "Subtract one when you mean days after receipt."),
+            ("point", "Each person keeping their own holiday list", "One list, one range, every formula."),
+            ("point", "Dates stored as text", "Check before you count, or the formulas return errors or wrong numbers."),
+            ("h", "Key Takeaways"),
+            ("point", "DAYS", "Calendar days between two dates, end date first."),
+            ("point", "NETWORKDAYS", "Working days, counting both ends, with an optional holiday list."),
+            ("point", "WORKDAY", "The due date a number of working days ahead."),
+            ("point", "EDATE and EOMONTH", "Dates a number of months away, and month-ends."),
+            ("h", "Your Part 29 Exercise"),
+            "Type the five practice applications into a new sheet.",
+            ("point", "Count both ways", "Add a DAYS column and a NETWORKDAYS minus one column, and compare "
+             "the averages."),
+            ("point", "Add a holiday", "Make a Holidays tab, add one date inside the range, and watch which "
+             "rows change."),
+            ("point", "Add due dates", "Use WORKDAY to compute a three-working-day due date for each one, and "
+             "mark the ones released after it."),
+            "Then take one real log from your office, and ask which kind of day its target is written in. "
+            "If the report and the target use different days, fix the report first.",
+            "The clerk rebuilt the column with NETWORKDAYS and the office holiday list, and labeled it "
+            "“Working days after receipt.” The quarterly report showed an average of 2.6, one application "
+            "over target, and the reason for it. The head of office asked for the same column on every log "
+            "from then on.",
+            ("cta", "Read: Data Analytics Series, Part 18: Taming Text and Dates, Names, Pesos and Day-Month Puzzles", "/blog/data-analytics-part-18-text-and-dates/"),
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Is your office’s service target written in calendar days or working days, and does the report match it?"),
+        ],
+    },
+    {
         "date": "March 27, 2027",
         "title": "Data Analytics Series, Part 28: SQL Joins, Finding Who Is Missing and Why Totals Double",
         "slug": "data-analytics-part-28-sql-joins",
