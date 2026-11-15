@@ -13,6 +13,136 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "January 15, 2027",
+        "title": "Business Intelligence Series, Part 14: The Date Table, a Calendar Your Dashboard Can Count On",
+        "slug": "business-intelligence-part-14-the-date-table",
+        "category": "bi",
+        "summary": "Treasury reports are organized by day, month and quarter, and dates are where a BI view "
+                   "can go quietly wrong. This part explains the date table: one row per day, the columns it needs, "
+                   "how to build one in a spreadsheet, and how it fixes missing days, odd sorting and unfair "
+                   "comparisons.",
+        "publish_on": "2027-01-15 21:00",
+        "body": [
+            "The analyst builds a chart of daily collections for the month. It looks fine until the head of "
+            "office asks why the line jumps straight from Friday to Monday, as if the weekend never happened. "
+            "Then someone sorts the monthly totals and gets April, August, December, February. And when the "
+            "office compares this January with last January, nobody is sure whether both months had the same "
+            "number of working days.",
+            "None of these is a problem with the collections. Each one is a problem with the dates.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 5 introduced facts and dimensions. This part builds a dimension that treasury "
+            "models rely on: the date table. By the end of this post you will know what a date table is, which "
+            "columns to put in it, how to build one in a spreadsheet, and how it fixes gaps, sorting and "
+            "comparisons.",
+            ("photo", "blog/bi-date-table.jpg", "A date table gives every day one row and answers the "
+             "calendar questions once: which year, which month, which kind of day and which period. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Date Table Is"),
+            "A date table is a list with one row for every day in the period you report on, including days "
+            "when nothing happened. Each row holds the date itself and facts about that date: its year, its "
+            "month, its day of the week, whether the office was open.",
+            "The receipts table, which Part 5 called the fact table, records what happened. The date table "
+            "describes when. The two are linked by the date: each receipt’s date matches one row in the date "
+            "table.",
+            ("quote", "Record the calendar once, and every chart can use it."),
+            ("h", "Why the Receipts Alone Are Not Enough"),
+            ("point", "Missing days", "The receipts table has rows only for days with collections. A chart "
+             "built from it skips weekends and holidays, which can hide the fact that nothing was collected. "
+             "A date table has every day, so a day with no collections can show as zero."),
+            ("point", "Sorting by name", "Month names sort alphabetically: April, August, December. A month "
+             "number column keeps them in calendar order."),
+            ("point", "Fair comparisons", "Two months can have different numbers of working days. Without a "
+             "working day column, a month with more holidays can look like a month with weaker collections."),
+            ("point", "One definition", "When every view reads its year, quarter and month from the same "
+             "table, two dashboards cannot disagree about which quarter a day belongs to."),
+            ("h", "The Columns a Treasury Date Table Needs"),
+            ("point", "Date", "The key. One row per day, no gaps, no repeats."),
+            ("point", "Year, quarter, month number, month name", "For grouping and for sorting in the right "
+             "order."),
+            ("point", "Day of week", "Monday to Sunday, to compare like with like."),
+            ("point", "Working day", "Yes or No. No for weekends and for the days the office was closed."),
+            ("point", "Holiday name", "Blank on ordinary days. The list of holidays for each year is "
+             "announced by presidential proclamation, and further non-working days can be declared during the year, so "
+             "this column needs updating as announcements come out."),
+            ("point", "Tax period", "Which payment period the day falls in. For example, the Local Government "
+             "Code allows real property tax to be paid in four installments due on or before March 31, June "
+             "30, September 30 and December 31, so a column can mark which installment period each day "
+             "belongs to."),
+            "Add other columns only when a report needs them, such as a week number or a flag for the days of "
+            "a special collection drive.",
+            ("h", "Building One in a Spreadsheet"),
+            "A date table can be built in Google Sheets or Excel in a few minutes.",
+            ("point", "1. The dates", "Type the first date of the period, such as January 1, 2026, in the "
+             "first cell under a Date header. In the next cell, add 1 to the cell above, and fill down until "
+             "the last day you need."),
+            ("point", "2. Year and month", "Use YEAR() and MONTH() on the date for the year and the month "
+             "number."),
+            ("point", "3. Month and day names", "Use TEXT() with a format such as \"mmmm\" for the month name "
+             "and \"dddd\" for the day name."),
+            ("point", "4. Quarter", "Divide the month number by 3 and round up: ROUNDUP(MONTH(A2)/3, 0) gives "
+             "1 to 4."),
+            ("point", "5. Holidays and working days", "Keep a small Holidays sheet with each holiday’s date "
+             "and name. Look each date up in it, and mark a day as a working day only if it is not a weekend "
+             "and not on the holidays list."),
+            ("point", "6. Check it", "The number of rows should equal the number of days in the period: 365, "
+             "or 366 in a leap year. No date should appear twice."),
+            ("h", "Using It in a Dashboard"),
+            ("point", "Link by date", "In the BI tool, connect the receipts to the date table on the date "
+             "field, so each receipt picks up its year, month and working day."),
+            ("point", "Group from the date table", "Build charts using the date table’s month and quarter, not "
+             "fields calculated separately in each chart."),
+            ("point", "Show zeros", "Where the tool allows it, include days with no receipts so the reader can "
+             "see the gaps instead of a line that skips them."),
+            ("point", "Compare per working day", "Divide collections by the number of working days for a fair "
+             "month-to-month comparison."),
+            ("h", "The January Comparison, Done Fairly"),
+            "Back to the question from the start. Suppose the date table shows that this "
+            "January had 19 working days and last January had 21, because of where the weekends and holidays "
+            "fell. Total "
+            "collections were ₱9.5 million this year against ₱10.0 million last year, which looked like a 5% "
+            "drop.",
+            "Per working day, the picture changes: ₱500,000 a day this year against about ₱476,000 a day last "
+            "year, an increase of about 5%. The office was not collecting less. It had two fewer days to "
+            "collect in. Both figures go in the report, with the working days beside them, so the reader can "
+            "see why they differ.",
+            ("h", "Test Before You Share"),
+            ("point", "Count the rows", "One row per day, with no gaps and no repeats."),
+            ("point", "Spot-check the holidays", "Pick three holidays and check that each is marked as a "
+             "non-working day with the right name."),
+            ("point", "Match the totals", "Total collections grouped by the date table’s months must equal the "
+             "total from the receipts. If they do not, some receipts have dates outside the table."),
+            ("point", "Check the sorting", "Months should appear January to December, not alphabetically."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Dates stored as text", "A date typed as text may not match the date table. Part 10 of "
+             "the Data Analytics series shows how to spot it."),
+            ("point", "A table that ends too soon", "Extend the date table before the new year starts, or "
+             "January’s receipts will have nowhere to link."),
+            ("point", "Holidays never updated", "Add newly declared non-working days as soon as they are "
+             "announced."),
+            ("point", "Each chart with its own calendar", "Calculate months and quarters once, in the date "
+             "table, not in every chart."),
+            ("h", "Key Takeaways"),
+            ("point", "One row per day", "Including days when nothing happened."),
+            ("point", "The right columns", "Year, quarter, month, day, working day, holiday and tax period."),
+            ("point", "Built once, used everywhere", "Every view reads its calendar from the same table."),
+            ("point", "Fair comparisons", "Compare per working day when the number of days differs."),
+            ("h", "Your Part 14 Exercise"),
+            "Build a date table for the current year in a spreadsheet.",
+            ("point", "Fill the columns", "Date, year, quarter, month number, month name, day name and working "
+             "day."),
+            ("point", "Add the holidays", "List this year’s holidays on their own sheet and link them."),
+            ("point", "Count", "Find how many working days each month of the year has."),
+            "Then take last month’s collections and divide by its working days. Compare the result with the "
+            "same month last year, worked out the same way.",
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Business Intelligence Series, Part 13", "/blog/business-intelligence-part-13-filters-and-drill-down/"),
+            ("cta", "Read: Business Intelligence Series, Part 9", "/blog/business-intelligence-part-9-testing-the-pipeline/"),
+            ("cta", "Read: Data Analytics Series, Part 10", "/blog/data-analytics-part-10-data-types-and-table-shapes/"),
+            ("ask", "How many working days did your office have last month, and does your report say so?"),
+        ],
+    },
+    {
         "date": "January 10, 2027",
         "title": "Business Intelligence Series, Part 13: Filters and Drill-Down, Letting Readers Ask the Next Question",
         "slug": "business-intelligence-part-13-filters-and-drill-down",
