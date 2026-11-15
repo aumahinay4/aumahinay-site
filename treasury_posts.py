@@ -7,6 +7,127 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 4: Selling Land? Meet the Transfer Tax",
+        "date": "January 4, 2027",
+        "publish_on": "2027-01-04 21:00",
+        "slug": "selling-land-transfer-tax",
+        "category": "finance",
+        "summary": "Before a sale or donation of land can be registered, a local tax must be paid at the treasury. Here is what the tax on transfer of real property is, who must pay it, how "
+                   "it is computed, the 60-day clock, and why the Register of Deeds will not move without "
+                   "the receipt.",
+        "body": [
+            "A retired teacher came to the treasury window with a brown envelope and a question. Months "
+            "earlier, she had sold a small lot to a neighbor. The deed was signed and notarized, the money "
+            "was paid, and everyone shook hands. Now the buyer was at the Register of Deeds, and the clerk "
+            "there had sent him back. “They need proof that the transfer tax was paid,” she said. “What "
+            "transfer tax?”",
+            "(As in every part of this series, the case is a composite. No real person, property or amount "
+            "is described.)",
+            "A land sale can be done in good faith, with a notarized deed, and still stall at this step: a local tax that one of the parties did not know about. "
+            "By the end of this post, you will know what the tax on transfer of real property ownership is, "
+            "who the law says must pay it, how to compute it, how long you have, what being late costs, and "
+            "what to bring to the window.",
+            ("photo", "blog/finance-transfer-tax.jpg", "The transfer tax: who pays, how much, within 60 days, "
+             "and the receipt the Register of Deeds needs. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What the Law Says"),
+            "The tax comes from Section 135 of the Local Government Code. It allows a province to impose a "
+            "tax on the sale, donation, barter or any other way of transferring ownership or title of real "
+            "property.",
+            ("point", "Who levies it", "It is a provincial tax. For land in a municipality, it belongs to "
+             "the province. A city may levy it itself, and under Section 151 a city’s rate may be up to 50% "
+             "higher than the provincial limit."),
+            ("point", "The rate", "At most 50% of 1% of the total consideration, or of the fair market "
+             "value when the money involved is not substantial, whichever is higher. In a city, the limit "
+             "is up to 0.75%."),
+            ("point", "The exemption", "Section 135 exempts transfers made under the Comprehensive Agrarian "
+             "Reform Law, Republic Act No. 6657."),
+            "Each province or city sets its actual rate in its own revenue code, so the limit in the Code is "
+            "a ceiling, not a guarantee of what your bill will be.",
+            ("h", "Who Must Pay"),
+            "Section 135 names the person responsible: the seller, donor, transferor, executor or "
+            "administrator. In our case, that is the retired teacher, not her neighbor.",
+            "Buyers and sellers can agree between themselves that the buyer will shoulder the tax, and some "
+            "deeds say so. That agreement settles who hands over the money. It does not change the fact that "
+            "the title will not move until the tax is paid, which is why the buyer was the one sent back.",
+            ("quote", "The deed changes hands in a day. The title changes hands only after the taxes are paid."),
+            ("h", "How Much: Two Examples"),
+            "Here is how the tax looks at the maximum provincial rate. Your province’s revenue code may set "
+            "a lower one.",
+            ("point", "A sale for ₱1,200,000", "The fair market value on the tax declaration is ₱1,000,000. "
+             "The price is higher, so the tax is computed on the price: 0.5% × ₱1,200,000 = ₱6,000."),
+            ("point", "A donation to a daughter", "No money changes hands, so the fair market value is used: "
+             "0.5% × ₱1,000,000 = ₱5,000."),
+            ("point", "The same sale in a city", "At the city limit of 0.75%, the tax on ₱1,200,000 could "
+             "reach ₱9,000."),
+            "The study note on sources of local revenue shows where this tax sits among the other taxes a "
+            "province, city and municipality may levy.",
+            ("cta", "Read the study note: Sources of local revenue", "/study-notes/sources-of-local-revenue/"),
+            ("h", "The 60-Day Clock"),
+            "Section 135 says the tax must be paid within 60 days from the date the deed was executed, or, "
+            "when the transfer comes from a death, from the date of death.",
+            "Sixty days is about two months, and it starts on the day the deed is signed, not on the day "
+            "anyone remembers the tax. In our case, the teacher signed in early March and came to the window in October, about five months after the deadline.",
+            ("h", "What Being Late Costs"),
+            "Section 168 of the Code allows a surcharge of up to 25% of the unpaid tax, plus interest of up to "
+            "2% a month on the unpaid tax and surcharge, for no more than 36 months. The province’s revenue "
+            "code sets the actual rates.",
+            ("point", "The tax", "₱6,000 on the ₱1,200,000 sale."),
+            ("point", "The surcharge", "Up to 25% × ₱6,000 = ₱1,500."),
+            ("point", "Interest", "Up to 2% a month on ₱7,500, or up to ₱150 for each month late."),
+            "Five months late, the bill could reach ₱6,000 + ₱1,500 + ₱750 = ₱8,250 at the maximum rates. "
+            "Paid on time, it would have been ₱6,000.",
+            ("h", "Why the Register of Deeds Sent the Buyer Back"),
+            "Section 135 makes payment a condition for the next steps. The Register of Deeds may not register "
+            "the deed until the provincial or city treasurer has certified that the tax was paid. The "
+            "assessor applies the same rule before cancelling the old tax declaration and issuing a new one "
+            "in the buyer’s name.",
+            "That is why an unpaid transfer tax quietly blocks everything. The buyer cannot get a title in "
+            "his name, cannot declare the property for real property tax under his name, and may find it "
+            "hard to sell or mortgage the land later.",
+            ("h", "The Notary’s Part"),
+            "The same section gives notaries public a duty too. A notary who notarizes a deed transferring "
+            "real property must give a copy to the provincial treasurer, or the city treasurer, within 30 "
+            "days. This lets the treasury know a transfer happened, even when the parties forget to come in.",
+            ("h", "What to Bring"),
+            "Each treasury sets its own list, so call first. Expect to be asked for these:",
+            ("point", "The notarized deed", "The deed of sale, donation or exchange, with copies."),
+            ("point", "The latest tax declaration", "It shows the property’s fair market value and the "
+             "assessed owner."),
+            ("point", "Proof that real property tax is paid", "Some offices ask for a certificate or the latest official receipt to show the property has no unpaid tax."),
+            ("point", "IDs of the parties", "And, for an estate, the papers showing who represents it."),
+            "National taxes are a separate track. The Bureau of Internal Revenue handles its own taxes on the "
+            "transfer and issues a Certificate Authorizing Registration. Ask the BIR office that covers the "
+            "property what it requires.",
+            ("h", "For Treasury Workers"),
+            "The transfer tax is easy to collect and easy to miss. Three habits help.",
+            ("point", "Use the notaries’ copies", "Match the deeds notaries send in against the payments "
+             "received. A deed with no payment after 60 days is a reminder letter waiting to be written."),
+            ("point", "Check the base", "Compare the price in the deed with the fair market value on the tax "
+             "declaration, and apply the rule in the revenue code consistently."),
+            ("point", "Explain the deadline at the counter", "A taxpayer who learns about the 60 days on day "
+             "59 is grateful. One who learns on day 150 is not."),
+            ("h", "The Teacher’s Lot"),
+            "The teacher paid the tax with the surcharge and interest, and the buyer finally registered the "
+            "deed. On her way out, she asked the clerk to write the 60-day rule on the back of her receipt. "
+            "“My brother is selling his lot next year,” she said. “He will not wait five months.”",
+            ("h", "Key Takeaways"),
+            ("point", "It is a provincial or city tax", "Up to 0.5% in a province, up to 0.75% in a city, on "
+             "the higher of the price or fair market value."),
+            ("point", "The law names the seller", "Or the donor, transferor, executor or administrator, whatever the parties agree between themselves."),
+            ("point", "Sixty days", "From the signing of the deed, or from the date of death."),
+            ("point", "No receipt, no transfer", "The Register of Deeds and the assessor need proof of "
+             "payment first."),
+            ("h", "The Question to Ask"),
+            "If you have signed a deed in the last two months, has the transfer tax been paid? If you work in "
+            "a treasury, ask your office: do we follow up the deeds the notaries send us?",
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula", "/blog/the-cedula-explained/"),
+            ("ask", "Have you ever had a land transfer stall at the Register of Deeds? I'd like to hear what held it up."),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 3: The Cedula, a Spanish-Era Tax That Never Left",
         "date": "December 30, 2026",
         "publish_on": "2026-12-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
