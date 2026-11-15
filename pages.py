@@ -806,12 +806,17 @@ def ph_today():
 
 
 def nice_date(iso):
-    d = datetime.strptime(iso, "%Y-%m-%d")
+    d = datetime.strptime(iso[:10], "%Y-%m-%d")
     return f"{d:%B} {d.day}, {d.year}"
 
 
 def lesson_is_live(x):
-    return "publish_on" not in x or (x["publish_on"] is not None and x["publish_on"] <= ph_today())
+    """Live from midnight PH for a date ("2026-11-14"), or from that minute for a date and time
+    ("2026-11-21 21:00"); scheduled lessons go live at 9 pm PH like every other scheduled post."""
+    if "publish_on" not in x:
+        return True
+    day = x["publish_on"]
+    return day is not None and day <= (datetime.now(PH).strftime("%Y-%m-%d %H:%M") if len(day) > 10 else ph_today())
 
 
 # preview.py sets SHOW_SCHEDULED so lessons can be reviewed before their date,

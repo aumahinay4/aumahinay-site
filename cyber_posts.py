@@ -9,6 +9,1520 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "March 4, 2027",
+        "title": "Cybersecurity Series, Part 24: QR Code Scams, When a Square of Dots Sends You the Wrong Way",
+        "slug": "cybersecurity-part-24-qr-code-scams",
+        "category": "security",
+        "summary": "A QR code hides where it leads, which is why scammers like it. Here is how QR code scams work, "
+                   "from stickers pasted over a store’s payment code to fake delivery messages, and the habits "
+                   "that keep a quick scan from becoming a costly one.",
+        "publish_on": "2027-03-04 21:00",
+        "body": [
+            "A small eatery near the town plaza accepted payments by QR code. A printed code stood on the "
+            "counter in a little acrylic stand. For two days, customers scanned it, paid and left. On the "
+            "third day, the owner checked her e-wallet and found that the money from those two days had "
+            "never arrived. Someone had pasted a new sticker over her code. The customers had paid a "
+            "stranger.",
+            "(This story is fictional. The eatery, its owner and its customers are made up.)",
+            "QR codes are convenient because they hide a long address or an account number behind a square "
+            "of dots. That same hiding is what makes them useful to scammers. Read to the end and you will "
+            "know how QR code scams work, the warnings issued by the FBI, the U.S. Federal Trade Commission "
+            "and the Bangko Sentral ng Pilipinas, how to check a code before you trust it, and what a "
+            "business can do to protect the code its customers pay with.",
+            ("photo", "blog/cyber-qr.jpg", "QR code scams: look for stickers, preview the address, check the "
+             "name before you pay, and use the official app. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Why QR Codes Are Easy to Abuse"),
+            "A person can read a web address and notice a strange spelling. Nobody can read a QR code by "
+            "looking at it. The Bangko Sentral ng Pilipinas made this point in April 2026, when a BSP officer "
+            "explained “quishing,” the use of malicious QR codes to trick people into visiting fake websites. "
+            "The code hides the real address, so a user may not be able to tell a harmful link from a real "
+            "one until after scanning.",
+            ("quote", "A QR code is a closed envelope. Look inside before you act on it."),
+            ("h", "The Main Tricks"),
+            ("point", "A sticker over the real code", "The FBI warned in January 2022, in public service "
+             "announcement I-011822-PSA, that criminals tamper with physical QR codes and replace legitimate "
+             "ones with their own, redirecting payments meant for a business. The BSP described the same "
+             "trick: scammers paste their own codes over legitimate merchant codes."),
+            ("point", "A fake website", "A code can open a lookalike site that asks for a login or card "
+             "details. Anything you type there goes to the criminal."),
+            ("point", "A message with a reason to scan", "The FTC’s December 2023 alert describes codes sent by "
+             "text or email with a made-up reason: a package that could not be delivered, a problem with "
+             "your account, or suspicious activity that requires a password change. The urgency is meant to "
+             "make you scan without thinking."),
+            ("point", "A code that installs an app", "The FBI advises against downloading an app from a QR "
+             "code. Apps should come from your phone’s official app store."),
+            ("h", "Before You Scan"),
+            ("point", "Look at the code itself", "Is it a sticker on top of another code? Is the edge raised, "
+             "or does it look newer than the sign around it? The FBI suggests checking physical codes for "
+             "tampering, such as a sticker placed over the original."),
+            ("point", "Ask whether you expected it", "A QR code in an unexpected message, especially one "
+             "that pushes you to act fast, deserves suspicion. The FTC’s advice: if you think it might be "
+             "real, contact the company through a phone number or website you already know."),
+            ("point", "Use your phone’s own camera", "The FBI suggests avoiding third-party QR scanner apps, "
+             "since many phone cameras already have a built-in scanner."),
+            ("h", "After You Scan, Before You Tap"),
+            ("point", "Read the address", "When the camera shows the link, read it before opening it. Look for "
+             "misspellings or swapped letters, and read the domain from the right, as Part 15 showed."),
+            ("point", "Do not log in from a scanned link", "If the page asks for your bank or e-wallet "
+             "password, close it and open the official app or a bookmark instead."),
+            ("point", "Read the name before you pay", "When a payment code opens your e-wallet or bank app, "
+             "look at the recipient name the app shows before you confirm. If it is not the store or person "
+             "you meant to pay, stop."),
+            ("h", "QR Codes in Work Email"),
+            "An email at work that asks you to scan a QR code to keep your account active, sign a document "
+            "or see a payroll notice deserves the same care as any other link. Scanning moves the link from "
+            "your office computer to your phone, where the small screen makes the address harder to read. "
+            "Ask your office’s IT contact or the sender, through a channel you already know, before you scan. "
+            "Part 19 covered how fake senders work.",
+            ("h", "QR Ph and Paying in Stores"),
+            "In the Philippines, QR payments run on QR Ph, the national QR code standard adopted under BSP "
+            "Circular No. 1055 in 2019. The BSP required its supervised payment service providers to use and "
+            "display QR Ph on their internet and mobile channels starting July 1, 2023, so one code can be "
+            "paid from different banks and e-wallets. That convenience works for honest stores and for "
+            "anyone who pastes a fake code, which is why the name check matters.",
+            ("h", "For Store Owners and Offices That Accept QR Payments"),
+            ("point", "Keep the code where you can see it", "Behind the counter or under a clear, fixed cover "
+             "is harder to tamper with than a loose card on a table."),
+            ("point", "Check it every morning", "Scan your own code and confirm that your business name "
+             "appears. It takes ten seconds."),
+            ("point", "Watch your incoming payments", "A busy day with no money arriving is the warning sign. "
+             "Turn on payment notifications."),
+            ("point", "Tell customers what name to expect", "A small line under the code, such as “Pay to: "
+             "the store’s registered name,” helps customers catch a swap."),
+            ("h", "For Treasury Workers"),
+            "If your local government accepts payments through a QR code, treat the printed "
+            "code like an accountable form: know where every copy is posted, check them on a schedule, and "
+            "make sure the official name shown in the payment app matches the local government’s account. "
+            "Payments made to a fake code do not reach the treasury, and the taxpayer will rightly ask why "
+            "their payment is missing.",
+            ("h", "If You Paid the Wrong Code"),
+            ("point", "Call your bank or e-wallet at once", "Use the hotline in the official app. Report the "
+             "transaction and the recipient’s details."),
+            ("point", "Tell the store", "They need to remove the fake code before others pay it."),
+            ("point", "Report it", "Part 13 listed where to report scams in the Philippines, including the "
+             "1326 hotline of the Cybercrime Investigation and Coordinating Center."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting a code because it is in a real store", "A sticker can be added by anyone."),
+            ("point", "Opening links without reading them", "Preview the address first."),
+            ("point", "Logging in from a scanned link", "Use the official app."),
+            ("point", "Confirming payment without reading the name", "Check the recipient every time."),
+            ("h", "Key Takeaways"),
+            ("point", "QR codes hide their destination", "That is why scammers use them."),
+            ("point", "Look, preview, check the name", "Three habits that stop the tricks above."),
+            ("point", "Unexpected codes deserve suspicion", "Especially those that come with urgency."),
+            ("point", "Businesses should guard their codes", "Check them daily and watch incoming payments."),
+            ("h", "Your Part 24 Action Plan"),
+            ("point", "Today", "Next time you pay by QR, read the recipient name before you confirm."),
+            ("point", "This week", "If you run a store or a payment counter, scan your own code and check the "
+             "name that appears."),
+            ("point", "This month", "Tell an older relative about sticker scams and the name check."),
+            "The eatery owner reported the fake code to her e-wallet provider and the police, and moved her "
+            "real code behind the counter, inside a frame screwed to the wall. Under it she added a line in "
+            "marker: “The name should say Aling Rosa’s Eatery.” Her regular customers started reading it out "
+            "loud before every payment, half as a joke and half as a habit.",
+            ("cta", "Read: Cybersecurity Series, Part 23: Your Yearly Security Checkup, One Afternoon, Twelve Checks", "/blog/cybersecurity-part-23-yearly-security-checkup/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("ask", "Have you ever checked the name before paying by QR code? Has a code ever surprised you?"),
+        ],
+    },
+    {
+        "date": "February 27, 2027",
+        "title": "Cybersecurity Series, Part 23: Your Yearly Security Checkup, One Afternoon, Twelve Checks",
+        "slug": "cybersecurity-part-23-yearly-security-checkup",
+        "category": "security",
+        "summary": "Security habits fade unless someone checks them. Here is a yearly checkup you can finish in "
+                   "one afternoon: twelve checks covering accounts, devices, money, files and family, each "
+                   "linked to the part of this series that explains it.",
+        "publish_on": "2027-02-27 21:00",
+        "body": [
+            "Every year, a retired teacher brings her car in for a tune-up before the long drive to her "
+            "province for the holidays. The mechanic checks the brakes, the tires and the oil, even when "
+            "nothing seems wrong. This year, her nephew asked her a question she had never considered: when "
+            "was the last time anyone checked her phone, her email and her bank apps the same way?",
+            "(The teacher and her nephew are fictional, as is everything else in this story.)",
+            "Security is not something you set up once. Passwords age, apps pile up, old shares stay open and "
+            "new scams arrive. By the end of this post, you will have a yearly checkup you can finish in one "
+            "afternoon: twelve checks, grouped by area, each pointing to the part of this series that explains "
+            "it in full.",
+            ("photo", "blog/cyber-checkup.jpg", "The yearly security checkup: accounts, devices, money and "
+             "files, and the people you protect. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Before You Start"),
+            "Pick a date you will remember. You could tie it to a birthday, the start of the school year or the week you file your taxes. Block two to three hours, sit with your phone and computer, and "
+            "keep a notebook nearby to write down what you changed. The notebook matters: next year, it tells "
+            "you where you left off.",
+            ("quote", "A checkup finds the small problem before it becomes the big one."),
+            ("h", "Part One: Your Accounts"),
+            ("point", "Check 1: Your email account", "Your email unlocks your other accounts, because password resets go there. Confirm it has two-factor authentication, that the recovery phone "
+             "number and recovery email are current, and that no forwarding rule sends your mail elsewhere. "
+             "Parts 2 and 19 cover this."),
+            ("point", "Check 2: Your passwords", "Open your password manager, or your list, and look for "
+             "passwords used on more than one site and accounts you no longer use. Change the reused ones and "
+             "close the accounts you do not need. Part 2 explains password managers and passkeys."),
+            ("point", "Check 3: Your social media", "Look at the list of devices where you are logged in and "
+             "sign out of any you do not recognize. Make sure your recovery codes are saved somewhere safe. "
+             "Part 14 walks through it."),
+            ("h", "Part Two: Your Devices"),
+            ("point", "Check 4: Updates", "On every phone, tablet and computer, check for system updates and "
+             "app updates, and turn on automatic updates where you can. Ask whether each device still gets "
+             "security updates at all. Part 11 explains why this matters."),
+            ("point", "Check 5: Your phone", "Confirm the screen lock is on, that one-time codes do not show "
+             "on the lock screen, and that remote locking and erasing is set up and works. Part 12 has the "
+             "steps."),
+            ("point", "Check 6: Your home router", "Make sure the router’s admin password is not the default "
+             "one, that its software is up to date, and that your Wi-Fi uses WPA3 or WPA2 with a strong password. Part 4 covers the router."),
+            ("point", "Check 7: Encryption", "Confirm that your phone and laptop are encrypted, and that any "
+             "USB drive with personal records is too. Part 17 shows how to check."),
+            ("h", "Part Three: Your Money and Your Files"),
+            ("point", "Check 8: Bank and e-wallet apps", "Delete banking and e-wallet apps you no longer use, "
+             "review transaction alerts, and confirm that your registered mobile number and email are "
+             "current. Part 13 covers e-wallet safety and the anti-scam law."),
+            ("point", "Check 9: Backups", "Pick one important file and actually restore it from your backup. "
+             "A backup you have never tested is only a hope. Part 5 explains the 3-2-1 approach."),
+            ("point", "Check 10: Shared files", "Open your cloud drive and review what is shared, especially "
+             "anything open to anyone with the link. Remove people who no longer need access. Part 21 has the "
+             "details."),
+            ("h", "Part Four: The People You Protect"),
+            ("point", "Check 11: Your family", "Sit with an elderly parent or a young relative for twenty "
+             "minutes. Check their phone lock and their e-wallet settings, and remind them about voice-clone "
+             "and fake-website scams. Agree on a family code word if you have not yet. Parts 15 and 22 "
+             "explain these scams."),
+            ("point", "Check 12: Your emergency plan", "Write down, on paper, what you would do in the first "
+             "hour if your phone were stolen or an account taken over: which bank hotline to call, how to "
+             "lock the phone remotely, and where to report. Part 9 covers incident response, including the "
+             "Cybercrime Investigation and Coordinating Center’s hotline, 1326."),
+            ("h", "For Small Offices"),
+            "An office can run the same checkup once a year for its shared accounts and devices. Part 18 "
+            "gave a one-page baseline for a small office. Use it as the checklist, mark each item done or "
+            "not done, and assign a name and a date to every item that is not. Repeat the review of who has "
+            "access to shared drives and systems, and remove accounts for staff who have left or moved.",
+            ("h", "How Long It Really Takes"),
+            "The first checkup is the slowest, because you are finding things for the first time: old "
+            "accounts, forgotten shares, apps you never open. Write down what you found. In the second year, "
+            "you start from your notes, and the checks go faster.",
+            ("h", "What to Do With What You Find"),
+            ("point", "Fix the quick things on the spot", "Turning on an update or deleting an old app takes "
+             "a minute."),
+            ("point", "Schedule the bigger things", "Setting up a password manager or a backup can take an "
+             "evening. Put it on your calendar for the next week."),
+            ("point", "Ask for help without embarrassment", "If something is confusing, ask someone you trust "
+             "to sit with you. Security is easier with two people."),
+            ("h", "When Not to Wait a Year"),
+            "Some events call for a checkup right away, whatever the calendar says.",
+            ("point", "A lost or stolen device", "Run Checks 1, 3, 5 and 8 the same day."),
+            ("point", "A notice that your data was leaked", "Change that password and any place you reused it, "
+             "then run Check 2."),
+            ("point", "A new phone or computer", "Run Checks 4, 5 and 7 before you move your accounts to it."),
+            ("point", "A scam attempt in the family", "Run Check 11 with everyone, while the story is fresh."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Doing it once and forgetting", "Set the date for next year before you finish."),
+            ("point", "Skipping the backup test", "A backup is only proven when a file comes back."),
+            ("point", "Checking your own devices but not your family’s", "A scammer needs only one person in the family to believe them."),
+            ("point", "Trying to fix everything in one sitting", "Fix the quick things, schedule the rest."),
+            ("h", "Key Takeaways"),
+            ("point", "Security needs a yearly review", "Settings drift and new risks appear."),
+            ("point", "Twelve checks cover the basics", "Accounts, devices, money, files and family."),
+            ("point", "A notebook makes next year easier", "Write down what you changed."),
+            ("point", "Help the people around you", "Their safety is part of yours."),
+            ("h", "Your Part 23 Action Plan"),
+            ("point", "Today", "Choose the date of your yearly checkup and put it in your calendar, with a "
+             "reminder."),
+            ("point", "This week", "Do Check 1, your email account. It protects your other accounts."),
+            ("point", "This month", "Finish all twelve checks, and write down what you changed."),
+            "The teacher and her nephew spent a Saturday afternoon on the twelve checks. They found an old "
+            "online shopping account with a reused password, a backup that had stopped running months "
+            "earlier, and a family group chat that had never heard of voice clones. By dinner, everything was "
+            "fixed or scheduled, and she had written a date on the first page of a new notebook: the same "
+            "Saturday, next year.",
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 22: Deepfakes and Cloned Voices, When Seeing and Hearing Is Not Enough", "/blog/cybersecurity-part-22-deepfakes-and-voice-clones/"),
+            ("cta", "Read: Cybersecurity Series, Part 5: Inside a Ransomware Attack", "/blog/cybersecurity-part-5-ransomware/"),
+            ("ask", "When did you last check your accounts and devices? Which of the twelve checks will you do first?"),
+        ],
+    },
+    {
+        "date": "February 22, 2027",
+        "title": "Cybersecurity Series, Part 22: Deepfakes and Cloned Voices, When Seeing and Hearing Is Not Enough",
+        "slug": "cybersecurity-part-22-deepfakes-and-voice-clones",
+        "category": "security",
+        "summary": "A familiar face on a video call or a familiar voice on the phone can now be faked. Here is "
+                   "how deepfake and voice-clone scams work, a real case that cost a company about US$25 "
+                   "million, and the simple checks that still work.",
+        "publish_on": "2027-02-22 21:00",
+        "body": [
+            "The phone rang just after dinner. The voice on the line belonged to a woman’s son, who was "
+            "working in another city. He was crying. He said he had been in an accident, that the other "
+            "driver was hurt, and that he needed money for a settlement tonight or he would be detained. He "
+            "begged her not to tell his father. Then another man came on the line and gave her an e-wallet "
+            "number.",
+            "(Everyone and everything in this story is fictional, including the numbers.)",
+            "Scammers no longer need to sound like strangers. With recordings of a person’s voice or a few photos, software can imitate a person well enough to fool someone who loves them. By the last "
+            "section, you will know what deepfakes and voice clones are, how scammers use them, what "
+            "happened in a real case that cost a company about US$25 million, and the checks that still work "
+            "when your eyes and ears cannot be trusted.",
+            ("photo", "blog/cyber-deepfakes.jpg", "Deepfakes and voice clones: pause, call back on a number "
+             "you know, ask a question only the real person can answer, and verify any payment. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Deepfake Is"),
+            "A deepfake is a video, image or audio recording made or changed by software to show a person "
+            "saying or doing something they never said or did. A voice clone is the audio version: software "
+            "that learns how a person sounds and then speaks any words in that voice.",
+            "These tools have legitimate uses, such as dubbing films or giving a voice back to someone who "
+            "has lost theirs. The same tools can also be used to impersonate a boss, a parent or a child.",
+            ("quote", "The face and the voice can be borrowed. The callback number cannot."),
+            ("h", "A Real Case: The Video Call That Cost About US$25 Million"),
+            "In January 2024, the engineering firm Arup reported a fraud to the police in Hong Kong. An "
+            "employee there had joined what looked like a genuine company video conference. The people on "
+            "the call, who appeared to be senior officers of the company, were deepfakes. They persuaded the "
+            "employee to make a series of transfers to bank accounts the scammers chose. The total was "
+            "HK$200 million, about US$25.6 million.",
+            "Arup said its financial stability and business operations were not affected and that none of "
+            "its internal systems were compromised. That is the important lesson. Nothing was hacked. A "
+            "person was convinced.",
+            ("h", "How Voice-Clone Scams Work"),
+            "The U.S. Federal Trade Commission warns about family emergency scams, in which someone contacts "
+            "you pretending to be a family member or close friend who needs money to get out of trouble. "
+            "The FTC says scammers use voice cloning to make these requests more believable.",
+            ("point", "A sample of the voice", "Short clips can come from public videos, social media "
+             "posts or a brief phone call."),
+            ("point", "An emergency", "An accident, an arrest, a hospital bill or a stranded trip, with no time to think."),
+            ("point", "Secrecy", "“Don’t tell Dad.” “Don’t call my phone, it’s broken.” Secrecy stops you "
+             "from checking."),
+            ("point", "A fast way to pay", "An e-wallet number, a bank transfer, prepaid load or gift "
+             "cards, money that is hard to get back."),
+            ("h", "The Signs to Watch For"),
+            "A good fake can look and sound real, so do not rely on spotting glitches. Watch the situation "
+            "instead.",
+            ("point", "Urgency", "You are told to act within minutes."),
+            ("point", "Secrecy", "You are told not to tell anyone or not to call back."),
+            ("point", "A new way to pay", "The money goes to an account or wallet you have never used for "
+             "this person."),
+            ("point", "A different channel", "Your boss, who always emails, suddenly calls from an unknown "
+             "number. Your child, who always messages, calls from someone else’s phone."),
+            ("h", "The Checks That Still Work"),
+            ("point", "Hang up and call back", "Call the person on the number you already have for them. "
+             "If they answer and know nothing about it, you have your answer."),
+            ("point", "Ask a question only they can answer", "Something that is not on social media: the "
+             "name of a childhood pet, what you ate at your last family dinner."),
+            ("point", "Agree on a family code word", "Choose a word or phrase today, share it in person, and "
+             "agree that anyone asking for emergency money must say it."),
+            ("point", "Reach someone else", "Call a sibling, a spouse or a co-worker who would know where "
+             "the person is."),
+            ("point", "Slow down", "A real emergency can survive a two-minute phone call to check."),
+            ("h", "At Work: Video Calls and Payment Requests"),
+            "The Arup case shows that a video call is not proof of identity. Offices that handle money can "
+            "add a few simple rules.",
+            ("point", "No payment on a call alone", "A request made during a call or video conference is "
+             "confirmed through a separate channel before any money moves."),
+            ("point", "Use the payment rule from Part 19", "Changes to bank details and urgent transfers are "
+             "confirmed by phone, using a number already on file."),
+            ("point", "Two people for large transfers", "One person prepares, another approves. A scammer "
+             "has to fool both."),
+            ("point", "Permission to pause", "Office heads can tell staff in advance that checking a request "
+             "will never get them in trouble, even if the request turns out to be real."),
+            ("h", "Protect Your Own Face and Voice"),
+            "You cannot hide completely, and you do not need to. A few habits lower the risk.",
+            ("point", "Review who can see your posts", "Videos of you speaking that only friends can see are harder for strangers to collect."),
+            ("point", "Be careful with unknown calls", "If a stranger calls and keeps you talking without a "
+             "clear reason, you can end the call."),
+            ("point", "Tell your family about this scam", "A strong defense for an elderly parent is knowing the trick exists before the call comes."),
+            ("h", "If You Already Sent Money"),
+            ("point", "Call your bank or e-wallet at once", "Ask them to stop or reverse the transfer and "
+             "flag the receiving account. Part 13 covered what to do and where to report in the "
+             "Philippines."),
+            ("point", "Report it", "Report to the police cybercrime unit and keep the call logs, numbers "
+             "and messages."),
+            ("point", "Warn the person who was impersonated", "Their voice or face may be used again on "
+             "someone else."),
+            ("h", "For Treasury Workers"),
+            "Treasuries release payments on the strength of signatures and approvals. Treat a voice or a "
+            "face on a screen the same way you treat an email: as a request, not as authority. Follow the "
+            "voucher, the signatures and the callback rule, whoever seems to be asking.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting a familiar voice", "Voices can be cloned."),
+            ("point", "Trusting a familiar face on video", "The Arup employee did, and it cost about US$25 million."),
+            ("point", "Calling back the number that called you", "Use the number you already have."),
+            ("point", "Keeping it secret because you were asked to", "Secrecy is the scammer’s tool."),
+            ("h", "Key Takeaways"),
+            ("point", "Faces and voices can be faked", "Video and audio are no longer proof."),
+            ("point", "The situation gives it away", "Urgency, secrecy and a new way to pay."),
+            ("point", "Verify through another channel", "Call back on a known number, or ask a question only "
+             "the real person can answer."),
+            ("point", "Set rules in advance", "A family code word and an office rule for payments."),
+            ("h", "Your Part 22 Action Plan"),
+            ("point", "Today", "Choose a family code word and share it in person with the people closest "
+             "to you."),
+            ("point", "This week", "Tell an elderly relative about voice-clone scams, using the story at the "
+             "top of this post."),
+            ("point", "This month", "Ask your office to adopt one rule: no payment based on a call or video "
+             "conference alone."),
+            "The mother did not send the money. She ended the call, sat down, and dialed her son’s number "
+            "from her own contacts. He answered on the second ring, from his office, confused and perfectly "
+            "fine. That weekend, the family chose a code word, and she taught it to her sister too.",
+            ("cta", "Read: Cybersecurity Series, Part 19: Email Security, Fake Senders and the Changed Bank Account", "/blog/cybersecurity-part-19-email-security/"),
+            ("cta", "Read: Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise", "/blog/cybersecurity-part-14-social-media-accounts/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("ask", "Does your family have a code word yet? What would you choose?"),
+        ],
+    },
+    {
+        "date": "February 17, 2027",
+        "title": "Cybersecurity Series, Part 21: Sharing Files Safely, Links, Attachments and Who Can See Them",
+        "slug": "cybersecurity-part-21-safe-file-sharing",
+        "category": "security",
+        "summary": "A shared link can reach far more people than you meant. Here is how to choose between a "
+                   "link and an attachment, set who can open a file, give access that ends on its own, "
+                   "protect a file with a password, and clean up old shares.",
+        "publish_on": "2027-02-17 21:00",
+        "body": [
+            "An office needed to send a list of beneficiaries to three partner offices, so a staff member "
+            "uploaded the spreadsheet to a cloud drive and set the link to “Anyone with the link can view.” "
+            "It was the easiest setting, and it worked. Weeks later, someone in one of the partner offices "
+            "pasted that same link into a large group chat to ask a question about one name. Now anyone in "
+            "that chat, and anyone they forwarded it to, could open the whole list.",
+            "(Nothing in this story is real. The offices, the people and the list are made up.)",
+            "Sharing files is part of daily work, and it is where good intentions leak data. After this "
+            "post, you will know when to send a link and when to send an attachment, how to choose who can "
+            "open a file, how to give access that ends on its own, how to protect a file with a password, "
+            "and how to clean up the shares you no longer need.",
+            ("photo", "blog/cyber-file-sharing.jpg", "Safe file sharing: restrict the link, give the least "
+             "access, set an end date, and review who still has access. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "A Link or an Attachment?"),
+            "Both have a place, and each has a different risk.",
+            ("point", "An attachment is a copy", "Once sent, it lives in every inbox it reaches, and you "
+             "cannot take it back. Anyone who receives it can forward it."),
+            ("point", "A link points to one file you control", "You can change who may open it, or turn it "
+             "off, at any time. But a link set to open for anyone is only as private as the places it gets "
+             "pasted."),
+            "For personal data or anything sensitive, a link restricted to named people is the "
+            "safer choice, because you keep control after you click Send.",
+            ("quote", "Share a file the way you would lend a key: to a named person, for a reason, and "
+             "ask for it back."),
+            ("h", "Who Can Open It"),
+            "Cloud drives let you choose the general access for a file. In Google Drive, for example, the "
+            "Share window offers two main choices.",
+            ("point", "Restricted", "Only the people you add by email can open the file. Google’s help "
+             "page puts it this way: only people with access can open it."),
+            ("point", "Anyone with the link", "Whoever has the link can open the file, including people you never added. This is convenient for public material, such as a flyer or a schedule."),
+            "The office in our story used the second setting for a list of names. Restricted, with the three "
+            "partner offices added by email, would have kept the file closed to the group chat.",
+            ("h", "Give the Least Access That Works"),
+            ("point", "Viewer", "Can open and read. This is enough for anyone who only needs to see a "
+             "file."),
+            ("point", "Commenter", "Can read and leave comments, but cannot change the content."),
+            ("point", "Editor", "Can change the file and, depending on the settings, share it with others. "
+             "Give this role only to people who must edit."),
+            "Google Drive also lets the owner choose whether people can download, copy and print the file, "
+            "under the Settings of the Share window. That helps, but Google’s own help page notes that you "
+            "cannot stop people from sharing a file’s content in other ways. Someone can still take a "
+            "screenshot. Limit the people first, and the settings second.",
+            ("h", "Access That Ends on Its Own"),
+            "Some sharing is meant to be temporary, yet the access stays until someone removes it. "
+            "Google Drive offers an expiration date on a person’s access: open Share, choose the person, "
+            "select Add expiration, and pick a date, which must be within one year. Google lists this option "
+            "among the features for accounts through work or school, so check whether your account has it.",
+            "If your tool has no expiry option, put a reminder in your calendar to remove access when the "
+            "work is done.",
+            ("h", "Protecting a File With a Password"),
+            "Sometimes a file must go by email, for example to someone outside your office who cannot use "
+            "your drive. Then protect the file itself.",
+            ("point", "Office documents", "In Microsoft Word or Excel, go to File, Info, then Protect "
+             "Document or Protect Workbook, and choose Encrypt with Password. Without the password, the "
+             "file will not open."),
+            ("point", "Send the password another way", "If the password is in the same email as the file, "
+             "anyone who gets the email gets both. Send it by text message or tell it by phone."),
+            ("point", "Use a strong password", "Part 2 covered passphrases. A short password on a file can "
+             "be guessed by software."),
+            ("h", "USB Drives and Shared Computers"),
+            ("point", "Treat a found USB drive as a risk", "Do not plug in a drive you found or were given by "
+             "a stranger. Give it to whoever handles your office’s computers."),
+            ("point", "Encrypt drives that leave the office", "Part 17 covered encryption. A lost drive that "
+             "is encrypted is a lost drive, not a data leak."),
+            ("point", "Do not leave files on shared computers", "Delete what you saved on a shared office or "
+             "internet café computer, and sign out of every account before you stand up."),
+            ("h", "Cleaning Up Old Shares"),
+            "Shares pile up. A folder shared with a former co-worker, a link sent to a supplier last year, a "
+            "file still open to anyone with the link: each is a door you forgot to close.",
+            ("point", "See who has access", "In Google Drive, right-click a file and open its File information, then Details, to see the owner and everyone with access. Manage access lets you change it."),
+            ("point", "Remove people who no longer need it", "Especially staff who have moved to other "
+             "offices."),
+            ("point", "Turn public links back to Restricted", "When the work that needed a public link is "
+             "done, close it."),
+            ("point", "Keep office files in office accounts", "When files sit in one person’s personal "
+             "account, the office can lose them when that person leaves. Store office work where the office "
+             "keeps control."),
+            ("h", "For Treasury Workers"),
+            "Treasury files carry names, property records, amounts and bank details. Share collection "
+            "reports, delinquency lists and payroll files only through restricted links or protected files, "
+            "and only to the people whose work needs them. Before sending any list outside the office, ask "
+            "whether the recipient needs every column, or only a total.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Using “Anyone with the link” for personal data", "Restrict it to named people."),
+            ("point", "Giving Editor when Viewer is enough", "Start with the least access."),
+            ("point", "Sending the password with the file", "Use another channel."),
+            ("point", "Never reviewing old shares", "Check who still has access."),
+            ("h", "Key Takeaways"),
+            ("point", "Links keep control, attachments do not", "Prefer a restricted link for sensitive "
+             "files."),
+            ("point", "Choose who and how much", "Restricted access, and the smallest role that works."),
+            ("point", "Give access an end", "Use expiry dates or a reminder to remove access."),
+            ("point", "Clean up regularly", "Old shares are open doors."),
+            ("h", "Your Part 21 Action Plan"),
+            ("point", "Today", "Open your cloud drive and find one file shared with “Anyone with the link.” "
+             "Decide whether it should be Restricted."),
+            ("point", "This week", "Review who has access to your three most sensitive files, and remove "
+             "anyone who no longer needs it."),
+            ("point", "This month", "Agree with your team on one rule: personal data is shared only through "
+             "restricted links or password-protected files."),
+            "The office changed the beneficiaries list to Restricted that same day and added the three "
+            "partner offices by email. The link in the group chat stopped working for everyone else. The "
+            "office could not undo what had already been seen, but it closed the door, wrote down what "
+            "happened, and changed how it shares lists from then on.",
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 17: Encryption Made Simple, Locking Data So a Lost Device Is Only a Lost Device", "/blog/cybersecurity-part-17-encryption-made-simple/"),
+            ("cta", "Read: Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private", "/blog/cybersecurity-part-6-cloud-and-privacy/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("ask", "How does your office share lists with other offices today? Is there one setting you would change after reading this?"),
+        ],
+    },
+    {
+        "date": "February 12, 2027",
+        "title": "Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk",
+        "slug": "cybersecurity-part-20-privacy-at-work",
+        "category": "security",
+        "summary": "Offices hold other people’s names, addresses, IDs and money records. Here is what the Data "
+                   "Privacy Act asks of the people who handle them, the desk habits that keep records safe, and "
+                   "what to do when personal data leaks.",
+        "publish_on": "2027-02-12 21:00",
+        "body": [
+            "A frontline clerk wanted to be helpful. A client had asked for a copy of a requirement she had "
+            "submitted, so the clerk took a photo of the client’s ID and application form with her own phone "
+            "and sent it through a chat app. It was quick, and the client was grateful. A month later, the "
+            "clerk’s phone was stolen at a jeepney stop. The phone had no screen lock, and its gallery held "
+            "more than a hundred photos of other people’s IDs.",
+            "(This is a teaching case. The clerk, the client and the office are fictional.)",
+            "Privacy at work depends on small habits at a desk as much as on the law. By the end of this post, "
+            "you will know what the Data Privacy Act of 2012 protects, which kinds of information need the "
+            "most care, the desk habits that keep other people’s records safe, how to share personal data "
+            "only when there is a reason, and what to do when something leaks.",
+            ("photo", "blog/cyber-privacy-work.jpg", "Privacy at work: know what is sensitive, collect only "
+             "what you need, keep it locked, and report leaks fast. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Law Behind It"),
+            "The Data Privacy Act of 2012, Republic Act No. 10173, was approved on August 15, 2012. It "
+            "protects personal information, meaning information that can identify a person. It covers "
+            "information processed by government offices and private businesses alike, and it created the "
+            "National Privacy Commission to enforce it.",
+            "The Act is not a reason to stop serving people. Offices still collect names, addresses and IDs "
+            "because the work needs them. What the Act asks is that this information is collected for a "
+            "clear purpose, used only for that purpose, kept safe, and not kept or shared beyond what the "
+            "purpose needs.",
+            ("quote", "Treat every record you hold as if its owner were standing beside your desk."),
+            ("h", "Personal and Sensitive Information"),
+            "The Act has a separate, stricter category called sensitive personal information. It includes a "
+            "person’s race, ethnic origin, marital status, age, color, and religious, philosophical or "
+            "political affiliations; their health, education, genetic or sexual life; and "
+            "government-issued identifiers such as social security numbers and tax returns.",
+            "Look at an ordinary office form with that list in mind. A business permit application, a "
+            "payroll sheet, a scholarship list or a patient logbook can hold several of these at once. That "
+            "is why a photo of one ID card is not a small thing. It can hold a full name, a birthdate and an "
+            "ID number in a single picture.",
+            ("point", "Personal information", "Anything that can identify a person, such as a name with an "
+             "address, a photo or an email address."),
+            ("point", "Sensitive personal information", "The stricter list above, including age, marital "
+             "status, health and government-issued numbers."),
+            ("point", "Not covered", "Information about a government official that relates to their "
+             "position and functions, such as their title, office address and the duties of their position, is one of the Act’s exceptions."),
+            ("h", "The Rights of the People in Your Records"),
+            "The Act gives the people whose information you hold a set of rights. Knowing them helps you "
+            "answer a client who asks what the office does with their papers.",
+            ("point", "To be informed", "They can know that their information is being collected and "
+             "processed."),
+            ("point", "To access", "They can ask what information about them the office holds and how it "
+             "is used."),
+            ("point", "To correct", "They can dispute an error and have it corrected."),
+            ("point", "To withdraw consent", "They can suspend or withdraw their consent to the processing of their information."),
+            ("point", "To be paid for damages", "They can claim damages caused by a violation of their "
+             "rights."),
+            ("h", "Desk Habits That Protect Records"),
+            "These habits need no technology. They are about how a desk is kept.",
+            ("point", "Clean desk at the end of the day", "Put forms and folders with personal data in a "
+             "drawer or cabinet that locks. A pile of applications on a counter overnight can be read by "
+             "anyone who passes."),
+            ("point", "Lock the screen when you stand up", "On Windows, press the Windows key and L. On a "
+             "Mac, press Control, Command and Q. It takes two seconds."),
+            ("point", "Turn screens away from the counter", "A client in line should not be able to read "
+             "the record of the client before them."),
+            ("point", "Shred, do not throw away", "Spoiled forms, extra photocopies and old printouts with "
+             "names and numbers go through a shredder, not the wastebasket."),
+            ("point", "Keep printouts off the printer tray", "Collect them at once, especially on a shared "
+             "printer."),
+            ("h", "Phones and Chats at Work"),
+            "The clerk in our story meant well. She used her own phone to make the work "
+            "faster. The risk was not the photo. It was where the photo stayed afterward.",
+            ("point", "Use office tools for office records", "If your office has an official way to receive "
+             "and send documents, use it, so the records stay in one controlled place."),
+            ("point", "Delete what you no longer need", "If you had to take a photo of a document, send it "
+             "where it belongs and then delete it from the phone, including the recently deleted folder."),
+            ("point", "Lock the phone", "Part 12 covered screen locks. A phone that holds client data needs "
+             "one."),
+            ("point", "Be careful with group chats", "A list of names, addresses and amounts posted to a "
+             "large group chat can be forwarded anywhere. Send it only to the people who need it."),
+            ("h", "Collect Less, Keep Less"),
+            "The safest record is the one an office never collected. Before adding a field to a form, ask "
+            "whether the work truly needs it. Before keeping a photocopy of an ID, ask whether seeing the "
+            "original was enough. And before keeping old files, check how long your office is required to "
+            "keep them, then dispose of them properly when that period ends.",
+            ("h", "Sharing Personal Data the Right Way"),
+            ("point", "Ask why", "Share personal information only when there is a clear purpose and the "
+             "person asking has a role that needs it."),
+            ("point", "Share the least", "If someone needs a total, send the total, not the list of names "
+             "behind it."),
+            ("point", "Hide other recipients", "When emailing several clients at once, put their addresses in "
+             "BCC so they cannot see each other’s addresses."),
+            ("point", "Protect the file", "Send a link that only named people can open, rather than an "
+             "attachment that can be forwarded anywhere."),
+            ("h", "When Personal Data Leaks"),
+            "Mistakes happen: a lost phone, a misdirected email, a stolen laptop. What matters next is speed "
+            "and honesty.",
+            ("point", "Report it inside the office at once", "Tell your supervisor and the person your office "
+             "has named to handle data privacy. The Act requires organizations to designate people "
+             "accountable for compliance."),
+            ("point", "Contain it", "Change passwords, ask the wrong recipient to delete the email, or lock "
+             "and erase a lost phone remotely if it was set up for that."),
+            ("point", "Notify when required", "Under the National Privacy Commission’s breach rules, when "
+             "sensitive personal information is believed to have been acquired by an unauthorized person "
+             "and there is a real risk of serious harm, the affected people must be notified within 72 "
+             "hours from discovery. The office’s privacy contact decides this, so report first."),
+            "Hiding a breach is the worst choice. The Act penalizes knowingly concealing a security breach that should "
+            "have been reported to the Commission with imprisonment of one year and six months to five "
+            "years and a fine of ₱500,000 to ₱1,000,000.",
+            ("h", "For Treasury Workers"),
+            "A treasury holds tax declarations, business records, payrolls and the names of people who owe "
+            "money. Keep delinquency lists and payroll sheets off public counters and out of group chats. "
+            "When a taxpayer asks about their own account, confirm who they are before reading figures "
+            "aloud, and keep the conversation at a level where the next person in line cannot hear.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Keeping client IDs in your phone’s gallery", "Send them where they belong, then delete "
+             "them."),
+            ("point", "Leaving forms on the counter overnight", "Lock them away."),
+            ("point", "Posting lists of names in large chats", "Share only with those who need them."),
+            ("point", "Keeping quiet about a leak", "Report it the same day."),
+            ("h", "Key Takeaways"),
+            ("point", "The Data Privacy Act covers offices too", "RA 10173 applies to government and private "
+             "organizations alike."),
+            ("point", "Some information is sensitive", "Age, marital status, health and government ID numbers "
+             "need the most care."),
+            ("point", "Privacy is a desk habit", "Clean desk, locked screen, shredder, careful chats."),
+            ("point", "Leaks must be reported fast", "Notification rules can run on a 72-hour clock."),
+            ("h", "Your Part 20 Action Plan"),
+            ("point", "Today", "Look through your phone’s gallery and delete any client documents that "
+             "belong in the office’s files instead."),
+            ("point", "This week", "Find out who your office has named to handle data privacy, and save "
+             "their contact details."),
+            ("point", "This month", "Walk around your office after hours and note every place where personal "
+             "data is left in the open."),
+            "The clerk reported the stolen phone to her supervisor that same afternoon. The office’s privacy "
+            "contact checked what the gallery held, notified the clients who were affected, and changed the "
+            "office’s rule: client documents now come in through the office email and never stay on personal phones. The clerk was the first to say it was a better rule.",
+            ("cta", "Read: Cybersecurity Series, Part 19: Email Security, Fake Senders and the Changed Bank Account", "/blog/cybersecurity-part-19-email-security/"),
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private", "/blog/cybersecurity-part-6-cloud-and-privacy/"),
+            ("ask", "Where does personal data sit in the open in your office? What one change would fix it?"),
+        ],
+    },
+    {
+        "date": "February 7, 2027",
+        "title": "Cybersecurity Series, Part 19: Email Security, Fake Senders and the Changed Bank Account",
+        "slug": "cybersecurity-part-19-email-security",
+        "category": "security",
+        "summary": "An email can show any name it likes. Here is how fake senders work, why a request to change bank details deserves special care, how to handle attachments "
+                   "and links, and what an office can set up so others cannot pretend to be it.",
+        "publish_on": "2027-02-07 21:00",
+        "body": [
+            "The email came from a supplier the office had paid for years. Same name, same signature, same "
+            "friendly tone. “Please note that we have changed banks,” it said. “Kindly send this month’s "
+            "payment to the new account below.” The account was in a different name, but the email had an "
+            "explanation for that too. The disbursing clerk had the voucher ready. Then she remembered a "
+            "rule her office had written down the year before.",
+            "(The clerk and the supplier are a composite. No real person, business or account is described.)",
+            "Email is where scams dress up as business. After this post, you will know how a fake sender "
+            "works, how to read who an email really came from, why a request to change bank details deserves "
+            "a phone call every time, how to treat attachments and links, and what an office can set up so "
+            "that others cannot easily send email in its name.",
+            ("photo", "blog/cyber-email.jpg", "Email security: check the real address, call before changing "
+             "bank details, treat attachments with care, and protect your office’s domain. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Scam That Costs the Most"),
+            "The scam in our story has a name: business email compromise. A criminal pretends to be a "
+            "supplier, a boss or a co-worker, and asks for a payment, for example to a new account. The FBI’s "
+            "Internet Crime Complaint Center received 21,442 complaints of business email compromise in 2024, "
+            "with losses close to $2.8 billion that year, according to the payments association Nacha’s "
+            "summary of the FBI report.",
+            "It works because it asks for something ordinary. Offices pay suppliers routinely. Suppliers "
+            "change banks. The email does not need a virus or a link. It only needs someone to believe it.",
+            ("quote", "A dangerous email can ask for nothing more than a new account number."),
+            ("h", "How a Fake Sender Works"),
+            ("point", "The display name is free text", "Anyone can make an email show “City Treasurer” or a "
+             "supplier’s name. The name you see is not proof of who sent it."),
+            ("point", "Lookalike addresses", "An address can differ from the real one by one letter, or use "
+             "a free email service with the supplier’s name in it."),
+            ("point", "A different reply-to", "The email comes from one address, but your reply goes to "
+             "another. Check where “Reply” will actually send."),
+            ("point", "A real account, taken over", "Sometimes the email really does come from the supplier’s "
+             "address, because a criminal has broken into it. Then every check of the address passes."),
+            "The last case is why checking the address is not enough on its own.",
+            ("h", "The One Rule for Payment Changes"),
+            "Part 18 put it in the office baseline as rule 8: payment requests and changes to bank details are "
+            "confirmed by phone, using a number already on file.",
+            ("point", "Use the number you already have", "Not the one in the email, which may belong to the "
+             "criminal."),
+            ("point", "Ask the person you usually deal with", "Describe the request and ask whether they sent "
+             "it."),
+            ("point", "Write down the confirmation", "Who you spoke to, when, and what they confirmed, and "
+             "keep it with the voucher."),
+            ("point", "Treat urgency as a warning", "A real supplier can wait an hour for a phone call."),
+            ("h", "When the Boss Emails"),
+            "A second version of the scam pretends to be someone senior. An email that appears to come from "
+            "the office head asks a staff member, quietly and urgently, to buy prepaid load or gift cards, "
+            "or to transfer money for something confidential. The pressure comes from rank as well as time.",
+            ("point", "Confirm in person or by phone", "A real office head can be reached. A request that "
+             "insists you must not call or tell anyone is the warning itself."),
+            ("point", "Agree on this in advance", "Office heads can tell their staff now that they will "
+             "never ask for money or load by email or chat alone."),
+            ("h", "Attachments: Open With Care"),
+            ("point", "Expect it before you open it", "An attachment you were not expecting deserves a quick "
+             "message to the sender, through another channel, before you open it."),
+            ("point", "Close documents that ask to “enable content”", "A document that will not show its "
+             "contents until you enable editing or macros is a known trick to run harmful code. Close it "
+             "and ask."),
+            ("point", "Watch the file type", "A file named “invoice.pdf.exe” is a program, not a PDF. "
+             "Compressed files and unusual types deserve extra care."),
+            ("h", "Links: Look Before You Tap"),
+            "On a computer, rest the mouse pointer on a link to see where it really goes. On a phone, press "
+            "and hold the link to preview the address. Then read the domain from the right, as Part 15 "
+            "showed. Better still, for anything that involves money or a login, ignore the link and open the "
+            "site from your own bookmark.",
+            ("h", "Protect Your Own Inbox"),
+            ("point", "Two-factor authentication", "A taken-over email account can lead to other losses, because password resets go there. Parts 2 and 14 covered how to protect it."),
+            ("point", "Check forwarding rules", "A criminal who gets into an account may set it to forward "
+             "copies of your mail elsewhere. Look at your email settings for forwarding you did not set up."),
+            ("point", "Use the official account for official work", "An office email address on the office’s "
+             "own domain is easier to protect and to recognize than a personal free account."),
+            ("h", "For Offices: Stop Others From Using Your Name"),
+            "An office that owns its email domain can publish records that tell other mail servers which "
+            "servers may send email for it. Three standards do this work:",
+            ("point", "SPF", "Lists the servers allowed to send email for the domain."),
+            ("point", "DKIM", "Adds a digital signature to outgoing email, so receivers can check it was not "
+             "altered and came from the domain."),
+            ("point", "DMARC", "Tells receivers what to do with email that fails those checks, such as "
+             "rejecting it, and sends reports back to the domain owner."),
+            "Setting these up is a task for whoever manages the office’s domain and email. With a strict DMARC policy in place, a criminal trying to send email from the office’s exact address has a much harder time reaching inboxes.",
+            ("h", "For Treasury Workers"),
+            "Treasuries pay suppliers, contractors and employees, which makes them a likely target. Keep a "
+            "supplier file with bank details and phone numbers verified in person or by an official letter, "
+            "and change it only after a confirmed call. Tell suppliers in writing that the office will never "
+            "change their payment details because of an email alone, and ask them to tell you the same.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting the display name", "It can say anything."),
+            ("point", "Calling the number in the email", "It may lead straight to the criminal."),
+            ("point", "Enabling content to read a document", "Close it and ask the sender."),
+            ("point", "Running official business on personal email", "It is harder to protect and to verify."),
+            ("h", "Key Takeaways"),
+            ("point", "Business email compromise is expensive", "Close to $2.8 billion in losses reported "
+             "to the FBI in 2024 alone."),
+            ("point", "A changed bank account means a phone call", "Using a number already on file."),
+            ("point", "Attachments and links need a pause", "Expect the file, preview the link."),
+            ("point", "Offices can protect their name", "SPF, DKIM and DMARC make spoofing harder."),
+            ("h", "Your Part 19 Action Plan"),
+            ("point", "Today", "Check your email settings for forwarding rules you did not create."),
+            ("point", "This week", "Write the payment-change rule on one line and share it with everyone "
+             "who handles vouchers."),
+            ("point", "This month", "Ask whoever manages your office’s domain whether SPF, DKIM and DMARC "
+             "are set up."),
+            "The clerk called the supplier using the number in the office’s supplier file. The supplier had "
+            "not changed banks, and its own email account had been broken into a week earlier. The payment "
+            "went to the right account, and the supplier thanked her for the call.",
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("ask", "Has your office ever received a request to change a supplier’s bank account by email? How did you check it?"),
+        ],
+    },
+    {
+        "date": "February 2, 2027",
+        "title": "Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office",
+        "slug": "cybersecurity-part-18-small-office-baseline",
+        "category": "security",
+        "summary": "A small office does not need a security department to be hard to break into. Here are ten "
+                   "rules that fit on one page, drawn from this series, with who owns each one and how to "
+                   "check it in an afternoon.",
+        "publish_on": "2027-02-02 21:00",
+        "body": [
+            "The new office head of a small government unit asked her staff a simple question at their "
+            "Monday meeting: “If our computers were attacked tonight, who would we call, and what would we "
+            "lose?” Nobody answered. There were eight computers, two printers, one Wi-Fi router, a shared "
+            "email password taped under a keyboard, and no one whose job it was to worry about any of it.",
+            "(The office is a composite. No real office or person is described.)",
+            "Seventeen parts of this series have covered passwords, scams, networks, ransomware, updates, "
+            "phones and encryption, one topic at a time. A small office needs them together, on one page, "
+            "with names attached. When you finish reading, you will have a ten-rule baseline you can print, "
+            "an owner for each rule, a way to check each one in an afternoon, and a short list of what to do "
+            "first if you can only do three things this month.",
+            ("photo", "blog/cyber-baseline.jpg", "A one-page baseline: accounts, updates, backups and a plan, "
+             "each with an owner. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Baseline, and Why One Page"),
+            "A baseline is the minimum every computer, account and person in the office meets. It is not a "
+            "policy manual. A one-page list can be posted, checked and remembered. A forty-page manual is "
+            "filed and forgotten.",
+            "The rules below are not new. Each one points back to a part of this series that explains the "
+            "why and the how. The new part is putting a name beside each rule.",
+            "A one-page baseline also helps on a new employee’s first day. They read one page and know the "
+            "office’s rules from the start, instead of learning them after a mistake.",
+            ("quote", "Security is a list of habits with someone’s name beside each one."),
+            ("h", "The Ten Rules"),
+            ("point", "1. One person, one account", "No shared logins. Every staff member signs in as "
+             "themselves, so actions can be traced and access can be removed. (Part 2)"),
+            ("point", "2. Long, unique passwords and two-factor authentication", "On email, banking, "
+             "government portals and anything that holds money or personal data. (Parts 2 and 14)"),
+            ("point", "3. Fewest possible administrators", "Daily work uses a normal account. Only the person "
+             "who maintains a computer has administrator rights on it. (Part 8)"),
+            ("point", "4. Updates on automatically", "Operating systems, browsers and office software. "
+             "Replace devices that no longer receive updates. (Part 11)"),
+            ("point", "5. Backups that are tested", "Keep several copies, one of them offline, and actually "
+             "restore a file from the backup every few months. (Part 5)"),
+            ("point", "6. Encrypted laptops and drives", "With recovery keys recorded and stored safely. "
+             "(Part 17)"),
+            ("point", "7. A separate guest Wi-Fi", "Visitors and personal gadgets stay off the network the "
+             "office computers use. Change the router’s default password. (Part 4)"),
+            ("point", "8. Verify before you pay or click", "Payment requests and changes to bank details are "
+             "confirmed by phone using a number already on file. (Parts 3 and 15)"),
+            ("point", "9. Access ends when the job ends", "When someone leaves or moves, their accounts and "
+             "keys are removed on their last day. (Part 8)"),
+            ("point", "10. A written plan and a call list", "Who to call, what to unplug and what to record "
+             "when something goes wrong. (Part 9)"),
+            ("h", "Do Not Forget the Paper"),
+            "Not every leak is digital. The shared password taped under a keyboard in our story is a rule 1 "
+            "and rule 2 problem written on paper.",
+            ("point", "No passwords on notes", "Use a password manager, not sticky notes or a notebook in "
+             "the drawer."),
+            ("point", "Lock the screen when you stand up", "On Windows, the Windows key and L together lock "
+             "it in a second. A computer left open at the counter is an open door."),
+            ("point", "Shred what has personal data", "Printed taxpayer lists, old forms and draft reports go "
+             "to a shredder, not the wastebasket."),
+            ("point", "Clear the printer tray", "Collect printouts at once, especially from a shared "
+             "printer."),
+            ("h", "Give Every Rule an Owner"),
+            "A rule without an owner becomes everyone’s job, which in practice means nobody’s. The owner is "
+            "not the person who does all the work. It is the person who checks that the work was done.",
+            ("point", "In a small office", "The office head can own rules 8 and 10. The person most "
+             "comfortable with computers can own rules 3 to 7. The administrative officer can own rules 1 "
+             "and 9, because they already handle hiring and leaving."),
+            ("point", "Write the names on the page", "And review them when people change roles."),
+            ("h", "Checking the Baseline in One Afternoon"),
+            "These rules can be checked by looking, not by buying anything.",
+            ("point", "Accounts", "List every shared login. Each one is a rule 1 problem to fix."),
+            ("point", "Two-factor", "Open the security settings of the office email and the bank portal. "
+             "Is two-factor on?"),
+            ("point", "Updates", "On each computer, open the update settings. Note any that say updates are "
+             "paused, or that the system is no longer supported."),
+            ("point", "Backups", "Pick one file and try to restore it from the backup. Time how long it "
+             "takes."),
+            ("point", "Encryption", "Check each laptop for Device encryption, BitLocker or FileVault."),
+            ("point", "Router", "Log in with the default password. If it works, rule 7 needs attention."),
+            ("point", "Leavers", "Compare the list of accounts with the list of current staff."),
+            ("h", "If You Can Only Do Three Things This Month"),
+            ("point", "Turn on two-factor for email and banking", "Password reset links go to email, and banking is where the money is."),
+            ("point", "Test one backup restore", "A backup you have never restored is a hope, not a plan."),
+            ("point", "Write the call list", "Names and numbers for your IT help, your bank, and the "
+             "cybercrime hotline 1326 from Part 9, printed and posted."),
+            "These three guard against three painful losses: a taken email account, money sent to a scammer, and "
+            "files held for ransom with no way back.",
+            ("h", "Keep It Alive"),
+            "A baseline decays. New staff join, new devices arrive, settings drift. Put a short review on the "
+            "calendar every three months: the same afternoon checklist, the same owners, a few minutes at a "
+            "staff meeting to report what changed. Keep a dated copy of each review. It shows auditors, and "
+            "your future self, that the office took reasonable care.",
+            ("h", "For Treasury Offices"),
+            "A treasury handles public money and taxpayers’ personal data, so the Data Privacy Act’s "
+            "requirement of reasonable and appropriate security measures applies directly. Two rules matter "
+            "especially at the counter and in the vault room. Rule 8 protects against fake requests to change "
+            "where payments go. Rule 9 makes sure a collector who transfers out can no longer sign in to the "
+            "collection system.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Writing a manual instead of a page", "Short rules get followed."),
+            ("point", "Buying tools before setting habits", "The first checks cost nothing but time."),
+            ("point", "Leaving rules without owners", "Everyone’s job is nobody’s job."),
+            ("point", "Checking once and stopping", "Review every three months."),
+            ("h", "Key Takeaways"),
+            ("point", "Ten rules, one page", "Accounts, passwords, admin rights, updates, backups, "
+             "encryption, Wi-Fi, verification, leavers and a plan."),
+            ("point", "Every rule has an owner", "The owner checks; the work can be shared."),
+            ("point", "Check by looking", "One afternoon finds the biggest gaps."),
+            ("point", "Start with three", "Two-factor, a tested restore and a call list."),
+            ("h", "Your Part 18 Action Plan"),
+            ("point", "Today", "Print the ten rules and write an owner beside each."),
+            ("point", "This week", "Do the one-afternoon check and list what failed."),
+            ("point", "This month", "Fix the three first-priority items, then schedule the next review."),
+            "Three months later, the office head asked the same question at another Monday meeting. This "
+            "time the answer was on the wall, printed on one page, with a name beside every line.",
+            ("cta", "Read: Cybersecurity Series, Part 17: Encryption Made Simple", "/blog/cybersecurity-part-17-encryption-made-simple/"),
+            ("cta", "Read: Cybersecurity Series, Part 9: Incident Response, or What to Do When Something Goes Wrong", "/blog/cybersecurity-part-9-incident-response/"),
+            ("cta", "Read: Cybersecurity Series, Part 11: Software Updates, the Fix You Keep Postponing", "/blog/cybersecurity-part-11-software-updates/"),
+            ("cta", "Read: Cybersecurity Series, Part 8: Zero Trust, or Why Every Door Gets Checked", "/blog/cybersecurity-part-8-zero-trust/"),
+            ("ask", "Which of the ten rules would your office fail today? I'd like to hear where you would start."),
+        ],
+    },
+    {
+        "date": "January 28, 2027",
+        "title": "Cybersecurity Series, Part 17: Encryption Made Simple, Locking Data So a Lost Device Is Only a Lost Device",
+        "slug": "cybersecurity-part-17-encryption-made-simple",
+        "category": "security",
+        "summary": "Encryption turns readable data into scrambled data that only the right key can open. Here "
+                   "is how it protects your phone, laptop, USB drive and messages, how to turn it on, and the "
+                   "one mistake that can lock you out of your own files.",
+        "publish_on": "2027-01-28 21:00",
+        "body": [
+            "A treasury clerk took a USB drive home to finish a report over the weekend. On it was a "
+            "spreadsheet of taxpayers with names, addresses and amounts paid. On the jeepney ride back on "
+            "Monday, the drive slipped out of her bag. She noticed at the office, and her first question "
+            "was the right one: “Was it encrypted?”",
+            "(The clerk is a composite. No real person, office or file is described.)",
+            "If the answer is yes, a lost drive is a lost piece of plastic. If the answer is no, anyone who "
+            "picks it up can read every name on it. Read to the end and you will know what encryption is in "
+            "plain words, where it already protects you, how to turn it on for your phone, laptop, USB "
+            "drives and files, what end-to-end encryption means for your messages, and the one mistake that "
+            "can lock you out of your own data.",
+            ("photo", "blog/cyber-encryption.jpg", "Encryption made simple: phones, laptops, USB drives and "
+             "messages, and a safe place for the recovery key. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What Encryption Is"),
+            "Encryption scrambles data so that it looks like nonsense to anyone without the key. The key is a secret, unlocked on your devices by your PIN, password or fingerprint. With the key, the data turns back "
+            "into the original. Without it, guessing is so slow that, for well-made encryption with a strong "
+            "password, it is not practical.",
+            "Think of a locked box rather than a hidden one. Everyone can see the box. Only the person with "
+            "the key can open it.",
+            ("quote", "Encryption does not hide your data. It makes it useless to anyone without the key."),
+            ("h", "Two Places Data Needs Protection"),
+            ("point", "Data on the move", "What travels between your device and a website or app. Parts 15 "
+             "and 16 covered this: the encrypted connection behind the address bar."),
+            ("point", "Data at rest", "What sits on your phone, laptop, USB drive or backup. This part is "
+             "mainly about that, because lost and stolen devices are a real, everyday risk."),
+            ("h", "Your Phone: Probably Already Encrypted"),
+            "Modern phones encrypt their storage, and the screen lock is what protects the key.",
+            ("point", "Android", "Android’s own documentation says that all devices launching with Android "
+             "10 and higher are required to use file-based encryption."),
+            ("point", "iPhone", "Apple’s data protection is turned on when you set a passcode."),
+            "That is why Part 12 insisted on a strong screen lock. A four-digit PIN that anyone can guess "
+            "weakens the encryption behind it, because it unlocks the key.",
+            ("h", "Your Laptop: Check It Today"),
+            "Laptops deserve a check, because encryption may not be on, and a laptop can hold years of files.",
+            ("point", "Windows", "Look in Settings for Device encryption, or for BitLocker. Which one you "
+             "have depends on your Windows edition and your hardware."),
+            ("point", "Mac", "Turn on FileVault in the Privacy and Security settings."),
+            ("point", "Save the recovery key", "Turning on encryption gives you a recovery key. Store it "
+             "somewhere safe and separate from the laptop: printed and filed, in your password manager, or, "
+             "for office laptops, with your IT staff."),
+            ("h", "The Mistake That Locks You Out"),
+            "Encryption works both ways. If you lose the key and the recovery key, your own data is as "
+            "unreadable to you as it is to a thief. A laptop that fails after an update and asks for a "
+            "recovery key you never saved can mean files lost for good.",
+            "This is the one mistake to plan against. Save the recovery key on the day you turn encryption on, "
+            "and keep a backup of your important files, as Part 5 advised for ransomware.",
+            ("h", "USB Drives and Single Files"),
+            ("point", "Use an encrypted drive or container", "Encryption tools built into your laptop, or "
+             "drives that require a password, protect the whole drive."),
+            ("point", "Password-protect sensitive files", "Spreadsheets, PDFs and archives can be saved with a "
+             "password that encrypts them. Use a long password, not the office name and the year."),
+            ("point", "Send the password a different way", "If you email a protected file, send the "
+             "password by text or call, never in the same email."),
+            ("point", "Carry less", "The safest file on a USB drive is the one you did not copy to it."),
+            ("h", "Backups Need Locks Too"),
+            "A backup is a full copy of your data, which makes it just as valuable to a thief as the "
+            "original. An external backup drive sitting in a desk drawer holds everything the laptop does.",
+            ("point", "Encrypt the backup drive", "Use the same built-in tools as for the laptop, and save "
+             "that recovery key too."),
+            ("point", "Guard the cloud account", "A cloud backup is protected by the account that holds it. "
+             "Part 6 covered the strong password and two-factor authentication it needs."),
+            ("point", "Keep backups out of sight", "Store an office backup drive in a locked cabinet, not on "
+             "top of the computer it backs up."),
+            ("h", "Messages: What End-to-End Means"),
+            "End-to-end encryption means a message is encrypted on the sender’s phone and decrypted only on "
+            "the recipient’s phone. The company carrying it cannot read it in between.",
+            ("point", "Some apps do it by default", "WhatsApp encrypts chats end to end. Meta announced on "
+             "December 6, 2023 that end-to-end encryption would be the default for personal one-to-one chats "
+             "in Messenger, with the rollout taking time to reach everyone."),
+            ("point", "Ordinary text messages do not", "SMS messages are not end-to-end encrypted. Do not "
+             "send passwords, ID numbers or account details by text."),
+            ("point", "Encryption ends at the screen", "Anyone who unlocks the recipient’s phone, or takes a "
+             "screenshot, can read the message. Encryption protects the trip, not what people do after."),
+            ("h", "What Encryption Cannot Do"),
+            ("point", "It cannot protect an unlocked device", "If the phone is open in a thief’s hand, the "
+             "data is already decrypted."),
+            ("point", "It cannot stop a phishing page", "If you type your password into a fake site, it "
+             "goes to the scammer, encrypted all the way."),
+            ("point", "It cannot fix a weak password", "A file protected by “123456” is barely protected."),
+            ("h", "Why Offices Must Care"),
+            "Section 20 of the Data Privacy Act of 2012, Republic Act No. 10173, requires those who handle "
+            "personal information to put in place reasonable and appropriate security measures to protect "
+            "it. For a treasury holding taxpayer names, addresses and payments, encrypting laptops and drives "
+            "is a practical place to start.",
+            ("h", "For Treasury Workers"),
+            ("point", "Encrypt every office laptop", "And keep the recovery keys with the IT staff, recorded "
+             "by device."),
+            ("point", "No unencrypted copies of taxpayer lists", "If a file must leave the office, encrypt it "
+             "first, and only with your office’s approval."),
+            ("point", "Report a lost device at once", "Even an encrypted one. Your office may need to record "
+             "the incident and check what was on it."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Not saving the recovery key", "Encryption without a recovery key can lock you out."),
+            ("point", "Sending the password with the file", "Use a different channel."),
+            ("point", "A weak screen lock", "It is the key to your phone’s encryption."),
+            ("point", "Trusting SMS with secrets", "Text messages are not end-to-end encrypted."),
+            ("h", "Key Takeaways"),
+            ("point", "Encryption makes lost data unreadable", "With a strong key, a lost device is only a "
+             "lost device."),
+            ("point", "Phones encrypt; laptops need checking", "Turn on Device encryption, BitLocker or "
+             "FileVault."),
+            ("point", "Save the recovery key", "Separate from the device, on the day you turn it on."),
+            ("point", "End-to-end protects the trip", "Not the screen at the other end."),
+            ("h", "Your Part 17 Action Plan"),
+            ("point", "Today", "Check whether your laptop is encrypted, and turn it on if it is not."),
+            ("point", "At the same time", "Save the recovery key somewhere safe and separate."),
+            ("point", "This week", "Find the files with personal data on your USB drives, delete what you "
+             "do not need, and protect the rest with a password."),
+            "The clerk’s drive was never found. The file on it had been saved with a long password the week "
+            "before, after an office briefing on data privacy. Her office recorded the loss, and nobody’s "
+            "name was exposed.",
+            ("cta", "Read: Cybersecurity Series, Part 16: Public Wi-Fi, Charging Stations and Staying Safe While Traveling", "/blog/cybersecurity-part-16-public-wifi-and-travel/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 5: Inside a Ransomware Attack", "/blog/cybersecurity-part-5-ransomware/"),
+            ("cta", "Read: Your Data at the Treasury Counter: What an Office May Share, and What It Must Protect", "/blog/your-data-at-the-treasury-counter/"),
+            ("ask", "Is your laptop encrypted right now? I'd like to hear what you found when you checked."),
+        ],
+    },
+    {
+        "date": "January 23, 2027",
+        "title": "Cybersecurity Series, Part 16: Public Wi-Fi, Charging Stations and Staying Safe While Traveling",
+        "slug": "cybersecurity-part-16-public-wifi-and-travel",
+        "category": "security",
+        "summary": "Is the free Wi-Fi at the airport or café safe? Mostly, yes, for a reason worth "
+                   "knowing. Here is what the real risks are today, what the FBI said about charging stations, "
+                   "and a simple travel routine for your phone and laptop.",
+        "publish_on": "2027-01-23 21:00",
+        "body": [
+            "A treasury employee on her way to a seminar in Manila waited at the bus terminal with an hour "
+            "to spare and a phone at 15%. Two networks appeared: “Terminal_Free_WiFi” and “Terminal Free "
+            "WiFi 2.” A charging kiosk nearby offered free USB ports. She wanted to check her email and send "
+            "a report to her office. Which network was safe? And was the kiosk?",
+            "(The employee and the terminal are a composite. No real person or place is described.)",
+            "Advice about public Wi-Fi has changed, and some of the old warnings no longer fit. Stay with me "
+            "to the end, and you will know why ordinary browsing on public Wi-Fi is safer than it used to "
+            "be, which risks remain, what the FBI said about free charging stations and how experts reacted, "
+            "and a short routine for keeping your devices safe on the road.",
+            ("photo", "blog/cyber-travel.jpg", "Staying safe while traveling: check the network name, trust "
+             "encryption but not every site, use your own charger, and keep sharing to contacts only. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Public Wi-Fi Is Safer Than It Used to Be"),
+            "Years ago, most websites sent information without encryption, as the FTC notes, so anyone on the same network "
+            "could read it. That has changed. The United States Federal Trade Commission now says that "
+            "“because of the widespread use of encryption, connecting through a public Wi-Fi network is "
+            "usually safe.”",
+            "Encryption scrambles what travels between your device and a website or app, so the café owner "
+            "or the person at the next table cannot read your password or your messages on the way. Part 15 "
+            "explained the limit: encryption protects the line, not the honesty of the site at the other "
+            "end.",
+            ("quote", "The danger has moved from the network to the page you land on."),
+            ("h", "The Risks That Remain"),
+            ("point", "Lookalike network names", "Anyone can set up a hotspot and name it anything, including "
+             "“Terminal_Free_WiFi.” A fake network cannot read encrypted traffic, but it can show you a "
+             "fake login page."),
+            ("point", "Sign-in pages that ask too much", "Some free networks show a sign-in page first. A "
+             "page that asks for your email password, bank details or ID number to give you Wi-Fi is a "
+             "warning sign."),
+            ("point", "Fake update pop-ups", "A page that says your browser or app must update before you "
+             "connect is not your device speaking, as Part 11 explained."),
+            ("point", "Shared screens and printers", "Internet café computers and print shops can keep "
+             "your files and stay logged in to your accounts after you leave."),
+            ("h", "Choosing a Network"),
+            ("point", "Ask the staff for the exact name", "If two names look alike, ask which one is real "
+             "instead of guessing."),
+            ("point", "Prefer your own mobile data for money", "For banking and e-wallets, your phone’s "
+             "data connection, or a hotspot from your own phone, avoids the question entirely."),
+            ("point", "Turn off auto-join", "Tell your phone to forget public networks after you leave, so "
+             "it does not join a network with the same name somewhere else."),
+            ("point", "Use apps and bookmarks, not links", "On any network, open your bank through its app "
+             "or your bookmark."),
+            ("h", "What About Free Charging Stations?"),
+            "In April 2023, the FBI’s Denver field office posted a warning: “Avoid using free charging "
+            "stations in airports, hotels or shopping centers. Bad actors have figured out ways to use public "
+            "USB ports to introduce malware and monitoring software onto devices.” It advised carrying your "
+            "own charger and cable and using an electrical outlet instead.",
+            "The warning spread widely. A report by the security company Malwarebytes said many security "
+            "experts were skeptical, and noted that the FBI office named no specific case, and that there were no "
+            "known recent cases of this kind of attack, known as juice jacking.",
+            "Both points can be true. The attack is possible in theory, no known recent case was found, "
+            "and the fix costs almost nothing. Carry your own charger and plug it into a wall outlet, or carry a "
+            "power bank. If you must use a USB port, and your phone asks whether to trust the device or "
+            "allow file transfer, say no and keep it to charging only.",
+            ("h", "What a VPN Does, and What It Does Not"),
+            "A virtual private network, or VPN, sends your traffic through an encrypted tunnel to a VPN "
+            "company’s server before it goes out to the internet. On public Wi-Fi, that hides which sites you "
+            "visit from the network’s owner.",
+            ("point", "It moves trust, it does not remove it", "The VPN company can now see what the café "
+             "could have seen. Choose a provider you have reason to trust, or one your office provides."),
+            ("point", "It does not stop fake websites", "A fake login page is just as fake through a VPN. "
+             "Reading the address still matters."),
+            ("point", "Be careful with unknown free VPN apps", "An app that routes all your traffic is a "
+             "powerful thing to install from a company you know nothing about."),
+            "For an office, a VPN the IT staff set up may be the approved way to reach office systems from "
+            "outside. Ask before you travel.",
+            ("h", "If Your Phone Is Lost on the Road"),
+            "Travel is a time when phones go missing: in a taxi, at a terminal, in a hotel room. Part 12 covered the "
+            "first hour. Before a trip, write your bank, e-wallet and network hotlines on paper and keep them "
+            "separate from the phone, together with a copy of your ID. If the phone disappears, those numbers "
+            "are the first thing you will need, and the phone that held them will be gone.",
+            ("h", "Sharing and Bluetooth on the Road"),
+            "Phones can send photos and files to nearby devices. In a crowded terminal, that feature can "
+            "also receive unwanted files from strangers. Set nearby sharing to your contacts only, and turn "
+            "on the setting to receive from everyone only when you need it, then turn it back off.",
+            ("h", "A Short Travel Routine"),
+            ("point", "Before you leave", "Update your phone and laptop, check that remote lock is on "
+             "(Part 12), and back up your files."),
+            ("point", "In transit", "Use your own data for money, keep the phone locked, and use your own "
+             "charger."),
+            ("point", "At the hotel or seminar", "Log out of any shared computer, delete your files from "
+             "it, and collect every page you printed."),
+            ("point", "When you return", "Remove public networks from your saved list."),
+            ("h", "For Treasury Workers"),
+            "Seminars, trainings and audits take treasury staff away from the office, sometimes with official "
+            "files. Do not open the office’s financial systems over a public network unless your office has "
+            "approved a secure way to do it. Carry only the files you need, keep them on an encrypted, "
+            "password-protected device, and never leave a laptop or USB drive unattended at a venue.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Picking the network with the strongest signal", "Ask the staff for the real name."),
+            ("point", "Giving personal details to a Wi-Fi sign-in page", "A café does not need your bank "
+             "password."),
+            ("point", "Leaving files at the print shop", "Delete them from the computer and log out."),
+            ("point", "Leaving sharing open to everyone", "Set it to contacts only."),
+            ("h", "Key Takeaways"),
+            ("point", "Encryption made public Wi-Fi safer", "The FTC now calls it usually safe."),
+            ("point", "Fake pages remain a risk", "Read the address, as Part 15 showed."),
+            ("point", "Use your own charger", "The FBI warning was debated, but the habit is free."),
+            ("point", "Keep money on your own data", "Bank and e-wallet tasks can wait for your own "
+             "connection."),
+            ("h", "Your Part 16 Action Plan"),
+            ("point", "Today", "Put a short charging cable and a wall adapter in your bag."),
+            ("point", "Tonight", "Set nearby sharing to contacts only, and remove old public networks from "
+             "your phone."),
+            ("point", "Before your next trip", "Update your devices and confirm remote lock works."),
+            "The employee asked the terminal staff, who said neither network was theirs; the terminal’s own "
+            "Wi-Fi had a different name posted at the counter. She sent her report using her phone’s data, "
+            "and charged her phone at a wall outlet with her own cable. It took the same hour.",
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 4: Securing Your Home and Remote Network", "/blog/cybersecurity-part-4-home-network/"),
+            ("cta", "Read: Cybersecurity Series, Part 11: Software Updates", "/blog/cybersecurity-part-11-software-updates/"),
+            ("ask", "Where do you connect to public Wi-Fi most often, and how do you choose the network?"),
+        ],
+    },
+    {
+        "date": "January 18, 2027",
+        "title": "Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address",
+        "slug": "cybersecurity-part-15-fake-websites",
+        "category": "security",
+        "summary": "A fake login page can look perfect and still carry the padlock. Here is what the padlock "
+                   "really means, how to read a web address in ten seconds, why the top search result can be a "
+                   "trap, and the browser habits that keep you on the real site.",
+        "publish_on": "2027-01-18 21:00",
+        "body": [
+            "An office clerk needed to pay a bill online before lunch. She typed her bank’s name into a "
+            "search engine and clicked the first result. The page looked exactly right: the logo, the colors, "
+            "the login box. It even had the little padlock beside the address. She typed her username and "
+            "password, and the page asked for the code sent to her phone. That is when she noticed the "
+            "address had one letter wrong.",
+            "(The clerk is a composite. No real person, bank or website is described.)",
+            "A fake website does not have to look fake. It can copy the real one down to the last button, and it can "
+            "carry the same padlock. After this post, you will know what that padlock does and does not "
+            "promise, how to read a web address in about ten seconds, why the top search result can be a "
+            "trap, and the browser habits that keep you on the real site.",
+            ("photo", "blog/cyber-fake-sites.jpg", "Spotting fake websites: the padlock is not proof, read "
+             "the address, skip search ads, and use bookmarks. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What the Padlock Really Means"),
+            "For years, people were told to look for the padlock. The padlock means the connection is "
+            "encrypted: what you type travels scrambled between your browser and the site. It says nothing "
+            "about who runs the site. A scammer can get the same encryption for a fake page.",
+            "Google decided this misunderstanding was serious enough to act on. In Chrome version 117, "
+            "released in September 2023, it replaced the padlock with a neutral “tune” icon, saying the "
+            "change prevents the misunderstanding that the lock is linked to a page’s trustworthiness. "
+            "Google reported that in one of its studies of 1,880 people, 89% misread what the padlock meant.",
+            "The United States Federal Trade Commission makes the same point in its advice on public Wi-Fi: "
+            "scammers “create fake websites and encrypt them to make you think they’re safe when they’re "
+            "not.”",
+            ("quote", "Encryption tells you the line is private. It does not tell you who is on the other end."),
+            ("h", "Read the Address, Not the Page"),
+            "The page can copy anything. The web address is the one thing a scammer cannot fully copy, "
+            "because the real domain belongs to the real owner. Here is how to read it.",
+            ("point", "1. Find the first single slash", "In https://www.example.com/login, look at the part "
+             "between “https://” and the first “/” after it. Here that is www.example.com."),
+            ("point", "2. Read that part from the right", "The ending and the name just before it, such as "
+             "example.com, or example.gov.ph for a Philippine government site, tell you who owns the "
+             "address. Everything further left is chosen by that owner."),
+            ("point", "3. Watch for the trick", "In bank.com.secure-login.example/home, the domain is "
+             "secure-login.example, not bank.com. The real bank’s name has been placed on the left, where "
+             "anyone can put anything."),
+            ("point", "4. Look for lookalike letters", "A swapped or added letter, “rn” standing in for “m”, "
+             "or an extra word like “-verify” or “-support” can make a fake address look right at a "
+             "glance."),
+            "A useful local check: Philippine government websites end in .gov.ph. A page claiming to be a "
+            "government office on any other ending deserves a second look.",
+            ("h", "Why the Top Search Result Can Be a Trap"),
+            "On December 21, 2022, the FBI warned that “cyber criminals are using search engine advertisement "
+            "services to impersonate brands and direct users to malicious sites.” Sponsored results can appear above the real ones, so a fake page can sit at the very top. The FBI noted that financial "
+            "websites, especially cryptocurrency platforms, had been impersonated to steal login details.",
+            "Its advice was simple. Check the address before clicking an ad, and type the business’s address "
+            "directly into the browser instead of searching for it. It also suggested an ad-blocking browser "
+            "extension.",
+            ("h", "Habits That Keep You on the Real Site"),
+            ("point", "Bookmark the sites that hold money", "Your bank, your e-wallet’s web page, your "
+             "government accounts. Use the bookmark every time instead of searching."),
+            ("point", "Let your password manager be a detector", "A password manager, as Part 2 described, "
+             "offers your saved password on the site it was saved for. If it offers nothing on a page that "
+             "looks like your bank, stop and read the address."),
+            ("point", "Heed the red warning screen", "Major browsers show a full-page warning when a site is "
+             "reported as deceptive. Do not click past it."),
+            ("point", "Do not log in from a link", "Links in texts and emails are where fake pages hide. "
+             "Open the app or your bookmark instead, as Part 13 advised for e-wallets."),
+            ("h", "Fake Shops and Fake Downloads"),
+            "Fake websites do not only steal logins. Some sell things that never arrive, and some hand you a "
+            "file that does harm.",
+            ("point", "A price far below everyone else’s", "Ask why. A shop with no address, no history and "
+             "only one way to pay deserves doubt."),
+            ("point", "Payment to a personal account", "Be wary when a company asks you to pay into a personal name."),
+            ("point", "“Your browser is out of date” pop-ups", "Modern browsers update themselves, as Part 11 explained. A web page offering a browser update is not your browser."),
+            ("point", "Software from its official site or store", "Free copies of paid software from "
+             "unknown sites can carry malware."),
+            ("h", "Short Links and QR Codes Hide the Address"),
+            "A shortened link and a QR code have the same weakness: you cannot see where they lead until you "
+            "open them. Scammers use both. A QR code sticker can be placed over a real one on a poster, a "
+            "parking meter or a payment counter.",
+            ("point", "Preview before you open", "When your camera reads a QR code, look at the web address it shows before you tap, and read the domain from the right."),
+            ("point", "Be careful with codes that ask for logins or payments", "A QR code on a flyer has "
+             "no business taking you to your bank’s login page."),
+            ("point", "Check the sticker", "At a counter, look for a code pasted on top of another one, "
+             "and ask the staff if in doubt."),
+            ("h", "Browser Extensions: Small Programs With Big Access"),
+            "An extension can read and change the pages you visit. That is useful for a dictionary or an ad "
+            "blocker, and dangerous for one you installed and forgot. Keep only the extensions you use, "
+            "install them from the browser’s official store, and remove any that ask for access they do not "
+            "need.",
+            ("h", "For Treasury Workers"),
+            "Offices that accept online payments should publish the exact address of their payment page, in "
+            "full, on their official website and their posted notices. Tell taxpayers plainly that the office "
+            "will never send a payment link by text message. A taxpayer who knows the right address can spot "
+            "the wrong one.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting the padlock", "It means encrypted, not honest."),
+            ("point", "Reading the address from the left", "The domain is on the right, just before the "
+             "first single slash."),
+            ("point", "Clicking the top result for your bank", "It may be a paid ad. Use a bookmark."),
+            ("point", "Clicking past a browser warning", "The warning means the site has been reported as deceptive or harmful."),
+            ("h", "Key Takeaways"),
+            ("point", "The padlock is about privacy", "It does not prove who runs the site."),
+            ("point", "The address is the truth", "Read the part just before the first single slash, from "
+             "the right."),
+            ("point", "Ads can impersonate brands", "Type the address or use a bookmark for anything that "
+             "holds money."),
+            ("point", "Your password manager can warn you", "If it stays silent on a familiar page, check "
+             "the address."),
+            ("h", "Your Part 15 Action Plan"),
+            ("point", "Today", "Bookmark your bank, e-wallet and government accounts, and use only those "
+             "bookmarks."),
+            ("point", "This week", "Open your browser’s extensions page and remove anything you do not use."),
+            ("point", "Practice", "For the next five links you open, read the domain before the page loads."),
+            "The clerk closed the page without entering the code, then called her bank from the number on "
+            "the back of her card and changed her password. Her account was untouched. The code she did not "
+            "type was the one thing standing between the scammer and her money.",
+            ("cta", "Read: Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise", "/blog/cybersecurity-part-14-social-media-accounts/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("ask", "Have you ever landed on a fake website that looked real? What gave it away?"),
+        ],
+    },
+    {
+        "date": "January 13, 2027",
+        "title": "Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise",
+        "slug": "cybersecurity-part-14-social-media-accounts",
+        "category": "security",
+        "summary": "A hacked social media account lets a scammer borrow your face and your friends’ trust. Here is "
+                   "how accounts are taken, how to lock yours down, what to stop posting, and what to do in the "
+                   "first hour if it happens.",
+        "publish_on": "2027-01-13 21:00",
+        "body": [
+            "The message came from a cousin, with his photo and his name, in the middle of a workday. “Pa-help "
+            "naman, emergency lang. Can you send ₱3,000 to this e-wallet number? I’ll pay you back tonight.” "
+            "The clerk who received it almost sent the money. Then she called her cousin. He was at home, "
+            "confused, and locked out of his own account.",
+            "(The clerk and her cousin are a composite. No real person is described.)",
+            "A stolen social media account is valuable to a scammer, and not for your photos. It comes with a "
+            "real face, a real name and hundreds of people who trust that face. When you finish reading, you "
+            "will know why ordinary accounts are targeted, the tricks used to take them, the settings that "
+            "lock yours down, what to stop posting, and the steps to take in the first hour after an account "
+            "is taken.",
+            ("photo", "blog/cyber-social.jpg", "Social media safety: a unique password, an authenticator app, "
+             "a check of where you are logged in, and less personal detail in public. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Your Account Is Worth Stealing"),
+            "Part 3 of this series showed that scammers work on trust. A message from a stranger asking for money is easy to ignore. The same message from a cousin’s account gets a second look, and sometimes a "
+            "transfer.",
+            ("point", "Your friends list", "Every person on it is a possible victim of a message that "
+             "appears to come from you."),
+            ("point", "Your pages and groups", "An account that manages a page or group can post to everyone "
+             "who follows it."),
+            ("point", "Your linked accounts", "Some apps let you sign in with a social media account. "
+             "Losing it can mean losing access to those apps too."),
+            ("quote", "A hacked account does not steal from you first. It steals from the people who trust you."),
+            ("h", "How Accounts Get Taken"),
+            "Taking an account does not require clever hacking. The tricks below are the same ones covered "
+            "earlier in this series, pointed at a social media login.",
+            ("point", "Fake warning messages", "A message says your page broke the platform’s rules and will "
+             "be removed unless you log in through a link. The link goes to a copy of the login page."),
+            ("point", "Reused passwords", "A password leaked from one website is tried on others. If you use "
+             "the same one everywhere, one leak opens them all."),
+            ("point", "The “wrong number” code", "A friend’s account, already taken, says it sent a code to "
+             "your phone by mistake and asks you to send it back. That code is the key to your own account."),
+            ("point", "Quizzes and fake apps", "Some ask you to sign in or to share details that answer "
+             "security questions."),
+            ("h", "Lock It Down: Five Settings"),
+            ("point", "1. A unique, long password", "Use a password manager, as Part 2 described, so every "
+             "account gets its own."),
+            ("point", "2. Two-factor authentication with an app", "Turn it on, and choose an authenticator "
+             "app or a security key over text messages where you can. Codes by text can be intercepted, and "
+             "Part 12 showed how they can appear on a lock screen."),
+            ("point", "3. Login alerts", "Ask to be notified when someone logs in from a new device."),
+            ("point", "4. Check where you are logged in", "Look at the list of active sessions in the "
+             "security settings, and log out of any device you do not recognize."),
+            ("point", "5. Secure the email behind it", "A password reset goes to your email. If that email "
+             "is weak, the social media account is weak too."),
+            "On Facebook and Instagram, these settings are gathered in Accounts Center, under Password and "
+            "security. Other platforms have similar menus. Set them up once, and check them every few months.",
+            ("h", "Keep Your Recovery Details Current"),
+            "Recovery details are the spare keys to your account, and they only help if they still work.",
+            ("point", "An email you still use", "If the recovery email is an old address you no longer open, "
+             "a reset link sent there is lost, or found by someone else."),
+            ("point", "A phone number you still hold", "If you changed numbers, update the account before you "
+             "need a code, not after."),
+            ("point", "Backup codes on paper", "When you turn on two-factor authentication, platforms such as "
+             "Facebook offer a set of recovery codes. Print or write them down and keep them at home, away "
+             "from the phone."),
+            ("h", "Post Less of What Unlocks You"),
+            "Some of what people share in public is the same information used to verify them.",
+            ("point", "Your full birthday", "Banks, hotlines and forms use it to confirm who you are. "
+             "Consider hiding the year."),
+            ("point", "Answers to security questions", "Your first school, your mother’s maiden name, your "
+             "first pet. Posts and quizzes can reveal them."),
+            ("point", "IDs, cards and boarding passes", "A photo of a new ID or a boarding pass can show "
+             "numbers and barcodes you never meant to publish."),
+            ("point", "Where you are right now", "Posting that the whole family is away for a week tells "
+             "everyone the house is empty. Post the photos when you are home."),
+            ("h", "When a Friend Asks for Money"),
+            "Treat every money request sent through social media as unverified until you confirm it another "
+            "way.",
+            ("point", "Call them", "Use the number you already have, not one given in the message."),
+            ("point", "Ask something only they know", "Part 10 suggested a family code word for exactly "
+             "this."),
+            ("point", "Do not be rushed", "Urgency is a scammer’s tool. A real emergency survives a "
+             "two-minute phone call."),
+            ("h", "The First Hour After an Account Is Taken"),
+            ("point", "Start the recovery", "For Facebook, go to facebook.com/hacked from a browser and "
+             "follow the steps. Other platforms have similar help pages."),
+            ("point", "Secure your email first", "Change its password and check its recovery settings, so "
+             "the attacker cannot reset everything again."),
+            ("point", "Warn people another way", "Text or call family and close friends: ignore money "
+             "requests from my account."),
+            ("point", "Check linked money", "If your e-wallet or bank app uses the same email or password, "
+             "change those too, and watch for transactions you did not make."),
+            "If someone was tricked into sending money, report it to their e-wallet or bank at once, as Part "
+            "13 described.",
+            ("h", "For Treasury Workers and Office Pages"),
+            "Offices post announcements, schedules and payment reminders on social media. A taken-over office "
+            "page could post a fake payment account to the whole town.",
+            ("point", "More than one admin", "At least two trusted staff, each with two-factor "
+             "authentication, so one lost account does not lock the office out."),
+            ("point", "Personal and official stay separate", "Give each staff member access through their own account instead of sharing one login, and remove access when a person leaves the office."),
+            ("point", "State the official channels", "Pin a post that lists the only accounts that may "
+             "receive payments, and repeat that the office never asks for codes or passwords."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Sending a code “back” to a friend", "It is your login code, and the friend’s account "
+             "is already taken."),
+            ("point", "Relying on text-message codes alone", "An authenticator app is harder to "
+             "intercept."),
+            ("point", "Leaving old devices logged in", "An old phone sold or lost can still be signed in."),
+            ("point", "Posting while away", "Share the trip after you are back."),
+            ("h", "Key Takeaways"),
+            ("point", "Your account carries your friends’ trust", "That trust is what scammers steal."),
+            ("point", "A takeover can start with a simple trick", "A fake warning, a reused password or a "
+             "code sent “back.”"),
+            ("point", "Two-factor with an app", "Plus login alerts and a check of active sessions."),
+            ("point", "Verify money requests by phone", "Every time, no matter whose face is on the message."),
+            ("h", "Your Part 14 Action Plan"),
+            ("point", "Tonight, ten minutes", "Turn on two-factor authentication with an authenticator app, "
+             "turn on login alerts, and log out of devices you do not recognize."),
+            ("point", "This week", "Hide your birth year and remove posts that show IDs or boarding passes."),
+            ("point", "Tell your family", "Agree that any money request by chat will be confirmed by a call."),
+            "The clerk’s cousin got his account back two days later. The first thing he posted was a warning. "
+            "Three relatives replied that they had received the same message. One had already sent the money.",
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("ask", "Has a friend’s hacked account ever asked you for money? I'd like to hear how you spotted it."),
+        ],
+    },
+    {
+        "date": "January 8, 2027",
+        "title": "Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name",
+        "slug": "cybersecurity-part-13-ewallets-and-the-anti-scam-law",
+        "category": "security",
+        "summary": "Lending your e-wallet account for a small fee can make you a money mule under Republic Act "
+                   "No. 12010. Here is what the anti-scam law says, what banks and e-wallets must do, and the "
+                   "habits that keep your money and your name safe.",
+        "publish_on": "2027-01-08 21:00",
+        "body": [
+            "A college student gets a message from a friendly stranger. He runs a small online business, he "
+            "says, and his own e-wallet has reached its limit. Could she let him use her verified account for a "
+            "few weeks? Money would come in and go out, and she would keep ₱500 a week for her trouble. It "
+            "sounds harmless. Nobody is asking for her money, only her account.",
+            "(The student and the stranger are a composite. No real person is described.)",
+            "That account is exactly what scammers want. Stolen money has to land somewhere with a real, "
+            "verified name on it before it disappears, and a borrowed account gives them that name. Read to "
+            "the end and you will know what the Anti-Financial Account Scamming Act says, why lending an "
+            "account is no longer a small favor, what your bank or e-wallet must do to protect you, and the "
+            "habits that keep both your money and your name safe.",
+            ("photo", "blog/cyber-ewallet.jpg", "E-wallet safety: never lend your account, never share a code, "
+             "use the official app, and report fast. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Law in One Paragraph"),
+            "Republic Act No. 12010, the Anti-Financial Account Scamming Act, was approved on July 20, 2024. It "
+            "covers financial accounts in a broad sense. Section 3 includes deposit, investment and credit card "
+            "accounts, and it names e-wallet accounts too. Section 4 then defines three kinds of offenses: "
+            "acting as a money mule, carrying out a social engineering scheme, and economic sabotage.",
+            ("h", "Money Mules: When an Account Becomes a Crime"),
+            "Section 4(a) treats a person as a money mule when they do certain acts “for the purpose of "
+            "obtaining, receiving, depositing, transferring, or withdrawing proceeds that are known to be "
+            "derived from crimes, offenses, or social engineering schemes.” The acts listed include:",
+            ("point", "Using, borrowing or allowing the use of an account", "This is the student’s case: "
+             "letting someone else move money through her name."),
+            ("point", "Opening an account under a fake name", "Or with another person’s identity or ID "
+             "documents."),
+            ("point", "Buying, renting, selling or lending an account", "Section 5 separately lists buying "
+             "or selling a financial account as an offense."),
+            ("point", "Recruiting others", "Hiring or inducing other people to do any of the acts above."),
+            "Under Section 16(a), a money mule faces imprisonment of six to eight years, a fine of ₱100,000 to "
+            "₱500,000, or both, at the court’s discretion. That is a heavy price for ₱500 a week.",
+            "Notice the words “known to be derived.” The law aims at people who know, or come to know, where "
+            "the money is from. But a stranger paying you to use your account is the warning itself. Once you "
+            "see money from people you do not know passing through your name, it becomes hard to claim you did not know.",
+            ("quote", "Nobody pays to borrow an account for an honest reason."),
+            ("h", "Social Engineering: Stealing the Keys"),
+            "Section 4(b) covers how scammers get your details in the first place. A social engineering scheme is committed by a "
+            "person who obtains another person’s sensitive identifying information through deception or "
+            "fraud, by pretending to act for a bank or e-wallet, or by using electronic communications.",
+            "In practice, that is the text saying your account will be locked unless you “verify” it, the "
+            "caller who claims to be from customer support and needs your one-time code, and the link to a "
+            "page dressed up like your e-wallet’s login. Part 3 of this series showed how these tricks play "
+            "on fear and urgency. The penalty under Section 16(b) is ten to twelve years of imprisonment, a "
+            "fine of ₱500,000 to ₱1,000,000, or both.",
+            ("h", "When It Becomes Economic Sabotage"),
+            "Section 4(c) raises these acts to economic sabotage when they are committed by a group of three or "
+            "more people conspiring together, against three or more victims, using a mass mailer, or through "
+            "human trafficking. Section 16(c) sets the penalty at life imprisonment, a fine of ₱1,000,000 to "
+            "₱5,000,000, or both. Scam operations that send messages in bulk to strangers can fall into this "
+            "group.",
+            ("h", "What Your Bank or E-Wallet Must Do"),
+            "The law also places duties on institutions. Section 6 says they “shall ensure that access to their "
+            "clients’ Financial Account is protected by adequate risk management systems and controls such as "
+            "MFAs, FMS, and other Account Owner enrollment and verification processes.” MFA is multi-factor "
+            "authentication, which Part 2 covered. FMS is a fraud management system, which watches for "
+            "unusual transactions.",
+            "Section 7 lets an institution temporarily hold funds involved in a disputed transaction, for a period set by the Bangko Sentral ng Pilipinas (BSP) that may not exceed 30 "
+            "calendar days unless a court extends it. Section 8 calls for a coordinated verification process "
+            "between the institutions and the account owners involved when a transaction is disputed.",
+            "There is one more line worth reading. Section 6 adds that institutions found by the BSP to have "
+            "adequate controls “shall not be liable for any loss or damage” arising from these offenses. In "
+            "other words, your own care still matters. The law can punish a scammer, but your habits are what "
+            "keep your money from leaving in the first place.",
+            ("h", "Habits That Keep Your E-Wallet Safe"),
+            ("point", "Never share a one-time code or PIN", "No real bank or e-wallet employee needs it. A "
+             "request for it is the scam."),
+            ("point", "Use only the official app", "Install it from the official app store, and reach "
+             "support through the contact details inside the app, not a number in a text message."),
+            ("point", "Ignore links in messages about your account", "Open the app yourself and check there. "
+             "If something is wrong, the app will show it."),
+            ("point", "Keep a separate wallet PIN", "Part 12 explained why the wallet’s PIN should differ "
+             "from the phone’s screen lock."),
+            ("point", "Turn on transaction alerts", "An alert for every transaction lets you spot one you did "
+             "not make within minutes."),
+            ("point", "Never lend, rent or sell your account", "Not to a friend’s business, not for a fee, "
+             "not for a few weeks."),
+            ("h", "If Money Leaves Without You"),
+            "Speed matters, because the hold under Section 7 can only work on money that has not yet been "
+            "moved on.",
+            ("point", "Call your institution first", "Use the hotline printed in the app or on the official "
+             "website. Report the transaction and ask them to secure the account."),
+            ("point", "Write everything down", "Times, amounts, reference numbers, and screenshots of the "
+             "messages that tricked you."),
+            ("point", "Report the scam", "The Cybercrime Investigation and Coordinating Center’s hotline, "
+             "1326, appears in Part 9 of this series."),
+            ("point", "Escalate if needed", "If your bank or e-wallet does not resolve your complaint, the "
+             "BSP accepts consumer complaints about the institutions it supervises, including through its "
+             "online chat assistant."),
+            ("h", "For Treasury Workers"),
+            "Some treasuries now take payments through bank transfers and e-wallets. That brings these scams to the "
+            "counter. A taxpayer may receive a fake message, supposedly from the treasury, asking them to pay "
+            "into a personal account. Post your official payment channels where taxpayers can see them, say "
+            "clearly that the office never asks for one-time codes, and never use a personal account to receive "
+            "public money.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Thinking “it is only my account”", "Under Section 4(a), lending it to move "
+             "proceeds of a crime can make you a money mule."),
+            ("point", "Trusting a familiar logo", "A message can copy any bank’s colors and name. Check "
+             "inside the official app."),
+            ("point", "Waiting a day to report", "Every hour gives the scammer time to move the money on."),
+            ("point", "Assuming the bank will pay it back", "Section 6 protects institutions that have "
+             "adequate controls. Prevention is your best protection."),
+            ("h", "Key Takeaways"),
+            ("point", "An account is a key", "Scammers need real names to receive stolen money. Do not "
+             "lend yours."),
+            ("point", "RA 12010 has teeth", "Six to eight years for money mules, ten to twelve for social "
+             "engineering, and up to life for economic sabotage."),
+            ("point", "Codes stay with you", "No legitimate employee asks for your one-time code or PIN."),
+            ("point", "Report within minutes", "Call your institution first, then report the scam."),
+            ("h", "Your Part 13 Action Plan"),
+            ("point", "Tonight", "Turn on transaction alerts and check that your wallet has its own PIN."),
+            ("point", "This week", "Save your bank and e-wallet hotlines from their official apps or "
+             "websites, and write them on paper at home."),
+            ("point", "Talk to one person", "Tell a student or relative that renting out an account is a "
+             "crime, and why."),
+            "The student in our story said no and blocked the stranger. Weeks later, a classmate who said yes "
+            "found her account frozen and her name in a police report. The ₱500 a week did not cover the "
+            "lawyer.",
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("cta", "Read: Cybersecurity Series, Part 9: Incident Response", "/blog/cybersecurity-part-9-incident-response/"),
+            ("ask", "Has anyone ever offered to pay you to use your account? I'd like to hear how you answered."),
+        ],
+    },
+    {
         "date": "January 3, 2027",
         "title": "Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost",
         "slug": "cybersecurity-part-12-securing-your-phone",
@@ -24,8 +1538,7 @@ CYBER_POSTS = [
             "family photos and the text messages where every one-time code arrives.",
             "A lost phone used to mean a lost phone. Today it can mean a lost wallet, a lost identity and a "
             "few anxious days of resetting passwords. The good news is that much of the damage can be limited by settings that take about fifteen minutes to set up, before anything happens.",
-            "In this part, we treat the phone as what it has become: the key to almost everything else. By "
-            "the end of this post, you will know how to lock your phone properly, how to keep harmful apps "
+            "In this part, we treat the phone as what it has become: the key to almost everything else. By the last section, you will know how to lock your phone properly, how to keep harmful apps "
             "off it, how to stop one-time codes from being read off your screen, how to set up remote "
             "locking and erasing, and what to do in the first hour after a phone is lost or stolen.",
             ("photo", "blog/cyber-phone.jpg", "Securing your phone: lock it, install apps only from the "
@@ -140,6 +1653,8 @@ CYBER_POSTS = [
              "ring. Then write your bank, e-wallet and network hotlines on paper and keep them at home."),
             "If the jeepney ride ever goes wrong, those fifteen minutes will be the best you ever spent on "
             "your phone.",
+            "Thank you for following this series through twelve parts. Share it with one person who would "
+            "benefit, especially someone who handles money, records or the accounts of an elderly parent.",
             ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
             ("cta", "Read: Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private", "/blog/cybersecurity-part-6-cloud-and-privacy/"),
             ("cta", "Read: Cybersecurity Series, Part 11: Software Updates", "/blog/cybersecurity-part-11-software-updates/"),
@@ -162,8 +1677,7 @@ CYBER_POSTS = [
             "because there is a line at the window and the restart takes too long.",
             "That small button is a real security decision, even if it does not feel like one. "
             "In this part, we look at what an update actually does, what happens when it is skipped, and how "
-            "to build a routine that keeps every device current without getting in the way of the work. By "
-            "the end of this post, you will know how attackers use known flaws, what end of support means "
+            "to build a routine that keeps every device current without getting in the way of the work. Stay with me to the end, and you will know how attackers use known flaws, what end of support means "
             "for an old computer or phone, how to check whether a device is up to date, and how a small office "
             "can plan its updates instead of postponing them.",
             ("photo", "blog/cyber-updates.jpg", "Software updates: install them, restart, replace devices "
@@ -417,13 +1931,13 @@ CYBER_POSTS = [
             "weaknesses: a stolen or guessed password, a person rushed into acting, a missing "
             "update, a setting left open, or data with no backup. The tools change. The weak "
             "points stay remarkably familiar.",
-            "That means the habits you have built through these ten parts will keep paying off. A"
+            "That means the habits you have built so far in this series will keep paying off. A"
             " passkey or an authenticator app defeats much of what AI-written phishing can do. A "
             "habit of verifying requests defeats the cloned voice. Automatic updates bring you "
             "the new post-quantum locks. A guest network contains the hacked gadget. An offline "
             "backup turns ransomware into a bad day instead of a catastrophe.",
-            ("h", "Looking Back on Ten Parts"),
-            "Over these ten parts, we have walked from the basics to the frontier. We learned how"
+            ("h", "Looking Back So Far"),
+            "So far, we have walked from the basics to the frontier. We learned how"
             " attacks unfold, then protected our accounts with strong passwords, passkeys and "
             "multi-factor authentication. We studied how scammers play on emotion, secured the "
             "home router and survived a ransomware scenario. We tidied up our cloud accounts, "
@@ -458,9 +1972,9 @@ CYBER_POSTS = [
              "Audit one smart device",
              "Change its default password, update its software, turn off features you do not use "
              "and move it to your guest network."),
-            "Thank you for reading these ten parts. Share them with one person who would benefit, "
+            "Share this series with one person who would benefit, "
             "especially someone who handles money, records or the accounts of an elderly parent.",
-            ("cta", "Start again with Part 1", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 1: How Modern Cyberattacks Really Work", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
             ("cta",
              "Read: Cybersecurity Series, Part 9: Incident Response",
              "/blog/cybersecurity-part-9-incident-response/"),
@@ -485,8 +1999,7 @@ CYBER_POSTS = [
             "things worse.",
             "Part 9 of this series is about incident response: the calm, ordered steps that limit"
             " the damage when something goes wrong. You do not need to be a technical expert to "
-            "follow them. You need a plan that is written down before the bad day arrives. By the"
-            " end of this post, you will know what to do in the first hour of common emergencies,"
+            "follow them. You need a plan that is written down before the bad day arrives. When you finish reading, you will know what to do in the first hour of common emergencies,"
             " how to keep evidence intact, where to report in the Philippines, and how to write a"
             " one-page plan.",
             ("h", "What Counts as an Incident?"),
@@ -681,7 +2194,7 @@ CYBER_POSTS = [
             " password or one infected laptop, the fortress model lets them walk freely from room"
             " to room. Ransomware, which we discussed in Part 5, can spread exactly this way.",
             "Part 8 of this series is about the answer that security experts have worked toward "
-            "for more than a decade: zero trust. By the end of this post, you will know what it "
+            "for more than a decade: zero trust. After this post, you will know what it "
             "really means, why it echoes the internal controls of a well-run treasury, and "
             "low-cost steps a small office can take this month.",
             ("h", "What Zero Trust Means"),
@@ -875,8 +2388,7 @@ CYBER_POSTS = [
             "Part 7 of this series, we take a guided tour of the most common weaknesses in web "
             "applications. If you use apps, this will help you understand the news. If your "
             "office buys or runs a system, it will help you ask better questions. And if you "
-            "build software, as I do for treasury work, it is a checklist worth keeping close. By"
-            " the end of this post, you will know the ten most serious app risks in plain words, "
+            "build software, as I do for treasury work, it is a checklist worth keeping close. Read to the end and you will know the ten most serious app risks in plain words, "
             "six questions to ask before your office buys a system, and habits that keep your own"
             " apps safer.",
             ("h", "What Is OWASP?"),
@@ -1056,7 +2568,7 @@ CYBER_POSTS = [
             "habits.",
             "In Part 6 of this series, we look at how to keep your cloud accounts secure and how "
             "to protect your privacy in a world where so much of our lives is stored, shared and "
-            "analyzed online. By the end of this post, you will know where your responsibility "
+            "analyzed online. By the last section, you will know where your responsibility "
             "begins, how to share files safely, and how to remove the apps that still reach your "
             "accounts.",
             ("h", "What \"the Cloud\" Really Means"),
@@ -1236,8 +2748,7 @@ CYBER_POSTS = [
             " Corporation (PhilHealth) went through a version of it. In Part 5 of this series, we"
             " look inside a modern ransomware attack: how it starts and why it is built to make "
             "you pay. We also look at what ordinary people and offices can do, so that a ransom "
-            "note becomes an inconvenience instead of a disaster. By the end of this post, you "
-            "will know how an attack unfolds, why paying is a bad bet, and how to set up backups "
+            "note becomes an inconvenience instead of a disaster. Stay with me to the end, and you will know how an attack unfolds, why paying is a bad bet, and how to set up backups "
             "an attacker cannot touch.",
             ("h", "From Locked Screens to a Criminal Industry"),
             "Early ransomware was crude. A virus scrambled the files on one computer and asked "
@@ -1455,7 +2966,7 @@ CYBER_POSTS = [
             "If you work from home even part of the time, the home router now protects not only "
             "family photos but sometimes office documents, government systems and money. In Part "
             "4 of this series, we will lock that front door, divide the house into safer rooms, "
-            "and clear up some common myths about VPNs. By the end of this post, you will be able"
+            "and clear up some common myths about VPNs. When you finish reading, you will be able"
             " to secure your router in under an hour, separate risky gadgets from your work "
             "laptop, and judge when a VPN actually helps.",
             ("h", "Why the Router Matters"),
@@ -1643,7 +3154,7 @@ CYBER_POSTS = [
             "suspended, or we have won a prize we never joined. In Part 3 of this series, we look"
             " at how these tricks work, why smart people fall for them, and the habits that "
             "defeat them, including scams that now use artificial intelligence to copy voices and"
-            " faces. By the end of this post, you will be able to spot the pressure tricks in a "
+            " faces. Read to the end and you will be able to spot the pressure tricks in a "
             "message within seconds and know exactly what to do if you already clicked.",
             ("h", "Why Smart People Get Fooled"),
             "Falling for a scam is not a sign of low intelligence. Scammers design messages to "

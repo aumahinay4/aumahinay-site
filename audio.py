@@ -45,6 +45,25 @@ def parts(b):
     return out
 
 
+_DIG = "zero one two three four five six seven eight nine".split()
+_TEENS = "ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
+
+
+def _two(a):
+    tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+    if a < 10:
+        return "oh " + _DIG[a]
+    return _TEENS[a - 10] if a < 20 else tens[a // 10] + ("-" + _DIG[a % 10] if a % 10 else "")
+
+
+def ra_words(n):
+    """How Butch reads law numbers (2026-11-15): RA 7160 -> "R A seventy-one sixty" (two pairs);
+    RA 12010 -> "R A twelve zero one zero" (first two digits as a number, the rest digit by digit)."""
+    if len(n) == 4:
+        return _two(int(n[:2])) + " " + _two(int(n[2:]))
+    return _two(int(n[:2])) + " " + " ".join(_DIG[int(d)] for d in n[2:])
+
+
 def spoken(text):
     """Small fixes so the voice reads the way a person would."""
     s = text
@@ -52,6 +71,10 @@ def spoken(text):
     s = s.replace("₱", "pesos ")
     s = re.sub(r"\bNos\.\s*(?=\d)", "Numbers ", s)  # "Republic Act No. 7160" -> "Republic Act Number 7160" (Butch, 2026-11-15)
     s = re.sub(r"\bNo\.\s*(?=\d)", "Number ", s)
+    s = re.sub(r"\b(Republic Act Numbers?|RA|R\.A\.)\s*(\d{4,5})\b",
+               lambda m: ("R A" if m.group(1) in ("RA", "R.A.") else m.group(1)) + " " + ra_words(m.group(2)), s)
+    s = re.sub(r"\bCRAA[FP](s?)\b", r"Cra-ap\1", s)  # Butch 2026-11-15: CRAAF/CRAAP read "Cra-ap"
+    s = re.sub(r"\bRAAF(s?)\b", r"Ra-ap\1", s)  # Butch 2026-11-15: RAAF read "Ra-ap"
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)

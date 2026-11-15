@@ -1088,7 +1088,7 @@ BLOG = [
             "Every treasurer eventually leaves. Some are transferred, some retire, and an acting "
             "treasurer's designation has a fixed end from the very first day. The question this "
             "last principle asks is uncomfortable but necessary: if I left tomorrow, what would "
-            "stop working? By the end of this post, you will have four practical ways to make "
+            "stop working? Read to the end and you will have four practical ways to make "
             "records and systems outlive the person who set them up, and the ten questions of the"
             " whole framework in one list.",
             ("quote",
@@ -1278,7 +1278,7 @@ BLOG = [
             "deposit reports, check registers, payment histories. It is easy to think of them "
             "only as things to file and submit. But there is another way to see them. The same "
             "records that prove we handled money correctly are also the best evidence we have for"
-            " managing it well. By the end of this post, you will see how the six steps of data "
+            " managing it well. By the last section, you will see how the six steps of data "
             "analysis fit treasury work, why a forecast needs a range, and how to keep numbers "
             "from making decisions on their own.",
             ("quote", "Every result is a prompt for a human decision, never an automatic action."),
@@ -1468,8 +1468,7 @@ BLOG = [
             "The first seven principles are mostly about the inside of the treasury: laws, forms,"
             " officers, deadlines, seals, signatures and funds. The eighth turns around and looks"
             " at the person standing at the window. How we treat that person decides whether "
-            "everything else feels like public service or like a wall. By the end of this post, "
-            "you will have four classic tests for a fair collection system and three things every"
+            "everything else feels like public service or like a wall. Stay with me to the end, and you will have four classic tests for a fair collection system and three things every"
             " taxpayer should get at the window.",
             ("quote", "What would a farmer from our farthest barangay say about paying taxes here?"),
             ("h", "Adam Smith's Four Tests"),
@@ -1630,8 +1629,7 @@ BLOG = [
         "body": [
             "Money in a local treasury is not one big pile. It is divided into funds, and each "
             "fund exists because a law or an ordinance said what that money is for. Mixing them, "
-            "even briefly and with good intentions, turns a legal promise into a guess. By the "
-            "end of this post, you will know the main funds of a local government, why the law "
+            "even briefly and with good intentions, turns a legal promise into a guess. By the end of this post, you will know the main funds of a local government, why the law "
             "keeps them apart, and a daily check that keeps every peso in the right account.",
             ("quote",
              "Every peso has an address. The law decides which fund it lives in, and the "
@@ -1790,7 +1788,7 @@ BLOG = [
             "Segregation of duties sounds like a phrase from an auditor's checklist, and in a way"
             " it is. It is also a basic internal control in public finance, and one of the "
             "kindest. The rule is simple: no single person should be able to start a transaction,"
-            " approve it, record it and then hide it. By the end of this post, you will know "
+            " approve it, record it and then hide it. After this post, you will know "
             "which duties must never sit in the same hands, how a small office can make up for a "
             "thin staff, and how to draw a duty map in under an hour.",
             ("quote", "When every step has a second pair of eyes, no one has to carry suspicion alone."),

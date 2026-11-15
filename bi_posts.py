@@ -13,6 +13,138 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "March 6, 2027",
+        "title": "Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing",
+        "slug": "business-intelligence-part-24-trend-lines-and-moving-averages",
+        "category": "bi",
+        "summary": "Daily collections jump up and down, and a busy chart hides the direction. This part shows how "
+                   "to add a trend line or a moving average in Data Studio, which type to choose, why missing "
+                   "days can drag a line to zero, and why a trend is not a forecast.",
+        "publish_on": "2027-03-06 21:00",
+        "body": [
+            "The daily collections chart looked like a saw blade. Up on Monday, down on Wednesday, up on "
+            "Friday, flat on weekends. The head of office squinted at it and asked the only question that "
+            "mattered: “Are we going up or down?” Nobody in the room could say for sure.",
+            "(The office, its people and its figures are invented. No real town or taxpayer is described.)",
+            "Part 23 joined two sources in one chart. This part helps readers see the direction inside a "
+            "noisy one. By the last section, you will know what a trend line and a moving average each show, "
+            "how to add them to a Data Studio chart, which type fits which question, why missing dates can "
+            "make a line fall to zero, and why a trend line should never be read as a promise about next "
+            "month.",
+            ("photo", "blog/bi-trend.jpg", "Trend lines and moving averages: smooth the noise, handle missing "
+             "dates on purpose, and never read a trend as a forecast. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Two Tools, Two Questions"),
+            ("point", "Trend line", "One line through the whole period that answers: over these months, "
+             "has the series generally gone up or down?"),
+            ("point", "Moving average", "A line that follows the data but smooths out the day-to-day "
+             "jumps, answering: what is the level lately, without the noise?"),
+            "Both leave the original data on the chart. They add a reading aid; they do not replace the "
+            "numbers.",
+            ("quote", "The dots tell you what happened. The line helps you see where it was heading."),
+            ("h", "What Data Studio Offers"),
+            "Google’s reference for time series charts lists the trend line options in the Style tab, under "
+            "the series settings. The reference notes that trend lines are available only for time series "
+            "and scatter charts.",
+            ("point", "Linear", "A straight line that, in the reference’s words, most closely approximates "
+             "the data in the chart."),
+            ("point", "Exponential", "A curve for data that grows or shrinks by a steady percentage rather "
+             "than a steady amount."),
+            ("point", "Polynomial", "A curve that can bend, which the reference suggests for large, highly "
+             "variable data."),
+            ("point", "Moving average", "Available only on time series charts. You set the number of periods "
+             "to average."),
+            "To add one: select the chart, open the Style tab, find the series, and choose a type from the "
+            "Trendline menu. Weight, style and color options then appear.",
+            ("h", "A Moving Average, by Hand"),
+            "Before trusting the line, it helps to see the arithmetic once. Say five working days brought in "
+            "₱38,000, ₱41,000, ₱36,000, ₱52,000 and ₱43,000.",
+            ("point", "Add them", "₱38,000 + ₱41,000 + ₱36,000 + ₱52,000 + ₱43,000 = ₱210,000."),
+            ("point", "Divide by five", "₱210,000 ÷ 5 = ₱42,000. That is the 5-day average for the fifth "
+             "day."),
+            ("point", "Slide one day", "On the sixth day, drop the first day and add the new one, then "
+             "divide again. The window moves, which is why it is called a moving average."),
+            "A longer window gives a smoother line that reacts more slowly. A shorter window reacts faster "
+            "but stays bumpier. For daily collections, a window that covers one full working week keeps "
+            "the weekly pattern from shaking the line.",
+            ("h", "The Missing Days Trap"),
+            "Treasuries do not collect on weekends and holidays, so those dates have no rows. Google’s "
+            "reference describes three settings for missing data in a time series chart, and the default "
+            "matters.",
+            ("point", "Line To Zero, the default", "The line drops to zero for the missing dates. A chart of "
+             "collections then dives to zero every Saturday and Sunday, and any trend line drawn on it is "
+             "pulled down."),
+            ("point", "Line Breaks", "Missing dates show as gaps. Honest, though the line looks broken."),
+            ("point", "Linear Interpolation", "The line connects the points on either side of the gap. "
+             "Smooth, but the eye may read the joined line as real days."),
+            "For collections, Line Breaks shows the plain truth: there was no collection day. "
+            "Whichever you choose, choose it on purpose, and say so in a note on the chart.",
+            ("h", "Which Type to Choose"),
+            ("point", "For a quick “up or down?”", "Linear, over a period long enough to include several "
+             "of the usual cycles."),
+            ("point", "For the level lately", "A moving average, with a window of one working week for daily "
+             "data or three months for monthly data."),
+            ("point", "Use the curves with care", "Exponential and polynomial lines can fit the past "
+             "nicely and still say little about what comes next. If you cannot explain why the data should "
+             "curve, use linear."),
+            ("h", "Seasons Break Straight Lines"),
+            "Local collections follow the calendar. Under the Local Government Code, business taxes are due "
+            "in the first twenty days of January or of each quarter, and real property tax installments fall "
+            "due by the end of each quarter. Collections can bunch up around those dates. A linear trend "
+            "drawn from January to June starts at a high point and may slope down even in a good year.",
+            ("point", "Compare like with like", "Part 19 compared this January with last January. For "
+             "seasonal data, that comparison says more than a trend line across different months."),
+            ("point", "Pick the window with the season in mind", "A trend across whole years, or a moving "
+             "average across a full quarter, is less fooled by the January rush."),
+            ("h", "A Trend Is Not a Forecast"),
+            "A trend line describes the past. Extending it into next month assumes nothing changes: the same "
+            "taxpayers, the same rates, the same calendar. Ordinances change, businesses open and close, and "
+            "a typhoon can close the office for days. If the dashboard shows a trend, label it “trend, "
+            "past data” and keep it inside the dates you actually have.",
+            ("h", "Labeling It So Readers Understand"),
+            ("point", "Name the line", "In the legend or a text box: “7-day moving average” or “linear "
+             "trend, January to June.”"),
+            ("point", "Keep the raw data visible", "Use a lighter color for the daily values and a darker, "
+             "thicker line for the trend."),
+            ("point", "Note the missing-data setting", "One line under the chart: “Weekends and holidays "
+             "shown as gaps.”"),
+            ("h", "Check It Before Sharing"),
+            ("point", "One average by hand", "Pick one point on the moving average and recompute it from "
+             "the table, as above."),
+            ("point", "Toggle the missing-data setting", "If the trend changes direction when you switch "
+             "from Line To Zero to Line Breaks, the zeros were driving it."),
+            ("point", "Change the window", "If a 5-day and a 10-day average tell opposite stories, the "
+             "direction is not yet clear, and the chart should say so."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Leaving Line To Zero on for working-day data", "Weekends become fake crashes."),
+            ("point", "Reading a trend as a forecast", "It describes the past only."),
+            ("point", "Fitting curves without a reason", "Default to linear unless you can explain the curve."),
+            ("point", "Hiding the raw data", "Show the daily values in a lighter color."),
+            ("h", "Key Takeaways"),
+            ("point", "Trend line and moving average answer different questions", "Overall direction versus "
+             "recent level."),
+            ("point", "Missing dates need a decision", "The default draws them as zero."),
+            ("point", "Seasons matter", "Compare like periods, or use windows that cover full cycles."),
+            ("point", "Label everything", "Name the line, the window and the missing-data choice."),
+            ("h", "Your Part 24 Exercise"),
+            "Use the practice dashboard from your earlier exercises.",
+            ("point", "Add a moving average", "On the daily collections time series, with a window of five."),
+            ("point", "Flip the missing-data setting", "Compare Line To Zero with Line Breaks and note what "
+             "changes."),
+            ("point", "Check one point", "Recompute one moving-average value by hand."),
+            "Write one sentence under the chart that a reader can trust. If you cannot write it, the chart "
+            "is not ready yet.",
+            "The analyst switched the chart to Line Breaks, added a 5-day moving average and labeled both. "
+            "The saw blade was still there in light gray, but a dark line now rose gently from March to May. "
+            "The head of office read the label, then the line, and finally had an answer.",
+            ("cta", "Read: Business Intelligence Series, Part 23: Blending Data, Two Sources in One Chart", "/blog/business-intelligence-part-23-blending-data/"),
+            ("cta", "Read: Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Business Intelligence Series, Part 14: The Date Table, a Calendar Your Dashboard Can Count On", "/blog/business-intelligence-part-14-the-date-table/"),
+            ("cta", "Read: Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("ask", "Which chart in your office would be easier to read with a moving average?"),
+        ],
+    },
+    {
         "date": "March 1, 2027",
         "title": "Business Intelligence Series, Part 23: Blending Data, Two Sources in One Chart",
         "slug": "business-intelligence-part-23-blending-data",
@@ -29,10 +161,10 @@ BI_POSTS = [
             "The collections were in the treasury’s Daily tab. The number of real property tax accounts in "
             "each barangay was in a list kept by the assessor’s office, in a sheet the treasury could read but "
             "did not own. The answer needed both.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real town or "
             "taxpayer is described.)",
             "Part 22 built new measures from a single source. This part brings a second source into the same "
-            "chart. By the end of this post you will know what a blend is in Data Studio, when to blend and "
+            "chart. Stay with me to the end, and you will know what a blend is in Data Studio, when to blend and "
             "when to copy data into the sheet instead, how to choose the join key and the join type, why a "
             "blend can double a total, and how to check a blend before anyone relies on it.",
             ("photo", "blog/bi-blending.jpg", "Blending data: match on one clean key, choose the join on "
@@ -176,9 +308,9 @@ BI_POSTS = [
             "The analyst’s first thought was to add three new columns to the sheet. Then the analyst "
             "remembered that the sheet feeds other reports, and every new column is one more thing to keep "
             "in step. The answers could be worked out inside the dashboard instead.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
             "taxpayer is described.)",
-            "This part covers calculated fields in Data Studio. By the end of this post you will know what a "
+            "This part covers calculated fields in Data Studio. After this post, you will know what a "
             "calculated field is, the difference between one saved in the data source and one made for a single "
             "chart, how to group values with CASE, how to build a ratio that adds up correctly, how to show a "
             "share of the total, and how to read the errors that stop a formula from saving.",
@@ -310,10 +442,10 @@ BI_POSTS = [
             "The analyst almost answers “with the dashboard,” then stops. The dashboard was the last thing "
             "built, not the first. Everything people see on it rests on work they never see: a question agreed "
             "on, a model, a pipeline, checks and rules about who sees what.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real town or "
             "taxpayer is described.)",
             "This part gathers the earlier parts of this series into one plan, in the order the work is "
-            "actually done. By the end of this post you will have a four-week plan for a first treasury BI "
+            "actually done. Stay with me to the end, and you will have a four-week plan for a first treasury BI "
             "setup, a checklist for each week, the questions to ask before calling it finished, and a routine "
             "that keeps it trustworthy afterward. Each step links back to the part that explains it.",
             ("photo", "blog/bi-four-weeks.jpg", "A first treasury BI setup in four weeks: the question, the "
@@ -444,11 +576,10 @@ BI_POSTS = [
             "different week, and the copying starts again.",
             "The spreadsheet already updates itself, as Part 16 set up. What is missing is a view that updates "
             "with it, that anyone allowed can open on a phone, and that lets them pick their own dates.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
             "taxpayer is described.)",
             "This part builds that view in Data Studio, Google’s free web tool for reports and dashboards. It "
-            "was called Looker Studio until April 2026, the name used in Part 17. By the end of this post you "
-            "will know how to prepare a sheet for a dashboard, connect it, check its fields, add a scorecard, a "
+            "was called Looker Studio until April 2026, the name used in Part 17. After this post, you will know how to prepare a sheet for a dashboard, connect it, check its fields, add a scorecard, a "
             "trend line, a bar chart and a date control, and share the result without sharing more than you "
             "meant to.",
             ("photo", "blog/bi-data-studio.jpg", "A first dashboard: prepare the sheet, connect it, add charts "
@@ -585,10 +716,10 @@ BI_POSTS = [
             "February with all thirty-one days of January, a month that includes business permit renewals. "
             "Compared with the first ten days of February last year, collections were up.",
             "The number was calculated correctly. The comparison was not fair.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real town or "
             "taxpayer is described.)",
             "Part 14 built a date table, and Part 18 set thresholds on weekly totals. Both rely on comparing "
-            "one period with another. By the end of this post you will know four questions to ask before any "
+            "one period with another. Stay with me to the end, and you will know four questions to ask before any "
             "comparison, how to compare period-to-date figures, how to adjust for working days, the "
             "difference between percent and percentage points, and how to label a comparison so nobody "
             "misreads it.",
@@ -724,11 +855,10 @@ BI_POSTS = [
             "the chart the whole time, one thin line among twelve.",
             "The dashboard did its job of showing the numbers. What it did not do was say which number "
             "needed a person to look at it.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
             "taxpayer is described.)",
             "Part 3 chose what to watch, and Part 16 added checks that stop bad data. This part adds "
-            "thresholds: rules that point to the numbers that need attention. By the end of this post you "
-            "will know four ways to set a threshold, why every alert needs an owner and an action, how to "
+            "thresholds: rules that point to the numbers that need attention. After this post, you will know four ways to set a threshold, why every alert needs an owner and an action, how to "
             "keep alerts few enough to matter, and how to build a status column in Google Sheets.",
             ("photo", "blog/bi-thresholds.jpg", "Thresholds and alerts: a clear rule, an owner, an action, and a "
              "label that does not rely on color alone. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -849,11 +979,10 @@ BI_POSTS = [
             "file: the Summary tab, but also the Raw tab, with every receipt, every taxpayer’s name and every "
             "amount.",
             "Nothing had leaked yet. But one paste would have shared far more than anyone asked for.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real town or "
             "taxpayer is described.)",
             "Part 4 put an access line in the BI brief, and Part 13 planned where each reader’s drill path "
-            "stops. This part is about the settings that carry out those decisions. By the end of this post "
-            "you will know how file sharing settings work, why a separate file for sharing is safer than a "
+            "stops. This part is about the settings that carry out those decisions. Stay with me to the end, and you will know how file sharing settings work, why a separate file for sharing is safer than a "
             "hidden tab, how dashboard credentials decide what readers can reach, how small numbers can "
             "reveal a person, and how to keep an access list current.",
             ("photo", "blog/bi-who-sees-what.jpg", "Who sees what: sharing settings, a separate file for "
@@ -989,10 +1118,10 @@ BI_POSTS = [
             "One Monday, the copy misses the last forty rows. Nobody notices until the head of office asks why "
             "one barangay collected almost nothing that week.",
             "The steps were right. The problem was doing them by hand, from memory, every week.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
             "taxpayer is described.)",
             "Part 7 explained what a pipeline does: extract, transform and load. Part 15 flattened the revenue "
-            "account levels during that loading step. This part builds a small pipeline in Google Sheets, which is free to use with a Google account. By the end of this post you will know how to lay out a pipeline in one "
+            "account levels during that loading step. This part builds a small pipeline in Google Sheets, which is free to use with a Google account. After this post, you will know how to lay out a pipeline in one "
             "Google Sheets file, the formulas for each stage, how to add checks that catch a bad week, and when "
             "the file has outgrown the job.",
             ("photo", "blog/bi-sheets-pipeline.jpg", "A small pipeline in one spreadsheet: a Raw tab, a Clean "
@@ -1135,10 +1264,10 @@ BI_POSTS = [
             "colleague, who builds the dashboards, prefers one table with all three levels side by side. "
             "“That way the dashboard has fewer tables to join.”",
             "Both are describing real designs. The first is a snowflake. The second is a star.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real town or "
             "taxpayer is described.)",
             "Part 14 built the date table, one of the dimensions in the model. This part looks at dimensions "
-            "that have levels inside them. By the end of this post you will know what makes a design a star or "
+            "that have levels inside them. Stay with me to the end, and you will know what makes a design a star or "
             "a snowflake, the trade-offs of each, and a simple way to decide which one to use.",
             ("photo", "blog/bi-star-snowflake.jpg", "Star and snowflake: the same revenue account levels kept "
              "in one table, or split into a chain of linked tables. (Illustration: Butch Mahinay, "
@@ -1266,10 +1395,10 @@ BI_POSTS = [
             "office compares this January with last January, nobody is sure whether both months had the same "
             "number of working days.",
             "None of these is a problem with the collections. Each one is a problem with the dates.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
             "taxpayer is described.)",
             "Part 5 introduced facts and dimensions. This part builds a dimension that treasury "
-            "models rely on: the date table. By the end of this post you will know what a date table is, which "
+            "models rely on: the date table. After this post, you will know what a date table is, which "
             "columns to put in it, how to build one in a spreadsheet, and how it fixes gaps, sorting and "
             "comparisons.",
             ("photo", "blog/bi-date-table.jpg", "A date table gives every day one row and answers the "
@@ -1395,10 +1524,10 @@ BI_POSTS = [
             "The view has no way to answer. It shows one total and one trend line. So the head of office sends "
             "a message to the analyst, the analyst builds a new table, and the answer arrives on Wednesday. "
             "By then, the meeting where it was needed is over.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real town or "
             "taxpayer is described.)",
             "Part 12 made the view readable on a phone. This part makes it useful for the second question. "
-            "By the end of this post you will know the difference between a filter and a drill-down, how to "
+            "By the last section, you will know the difference between a filter and a drill-down, how to "
             "choose the few that matter, how to keep filtered numbers honest, and where to stop drilling so "
             "private details stay private.",
             ("photo", "blog/bi-drill-down.jpg", "Drilling down from the total to the detail beneath it, one "
@@ -1531,10 +1660,10 @@ BI_POSTS = [
             "enough to load on mobile data that the meeting starts first.",
             "The dashboard was correct and well designed for the analyst’s screen. It was not designed for "
             "the reader’s.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
             "taxpayer is described.)",
             "Part 4 asked who reads each view and on what device. This part is about acting on the answer. "
-            "By the end of this post you will know how to lay out a BI view for a phone, which charts work "
+            "By the end of this post, you will know how to lay out a BI view for a phone, which charts work "
             "on a small screen, how to keep a page light enough to load quickly, and how to test it before "
             "anyone complains.",
             ("photo", "blog/bi-phone-layout.jpg", "A view built for the phone: the answer first in one column, simple charts, a light page and a real test. "
@@ -1659,10 +1788,10 @@ BI_POSTS = [
             "about it.",
             "The numbers were correct and the dashboard was well built. What was missing was a briefing: a "
             "short spoken answer, shaped for one person who has to make a decision.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
             "taxpayer is described.)",
             "Parts 8 to 10 covered how BI views are built and kept trustworthy. This part is about the moment "
-            "someone has to act on them. By the end of this post you will have a five-minute structure, a way "
+            "someone has to act on them. When you finish reading, you will have a five-minute structure, a way "
             "to choose the three facts that matter, a worked year-end example, and a checklist for the "
             "questions that follow.",
             ("photo", "blog/bi-five-minute-briefing.jpg", "A five-minute briefing: the answer, three facts, "
@@ -1788,10 +1917,9 @@ BI_POSTS = [
             "real property tax its own account code. The dashboard counted only the basic tax account. The "
             "spreadsheet still counted both. Nobody had written the change down, so nobody "
             "knew to update the other view.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
             "taxpayer is described.)",
-            "Parts 7 to 9 made the pipeline reliable. This part is about keeping the meaning reliable. By the "
-            "end of this post you will know how to write a data dictionary, which owners a small BI setup "
+            "Parts 7 to 9 made the pipeline reliable. This part is about keeping the meaning reliable. After this post, you will know how to write a data dictionary, which owners a small BI setup "
             "needs, how to keep a change log, and how these three habits work together.",
             ("photo", "blog/bi-keeping-honest.jpg", "Three habits that keep BI honest: a data dictionary that "
              "says what each field means, owners who answer for it, and a change log that records what "
@@ -1922,10 +2050,10 @@ BI_POSTS = [
             "before, the counter system had been updated, and the column once called “amount” was now called "
             "“amount_paid.” The script could not find the old column, filled the amounts with zero, and "
             "carried on. Every count matched. Every peso was missing.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
             "taxpayer is described.)",
             "Part 7 added four basic checks to the nightly pipeline: count, total, completeness and a run log. "
-            "This part turns them into a full test plan. By the end of this post you will know five more kinds of tests, how to respond when a test fails, and how to try a "
+            "This part turns them into a full test plan. Read to the end and you will know five more kinds of tests, how to respond when a test fails, and how to try a "
             "change safely before it reaches the dashboard.",
             ("photo", "blog/bi-pipeline-tests.jpg", "Five tests a pipeline runs before anyone sees a number: "
              "schema, uniqueness, validity, consistency and freshness. (Illustration: Butch Mahinay, "
@@ -2045,10 +2173,10 @@ BI_POSTS = [
             "again.",
             "The work was good. The format was wrong. A year-end report is a record that must stay exactly "
             "as it was signed. A live dashboard is built to change every time the data does. Choosing between them is a decision worth making at the start of a BI request, and it can go wrong when everything is called “a dashboard.”",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
             "taxpayer is described.)",
             "Parts 6 and 7 built the warehouse and the pipeline that fills it. This part is about the views "
-            "people actually look at. By the end of this post you will know the three kinds of BI views, what "
+            "people actually look at. By the last section, you will know the three kinds of BI views, what "
             "each one is for, how to choose between them, and how often each should refresh.",
             ("photo", "blog/bi-three-views.jpg", "Three kinds of BI views: a static report fixed at a point in "
              "time, a live dashboard that refreshes on a schedule, and a self-service view that readers can "
@@ -2176,10 +2304,9 @@ BI_POSTS = [
             "Every step she does by hand has a name. Together they are a data pipeline, and the order in "
             "which they happen has a name too. Getting that order right, and making it run without her, is "
             "what this part is about.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
             "taxpayer is described.)",
-            "Part 6 introduced the nightly copy from the working database to the warehouse. By the end of this "
-            "post you will know the two main patterns for that copy, ETL and ELT, what each does well, which "
+            "Part 6 introduced the nightly copy from the working database to the warehouse. Stay with me to the end, and you will know the two main patterns for that copy, ETL and ELT, what each does well, which "
             "one suits a small treasury, and the checks every pipeline needs whichever pattern you choose.",
             ("photo", "blog/bi-etl-elt.jpg", "Two orders for the same three steps: ETL transforms data before "
              "loading it, while ELT loads raw data first and transforms it inside the warehouse. "
@@ -2297,10 +2424,10 @@ BI_POSTS = [
             "Nothing is broken. The same system is simply being asked to do two very different jobs at once: "
             "record each payment quickly and correctly, and answer big questions about thousands of past "
             "payments. Business intelligence works better when those two jobs are kept apart.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
             "taxpayer is described.)",
             "In Part 5, we shaped the data into a star: facts in the middle, dimensions around them. This part "
-            "is about where that star should live. By the end of this post you will know the difference "
+            "is about where that star should live. By the end of this post, you will know the difference "
             "between a database, a data warehouse, a data mart and a data lake, which one a treasury needs "
             "first, and how to set up a small, free version to practice on.",
             ("photo", "blog/bi-data-homes.jpg", "Four homes for data: the database runs the day, the warehouse "
@@ -2424,11 +2551,11 @@ BI_POSTS = [
             "Some receipts were counted twice. The same barangay was also spelled three ways, so part of its "
             "money landed in rows the chart never picked up. The fix was not a better chart. It was a better "
             "shape for the data.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
             "taxpayer is described.)",
             "In Part 4, the BI brief defined each measure in plain words. This part is about the tables that "
             "hold those measures. That design is called the data model, and it decides whether a dashboard "
-            "gives the same answer as the cashier. By the end of this post you will know the four ideas behind a sound model (facts, dimensions, grain and keys), and you will be able to sketch one for "
+            "gives the same answer as the cashier. When you finish reading, you will know the four ideas behind a sound model (facts, dimensions, grain and keys), and you will be able to sketch one for "
             "your own office on a single sheet of paper.",
             ("h", "What a Data Model Is"),
             "A data model is the set of tables a report reads, the columns in each table, and the links "
@@ -2554,9 +2681,9 @@ BI_POSTS = [
             "Three weeks later she shows the result. The head of office looks at it politely and asks, “Where "
             "can I see which collectors have not yet turned in their reports?” That was never on the screen, "
             "because nobody asked what the dashboard was for.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
             "taxpayer is described.)",
-            "In Part 3, I listed six measures a treasury could watch every day. This part goes one step earlier. Before you choose a single measure, find out who will use the dashboard and what they will decide with it, then write it down on one page. I call that page the BI brief. By the end of this post you will have five interview questions, a six-line template and a filled-in example you can copy.",
+            "In Part 3, I listed six measures a treasury could watch every day. This part goes one step earlier. Before you choose a single measure, find out who will use the dashboard and what they will decide with it, then write it down on one page. I call that page the BI brief. Read to the end and you will have five interview questions, a six-line template and a filled-in example you can copy.",
             ("h", "Ask About Decisions, Not Charts"),
             "Asking people which charts they want to see is the wrong starting point, because a chart is only "
             "useful if it changes what someone does.",
@@ -2676,12 +2803,12 @@ BI_POSTS = [
             "Nothing on the dashboard is wrong. There is simply too much of it, and none of it "
             "says what needs attention today. It answers every question except the one the reader"
             " actually has.",
-            "(As always in this series, the office, the people and the numbers are made up. No "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No "
             "real town or taxpayer is described.)",
             "In Part 1, I described BI as a service that keeps answers coming. This part is about"
             " choosing which answers deserve that treatment. The secret is to move from one-time "
             "questions to a short list of measures that are watched every day, each with a clear "
-            "limit that tells you when to act. By the end of this post, you will be able to tell "
+            "limit that tells you when to act. By the last section, you will be able to tell "
             "one-time questions from always-on ones, choose a short list of daily measures, and "
             "set limits that tell someone when to act.",
             ("h", "One-Time Questions and Always-On Questions"),
@@ -2870,8 +2997,7 @@ BI_POSTS = [
             "real town or taxpayer is described.)",
             "In a large organization, three different people might take that call. In a small "
             "treasury, it may be one person. Either way, it helps to know the three jobs apart, "
-            "because each one fails in its own way and each one is fixed in its own way. By the "
-            "end of this post, you will know the three kinds of BI work, how each one fails, and "
+            "because each one fails in its own way and each one is fixed in its own way. By the end of this post, you will know the three kinds of BI work, how each one fails, and "
             "how one person in a small office can do all three.",
             ("photo",
              "blog/bi-roles.jpg",
