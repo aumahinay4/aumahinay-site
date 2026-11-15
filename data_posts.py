@@ -12,6 +12,129 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 1, 2027",
+        "title": "Data Analytics Series, Part 11: Good Data or Bad Data? The ROCCC Test",
+        "slug": "data-analytics-part-11-roccc-test",
+        "category": "data",
+        "summary": "Before you trust a data set, test it. This part explains the five ROCCC checks, reliable, "
+                   "original, comprehensive, current and cited, scores two treasury data sets with them, and "
+                   "shows what to do when a source fails.",
+        "publish_on": "2027-01-01 21:00",
+        "body": [
+            "The revenue unit is preparing next year’s collection target for business tax. Two files are on "
+            "the table. One is the office’s own record of business taxes paid over the last three years, "
+            "taken from the official receipts. The other is a summary someone received in a seminar handout, "
+            "showing “average business tax growth for towns like ours.” It has no date and no author.",
+            "The handout’s number is higher, and it would make a more impressive target. Before anyone uses "
+            "it, the analyst asks a simple question: how do we know this data is good enough to plan with?",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town, business or taxpayer is described.)",
+            "Part 9 explained where data comes from, and Part 10 explained what shape it is in. This part gives "
+            "a quick test of whether a source can be trusted. By the end of this post you will know the five "
+            "ROCCC checks, how to score a data set with them, and what to do when a source fails one.",
+            ("photo", "blog/data-roccc.jpg", "The ROCCC test: reliable, original, comprehensive, current and "
+             "cited. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Five Questions in One Word"),
+            "ROCCC is a short checklist taught in the Google Data Analytics course for judging whether data "
+            "is credible. Each letter is one question.",
+            ("point", "R: Reliable", "Is the source trustworthy, and was the data collected in a consistent "
+             "way? Official receipts issued under the office’s rules are reliable. Numbers copied by hand from "
+             "memory are not."),
+            ("point", "O: Original", "Can you trace the data back to where it was first recorded? A copy of a "
+             "copy can carry errors you cannot see. Go back to the first source when you can."),
+            ("point", "C: Comprehensive", "Does it contain everything needed to answer your question? A list "
+             "of business tax payments that leaves out the first quarter cannot tell you the year’s total."),
+            ("point", "C: Current", "Is it recent enough for the decision? Last year’s tax rates are not "
+             "current if an ordinance changed them in January."),
+            ("point", "C: Cited", "Is it documented, with a named source, a date and a description of how it "
+             "was made? Data with no citation is hard to check."),
+            ("quote", "Good data is not data you like. It is data you can trace, check and explain."),
+            ("h", "Scoring the Two Files"),
+            "Score each check as pass, partial or fail, and write one line explaining why.",
+            ("point", "Office receipts, three years", "Reliable: pass, issued under the office’s rules. "
+             "Original: pass, taken directly from the receipts. Comprehensive: partial, two months of one year "
+             "were encoded late and must be checked. Current: pass, includes this year. Cited: pass, with a "
+             "source note from Part 9."),
+            ("point", "Seminar handout", "Reliable: unknown, the method is not given. Original: fail, it is a "
+             "summary of data from elsewhere. Comprehensive: unknown, it does not say which towns were "
+             "included. Current: unknown, no date. Cited: fail, no author or source."),
+            "The office’s own data has one partial that can be fixed. The handout has two fails and three "
+            "unknowns. It might be useful as a question to explore, but not as a number to plan with.",
+            ("h", "Unknown Is Not the Same as Pass"),
+            "When you cannot answer a ROCCC question, mark it unknown, not pass. An unknown is a task: ask the "
+            "person who gave you the data, look for the original, or find the date.",
+            "In the opening story, a phone call to the seminar organizer might turn the handout’s unknowns into "
+            "answers. Until then, the honest description is: “source not verified.”",
+            ("h", "What to Do When a Source Fails"),
+            ("point", "Fix it", "If the problem is in your own data, such as months encoded late, correct "
+             "the records and note the fix in the source note."),
+            ("point", "Replace it", "If a better source exists, use it. Instead of a growth figure from an "
+             "unknown handout, compute your own office’s growth from the receipts."),
+            ("point", "Use it with a warning", "If there is no better source, use the data but say plainly "
+             "which checks it failed. For example: “This comparison uses a figure we could not verify.”"),
+            ("point", "Set it aside", "If a source fails on reliability and originality and cannot be "
+             "traced, leave it out of decisions."),
+            ("h", "ROCCC for the Treasury’s Common Sources"),
+            ("point", "Official receipts and collection reports", "They are the first record, so they can "
+             "score well on reliability and originality. Check comprehensiveness for late-encoded or "
+             "missing days."),
+            ("point", "Data shared by another office", "Ask for the date and how it was collected. Check "
+             "currency: an assessment roll from last year may not include this year’s new declarations."),
+            ("point", "Published statistics", "Check the citation: which agency, which year, and which "
+             "table. Use the agency’s own publication rather than a news story or a slide that quotes it."),
+            ("point", "Online lists and directories", "They can score poorly on original and cited. Treat them "
+             "as leads, as in Part 9."),
+            ("h", "Checking “Comprehensive” in Practice"),
+            "Of the five checks, comprehensive is one your own data can fail without anyone noticing. Three "
+            "quick tests help.",
+            ("point", "Count the days", "For each month, count the days that have at least one receipt and "
+             "compare with the working days. A working day with no receipts may mean a closed office or a missing file, so check it."),
+            ("point", "Compare with signed reports", "Add up each month in your data and compare it with the "
+             "monthly collections report that was signed. A difference points to missing or extra records."),
+            ("point", "Check every category", "Make sure each revenue account, collector and barangay you "
+             "expect appears at least once. One that is missing entirely may have been left out of the "
+             "extract."),
+            ("h", "A ROCCC Note, Written Out"),
+            ("point", "Data set", "Business tax receipts, January 2024 to November 2026."),
+            ("point", "Reliable: pass", "Official receipts issued under the office’s rules."),
+            ("point", "Original: pass", "Extracted directly from the collection system."),
+            ("point", "Comprehensive: partial", "March and April 2025 were encoded late; totals are being "
+             "checked against the signed monthly reports."),
+            ("point", "Current: pass", "Includes receipts up to November 30, 2026."),
+            ("point", "Cited: pass", "Source note kept with the file, owner: the revenue unit."),
+            ("h", "Making ROCCC a Habit"),
+            "Add a short ROCCC section to every source note: five lines, one per letter, each with pass, "
+            "partial, fail or unknown and a reason. It takes a few minutes and saves a reader from guessing "
+            "later.",
+            "When you present results, mention the weakest check. “This analysis uses our own receipts, "
+            "complete except for March and April 2025, which are being checked” tells the reader exactly how far to "
+            "trust it.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting a number because it is convenient", "The handout’s growth figure was attractive "
+             "because it was high. That is a reason to check it more, not less."),
+            ("point", "Assuming official means current", "An official list can still be out of date."),
+            ("point", "Skipping your own data", "Your office’s records can fail a check too, such as "
+             "comprehensive when days are missing."),
+            ("h", "Key Takeaways"),
+            ("point", "Five checks", "Reliable, original, comprehensive, current and cited."),
+            ("point", "Score honestly", "Pass, partial, fail or unknown, each with a reason."),
+            ("point", "Unknown is a task", "Find the answer before treating it as a pass."),
+            ("point", "Say the weakest check", "Tell readers how far to trust the result."),
+            ("h", "Your Part 11 Exercise"),
+            "Pick one number your office used in a plan or report this year that came from outside your own "
+            "records.",
+            ("point", "Score it", "Run the five ROCCC checks and write a reason for each."),
+            ("point", "Find the original", "Try to trace it to the first place it was published or recorded."),
+            ("point", "Decide", "Fix, replace, use with a warning, or set aside."),
+            "If you cannot trace it at all, ask yourself whether the plan still holds without it.",
+            ("cta", "Read: Data Analytics Series, Part 9", "/blog/data-analytics-part-9-where-data-comes-from/"),
+            ("cta", "Read: Data Analytics Series, Part 10", "/blog/data-analytics-part-10-data-types-and-table-shapes/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("cta", "Read: Business Intelligence Series, Part 10", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("ask", "Which number has your office used that would fail the ROCCC test today?"),
+        ],
+    },
+    {
         "date": "December 27, 2026",
         "title": "Data Analytics Series, Part 10: Data Types, Structured Data and Wide vs Long Tables",
         "slug": "data-analytics-part-10-data-types-and-table-shapes",
