@@ -70,8 +70,7 @@ BI_POSTS = [
              "enough to read without zooming. Test this on a real phone, not by shrinking a browser window."),
             ("point", "Round", "Show ₱3.1M rather than ₱3,104,226.15 on the main tile. Keep the exact figure "
              "in the table further down."),
-            ("point", "Contrast", "Dark text on a light background, or the reverse. Pale gray labels may "
-             "disappear in bright daylight."),
+            ("point", "Contrast", "Dark text on a light background, or the reverse. Pale gray labels may be hard to read in bright daylight."),
             ("point", "Color with a label", "Do not rely on color alone. A red bar should also say “below "
              "target,” so the meaning survives a small screen, a dim display or a reader who sees colors "
              "differently."),
@@ -96,12 +95,12 @@ BI_POSTS = [
             ("point", "Bottom", "A short table of the five accounts furthest below target, and one date "
              "filter."),
             ("point", "Second page", "The collector table and the full set of filters, for the desktop reader."),
-            "On the phone, the head of office now sees the answer before the screen finishes scrolling, and "
+            "On the phone, the head of office now sees the answer as soon as the page opens, and "
             "the page reads a small summary table instead of a full year of receipts.",
             ("h", "One View or Two?"),
             "Sometimes one layout cannot serve both readers well. The head of office wants one answer in "
             "the morning; the revenue unit wants every filter and every collector for a full afternoon of "
-            "checking. Forcing both into one page makes it too long for the phone and too thin for the desk.",
+            "checking. Forcing both into one page can make it too long for the phone and too thin for the desk.",
             ("point", "Make two views", "Build a short phone view for the daily answer and a fuller desktop "
              "view for the detailed work."),
             ("point", "Use the same data", "Point both views at the same summary table, so the numbers on the "
@@ -115,8 +114,7 @@ BI_POSTS = [
              "number takes to appear."),
             ("point", "With a reader", "Hand the phone to someone who will use the view and ask them to find "
              "one specific number. Watch where they get stuck."),
-            ("point", "In both orientations", "Check it upright and sideways. Some readers turn the phone to "
-             "see a chart better."),
+            ("point", "In both orientations", "Check it upright and sideways. A reader may turn the phone sideways to see a chart better."),
             ("h", "Mistakes to Avoid"),
             ("point", "Designing only on the big monitor", "What fits on the analyst’s screen may not fit on "
              "the reader’s."),

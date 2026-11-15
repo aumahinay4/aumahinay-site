@@ -99,7 +99,7 @@ PM_POSTS = [
             ("point", "Cost and approval", "What it costs now, what it may cost as the team grows, and how "
              "long approval would take."),
             "Add up the scores, but read the low scores too. A tool that scores well overall but fails on data "
-            "privacy is not a choice a treasury office can make.",
+            "privacy is not one a treasury office should choose.",
             ("h", "Run a Short Trial"),
             ("point", "One project, one month", "Try the tool on a single project with a small team, not on "
              "the whole office."),

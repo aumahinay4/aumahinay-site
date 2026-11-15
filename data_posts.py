@@ -28,8 +28,7 @@ DATA_POSTS = [
             "One afternoon the head of office asks a simple question: which ten accounts paid the most this "
             "quarter? The analyst tries to sort the amounts. The spreadsheet refuses because of the merged "
             "cells. After unmerging them, the sort runs, but now the subtotal rows are mixed in with the "
-            "accounts, and the biggest “account” on the list is a barangay subtotal. The green shading does "
-            "not sort into anything that can be counted.",
+            "accounts, and the biggest “account” on the list is a barangay subtotal. And no simple formula counts the green rows.",
             "The sheet was built to be looked at. It was not built to be worked with.",
             "(As always in this series, the office, the people and every number below are made up. No real "
             "town, barangay or taxpayer is described.)",
@@ -50,8 +49,7 @@ DATA_POSTS = [
             ("quote", "Decide what one row stands for before you type the first row."),
             ("h", "Seven Rules for a Sheet You Can Work With"),
             ("point", "1. One header row", "Put the column names in the first row, one name per column, with "
-             "no title above them. Move the title to the file name or to a separate notes sheet. Filters, "
-             "sorting and pivot tables read the first row as the column names."),
+             "no title above them. Move the title to the file name or to a separate notes sheet. Filters, sorting and pivot tables use the top row of the data as the column names."),
             ("point", "2. No merged cells", "Merged cells look tidy but get in the way of sorting, filtering "
              "and copying. Microsoft’s support page notes that Excel will not sort a range where only some of "
              "the cells are merged. If a heading needs to span columns, keep it in the printed report, not in "
@@ -78,8 +76,7 @@ DATA_POSTS = [
             ("point", "In Excel", "Select the cells, then go to Data, Data Validation, and under Allow choose "
              "List. Point the source to a range that holds the allowed values."),
             ("point", "Keep the list on its own sheet", "Put the allowed barangays, revenue sources and "
-             "collectors on a sheet called Lists. When a new item is approved, add it there once, and every "
-             "dropdown that reads from it can use it."),
+             "collectors on a sheet called Lists. When a new item is approved, add it there once. Then check that each dropdown’s source range includes the new row."),
             "A dropdown does not make a value correct. It only makes sure the value is one of the allowed "
             "choices. Someone can still pick the wrong barangay, so the checks in the next section still "
             "matter.",
