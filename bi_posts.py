@@ -13,6 +13,131 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "February 4, 2027",
+        "title": "Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look",
+        "slug": "business-intelligence-part-18-thresholds-and-alerts",
+        "category": "bi",
+        "summary": "A dashboard that is checked every day can still hide a problem in plain sight. This part "
+                   "explains how to set thresholds that mean something, give every alert an owner and an "
+                   "action, keep alerts few, and build a simple status column with conditional formatting in "
+                   "Google Sheets.",
+        "publish_on": "2027-02-04 21:00",
+        "body": [
+            "The head of office opens the collections dashboard every morning. Twelve collectors, twelve "
+            "lines on a chart, totals by week. Everything looks roughly the way it looked last month.",
+            "Three weeks later, a barangay captain mentions that nobody has come to collect in two sitios. "
+            "The analyst checks: one collector’s weekly total had dropped by half and stayed there. It was on "
+            "the chart the whole time, one thin line among twelve.",
+            "The dashboard did its job of showing the numbers. What it did not do was say which number "
+            "needed a person to look at it.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 3 chose what to watch, and Part 16 added checks that stop bad data. This part adds "
+            "thresholds: rules that point to the numbers that need attention. By the end of this post you "
+            "will know four ways to set a threshold, why every alert needs an owner and an action, how to "
+            "keep alerts few enough to matter, and how to build a status column in Google Sheets.",
+            ("photo", "blog/bi-thresholds.jpg", "Thresholds and alerts: a clear rule, an owner, an action, and a "
+             "label that does not rely on color alone. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Threshold Is"),
+            "A threshold is a value that, when a measure crosses it, means someone should look. It turns "
+            "“the line went down a bit” into a plain question: is this below the level we agreed to act on?",
+            "A threshold does not say what is wrong. It says where to start looking. A drop in one collector’s "
+            "total could mean fewer payments, a missing remittance, a data error, or a collector reassigned "
+            "for the week. The person who looks finds out which.",
+            ("quote", "A dashboard shows the numbers. A threshold says which ones need a person."),
+            ("h", "Four Ways to Set a Threshold"),
+            ("point", "1. A target", "A number the office has agreed to reach, such as a monthly collection "
+             "goal. Below a stated share of the target by a given date, the measure is flagged."),
+            ("point", "2. The same period last year", "Collections follow the calendar, with busy months near "
+             "tax deadlines. Comparing January with last January avoids flagging a normal seasonal dip."),
+            ("point", "3. A normal range from recent history", "Take the lowest and highest weekly totals for "
+             "each collector over, say, the last twelve weeks. A week outside that range is flagged. This "
+             "needs no target, only the office’s own data."),
+            ("point", "4. A rule", "Some alerts are yes or no: a collector’s remittance not recorded by the "
+             "next working day, or a receipt series with a gap in its numbers."),
+            "The choice depends on the measure. A target suits a total the office is responsible for. A "
+            "normal range suits measures that vary from week to week for ordinary reasons. A rule suits "
+            "anything that should always happen.",
+            ("h", "Every Alert Needs an Owner and an Action"),
+            "An alert that nobody is responsible for becomes decoration. Before adding one, write three "
+            "things beside it.",
+            ("point", "Who looks", "One named person or role, such as the head of the collections unit."),
+            ("point", "What they check first", "For a low collector total: whether all of that collector’s "
+             "receipts were entered, then whether the collector was reassigned, then the barangays covered."),
+            ("point", "By when", "Within one working day, for example, so an alert does not wait for the "
+             "monthly meeting."),
+            "Write these in the BI brief from Part 4, next to the measure. When the dashboard changes hands, "
+            "the alerts still make sense to the next person.",
+            ("h", "Keeping Alerts Few Enough to Matter"),
+            "If ten things are flagged every morning, people stop reading the flags. A threshold set too "
+            "tight can do more harm than having none, because it teaches everyone to ignore it.",
+            ("point", "Start with a few", "Two or three alerts on the measures that matter most."),
+            ("point", "Count what happens", "For a month, note each alert and whether it led to an action. An "
+             "alert that never leads to anything needs a wider threshold or should be removed."),
+            ("point", "Review after changes", "A new collector, a new barangay assignment or a new tax rate "
+             "can change what normal looks like. Adjust the threshold when the facts change."),
+            ("h", "Data Alerts and Business Alerts"),
+            "Part 16 built a Checks tab that shows READY or STOP. That is a data alert: it says whether the "
+            "numbers can be trusted. The thresholds in this post are business alerts: they say whether "
+            "something in the office needs attention.",
+            "Check the data alert first. A collector’s total that drops because forty receipts were never "
+            "pasted into the Raw tab is a data problem, not a collection problem. Sending a supervisor to "
+            "the field to look for it wastes a day.",
+            ("h", "Show It So Everyone Can Read It"),
+            ("point", "Use words as well as color", "The W3C’s accessibility guidelines (WCAG, success "
+             "criterion 1.4.1) say color should not be the only visual means of conveying information. Some readers have difficulty telling certain colors apart, such as red and green. A label such as “Below range” or a symbol says the same "
+             "thing without color."),
+            ("point", "Show the threshold itself", "Draw the target or the normal range on the chart, so "
+             "readers can see how far the measure is from it."),
+            ("point", "Put flagged items first", "A short list at the top of the dashboard, “Needs a look this "
+             "week,” is read before anything else."),
+            ("point", "Say why", "“Below its 12-week range for 3 weeks” explains more than a red dot."),
+            ("h", "Building a Status Column in Google Sheets"),
+            "In a weekly summary with one row per collector, four columns are enough.",
+            ("point", "B: This week", "The collector’s total for the week, from the Summary tab of Part 16."),
+            ("point", "C and D: Normal range", "The lowest and highest weekly totals over the last twelve "
+             "weeks, with =MIN and =MAX over that collector’s past weeks."),
+            ("point", "E: Status", "=IF(B2<C2, \"BELOW RANGE\", IF(B2>D2, \"ABOVE RANGE\", \"OK\")). The "
+             "status is written in words, so it can be read without color."),
+            ("point", "Color as a second signal", "Select the rows, then use conditional formatting with "
+             "“Custom formula is” and =$E2=\"BELOW RANGE\" to shade a whole row. Google’s help gives the same "
+             "kind of example, and notes that these formulas can only reference the same sheet, so keep the "
+             "status column on the tab being formatted."),
+            "An above-range week is worth a look too. A sudden jump can be a real windfall, or a receipt "
+            "entered twice.",
+            ("h", "The Collections Dashboard, With Thresholds"),
+            "The office added a normal-range status for each collector’s weekly total and one rule: any "
+            "remittance not recorded by the next working day. Each had an owner and a first check written in "
+            "the brief. The top of the dashboard now lists only what needs a look.",
+            "Two weeks later, one collector showed BELOW RANGE. The Checks tab said READY, so the data was "
+            "complete. The first check found the answer in minutes: the collector had been assigned to the "
+            "counter for the busy period, and two sitios had no one covering them. The office arranged "
+            "another collector the same day.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Alerts without owners", "Name who looks, what they check and by when."),
+            ("point", "Too many flags", "Start with a few, and remove any that never lead to action."),
+            ("point", "Color only", "Write the status in words as well."),
+            ("point", "Skipping the data check", "Confirm the numbers are complete before chasing a drop."),
+            ("h", "Key Takeaways"),
+            ("point", "Thresholds point", "They say where to look, not what is wrong."),
+            ("point", "Four sources", "A target, last year, a normal range, or a rule."),
+            ("point", "Owner and action", "Every alert needs a person, a first check and a deadline."),
+            ("point", "Few and readable", "Keep alerts few, and show them in words as well as color."),
+            ("h", "Your Part 18 Exercise"),
+            "Pick one measure on a dashboard or report your office uses.",
+            ("point", "Choose a threshold", "Decide which of the four ways fits it, and write the number."),
+            ("point", "Name the owner", "Write who looks, what they check first, and by when."),
+            ("point", "Build the status", "Add a status column in words, then color it as a second signal."),
+            "Then look back over the last three months of that measure. Count how many times the threshold "
+            "would have been crossed, and whether each time deserved a look.",
+            ("cta", "Read: Business Intelligence Series, Part 3", "/blog/business-intelligence-part-3-what-to-watch/"),
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Which number in your office would you want a dashboard to flag before anyone has to ask?"),
+        ],
+    },
+    {
         "date": "January 30, 2027",
         "title": "Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much",
         "slug": "business-intelligence-part-17-who-sees-what",
