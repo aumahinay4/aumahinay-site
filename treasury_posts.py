@@ -7,6 +7,282 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?",
+        "date": "January 14, 2027",
+        "publish_on": "2027-01-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "can-the-town-forgive-a-tax",
+        "category": "finance",
+        "summary": "After a typhoon or a bad harvest, people ask whether the town can forgive their real property "
+                   "tax. Here is what the law allows a sanggunian and the President to do, what the 2024 national "
+                   "amnesty covered, and what it did not.",
+        "body": [
+            "Two weeks after a typhoon flattened the rice fields, a barangay captain sat across from the "
+            "treasurer with a folded letter from his farmers. The typhoon had taken the harvest that paid their bills. “They are asking if the town can forgive this year’s amilyar,” he said. “Can it?”",
+            "(As in every part of this series, the case is a composite. No real person, place or amount is "
+            "described.)",
+            "The honest answer is “sometimes, and only in the ways the law allows.” By the end of this post, you "
+            "will know who can reduce or forgive real property tax, under what conditions, what the 2024 national "
+            "amnesty under Republic Act No. 12001 covered and who it left out, and how to tell real relief from "
+            "a rumor at the window.",
+            ("photo", "blog/finance-tax-relief.jpg", "Four kinds of relief: calamity condonation, the President’s "
+             "power, the 2024 amnesty, and the 6% cap. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Treasurer Cannot Simply Say Yes"),
+            "A treasurer collects what the law and the local revenue code say is due. The treasurer does not set "
+            "taxes and cannot waive them on a kind heart. Forgiving a tax is a policy decision, and the Local "
+            "Government Code gives that decision to specific people, with specific limits.",
+            "That matters for taxpayers too. A discount promised verbally at the window, with no ordinance or law "
+            "behind it, protects nobody. When auditors review the collections, any tax left uncollected has to rest on a legal basis.",
+            ("quote", "Relief is real only when it is written in an ordinance or a law."),
+            ("h", "The General Power: Section 192"),
+            "Section 192 of the Code says local government units “may, through ordinances duly approved, grant "
+            "tax exemptions, incentives or reliefs under such terms and conditions as they may deem necessary.”",
+            "The key words are “through ordinances.” Relief comes from the sanggunian, passed and approved like "
+            "any other ordinance, and it reaches only the taxes that local government levies.",
+            ("h", "Relief After a Calamity: Section 276"),
+            "For the real property tax, Section 276 is more specific. After a general failure of crops, a "
+            "substantial drop in the prices of agricultural or agri-based products, or a calamity, the "
+            "sanggunian may condone or reduce, wholly or partly, the tax and interest for the following year or "
+            "years in the areas affected.",
+            "Two details stand out:",
+            ("point", "It must be done by ordinance", "The sanggunian acts, not the treasurer or the mayor "
+             "alone."),
+            ("point", "It must be passed before January 1", "The ordinance is passed before the first day of "
+             "January of the year it covers. Relief is planned for the coming year, not granted retroactively "
+             "at the window."),
+            "For the barangay captain, this was the realistic path. If the council passed an ordinance before "
+            "January 1, the farmers’ tax for the next year could be reduced or condoned. This year’s bill, "
+            "already due, was a different matter.",
+            ("h", "When the President Steps In: Section 277"),
+            "Section 277 gives the President the power to condone or reduce the real property tax and its "
+            "interest, for any year, in any province or city, or a municipality within Metro Manila, when the "
+            "public interest requires it.",
+            "This is a national power. It is not something a resident can apply for at the treasury, and "
+            "an owner should not delay payment hoping for it.",
+            ("h", "A Real Example of Local Relief"),
+            "After Typhoon Santi in 2013, the Inquirer reported that Cabanatuan City’s council passed an ordinance "
+            "condoning interest and penalties on unpaid real property tax for 2013 and earlier years. Public "
+            "auctions of delinquent properties were halted for the period, and properties involved in court "
+            "cases over the tax were not covered.",
+            "Notice what was forgiven: the interest and penalties, not the tax itself. Owners still paid what "
+            "they owed. That pattern repeats in the national amnesty below.",
+            ("h", "The 2024 National Amnesty: RA 12001, Section 30"),
+            "Republic Act No. 12001, the Real Property Valuation and Assessment Reform Act, was approved on June "
+            "13, 2024. Its Section 30 granted a real property tax amnesty that “shall cover penalties, "
+            "surcharges, and interests from all unpaid real property taxes, including Special Education Fund, "
+            "idle land tax, and other special levy taxes, prior to the effectivity of this Act.”",
+            ("point", "What owners still paid", "The tax itself. Section 30 allowed “one-time payment or "
+             "installment payment of the delinquent real property taxes.”"),
+            ("point", "The deadline", "The amnesty could “only be availed within a period of two (2) years "
+             "after the effectivity of this Act.”"),
+            ("point", "When the law took effect", "Section 39 made it effective 15 days after publication. "
+             "The amnesty window ran from July 2024 and closed in July 2026."),
+            "Section 30 also listed three kinds of property the amnesty did not cover:",
+            ("point", "(a) Already auctioned", "“Delinquent real properties which have been disposed of at "
+             "public auction to satisfy the real property tax delinquencies.”"),
+            ("point", "(b) Under a compromise", "“Real properties with tax delinquencies which are being paid "
+             "pursuant to a compromise agreement.”"),
+            ("point", "(c) In court", "“Real properties subject of pending cases in court for real property "
+             "tax delinquencies.”"),
+            "An owner reading this in 2027 should treat Section 30 as history. Any relief today has to come "
+            "from a newer law or a local ordinance, and the treasury can say whether one exists.",
+            ("h", "A Different Kind of Relief: The 6% Cap"),
+            "RA 12001 also requires local governments to update their schedules of market values, the basis of "
+            "the real property tax. New values can mean higher bills. Section 29 softens the first step: for the "
+            "first year a new schedule takes effect, “any increase in real property taxes shall be limited to a "
+            "maximum of six percent (6%)” of the taxes assessed before the law took effect.",
+            "The cap applies to each type of real property tax, including the Special Education Fund and idle "
+            "land tax. For the years after, Section 29 adds that the local government “may enact an ordinance to "
+            "impose a cap on the increase.” Whether your town did so is a question for your sanggunian.",
+            ("point", "An example", "A lot taxed ₱2,400 a year before the law can be billed at most ₱2,544 in "
+             "the first year of the new schedule, an increase of ₱144."),
+            ("h", "Is Amnesty Fair?"),
+            "Amnesties raise a fair question. The owner who paid on time, every year, gets nothing, while the one "
+            "who waited is spared the interest. Supporters answer that an amnesty brings in money that might "
+            "never be collected, and puts properties back on the paying rolls.",
+            "Both points deserve weight. That is one reason the law sets limits, such as the deadline and the "
+            "exclusions in Section 30. Relief is meant to be a door that opens once and closes, not a habit.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Waiting for an amnesty", "Interest under Section 255 keeps running at 2% a month while "
+             "you wait, and no relief is promised until an ordinance or law says so."),
+            ("point", "Thinking amnesty erases the tax", "Under RA 12001, only penalties, surcharges and "
+             "interest were forgiven. The tax was still paid."),
+            ("point", "Trusting a verbal promise", "Ask for the ordinance number or the law. If there is none, "
+             "there is no relief."),
+            ("point", "Assuming auctioned land is covered", "Section 30 excluded properties already sold at "
+             "auction for unpaid tax."),
+            ("h", "An Action Plan"),
+            ("point", "After a calamity", "Write to your barangay captain or councilor early, before "
+             "December, since a Section 276 ordinance must pass before January 1."),
+            ("point", "If you have arrears", "Ask the treasury for a statement of account and whether any "
+             "ordinance currently grants relief, with its number."),
+            ("point", "If your bill rose", "Ask whether a new schedule of market values took effect, and "
+             "whether the 6% first-year cap was applied."),
+            ("point", "Keep the papers", "Keep the official receipts and a copy of any ordinance you relied "
+             "on."),
+            ("h", "The Captain’s Letter"),
+            "The treasurer explained the rules, and the captain took the letter to the sanggunian instead. In "
+            "December, the council debated an ordinance reducing the next year’s tax in the barangays the "
+            "typhoon hit. The farmers paid this year’s bill in installments, and the captain posted a copy of "
+            "the ordinance on the barangay board when it passed.",
+            ("h", "Key Takeaways"),
+            ("point", "Only an ordinance or a law can forgive a tax", "Not the treasurer, and not a promise "
+             "at the window."),
+            ("point", "Section 276 is for calamities", "The sanggunian may condone or reduce the next year’s "
+             "tax by an ordinance passed before January 1."),
+            ("point", "RA 12001’s amnesty has closed", "It forgave penalties, surcharges and interest, not "
+             "the tax, and it could be availed only until July 2026."),
+            ("point", "The 6% cap still matters", "It limits the first-year increase when a new schedule of "
+             "market values takes effect."),
+            ("h", "The Question to Ask"),
+            "Do you know whether your town has any tax relief ordinance in force today? If you work in a "
+            "treasury, ask your office: when a calamity hits, who drafts the Section 276 ordinance, and by when?",
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("cta", "Read the study note: Paying real property tax", "/study-notes/paying-real-property-tax/"),
+            ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Has your town ever granted tax relief after a calamity? I'd like to hear how it worked."),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction",
+        "date": "January 9, 2027",
+        "publish_on": "2027-01-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "unpaid-amilyar-notice-to-auction",
+        "category": "finance",
+        "summary": "Real property tax left unpaid does not simply disappear. Here is how interest grows, what a "
+                   "notice of delinquency means, how a warrant of levy and an auction work, and the one year an "
+                   "owner has to get the property back.",
+        "body": [
+            "A man home from work abroad walked into the treasury with his phone held out. On the screen was a "
+            "photo his cousin had taken at the barangay hall: a list of names posted on the board, under the "
+            "words “Notice of Delinquency.” His late father’s name was on it. “Papa paid the amilyar every year,” "
+            "he said. “At least, I thought he did.”",
+            "(As in every part of this series, the case is a composite. No real person, property or amount is "
+            "described.)",
+            "Amilyar is the everyday name for the real property tax on land and buildings. It is due every "
+            "year, and when it goes unpaid, the Local Government Code lays out a series of steps that can end "
+            "with the property sold at public auction. By the end of this post, you will know how the unpaid "
+            "tax grows, what each step from notice to auction means, how much time an owner has at each stage, "
+            "and how to stop the process before it goes too far.",
+            ("photo", "blog/finance-rpt-delinquency.jpg", "From unpaid tax to auction: the notice, the warrant of "
+             "levy, the sale, and the one year to redeem. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "The Tax Is Tied to the Land"),
+            "Under Section 246 of the Code, the real property tax for a year falls due on January 1, and from that "
+            "day it is a lien on the property. A lien is a legal claim. This one is superior to other liens and "
+            "encumbrances, and it stays with the property until the tax is paid, even if the property changes "
+            "hands.",
+            "That is why the son’s problem did not die with his father. The unpaid tax stayed attached to the lot, "
+            "and anyone who inherits or buys it inherits the problem with it.",
+            ("quote", "The tax does not follow the owner. It stays with the land."),
+            ("h", "How the Bill Grows"),
+            "Section 250 lets owners pay the basic tax and the Special Education Fund in four installments, due "
+            "by March 31, June 30, September 30 and December 31. An installment not paid on time earns interest "
+            "under Section 255: 2% a month on the unpaid amount, until it is paid. The interest stops growing "
+            "after 36 months, so the most it can reach is 72% of the unpaid tax.",
+            "Here is what that looks like for a lot whose basic tax and Special Education Fund add up to ₱2,400 "
+            "a year:",
+            ("point", "One year’s tax, 12 months late", "2% × 12 = 24% interest, or ₱576. The bill becomes "
+             "₱2,976."),
+            ("point", "The same tax, 36 months or more late", "The cap of 72% applies, or ₱1,728. The bill "
+             "becomes ₱4,128."),
+            ("point", "Three years unpaid", "Each year’s tax carries its own interest, counted from its own due "
+             "dates, so the arrears pile up year after year."),
+            "Section 250 adds a rule that can surprise owners. A payment is applied first to the unpaid tax, "
+            "interest and penalties of earlier years. An owner cannot choose to pay only this year’s tax and "
+            "leave the old years for later.",
+            "The study note on paying real property tax walks through quarterly payments, discounts and "
+            "interest with worked examples.",
+            ("cta", "Read the study note: Paying real property tax", "/study-notes/paying-real-property-tax/"),
+            ("h", "Step 1: The Notice of Delinquency"),
+            "When the tax becomes delinquent, Section 254 requires the treasurer to post a notice at the main "
+            "entrance of the provincial capitol or the city or municipal hall, and in a public place in each "
+            "barangay. The notice is also published once a week for two weeks in a newspaper of general "
+            "circulation in the area.",
+            "This is the list the son’s cousin had photographed. It is a public warning, and it is the clearest "
+            "moment to act, because nothing has been levied yet and the owner can still settle at the window.",
+            ("h", "Step 2: The Warrant of Levy"),
+            "Section 256 gives the local government two remedies for unpaid real property tax: an administrative "
+            "action through levy on the property, and a court case. It may use one or both.",
+            "For the levy, Section 258 has the treasurer issue a warrant of levy, which has the force of a court "
+            "order of execution. The warrant is mailed to or served on the owner, and the levy is annotated on the tax "
+            "declaration and the title. From then on, anyone who checks the title sees it.",
+            "The law also puts pressure on the treasurer. Under Section 259, a treasurer who fails to issue or "
+            "execute the warrant within one year from the time the tax became delinquent may be dismissed from "
+            "the service. Collecting unpaid real property tax is a duty, not a "
+            "favor.",
+            ("h", "Step 3: The Auction"),
+            "Section 260 sets the timetable. Within 30 days after the warrant is served, the treasurer advertises "
+            "the sale of the property. The notice is posted at the main entrance of the government building and "
+            "in a public place in the barangay where the property is, and published once a week for two weeks.",
+            "Even then, the owner can stop it. At any time before the date fixed for the sale, the owner may pay "
+            "the delinquent tax, the interest and the expenses, and the sale does not go ahead.",
+            "Section 263 covers the case where nobody bids, or the highest bid does not cover the tax, interest "
+            "and expenses. The treasurer then buys the property for the local government. The owner can still "
+            "redeem it within one year.",
+            ("h", "Step 4: One Year to Redeem"),
+            "A sale is not the end. Under Section 261, the owner has one year from the date of sale to redeem "
+            "the property. To do so, the owner pays the delinquent tax with its interest, the expenses of the "
+            "sale, and interest of up to 2% a month on the price the buyer paid, counted from the sale to the "
+            "redemption.",
+            "During that year, the owner keeps possession of the property and the right to its rent and "
+            "other income. But the year is the limit the law sets. After it, the right to redeem under "
+            "Section 261 is gone.",
+            ("h", "Is There a Time Limit on Collection?"),
+            "Yes. Section 270 says the tax must be collected within five years from the date it became due, or "
+            "within ten years from discovery when there was fraud or intent to evade. The period stops running "
+            "in some cases, such as when the owner is out of the country or cannot be located.",
+            "That limit is not a reason to wait. The lien under Section 246 remains on the property, and an owner "
+            "who wants to sell, mortgage or transfer it will still be asked to show that the tax is paid.",
+            ("h", "What About the Amnesty?"),
+            "Republic Act No. 12001, signed on June 13, 2024, included a one-time amnesty under Section 30. It "
+            "covered “penalties, surcharges, and interests from all unpaid real property taxes” due before the "
+            "law took effect, but only if availed “within a period of two (2) years after the effectivity of "
+            "this Act.” The tax itself was still paid, either at once or by installment.",
+            "Counting from the law’s effectivity in July 2024, that window closed in July 2026. An owner reading "
+            "this today should ask the treasury whether any newer local relief applies, and should not assume "
+            "one does.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming someone else paid", "A tax declaration can stay in the name of a parent who "
+             "has passed away. Ask for a statement of account instead of relying on memory."),
+            ("point", "Paying only the current year", "Section 250 applies payments to older arrears first, so "
+             "a payment meant for this year may go to past years."),
+            ("point", "Ignoring the posted notice", "The notice of delinquency is the stage where settling is "
+             "simplest. Later stages add expenses and annotations on the title."),
+            ("point", "Treating the auction as final", "There is still a year to redeem under Section 261, "
+             "but it is a firm limit."),
+            ("h", "An Action Plan"),
+            ("point", "This week", "Ask the treasury for a statement of account on every property in your "
+             "family, by tax declaration number."),
+            ("point", "If there are arrears", "Ask what the total is today, how it is computed, and whether "
+             "payment by installment is allowed under your local revenue code."),
+            ("point", "If you disagree with the amount", "Section 252 lets you pay under protest and file a "
+             "written protest within 30 days of payment."),
+            ("point", "Every year after", "Pay by March 31 if you can, and keep the official receipts together "
+             "with the tax declaration."),
+            ("h", "The Son’s Lot"),
+            "The son asked for a statement of account, and the arrears covered all of the previous year. No warrant had been issued yet, so he paid in full at the window, then went to the assessor to start transferring the tax declaration to the "
+            "heirs. On his way out, he took a photo of the receipt and sent it to his cousin. “Tell me if our name "
+            "is ever on that board again,” he wrote.",
+            ("h", "Key Takeaways"),
+            ("point", "The tax is a lien", "It stays with the property until paid, even after the owner dies "
+             "or the land is sold."),
+            ("point", "Interest is 2% a month", "It is capped at 36 months, or 72% of the unpaid tax."),
+            ("point", "Notice, levy, auction", "Each step is set by law, and the owner can stop the sale by "
+             "paying before the auction date."),
+            ("point", "One year to redeem", "After a sale, the owner keeps possession for a year and can get "
+             "the property back by paying."),
+            ("h", "The Question to Ask"),
+            "When did you last see an official receipt for the amilyar on your family’s land? If you work in a "
+            "treasury, ask your office: how long does it take us to move from a posted notice to a warrant?",
+            ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
+            ("cta", "Read: Inside the Local Treasury, Part 4: Selling Land? Meet the Transfer Tax", "/blog/selling-land-transfer-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("ask", "Has your family ever found an unpaid amilyar years after the fact? I'd like to hear how it was settled."),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 4: Selling Land? Meet the Transfer Tax",
         "date": "January 4, 2027",
         "publish_on": "2027-01-04 21:00",
