@@ -32,8 +32,7 @@ DATA_POSTS = [
             "town or taxpayer is described.)",
             "Part 12 stopped errors at the door of a spreadsheet with dropdown lists. This part does the same "
             "for a database. By the end of this post you will know how to write rules into a table so it "
-            "rejects bad rows, what NOT NULL, UNIQUE, CHECK and foreign keys each catch, why SQLite needs two "
-            "extra settings to be strict, and how to find bad rows that were saved before the rules existed. "
+            "rejects bad rows, what NOT NULL, UNIQUE, CHECK and foreign keys each catch, why SQLite needs two extra steps to be strict, and how to find bad rows that were saved before the rules existed. "
             "Every statement below was run in SQLite, and the results shown are what it returned.",
             ("photo", "blog/data-db-rules.jpg", "Rules inside the database: required values, no repeats, "
              "sensible values and known codes. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -101,8 +100,9 @@ DATA_POSTS = [
             ("point", "Which versions", "SQLite’s documentation says STRICT tables arrived in version 3.37.0, "
              "released in November 2021. Check your version with sqlite3 --version before relying on it."),
             ("h", "Bad Rows That Were Already There"),
-            "Rules protect the table from the moment they exist. Rows saved before then, or saved while foreign "
-            "keys were off, are not checked again.",
+            "Rules protect the table from the moment they exist. Rows saved while foreign keys were off "
+            "are not checked again when the switch is turned on, and old data copied in from an earlier table "
+            "deserves a look before anyone relies on it.",
             ("point", "Unknown codes", "PRAGMA foreign_key_check; lists rows whose foreign key points nowhere. "
              "In the test, it found the C-99 receipt saved before the switch was on."),
             ("point", "Other rules", "Run the rule as a query. SELECT receipt_no FROM receipts WHERE amount "

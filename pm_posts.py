@@ -55,9 +55,8 @@ PM_POSTS = [
              "could. Eliyahu Goldratt’s business novel Critical Chain, published in 1997, calls this "
              "the student syndrome, after students who begin an assignment just before it is due. Then a problem near the "
              "end has no time left to absorb it."),
-            ("point", "Early finishes are lost", "If the next task was planned to start on a fixed date, a "
-             "task that finishes early before it changes nothing. A task that finishes late pushes the next "
-             "one back."),
+            ("point", "Early finishes are lost", "If the next task is planned to start on a fixed date, finishing the "
+             "task before it early changes nothing. Finishing it late pushes the next one back."),
             "Put together, each task’s safety is spent on that task, and the project as a whole still runs "
             "late. The safety was real, but it was in the wrong place.",
             ("h", "Moving the Safety Into the Open"),

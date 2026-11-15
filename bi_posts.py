@@ -125,7 +125,7 @@ BI_POSTS = [
             ("h", "Mistakes to Avoid"),
             ("point", "Starting with the dashboard", "Start with the question and the measures."),
             ("point", "Building for everyone at once", "One audience, one source, then grow."),
-            ("point", "Skipping the checks", "A dashboard without checks spreads mistakes faster."),
+            ("point", "Skipping the checks", "A dashboard without checks can show a mistake to every reader at once."),
             ("point", "No written routine", "If only one person knows how it runs, it stops when they are away."),
             ("h", "Key Takeaways"),
             ("point", "Week 1", "Brief, measures, definitions and access."),
