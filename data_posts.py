@@ -12,6 +12,162 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 26, 2027",
+        "title": "Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them",
+        "slug": "data-analytics-part-16-dirty-data",
+        "category": "data",
+        "summary": "A sheet can look tidy and still count one barangay as three. This part lines up the usual "
+                   "suspects in treasury data, from duplicates and stray spaces to numbers stored as text and "
+                   "impossible amounts, with a quick test to spot each one and a ten-minute scan to run "
+                   "before any analysis.",
+        "publish_on": "2027-01-26 21:00",
+        "body": [
+            "The head of office asks a simple question: how many business permits were renewed in each "
+            "barangay this year? The analyst opens the permits sheet, which three encoders filled in, and "
+            "makes a quick count by barangay.",
+            "The town has 24 barangays. The count shows 31. “Poblacion,” “Pob.” and “Pob” each have their "
+            "own line, and several other barangays are split the same way. A few renewals also appear twice. "
+            "The totals are wrong before any analysis has started.",
+            "The data is not fake, and the encoders were not careless. It is dirty: correct in spirit, but "
+            "not yet fit to count.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 15 was about keeping data files safe. This part looks inside the file. By the end of this "
+            "post you will know the usual kinds of dirty data, a quick test to spot each one in a "
+            "spreadsheet, the first safe step to fix it, and a short scan to run before you trust any total.",
+            ("photo", "blog/data-dirty-data.jpg", "The usual suspects in dirty data: duplicates, inconsistent "
+             "names, stray spaces and numbers stored as text. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What Makes Data Dirty"),
+            "Dirty data is data that is incomplete, incorrect or inconsistent in ways that can mislead an "
+            "analysis. Google’s Data Analytics Certificate groups it into types such as duplicate, outdated, "
+            "incomplete, incorrect and inconsistent data.",
+            "In a treasury spreadsheet, those types show up as a handful of familiar problems. Each one below "
+            "comes with a test you can run in Google Sheets or Excel, and a first step that does not destroy "
+            "anything.",
+            ("quote", "Clean data is not data with no problems. It is data whose problems you have found."),
+            ("h", "Suspect 1: Duplicates"),
+            "The same record entered twice. It happens when two encoders type the same batch, when an export "
+            "is pasted twice, or when a corrected row is added without removing the old one.",
+            ("point", "How to spot it", "Use the record’s key, such as the receipt number with its series "
+             "from Part 14. =COUNTIF(A:A, A2)>1 returns TRUE for any key that appears more than once."),
+            ("point", "Look before removing", "Two rows with the same date, name and amount are not always "
+             "duplicates. Two receipts can match by chance. Only the key, or the source document, can say."),
+            ("point", "A note on the built-in tool", "Google Sheets has a Remove duplicates tool. Its help page "
+             "notes that values that differ only in letter case are treated as duplicates. Check what it "
+             "will remove, and work on a copy."),
+            ("h", "Suspect 2: Inconsistent Names and Codes"),
+            "The same thing written in more than one way: “Pob.” and “Poblacion,” “RPT” and “Real Property "
+            "Tax,” or a collector’s name with and without a middle initial. Each version is counted as "
+            "something different.",
+            ("point", "How to spot it", "List the distinct values in the column with =UNIQUE(D2:D), sort the "
+             "list, and read it. Near-twins sit next to each other."),
+            ("point", "First step", "Make a small mapping table: each version found, and the standard name it "
+             "should be. Add a column that looks up the standard name, instead of retyping the original."),
+            ("point", "Stop it coming back", "Use a dropdown list for that column, as shown in Part 12."),
+            ("h", "Suspect 3: Extra and Hidden Spaces"),
+            "“Reyes” and “Reyes ” look the same on screen, but the second has a space at the end, and a "
+            "spreadsheet treats them as different values. Lookups fail and counts split for no visible reason.",
+            ("point", "How to spot it", "=LEN(C2)<>LEN(TRIM(C2)) returns TRUE when a cell has spaces at the "
+             "ends or doubled inside."),
+            ("point", "First step", "=TRIM(C2) in a new column removes them."),
+            ("point", "The space TRIM misses", "Microsoft’s help explains that Excel’s TRIM removes the "
+             "ordinary space character but not the non-breaking space, character 160, which can arrive in "
+             "text copied from web pages. Google’s help for Sheets says the same of its TRIM. "
+             "=TRIM(SUBSTITUTE(C2, CHAR(160), \" \")) handles both."),
+            ("h", "Suspect 4: Numbers Stored as Text"),
+            "An amount that looks like 1,250.00 may be stored as text, especially after an export or a paste "
+            "from another program. A SUM can leave it out, and the total comes up short without any error.",
+            ("point", "How to spot it", "=ISNUMBER(F2) returns FALSE for a number stored as text. Another "
+             "clue: in both Excel and Google Sheets, numbers line up on the right by default, while text lines "
+             "up on the left. A column of amounts with a few left-aligned cells deserves a look."),
+            ("point", "First step", "=VALUE(F2) in a new column converts text that looks like a number into a "
+             "real number."),
+            ("point", "Check the total", "Compare =SUM of the original column with =SUM of the converted one. "
+             "The difference is the money the first total was missing."),
+            ("h", "Suspect 5: Mixed Date Formats"),
+            "A date typed as 03/04/2026 can mean March 4 or April 3, depending on who typed it and how the "
+            "spreadsheet is set up. Other dates arrive as text, such as “Mar. 4, 2026,” that the spreadsheet "
+            "cannot sort by date.",
+            ("point", "How to spot it", "Spreadsheets store real dates as numbers, so =ISNUMBER(B2) returns "
+             "FALSE for a date that is only text. Sorting the column also helps: text dates gather in one "
+             "block, apart from the real ones."),
+            ("point", "First step", "Agree on one format for new entries, such as the year-month-day order "
+             "from Part 15, and fix the old ones in a new column. Ambiguous dates go back to the source "
+             "document, not to a guess."),
+            ("h", "Suspect 6: Missing Values"),
+            "A blank cell can mean “zero,” “not yet known,” “not applicable” or “forgot to type.” Those are "
+            "four different facts, and a blank hides which one it is.",
+            ("point", "How to spot it", "=COUNTBLANK(F2:F500) counts the blanks in a column. Also look for "
+             "stand-ins such as “N/A,” “none,” a dash or 0 used to mean “unknown.”"),
+            ("point", "First step", "Do not fill a blank amount with zero or an average just to make the sheet "
+             "complete. Find the source document, or mark the row so it can be counted separately."),
+            ("point", "Report it", "If 40 of 600 permits have no barangay, say so beside the chart, instead of "
+             "leaving them out quietly."),
+            ("h", "Suspect 7: Impossible or Unlikely Values"),
+            "An amount with an extra zero, a payment dated in 2062, a negative tax due, or a permit fee far "
+            "above any fee in the schedule. Some are typing errors. Some are real and unusual.",
+            ("point", "How to spot it", "Sort each number and date column from smallest to largest, then the "
+             "other way, and read both ends. =MIN and =MAX do the same for a quick look."),
+            ("point", "Check, do not delete", "A large amount may be a large business paying its real tax. "
+             "Compare the row with the receipt or the assessment before changing anything."),
+            ("point", "Set limits", "Data validation can reject a date outside the year or an amount below "
+             "zero at the moment it is typed."),
+            ("h", "Suspect 8: Outdated Records"),
+            "A business that closed last year still listed as active, or a taxpayer’s old address. Each value "
+            "was correct once.",
+            ("point", "How to spot it", "Add a “last updated” column, and sort by it. Records not touched in "
+             "a long time are the ones to confirm first."),
+            ("point", "First step", "Update the record in one place, as Part 14 suggested, so the change "
+             "reaches every row that points to it."),
+            ("h", "Keep a Cleaning Log"),
+            "Every fix changes the data, so write it down. A short log, like the change log from Part 15, "
+            "lists what was found, how many rows, and what was done: “Mapped 7 barangay spellings to the "
+            "standard list. Removed 6 duplicate renewals after checking receipt numbers.”",
+            "The log lets someone else repeat the cleaning next month, and it answers the question “Why does "
+            "your total differ from the raw file?” before anyone asks it.",
+            ("h", "A Ten-Minute Dirty-Data Scan"),
+            ("point", "1. Keys", "Count duplicates in the key column."),
+            ("point", "2. Text columns", "List the distinct values, sorted, and read them."),
+            ("point", "3. Spaces", "Run the LEN and TRIM test on names and codes."),
+            ("point", "4. Numbers and dates", "Run ISNUMBER on every amount and date column."),
+            ("point", "5. Blanks", "Count blanks and stand-ins in each important column."),
+            ("point", "6. Both ends", "Sort each number and date column both ways and read the extremes."),
+            "Ten minutes is a rough guide for a sheet of a few hundred rows. The point is to run the same scan "
+            "every time, before any total leaves the office.",
+            ("h", "The Permits Sheet, Cleaned"),
+            "The analyst ran the scan on a copy of the permits sheet. A mapping table turned seven spellings "
+            "into the standard barangay names, and the count fell from 31 to 24. Six renewals appeared twice "
+            "because two encoders had typed the same batch; the receipt numbers confirmed it. Twelve fees "
+            "were stored as text and were missing from the first total.",
+            "The new count went to the head of office with one line underneath: “Cleaned on January 26; "
+            "cleaning log attached.”",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Cleaning the original", "Work on a copy, and keep the raw file as it arrived."),
+            ("point", "Deleting what looks odd", "Check unusual values against the source first."),
+            ("point", "Filling blanks with guesses", "A blank is a question, not a zero."),
+            ("point", "Cleaning without a log", "Write down every fix so it can be repeated and explained."),
+            ("h", "Key Takeaways"),
+            ("point", "Dirty is not fake", "Dirty data is real data that is not yet fit to count."),
+            ("point", "Know the suspects", "Duplicates, inconsistent names, spaces, text numbers, dates, "
+             "blanks, odd values and old records."),
+            ("point", "Spot before you fix", "A quick formula test finds each one."),
+            ("point", "Fix safely", "Work in new columns or copies, and keep a cleaning log."),
+            ("h", "Your Part 16 Exercise"),
+            "Take one spreadsheet your office uses for counting, such as permits, receipts or notices.",
+            ("point", "Run the scan", "Go through the six steps above on a copy of the sheet."),
+            ("point", "Count the suspects", "Write down how many rows each kind of problem affects."),
+            ("point", "Fix one", "Pick the problem that changes the totals most, fix it in a new column, and "
+             "log it."),
+            "Then compare the total before and after. The gap shows how much the dirty data was hiding.",
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 15", "/blog/data-analytics-part-15-naming-versions-backups/"),
+            ("cta", "Read: Data Analytics Series, Part 10", "/blog/data-analytics-part-10-data-types-and-table-shapes/"),
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("ask", "Which column in your office’s data has the most ways of spelling the same thing?"),
+        ],
+    },
+    {
         "date": "January 21, 2027",
         "title": "Data Analytics Series, Part 15: Naming, Versions and Backups, Keeping Data Files Safe",
         "slug": "data-analytics-part-15-naming-versions-backups",
