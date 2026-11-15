@@ -13,6 +13,141 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "January 10, 2027",
+        "title": "Business Intelligence Series, Part 13: Filters and Drill-Down, Letting Readers Ask the Next Question",
+        "slug": "business-intelligence-part-13-filters-and-drill-down",
+        "category": "bi",
+        "summary": "A good BI view answers the first question and lets the reader ask the next one. This part "
+                   "explains filters and drill-down in plain words, how to choose them, how to keep them "
+                   "honest, and where to stop so private details stay private.",
+        "publish_on": "2027-01-10 21:00",
+        "body": [
+            "The head of office opens the collections view on Monday morning. Business tax collections are "
+            "down 8% from the same month last year. The next question comes at once: where? Which barangays, "
+            "which kinds of business, which weeks?",
+            "The view has no way to answer. It shows one total and one trend line. So the head of office sends "
+            "a message to the analyst, the analyst builds a new table, and the answer arrives on Wednesday. "
+            "By then, the meeting where it was needed is over.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 12 made the view readable on a phone. This part makes it useful for the second question. "
+            "By the end of this post you will know the difference between a filter and a drill-down, how to "
+            "choose the few that matter, how to keep filtered numbers honest, and where to stop drilling so "
+            "private details stay private.",
+            ("photo", "blog/bi-drill-down.jpg", "Drilling down from the total to the detail beneath it, one "
+             "level at a time. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Ways to Ask the Next Question"),
+            ("point", "A filter", "Narrows what the whole view shows. Choose “Barangay: San Isidro” and every "
+             "chart and total on the page now counts only San Isidro. A filter answers “show me only this.”"),
+            ("point", "A drill-down", "Opens the detail beneath one number. Start from the year’s total, open "
+             "it into months, then open one month into days. A drill-down answers “what is inside this?”"),
+            "Both let the reader move from the answer to the reason without waiting for the analyst. The "
+            "difference matters when you design: a filter changes the whole page, while a drill-down follows "
+            "one number down a path you have planned.",
+            ("quote", "Plan for the second question before the reader has to ask it."),
+            ("h", "Choosing Filters: Fewer, and the Right Ones"),
+            "A view with twelve filters along the top looks powerful but can leave the reader unsure where to "
+            "start. Choose filters from the questions the readers actually ask. The BI brief from Part 4 "
+            "already lists them.",
+            ("point", "Time", "Collections are counted by period: this month, this quarter, this year. A date "
+             "filter belongs on nearly every collections view."),
+            ("point", "Place", "Barangay, when collections are tracked by location."),
+            ("point", "Kind", "Revenue source, such as real property tax, business tax or fees."),
+            ("point", "Who", "Collector or office, for the views used to manage the work."),
+            "In the example below, these four answer every question in the brief. Add a fifth only when a "
+            "reader asks for it more than once.",
+            ("h", "Planning a Drill Path"),
+            "A drill-down follows a hierarchy, where each level sits neatly inside the one above it. Write the "
+            "path down before building it.",
+            ("point", "Time path", "Year, then quarter, then month, then day."),
+            ("point", "Place path", "Whole municipality, then barangay, then account."),
+            ("point", "Source path", "All collections, then revenue source, then the kind of fee or tax "
+             "within it."),
+            "Each level should add up to the one above. If the twelve months do not add up to the year, the "
+            "reader has good reason to stop trusting the view. Part 5’s data model helps here: when every receipt "
+            "carries a date, a barangay and a revenue source, each path can be built to add up.",
+            ("h", "Keeping Filtered Numbers Honest"),
+            ("point", "Show what is filtered", "Write the active filters near the top, in words: “Showing: "
+             "San Isidro, business tax, October 2026.” A screenshot shared without this line can be mistaken "
+             "for the whole picture."),
+            ("point", "Say what a percentage is a share of", "Under a filter, “25%” can mean a share of the "
+             "filtered total or a share of the whole. Label it: “25% of San Isidro’s collections” or "
+             "“25% of all collections.”"),
+            ("point", "Keep the date line", "The “data as of” date from earlier parts should stay visible "
+             "whatever the filters are."),
+            ("point", "Offer a reset", "Give the reader one clear way back to the full view, such as a "
+             "“Clear filters” button or a note on how to clear them."),
+            ("point", "Handle empty results", "If a combination returns nothing, say so in words: “No "
+             "collections match these filters.” A blank chart can look like a broken one."),
+            ("h", "Watch Out for Small Numbers"),
+            "The deeper the reader drills, the smaller the numbers get, and small numbers swing easily. If a "
+            "barangay had two business permits renewed last March and four this March, that is a 100% "
+            "increase built on two permits.",
+            ("point", "Show the count beside the percentage", "“Up 100% (from 2 to 4 permits)” tells the "
+             "real story."),
+            ("point", "Set a floor", "For percentage changes, consider showing “too few to compare” when the "
+             "base is below a number your office agrees on."),
+            ("h", "Where to Stop Drilling"),
+            "Drill-down makes it easy to go from a total to a single taxpayer, and that is where privacy "
+            "begins. Part 4’s BI brief asked who may see what. The drill path is where that decision is "
+            "enforced.",
+            ("point", "Stop at the level the reader needs", "The head of office deciding where to send "
+             "collectors may need barangay totals, not taxpayer names."),
+            ("point", "Give names only to those who work with them", "The revenue unit, which follows up "
+             "accounts, may need account-level detail. Give them a separate view with its own access."),
+            ("point", "Ask before you open the last level", "Personal information is protected under the Data "
+             "Privacy Act of 2012 (Republic Act No. 10173). Check the account-level view with your office’s "
+             "data protection officer before sharing it."),
+            ("h", "The Collections View, With Filters and Drill-Down"),
+            ("point", "Filters", "Month, revenue source and barangay, with the active filters written under "
+             "the title."),
+            ("point", "Drill path", "Total collections, then revenue source, then barangay. It stops there for "
+             "the head of office."),
+            ("point", "A second view", "For the revenue unit only: barangay, then account, for follow-up "
+             "work."),
+            "On Monday morning, the head of office sees business tax down 8%, opens it by barangay, and finds "
+            "that most of the drop is in two barangays where two large stores closed during the year. The question "
+            "that took until Wednesday now takes a minute, and the follow-up list goes to the revenue unit, "
+            "whose view shows the accounts.",
+            ("h", "Test Before You Share"),
+            ("point", "Add it up", "Pick one filter, note the total, then check it against the same total "
+             "from the source report. They must match."),
+            ("point", "Walk every path", "Drill down each path to the bottom and back up. Check that each "
+             "level adds up to the one above."),
+            ("point", "Try odd combinations", "Choose filters that should return nothing, and check that the "
+             "view says so clearly."),
+            ("point", "Check the access", "Sign in as a reader who should not see account names and confirm "
+             "that they cannot."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "A filter for everything", "Too many filters can hide the few that matter."),
+            ("point", "Hidden filters", "A view that does not say what is filtered can mislead anyone who "
+             "sees a screenshot."),
+            ("point", "Percentages of unclear wholes", "Always say what the percentage is a share of."),
+            ("point", "Drilling past privacy", "Plan where each reader’s path stops before building it."),
+            ("h", "Key Takeaways"),
+            ("point", "Filter or drill", "A filter narrows the whole view; a drill-down opens one number."),
+            ("point", "Few and chosen", "Pick filters from the questions readers actually ask."),
+            ("point", "Honest under filters", "Show the active filters, label percentages and keep the date "
+             "line."),
+            ("point", "Stop at the right level", "Plan each reader’s drill path with privacy in mind."),
+            ("h", "Your Part 13 Exercise"),
+            "Take one view your office uses and write down the last three follow-up questions someone asked "
+            "about it.",
+            ("point", "Sort them", "For each question, decide whether a filter or a drill-down would answer it."),
+            ("point", "Draw the path", "Write the drill path from the top level to the lowest level that "
+             "reader needs."),
+            ("point", "Mark the stop", "Draw a line at the level where names or other personal details "
+             "begin, and note who may go below it."),
+            "If the three questions need more than four filters, look again: some of them may belong in a "
+            "drill-down instead.",
+            ("cta", "Read: Business Intelligence Series, Part 12", "/blog/business-intelligence-part-12-fast-and-readable-on-a-phone/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("ask", "What is the follow-up question your office’s reports most often leave unanswered?"),
+        ],
+    },
+    {
         "date": "January 5, 2027",
         "title": "Business Intelligence Series, Part 12: Fast and Readable on a Phone",
         "slug": "business-intelligence-part-12-fast-and-readable-on-a-phone",

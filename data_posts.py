@@ -12,6 +12,143 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 11, 2027",
+        "title": "Data Analytics Series, Part 13: Bias in Data, and How to Catch It",
+        "slug": "data-analytics-part-13-bias-in-data",
+        "category": "data",
+        "summary": "Data can be accurate and still lead to the wrong answer when it leans one way. This part "
+                   "explains four kinds of bias, sampling, observer, interpretation and confirmation, with "
+                   "treasury examples and a short checklist for catching each one.",
+        "publish_on": "2027-01-11 21:00",
+        "body": [
+            "The office wants to know how taxpayers feel about its service, so it runs a short survey at the "
+            "counter for two weeks. The results are excellent: nine out of ten say the service is fast and "
+            "friendly. The report goes up with a confident headline.",
+            "A month later, a councilor mentions that several residents have complained about long waits and "
+            "unclear notices. How can both be true?",
+            "Look at who answered. The survey reached only people who came to the counter, during the two "
+            "quietest weeks of the year, and who had time to stay a few minutes after paying. The people who "
+            "gave up waiting, who never came because the notice confused them, or who came during the January "
+            "rush, were never asked. Every answer was real. The sample was not the whole picture.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town, councilor or taxpayer is described.)",
+            "Part 11 tested whether a source can be trusted, and Part 12 put the data in a clean sheet. This "
+            "part asks a different question: does the data, or the way we read it, lean one way? By the end "
+            "of this post you will know four common kinds of bias, how each shows up in treasury work, and a "
+            "simple check for each.",
+            ("photo", "blog/data-bias.jpg", "Four kinds of bias: sampling, observer, interpretation and "
+             "confirmation. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Bias Means Here"),
+            "The Google Data Analytics course defines bias as a conscious or subconscious preference in favor "
+            "of or against a person, group of people or thing. In data work, bias is any lean that pushes the "
+            "result away from the truth in one direction.",
+            "Bias is different from a random error. A typing mistake in one receipt may push a total up or "
+            "down by chance. Bias pushes in the same direction "
+            "again and again, so collecting more of the same data does not remove it. A bigger survey at the same counter in the same quiet weeks would only repeat the same "
+            "lean with more confidence.",
+            ("quote", "More data with the same lean is still leaning."),
+            ("h", "1. Sampling Bias: Who Was Counted?"),
+            "Sampling bias happens when the group you collected data from does not represent the whole group "
+            "you want to describe. The counter survey above is one example.",
+            ("point", "Treasury example", "Estimating how many businesses operate without a permit by "
+             "checking only stores along the main road. The side streets and the barangays far from the town "
+             "center may look very different."),
+            ("point", "How to catch it", "Write down the whole group your question is about, such as “all "
+             "taxpayers” or “all businesses in the municipality.” Then ask who in that group could not have "
+             "ended up in your data."),
+            ("point", "How to reduce it", "Choose from the full list rather than from whoever is nearby. One "
+             "simple way is to take every tenth account from the complete list, so the sample is spread "
+             "across the whole list."),
+            ("h", "2. Observer Bias: Who Recorded It?"),
+            "Observer bias happens when the expectations of the person collecting the data affect what gets "
+            "recorded. Two people looking at the same thing can write it down differently.",
+            ("point", "Treasury example", "Collectors marking visited accounts as “refused to pay” or “not "
+             "home.” One collector who expects resistance may write “refused” for a door that simply was not "
+             "answered. The count of refusals then depends on who visited, not only on what happened."),
+            ("point", "How to catch it", "Compare the same measure across the people who record it. If one "
+             "collector reports three times as many refusals as the others in similar areas, look closer "
+             "before drawing conclusions."),
+            ("point", "How to reduce it", "Write a short definition for each choice, such as “Refused: the "
+             "taxpayer said they will not pay.” Train everyone on the same definitions, and use a dropdown "
+             "with only those choices, as in Part 12."),
+            ("h", "3. Interpretation Bias: How Was It Read?"),
+            "Interpretation bias is the tendency to read unclear or neutral data in a way that fits what we "
+            "already think. The numbers are fine; the reading leans.",
+            ("point", "Treasury example", "Real property tax collections in March are lower than last March. "
+             "One reader sees taxpayers becoming less willing to pay. Another notices that a discount "
+             "deadline moved, shifting payments into February. The same number supports both readings until "
+             "someone checks."),
+            ("point", "How to catch it", "Before explaining a change, list at least two other possible causes. "
+             "Check each one against the data: Did February rise by about the same amount? Did anything "
+             "change in the calendar, the rules or the system?"),
+            ("point", "How to reduce it", "Ask someone who was not involved to read the chart and explain it "
+             "in their own words before you share your explanation."),
+            ("h", "4. Confirmation Bias: What Did We Look For?"),
+            "The Google course describes confirmation bias as the tendency to search for or interpret "
+            "information in a way that confirms what we already believe. It affects which data we look at in "
+            "the first place.",
+            ("point", "Treasury example", "A staff member is sure that the new online payment option is "
+             "lowering counter collections. They pull the three months where counter collections fell and "
+             "stop there, without checking the months where counter collections rose after online payment "
+             "started."),
+            ("point", "How to catch it", "Ask: “What would I expect to see if I am wrong?” Then go and look "
+             "for exactly that."),
+            ("point", "How to reduce it", "Write down your question and how you will measure it before you "
+             "open the data. Decide in advance which months, which accounts and which comparison you will "
+             "use, and stick to them."),
+            ("h", "Who Is Missing From the Data?"),
+            "Some treasury records describe only the people who already deal with the office. A list of "
+            "business taxpayers contains registered businesses. A list of payments contains people who paid. "
+            "A complaint log contains people who knew how to complain.",
+            "None of these lists is wrong. But a conclusion drawn from them describes only the people on them. "
+            "Before saying “taxpayers think” or “businesses are,” check whether the data includes the people "
+            "who are not yet on any list.",
+            ("h", "A Five-Question Bias Check"),
+            "Before sharing any finding, run through five questions. They take a few minutes.",
+            ("point", "Who should be in this data?", "Name the whole group the question is about."),
+            ("point", "Who could not be in it?", "Look for the people, places or periods that were left out."),
+            ("point", "Who recorded it, and how?", "Check whether definitions were written down and shared."),
+            ("point", "What else could explain it?", "List at least two other causes and check them."),
+            ("point", "What would prove me wrong?", "Look for that evidence on purpose."),
+            "Write the answers in a short note with the analysis. If a question cannot be answered, say so in "
+            "the report: “The survey covered counter visitors only.” Readers can then judge the result fairly.",
+            ("h", "The Survey, Done Again"),
+            "The office ran the survey again. This time it chose every tenth taxpayer from the full list of "
+            "property accounts, reached them by text message and by a short form at the barangay hall, and "
+            "spread the survey across a busy month and a quiet one. The questions were written so they did not "
+            "suggest an answer, for example “How long did you wait?” instead of “Was the service fast?”",
+            "The results were more mixed and more useful. Most people still rated the staff well, but waiting "
+            "time during the January rush and the wording of the notices stood out. Those became the two "
+            "things the office set out to fix.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting size over fairness", "A large sample from the wrong group is still the wrong "
+             "group."),
+            ("point", "Undefined categories", "If “refused” is not defined, each person may define it differently."),
+            ("point", "One explanation only", "A single explanation, checked against nothing, is a guess."),
+            ("point", "Hiding the limits", "State who the data covers, so readers can judge the "
+             "finding fairly."),
+            ("h", "Key Takeaways"),
+            ("point", "Bias leans one way", "More of the same data does not fix it."),
+            ("point", "Four kinds", "Sampling, observer, interpretation and confirmation."),
+            ("point", "Check who is missing", "Records describe only the people on them."),
+            ("point", "Run the five questions", "And write the limits into the report."),
+            ("h", "Your Part 13 Exercise"),
+            "Pick one finding your office shared in the last year, such as a survey result, a trend or a "
+            "comparison.",
+            ("point", "Run the check", "Answer the five questions above for that finding."),
+            ("point", "Name the lean", "Decide which of the four kinds of bias, if any, could have affected it."),
+            ("point", "Write one line", "Draft the sentence that should have gone with it, such as “This "
+             "covers only accounts that paid at the counter.”"),
+            "If you find no possible bias at all, ask a colleague to try. A second pair of eyes is one of the "
+            "simplest checks there is.",
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 11", "/blog/data-analytics-part-11-roccc-test/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("cta", "Read: Business Intelligence Series, Part 10", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("ask", "Which of your office’s numbers describes only the people who already come to the counter?"),
+        ],
+    },
+    {
         "date": "January 6, 2027",
         "title": "Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record",
         "slug": "data-analytics-part-12-one-row-per-record",

@@ -14,6 +14,134 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "January 12, 2027",
+        "title": "Project Management Series, Part 13: The Pre-Launch Checklist, a Review of Parts 1 to 12",
+        "slug": "project-management-part-13-pre-launch-checklist",
+        "category": "pm",
+        "summary": "Before the real work starts, one short review can catch the gaps that cause trouble later. "
+                   "This part turns the first twelve parts of the series into a pre-launch checklist, shows "
+                   "how to run it in one meeting, and applies it to the treasury encoding project.",
+        "publish_on": "2027-01-12 21:00",
+        "body": [
+            "The encoding project is about to move from planning into full execution. The charter is signed, "
+            "the team is named, the tracker is set up. The revenue clerk who leads it feels ready, and the "
+            "head of office is eager to begin.",
+            "Then, in a short review meeting, one question stops the room: “Who checks the encoded records "
+            "against the tax declarations once the assessor’s staff member goes back to year-end work?” "
+            "Nobody has an answer. The checking was in the charter, and the assessor’s support was in the "
+            "charter, but the plan for that busy period was not written anywhere.",
+            "Finding that gap in a meeting cost twenty minutes. Finding it in the middle of the work could "
+            "have cost weeks.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "This is the last part of the series’ first stage, which covered how a project starts. By the end "
+            "of this post you will have a pre-launch checklist built from Parts 1 to 12, a way to run it in "
+            "one meeting, a simple rating for each item, and a plan for what to do with the gaps you find.",
+            ("photo", "blog/pm-pre-launch.jpg", "A pre-launch checklist in four groups: purpose, boundaries, "
+             "people and ways of working. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Checklist Before Launch"),
+            "A project’s early decisions are spread across many documents and meetings: a charter, a list of "
+            "stakeholders, a scope, a RACI matrix, a communication plan. Each was done well on its own day. A "
+            "checklist puts them side by side and asks whether they still fit together.",
+            "It also gives the team one moment to say what worries them before the work speeds up. Questions "
+            "that feel awkward in the middle of the project can be easier to ask before it starts.",
+            ("quote", "Check the plan while changing it is still cheap."),
+            ("h", "Group 1: Purpose and Authority"),
+            ("point", "Is this a project? (Part 1)", "It has a start, an end and a result that did not exist "
+             "before. If it is really ongoing work, it needs a routine, not a project plan."),
+            ("point", "Is there a signed charter? (Part 2)", "One page, approved by the sponsor, with the "
+             "purpose, scope, milestones, people, money and risks."),
+            ("point", "Is the business case still true? (Part 10)", "The reasons for approving the project "
+             "still hold. If costs or benefits have changed since approval, the sponsor should know."),
+            ("point", "Are the objectives measurable? (Part 6)", "Each objective names a real outcome, a "
+             "starting point and a target everyone can check."),
+            ("h", "Group 2: Boundaries"),
+            ("point", "Is the scope written down? (Part 4)", "What is included and, just as clearly, what is "
+             "not. Everyone on the team can say where the line is."),
+            ("point", "Are the requirements agreed? (Part 9)", "The must-haves are listed and approved. Each "
+             "one can be tested when the work is done."),
+            ("point", "Is there a way to handle new requests? (Part 4)", "Requests that fall outside the scope "
+             "go to a list for the sponsor to decide, not straight into the work."),
+            ("h", "Group 3: People"),
+            ("point", "Are the stakeholders mapped? (Part 3)", "Everyone the project affects is on the list, "
+             "including people outside the team whose staff or time it uses."),
+            ("point", "Was there a kickoff? (Part 7)", "The team heard the same goals, roles and dates at the "
+             "same time, and had a chance to raise concerns."),
+            ("point", "Does every task have one owner? (Part 8)", "The RACI matrix names one Accountable "
+             "person for each main piece of work."),
+            ("point", "Does everyone know who hears what? (Part 11)", "The communication plan lists who gets "
+             "which update, how and how often, and who sends it."),
+            ("h", "Group 4: Ways of Working"),
+            ("point", "Is the way of working chosen? (Part 5)", "The team knows whether the work runs in "
+             "planned stages, short cycles or a mix, and why."),
+            ("point", "Is the tracker working? (Part 12)", "The stages, owners, update rule and one place "
+             "for tasks are agreed, and the tracker shows the true status today."),
+            ("point", "Are the risks named with an owner? (Part 2)", "Each main risk from the charter has a "
+             "person watching it and a first step if it happens."),
+            ("h", "Rating Each Item"),
+            "Rate each item with one of three words. Keep it simple enough to do in the meeting.",
+            ("point", "Ready", "Done, written down, and the people involved agree."),
+            ("point", "Partly", "Started, but missing a piece, an approval or a name."),
+            ("point", "Missing", "Not done, or nobody is sure."),
+            "“Not sure” always counts as Missing. If the team cannot point to where something is written, "
+            "treat it as not written.",
+            ("h", "Running the Review in One Meeting"),
+            ("point", "Who attends", "The project lead, the sponsor or someone who can decide for them, and "
+             "one person from each group doing the work."),
+            ("point", "How long", "Plan for about an hour. Go through the groups in order, rating each item "
+             "aloud."),
+            ("point", "One rule", "Rate first, discuss later. If an item needs a long discussion, mark it "
+             "Partly or Missing, name an owner for the fix, and move on."),
+            ("point", "One output", "A list of every item rated Partly or Missing, each with an owner and a "
+             "date."),
+            ("h", "What to Do With the Gaps"),
+            ("point", "Fix before starting", "Gaps that could stop the work or cause rework: no owner for a "
+             "main task, an unapproved scope, a sponsor who has not signed."),
+            ("point", "Fix in the first two weeks", "Gaps that slow the work but do not stop it: a missing "
+             "line in the communication plan, a risk without a first step."),
+            ("point", "Accept and note", "Small gaps the team agrees to live with. Write them down, so the "
+             "choice is visible later."),
+            "The sponsor then makes one decision: start now, start once the first group of fixes is done, or "
+            "hold. Write the decision and the date into the project record.",
+            ("h", "The Encoding Project, Checked"),
+            "Here is how the review went for the encoding project. Most items were Ready. Three were not.",
+            ("point", "Checking during the busy period: Missing", "The charter named the assessor’s staff "
+             "member for checking, but not who would cover when year-end work pulled them away. Fix before "
+             "starting: the head of office agreed with the assessor on one backup name and two fixed "
+             "afternoons."),
+            ("point", "Sample bills review: Partly", "The milestone said the head of office would review "
+             "sample bills, but not what “reviewed” meant. Fix in two weeks: a short list of what each "
+             "bill must show, signed off by the head of office."),
+            ("point", "Updates to the cashier: Partly", "The cashier was on the stakeholder map but missing "
+             "from the communication plan. Fix in two weeks: added to the weekly update."),
+            "The sponsor chose to start once the backup checker was named. That took two days. The project "
+            "began with every main gap either closed or scheduled.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating it as a formality", "If every item is rated Ready in ten minutes, ask for the "
+             "document behind each one."),
+            ("point", "Leaving the sponsor out", "Only the sponsor can decide whether to start with gaps open."),
+            ("point", "Gaps without owners", "A gap with no name and no date can easily stay a gap."),
+            ("point", "Never looking again", "Run a shorter version of the checklist at each major milestone."),
+            ("h", "Key Takeaways"),
+            ("point", "One list, four groups", "Purpose, boundaries, people and ways of working."),
+            ("point", "Three ratings", "Ready, Partly or Missing. “Not sure” counts as Missing."),
+            ("point", "Every gap gets an owner", "With a date, and a decision on when it must be fixed."),
+            ("point", "The sponsor decides", "Start, start after fixes, or hold."),
+            ("h", "Your Part 13 Exercise"),
+            "Take a project your office is about to start, or one that started recently.",
+            ("point", "Rate it", "Go through the fourteen items and rate each one Ready, Partly or Missing."),
+            ("point", "Pick the top three", "Choose the three gaps most likely to cause trouble."),
+            ("point", "Name the fixes", "Write an owner and a date beside each of the three."),
+            "If you rated everything Ready, choose the three items you are least sure of and find the "
+            "document for each. That alone is a useful review.",
+            ("cta", "Read: Project Management Series, Part 12", "/blog/project-management-part-12-choosing-pm-software/"),
+            ("cta", "Read: Project Management Series, Part 2", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 1", "/blog/project-management-part-1-accidental-project-manager/"),
+            ("ask", "Which item on this checklist would your current project rate as Missing?"),
+        ],
+    },
+    {
         "date": "January 7, 2027",
         "title": "Project Management Series, Part 12: Choosing PM Software, and Why Tools Don’t Fix Broken Processes",
         "slug": "project-management-part-12-choosing-pm-software",
