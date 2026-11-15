@@ -15,10 +15,9 @@ on:
     # a new post or lesson has reached its date (Philippine time), so the
     # first hourly run after midnight PH puts it live.
     - cron: "17 * * * *"
-    # Civil Service vocabulary modules go live Wednesdays at 9 pm PH (13:00 UTC).
-    - cron: "2 13 * * 3"
-    # Cybersecurity series posts go live Saturdays at 10 pm PH (14:00 UTC).
-    - cron: "2 14 * * 6"
+    # Every scheduled post, lesson, note and vocabulary module goes live at the
+    # same time, 9 pm PH (13:00 UTC), so run right after it every day.
+    - cron: "2 13 * * *"
 
 jobs:
   deploy:

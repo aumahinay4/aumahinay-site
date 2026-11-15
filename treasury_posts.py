@@ -7,6 +7,1304 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar",
+        "date": "March 5, 2027",
+        "publish_on": "2027-03-05 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "special-education-fund",
+        "category": "finance",
+        "summary": "Part of every real property tax payment goes to local public schools. Here is where the "
+                   "Special Education Fund comes from, how it is shared, who decides how it is spent, what it "
+                   "may pay for under the 2025 omnibus guidelines, and how you can see where it went.",
+        "body": [
+            "A father paying his real property tax looked closely at the official receipt for the first "
+            "time. There were two amounts: one for the basic tax, and a second, labeled SEF. He asked the collector what the second one was. “Special Education Fund,” the collector said. “That part goes to the "
+            "public schools.” He thought of his daughter’s classroom, the one with the leaking roof, and "
+            "asked the next question: who decides what that money is spent on?",
+            "(The story is made up for teaching, and so are its office, people and figures.)",
+            "The Special Education Fund, or SEF, is a local fund that the law ties to a single purpose: public education. After this post, you will know where the SEF comes from, how it is "
+            "collected and shared, who decides how it is spent, what it may pay for under the current "
+            "guidelines, and where to look to see how your town used it.",
+            ("photo", "blog/finance-sef.jpg", "The Special Education Fund: 1 percent on real property, "
+             "released to the local school board, spent on public schools, and reported to the public. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the SEF Comes From"),
+            "Section 235 of the Local Government Code allows a province or city, or a municipality within "
+            "Metropolitan Manila, to levy and collect an annual tax of one percent on the assessed value of "
+            "real property, in addition to the basic real property tax. The law says the proceeds accrue "
+            "exclusively to the Special Education Fund.",
+            "The SEF itself is older than the Code. It was created by Republic Act No. 5447, which the 2025 "
+            "guidelines list among their legal bases.",
+            ("quote", "Every amilyar receipt carries a small payment toward a classroom."),
+            ("h", "How It Is Collected"),
+            "The SEF tax is paid together with the basic real property tax, on the same schedule and with "
+            "the same incentives.",
+            ("point", "Notice by January 31", "Section 249 requires the city or municipal treasurer to post "
+             "and publish, by January 31, the dates when the basic tax and the SEF tax may be paid without "
+             "interest."),
+            ("point", "Four installments", "Under Section 250, both may be paid without interest in four "
+             "equal installments, due by March 31, June 30, September 30 and December 31."),
+            ("point", "Discount for paying early", "Section 251 allows the sanggunian to grant a discount "
+             "of up to 20 percent of the annual tax for advance payment of the basic and SEF taxes."),
+            "Here is a simple example. A house and lot with an assessed value of ₱200,000 owes an SEF tax "
+            "of 1 percent, or ₱2,000 a year, on top of the basic tax. Paid in four installments, that is "
+            "₱500 a quarter for the schools.",
+            ("h", "How It Is Shared"),
+            "The newest rules are in DepEd, DBM, DILG and DOF Joint Circular No. 01, series of 2025, the "
+            "Omnibus Guidelines on the Use of the Special Education Fund. It revises the earlier joint "
+            "circulars of 2017 and 2020.",
+            ("point", "Released to the school boards", "SEF proceeds are automatically released to the "
+             "local school boards."),
+            ("point", "Provinces share with municipalities", "Collections in a province are shared equally "
+             "by the province and the municipalities within it."),
+            ("point", "Cities keep their own", "A city keeps all of its SEF collections."),
+            "So if you live in a municipality within a province, the SEF you pay is split between two "
+            "school boards: the one in your town and the one at the provincial capitol. Both answer for "
+            "how their share is used.",
+            ("h", "Who Decides How It Is Spent"),
+            "The local school board decides. Under the guidelines, the school board budget is prepared by "
+            "the schools division superintendent, city superintendent or district supervisor, supported by "
+            "the board’s programs, projects and activities. The SEF budget is approved through a local "
+            "school board resolution signed by the chair and co-chair and approved by a majority of all "
+            "members. The guidelines also widen the board’s membership to include, among others, "
+            "implementers of the Alternative Learning System and parents of children with disabilities.",
+            "The local treasurer’s role is to collect and keep the money, release it according to the "
+            "approved budget, and keep its accounts separate from the General Fund. Under the guidelines, "
+            "the treasurer, the budget officer and the accountant each receive a copy of the approved SEF "
+            "budget within seven days of its approval.",
+            ("h", "What the SEF May Pay For"),
+            "The 2025 guidelines list allowable expenses. Among them:",
+            ("point", "Operation and maintenance of public schools", "Including utilities and certain school "
+             "health costs."),
+            ("point", "School buildings and facilities", "Construction and repair."),
+            ("point", "Equipment", "Including information and communication technology, following DepEd "
+             "specifications."),
+            ("point", "Early childhood and feeding programs", "Support for early childhood care and "
+             "development, and for the National Feeding Program."),
+            ("point", "Alternative and inclusive learning", "The Alternative Learning System, and support "
+             "services for learners with disabilities."),
+            ("point", "Books, research and sports", "Library books and periodicals, educational research "
+             "and sports development."),
+            "There is an important condition. Only items that are not adequately funded by DepEd or other "
+            "national agencies may be charged to the SEF. The fund fills gaps; it does not replace the "
+            "national budget for schools.",
+            ("h", "How the Public Can See It"),
+            "The guidelines require a detailed report on how the SEF was used to be posted on the local "
+            "government’s website, in at least three conspicuous public places, or both, under the DILG’s "
+            "Full Disclosure Policy. Part 10 of this series explained where to find these postings. The "
+            "guidelines also require quarterly and year-end SEF reports to the Bureau of Local Government "
+            "Finance: the first three quarterly reports by the 15th day of the month after each quarter, "
+            "and the year-end report by February 28.",
+            ("h", "Important Dates in the SEF Year"),
+            ("point", "January 31", "Treasurer’s notice of the real property tax and SEF payment dates."),
+            ("point", "Quarterly", "Installments due by March 31, June 30, September 30 and December 31, "
+             "and quarterly reports to the Bureau of Local Government Finance."),
+            ("point", "October 31", "Deadline for the local school board to approve the SEF budget for the "
+             "coming year."),
+            ("point", "February 28", "Year-end SEF report due."),
+            ("h", "For Treasury Workers"),
+            "Record the basic tax and the SEF tax separately on every receipt and in every report, and "
+            "deposit them to the right accounts. A peso of SEF collected but recorded as basic tax ends up "
+            "in the wrong fund. When the school board asks how much it has to work with, the treasury’s "
+            "figures should be ready and match the bank.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Mixing SEF with the General Fund", "The SEF is a special fund, with its own accounts."),
+            ("point", "Spending on items already funded by DepEd", "The SEF fills gaps only."),
+            ("point", "Skipping the public posting", "The utilization report must be posted."),
+            ("point", "Assuming residents cannot ask", "The reports are public, and residents can read "
+             "them."),
+            ("h", "Key Takeaways"),
+            ("point", "One percent for schools", "An additional tax on assessed value (Section 235)."),
+            ("point", "Paid with the amilyar", "Same installments, same early-payment discount."),
+            ("point", "The local school board decides", "Under Joint Circular No. 01, series of 2025."),
+            ("point", "Posted for the public", "Under the Full Disclosure Policy."),
+            ("h", "Your Part 16 Action Plan"),
+            ("point", "If you own property", "Look at your last real property tax receipt and find the SEF "
+             "line."),
+            ("point", "If you are a parent", "Ask your school head what the local school board funded for "
+             "your school this year."),
+            ("point", "If you work in a treasury", "Check that SEF and basic tax collections go to separate "
+             "accounts, every day."),
+            "The father asked the collector who sat on the school board. She told him which office at the town hall handles the school board’s papers and showed him where the town posts its SEF reports. That evening he "
+            "found the report, and on it, a line for the repair of school roofs. His daughter’s school was "
+            "on the list, scheduled for the summer break.",
+            ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
+            ("ask", "Have you ever seen how your town’s school board spends the SEF? What would you want it to fund?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters",
+        "date": "February 28, 2027",
+        "publish_on": "2027-02-28 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "fee-or-tax",
+        "category": "finance",
+        "summary": "A fee and a tax both come out of your pocket, but the law treats them differently. Here "
+                   "is what the Local Government Code says about each, the test the Supreme Court uses to "
+                   "tell them apart, the limits on both, and what you can do if a charge seems wrong.",
+        "body": [
+            "A woman opening a small eatery looked at her assessment from the town hall and frowned. There "
+            "was the business tax, which she expected. Below it were a mayor’s permit fee, a sanitary "
+            "inspection fee, a garbage fee and a fee for her signboard. “These are all just taxes with "
+            "different names,” she told the clerk. The clerk smiled. “Not quite,” the clerk said, “and the "
+            "difference is written in the law.”",
+            "(This is a teaching case: the office, its staff and its figures are fictional.)",
+            "To the person paying, a peso is a peso. To the law, a fee and a tax are different things, with "
+            "different purposes and different limits. When you finish reading, you will know how the Local "
+            "Government Code defines fees and charges, the test the Supreme Court uses to tell a fee from a "
+            "tax, the limits that apply to each, how these charges are created, and what a taxpayer can do "
+            "when one seems wrong.",
+            ("photo", "blog/finance-fee-or-tax.jpg", "Fee or tax: a fee pays for regulation or a service, a "
+             "tax raises revenue, and both need an ordinance and an official receipt. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What the Code Says"),
+            "Section 131 of the Local Government Code defines the terms used in local taxation. Two of them "
+            "matter here.",
+            ("point", "Fee", "A charge fixed by law or ordinance for the regulation or inspection of a "
+             "business or activity."),
+            ("point", "Charges", "Pecuniary liability, such as rents or fees, against persons or property."),
+            "A tax, by contrast, is imposed mainly to raise revenue for the government’s general needs. The "
+            "business tax and the real property tax are examples. The money goes into the treasury to fund "
+            "public services in general, not to pay for one particular service to the person who paid.",
+            ("quote", "A tax pays for government. A fee pays for a specific job government does."),
+            ("h", "The Supreme Court’s Test: What Is the Main Purpose?"),
+            "In Progressive Development Corporation v. Quezon City, decided on April 24, 1989, the Supreme "
+            "Court looked at a 5 percent charge on the gross receipts from stall rentals in a privately owned "
+            "public market. The owner argued that it was a tax on income. The Court disagreed.",
+            "The Court explained that if generating revenue is the primary purpose and regulation is merely "
+            "incidental, the charge is a tax. If regulation is the primary purpose, the charge does not "
+            "become a tax just because it also brings in money. The Court held that the 5 percent charge was "
+            "a license fee for regulating the market, imposed under the city’s police power, and upheld it.",
+            "So the label on a charge does not decide what it is. Its main purpose does.",
+            ("h", "Who Can Create a Tax or a Fee"),
+            "Section 132 gives the power to impose taxes, fees and charges to the sanggunian of the local "
+            "government, exercised through an ordinance. A treasurer, a mayor or a department head cannot "
+            "create a new charge on their own. If there is no ordinance, there is no basis to collect.",
+            ("h", "The Limits on Fees"),
+            "For fees that municipalities impose on businesses and occupations, Section 147 allows reasonable fees commensurate with "
+            "the cost of regulation, inspection and licensing. In plain words, a regulatory fee should be "
+            "in proportion to what it costs the town to inspect, regulate and license.",
+            ("point", "Reasonable", "Not out of proportion to the work done."),
+            ("point", "Tied to a purpose", "Inspection, regulation or a service, such as garbage "
+             "collection."),
+            ("point", "Set by ordinance", "With the amount written down, not decided at the window."),
+            ("h", "The Limits on New Taxes and Charges"),
+            "Section 186 lets a local government levy taxes, fees or charges on bases not already listed in "
+            "the Code, but only if they are not unjust, excessive, oppressive, confiscatory or contrary to "
+            "declared national policy, and only after a public hearing.",
+            ("h", "Public Hearings Come First"),
+            "Section 187 requires public hearings before any tax ordinance is enacted. This is where "
+            "residents and business owners can speak for or against a proposed charge, and where a town "
+            "should explain what each fee pays for.",
+            "If you think an ordinance is illegal or unconstitutional, Section 187 also gives a remedy. You "
+            "may appeal to the Secretary of Justice within thirty days from the ordinance’s effectivity, and "
+            "the Secretary must decide within sixty days of receiving the appeal. The appeal does not stop "
+            "the ordinance from taking effect, and it does not stop collection while the appeal is pending.",
+            ("h", "Why the Difference Matters"),
+            ("point", "To the taxpayer", "A fee should be explainable: you can ask what the inspection or "
+             "the service involves and why it costs what it costs."),
+            ("point", "To the town", "A regulatory fee that is far higher than the cost of regulation can be questioned as a tax in disguise."),
+            ("point", "To the treasury", "Fees and taxes are recorded under different accounts, and some "
+             "fees support a specific service. Knowing which is which keeps the books and the reports "
+             "correct."),
+            ("h", "Reading Your Assessment"),
+            "On an assessment for a business permit, you will see two kinds of lines. The first is "
+            "the business tax, computed from gross sales or receipts. The second is a group of regulatory "
+            "fees and service charges, such as the mayor’s permit fee, sanitary and other inspection fees, "
+            "garbage fees and signboard fees. Each line should trace back to an ordinance. If you want to "
+            "see the basis, ask the treasurer’s office which ordinance and which section sets it. That is a "
+            "fair question, and it deserves a clear answer.",
+            ("h", "Every Peso Gets an Official Receipt"),
+            "Whether it is a tax, a fee or a charge, every payment to the treasury gets an official receipt. "
+            "Part 11 explained why that receipt matters. A fee paid without one is a fee the treasury may "
+            "never see.",
+            ("h", "For Treasury Workers"),
+            "Keep a copy of the tax ordinance and the schedule of fees at the window, and know the section "
+            "number for each line on an assessment. When a fee has not been reviewed in years, raise it "
+            "with the office head so the sanggunian can check whether it still matches the cost of the "
+            "service. And when a taxpayer asks for the legal basis of a charge, treat it as a fair "
+            "question, not as a complaint.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming every charge is a tax", "Some are fees for regulation or services, with "
+             "different rules."),
+            ("point", "Collecting a charge with no ordinance", "No ordinance, no basis to collect."),
+            ("point", "Setting fees far above cost", "Fees should be commensurate with the cost of "
+             "regulation."),
+            ("point", "Missing the 30-day appeal window", "Challenges to an ordinance have a deadline."),
+            ("h", "Key Takeaways"),
+            ("point", "Purpose decides", "Revenue first means a tax; regulation first means a fee."),
+            ("point", "Only an ordinance can create either", "Through the sanggunian (Section 132)."),
+            ("point", "Fees follow cost", "Commensurate with the cost of regulation, inspection and "
+             "licensing (Section 147)."),
+            ("point", "Public hearings and appeals exist", "Speak up before enactment, or appeal within 30 "
+             "days (Section 187)."),
+            ("h", "Your Part 15 Action Plan"),
+            ("point", "If you run a business", "Look at your last assessment and sort each line into tax "
+             "or fee."),
+            ("point", "If you work in a treasury", "Check that every line on your assessment form names its "
+             "ordinance and section."),
+            ("point", "If you care about your town", "Watch for notices of public hearings on tax "
+             "ordinances, and attend one."),
+            "The eatery owner asked the clerk which ordinance set the signboard fee. The clerk found it in "
+            "the town’s revenue code and showed her the section, the amount and what it covered. The owner "
+            "paid, kept her receipts and, a few months later, attended her first public hearing on a "
+            "proposed change to the fee schedule.",
+            ("cta", "Read the study note: Fees and charges", "/study-notes/fees-and-charges/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
+            ("cta", "Read: Inside the Local Treasury, Part 14: Closing a Business the Right Way", "/blog/closing-a-business-the-right-way/"),
+            ("ask", "Which line on your business permit assessment have you wondered about?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 14: Closing a Business the Right Way",
+        "date": "February 23, 2027",
+        "publish_on": "2027-02-23 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "closing-a-business-the-right-way",
+        "category": "finance",
+        "summary": "Shutting the door is not the same as closing a business. Here is why the town hall asks "
+                   "for this year’s sales when you retire, what Section 145 of the Local Government Code "
+                   "requires, the papers for the barangay, the BIR and the DTI, and the mistakes that keep a "
+                   "closed business owing taxes.",
+        "body": [
+            "A couple ran a small bakery for six years. Last August, with rent rising and their eldest "
+            "starting college, they sold the oven, returned the keys and put a sign on the door: “Thank you, "
+            "suki!” They thought that was the end of it. The next January, a letter arrived from the "
+            "municipal treasurer’s office. The bakery was still on the list of businesses due for renewal.",
+            "(The bakery and the couple are invented, and so are the figures.)",
+            "Closing a business has its own paperwork, just as opening one does. Stay with me to the end, "
+            "and you will know why a business must be formally retired, why the treasurer asks for this "
+            "year’s sales, what the barangay, the town hall, the BIR and the DTI each need, and the "
+            "mistakes that keep a closed business owing taxes.",
+            ("photo", "blog/finance-closing-business.jpg", "Closing a business: tell the barangay, retire "
+             "the permit at the town hall, close the BIR registration, and cancel the business name. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why “Retire” and Not Just “Close”"),
+            "To the treasury, a business exists as long as its records say it does. If no one tells the "
+            "town hall that the business has stopped, the records still show an active business, and the "
+            "treasury still expects the tax and the renewal. Retiring a business is how the owner tells the "
+            "government, officially, that the business has ended and on what date.",
+            ("quote", "A business opens with papers, and it has to close with papers too."),
+            ("h", "Why the Treasurer Asks for This Year’s Sales"),
+            "This part can surprise business owners. Under Section 143 of the Local Government Code, the local "
+            "business tax is computed on the gross sales or receipts for the preceding calendar year. So the "
+            "tax a business pays in 2027 is based on what it sold in 2026.",
+            "When a business ends, that pattern breaks: there is no next year to pay on this year’s sales. "
+            "Section 145 handles it. A business that ends must submit a sworn statement of its gross sales "
+            "or receipts for the current year. If the tax paid during the year is less than the tax due on "
+            "those current-year sales, the difference must be paid before the business is considered "
+            "officially retired.",
+            ("h", "A Worked Example"),
+            ("point", "Tax paid in January", "The bakery paid ₱9,000 in business tax for the year, based on "
+             "last year’s sales."),
+            ("point", "Sworn statement on closing", "From January to August, the bakery sold more than the "
+             "year before. Using the town’s ordinance rates, the tax due on those sales comes to ₱10,500."),
+            ("point", "The difference", "₱10,500 minus ₱9,000 equals ₱1,500, which must be paid before the "
+             "bakery is officially retired."),
+            "The rates themselves come from the local tax ordinance, within the limits in Section 143, so "
+            "the figures differ from town to town. The treasurer’s office computes the final amount.",
+            ("h", "Step 1: The Barangay"),
+            "The town hall will want proof from the barangay that the business has stopped. In Quezon City, for example, this is a barangay certificate stating the exact closure date. Ask the barangay hall where the business operated what it issues and what it needs.",
+            ("h", "Step 2: The Town Hall"),
+            "Each local government sets its own list of requirements, so check with your business permits "
+            "and licensing office. Quezon City, for example, asks for a notarized affidavit of closure "
+            "stating the exact closure date, a barangay certificate with the closure date, the BIR "
+            "certificate of registration, and sales records, among others. After the assessment is paid, "
+            "the city issues a business retirement certificate.",
+            ("point", "Affidavit of closure", "States the reason for closing and the exact date."),
+            ("point", "Sworn statement of gross sales", "For the current year, up to the closing date."),
+            ("point", "Latest permit and receipts", "Proof of what has already been paid."),
+            ("point", "Payment of the assessment", "Including any difference under Section 145."),
+            ("h", "Step 3: The BIR"),
+            "The Bureau of Internal Revenue has its own closure process. Revenue Memorandum Circular No. "
+            "47-2026, dated May 19, 2026, sets the current procedure.",
+            ("point", "File BIR Form 1905", "This is the form used to cancel a registration."),
+            ("point", "File the final returns", "Returns for every registered tax type, up to the closing "
+             "date, with any tax due paid."),
+            ("point", "Surrender unused invoices and permits", "Unused invoices, receipts and other "
+             "accounting forms are submitted, along with the original BIR permits."),
+            ("point", "Micro taxpayers", "Under the circular, micro taxpayers are no longer subject to a "
+             "mandatory audit for closing a business."),
+            ("h", "Step 4: The DTI, and Your Workers"),
+            "A sole proprietor registered the business name with the Department of Trade and Industry, so "
+            "the name must be cancelled there too. The DTI’s guide on closing a business lists a signed "
+            "application form, a valid ID and a sworn declaration that the closure will not defraud "
+            "creditors.",
+            "If the business has employees, the DTI’s guide also points to the labor rules: written notice "
+            "to the employees and to the Department of Labor and Employment at least one month before the "
+            "closing date, and separation pay of at least one month’s pay or half a month’s pay for every "
+            "year of service, whichever is higher.",
+            ("h", "What Happens If You Do Not Retire"),
+            "A business that stops without retiring can stay on the treasury’s list as an active "
+            "business. Unpaid local business taxes can draw a surcharge of up to 25 percent and interest of "
+            "up to 2 percent a month, for a maximum of 36 months, at rates set by the local ordinance "
+            "(Section 168). The longer the owner waits, the harder it is to prove when the business really "
+            "stopped.",
+            ("h", "Keep the Closing Papers"),
+            "Once everything is done, put the papers in one folder and keep it: the affidavit of closure, "
+            "the barangay certificate, the retirement certificate from the town hall, the official receipt "
+            "for the final payment, the BIR filing and clearance papers, and the DTI cancellation. If a "
+            "letter or a bill arrives years later, that folder answers it in minutes. Keep a photo or scan "
+            "of each one as well, in case the paper copies are lost.",
+            ("h", "For Treasury Workers"),
+            "A clear retirement process helps the treasury too. It keeps the list of active businesses "
+            "honest, so collection targets and delinquency lists are real. Post the requirements at the "
+            "window and on the town’s page, and give each retiring owner a written list. When a business "
+            "has clearly closed but never retired, a letter explaining the steps does more good than a "
+            "growing bill.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Closing the door and telling no one", "Retire the business at the town hall."),
+            ("point", "Waiting until the next January", "Retire it soon after closing, while the records "
+             "are fresh."),
+            ("point", "Forgetting the BIR", "The local permit and the BIR registration are closed "
+             "separately."),
+            ("point", "Throwing away unused invoices", "They are surrendered to the BIR."),
+            ("h", "Key Takeaways"),
+            ("point", "Retire, do not just close", "The records must show the business has ended."),
+            ("point", "This year’s sales matter", "Section 145 asks for a sworn statement and payment of "
+             "any difference."),
+            ("point", "Four offices, four steps", "Barangay, town hall, BIR and, for sole proprietors, "
+             "the DTI."),
+            ("point", "Delay costs money", "Unpaid taxes can draw surcharges and interest."),
+            ("h", "Your Part 14 Action Plan"),
+            ("point", "If you are closing a business", "Write down the closing date today, and keep your "
+             "sales records up to that date."),
+            ("point", "If you run a business", "Keep a folder with your permit, receipts and BIR "
+             "registration, so closing, if it ever comes, is simple."),
+            ("point", "If you work in a treasury", "Check whether your office has a written list of "
+             "retirement requirements that owners can take home."),
+            "The couple went to the town hall with the letter. The treasurer’s office explained the steps, "
+            "and within a few weeks the bakery was officially retired. They paid the small difference, got "
+            "their certificate, and framed the last receipt next to a photo of their first loaf.",
+            ("cta", "Read the study note: Business tax and the mayor’s permit", "/study-notes/business-tax-and-mayors-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
+            ("ask", "Have you ever closed a business, or helped someone close one? Which step took the longest?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait",
+        "date": "February 18, 2027",
+        "publish_on": "2027-02-18 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "deposits-cash-box-to-bank",
+        "category": "finance",
+        "summary": "Collecting the money is only half the job. Here is how a day’s collections travel from the "
+                   "window to the bank, what “deposit intact” means, which banks may hold a town’s money, and "
+                   "why a late deposit is a finding even when every peso is there.",
+        "body": [
+            "It was a Friday afternoon, and the market collector was having a good day. By four o’clock her cash box "
+            "held more than ₱60,000. The bank was a forty-minute ride away, and it would close before she got "
+            "there. So she locked the box in the office cabinet and went home, planning to deposit on "
+            "Monday. Over the weekend, she kept thinking about that cabinet.",
+            "(Like every case in this series, this one is invented, from the office down to the last peso.)",
+            "Every peso a treasury collects has to reach the bank, whole and on time. Read to the end and "
+            "you will know how collections travel from the window to the bank, what it means to deposit "
+            "intact, which banks may hold a local government’s money, what the deposit papers prove, and "
+            "how a collector far from a bank can stay inside the rules.",
+            ("photo", "blog/finance-deposits.jpg", "From the cash box to the bank: deposit intact, deposit "
+             "on time, keep the papers, and keep the funds apart. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Deposits Matter"),
+            "Cash in a drawer can be lost, stolen, borrowed or simply miscounted. Cash in a government bank "
+            "account is recorded by someone outside the office, the bank, and can be checked against the "
+            "treasury’s own books. A deposit turns money that depends on one person’s care into money that "
+            "leaves a trail.",
+            ("quote", "Money in the bank answers for itself. Money in a drawer needs someone to answer for it."),
+            ("h", "Rule One: Deposit Intact"),
+            "The Government Auditing Code, Presidential Decree No. 1445, says that officers who collect "
+            "public money must remit or deposit intact the full amounts they receive and collect (Section "
+            "69). Intact means exactly what was collected.",
+            ("point", "No deductions", "Expenses are not paid out of collections, even small ones like "
+             "fare or snacks for an event."),
+            ("point", "No loans", "Not to a co-worker, not to yourself, and not “just until payday.”"),
+            ("point", "No swapping", "Personal checks are not cashed from the cash box, and the collector’s "
+             "own bills are not exchanged with the day’s collections."),
+            "If the receipts for the day add up to ₱61,240, the deposit is ₱61,240. Anything less is a "
+            "shortage, and Part 12 explained how seriously the law treats one.",
+            ("h", "Rule Two: Deposit on Time"),
+            "Collections are meant to reach the bank daily, or by the next banking day when they come in "
+            "after the bank has closed. The Bureau of the Treasury’s Department Order No. 52-96, from May "
+            "1996, sets this rhythm for national collections handled by local treasurers: deposit daily, "
+            "and deposit collections received after banking hours on the next banking day.",
+            "Audit reports test the same rhythm for local collections. For example, SunStar reported that "
+            "the Commission on Audit’s 2025 annual audit report on Cebu City flagged collections "
+            "that were not deposited each day or by the next banking day, and some that were not deposited "
+            "intact.",
+            "A late deposit can be a finding even when every peso is present, because the risk was there "
+            "the whole time the money sat outside the bank.",
+            ("h", "How Collections Travel"),
+            ("point", "At the window", "Each payment gets an official receipt, issued in serial order."),
+            ("point", "At the end of the day", "The collector counts the cash and checks, compares them with "
+             "the receipts, and prepares a Report of Collections and Deposits, which lists the receipts and "
+             "what was remitted or deposited."),
+            ("point", "To the treasurer or the bank", "The collections go either to the treasurer or "
+             "cashier, who signs for them, or straight to the bank."),
+            ("point", "Back to the books", "The validated deposit slip comes back to the office and is "
+             "attached to the report, so the books, the report and the bank all show the same amount."),
+            ("h", "Which Banks May Hold a Town’s Money"),
+            "A local government cannot open accounts wherever it likes. The Department of Finance’s "
+            "Department Circular No. 001-2015, dated June 1, 2015, sets the rules for authorized government "
+            "depository banks.",
+            ("point", "Government banks first", "Local governments deposit with government financial "
+             "institutions that hold a universal bank license and a CAMELS rating of at least 3."),
+            ("point", "Collection banks", "Another bank may be used only to collect payments, for a fee, "
+             "and the collections must move to the government bank on the next banking day."),
+            ("point", "Other banks, by exception", "A non-government bank account is allowed only under conditions the circular lists. Among them are the lack of an accessible government bank or collection facility within a twenty-kilometer radius, and security reasons backed by a police certification. Even then, the account may hold only operating funds, and the balance is "
+             "capped at three months of operating expenses or the deposit insurance limit, whichever is lower. That limit was ₱500,000 when the circular was issued."),
+            ("h", "Keep the Funds Apart"),
+            "A treasury does not pour everything into one account. Collections for the General Fund, the "
+            "Special Education Fund and trust funds are reported and deposited separately, so that money "
+            "set aside by law for one purpose is not spent on another. A deposit slip should show which "
+            "fund it belongs to, and the report should match it fund by fund.",
+            ("h", "When the Bank Is Far Away"),
+            "Our collector’s problem is real in towns where the nearest bank branch is a long trip away. "
+            "The rules do not disappear, so the office plans around them.",
+            ("point", "Schedule the trip", "Set the deposit run early enough in the day to reach the bank "
+             "before it closes."),
+            ("point", "Use a collection facility", "Where the government bank has an authorized collection "
+             "partner closer to the office, ask the treasurer whether it can be used."),
+            ("point", "Remit to the treasurer", "A collector who cannot reach the bank can turn over the "
+             "collections to the treasurer or cashier the same day, with the report, so the money moves "
+             "out of one person’s hands."),
+            ("point", "Secure what must stay overnight", "If cash must stay in the office, it goes in the "
+             "vault or safe, is recorded, and is deposited first thing on the next banking day."),
+            ("h", "What the Papers Prove"),
+            "The Report of Collections and Deposits proves what was collected. The validated deposit slip "
+            "proves what reached the bank. When the two match, the collector is clear. When an auditor "
+            "compares the receipts, the report and the bank statement and finds a gap in time or in amount, "
+            "the papers point to exactly where it happened. Keep them complete and filed by date.",
+            ("h", "For Taxpayers"),
+            "Pay only at an official window or through an official channel, and keep your official "
+            "receipt. If a treasury offers payment through a bank or an online channel, the money goes "
+            "straight into the government’s account and you get a record of your own.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Keeping collections for several days", "Deposit daily, or on the next banking day."),
+            ("point", "Paying small expenses from collections", "Deposit intact, always."),
+            ("point", "Mixing funds in one deposit", "Keep each fund on its own slip and report."),
+            ("point", "Losing the validated deposit slip", "It is your proof. File it with the report."),
+            ("h", "Key Takeaways"),
+            ("point", "Deposit intact", "The full amount collected, with nothing taken out (PD 1445, "
+             "Section 69)."),
+            ("point", "Deposit on time", "Daily, or on the next banking day for late collections."),
+            ("point", "Use the right bank", "Government banks first, under DOF Department Circular No. "
+             "001-2015."),
+            ("point", "Let the papers match", "Receipts, report and deposit slip should tell one story."),
+            ("h", "Your Part 13 Action Plan"),
+            ("point", "If you collect", "Check your last five deposit slips against your reports. Do the "
+             "dates and amounts match?"),
+            ("point", "If you supervise collectors", "List who deposits late and why, and fix the cause, "
+             "whether it is distance, schedule or staffing."),
+            ("point", "If you pay taxes or fees", "Keep your next official receipt, and ask whether your "
+             "town offers payment through a bank."),
+            "On Monday morning, the collector deposited the ₱60,000 the moment the bank opened. Every peso "
+            "was there. Still, her supervisor changed the routine that week: on market days, the collector "
+            "now turns over her collections to the cashier at three o’clock, and the cashier makes one "
+            "deposit run for the whole office. The cabinet has been empty on weekends ever since.",
+            ("cta", "Read the study note: Collection and deposit", "/study-notes/collection-and-deposit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means", "/blog/cash-counts-and-shortages/"),
+            ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("ask", "How far is the nearest bank from your town hall? How does your treasury handle the trip?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means",
+        "date": "February 13, 2027",
+        "publish_on": "2027-02-13 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "cash-counts-and-shortages",
+        "category": "finance",
+        "summary": "An auditor can walk in and count a collector’s cash at any time. Here is how a cash count "
+                   "works, how a shortage is computed, why the law treats a missing peso so seriously, and the "
+                   "habits that keep an honest collector safe.",
+        "body": [
+            "At three in the afternoon, two people from the audit team walked up to a collector’s window and "
+            "asked her to stop accepting payments. They were there for a cash count. She had not been told "
+            "in advance, and that was the point. She closed her drawer, brought out her booklet of receipts "
+            "and her cash box, and waited. She was nervous, though she had no reason to be. Or so she hoped.",
+            "(The collector, the auditors and the office are invented for teaching, and so are the figures.)",
+            "A cash count is one of the simplest controls in public finance. When you "
+            "finish reading, you will know who answers for public money, how a cash count is done, how a "
+            "shortage is computed, what the law says when cash is short or lost, and the daily habits that "
+            "make a surprise count a non-event.",
+            ("photo", "blog/finance-cash-count.jpg", "The cash count: list the receipts, count the cash, "
+             "compare the two, and explain any difference at once. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Who Answers for Public Money"),
+            "Under the Government Auditing Code, Presidential Decree No. 1445, any officer whose duties "
+            "permit or require the possession or custody of government funds or property is accountable for "
+            "them and for their safekeeping (Section 101). In a local treasury, that includes the treasurer, "
+            "cashiers, collectors and disbursing officers. The same section requires these officers to be "
+            "bonded.",
+            ("point", "The bond", "A fidelity bond, processed through the Bureau of the Treasury, protects the government, not the officer. It is there to make the government whole if public money is lost, and it does not clear the officer of liability."),
+            ("point", "The head of the office", "The head of each agency is immediately and primarily "
+             "responsible for all its funds and property, and those under the head answer to the head "
+             "(Section 102)."),
+            ("point", "Supervision", "A head who fails to supervise accountable officers with due care can "
+             "be held jointly and solidarily liable with the officer who is primarily accountable (Section "
+             "104)."),
+            ("quote", "A collector holds the public’s money for a few hours. The law expects it back in full."),
+            ("h", "How a Cash Count Works"),
+            "A cash count compares two things: what the records say the collector should have, and what the "
+            "collector actually has. The idea is simple enough to do on a single sheet of paper.",
+            ("point", "Stop the transactions", "No payments are accepted while the count is going on, so "
+             "the figures stay still."),
+            ("point", "List the receipts", "Find the last receipt covered by the most recent deposit. Every "
+             "receipt issued after it is money the collector should still be holding."),
+            ("point", "Add up the accountability", "Total the amounts on those receipts."),
+            ("point", "Count the cash and checks", "Bills and coins are counted by denomination. Checks are "
+             "listed one by one and checked against the receipts they paid for."),
+            ("point", "Compare and sign", "If the two totals match, the count is clean. If they do not, the "
+             "difference is recorded, and the collector is asked to explain it."),
+            ("h", "Computing a Shortage: A Worked Example"),
+            "Here is the count at our collector’s window, step by step.",
+            ("point", "Last deposit", "Covered receipts up to number 7820."),
+            ("point", "Receipts issued since", "Numbers 7821 to 7864, which total ₱38,450. That is her "
+             "accountability for undeposited collections."),
+            ("point", "Cash counted", "₱37,950 in bills and coins."),
+            ("point", "Checks on hand", "One check for ₱300, payable to the municipality and matching a "
+             "receipt in the series."),
+            ("point", "Total on hand", "₱37,950 plus ₱300 equals ₱38,250."),
+            ("point", "Shortage", "₱38,450 minus ₱38,250 equals ₱200."),
+            "Two hundred pesos. She looked at the figure twice. Then she remembered: a taxpayer had paid "
+            "₱200 that morning, and she had written the receipt, but had she put the money in the box? A "
+            "small shortage still has to be explained and restored right away. The size of the amount does "
+            "not change the duty.",
+            ("h", "Why a Missing Peso Is Serious"),
+            "A shortage is more than an accounting problem. Article 217 of the Revised Penal Code, on "
+            "malversation of public funds, says that when a public officer fails to have public funds or "
+            "property duly forthcoming upon demand by a duly authorized officer, that failure is prima facie "
+            "evidence that the officer put the missing funds or property to personal use.",
+            "Prima facie means that the law presumes it until the officer proves otherwise. That is why an "
+            "honest collector with a sloppy cash box is still in danger. The presumption does not ask "
+            "whether the officer is a good person. It asks whether the money is there.",
+            ("point", "Liability for funds", "An officer accountable for funds is liable for all losses that "
+             "result from their unlawful deposit, use or application, and for losses caused by negligence "
+             "in keeping them (PD 1445, Section 105)."),
+            ("point", "Orders from above", "Acting on a superior’s instruction does not relieve an "
+             "accountable officer of liability, unless the officer notified the superior in writing that "
+             "the payment was illegal (PD 1445, Section 106)."),
+            ("h", "When the Treasurer Is Found Short"),
+            "The Government Auditing Code has a rule for the most serious case. When an examination of a "
+            "local treasurer’s accounts shows a shortage in the cash that should be on hand, the examining "
+            "officer takes full possession of the office and its contents, notifies the Commission on Audit "
+            "and the local chief executive, closes the treasurer’s accounts up to the date of possession, "
+            "and carries on the office’s public business for the time being (PD 1445, Section 46).",
+            ("h", "Losses That Are Not the Officer’s Fault"),
+            "Robbery, fire and flood happen. The law gives an honest officer a way to be cleared. When "
+            "government funds or property are lost in transit, or through fire, theft or another casualty, "
+            "the officer must notify the Commission on Audit or the auditor at once, and file an "
+            "application for relief, with the available evidence, within thirty days of the loss, unless a "
+            "longer period is allowed in a particular case (PD 1445, Section 73).",
+            "Missing that deadline can cost the officer the relief. If you are ever robbed while carrying "
+            "collections, the police report is only the first paper. The application for relief is the one "
+            "that protects you.",
+            ("h", "Habits That Make a Surprise Count a Non-Event"),
+            ("point", "Count your own cash every day", "Before the end of the day, total your receipts and "
+             "count your box. A gap you find at four o’clock is easier to explain than one an auditor finds "
+             "the next morning."),
+            ("point", "Deposit intact and on time", "The Government Auditing Code requires collecting "
+             "officers to deposit the full amounts they collect (PD 1445, Section 69). Do not pay expenses "
+             "out of collections."),
+            ("point", "Never mix your own money with public money", "Keep your personal wallet away from the "
+             "cash box, and never lend from collections, even for an hour."),
+            ("point", "Keep checks matched to receipts", "Each check should point to the receipt it paid."),
+            ("point", "Keep your bond current", "Know when it expires and what amount it covers."),
+            ("point", "Object in writing", "If you are told to release money in a way you believe is "
+             "illegal, put your objection on paper before you act."),
+            ("h", "For Taxpayers"),
+            "Always ask for an official receipt, and check that its amount matches what you paid. The "
+            "receipt is your proof of payment, and it is also what lets an auditor find any money that did "
+            "not reach the treasury. Every receipt you insist on helps keep a collector honest and helps "
+            "clear an honest one.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Leaving collections undeposited for days", "Money in a box is exposed to loss and to "
+             "suspicion."),
+            ("point", "Using the cash box for change from your own wallet", "It blurs whose money is whose."),
+            ("point", "Waiting to explain a shortage", "Explain and restore it at once."),
+            ("point", "Forgetting the 30-day deadline after a robbery", "File the application for relief "
+             "on time."),
+            ("h", "Key Takeaways"),
+            ("point", "Accountable officers answer for public money", "And they must be bonded (PD 1445, "
+             "Section 101)."),
+            ("point", "A cash count compares records with cash", "Receipts since the last deposit against "
+             "what is in the box."),
+            ("point", "Failure to produce funds on demand is serious", "Under Article 217, it is prima facie "
+             "evidence of malversation."),
+            ("point", "Honest losses can be relieved", "Notify at once and file within 30 days."),
+            ("h", "Your Part 12 Action Plan"),
+            ("point", "If you handle collections", "Do your own cash count before closing today, using the "
+             "steps above."),
+            ("point", "If you supervise collectors", "Hold one unannounced count this month, and treat a "
+             "clean result as good news, not as wasted time."),
+            ("point", "If you pay taxes or fees", "Check the next official receipt you receive before you "
+             "leave the window."),
+            "The ₱200 turned up in the collector’s own wallet. While making change that morning, she had slipped the taxpayer’s bills in with her own money by mistake. She restored "
+            "it on the spot, the auditors noted the explanation, and the next morning she bought a separate "
+            "coin purse for her own money. She has not mixed the two since.",
+            ("cta", "Read the study note: Accountability: bonds, cash counts and shortages", "/study-notes/accountability-bonds-cash-counts-shortages/"),
+            ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("cta", "Read: Inside the Local Treasury, Part 8: Cash Advances, the Money You Must Account For Later", "/blog/cash-advances-explained/"),
+            ("ask", "Have you ever been part of a surprise cash count, on either side of the window? What did it teach you?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF",
+        "date": "February 8, 2027",
+        "publish_on": "2027-02-08 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "accountable-forms-blank-receipts",
+        "category": "finance",
+        "summary": "A blank official receipt has no value, yet losing one can cause more trouble than losing "
+                   "cash. Here is why receipts are counted by serial number, how a booklet moves through a "
+                   "treasury, what the RAAF report shows, and what to do when a form goes missing.",
+        "body": [
+            "A collector at a public market finished her day, counted her cash and balanced her report. "
+            "Everything matched, except one thing. In her booklet of official receipts, number 4517 was "
+            "missing. Not used, not cancelled, just gone. The cash was complete, so she wondered whether it "
+            "mattered. Her supervisor told her it mattered more than she thought.",
+            "(The collector and the market are a composite. No real person, office or form is described.)",
+            "A missing receipt is a door left open. Anyone holding a blank official receipt could collect money "
+            "that never reaches the treasury, and the taxpayer would walk away believing they had paid. "
+            "Stay with me to the end, and you will know what accountable forms are, how a booklet moves "
+            "from the supplier to the collector and back, how the RAAF report keeps every serial number in "
+            "view, and the habits that keep a collector safe.",
+            ("photo", "blog/finance-accountable-forms.jpg", "Accountable forms: counted by serial number, "
+             "issued in order, reported in the RAAF, and reported at once when lost. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Makes a Form Accountable"),
+            "Some printed forms are worth nothing until they are used, but become proof of payment once they "
+            "are. Official receipts, community tax certificates and cash tickets are examples. Because of "
+            "that, the officer who holds them answers for every one, by serial number, until it is used, "
+            "cancelled or returned.",
+            ("point", "Official receipts for general collections", "Accountable Form No. 51 is an official "
+             "receipt used for taxes, fees and charges."),
+            ("point", "Official receipts for real property tax", "Accountable Form No. 56 shows the "
+             "property, its assessed value, and the basic tax and Special Education Fund separately."),
+            ("point", "Community tax certificates", "The cedula from Part 3, for individuals and "
+             "corporations."),
+            ("point", "Cash tickets", "Forms with a printed money value, such as those sold at markets. For "
+             "these, a missing piece can mean a liability for its face value."),
+            ("quote", "A blank receipt is worth nothing until someone uses it. That is exactly why it must be "
+             "counted."),
+            ("h", "The Life of a Booklet"),
+            ("point", "Supply", "The treasurer obtains forms from the provincial treasurer’s office or "
+             "directly from the National Printing Office."),
+            ("point", "Custody", "The stock is kept in a safe place, and every booklet received is recorded "
+             "by form number and serial numbers."),
+            ("point", "Issue", "Booklets are issued to collectors in serial order, and the collector signs "
+             "for them. From that moment, the collector answers for every receipt inside."),
+            ("point", "Use", "Receipts are used in serial order, one per payment. A spoiled receipt is marked "
+             "“Cancelled,” with all its copies left in the booklet."),
+            ("point", "Return", "A finished booklet, with its copies, goes back to the treasurer and is kept "
+             "for audit."),
+            ("h", "The RAAF: Four Numbers That Must Agree"),
+            "The Report of Accountability for Accountable Forms, or RAAF, is how a collector reports the "
+            "forms in their care. For each kind of form, it shows the quantity and the first and last serial "
+            "numbers in four columns:",
+            ("point", "Beginning balance", "Forms on hand at the start of the period."),
+            ("point", "Receipts", "Forms received during the period."),
+            ("point", "Issued", "Forms used, including cancelled ones, or issued to others."),
+            ("point", "Ending balance", "Forms still on hand at the end of the period."),
+            "The arithmetic must hold: beginning balance plus receipts, minus issued, equals ending balance. "
+            "Each collector prepares a RAAF every month. The liquidating officer combines them into a "
+            "Consolidated RAAF, or CRAAF, submitted on or before the 5th day of the following month.",
+            ("h", "A Worked Example"),
+            ("point", "June 1", "A collector holds two booklets, serial numbers 12401 to 12500: 100 "
+             "receipts."),
+            ("point", "June 10", "She receives five more booklets, 12501 to 12750: 250 receipts."),
+            ("point", "During June", "She uses 12401 to 12580, including two cancelled: 180 receipts."),
+            ("point", "Ending balance", "100 + 250 − 180 = 170 receipts, serial numbers 12581 to 12750. "
+             "Check: 12750 − 12581 + 1 = 170."),
+            "When the count and the serial numbers agree, the RAAF tells a clean story. When they do not, "
+            "the gap is where the questions start.",
+            ("h", "What Auditors Look For"),
+            "COA auditors match the serial numbers on the RAAF against the receipts, the reports of "
+            "collections and deposits, and the deposits themselves. A gap or a repeated number stands out. "
+            "If receipt 4517 appears in no report and is not marked cancelled, someone must explain where it "
+            "went.",
+            "That is why the collector’s complete cash did not settle the matter. The cash proved what she "
+            "collected with the receipts she used. It said nothing about a receipt someone else might use.",
+            ("h", "When a Form Goes Missing"),
+            ("point", "Report it at once", "Tell the treasurer and the COA auditor the same day. A late "
+             "report looks worse than an early one."),
+            ("point", "Apply for relief when the law allows", "Under Section 73 of PD 1445, when government "
+             "funds or property are lost through fire, theft or other casualty, the accountable officer "
+             "notifies COA immediately and files an application for relief, with evidence, within 30 days."),
+            ("point", "Expect a question about care", "Relief is given only when the evidence shows the "
+             "loss was not due to the officer’s negligence."),
+            ("h", "Habits That Keep a Collector Safe"),
+            ("point", "Never pre-sign or pre-fill receipts", "A signed blank receipt is a gift to anyone who "
+             "finds it."),
+            ("point", "Never lend a booklet", "Not even for a few minutes. The collector who signed for it "
+             "answers for it."),
+            ("point", "Never use another collector’s booklet", "Every receipt must come from your own "
+             "issued series."),
+            ("point", "Count at the start and end of the day", "And lock unused booklets away."),
+            ("h", "What Taxpayers Can Do"),
+            "Always ask for an official receipt, and look at it before you leave the window. Check that it "
+            "has a serial number, the correct amount and the date. A handwritten note, an acknowledgment slip "
+            "or a receipt from a booklet that looks different from the usual is worth a polite question. Your receipt is your proof, and the treasury’s record that the money arrived. For real property tax, the receipt should also show the property, and the basic tax and the Special Education Fund as separate amounts. Keep these receipts with the tax declaration, as Part 5 advised.",
+            ("h", "For Treasury Workers"),
+            ("point", "Issue in order, record every booklet", "Keep the stock record current, by serial "
+             "number."),
+            ("point", "Check the RAAF arithmetic monthly", "Do not wait for the auditor to find a gap."),
+            ("point", "Explain why it matters", "New collectors follow rules better when they understand "
+             "the blank receipt problem."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Thinking complete cash closes the matter", "A missing blank receipt is a separate "
+             "risk."),
+            ("point", "Throwing away a spoiled receipt", "Mark it cancelled and keep every copy."),
+            ("point", "Lending a booklet", "Accountability does not transfer."),
+            ("point", "Reporting a loss days later", "Report it the same day."),
+            ("h", "The Collector’s Receipt"),
+            "The supervisor helped her search the stall area and the collection bag. Receipt 4517 turned up "
+            "between the pages of her cash notebook, torn out by accident and still blank. She marked it "
+            "cancelled, kept it with the booklet, and noted it in her report. From then on, she counted her "
+            "receipts at the end of every day, not just her cash.",
+            ("h", "Key Takeaways"),
+            ("point", "Blank forms carry risk", "That is why they are counted by serial number."),
+            ("point", "Beginning plus receipts minus issued equals ending", "The RAAF must always balance."),
+            ("point", "CRAAF by the 5th", "Collectors’ reports are consolidated monthly."),
+            ("point", "Report losses at once", "PD 1445, Section 73, sets 30 days for relief."),
+            ("h", "The Question to Ask"),
+            "Do you check the serial number on your official receipt? If you work in a treasury, ask your "
+            "office: when did we last reconcile every booklet issued with every receipt reported?",
+            ("cta", "Read the study note: Accountable forms and the RAAF", "/study-notes/accountable-forms-and-raaf/"),
+            ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula", "/blog/the-cedula-explained/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes", "/blog/when-coa-writes/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("ask", "Have you ever been given a receipt that did not look right? What did you do?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 10: Where to See How Your Town Spends",
+        "date": "February 3, 2027",
+        "publish_on": "2027-02-03 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "where-to-see-how-your-town-spends",
+        "category": "finance",
+        "summary": "Your town’s budget, its cash flows, its bids and its audit findings are meant to be public. "
+                   "Here is what the law and the Full Disclosure Policy require towns to post, where to find "
+                   "it, and how to read the first few numbers.",
+        "body": [
+            "A group of senior high school students had a class project: find out how their town spent its "
+            "money last year. Their teacher expected them to come back with nothing. Instead, they came back "
+            "with photos of a bulletin board at the municipal hall, a printout of a cash flow statement, and "
+            "a question for their teacher: “Why is the money for the new market still unspent?”",
+            "(The students and their town are a composite. No real town, school or amount is described.)",
+            "A town’s finances are not supposed to be a secret, and the law says so. This post explains what "
+            "towns are required to post, where to look for it, which documents to read first, and what "
+            "questions a resident, a student or a treasury worker can fairly ask after reading them.",
+            ("photo", "blog/finance-full-disclosure.jpg", "Where to see how your town spends: the bulletin "
+             "board, the website, the audit report and the procurement notices. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Law: Section 352"),
+            "Section 352 of the Local Government Code requires the local treasurer to post, within 30 days "
+            "after the end of each year, a summary of all revenues collected and funds received, and of the "
+            "appropriations and disbursements, in at least three publicly accessible and conspicuous places. "
+            "Part 7 mentioned it as the last step in the trail of a payment.",
+            "Section 352 sets the minimum. A national policy built on it asks for much more.",
+            ("quote", "Public money leaves a public trail. You only have to know where to look."),
+            ("h", "The Full Disclosure Policy"),
+            "In 2010, the Department of the Interior and Local Government (DILG) issued Memorandum Circular "
+            "No. 2010-83, known as the Full Disclosure Policy. According to the DILG, it requires local "
+            "officials of provinces, cities and municipalities to fully disclose particular financial "
+            "transactions, so that residents know how the budget is managed, disbursed and used.",
+            "The circular was challenged in court as an intrusion on local autonomy. In Villafuerte v. "
+            "Robredo, decided in December 2014, the Supreme Court upheld it. The Court called its posting "
+            "requirements “mere transparency measures” and said the documents it requires are “well-within "
+            "the contemplation of Section 352” of the Code.",
+            ("h", "What Towns Must Post"),
+            "The DILG’s Full Disclosure Policy page lists the reports in three groups:",
+            ("point", "Budget reports", "The annual budget report, every year. The statement of debt service, the statement of receipts and expenditures and the statement of cash flow, every quarter."),
+            ("point", "Procurement reports", "The annual procurement plan or procurement list, and any "
+             "supplemental plan. Items to bid, bid results and abstracts of bids, every quarter."),
+            ("point", "Special purpose fund reports", "Special Education Fund estimates and utilization, the "
+             "Gender and Development accomplishment report, the use of the 20% development fund from the "
+             "national tax allotment, and the use of the disaster risk reduction and management fund."),
+            ("h", "Where to Look"),
+            ("point", "Bulletin boards", "The policy calls for posting in at least three conspicuous places, "
+             "such as the municipal or city hall, the provincial capitol, barangay halls, public markets, "
+             "hospitals and schools."),
+            ("point", "The town’s website", "The Supreme Court’s decision describes posting on websites as "
+             "well as in public buildings and print media."),
+            ("point", "The DILG’s Full Disclosure Policy portal", "The DILG runs an online portal for these "
+             "reports, at fdpp.dilg.gov.ph."),
+            ("point", "COA’s audit reports", "Part 9 explained that annual audit reports on local governments "
+             "are public, and COA posts audit reports on its website."),
+            ("h", "Reading the First Three Documents"),
+            "The full set can be long. Start with three, and look for one thing in each.",
+            ("point", "The annual budget report", "Find the total budget, then the three largest items. Ask "
+             "whether they match what the town says its priorities are."),
+            ("point", "The statement of receipts and expenditures", "Compare what was collected with what was estimated. A large gap is worth a question."),
+            ("point", "The 20% development fund report", "Look for projects listed as not started or not "
+             "completed. That is where the students found their unspent market money."),
+            ("h", "Four Words That Unlock the Reports"),
+            "The reports use the same few words again and again. Part 7 introduced most of them.",
+            ("point", "Appropriation", "The amount the budget allows to be spent on an item. It is "
+             "permission, not cash."),
+            ("point", "Obligation", "Part of an appropriation set aside for a specific claim, such as a "
+             "contract or a payroll."),
+            ("point", "Disbursement", "Money actually paid out of the treasury."),
+            ("point", "Balance", "What is left of an appropriation that has not been obligated or spent. A "
+             "large balance late in the year is a fair thing to ask about."),
+            "With these four words, a resident can follow an item from the budget to the payment, and see "
+            "where it stopped.",
+            ("h", "Questions You Can Fairly Ask"),
+            "Reading the reports is the start. Asking about them is how they become useful. Good questions "
+            "are specific and polite.",
+            ("point", "Why was this project not started?", "There may be a good reason, such as a failed "
+             "bidding or a land issue. Asking lets the office explain."),
+            ("point", "Why did this revenue fall short?", "Part 1 showed how a town depends on local "
+             "collections and transfers from the national government."),
+            ("point", "Where can I see the bid results?", "The procurement reports should name the winning "
+             "bidders and amounts."),
+            ("point", "What did the auditor say?", "The audit report includes management’s comments on each "
+             "finding."),
+            ("h", "What Happens When a Town Does Not Post"),
+            "According to the DILG, COA auditors were directed in 2010 to monitor compliance with the Full "
+            "Disclosure Policy, and deviations may be raised in an audit observation memorandum and appear in "
+            "the annual audit report. The DILG also cites Section 60 of the Local Government Code, which "
+            "allows officials to be disciplined for gross negligence or dereliction of duty.",
+            "For a resident, the practical step is simpler: if a report is missing from the board or the "
+            "website, ask the town where it can be seen.",
+            ("h", "For Treasury Workers"),
+            ("point", "Post on time, every time", "The Section 352 summary is due within 30 days after the "
+             "year ends. Put the date on the office calendar."),
+            ("point", "Make the board readable", "A faded printout behind dusty glass is posted but not "
+             "disclosed. Replace pages when they fade."),
+            ("point", "Welcome the questions", "A resident who reads the cash flow statement is doing what "
+             "the policy intends. A clear answer builds trust."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming the numbers are secret", "The policy requires them to be posted."),
+            ("point", "Reading only the totals", "The story is in the items and the unspent balances."),
+            ("point", "Jumping to conclusions", "An unspent fund can have a lawful reason. Ask first."),
+            ("point", "Forgetting the audit report", "It is the independent view of the same numbers."),
+            ("h", "The Students’ Answer"),
+            "The students wrote to the municipal planning office with their question. The reply explained "
+            "that the market project’s first bidding had failed and a second was scheduled. They added the "
+            "letter to their report, and their teacher posted the whole project on the school’s bulletin "
+            "board, two blocks from the one at the municipal hall.",
+            ("h", "Key Takeaways"),
+            ("point", "Section 352 is the minimum", "A yearly summary posted within 30 days in three "
+             "public places."),
+            ("point", "The Full Disclosure Policy asks for more", "Budget, procurement and special fund "
+             "reports, upheld by the Supreme Court in 2014."),
+            ("point", "Look in four places", "Bulletin boards, the town website, the DILG portal and COA’s "
+             "audit reports."),
+            ("point", "Ask specific, polite questions", "The reports are meant to be read and asked about."),
+            ("h", "The Question to Ask"),
+            "When did you last look at your town’s bulletin board for its budget reports? If you work in a "
+            "treasury, ask your office: are this quarter’s reports posted, and could a student read them?",
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes", "/blog/when-coa-writes/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Year-End in the Treasury: What Really Happens in December", "/blog/year-end-in-the-treasury/"),
+            ("ask", "Have you ever read your town’s budget or audit report? What surprised you?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance",
+        "date": "January 29, 2027",
+        "publish_on": "2027-01-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "when-coa-writes",
+        "category": "finance",
+        "summary": "An audit memo, a notice of suspension, a notice of disallowance: each letter from the "
+                   "Commission on Audit means something different. Here is what each one asks, the deadlines "
+                   "the law sets, how an appeal works, and how to keep a memo from becoming a disallowance.",
+        "body": [
+            "The envelope was on the treasurer’s desk on a Monday morning, marked with the seal of the "
+            "Commission on Audit. Inside was an audit observation memorandum about cash advances that were "
+            "past their liquidation deadline. A new clerk, seeing the seal, asked in a whisper whether "
+            "someone was in trouble. The treasurer smiled. “Not yet,” she said. “This is the letter that "
+            "lets us fix it before anyone is.”",
+            "(The treasurer and the clerk are made up for this post, as in every part of this series. No "
+            "real office, person or amount is described.)",
+            "A letter from the Commission on Audit, or COA, can cause panic in an office. It should cause "
+            "action instead, and the right action depends on which letter it is. By the last section, you "
+            "will know what COA does, the difference between an audit observation memorandum, a notice of "
+            "suspension and a notice of disallowance, the deadlines the law sets, how an appeal works, and "
+            "the habits that keep a memo from growing into a disallowance.",
+            ("photo", "blog/finance-coa.jpg", "When COA writes: an observation, a suspension, a disallowance, "
+             "and the way to settle each. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who COA Is and Why It Writes"),
+            "The Commission on Audit is the constitutional body that examines, audits and settles the "
+            "accounts of government offices, local governments included. Its auditors check that money was "
+            "collected, kept and spent according to law, and that every transaction has the documents to "
+            "prove it.",
+            "Auditors work from documents. That is why the earlier parts of this "
+            "series kept returning to papers: the official receipt, the voucher, the liquidation report. "
+            "When a paper is missing or a rule was not followed, the auditor writes.",
+            ("quote", "An audit letter is a question. The answer is a document."),
+            ("h", "Letter One: The Audit Observation Memorandum"),
+            "An audit observation memorandum, or AOM, tells the office what the auditor noticed. It might "
+            "point out cash advances past their deadline, collections deposited late, or records that are "
+            "incomplete. It asks the office for its comments and the documents that explain or correct the "
+            "finding.",
+            "An AOM is the early warning. In our story, the treasurer’s office had a list of employees whose "
+            "travel advances were overdue. The memo was the chance to collect their liquidation reports, as "
+            "Part 8 described, before the finding hardened into something worse.",
+            ("h", "Letter Two: The Notice of Suspension"),
+            "A notice of suspension holds a transaction in place because something is missing or unclear, "
+            "such as a voucher without the documents that support it. The transaction is not yet rejected. "
+            "It is waiting for an explanation.",
+            "The Government Auditing Code sets a clock on that wait. Section 82 of Presidential Decree No. "
+            "1445 says a suspension “which is not satisfactorily explained within ninety days” after the "
+            "accountable officer receives the notice “shall become a disallowance,” unless the auditor, in "
+            "writing and for good cause, extends the time.",
+            ("point", "What to do", "Submit the missing documents, or a written explanation, well before "
+             "the 90 days end."),
+            ("point", "What not to do", "Wait for a reminder. The deadline runs from receipt of the notice, "
+             "not from the next letter."),
+            ("h", "Letter Three: The Notice of Disallowance"),
+            "A notice of disallowance, or ND, means the auditor has decided that a payment should not have "
+            "been made, in whole or in part. It names the amount and the persons the auditor holds liable for "
+            "it.",
+            "This is where liability becomes personal. Section 103 of PD 1445 says spending of government "
+            "funds in violation of law or regulations “shall be a personal liability of the official or "
+            "employee found to be directly responsible therefor.” Part 7 explained why signatures carry "
+            "weight. A disallowance is where that weight is measured in pesos.",
+            "COA can also issue a notice of charge, for revenue that should have been collected in full but "
+            "was not. For a treasury, that can mean a tax, fee or charge that was under-assessed or not "
+            "collected.",
+            ("h", "How an Appeal Works"),
+            "A disallowance is not the last word if the office believes the auditor is wrong.",
+            ("point", "Six months to appeal", "Section 48 of PD 1445 lets any person aggrieved by an "
+             "auditor’s decision appeal in writing within six months from receipt of the decision."),
+            ("point", "First stop: the Director", "Under COA’s 2009 Revised Rules of Procedure, Rule V, an "
+             "aggrieved party appeals from the auditor to the Director, within six months after receiving "
+             "the decision."),
+            ("point", "Then the Commission Proper", "Rule VII allows a further appeal, but only within the "
+             "time remaining of the same six-month period. Time spent on the first appeal counts against "
+             "it."),
+            ("point", "If no appeal is filed", "Section 51 of PD 1445 makes the decision final and "
+             "executory."),
+            "Because the six months are shared between stages, an office that waits until the fifth month to "
+            "file its first appeal leaves itself very little time for the next one.",
+            ("h", "How Each Letter Ends"),
+            "When the documents are submitted, the amount is refunded, or an appeal succeeds, the matter is "
+            "settled. The auditor then issues a notice of settlement of suspension, disallowance or charge, "
+            "which allows the item to be removed from the books. Keep that notice. It is the proof that the "
+            "matter is closed.",
+            ("h", "What Residents Can Read"),
+            "Audit findings are not secret. Annual audit reports on local governments are public documents. COA posts audit reports on its website, coa.gov.ph, and some towns post their own reports on their websites. A town’s report lists the auditor’s observations, "
+            "the recommendations, and the management’s comments. Reading your town’s report is one of the "
+            "clearest views of how its money was handled.",
+            ("h", "For Treasury Workers"),
+            ("point", "Log every letter on the day it arrives", "Write the date received and the deadline it "
+             "starts. For a suspension, that is 90 days. For a disallowance, six months to appeal."),
+            ("point", "Answer the AOM fully", "Attach documents, not just explanations. A finding fixed at "
+             "the AOM stage does not reach the later letters."),
+            ("point", "Fix the cause, not only the case", "If the AOM was about late liquidations, set up "
+             "the tracking list from Part 8 so the next audit finds none."),
+            ("point", "Get advice early on an ND", "A disallowance involves personal liability and strict "
+             "deadlines. Consult your office’s legal officer before the time runs short."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating an AOM as routine paperwork", "It is the cheapest stage to fix a problem."),
+            ("point", "Letting the 90 days pass", "Under Section 82, an unexplained suspension becomes a "
+             "disallowance."),
+            ("point", "Appealing late in the six months", "The same six months must cover every stage of "
+             "appeal."),
+            ("point", "Losing the settlement notice", "Without it, proving that the matter is closed is "
+             "harder."),
+            ("h", "The Treasurer’s Answer"),
+            "The treasurer gave each employee named in the memo a written reminder with a date. Within two "
+            "weeks, every overdue advance was liquidated or refunded, and the office replied to the AOM with "
+            "copies of the reports and official receipts attached. The finding appeared in the audit report "
+            "as an observation with the office’s action noted, and it went no further.",
+            ("h", "Key Takeaways"),
+            ("point", "Each letter means something different", "An AOM observes, a suspension waits, a "
+             "disallowance decides."),
+            ("point", "Ninety days for a suspension", "PD 1445, Section 82, turns an unexplained suspension "
+             "into a disallowance."),
+            ("point", "Six months to appeal, shared", "Section 48 and COA’s rules set one six-month period "
+             "for all stages."),
+            ("point", "Liability is personal", "Section 103 places it on the person directly responsible."),
+            ("h", "The Question to Ask"),
+            "Have you ever read your town’s annual audit report? If you work in a treasury, ask your office: "
+            "how many audit observations from last year are still unanswered, and who owns each one?",
+            ("cta", "Read: Inside the Local Treasury, Part 8: Cash Advances", "/blog/cash-advances-explained/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check", "/blog/from-budget-to-check/"),
+            ("cta", "Read the study note: Disbursements, vouchers, checks and cash advances", "/study-notes/disbursements-vouchers-checks-cash-advances/"),
+            ("cta", "Read: Year-End in the Treasury: What Really Happens in December", "/blog/year-end-in-the-treasury/"),
+            ("ask", "What is the most useful thing you learned from an audit finding? I'd like to hear it."),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 8: Cash Advances, the Money You Must Account For Later",
+        "date": "January 24, 2027",
+        "publish_on": "2027-01-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "cash-advances-explained",
+        "category": "finance",
+        "summary": "A cash advance looks like money in hand, but it is a debt to the town until it is "
+                   "liquidated. Here is who may get one, what it may be used for, the deadlines to account for "
+                   "it, and what happens when they are missed.",
+        "body": [
+            "Three weeks after a seminar in Manila, an employee found a note clipped to her payslip: “Please "
+            "see the accountant re: unliquidated cash advance.” She had come home with receipts in her bag "
+            "and every intention of filing them. Then work piled up. Now her next salary was at risk.",
+            "(Like every story in this series, this one is a composite. No real employee, office or amount "
+            "is described.)",
+            "A cash advance is simple to receive and easy to forget. Read to the end and you will know what a "
+            "cash advance is, who may receive one, the rules that keep it honest, the deadlines for "
+            "accounting for it, what happens when they pass, and the habits that make liquidation painless.",
+            ("photo", "blog/finance-cash-advance.jpg", "Cash advances: a specific purpose, one at a time, "
+             "liquidated on time, and the balance refunded. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What a Cash Advance Is"),
+            "Part 7 followed a normal payment: the goods or service come first, then the voucher, then the "
+            "check. Some expenses cannot wait for that. An employee traveling to a seminar needs money for "
+            "fares and meals before the trip, and a payroll paid in cash needs cash before payday.",
+            "A cash advance solves that. Money is released before the expense, to an official or employee "
+            "who becomes accountable for it. Until they show how it was spent and return what was not spent, "
+            "the amount stays on the books as something they owe.",
+            ("quote", "A cash advance is not an allowance. It is a loan from the town that is repaid with "
+             "receipts."),
+            ("h", "The Rules in the Law"),
+            ("point", "Only under COA’s rules", "Section 339 of the Local Government Code says no cash "
+             "advance may be granted to any local official or employee except under the rules of the "
+             "Commission on Audit (COA)."),
+            ("point", "Only for a specific purpose", "Section 89 of the Government Auditing Code, Presidential "
+             "Decree No. 1445, allows a cash advance only for a legally authorized, specific purpose."),
+            ("point", "One at a time", "The same section says no new cash advance is given until the "
+             "previous one is settled."),
+            "COA Circular No. 97-002 sets out the details that offices follow. The study note on "
+            "disbursements lists them with the related sections.",
+            ("cta", "Read the study note: Disbursements, vouchers, checks and cash advances", "/study-notes/disbursements-vouchers-checks-cash-advances/"),
+            ("h", "Who May Receive One"),
+            ("point", "Disbursing officers", "Under COA Circular No. 97-002, only permanently appointed "
+             "officials may be designated disbursing officers, the people who hold cash advances for "
+             "payrolls or petty expenses."),
+            ("point", "Elected officials", "They may get cash advances only for official travel."),
+            ("point", "No passing it along", "A cash advance may not be transferred from one accountable "
+             "officer to another. The person who signed for it answers for it."),
+            ("h", "The Deadlines"),
+            "Each kind of advance has its own clock under COA Circular No. 97-002:",
+            ("point", "Salaries and wages", "Liquidated within 5 days after the end of each pay period."),
+            ("point", "Petty operating and field expenses", "Liquidated within 20 days after the end of the "
+             "year."),
+            ("point", "Local travel", "Within 30 days after returning to the official station."),
+            ("point", "Foreign travel", "Within 60 days after returning to the Philippines."),
+            ("point", "Year end", "All cash advances are liquidated by the end of the year, and unused "
+             "balances are refunded."),
+            "Our employee returned from her seminar on March 6. Thirty days later is April 5. The note on her "
+            "payslip arrived after that date had passed.",
+            ("h", "A Worked Example"),
+            ("point", "The advance", "₱5,000 for a three-day seminar in another province."),
+            ("point", "The spending", "Fares, meals and registration, supported by receipts, total "
+             "₱4,200."),
+            ("point", "The liquidation", "A liquidation report showing ₱4,200 in expenses, with the receipts "
+             "attached."),
+            ("point", "The refund", "The unused ₱800 is returned to the treasury, which issues an official "
+             "receipt for it."),
+            "The refund matters as much as the receipts. Keeping the balance, even by accident, leaves the "
+            "advance open on the books.",
+            ("h", "Petty Cash: Small Amounts, Same Discipline"),
+            "An office may keep a petty cash fund for small, urgent purchases. Under COA Circular No. 97-002, a "
+            "payment from petty cash is capped at ₱15,000 per transaction, and splitting one purchase into "
+            "several smaller ones to stay under the cap is not allowed. The custodian replenishes the fund by "
+            "accounting for what was spent.",
+            ("h", "Why the Rules Are This Strict"),
+            "Each rule closes a gap that would otherwise let public money drift.",
+            ("point", "One advance at a time", "Without it, a new advance could quietly cover an old one, "
+             "and the unaccounted amount would roll forward from trip to trip."),
+            ("point", "No transfer between officers", "When the person who signed for the money is the only "
+             "one who answers for it, it is clear who must explain a shortage."),
+            ("point", "A specific purpose", "An advance “for expenses” cannot be checked. An advance “for "
+             "the three-day seminar on March 3 to 5” can."),
+            ("point", "Deadlines in days", "Thirty days is short enough that receipts are still in the bag "
+             "and memories are fresh."),
+            ("h", "What Happens When It Is Late"),
+            "Under COA Circular No. 97-002, if a cash advance is not liquidated on time, the officer’s salary "
+            "may be withheld, and the officer may face administrative and criminal charges. An unliquidated "
+            "advance also blocks the next one, under the one-at-a-time rule.",
+            "For the office, an unliquidated advance means money has left the treasury without proof of "
+            "how it was used, which is what auditors look for. That brings us back to the payslip note. The "
+            "accountant was not being harsh. The rule leaves no room to wait.",
+            ("h", "Habits That Make Liquidation Easy"),
+            ("point", "Keep one envelope per trip", "Put every receipt in it as you go, and write the date "
+             "and purpose on the back of each."),
+            ("point", "Ask what counts before you leave", "Ask the accountant which receipts and documents "
+             "the liquidation will need, such as a certificate of appearance or attendance from the venue."),
+            ("point", "Liquidate in your first week back", "The 30-day clock starts the day you return, "
+             "not the day you remember."),
+            ("point", "Refund the balance with an official receipt", "And keep a copy of that receipt."),
+            ("h", "For Treasury Workers"),
+            ("point", "Check before releasing", "Confirm that the person has no open advance, and that the "
+             "purpose is specific and authorized."),
+            ("point", "Track the due dates", "A simple list of open advances and their deadlines prevents "
+             "surprises."),
+            ("point", "Explain the clock at release", "Tell the employee the deadline in days and as a date, "
+             "when you hand over the money."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the advance as personal money", "It is public money until it is "
+             "liquidated."),
+            ("point", "Lending it to a co-worker", "The advance cannot be transferred, and you remain "
+             "accountable for it."),
+            ("point", "Losing receipts", "Without them, the expense cannot be supported."),
+            ("point", "Forgetting the refund", "The unused balance is returned with an official receipt."),
+            ("h", "The Employee’s Envelope"),
+            "She found the receipts in her seminar bag, filled out the liquidation report that afternoon, and "
+            "refunded ₱800 at the treasury window. Her salary was released on time. Before her next trip, she "
+            "bought a box of brown envelopes and labeled the first one with the seminar’s name and the date "
+            "30 days after her return.",
+            ("h", "Key Takeaways"),
+            ("point", "A cash advance is a debt", "It is cleared only by receipts and a refund of the "
+             "balance."),
+            ("point", "Specific purpose, one at a time", "PD 1445, Section 89, and COA’s rules."),
+            ("point", "Know your clock", "Five days for payroll, 30 days after local travel, 60 after "
+             "foreign travel."),
+            ("point", "Late means consequences", "Salary may be withheld, and charges may follow."),
+            ("h", "The Question to Ask"),
+            "Do you have a cash advance open right now, and do you know its deadline as a date? If you work "
+            "in a treasury, ask your office: how many advances are past due today, and who is following them "
+            "up?",
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Year-End in the Treasury: What Really Happens in December", "/blog/year-end-in-the-treasury/"),
+            ("ask", "What is your system for keeping receipts on an official trip? I'd like to hear what works."),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills",
+        "date": "January 19, 2027",
+        "publish_on": "2027-01-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "from-budget-to-check",
+        "category": "finance",
+        "summary": "Why does a supplier wait weeks for a check after delivering the goods? Follow one payment "
+                   "from the budget to the check, through three certifications, an approval and two "
+                   "signatures, and see what each one protects.",
+        "body": [
+            "A supplier of office chairs stood at the treasury window with a delivery receipt in one hand and "
+            "his phone in the other. “The chairs were delivered two weeks ago,” he said. “They are already "
+            "being used. Why is there still no check?” The clerk opened a folder and showed him where his "
+            "voucher was: on a desk two offices away, waiting for one more signature.",
+            "(This case, like every case in this series, is a composite. No real supplier, office or amount is "
+            "described.)",
+            "To someone outside, the wait looks like red tape. Inside, every signature on that voucher answers "
+            "a question the law requires someone to ask before public money leaves the treasury. This post "
+            "explains each step from the budget to the check, who signs at each one, what the signature "
+            "means, and what a supplier, an employee or a resident can do to keep a payment moving.",
+            ("photo", "blog/finance-budget-to-check.jpg", "From budget to check: an appropriation, an "
+             "obligation, a voucher, and a check with two signatures. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Rule One: No Appropriation, No Payment"),
+            "Section 305 of the Local Government Code sets the first principle: no money is paid out of the "
+            "local treasury except under an appropriation ordinance or law. The annual budget, passed by the "
+            "sanggunian, is that ordinance. It lists how much each office may spend, and on what.",
+            "Section 336 adds that appropriated funds are used only for the purpose they were appropriated "
+            "for. Money set aside for office equipment cannot quietly pay for a fiesta. If a need was not in "
+            "the budget, the sanggunian has to act first.",
+            ("quote", "The budget is not a wish list. It is the permission slip for every peso that leaves."),
+            ("h", "Rule Two: Deliver First, Then Get Paid"),
+            "Section 338 says no money is paid on a contract under which no services were rendered or goods "
+            "delivered. The chairs had to arrive, and the office had to confirm they matched what was ordered, "
+            "before any payment could begin.",
+            "That is the reason for the delivery receipt in the supplier’s hand. It is the first document in "
+            "his payment folder, not the last.",
+            ("h", "Three Certifications and an Approval"),
+            "Section 344 is the heart of the process. No money may be disbursed unless three officers have "
+            "each certified their part:",
+            ("point", "The budget officer", "Certifies that an appropriation exists for the purpose. "
+             "Question answered: is this expense in the budget?"),
+            ("point", "The accountant", "Obligates the appropriation, setting the amount aside so it cannot "
+             "be spent twice. Question answered: is the money reserved for this claim?"),
+            ("point", "The treasurer", "Certifies that funds are available. Question answered: is there "
+             "cash to pay it?"),
+            "Section 344 then requires the head of the office with control of the fund to certify the voucher "
+            "or payroll as to the validity, propriety and legality of the claim. In the supplier’s case, that "
+            "was the head of the office that ordered the chairs.",
+            "Finally, the local chief executive approves the voucher. The same section exempts regularly "
+            "recurring administrative expenses, such as payrolls for regular employees, light, water and "
+            "telephone bills, and remittances to government creditors like the GSIS and SSS. Those do not need "
+            "the mayor’s own signature on each voucher.",
+            "The study note on disbursements lists these rules with their section numbers and a worked "
+            "example.",
+            ("cta", "Read the study note: Disbursements, vouchers, checks and cash advances", "/study-notes/disbursements-vouchers-checks-cash-advances/"),
+            ("h", "Two Signatures on the Check"),
+            "Under Section 345, checks are drawn by the local treasurer and countersigned by the local "
+            "administrator. If either is temporarily absent or incapacitated, the duty passes to their "
+            "immediate assistant.",
+            "Two signatures mean no single person can both prepare and release a payment. The same idea runs "
+            "through the whole process: the person who asks for the money, the person who checks the budget, "
+            "the person who reserves it, the person who confirms the cash and the person who approves are meant to be different people.",
+            ("h", "A Limit on Spending Ahead of Collections"),
+            "A treasurer cannot pay everything in the budget just because it was approved. Section 337 limits "
+            "total disbursements from a fund to its actual collections plus 50% of its estimated revenue not "
+            "yet collected.",
+            ("point", "An example", "A fund expects ₱100 million this year and has collected ₱60 million. "
+             "The limit is ₱60 million + 50% × ₱40 million = ₱80 million."),
+            ("point", "At year end", "Section 337 allows no cash overdraft in any fund at the end of the "
+             "year."),
+            "This is one reason payments are sometimes scheduled rather than released the day a voucher is "
+            "complete. The treasurer’s certification of available funds has to be true when it is signed.",
+            ("h", "Why Each Signature Is Taken Seriously"),
+            "Signing is not a formality, because the law attaches liability to it. Under Section 342, an "
+            "accountable officer who follows a superior’s order to make an illegal payment is not relieved of "
+            "liability unless they object in writing, and the superior who gave the order is jointly and "
+            "severally liable.",
+            "So when a treasurer asks for a missing document, it is not stubbornness. It is the officer making "
+            "sure that the certification they sign is true.",
+            ("h", "Where Payments Get Stuck"),
+            "The supplier’s voucher was not lost. It was waiting, and the reasons for waiting fall into a few "
+            "kinds.",
+            ("point", "A missing document", "A delivery receipt without the inspection report, or a "
+             "contract without the purchase order."),
+            ("point", "An absent signatory", "Section 345 lets an immediate assistant sign checks, and "
+             "Section 344 has a rule for a department head’s next-in-rank, but someone still has to be there to sign."),
+            ("point", "No obligation yet", "The accountant cannot obligate an amount that the budget officer "
+             "has not certified."),
+            ("point", "Cash timing", "The Section 337 limit, or simply waiting for collections to come in."),
+            ("h", "What a Supplier or Employee Can Do"),
+            ("point", "Submit complete papers", "Ask the ordering office for its list of required documents "
+             "before delivery, not after."),
+            ("point", "Ask where the voucher is", "A polite question at each office, such as “Which "
+             "signature is still missing?”, moves a voucher faster than a complaint."),
+            ("point", "Keep copies", "Keep the delivery receipt, the invoice and any acknowledgment of the "
+             "documents you submitted."),
+            ("h", "What a Resident Can Check"),
+            "Payments are public money, and some of the trail is public too. Section 352 requires the treasurer "
+            "to post, within 30 days after the year ends, a summary of all revenues collected and funds "
+            "received, and of the appropriations and disbursements, in at least three public places. Ask your "
+            "town where it is posted, and read it.",
+            ("h", "For Treasury Workers"),
+            ("point", "Check before you certify", "Your certification of available funds is a statement of "
+             "fact. Confirm the balance, not just the paper."),
+            ("point", "Put objections in writing", "Section 342 protects the officer who registers an "
+             "objection in writing."),
+            ("point", "Explain the step, not just the rule", "A supplier told “we need the inspection report "
+             "from the requesting office” knows where to go. One told “incomplete” does not."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Delivering before the order is final", "Without an obligation, there is no money "
+             "reserved for you."),
+            ("point", "Assuming approval means cash", "An approved budget is permission, not money in the "
+             "bank."),
+            ("point", "Skipping a signature to save time", "A skipped step can become an audit finding later."),
+            ("point", "Asking the treasurer to “just release it”", "The treasurer cannot certify what is "
+             "not yet true."),
+            ("h", "The Supplier’s Check"),
+            "The missing signature was the head of the office that ordered the chairs, who had been on leave. "
+            "The next-in-rank officer signed the next morning, and the check, signed by the treasurer and "
+            "countersigned by the administrator, was ready three days later. The supplier left with a list of "
+            "documents for his next delivery.",
+            ("h", "Key Takeaways"),
+            ("point", "No appropriation, no payment", "Section 305 ties every peso to the budget."),
+            ("point", "Three certifications", "Budget officer, accountant and treasurer, then the head of "
+             "office and the approving authority (Section 344)."),
+            ("point", "Two signatures on the check", "Treasurer and administrator (Section 345)."),
+            ("point", "Signatures carry liability", "That is why missing papers stop a payment."),
+            ("h", "The Question to Ask"),
+            "Have you ever waited for a check from your town? Which signature was missing? If you work in a "
+            "treasury, ask your office: how long does a complete voucher take to become a check, and where "
+            "does it wait the longest?",
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("ask", "Have you ever waited for a government check? I'd like to hear what held it up."),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?",
         "date": "January 14, 2027",
         "publish_on": "2027-01-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
@@ -20,8 +1318,7 @@ TREASURY_POSTS = [
             "treasurer with a folded letter from his farmers. The typhoon had taken the harvest that paid their bills. “They are asking if the town can forgive this year’s amilyar,” he said. “Can it?”",
             "(As in every part of this series, the case is a composite. No real person, place or amount is "
             "described.)",
-            "The honest answer is “sometimes, and only in the ways the law allows.” By the end of this post, you "
-            "will know who can reduce or forgive real property tax, under what conditions, what the 2024 national "
+            "The honest answer is “sometimes, and only in the ways the law allows.” When you finish reading, you will know who can reduce or forgive real property tax, under what conditions, what the 2024 national "
             "amnesty under Republic Act No. 12001 covered and who it left out, and how to tell real relief from "
             "a rumor at the window.",
             ("photo", "blog/finance-tax-relief.jpg", "Four kinds of relief: calamity condonation, the President’s "
@@ -53,9 +1350,7 @@ TREASURY_POSTS = [
             "January 1, the farmers’ tax for the next year could be reduced or condoned. This year’s bill, "
             "already due, was a different matter.",
             ("h", "When the President Steps In: Section 277"),
-            "Section 277 gives the President the power to condone or reduce the real property tax and its "
-            "interest, for any year, in any province or city, or a municipality within Metro Manila, when the "
-            "public interest requires it.",
+            "Section 277 gives the President the power to condone or reduce the real property tax and its interest when the public interest requires it.",
             "This is a national power. It is not something a resident can apply for at the treasury, and "
             "an owner should not delay payment hoping for it.",
             ("h", "A Real Example of Local Relief"),
@@ -102,8 +1397,7 @@ TREASURY_POSTS = [
             "Both points deserve weight. That is one reason the law sets limits, such as the deadline and the "
             "exclusions in Section 30. Relief is meant to be a door that opens once and closes, not a habit.",
             ("h", "Mistakes to Avoid"),
-            ("point", "Waiting for an amnesty", "Interest under Section 255 keeps running at 2% a month while "
-             "you wait, and no relief is promised until an ordinance or law says so."),
+            ("point", "Waiting for an amnesty", "Interest under Section 255 keeps running at 2% a month, for up to 36 months, while you wait, and no relief is promised until an ordinance or law says so."),
             ("point", "Thinking amnesty erases the tax", "Under RA 12001, only penalties, surcharges and "
              "interest were forgiven. The tax was still paid."),
             ("point", "Trusting a verbal promise", "Ask for the ordinance number or the law. If there is none, "
@@ -161,14 +1455,14 @@ TREASURY_POSTS = [
             "described.)",
             "Amilyar is the everyday name for the real property tax on land and buildings. It is due every "
             "year, and when it goes unpaid, the Local Government Code lays out a series of steps that can end "
-            "with the property sold at public auction. By the end of this post, you will know how the unpaid "
+            "with the property sold at public auction. Read to the end and you will know how the unpaid "
             "tax grows, what each step from notice to auction means, how much time an owner has at each stage, "
             "and how to stop the process before it goes too far.",
             ("photo", "blog/finance-rpt-delinquency.jpg", "From unpaid tax to auction: the notice, the warrant of "
              "levy, the sale, and the one year to redeem. (Illustration: Butch Mahinay, aumahinay.dev)",
              "medium"),
             ("h", "The Tax Is Tied to the Land"),
-            "Under Section 246 of the Code, the real property tax for a year falls due on January 1, and from that "
+            "Under Section 246 of the Code, the real property tax for a year accrues on January 1, and from that "
             "day it is a lien on the property. A lien is a legal claim. This one is superior to other liens and "
             "encumbrances, and it stays with the property until the tax is paid, even if the property changes "
             "hands.",
@@ -300,7 +1594,7 @@ TREASURY_POSTS = [
             "(As in every part of this series, the case is a composite. No real person, property or amount "
             "is described.)",
             "A land sale can be done in good faith, with a notarized deed, and still stall at this step: a local tax that one of the parties did not know about. "
-            "By the end of this post, you will know what the tax on transfer of real property ownership is, "
+            "Stay with me to the end, and you will know what the tax on transfer of real property ownership is, "
             "who the law says must pay it, how to compute it, how long you have, what being late costs, and "
             "what to bring to the window.",
             ("photo", "blog/finance-transfer-tax.jpg", "The transfer tax: who pays, how much, within 60 days, "
@@ -420,8 +1714,7 @@ TREASURY_POSTS = [
             "need her income?",
             "(As in every part of this series, the case is a composite. No real person or amount "
             "is described.)",
-            "It is a fair question, and the answer goes back almost a century and a half. By the "
-            "end of this post, you will know where the cedula came from, how to compute what you "
+            "It is a fair question, and the answer goes back almost a century and a half. By the end of this post, you will know where the cedula came from, how to compute what you "
             "owe, where paying it helps your barangay most, and what it can and cannot prove.",
             ("h", "A Tax Older Than the Republic"),
             "Under Spain, Filipinos paid a head tax called the tribute. Historian Filomeno V. "
@@ -575,8 +1868,7 @@ TREASURY_POSTS = [
             "(As in every part of this series, the case is a composite. No real person, business "
             "or amount is described.)",
             "A late payment like this can be avoided with three things: knowing the real "
-            "deadline, knowing what you are paying for, and bringing the right papers. By the end"
-            " of this post, you will know the real deadline, what being late costs in pesos, what"
+            "deadline, knowing what you are paying for, and bringing the right papers. When you finish reading, you will know the real deadline, what being late costs in pesos, what"
             " to bring, and what to do if you believe the bill is wrong.",
             ("h", "Why Everything Happens in January"),
             "The local business tax is a yearly tax, and under the Local Government Code it "
@@ -736,7 +2028,7 @@ TREASURY_POSTS = [
             "with a simple question. The town collects taxes every working day, so why is there "
             "never enough money for the road in their barangay? It is a fair question, and it "
             "deserves a better answer than “walang pondo.” The answer starts with where the money"
-            " actually comes from. By the end of this post, you will be able to read the one "
+            " actually comes from. After this post, you will be able to read the one "
             "ratio that explains much of the answer, see why the national share can fall without "
             "warning, and know what actually raises a town's own income.",
             "(The cases in this series are composites, not records of any real office. Names, "

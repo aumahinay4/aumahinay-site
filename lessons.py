@@ -650,7 +650,7 @@ LESSONS = [
         "level": "Beginner",
         "minutes": 20,
         "topics": ["validation", "try and except", "datetime", "functions"],
-        "publish_on": "2026-11-21",
+        "publish_on": "2026-11-21 21:00",  # 9 pm PH, same time as every scheduled post (Butch 2026-11-15)
         "learn": [
             "Write a function that checks one row and returns its problems",
             "Catch errors with try and except instead of letting the script stop",
@@ -714,7 +714,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 25,
         "topics": ["pytest", "assert", "parametrize", "testing"],
-        "publish_on": "2026-11-28",
+        "publish_on": "2026-11-28 21:00",  # 9 pm PH, same time as every scheduled post (Butch 2026-11-15)
         "learn": [
             "Keep the rules in their own file so they can be tested",
             "Write a test as a function with assert",
@@ -789,7 +789,7 @@ LESSONS = [
         "level": "Intermediate",
         "minutes": 30,
         "topics": ["Flask", "routes", "templates", "JSON"],
-        "publish_on": "2026-12-05",
+        "publish_on": "2026-12-05 21:00",  # 9 pm PH, same time as every scheduled post (Butch 2026-11-15)
         "learn": [
             "Write a Flask app with two routes",
             "Fill an HTML page with values using a template",

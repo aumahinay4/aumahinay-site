@@ -30,10 +30,9 @@ PM_POSTS = [
             "mistakes. What made them?” The answer was in the risk register from Part 19: the notices were "
             "filled in from a list that had been edited by hand. The check was good. Not needing it would "
             "have been better.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
             "town, employee or taxpayer is described.)",
-            "Parts 14 to 22 planned the work, time, money, risks and purchases. This part plans quality. By "
-            "the end of this post you will know what quality means in a project, how to write a standard for "
+            "Parts 14 to 22 planned the work, time, money, risks and purchases. This part plans quality. When you finish reading, you will know what quality means in a project, how to write a standard for "
             "each deliverable, how to choose the right check, what the cost of quality is, and how to put "
             "quality work into the schedule and the budget.",
             ("photo", "blog/pm-quality.jpg", "Quality planning: define good for each deliverable, prevent "
@@ -162,7 +161,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town, employee or taxpayer is described.)",
             "Parts 14 to 21 planned the work, the time, the money and the risks. This part adds the things a "
-            "project must buy. By the end of this post you will know how to list what must be procured, why "
+            "project must buy. By the last section, you will know how to list what must be procured, why "
             "procurement belongs in the schedule, how to write a specification a supplier cannot misread, how "
             "to work with your procurement team, and how to manage a supplier from order to acceptance.",
             ("photo", "blog/pm-procurement.jpg", "Procurement in a project: list what to buy, plan the lead "
@@ -284,10 +283,10 @@ PM_POSTS = [
             "agreed with the adviser in advance, and filling and printing had been timed in the second round. "
             "But the undelivered list, two days, turned out to be one day plus one “just in case.” None of this "
             "was dishonest. People protect their own tasks. The question was what that hidden time was doing.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
             "town, employee or taxpayer is described.)",
             "Part 15 showed why estimates tend to run short, and Part 17 set money aside for risks in a "
-            "contingency reserve. This part does the same for time. By the end of this post you will know the "
+            "contingency reserve. This part does the same for time. When you finish reading, you will know the "
             "difference between padding and a buffer, why hidden safety tends to get used up anyway, how to "
             "move it into one visible buffer, and how to watch that buffer while the project runs.",
             ("photo", "blog/pm-buffers.jpg", "Buffers, not padding: safety time moved out of each task into one "
@@ -408,7 +407,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town, employee or taxpayer is described.)",
             "Part 16 put the work packages in order and found the critical path, using only the simplest kind "
-            "of link. This part looks at the links themselves. By the end of this post you will know the four "
+            "of link. This part looks at the links themselves. By the last section, you will know the four "
             "kinds of links between tasks, how to tell a link you must keep from one you chose, what leads and "
             "lags are, and what to do when a task is stuck waiting on someone else.",
             ("photo", "blog/pm-dependencies.jpg", "Dependencies: the four kinds of links between tasks, the "
@@ -527,11 +526,10 @@ PM_POSTS = [
             "whoever happened to be there.",
             "Looking back, none of them was truly unexpected. Anyone on the team could have named all three "
             "before the project started. Nobody had asked.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
             "town, employee or taxpayer is described.)",
             "Parts 15 to 18 kept pointing to risks: uncertain estimates, near-critical paths, contingency "
-            "reserves and single points of failure. This part gathers them in one place. By the end of this "
-            "post you will know how to write a risk clearly, score it, choose a response, give it an owner "
+            "reserves and single points of failure. This part gathers them in one place. When you finish reading, you will know how to write a risk clearly, score it, choose a response, give it an owner "
             "and a trigger, and keep the register alive while the project runs.",
             ("photo", "blog/pm-risks.jpg", "The risk register: each risk written clearly, scored, given an "
              "owner, a response and a trigger. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -664,7 +662,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town, employee or taxpayer is described.)",
             "Parts 14 to 17 described what the work is, how long it takes, in what order it runs and what it "
-            "costs. This part asks who will do it, and whether they can. By the end of this post you will "
+            "costs. This part asks who will do it, and whether they can. By the last section, you will "
             "know how to list people’s real availability, assign work packages, find overloads with a simple "
             "chart, and fix them using float before the finish date has to move.",
             ("photo", "blog/pm-resources.jpg", "Assigning people: real availability, assignments, overloads "
@@ -802,10 +800,10 @@ PM_POSTS = [
             "halfway through the run.",
             "None of these costs was a surprise. They were simply never written down, because the estimate "
             "started from the biggest purchase instead of from the work.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
             "town, employee or taxpayer is described.)",
             "Part 14 broke the project into work packages, Part 15 estimated their time, and Part 16 put them "
-            "in order. This part puts a cost on them. By the end of this post you will know how to build a "
+            "in order. This part puts a cost on them. When you finish reading, you will know how to build a "
             "budget package by package, three ways to estimate a cost, why staff time belongs in the plan, "
             "how reserves work, and how to place spending on the calendar.",
             ("photo", "blog/pm-budget.jpg", "A project budget built from the work packages, with reserves for "
@@ -945,7 +943,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town, employee or taxpayer is described.)",
             "Part 14 broke the project into work packages, and Part 15 put time estimates on them. This part "
-            "puts them in order. By the end of this post you will know how to line up packages by what they "
+            "puts them in order. By the last section, you will know how to line up packages by what they "
             "depend on, find the critical path with a forward and a backward pass, read float, and choose "
             "carefully when the finish date has to move earlier.",
             ("photo", "blog/pm-critical-path.jpg", "The critical path: the chain of dependent work that takes "
@@ -1094,10 +1092,9 @@ PM_POSTS = [
             "Together they used up the whole margin and more.",
             "The clerk is not careless. Underestimating one’s own work is a well-studied human tendency, "
             "and it has a name.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
             "town, employee or taxpayer is described.)",
-            "Part 14 broke the project into work packages. This part puts time on them. By the end of this "
-            "post you will know why estimates tend to run short, four ways to make them better, and how to "
+            "Part 14 broke the project into work packages. This part puts time on them. When you finish reading, you will know why estimates tend to run short, four ways to make them better, and how to "
             "present an estimate honestly to a sponsor.",
             ("photo", "blog/pm-estimates.jpg", "Four ways to better estimates: ask the doer, build from the "
              "WBS, compare with the past and use three points. (Illustration: Butch Mahinay, aumahinay.dev)",
@@ -1225,7 +1222,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town, employee or taxpayer is described.)",
             "Part 13 closed the first stage of this series with a pre-launch checklist. This part starts the "
-            "planning stage. By the end of this post you will know what a work breakdown structure is, the "
+            "planning stage. By the last section, you will know what a work breakdown structure is, the "
             "rule that keeps it complete, how far to break the work down, and how to write a WBS dictionary "
             "that makes each piece clear.",
             ("photo", "blog/pm-wbs.jpg", "A work breakdown structure: the project at the top, the main "
@@ -1357,10 +1354,9 @@ PM_POSTS = [
             "charter, but the plan for that busy period was not written anywhere.",
             "Finding that gap in a meeting cost twenty minutes. Finding it in the middle of the work could "
             "have cost weeks.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
             "town or employee is described.)",
-            "This is the last part of the series’ first stage, which covered how a project starts. By the end "
-            "of this post you will have a pre-launch checklist built from Parts 1 to 12, a way to run it in "
+            "This is the last part of the series’ first stage, which covered how a project starts. By the end of this post, you will have a pre-launch checklist built from Parts 1 to 12, a way to run it in "
             "one meeting, a simple rating for each item, and a plan for what to do with the gaps you find.",
             ("photo", "blog/pm-pre-launch.jpg", "A pre-launch checklist in four groups: purpose, boundaries, "
              "people and ways of working. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -1489,7 +1485,7 @@ PM_POSTS = [
             "(As in every part of this series, the office, the people and the tools are made up. No real "
             "town, employee or product is described or recommended.)",
             "Part 11 settled who hears what and when. This part is about the place where the work is tracked. "
-            "By the end of this post you will know how to check a process before choosing a tool, the five "
+            "After this post, you will know how to check a process before choosing a tool, the five "
             "jobs a PM tool needs to do, how to compare options with a simple scoring sheet, and how to run a "
             "short trial before committing.",
             ("photo", "blog/pm-process-first.jpg", "Process first, then tool: agree on the stages, the owner, the update rule and the one place where tasks live. "
@@ -1611,10 +1607,9 @@ PM_POSTS = [
             "never been told how much of their time the project needed.",
             "Nobody had hidden anything. Each person had simply assumed someone else would tell the assessor. "
             "A communication plan exists to stop that assumption.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Everyone and everything in this story is fictional, including the numbers. No real "
             "town or employee is described.)",
-            "Part 8 settled who does each task. This part settles who needs to know about it. By the end of "
-            "this post you will have a five-column communication plan, a filled-in example, a rule for "
+            "Part 8 settled who does each task. This part settles who needs to know about it. Read to the end and you will have a five-column communication plan, a filled-in example, a rule for "
             "delivering bad news, and a way to keep updates short enough that people read them.",
             ("photo", "blog/pm-communication-plan.jpg", "A communication plan answers five questions: who, "
              "what, how, how often and from whom. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -1739,9 +1734,9 @@ PM_POSTS = [
             "A month later, the clerk asks again, this time with one page. It shows how long taxpayers waited "
             "last January, how many left the line without paying, what the printer and encoder would cost, and "
             "three options side by side. The head of office reads it twice, asks two questions and approves the printer.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(The office and the people in this story are invented, and so are the figures. No real "
             "town or employee is described.)",
-            "The request did not change. The case for it did. By the end of this post you will know the six "
+            "The request did not change. The case for it did. By the last section, you will know the six "
             "parts of a business case, how to compare options honestly, including doing nothing, how to work "
             "out a simple payback, and how to present it so a busy decision maker can say yes or no quickly.",
             ("photo", "blog/pm-business-case.jpg", "Six parts of a business case: the problem, the options, "
@@ -1865,10 +1860,10 @@ PM_POSTS = [
             "The cashier looks at it politely and says it is nice. The totals were never the slow part. The "
             "slow part was finding the three or four receipts each day that did not match the cash count, and "
             "the spreadsheet does nothing about that.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Everyone and everything in this story is fictional, including the numbers. No real "
             "town or employee is described.)",
             "The cashier did know what the problem was. What nobody had done was ask the questions that would "
-            "bring it out. By the end of this post you will know five ways to gather requirements, the "
+            "bring it out. Stay with me to the end, and you will know five ways to gather requirements, the "
             "questions that get past the first answer, how to write a requirement that can be tested, and how "
             "to get it agreed before the work begins.",
             ("photo", "blog/pm-requirements-methods.jpg", "Five ways to gather requirements: interview, "
@@ -1995,10 +1990,9 @@ PM_POSTS = [
             "The kickoff had named who works on which afternoons. What it had not settled was who owns each "
             "task: who does it, who answers for it, who must be asked first and who only needs to be told. "
             "A simple grid called a RACI matrix settles exactly that.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(The office and the people in this story are invented, and so are the figures. No real "
             "town or employee is described.)",
-            "Part 7 ran the kickoff. This part turns its decisions into a written map of roles. By the end of "
-            "this post you will know the four RACI roles, how to build a matrix for a small office project, "
+            "Part 7 ran the kickoff. This part turns its decisions into a written map of roles. By the end of this post, you will know the four RACI roles, how to build a matrix for a small office project, "
             "four checks that expose gaps and overlaps, and how to keep the matrix useful after the first "
             "week.",
             ("photo", "blog/pm-raci-roles.jpg", "The four RACI roles: Responsible does the work, Accountable "
@@ -2127,9 +2121,9 @@ PM_POSTS = [
             "The charter was signed. The scope was clear. The objective was measurable. What was missing was "
             "one well-run hour that turned those documents into a shared plan that every person in the room "
             "understood the same way.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Everyone and everything in this story is fictional, including the numbers. No real "
             "town or employee is described.)",
-            "This part is about that hour. By the end of this post you will have a one-hour kickoff agenda, a "
+            "This part is about that hour. When you finish reading, you will have a one-hour kickoff agenda, a "
             "list of what to prepare beforehand, a way to run each segment so it ends in a decision, and a "
             "short follow-up note you can send the same afternoon.",
             ("photo", "blog/pm-kickoff-agenda.jpg", "A one-hour kickoff in five segments: why, what, who, how "
@@ -2249,9 +2243,9 @@ PM_POSTS = [
             "The bills print faster, but taxpayers still wait while staff look up past payments on ledger "
             "cards. The project delivered exactly what it promised. It just never promised the thing the "
             "head of office actually wanted: shorter waiting time at the counter.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(The office and the people in this story are invented, and so are the figures. No real "
             "town or employee is described.)",
-            "This part is about closing that gap. By the end of this post you will know where the SMART "
+            "This part is about closing that gap. After this post, you will know where the SMART "
             "checklist came from, the difference between an output and an outcome, and a five-part pattern "
             "for objectives that tell everyone what success looks like before the work begins.",
             ("photo", "blog/pm-objective-parts.jpg", "A useful objective has five parts: the outcome, how it "
@@ -2380,9 +2374,9 @@ PM_POSTS = [
             "The clerk plans both the same way, with every task written out in advance. The first project "
             "runs smoothly. The second produces a carefully built screen that the counter staff find "
             "confusing on the first morning they use it, and most of the plan has to be redone.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(Everyone and everything in this story is fictional, including the numbers. No real "
             "town or employee is described.)",
-            "The problem was not the plan. It was the choice of approach. By the end of this post you will "
+            "The problem was not the plan. It was the choice of approach. Read to the end and you will "
             "know the difference between the predictive, adaptive and hybrid ways of running a project, the "
             "questions that tell you which one fits, and how to mix them on a real office project.",
             ("photo", "blog/pm-three-approaches.jpg", "Three ways to run a project: predictive (plan, then "
@@ -2508,10 +2502,10 @@ PM_POSTS = [
             "Each idea is reasonable. Each would take only “a little extra time.” Together, they could push the "
             "January deadline into March. The revenue clerk needs a clear way to say what the project includes, "
             "and a calm way to handle everything else.",
-            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "(The office and the people in this story are invented, and so are the figures. No real "
             "town or employee is described.)",
             "That clear way is the scope statement. In Part 2, the charter gave a short list of what was in and "
-            "out. The scope statement goes one level deeper: it names each deliverable, says how everyone will know it is done, and becomes the page everyone checks when a new idea arrives. By the end of this post you will have a five-part template, a filled-in example and a calm way to answer extra requests.",
+            "out. The scope statement goes one level deeper: it names each deliverable, says how everyone will know it is done, and becomes the page everyone checks when a new idea arrives. By the last section, you will have a five-part template, a filled-in example and a calm way to answer extra requests.",
             ("h", "Two Kinds of Scope"),
             "Project management guides separate two ideas that are easy to mix up.",
             ("point", "Product scope", "The features and functions of the result. For the encoding project: "
@@ -2634,12 +2628,10 @@ PM_POSTS = [
             "Nothing has gone wrong with the work. The encoding is on schedule. But someone with "
             "a great deal of power over the project was not on the clerk’s list, and now she must"
             " spend a day explaining instead of a minute informing.",
-            "(As in every part of this series, the office, the people and the numbers are made "
-            "up. No real town or employee is described.)",
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or employee is described.)",
             "This part is about avoiding that day. It is about stakeholders: the people and "
             "groups who can affect a project or are affected by it. Finding them early, and "
-            "deciding how to work with each one, is time well spent. By the end of this post, you"
-            " will be able to list a project's stakeholders, place them on a power and interest "
+            "deciding how to work with each one, is time well spent. By the end of this post, you will be able to list a project's stakeholders, place them on a power and interest "
             "grid, and plan how each one hears from you.",
             ("h", "Who Counts as a Stakeholder"),
             "It is tempting to think stakeholders are only the people who approve or pay for a "
@@ -2833,11 +2825,9 @@ PM_POSTS = [
             "Nobody in the room is being difficult. Each person simply remembers the assignment "
             "differently, because nobody ever wrote it down. The clerk now spends an hour "
             "defending decisions that were never really made.",
-            "(As in every part of this series, the office, the people and the numbers are made "
-            "up. No real town or employee is described.)",
+            "(The office and the people in this story are invented, and so are the figures. No real town or employee is described.)",
             "This is the problem a project charter solves. It is the first document of a project,"
-            " and in a small office it may be the only one you need. By the end of this post, you"
-            " will know the six parts of a one-page charter, see one written for a treasury "
+            " and in a small office it may be the only one you need. After this post, you will know the six parts of a one-page charter, see one written for a treasury "
             "project, and know how to handle changes without arguments.",
             ("h", "What a Project Charter Is"),
             "A project charter is a short, signed document that officially starts a project. It "
