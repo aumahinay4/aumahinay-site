@@ -14,6 +14,139 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "February 11, 2027",
+        "title": "Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong",
+        "slug": "project-management-part-19-risk-register",
+        "category": "pm",
+        "summary": "Every project has things that might go wrong. The difference is whether they are written "
+                   "down with an owner and a plan before they happen. This part builds a risk register for a "
+                   "treasury project, scores each risk, and explains the four classic ways to respond.",
+        "publish_on": "2027-02-11 21:00",
+        "body": [
+            "During the first round of notices, three things went wrong. The legal "
+            "review came back late. A batch of notices had to be reprinted. A collector was out sick during "
+            "delivery. Each problem was handled, but each one was handled as a surprise, in a hurry, by "
+            "whoever happened to be there.",
+            "Looking back, none of them was truly unexpected. Anyone on the team could have named all three "
+            "before the project started. Nobody had asked.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Parts 15 to 18 kept pointing to risks: uncertain estimates, near-critical paths, contingency "
+            "reserves and single points of failure. This part gathers them in one place. By the end of this "
+            "post you will know how to write a risk clearly, score it, choose a response, give it an owner "
+            "and a trigger, and keep the register alive while the project runs.",
+            ("photo", "blog/pm-risks.jpg", "The risk register: each risk written clearly, scored, given an "
+             "owner, a response and a trigger. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Risk Is, and What It Is Not"),
+            "A risk is something uncertain that, if it happens, would affect the project. It has not happened "
+            "yet, and it might not happen at all.",
+            ("point", "A risk", "“The legal review may take longer than a week.” Uncertain, and in the future."),
+            ("point", "An issue", "“The legal review is late.” It has already happened, and now it needs "
+             "action, not a probability."),
+            ("point", "A fact", "“The office has one printer.” Not uncertain. It is a constraint to plan "
+             "around, though it can cause risks."),
+            "Keeping these apart keeps the register useful. A risk that happens becomes an issue and moves "
+            "into the weekly update from Part 11.",
+            ("quote", "A risk written down is a problem you can still prepare for."),
+            ("h", "Writing a Risk Clearly"),
+            "A vague risk such as “printing problems” is hard to act on. A clearer form names the cause, the "
+            "event and the effect.",
+            ("point", "The pattern", "Because of a cause, an event may happen, which would lead to an effect."),
+            ("point", "Example", "Because the notices are filled in from a list that was edited by hand, "
+             "some printed notices may show wrong amounts, which would mean reprinting and a delay of up to "
+             "two days."),
+            "Written this way, the cause points to prevention, and the effect points to how much it matters.",
+            ("h", "Finding the Risks"),
+            ("point", "Ask the team", "The people doing the work know what has gone wrong before. Ask each "
+             "of them, as in Part 15."),
+            ("point", "Read the last project", "Look at how the first round actually went, as Part 15 did."),
+            ("point", "Walk the schedule", "Go through each package in the critical path from Part 16 and "
+             "ask what could delay it."),
+            ("point", "Check the people", "The resource grid from Part 18 shows who is overloaded or "
+             "irreplaceable."),
+            ("h", "Scoring: Probability and Impact"),
+            "Not every risk deserves the same attention. A simple score helps decide where to look first.",
+            ("point", "Probability", "How likely is it? Low, medium or high, scored 1, 2 or 3."),
+            ("point", "Impact", "If it happens, how much would it hurt the date, the cost or the quality? "
+             "Low, medium or high, scored 1, 2 or 3."),
+            ("point", "Score", "Probability times impact, from 1 to 9. Write down what each level means for "
+             "this project, so two people score the same risk the same way."),
+            "The score is a way to sort the list, not a precise measurement. Its main job is to start a "
+            "conversation about which risks matter most.",
+            ("h", "Four Ways to Respond to a Threat"),
+            "PMI’s PMBOK Guide describes several responses to threats. This post uses these four.",
+            ("point", "Avoid", "Change the plan so the risk cannot happen or cannot affect the project. If "
+             "mailing notices risks delays in the post, delivering by hand avoids that risk."),
+            ("point", "Mitigate", "Reduce the probability or the impact. Checking a sample of the first "
+             "printed batch before printing the rest keeps an error from reaching every notice."),
+            ("point", "Transfer", "Shift the impact to someone else, for example by contract. If an outside "
+             "supplier printed the notices, a term requiring it to redo faulty prints at its own cost would "
+             "transfer that cost. Transfer does not remove the risk itself."),
+            ("point", "Accept", "Acknowledge the risk and take no special action, or set money or time aside "
+             "in case it happens, like the contingency reserve in Part 17."),
+            "Every response has a cost. Mitigating a low-score risk can cost more than the risk would. "
+            "Accepting a high-score risk without a plan can be a decision nobody meant to make.",
+            ("h", "Owners and Triggers"),
+            ("point", "One owner per risk", "The person who watches it and starts the response. A good choice is the owner of the package it affects."),
+            ("point", "A trigger", "A sign that the risk is about to happen or has started. “No comments from "
+             "the legal adviser by day 8” is a trigger. When it fires, the owner acts without waiting for a "
+             "meeting."),
+            ("h", "The Notices Project Risk Register"),
+            ("point", "R1. Legal review runs late", "Because the legal adviser serves other offices, the review "
+             "may take more than a week, which would delay the critical path. Probability 2, impact 3, score 6. "
+             "Response: mitigate by having the clerk draft it on days 3 to 5 and send it on day 5, as planned in Part 18, and by agreeing the review "
+             "date in advance. Owner: the clerk. Trigger: no comments by day 8."),
+            ("point", "R2. Wrong amounts on printed notices", "Probability 2, impact 2, score 4. Response: "
+             "mitigate by checking a random sample of the first printed batch before printing the rest, as "
+             "in Part 17 of the Data Analytics series, and accept the rest with the ₱1,000 reprint reserve. Owner: the clerk. "
+             "Trigger: any error found in the sample."),
+            ("point", "R3. The clerk is absent", "Because the clerk holds several packages, an absence would "
+             "stop critical work. Probability 1, impact 3, score 3. Response: mitigate by having a second "
+             "person shadow the filling of notices, as in Part 18. Owner: the head of office."),
+            ("point", "R4. Hard-to-find households", "Probability 3, impact 1, score 3. Response: accept, with "
+             "the ₱1,500 reserve for extra trips from Part 17. Owner: Collector Reyes. Trigger: more than ten "
+             "notices returned in one week."),
+            ("point", "R5. The printer breaks down", "Probability 1, impact 2, score 2. Response: mitigate by "
+             "agreeing in advance to borrow another office’s printer if needed. Owner: the clerk."),
+            "Sorted by score, the register puts the legal review at the top. That matches what Part 16 found: "
+            "the template, not the list, sets the finish date.",
+            ("h", "Keeping the Register Alive"),
+            ("point", "Review it weekly", "Five minutes in the weekly update: any new risks, any scores that "
+             "changed, any triggers that fired."),
+            ("point", "Close what has passed", "Once printing is done, R2 and R5 can be closed."),
+            ("point", "Move what happened", "A risk that happens becomes an issue, with its response already "
+             "written."),
+            ("point", "Record the lessons", "At the end, note which risks happened and whether the responses "
+             "worked. The next project’s register starts from that."),
+            ("h", "The Second Round, With a Register"),
+            "This time, the register was tested twice. The legal adviser was called away for two days, but the trigger fired on day 8, the clerk called the adviser’s office the same morning, and the comments arrived on day 10, still on time. Then a sample check of the first printed batch found wrong amounts before the rest were printed, so only part of that batch was reprinted: the ₱800 reprint described in Part 17, the one risk that drew on the budget.",
+            "Neither problem became a surprise, and the project finished inside its schedule and its budget.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Vague risks", "Name the cause, the event and the effect."),
+            ("point", "Risks without owners", "Every risk needs one person to watch it."),
+            ("point", "Writing it once", "Review the register every week."),
+            ("point", "Mixing risks and issues", "A risk might happen; an issue already has."),
+            ("h", "Key Takeaways"),
+            ("point", "Write it clearly", "Cause, event and effect."),
+            ("point", "Score it", "Probability times impact, to decide what to look at first."),
+            ("point", "Four responses", "Avoid, mitigate, transfer or accept."),
+            ("point", "Owner and trigger", "Someone watches, and a clear sign starts the response."),
+            ("h", "Your Part 19 Exercise"),
+            "Take the project you have been planning through this series.",
+            ("point", "List five risks", "Ask the people doing the work, and write each as cause, event and "
+             "effect."),
+            ("point", "Score and respond", "Give each a probability, an impact and one of the four responses."),
+            ("point", "Name owners and triggers", "One person and one clear sign for each."),
+            "Then compare your top risk with your critical path. If they are in different places, ask whether "
+            "you are watching the right part of the project.",
+            ("cta", "Read: Project Management Series, Part 18", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 17", "/blog/project-management-part-17-project-budget/"),
+            ("cta", "Read: Project Management Series, Part 16", "/blog/project-management-part-16-critical-path/"),
+            ("cta", "Read: Data Analytics Series, Part 17", "/blog/data-analytics-part-17-samples-margin-of-error/"),
+            ("ask", "Which risk in your current project has everyone noticed but nobody written down?"),
+        ],
+    },
+    {
         "date": "February 6, 2027",
         "title": "Project Management Series, Part 18: Assigning People Without Overloading Them",
         "slug": "project-management-part-18-resource-allocation",
