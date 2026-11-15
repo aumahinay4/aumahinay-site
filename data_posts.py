@@ -12,6 +12,133 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 21, 2027",
+        "title": "Data Analytics Series, Part 15: Naming, Versions and Backups, Keeping Data Files Safe",
+        "slug": "data-analytics-part-15-naming-versions-backups",
+        "category": "data",
+        "summary": "“Final,” “final2” and “final-REAL” are how good analysis gets lost. This part gives simple "
+                   "rules for naming data files, keeping versions you can trust, and backing them up with the "
+                   "3-2-1 rule, so you can find, and trust, the right file.",
+        "publish_on": "2027-01-21 21:00",
+        "body": [
+            "The analyst needs last quarter’s cleaned collections file. The shared folder holds "
+            "“collections.xlsx,” “collections final.xlsx,” “collections final2.xlsx,” “collections final "
+            "USE THIS.xlsx” and “Copy of collections final2.xlsx.” Each one has slightly different totals. "
+            "The person who made them has since moved to another office.",
+            "Then the computer that held the only other copy stops starting up. The cleaned file the head of "
+            "office approved is somewhere in that folder, or it is gone.",
+            "Nothing in the analysis was wrong. The problem was how the files were named, saved and copied.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 14 showed how to organize data inside a database. This part is about the files themselves. "
+            "By the end of this post you will know a naming pattern that sorts itself, a simple way to keep "
+            "versions, the 3-2-1 backup rule, and how to test that a backup actually works.",
+            ("photo", "blog/data-file-safety.jpg", "Keeping data files safe: clear names, numbered versions, "
+             "three copies and a restore test. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Names That Sort Themselves"),
+            "A good file name tells you what is inside before you open it, and puts related files in a useful "
+            "order when sorted by name.",
+            ("point", "Date first, year-month-day", "Write dates as 2026-10-31, not 10-31-2026 or Oct 31. "
+             "Written this way, files sort in calendar order by name alone, and nobody wonders whether 10-11 "
+             "means October 11 or November 10. This order follows the ISO 8601 date standard."),
+            ("point", "Then what it is", "A short, plain description: collections-q3, rpt-delinquent-list, "
+             "business-permits."),
+            ("point", "Then the stage", "raw, clean or report, so nobody mistakes an untouched export for a "
+             "checked file."),
+            ("point", "Then the version", "v01, v02, v03, with a leading zero so v10 sorts after v09."),
+            ("point", "No spaces or special characters", "Use hyphens or underscores. Some systems and "
+             "scripts handle spaces, slashes and symbols poorly."),
+            "Put together: 2026-09-30_collections-q3_clean_v03.xlsx. Anyone in the office can tell what it "
+            "is, when it is from and which version it is.",
+            ("quote", "A file name is the first line of documentation."),
+            ("h", "Versions You Can Trust"),
+            "A file called “final” can still change the next day. Numbered versions are easier to follow.",
+            ("point", "Raw stays raw", "Keep the original export untouched, named with the stage raw. All "
+             "cleaning happens on copies. If a cleaning step goes wrong, you can start again from the raw "
+             "file."),
+            ("point", "Number every saved change", "When a change matters, save as the next version number "
+             "instead of overwriting. Old versions stay available if a question comes up."),
+            ("point", "Keep a short change log", "Add a sheet or a text file that lists each version, the "
+             "date, who made it and what changed: “v03: removed 12 duplicate receipts, fixed barangay codes.”"),
+            ("point", "Mark the approved one", "When the head of office approves a version, write that in the "
+             "change log with the date. The approved version is a fact, not a guess based on the file name."),
+            "Google Sheets files, and Excel files stored in OneDrive or SharePoint, keep a version "
+            "history of their own, which helps. It does not replace clear names and a change log, because it records when a "
+            "file changed, not why.",
+            ("h", "Inside the File: Sheets and Columns"),
+            "Good names matter inside the file too, not only on the file itself.",
+            ("point", "Name every sheet", "Replace Sheet1 and Sheet2 with names such as Receipts, Lists, Notes "
+             "and Summary, so formulas that point to them are easier to read."),
+            ("point", "Name columns plainly", "Use short, clear headers such as receipt_no, date, barangay and "
+             "amount. Avoid headers that only make sense to the person who wrote them."),
+            ("point", "Keep the change log inside", "A sheet called Changes, at the end of the workbook, "
+             "travels with the file wherever it is copied."),
+            ("point", "Note the source", "On the Notes sheet, write where the raw data came from and the date "
+             "it was exported, so the next person can trace it back."),
+            ("h", "One Home for Each File"),
+            ("point", "One shared folder", "Agree on one folder where the working files live, not on "
+             "anyone’s desktop or phone."),
+            ("point", "A simple folder layout", "For example: one folder per year, and inside it raw, clean "
+             "and reports."),
+            ("point", "Office accounts", "Keep shared files in an account that belongs to the office, so they "
+             "stay when someone transfers or retires."),
+            ("point", "Access to match the data", "Files with taxpayer names and amounts carry personal "
+             "information. Share them only with the people who need them, as discussed in Part 6."),
+            ("h", "The 3-2-1 Backup Rule"),
+            "A well-known rule for backups, often credited to photographer Peter Krogh and adopted in "
+            "guidance from the U.S. Cybersecurity and Infrastructure Security Agency, has three parts.",
+            ("point", "3 copies", "Keep at least three copies of data that matters: the working copy and two "
+             "backups."),
+            ("point", "2 kinds of storage", "Keep the copies on at least two different kinds of storage, such "
+             "as the office computer and an external drive, or a drive and a cloud account."),
+            ("point", "1 copy elsewhere", "Keep at least one copy away from the office, or in a separate "
+             "account, so a fire, flood or theft does not take every copy at once."),
+            "For a small treasury office, this can be as simple as the working files in the shared folder, a "
+            "weekly copy to an external drive kept in a locked cabinet, and a copy in a separate cloud account "
+            "that belongs to the office. Ask your IT staff or data protection officer which services the "
+            "office is allowed to use for personal data.",
+            ("h", "Test the Restore, Not Just the Backup"),
+            "A backup you have never restored is a hope, not a backup. Once a month, try it.",
+            ("point", "Pick one file", "Choose a file at random from the backup."),
+            ("point", "Restore it to a new place", "Copy it back to a test folder, never over the working "
+             "copy."),
+            ("point", "Open and check", "Does it open? Do its totals match the change log?"),
+            ("point", "Write it down", "Note the date and the result. If the restore failed, fix the backup "
+             "before you need it."),
+            ("h", "The Collections Folder, Cleaned Up"),
+            "The analyst gathered the five files, compared their totals with the approved report, and found "
+            "that “collections final2.xlsx” matched. It was renamed 2026-09-30_collections-q3_clean_v02.xlsx, "
+            "with a change log entry noting the approval date. The other files went into an archive folder "
+            "with their own version numbers, instead of being deleted.",
+            "The office then set up the 3-2-1 copies and a monthly restore test on the first working day of "
+            "each month.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "“Final” in the name", "Use version numbers, and record approval in the change log."),
+            ("point", "Overwriting the raw export", "Clean a copy. Keep the original as it arrived."),
+            ("point", "Backups in the same place", "A copy on the same computer is lost with the computer."),
+            ("point", "Never testing", "Restore a file each month to prove the backup works."),
+            ("h", "Key Takeaways"),
+            ("point", "Names that sort", "Date first, then what, then stage, then version."),
+            ("point", "Versions with a log", "Number each change and write down why."),
+            ("point", "3-2-1", "Three copies, two kinds of storage, one elsewhere."),
+            ("point", "Test the restore", "A backup counts only if it can be opened."),
+            ("h", "Your Part 15 Exercise"),
+            "Open the folder where your office keeps its most important data file.",
+            ("point", "Count the copies", "How many versions of the same file are there, and can you tell "
+             "which one was approved?"),
+            ("point", "Rename one", "Rename the approved version using the date, what, stage and version "
+             "pattern, and start a change log."),
+            ("point", "Check 3-2-1", "Count the copies of that file and where they are kept."),
+            "Then restore one backup copy to a test folder and open it. If you cannot, you have found the most "
+            "important task for this week.",
+            ("cta", "Read: Data Analytics Series, Part 14", "/blog/data-analytics-part-14-databases-101/"),
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("cta", "Read: Business Intelligence Series, Part 10", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("ask", "How many copies of your office’s most important data file exist, and where are they?"),
+        ],
+    },
+    {
         "date": "January 16, 2027",
         "title": "Data Analytics Series, Part 14: Databases 101, Tables, Primary Keys and Foreign Keys",
         "slug": "data-analytics-part-14-databases-101",

@@ -13,6 +13,138 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "January 20, 2027",
+        "title": "Business Intelligence Series, Part 15: Star or Snowflake? Shaping Dimensions for a Treasury Model",
+        "slug": "business-intelligence-part-15-star-or-snowflake",
+        "category": "bi",
+        "summary": "When a dimension has levels inside it, such as revenue accounts grouped into kinds of tax, "
+                   "you can keep it in one table or split it into several. This part explains star and "
+                   "snowflake designs in plain words, what each costs, and how to choose for a treasury model.",
+        "publish_on": "2027-01-20 21:00",
+        "body": [
+            "The analyst is extending the collections model from Part 5. The revenue account table has grown: "
+            "each account now belongs to a group, such as real property tax or business tax, and each group "
+            "belongs to a wider class, such as tax revenue or non-tax revenue.",
+            "A colleague who studied databases suggests splitting it into three tables: accounts, groups and "
+            "classes, each linked to the next. “That way each group name is stored only once.” Another "
+            "colleague, who builds the dashboards, prefers one table with all three levels side by side. "
+            "“That way the dashboard has fewer tables to join.”",
+            "Both are describing real designs. The first is a snowflake. The second is a star.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 14 built the date table, one of the dimensions in the model. This part looks at dimensions "
+            "that have levels inside them. By the end of this post you will know what makes a design a star or "
+            "a snowflake, the trade-offs of each, and a simple way to decide which one to use.",
+            ("photo", "blog/bi-star-snowflake.jpg", "Star and snowflake: the same revenue account levels kept "
+             "in one table, or split into a chain of linked tables. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "A Quick Reminder: Facts and Dimensions"),
+            "In Part 5, the collections model had one fact table in the middle, holding the amounts, and "
+            "dimension tables around it for date, collector, barangay and revenue account. Each dimension was "
+            "a single table linked directly to the facts. That shape is a star schema.",
+            "The question now is what to do when a dimension has its own levels. Accounts sit inside groups, "
+            "and groups sit inside classes. Barangays may sit inside districts. Where should those levels "
+            "live?",
+            ("h", "The Snowflake: Each Level in Its Own Table"),
+            "Microsoft’s Power BI guidance describes a snowflake dimension as a set of normalized tables for a "
+            "single business entity. In plain words: one dimension, split into a chain of tables, one per "
+            "level.",
+            ("point", "Accounts table", "Account code, account title and a group code."),
+            ("point", "Groups table", "Group code, group name such as “Real property tax,” and a class code."),
+            ("point", "Classes table", "Class code and class name such as “Tax revenue.”"),
+            "Drawn out, the chain branches away from the fact table like the arms of a snowflake, which is "
+            "where the name comes from.",
+            ("h", "The Star: All Levels in One Table"),
+            "In a star design, the same information sits in a single, wider dimension table. Each account row "
+            "carries its own group name and class name.",
+            ("point", "Accounts table", "Account code, account title, group name and class name, all on one "
+             "row."),
+            "The group name “Real property tax” now appears on every account row in that group. That is "
+            "repetition, but it is repetition inside a small dimension table, rebuilt from one source.",
+            ("quote", "A snowflake saves repetition. A star saves steps."),
+            ("h", "What Each Design Costs"),
+            ("point", "Snowflake: less repetition", "Each group and class name is stored once. Renaming a "
+             "group means changing one row."),
+            ("point", "Snowflake: more steps", "Microsoft’s guidance notes that mimicking a snowflake in a "
+             "Power BI model loads more tables, which is less efficient for storage and performance, and that "
+             "filters must travel along longer chains of relationships."),
+            ("point", "Snowflake: harder to read", "Report builders see more tables, some with only one or two "
+             "columns, which the same guidance says can be a less intuitive experience."),
+            ("point", "Star: simpler to use", "One table per dimension. The same guidance notes that a single "
+             "table lets you build a hierarchy from the highest to the lowest level, such as class, then "
+             "group, then account."),
+            ("point", "Star: some repeated text", "Group and class names repeat on many rows, which can add to "
+             "storage size when the dimension is large."),
+            "Microsoft’s summary for Power BI is that, generally, the benefits of a single model table "
+            "outweigh the benefits of multiple model tables, and that the best decision can depend on data "
+            "volumes and how the model will be used.",
+            ("h", "Where Each One Fits"),
+            ("point", "In the source system", "The system where data is entered can keep levels in separate "
+             "tables, so a group name is edited in one place. That is the database habit from Part 14 of the "
+             "Data Analytics series."),
+            ("point", "In the reporting model", "When the data is loaded for dashboards, the levels can be "
+             "combined into one dimension table, so readers and report builders deal with fewer tables."),
+            "These are not in conflict. A practical approach is to keep the source tidy and split, then "
+            "flatten the dimensions during the loading step from Part 7. The pipeline does the joining once, so every "
+            "dashboard does not have to.",
+            ("h", "When a Separate Table Still Helps"),
+            "Flattening is not always the right call, even in the reporting model.",
+            ("point", "A level with its own details", "If each revenue group has its own target, owner and "
+             "notes, a separate groups table can hold them without repeating them on every account row."),
+            ("point", "A level shared by several dimensions", "If both accounts and budget lines use the same "
+             "list of classes, one shared classes table keeps them consistent."),
+            "In those cases, test both designs with the real dashboard before deciding.",
+            ("h", "Flattening a Snowflake, Step by Step"),
+            ("point", "1. Start with the lowest level", "Take the accounts table: one row per account."),
+            ("point", "2. Bring in the next level", "Look up each account’s group code in the groups table "
+             "and add the group name as a new column."),
+            ("point", "3. Repeat upward", "Look up each group’s class and add the class name."),
+            ("point", "4. Check the row count", "The result must have exactly as many rows as the accounts "
+             "table. More rows mean a code matched twice; fewer mean a code did not match at all."),
+            ("point", "5. Check for blanks", "Any blank group or class name points to an account whose code "
+             "is missing from the next table. Fix the source, not the dashboard."),
+            ("h", "The Collections Model, Decided"),
+            "The office kept the three tables in the source spreadsheet, where the revenue unit maintains "
+            "them. In the pipeline, it flattened them into one revenue account dimension with three columns: "
+            "class, group and account. The dashboard gained a drill path from class to group to account, the "
+            "kind of path planned in Part 13, without any extra joins in the dashboard itself.",
+            ("h", "Test Before You Share"),
+            ("point", "Same totals", "Collections by class, by group and by account must all add up to the "
+             "same grand total."),
+            ("point", "No orphans", "Every account in the fact table must appear in the dimension, with a "
+             "group and a class."),
+            ("point", "Rename test", "Change one group name in the source, run the pipeline, and confirm the "
+             "new name appears on every account in that group."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Splitting everything by habit", "A level with one or two columns may not need its own "
+             "table in the reporting model."),
+            ("point", "Flattening without checking", "Count the rows before and after. A duplicate code can "
+             "multiply rows quietly."),
+            ("point", "Editing the flattened table", "Make changes in the source tables and let the pipeline "
+             "rebuild the dimension."),
+            ("point", "Mixing levels in one column", "Keep class, group and account in separate columns, so "
+             "each can be filtered on its own."),
+            ("h", "Key Takeaways"),
+            ("point", "Star", "Each dimension is one table linked directly to the facts."),
+            ("point", "Snowflake", "A dimension split into a chain of tables, one per level."),
+            ("point", "Trade-off", "A snowflake saves repetition; a star is simpler and quicker to use."),
+            ("point", "Both in their place", "Keep the source split if it helps, and flatten for reporting."),
+            ("h", "Your Part 15 Exercise"),
+            "Pick one dimension in your office’s data that has levels, such as revenue accounts, barangays or "
+            "offices.",
+            ("point", "List the levels", "Write them from the widest to the narrowest."),
+            ("point", "Draw both designs", "Sketch it once as a chain of tables and once as a single table."),
+            ("point", "Flatten a sample", "Take ten rows and build the single table by hand, then check the "
+             "row count."),
+            "Then ask the person who builds your reports which version they would rather work with, and why.",
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Business Intelligence Series, Part 14", "/blog/business-intelligence-part-14-the-date-table/"),
+            ("cta", "Read: Business Intelligence Series, Part 7", "/blog/business-intelligence-part-7-etl-or-elt/"),
+            ("cta", "Read: Data Analytics Series, Part 14", "/blog/data-analytics-part-14-databases-101/"),
+            ("ask", "Which dimension in your office’s data has levels that nobody has written down?"),
+        ],
+    },
+    {
         "date": "January 15, 2027",
         "title": "Business Intelligence Series, Part 14: The Date Table, a Calendar Your Dashboard Can Count On",
         "slug": "business-intelligence-part-14-the-date-table",

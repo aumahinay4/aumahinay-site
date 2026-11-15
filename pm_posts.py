@@ -14,6 +14,135 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "January 22, 2027",
+        "title": "Project Management Series, Part 15: Why Estimates Run Short, and Four Ways to Fix Them",
+        "slug": "project-management-part-15-estimating-time",
+        "category": "pm",
+        "summary": "People tend to underestimate how long their own work will take, even when they know their "
+                   "past projects ran late. This part explains why, then gives four practical fixes: ask the "
+                   "doer, estimate from the WBS, compare with the past, and use three-point estimates.",
+        "publish_on": "2027-01-22 21:00",
+        "body": [
+            "The revenue clerk looks at the work breakdown structure for the notices project and fills in the "
+            "estimates quickly. Checking the account list: two days. Notice template: one day. Printing: one "
+            "day. Delivery: a week. Six weeks in total looks generous, and the head of office is pleased.",
+            "Eight weeks later, the notices are still being delivered. Nothing dramatic went wrong. The list "
+            "took longer to check because some ledger cards were unclear. The legal review came back with "
+            "changes. Two collectors were pulled to the counter during a busy week. Each delay was small. "
+            "Together they used up the whole margin and more.",
+            "The clerk is not careless. Underestimating one’s own work is a well-studied human tendency, "
+            "and it has a name.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Part 14 broke the project into work packages. This part puts time on them. By the end of this "
+            "post you will know why estimates tend to run short, four ways to make them better, and how to "
+            "present an estimate honestly to a sponsor.",
+            ("photo", "blog/pm-estimates.jpg", "Four ways to better estimates: ask the doer, build from the "
+             "WBS, compare with the past and use three points. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "The Planning Fallacy"),
+            "Psychologists Daniel Kahneman and Amos Tversky coined the term “planning fallacy” in 1979 for "
+            "the tendency to underestimate how long a task will take. Later studies by Roger Buehler and his "
+            "colleagues found a telling pattern in university students: they admit that past assignments were "
+            "finished close to the deadline, yet they expect to finish the next one well ahead of it.",
+            "Part of the reason is where attention goes. When we picture a task, we picture it going "
+            "smoothly: the steps we know, done one after another. The interruptions, the rework and the "
+            "waiting for other people are hard to picture in advance, so they are left out of the estimate.",
+            ("quote", "An estimate pictures the plan. The calendar meets the real week."),
+            ("h", "Fix 1: Ask the Person Who Will Do the Work"),
+            "The clerk estimated the delivery from the office. The collectors who deliver notices know how far "
+            "the farthest barangays are, which households are hard to find, and which days the roads are "
+            "worse.",
+            ("point", "Ask, do not tell", "Instead of “Can you finish delivery in a week?”, ask “How long would "
+             "delivery take you?” The first question invites a yes."),
+            ("point", "Ask about the last time", "“How long did it take last time?” is easier to answer "
+             "honestly than a guess about the future."),
+            ("point", "Ask what could slow it", "Each answer is a risk to write down."),
+            ("h", "Fix 2: Estimate From the Work Packages"),
+            "A single estimate for the whole project hides its parts. An estimate built from each work "
+            "package in the WBS from Part 14 is easier to check, because each piece is small enough to "
+            "picture.",
+            ("point", "Estimate each package", "Write a time beside every work package, not just beside the "
+             "main deliverables."),
+            ("point", "Include the small things", "Approvals, reviews, waiting for signatures and the weekly "
+             "updates take time too."),
+            ("point", "Effort is not duration", "Two days of work done two afternoons a week takes two weeks "
+             "on the calendar. Estimate the work, then place it on the calendar based on when people are "
+             "actually free."),
+            ("h", "Fix 3: Compare With the Past"),
+            "Kahneman later described a remedy he called the outside view: before trusting your own plan, "
+            "look at how long similar projects actually took.",
+            ("point", "Find a comparable project", "Last year’s notices, a past collection drive, any "
+             "project with similar steps."),
+            ("point", "Look at the actual dates", "Not the planned ones. Emails, logbooks and the tracker "
+             "from Part 12 can show when things really finished."),
+            ("point", "Adjust for differences", "More accounts, fewer staff or a new step all change the "
+             "number. Start from the past, then adjust."),
+            "If past projects of this kind ran about a third over their plan, an estimate that assumes this "
+            "one will not deserves a second look.",
+            ("h", "Fix 4: Use Three Points, Not One"),
+            "A single number hides how uncertain it is. A three-point estimate asks for three numbers for each "
+            "work package.",
+            ("point", "O, optimistic", "How long it takes if things go well."),
+            ("point", "M, most likely", "How long it takes in a normal week."),
+            ("point", "P, pessimistic", "How long it takes if the likely problems happen."),
+            "Two common ways to combine them are a simple average, (O + M + P) ÷ 3, and the PERT or beta "
+            "formula, (O + 4M + P) ÷ 6, which gives the most likely value more weight.",
+            ("point", "Example", "Checking the account list: optimistic 2 days, most likely 4, pessimistic 9. "
+             "The simple average is 5 days. The PERT formula gives (2 + 16 + 9) ÷ 6 = 4.5 days. Either is "
+             "very different from the 2 days the clerk first wrote."),
+            "The gap between O and P is useful by itself. A wide gap marks a package that needs attention, a "
+            "risk owner, or a closer look before the plan is approved.",
+            ("h", "Watch Out for the First Number"),
+            "Tversky and Kahneman also described anchoring: estimates tend to stay close to a starting number, "
+            "even when that number is arbitrary. In a project, the anchor can be the deadline someone "
+            "mentioned first.",
+            ("point", "Estimate before you hear the deadline", "Ask the team for estimates before telling them "
+             "the date the sponsor hopes for."),
+            ("point", "Write it down first", "Have each person write their estimate privately, then compare, "
+             "so the first voice in the room does not set the number for everyone."),
+            ("h", "Presenting an Estimate Honestly"),
+            ("point", "Give a range", "“Eight to ten weeks, most likely nine” is more honest than “six weeks,” "
+             "and it helps the sponsor plan."),
+            ("point", "Say what it depends on", "“Assuming the legal review takes no more than a week and two "
+             "collectors are available on Tuesdays and Thursdays.”"),
+            ("point", "Do not trade accuracy for approval", "A short estimate can win a quick yes and still "
+             "lead to a missed date. A realistic one protects everyone."),
+            ("point", "Update it", "As packages finish, replace estimates with actual times and revise the "
+             "rest."),
+            ("h", "The Notices Project, Estimated Again"),
+            "For the next round of notices, the clerk asked each collector for their own estimate, built the "
+            "total from the work packages, compared it with how the first round actually went, and used three "
+            "points for the packages with the most uncertainty. The result was a range of eight to ten weeks.",
+            "The head of office was less pleased at first. But the notices went out in nine weeks, inside the "
+            "range, and the plan held without a single extension request.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Estimating for someone else", "The person doing the work should help estimate it."),
+            ("point", "One number for everything", "Estimate each package, and show a range for the total."),
+            ("point", "Forgetting the waiting", "Reviews, approvals and signatures take calendar time."),
+            ("point", "Never comparing with actuals", "Record how long things really took, so the next "
+             "estimate starts from facts."),
+            ("h", "Key Takeaways"),
+            ("point", "We tend to underestimate", "The planning fallacy affects careful people too."),
+            ("point", "Four fixes", "Ask the doer, build from the WBS, compare with the past, use three "
+             "points."),
+            ("point", "Effort is not duration", "Place the work on the calendar people actually have."),
+            ("point", "Present a range", "With the assumptions written beside it."),
+            ("h", "Your Part 15 Exercise"),
+            "Take the work breakdown structure from your Part 14 exercise, or any plan you are working on.",
+            ("point", "Ask", "For three work packages, ask the person doing the work for their estimate."),
+            ("point", "Three points", "Write O, M and P for each, and work out the PERT value."),
+            ("point", "Compare", "Find one past project with similar steps and note how long it actually took."),
+            "Then compare your new total with your first guess. The difference is a measure of how much the "
+            "planning fallacy was shaping your plan.",
+            ("cta", "Read: Project Management Series, Part 14", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("cta", "Read: Project Management Series, Part 12", "/blog/project-management-part-12-choosing-pm-software/"),
+            ("cta", "Read: Project Management Series, Part 10", "/blog/project-management-part-10-business-case/"),
+            ("cta", "Read: Data Analytics Series, Part 13", "/blog/data-analytics-part-13-bias-in-data/"),
+            ("ask", "Which task in your office always takes longer than anyone plans for?"),
+        ],
+    },
+    {
         "date": "January 17, 2027",
         "title": "Project Management Series, Part 14: The Work Breakdown Structure, One Bite at a Time",
         "slug": "project-management-part-14-work-breakdown-structure",
