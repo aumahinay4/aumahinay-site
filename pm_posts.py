@@ -14,6 +14,136 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "March 3, 2027",
+        "title": "Project Management Series, Part 23: Quality Planning, Deciding What Good Enough Means",
+        "slug": "project-management-part-23-quality-planning",
+        "category": "pm",
+        "summary": "Quality is easier to plan than to inspect at the end. This part shows how to write what "
+                   "“good” means for each deliverable, decide how and when it will be checked, weigh what "
+                   "quality costs against what mistakes cost, and fit the checks into the schedule.",
+        "publish_on": "2027-03-03 21:00",
+        "body": [
+            "In the last round of notices, a sample check caught wrong amounts on part of the first printed "
+            "batch. Only that part had to be reprinted, for ₱800, and the project still stayed within its budget. "
+            "Everyone agreed the check had saved the round.",
+            "At the planning meeting for next year, the clerk asked a harder question. “The check found the "
+            "mistakes. What made them?” The answer was in the risk register from Part 19: the notices were "
+            "filled in from a list that had been edited by hand. The check was good. Not needing it would "
+            "have been better.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Parts 14 to 22 planned the work, time, money, risks and purchases. This part plans quality. By "
+            "the end of this post you will know what quality means in a project, how to write a standard for "
+            "each deliverable, how to choose the right check, what the cost of quality is, and how to put "
+            "quality work into the schedule and the budget.",
+            ("photo", "blog/pm-quality.jpg", "Quality planning: define good for each deliverable, prevent "
+             "errors at the source, check at the right point, and record the result. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Quality Means in a Project"),
+            "In this series, quality means that a deliverable meets the requirements agreed at the start. It "
+            "does not mean the most expensive version, or perfection. A notice printed on heavy paper with a "
+            "color seal is not better quality if the amount on it is wrong.",
+            ("point", "Good enough, written down", "Every deliverable needs a short statement of what “good” "
+             "means, agreed with the sponsor before the work begins."),
+            ("point", "Measurable", "“Accurate” is a wish. “The amount on each notice matches the ledger to "
+             "the centavo” can be checked."),
+            ("point", "Linked to requirements", "The standards come from the requirements gathered in Part 9, "
+             "not from the team’s taste."),
+            ("quote", "Decide what good looks like while it is still cheap to change."),
+            ("h", "Prevention Before Inspection"),
+            "The quality pioneer W. Edwards Deming put it as the third of his fourteen points for management, "
+            "in his book Out of the Crisis: cease dependence on inspection to achieve quality, and build "
+            "quality into the product in the first place.",
+            "For the notices, inspection had found the wrong amounts. Prevention meant removing the reason "
+            "they appeared. The clerk proposed filling the notices directly from the ledger export, with no "
+            "hand-edited list in between. The sample check stayed, but its job changed from catching "
+            "expected errors to confirming that none were made.",
+            ("h", "Step 1: A Standard for Each Deliverable"),
+            "Go through the work breakdown structure from Part 14 and write one or two standards for each "
+            "deliverable. For the notices project:",
+            ("point", "The notice template", "Approved in writing by the legal adviser, with the legal basis "
+             "and the payment deadline stated."),
+            ("point", "Each printed notice", "Name, address and barangay match the taxpayer record; the amount "
+             "matches the ledger to the centavo; the notice is signed."),
+            ("point", "Delivery", "Each notice is either received, with a signature or a recorded refusal, or "
+             "listed as undelivered with a reason."),
+            ("point", "The envelopes", "The specification from Part 22: size, color and quantity, checked on "
+             "delivery."),
+            ("h", "Step 2: Choose the Check"),
+            "A standard needs a check that tells you whether it was met. For each one, decide how, how much, "
+            "by whom and when.",
+            ("point", "Every item, or a sample", "Amounts can be compared for all 1,800 notices by a formula, "
+             "matching each notice’s amount against the ledger. Signatures are checked by eye, so a sample "
+            "of each batch is practical."),
+            ("point", "By someone else", "A second person does the check, so it does not depend on the person "
+             "who prepared the work reading it again with the same eyes."),
+            ("point", "As early as possible", "Check the first batch before printing the rest, and the "
+             "template before filling any notice. A mistake found at the first step costs one page."),
+            ("point", "Recorded", "Each check gets a line: date, what was checked, how many, what was found, "
+             "who checked."),
+            ("h", "Step 3: Count the Cost of Quality"),
+            "The American Society for Quality describes the cost of quality in four groups. They help a "
+            "project see where its quality money goes.",
+            ("point", "Prevention", "Spent to stop problems before they start, such as writing standards and "
+             "training. Here: setting up the direct fill from the ledger, and a short briefing for the "
+             "encoders."),
+            ("point", "Appraisal", "Spent on measuring and checking. Here: the formula comparison, the "
+             "signature sample and the inspection of the envelopes."),
+            ("point", "Internal failure", "Spent fixing defects found before they reach the customer. Here: "
+             "the ₱800 reprint from the last round."),
+            ("point", "External failure", "Spent fixing defects found after delivery. Here: a taxpayer who "
+             "receives a notice with the wrong amount, comes to the office to complain, and needs a corrected "
+             "notice, plus the time of the staff who handle it and the trust that is lost."),
+            "Prevention and appraisal are planned costs. The two failure costs are the price of skipping them, "
+            "and the external one is the hardest to see in any budget.",
+            ("h", "Step 4: Put Quality Into the Plan"),
+            ("point", "In the schedule", "The checks take time. The clerk placed the first-batch check inside "
+             "the printing days, so the dates in the plan from Part 21 did not move."),
+            ("point", "In the budget", "Setting up the direct fill took two days of the analyst’s time, "
+             "costed like any other staff time, as in Part 17."),
+            ("point", "In the register", "R2, wrong amounts on printed notices, was updated. With the cause "
+             "removed, its probability dropped, and the response now pointed to the new standard."),
+            ("h", "The Quality Plan on One Page"),
+            "The clerk kept the whole plan to one table with five columns.",
+            ("point", "Deliverable", "What is being produced."),
+            ("point", "Standard", "What good means, in a form that can be checked."),
+            ("point", "Check", "How, how many, and by whom."),
+            ("point", "When", "The step in the schedule where it happens."),
+            ("point", "Record", "Where the result is written."),
+            "The head of office signed it with the rest of the plan. From then on, “Is it good enough?” had a "
+            "written answer.",
+            ("h", "How the Round Went"),
+            "The formula compared all 1,800 amounts with the ledger and found none that differed. The "
+            "signature sample found two unsigned notices in the third batch, signed the same afternoon. No "
+            "notice had to be reprinted. The check that had saved the last round became, this time, the "
+            "proof that the work was right.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "“High quality” as a goal", "Write a standard that can be checked."),
+            ("point", "Relying only on the final check", "Remove the causes of errors first."),
+            ("point", "Checking your own work", "Give the check to someone else."),
+            ("point", "Leaving checks out of the plan", "They need time, money and an owner."),
+            ("h", "Key Takeaways"),
+            ("point", "Quality is agreed", "Meeting the requirements, written down before the work starts."),
+            ("point", "Prevent, then check", "Build it in at the source, and confirm with a check."),
+            ("point", "Four costs", "Prevention, appraisal, internal and external failure."),
+            ("point", "One page", "Deliverable, standard, check, when and record."),
+            ("h", "Your Part 23 Exercise"),
+            "Take the work breakdown structure from your Part 14 exercise.",
+            ("point", "Write standards", "For three deliverables, write what good means in a way that can be "
+             "checked."),
+            ("point", "Choose checks", "For each one, decide how, how many, by whom and when."),
+            ("point", "Find one cause", "Pick the error your office sees most in this kind of work, and write "
+             "one way to stop it at the source."),
+            "Then show the page to the person who will receive the work, and ask whether it describes what "
+            "they expect. If it does not, you found the gap before it cost anything.",
+            ("cta", "Read: Project Management Series, Part 19", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Project Management Series, Part 9", "/blog/project-management-part-9-gathering-requirements/"),
+            ("cta", "Read: Project Management Series, Part 22", "/blog/project-management-part-22-procurement-and-suppliers/"),
+            ("cta", "Read: Project Management Series, Part 14", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("ask", "What does “good enough” mean for the main deliverable of your current project, and is it written down?"),
+        ],
+    },
+    {
         "date": "February 26, 2027",
         "title": "Project Management Series, Part 22: Procurement and Suppliers, Planning What You Must Buy",
         "slug": "project-management-part-22-procurement-and-suppliers",

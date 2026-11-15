@@ -13,6 +13,153 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "March 1, 2027",
+        "title": "Business Intelligence Series, Part 23: Blending Data, Two Sources in One Chart",
+        "slug": "business-intelligence-part-23-blending-data",
+        "category": "bi",
+        "summary": "Some questions need numbers that live in two places. This part shows how to blend the "
+                   "collections sheet with a barangay list kept by another office in Data Studio: choosing the "
+                   "join key and the join type, avoiding doubled totals, and checking the result before anyone "
+                   "reads it.",
+        "publish_on": "2027-03-01 21:00",
+        "body": [
+            "The head of office looked at the collections dashboard and asked a fair question: “Poblacion "
+            "brings in the most money, but it also has the most properties. Which barangay collects the most "
+            "per account?”",
+            "The collections were in the treasury’s Daily tab. The number of real property tax accounts in "
+            "each barangay was in a list kept by the assessor’s office, in a sheet the treasury could read but "
+            "did not own. The answer needed both.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 22 built new measures from a single source. This part brings a second source into the same "
+            "chart. By the end of this post you will know what a blend is in Data Studio, when to blend and "
+            "when to copy data into the sheet instead, how to choose the join key and the join type, why a "
+            "blend can double a total, and how to check a blend before anyone relies on it.",
+            ("photo", "blog/bi-blending.jpg", "Blending data: match on one clean key, choose the join on "
+             "purpose, keep one row per key, and check the total. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Blend Is"),
+            "Google’s Data Studio documentation says that blending data creates a resource called a blend, "
+            "which combines information from several data sources in one view. A few facts from the "
+            "documentation shape how it is used.",
+            ("point", "Up to five sources", "A blend can combine up to five data sources, as up to five "
+             "tables."),
+            ("point", "It lives in the report", "Blends are embedded in the report where they are made. They "
+             "cannot be shared with another report, although copying a report copies its blends too."),
+            ("point", "It matches on equal values", "A join links rows whose fields hold equal values. The "
+             "documentation says only equality is supported in the merge condition. The fields may have "
+             "different names, as long as the values match."),
+            ("quote", "A blend is only as good as the key that holds it together."),
+            ("h", "Blend, or Copy Into the Sheet?"),
+            "The same answer could be built in Google Sheets: copy the assessor’s list into a tab and look up "
+            "each barangay’s account count with a formula. Both ways work. The choice depends on who owns "
+            "the second source.",
+            ("point", "Copy into the sheet", "When the second list rarely changes and the treasury maintains "
+             "it, a lookup tab in the pipeline from Part 16 keeps everything in one place, with checks."),
+            ("point", "Blend in the report", "When another office keeps the list and updates it on its own "
+             "schedule, a blend reads their sheet directly. Nobody has to remember to paste a new copy."),
+            "Here the assessor’s office updates its list when new tax declarations are recorded, so a blend "
+            "was the better choice. The treasury asked for view access to that sheet and connected it as a "
+            "second data source.",
+            ("h", "Step 1: Check the Key First"),
+            "The key is the field both tables share. Here it is Barangay. Before building anything, the "
+            "analyst put the two barangay lists side by side.",
+            ("point", "Same spelling", "The Daily tab wrote POBLACION in capitals. The assessor’s list wrote "
+             "Poblacion. Since the join compares values for equality, the safest fix is to make the two lists "
+             "identical. The analyst added a clean column to the treasury’s Clean tab that matched the "
+             "assessor’s spelling, rather than asking the other office to change theirs."),
+            ("point", "One row per key", "The documentation warns that multiple matches for the join "
+             "condition can make more rows appear in the blend. If the assessor’s list held San Isidro on two "
+             "rows, every San Isidro collection would be matched twice, and its total would double."),
+            ("point", "Nothing missing", "Every barangay in the Daily tab should appear in the assessor’s "
+             "list. One that is missing will not match, and what happens to its rows depends on the join "
+             "type."),
+            ("h", "Step 2: Choose the Join on Purpose"),
+            "The documentation lists five join operators and a union. Three matter for this kind of question.",
+            ("point", "Left outer", "Keeps every row from the left table, here the collections, and adds the "
+             "matching information from the right. A barangay missing from the assessor’s list keeps its "
+             "collections, with a blank account count. This is the safe default for a report on money."),
+            ("point", "Inner", "Keeps only rows that match on both sides. A missing barangay disappears, and "
+             "its collections vanish from the total without any warning."),
+            ("point", "Cross", "Pairs every row with every other row. The documentation notes that a cross "
+             "join always returns more rows than the source tables have together. It has no place in this "
+             "report."),
+            "Put the table you report on first, on the left, and join the reference list to it. Then a gap in "
+            "the reference list shows up as a blank instead of a smaller total.",
+            ("h", "Step 3: Mind the Grouping"),
+            "One detail surprises people. The documentation explains that before merging, Data Studio groups "
+            "and aggregates the rows in each table by that table’s dimensions. Metrics from the sources then "
+            "become plain numbers in the blend, which the chart adds up again.",
+            ("point", "What it means here", "If the collections table keeps both Date and Barangay as "
+             "dimensions, each barangay appears once per date. The account count from the right table is then "
+             "repeated on every one of those rows."),
+            ("point", "The trap", "A chart that sums Accounts by barangay would then add the same count once "
+             "per date. A barangay with 450 accounts and 20 collection days would show 9,000."),
+            ("point", "The fix", "For a per-account measure, keep the collections table at the barangay level "
+             "only, with Barangay as its dimension and Amount as its metric. Each barangay then appears once, "
+             "with its total, next to its account count."),
+            "The documentation also recommends adding a unique identifier to a table’s dimensions when its rows "
+            "should not be grouped together. The rule underneath both cases is the same: decide what one row "
+            "of each table should mean before joining.",
+            ("h", "Step 4: Build It"),
+            ("point", "Start the blend", "In edit mode, select the chart, and under Data source in the "
+             "properties panel choose Blend data. The documentation also describes Resource, then Manage "
+             "blended data, then Add blend."),
+            ("point", "Add the second table", "Choose Merge another table, pick the assessor’s data source, and "
+             "add Barangay and Accounts."),
+            ("point", "Set the join", "Click the join box between the tables, choose Left outer, and pair "
+             "Barangay with Barangay under the merge conditions. Save, and give the blend a clear name, such "
+             "as “Collections with assessor accounts.”"),
+            ("point", "Add the measure", "In the chart, create a field: SUM(Amount) / SUM(Accounts), the "
+             "ratio of sums from Part 22. With one row per barangay, each side is summed once."),
+            ("h", "Step 5: Check Before Sharing"),
+            ("point", "Same total", "Put the blended chart’s total collections next to a scorecard built on "
+             "the Daily tab alone, for the same dates. They must match. A larger blended total points to a "
+             "duplicated key; a smaller one points to an inner join or a filter."),
+            ("point", "Find the blanks", "Make a small table of barangays with a blank account count. Each "
+             "row is a name that did not match, and the fix belongs in the key."),
+            ("point", "One by hand", "Pick one barangay. Divide its collections by its account count on a "
+             "calculator and compare with the chart."),
+            ("h", "Filters and Speed"),
+            ("point", "Before or after the merge", "The documentation explains that a filter set on a table "
+             "inside the blend applies before the tables are merged, while a filter on the chart applies to "
+             "the blended result. The two can give different answers, so decide which one you mean."),
+            ("point", "Only the fields you need", "The documentation warns that blending can create very large "
+             "data sets and slow charts down. Add only the fields the question needs."),
+            ("h", "The Answer for the Head of Office"),
+            "The first blended total came out ₱18,500 higher than the plain scorecard. The assessor’s list "
+            "had San Roque on two rows, one of them an old entry from before a boundary update. The assessor’s "
+            "office removed the old row, and the totals matched. The chart then showed Poblacion first in "
+            "money but third in collections per account, behind two outer barangays where many owners paid in "
+            "full at the start of the year. The head of office asked for that ranking in the next briefing, "
+            "with the account count printed beside each bar so readers could see the base.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Joining on names that do not match", "Make the key identical before blending."),
+            ("point", "A reference list with repeats", "One row per key, or totals double."),
+            ("point", "Inner join on money", "Use left outer so missing matches show as blanks."),
+            ("point", "Skipping the total check", "Compare with a scorecard built on one source."),
+            ("h", "Key Takeaways"),
+            ("point", "What a blend is", "Up to five sources, joined on equal values, inside one report."),
+            ("point", "The key", "Same spelling, one row per key, nothing missing."),
+            ("point", "The grouping", "Decide what one row of each table means before joining."),
+            ("point", "The check", "The blended total must equal the single-source total."),
+            ("h", "Your Part 23 Exercise"),
+            "Use the practice dashboard from your Part 22 exercise.",
+            ("point", "Make a reference list", "A new sheet with one row per barangay and one number, such as "
+             "the number of accounts."),
+            ("point", "Blend it", "Left outer, joined on the barangay, with the collections table at barangay "
+             "level."),
+            ("point", "Break it on purpose", "Add a repeated row to the reference list and watch the total "
+             "change. Then remove it."),
+            "Seeing a total double once is the best reminder to check every blend before sharing it.",
+            ("cta", "Read: Business Intelligence Series, Part 22", "/blog/business-intelligence-part-22-calculated-fields/"),
+            ("cta", "Read: Business Intelligence Series, Part 20", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Data Analytics Series, Part 14", "/blog/data-analytics-part-14-databases-101/"),
+            ("ask", "Which question in your office needs numbers from two offices, and who keeps the key that joins them?"),
+        ],
+    },
+    {
         "date": "February 24, 2027",
         "title": "Business Intelligence Series, Part 22: Calculated Fields, New Measures Without Touching the Sheet",
         "slug": "business-intelligence-part-22-calculated-fields",

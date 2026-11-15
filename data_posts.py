@@ -12,6 +12,140 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "March 2, 2027",
+        "title": "Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS",
+        "slug": "data-analytics-part-23-sumifs-countifs-averageifs",
+        "category": "data",
+        "summary": "Totals by barangay, by month or by collector do not need a calculator and sixty filters. "
+                   "This part explains SUMIFS, COUNTIFS and AVERAGEIFS with treasury examples: text, number "
+                   "and date conditions, a summary table that fills itself in, and a check row that catches "
+                   "what the formulas miss.",
+        "publish_on": "2027-03-02 21:00",
+        "body": [
+            "The council wanted a table for its budget hearing: real property tax collections for each of "
+            "five barangays, for each month of last year. Sixty numbers.",
+            "A staff member started with filters. Filter to Poblacion and January, read the total "
+            "at the bottom of the screen, write it on a pad. Clear the filter. Poblacion and February. By the "
+            "middle of the afternoon the pad had forty numbers, two of them crossed out, and nobody was sure "
+            "which filter had been left on when the twenty-third was written down.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 22 sorted and filtered a table to find rows. This part adds up rows without hiding any of "
+            "them. By the end of this post you will know how SUMIFS, COUNTIFS and AVERAGEIFS work, how to "
+            "write conditions for text, numbers and dates, how to build a summary table that fills itself in, "
+            "and how to check it so that no peso falls through a gap.",
+            ("photo", "blog/data-sumifs.jpg", "SUMIFS, COUNTIFS and AVERAGEIFS: add, count or average only "
+             "the rows that meet every condition, then check the total. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Practice Table"),
+            "The examples use a Receipts tab laid out as Part 12 recommends, one row per receipt, with "
+            "column A for the date, B for the barangay, C for the collector, D for the type (RPT or "
+            "BUSINESS) and E for the amount. Rows 2 to 500 hold the data.",
+            ("h", "How the Three Functions Read"),
+            ("point", "SUMIFS", "=SUMIFS(E2:E500, B2:B500, \"POBLACION\") adds the amounts in column E for the "
+             "rows where column B says POBLACION. The first range is what to add. Then come pairs: a range to "
+             "test, and the test."),
+            ("point", "COUNTIFS", "=COUNTIFS(B2:B500, \"POBLACION\") counts the rows that pass. It has no range "
+             "to add, so it starts with the first pair."),
+            ("point", "AVERAGEIFS", "=AVERAGEIFS(E2:E500, B2:B500, \"POBLACION\") averages the amounts of the "
+             "rows that pass. Like SUMIFS, the range to average comes first."),
+            "Each function takes more pairs, and a row is included only when it meets all of them. Google’s "
+            "help for SUMIFS and Microsoft’s help for Excel describe the same rule: the row must meet every "
+            "condition. =SUMIFS(E2:E500, B2:B500, \"POBLACION\", D2:D500, \"RPT\") adds only Poblacion rows that "
+            "are also real property tax.",
+            ("point", "Watch the order", "The older SUMIF puts the range to add last. Microsoft’s help points "
+             "out that the sum range is the first argument in SUMIFS but the third in SUMIF. Using SUMIFS "
+             "everywhere, even for one condition, keeps one pattern to remember."),
+            ("quote", "Write the question as conditions, and the formula almost writes itself."),
+            ("h", "Writing the Conditions"),
+            ("point", "Text", "Put it in quotation marks: \"POBLACION\". Microsoft’s help lists a missing pair "
+             "of quotation marks around text as a reason a formula shows 0 instead of the expected result."),
+            ("point", "Numbers with a comparison", "Put the operator inside the quotation marks: "
+             "\">=10000\" for amounts of ₱10,000 or more. =COUNTIFS(B2:B500, \"POBLACION\", E2:E500, "
+             "\">=10000\") counts the large receipts in Poblacion."),
+            ("point", "A value in another cell", "Join the operator to the cell with an ampersand: "
+             "\">=\"&H1 uses whatever amount is typed in H1. Change H1, and every formula that points to it "
+             "follows."),
+            ("point", "Patterns", "An asterisk stands for any run of characters, and a question mark for any "
+             "single character. \"SAN*\" matches San Isidro and San Roque. Google’s help for "
+             "SUMIF and Microsoft’s help for SUMIFS both describe these wildcards."),
+            ("h", "Dates Without Gaps"),
+            "Dates are where totals quietly go wrong. For January 2027, use two conditions on the same column: "
+            "on or after the first day of the month, and before the first day of the next month.",
+            ("point", "The formula", "=SUMIFS(E2:E500, A2:A500, \">=\"&DATE(2027,1,1), A2:A500, "
+             "\"<\"&DATE(2027,2,1))"),
+            ("point", "Why “before the next month”", "It includes every receipt on January 31, and the same "
+             "pattern works for any month without remembering whether it has 28, 30 or 31 days."),
+            ("point", "Real dates only", "The conditions compare numbers, so a date stored as text will not "
+             "pass. Part 18 showed how to find and convert those first."),
+            "In a test sheet of six receipts, this formula returned ₱40,500 for January and left out a "
+            "receipt dated February 1, exactly as intended.",
+            ("h", "A Summary Table That Fills Itself In"),
+            "Back to the council’s sixty numbers. Put the five barangay names down column H, from H2 to H6, "
+            "and the first day of each month across row 1, from I1 to T1.",
+            ("point", "One formula", "In I2: =SUMIFS($E$2:$E$500, $B$2:$B$500, $H2, $A$2:$A$500, "
+             "\">=\"&I$1, $A$2:$A$500, \"<\"&EDATE(I$1,1))"),
+            ("point", "The dollar signs", "They keep the data ranges fixed, the barangay tied to column H and "
+             "the month tied to row 1. Copy the formula across and down, and all sixty cells fill in."),
+            ("point", "EDATE", "EDATE(I$1,1) gives the same day one month later, so each cell stops at the "
+             "first day of the next month."),
+            ("h", "The Check Row That Catches Gaps"),
+            "A summary table can look complete and still miss money. Every row that matches none of the names "
+            "in column H is left out, without an error.",
+            ("point", "Add one check", "Below the table, total all sixty cells. Beside it, add up the whole "
+             "Amount column for the same year with one SUMIFS on the dates alone. The two must match."),
+            ("point", "Why it fails", "In the same test sheet, one receipt was typed “POBLACION ” with a space "
+             "at the end. SUMIFS for POBLACION left its ₱2,000 out. The stray space was one of the suspects in "
+             "Part 16, and TRIM in the Clean tab removes it."),
+            ("point", "Text amounts", "An amount stored as text is skipped, as with SUM in Part 16. The check "
+             "row will not catch it, because the grand total skips it too. Run the ISNUMBER test from Part 16 "
+             "on the Amount column as well."),
+            ("h", "Averages and Empty Groups"),
+            ("point", "When nothing matches", "Microsoft’s help says AVERAGEIFS returns the #DIV/0! error when "
+             "no cell meets all the criteria. A barangay with no receipts in a month produces exactly that."),
+            ("point", "Handle it honestly", "=IFERROR(AVERAGEIFS(…), \"none\") shows a word instead of an "
+             "error. Avoid replacing it with 0: an average of zero claims receipts that were all zero, which "
+             "is not the same as no receipts."),
+            ("point", "Count beside it", "Put COUNTIFS next to every average. An average of ₱8,000 from two "
+             "receipts means less than one from two hundred."),
+            ("h", "Either One, Not Both"),
+            "SUMIFS keeps a row only when every condition is true. For Poblacion or San Isidro, add two "
+            "SUMIFS together: =SUMIFS(E2:E500, B2:B500, \"POBLACION\") + SUMIFS(E2:E500, B2:B500, \"SAN "
+            "ISIDRO\"). The two sets of rows cannot overlap, because a receipt has one barangay, so nothing "
+            "is counted twice.",
+            ("point", "Same size ranges", "Microsoft’s help says each criteria range must have the same number "
+             "of rows and columns as the sum range. A formula with E2:E500 and B2:B499 returns an error, which "
+             "is better than a wrong total."),
+            ("h", "The Council Table, Done Right"),
+            "The analyst built the table with one formula, copied across and down, and added the check row. "
+            "The first check showed ₱6,200 missing. Three receipts had a barangay name with a trailing space. "
+            "After TRIM, the check matched, and the council received sixty numbers that added up to the "
+            "year’s total. The next year’s table took one change: the year in row 1.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Mixing up SUMIF and SUMIFS", "Use SUMIFS for everything, with the sum range first."),
+            ("point", "Dates with “less than or equal to the 31st”", "Use “before the first of next month.”"),
+            ("point", "No check row", "Compare the table’s total with the grand total."),
+            ("point", "Hiding empty groups as zero", "Show “none,” with a count beside each average."),
+            ("h", "Key Takeaways"),
+            ("point", "Pairs of range and test", "A row counts only if it passes every pair."),
+            ("point", "Conditions", "Text in quotes, operators inside quotes, cells joined with &."),
+            ("point", "One formula, many cells", "Dollar signs let one formula fill a whole table."),
+            ("point", "Check the total", "The parts must add up to the whole."),
+            ("h", "Your Part 23 Exercise"),
+            "Use your practice list from Part 22, with a date, barangay and amount for each row.",
+            ("point", "One total", "Write a SUMIFS for one barangay and one month."),
+            ("point", "One table", "Build a barangay-by-month table from a single formula."),
+            ("point", "One check", "Add the check row, then add a trailing space to one name and watch it fail."),
+            "Then fix the space with TRIM and watch the check pass. A check you have seen fail is one you will "
+            "trust when it passes.",
+            ("cta", "Read: Data Analytics Series, Part 22", "/blog/data-analytics-part-22-sorting-and-filtering/"),
+            ("cta", "Read: Data Analytics Series, Part 16", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Which table does your office still build with a filter and a calculator?"),
+        ],
+    },
+    {
         "date": "February 25, 2027",
         "title": "Data Analytics Series, Part 22: Sorting and Filtering With Purpose",
         "slug": "data-analytics-part-22-sorting-and-filtering",
