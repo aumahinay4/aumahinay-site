@@ -80,8 +80,8 @@ BI_POSTS = [
             ("point", "Handle empty results", "If a combination returns nothing, say so in words: “No "
              "collections match these filters.” A blank chart can look like a broken one."),
             ("h", "Watch Out for Small Numbers"),
-            "The deeper the reader drills, the smaller the numbers get, and small numbers swing easily. If a "
-            "barangay had two business permits renewed last March and four this March, that is a 100% "
+            "The deeper the reader drills, the smaller the numbers get, and small numbers swing easily. If a barangay had two new business "
+            "permits issued last March and four this March, that is a 100% "
             "increase built on two permits.",
             ("point", "Show the count beside the percentage", "“Up 100% (from 2 to 4 permits)” tells the "
              "real story."),

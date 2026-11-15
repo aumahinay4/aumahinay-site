@@ -65,8 +65,8 @@ PM_POSTS = [
             ("h", "Group 3: People"),
             ("point", "Are the stakeholders mapped? (Part 3)", "Everyone the project affects is on the list, "
              "including people outside the team whose staff or time it uses."),
-            ("point", "Was there a kickoff? (Part 7)", "The team heard the same goals, roles and dates at the "
-             "same time, and had a chance to raise concerns."),
+            ("point", "Was there a kickoff? (Part 7)", "Everyone heard the same answers to why, what, "
+             "who, how and next, and open questions went to a parking list with owners."),
             ("point", "Does every task have one owner? (Part 8)", "The RACI matrix names one Accountable "
              "person for each main piece of work."),
             ("point", "Does everyone know who hears what? (Part 11)", "The communication plan lists who gets "
@@ -76,7 +76,7 @@ PM_POSTS = [
              "planned stages, short cycles or a mix, and why."),
             ("point", "Is the tracker working? (Part 12)", "The stages, owners, update rule and one place "
              "for tasks are agreed, and the tracker shows the true status today."),
-            ("point", "Are the risks named with an owner? (Part 2)", "Each main risk from the charter has a "
+            ("point", "Are the risks named with an owner? (Parts 2 and 10)", "Each main risk from the charter and the business case has a "
              "person watching it and a first step if it happens."),
             ("h", "Rating Each Item"),
             "Rate each item with one of three words. Keep it simple enough to do in the meeting.",
@@ -112,8 +112,8 @@ PM_POSTS = [
             ("point", "Sample bills review: Partly", "The milestone said the head of office would review "
              "sample bills, but not what “reviewed” meant. Fix in two weeks: a short list of what each "
              "bill must show, signed off by the head of office."),
-            ("point", "Updates to the cashier: Partly", "The cashier was on the stakeholder map but missing "
-             "from the communication plan. Fix in two weeks: added to the weekly update."),
+            ("point", "Open kickoff questions: Partly", "Two questions on the kickoff parking list still had no "
+             "answer. Fix in two weeks: each was given an owner and a due date."),
             "The sponsor chose to start once the backup checker was named. That took two days. The project "
             "began with every main gap either closed or scheduled.",
             ("h", "Mistakes to Avoid"),
