@@ -14,6 +14,134 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "January 7, 2027",
+        "title": "Project Management Series, Part 12: Choosing PM Software, and Why Tools Don’t Fix Broken Processes",
+        "slug": "project-management-part-12-choosing-pm-software",
+        "category": "pm",
+        "summary": "A new project tool does not fix a process nobody has agreed on. This part shows how to get the "
+                   "process working on paper first, what a PM tool actually needs to do, how to compare "
+                   "options fairly, and how to try one without moving the whole office at once.",
+        "publish_on": "2027-01-07 21:00",
+        "body": [
+            "A month into the encoding project, the team is frustrated. Tasks are scattered across a group "
+            "chat, a spreadsheet and two notebooks. Someone suggests the answer: “Let’s get a proper project "
+            "management app.” A free tool is set up that same afternoon. Boards are created, tasks are typed "
+            "in, and everyone is invited.",
+            "Two weeks later, the board is half empty. Some people update it; most do not. Tasks still get "
+            "assigned in the group chat, and the board shows work as “in progress” that was finished days "
+            "ago. The head of office asks for a status update, and the project lead ends up asking each "
+            "person by phone, just as before.",
+            "The tool was not the problem. Nobody had agreed on how tasks are assigned, who updates them, or "
+            "what “done” means. The app simply gave the old confusion a new home.",
+            "(As in every part of this series, the office, the people and the tools are made up. No real "
+            "town, employee or product is described or recommended.)",
+            "Part 11 settled who hears what and when. This part is about the place where the work is tracked. "
+            "By the end of this post you will know how to check a process before choosing a tool, the five "
+            "jobs a PM tool needs to do, how to compare options with a simple scoring sheet, and how to run a "
+            "short trial before committing.",
+            ("photo", "blog/pm-process-first.jpg", "Process first, then tool: agree on the stages, the owner, the update rule and the one place where tasks live. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Why a Tool Does Not Fix the Process"),
+            "A project tool records decisions people have already made: who owns a task, when it is due, "
+            "what stage it is in. If those decisions are not being made, the tool has nothing true to record.",
+            ("point", "No owner, no update", "A task without one named owner sits on a board just as it sat "
+             "in a notebook. Part 8’s RACI matrix answers this, not the software."),
+            ("point", "No definition of done", "If one person marks a task done when it is drafted and "
+             "another when it is approved, the board can show a different picture from the real work."),
+            ("point", "No single place", "If tasks can still be assigned in the group chat, the board can fall behind. The team has to agree that the board is where tasks live."),
+            ("quote", "A tool can carry a working process. It does not create one."),
+            ("h", "Get the Process Working on Paper First"),
+            "Before comparing any software, run the project for two weeks with the simplest tracker you have: "
+            "a shared spreadsheet or a whiteboard. Use it to settle four things.",
+            ("point", "1. The stages", "Name the few stages a task moves through, such as To do, Doing, For "
+             "review and Done. Write one sentence for what each stage means."),
+            ("point", "2. The owner", "Every task has one name beside it. If two people share a task, split "
+             "it into two tasks."),
+            ("point", "3. The update rule", "Agree when the tracker is updated, for example before leaving "
+             "the office each day, and by whom: the task owner."),
+            ("point", "4. The one place", "New tasks are added to the tracker, not assigned by message. A "
+             "request that arrives by chat is copied in by the person who receives it."),
+            "If the team can keep a spreadsheet accurate for two weeks, the process works, and a tool can make "
+            "it easier. If the spreadsheet falls behind, the "
+            "problem is the habit, not the tool, so fix the habit first.",
+            ("h", "Five Jobs a PM Tool Needs to Do"),
+            "Write down what the tool must do for this team, in plain words, before looking at any product.",
+            ("point", "Show the tasks", "Every task, its owner, its due date and its stage, in one view."),
+            ("point", "Show what is late", "A way to see quickly which tasks are past their due date."),
+            ("point", "Keep the history", "Who changed what, and when, so a question about a task can be "
+             "answered later."),
+            ("point", "Hold the files and notes", "A place to attach the document or comment that belongs to "
+             "a task, so it is not lost in a chat."),
+            ("point", "Work where the team works", "If collectors are in the field with phones, the tool "
+             "must work well on a phone and on a slow connection."),
+            "Anything beyond these five is a nice-to-have. Long feature lists make tools look powerful, but "
+            "every extra feature is something the team has to learn.",
+            ("h", "Questions a Treasury Office Should Ask"),
+            ("point", "Where is the data stored?", "Project notes can include taxpayer names and amounts. "
+             "Personal information is covered by the Data Privacy Act of 2012 (Republic Act No. 10173). Ask "
+             "your data protection officer before putting such details in any outside service, and keep "
+             "personal data out of task titles."),
+            ("point", "Who owns the account?", "Set the account up under an office email, not a personal "
+             "one, so the records stay with the office when someone transfers or retires."),
+            ("point", "Can we get our data out?", "Check that tasks and history can be exported to a file. "
+             "If the tool is ever dropped, the project record should not go with it."),
+            ("point", "What does it cost, and who approves it?", "A free plan may have limits on users, "
+             "storage or history. A paid plan needs a budget and has to go through your office’s "
+             "procurement rules. Find out both before the team starts depending on it."),
+            ("h", "Compare Options With a Simple Scoring Sheet"),
+            "Choose two or three options, and include the one you already have, such as the shared "
+            "spreadsheet. Score each from 1 to 3 on the same list.",
+            ("point", "The five jobs", "One score for each job above."),
+            ("point", "Ease for the least technical member", "Ask that person to add and update a task, and "
+             "score how easily it went."),
+            ("point", "Data and ownership", "Storage, office account and export."),
+            ("point", "Cost and approval", "What it costs now, what it may cost as the team grows, and how "
+             "long approval would take."),
+            "Add up the scores, but read the low scores too. A tool that scores well overall but fails on data "
+            "privacy is not a choice a treasury office can make.",
+            ("h", "Run a Short Trial"),
+            ("point", "One project, one month", "Try the tool on a single project with a small team, not on "
+             "the whole office."),
+            ("point", "Same rules", "Use the same stages, owners and update rule that worked on paper."),
+            ("point", "Measure it", "At the end, ask: Is the board accurate today? Did status updates get "
+             "faster? Did anyone stop using it, and why?"),
+            ("point", "Decide on purpose", "Keep it, drop it, or go back to the spreadsheet. Going back is a "
+             "valid result."),
+            "In the encoding project, the team went back to the shared spreadsheet for two weeks and agreed on "
+            "the four rules. Only then did they try a board again, with the same rules. This time, the head "
+            "of office could read the status without calling anyone.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Buying before agreeing", "Settle the process first, then choose the tool."),
+            ("point", "Choosing for the most technical person", "The tool has to work for the person who "
+             "will find it hardest."),
+            ("point", "Running two trackers", "If the old spreadsheet and the new board both stay in use, "
+             "people may not know which one to trust. Pick one."),
+            ("point", "Moving everything at once", "Try it on one project before rolling it out."),
+            ("h", "Key Takeaways"),
+            ("point", "Process before tool", "Agree on stages, owners, the update rule and one place."),
+            ("point", "Five jobs", "Show tasks, show what is late, keep history, hold files, work where the "
+             "team works."),
+            ("point", "Ask the treasury questions", "Data privacy, office ownership, export and approval."),
+            ("point", "Trial, then decide", "One project, one month, with a clear review."),
+            ("h", "Your Part 12 Exercise"),
+            "Look at how your current project tracks its tasks today.",
+            ("point", "Write the four rules", "Stages, owner, update rule and one place. Mark any you have "
+             "not agreed on."),
+            ("point", "Check the tracker", "Pick five tasks at random and ask each owner whether the "
+             "tracker shows the true status."),
+            ("point", "Decide what to fix", "If fewer than five match, fix the rules before changing the "
+             "tool."),
+            "If all five match, you already have a working process, and any tool you choose has a fair chance "
+            "of helping.",
+            ("cta", "Read: Project Management Series, Part 11", "/blog/project-management-part-11-communication-plan/"),
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 5", "/blog/project-management-part-5-waterfall-agile-hybrid/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("ask", "What rule does your team need to agree on before any new tool could help?"),
+        ],
+    },
+    {
         "date": "January 2, 2027",
         "title": "Project Management Series, Part 11: The Communication Plan, Who Hears What, When",
         "slug": "project-management-part-11-communication-plan",

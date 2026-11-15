@@ -13,6 +13,136 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "January 5, 2027",
+        "title": "Business Intelligence Series, Part 12: Fast and Readable on a Phone",
+        "slug": "business-intelligence-part-12-fast-and-readable-on-a-phone",
+        "category": "bi",
+        "summary": "A dashboard built on a wide office monitor can be unreadable on the phone where it is "
+                   "actually opened. This part shows how to design BI views for small screens and slow "
+                   "connections: one column, fewer charts, bigger numbers and lighter data.",
+        "publish_on": "2027-01-05 21:00",
+        "body": [
+            "The analyst builds the collections dashboard on a wide monitor in the office: six charts in two "
+            "rows, a table of collectors on the right and four filters along the top. It looks clean. The next "
+            "morning, the head of office opens it on a phone while waiting for a meeting. The charts have "
+            "shrunk to the size of stamps, the table runs off the edge of the screen, and the page takes long "
+            "enough to load on mobile data that the meeting starts first.",
+            "The dashboard was correct and well designed for the analyst’s screen. It was not designed for "
+            "the reader’s.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 4 asked who reads each view and on what device. This part is about acting on the answer. "
+            "By the end of this post you will know how to lay out a BI view for a phone, which charts work "
+            "on a small screen, how to keep a page light enough to load quickly, and how to test it before "
+            "anyone complains.",
+            ("photo", "blog/bi-phone-layout.jpg", "A view built for the phone: the answer first in one column, simple charts, a light page and a real test. "
+             "(Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Start From the Reader’s Screen"),
+            "Before building anything, find out where the view will be opened. Ask the readers, or look at how "
+            "they open the views they already have. If the head of office reads on a phone and the cashier on "
+            "a desktop, those are two different design problems.",
+            "When a view will be read on both, design for the phone first. A single column stretches easily "
+            "onto a wide screen, while six charts in two rows have to be rearranged to fit a phone.",
+            ("quote", "Design for the screen your reader actually holds."),
+            ("h", "Layout: One Column, Answer First"),
+            ("point", "One column", "Stack everything in a single column so the reader scrolls down, never "
+             "sideways. A reader may not notice that part of the page is hidden off to the side."),
+            ("point", "The answer at the top", "Put the one number that matters most where the screen opens: "
+             "for example, collections this month against target. The reader should not have to scroll to "
+             "find it."),
+            ("point", "Then the supporting facts", "Below the answer, add the two or three charts that explain "
+             "it, in the order of the five-minute briefing from Part 11."),
+            ("point", "Details last", "Tables and filters go at the bottom, for the reader who wants to dig."),
+            ("h", "Charts That Survive a Small Screen"),
+            ("point", "Big number tiles", "A single large figure with a short label and a comparison, such as "
+             "“₱3.1M collected, 92% of target.” They stay readable on a small screen."),
+            ("point", "Horizontal bars", "Bars running across the screen leave room for long labels such as "
+             "barangay or account names. Vertical bars leave little room under each bar, so long labels have to be shortened or tilted."),
+            ("point", "Simple lines", "A line chart with one or two lines shows a trend clearly. Five lines in "
+             "five colors become hard to tell apart on a phone."),
+            ("point", "Short tables", "If a table is needed, keep it to three or four columns and the top ten "
+             "rows. A twelve-column table may run off a phone screen."),
+            "Avoid charts that need hovering to read. A phone has no mouse, so a value shown only on hover may "
+            "be hard to reach.",
+            ("h", "Text and Numbers People Can Read"),
+            ("point", "Size", "Make the main number large enough to read at arm’s length, and labels large "
+             "enough to read without zooming. Test this on a real phone, not by shrinking a browser window."),
+            ("point", "Round", "Show ₱3.1M rather than ₱3,104,226.15 on the main tile. Keep the exact figure "
+             "in the table further down."),
+            ("point", "Contrast", "Dark text on a light background, or the reverse. Pale gray labels may "
+             "disappear in bright daylight."),
+            ("point", "Color with a label", "Do not rely on color alone. A red bar should also say “below "
+             "target,” so the meaning survives a small screen, a dim display or a reader who sees colors "
+             "differently."),
+            ("h", "Fast: Keeping the Page Light"),
+            "A view that takes too long to load may never get read. One part of the speed is in the analyst’s "
+            "control: how much data the page asks for.",
+            ("point", "Summarize before the dashboard", "Build a small summary table in the pipeline, such as "
+             "collections by day, account and barangay, and point the dashboard at it instead of at every "
+             "receipt. The dashboard then reads far fewer rows."),
+            ("point", "Fewer charts per page", "Each chart may send its own request for data. More charts can "
+             "mean more waiting. Move secondary charts to a second page."),
+            ("point", "Sensible default filters", "Open on this month, not on all years. Readers can widen the "
+             "range if they need to."),
+            ("point", "Light images", "Leave out large logos and background pictures. They add to loading "
+             "time and say nothing about the numbers."),
+            ("h", "The Collections Dashboard, Redesigned"),
+            ("point", "Top", "One tile: collections this month and the percentage of target, with the “data as "
+             "of” date beneath it."),
+            ("point", "Second", "Horizontal bars: this month’s collections by revenue source, sorted from "
+             "largest to smallest."),
+            ("point", "Third", "A line: daily collections this month against the same days last year."),
+            ("point", "Bottom", "A short table of the five accounts furthest below target, and one date "
+             "filter."),
+            ("point", "Second page", "The collector table and the full set of filters, for the desktop reader."),
+            "On the phone, the head of office now sees the answer before the screen finishes scrolling, and "
+            "the page reads a small summary table instead of a full year of receipts.",
+            ("h", "One View or Two?"),
+            "Sometimes one layout cannot serve both readers well. The head of office wants one answer in "
+            "the morning; the revenue unit wants every filter and every collector for a full afternoon of "
+            "checking. Forcing both into one page makes it too long for the phone and too thin for the desk.",
+            ("point", "Make two views", "Build a short phone view for the daily answer and a fuller desktop "
+             "view for the detailed work."),
+            ("point", "Use the same data", "Point both views at the same summary table, so the numbers on the "
+             "phone always match the numbers on the desk."),
+            ("point", "Label them clearly", "Name them for their use, such as “Daily summary (phone)” and "
+             "“Collections detail (desktop),” so nobody opens the wrong one."),
+            ("h", "Test Before You Share"),
+            ("point", "On a real phone", "Open the view on an ordinary phone, not only on the analyst’s "
+             "computer."),
+            ("point", "On mobile data", "Turn off office Wi-Fi and load it again. Time how long the first "
+             "number takes to appear."),
+            ("point", "With a reader", "Hand the phone to someone who will use the view and ask them to find "
+             "one specific number. Watch where they get stuck."),
+            ("point", "In both orientations", "Check it upright and sideways. Some readers turn the phone to "
+             "see a chart better."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Designing only on the big monitor", "What fits on the analyst’s screen may not fit on "
+             "the reader’s."),
+            ("point", "Every chart on one page", "More charts mean more scrolling and more loading."),
+            ("point", "Reading straight from raw receipts", "Summarize first, then display."),
+            ("point", "Tiny text to fit more in", "If the text must shrink to fit, the page has too much on it."),
+            ("h", "Key Takeaways"),
+            ("point", "Phone first", "One column, the answer at the top, details at the bottom."),
+            ("point", "Simple charts", "Number tiles, horizontal bars, simple lines and short tables."),
+            ("point", "Light pages", "Summary tables, fewer charts per page and sensible default filters."),
+            ("point", "Test for real", "On an actual phone, on mobile data, with an actual reader."),
+            ("h", "Your Part 12 Exercise"),
+            "Open one dashboard or report your office uses on your own phone, using mobile data.",
+            ("point", "Time it", "How many seconds until the first number appears?"),
+            ("point", "Find the answer", "Can you see the most important number without scrolling?"),
+            ("point", "Count the problems", "List every chart, label or table that is hard to read."),
+            "Then sketch a one-column version on paper, with the answer at the top. If it fits on two phone "
+            "screens, you have a layout worth building.",
+            ("cta", "Read: Business Intelligence Series, Part 11", "/blog/business-intelligence-part-11-five-minute-briefing/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Business Intelligence Series, Part 8", "/blog/business-intelligence-part-8-report-or-dashboard/"),
+            ("cta", "Read: Data Analytics Series, Part 10", "/blog/data-analytics-part-10-data-types-and-table-shapes/"),
+            ("ask", "On which screen do the readers of your office’s reports actually open them?"),
+        ],
+    },
+    {
         "date": "December 31, 2026",
         "title": "Business Intelligence Series, Part 11: The Five-Minute Briefing for Decision Makers",
         "slug": "business-intelligence-part-11-five-minute-briefing",
