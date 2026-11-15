@@ -71,8 +71,7 @@ PM_POSTS = [
             ("point", "Can be checked", "Anyone can tell whether it is done."),
             "If a piece fails any of these, break it down further. If breaking it further would only add "
             "paperwork without making the plan clearer, stop. PMI’s advice puts it simply: stop when each "
-            "package is small enough to estimate and track, but before the detail costs more to manage than "
-            "it is worth.",
+            "package is small enough to estimate and track, but before the detail costs more to manage than it tells you.",
             ("h", "The Notices Project, Broken Down"),
             ("point", "1. Account list", "1.1 List of accounts with unpaid past-year tax, taken from the "
              "ledger. 1.2 List checked against the assessor’s records. 1.3 Final list approved by the head of "

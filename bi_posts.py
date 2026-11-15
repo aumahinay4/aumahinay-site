@@ -97,8 +97,9 @@ BI_POSTS = [
             ("point", "Compare per working day", "Divide collections by the number of working days for a fair "
              "month-to-month comparison."),
             ("h", "The January Comparison, Done Fairly"),
-            "Back to the question from the start. The analyst counts working days from the date table: this "
-            "January had 19, last January had 21, because of where the weekends and holidays fell. Total "
+            "Back to the question from the start. Suppose the date table shows that this "
+            "January had 19 working days and last January had 21, because of where the weekends and holidays "
+            "fell. Total "
             "collections were ₱9.5 million this year against ₱10.0 million last year, which looked like a 5% "
             "drop.",
             "Per working day, the picture changes: ₱500,000 a day this year against about ₱476,000 a day last "

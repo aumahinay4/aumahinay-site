@@ -50,8 +50,7 @@ DATA_POSTS = [
             "If you have kept a clean spreadsheet with one row per record, you already know most of this. What "
             "a database adds is the idea of keys.",
             ("h", "Primary Key: One Value, One Record"),
-            "A primary key is a field whose value identifies exactly one record in its table. No two records "
-            "may share it, and it may not be left blank.",
+            "A primary key is a field whose value identifies exactly one record in its table. No two records may share it, and it should never be left blank.",
             ("point", "Taxpayers table", "A taxpayer ID such as T-00125. Names are a poor key because two "
              "people can share a name, and the same person can be written in different ways."),
             ("point", "Receipts table", "The official receipt number together with its series, since numbers "
