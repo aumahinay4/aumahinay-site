@@ -62,8 +62,8 @@ DATA_POSTS = [
              "date, who made it and what changed: “v03: removed 12 duplicate receipts, fixed barangay codes.”"),
             ("point", "Mark the approved one", "When the head of office approves a version, write that in the "
              "change log with the date. The approved version is a fact, not a guess based on the file name."),
-            "Google Sheets and Excel files stored in OneDrive or SharePoint keep a version history of their "
-            "own, which helps. It does not replace clear names and a change log, because it records when a "
+            "Google Sheets files, and Excel files stored in OneDrive or SharePoint, keep a version "
+            "history of their own, which helps. It does not replace clear names and a change log, because it records when a "
             "file changed, not why.",
             ("h", "Inside the File: Sheets and Columns"),
             "Good names matter inside the file too, not only on the file itself.",
