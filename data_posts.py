@@ -68,8 +68,8 @@ DATA_POSTS = [
              "characters to remove instead."),
             ("point", "Watch the ñ", "The ñ stayed small in “STO. NIñO.” SQLite’s documentation says its "
              "built-in UPPER converts only lower-case ASCII letters, the basic English alphabet, so letters "
-             "such as ñ are left as they are. Grouping still works, because every copy of the name changes "
-             "the same way, but a report should show the name as people write it."),
+             "such as ñ are left as they are. Grouping is not affected here, because Sto. Niño appears in only one form. A name typed once as “NIÑO” and once as “Niño” would stay two groups, so check names with "
+             "letters outside the basic alphabet by eye."),
             "In a spreadsheet, the same fixes came from TRIM and UPPER in Part 18. The difference is where the "
             "rule lives: in SQL, it is written once in a query and applied to every row the query reads.",
             ("h", "Step 3: Turn Text Into Numbers"),

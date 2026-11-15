@@ -47,9 +47,10 @@ BI_POSTS = [
             ("point", "No totals rows", "Leave totals out. The tutorial advises this so Data Studio can "
              "calculate totals itself. A totals row in the sheet would be added up along with the rows it "
              "totals."),
-            "For this office, the source is a Daily tab in the sharing file from Part 17. It has four columns, "
-            "Date, Barangay, Collector and Amount, filled by formulas from the Clean tab. It carries no taxpayer "
-            "names, so the dashboard cannot show any.",
+            "For this office, the analyst adds a Daily tab to the sharing file from Part 17, brought in with "
+            "IMPORTRANGE like the rest of that file. It has four columns, Date, Barangay, Collector and Amount, "
+            "with small barangays combined as before. It carries no taxpayer names, so the dashboard cannot "
+            "show any.",
             ("quote", "Build the dashboard on the cleanest table you have, not the one that is easiest to find."),
             ("h", "Step 2: Connect the Data"),
             ("point", "Create a data source", "Sign in to Data Studio, click Create in the top left, and choose "
@@ -126,7 +127,7 @@ BI_POSTS = [
             "Monday morning on the question the bars raised instead.",
             ("h", "Mistakes to Avoid"),
             ("point", "Connecting to the working file", "Build on a table with only what readers may see."),
-            ("point", "Dates stored as text", "Fix them in the sheet, or the date controls will not work."),
+            ("point", "Dates stored as text", "Fix them in the sheet, so the date settings work as expected."),
             ("point", "Trusting the default aggregation", "Check that Amount is summed, not averaged or counted."),
             ("point", "Sharing before checking", "Match one total with the sheet before anyone else sees it."),
             ("h", "Key Takeaways"),

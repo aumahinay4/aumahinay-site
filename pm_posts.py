@@ -61,8 +61,7 @@ PM_POSTS = [
             "can shorten the project, but only when the overlap is on the critical path. The list (A, B) has one "
             "day of float, so overlapping its tasks would not move the finish date.",
             ("h", "Why the Link Exists"),
-            "Each link also has a reason, and the reason decides whether it can change. PMI’s PMBOK Guide "
-            "groups the reasons into four kinds.",
+            "Each link also has a reason, and the reason decides whether it can change. PMI’s PMBOK Guide describes two pairs: mandatory or discretionary, and external or internal. A link can be one of each, such as mandatory and external.",
             ("point", "Mandatory", "Required by the nature of the work, or by law or contract. A notice cannot "
              "be printed before it is filled. This link stays."),
             ("point", "Discretionary", "Chosen because of a good practice, past experience or a preference. "
@@ -118,7 +117,7 @@ PM_POSTS = [
             ("point", "Adding a lead without rechecking", "Run the passes again and see what became critical."),
             ("h", "Key Takeaways"),
             ("point", "Four kinds", "Finish-to-start, start-to-start, finish-to-finish and start-to-finish."),
-            ("point", "Four reasons", "Mandatory, discretionary, external and internal."),
+            ("point", "Two pairs of reasons", "Mandatory or discretionary, external or internal."),
             ("point", "Leads and lags", "Start early, or wait on purpose, and write it into the link."),
             ("point", "Stuck tasks", "Check the link, ask for part of the work, and raise it on time."),
             ("h", "Your Part 20 Exercise"),
