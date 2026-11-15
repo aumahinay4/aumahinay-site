@@ -12,6 +12,128 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "February 25, 2027",
+        "title": "Data Analytics Series, Part 22: Sorting and Filtering With Purpose",
+        "slug": "data-analytics-part-22-sorting-and-filtering",
+        "category": "data",
+        "summary": "Sorting and filtering are the first tools of analysis, and the easiest to misuse. This part "
+                   "shows how to sort without scrambling rows, use sorting to find problems, filter without "
+                   "changing what colleagues see, and keep a filtered answer up to date with the SORT and "
+                   "FILTER functions.",
+        "publish_on": "2027-02-25 21:00",
+        "body": [
+            "The head of office needs a list for Monday’s meeting: the twenty largest delinquent real property "
+            "tax accounts in two barangays, biggest first. A staff member opens the shared delinquency sheet, "
+            "selects the Amount column, and sorts it from largest to smallest.",
+            "The amounts move. The names beside them do not. For about ten minutes, until someone notices, the "
+            "sheet shows each taxpayer next to someone else’s balance.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 12 laid out data as one row per record, and Part 19 asked questions of a database with WHERE "
+            "and ORDER BY. This part does the same everyday work in a spreadsheet. By the end of this post you "
+            "will know how to sort a table safely, use sorting to spot problems, filter without changing what "
+            "colleagues see, build answers that update themselves with SORT and FILTER, and decide when a "
+            "filtered list is the right tool and when it is not.",
+            ("photo", "blog/data-sort-filter.jpg", "Sorting and filtering with purpose: keep rows together, "
+             "find problems, use filter views and write formulas that update. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Sort the Whole Row, Every Time"),
+            "A row is one record. Its cells belong together: the account number, the name, the barangay, the "
+            "years unpaid and the amount. Sorting one column on its own breaks that link.",
+            ("point", "In Google Sheets", "Select the whole table, including every column, then choose Data, "
+             "Sort range, and Advanced range sorting options. Google’s help describes this path. Tick “Data has "
+             "header row” so the column titles stay at the top, then choose the column to sort by."),
+            ("point", "In Excel", "If you select a single column inside a larger table and sort, Excel shows a "
+             "warning and offers to expand the selection. Choose to expand it."),
+            ("point", "Before any sort", "Add a column called Row with the numbers 1, 2, 3 and so on. Sorting "
+             "by it later puts the table back in its original order."),
+            ("quote", "Sort the record, not the cell."),
+            ("h", "Sorting to Find Problems"),
+            "Sorting is not only for presentation. Putting values in order pushes the unusual ones to the top "
+            "or the bottom, where they are easy to see.",
+            ("point", "Amount, smallest first", "Zero, negative or blank amounts gather at one end. So do amounts stored as text, the problem Part 16 described, because a sort places text apart from numbers."),
+            ("point", "Amount, largest first", "A balance ten times bigger than the next one is either the "
+             "most important account in the list or a typing error. Either way, someone should look."),
+            ("point", "Names, A to Z", "Near-duplicates sit next to each other: “Dela Cruz, Juan” and “Dela "
+             "Cruz, Juan P.” Part 14 explained why these become one taxpayer ID."),
+            ("point", "Dates, oldest first", "A date far outside the period, such as a year that has not "
+             "happened yet, shows up at the end."),
+            ("h", "Filters and Filter Views"),
+            "A filter hides the rows that do not match a condition. In a shared sheet, the kind of filter "
+            "matters.",
+            ("point", "A filter", "Google’s help notes that when you add a filter, anyone with access to the "
+             "spreadsheet will see it. If a colleague is working in the same sheet, their rows disappear too."),
+            ("point", "A filter view", "A filter view applies only to your view of the spreadsheet, so several "
+             "people can filter the same sheet at once in different ways. Create one from the Data menu with "
+             "“Create filter view,” then name it."),
+            ("point", "View-only access", "The same help page notes that someone who can only view a sheet can "
+             "create a temporary filter view that only they can use, and it is not saved."),
+            "For the Monday list, a named filter view such as “Delinquent, Poblacion and San Isidro, largest "
+            "first” lets anyone open the same view later without disturbing the sheet for others.",
+            ("h", "Filter by Condition"),
+            ("point", "By values", "Tick the barangays to keep. Simple, but new values that appear later are "
+             "not ticked automatically."),
+            ("point", "By condition", "Rules such as “greater than or equal to 10,000” or “text contains.” A "
+             "rule keeps working when new rows arrive."),
+            ("point", "Combine with care", "Filters on two columns keep only rows that pass both. A list of "
+             "accounts that are both over ₱10,000 and over three years unpaid can be much shorter than either "
+             "list alone."),
+            ("h", "Answers That Update Themselves"),
+            "A sorted and filtered sheet shows the answer today. A formula can show it every day. Google Sheets "
+            "has SORT and FILTER functions that return a new range of results in another place, leaving the "
+            "original table as it is.",
+            ("point", "FILTER", "=FILTER(A2:E500, C2:C500=\"POBLACION\") returns only the rows where column C, "
+             "the barangay, is POBLACION. More conditions can be added as extra arguments, and a row must meet "
+             "all of them."),
+            ("point", "SORT", "=SORT(A2:E500, 5, FALSE) returns the table sorted by its fifth column, the "
+             "amount, from largest to smallest. TRUE would sort from smallest to largest."),
+            ("point", "Together", "=SORT(FILTER(A2:E500, (C2:C500=\"POBLACION\")+(C2:C500=\"SAN ISIDRO\")), 5, "
+             "FALSE) keeps rows from either barangay, then sorts them. Adding two conditions with a plus sign "
+             "means “either one”; listing them as separate arguments means “both.”"),
+            ("point", "The top twenty", "Wrap the result in ARRAY_CONSTRAIN(…, 20, 5) to keep the first twenty "
+             "rows and five columns."),
+            "Put these formulas on a separate tab, such as Monday List, and the list updates when the "
+            "delinquency sheet changes. Excel has SORT and FILTER functions too, in recent versions, with "
+            "slightly different rules for combining conditions.",
+            ("h", "When a Filtered List Is Not Enough"),
+            ("point", "Totals by group", "A filter shows rows, not totals by barangay. That is a job for SUMIFS "
+             "or a pivot table."),
+            ("point", "Hidden rows still count", "Some tools include hidden rows in totals. Check how a total "
+             "treats filtered rows before quoting it, as Part 20 of the Business Intelligence series noted for "
+             "Data Studio."),
+            ("point", "Privacy", "A filtered list of named delinquent taxpayers is personal data. Share it only "
+             "with the people who need it, as Part 6 explained."),
+            ("h", "The Monday List, Done Right"),
+            "After the scrambled sort, the staff member pressed undo, then spot-checked several accounts against the cashier’s records to be sure every name was back with its balance. The analyst added a Row column for next time, then built a Monday List tab "
+            "with one SORT and FILTER formula and a note above it with the conditions in words. The head of "
+            "office received a list whose rules anyone could read, and the next month’s list took no work at "
+            "all.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Sorting one column", "Select the whole table, or let Excel expand the selection."),
+            ("point", "Filtering a shared sheet", "Use a filter view, so colleagues are not affected."),
+            ("point", "Ticking values for a rule", "Use a condition when new values will arrive."),
+            ("point", "Quoting totals from a filtered sheet", "Check whether hidden rows are counted."),
+            ("h", "Key Takeaways"),
+            ("point", "Keep rows together", "Sort the whole table, with a Row column to return to."),
+            ("point", "Sort to find problems", "Extremes and near-duplicates gather at the ends and side by side."),
+            ("point", "Filter views", "Your own view, without changing anyone else’s."),
+            ("point", "SORT and FILTER", "Answers that update when the data does."),
+            ("h", "Your Part 22 Exercise"),
+            "Make a copy of a list your office uses, or a practice list of thirty made-up accounts with name, "
+            "barangay, years unpaid and amount.",
+            ("point", "Sort safely", "Add a Row column, sort the whole table by amount, then sort it back."),
+            ("point", "Find one problem", "Sort each column in turn and note anything odd at the ends."),
+            ("point", "Write the formula", "Build one SORT and FILTER that answers a real question."),
+            "Then write the question above the formula in plain words. A list with its rules in words can be "
+            "checked by anyone, not only by the person who built it.",
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 16", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 19", "/blog/data-analytics-part-19-first-steps-in-sql/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("ask", "Which list does your office rebuild by hand every month that one formula could keep up to date?"),
+        ],
+    },
+    {
         "date": "February 20, 2027",
         "title": "Data Analytics Series, Part 21: Stop Bad Data at the Door, Rules Inside the Database",
         "slug": "data-analytics-part-21-rules-inside-the-database",
