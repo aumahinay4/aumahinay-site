@@ -50,6 +50,8 @@ def spoken(text):
     s = text
     s = re.sub(r"₱\s?([\d,]+(?:\.\d+)?)(\s?(?:million|billion|thousand))?", lambda m: m.group(1) + (m.group(2) or "") + " pesos", s)
     s = s.replace("₱", "pesos ")
+    s = re.sub(r"\bNos\.\s*(?=\d)", "Numbers ", s)  # "Republic Act No. 7160" -> "Republic Act Number 7160" (Butch, 2026-11-15)
+    s = re.sub(r"\bNo\.\s*(?=\d)", "Number ", s)
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)
