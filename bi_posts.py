@@ -59,8 +59,8 @@ BI_POSTS = [
             ("h", "Adding the Daily Tab’s Missing Column"),
             "The Daily tab from Part 20 has Date, Barangay, Collector and Amount. For an average per receipt, "
             "the analyst added one more column to it, Receipts, with the number of receipts behind each row. "
-            "This is a count from the Clean tab, not a calculation, so it belongs in the sheet.",
-            ("point", "Add the field", "Open the data source for editing, choose Add a field, give it a name, "
+            "It comes from counting the receipts in the Clean tab, which the dashboard cannot do from the Daily totals alone, so it belongs in the sheet.",
+            ("point", "Add the field", "Open the data source for editing, choose Add a field, then Add calculated field, give it a name, "
              "write the formula and save. The Data Studio tutorial on calculated fields walks through these "
              "steps."),
             ("h", "Field 1: Group With CASE"),
@@ -105,13 +105,12 @@ BI_POSTS = [
             ("point", "Words, not only colors", "A label in words can be read without color, the habit from "
              "Part 18."),
             ("h", "When a Formula Will Not Save"),
-            "The formula editor shows a warning and will not save a field with an error. Two rules from the documentation are worth knowing first.",
+            "The formula editor shows a warning and will not save a field with an error. Three rules from the documentation explain what the editor checks.",
             ("point", "Dimensions or metrics, not both", "A formula can use dimensions or metrics, but not mix "
              "them. SUM(Amount) / Barangay makes no sense, and the editor refuses it."),
             ("point", "No second aggregation", "A field that is already aggregated cannot be aggregated again. "
              "SUM of a field that is itself a SUM is refused."),
-            ("point", "Names must match", "Field names in a formula must match the data source exactly. The "
-             "editor shows a recognized field as a colored chip."),
+            ("point", "Names must match", "Field names in a formula must match the data source exactly. The documentation notes that a valid field name appears as a green or blue chip in the editor."),
             ("h", "Test Every New Field"),
             ("point", "Check one group by hand", "Pick one week and one collector. Work out the average per "
              "receipt in the sheet with SUMIFS and compare."),

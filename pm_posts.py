@@ -27,8 +27,7 @@ PM_POSTS = [
             "The plan for next year’s round of notices looked ready. The critical path was clear, the buffer "
             "was visible, and the budget was approved. Then the clerk asked a simple question at the weekly "
             "check-in: “Who is buying the envelopes, and when?”",
-            "Nobody had an answer. The envelopes were in the budget from Part 17, ₱3,600 for 1,800 of them, but "
-            "they were not in any work package. And in a government office, money in the budget does not put "
+            "Nobody had an answer. The envelopes were in the budget from Part 17, ₱3,600 for 1,800 of them, costed under package 2.3, printing and signing. But nobody had been named to buy them, and in a government office, money in the budget does not put "
             "envelopes on a desk. A purchase has to go through procurement first.",
             "(As in every part of this series, the office, the people and the numbers are made up. No real "
             "town, employee or taxpayer is described.)",

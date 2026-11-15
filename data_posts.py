@@ -51,8 +51,7 @@ DATA_POSTS = [
             ("h", "Sorting to Find Problems"),
             "Sorting is not only for presentation. Putting values in order pushes the unusual ones to the top "
             "or the bottom, where they are easy to see.",
-            ("point", "Amount, smallest first", "Zero, negative or blank amounts gather at one end. So do "
-             "amounts stored as text, which a sort may place apart from the numbers, as Part 16 described."),
+            ("point", "Amount, smallest first", "Zero, negative or blank amounts gather at one end. So do amounts stored as text, the problem Part 16 described, because a sort places text apart from numbers."),
             ("point", "Amount, largest first", "A balance ten times bigger than the next one is either the "
              "most important account in the list or a typing error. Either way, someone should look."),
             ("point", "Names, A to Z", "Near-duplicates sit next to each other: “Dela Cruz, Juan” and “Dela "
@@ -105,8 +104,7 @@ DATA_POSTS = [
             ("point", "Privacy", "A filtered list of named delinquent taxpayers is personal data. Share it only "
              "with the people who need it, as Part 6 explained."),
             ("h", "The Monday List, Done Right"),
-            "After the scrambled sort, the staff member pressed undo, then checked the sheet against the Row "
-            "column to be sure every name was back with its balance. The analyst then built a Monday List tab "
+            "After the scrambled sort, the staff member pressed undo, then spot-checked several accounts against the cashier’s records to be sure every name was back with its balance. The analyst added a Row column for next time, then built a Monday List tab "
             "with one SORT and FILTER formula and a note above it with the conditions in words. The head of "
             "office received a list whose rules anyone could read, and the next month’s list took no work at "
             "all.",
