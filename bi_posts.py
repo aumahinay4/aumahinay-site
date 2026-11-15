@@ -48,7 +48,7 @@ BI_POSTS = [
              "kind of tax."),
             ("point", "The budget officer", "Plans spending from monthly totals by class of revenue. No names "
              "needed."),
-            ("point", "Council staff and the public", "Follow the overall trend. Totals by month and by kind "
+            ("point", "Council staff", "Follow the overall trend. Totals by month and by kind "
              "of tax are enough."),
             "Only one of the four groups needs to see individual receipts. That single fact shapes every "
             "setting below.",

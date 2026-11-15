@@ -28,7 +28,7 @@ PM_POSTS = [
             "question: “How much will this cost, and do we have the funds?”",
             "The revenue clerk remembers the first round. Asked the same question then, the clerk answered "
             "quickly: “Mostly the printing.” The printing quote was about ₱6,500, so that went into the plan. "
-            "Three weeks into that round, the envelopes have not been counted, "
+            "Three weeks into that round, the envelopes had not been counted, "
             "the collectors were asking about their transport for the far barangays, and the toner ran out "
             "halfway through the run.",
             "None of these costs was a surprise. They were simply never written down, because the estimate "
@@ -69,13 +69,12 @@ PM_POSTS = [
             "Keeping the two side by side shows the full cost of the project, and it helps the sponsor see "
             "what the office is giving up to do it.",
             ("h", "The Notices Project Budget"),
-            ("point", "1. Account list (1.1 to 1.3)", "No cash cost. Staff time: 9 person-days from the clerk "
-             "and one checker."),
+            ("point", "1. Account list (1.1 to 1.3)", "No cash cost. Staff time: about 9 person-days of the clerk’s and a checker’s time."),
             ("point", "2.1 Notice template", "No cash cost. Staff time: 2 person-days, plus one review session "
              "with the legal adviser."),
             ("point", "2.3 Printing and signing", "Paper and toner from the supplier quote, ₱6,500. Envelopes, "
              "1,800 at ₱2, ₱3,600."),
-            ("point", "3.2 Delivery", "Transport for two collectors: 25 days × 2 × ₱150 = ₱7,500."),
+            ("point", "3.2 Delivery", "Transport allowance for the delivery trips: 50 trips at ₱150 = ₱7,500."),
             ("point", "4.2 Counter guide", "Printed copies for the counter, ₱500."),
             ("point", "5.3 Closing report", "Printing, ₱300."),
             "Cash total: ₱6,500 + ₱3,600 + ₱7,500 + ₱500 + ₱300 = ₱18,400. That is almost three times the "
@@ -88,10 +87,8 @@ PM_POSTS = [
             ("point", "Management reserve", "Money held back for problems nobody foresaw. It sits on top of the "
              "cost baseline, and the cost baseline plus the management reserve is the project budget."),
             "For the notices project, two identified risks were costed.",
-            ("point", "Reprinting", "If the legal review asks for a change after printing, part of the run must "
-             "be redone. The clerk set aside ₱1,000."),
-            ("point", "Longer delivery", "If the pessimistic delivery estimate from Part 15 comes true, five "
-             "more days of transport for two collectors cost 5 × 2 × ₱150 = ₱1,500."),
+            ("point", "Reprinting", "If errors such as a wrong amount are found after printing, part of the run must be redone. The clerk set aside ₱1,000."),
+            ("point", "Longer delivery", "If hard-to-find households need extra visits, 10 more trips at ₱150 cost ₱1,500."),
             "Contingency reserve: ₱2,500. Cost baseline: ₱18,400 + ₱2,500 = ₱20,900. The head of office held a "
             "management reserve of ₱1,000, bringing the project budget to ₱21,900.",
             "The difference matters in practice. In this office, the clerk may use the contingency reserve "
@@ -128,8 +125,7 @@ PM_POSTS = [
             "This time, the clerk presented the budget package by package, with staff time beside "
             "the cash costs and the two reserves explained. The budget officer confirmed which items of the "
             "office’s approved budget would cover the supplies and the transport.",
-            "One risk did happen: the legal adviser asked for a wording change after the first batch was "
-            "printed. The reprint cost ₱800, paid from the contingency reserve, and the project finished "
+            "One risk did happen: a checker found wrong amounts on part of the first printed batch. The reprint cost ₱800, paid from the contingency reserve, and the project finished "
             "inside its budget without a single request for more funds.",
             ("h", "Mistakes to Avoid"),
             ("point", "Starting from the biggest purchase", "Start from the work packages instead."),

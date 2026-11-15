@@ -95,8 +95,7 @@ DATA_POSTS = [
             "the size.",
             ("h", "Does the Population Size Matter?"),
             "Less than you might expect. The formula above has no population size in it at all. For smaller "
-            "populations, a finite population correction trims the sample a little: n ÷ (1 + (n − 1) ÷ N), "
-            "where N is the population size.",
+            "populations, a finite population correction trims the sample a little: divide the starting sample size n by 1 + (n − 1) ÷ N, where N is the population size.",
             ("point", "For 12,000 receipts", "385 ÷ (1 + 384 ÷ 12,000) is about 373.1, so 374 records instead "
              "of 385."),
             "That is why 400 out of 12,000 is not “barely three percent” in the way the head of office feared. "
