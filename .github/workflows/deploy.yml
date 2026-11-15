@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install Pillow (makes each post's link-preview picture)
+        run: pip install pillow || echo "Pillow not installed; posts will share the site picture"
       - name: Build the site
         run: python build.py
       - name: Anything new to publish?
