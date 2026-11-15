@@ -9,6 +9,286 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "January 3, 2027",
+        "title": "Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost",
+        "slug": "cybersecurity-part-12-securing-your-phone",
+        "category": "security",
+        "summary": "A phone now holds an e-wallet, a bank app, email, photos and the codes that unlock "
+                   "everything else. This part shows how to lock it properly, keep harmful apps off it, hide "
+                   "one-time codes from a stranger’s view, and what to do in the first hour after it is lost "
+                   "or stolen.",
+        "publish_on": "2027-01-03 21:00",
+        "body": [
+            "A jeepney ride home after a long day. A phone in the back pocket, then not. By the time its owner "
+            "notices, the phone is gone, and with it the e-wallet, the bank app, the email account, the "
+            "family photos and the text messages where every one-time code arrives.",
+            "A lost phone used to mean a lost phone. Today it can mean a lost wallet, a lost identity and a "
+            "few anxious days of resetting passwords. The good news is that much of the damage can be limited by settings that take about fifteen minutes to set up, before anything happens.",
+            "In this part, we treat the phone as what it has become: the key to almost everything else. By "
+            "the end of this post, you will know how to lock your phone properly, how to keep harmful apps "
+            "off it, how to stop one-time codes from being read off your screen, how to set up remote "
+            "locking and erasing, and what to do in the first hour after a phone is lost or stolen.",
+            ("photo", "blog/cyber-phone.jpg", "Securing your phone: lock it, install apps only from the "
+             "store, hide codes on the lock screen, and set up remote lock and erase. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why the Phone Is the Master Key"),
+            "Part 2 called email the master key to your accounts, because a password reset link goes there. "
+            "The phone has become an even bigger key. It receives the reset links, the "
+            "one-time codes by text message and the approval prompts. It also holds apps that are already "
+            "signed in.",
+            "That means a thief does not need to know your passwords. If the phone is unlocked, or easy to "
+            "unlock, the apps are open and the codes arrive on the same screen. Securing the phone protects "
+            "every account that trusts it.",
+            ("quote", "Whoever holds your unlocked phone holds the keys to your accounts."),
+            ("h", "Step 1: A Real Screen Lock"),
+            ("point", "Use a PIN or password, not a simple swipe", "A six-digit PIN or a longer passcode is "
+             "harder to guess than four digits. Avoid birthdays, 123456 and repeated digits."),
+            ("point", "Add a fingerprint or face unlock", "They make a strong PIN easy to live with, because "
+             "you type it less often. The PIN still matters: it is the fallback a thief would try."),
+            ("point", "Set a short auto-lock", "Thirty seconds to one minute. A phone that stays unlocked for "
+             "ten minutes on a table is an open wallet."),
+            ("point", "Watch for shoulder surfers", "In a crowded line or vehicle, people can watch you type "
+             "your PIN, then take the phone later. Use your fingerprint or face in public, or shield the "
+             "screen."),
+            ("h", "Step 2: Lock the Apps That Hold Money"),
+            "E-wallet and banking apps have their own PIN or biometric login. Turn it on, and use a PIN that "
+            "is different from the phone’s screen lock. If someone learns the screen lock by watching, the "
+            "money still has a second door.",
+            "Do not save the PINs in your notes app, in a photo of a card, or in a message to yourself. A "
+            "thief who opens the phone can find them there. A password manager, as described in Part 2, "
+            "is the right place.",
+            ("h", "Step 3: Keep Codes Off the Lock Screen"),
+            "One-time codes by text message can appear in a notification on the lock screen. Anyone holding "
+            "the phone, even a locked one, may be able to read them. That turns your second factor into "
+            "something a thief can see without your PIN.",
+            ("point", "Hide message content on the lock screen", "Look in your phone’s notification settings "
+             "for the option to hide sensitive content or show notifications only when the phone is "
+             "unlocked."),
+            ("point", "Prefer an authenticator app or passkey", "Where an account offers it, use an "
+             "authenticator app or a passkey instead of text messages, as Part 2 recommended. They are "
+             "harder to intercept."),
+            ("point", "Never read a code to anyone", "A one-time code is meant for you alone. Treat anyone who asks for it, by call, text or chat, as a scammer, as Part 3 explained."),
+            ("h", "Step 4: Only Trusted Apps"),
+            "Harmful apps are one way phones are attacked. Some pretend to be games, flashlight "
+            "tools or loan apps, then read messages, show fake login screens or send data away.",
+            ("point", "Install from the official store", "On Android, Google’s help explains that Google "
+             "Play Protect runs a safety check on Play Store apps before you download them, checks the device "
+             "for harmful apps from other sources, and may deactivate or remove harmful apps. It is on by "
+             "default. Check it under your profile picture in the Play Store, then Play Protect."),
+            ("point", "Be wary of app files sent by message", "A file that ends in .apk, sent through chat "
+             "and described as an update, a loan app or a delivery tracker, is a way to install malware outside the store’s checks."),
+            ("point", "Review permissions", "A calculator does not need your contacts or text messages. Part 6 "
+             "showed how to review what each app can reach. Remove apps you no longer use."),
+            ("point", "Keep the phone updated", "As Part 11 explained, updates close known flaws. Check for "
+             "them under System, then Software updates, on Android, or Settings on an iPhone."),
+            ("h", "Step 5: Set Up Remote Lock and Erase Today"),
+            "This is the step people skip, and it is the one they wish they had done when the phone is gone. "
+            "Both major phone systems can locate, lock and erase a lost phone from another device, but only if "
+            "the feature was set up before the loss.",
+            ("point", "Android: Find Hub", "Google’s help describes how Find Hub can show the phone’s "
+             "estimated location, ring it at full volume for five minutes even when silenced, lock it with a "
+             "“Mark as lost” option that also turns off notifications, and erase it. To lock or erase, the "
+             "phone must have power, be connected, be signed in to a Google Account, and have Find Hub "
+             "turned on."),
+            ("point", "iPhone: Find My", "Apple’s help advises putting a stolen device in Lost Mode as "
+             "quickly as possible, through iCloud.com/find. Apple also describes Stolen Device Protection, "
+             "which requires Face ID or Touch ID for some sensitive changes, even if someone knows the "
+             "passcode."),
+            ("point", "Test it once", "Sign in from a computer or a family member’s phone and make your own "
+             "phone ring. If it works today, it will work when you need it."),
+            ("h", "Step 6: Back It Up"),
+            "Photos of children growing up, receipts saved for a tax return, contacts collected over years: "
+            "these are worth more than the phone. Turn on the phone’s cloud backup, or copy important files to "
+            "a computer regularly. Part 5 explained why a backup the attacker cannot reach is the cure for "
+            "ransomware. For a lost phone, a backup is the difference between buying a new phone and starting "
+            "over.",
+            ("h", "The First Hour After a Loss"),
+            ("point", "1. Lock it remotely", "Use Find Hub or Find My to mark it as lost. Apple advises not to "
+             "add your contact details to the lock message if the phone was stolen, since a thief could use "
+             "them for a scam."),
+            ("point", "2. Call your mobile network", "Ask them to block the SIM, so no one receives your "
+             "codes by text. Request a replacement SIM for the same number."),
+            ("point", "3. Call your bank and e-wallet providers", "Use the hotline on their official website "
+             "or app, and ask them to lock or watch the accounts."),
+            ("point", "4. Change the key passwords", "From a safe device, change your email password first, "
+             "then the accounts that matter most, and sign the lost phone out of them."),
+            ("point", "5. Erase only when hope is gone", "Apple’s help calls erasing a last resort, because it "
+             "cannot be undone, and Google’s help notes that an erased phone can no longer be located."),
+            ("point", "6. Report it", "Report the theft to the police. The SIM Registration Act, Republic Act "
+             "No. 11934, signed in October 2022, links each SIM to a registered owner, so report quickly if a "
+             "SIM in your name might be misused."),
+            ("h", "For Treasury Workers and Office Phones"),
+            "A work phone or a personal phone used for work carries more than your own data. It may hold "
+            "group chats where collection reports are shared, photos of documents, or email with taxpayer "
+            "information. Losing it can become a personal data breach, which Part 9 explained may need to be "
+            "reported.",
+            "Keep work documents in the office’s approved storage rather than in the phone’s gallery. Delete "
+            "photos of IDs and forms once they are filed. And tell the office right away if a phone with work "
+            "data is lost. A quick report makes containment possible.",
+            ("h", "Key Takeaways"),
+            ("point", "The phone is the master key", "It receives codes and holds signed-in apps."),
+            ("point", "Two locks for money", "A strong screen lock, and a different PIN for wallets and banks."),
+            ("point", "Hide codes and trust only the store", "Codes off the lock screen, apps from the "
+             "official store."),
+            ("point", "Prepare for loss today", "Set up remote lock, test it, and keep a backup."),
+            ("h", "Your Part 12 Action Plan"),
+            ("point", "Fifteen minutes tonight", "Set a six-digit PIN, a one-minute auto-lock and hidden "
+             "lock-screen content."),
+            ("point", "Check the wallet apps", "Turn on their own PIN or biometric login, different from the "
+             "screen lock."),
+            ("point", "Ring your own phone", "Open Find Hub or Find My from another device and make your phone "
+             "ring. Then write your bank, e-wallet and network hotlines on paper and keep them at home."),
+            "If the jeepney ride ever goes wrong, those fifteen minutes will be the best you ever spent on "
+            "your phone.",
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("cta", "Read: Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private", "/blog/cybersecurity-part-6-cloud-and-privacy/"),
+            ("cta", "Read: Cybersecurity Series, Part 11: Software Updates", "/blog/cybersecurity-part-11-software-updates/"),
+            ("cta", "Read: Cybersecurity Series, Part 9: Incident Response", "/blog/cybersecurity-part-9-incident-response/"),
+            ("ask", "If your phone disappeared right now, which account would you need to protect first?"),
+        ],
+    },
+    {
+        "date": "December 29, 2026",
+        "title": "Cybersecurity Series, Part 11: Software Updates, the Fix You Keep Postponing",
+        "slug": "cybersecurity-part-11-software-updates",
+        "category": "security",
+        "summary": "An attack does not always need a genius. Sometimes a computer that missed an update is enough. This part "
+                   "explains what an update fixes, why the WannaCry outbreak spread through machines that were "
+                   "two months behind, what end of support means for an old computer, and how a small office "
+                   "can keep every device current without stopping work.",
+        "publish_on": "2026-12-29 21:00",
+        "body": [
+            "Every office has one: the computer in the corner with a small message that has been waiting for "
+            "weeks. “Updates are ready. Restart now?” And every day, someone clicks “Remind me tomorrow,” "
+            "because there is a line at the window and the restart takes too long.",
+            "That small button is a real security decision, even if it does not feel like one. "
+            "In this part, we look at what an update actually does, what happens when it is skipped, and how "
+            "to build a routine that keeps every device current without getting in the way of the work. By "
+            "the end of this post, you will know how attackers use known flaws, what end of support means "
+            "for an old computer or phone, how to check whether a device is up to date, and how a small office "
+            "can plan its updates instead of postponing them.",
+            ("photo", "blog/cyber-updates.jpg", "Software updates: install them, restart, replace devices "
+             "that no longer get them, and keep a simple list. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What an Update Really Fixes"),
+            "Software is written by people, and people make mistakes. Some mistakes only cause a crash. Others "
+            "open a door: a way for someone outside to read files, run their own program or take control of "
+            "the device. These doors are called vulnerabilities.",
+            "When a maker finds one, or someone reports it, the maker writes a fix and sends it out as an "
+            "update. Some updates add features, but the ones that matter here are security updates, sometimes "
+            "called patches.",
+            "Here is the uncomfortable part. Once a fix is published, the flaw is no longer a secret. Attackers "
+            "can study the update, work out what it changed, and build a tool that attacks every device that "
+            "has not installed it yet. From that day, the race is between the person who installs the update "
+            "and the person who wants to use the flaw.",
+            ("quote", "An update you postpone is a door you have been told about and left open."),
+            ("h", "A Lesson From 2017: WannaCry"),
+            "On May 12, 2017, Microsoft detected a new kind of ransomware that spread like a worm. It became "
+            "known as WannaCry, or WannaCrypt. It locked files and demanded payment, as described in Part 5, "
+            "but its spread was what made it famous. It did not need anyone to click a link. Once inside a "
+            "network, it searched for other Windows computers with a particular flaw in file sharing and "
+            "copied itself to them.",
+            "The fix for that flaw was not new. Microsoft had released it on March 14, 2017, as security "
+            "bulletin MS17-010, about two months before the outbreak. Microsoft’s guidance at the time said "
+            "that customers with Windows Update turned on were protected against attacks on this "
+            "vulnerability. Microsoft also wrote that the exploit worked against unpatched Windows 7 and "
+            "older systems, and that Windows 10 computers were not affected.",
+            "Microsoft also took the unusual step of making the "
+            "fix available for systems it no longer normally supported, including Windows XP. The lesson is "
+            "simple. The damage did not come from a flaw nobody knew about. It came from a fix that had not "
+            "been installed.",
+            ("h", "Known Flaws Are Enough"),
+            "News stories like to talk about “zero-day” attacks, which use a flaw before any fix exists. Those "
+            "are real. But an attacker does not need one when a flaw that was fixed long ago is still open on "
+            "the computer in front of them.",
+            "The United States Cybersecurity and Infrastructure Security Agency keeps a public list called the "
+            "Known Exploited Vulnerabilities Catalog: flaws that attackers are known to have used in real "
+            "attacks. Each one on the list has a fix or a workaround. If a flaw is on that list and your "
+            "device has not been updated, you are not waiting for a rare event. You are on a list of targets "
+            "that already works.",
+            ("h", "When the Updates Stop: End of Support"),
+            "Every product has a last day of security updates. After that, new flaws are found, but no fixes "
+            "arrive. The device still turns on and still looks fine, which is what makes this risk easy to "
+            "miss.",
+            ("point", "Windows 10", "Microsoft ended support on October 14, 2025. Its help page says the "
+             "software will continue to function, but security updates and fixes are no longer provided. "
+             "Microsoft offers a paid Extended Security Updates program for consumers that can cover a "
+             "Windows 10 device until October 12, 2027, as a bridge to a newer system."),
+            ("point", "Phones", "Each phone maker decides how long a model receives updates. An old phone "
+             "that still holds your e-wallet, email and photos may have stopped receiving them years ago."),
+            ("point", "Routers and gadgets", "As Part 4 and Part 10 explained, routers, cameras and smart "
+             "devices run software too, and some stop receiving updates early."),
+            "For an office, this turns into a planning question, not a technical one. A computer that handles "
+            "collections, payroll or personal data should not be running a system that no longer receives "
+            "security fixes. Its replacement belongs in the budget before its last update, not after an "
+            "incident.",
+            ("h", "How to Check a Device in Two Minutes"),
+            ("point", "Windows", "Open Settings, then Windows Update. It shows whether updates are waiting, "
+             "and whether a restart is needed to finish them."),
+            ("point", "Android", "Google’s help says to open Settings, tap About phone, then Android version, "
+             "where the Android security update date is listed. Updates themselves are under System, then "
+             "Software updates. Google advises connecting to Wi-Fi and charging to at least 75% first."),
+            ("point", "Browsers", "Chrome, Edge and Firefox update themselves, but the update finishes only "
+             "after the browser is closed and opened again. A browser left open for weeks may be running old "
+             "code."),
+            ("point", "Apps", "Turn on automatic updates in the app store, and remove apps you no longer use. "
+             "An app you do not have cannot be attacked."),
+            ("h", "Why Restarts Matter"),
+            "Some updates download quietly but only take effect after a restart. A computer that has not been "
+            "restarted in a month may show that updates were downloaded, while still running the old, flawed "
+            "code. That is why the restart button matters as much as the download.",
+            "A simple office rule helps: every computer is restarted at the end of the working day "
+            "at least once a week. Ten minutes after closing, with no taxpayer waiting, is the cheapest "
+            "security work an office can do.",
+            ("h", "An Update Routine for a Small Office"),
+            ("point", "Keep a list", "One sheet with every computer, phone, printer and router: who uses it, "
+             "what system it runs, and when it was last updated. You cannot update what you have forgotten "
+             "you own."),
+            ("point", "Turn on automatic updates", "Automatic updates do not depend on anyone remembering. "
+             "Schedule the installation for after office hours where the system allows it."),
+            ("point", "Test the critical ones first", "For the computer that runs a collection or accounting "
+             "system, update one machine first and confirm the system still works before updating the rest. "
+             "Ask the system’s supplier which updates they have tested."),
+            ("point", "Mark the end dates", "Note when each device stops receiving security updates, and put "
+             "its replacement in the next budget."),
+            ("point", "Name an owner", "One person checks the list each month. Without an owner, the list "
+             "becomes another file nobody opens."),
+            ("h", "Updates Without Fear"),
+            "People postpone updates for real reasons. They worry that something will break, that the printer "
+            "will stop working, or that the computer will restart in the middle of a transaction. These fears "
+            "are fair, and the answer is planning, not avoidance.",
+            "Make a backup before major updates, as Part 5 described. Install them when the office is closed. "
+            "Keep the supplier’s support number at hand for the critical systems. If an update does cause a "
+            "problem, the supplier or the maker’s support pages can help undo or fix it. A ransomware attack "
+            "through an old flaw can stop an office for much longer.",
+            "One more caution: install updates only from the device itself, the official app store or the "
+            "maker’s website. A pop-up on a web page that says your computer needs an urgent update is a "
+            "trick for getting people to install malware, the kind of lure Part 3 described.",
+            ("h", "Key Takeaways"),
+            ("point", "Updates close known doors", "Once a fix is public, attackers study it and target "
+             "devices that have not installed it."),
+            ("point", "WannaCry’s fix was two months old", "The damage came from updates not installed, not "
+             "from an unknown flaw."),
+            ("point", "End of support is a deadline", "A device with no security updates belongs in the "
+             "replacement plan."),
+            ("point", "Restart to finish", "Downloaded is not installed until the device restarts."),
+            ("h", "Your Part 11 Action Plan"),
+            ("point", "Check three devices", "Your phone, your work computer and your browser. Install what "
+             "is waiting and restart."),
+            ("point", "Start the list", "Write down every device in your home or office and the system it "
+             "runs."),
+            ("point", "Find the oldest", "Look up whether it still receives security updates. If it does "
+             "not, decide this week how it will be replaced or kept offline."),
+            "Then press Restart on that computer in the corner, after closing time. It is the simplest "
+            "security fix in this whole series.",
+            ("cta", "Read: Cybersecurity Series, Part 5: Inside a Ransomware Attack", "/blog/cybersecurity-part-5-ransomware/"),
+            ("cta", "Read: Cybersecurity Series, Part 4: Securing Your Home and Remote Network", "/blog/cybersecurity-part-4-home-network/"),
+            ("cta", "Read: Cybersecurity Series, Part 10: AI, Quantum Computers and the Next Wave", "/blog/cybersecurity-part-10-future-threats/"),
+            ("cta", "Read: Your Data at the Treasury Counter", "/blog/your-data-at-the-treasury-counter/"),
+            ("ask", "Which device in your home or office has gone the longest without an update?"),
+        ],
+    },
+    {
         "date": "December 24, 2026",
         "title": "Cybersecurity Series, Part 10: AI, Quantum Computers and the Next Wave of Threats",
         "slug": "cybersecurity-part-10-future-threats",
@@ -150,7 +430,7 @@ CYBER_POSTS = [
             "habit of verifying requests defeats the cloned voice. Automatic updates bring you "
             "the new post-quantum locks. A guest network contains the hacked gadget. An offline "
             "backup turns ransomware into a bad day instead of a catastrophe.",
-            ("h", "Looking Back on the Series"),
+            ("h", "Looking Back on Ten Parts"),
             "Over these ten parts, we have walked from the basics to the frontier. We learned how"
             " attacks unfold, then protected our accounts with strong passwords, passkeys and "
             "multi-factor authentication. We studied how scammers play on emotion, secured the "
@@ -186,7 +466,7 @@ CYBER_POSTS = [
              "Audit one smart device",
              "Change its default password, update its software, turn off features you do not use "
              "and move it to your guest network."),
-            "Thank you for reading this series. Share it with one person who would benefit, "
+            "Thank you for reading these ten parts. Share them with one person who would benefit, "
             "especially someone who handles money, records or the accounts of an elderly parent.",
             ("cta", "Start again with Part 1", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
             ("cta",
