@@ -13,6 +13,138 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "March 6, 2027",
+        "title": "Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing",
+        "slug": "business-intelligence-part-24-trend-lines-and-moving-averages",
+        "category": "bi",
+        "summary": "Daily collections jump up and down, and a busy chart hides the direction. This part shows how "
+                   "to add a trend line or a moving average in Data Studio, which type to choose, why missing "
+                   "days can drag a line to zero, and why a trend is not a forecast.",
+        "publish_on": "2027-03-06 21:00",
+        "body": [
+            "The daily collections chart looked like a saw blade. Up on Monday, down on Wednesday, up on "
+            "Friday, flat on weekends. The head of office squinted at it and asked the only question that "
+            "mattered: “Are we going up or down?” Nobody in the room could say for sure.",
+            "(The office, its people and its figures are invented. No real town or taxpayer is described.)",
+            "Part 23 joined two sources in one chart. This part helps readers see the direction inside a "
+            "noisy one. By the last section, you will know what a trend line and a moving average each show, "
+            "how to add them to a Data Studio chart, which type fits which question, why missing dates can "
+            "make a line fall to zero, and why a trend line should never be read as a promise about next "
+            "month.",
+            ("photo", "blog/bi-trend.jpg", "Trend lines and moving averages: smooth the noise, handle missing "
+             "dates on purpose, and never read a trend as a forecast. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Two Tools, Two Questions"),
+            ("point", "Trend line", "One line through the whole period that answers: over these months, "
+             "has the series generally gone up or down?"),
+            ("point", "Moving average", "A line that follows the data but smooths out the day-to-day "
+             "jumps, answering: what is the level lately, without the noise?"),
+            "Both leave the original data on the chart. They add a reading aid; they do not replace the "
+            "numbers.",
+            ("quote", "The dots tell you what happened. The line helps you see where it was heading."),
+            ("h", "What Data Studio Offers"),
+            "Google’s reference for time series charts lists the trend line options in the Style tab, under "
+            "the series settings. The reference notes that trend lines are available only for time series "
+            "and scatter charts.",
+            ("point", "Linear", "A straight line that, in the reference’s words, most closely approximates "
+             "the data in the chart."),
+            ("point", "Exponential", "A curve for data that grows or shrinks by a steady percentage rather "
+             "than a steady amount."),
+            ("point", "Polynomial", "A curve that can bend, which the reference suggests for large, highly "
+             "variable data."),
+            ("point", "Moving average", "Available only on time series charts. You set the number of periods "
+             "to average."),
+            "To add one: select the chart, open the Style tab, find the series, and choose a type from the "
+            "Trendline menu. Weight, style and color options then appear.",
+            ("h", "A Moving Average, by Hand"),
+            "Before trusting the line, it helps to see the arithmetic once. Say five working days brought in "
+            "₱38,000, ₱41,000, ₱36,000, ₱52,000 and ₱43,000.",
+            ("point", "Add them", "₱38,000 + ₱41,000 + ₱36,000 + ₱52,000 + ₱43,000 = ₱210,000."),
+            ("point", "Divide by five", "₱210,000 ÷ 5 = ₱42,000. That is the 5-day average for the fifth "
+             "day."),
+            ("point", "Slide one day", "On the sixth day, drop the first day and add the new one, then "
+             "divide again. The window moves, which is why it is called a moving average."),
+            "A longer window gives a smoother line that reacts more slowly. A shorter window reacts faster "
+            "but stays bumpier. For daily collections, a window that covers one full working week keeps "
+            "the weekly pattern from shaking the line.",
+            ("h", "The Missing Days Trap"),
+            "Treasuries do not collect on weekends and holidays, so those dates have no rows. Google’s "
+            "reference describes three settings for missing data in a time series chart, and the default "
+            "matters.",
+            ("point", "Line To Zero, the default", "The line drops to zero for the missing dates. A chart of "
+             "collections then dives to zero every Saturday and Sunday, and any trend line drawn on it is "
+             "pulled down."),
+            ("point", "Line Breaks", "Missing dates show as gaps. Honest, though the line looks broken."),
+            ("point", "Linear Interpolation", "The line connects the points on either side of the gap. "
+             "Smooth, but the eye may read the joined line as real days."),
+            "For collections, Line Breaks shows the plain truth: there was no collection day. "
+            "Whichever you choose, choose it on purpose, and say so in a note on the chart.",
+            ("h", "Which Type to Choose"),
+            ("point", "For a quick “up or down?”", "Linear, over a period long enough to include several "
+             "of the usual cycles."),
+            ("point", "For the level lately", "A moving average, with a window of one working week for daily "
+             "data or three months for monthly data."),
+            ("point", "Use the curves with care", "Exponential and polynomial lines can fit the past "
+             "nicely and still say little about what comes next. If you cannot explain why the data should "
+             "curve, use linear."),
+            ("h", "Seasons Break Straight Lines"),
+            "Local collections follow the calendar. Under the Local Government Code, business taxes are due "
+            "in the first twenty days of January or of each quarter, and real property tax installments fall "
+            "due by the end of each quarter. Collections can bunch up around those dates. A linear trend "
+            "drawn from January to June starts at a high point and may slope down even in a good year.",
+            ("point", "Compare like with like", "Part 19 compared this January with last January. For "
+             "seasonal data, that comparison says more than a trend line across different months."),
+            ("point", "Pick the window with the season in mind", "A trend across whole years, or a moving "
+             "average across a full quarter, is less fooled by the January rush."),
+            ("h", "A Trend Is Not a Forecast"),
+            "A trend line describes the past. Extending it into next month assumes nothing changes: the same "
+            "taxpayers, the same rates, the same calendar. Ordinances change, businesses open and close, and "
+            "a typhoon can close the office for days. If the dashboard shows a trend, label it “trend, "
+            "past data” and keep it inside the dates you actually have.",
+            ("h", "Labeling It So Readers Understand"),
+            ("point", "Name the line", "In the legend or a text box: “7-day moving average” or “linear "
+             "trend, January to June.”"),
+            ("point", "Keep the raw data visible", "Use a lighter color for the daily values and a darker, "
+             "thicker line for the trend."),
+            ("point", "Note the missing-data setting", "One line under the chart: “Weekends and holidays "
+             "shown as gaps.”"),
+            ("h", "Check It Before Sharing"),
+            ("point", "One average by hand", "Pick one point on the moving average and recompute it from "
+             "the table, as above."),
+            ("point", "Toggle the missing-data setting", "If the trend changes direction when you switch "
+             "from Line To Zero to Line Breaks, the zeros were driving it."),
+            ("point", "Change the window", "If a 5-day and a 10-day average tell opposite stories, the "
+             "direction is not yet clear, and the chart should say so."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Leaving Line To Zero on for working-day data", "Weekends become fake crashes."),
+            ("point", "Reading a trend as a forecast", "It describes the past only."),
+            ("point", "Fitting curves without a reason", "Default to linear unless you can explain the curve."),
+            ("point", "Hiding the raw data", "Show the daily values in a lighter color."),
+            ("h", "Key Takeaways"),
+            ("point", "Trend line and moving average answer different questions", "Overall direction versus "
+             "recent level."),
+            ("point", "Missing dates need a decision", "The default draws them as zero."),
+            ("point", "Seasons matter", "Compare like periods, or use windows that cover full cycles."),
+            ("point", "Label everything", "Name the line, the window and the missing-data choice."),
+            ("h", "Your Part 24 Exercise"),
+            "Use the practice dashboard from your earlier exercises.",
+            ("point", "Add a moving average", "On the daily collections time series, with a window of five."),
+            ("point", "Flip the missing-data setting", "Compare Line To Zero with Line Breaks and note what "
+             "changes."),
+            ("point", "Check one point", "Recompute one moving-average value by hand."),
+            "Write one sentence under the chart that a reader can trust. If you cannot write it, the chart "
+            "is not ready yet.",
+            "The analyst switched the chart to Line Breaks, added a 5-day moving average and labeled both. "
+            "The saw blade was still there in light gray, but a dark line now rose gently from March to May. "
+            "The head of office read the label, then the line, and finally had an answer.",
+            ("cta", "Read: Business Intelligence Series, Part 23: Blending Data, Two Sources in One Chart", "/blog/business-intelligence-part-23-blending-data/"),
+            ("cta", "Read: Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Business Intelligence Series, Part 14: The Date Table, a Calendar Your Dashboard Can Count On", "/blog/business-intelligence-part-14-the-date-table/"),
+            ("cta", "Read: Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("ask", "Which chart in your office would be easier to read with a moving average?"),
+        ],
+    },
+    {
         "date": "March 1, 2027",
         "title": "Business Intelligence Series, Part 23: Blending Data, Two Sources in One Chart",
         "slug": "business-intelligence-part-23-blending-data",

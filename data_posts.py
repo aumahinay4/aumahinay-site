@@ -12,6 +12,134 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "March 7, 2027",
+        "title": "Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds",
+        "slug": "data-analytics-part-24-pivot-tables",
+        "category": "data",
+        "summary": "A pivot table turns hundreds of receipt rows into a summary by barangay, type or month, and "
+                   "lets you rearrange it with a click. This part builds one in Google Sheets step by step, "
+                   "checks it against SUMIFS, and shows the traps: missing headers, value filters and totals "
+                   "that hide a gap.",
+        "publish_on": "2027-03-07 21:00",
+        "body": [
+            "The day after the council received its sixty-number table, a councilor called with three new "
+            "questions. What about totals by type of tax, not just by barangay? How many receipts were behind "
+            "each total? And what share of the year did each barangay bring in? The analyst could write "
+            "three new sets of SUMIFS formulas. Or she could build one pivot table and drag a few fields "
+            "around.",
+            "(Everyone and everything in this story is fictional, including the numbers. No real town or taxpayer is described.)",
+            "Part 23 built a summary from formulas. This part builds one without writing any. Stay with me "
+            "to the end, and you will know what a pivot table is, how to build one in Google Sheets, how to "
+            "change what it counts and how it groups dates, how to check it against SUMIFS, and the "
+            "mistakes that make a pivot table quietly wrong.",
+            ("photo", "blog/data-pivot.jpg", "Pivot tables: one row per record in, a summary you can rearrange out, and a check against the grand total. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What a Pivot Table Is"),
+            "A pivot table reads a list of records and summarizes it: totals, counts or other figures, "
+            "grouped by whatever fields you choose. You do not type formulas. You choose which field goes "
+            "down the side, which goes across the top, and what to add up. Change your mind, and the table "
+            "rearranges itself.",
+            "It works only on a clean list. Part 12 laid out the rule: one row per record, one column per "
+            "field, and a header on top of every column.",
+            ("quote", "A pivot table is a question you can rearrange."),
+            ("h", "The Practice Data"),
+            "The examples use eight receipts from a Receipts tab with four columns: Date, Barangay, Type "
+            "and Amount.",
+            ("point", "January 4", "Poblacion, RPT, ₱5,000; San Isidro, Business, ₱3,200."),
+            ("point", "January 5", "Poblacion, Business, ₱7,500; San Roque, RPT, ₱2,800."),
+            ("point", "January 6", "San Isidro, RPT, ₱4,100; Poblacion, RPT, ₱2,600."),
+            ("point", "February 1 and 2", "San Roque, Business, ₱6,000; San Isidro, RPT, ₱1,900."),
+            "Together they add up to ₱33,100. Keep that number in mind; every summary below must reach it.",
+            ("h", "Step 1: Create It"),
+            "Google’s help for Sheets gives the steps. Select the cells with the source data, including the "
+            "headers, since each column needs a header. Then click Insert, then Pivot table. The pivot table "
+            "opens in a new sheet, with an editor panel at the side.",
+            ("h", "Step 2: Rows, Columns and Values"),
+            ("point", "Rows", "Click Add next to Rows and choose Barangay. The three barangays appear down "
+             "the side."),
+            ("point", "Columns", "Click Add next to Columns and choose Type. Business and RPT appear across "
+             "the top."),
+            ("point", "Values", "Click Add next to Values and choose Amount, summarized by SUM."),
+            "With the practice data, the table shows Poblacion with ₱7,500 in business tax and ₱7,600 in "
+            "real property tax, for ₱15,100. San Isidro shows ₱3,200 and ₱6,000, for ₱9,200. San Roque shows "
+            "₱6,000 and ₱2,800, for ₱8,800. The grand total is ₱33,100, the same as the list.",
+            ("h", "Step 3: Ask the Councilor’s Questions"),
+            ("point", "How many receipts?", "Add Amount to Values a second time and summarize it by COUNTA, "
+             "which counts the filled cells. Poblacion has 3 receipts, San Isidro 3 and San Roque 2, for 8."),
+            ("point", "What share of the total?", "Under Values, change Show as from Default to a percentage "
+             "of the grand total. Poblacion brought in about 45.6 percent, San Isidro 27.8 percent and San "
+             "Roque 26.6 percent."),
+            ("point", "By month?", "Move Barangay out of Rows and put Date there instead. Then right-click a "
+             "date in the table, choose Create pivot date group, and pick a period such as month. January "
+             "shows ₱25,200 and February ₱7,900."),
+            "Each answer took a few clicks. The data underneath never moved.",
+            ("h", "Step 4: See the Rows Behind a Number"),
+            "Google’s help describes a drill-down: in the pivot table, double-click a value, and a new sheet "
+            "opens with the source rows behind it. Double-clicking Poblacion’s RPT total of ₱7,600 shows the "
+            "two receipts, ₱5,000 and ₱2,600. It is a fast way to answer “where did this number come "
+            "from?”",
+            ("h", "Sorting and Totals"),
+            "A summary is easier to read when the biggest numbers come first. Google’s help explains that "
+            "under Rows or Columns you can click the arrow under Order or Sort by to change the order, and check Show totals to display the totals.",
+            ("point", "Sort by the value", "Sort the barangays by the SUM of Amount, largest first, so the "
+             "councilor sees Poblacion at the top."),
+            ("point", "Keep the totals on", "The grand total is the number you will check, so leave it "
+             "visible."),
+            ("h", "Step 5: Filters, With One Warning"),
+            "The Filters section of the editor narrows what the pivot table includes, either by condition or "
+            "by values, unchecking items you want to hide.",
+            "Google’s help adds a warning worth remembering: a filter by values does not pick up new source "
+            "data automatically. If a new barangay appears in the list next month, a values filter set "
+            "today can leave it out without any message. Check the filter whenever the source grows.",
+            ("h", "Check It Against SUMIFS"),
+            "A pivot table is convenient, but it still deserves a check. Pick one cell and recompute it with "
+            "the tool from Part 23.",
+            ("point", "One cell", "=SUMIFS(D2:D9, B2:B9, \"POBLACION\", C2:C9, \"RPT\") should equal "
+             "Poblacion’s RPT cell, ₱7,600."),
+            ("point", "The grand total", "=SUM(D2:D9) should equal the pivot table’s grand total, "
+             "₱33,100."),
+            "If the grand totals match but a barangay looks wrong, look for a spelling variant. “POBLACION ” "
+            "with a trailing space becomes its own row in a pivot table, which is at least easier to spot "
+            "than a missing amount in a formula.",
+            ("h", "Keeping It Current"),
+            "Google’s help says the pivot table refreshes whenever you change the source cells it is drawn "
+            "from. New rows are another matter: if the pivot table reads a fixed range, such as rows 1 to 9, "
+            "receipts added in row 10 are left out. Set the range to cover the whole columns, or extend it "
+            "when the data grows, and compare the grand total with the list after every update.",
+            ("h", "Pivot Table or SUMIFS?"),
+            ("point", "Pivot table", "Suited to exploring: trying different groupings quickly, counting and "
+             "drilling down."),
+            ("point", "SUMIFS", "Suited to a fixed report layout that must stay exactly the same every month, "
+             "such as the council’s table."),
+            "You can use both: a pivot table to explore, then SUMIFS for the final report, with each checking the other.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Missing or repeated headers", "Every column needs one clear header."),
+            ("point", "A range that stops short", "New rows outside the range are left out."),
+            ("point", "Trusting a values filter on growing data", "It does not pick up new items."),
+            ("point", "Skipping the grand total check", "It must match the list."),
+            ("h", "Key Takeaways"),
+            ("point", "A clean list goes in", "One row per record, headers on every column."),
+            ("point", "Rows, columns, values", "Choose them, then rearrange freely."),
+            ("point", "Drill down to the source", "Double-click a value to see its rows."),
+            ("point", "Check it", "One cell with SUMIFS, the grand total with SUM."),
+            ("h", "Your Part 24 Exercise"),
+            "Type the eight practice receipts into a new sheet, or use your own practice list.",
+            ("point", "Build it", "Barangay in Rows, Type in Columns, SUM of Amount in Values."),
+            ("point", "Ask three questions", "Add a count, show the share of the grand total, and group by "
+             "month."),
+            ("point", "Check it", "Recompute one cell with SUMIFS and the grand total with SUM."),
+            "When all three checks pass, you have a summary you can trust and rearrange in seconds.",
+            "The analyst sent the councilor one pivot table, then rearranged it twice during the phone call "
+            "as new questions came up. Before hanging up, she ran the grand total check. It matched, to the "
+            "peso.",
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Data Analytics Series, Part 22: Sorting and Filtering With Purpose", "/blog/data-analytics-part-22-sorting-and-filtering/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("ask", "Which report in your office would you rebuild as a pivot table first?"),
+        ],
+    },
+    {
         "date": "March 2, 2027",
         "title": "Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS",
         "slug": "data-analytics-part-23-sumifs-countifs-averageifs",

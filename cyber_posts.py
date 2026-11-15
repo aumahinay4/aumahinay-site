@@ -9,6 +9,126 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "March 4, 2027",
+        "title": "Cybersecurity Series, Part 24: QR Code Scams, When a Square of Dots Sends You the Wrong Way",
+        "slug": "cybersecurity-part-24-qr-code-scams",
+        "category": "security",
+        "summary": "A QR code hides where it leads, which is why scammers like it. Here is how QR code scams work, "
+                   "from stickers pasted over a store’s payment code to fake delivery messages, and the habits "
+                   "that keep a quick scan from becoming a costly one.",
+        "publish_on": "2027-03-04 21:00",
+        "body": [
+            "A small eatery near the town plaza accepted payments by QR code. A printed code stood on the "
+            "counter in a little acrylic stand. For two days, customers scanned it, paid and left. On the "
+            "third day, the owner checked her e-wallet and found that the money from those two days had "
+            "never arrived. Someone had pasted a new sticker over her code. The customers had paid a "
+            "stranger.",
+            "(This story is fictional. The eatery, its owner and its customers are made up.)",
+            "QR codes are convenient because they hide a long address or an account number behind a square "
+            "of dots. That same hiding is what makes them useful to scammers. Read to the end and you will "
+            "know how QR code scams work, the warnings issued by the FBI, the U.S. Federal Trade Commission "
+            "and the Bangko Sentral ng Pilipinas, how to check a code before you trust it, and what a "
+            "business can do to protect the code its customers pay with.",
+            ("photo", "blog/cyber-qr.jpg", "QR code scams: look for stickers, preview the address, check the "
+             "name before you pay, and use the official app. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Why QR Codes Are Easy to Abuse"),
+            "A person can read a web address and notice a strange spelling. Nobody can read a QR code by "
+            "looking at it. The Bangko Sentral ng Pilipinas made this point in April 2026, when a BSP officer "
+            "explained “quishing,” the use of malicious QR codes to trick people into visiting fake websites. "
+            "The code hides the real address, so a user may not be able to tell a harmful link from a real "
+            "one until after scanning.",
+            ("quote", "A QR code is a closed envelope. Look inside before you act on it."),
+            ("h", "The Main Tricks"),
+            ("point", "A sticker over the real code", "The FBI warned in January 2022, in public service "
+             "announcement I-011822-PSA, that criminals tamper with physical QR codes and replace legitimate "
+             "ones with their own, redirecting payments meant for a business. The BSP described the same "
+             "trick: scammers paste their own codes over legitimate merchant codes."),
+            ("point", "A fake website", "A code can open a lookalike site that asks for a login or card "
+             "details. Anything you type there goes to the criminal."),
+            ("point", "A message with a reason to scan", "The FTC’s December 2023 alert describes codes sent by "
+             "text or email with a made-up reason: a package that could not be delivered, a problem with "
+             "your account, or suspicious activity that requires a password change. The urgency is meant to "
+             "make you scan without thinking."),
+            ("point", "A code that installs an app", "The FBI advises against downloading an app from a QR "
+             "code. Apps should come from your phone’s official app store."),
+            ("h", "Before You Scan"),
+            ("point", "Look at the code itself", "Is it a sticker on top of another code? Is the edge raised, "
+             "or does it look newer than the sign around it? The FBI suggests checking physical codes for "
+             "tampering, such as a sticker placed over the original."),
+            ("point", "Ask whether you expected it", "A QR code in an unexpected message, especially one "
+             "that pushes you to act fast, deserves suspicion. The FTC’s advice: if you think it might be "
+             "real, contact the company through a phone number or website you already know."),
+            ("point", "Use your phone’s own camera", "The FBI suggests avoiding third-party QR scanner apps, "
+             "since many phone cameras already have a built-in scanner."),
+            ("h", "After You Scan, Before You Tap"),
+            ("point", "Read the address", "When the camera shows the link, read it before opening it. Look for "
+             "misspellings or swapped letters, and read the domain from the right, as Part 15 showed."),
+            ("point", "Do not log in from a scanned link", "If the page asks for your bank or e-wallet "
+             "password, close it and open the official app or a bookmark instead."),
+            ("point", "Read the name before you pay", "When a payment code opens your e-wallet or bank app, "
+             "look at the recipient name the app shows before you confirm. If it is not the store or person "
+             "you meant to pay, stop."),
+            ("h", "QR Codes in Work Email"),
+            "An email at work that asks you to scan a QR code to keep your account active, sign a document "
+            "or see a payroll notice deserves the same care as any other link. Scanning moves the link from "
+            "your office computer to your phone, where the small screen makes the address harder to read. "
+            "Ask your office’s IT contact or the sender, through a channel you already know, before you scan. "
+            "Part 19 covered how fake senders work.",
+            ("h", "QR Ph and Paying in Stores"),
+            "In the Philippines, QR payments run on QR Ph, the national QR code standard adopted under BSP "
+            "Circular No. 1055 in 2019. The BSP required its supervised payment service providers to use and "
+            "display QR Ph on their internet and mobile channels starting July 1, 2023, so one code can be "
+            "paid from different banks and e-wallets. That convenience works for honest stores and for "
+            "anyone who pastes a fake code, which is why the name check matters.",
+            ("h", "For Store Owners and Offices That Accept QR Payments"),
+            ("point", "Keep the code where you can see it", "Behind the counter or under a clear, fixed cover "
+             "is harder to tamper with than a loose card on a table."),
+            ("point", "Check it every morning", "Scan your own code and confirm that your business name "
+             "appears. It takes ten seconds."),
+            ("point", "Watch your incoming payments", "A busy day with no money arriving is the warning sign. "
+             "Turn on payment notifications."),
+            ("point", "Tell customers what name to expect", "A small line under the code, such as “Pay to: "
+             "the store’s registered name,” helps customers catch a swap."),
+            ("h", "For Treasury Workers"),
+            "If your local government accepts payments through a QR code, treat the printed "
+            "code like an accountable form: know where every copy is posted, check them on a schedule, and "
+            "make sure the official name shown in the payment app matches the local government’s account. "
+            "Payments made to a fake code do not reach the treasury, and the taxpayer will rightly ask why "
+            "their payment is missing.",
+            ("h", "If You Paid the Wrong Code"),
+            ("point", "Call your bank or e-wallet at once", "Use the hotline in the official app. Report the "
+             "transaction and the recipient’s details."),
+            ("point", "Tell the store", "They need to remove the fake code before others pay it."),
+            ("point", "Report it", "Part 13 listed where to report scams in the Philippines, including the "
+             "1326 hotline of the Cybercrime Investigation and Coordinating Center."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting a code because it is in a real store", "A sticker can be added by anyone."),
+            ("point", "Opening links without reading them", "Preview the address first."),
+            ("point", "Logging in from a scanned link", "Use the official app."),
+            ("point", "Confirming payment without reading the name", "Check the recipient every time."),
+            ("h", "Key Takeaways"),
+            ("point", "QR codes hide their destination", "That is why scammers use them."),
+            ("point", "Look, preview, check the name", "Three habits that stop the tricks above."),
+            ("point", "Unexpected codes deserve suspicion", "Especially those that come with urgency."),
+            ("point", "Businesses should guard their codes", "Check them daily and watch incoming payments."),
+            ("h", "Your Part 24 Action Plan"),
+            ("point", "Today", "Next time you pay by QR, read the recipient name before you confirm."),
+            ("point", "This week", "If you run a store or a payment counter, scan your own code and check the "
+             "name that appears."),
+            ("point", "This month", "Tell an older relative about sticker scams and the name check."),
+            "The eatery owner reported the fake code to her e-wallet provider and the police, and moved her "
+            "real code behind the counter, inside a frame screwed to the wall. Under it she added a line in "
+            "marker: “The name should say Aling Rosa’s Eatery.” Her regular customers started reading it out "
+            "loud before every payment, half as a joke and half as a habit.",
+            ("cta", "Read: Cybersecurity Series, Part 23: Your Yearly Security Checkup, One Afternoon, Twelve Checks", "/blog/cybersecurity-part-23-yearly-security-checkup/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("ask", "Have you ever checked the name before paying by QR code? Has a code ever surprised you?"),
+        ],
+    },
+    {
         "date": "February 27, 2027",
         "title": "Cybersecurity Series, Part 23: Your Yearly Security Checkup, One Afternoon, Twelve Checks",
         "slug": "cybersecurity-part-23-yearly-security-checkup",
