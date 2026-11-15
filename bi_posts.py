@@ -13,6 +13,151 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "January 25, 2027",
+        "title": "Business Intelligence Series, Part 16: A Small Pipeline in Google Sheets, Raw to Clean to Summary",
+        "slug": "business-intelligence-part-16-pipeline-in-sheets",
+        "category": "bi",
+        "summary": "A pipeline does not have to start with servers or paid tools. This part builds a small, free "
+                   "pipeline inside one Google Sheets file: a Raw tab that is never edited, a Clean tab of "
+                   "formulas, a Summary tab built with QUERY, and a Checks tab that shows when something is off.",
+        "publish_on": "2027-01-25 21:00",
+        "body": [
+            "Every Monday morning, the analyst opens the cashier’s export of last week’s receipts, copies it into "
+            "a working sheet, deletes the extra spaces in the collector names by hand, retypes a few amounts "
+            "that came in as text, and adds up the totals by barangay. Then the totals are typed into the "
+            "dashboard. It takes most of the morning.",
+            "One Monday, the copy misses the last forty rows. Nobody notices until the head of office asks why "
+            "one barangay collected almost nothing that week.",
+            "The steps were right. The problem was doing them by hand, from memory, every week.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 7 explained what a pipeline does: extract, transform and load. Part 15 flattened the revenue "
+            "account levels during that loading step. This part builds a small pipeline in Google Sheets, which is free to use with a Google account. By the end of this post you will know how to lay out a pipeline in one "
+            "Google Sheets file, the formulas for each stage, how to add checks that catch a bad week, and when "
+            "the file has outgrown the job.",
+            ("photo", "blog/bi-sheets-pipeline.jpg", "A small pipeline in one spreadsheet: a Raw tab, a Clean "
+             "tab, a Summary tab and a Checks tab. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Four Tabs, Four Jobs"),
+            "The idea is to give each stage of the work its own tab, and to let formulas carry the data from "
+            "one tab to the next. People touch only the first tab. Everything after it is calculated.",
+            ("point", "Raw", "The export exactly as it arrived. Nobody types here."),
+            ("point", "Clean", "Formulas that read Raw row by row and fix what needs fixing."),
+            ("point", "Summary", "Formulas that total the Clean tab by barangay, collector or account."),
+            ("point", "Checks", "A few cells that compare the tabs and show whether this week’s run can be "
+             "trusted."),
+            "A fifth tab, Lists, holds the revenue account dimension from Part 15: account code, account title, "
+            "group and class. The Clean tab looks up each receipt’s account there.",
+            ("quote", "Let people fill one tab. Let formulas fill the rest."),
+            ("h", "Step 1: The Raw Tab"),
+            "The Raw tab holds one row per receipt, with the same columns every week: receipt number, date, "
+            "collector, barangay, account code and amount. This follows the one-row-per-record layout from "
+            "Part 12 of the Data Analytics series.",
+            ("point", "Paste as it arrived", "Paste the export into Raw without fixing anything. If it has "
+             "problems, the Clean tab will deal with them, and the original stays available to compare."),
+            ("point", "Or pull it in", "If the cashier keeps the receipts in another Google Sheets file, "
+             "IMPORTRANGE can bring them in: =IMPORTRANGE(\"file URL\", \"Receipts!A2:F\"). Google’s help notes "
+             "that the first time, you must click Allow Access to connect the two files."),
+            ("point", "Same columns, same order", "If the export layout changes, every formula after it can "
+             "point to the wrong column. Agree on the layout with whoever makes the export."),
+            ("h", "Step 2: The Clean Tab"),
+            "Each column in the Clean tab is a formula that reads the same row in Raw. Write the formula in row "
+            "2, then copy it down to more rows than a busy month needs. Wrapping each formula in IF(Raw!A2=\"\",\"\", …) keeps the unused rows blank. Columns A to F keep the same order as Raw, and two new columns follow: G for the account group and H for a duplicate flag.",
+            ("point", "Extra spaces", "=TRIM(Raw!C2). Google’s help says TRIM removes leading, trailing and "
+             "repeated spaces, so “ Reyes  M.” becomes “Reyes M.” and groups correctly."),
+            ("point", "Spaces TRIM misses", "The same help page notes that non-breaking spaces are not trimmed. "
+             "They can arrive in data copied from web pages or some exports. "
+             "=TRIM(SUBSTITUTE(Raw!C2,CHAR(160),\" \")) replaces them with ordinary spaces first."),
+            ("point", "Amounts stored as text", "=VALUE(Raw!F2) turns text that looks like a number into a "
+             "number, so it can be added up."),
+            ("point", "Account levels", "=XLOOKUP(Raw!E2, Lists!A:A, Lists!C:C, \"NOT FOUND\") brings in the "
+             "account’s group. The last part tells the formula what to show when the code is missing from "
+             "Lists, so a gap is visible instead of silent."),
+            ("point", "A duplicate flag", "=IF(COUNTIF(Raw!A:A, Raw!A2)>1, \"DUPLICATE\", \"OK\") marks any "
+             "receipt number that appears more than once."),
+            "Notice what the Clean tab does not do. It does not delete rows or change Raw. If a cleaning rule "
+            "turns out to be wrong, you fix the formula, and every row is recalculated from the original.",
+            ("h", "Step 3: The Summary Tab"),
+            "The QUERY function lets a formula group and total data using a short query language. Google’s help "
+            "gives its form as QUERY(data, query, headers), where headers is the number of header rows.",
+            ("point", "Totals by barangay", "In cell A1 of Summary: =QUERY(Clean!A1:H, \"select D, sum(F) where F is not null group "
+             "by D label sum(F) 'Total'\", 1). The letters refer to the columns of the range: D is the "
+             "barangay and F the amount."),
+            ("point", "Totals by group", "The same pattern with the group column gives collections by kind of tax, one level of the class, group and account path from Part 15."),
+            ("point", "Why VALUE matters here", "Google’s help notes that when a column has mixed data types, "
+             "QUERY uses the majority type and treats the others as empty. An amount left as text could drop "
+             "out of the total without any error."),
+            "Because these are formulas, the Summary tab updates when new rows arrive in Raw. Nobody retypes a "
+            "total.",
+            ("h", "Step 4: The Checks Tab"),
+            "Part 9 set out a full test plan for a pipeline. In a spreadsheet, a few cells can carry several of those tests, so the analyst sees at a glance whether this week’s data is safe to share.",
+            ("point", "Totals agree", "=SUM(Clean!F2:F) beside =SUM(Summary!B2:B). If they differ, some rows "
+             "did not make it into the summary."),
+            ("point", "No duplicates", "=COUNTIF(Clean!H2:H, \"DUPLICATE\") should be 0."),
+            ("point", "No unknown codes", "=COUNTIF(Clean!G2:G, \"NOT FOUND\") should be 0."),
+            ("point", "Rows match the export", "Write the row count the cashier reports, and compare it with "
+             "=COUNTA(Raw!A2:A). This is the check that would have caught the missing forty rows."),
+            "Add a cell that combines them, such as =IF(AND(…), \"READY\", \"STOP\"), and use conditional "
+            "formatting to turn it green or red. The rule for the office is simple: if it says STOP, the "
+            "dashboard waits.",
+            ("h", "Step 5: Let the Dashboard Read the Summary"),
+            "Charts in the same file, or a dashboard tool connected to it, should read from the Summary tab, "
+            "not from Raw or Clean. The dashboard then shows only numbers that have passed through the "
+            "cleaning formulas and the checks.",
+            ("point", "One source", "If two dashboards need the same total, they read the same Summary cell."),
+            ("point", "No typing", "A number typed into a dashboard by hand has skipped every check above."),
+            ("h", "Protecting the Pipeline"),
+            ("point", "Protect the formula tabs", "Google Sheets lets you protect a tab or a range so only "
+             "chosen people can edit it. Protect Clean, Summary, Checks and Lists, and leave only Raw open to "
+             "the person who pastes the export."),
+            ("point", "Write a short guide", "A note at the top of Raw: what to paste, where it comes from, and "
+             "what to do if Checks says STOP."),
+            ("point", "Keep versions", "Before changing a formula, make a copy of the file, using the naming "
+             "and version habits from Part 15 of the Data Analytics series."),
+            ("point", "Mind who can see it", "Receipts carry taxpayer details. Share the file only with the "
+             "people who need it, and give others who need only the totals a dashboard built on the Summary tab."),
+            ("h", "Is This Really a Pipeline?"),
+            "It is a small one. Raw is the extract, Clean is the transform, and Summary is the load into the "
+            "shape the dashboard needs: the ETL pattern from Part 7, inside one file. It has three important parts: the original kept untouched, cleaning written down as rules, and checks before "
+            "anyone sees a number.",
+            "It also has limits. A spreadsheet that holds years of receipts can become slow to open and "
+            "recalculate, and formulas can be broken by anyone with edit access. When the file starts to feel "
+            "heavy, or several offices need the same data, it may be time for the database or warehouse "
+            "options described in Part 6. The tabs you built still help: they are a written record of every "
+            "cleaning rule the new system will need.",
+            ("h", "The Monday Routine, Rebuilt"),
+            "The analyst now pastes the export into Raw, types the cashier’s row count into Checks, and waits "
+            "a moment for the formulas. The Checks tab shows READY, and the dashboard is already up to date. "
+            "On the one Monday it showed STOP, the cause was a new account code missing from Lists. Adding it "
+            "took two minutes, and the wrong total never reached the head of office.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Fixing data in Raw", "Fix it with a formula in Clean, so the original stays as it "
+             "arrived."),
+            ("point", "Copying values instead of formulas", "A pasted total does not update. Keep the "
+             "Summary as formulas."),
+            ("point", "Leaving amounts as text", "Convert them with VALUE before any QUERY totals them."),
+            ("point", "Skipping the Checks tab", "A pipeline without checks moves mistakes faster."),
+            ("h", "Key Takeaways"),
+            ("point", "One tab per stage", "Raw, Clean, Summary and Checks, with formulas between them."),
+            ("point", "Raw stays raw", "People paste; formulas clean."),
+            ("point", "QUERY for totals", "Group and total the Clean tab without typing a number."),
+            ("point", "Checks before sharing", "If the checks say STOP, the dashboard waits."),
+            ("h", "Your Part 16 Exercise"),
+            "Take one weekly or monthly report your office still totals by hand.",
+            ("point", "Set up the tabs", "Make Raw, Clean, Summary and Checks in a new file, and paste one "
+             "period’s export into Raw."),
+            ("point", "Write three formulas", "One TRIM, one VALUE and one QUERY that totals by a column you "
+             "report on."),
+            ("point", "Add two checks", "Compare the totals, and count the rows against the export."),
+            "Then paste the next period’s export and time how long the report takes. Compare it with the "
+            "time the hand-made version took.",
+            ("cta", "Read: Business Intelligence Series, Part 7", "/blog/business-intelligence-part-7-etl-or-elt/"),
+            ("cta", "Read: Business Intelligence Series, Part 9", "/blog/business-intelligence-part-9-testing-the-pipeline/"),
+            ("cta", "Read: Business Intelligence Series, Part 15", "/blog/business-intelligence-part-15-star-or-snowflake/"),
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("ask", "Which report in your office is still totaled by hand every week?"),
+        ],
+    },
+    {
         "date": "January 20, 2027",
         "title": "Business Intelligence Series, Part 15: Star or Snowflake? Shaping Dimensions for a Treasury Model",
         "slug": "business-intelligence-part-15-star-or-snowflake",

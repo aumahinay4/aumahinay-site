@@ -14,6 +14,159 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "January 27, 2027",
+        "title": "Project Management Series, Part 16: The Critical Path, Finding the Work That Sets the Finish Date",
+        "slug": "project-management-part-16-critical-path",
+        "category": "pm",
+        "summary": "Some tasks can slip a little without moving the finish date. Others cannot slip at all. This "
+                   "part explains the critical path method in plain words, works through the forward and "
+                   "backward pass on a treasury project, and shows how float helps you decide where to watch "
+                   "and where to act.",
+        "publish_on": "2027-01-27 21:00",
+        "body": [
+            "The revenue clerk has estimates for every work package in the notices project. Now the head of "
+            "office wants to know two things: when the notices will be out, and which part of the work to "
+            "keep an eye on.",
+            "The clerk is sure the answer to the second question is the account list. It is the largest "
+            "piece of checking, and it caused delays in the first round. But when the packages are "
+            "lined up in order, the list turns out to have a day to spare. The package with no room at all is "
+            "the notice template waiting for legal review.",
+            "That is what the critical path shows: not which work is biggest or hardest, but which work sets "
+            "the finish date.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Part 14 broke the project into work packages, and Part 15 put time estimates on them. This part "
+            "puts them in order. By the end of this post you will know how to line up packages by what they "
+            "depend on, find the critical path with a forward and a backward pass, read float, and choose "
+            "carefully when the finish date has to move earlier.",
+            ("photo", "blog/pm-critical-path.jpg", "The critical path: the chain of dependent work that takes "
+             "longest and sets the finish date. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Method Came From"),
+            "The critical path method, or CPM, grew out of scheduling work that began at the chemical company DuPont in late 1956. According to a history published by PMI, Morgan Walker of DuPont and James Kelley of Remington Rand developed it, and in 1959 it was given its name and presented in a paper by the two of them. It began with large engineering and construction projects, but the idea works for a small office project too.",
+            "The idea is this. When some work must wait for other work, the packages form chains. The longest "
+            "chain from start to finish is the critical path, and its length is the shortest time in which "
+            "the whole project can be done.",
+            ("quote", "The longest chain of waiting sets the earliest finish."),
+            ("h", "Step 1: List What Each Package Waits For"),
+            "A dependency is a rule that one piece of work cannot start until another is finished. This post uses only the finish-to-start kind: the notices cannot be printed until they are filled in.",
+            "For the second round of notices, the clerk listed each work package from the WBS, its most likely "
+            "duration in working days from the Part 15 estimates, and what it waits for.",
+            ("point", "A. Pull the account list (1.1)", "3 days. Waits for nothing."),
+            ("point", "B. Check the list against the assessor’s records (1.2)", "4 days. Waits for A."),
+            ("point", "C. Notice template with legal review (2.1)", "10 days. Waits for nothing."),
+            ("point", "D. Final list approved (1.3)", "2 days. Waits for B."),
+            ("point", "E. Fill in the notices (2.2)", "4 days. Waits for C and D."),
+            ("point", "F. Print and sign the notices (2.3)", "4 days. Waits for E."),
+            ("point", "G. Delivery routes (3.1)", "3 days. Waits for D."),
+            ("point", "H. Counter readiness (4.1 and 4.2)", "4 days. Waits for C, and must be done before "
+             "delivery starts."),
+            ("point", "I. Deliver the notices (3.2)", "25 days. Waits for F, G and H."),
+            ("point", "J. List of undelivered notices (3.3)", "2 days. Waits for I."),
+            "The project management branch, with its plan, weekly updates and closing report, runs alongside "
+            "the whole project, so it is left out of the chains.",
+            "Drawing the packages as boxes with arrows from each package to the ones that wait for it makes "
+            "the chains easy to see. A sheet of paper is enough.",
+            ("h", "Step 2: The Forward Pass"),
+            "The forward pass finds the earliest each package can start and finish. Count in working days from "
+            "the start of the project, which is day 0.",
+            ("point", "Rule 1", "A package with nothing to wait for starts at day 0."),
+            ("point", "Rule 2", "Earliest finish = earliest start + duration."),
+            ("point", "Rule 3", "A package that waits for several others starts when the last of them "
+             "finishes, so take the largest earliest finish among them."),
+            ("point", "The list chain", "A runs from day 0 to 3. B runs from 3 to 7. D runs from 7 to 9."),
+            ("point", "The template", "C runs from day 0 to 10."),
+            ("point", "Filling in", "E waits for C (day 10) and D (day 9), so it starts at day 10 and finishes "
+             "at day 14. F then runs from 14 to 18."),
+            ("point", "Routes and counter", "G runs from day 9 to 12. H runs from 10 to 14."),
+            ("point", "Delivery", "I waits for F (day 18), G (day 12) and H (day 14), so it starts at day 18 "
+             "and finishes at day 43. J runs from 43 to 45."),
+            "The project can finish at day 45 at the earliest: 45 working days, or nine weeks of five working "
+            "days, which matches the most likely value in the range from Part 15.",
+            ("h", "Step 3: The Backward Pass"),
+            "The backward pass works from the finish back to the start. It finds the latest each package can "
+            "start and finish without moving the finish date.",
+            ("point", "Rule 1", "The last package’s latest finish is the project finish, day 45."),
+            ("point", "Rule 2", "Latest start = latest finish − duration."),
+            ("point", "Rule 3", "A package that others wait for must finish by the earliest of their latest "
+             "starts, so take the smallest."),
+            ("point", "From the end", "J: latest start 43. I: latest finish 43, latest start 18. F: 14 to 18. "
+             "E: 10 to 14."),
+            ("point", "Routes and counter", "G must finish by 18, so its latest start is 15. H must also "
+             "finish by 18, so its latest start is 14."),
+            ("point", "The template", "C must finish by E’s latest start (10) and H’s (14). The smaller is 10, "
+             "so its latest start is 0."),
+            ("point", "The list chain", "D must finish by the smaller of E’s latest start (10) and G’s (15), "
+             "which is 10, so its latest start is 8. B then runs latest from 4 to 8, and A from 1 to 4."),
+            ("h", "Step 4: Read the Float"),
+            "Float, also called slack, is how long a package can slip without moving the project finish. It "
+            "is the latest start minus the earliest start.",
+            ("point", "C, E, F, I and J", "Zero float. This chain is the critical path: 10 + 4 + 4 + 25 + 2 = "
+             "45 days. A day lost on any of these is a day added to the project."),
+            ("point", "A, B and D", "One day of float. The account list can slip one day and no more."),
+            ("point", "H", "Four days of float."),
+            ("point", "G", "Six days of float."),
+            "This is what surprised the clerk. The legal review, not the list, sets the date. The list is "
+            "still worth watching, because with only one day of float it is a near-critical path: a two-day "
+            "delay there makes it the new critical path.",
+            ("h", "Using the Critical Path"),
+            ("point", "Watch the zero-float work first", "In the weekly update, report the critical packages "
+             "by name, with their owners from the RACI matrix in Part 8."),
+            ("point", "Start critical work early", "The legal review can begin on day 0, so the template "
+             "should be sent to the legal adviser in the first week, not after the list is done."),
+            ("point", "Use float to plan people", "The routes have six days to spare. If a collector is needed "
+             "at the counter that week, the routes can wait a little without harm."),
+            ("point", "Check the near-critical paths", "List any chain with only a day or two of float, and "
+             "give it the same attention when its packages are running."),
+            ("h", "When the Date Has to Move Earlier"),
+            "Suppose the head of office needs the notices out a week sooner. There are two common ways to "
+            "shorten a schedule, and both carry a price.",
+            ("point", "Crashing", "Add people or other resources to a critical package. Two more collectors "
+             "for delivery could shorten it, but they are taken from other work, and the cost goes up."),
+            ("point", "Fast-tracking", "Overlap packages that were planned one after the other. Delivery could "
+             "start with the first barangays as soon as their notices are printed and signed, instead of "
+             "waiting for the last notice. This adds risk: a mistake found late may affect notices already "
+             "delivered."),
+            ("point", "Shorten only critical work", "Cutting two days from the routes would not move the "
+             "finish at all, because the routes already have float."),
+            ("point", "Recalculate after each change", "When a critical package gets shorter, another chain "
+             "may become the longest. Run the forward and backward pass again."),
+            ("h", "Estimates, Uncertainty and the Path"),
+            "The critical path is only as good as the estimates under it. The calculation above uses the most "
+            "likely durations from Part 15. If the pessimistic value for the legal review comes true, the "
+            "finish date moves with it.",
+            "A practical habit is to look at the packages on the critical path that also had a wide gap "
+            "between their optimistic and pessimistic estimates. Those are the places where a risk owner and "
+            "a closer look are most useful.",
+            "Project management software, such as the tools compared in Part 12, can calculate the passes once "
+            "dependencies are entered. Working through one small network by hand first makes it easier to "
+            "check what the software shows.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Confusing big with critical", "The largest package is not always on the critical path."),
+            ("point", "Missing dependencies", "A forgotten dependency, such as counter readiness before "
+             "delivery, can hide the real critical path."),
+            ("point", "Ignoring near-critical paths", "One day of float can disappear in one bad week."),
+            ("point", "Calculating once", "Update the passes when packages finish early or late."),
+            ("h", "Key Takeaways"),
+            ("point", "Critical path", "The longest chain of dependent work sets the earliest finish."),
+            ("point", "Two passes", "Forward for earliest dates, backward for latest dates."),
+            ("point", "Float", "Latest start minus earliest start; zero float means critical."),
+            ("point", "Shorten with care", "Crashing costs more, fast-tracking adds risk, and only critical "
+             "work moves the date."),
+            ("h", "Your Part 16 Exercise"),
+            "Take the work packages and estimates from your Part 14 and Part 15 exercises.",
+            ("point", "List the dependencies", "For each package, write what it waits for."),
+            ("point", "Run both passes", "Work out the earliest and latest start for each package."),
+            ("point", "Find the path", "Mark the packages with zero float, and any with one or two days."),
+            "Then ask yourself whether the work you were most worried about is on the critical path. If it is "
+            "not, you may have been watching the wrong part of the project.",
+            ("cta", "Read: Project Management Series, Part 15", "/blog/project-management-part-15-estimating-time/"),
+            ("cta", "Read: Project Management Series, Part 14", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 12", "/blog/project-management-part-12-choosing-pm-software/"),
+            ("ask", "Which task in your current project has no room to slip, and does everyone know it?"),
+        ],
+    },
+    {
         "date": "January 22, 2027",
         "title": "Project Management Series, Part 15: Why Estimates Run Short, and Four Ways to Fix Them",
         "slug": "project-management-part-15-estimating-time",
