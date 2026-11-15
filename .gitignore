@@ -7,3 +7,5 @@ tutorials/**/*.xlsx
 tutorials/**/audit_log.json
 .wrangler/
 tutorials/**/*.db
+static/share/
+dist/static/share/

@@ -10,6 +10,7 @@ from pathlib import Path
 import tags as t
 from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
 from highlight import highlight
+from share_cards import card_for
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
@@ -206,7 +207,8 @@ def person_json_ld():
     return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
 
-def layout(title, active, body, description=None, url=None, og_type="website", seo_title=None, json_ld=None):
+def layout(title, active, body, description=None, url=None, og_type="website", seo_title=None, json_ld=None,
+           share_image=None):
     url = url or active
     # his name in every title, so a search for "Butch Mahinay" finds the site; a page may give its own search
     # title (seo_title), and a long title drops the name so search results don't cut off its key words
@@ -243,11 +245,12 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             t.meta(property="og:title", content=page_title),
             t.meta(property="og:description", content=description or SITE["tagline"]),
             t.meta(property="og:url", content=f"https://{SITE['domain']}{url}"),
-            t.meta(property="og:image", content=f"https://{SITE['domain']}/static/share.jpg?v="
-                   + hashlib.sha1((STATIC / "share.jpg").read_bytes()).hexdigest()[:8]),  # new picture = new link, so Facebook fetches it again
+            # a post with a picture shares its own card (share_cards.py); every other page shares share.jpg.
+            # ?v= is the picture's hash: new picture = new link, so Facebook fetches it again
+            t.meta(property="og:image", content=f"https://{SITE['domain']}" + asset_url(share_image or "share.jpg")),
             t.meta(property="og:image:width", content="1200"),
             t.meta(property="og:image:height", content="630"),
-            t.meta(property="og:image:alt", content=f"{SITE['short_name']}, {SITE['domain']}"),
+            t.meta(property="og:image:alt", content=title if share_image else f"{SITE['short_name']}, {SITE['domain']}"),
             t.meta(name="twitter:card", content="summary_large_image"),
             t.link(rel="icon", href="/favicon.ico", sizes="any"),
             t.link(rel="icon", type="image/png", sizes="32x32", href=asset_url("favicon-32.png")),
@@ -308,11 +311,12 @@ def article_ld(headline, description, url, day=None, image=None, kind="BlogPosti
     return data
 
 
-def part(title, active, *body, description=None, url=None, og_type="website", seo_title=None, json_ld=None):
+def part(title, active, *body, description=None, url=None, og_type="website", seo_title=None, json_ld=None,
+         share_image=None):
     """The pieces of one page, before it is wrapped in the site layout. seo_title (optional) is the full
     browser and search-result title; json_ld (optional) is structured data for search engines."""
     return {"title": title, "active": active, "body": list(body), "description": description, "url": url,
-            "og_type": og_type, "seo_title": seo_title, "json_ld": json_ld}
+            "og_type": og_type, "seo_title": seo_title, "json_ld": json_ld, "share_image": share_image}
 
 
 def tag_list(items):
@@ -1622,8 +1626,14 @@ def post_page(b):
         url=post_url(b),
         og_type="article",
         json_ld=article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
-                           post_day(b), next((x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "photo"), None)),
+                           post_day(b), post_photo(b)),
+        share_image=card_for(post_photo(b)) if post_photo(b) else None,  # link previews show the post's own picture
     )
+
+
+def post_photo(b):
+    """The post's first picture that exists in static/, or None."""
+    return next((x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "photo" and (STATIC / x[1]).exists()), None)
 
 
 def related_posts(b, posts, skip=()):
@@ -1966,7 +1976,8 @@ def _full_page(build):
     def render():
         p = build()
         return layout(p["title"], p["active"], p["body"], description=p["description"], url=p["url"],
-                      og_type=p["og_type"], seo_title=p.get("seo_title"), json_ld=p.get("json_ld"))
+                      og_type=p["og_type"], seo_title=p.get("seo_title"), json_ld=p.get("json_ld"),
+                      share_image=p.get("share_image"))
     return render
 
 
