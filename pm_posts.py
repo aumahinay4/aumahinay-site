@@ -28,7 +28,7 @@ PM_POSTS = [
             "office wants to know two things: when the notices will be out, and which part of the work to "
             "keep an eye on.",
             "The clerk is sure the answer to the second question is the account list. It is the largest "
-            "piece of checking, and it caused the most trouble in the first round. But when the packages are "
+            "piece of checking, and it caused delays in the first round. But when the packages are "
             "lined up in order, the list turns out to have a day to spare. The package with no room at all is "
             "the notice template waiting for legal review.",
             "That is what the critical path shows: not which work is biggest or hardest, but which work sets "
@@ -42,9 +42,7 @@ PM_POSTS = [
             ("photo", "blog/pm-critical-path.jpg", "The critical path: the chain of dependent work that takes "
              "longest and sets the finish date. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
             ("h", "Where the Method Came From"),
-            "The critical path method, or CPM, grew out of planning work at the chemical company DuPont that "
-            "began in 1956, and was described by James Kelley and Morgan Walker in 1957. It began with industrial plant "
-            "projects, but the idea works for a small office project too.",
+            "The critical path method, or CPM, grew out of scheduling work that began at the chemical company DuPont in late 1956. According to a history published by PMI, Morgan Walker of DuPont and James Kelley of Remington Rand developed it, and in 1959 it was given its name and presented in a paper by the two of them. It began with large engineering and construction projects, but the idea works for a small office project too.",
             "The idea is this. When some work must wait for other work, the packages form chains. The longest "
             "chain from start to finish is the critical path, and its length is the shortest time in which "
             "the whole project can be done.",

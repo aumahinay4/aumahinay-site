@@ -61,8 +61,7 @@ BI_POSTS = [
              "point to the wrong column. Agree on the layout with whoever makes the export."),
             ("h", "Step 2: The Clean Tab"),
             "Each column in the Clean tab is a formula that reads the same row in Raw. Write the formula in row "
-            "2, then copy it down to more rows than a busy month needs. Wrapping each formula in "
-            "IF(Raw!A2=\"\",\"\", …) keeps the unused rows blank.",
+            "2, then copy it down to more rows than a busy month needs. Wrapping each formula in IF(Raw!A2=\"\",\"\", …) keeps the unused rows blank. Columns A to F keep the same order as Raw, and two new columns follow: G for the account group and H for a duplicate flag.",
             ("point", "Extra spaces", "=TRIM(Raw!C2). Google’s help says TRIM removes leading, trailing and "
              "repeated spaces, so “ Reyes  M.” becomes “Reyes M.” and groups correctly."),
             ("point", "Spaces TRIM misses", "The same help page notes that non-breaking spaces are not trimmed. "
@@ -80,11 +79,10 @@ BI_POSTS = [
             ("h", "Step 3: The Summary Tab"),
             "The QUERY function lets a formula group and total data using a short query language. Google’s help "
             "gives its form as QUERY(data, query, headers), where headers is the number of header rows.",
-            ("point", "Totals by barangay", "=QUERY(Clean!A1:H, \"select D, sum(F) where F is not null group "
+            ("point", "Totals by barangay", "In cell A1 of Summary: =QUERY(Clean!A1:H, \"select D, sum(F) where F is not null group "
              "by D label sum(F) 'Total'\", 1). The letters refer to the columns of the range: D is the "
              "barangay and F the amount."),
-            ("point", "Totals by group", "The same pattern with the group column gives collections by kind of "
-             "tax, the class-to-account drill path from Part 15."),
+            ("point", "Totals by group", "The same pattern with the group column gives collections by kind of tax, one level of the class, group and account path from Part 15."),
             ("point", "Why VALUE matters here", "Google’s help notes that when a column has mixed data types, "
              "QUERY uses the majority type and treats the others as empty. An amount left as text could drop "
              "out of the total without any error."),
@@ -116,7 +114,7 @@ BI_POSTS = [
             ("point", "Keep versions", "Before changing a formula, make a copy of the file, using the naming "
              "and version habits from Part 15 of the Data Analytics series."),
             ("point", "Mind who can see it", "Receipts carry taxpayer details. Share the file only with the "
-             "people who need it, and share dashboards built on the Summary tab with everyone else."),
+             "people who need it, and give others who need only the totals a dashboard built on the Summary tab."),
             ("h", "Is This Really a Pipeline?"),
             "It is a small one. Raw is the extract, Clean is the transform, and Summary is the load into the "
             "shape the dashboard needs: the ETL pattern from Part 7, inside one file. It has three important parts: the original kept untouched, cleaning written down as rules, and checks before "

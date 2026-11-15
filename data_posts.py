@@ -50,7 +50,7 @@ DATA_POSTS = [
             "The same record entered twice. It happens when two encoders type the same batch, when an export "
             "is pasted twice, or when a corrected row is added without removing the old one.",
             ("point", "How to spot it", "Use the record’s key, such as the receipt number with its series "
-             "from Part 14. =COUNTIF(A:A, A2)>1 returns TRUE for any key that appears more than once."),
+             "from Part 14. =COUNTIFS(A:A, A2, B:B, B2)>1 returns TRUE when the same number and series, in columns A and B, appear more than once."),
             ("point", "Look before removing", "Two rows with the same date, name and amount are not always "
              "duplicates. Two receipts can match by chance. Only the key, or the source document, can say."),
             ("point", "A note on the built-in tool", "Google Sheets has a Remove duplicates tool. Its help page "
@@ -87,8 +87,7 @@ DATA_POSTS = [
              "The difference is the money the first total was missing."),
             ("h", "Suspect 5: Mixed Date Formats"),
             "A date typed as 03/04/2026 can mean March 4 or April 3, depending on who typed it and how the "
-            "spreadsheet is set up. Other dates arrive as text, such as “Mar. 4, 2026,” that the spreadsheet "
-            "cannot sort by date.",
+            "spreadsheet is set up. Other dates arrive as text, for example from an export, and the spreadsheet cannot sort them by date.",
             ("point", "How to spot it", "Spreadsheets store real dates as numbers, so =ISNUMBER(B2) returns "
              "FALSE for a date that is only text. Sorting the column also helps: text dates gather in one "
              "block, apart from the real ones."),
