@@ -13,6 +13,147 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "January 30, 2027",
+        "title": "Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much",
+        "slug": "business-intelligence-part-17-who-sees-what",
+        "category": "bi",
+        "summary": "A dashboard link can open far more than the dashboard. This part shows how sharing settings, "
+                   "separate files, report credentials and small-number rules decide who sees what, with a "
+                   "treasury example and an access list you can keep up to date.",
+        "publish_on": "2027-01-30 21:00",
+        "body": [
+            "The collections dashboard from Part 16 is working, and people have noticed. The budget officer "
+            "wants the monthly totals. The heads of the revenue units want their own accounts. A staff member "
+            "from the municipal council asks for “the link, so we can follow the numbers.”",
+            "The analyst opens the share menu of the spreadsheet, chooses “Anyone with the link,” and starts "
+            "to paste the link into the office group chat. Then the analyst stops. The link opens the whole "
+            "file: the Summary tab, but also the Raw tab, with every receipt, every taxpayer’s name and every "
+            "amount.",
+            "Nothing had leaked yet. But one paste would have shared far more than anyone asked for.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 4 put an access line in the BI brief, and Part 13 planned where each reader’s drill path "
+            "stops. This part is about the settings that carry out those decisions. By the end of this post "
+            "you will know how file sharing settings work, why a separate file for sharing is safer than a "
+            "hidden tab, how dashboard credentials decide what readers can reach, how small numbers can "
+            "reveal a person, and how to keep an access list current.",
+            ("photo", "blog/bi-who-sees-what.jpg", "Who sees what: sharing settings, a separate file for "
+             "sharing, report credentials and small-number rules. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Start With the Readers, Not the File"),
+            "Before touching any setting, write down who wants to see the numbers and what each of them needs "
+            "to decide. In the collections example, there are four groups.",
+            ("point", "The analyst", "Works with every receipt, so needs the Raw and Clean tabs."),
+            ("point", "Revenue unit heads", "Follow up accounts, so need account-level detail for their own "
+             "kind of tax."),
+            ("point", "The budget officer", "Plans spending from monthly totals by class of revenue. No names "
+             "needed."),
+            ("point", "Council staff and the public", "Follow the overall trend. Totals by month and by kind "
+             "of tax are enough."),
+            "Only one of the four groups needs to see individual receipts. That single fact shapes every "
+            "setting below.",
+            ("quote", "Share the answer the reader needs, not the file you used to find it."),
+            ("h", "How File Sharing Works in Google Drive"),
+            "Google’s help for Drive describes two separate controls: the role each person gets, and the "
+            "general access of the file.",
+            ("point", "Viewer", "Can open the file, but cannot comment or edit."),
+            ("point", "Commenter", "Can open and comment, but cannot edit."),
+            ("point", "Editor", "Can open, comment and edit, and can also share the file with others."),
+            ("point", "Restricted", "Only the people added by name can open the file."),
+            ("point", "Anyone with the link", "Anyone who has the link can open the file without signing in. "
+             "A link pasted in a group chat can be forwarded beyond it."),
+            "Google’s help also notes that an owner can stop viewers and commenters from downloading, "
+            "printing or copying a file. That is worth turning on for anything sensitive, but it does not "
+            "stop someone from taking a photo of the screen. The safest file to share is one that holds "
+            "nothing private in the first place.",
+            ("h", "A Separate File for Sharing"),
+            "Sharing a spreadsheet shares the whole spreadsheet. Hiding a tab does not change who can open the "
+            "file, and protecting a range, as in Part 16, controls who can edit it, not who can see it.",
+            "A safer pattern is to keep two files.",
+            ("point", "The working file", "Raw, Clean, Summary and Checks. Restricted to the analyst and a "
+             "backup person."),
+            ("point", "The sharing file", "Holds only the Summary totals, brought in with IMPORTRANGE from the "
+             "working file. Shared with the readers who need totals."),
+            ("point", "Keep its editors few", "Google’s help for IMPORTRANGE warns that once access is "
+             "granted, any editor of the destination file can pull from any part of the source file. So the "
+             "sharing file should have the analyst as its only editor, and everyone else as viewers."),
+            "The budget officer and council staff now open a file that simply does not contain a single name. "
+            "There is nothing to hide, because nothing private is there.",
+            ("h", "Dashboards: Whose Access Does the Report Use?"),
+            "Dashboard tools add one more question: when a reader opens a report, whose permission is used to "
+            "fetch the data? Looker Studio, Google’s free dashboard tool, offers two answers, which its help "
+            "calls data credentials.",
+            ("point", "Owner’s credentials", "The report uses the access of one person, such as the person who built it. "
+             "Readers can see the data in the report even if they have no access to the data source itself."),
+            ("point", "Viewer’s credentials", "Each reader’s own access is used. Readers who cannot open the "
+             "data source cannot see its data in the report."),
+            "Owner’s credentials are convenient, because readers need nothing else. That makes it important "
+            "to connect such a report to the sharing file, not the working file. A report can only show what "
+            "its data source contains.",
+            "For the revenue unit heads, who need account detail, viewer’s credentials on a separate data "
+            "source with only their kind of tax keeps the decision in one place: whoever can open that source "
+            "can see that detail, and nobody else can.",
+            ("h", "When a Total Points to a Person"),
+            "Removing names is not always enough. A total can reveal a person when the group behind it is "
+            "very small.",
+            "Suppose a barangay has only two registered businesses. A dashboard that shows the business tax "
+            "collected there, and a reader who knows one of the two owners, can work out roughly what the "
+            "other one paid. The chart named no one, but it still told something about a person.",
+            ("point", "Set a minimum group size", "Decide with your data protection officer how many records a "
+             "total must include before it is shown on its own."),
+            ("point", "Combine small groups", "Show barangays below that size together as “Other barangays.”"),
+            ("point", "Watch filters", "A filter, as in Part 13, can shrink a large group into a small one. "
+             "Check the smallest view a reader can reach, not only the default view."),
+            "This follows the proportionality principle discussed in Part 6 of the Data Analytics series: "
+            "show what the purpose needs, and no more.",
+            ("h", "Keep an Access List"),
+            "Settings drift. People transfer, retire or change roles, and a link shared for one meeting stays "
+            "open for years. A short list keeps track.",
+            ("point", "What it records", "Each file or report, who has access, what role, why, and the date "
+             "it was given."),
+            ("point", "Review it on a schedule", "Once a quarter is a reasonable start. Remove anyone who no "
+             "longer needs access."),
+            ("point", "Use office accounts", "As in Part 15 of the Data Analytics series, files owned by an "
+             "office account stay with the office when a person leaves."),
+            ("point", "Test as a reader", "Open each shared file or report while signed in as someone with "
+             "the reader’s level of access, and confirm they see what they should and nothing more."),
+            ("h", "The Collections Dashboard, Shared Again"),
+            "The analyst never pasted that link. Instead, the office set up a sharing file holding only "
+            "monthly totals by class, group and barangay, with small barangays combined. The budget officer "
+            "and council staff were added to it as viewers by name. Each revenue unit head received a "
+            "separate report with account detail for their own kind of tax only.",
+            "The working file stayed restricted to the analyst and one backup person, and the access list "
+            "went into the same folder, with its first quarterly review on the calendar.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "“Anyone with the link” on working files", "Keep files with personal data restricted to "
+             "named people."),
+            ("point", "Hiding instead of separating", "A hidden tab is still in the file. Put shared numbers in "
+             "a file of their own."),
+            ("point", "Too many editors", "Editors can share further, and on an IMPORTRANGE file they can reach "
+             "the source."),
+            ("point", "Forgetting small groups", "Check whether any total describes only one or two people."),
+            ("h", "Key Takeaways"),
+            ("point", "Readers first", "List who needs what before choosing any setting."),
+            ("point", "Separate files", "Share a file that holds only what readers need."),
+            ("point", "Know the credentials", "A report using the owner’s access shows its data to every reader."),
+            ("point", "Review access", "Keep a list, and check it on a schedule."),
+            ("h", "Your Part 17 Exercise"),
+            "Pick one file or dashboard your office shares with people outside your unit.",
+            ("point", "Check its sharing", "Open the share settings and write down every person, every role and "
+             "the general access."),
+            ("point", "Look inside", "List every tab or data source a reader can reach, not just the one they "
+             "use."),
+            ("point", "Find the smallest total", "Filter to the smallest group a reader can reach and count the "
+             "records behind it."),
+            "Then decide what you would remove, separate or combine. Start your access list with that one file.",
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("cta", "Read: Business Intelligence Series, Part 13", "/blog/business-intelligence-part-13-filters-and-drill-down/"),
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("ask", "Who can open your office’s most important spreadsheet today, and does each of them still need to?"),
+        ],
+    },
+    {
         "date": "January 25, 2027",
         "title": "Business Intelligence Series, Part 16: A Small Pipeline in Google Sheets, Raw to Clean to Summary",
         "slug": "business-intelligence-part-16-pipeline-in-sheets",

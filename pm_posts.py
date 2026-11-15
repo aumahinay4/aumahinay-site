@@ -14,6 +14,150 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "February 1, 2027",
+        "title": "Project Management Series, Part 17: The Project Budget, Built Package by Package",
+        "slug": "project-management-part-17-project-budget",
+        "category": "pm",
+        "summary": "“How much will it cost?” deserves a better answer than a guess at the biggest purchase. "
+                   "This part builds a project budget from the work packages, explains three ways to "
+                   "estimate cost, separates cash from staff time, and shows how contingency and management "
+                   "reserves protect the plan.",
+        "publish_on": "2027-02-01 21:00",
+        "body": [
+            "The head of office approves the nine-week schedule for the notices project. Then comes the next "
+            "question: “How much will this cost, and do we have the funds?”",
+            "The revenue clerk remembers the first round. Asked the same question then, the clerk answered "
+            "quickly: “Mostly the printing.” The printing quote was about ₱6,500, so that went into the plan. "
+            "Three weeks into that round, the envelopes have not been counted, "
+            "the collectors were asking about their transport for the far barangays, and the toner ran out "
+            "halfway through the run.",
+            "None of these costs was a surprise. They were simply never written down, because the estimate "
+            "started from the biggest purchase instead of from the work.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Part 14 broke the project into work packages, Part 15 estimated their time, and Part 16 put them "
+            "in order. This part puts a cost on them. By the end of this post you will know how to build a "
+            "budget package by package, three ways to estimate a cost, why staff time belongs in the plan, "
+            "how reserves work, and how to place spending on the calendar.",
+            ("photo", "blog/pm-budget.jpg", "A project budget built from the work packages, with reserves for "
+             "risks and spending placed on the calendar. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Start From the Work Packages"),
+            "The WBS from Part 14 is already a list of everything the project must deliver. A bottom-up "
+            "budget goes through it one package at a time and asks: what does this package need that costs "
+            "money?",
+            "Working this way makes forgotten costs easier to spot. The envelopes belong to package 2.3, "
+            "printing and signing. The collectors’ transport belongs to package 3.2, delivery. Each one has "
+            "a place to be written down.",
+            ("quote", "A budget built from the work leaves fewer costs out."),
+            ("h", "Three Ways to Estimate a Cost"),
+            ("point", "Bottom-up", "Estimate each package, then add them up. It takes more effort than the other two ways and gives more detail."),
+            ("point", "From a past project", "Start from what a similar project actually spent, then adjust "
+             "for differences, the same outside view used for time in Part 15."),
+            ("point", "From a unit cost", "Multiply a known rate by a quantity: 1,800 envelopes at ₱2 each is "
+             "₱3,600. This works well wherever a price per item is known."),
+            "These can be mixed. In the notices project, the clerk is using unit costs for envelopes and "
+            "transport, a supplier quote for printing, and last year’s supply records to check the total.",
+            ("h", "Cash Costs and Staff Time"),
+            "Much of the work in an office project is done by staff who are already paid. That time does not "
+            "need new funds, but it is not free: an hour spent checking the account list is an hour not spent "
+            "at the counter.",
+            ("point", "Cash costs", "Things the office must pay for: paper, toner, envelopes, transport. These "
+             "need funds in the office’s budget."),
+            ("point", "Staff time", "Person-days from each package’s estimate. These need people to be "
+             "available, which ties back to the effort and duration point in Part 15."),
+            "Keeping the two side by side shows the full cost of the project, and it helps the sponsor see "
+            "what the office is giving up to do it.",
+            ("h", "The Notices Project Budget"),
+            ("point", "1. Account list (1.1 to 1.3)", "No cash cost. Staff time: 9 person-days from the clerk "
+             "and one checker."),
+            ("point", "2.1 Notice template", "No cash cost. Staff time: 2 person-days, plus one review session "
+             "with the legal adviser."),
+            ("point", "2.3 Printing and signing", "Paper and toner from the supplier quote, ₱6,500. Envelopes, "
+             "1,800 at ₱2, ₱3,600."),
+            ("point", "3.2 Delivery", "Transport for two collectors: 25 days × 2 × ₱150 = ₱7,500."),
+            ("point", "4.2 Counter guide", "Printed copies for the counter, ₱500."),
+            ("point", "5.3 Closing report", "Printing, ₱300."),
+            "Cash total: ₱6,500 + ₱3,600 + ₱7,500 + ₱500 + ₱300 = ₱18,400. That is almost three times the "
+            "clerk’s first answer.",
+            ("h", "Reserves: Planning for What Might Go Wrong"),
+            "No estimate is exact, as Part 15 showed. Reserves set money aside for that uncertainty, in two "
+            "layers. A PMI paper on contingency reserves describes them this way.",
+            ("point", "Contingency reserve", "Money set aside for identified risks, the ones already written in "
+             "the risk list with a response planned. It is added to the estimates to form the cost baseline."),
+            ("point", "Management reserve", "Money held back for problems nobody foresaw. It sits on top of the "
+             "cost baseline, and the cost baseline plus the management reserve is the project budget."),
+            "For the notices project, two identified risks were costed.",
+            ("point", "Reprinting", "If the legal review asks for a change after printing, part of the run must "
+             "be redone. The clerk set aside ₱1,000."),
+            ("point", "Longer delivery", "If the pessimistic delivery estimate from Part 15 comes true, five "
+             "more days of transport for two collectors cost 5 × 2 × ₱150 = ₱1,500."),
+            "Contingency reserve: ₱2,500. Cost baseline: ₱18,400 + ₱2,500 = ₱20,900. The head of office held a "
+            "management reserve of ₱1,000, bringing the project budget to ₱21,900.",
+            "The difference matters in practice. In this office, the clerk may use the contingency reserve "
+            "when a listed risk happens, while the management reserve stays with the head of office, who decides whether an "
+            "unexpected problem deserves it.",
+            ("h", "Placing Spending on the Calendar"),
+            "A budget also has a timeline. The critical path from Part 16 shows when each package runs, so it "
+            "also shows when money is needed.",
+            ("point", "Weeks 1 to 2", "Almost no cash. The list and the template are staff time."),
+            ("point", "Weeks 3 to 4", "Printing, envelopes and the counter guide: about ₱10,600."),
+            ("point", "Weeks 4 to 9", "Delivery transport, spread across the delivery weeks: ₱7,500."),
+            "Knowing this helps the office arrange purchases in time. Buying supplies through the office’s "
+            "usual process takes calendar time too, so ask the supply staff early how long it takes.",
+            ("h", "Checking the Funds"),
+            "For a government office, an estimate is only the first step. The 1987 Constitution provides that "
+            "no money shall be paid out of the Treasury except in pursuance of an appropriation made by law. "
+            "In practice, that means every cash cost must be covered by the office’s approved budget.",
+            ("point", "Ask the budget officer early", "Show the cash costs by item and ask which part of the "
+             "office’s approved budget can cover each one."),
+            ("point", "Follow the purchasing rules", "Supplies are bought through the office’s procurement "
+             "process. The supply or procurement staff can say what documents are needed."),
+            ("point", "Write it in the plan", "Record where the funds come from beside each cost, so nobody "
+             "has to ask again mid-project."),
+            ("h", "Tracking Actual Spending"),
+            ("point", "Record each cost when it happens", "Use the tracker from Part 12 and add the actual "
+             "amount to the package it belongs to."),
+            ("point", "Compare weekly", "For each package, compare the budget with what was actually spent so "
+             "far, and note the difference."),
+            ("point", "Explain the gaps", "A package over budget needs a reason and a decision: use the "
+             "contingency reserve, cut elsewhere, or ask the sponsor."),
+            ("point", "Close with actuals", "The closing report should record what each package actually "
+             "cost, so the next estimate starts from facts."),
+            ("h", "The Notices Project, Budgeted Again"),
+            "This time, the clerk presented the budget package by package, with staff time beside "
+            "the cash costs and the two reserves explained. The budget officer confirmed which items of the "
+            "office’s approved budget would cover the supplies and the transport.",
+            "One risk did happen: the legal adviser asked for a wording change after the first batch was "
+            "printed. The reprint cost ₱800, paid from the contingency reserve, and the project finished "
+            "inside its budget without a single request for more funds.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Starting from the biggest purchase", "Start from the work packages instead."),
+            ("point", "Ignoring staff time", "Record person-days even when no new money is needed."),
+            ("point", "One pot for everything", "Keep contingency and management reserves separate, with "
+             "different owners."),
+            ("point", "Checking funds too late", "Ask the budget officer before the plan is approved."),
+            ("h", "Key Takeaways"),
+            ("point", "Bottom-up", "A budget built from each work package leaves fewer costs out."),
+            ("point", "Cash and time", "Show both, so the full cost of the project is visible."),
+            ("point", "Two reserves", "Contingency for listed risks; management reserve for the unforeseen."),
+            ("point", "Funds and timing", "Confirm the funds early, and place spending on the calendar."),
+            ("h", "Your Part 17 Exercise"),
+            "Take the work packages from your Part 14 exercise.",
+            ("point", "Cost each one", "Write the cash cost and the person-days beside every package."),
+            ("point", "Add reserves", "Pick two risks, put a cost on each, and add them as a contingency "
+             "reserve."),
+            ("point", "Place it in time", "Use your Part 16 schedule to show which weeks need the money."),
+            "Then compare your total with the first figure that came to mind. The gap shows how much the "
+            "project would have cost beyond what anyone planned for.",
+            ("cta", "Read: Project Management Series, Part 16", "/blog/project-management-part-16-critical-path/"),
+            ("cta", "Read: Project Management Series, Part 15", "/blog/project-management-part-15-estimating-time/"),
+            ("cta", "Read: Project Management Series, Part 14", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("cta", "Read: Project Management Series, Part 10", "/blog/project-management-part-10-business-case/"),
+            ("ask", "Which cost in your last project was never written down until it had to be paid?"),
+        ],
+    },
+    {
         "date": "January 27, 2027",
         "title": "Project Management Series, Part 16: The Critical Path, Finding the Work That Sets the Finish Date",
         "slug": "project-management-part-16-critical-path",
