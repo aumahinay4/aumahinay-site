@@ -12,6 +12,136 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "February 20, 2027",
+        "title": "Data Analytics Series, Part 21: Stop Bad Data at the Door, Rules Inside the Database",
+        "slug": "data-analytics-part-21-rules-inside-the-database",
+        "category": "data",
+        "summary": "Cleaning fixes yesterday’s mistakes; rules prevent tomorrow’s. This part builds a receipts "
+                   "table in SQLite that refuses duplicates, blanks, negative amounts, badly written dates and "
+                   "unknown collectors, tests every rule with a bad row, and explains the two settings that "
+                   "quietly switch some protection off.",
+        "publish_on": "2027-02-20 21:00",
+        "body": [
+            "Part 20 ended with a view that cleans the satellite office’s import every week: commas removed, "
+            "names trimmed, blanks labeled, repeats dropped. It works. But every week the same mistakes "
+            "arrive, and every week the view has to fix them again.",
+            "The analyst asks a different question: what if the database simply refused a receipt with no "
+            "barangay, an amount below zero, or a date written the wrong way, at the moment someone tries to "
+            "save it?",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 12 stopped errors at the door of a spreadsheet with dropdown lists. This part does the same "
+            "for a database. By the end of this post you will know how to write rules into a table so it "
+            "rejects bad rows, what NOT NULL, UNIQUE, CHECK and foreign keys each catch, why SQLite needs two extra steps to be strict, and how to find bad rows that were saved before the rules existed. "
+            "Every statement below was run in SQLite, and the results shown are what it returned.",
+            ("photo", "blog/data-db-rules.jpg", "Rules inside the database: required values, no repeats, "
+             "sensible values and known codes. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Rules Belong in the Table"),
+            "A form on a screen can check entries, and a careful clerk can check them again. But data can "
+            "reach a table by other routes too: an import, a script, a copy from another file. A rule written "
+            "into the table itself applies to every one of them, because the database checks it on every "
+            "insert and every update.",
+            ("quote", "A rule in the table is a check that never gets tired."),
+            ("h", "The Table, With Its Rules"),
+            "Here is the receipts table, written with a rule on each column. The collectors table it refers to "
+            "holds C-04 Reyes and C-07 Lim, as in Part 19.",
+            ("point", "The statement", "CREATE TABLE receipts ( receipt_no TEXT NOT NULL PRIMARY KEY, "
+             "taxpayer_id TEXT NOT NULL, collector_id TEXT NOT NULL REFERENCES collectors(collector_id), "
+             "barangay TEXT NOT NULL CHECK (trim(barangay) <> ''), amount REAL NOT NULL CHECK (amount > 0), "
+             "paid_on TEXT NOT NULL CHECK (paid_on IS date(paid_on)) ) STRICT;"),
+            "It looks long, but each line is one plain rule. The sections below take them one at a time, each "
+            "with a bad row that tests it.",
+            ("h", "NOT NULL: A Value Is Required"),
+            ("point", "The rule", "NOT NULL means the column must have a value. SQLite’s documentation says "
+             "that trying to save NULL there is a constraint violation."),
+            ("point", "The test", "A receipt with NULL as its barangay was refused with “NOT NULL constraint "
+             "failed: receipts.barangay.”"),
+            ("point", "What it misses", "An empty text value is not NULL, so NOT NULL alone lets it through. "
+             "That is why the barangay column has a second rule."),
+            ("h", "UNIQUE and PRIMARY KEY: No Repeats"),
+            ("point", "The rule", "A primary key identifies each row, so no two rows may share it. Saving "
+             "receipt 004701 a second time was refused with “UNIQUE constraint failed: receipts.receipt_no.”"),
+            ("point", "Why it matters", "This is the duplicate import from Part 20, stopped before it is saved "
+             "instead of removed after."),
+            ("point", "Watch for NULL", "SQLite’s documentation says that for UNIQUE rules, NULL values count as "
+             "different from each other, so several rows may hold NULL in a UNIQUE column. Pair UNIQUE with NOT "
+             "NULL when a value must always be there."),
+            ("h", "CHECK: Values That Make Sense"),
+            "A CHECK rule is a condition each row must meet. SQLite tests it every time a row is inserted or "
+            "updated.",
+            ("point", "No blank barangay", "CHECK (trim(barangay) <> '') refused a receipt whose barangay was "
+             "an empty value: “CHECK constraint failed.”"),
+            ("point", "No zero or negative amount", "CHECK (amount > 0) refused a receipt for -500."),
+            ("point", "Dates in one format", "CHECK (paid_on IS date(paid_on)) refused “11/09/2026.” It also "
+             "refused “2026-02-30,” because SQLite’s date function turned that into 2026-03-02, which does not "
+             "match what was typed."),
+            "The date rule uses IS rather than =, and the reason is worth knowing. SQLite’s date function "
+            "returns NULL for “11/09/2026,” and comparing anything with NULL using = gives NULL. SQLite’s "
+            "documentation says a CHECK that comes out NULL is not a violation. In a test table with "
+            "CHECK (paid_on = date(paid_on)), “11/09/2026” was saved without complaint. IS treats NULL as a "
+            "value to compare, so the rule fails as it should.",
+            ("h", "Foreign Keys: Only Known Codes"),
+            ("point", "The rule", "REFERENCES collectors(collector_id) says every receipt’s collector must "
+             "exist in the collectors table, the link Part 14 sketched on paper."),
+            ("point", "The surprise", "A receipt for collector C-99, who does not exist, was saved. SQLite’s "
+             "documentation explains that foreign key rules are switched off by default and must be switched "
+             "on for each connection."),
+            ("point", "The switch", "After PRAGMA foreign_keys = ON; the same kind of receipt was refused with "
+             "“FOREIGN KEY constraint failed.” Run it at the start of every session, before any other "
+             "statement. The documentation notes that it has no effect inside an open transaction."),
+            ("h", "STRICT: Types That Are Enforced"),
+            "The table ends with the word STRICT, and that is the second switch. In an ordinary SQLite table, "
+            "a column’s type is a preference, not a rule.",
+            ("point", "Without STRICT", "In an ordinary test table, an amount column declared as REAL "
+             "accepted “1,250.00” and stored it as text. That is how the commas in Part 20 got in."),
+            ("point", "With STRICT", "The receipts table refused “1,250.00” with “cannot store TEXT value in "
+             "REAL column.” It accepted “800,” because that text converts cleanly, and stored it as the number "
+             "800."),
+            ("point", "Which versions", "SQLite’s documentation says STRICT tables arrived in version 3.37.0, "
+             "released in November 2021. Check your version with sqlite3 --version before relying on it."),
+            ("h", "Bad Rows That Were Already There"),
+            "Rules protect the table from the moment they exist. Rows saved while foreign keys were off "
+            "are not checked again when the switch is turned on, and old data copied in from an earlier table "
+            "deserves a look before anyone relies on it.",
+            ("point", "Unknown codes", "PRAGMA foreign_key_check; lists rows whose foreign key points nowhere. "
+             "In the test, it found the C-99 receipt saved before the switch was on."),
+            ("point", "Other rules", "Run the rule as a query. SELECT receipt_no FROM receipts WHERE amount "
+             "<= 0 OR paid_on IS NOT date(paid_on); finds rows that break the amount or date rules."),
+            ("point", "Fix at the source", "Look up the paper receipt, correct the row, and note it in the "
+             "cleaning log from Part 16."),
+            ("h", "The Satellite Office, One Week Later"),
+            "The analyst rebuilt the receipts table with its rules, switched foreign keys on in the import "
+            "script, and ran the next week’s file. Four rows were refused, each with a message that named "
+            "the rule. The satellite office fixed them the same afternoon and sent them again. The view from "
+            "Part 20 still runs, but now it has less to clean.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting NOT NULL for blanks", "Add a CHECK for empty text too."),
+            ("point", "Comparing with = in a CHECK", "A NULL result passes. Use IS where NULL can appear."),
+            ("point", "Forgetting the switch", "Turn foreign keys on in every session."),
+            ("point", "Assuming types are enforced", "Use STRICT, or check types with TYPEOF."),
+            ("h", "Key Takeaways"),
+            ("point", "Rules in the table", "They apply to every route data takes, every time."),
+            ("point", "Four kinds", "NOT NULL, UNIQUE, CHECK and foreign keys, each catching a different "
+             "mistake."),
+            ("point", "Two switches", "PRAGMA foreign_keys = ON and STRICT tables."),
+            ("point", "Old rows", "Check them with foreign_key_check and with each rule run as a query."),
+            ("h", "Your Part 21 Exercise"),
+            "In your SQLite practice file, create a small receipts table with at least one rule of each kind "
+            "and the word STRICT at the end.",
+            ("point", "Test each rule", "Try to insert one bad row per rule, and read the message each time."),
+            ("point", "Try the NULL trap", "Write a date rule with = and then with IS, and insert “11/09/2026” "
+             "into each."),
+            ("point", "Switch it on", "Insert an unknown collector before and after PRAGMA foreign_keys = ON."),
+            "Then list the mistakes your office’s data arrives with most often, and write one rule for each. "
+            "Every rule written is a mistake you no longer clean by hand.",
+            ("cta", "Read: Data Analytics Series, Part 20", "/blog/data-analytics-part-20-cleaning-with-sql/"),
+            ("cta", "Read: Data Analytics Series, Part 14", "/blog/data-analytics-part-14-databases-101/"),
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 19", "/blog/data-analytics-part-19-first-steps-in-sql/"),
+            ("ask", "Which mistake would you most like your office’s data to refuse at the door?"),
+        ],
+    },
+    {
         "date": "February 15, 2027",
         "title": "Data Analytics Series, Part 20: Cleaning Data With SQL, Without Touching the Original",
         "slug": "data-analytics-part-20-cleaning-with-sql",

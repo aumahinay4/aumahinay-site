@@ -14,6 +14,126 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "February 21, 2027",
+        "title": "Project Management Series, Part 21: Buffers, Not Padding, Adding Safety to a Schedule Honestly",
+        "slug": "project-management-part-21-buffers-not-padding",
+        "category": "pm",
+        "summary": "Most schedules already hold extra time, hidden inside each estimate where nobody can see or "
+                   "manage it. This part shows how to bring that safety into the open as a visible buffer, who "
+                   "should own it, and how to watch it week by week.",
+        "publish_on": "2027-02-21 21:00",
+        "body": [
+            "When the clerk asked Collector Lim how long delivery would take for next year’s round, the answer "
+            "came quickly: “Twenty-five days.” Later, over coffee, Lim added, “Twenty, most likely. I put in five extra, just in case.”",
+            "The clerk checked the other estimates on the critical path. The legal review date had been "
+            "agreed with the adviser in advance, and filling and printing had been timed in the second round. "
+            "But the undelivered list, two days, turned out to be one day plus one “just in case.” None of this "
+            "was dishonest. People protect their own tasks. The question was what that hidden time was doing.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Part 15 showed why estimates tend to run short, and Part 17 set money aside for risks in a "
+            "contingency reserve. This part does the same for time. By the end of this post you will know the "
+            "difference between padding and a buffer, why hidden safety tends to get used up anyway, how to "
+            "move it into one visible buffer, and how to watch that buffer while the project runs.",
+            ("photo", "blog/pm-buffers.jpg", "Buffers, not padding: safety time moved out of each task into one "
+             "visible buffer that the project manager owns. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Padding and Buffers"),
+            ("point", "Padding", "Extra time added quietly inside a task’s estimate. Nobody else knows it is "
+             "there, and the person who added it treats it as part of the task."),
+            ("point", "A buffer", "Extra time placed in the schedule openly, as a line of its own, with a "
+             "name, an owner and a rule for using it."),
+            "Both come from the same honest worry: things go wrong. The difference is who can see the safety, "
+            "and who decides when it is used.",
+            ("quote", "Safety you can see is safety you can manage."),
+            ("h", "Why Hidden Safety Disappears"),
+            "Padding seems safe, but three patterns can use it up before it is needed.",
+            ("point", "Parkinson’s law", "In a 1955 essay in The Economist, the historian C. Northcote "
+             "Parkinson wrote that work expands so as to fill the time available for its completion. A task "
+             "given twenty-five days can take twenty-five, even when twenty would have done."),
+            ("point", "Starting late", "When a deadline feels comfortable, the work can start later than it "
+             "could. Eliyahu Goldratt’s business novel Critical Chain, published in 1997, calls this "
+             "the student syndrome, after students who begin an assignment just before it is due. Then a problem near the "
+             "end has no time left to absorb it."),
+            ("point", "Early finishes are lost", "If the next task is planned to start on a fixed date, finishing the "
+             "task before it early changes nothing. Finishing it late pushes the next one back."),
+            "Put together, each task’s safety is spent on that task, and the project as a whole still runs "
+            "late. The safety was real, but it was in the wrong place.",
+            ("h", "Moving the Safety Into the Open"),
+            ("point", "1. Ask for two numbers", "For each task on the critical path, ask for a likely duration "
+             "and a safe one, as in the three-point estimates of Part 15. The gap between them is the padding."),
+            ("point", "2. Plan with the likely number", "Put the likely duration in the schedule, so each task "
+             "has a target that is achievable but not loose."),
+            ("point", "3. Gather the gaps into one buffer", "Add the removed time as one buffer at the end of "
+             "the critical path, before the finish date."),
+            ("point", "4. Give the buffer an owner", "The project manager holds it. A task that runs over draws "
+             "from it openly, and the draw is written down."),
+            "This changes how lateness is seen. A task that takes longer than its likely number is not a "
+            "failure. It is exactly what the buffer is for, and the only question is whether the buffer is "
+            "being used faster than the work is getting done.",
+            ("h", "Why One Buffer Can Be Smaller Than the Sum"),
+            "Not every task will need all its safety at once. One task runs late, another runs early, and a "
+            "third uses half its margin. A shared buffer can absorb the late ones with time that would have "
+            "sat unused inside the others.",
+            "Critical chain methods use rules of thumb to size the shared buffer. A first project does not "
+            "need one. "
+            "Keeping the full amount as a buffer still gains the main benefits: the safety is visible, it has "
+            "an owner, and early finishes can be passed on.",
+            ("h", "Feeding Buffers for the Side Paths"),
+            "Where a side path joins the critical path, a delay on the side path can hold up the critical work. "
+            "A small buffer at that joining point, called a feeding buffer, protects the critical path from "
+            "it.",
+            "In the notices plan from Part 20, counter readiness (H) finishes on day 14, and delivery may start "
+            "two days later because of the lag the cashiers asked for. Delivery starts on day 17, so there is "
+            "one day to spare. That day is a small feeding buffer, and it is worth naming as one, so nobody "
+            "spends it without noticing.",
+            ("h", "The Notices Plan, With a Visible Buffer"),
+            "The clerk asked for likely and safe numbers on the critical path and wrote both down.",
+            ("point", "Template and legal review (C)", "10 days. The review date is agreed in advance, "
+             "so no gap."),
+            ("point", "Fill, print and sign (E, F)", "4 days each, timed in the second round. No gap."),
+                        ("point", "Delivery (I)", "Safe 25 days, likely 20. Gap: 5."),
+            ("point", "Undelivered list (J)", "Safe 2 days, likely 1. Gap: 1."),
+            "The gaps add up to six days. The schedule now shows delivery from day 17 to 37 and the "
+            "undelivered list from day 37 to 38, followed by a six-day project buffer. The finish date the head of office approved, day 44, did not "
+            "move. What changed is that the six days now sit in one place, with one owner, where everyone can "
+            "see them.",
+            ("h", "Watching the Buffer"),
+            ("point", "One weekly check", "Compare how much of the critical work is done with how much of the "
+             "buffer is used."),
+            ("point", "Healthy, for example", "Half the work done and a quarter of the buffer used: on course."),
+            ("point", "Warning, for example", "A third of the work done and half the buffer used: find the cause and plan a "
+             "response."),
+            ("point", "Act early", "If the buffer is being used faster than the work moves, raise it in the "
+             "weekly update from Part 11 before it runs out, not after."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Cutting estimates and dropping the safety", "Removing padding without adding a buffer "
+             "only makes the schedule tighter."),
+            ("point", "Treating the buffer as spare time", "It belongs to the whole project, not to the first "
+             "task that wants it."),
+            ("point", "Blaming people for using it", "A draw on the buffer is information, not a fault."),
+            ("point", "Hiding the buffer from the sponsor", "Show it, explain it, and report its use."),
+            ("h", "Key Takeaways"),
+            ("point", "Padding hides", "Safety inside tasks tends to be used up where it sits."),
+            ("point", "Buffers show", "One visible buffer, with an owner and a rule."),
+            ("point", "Plan at likely", "Tasks get achievable targets; the buffer absorbs what goes wrong."),
+            ("point", "Watch the rate", "Buffer used against work done, every week."),
+            ("h", "Your Part 21 Exercise"),
+            "Take the critical path from your Part 16 exercise.",
+            ("point", "Two numbers", "For each task on it, ask the person doing it for a likely and a safe "
+             "duration."),
+            ("point", "Build the buffer", "Add up the gaps and place them as one buffer before the finish date."),
+            ("point", "Set the check", "Decide what “healthy” and “warning” mean for your project."),
+            "Then show the plan to your sponsor with the buffer on its own line. Explaining it takes a few "
+            "minutes, and from then on, everyone can see how much safety is left.",
+            ("cta", "Read: Project Management Series, Part 15", "/blog/project-management-part-15-estimating-time/"),
+            ("cta", "Read: Project Management Series, Part 17", "/blog/project-management-part-17-project-budget/"),
+            ("cta", "Read: Project Management Series, Part 20", "/blog/project-management-part-20-dependencies/"),
+            ("cta", "Read: Project Management Series, Part 16", "/blog/project-management-part-16-critical-path/"),
+            ("ask", "Where in your current plan is the safety hidden, and who knows it is there?"),
+        ],
+    },
+    {
         "date": "February 16, 2027",
         "title": "Project Management Series, Part 20: Understanding Dependencies, When Task B Is Waiting on Task A",
         "slug": "project-management-part-20-dependencies",
