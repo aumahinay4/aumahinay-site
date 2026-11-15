@@ -12,6 +12,532 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "March 27, 2027",
+        "title": "Data Analytics Series, Part 28: SQL Joins, Finding Who Is Missing and Why Totals Double",
+        "slug": "data-analytics-part-28-sql-joins",
+        "category": "data",
+        "summary": "Part 19 joined two tables to get totals by barangay. This part goes further: the "
+                   "difference between an inner join and a left join, how to list taxpayers with no "
+                   "receipts, why a condition in the wrong place hides them again, and how a join can "
+                   "quietly double a total.",
+        "publish_on": "2027-03-27 21:00",
+        "body": [
+            "The head of office wanted a simple list: every registered business and how much each one paid "
+            "this year. The analyst joined the taxpayers table to the receipts table, grouped by taxpayer, "
+            "and printed the result. Four businesses, four totals. The head of office counted the folders "
+            "on the shelf. “We have five registered businesses in this sample. Where is Lim Trading?”",
+            "Lim Trading had not paid anything. And because it had not paid, the query had left it out, "
+            "without a word. The one taxpayer the head of office most needed to see was the one the report "
+            "could not show.",
+            "(A made-up office and made-up figures, built for this lesson. No real business or taxpayer is "
+            "described.)",
+            "In Part 19, a JOIN brought the barangay from the taxpayers table into a total of receipts. "
+            "This part looks closely at how joins decide which rows to keep. By the end, you will know "
+            "the difference between an inner join and a left join, how to list who has no matching record, "
+            "where to put a date condition so it does not hide anyone, and how to catch a join that "
+            "counts the same money twice. Every result below was checked by running the queries in SQLite.",
+            ("photo", "blog/data-joins.jpg", "SQL joins: an inner join keeps only matches, a left join "
+             "keeps everyone, IS NULL finds who is missing, and a check total catches double counting. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Sample Tables"),
+            "The tables are the ones from Part 19, with one taxpayer added.",
+            ("point", "taxpayers", "Five businesses: T-00125 Ramos Bakery, T-00140 Cruz Store and T-00152 "
+             "Dela Rosa Eatery in Poblacion, T-00131 Santos Hardware in San Isidro, and the new one, "
+             "T-00163 Lim Trading in San Roque."),
+            ("point", "receipts", "The same six receipts, 004512 to 004517, totaling 8,150. Ramos Bakery "
+             "paid twice, Santos Hardware paid twice, and Cruz Store and Dela Rosa Eatery paid once each. "
+             "Lim Trading has no receipt."),
+            ("point", "contacts", "A third table, added later in this post: phone numbers, one row per "
+             "number. Ramos Bakery has two numbers on file and Santos Hardware has one."),
+            ("quote", "A join answers two questions at once: what matches, and what to do with what does "
+             "not. Only the second one is easy to forget."),
+            ("h", "The Inner Join Keeps Only Matches"),
+            ("point", "The query", "SELECT t.name, SUM(r.amount) AS paid FROM taxpayers AS t JOIN "
+             "receipts AS r ON r.taxpayer_id = t.taxpayer_id GROUP BY t.taxpayer_id;"),
+            ("point", "What it returned", "Four rows: Ramos Bakery 3,050, Santos Hardware 2,500, Cruz "
+             "Store 800 and Dela Rosa Eatery 1,800. Lim Trading is not there."),
+            ("point", "Why", "JOIN on its own means an inner join. It keeps a row only when a match is "
+             "found on both sides. A taxpayer with no receipt has nothing to match, so the taxpayer "
+             "disappears from the result."),
+            "For a total of money collected, that is exactly right. Every peso comes from a receipt, and "
+            "every receipt has a taxpayer. The trouble starts when the question is about the taxpayers, "
+            "including the ones who did not pay.",
+            ("h", "The Left Join Keeps Everyone on the Left"),
+            ("point", "The query", "SELECT t.name, COUNT(r.receipt_no) AS receipts, SUM(r.amount) AS paid "
+             "FROM taxpayers AS t LEFT JOIN receipts AS r ON r.taxpayer_id = t.taxpayer_id GROUP BY "
+             "t.taxpayer_id;"),
+            ("point", "What it returned", "Five rows. The first four are the same as before. The fifth is "
+             "Lim Trading with 0 receipts and an empty total."),
+            ("point", "Why", "SQLite’s documentation explains that a LEFT JOIN adds an extra row for each "
+             "row in the left table that matches nothing on the right, and fills the right table’s "
+             "columns in that row with NULL. The table named first, before LEFT JOIN, is the one whose "
+             "rows are all kept."),
+            ("point", "Count a column, not the row", "COUNT(r.receipt_no) gave 0 for Lim Trading because "
+             "COUNT of a column skips NULL, as Part 20 showed. COUNT(*) would have counted the filler row "
+             "and reported 1 receipt that does not exist."),
+            ("point", "Turn the blank into zero", "SUM over nothing but NULL returned NULL, not 0. "
+             "COALESCE(SUM(r.amount), 0) shows 0, which reads better in a report."),
+            "The same idea works by barangay. A LEFT JOIN from taxpayers to receipts, grouped by "
+            "barangay, with COALESCE, returned Poblacion 5,650, San Isidro 2,500 and San Roque 0. With "
+            "an inner join, San Roque was missing from the list entirely, and a reader could think the "
+            "town has only two barangays with businesses.",
+            ("h", "Finding Who Is Missing"),
+            "In a treasury, a left join is especially handy for one question: “Who has not "
+            "paid?”",
+            ("point", "The query", "SELECT t.taxpayer_id, t.name FROM taxpayers AS t LEFT JOIN receipts "
+             "AS r ON r.taxpayer_id = t.taxpayer_id WHERE r.receipt_no IS NULL;"),
+            ("point", "What it returned", "One row: T-00163 Lim Trading."),
+            ("point", "How it works", "The left join keeps every taxpayer. For the ones with no receipt, "
+             "the receipt columns are NULL. The WHERE line then keeps only those rows. Use IS NULL here, "
+             "not = NULL, because in SQL nothing is equal to NULL, not even another NULL."),
+            ("point", "Another way", "SELECT taxpayer_id FROM taxpayers WHERE taxpayer_id NOT IN (SELECT "
+             "taxpayer_id FROM receipts); returned the same taxpayer. Be careful with NOT IN if the inner "
+             "list can contain NULL: in standard SQL, one NULL in that list makes the whole test return "
+             "no rows. The left join version does not have that trap."),
+            "This list is where follow-up work begins: a reminder letter, a visit, or a check that the "
+            "business is still operating. It is the same list the head of office was asking for at the "
+            "start.",
+            ("h", "Where the Date Condition Goes"),
+            "Now the head of office asks a narrower question: “How many receipts did each business get "
+            "in November?” This is where a left join can quietly turn back into an inner join.",
+            ("point", "The condition in WHERE", "Adding WHERE r.paid_on BETWEEN '2026-11-01' AND "
+             "'2026-11-30' after the left join returned only two rows: Santos Hardware with 1 and Dela "
+             "Rosa Eatery with 1. Ramos Bakery, Cruz Store and Lim Trading disappeared."),
+            ("point", "Why", "For a taxpayer with no November receipt, the date column is NULL or an "
+             "October date, and the WHERE test fails, so the row is dropped. The left join kept everyone; "
+             "the WHERE line threw them away again."),
+            ("point", "The condition in ON", "Moving the date test into the join, ON r.taxpayer_id = "
+             "t.taxpayer_id AND r.paid_on BETWEEN '2026-11-01' AND '2026-11-30', returned all five "
+             "businesses: Santos Hardware 1, Dela Rosa Eatery 1, and 0 for the other three."),
+            "The rule of thumb: a condition about the right-hand table belongs in ON when you want to "
+            "keep every row on the left. A condition about the left-hand table, such as WHERE t.barangay "
+            "= 'Poblacion', can stay in WHERE.",
+            ("h", "When a Join Doubles the Money"),
+            "Later, the analyst added the contacts table so the report could show a phone number beside "
+            "each payment.",
+            ("point", "The query", "SELECT COUNT(*), SUM(r.amount) FROM receipts AS r LEFT JOIN contacts "
+             "AS k ON k.taxpayer_id = r.taxpayer_id;"),
+            ("point", "What it returned", "8 rows and a total of 11,200. There are six receipts and the "
+             "true total is 8,150."),
+            ("point", "Why", "Ramos Bakery has two phone numbers. Each of its two receipts matched both "
+             "numbers, so each receipt appeared twice. Its 3,050 was counted twice, and 8,150 plus 3,050 "
+             "is 11,200."),
+            ("point", "The fix", "Join one row per taxpayer, not one row per phone number. For example, "
+             "total the receipts first in one query, or keep a single main number per taxpayer, and join "
+             "to that. Then check the row count and total again."),
+            "This is sometimes called fan-out: a join to a table that has several rows per key multiplies "
+            "the rows on the other side. No error appears. The total is simply wrong.",
+            ("h", "Right Joins, Full Joins and Cross Joins"),
+            ("point", "RIGHT JOIN", "Keeps every row of the second table instead of the first. Writing the "
+             "tables in the other order and using LEFT JOIN does the same thing, so use "
+             "whichever direction you find easier to read. If an older copy of sqlite3 rejects RIGHT JOIN, swap the tables "
+             "and use LEFT JOIN."),
+            ("point", "FULL JOIN", "SQLite’s documentation describes it as a combination of a left and a "
+             "right join: unmatched rows from both sides are kept. It suits comparing two lists, such as "
+             "the receipts in the system against a collector’s own list."),
+            ("point", "CROSS JOIN", "Pairs every row with every row. The documentation says an inner join "
+             "with no ON clause gives the same result. Five taxpayers and six receipts make 30 rows, "
+             "which is why Part 19 warned about forgetting the ON line."),
+            ("h", "Three Checks After Every Join"),
+            ("point", "Count the rows", "Before the join, count the rows of the main table. After it, "
+             "count again. If the number grew, look for a key with several matches."),
+            ("point", "Check a known total", "SELECT SUM(amount) FROM receipts; gave 8,150. Any joined "
+             "report of the same receipts should still add up to 8,150."),
+            ("point", "Look for the missing", "Run the IS NULL query from both sides: taxpayers with no "
+             "receipts, and receipts whose taxpayer ID is not in the taxpayers table. The second kind "
+             "points to a typing error or a missing registration."),
+            ("h", "The List, Corrected"),
+            "The analyst changed JOIN to LEFT JOIN, counted receipt numbers instead of rows, and wrapped "
+            "the total in COALESCE. The new report showed five businesses, with Lim Trading at the "
+            "bottom with 0. A second page listed the businesses with no receipt this year, and the head "
+            "of office used it to plan reminder letters. Beside the query, the analyst wrote the row "
+            "count and the check total, so anyone running it next month can confirm it still adds up.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Using an inner join for a list of people", "It drops everyone with no match."),
+            ("point", "Counting rows after a left join", "Count a column from the right table instead."),
+            ("point", "Filtering the right table in WHERE", "Put that condition in ON to keep everyone."),
+            ("point", "Joining to a table with several rows per key", "Check the row count and the total."),
+            ("h", "Key Takeaways"),
+            ("point", "Inner join", "Keeps only rows that match on both sides."),
+            ("point", "Left join", "Keeps every row of the first table and fills the gaps with NULL."),
+            ("point", "IS NULL after a left join", "Lists who or what has no match."),
+            ("point", "Check totals", "A join should never change the sum of the money it reports."),
+            ("h", "Your Part 28 Exercise"),
+            "In your SQLite practice file from Part 19, add one taxpayer with no receipts.",
+            ("point", "Run both joins", "Compare the inner join and the left join, and note the row "
+             "counts."),
+            ("point", "Find the missing", "Write the IS NULL query and confirm it returns the new "
+             "taxpayer."),
+            ("point", "Test the trap", "Add a date condition in WHERE, then move it into ON, and compare "
+             "the two results."),
+            "Last, make a small table with two rows for one taxpayer, join to it, and watch the total "
+            "grow. Seeing it happen once makes it easier to catch at work.",
+            ("cta", "Read: Data Analytics Series, Part 19: First Steps in SQL, Asking a Database Questions", "/blog/data-analytics-part-19-first-steps-in-sql/"),
+            ("cta", "Read: Data Analytics Series, Part 20: Cleaning Data With SQL, Without Touching the Original", "/blog/data-analytics-part-20-cleaning-with-sql/"),
+            ("cta", "Read: Data Analytics Series, Part 14: Databases 101, Tables, Primary Keys and Foreign Keys", "/blog/data-analytics-part-14-databases-101/"),
+            ("cta", "Read: Data Analytics Series, Part 21: Stop Bad Data at the Door, Rules Inside the Database", "/blog/data-analytics-part-21-rules-inside-the-database/"),
+            ("ask", "Which list in your office should include the people who did not show up in the data?"),
+        ],
+    },
+    {
+        "date": "March 22, 2027",
+        "title": "Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question",
+        "slug": "data-analytics-part-27-choosing-the-right-chart",
+        "category": "data",
+        "summary": "A chart should answer one question at a glance. This part matches five basic questions "
+                   "to the chart types Google Sheets offers, builds two of them from practice data, and "
+                   "shows the axis, title and slice mistakes that make an honest number look misleading.",
+        "publish_on": "2027-03-22 21:00",
+        "body": [
+            "The analyst was proud of the pie chart: twelve slices, one for each month’s collections, each in "
+            "its own color. At the meeting, nobody could tell whether March was bigger than April, or whether "
+            "the year had gone up or down. Someone asked for the numbers, and the analyst read them aloud "
+            "from the table. The chart had used half a page and answered nothing.",
+            "(The meeting, the months and the amounts below are invented for practice. No real office or "
+            "taxpayer is described.)",
+            "Part 26 chose the right middle number. This part chooses the right picture. After reading, you "
+            "will be able to start from the question instead of the chart menu, match five basic questions "
+            "to chart types in Google Sheets, build a line chart and a bar chart from practice data, and "
+            "avoid the axis, title and pie mistakes that mislead readers.",
+            ("photo", "blog/data-charts.jpg", "Choosing a chart: trend in a line, comparison in sorted bars, "
+             "a few parts of a whole in a pie, spread in a histogram, and a title that states the finding. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Start With the Question"),
+            "Before opening the chart menu, write the question the chart must answer in one sentence. The "
+            "question decides the chart.",
+            ("point", "How did it change over time?", "A trend."),
+            ("point", "Which is bigger?", "A comparison between categories."),
+            ("point", "What share does each part have?", "Parts of a whole."),
+            ("point", "How are the values spread out?", "A distribution."),
+            ("point", "Do two things move together?", "A relationship."),
+            ("quote", "Pick the question first. The chart follows."),
+            ("h", "What Google Says Each Chart Is For"),
+            "Google’s help page on chart types in Sheets gives a one-line purpose for each.",
+            ("point", "Line", "To look at trends or data over a time period."),
+            ("point", "Bar", "To show the difference between the data points for one or more categories."),
+            ("point", "Column", "To show one or more categories, or groups, of data, especially if each "
+             "category has subcategories."),
+            ("point", "Pie", "To show data as slices of pie, or proportions of a whole."),
+            ("point", "Histogram", "To show the distribution of a data set across different buckets."),
+            ("point", "Scatter", "To show numeric coordinates along the horizontal and vertical axes."),
+            "Put the two lists together and the match is direct: trend to line, comparison to bar or column, "
+            "parts of a whole to pie, distribution to histogram, relationship to scatter.",
+            ("h", "Practice 1: A Trend in a Line"),
+            "Type six months of practice collections into columns A and B: January ₱25,200; February ₱7,900; "
+            "March ₱9,400; April ₱18,600; May ₱8,700; June ₱9,100.",
+            ("point", "Insert it", "Select A1:B7 with the headers, then Insert, then Chart. In the chart "
+             "editor, under Setup, set the chart type to Line."),
+            ("point", "Read it", "The line shows two peaks, January and April, which matches the deadline "
+             "months for business taxes discussed in the Business Intelligence series."),
+            ("point", "Title it with the finding", "Not “Collections, January to June,” but “Collections "
+             "peak in deadline months: January and April.”"),
+            "Twelve slices of a pie could not show this. A line shows it in one look, because time runs left "
+            "to right.",
+            ("h", "Practice 2: A Comparison in Sorted Bars"),
+            "Use the barangay totals from Part 24: Poblacion ₱15,100, San Isidro ₱9,200 and San Roque ₱8,800.",
+            ("point", "Insert a bar chart", "Select the barangay names and totals, Insert, Chart, then Bar."),
+            ("point", "Sort first", "Sort the data from largest to smallest before charting, as Part 22 "
+             "showed, so the bars appear in order."),
+            ("point", "Label the values", "With only three bars, show the amount on each bar so readers do "
+             "not have to read the axis."),
+            ("h", "Column or Bar?"),
+            "Google’s description of the column chart mentions categories that have subcategories. That fits the pivot table from Part 24, where each barangay had a business tax amount and a real property tax amount.",
+            ("point", "Clustered columns", "Barangays along the bottom, two columns each, one for business tax and one for real property tax. Poblacion’s ₱7,500 and ₱7,600 stand side by side, and the reader sees they are nearly equal."),
+            ("point", "Bars for long names", "When category names are long, horizontal bars leave room for the labels. Long barangay names can fit better on a bar chart than under columns."),
+            "Both show comparison. Choose by the labels and the subcategories, not by habit.",
+            ("h", "The Axis That Starts at Zero"),
+            "Bars show size by their length. If the axis starts above zero, the lengths stop telling the "
+            "truth.",
+            ("point", "Honest", "With the axis from zero, San Isidro’s ₱9,200 bar is a little longer than "
+             "San Roque’s ₱8,800 bar, which is the truth: a difference of ₱400, under 5 percent."),
+            ("point", "Misleading", "Start the axis at ₱8,000, and San Isidro’s visible bar is 1,200 long "
+             "against San Roque’s 800. It looks one and a half times as big."),
+            "In the chart editor, check the minimum of the horizontal axis on a bar chart. Line charts can "
+            "start above zero when the point is the shape of the change, but say so on the axis.",
+            ("h", "When a Pie Is Fine"),
+            ("point", "Few parts", "Two to four slices that together make a meaningful whole, such as "
+             "real property tax versus business tax in total collections."),
+            ("point", "Big differences", "Slices that differ clearly. Close slices can be hard to tell apart by eye; use bars instead."),
+            ("point", "Not for time", "Months are a sequence, not parts of a whole to compare by size. Use a "
+             "line."),
+            ("h", "Distribution and Relationship"),
+            ("point", "Histogram for spread", "The nine payments from Part 26 in a histogram show eight small "
+             "payments in the lowest buckets and one far to the right. That is the gap between the mean and "
+             "the median, drawn as a picture."),
+            ("point", "Scatter for two measures", "Each dot is one barangay, placed by two numbers, such as "
+             "number of business taxpayers and total business tax. Dots that rise together suggest a "
+             "relationship; they do not prove a cause."),
+            ("h", "Titles, Labels and Notes"),
+            ("point", "Say the finding", "The title states what the reader should see."),
+            ("point", "Units on the axis", "Pesos, count, percent. Never leave the reader to guess."),
+            ("point", "Source and date", "One line under the chart: where the data came from and when it "
+             "was pulled."),
+            ("point", "Color with a purpose", "Use one color for the bars unless a color carries meaning, such as one highlighted barangay. Part 26 of the Business Intelligence series covers colors that every reader can tell apart."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Choosing the chart before the question", "Write the question first."),
+            ("point", "Pies with many slices", "More than a few slices can become hard to compare."),
+            ("point", "Bar axes that skip zero", "They exaggerate small differences."),
+            ("point", "Titles that only name the data", "State the finding."),
+            ("h", "Key Takeaways"),
+            ("point", "Five questions, five charts", "Trend, comparison, share, spread, relationship."),
+            ("point", "Line for time, bars for comparison", "Sorted, labeled, from zero."),
+            ("point", "Pies only for a few parts", "Of a meaningful whole."),
+            ("point", "A title that says something", "Plus units, source and date."),
+            ("h", "Your Part 27 Exercise"),
+            "Use the practice data above, or your own.",
+            ("point", "Write three questions", "One about time, one comparison, one share."),
+            ("point", "Build three charts", "A line, a sorted bar chart and a pie with no more than four "
+             "slices."),
+            ("point", "Retitle them", "Write each title as the finding, in one sentence."),
+            "Then show only the charts to a colleague and ask what each one says. If their answer matches "
+            "your title, the chart works.",
+            "At the next meeting, the analyst brought one line chart titled “Collections peak in deadline "
+            "months: January and April.” Nobody asked for the table. The discussion moved straight to the "
+            "question that mattered: how to prepare the cashiers for April.",
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds", "/blog/data-analytics-part-24-pivot-tables/"),
+            ("cta", "Read: Data Analytics Series, Part 22: Sorting and Filtering With Purpose", "/blog/data-analytics-part-22-sorting-and-filtering/"),
+            ("cta", "Read: Business Intelligence Series, Part 25: Annotating Charts, Lines, Bands and Notes That Explain the Bumps", "/blog/business-intelligence-part-25-annotating-charts/"),
+            ("ask", "Which chart in your office would say more if it started from a question?"),
+        ],
+    },
+    {
+        "date": "March 17, 2027",
+        "title": "Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth",
+        "slug": "data-analytics-part-26-mean-or-median",
+        "category": "data",
+        "summary": "One very large payment can make an average describe nobody. This part compares the mean "
+                   "and the median with nine practice receipts, shows both in Google Sheets, explains when "
+                   "each one is the right answer, and gives a simple habit for reporting the middle "
+                   "honestly.",
+        "publish_on": "2027-03-17 21:00",
+        "body": [
+            "The report said the average business tax payment in the first week of January was ₱13,244. A "
+            "councilor read it twice. “Our small stores pay that much now?” They did not. Eight of the nine "
+            "payments that week were between ₱2,800 and ₱6,000. The ninth, from a large company, was "
+            "₱85,000, and it had pulled the average far above every small store in town.",
+            "(The payments, the stores and the company are invented for practice. They do not describe any "
+            "real taxpayer.)",
+            "Part 25 brought detail into each row. This part summarizes a column with a single number, and "
+            "asks which number. By the end, you will know what the mean and the median are, how to compute "
+            "both in Google Sheets, why one large value moves one and not the other, when each is the right "
+            "choice, and how to report a middle value so that nobody is misled.",
+            ("photo", "blog/data-median.jpg", "Mean or median: the mean rebuilds the total, the median finds "
+             "the typical case, and showing both, with the range, tells the whole story. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Kinds of Middle"),
+            ("point", "The mean", "Add all the values and divide by how many there are. It is what the AVERAGE function computes in Sheets."),
+            ("point", "The median", "Sort the values and take the one in the middle. Half the values are at or "
+             "below it, half at or above."),
+            "Both are honest numbers. They answer different questions, and a report goes wrong when it uses "
+            "one to answer the other’s question.",
+            ("quote", "An average can describe a town where nobody lives."),
+            ("h", "The Practice Data"),
+            "Nine business tax payments, in pesos, already sorted from smallest to largest: 2,800; 3,200; "
+            "3,500; 4,100; 4,400; 5,000; 5,200; 6,000; and 85,000. Type them into cells B2 to B10.",
+            ("point", "The total", "=SUM(B2:B10) gives ₱119,200."),
+            ("point", "The mean", "=AVERAGE(B2:B10) gives ₱119,200 ÷ 9, about ₱13,244.44."),
+            ("point", "The median", "=MEDIAN(B2:B10) gives ₱4,400, the fifth of the nine values."),
+            "The mean is higher than eight of the nine payments. The median sits right among the small "
+            "stores, where most of the payments are.",
+            ("h", "What One Large Value Does"),
+            "Remove the ₱85,000 payment and compute again on the other eight.",
+            ("point", "The mean falls", "From about ₱13,244 to ₱4,275, because ₱34,200 ÷ 8 = ₱4,275."),
+            ("point", "The median barely moves", "From ₱4,400 to ₱4,250. With an even number of values, "
+             "Google’s help says MEDIAN interpolates between the two center values, here ₱4,100 and ₱4,400."),
+            "One payment changed the mean by about ₱9,000 and the median by ₱150. That is the difference in "
+            "one sentence: the mean feels every value, including the extreme ones; the median only cares "
+            "about the order.",
+            ("h", "When the Mean Is Right"),
+            ("point", "When the total matters", "The mean times the count gives back the total: ₱13,244.44 "
+             "× 9 is ₱119,200. For a budget estimate, a forecast of total collections or a cost per "
+             "transaction, the mean is the one to use."),
+            ("point", "When values are close together", "If payments ranged only from ₱4,000 to ₱5,000, the "
+             "mean and the median would be close, and the mean is fine."),
+            ("h", "When the Median Is Right"),
+            ("point", "When you describe a typical case", "“What does a typical small store pay?” The median "
+             "answers that without being dragged by the largest taxpayer."),
+            ("point", "When a few values are very large", "Payments, property values and incomes can have a "
+             "few very large values. The median stays near the middle of the group."),
+            ("point", "When data may contain mistakes", "A payment typed as ₱850,000 instead of ₱8,500 would "
+             "wreck the mean. The median would hardly notice, which is useful, and also a reason to find "
+             "the typo anyway."),
+            ("h", "Where This Shows Up in a Treasury"),
+            ("point", "Collections per day", "For a budget estimate of yearly collections, the mean daily collection times the number of collection days rebuilds the total. The median day would understate it if a few deadline days are very large."),
+            ("point", "Assessed values", "To describe a typical residential lot, the median is safer, since a few large commercial properties can pull the mean up."),
+            ("point", "Time at the window", "To tell taxpayers how long a typical visit takes, the median wait describes the middle visitor better than a mean raised by a few very long visits."),
+            ("h", "Look Before You Choose"),
+            "Before picking either, look at the values. Part 22 sorted them; do the same here.",
+            ("point", "Sort and read the ends", "=MIN(B2:B10) gives ₱2,800 and =MAX(B2:B10) gives ₱85,000. "
+             "A maximum many times the median is a signal to check."),
+            ("point", "Compare the two", "If the mean and the median are far apart, a few values are pulling "
+             "the mean. Find them and decide whether they are real."),
+            ("point", "Check the large values", "Values far from the rest are called outliers. Confirm each one against its receipt before deciding what to do."),
+            "In this case, the ₱85,000 was real: a large company paying its tax. It belongs in the total. It "
+            "does not belong in a sentence about what small stores pay.",
+            ("h", "Medians by Group"),
+            "Add a column C that labels each payment by size: Small for the first eight rows, Large for the ₱85,000 payment. Then a median can be computed for one group at a time.",
+            ("point", "With FILTER", "=MEDIAN(FILTER(B2:B10, C2:C10=\"Small\")) keeps only the small payments and returns ₱4,250, the same as removing the large one by hand, but without deleting anything."),
+            ("point", "In a pivot table", "The pivot table from Part 24 can summarize Values by MEDIAN instead of SUM. Put Size in Rows, Amount in Values, and choose MEDIAN to see one middle per group."),
+            ("point", "Count each group too", "A median from two payments says much less than a median from two hundred. Add COUNTA beside it, as in Part 24, so the reader sees how many values stand behind each number."),
+            "Here, grouping is the cleanest answer to the councilor’s question. The small stores get their own middle, the large company is reported as what it is, and nothing is hidden or removed.",
+            ("h", "Reporting the Middle Honestly"),
+            ("point", "Name the measure", "Write “median payment” or “mean payment,” not just “average.”"),
+            ("point", "Show both when they differ", "“The median payment was ₱4,400; the mean was ₱13,244, "
+             "raised by one large payment of ₱85,000.”"),
+            ("point", "Add the range", "The smallest and largest values show the reader how spread out the "
+             "data is."),
+            ("point", "Split the groups", "Sometimes the best answer is two groups: small businesses and large "
+             "ones, each with its own median. COUNTIFS and AVERAGEIFS from Part 23 do this."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Saying “average” without saying which", "Name the mean or the median."),
+            ("point", "Using the mean for a typical case", "Large values can pull it away from the rest of the data."),
+            ("point", "Using the median for totals", "The median times the count does not give the total."),
+            ("point", "Deleting large values to fix the mean", "Check them; if real, report them."),
+            ("h", "Key Takeaways"),
+            ("point", "Mean for totals", "AVERAGE, and it rebuilds the sum."),
+            ("point", "Median for the typical case", "MEDIAN, and it resists extreme values."),
+            ("point", "Far apart means look closer", "A gap between them points to large values."),
+            ("point", "Report clearly", "Name the measure, show both when they differ, add the range."),
+            ("h", "Your Part 26 Exercise"),
+            "Type the nine practice payments, or use a column from your own practice data.",
+            ("point", "Compute both", "AVERAGE and MEDIAN, plus MIN and MAX."),
+            ("point", "Remove the largest", "Recompute both and note which one moved."),
+            ("point", "Write one sentence", "Describe the typical payment, naming the measure you chose and "
+             "why."),
+            "If your sentence would still be true for the small store owner reading it, you chose well.",
+            "The analyst rewrote the line in the report: “The median business tax payment in the first week "
+            "of January was ₱4,400. One large payment of ₱85,000 raised the mean to ₱13,244.” The councilor "
+            "read it once and nodded. That was the town he knew.",
+            ("cta", "Read: Data Analytics Series, Part 25: XLOOKUP, Bringing the Right Detail Into Every Row", "/blog/data-analytics-part-25-xlookup/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Data Analytics Series, Part 22: Sorting and Filtering With Purpose", "/blog/data-analytics-part-22-sorting-and-filtering/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("ask", "Which “average” in your office reports would change its story if you used the median?"),
+        ],
+    },
+    {
+        "date": "March 12, 2027",
+        "title": "Data Analytics Series, Part 25: XLOOKUP, Bringing the Right Detail Into Every Row",
+        "slug": "data-analytics-part-25-xlookup",
+        "category": "data",
+        "summary": "Receipts list a taxpayer ID; the names and barangays live on another tab. XLOOKUP joins "
+                   "them with one formula. This part builds it step by step in Google Sheets, shows what to "
+                   "do when an ID is missing, how to return two columns at once, find the latest entry, and "
+                   "match a value to a bracket.",
+        "publish_on": "2027-03-12 21:00",
+        "body": [
+            "The receipts list had dates, amounts and a taxpayer ID in every row. The councilor’s question "
+            "needed names and barangays, which lived on a separate Taxpayers tab. An encoder started copying "
+            "them over by hand, row by row. Halfway down, she pasted one name a row too low, and every name "
+            "below it was wrong. Nobody noticed until a store owner asked why his receipt showed a bakery.",
+            "(The store, the bakery, the IDs and the amounts are fictional, invented for practice. No real "
+            "taxpayer is described.)",
+            "Part 24 summarized a list with a pivot table. This part brings detail into a list from another "
+            "table. Work through it and you will be able to write an XLOOKUP formula in Google Sheets, show "
+            "a clear message when a match is missing, return two columns at once, find the latest receipt for "
+            "a taxpayer, match a value to a bracket, and check that every lookup found what it should.",
+            ("photo", "blog/data-xlookup.jpg", "XLOOKUP: find the key, return the detail, say clearly when "
+             "it is missing, and count the misses before you trust the list. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What XLOOKUP Does"),
+            "Google’s help for Sheets describes XLOOKUP as a function that searches a range for a key and "
+            "returns the matching item from a second range. Its full form is:",
+            ("point", "The syntax", "XLOOKUP(search_key, lookup_range, result_range, missing_value, "
+             "match_mode, search_mode)"),
+            ("point", "The three you always need", "What to look for, where to look, and what to bring "
+             "back. The help says the lookup range must be a single row or column."),
+            ("point", "The three optional ones", "What to show when nothing matches, how to match, and "
+             "which direction to search."),
+            ("quote", "Type the detail once, in one table, and let the formula bring it everywhere else."),
+            ("h", "The Practice Data"),
+            "The Taxpayers tab has an ID in column A, a name in column B and a barangay in column C:",
+            ("point", "T-001", "Reyes Store, Poblacion."),
+            ("point", "T-002", "Santos Bakery, San Isidro."),
+            ("point", "T-003", "Cruz Hardware, San Roque."),
+            ("point", "T-004", "Dela Cruz Farm, Poblacion."),
+            "The Receipts tab has a date in column A, a taxpayer ID in column B and an amount in column C, "
+            "in rows 2 to 7: January 4, T-001, ₱5,000; January 4, T-002, ₱3,200; January 5, T-003, ₱2,800; "
+            "January 6, T-005, ₱1,500; February 1, T-002, ₱1,900; February 2, T-001, ₱2,600.",
+            "Notice T-005. It is not on the Taxpayers tab. That is on purpose.",
+            ("h", "Step 1: The Basic Lookup"),
+            "In cell D2 of the Receipts tab, type:",
+            ("point", "Formula", "=XLOOKUP(B2, Taxpayers!A$2:A$5, Taxpayers!B$2:B$5)"),
+            "It takes the ID in B2, finds it in the Taxpayers IDs, and returns the name in the same position. "
+            "D2 shows Reyes Store. The dollar signs lock the rows of the two ranges, so when you copy the "
+            "formula down to D7, each row looks up its own ID in the same table.",
+            "Row 5 shows #N/A. Google’s help says this is the default when no match is found. The formula is "
+            "working; the data has a gap.",
+            ("h", "Step 2: Say Clearly What Is Missing"),
+            "Add the fourth argument:",
+            ("point", "Formula", "=XLOOKUP(B2, Taxpayers!A$2:A$5, Taxpayers!B$2:B$5, \"NOT FOUND\")"),
+            "Row 5 now reads NOT FOUND. An error code can look like a broken formula and get deleted. A "
+            "plain message tells the next person exactly what to fix: add T-005 to the Taxpayers tab, or "
+            "correct the ID on the receipt. Part 16 of the Business Intelligence series used the same idea in "
+            "its cleaning tab.",
+            ("h", "Step 3: Bring Back Two Columns at Once"),
+            "Google’s help notes that if the result range covers more than one column, XLOOKUP returns the "
+            "whole row at the matched position. So one formula can bring both the name and the barangay:",
+            ("point", "Formula", "=XLOOKUP(B2, Taxpayers!A$2:A$5, Taxpayers!B$2:C$5, \"NOT FOUND\")"),
+            "D2 shows Reyes Store and E2 shows Poblacion. Leave column E empty before you enter it, because "
+            "the result needs that space.",
+            ("h", "Step 4: Find the Latest Receipt"),
+            "The last argument, search_mode, sets the direction. The help lists 1 for first to last, the "
+            "default, and -1 for last to first. If the receipts are sorted by date, oldest first, searching "
+            "from the bottom finds the most recent one.",
+            ("point", "Formula", "=XLOOKUP(\"T-002\", B2:B7, A2:A7, \"none\", 0, -1)"),
+            "It returns February 1, the later of Santos Bakery’s two receipts. The 0 before the -1 asks for an "
+            "exact match. The same formula for T-001 returns February 2.",
+            ("h", "Step 5: Match a Value to a Bracket"),
+            "The fifth argument, match_mode, can do more than exact matches. The help lists 0 for exact, 1 "
+            "for exact or the next larger value, -1 for exact or the next smaller value, and 2 for a wildcard "
+            "match.",
+            "Say a practice table on a Bands tab lists lower limits in column A, 0, 100,000 and 500,000, "
+            "with labels Band A, Band B and Band C in column B. To place gross sales of ₱250,000:",
+            ("point", "Formula", "=XLOOKUP(250000, Bands!A2:A4, Bands!B2:B4, \"none\", -1)"),
+            "There is no exact 250,000, so -1 takes the next smaller limit, 100,000, and returns Band B. These "
+            "bands are invented for practice; a real rate schedule comes from the ordinance.",
+            ("h", "Check Every Lookup"),
+            ("point", "Count the misses", "=COUNTIF(D2:D7, \"NOT FOUND\") returns 1, for T-005. Make it zero "
+             "before using the list."),
+            ("point", "Look for spaces", "An ID typed as “T-001 ” with a trailing space will not match. Part "
+             "16 of the Business Intelligence series showed how TRIM cleans these."),
+            ("point", "Spot-check by hand", "Pick two rows and find the ID on the Taxpayers tab yourself. If the name and barangay match what the formula returned, the formula and the table agree. If not, check the ranges first."),
+            ("h", "XLOOKUP or VLOOKUP?"),
+            "VLOOKUP searches the first column of a range and returns a column you name by its number, "
+            "counting from the left. Insert a column in the middle, and that number can point to the wrong "
+            "column. XLOOKUP names the lookup range and the result range separately, so the lookup column does not have to come first, and there is no column number to keep up to date. Both functions still work; XLOOKUP just removes the column number that can go out of date.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Unlocked ranges", "Without the dollar signs, the ranges slide when copied down."),
+            ("point", "Ranges of different sizes", "The help says the result range should match the lookup "
+             "range."),
+            ("point", "Ignoring #N/A", "Give it a message, then count and fix the misses."),
+            ("point", "Searching from the end on unsorted data", "“Latest” only works if the list is in date "
+             "order."),
+            ("h", "Key Takeaways"),
+            ("point", "Three parts", "What to find, where to look, what to return."),
+            ("point", "Name the gaps", "Use the missing value to show NOT FOUND."),
+            ("point", "Direction and mode", "-1 in search mode finds the last entry; -1 in match mode finds "
+             "a bracket."),
+            ("point", "Count before you trust", "Zero misses, then a spot check."),
+            ("h", "Your Part 25 Exercise"),
+            "Type the two practice tabs into a new sheet, or use your own lists.",
+            ("point", "Look up names", "Add a Name column to Receipts with XLOOKUP and a NOT FOUND message."),
+            ("point", "Return two columns", "Change it to bring back name and barangay together."),
+            ("point", "Find the latest", "Find the most recent receipt date for T-001."),
+            "Then count the misses and fix them. A list with zero NOT FOUND rows is one you can sort, "
+            "filter and pivot with confidence.",
+            "The encoder deleted the pasted names and typed one XLOOKUP in D2. Copied down, it filled every "
+            "row in a second, and one row said NOT FOUND. It was a receipt typed with the wrong ID. She fixed "
+            "it, and the store owner’s receipt showed his store again.",
+            ("cta", "Read: Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds", "/blog/data-analytics-part-24-pivot-tables/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Business Intelligence Series, Part 16: A Small Pipeline in Google Sheets, Raw to Clean to Summary", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("ask", "Which list in your office is still filled in by copying from another list?"),
+        ],
+    },
+    {
         "date": "March 7, 2027",
         "title": "Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds",
         "slug": "data-analytics-part-24-pivot-tables",

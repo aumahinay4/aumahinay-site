@@ -9,6 +9,641 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "March 29, 2027",
+        "title": "Cybersecurity Series, Part 29: Before You Sell, Donate or Throw Away a Phone or Laptop",
+        "slug": "cybersecurity-part-29-wiping-old-devices",
+        "category": "security",
+        "summary": "An old phone or laptop can still hold your messages, photos, saved passwords and work "
+                   "files. This part walks through what to do before a device leaves your hands: back up, "
+                   "sign out, remove cards, reset properly, and handle office devices and broken drives with "
+                   "extra care.",
+        "publish_on": "2027-03-29 21:00",
+        "body": [
+            "Liza bought a new phone and sold her old one to a neighbor’s son for a fair price. She "
+            "deleted her photos one by one the night before, closed her apps, and handed it over. Two "
+            "days later, her sister called. “Why is your Facebook liking posts at two in the morning?” "
+            "The neighbor’s son had opened the app. Liza had never signed out. Her deleted photos were "
+            "still in a folder she did not know about, and her e-wallet app was still on the home screen.",
+            "Nothing was stolen. But for two days, a stranger had a key to her accounts, and she had "
+            "handed it over herself.",
+            "(Liza and her neighbor are made up for this post. Any resemblance to a real person is "
+            "unintended.)",
+            "Part 12 secured a phone before it could be lost. This part covers the day you let it go on "
+            "purpose: selling it, giving it to a relative, trading it in, or throwing it away. By the end, "
+            "you will know the steps that matter for phones and laptops, why deleting files one by one is "
+            "not enough, how to keep from locking out the next owner, and what extra care an office device "
+            "needs.",
+            ("photo", "blog/cyber-wipe.jpg", "Before a device leaves your hands: back up, sign out, take out "
+             "the cards, reset it properly, and check that nothing of yours is left. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Deleting Is Not Enough"),
+            "Deleting a photo can move it to a recently deleted folder. Closing an app does not sign you "
+            "out of it. A device that has been used for years holds far more than what shows on the home "
+            "screen: saved passwords, messages, account sessions, downloaded files and backups.",
+            "A factory reset is designed to erase the data on the device and return it to the way it left "
+            "the factory. But a reset is only one step. Before it come the steps that protect your accounts "
+            "and your copy of your own information.",
+            ("quote", "Selling a phone is like selling a house. Take your things out, then change the "
+             "locks, then hand over the keys."),
+            ("h", "Step 1: Back Up What You Want to Keep"),
+            "The US Federal Trade Commission’s consumer advice on getting rid of a phone starts here: back "
+            "up your phone so you have a copy of your information. Apple’s guide for iPhones also begins "
+            "with a backup.",
+            ("point", "Photos and videos", "Copy them to your new device, a computer or a cloud account "
+             "you control."),
+            ("point", "Chats", "Messaging apps have their own backup settings. Check each one you use."),
+            ("point", "Two-factor codes", "If an authenticator app holds codes for your accounts, move them "
+             "to the new phone, or set up two-factor again on each account, before erasing the old one. Otherwise you may lock yourself out."),
+            ("point", "Check the backup", "Open a few photos and messages on the new device before erasing "
+             "the old one."),
+            ("h", "Step 2: Sign Out of Your Accounts"),
+            "This is the step Liza missed, and the one that protects you after the device is gone.",
+            ("point", "Android", "Google’s help explains that a protected device asks, after a factory "
+             "reset, for the screen lock or the password of a Google Account that was on the device. If "
+             "the new owner cannot give it, the page says they will not be able to use the device at all. "
+             "To turn this protection off, Google says to remove your Google Account from the device. Do "
+             "this before the reset, so the buyer is not stuck."),
+            ("point", "iPhone", "Apple’s guide says to sign out of your Apple Account in Settings before "
+             "erasing, and to unpair any Apple Watch. It warns not to delete contacts, calendars, "
+             "reminders, documents or photos by hand while signed in to iCloud, because that removes them "
+             "from iCloud and from your other devices too."),
+            ("point", "Apps that hold money", "Sign out of e-wallet and banking apps, and remove saved "
+             "cards from payment apps. Part 13 covered why an e-wallet deserves the same care as cash."),
+            ("point", "Social media and email", "Sign out on the device, then check each account’s list of "
+             "logged-in devices from your new phone, and remove the old one if it still appears."),
+            ("h", "Step 3: Take Out the Cards"),
+            ("point", "SIM card", "The FTC’s advice says a SIM card may store personal information, and "
+             "to remove it. If you will not reuse it, the FTC says to destroy it. Remember from Part 27 "
+             "that in the Philippines a SIM is registered to your name."),
+            ("point", "Memory card", "If the phone has an SD card for storage, the FTC says to remove it. "
+             "A reset of the phone may not erase what is on the card."),
+            ("point", "eSIM", "Apple’s guide says that on a phone with an eSIM, choose the option to erase "
+             "the eSIM profile when prompted during the erase. If you are unsure, ask your network "
+             "provider before you hand the phone over."),
+            ("h", "Step 4: Reset It Properly"),
+            ("point", "iPhone", "Apple’s path is Settings, then General, then Transfer or Reset, then "
+             "Erase All Content and Settings. Apple notes that erasing also turns off Find My and "
+             "Activation Lock, so the next owner can use the device."),
+            ("point", "Android", "Use the factory reset option in Settings. The wording and menu "
+             "differ from brand to brand, so search your phone maker’s help for the exact steps."),
+            ("point", "After the reset", "Turn the device on. You should see the first setup screen, "
+             "with none of your apps, photos or accounts. If anything of yours appears, stop and repeat "
+             "the steps."),
+            ("h", "Laptops and Computers"),
+            "The same order applies: back up, sign out, then erase.",
+            ("point", "Sign out", "Sign out of your browser profile, email, cloud storage and any password "
+             "manager. Browsers can hold saved passwords and open sessions."),
+            ("point", "Use the built-in reset", "Windows and macOS both offer official ways to erase the "
+             "computer and reinstall the system. Use the official option for your computer, "
+             "and choose the setting that removes your files, not the one that keeps them."),
+            ("point", "Encryption helps", "Part 17 explained that encryption makes data unreadable without "
+             "the key. A drive that was encrypted from the start is much safer to reset and pass on."),
+            ("h", "Office Devices Need More Care"),
+            "A treasury laptop or phone may hold taxpayer names, receipts and reports. The Data Privacy "
+            "Act, covered in Part 20, expects offices to protect personal data, and that duty does not end "
+            "when a device is replaced.",
+            ("point", "Do not decide alone", "Office devices are government property. Follow your office’s "
+             "rules for returning or disposing of equipment, and involve the person in charge of IT."),
+            ("point", "Keep a record", "Write down which device was erased, by whom, on what date and how. "
+             "If questions come up later, the record answers them."),
+            ("point", "Know the standard", "For organizations, the US National Institute of Standards and "
+             "Technology publishes guidelines for media sanitization, updated in September 2025. It "
+             "defines sanitization as making access to the data infeasible for a given level of effort."),
+            ("point", "Broken drives", "A drive that no longer works cannot be reset, but it may still hold "
+             "readable data. Do not throw it in the trash. Ask your IT person how your office destroys "
+             "such drives."),
+            ("h", "If the Device Is Already Gone"),
+            ("point", "Change passwords", "Start with email, then e-wallets, banking and social media."),
+            ("point", "Remove the device", "From your Google or Apple account, and from each app’s list of "
+             "logged-in devices."),
+            ("point", "Ask the new owner", "Apple’s guide suggests asking the new owner to erase the device "
+             "using the steps above. A family member or buyer you know may help."),
+            ("point", "Watch your accounts", "Check for messages or payments you did not make over the next "
+             "few weeks."),
+            "Liza did all four. She changed her passwords from her new phone, removed the old phone from "
+            "her Facebook and Google accounts, and asked her neighbor’s son to bring the phone back for an "
+            "hour. Together they reset it, and he got a phone that was truly his.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Deleting files by hand", "Use the full reset instead."),
+            ("point", "Resetting before signing out", "The buyer may be locked out, or your account may stay linked."),
+            ("point", "Forgetting the cards", "Take out the SIM and memory card."),
+            ("point", "Throwing a broken drive away", "It may still hold your data."),
+            ("h", "Key Takeaways"),
+            ("point", "Back up first", "And check the backup on the new device."),
+            ("point", "Sign out before the reset", "Google, Apple, e-wallets, social media and email."),
+            ("point", "Remove the SIM and memory card", "Destroy a SIM you will not reuse."),
+            ("point", "Office devices follow office rules", "With a written record of each erase."),
+            ("h", "Your Part 29 Checklist"),
+            "Copy this list and keep it with the device you plan to replace next.",
+            ("point", "Before", "Back up, move authenticator codes, sign out of every account, remove cards "
+             "from payment apps."),
+            ("point", "During", "Take out the SIM and memory card, then run the full factory reset."),
+            ("point", "After", "Turn it on, check the setup screen, then remove the device from your "
+             "accounts’ device lists."),
+            "Then look around your home for old phones in drawers. If one still has your accounts on it, "
+            "it does not have to be sold to be a risk.",
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 17: Encryption Made Simple, Locking Data So a Lost Device Is Only a Lost Device", "/blog/cybersecurity-part-17-encryption-made-simple/"),
+            ("cta", "Read: Cybersecurity Series, Part 27: Your SIM Is a Key, Registration, SIM Swaps and Lost Phones", "/blog/cybersecurity-part-27-sim-registration-and-sim-swaps/"),
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("ask", "How many old phones are in a drawer at your home, and is anyone still signed in on them?"),
+        ],
+    },
+    {
+        "date": "March 24, 2027",
+        "title": "Cybersecurity Series, Part 28: Kids Online, Settings, Talks and Habits That Keep Them Safer",
+        "slug": "cybersecurity-part-28-kids-online",
+        "category": "security",
+        "summary": "Children use the same apps and phones as adults, sometimes with fewer defenses. This part "
+                   "covers the parental controls built into Android and iPhone, the scams aimed at young "
+                   "gamers, what children should never share, and how to keep them talking to you when "
+                   "something goes wrong.",
+        "publish_on": "2027-03-24 21:00",
+        "body": [
+            "Ten-year-old Paolo wanted a rare skin for his character in an online game. A player he had "
+            "met in the game offered him one for free. All Paolo had to do was log in on a website the "
+            "player sent, “to receive the gift.” He typed his username and password, then his mother’s "
+            "e-wallet number when the site asked for it “to verify age.” By evening, his game account was "
+            "gone, and his mother had a text asking for a one-time code.",
+            "(Paolo and his family are imagined for this lesson. The details are examples, not a report "
+            "of a real case.)",
+            "Part 27 protected your mobile number. This part protects the youngest people in your home. "
+            "Keep reading and you will know what parental controls Android phones and iPhones offer, the "
+            "tricks aimed at children in games and chats, what children should keep private, how to talk "
+            "about it without making them hide things, and what the law and the hotlines offer if something "
+            "serious happens.",
+            ("photo", "blog/cyber-kids.jpg", "Kids online: set the controls, keep personal details private, "
+             "spot fake gifts and strangers, and keep the conversation open. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Start With the Settings"),
+            "Both major phone systems include free tools for parents. They do not replace attention, but "
+            "they set limits that hold when you are not looking.",
+            ("point", "Android: Google Family Link", "Google’s help says parents can approve or block apps "
+             "the child wants to download, set daily screen time limits and a bedtime, see the location of "
+             "the child’s device, and restrict mature content on Google Play."),
+            ("point", "Who it is for", "Google’s help describes Family Link accounts for children under 13, "
+             "or the applicable age in their country, and requires the parent to be an adult living in the "
+             "same country."),
+            ("point", "iPhone: Screen Time and Family Sharing", "Apple’s Screen Time includes downtime, app "
+             "limits and content restrictions, and Family Sharing’s Ask to Buy sends purchase requests to a "
+             "parent for approval."),
+            "Set these up together with your child, and explain each one. A rule a child understands is "
+            "easier to keep than one they discover.",
+            ("quote", "Settings set the walls. Conversations keep the door open."),
+            ("h", "Check the Age Rule Before Installing"),
+            "Apps can set a minimum age in their terms. Facebook’s terms, for example, require users to be at least 13. Before installing an app for a child, read its age rule in the app store listing or the terms.",
+            ("point", "Do not lie about the birth year", "An account opened with an older birth year may not get the settings the app gives younger users, and the child learns that rules are for getting around."),
+            ("point", "Use the child’s own account", "A child using a parent’s account sees adult content settings and may have access to the parent’s saved payment details."),
+            ("point", "Review once a year", "Children grow, and so do the apps they want. Look at the settings again on each birthday."),
+            ("h", "Tricks Aimed at Young Gamers"),
+            "Children are targets for the same reasons adults are: they have accounts worth stealing and sometimes access to money, a parent’s. The tricks are familiar from earlier parts of this series, "
+            "dressed for a younger audience.",
+            ("point", "The free gift", "Free skins, coins or items, if the player logs in on a website. That "
+             "website is a fake login page, as in Part 15."),
+            ("point", "The trade that needs a code", "A “friend” asks for the code that just arrived by text "
+             "to “confirm the trade.” It is the account’s recovery code, as in Part 25’s verification code "
+             "trick."),
+            ("point", "The parent’s wallet", "Any request for a parent’s e-wallet number, card or code is a "
+             "stop sign, whatever the reason given."),
+            ("h", "What Children Should Keep Private"),
+            ("point", "Passwords and codes", "Not shared with friends, even best friends. Parents may know "
+             "them; nobody else."),
+            ("point", "Where they are", "Home address, school name, uniform in photos, and real-time "
+             "location."),
+            ("point", "Family money details", "Parents’ e-wallet numbers, cards and one-time codes."),
+            ("point", "Photos they would not show a teacher", "Once sent, a photo cannot be taken back."),
+            ("h", "Strangers Online"),
+            "Not every new contact is dangerous, and children make real friends in games. Some signs call "
+            "for a pause.",
+            ("point", "Gifts and favors", "Free items, game currency or load from someone they met online."),
+            ("point", "Secrecy", "“Don’t tell your parents.” Any request for secrecy is a reason to tell."),
+            ("point", "Moving to private chats", "Asking to continue on another app, away from the game’s own "
+             "chat."),
+            ("point", "Requests for photos or meetings", "These go to a parent right away."),
+            "The rule for children is simple: if something online makes you feel uncomfortable, confused or "
+            "pressured, tell an adult you trust, and you will not be in trouble for telling.",
+            ("h", "Talk So They Keep Talking"),
+            ("point", "Ask about their online life", "Which games, which friends, what they enjoy. Interest "
+             "comes before rules."),
+            ("point", "Do not punish the report", "If telling you about a problem means losing the phone, a "
+             "child may stop telling. Deal with the problem, not the messenger."),
+            ("point", "Use real examples", "Paolo’s story, or one from the news, makes the danger concrete "
+             "without a lecture."),
+            ("point", "Agree on the rules together", "Screen time, where devices stay at night, and what "
+             "needs a parent’s yes."),
+            ("h", "When It Is Serious"),
+            "Republic Act No. 11930, which lapsed into law on July 30, 2022, is the Philippine law against "
+            "online sexual abuse and exploitation of children. If a child is asked for sexual images, "
+            "threatened, or pressured to meet someone, it is a matter for the authorities, not only the "
+            "family.",
+            ("point", "Keep the evidence", "Do not delete the chat. Take screenshots of the profile and the "
+             "messages."),
+            ("point", "Do not confront the account", "Block it after saving the evidence."),
+            ("point", "Report it", "Call the CICC hotline 1326 or go to the PNP Anti-Cybercrime Group or the "
+             "Women and Children Protection Desk at your local police station."),
+            ("h", "For Treasury Workers"),
+            "Office phones and laptops are not toys. If children use a shared family device that also opens "
+            "work email or the office’s bank portal, separate them: a child profile or a different device. "
+            "A game installed on a work phone brings its chats, links and in-app purchases with it.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Setting controls in secret", "Explain them, so the child does not work around them."),
+            ("point", "Sharing a parent’s e-wallet on a child’s phone", "Keep payment apps off it, or locked."),
+            ("point", "Punishing a child for telling", "Thank them, then fix the problem."),
+            ("point", "Deleting evidence in anger", "Save it first, then block and report."),
+            ("h", "Key Takeaways"),
+            ("point", "Use the built-in controls", "Family Link on Android, Screen Time on iPhone."),
+            ("point", "Free gifts are bait", "Fake logins and code requests target young gamers."),
+            ("point", "Some things stay private", "Passwords, codes, location and family money details."),
+            ("point", "Keep them talking", "A child who reports early gives you time to act."),
+            ("h", "Your Part 28 Action Plan"),
+            ("point", "Today", "Ask your child which games and apps they use, and who they talk to there."),
+            ("point", "This week", "Set up Family Link or Screen Time together, and explain each setting."),
+            ("point", "This month", "Agree on three family rules, write them down, and post them near "
+             "where devices charge at night."),
+            "Tell your child, in those words, that they will never be in trouble for telling you about "
+            "something that went wrong online.",
+            "Paolo’s mother reported the e-wallet number to her provider and refused the code. Her account "
+            "stayed safe. The game account was recovered with help from the game’s support page. That "
+            "weekend, the family set up Family Link together, and Paolo wrote the first rule himself: “No "
+            "free gifts from strangers.”",
+            ("cta", "Read: Cybersecurity Series, Part 27: Your SIM Is a Key, Registration, SIM Swaps and Lost Phones", "/blog/cybersecurity-part-27-sim-registration-and-sim-swaps/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 25: Online Marketplace Scams, Buying and Selling Without Getting Burned", "/blog/cybersecurity-part-25-online-marketplace-scams/"),
+            ("ask", "What is one online rule your family agreed on, and did it work?"),
+        ],
+    },
+    {
+        "date": "March 19, 2027",
+        "title": "Cybersecurity Series, Part 27: Your SIM Is a Key, Registration, SIM Swaps and Lost Phones",
+        "slug": "cybersecurity-part-27-sim-registration-and-sim-swaps",
+        "category": "security",
+        "summary": "Your mobile number receives the codes that open your bank, e-wallet and email. This part "
+                   "explains what the SIM Registration Act requires, how a SIM swap lets someone else "
+                   "receive those codes, the warning signs, and what to do in the first hour if your number "
+                   "stops working.",
+        "publish_on": "2027-03-19 21:00",
+        "body": [
+            "On a Thursday afternoon, the signal bars on Nora’s phone disappeared. She assumed the network "
+            "was down and kept working. By the time she noticed that her officemates still had signal, "
+            "someone had used her number to receive a one-time code and reset the password of her e-wallet. "
+            "Her phone was still in her hand the whole time. Her number was not.",
+            "(Nora is a made-up character, and so is her afternoon. The pattern she meets is real, and "
+            "sources are named below.)",
+            "Part 26 covered scams that ask you to pay first. This part covers a quieter risk: losing "
+            "control of your mobile number. You will learn what the SIM Registration Act requires and "
+            "allows, what a SIM swap is and why it matters, the signs that your number has been taken, how "
+            "to make it harder, and what to do first if it happens.",
+            ("photo", "blog/cyber-sim.jpg", "Your SIM is a key: register it truthfully, guard the details "
+             "used to verify you, move codes off text messages where you can, and act fast when the signal "
+             "vanishes. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Your Number Matters"),
+            "Banks, e-wallets and email services send one-time codes by text message to confirm that it is "
+            "you. Part 2 explained multi-factor authentication. When the second factor is a text message, "
+            "whoever controls the number controls the code.",
+            ("quote", "Your phone number is not just how people reach you. It is how your accounts recognize "
+             "you."),
+            ("h", "What the SIM Registration Act Requires"),
+            "Republic Act No. 11934, the SIM Registration Act, was signed on October 10, 2022. As summarized "
+            "by the law firm MTF Counsel, it covers the following.",
+            ("point", "Every SIM registered", "Prepaid and postpaid, with registration a condition for "
+             "activation, backed by a government-issued ID."),
+            ("point", "Deactivation on report", "If a SIM is lost, or the user dies, the user or family can "
+             "report it, and the telecom company must deactivate the SIM within 24 hours of the report."),
+            ("point", "Penalties", "For giving false information or a fictitious ID when registering, for "
+             "spoofing a registered SIM, and for selling or transferring a registered SIM without "
+             "following the law’s rules."),
+            ("point", "Confidentiality", "Breaches of the confidentiality of registration data are "
+             "punishable."),
+            "Registration had a deadline. Gulf News reported that the deadline for existing SIMs was July 25, "
+            "2023, after a 90-day extension, with deactivation of unregistered SIMs starting the next day. "
+            "It cited the National Telecommunications Commission as reporting about 114 million SIMs "
+            "registered as of July 30, 2023.",
+            ("h", "What Registration Does Not Do"),
+            "Registration ties a number to an identity. It does not stop someone from tricking a telecom "
+            "store into moving your number to a new SIM, and it does not stop you from reading a code aloud "
+            "to a stranger. The penalties apply after the fact. Your own habits work before it.",
+            ("point", "Do not sell or lend a registered SIM", "The law penalizes the transfer of a registered "
+             "SIM without following its rules. A SIM registered in your name and used by someone else for "
+             "scams leads back to you."),
+            ("point", "Register with your own true details", "False information is itself an offense."),
+            ("h", "Links That Ask You to Re-register"),
+            "A text that asks you to register, update or “re-verify” your SIM through a link deserves suspicion. Registration under the law goes through your telecom company’s own channels, and a link in a text can lead to a look-alike page, as Part 15 showed with fake websites.",
+            ("point", "Use the official app or website", "Type the address yourself or open your telecom’s own app."),
+            ("point", "Never send an ID photo by chat", "A photo of your ID, with your birthdate and number, is exactly what an impostor needs at a store counter."),
+            ("h", "What a SIM Swap Is"),
+            "In a rule adopted in November 2023, the US Federal Communications Commission described SIM swap and port-out "
+            "fraud as ways for bad actors to take control of a consumer’s cell phone account without ever "
+            "getting hold of the phone. The criminal convinces the provider to move the number to a SIM, or "
+            "to another provider, that the criminal controls.",
+            "The FCC said this lets criminals complete text and voice checks to get into a victim’s other "
+            "accounts. Its rule requires US providers to use secure ways to confirm a customer’s identity "
+            "before a SIM change, and to notify customers right away when a SIM change or port-out is "
+            "requested.",
+            ("h", "Warning Signs"),
+            ("point", "Sudden loss of signal", "No service in a place where others have it, and a restart "
+             "does not help."),
+            ("point", "A message you did not expect", "A text or email from your provider about a SIM "
+             "change, a replacement or a port request."),
+            ("point", "Codes you did not ask for", "One-time codes arriving for logins you did not start."),
+            ("point", "Locked out", "A password that suddenly no longer works on your e-wallet or email."),
+            ("h", "Make It Harder"),
+            ("point", "Use an authenticator app or passkey where offered", "Part 2 explained these. A code "
+             "generated on your phone does not travel by text message, so moving your number does not move "
+             "it."),
+            ("point", "Guard your verification details", "Birthdate, mother’s maiden name, ID numbers: these "
+             "are what a criminal needs to pass as you at a store. Keep them off public posts, as Part 14 "
+             "advised."),
+            ("point", "Set the PINs you are offered", "Use the PIN or lock features in your e-wallet and "
+             "banking apps, and keep them different from your birthday."),
+            ("point", "Never read a code to anyone", "No bank, e-wallet or telecom agent needs your one-time "
+             "code."),
+            ("h", "The First Hour"),
+            ("point", "Confirm from another phone", "Call your own number. Then call your telecom’s hotline "
+             "from a colleague’s phone and report the problem."),
+            ("point", "Call your bank and e-wallet", "Ask them to lock or watch the accounts linked to your "
+             "number, using the hotline in the official app or website."),
+            ("point", "Change passwords from a trusted device", "Start with email, since password resets for "
+             "other accounts can go there."),
+            ("point", "Report it", "To the CICC hotline 1326 or the PNP Anti-Cybercrime Group, with the time "
+             "your signal disappeared."),
+            ("h", "For Treasury Workers"),
+            "Some office tasks depend on a phone number: a bank portal that sends codes, an official "
+            "e-mail recovery number, a payment app on an office phone. Know whose SIM each one is, keep it "
+            "registered to the right person or office, and write down who reports it if the phone is lost. "
+            "A lost office phone should be reported to the telecom as promptly as a personal one.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Ignoring a sudden “No service”", "Check whether others have signal."),
+            ("point", "Lending a registered SIM", "It stays in your name."),
+            ("point", "Relying only on text codes", "Use an app or passkey where offered."),
+            ("point", "Posting verification details", "Birthdates and IDs help impostors."),
+            ("h", "Key Takeaways"),
+            ("point", "Your number is a key", "Text codes follow the number, not the phone."),
+            ("point", "Registration is the law", "RA 11934, with 24-hour deactivation on report."),
+            ("point", "SIM swaps move the number", "Watch for signal loss and unexpected notices."),
+            ("point", "Act in the first hour", "Telecom, bank, passwords, report."),
+            ("h", "Your Part 27 Action Plan"),
+            ("point", "Today", "Save your telecom’s hotline in a colleague’s or family member’s phone."),
+            ("point", "This week", "Switch one important account from text codes to an authenticator app "
+             "or passkey, if it offers one."),
+            ("point", "This month", "List the office accounts that depend on a phone number, and whose SIM "
+             "each one uses."),
+            "Write the first-hour steps on a card in your wallet. On the day your signal vanishes, you will "
+            "not want to be searching for them.",
+            "Nora’s e-wallet provider froze the account within the hour, and the transfer that had been "
+            "started did not go through. The telecom restored her number the next day. That weekend she "
+            "moved her e-wallet and email to app-based codes, and taped the hotline numbers inside her "
+            "phone case.",
+            ("cta", "Read: Cybersecurity Series, Part 26: Job and Investment Scams, When Easy Money Asks You to Pay First", "/blog/cybersecurity-part-26-job-and-investment-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("cta", "Read: Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise", "/blog/cybersecurity-part-14-social-media-accounts/"),
+            ("ask", "If your phone lost signal right now, which of your accounts would be at risk?"),
+        ],
+    },
+    {
+        "date": "March 14, 2027",
+        "title": "Cybersecurity Series, Part 26: Job and Investment Scams, When Easy Money Asks You to Pay First",
+        "slug": "cybersecurity-part-26-job-and-investment-scams",
+        "category": "security",
+        "summary": "A message offers easy work from home, or a plan that doubles your money in weeks. This "
+                   "part explains how task scams and investment scams work, the numbers the FTC has "
+                   "reported, how to check an investment offer with the SEC, and the one rule that applies to both: never pay to get paid.",
+        "publish_on": "2027-03-14 21:00",
+        "body": [
+            "The message arrived on a Tuesday night: “Hi! We are hiring part-time online staff. Just like "
+            "and rate products, 30 minutes a day, ₱500 to ₱2,000 daily.” Carla, a job order employee saving "
+            "for her daughter’s tuition, replied. By Friday the app showed ₱3,800 in commissions, and ₱150 "
+            "had actually reached her e-wallet. Then came a “combination task”: deposit ₱5,000 to unlock it, "
+            "and get it all back with a bonus. She nearly did.",
+            "(Carla and her story are made up to show how the scam works. The amounts are examples too.)",
+            "Part 25 dealt with scams in buying and selling. This part covers two scams that promise income: "
+            "fake jobs and fake investments. You will come away knowing how a task scam works step by step, "
+            "what the US Federal Trade Commission has reported about it, how investment scams use the same "
+            "pattern, how to check an investment offer with the Securities and Exchange Commission, and what "
+            "to do if you already paid.",
+            ("photo", "blog/cyber-easy-money.jpg", "Job and investment scams: an unexpected offer, fake "
+             "earnings, a small payout, then a deposit you never see again. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "How a Task Scam Works"),
+            "The FTC described the pattern in a data report of December 12, 2024, and again in a consumer "
+            "alert in August 2025.",
+            ("point", "The contact", "An unexpected text, WhatsApp or social media message offers online "
+             "work with few details, such as “optimizing” apps or “boosting” products."),
+            ("point", "The tasks", "Simple, repetitive clicks, like rating products or liking videos, in an "
+             "app that shows a commission growing with each one."),
+            ("point", "The small payout", "The FTC says scammers may pay out a small amount early, to build "
+             "trust."),
+            ("point", "The deposit", "To unlock the next set of tasks or withdraw the “earnings,” the worker "
+             "is told to deposit their own money. The balance on the screen was never real, and the deposit "
+             "does not come back."),
+            "The FTC adds a detail that matters: if a victim hesitates, scammers may add them to a group chat "
+            "where others post “success stories” to push them to pay.",
+            ("quote", "A real job pays you. It never asks you to pay to get paid."),
+            ("h", "Why It Catches Careful People"),
+            "Each step in the FTC’s description is built to lower a person’s guard a little more.",
+            ("point", "The payout is real", "The first small amount actually arrives, so the job seems to be real too."),
+            ("point", "The balance grows", "The app shows earnings that feel already yours, which makes walking away feel like losing money."),
+            ("point", "Others seem to win", "The group chat full of “success stories” makes paying look normal."),
+            "None of this needs the victim to be careless. It needs them to be hopeful, and to believe what a screen shows them.",
+            ("h", "What the Numbers Show"),
+            "In the December 2024 report, the FTC said reported losses to job scams more than tripled from "
+            "2020 to 2023, and topped $220 million in the first half of 2024 alone. It estimated about 20,000 "
+            "task scam reports in that half year, up from about 5,000 in all of 2023. The FTC also notes that "
+            "the vast majority of frauds are not reported, so these are the cases it heard about, not all of them.",
+            "These are US figures. They are here because they show how fast the pattern grew, and a message like Carla’s can reach any phone with a chat app.",
+            ("h", "Investment Scams Follow the Same Script"),
+            "Swap “tasks” for “trading” and the pattern is the same: an unexpected contact, a screen showing "
+            "returns, a small withdrawal that works, then a request for more money.",
+            ("point", "Returns that are too high", "In April 2026, the SEC warned the public about one scheme "
+             "whose plans advertised returns of up to ₱43,411 a day."),
+            ("point", "Recruit to earn", "The same advisory warned against commission-based recruiting "
+             "without a permit to sell securities."),
+            ("point", "An app from a link", "The SEC also told the public to be careful about installing apps "
+             "from unofficial sources, such as files sent by text or social media."),
+            ("h", "Check an Investment Offer With the SEC"),
+            "In the Philippines, the SEC has said that soliciting investments from the public requires both "
+            "registration and a secondary license. A business permit or a certificate of incorporation alone "
+            "is not a license to take investments.",
+            ("point", "Ask for the secondary license", "Not just the company’s registration. If they cannot "
+             "show one, stop."),
+            ("point", "Search the SEC’s advisories", "The SEC publishes advisories naming schemes it has "
+             "found operating without authority."),
+            ("point", "Know the risk to recruiters", "The SEC has warned that salesmen and promoters of "
+             "unlicensed schemes can face criminal penalties. Recruiting friends into one can make you liable, "
+             "not only a victim."),
+            ("h", "Warning Signs in One List"),
+            "The FTC’s August 2025 alert lists signs of a task scam. Several of them fit investment scams too.",
+            ("point", "An offer you did not apply for", "The FTC says real employers will not contact you "
+             "that way, through a random text or chat."),
+            ("point", "Quick, easy money", "Pay for a few minutes of clicking, or returns far above what a "
+             "bank or bond pays."),
+            ("point", "Any request to pay first", "A deposit, a “fee,” a “tax” on your earnings, or money to "
+             "unlock a withdrawal."),
+            ("point", "Pay for ratings or likes", "The FTC tells people not to accept money for giving "
+             "ratings or likes online."),
+            ("h", "For Treasury Workers"),
+            "Regular employees draw a monthly salary, and some offices also employ job order and contract "
+            "of service workers who may look for extra income. Both are reachable by the same messages. If an "
+            "offer arrives on an office phone or office account, report it to whoever handles IT, so others "
+            "are warned. And never use an office device to install an app sent by a stranger.",
+            ("h", "If You Already Paid"),
+            ("point", "Stop paying", "No further deposit will release the earlier ones."),
+            ("point", "Save everything", "Screenshots of the chat, the app, the account numbers and every "
+             "transfer."),
+            ("point", "Call your bank or e-wallet", "Use the hotline in the official app, and report the "
+             "receiving accounts."),
+            ("point", "Report it", "Call the CICC hotline 1326 or go to the PNP Anti-Cybercrime Group. For an "
+             "investment scheme, report it to the SEC as well."),
+            "The FTC also warns about refund and recovery scams: people who promise to get your money back for a fee. Paying them is "
+            "paying to get paid, again.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting the balance on the screen", "Only money you can withdraw is real."),
+            ("point", "Paying to unlock earnings", "In the FTC’s description, that is the scam."),
+            ("point", "Recruiting others", "You may share the legal risk."),
+            ("point", "Paying a “recovery agent”", "It is the same trick in a new costume."),
+            ("h", "Key Takeaways"),
+            ("point", "Never pay to get paid", "The FTC’s rule, and the simplest one."),
+            ("point", "Same script for jobs and investments", "Contact, fake gains, small payout, deposit."),
+            ("point", "Check the secondary license", "A business registration is not enough to take "
+             "investments."),
+            ("point", "Report quickly", "Bank, CICC 1326, and the SEC for investment schemes."),
+            ("h", "Your Part 26 Action Plan"),
+            ("point", "Today", "Write “Never pay to get paid” in your family group chat, with one sentence on "
+             "how task scams work."),
+            ("point", "This week", "If anyone you know is in an “investment” paying high returns, ask for "
+             "its secondary license."),
+            ("point", "Next time a job message arrives", "Do not reply. Block, report and delete."),
+            "Scam stories change. The request at the end, pay first, appears in every version described in this part.",
+            "Carla showed the chat to her supervisor the next morning. The supervisor had read the same "
+            "script in a news report the week before. Carla blocked the number, reported the account to her e-wallet, and kept her ₱5,000 for tuition.",
+            ("cta", "Read: Cybersecurity Series, Part 25: Online Marketplace Scams, Buying and Selling Without Getting Burned", "/blog/cybersecurity-part-25-online-marketplace-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 22: Deepfakes and Cloned Voices, When Seeing and Hearing Is Not Enough", "/blog/cybersecurity-part-22-deepfakes-and-voice-clones/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("ask", "Have you or someone you know received a “like and earn” job message? What did it promise?"),
+        ],
+    },
+    {
+        "date": "March 9, 2027",
+        "title": "Cybersecurity Series, Part 25: Online Marketplace Scams, Buying and Selling Without Getting Burned",
+        "slug": "cybersecurity-part-25-online-marketplace-scams",
+        "category": "security",
+        "summary": "Selling a used phone or buying a cheap appliance online is convenient, and scammers know "
+                   "it. This part covers the fake payment screenshot, the overpayment refund, the shared "
+                   "code, the deal that is too cheap, and the habits and the law that protect buyers and "
+                   "sellers.",
+        "publish_on": "2027-03-09 21:00",
+        "body": [
+            "Lito posted his old phone for sale on a Sunday night. By Monday morning, a buyer had agreed to "
+            "the price without haggling and sent a screenshot of an e-wallet transfer for the full amount. "
+            "“Paid already. Please ship today, my rider is waiting.” The screenshot looked right: the logo, "
+            "the amount, a reference number. Lito almost wrapped the phone. Then he opened his own e-wallet "
+            "app. The balance had not changed.",
+            "(Lito, his buyer and the amounts here are invented. Any resemblance to a real person or account "
+            "is a coincidence.)",
+            "Part 24 looked at QR codes that send money to the wrong place. This part looks at the people on "
+            "the other side of an online sale. Read on, and you will know the scams that target sellers, the "
+            "ones that target buyers, the checks to make before any money moves, what the "
+            "Internet Transactions Act does for online shoppers, and what to do if a sale goes wrong.",
+            ("photo", "blog/cyber-marketplace.jpg", "Online marketplace scams: check your own app, refuse "
+             "overpayments, never share a code, and question the deal that is too cheap. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Scams That Target Sellers"),
+            "The US Federal Trade Commission described three tricks aimed at people who sell things online "
+            "in a consumer alert of July 27, 2022. The examples come from the United States. Watch for the same moves here.",
+            ("point", "The fake payment notice", "The buyer insists on paying through a mobile payment app, "
+             "then sends a fake notice of payment, hoping you ship the item before you notice that no money "
+             "came in."),
+            ("point", "The overpayment refund", "The buyer claims to have paid too much by mistake and asks "
+             "you to send back the difference. In the alert’s check version, the payment later bounces, "
+             "and the seller loses the refund and the item."),
+            ("point", "The verification code", "The buyer asks you to read back a code sent to your phone. In the FTC’s example, the scammer used the code to set up a Google Voice number linked to the seller’s phone, then used it to scam others while hiding who they were."),
+            ("quote", "A screenshot is a picture of a payment, not a payment."),
+            ("h", "Scams That Target Buyers"),
+            "The FTC’s guide to shopping online lists warning signs on the buying side.",
+            ("point", "The price that is too good", "The guide warns that deep discounts on expensive "
+             "brand-name items may signal goods that are counterfeit or stolen."),
+            ("point", "Unusual payment demands", "Be wary, the guide says, of sellers who insist on gift cards, wire transfers, payment apps or cryptocurrency."),
+            ("point", "Reviews that may not be real", "The guide notes that some reviews and ratings are fake "
+             "or misleading, and suggests checking more than the star rating."),
+            "A pattern joins the seller and buyer scams: pressure to act now. “My rider is waiting.” "
+            "“Many people want it, pay the reservation today.” Pressure is the scammer’s tool for skipping "
+            "your checks.",
+            ("h", "Five Checks Before Money Moves"),
+            ("point", "Open your own app", "Sellers: confirm payment by opening your e-wallet or bank app "
+             "yourself, not by looking at a screenshot, a text message or an email that says you were paid."),
+            ("point", "Refuse every overpayment", "If a buyer pays too much, do not send back the "
+             "difference. The FTC’s advice is never to deposit a check for more than the selling price."),
+            ("point", "Keep codes to yourself", "The FTC says not to share a verification code with someone "
+             "you do not know. A real buyer has no reason to ask for one."),
+            ("point", "Search the name", "Buyers: the FTC suggests searching the seller or product name with "
+             "the words “complaint” or “scam” to see what other buyers say."),
+            ("point", "Meet in a safe place if you can", "For local sales, the FTC suggests meeting buyers in "
+             "person and accepting cash. Choose a busy public place, in daylight."),
+            ("h", "Stay Inside the Platform"),
+            "Buyers and sellers who meet on a marketplace site are sometimes asked to “continue the "
+            "conversation” on another messaging app, or to pay outside the site’s own checkout. Moving off "
+            "the platform can mean losing its records and any buyer or seller protection it offers. Before "
+            "a large purchase, read what protection the site gives, and keep the whole conversation where "
+            "the site can see it.",
+            ("h", "What the Internet Transactions Act Does"),
+            "Republic Act No. 11967, the Internet Transactions Act of 2023, was signed on December 5, 2023. "
+            "The Department of Trade and Industry describes it as a law to boost and protect e-commerce and "
+            "build trust in online transactions.",
+            ("point", "An E-Commerce Bureau", "Created under the DTI, with an online business database and a "
+             "government-wide system for tracking online consumer complaints."),
+            ("point", "Powers against bad sellers", "The DTI lists compliance orders, subpoenas, takedowns of "
+             "websites and the blacklisting of online businesses among its powers under the law."),
+            ("point", "Duties for platforms and merchants", "The law sets out liabilities for online "
+             "merchants, e-retailers, e-marketplaces and digital platforms, with penalties for violators."),
+            "For a buyer, this means a complaint about an online seller has a government office to go to, "
+            "apart from the police. For the scams themselves, the Anti-Financial Account Scamming Act from "
+            "Part 13 still applies.",
+            ("h", "For Treasury Workers"),
+            "Offices buy supplies through formal procurement, not marketplace chats. The risk at work is "
+            "personal: a colleague selling something on their lunch break, or receiving a “payment” on the "
+            "office phone. The same checks apply. And if someone asks you to read back a code that just "
+            "arrived on an office phone, the answer is no, whoever they say they are.",
+            ("h", "If a Sale Goes Wrong"),
+            ("point", "Stop and save", "Stop replying. Take screenshots of the listing, the chat, the "
+             "profile and any payment details before they disappear."),
+            ("point", "Call your bank or e-wallet", "Use the hotline in the official app. Report the account "
+             "you paid and ask what can still be done."),
+            ("point", "Report the account", "Use the marketplace’s own report button so the listing can be "
+             "reviewed."),
+            ("point", "File a report", "Call the CICC hotline 1326 or go to the PNP Anti-Cybercrime Group. "
+             "For a complaint about an online seller, the DTI’s consumer channels are another route."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting a screenshot", "Check your own app."),
+            ("point", "Refunding an overpayment", "Cancel the deal instead."),
+            ("point", "Sharing a verification code", "No real buyer needs it."),
+            ("point", "Paying outside the platform", "You may lose its records and protection."),
+            ("h", "Key Takeaways"),
+            ("point", "Sellers check the app", "Money is real only when your own balance shows it."),
+            ("point", "Buyers check the seller", "Search the name with “scam,” and question deep discounts."),
+            ("point", "Pressure is a warning sign", "A real buyer or seller can wait for your checks."),
+            ("point", "The law gives you a door", "The DTI’s E-Commerce Bureau tracks online complaints."),
+            ("h", "Your Part 25 Action Plan"),
+            ("point", "Today", "Turn on notifications in your e-wallet app, so a real payment shows up "
+             "where you can see it."),
+            ("point", "This week", "Tell one family member who sells online about the fake screenshot and "
+             "the code request."),
+            ("point", "Next purchase", "Before paying, search the seller’s name with “scam” and read the "
+             "site’s buyer protection."),
+            "Write the three checks on a note near your phone: own app, no refunds of overpayments, no "
+            "codes. They take less than a minute, and a real buyer has no reason to object.",
+            "Lito messaged the buyer: “Payment not received. I will ship when it shows in my account.” The "
+            "buyer called him impatient, then blocked him. Lito reported the account, posted the phone "
+            "again, and sold it two days later to a woman who paid in cash at a busy coffee shop.",
+            ("cta", "Read: Cybersecurity Series, Part 24: QR Code Scams, When a Square of Dots Sends You the Wrong Way", "/blog/cybersecurity-part-24-qr-code-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise", "/blog/cybersecurity-part-14-social-media-accounts/"),
+            ("ask", "Have you ever been sent a payment screenshot that turned out to be fake?"),
+        ],
+    },
+    {
         "date": "March 4, 2027",
         "title": "Cybersecurity Series, Part 24: QR Code Scams, When a Square of Dots Sends You the Wrong Way",
         "slug": "cybersecurity-part-24-qr-code-scams",

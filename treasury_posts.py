@@ -7,6 +7,642 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 21: The Professional Tax, What Your PTR Number Means",
+        "date": "March 30, 2027",
+        "publish_on": "2027-03-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "professional-tax-receipt",
+        "category": "finance",
+        "summary": "Engineers, nurses, accountants and other licensed professionals see a PTR number under "
+                   "signatures on plans, reports and prescriptions. It is the receipt for a local tax. This "
+                   "part explains who pays the professional tax, how much, where and when, who is exempt, "
+                   "and why the receipt number must be written on documents.",
+        "body": [
+            "A young civil engineer passed the board exam, got her license, and in March was hired by a "
+            "construction firm. On her first week, the project manager handed back the building plans she "
+            "had signed. “Your PTR number is missing under your name. And the office needs a copy of the "
+            "receipt before payroll.” She knew her license number by heart. She had never heard of a PTR.",
+            "(The engineer, her firm and her first week are illustrations, not a real person or company.)",
+            "Part 20 looked at who does what inside the treasurer’s office. This part looks at one tax "
+            "that brings first-time professionals to a treasury window. Read on to learn what the "
+            "professional tax is, who must pay it and how much, where and when it is paid, who is exempt, "
+            "what happens when it is paid late, and why the official receipt number travels with a "
+            "professional’s signature.",
+            ("photo", "blog/finance-ptr.jpg", "The professional tax: who pays, how much, when it is due, and "
+             "why the receipt number goes under the signature. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What the Professional Tax Is"),
+            "Section 139 of the Local Government Code allows the province to levy an annual professional "
+            "tax on each person engaged in the exercise or practice of a profession that requires a "
+            "government examination. The official receipt issued for it is what people call the PTR, the "
+            "professional tax receipt.",
+            ("point", "Who it covers", "People practicing a profession that requires a government "
+             "examination, such as the board and bar examinations. The license comes from passing the "
+             "exam; the professional tax is a separate local tax for practicing."),
+            ("point", "How much", "Section 139(a) lets the sangguniang panlalawigan set the amount and "
+             "reasonable classes, but it can in no case exceed ₱300 a year."),
+            ("point", "Cities too", "Section 151 lets a city levy the taxes the province may impose. Cities "
+             "may set tax rates up to 50% above the provincial maximum, but Section 151 makes an "
+             "exception for professional and amusement taxes. So the ₱300 cap applies in cities as well."),
+            ("quote", "The license says you may practice. The PTR says you paid the local tax for practicing "
+             "this year."),
+            ("h", "Where and When to Pay"),
+            ("point", "Where", "Section 139(b) says to pay the province where you practice, or where you "
+             "keep your principal office if you practice in several places. In a city that levies the tax, "
+             "it goes to the city."),
+            ("point", "When", "Section 139(d) says the tax is payable annually, on or before January 31."),
+            ("point", "Starting later in the year", "The same paragraph says a person who first begins "
+             "to practice after January must pay the full tax before starting. There is no half-year rate "
+             "for starting in March."),
+            ("point", "One payment, the whole country", "Section 139(b) adds that once the tax is paid, "
+             "the professional may practice anywhere in the Philippines without being made to pay any "
+             "other national or local tax, license or fee for practicing that profession."),
+            ("point", "Ask the right office", "Section 170 lets treasurers collect through duly authorized "
+             "deputies. If you are unsure where your PTR is issued, ask the provincial treasurer’s office, "
+             "or the city treasurer’s office if you practice in a city."),
+            ("h", "Who Is Exempt"),
+            ("point", "Government employees", "Section 139(d) says professionals exclusively employed in the "
+             "government are exempt."),
+            ("point", "Exclusively is the key word", "A nurse employed only in a government hospital is "
+             "exempt. If the same nurse also works shifts at a private clinic, the employment is no longer "
+             "exclusively in government, and the tax applies."),
+            ("point", "A second profession", "Section 139(d) also says a line of profession does not become "
+             "exempt just because it is practiced together with another profession whose tax was paid. A "
+             "person licensed and practicing as both a lawyer and an accountant pays for each."),
+            ("h", "The Employer’s Duty"),
+            "Section 139(c) puts a duty on the employer as well. Any individual or corporation employing "
+            "a person subject to the professional tax must require that person to pay the tax before "
+            "employment and every year after.",
+            "That is why the engineer’s firm asked for a copy of her receipt. A firm that hires licensed "
+            "professionals can keep a simple list: each employee, the PTR number, the date paid and the "
+            "province or city, and check it every January.",
+            ("h", "Why the Number Goes Under Your Signature"),
+            "Section 139(e) says a person subject to the professional tax must write the number of the "
+            "official receipt issued to him in deeds, receipts, prescriptions, reports, books of account, "
+            "plans and designs, surveys and maps, as the case may be.",
+            ("point", "For the professional", "Keep the receipt number, date and place of issue where you "
+             "can find them. Each year’s payment has its own receipt, so documents signed in January of a new "
+             "year should carry the new one."),
+            ("point", "For the reader", "A PTR number on a plan or report shows that the signer paid the "
+             "professional tax for that year, and where. It may appear beside the signer’s "
+             "license number."),
+            ("point", "Not a license", "The PTR does not prove the person is licensed. The license itself "
+             "comes from passing the government examination."),
+            ("h", "Paying Late"),
+            "Section 168 lets the sanggunian impose a surcharge of up to 25% on taxes not paid on time, "
+            "and interest of up to 2% a month on the unpaid amount, including the surcharge, until paid. "
+            "Total interest cannot run for more than 36 months. The exact rates are in the local revenue "
+            "code, not in the Local Government Code itself.",
+            "Here is an example. Suppose a province sets the tax at ₱300, with the highest surcharge and "
+            "interest the law allows, and a professional pays four months after the January 31 deadline.",
+            ("point", "Surcharge", "25% of ₱300 is ₱75, making ₱375."),
+            ("point", "Interest", "2% of ₱375 is ₱7.50 a month. Over four months, that is ₱30."),
+            ("point", "Total", "₱300 tax, ₱75 surcharge and ₱30 interest, or ₱405. How months are counted, "
+             "and the actual rates, depend on the local ordinance."),
+            "The amounts are small. The bigger cost is a plan, report or prescription signed without a "
+            "valid receipt number when the law asks for one.",
+            ("h", "For Treasury Workers"),
+            ("point", "Know your ordinance", "Have the local revenue code’s rate, classes, surcharge and "
+             "interest ready at the window, with a printed copy for taxpayers who ask."),
+            ("point", "Ask about government employment", "A taxpayer who says “I work in government” may "
+             "be exempt, but only if the work is exclusively in government. Ask, and note the answer."),
+            ("point", "One receipt per profession", "A person practicing two professions needs the tax for "
+             "each, under Section 139(d)."),
+            ("point", "January planning", "With a January 31 deadline, the professional tax falls in "
+             "the same month as the January rush described in Part 2."),
+            ("h", "For Professionals"),
+            ("point", "Pay before you practice", "If you start work after January, pay the full year before "
+             "you sign anything."),
+            ("point", "Pay in the right place", "Where you practice, or your principal office if you "
+             "practice in several places."),
+            ("point", "Write the number", "On every document the law lists, and update it each new year."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Confusing the license with the PTR", "The license lets you practice; the PTR is a yearly local tax."),
+            ("point", "Assuming every government worker is exempt", "Only those exclusively employed in government."),
+            ("point", "Waiting until next January", "A late starter pays before beginning to practice."),
+            ("point", "Reusing last year’s number", "A new year means a new receipt."),
+            ("h", "Key Takeaways"),
+            ("point", "Up to ₱300 a year", "Set by the province or city, and capped by Section 139."),
+            ("point", "Due January 31", "Or before practice begins, for those who start later."),
+            ("point", "Paid once, valid nationwide", "For practicing that profession that year."),
+            ("point", "The number goes on documents", "Plans, reports, prescriptions and the others in Section 139(e)."),
+            ("h", "Your Part 21 Action Plan"),
+            ("point", "If you are a professional", "Find this year’s receipt. Check that its number is on "
+             "the documents you signed this year."),
+            ("point", "If you employ professionals", "List each one with their PTR number and date, as "
+             "Section 139(c) expects you to require the payment."),
+            ("point", "If you work in a treasury", "Read the professional tax section of your local "
+             "revenue code and confirm the rate, the classes and the late-payment charges."),
+            "The engineer paid her professional tax that afternoon, wrote the receipt number under her "
+            "signature on the plans, and gave the firm a copy. Next January, she will be the one reminding "
+            "the new hires.",
+            ("cta", "Read: Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office", "/blog/inside-the-treasurers-office/"),
+            ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula, a Spanish-Era Tax That Never Left", "/blog/the-cedula-explained/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("ask", "If you are a licensed professional, did anyone explain the PTR to you before your first job?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office",
+        "date": "March 25, 2027",
+        "publish_on": "2027-03-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "inside-the-treasurers-office",
+        "category": "finance",
+        "summary": "The treasurer’s office collects taxes, keeps the town’s money and pays its bills, but it "
+                   "does not assess property, keep the books or prepare the budget. Here is what the Local "
+                   "Government Code assigns to the treasurer, who supervises the office, and which office to "
+                   "visit for what.",
+        "body": [
+            "A new employee on her first day at the town hall was given a simple task: deliver a taxpayer’s "
+            "letter “to the treasury.” The letter asked why her property’s assessed value had gone up. The "
+            "cashier read it, smiled, and sent her to another office down the hall. “We collect the tax,” he "
+            "said, “but we don’t set the value.” By lunchtime she had visited three offices and learned more "
+            "about local government than in her whole orientation.",
+            "(The employee, the letter and the town hall are fictional, made up to explain the offices.)",
+            "Part 19 looked at the public market as a business the town runs. This part steps back to look "
+            "at the office that handles the town’s money. Read to the end, and you will know what the Local "
+            "Government Code gives the treasurer to do, who appoints and supervises the treasurer, how the "
+            "treasurer’s work differs from the assessor’s, the accountant’s and the budget officer’s, and "
+            "which office a taxpayer should visit for which question.",
+            ("photo", "blog/finance-office.jpg", "The treasurer’s office: advise on funds, keep custody, take "
+             "charge of disbursements, inspect for tax compliance and keep the tax records. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What the Code Assigns to the Treasurer"),
+            "Section 470 of the Local Government Code sets out the treasurer’s functions. In plain words, "
+            "the treasurer:",
+            ("point", "Advises on funds", "Advises the governor or mayor and the council on the disposition of local government funds."),
+            ("point", "Keeps custody", "Takes custody of and properly manages the funds of the local "
+             "government."),
+            ("point", "Takes charge of disbursement", "Takes charge of the disbursement of local government "
+             "funds, the last step of the payment process in Part 7."),
+            ("point", "Inspects establishments", "Inspects private commercial and industrial establishments "
+             "within the locality, in connection with the tax ordinances."),
+            ("point", "Keeps the tax information", "Maintains and updates the local government’s tax "
+             "information system."),
+            ("point", "Administers oaths", "On notices to delinquent real property taxpayers, as in Part 5."),
+            "The Code adds other duties as provided by law or ordinance. Much of this series, from the "
+            "receipts in Part 11 to the deposits in Part 13, is these functions at work.",
+            ("quote", "The treasurer keeps the money. Other offices decide the value, the budget and the "
+             "books."),
+            ("h", "Who Appoints and Who Supervises"),
+            "Section 470 provides that the treasurer is appointed by the Secretary of Finance, from a list of at least three eligible recommendees of the governor or mayor. A House bill filed in the 19th Congress proposed moving the appointment to local chief executives. Its explanatory note describes the current arrangement: appointment by the Secretary of Finance, with the governor or mayor exercising administrative supervision. Until a change becomes law, the Code’s rule stands.",
+            "So the appointment comes from the national Department of Finance, while the day-to-day supervision of the office sits with the local chief executive, to whom the treasurer reports on the work of the office.",
+            ("h", "Four Offices, Four Jobs"),
+            "The new employee’s morning makes sense once the offices are laid side by side.",
+            ("point", "The assessor", "Appraises and assesses real property. A question about the assessed "
+             "value of a lot goes here, not to the treasury."),
+            ("point", "The treasurer", "Collects taxes, fees and charges, keeps the money, and pays out "
+             "approved disbursements."),
+            ("point", "The accountant", "Keeps the books, records every transaction in the accounts, and "
+             "prepares the financial reports. The treasurer’s collections and deposits are recorded here."),
+            ("point", "The budget officer", "Prepares the budget with the local chief executive and checks "
+             "that funds are available for each expense."),
+            "The separation builds in checks. The assessor sets a value the treasurer did not choose; the "
+            "accountant records money the treasurer did not count alone; the budget officer confirms the "
+            "funds the treasurer pays out. Part 7 followed a single payment through all of them.",
+            ("h", "Inside the Treasury"),
+            "Offices organize the treasurer’s work in different ways, depending on their size. One way an "
+            "office might divide it:",
+            ("point", "Collection", "The cashiers at the windows and the collectors in the field, issuing "
+             "official receipts from accountable forms."),
+            ("point", "Real property tax", "The records of each declared property, its payments and arrears, "
+             "and the notices in Part 5."),
+            ("point", "Business taxes and licenses", "The computations from gross sales declarations, done "
+             "with the business permit process in Part 2."),
+            ("point", "Cash and disbursement", "Deposits, bank accounts, checks and the cash book."),
+            ("point", "Examination and inspection", "Visits to establishments and checks on declarations."),
+            ("h", "The Records the Office Keeps"),
+            "Much of the treasurer’s work leaves a paper trail that other offices and the auditors rely on. Earlier parts of this series described several of these records.",
+            ("point", "Official receipts and accountable forms", "Issued, used and returned under the RAAF, as Part 11 explained."),
+            ("point", "Collection and deposit records", "Each day’s collections and the deposits that match them, as in Part 13."),
+            ("point", "Real property tax records", "Payments and arrears for each property, which feed the barangay shares in Part 17."),
+            ("point", "Claims and protests", "The log of refund claims and protests with their deadlines, from Part 18."),
+            "When COA audits the office, as Part 9 described, these are the records that show whether the money was handled as the rules require.",
+            ("h", "Which Window for Which Question?"),
+            ("point", "“How much do I owe?”", "The treasurer’s office, from its records."),
+            ("point", "“Why did my assessed value go up?”", "The assessor’s office."),
+            ("point", "“When will my supplier payment be released?”", "The treasurer’s office for the check, "
+             "after the accountant and budget officer have processed the voucher."),
+            ("point", "“Was my payment recorded?”", "The treasurer’s office first, with your official receipt "
+             "in hand."),
+            ("point", "“I paid too much.”", "A written claim to the local treasurer, as in Part 18."),
+            ("h", "For New Treasury Workers"),
+            ("point", "Learn the neighbors", "Know what the assessor, accountant and budget officer do, so you "
+             "can send taxpayers to the right door the first time."),
+            ("point", "Know your accountability", "If you handle cash or accountable forms, you answer for "
+             "them, as Parts 11 and 12 showed."),
+            ("point", "Ask before you answer", "If a question is outside the treasury’s work, say so and walk "
+             "the taxpayer to the right office."),
+            ("point", "Protect what you see", "Treasury records hold names, addresses, property and income details. Share them only as the office’s rules and the Data Privacy Act allow, and never discuss a taxpayer’s account with someone who is not entitled to it."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Arguing assessed values at the cashier’s window", "That is the assessor’s work."),
+            ("point", "Assuming the mayor appoints the treasurer", "Under current law, the Secretary of "
+             "Finance does."),
+            ("point", "Treating the four offices as one", "Each checks the others."),
+            ("point", "Leaving taxpayers to find the door", "Point them to the right office."),
+            ("h", "Key Takeaways"),
+            ("point", "Section 470 lists the duties", "Advise, keep custody, disburse, inspect, keep tax "
+             "records."),
+            ("point", "Appointed by the Secretary of Finance", "Under the mayor’s or governor’s "
+             "administrative supervision."),
+            ("point", "Four offices, four jobs", "Assessor values, treasurer collects and pays, accountant "
+             "records, budget officer plans."),
+            ("point", "Built-in checks", "No single office handles money from start to finish."),
+            ("h", "Your Part 20 Action Plan"),
+            ("point", "If you pay local taxes", "Before your next visit, write your question and decide "
+             "which office it belongs to."),
+            ("point", "If you are new to a treasury", "Visit the assessor, accountant and budget officer and "
+             "ask each what they need from you."),
+            ("point", "If you follow local government", "Find who your town’s treasurer is, and where the "
+             "office posts its reports."),
+            "The new employee delivered the letter to the assessor’s office just before noon. On her way "
+            "back, she drew a small map of the four offices on the back of her orientation sheet. A week "
+            "later, she was the one giving directions.",
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means", "/blog/cash-counts-and-shortages/"),
+            ("ask", "Have you ever been sent from one town hall office to another? Which question was it?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs",
+        "date": "March 20, 2027",
+        "publish_on": "2027-03-20 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "public-market-economic-enterprise",
+        "category": "finance",
+        "summary": "Stall rentals, slaughterhouse fees and terminal charges come from businesses the town "
+                   "itself runs. Here is what the law and the DBM’s manual call these enterprises, how their "
+                   "money is kept separate, how to tell whether one pays for itself, and what happens to any "
+                   "excess.",
+        "body": [
+            "A vendor who had sold vegetables in the public market for twenty years asked the market "
+            "collector a question one morning. “I pay my stall rent every day. Where does it go? The roof "
+            "still leaks over my stall.” The collector did not know. Neither did the vendors beside her. "
+            "The answer starts with an idea that surprises some taxpayers: the public market is a business, "
+            "and the town is its owner.",
+            "(The vendor, the market and every number here are invented to explain the rules. No real "
+            "market or person is described.)",
+            "Part 18 looked at money the treasury must return. This part looks at money the town earns, not "
+            "from taxes, but from running an enterprise. By the end, you will know what a local economic "
+            "enterprise is, why its money is kept in a special account, how to measure whether it pays for "
+            "itself, what happens to any excess, and what vendors, treasury staff and councils can each "
+            "check.",
+            ("photo", "blog/finance-market.jpg", "The public market as an economic enterprise: its own account, "
+             "its own budget, a self-sufficiency ratio, and excess income that returns to the general fund. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Service and a Business"),
+            "Section 17 of the Local Government Code lists public markets, slaughterhouses and other "
+            "municipal enterprises among the basic services and facilities a municipality provides. The same "
+            "section says costs may be charged for the delivery of these services.",
+            "The Department of Budget and Management’s Manual on the Setting Up and Operation of Local "
+            "Economic Enterprises, issued with Local Budget Circular No. 111 on June 10, 2016, describes "
+            "these as ventures wholly or partially owned by local governments that earn income by selling "
+            "goods and services.",
+            ("point", "Public utilities", "The manual lists examples such as water supply, power, "
+             "sanitation, and transport terminals, including bus and jeepney terminals, parking and piers."),
+            ("point", "Other economic enterprises", "Public markets, slaughterhouses, cold storage, "
+             "commercial spaces and local hospitals."),
+            ("quote", "A market stall’s rent is not a tax. It is the price of a service the town sells."),
+            ("h", "Where the Charges Come From"),
+            "The Code gives local governments the power to charge for these services. Section 153 allows "
+            "reasonable fees and charges for services rendered. Section 154 lets them fix the rates for "
+            "public utilities they own and operate. Section 155 lets the council set toll fees for the use "
+            "of public roads, piers or wharves. The amounts themselves are set in local ordinances, which is "
+            "why stall rents and slaughter fees differ from town to town. Part 15 explained why a fee for a "
+            "service follows different rules from a tax.",
+            ("h", "Its Own Account"),
+            "The manual cites Section 313 of the Code, which requires special accounts in the general fund "
+            "for public utilities and other economic enterprises. It says each enterprise should have its own "
+            "special account and its own annual operating budget.",
+            ("point", "Income in", "Stall rentals, entrance fees, slaughter fees and similar collections for "
+             "that enterprise."),
+            ("point", "Costs out", "The manual counts personnel services, maintenance and other operating "
+             "expenses, and finance charges as operating costs."),
+            ("point", "Kept apart", "So the town can see whether the market earns its keep, instead of the "
+             "figures disappearing into the general fund."),
+            ("h", "Does It Pay for Itself?"),
+            "The manual defines a simple test. An enterprise is self-sufficient if it recovers 100 percent of "
+            "its operating costs. The self-sufficiency ratio is total income divided by total expenses, times "
+            "100.",
+            ("point", "Example", "A market earns ₱3,600,000 in a year from rentals and fees and spends "
+             "₱4,500,000 to run. ₱3,600,000 ÷ ₱4,500,000 × 100 = 80 percent."),
+            ("point", "What 80 percent means", "The market covered four-fifths of its costs. The other "
+             "₱900,000 came from somewhere else, such as support from the general fund."),
+            "Arrears change the picture. If the same market had ₱300,000 in unpaid stall rent and collected it, income would be ₱3,900,000, and the ratio would rise to about 86.7 percent, without raising a single rate. Before asking for a higher rent, a council can ask how much of the current rent is actually being collected.",
+            "The manual describes transfers from the general fund to an enterprise as subsidies or "
+            "advances. A subsidy is not wrong in itself; a town may decide the market is worth supporting. "
+            "But it should be a decision, made with the number in view.",
+            ("h", "Where Any Excess Goes"),
+            "When an enterprise earns more than it spends, the manual, citing Section 313, sets an order. "
+            "Income first covers improvement, repair and related costs of the enterprise. Next it repays "
+            "advances from the general fund. Any excess then becomes part of the general fund of the local "
+            "government.",
+            "The manual also notes that, unlike a private corporation, an enterprise cannot keep its "
+            "current-year earnings for itself. For the vendor’s question, this is the key: stall rent can pay "
+            "for the market’s roof, but only if the repair is budgeted in the market’s account.",
+            ("h", "Reviewing an Enterprise"),
+            "The manual calls for a review every five years of whether each enterprise should continue. If "
+            "an enterprise does not reach self-sufficiency, the local government may audit its facilities and "
+            "then decide to continue it, restructure it or exit it.",
+            ("h", "For Treasury Workers"),
+            ("point", "Record collections by enterprise", "Each receipt for stall rent or slaughter fees should "
+             "be coded to the right enterprise, so its income can be totaled."),
+            ("point", "Track arrears by stall", "Unpaid rentals reduce the ratio as surely as higher costs. A "
+             "list of overdue stalls, by amount and age, belongs in every monthly report."),
+            ("point", "Deposit on time", "Market collections follow the same deposit rules as any other "
+             "collection, as Part 13 explained."),
+            ("point", "Use accountable forms", "Daily stall tickets or receipts are accountable forms, issued "
+             "and returned as described in Part 11."),
+            ("point", "Report the ratio", "Give the council the year-to-date income, expenses and self-sufficiency ratio of each enterprise every quarter, not only at budget time."),
+            ("h", "For Vendors and Councils"),
+            ("point", "Vendors", "Ask to see the market’s operating budget. Repairs you want should appear "
+             "there."),
+            ("point", "Councils", "Ask for the self-sufficiency ratio each year, and decide the subsidy "
+             "openly."),
+            ("point", "Everyone", "Compare this year’s ratio with last year’s. The direction says more than a "
+             "single number."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Mixing market money into the general fund", "It needs its own special account."),
+            ("point", "Ignoring rental arrears", "They lower income as much as a rate cut would."),
+            ("point", "Hiding the subsidy", "Show it as a decision, with the ratio."),
+            ("point", "Unbudgeted repairs", "If it is not in the enterprise budget, the rent cannot pay for it."),
+            ("h", "Key Takeaways"),
+            ("point", "The market is an enterprise", "Run by the town, with income from fees and rentals."),
+            ("point", "Its own account and budget", "Under Section 313, as the DBM manual explains."),
+            ("point", "Self-sufficiency ratio", "Income divided by expenses, times 100; 100 percent pays "
+             "for itself."),
+            ("point", "Excess has an order", "Repairs and improvements, then advances, then the general "
+             "fund."),
+            ("h", "Your Part 19 Action Plan"),
+            ("point", "If you rent a stall", "Ask the market office what repairs are in this year’s budget."),
+            ("point", "If you work in a treasury", "Total last year’s collections by enterprise, and set them "
+             "beside the enterprise’s expenses."),
+            ("point", "If you follow your council", "Look for the market subsidy in the budget and ask what "
+             "ratio it supports."),
+            "The collector carried the vendor’s question to the market supervisor, who showed her the "
+            "market’s operating budget. The roof repair was there, scheduled before the rainy season. The "
+            "vendor went back to her stall with a date, and, for the first time, a reason to keep her rent "
+            "receipts in order.",
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
+            ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
+            ("cta", "Read: Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests", "/blog/local-tax-refunds-and-credits/"),
+            ("ask", "Does your town’s public market pay for itself? Have you ever seen its budget?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests",
+        "date": "March 15, 2027",
+        "publish_on": "2027-03-15 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "local-tax-refunds-and-credits",
+        "category": "finance",
+        "summary": "Local taxes can be paid in error, or assessed wrongly. The Local Government Code gives "
+                   "taxpayers written remedies with firm deadlines: a claim for refund or credit, a protest "
+                   "of assessment, and payment under protest for real property tax. Here is how each works.",
+        "body": [
+            "In February, a hardware store owner sat down with her accountant to close the books and found "
+            "a problem. The business tax she paid in January had been computed on the wrong gross sales "
+            "figure, a number from another store’s declaration typed into her record. She had paid ₱6,000 "
+            "more than she owed. Her first question was whether the money was gone. Her second was how to "
+            "ask for it back.",
+            "(The store owner, the figures and the mix-up are illustrations, not a real case.)",
+            "Part 17 followed money from the town to its barangays. This part follows money back to the "
+            "taxpayer. It explains what the law calls an erroneous or illegal collection, the difference "
+            "between a refund and a tax credit, how to file a claim and by when, how a protest of assessment "
+            "differs from a refund claim, and the separate rules for real property tax.",
+            ("photo", "blog/finance-refund.jpg", "Refunds, tax credits and protests: put it in writing, file "
+             "within the deadline, and keep the receipt. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Erroneous or Illegal Collection"),
+            "Section 196 of the Local Government Code speaks of any tax, fee or charge erroneously or "
+            "illegally collected. Two kinds of cases fit.",
+            ("point", "Erroneous", "The tax is valid, but the amount was wrong: a typing error, a wrong "
+             "rate applied, or a payment made twice."),
+            ("point", "Illegal", "The tax itself should not have been collected, for example a charge with "
+             "no valid basis in an ordinance, as Part 15 discussed."),
+            ("quote", "A refund starts with a letter, not with an argument at the window."),
+            ("h", "Refund or Credit"),
+            ("point", "A refund", "The amount is paid back to the taxpayer."),
+            ("point", "A tax credit", "The amount is applied against the taxpayer’s current or future tax, "
+             "so the next payment is smaller."),
+            "Section 196 covers both and asks for a written claim for refund or credit. For a business that "
+            "will pay again next quarter, a credit can be the simpler result. A taxpayer who has closed the "
+            "business, as in Part 14, would ask for a refund.",
+            ("h", "Step 1: File a Written Claim, Early"),
+            "Section 196 sets two rules. First, no case can be brought in court to recover a tax, fee or "
+            "charge erroneously or illegally collected until a written claim for refund or credit has been "
+            "filed with the local treasurer. Second, no court case is allowed after two years from the date "
+            "of payment, or from the date the taxpayer became entitled to a refund or credit. Because the claim must come before any court case, and any case must be filed within those two years, file the claim early.",
+            ("point", "Write to the local treasurer", "A short letter: who you are, what you paid, when, "
+             "why it was wrong, and whether you ask for a refund or a credit."),
+            ("point", "Attach the proof", "A copy of the official receipt, the assessment or computation, "
+             "and the document that shows the right figure, such as the correct sales declaration."),
+            ("point", "Get it received", "Ask for a received stamp with the date on your copy. That date is "
+             "your evidence that you filed in time."),
+            "For the store owner, the payment was made on January 15. Two years from that date is January "
+            "15, 2029. She filed in February, with almost all of that time still ahead of her, which is "
+            "the safer way to use a deadline.",
+            ("h", "A Protest Is Different"),
+            "A refund claim is for money already paid. A protest of assessment, under Section 195, is for a "
+            "notice of assessment that says you owe more.",
+            ("point", "The notice", "When the treasurer finds that the correct tax was not paid, the law "
+             "requires a notice of assessment stating the tax, the deficiency, and the surcharges, interest "
+             "and penalties."),
+            ("point", "Sixty days to protest", "The taxpayer may file a written protest within 60 days from "
+             "receipt of the notice. Otherwise the assessment becomes final and executory."),
+            ("point", "Sixty days to decide", "The treasurer must decide the protest within 60 days from "
+             "filing, canceling the assessment wholly or partly, or denying it wholly or partly."),
+            ("point", "Thirty days to appeal", "From receipt of the denial, or from the end of the 60-day "
+             "period without a decision, the taxpayer has 30 days to appeal to the proper court. Otherwise "
+             "the assessment becomes conclusive and unappealable."),
+            ("h", "Real Property Tax: Pay First, Then Protest"),
+            "Real property tax has its own rules in the part of the Code on real property taxation.",
+            ("point", "Pay first", "Section 252 says no protest is entertained unless the taxpayer first pays "
+             "the tax, and the receipt is marked “paid under protest.”"),
+            ("point", "Protest within 30 days", "The written protest goes to the provincial or city "
+             "treasurer, or the municipal treasurer within Metropolitan Manila, within 30 days from "
+             "payment."),
+            ("point", "Held in trust", "The amount paid under protest is held in trust by the treasurer, and "
+             "the treasurer decides within 60 days of receiving the protest."),
+            ("point", "If the taxpayer wins", "The amount is refunded or applied as a credit against current "
+             "or future real property tax."),
+            "Section 253 adds a separate claim for repayment when a real property tax is found illegal or "
+            "erroneous and is reduced or adjusted. The taxpayer files a written claim with the provincial or "
+            "city treasurer within two years from the date the taxpayer is entitled to the reduction, and "
+            "the treasurer decides within 60 days.",
+            ("h", "For Treasury Workers"),
+            ("point", "Keep a claims log", "Date received, taxpayer, amount, type of claim, deadline to "
+             "decide, decision and date released."),
+            ("point", "Check the computation, not the person", "Recompute from the documents. If the error is "
+             "the office’s, say so in the reply."),
+            ("point", "Decide in writing, on time", "The 60-day periods in Sections 195, 252 and 253 run "
+             "whether or not anyone remembers them."),
+            ("point", "Record credits where the cashier will see them", "A credit that is not on the "
+             "taxpayer’s record at the next payment is a promise that will be broken."),
+            "A cash refund is money leaving the treasury, so it follows the payment steps described in Part 7, "
+            "with the claim, the decision and the receipts as supporting documents.",
+            ("h", "For Taxpayers"),
+            ("point", "Read the computation before paying", "An error caught at the window can be fixed before it becomes a claim."),
+            ("point", "Keep every receipt", "A claim without the receipt is hard to prove."),
+            ("point", "Watch the dates", "Thirty days, sixty days and two years are different deadlines for "
+             "different remedies."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Asking only at the window", "Without a written claim, there is no claim."),
+            ("point", "Missing the two-year limit", "File early, and keep the received copy."),
+            ("point", "Confusing a protest with a refund", "One answers an assessment; the other recovers a "
+             "payment."),
+            ("point", "Forgetting to apply a credit", "Mark it on the taxpayer’s record right away."),
+            ("h", "Key Takeaways"),
+            ("point", "Written claim first", "Section 196 requires it before any court case."),
+            ("point", "Two years", "From payment, or from the date of entitlement."),
+            ("point", "Protest of assessment", "Sixty days to protest, sixty to decide, thirty to appeal."),
+            ("point", "Real property tax", "Pay under protest, protest within 30 days, decision in 60."),
+            ("h", "Your Part 18 Action Plan"),
+            ("point", "If you pay local taxes", "Check your last receipt against your declaration. If they "
+             "differ, write to the treasurer this month."),
+            ("point", "If you work in a treasury", "Start a claims log with a column for the decision "
+             "deadline."),
+            ("point", "If you own property", "Learn the words “paid under protest” before you need them."),
+            "The store owner’s letter was received on a Tuesday. The treasurer’s office rechecked the "
+            "declaration, found the typed figure, and wrote back within the month: ₱6,000 would be credited "
+            "to her next quarterly payment. In April, her receipt showed the credit, and the amount due was "
+            "₱6,000 smaller.",
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
+            ("ask", "Have you ever paid a local tax twice or by mistake? How did you get it back?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive",
+        "date": "March 10, 2027",
+        "publish_on": "2027-03-10 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "barangay-share-of-real-property-tax",
+        "category": "finance",
+        "summary": "Part of every basic real property tax payment belongs to the barangay where the property "
+                   "stands. Here is how the Local Government Code splits the tax, how the share is computed, "
+                   "when it must be released, and why a missing report can hold back millions.",
+        "body": [
+            "The barangay treasurer arrived at the municipal treasury with a folder and a calculator. Her "
+            "barangay council was preparing its budget, and the captain had asked a simple question: how "
+            "much of the amilyar paid in their barangay last quarter would come back to them, and when? "
+            "The answer, it turned out, was written in one section of the law. Getting the number right "
+            "took a report that showed every payment by barangay.",
+            "(The treasurer, her barangay and the figures in this story are invented. A real case, reported "
+            "in the news, appears later and is named as such.)",
+            "Part 16 followed the Special Education Fund to the schools. This part follows the other half "
+            "of the real property tax receipt, the basic tax, as it is shared out. You will learn how "
+            "Section 271 of the Local Government Code divides it, how to compute a barangay’s share, when "
+            "the share must be released, what a recent audit found when it was not, and what treasurers and "
+            "barangay officials can each check.",
+            ("photo", "blog/finance-brgy-share.jpg", "The barangay share of real property tax: split by "
+             "law, computed by location, released every quarter, free of any holdback. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Is Shared"),
+            "Section 271 covers the proceeds of the basic real property tax, including the interest on it, "
+            "and the proceeds from the use, lease, disposition, sale or redemption of property acquired at a public auction under the real property tax rules, the last step described in Part 5.",
+            "The Special Education Fund is not part of this split. As Part 16 explained, Section 235 says "
+            "the additional one percent tax accrues exclusively to the SEF.",
+            ("quote", "The barangay’s share is not a gift from the town hall. It is set by law."),
+            ("h", "The Split, by Type of Local Government"),
+            ("point", "In a province", "35 percent to the province’s general fund, 40 percent to the "
+             "general fund of the municipality where the property is located, and 25 percent to the "
+             "barangay where the property is located."),
+            ("point", "In a city", "70 percent to the city’s general fund and 30 percent to its barangays. "
+             "Half of that 30 percent goes to the barangay where the property is located, and the other "
+             "half is divided equally among all the city’s barangays."),
+            ("point", "In a Metro Manila municipality", "35 percent to the Metropolitan Manila Authority, "
+             "35 percent to the municipality’s general fund, and 30 percent to the barangays, shared the "
+             "same way as in a city."),
+            ("h", "Worked Example: A Municipality in a Province"),
+            "Say a municipality collects ₱1,200,000 in basic real property tax and interest in one quarter.",
+            ("point", "Province, 35 percent", "₱420,000."),
+            ("point", "Municipality, 40 percent", "₱480,000."),
+            ("point", "Barangays, 25 percent", "₱300,000 in all, but not divided equally. Each barangay "
+             "gets 25 percent of what was paid on property located in it."),
+            "If property in Poblacion paid ₱500,000, San Isidro ₱400,000 and San Roque ₱300,000, the shares "
+            "are ₱125,000, ₱100,000 and ₱75,000. Together they make ₱300,000, and the three parts add back "
+            "up to ₱1,200,000.",
+            ("h", "Worked Example: A City"),
+            "Say a city with ten barangays collects ₱6,000,000 in one quarter.",
+            ("point", "City, 70 percent", "₱4,200,000."),
+            ("point", "Barangays, 30 percent", "₱1,800,000, split in two halves of ₱900,000."),
+            ("point", "Location half", "Each barangay gets 15 percent, half of 30, of what was paid on "
+             "property in it. A barangay whose properties paid ₱1,000,000 gets ₱150,000."),
+            ("point", "Equal half", "₱900,000 divided by ten barangays is ₱90,000 each."),
+            "That barangay’s total for the quarter is ₱150,000 plus ₱90,000, or ₱240,000.",
+            ("h", "When the Share Must Arrive"),
+            "Section 271 is specific about timing. The share of each barangay is released, without need of "
+            "any further action, directly to the barangay treasurer, every quarter, within five days after "
+            "the end of the quarter. The law adds that the share is not subject to any lien or holdback for "
+            "whatever purpose.",
+            ("point", "No request needed", "The barangay does not have to apply or follow up for its share."),
+            ("point", "Directly to the barangay treasurer", "Not through another office, and not held as "
+             "a credit against something else."),
+            ("point", "Five days after the quarter", "For January to March, that is by April 5."),
+            ("h", "A Real Case: When the Report Is Missing"),
+            "In July 2026, SunStar Cebu reported on the Commission on Audit’s 2025 audit report on Cebu "
+            "City. According to the report, the city had not distributed ₱280.75 million in barangay shares "
+            "of advance real property tax collections for 2020 to 2025, owed to its 80 barangays.",
+            ("point", "What COA found", "The amounts sat in a deferred real property tax account instead of "
+             "being recorded as owed to the barangays, which COA said violated Section 271."),
+            ("point", "Why, according to the city", "Its tax software could not produce the detailed reports "
+             "needed to compute each barangay’s share, and monthly reports did not match the accounting "
+             "records."),
+            ("point", "What COA recommended", "Finish the reconciliation within a firm timeframe, set a "
+             "distribution schedule, record the amounts as liabilities, and resume quarterly releases."),
+            "The lesson for any treasury is in the city’s explanation. The share depends on knowing where "
+            "each paid property is located. If the collection records cannot be sorted by barangay, the law "
+            "is clear but the number cannot be computed.",
+            ("h", "For Treasury Workers"),
+            ("point", "Record the barangay on every payment", "Each receipt and each collection report "
+             "should carry the property’s barangay, taken from the tax declaration."),
+            ("point", "Separate basic tax, interest and SEF", "Only basic tax, its interest and proceeds from auctioned property go into the split."),
+            ("point", "Run the report before the quarter closes", "A total by barangay, reconciled with "
+             "accounting, ready by the first day of the new quarter."),
+            ("point", "Watch advance payments", "Payments made ahead for a future year still have a barangay "
+             "share. Record it as owed, as COA advised, so it is not forgotten."),
+            "Section 247 also lets the city or municipal treasurer deputize a barangay treasurer, if "
+            "properly bonded, to collect real property tax on property located in the barangay. That "
+            "changes who issues the receipt, but not the shares.",
+            ("h", "For Barangay Officials"),
+            ("point", "Ask for the computation", "Not only the amount, but the barangay’s collections it was "
+             "based on."),
+            ("point", "Check the calendar", "Note the date each quarterly share arrives, and ask if one is "
+             "late."),
+            ("point", "Put it in the budget carefully", "The share follows actual collections, so it moves "
+             "from quarter to quarter."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Dividing equally in a province", "There, each barangay’s 25 percent follows its own "
+             "collections."),
+            ("point", "Including the SEF in the split", "It goes entirely to the SEF."),
+            ("point", "Holding the share against a debt", "The law forbids any lien or holdback."),
+            ("point", "Collecting without recording the barangay", "Then the share cannot be computed."),
+            ("h", "Key Takeaways"),
+            ("point", "Set by Section 271", "25 percent in a province, 30 percent in a city."),
+            ("point", "Computed by location", "From what was paid on property in each barangay."),
+            ("point", "Released every quarter", "Within five days, directly to the barangay treasurer."),
+            ("point", "No holdback", "The share cannot be held for any purpose."),
+            ("h", "Your Part 17 Action Plan"),
+            ("point", "If you work in a treasury", "Check whether last quarter’s collection report can be "
+             "sorted by barangay without retyping anything."),
+            ("point", "If you serve in a barangay", "Ask for last quarter’s computation and the date the "
+             "share was released."),
+            ("point", "If you pay amilyar", "Look at the barangay printed on your tax declaration. That is "
+             "where a part of your payment goes."),
+            "The barangay treasurer left with a one-page computation and a date. The captain read it at the "
+            "next session: their share for the quarter, the collections it came from, and the day it would "
+            "arrive. For the first time, the line in their budget had a number behind it.",
+            ("cta", "Read: Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar", "/blog/special-education-fund/"),
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
+            ("ask", "Does your barangay know how much of last quarter’s amilyar came back to it?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar",
         "date": "March 5, 2027",
         "publish_on": "2027-03-05 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
