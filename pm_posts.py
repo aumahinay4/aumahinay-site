@@ -14,6 +14,144 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "February 6, 2027",
+        "title": "Project Management Series, Part 18: Assigning People Without Overloading Them",
+        "slug": "project-management-part-18-resource-allocation",
+        "category": "pm",
+        "summary": "A schedule can be correct on paper and impossible in practice, because one person is "
+                   "needed in two places at once. This part shows how to list who is really available, "
+                   "assign the work, spot overloads, and fix them with float before the finish date has to "
+                   "move.",
+        "publish_on": "2027-02-06 21:00",
+        "body": [
+            "The schedule for the notices project is approved: 45 working days, with the critical path "
+            "worked out in Part 16 and the budget from Part 17. On paper, everything fits.",
+            "Then the clerk writes names beside the packages. Collector Reyes knows the far barangays best, "
+            "so Reyes plans the delivery routes. Reyes also wrote the counter guide in the first round, so "
+            "Reyes is down for counter readiness too. Both packages fall in the same week of the schedule.",
+            "The plan says both will be done on time. Reyes cannot be in two places at once.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Parts 14 to 17 described what the work is, how long it takes, in what order it runs and what it "
+            "costs. This part asks who will do it, and whether they can. By the end of this post you will "
+            "know how to list people’s real availability, assign work packages, find overloads with a simple "
+            "chart, and fix them using float before the finish date has to move.",
+            ("photo", "blog/pm-resources.jpg", "Assigning people: real availability, assignments, overloads "
+             "spotted early and fixed with float. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Resource Allocation Means"),
+            "In project management, resources are the people, equipment and materials the work needs. "
+            "Allocating them means deciding who or what does each work package, and checking that no one "
+            "is given more than they can actually do.",
+            "In this treasury office, the main resource is people, and each of them has a regular job that "
+            "does not stop for the project. The counter still opens every morning.",
+            ("quote", "A schedule is a promise about people’s time. Check that they can keep it."),
+            ("h", "Step 1: Write Down When People Are Really Available"),
+            "A resource calendar lists when each person can work on the project. It can be less than the office calendar suggests.",
+            ("point", "Regular duties", "The cashier keeps the counter open. Collectors have field "
+             "collections. In Part 15, two collectors were available for delivery only on Tuesdays and "
+             "Thursdays."),
+            ("point", "Leave and holidays", "Approved leave, training days and holidays during the project."),
+            ("point", "Busy periods", "Weeks near tax deadlines, when the counter needs everyone."),
+            ("point", "People outside the office", "The legal adviser and the head of office have their own "
+             "schedules. A signature can wait days."),
+            "Plan project work for less than a full day. A clerk who also answers the counter phone does not have eight hours a day for the project, and the plan should not pretend otherwise.",
+            ("h", "Step 2: Assign Each Package"),
+            "Use the RACI matrix from Part 8 for who is accountable. Here the question is narrower: who does "
+            "the work, on which days. For the second round of notices, the clerk wrote this list, using the "
+            "earliest dates from Part 16.",
+            ("point", "Pull and check the list (A, B)", "The clerk, days 0 to 3; then a revenue staff member, "
+             "days 3 to 7."),
+            ("point", "Approve the list (D)", "The head of office, days 7 to 9."),
+            ("point", "Notice template (C)", "The clerk drafts, the legal adviser reviews, days 0 to 10."),
+            ("point", "Fill, print and sign (E, F)", "The clerk, days 10 to 18, with the head of office "
+             "signing."),
+            ("point", "Delivery routes (G)", "Collector Reyes, days 9 to 12."),
+            ("point", "Counter readiness (H)", "The cashier and Collector Reyes, days 10 to 14."),
+            ("point", "Delivery and undelivered list (I, J)", "Collectors Reyes and Lim, days 18 to 43; then "
+             "the clerk, days 43 to 45."),
+            ("h", "Step 3: Find the Overloads"),
+            "A simple chart shows what a list hides. Make a grid with one row per person and one column per "
+            "working day. Mark each day a person is assigned to a package. Any day with two marks for the "
+            "same person is an overload.",
+            "For Collector Reyes, the routes run from day 9 to day 12 and counter readiness from day 10 to day "
+            "14. The two overlap for two working days, and on those days the schedule asks for two full jobs "
+            "from one person.",
+            "The same grid can be built in a spreadsheet: people down the side, days across the top, and an "
+            "X in each assigned cell. =COUNTIF(B2:B10, \"X\") under a day counts how many packages share it, "
+            "and a rule that flags anything above one does the rest.",
+            ("h", "Step 4: Fix the Overload"),
+            "There are several ways to remove an overload. Try them in this order, because the first ones "
+            "protect the finish date.",
+            ("point", "Move work within its float", "In Part 16, the routes had six days of float: they could "
+             "start as late as day 15 without moving the finish. Moving them to start after counter "
+             "readiness solves the clash."),
+            ("point", "Give the work to someone else", "Another collector could plan some of the routes, if "
+             "they know those barangays."),
+            ("point", "Split the work", "The counter guide could be written by the cashier, with Reyes "
+             "reviewing it for an hour instead of writing it."),
+            ("point", "Add help", "A staff member from another unit for a few days, if the head of office "
+             "agrees."),
+            ("point", "Extend the schedule", "If none of the above works, the package waits until the person "
+             "is free, and the finish date may move."),
+            "PMI’s guidance has names for the two ends of this list. Resource smoothing adjusts the schedule "
+            "so demand stays within limits by moving work only within its float, so the critical path and the "
+            "finish date stay the same. Resource leveling lets the schedule change when people are simply not "
+            "available, and the finish date can move later.",
+            ("h", "The Overload, Fixed"),
+            "The clerk moved the routes to start on day 14, after counter readiness finishes. They now run "
+            "from day 14 to day 17, and delivery still starts on day 18. The finish stays at day 45.",
+            ("point", "The cost of the fix", "The routes used five of their six days of float. Their latest "
+             "start is still day 15, so only one day of float is left. A package that had room to spare is "
+             "now nearly critical."),
+            ("point", "What changed in the plan", "The routes now go on the list of near-critical work from "
+             "Part 16, and Reyes knows the new dates."),
+            "This is the hidden price of smoothing. Float used to solve one problem is no longer available "
+            "for the next one.",
+            ("h", "Do Not Forget Equipment and Signatures"),
+            ("point", "The one printer", "If the office has one printer for 1,800 notices and daily work, "
+             "printing competes with the counter’s own printing."),
+            ("point", "The signing", "If every notice needs the head of office’s signature, that time belongs "
+             "in the head’s calendar, not just in the clerk’s plan."),
+            ("point", "Vehicles", "If two collectors share one motorcycle, they cannot deliver in two "
+             "directions on the same day."),
+            ("h", "When One Person Holds Too Much"),
+            "Look down the chart for a person whose row is full while everyone else’s is light. In the notices "
+            "project, the clerk appears in more packages than anyone else. If the clerk is absent for a week, "
+            "several packages stop at once, some of them on the critical path.",
+            ("point", "Share the knowledge", "Have a second person shadow the clerk on filling the notices, "
+             "so the work can continue during leave."),
+            ("point", "Write it down", "A short guide for each of the clerk’s packages makes a handover "
+             "possible."),
+            ("point", "Record it as a risk", "Name the risk, its owner and the response, so it is managed "
+             "rather than hoped away."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Planning people at full time", "Leave room for regular duties."),
+            ("point", "Checking dates but not names", "A schedule can fit while one person is double-booked."),
+            ("point", "Using float without noticing", "Note how much float each fix uses up."),
+            ("point", "Ignoring people outside the team", "Signatures, reviews and shared equipment take time "
+             "too."),
+            ("h", "Key Takeaways"),
+            ("point", "Real availability", "A resource calendar shows when people can actually work on the "
+             "project."),
+            ("point", "Find overloads early", "A person-by-day grid shows double bookings."),
+            ("point", "Fix with float first", "Smoothing keeps the finish date; leveling may move it."),
+            ("point", "Watch single points", "Spread knowledge so one absence does not stop the project."),
+            ("h", "Your Part 18 Exercise"),
+            "Take the schedule from your Part 16 exercise.",
+            ("point", "Add names", "Write who does each package, and on which days."),
+            ("point", "Draw the grid", "One row per person, one column per day or week, and a mark for each "
+             "assignment."),
+            ("point", "Fix one overload", "Use float first, and note how much float the fix uses."),
+            "Then look for the person whose row is fullest, and ask what would happen to the project if they "
+            "were away for a week.",
+            ("cta", "Read: Project Management Series, Part 16", "/blog/project-management-part-16-critical-path/"),
+            ("cta", "Read: Project Management Series, Part 17", "/blog/project-management-part-17-project-budget/"),
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 15", "/blog/project-management-part-15-estimating-time/"),
+            ("ask", "Who in your office is assigned to more work than their calendar can hold?"),
+        ],
+    },
+    {
         "date": "February 1, 2027",
         "title": "Project Management Series, Part 17: The Project Budget, Built Package by Package",
         "slug": "project-management-part-17-project-budget",

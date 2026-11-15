@@ -12,6 +12,140 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "February 5, 2027",
+        "title": "Data Analytics Series, Part 18: Taming Text and Dates, Names, Pesos and Day-Month Puzzles",
+        "slug": "data-analytics-part-18-text-and-dates",
+        "category": "data",
+        "summary": "An export from an older system can arrive with names in capitals, amounts with peso signs, "
+                   "receipt numbers that lose their zeros and dates the spreadsheet cannot read. This part "
+                   "shows the text and date formulas that fix each one, with a few traps to avoid.",
+        "publish_on": "2027-02-05 21:00",
+        "body": [
+            "The analyst receives an export of last year’s business permit payments from an older system. "
+            "Names are in capitals with the family name first: “DELA CRUZ, JUAN P.” Amounts look like "
+            "“₱1,250.00.” Receipt numbers such as 004512 have turned into 4512. The payment dates read "
+            "“15/01/2026,” and the spreadsheet will not sort them as dates.",
+            "Every value is there. None of it is ready to use.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 16 found the usual kinds of dirty data. This part fixes two stubborn kinds: "
+            "text and dates. By the end of this post you will know how to keep codes from losing their "
+            "zeros, how to change and split text safely, how to turn peso text into numbers, how to build "
+            "dates from text the spreadsheet cannot read, and how to show dates without breaking them.",
+            ("photo", "blog/data-text-dates.jpg", "Taming text and dates: codes kept as text, names split, pesos "
+             "turned into numbers and dates built from their parts. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Codes Are Text, Even When They Look Like Numbers"),
+            "A receipt number, a taxpayer ID or a barangay code is a label, not a quantity. Nobody adds two "
+            "receipt numbers together. But when a spreadsheet sees 004512, it may treat it as the number 4512 "
+            "and drop the zeros.",
+            ("point", "Before pasting", "Format the column as plain text first. In Google Sheets this is under "
+             "Format, then Number, then Plain text. Values pasted into it keep their zeros."),
+            ("point", "If the zeros are already gone", "=TEXT(A2, \"000000\") turns 4512 back into the text "
+             "004512, as long as you know every number should have six digits."),
+            ("point", "Why it matters", "As Part 14 explained, keys link tables. If one table has 004512 "
+             "and another has 4512, the link fails without any warning."),
+            ("quote", "If you would never add it up, store it as text."),
+            ("h", "Capitals and Small Letters"),
+            ("point", "UPPER", "=UPPER(A2) turns “Dela Cruz” into “DELA CRUZ.”"),
+            ("point", "LOWER", "=LOWER(A2) turns everything into small letters."),
+            ("point", "PROPER", "=PROPER(A2) capitalizes the first letter of each word: “DELA CRUZ, JUAN P.” "
+             "becomes “Dela Cruz, Juan P.”"),
+            "PROPER is handy for display, but it cannot know how a person writes their own name. One family "
+            "may write “dela Cruz” and another “Dela Cruz,” and a name such as “McArthur” comes out as "
+            "“Mcarthur.” For letters and notices, check names against the source record.",
+            "For matching, the safer habit is to compare in one case. =UPPER(A2)=UPPER(B2) treats “Dela Cruz” "
+            "and “DELA CRUZ” as the same, without changing either one.",
+            ("h", "Splitting and Joining Text"),
+            "A name written as “DELA CRUZ, JUAN P.” holds two fields in one cell. Splitting it makes each part "
+            "usable on its own.",
+            ("point", "SPLIT in Google Sheets", "=SPLIT(A2, \",\") divides the text at the comma, giving "
+             "“DELA CRUZ” and “ JUAN P.” in two cells. Wrap each result in TRIM to remove the leftover space."),
+            ("point", "A trap to know", "Google’s help explains that SPLIT, by default, splits at each "
+             "character in the delimiter. =SPLIT(A2, \", \") would split at every comma and every space, "
+             "breaking “DELA CRUZ” in two. Use a single character, or set the third argument to FALSE."),
+            ("point", "Taking part of a code", "For a code such as SI-2026-00451, =LEFT(A2, 2) gives “SI,” "
+             "=MID(A2, 4, 4) gives “2026,” and =RIGHT(A2, 5) gives “00451.”"),
+            ("point", "Joining", "=B2 & \" \" & C2 joins two cells with a space between them."),
+            "Keep the original column. Splitting is done in new columns, so the source stays as it arrived, "
+            "as Part 15 advised.",
+            ("h", "Pesos Stored as Text"),
+            "“₱1,250.00” contains a peso sign and a comma, so it is text, and SUM leaves it out. Remove the "
+            "extra characters, then convert.",
+            ("point", "The formula", "=VALUE(SUBSTITUTE(SUBSTITUTE(A2, \"₱\", \"\"), \",\", \"\")). The inner "
+             "SUBSTITUTE removes the peso sign, the outer one removes the commas, and VALUE turns what is "
+             "left into a number."),
+            ("point", "Other labels", "If some amounts say “PHP 1,250.00,” add one more SUBSTITUTE for "
+             "“PHP” and wrap the result in TRIM."),
+            ("point", "Check it", "Compare the count of numbers before and after with =COUNT. Every amount "
+             "row should now be counted."),
+            "Once the values are numbers, format the column as currency if you want the peso sign shown. "
+            "The sign then becomes part of the display, not part of the value.",
+            ("h", "How Spreadsheets Store Dates"),
+            "Behind every real date, a spreadsheet stores a number that counts days. Google’s help for "
+            "DATEVALUE notes that it returns integers that can be used in formulas. That is why real dates "
+            "can be sorted, subtracted and grouped by month, and text that only looks like a date cannot.",
+            ("point", "Locale decides the default", "Google’s help explains that a spreadsheet’s locale sets "
+             "its default date, number and currency formats. It is under File, then Settings."),
+            ("point", "Why exports break", "If an export writes the day first, such as 15/01/2026, and the "
+             "spreadsheet’s locale expects the month first, there is no month 15, so the value stays text. "
+             "Worse, 03/04/2026 is accepted, but possibly as the wrong date."),
+            ("h", "Building Dates From Their Parts"),
+            "The safest fix does not ask the spreadsheet to guess. It takes the day, month and year out of "
+            "the text and builds the date with DATE(year, month, day).",
+            ("point", "Day first, such as 15/01/2026", "=DATE(VALUE(RIGHT(A2, 4)), VALUE(MID(A2, 4, 2)), "
+             "VALUE(LEFT(A2, 2))). This works when every value has two-digit days and months."),
+            ("point", "Year first, such as 2026-01-15", "=DATE(VALUE(LEFT(A2, 4)), VALUE(MID(A2, 6, 2)), "
+             "VALUE(RIGHT(A2, 2)))."),
+            ("point", "With a time attached, such as 2026-01-15 09:42", "Take the first ten characters with "
+             "LEFT(A2, 10), then use the year-first formula on that."),
+            ("point", "Check the result", "=ISNUMBER(B2) should be TRUE for every row, and sorting the new "
+             "column should give a sensible first and last date."),
+            "Before converting, look at a handful of rows by eye. If one export mixes day-first and "
+            "month-first dates, no formula can tell 03/04 apart, and those rows go back to the source.",
+            ("h", "Showing Dates Without Breaking Them"),
+            ("point", "Format, do not convert", "To show a date as 2026-01-15 or January 15, 2026, change the "
+             "cell’s number format. The value stays a date."),
+            ("point", "TEXT for labels", "=TEXT(B2, \"yyyy-mm-dd\") gives the year-month-day text used in file "
+             "names in Part 15. =TEXT(B2, \"mmmm\") gives the month name for a chart label."),
+            ("point", "Do not calculate on TEXT", "The result of TEXT is text again. Keep the real date column "
+             "for sorting and arithmetic."),
+            ("h", "The Permit Payments, Cleaned"),
+            "The analyst pasted the export into a column formatted as plain text, so the receipt numbers kept "
+            "their zeros. Names were split at the comma and trimmed, and kept in capitals for matching, with "
+            "a separate display column for notices. Amounts went through the SUBSTITUTE and VALUE formula, "
+            "and =COUNT confirmed every row. Dates were built with DATE from their parts.",
+            "The yearly report took one afternoon instead of two days, and the cleaning steps went into "
+            "the change log, ready for the next export.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Letting codes become numbers", "Format code columns as plain text before pasting."),
+            ("point", "Trusting PROPER with names", "Use it for display, and check against the source."),
+            ("point", "Splitting at two characters", "In Google Sheets, SPLIT splits at each character unless "
+             "told otherwise."),
+            ("point", "Letting the spreadsheet guess dates", "Build dates from their parts when the order is "
+             "not certain."),
+            ("h", "Key Takeaways"),
+            ("point", "Codes are text", "Keep IDs and receipt numbers as text so zeros and links survive."),
+            ("point", "Clean text in new columns", "UPPER, PROPER, SPLIT, TRIM and SUBSTITUTE, with the "
+             "original kept."),
+            ("point", "Pesos to numbers", "Remove the sign and commas, then use VALUE."),
+            ("point", "Dates from parts", "DATE(year, month, day) removes the guesswork."),
+            ("h", "Your Part 18 Exercise"),
+            "Take one export your office receives from another system.",
+            ("point", "Find the codes", "List the columns that should be text, and check whether any lost "
+             "their zeros."),
+            ("point", "Fix one text column", "Split, trim or convert it in a new column."),
+            ("point", "Fix one date column", "Build real dates with DATE and confirm with ISNUMBER."),
+            "Then write the steps down in order. Next time the export arrives, the cleaning becomes a "
+            "routine instead of a puzzle.",
+            ("cta", "Read: Data Analytics Series, Part 16", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 10", "/blog/data-analytics-part-10-data-types-and-table-shapes/"),
+            ("cta", "Read: Data Analytics Series, Part 15", "/blog/data-analytics-part-15-naming-versions-backups/"),
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("ask", "Which export in your office arrives with dates or amounts the spreadsheet cannot read?"),
+        ],
+    },
+    {
         "date": "January 31, 2027",
         "title": "Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000",
         "slug": "data-analytics-part-17-samples-margin-of-error",
