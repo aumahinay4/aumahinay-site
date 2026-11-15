@@ -12,6 +12,138 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 16, 2027",
+        "title": "Data Analytics Series, Part 14: Databases 101, Tables, Primary Keys and Foreign Keys",
+        "slug": "data-analytics-part-14-databases-101",
+        "category": "data",
+        "summary": "A spreadsheet that repeats the same taxpayer’s name on every receipt is one typo away from "
+                   "counting one person as two. This part explains, in plain words, how a database splits "
+                   "data into linked tables using primary keys and foreign keys, with a three-table treasury "
+                   "example you can sketch on paper.",
+        "publish_on": "2027-01-16 21:00",
+        "body": [
+            "The collections sheet has a row for every receipt, and each row repeats the taxpayer’s full name "
+            "and address. Over the year, one taxpayer appears as “Dela Cruz, Juan,” “Juan dela Cruz” and "
+            "“Dela Cruz, Juan P.” A count of taxpayers who paid comes out higher than it should, because one "
+            "person has become three.",
+            "Then the taxpayer moves to a new address. The clerk updates it on the latest receipt row, but the "
+            "older rows keep the old address. Now the sheet holds two addresses for the same person, and "
+            "nobody can tell which one is current.",
+            "Both problems have the same cause: the same fact is typed in many places. Databases are designed "
+            "to avoid exactly that.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 12 showed how to lay out one clean table. This part shows how several tables work together. "
+            "By the end of this post you will know what a database table, a record and a field are, what "
+            "primary and foreign keys do, how tables are linked, and how to sketch a small treasury database "
+            "before anyone builds it.",
+            ("photo", "blog/data-database-keys.jpg", "Three linked tables: taxpayers, receipts and "
+             "collectors. Each receipt points to one taxpayer and one collector by their keys. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Words You Need"),
+            ("point", "Database", "An organized collection of data. In the kind of database "
+             "this post describes, the data is kept in tables that can be linked to each other."),
+            ("point", "Table", "A set of rows and columns about one kind of thing: taxpayers, receipts or "
+             "collectors. It follows the same rules as the clean sheet from Part 12."),
+            ("point", "Record", "One row in a table: one taxpayer, one receipt."),
+            ("point", "Field", "One column in a table: a name, a date, an amount."),
+            "If you have kept a clean spreadsheet with one row per record, you already know most of this. What "
+            "a database adds is the idea of keys.",
+            ("h", "Primary Key: One Value, One Record"),
+            "A primary key is a field whose value identifies exactly one record in its table. No two records "
+            "may share it, and it may not be left blank.",
+            ("point", "Taxpayers table", "A taxpayer ID such as T-00125. Names are a poor key because two "
+             "people can share a name, and the same person can be written in different ways."),
+            ("point", "Receipts table", "The official receipt number together with its series, since numbers "
+             "are unique only within a series."),
+            ("point", "Collectors table", "A collector ID such as C-04."),
+            "A good primary key does not change. A name or an address can change; an ID assigned once and "
+            "never reused is a safer key.",
+            ("quote", "Give every record one value that belongs to it alone."),
+            ("h", "Foreign Key: Pointing to Another Table"),
+            "A foreign key is a field in one table that holds the primary key of a record in another table. "
+            "It is how tables point to each other.",
+            "In the receipts table, instead of typing the taxpayer’s name and address on every receipt, you "
+            "type only the taxpayer ID. That ID is a foreign key: it points to one row in the taxpayers table, "
+            "where the name and address are kept once.",
+            ("point", "Receipt 004512", "Taxpayer ID T-00125, collector ID C-04, date, amount."),
+            ("point", "Taxpayer T-00125", "Name, address, contact details, typed once."),
+            ("point", "Collector C-04", "Name and assigned barangays, typed once."),
+            "When the taxpayer moves, the address is changed in one row of the taxpayers table, and every "
+            "receipt that points to T-00125 now leads to the new address.",
+            ("h", "How Tables Relate"),
+            ("point", "One-to-many", "One taxpayer can have many receipts, but each receipt belongs to one "
+             "taxpayer. Receipts and taxpayers are linked this way."),
+            ("point", "One-to-one", "One record matches exactly one record in another table, for "
+             "example when sensitive details are kept in a separate table with tighter access."),
+            ("point", "Many-to-many", "One taxpayer can own several properties, and one property can have "
+             "several owners. This needs a third table in between, such as an ownership table with one row "
+             "for each taxpayer–property pair."),
+            ("h", "Why Split the Data at All?"),
+            ("point", "Each fact once", "A name or address typed once cannot disagree with itself."),
+            ("point", "Easier counting", "Counting taxpayers who paid means counting distinct taxpayer IDs, "
+             "not guessing which spellings are the same person."),
+            ("point", "Rules the database can enforce", "A database can refuse a receipt whose taxpayer ID "
+             "does not exist in the taxpayers table, or a second record with the same primary key."),
+            ("point", "Tighter access", "Personal details can sit in one table that fewer people can open, "
+             "while the receipts can be analyzed by ID. This supports the Data Privacy Act duties discussed "
+             "in Part 6."),
+            ("h", "Sketching a Treasury Database on Paper"),
+            "Before anyone installs anything, draw it. A sheet of paper is enough.",
+            ("point", "1. List the things", "Write one box for each kind of thing you record: taxpayers, "
+             "receipts, collectors."),
+            ("point", "2. Choose the keys", "Under each box, write its primary key first."),
+            ("point", "3. List the fields", "Add the fields that belong to that thing and to nothing else. The "
+             "taxpayer’s address belongs in Taxpayers, not in Receipts."),
+            ("point", "4. Draw the links", "Draw a line from each foreign key to the table it points to, and "
+             "mark which side is the “many.”"),
+            ("point", "5. Test with a question", "Pick a real question, such as “How much did each collector "
+             "receive from taxpayers in San Isidro last month?” Trace on paper how the tables would answer "
+             "it. If you cannot, a field or a link is missing."),
+            ("h", "Does This Field Belong Here?"),
+            "When you are unsure where a field goes, ask what it describes.",
+            ("point", "It describes the taxpayer", "Name, address, contact number. It goes in Taxpayers, "
+             "even if you first saw it on a receipt."),
+            ("point", "It describes the payment", "Date, amount, revenue source, receipt number. It goes in "
+             "Receipts."),
+            ("point", "It describes the collector", "Name, assigned barangays. It goes in Collectors."),
+            ("point", "It describes a pair", "The share of a property owned by one taxpayer describes the "
+             "taxpayer and the property together, so it goes in the ownership table between them."),
+            ("h", "Spreadsheet or Database?"),
+            "A spreadsheet can be enough for one person working with one table. A database starts to make "
+            "sense when several tables need to be linked, several people enter data at the same time, or "
+            "rules such as unique receipt numbers must be enforced every time.",
+            "A free way to learn is SQLite, a database engine that stores a whole database in a single "
+            "ordinary file, with no server to set up.",
+
+            ("h", "Mistakes to Avoid"),
+            ("point", "Names as keys", "Use an ID that never changes and never repeats."),
+            ("point", "Copying fields across tables", "If the taxpayer’s address appears in the receipts "
+             "table, it can drift out of date. Keep it in one place."),
+            ("point", "Reusing old IDs", "An ID given to a closed account should not be given to a new one."),
+            ("point", "Building before sketching", "Draw the tables and test them with a question first."),
+            ("h", "Key Takeaways"),
+            ("point", "Tables, records, fields", "Rows and columns about one kind of thing."),
+            ("point", "Primary key", "One value, one record, never blank, never repeated."),
+            ("point", "Foreign key", "A pointer to a record in another table."),
+            ("point", "Each fact once", "Splitting data into linked tables keeps it consistent."),
+            ("h", "Your Part 14 Exercise"),
+            "Take one spreadsheet your office uses that repeats the same names or addresses on many rows.",
+            ("point", "Find the things", "List each kind of thing it records, such as taxpayers, receipts or "
+             "permits."),
+            ("point", "Choose the keys", "Write a primary key for each, and mark where a foreign key would "
+             "replace a repeated name."),
+            ("point", "Draw it", "Sketch the boxes and lines on paper, and test them with one real question."),
+            "Count how many columns would disappear from the main sheet once each repeated fact lives in its "
+            "own table. That number shows how much room there was for errors.",
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 13", "/blog/data-analytics-part-13-bias-in-data/"),
+            ("cta", "Read: Data Analytics Series, Part 6", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("cta", "Read: Business Intelligence Series, Part 5", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("ask", "Which name or address does your office type again and again that belongs in its own table?"),
+        ],
+    },
+    {
         "date": "January 11, 2027",
         "title": "Data Analytics Series, Part 13: Bias in Data, and How to Catch It",
         "slug": "data-analytics-part-13-bias-in-data",

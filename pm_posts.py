@@ -14,6 +14,141 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "January 17, 2027",
+        "title": "Project Management Series, Part 14: The Work Breakdown Structure, One Bite at a Time",
+        "slug": "project-management-part-14-work-breakdown-structure",
+        "category": "pm",
+        "summary": "A project that feels too big to plan becomes manageable once it is broken into pieces. "
+                   "This part explains the work breakdown structure, the 100% rule, work packages and the WBS "
+                   "dictionary, and breaks down a treasury project from a single goal to tasks people can own.",
+        "publish_on": "2027-01-17 21:00",
+        "body": [
+            "The encoding project is done, and the head of office approves the next one: sending notices to "
+            "taxpayers with unpaid real property tax from past years. The revenue clerk is asked for a plan "
+            "and a timeline by Friday.",
+            "The clerk opens a blank page and writes “Send delinquency notices.” Then nothing. The goal is "
+            "clear, but it is one big lump. How long will it take? Who does what? What does it cost? None of "
+            "those can be answered while the work is still a single line.",
+            "The way forward is to break the lump into pieces small enough to answer those questions. That is "
+            "what a work breakdown structure does.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Part 13 closed the first stage of this series with a pre-launch checklist. This part starts the "
+            "planning stage. By the end of this post you will know what a work breakdown structure is, the "
+            "rule that keeps it complete, how far to break the work down, and how to write a WBS dictionary "
+            "that makes each piece clear.",
+            ("photo", "blog/pm-wbs.jpg", "A work breakdown structure: the project at the top, the main "
+             "deliverables below it, and work packages at the bottom. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Work Breakdown Structure Is"),
+            "PMI describes a work breakdown structure, or WBS, as a deliverable-oriented, hierarchical "
+            "breakdown of the total scope of a project into smaller, manageable components. In plain words: "
+            "start with the whole project, split it into the main things it must produce, and keep splitting "
+            "until each piece is small enough to plan.",
+            "It can be drawn as a tree, like an organization chart, or written as a numbered outline. "
+            "Both show the same thing: what the project will deliver, piece by piece.",
+            ("quote", "You cannot schedule a lump. You can schedule its pieces."),
+            ("h", "Deliverables, Not Activities"),
+            "The upper levels of a WBS name things the project produces, not actions. “Notices” is a "
+            "deliverable. “Printing” is an activity that helps produce it.",
+            "Naming deliverables first keeps attention on results. A list of activities can look busy and "
+            "still leave out something the project must hand over. A list of deliverables makes the gaps "
+            "easier to see.",
+            ("h", "The 100% Rule"),
+            "PMI’s guidance includes a simple test: the WBS includes 100% of the work in scope, and the "
+            "pieces under any element add up to exactly that element.",
+            ("point", "Nothing missing", "If a piece of work is in the scope from Part 4, it must appear "
+             "somewhere in the WBS."),
+            ("point", "Nothing extra", "If something is in the WBS but not in the scope, it is either a "
+             "scope change for the sponsor to approve or it comes out."),
+            ("point", "Nothing counted twice", "Each piece of work sits in one place. If two branches both "
+             "include “print the notices,” one of them is wrong."),
+            ("h", "Work Packages: Where to Stop"),
+            "The lowest level of a WBS is the work package. PMI describes it as a piece with a single point of "
+            "responsibility that can be estimated, managed and measured.",
+            ("point", "One owner", "One person is answerable for it, as in the RACI matrix from Part 8."),
+            ("point", "Can be estimated", "You can say roughly how long it will take and what it will cost."),
+            ("point", "Can be checked", "Anyone can tell whether it is done."),
+            "If a piece fails any of these, break it down further. If breaking it further would only add "
+            "paperwork without making the plan clearer, stop. PMI’s advice puts it simply: stop when each "
+            "package is small enough to estimate and track, but before the detail costs more to manage than "
+            "it is worth.",
+            ("h", "The Notices Project, Broken Down"),
+            ("point", "1. Account list", "1.1 List of accounts with unpaid past-year tax, taken from the "
+             "ledger. 1.2 List checked against the assessor’s records. 1.3 Final list approved by the head of "
+             "office."),
+            ("point", "2. Notices", "2.1 Notice template, reviewed by the office’s legal adviser. 2.2 "
+             "Notices filled in from the final list. 2.3 Notices printed and signed."),
+            ("point", "3. Delivery", "3.1 Delivery routes by barangay. 3.2 Notices delivered, with "
+             "proof of receipt. 3.3 List of notices that could not be delivered, with the reason."),
+            ("point", "4. Counter readiness", "4.1 Cashier and counter staff briefed on the notices. 4.2 A "
+             "short guide for answering taxpayers’ questions."),
+            ("point", "5. Project management", "5.1 Plan and schedule. 5.2 Weekly updates. 5.3 Closing report."),
+            "Notice that project management has its own branch. Planning, updates and the closing report take "
+            "real time. Leaving them out of the WBS leaves them out of the schedule.",
+            ("h", "The WBS Dictionary"),
+            "A short label such as “2.1 Notice template” can mean different things to different people. A WBS "
+            "dictionary is a companion document that describes each element. PMI lists what it covers: the "
+            "element’s scope, milestones, responsible party, resources and acceptance criteria.",
+            ("point", "Scope", "One notice template for unpaid real property tax, in English and Filipino, on "
+             "one page."),
+            ("point", "Owner", "The revenue clerk."),
+            ("point", "Resources", "Two days of the clerk’s time and one review session with the legal "
+             "adviser."),
+            ("point", "Milestone", "Approved by February 5."),
+            ("point", "Acceptance", "Approved in writing by the head of office after the legal adviser’s "
+             "review."),
+            "Write entries only for the work packages that need them. A one-line package everyone understands "
+            "does not need a page of explanation.",
+            ("h", "How the WBS Feeds the Rest of the Plan"),
+            ("point", "Schedule", "Each work package gets a start, a finish and an order. Packages that "
+             "depend on each other are lined up."),
+            ("point", "Budget", "Each package gets a cost. Added up, they give the project budget."),
+            ("point", "Responsibility", "Each package gets one owner, which feeds the RACI matrix."),
+            ("point", "Tracking", "Each package becomes a line in the tracker from Part 12."),
+            ("h", "When the WBS Changes"),
+            "A WBS is written at the start, but it is not frozen. If the sponsor approves a change to the "
+            "scope, the WBS changes with it, and so do the schedule and the budget that come from it.",
+            ("point", "Add, then renumber carefully", "Add the new package under the right deliverable. Keep "
+             "existing numbers where possible, so earlier reports still make sense."),
+            ("point", "Record why", "Note the date and the approved change beside the new package."),
+            ("point", "Check the 100% rule again", "Make sure the new work is not already covered elsewhere."),
+            ("h", "Building One With the Team"),
+            ("point", "Start from the scope", "Write the project name at the top and the main deliverables "
+             "below it, taken from the scope statement."),
+            ("point", "Use sticky notes", "Give the team notes and a wall. Each person writes the pieces "
+             "they know. Group them under the deliverables."),
+            ("point", "Check the 100% rule", "Read each branch aloud and ask: is anything missing, extra or "
+             "counted twice?"),
+            ("point", "Number it", "Number every element, such as 2.1 and 2.2, so it can be referred to "
+             "without confusion."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "A to-do list in disguise", "Start with deliverables, then the work under them."),
+            ("point", "Forgetting project management", "Plans, updates and reports are work too."),
+            ("point", "Going too deep", "Packages of an hour each can create tracking work without adding clarity."),
+            ("point", "Building it alone", "The people doing the work know the pieces the planner forgets."),
+            ("h", "Key Takeaways"),
+            ("point", "Break the lump", "A WBS splits the whole scope into manageable pieces."),
+            ("point", "The 100% rule", "Nothing missing, nothing extra, nothing counted twice."),
+            ("point", "Work packages", "One owner, can be estimated, can be checked."),
+            ("point", "A dictionary for clarity", "Scope, owner, resources, milestone and acceptance for each "
+             "package that needs it."),
+            ("h", "Your Part 14 Exercise"),
+            "Take a project you are about to plan, or one that feels too big to start.",
+            ("point", "Write the deliverables", "List three to six main things the project must produce."),
+            ("point", "Break them down", "Split each into work packages that pass the one-owner, estimate and "
+             "check tests."),
+            ("point", "Test it", "Apply the 100% rule against your scope statement."),
+            "Then write a dictionary entry for the work package you are least sure about. Writing it can "
+            "show what still needs to be decided.",
+            ("cta", "Read: Project Management Series, Part 13", "/blog/project-management-part-13-pre-launch-checklist/"),
+            ("cta", "Read: Project Management Series, Part 4", "/blog/project-management-part-4-defining-scope/"),
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 12", "/blog/project-management-part-12-choosing-pm-software/"),
+            ("ask", "Which part of your current project is still one big lump that nobody has broken down?"),
+        ],
+    },
+    {
         "date": "January 12, 2027",
         "title": "Project Management Series, Part 13: The Pre-Launch Checklist, a Review of Parts 1 to 12",
         "slug": "project-management-part-13-pre-launch-checklist",
