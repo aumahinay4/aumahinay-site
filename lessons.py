@@ -726,8 +726,8 @@ LESSONS = [
             "When you change a script, how do you know you did not break something that used to work? "
             "Checking by hand every time is slow and easy to skip. A test is a small function that runs your "
             "code with an input whose answer you already know, and complains if the answer is different. "
-            "Once written, hundreds of tests run in a second, every time you change the code. pytest is "
-            "the most widely used tool for this in Python.",
+            "Once written, the tests can run again with one command every time you change the code. "
+            "pytest is a free Python tool for writing and running such tests.",
             ("tip", "Install pytest once with: py -m pip install pytest (Windows) or python3 -m pip install "
                     "pytest (Mac)."),
             ("h", "The code to test"),
@@ -798,7 +798,7 @@ LESSONS = [
             "Check every page from a script with Flask's test client",
         ],
         "body": [
-            "So far every script has printed its results in Command Prompt. A web app shows them in a "
+            "So far the scripts have shown their results in Command Prompt or Terminal. A web app shows them in a "
             "browser instead, so a cashier or a supervisor can look at the day's totals without running "
             "anything. Flask is a small Python library for making web apps; this website and ALTOS are "
             "written in Python too. In this lesson the whole app is one file.",
