@@ -13,6 +13,146 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "February 14, 2027",
+        "title": "Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data",
+        "slug": "business-intelligence-part-20-first-data-studio-dashboard",
+        "category": "bi",
+        "summary": "A step-by-step build of a small collections dashboard in Google’s free Data Studio, "
+                   "connected to a Google Sheets tab: preparing the data, connecting it, checking the fields, "
+                   "adding a scorecard, a trend line, a bar chart and a date control, and sharing it safely.",
+        "publish_on": "2027-02-14 21:00",
+        "body": [
+            "Every Monday, the analyst copies the week’s totals from the spreadsheet into a slide, saves it as "
+            "a file and sends it to the head of office. By Wednesday, someone asks for the same chart for a "
+            "different week, and the copying starts again.",
+            "The spreadsheet already updates itself, as Part 16 set up. What is missing is a view that updates "
+            "with it, that anyone allowed can open on a phone, and that lets them pick their own dates.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "This part builds that view in Data Studio, Google’s free web tool for reports and dashboards. It "
+            "was called Looker Studio until April 2026, the name used in Part 17. By the end of this post you "
+            "will know how to prepare a sheet for a dashboard, connect it, check its fields, add a scorecard, a "
+            "trend line, a bar chart and a date control, and share the result without sharing more than you "
+            "meant to.",
+            ("photo", "blog/bi-data-studio.jpg", "A first dashboard: prepare the sheet, connect it, add charts "
+             "and controls, then share. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 1: Prepare the Sheet"),
+            "A dashboard can only be as tidy as the table under it. Google’s Data Studio tutorial on Sheets "
+            "data sources gives a short list of rules, and they match the habits from earlier parts.",
+            ("point", "A simple table", "One value per cell, field names in the first row, no merged cells, "
+             "and no charts or pictures inside the data range."),
+            ("point", "Complete dates", "Each date with day, month and year, formatted as a date, not as text."),
+            ("point", "Long, not wide", "One row per day, barangay and collector, instead of one column per "
+             "barangay. This is the one-row-per-record layout from Part 12 of the Data Analytics series."),
+            ("point", "No totals rows", "Leave totals out. The tutorial advises this so Data Studio can "
+             "calculate totals itself. A totals row in the sheet would be added up along with the rows it "
+             "totals."),
+            "For this office, the analyst adds a Daily tab to the sharing file from Part 17, brought in with "
+            "IMPORTRANGE like the rest of that file. It has four columns, Date, Barangay, Collector and Amount, "
+            "with small barangays combined as before. It carries no taxpayer names, so the dashboard cannot "
+            "show any.",
+            ("quote", "Build the dashboard on the cleanest table you have, not the one that is easiest to find."),
+            ("h", "Step 2: Connect the Data"),
+            ("point", "Create a data source", "Sign in to Data Studio, click Create in the top left, and choose "
+             "Data source."),
+            ("point", "Choose Google Sheets", "Select the Google Sheets connector, then the spreadsheet and the "
+             "worksheet, here the Daily tab."),
+            ("point", "Check the options", "“Use first row as headers” takes the field names from row 1. "
+             "“Include hidden and filtered cells” is on by default, so rows hidden in the sheet are still "
+             "counted unless you turn it off. An optional range limits the source to certain cells."),
+            ("point", "Connect", "Click Connect in the upper right."),
+            "Google’s help notes that Data Studio checks the sheet for changed values and new rows each time a "
+            "report that uses it runs a query. When the Daily tab gains a new day, the dashboard can show it "
+            "without anyone copying anything.",
+            ("h", "Step 3: Check the Fields"),
+            "After connecting, Data Studio lists the fields it found. Each one is either a dimension, something "
+            "to group by, or a metric, something to add up or count.",
+            ("point", "Date", "Its type should be a date. If it shows as text, the sheet probably holds dates "
+             "typed as text. Fix the column in the sheet, as in Part 18 of the Data Analytics series, because "
+             "the date settings in Step 6 need complete dates."),
+            ("point", "Barangay and Collector", "Text dimensions, used to group the totals."),
+            ("point", "Amount", "A number metric, added up with Sum. Check that it is not set to Average or "
+             "Count by mistake."),
+            ("point", "Name the source", "Click the name in the upper left and give it a clear one, such as "
+             "“Collections Daily, sharing file.” Six months from now, someone will need to know where the "
+             "numbers come from."),
+            ("h", "Step 4: The Scorecard"),
+            "Click Create report, and Data Studio opens a report with a table of the fields. Remove it, then use "
+            "Add a chart in the toolbar to place the pieces one by one.",
+            ("point", "One number", "A scorecard shows a summary of a single metric. Add one with Amount as its "
+             "metric: total collections for the dates selected."),
+            ("point", "A comparison", "In the scorecard’s setup, a comparison date range can be added, such as "
+             "the previous period or the previous year. The scorecard then shows the change, as a percentage "
+             "by default or as an amount if you choose that option."),
+            ("point", "Fair by design", "A previous-year comparison sets this year’s dates against the same "
+             "period a year before, the like-with-like comparison from Part 19. Add a text box beside it that "
+             "says what is being compared, and check one figure against the sheet."),
+            ("h", "Step 5: The Trend and the Breakdown"),
+            ("point", "A time series", "Add a time series chart with Date as its dimension and Amount as its "
+             "metric. It shows how collections change over time, with dates along the horizontal axis."),
+            ("point", "Missing days", "The office does not collect on weekends, so those days have no rows. "
+             "Data Studio’s default for missing data draws the line down to zero, which can look like a "
+             "collapse every Saturday. The Missing data setting can show breaks in the line instead."),
+            ("point", "A bar chart", "Add a bar chart with Barangay as its dimension and Amount as its metric, "
+             "sorted from largest to smallest. A second bar chart by Collector, on the same page or a second "
+             "page, answers the next question."),
+            "Three charts are enough for a first page. Part 12 explained why a phone screen rewards fewer, "
+            "clearer pieces, and Part 13 explained how to let readers dig deeper without crowding the first view.",
+            ("h", "Step 6: Let Readers Choose"),
+            ("point", "A date range control", "Use Add a control in the toolbar and choose Date range control. "
+             "Readers can then pick any period, and the charts on the page follow it."),
+            ("point", "A drop-down list", "Add a drop-down list control with Barangay as its control field, so "
+             "a reader can show one barangay at a time."),
+            ("point", "Set the default", "In the Properties panel, the default date range can be left on Auto or "
+             "set to a custom range, fixed or rolling. Google’s help notes that the date range dimension must "
+             "hold complete dates, which Step 1 already made sure of."),
+            "Controls placed on a page apply to that page. Data Studio can also make a control report-level, "
+            "so it stays in place and keeps its setting across every page.",
+            ("h", "Step 7: Check It, Then Share It"),
+            ("point", "Check one number", "Pick one week and compare the scorecard with the same total worked out "
+             "in the sheet with SUMIFS, as in Part 19. If they differ, look first at hidden rows and the Amount "
+             "aggregation."),
+            ("point", "View it as a reader", "Switch to View mode. It shows the report as others will see it. "
+             "Open it on a phone too."),
+            ("point", "Share by name", "Click Share and add the people or Google Groups who need it. Choose "
+             "“Can view” for readers. Only the people who maintain the report need editing rights."),
+            ("point", "Mind the credentials", "As Part 17 explained, a report using the owner’s credentials "
+             "shows its data to every reader. That is why this one is built on the sharing file, which holds "
+             "only totals."),
+            ("h", "The Monday Slide, Retired"),
+            "The analyst sent the head of office one link. On Monday, the scorecard showed the week against the "
+            "same week last year, the trend line showed each working day with gaps for the weekends, and the "
+            "bars showed which barangays were behind. When the head of office wanted to see only Poblacion, a "
+            "tap on the drop-down did it. Nobody copied a chart into a slide that week, and the analyst spent "
+            "Monday morning on the question the bars raised instead.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Connecting to the working file", "Build on a table with only what readers may see."),
+            ("point", "Dates stored as text", "Fix them in the sheet, so the date settings work as expected."),
+            ("point", "Trusting the default aggregation", "Check that Amount is summed, not averaged or counted."),
+            ("point", "Sharing before checking", "Match one total with the sheet before anyone else sees it."),
+            ("h", "Key Takeaways"),
+            ("point", "Prepare first", "A simple, long table with complete dates and no totals rows."),
+            ("point", "Connect and check", "Google Sheets connector, then dimensions, metrics and their types."),
+            ("point", "Three pieces", "A scorecard with a fair comparison, a trend line and a breakdown."),
+            ("point", "Share with care", "View access by name, built on a table that holds only what readers "
+             "may see."),
+            ("h", "Your Part 20 Exercise"),
+            "Make a practice sheet with made-up data: four columns, Date, Barangay, Collector and Amount, and "
+            "about thirty rows.",
+            ("point", "Build the page", "Connect it to Data Studio and add a scorecard, a time series and a bar "
+             "chart."),
+            ("point", "Add a control", "Add a date range control and pick a different week."),
+            ("point", "Check it", "Compare one total in the dashboard with the same total in the sheet."),
+            "Then change one amount in the sheet and look at the dashboard again. Seeing the number change "
+            "without copying anything is the moment a report becomes a dashboard.",
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("cta", "Read: Business Intelligence Series, Part 17", "/blog/business-intelligence-part-17-who-sees-what/"),
+            ("cta", "Read: Business Intelligence Series, Part 19", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Business Intelligence Series, Part 12", "/blog/business-intelligence-part-12-fast-and-readable-on-a-phone/"),
+            ("ask", "Which report in your office is still copied into a slide by hand every week?"),
+        ],
+    },
+    {
         "date": "February 9, 2027",
         "title": "Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year",
         "slug": "business-intelligence-part-19-fair-comparisons",

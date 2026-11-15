@@ -12,6 +12,147 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "February 15, 2027",
+        "title": "Data Analytics Series, Part 20: Cleaning Data With SQL, Without Touching the Original",
+        "slug": "data-analytics-part-20-cleaning-with-sql",
+        "category": "data",
+        "summary": "Messy imports reach databases too. This part cleans a small table of receipts with SQL: "
+                   "finding the mess with DISTINCT and COUNT, fixing spaces and letter case, turning text "
+                   "amounts into numbers, filling blanks, removing duplicates, and saving the rules in a view "
+                   "so the original stays as it arrived.",
+        "publish_on": "2027-02-15 21:00",
+        "body": [
+            "The analyst imports a week of receipts from a satellite office into the database from Part 19 and "
+            "runs a quick total. It comes back as 3,354. The receipts on paper add up to 8,300.50.",
+            "No error message appeared. The query ran, the database answered, and the answer was wrong by more "
+            "than half. The amounts had arrived as text with commas in them, and the database had quietly read "
+            "“1,250.00” as 1.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 16 listed the usual kinds of dirty data, and Part 18 cleaned text and dates in a spreadsheet. "
+            "This part does the same work in SQL. By the end of this post you will know how to find the mess "
+            "with DISTINCT and COUNT, fix spaces and letter case, turn text into numbers, handle blanks and "
+            "empty values, find and remove duplicates, and keep your cleaning rules in a view that leaves the "
+            "original table untouched. Every query below was run in SQLite on the sample data, and the results "
+            "shown are what it returned.",
+            ("photo", "blog/data-sql-cleaning.jpg", "Cleaning with SQL: find the mess, fix text, fix numbers, "
+             "save the rules in a view. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Sample Table"),
+            "The import went into a table called raw_receipts, with five columns: receipt number, taxpayer ID, "
+            "barangay, amount and payment date. Every column was imported as text. It has eight rows, and they "
+            "hold the problems this post will fix.",
+            ("point", "Barangay names", "“Poblacion,” “ poblacion ” with spaces at both ends, and "
+             "“POBLACION” in capitals, plus “San Isidro” and “Sto. Niño.”"),
+            ("point", "Gaps", "One receipt with an empty barangay, and one with no value at all, which SQL "
+             "calls NULL."),
+            ("point", "Amounts as text", "Values such as “1,250.00” and “2,400.50,” with commas."),
+            ("point", "A duplicate", "Receipt 004606 appears twice, the same row imported two times."),
+            ("quote", "Clean the copy, keep the original, and write every rule down."),
+            ("h", "Step 1: Find the Mess Before Fixing It"),
+            ("point", "See the variants", "SELECT DISTINCT barangay FROM raw_receipts; returned seven values "
+             "for what are really three barangays and two kinds of gap: three spellings of Poblacion, San Isidro, Sto. Niño, an empty "
+             "value and NULL."),
+            ("point", "Count the gaps", "SELECT COUNT(barangay), COUNT(*) FROM raw_receipts; returned 6 and 8. "
+             "COUNT of a column skips NULL, while COUNT(*) counts every row. The empty value is not NULL, so it "
+             "was counted."),
+            ("point", "Count the duplicates", "SELECT COUNT(*), COUNT(DISTINCT receipt_no) FROM raw_receipts; "
+             "returned 8 and 7: eight rows, but only seven different receipt numbers."),
+            "These three queries change nothing. They tell you what to fix, and they give you numbers to check "
+            "against once the cleaning is done.",
+            ("h", "Step 2: Spaces and Letter Case"),
+            ("point", "The query", "SELECT DISTINCT UPPER(TRIM(barangay)) FROM raw_receipts;"),
+            ("point", "What it returned", "POBLACION, SAN ISIDRO, an empty value, NULL, and STO. NIñO. The three "
+             "spellings of Poblacion became one."),
+            ("point", "What TRIM does", "SQLite’s documentation says TRIM with one argument removes spaces from "
+             "both ends. It does not touch other characters, such as tabs. A second argument lists the "
+             "characters to remove instead."),
+            ("point", "Watch the ñ", "The ñ stayed small in “STO. NIñO.” SQLite’s documentation says its "
+             "built-in UPPER converts only lower-case ASCII letters, the basic English alphabet, so letters "
+             "such as ñ are left as they are. Grouping is not affected here, because Sto. Niño appears in only one form. A name typed once as “NIÑO” and once as “Niño” would stay two groups, so check names with "
+             "letters outside the basic alphabet by eye."),
+            "In a spreadsheet, the same fixes came from TRIM and UPPER in Part 18. The difference is where the "
+            "rule lives: in SQL, it is written once in a query and applied to every row the query reads.",
+            ("h", "Step 3: Turn Text Into Numbers"),
+            ("point", "The trap", "SELECT CAST(amount AS REAL) FROM raw_receipts; turned “1,250.00” into 1.0 "
+             "and “2,400.50” into 2.0. SQLite’s documentation explains why: when it converts text to a number, "
+             "it reads the longest part at the start that looks like a number and ignores the rest. Reading "
+             "stops at the comma."),
+            ("point", "The fix", "SELECT CAST(REPLACE(amount, ',', '') AS REAL) FROM raw_receipts; removes the "
+             "commas first. “1,250.00” became 1250.0 and “2,400.50” became 2400.5."),
+            ("point", "Check the type", "SELECT typeof(amount) returned text for the raw column, and "
+             "typeof( CAST( REPLACE(amount, ',', '') AS REAL ) ) returned real. The TYPEOF function shows what the "
+             "database is really holding."),
+            "This is the same lesson as the amounts stored as text in Part 16 of the Business Intelligence "
+            "series: a number that is really text can drop out of a total, or count as the wrong amount, "
+            "without any warning.",
+            ("h", "Step 4: Blanks and NULL"),
+            "An empty value and NULL are different things in a database. An empty text value is a value that "
+            "happens to have no characters. NULL means no value at all. A clean column should use one of them, "
+            "not both.",
+            ("point", "Empty to NULL", "NULLIF(TRIM(barangay), '') returns NULL when the trimmed value is empty, "
+             "and the value itself otherwise."),
+            ("point", "NULL to a label", "COALESCE(x, '(no barangay)') returns the first value that is not "
+             "NULL. Together, COALESCE( NULLIF( TRIM(barangay), '' ), '(no barangay)' ) gave both problem receipts, "
+             "004605 and 004606, the same clear label."),
+            ("point", "Label, do not guess", "Do not fill a missing barangay with the most common one. A label "
+             "keeps the gap visible, so someone can find the paper receipt and fix the source."),
+            ("h", "Step 5: Find and Remove Duplicates"),
+            ("point", "Find them", "SELECT receipt_no, COUNT(*) FROM raw_receipts GROUP BY receipt_no HAVING "
+             "COUNT(*) > 1; returned one row: 004606, appearing 2 times. HAVING filters groups after they are "
+             "counted, the way WHERE filters rows before."),
+            ("point", "Check before removing", "Look at both rows. Here they matched in every column, so one "
+             "was an import repeat. If two rows share a receipt number but differ in amount, that is a question "
+             "for the cashier, not something to delete."),
+            ("point", "Remove exact repeats", "SELECT DISTINCT over all the columns keeps one copy of rows that "
+             "match completely."),
+            ("h", "Step 6: Save the Rules in a View"),
+            "A view is a saved query with a name. It holds no data of its own. Each time it is used, it reads "
+            "the original table and applies the rules again.",
+            ("point", "The view", "CREATE VIEW clean_receipts AS SELECT DISTINCT receipt_no, taxpayer_id, "
+             "COALESCE( NULLIF( UPPER( TRIM(barangay) ), '' ), '(NO BARANGAY)' ) AS barangay, "
+             "CAST( REPLACE(amount, ',', '') AS REAL ) AS amount, paid_on FROM raw_receipts;"),
+            ("point", "Use it like a table", "SELECT barangay, COUNT(*) AS receipts, SUM(amount) AS total FROM "
+             "clean_receipts GROUP BY barangay ORDER BY total DESC; returned POBLACION with 3 receipts and "
+             "4,450.50, (NO BARANGAY) with 2 and 2,300, STO. NIñO with 1 and 900, and SAN ISIDRO with 1 and 650."),
+            ("point", "Check against Step 1", "SELECT COUNT(*), SUM(amount) FROM clean_receipts; returned 7 rows "
+             "and 8,300.50. Seven matches the distinct receipt count from Step 1, and the total matches the "
+             "paper receipts."),
+            "The raw table still holds every row exactly as it arrived. If a rule turns out to be wrong, you "
+            "change the view, and nothing is lost. This is the Raw and Clean tab idea from Part 16 of the "
+            "Business Intelligence series, written in SQL.",
+            ("h", "The Satellite Office Total, Corrected"),
+            "The analyst built the view, ran the totals, and wrote a short note beside the query: which rules "
+            "it applies, the counts before and after, and the two receipts with no barangay. The paper receipts "
+            "named the barangays, and the satellite office corrected them at the source. The next week’s import "
+            "had commas in the amounts again, and the view handled them without anyone noticing.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Summing text", "Check the type with TYPEOF before adding up a column."),
+            ("point", "Casting with commas", "Remove commas with REPLACE before CAST."),
+            ("point", "Deleting duplicates without looking", "Rows that differ need a person, not a query."),
+            ("point", "Cleaning the original", "Keep raw data as it arrived, and clean in a view."),
+            ("h", "Key Takeaways"),
+            ("point", "Find first", "DISTINCT and COUNT show the mess and give you numbers to check against."),
+            ("point", "Fix text", "TRIM and UPPER, knowing what each one leaves alone."),
+            ("point", "Fix numbers and gaps", "REPLACE then CAST, and NULLIF with COALESCE."),
+            ("point", "Save the rules", "A view keeps the cleaning repeatable and the original safe."),
+            ("h", "Your Part 20 Exercise"),
+            "In your SQLite practice file from Part 19, make a small table of eight rows with the same kinds of "
+            "mess: names with extra spaces and mixed capitals, amounts with commas, one blank and one repeated "
+            "row.",
+            ("point", "Find the mess", "Run DISTINCT and the two COUNT queries, and write down the numbers."),
+            ("point", "Write the view", "Apply TRIM, UPPER, REPLACE, CAST, NULLIF and COALESCE in one view."),
+            ("point", "Check the result", "Compare the row count and total from the view with what you expect "
+             "by hand."),
+            "Then add one new messy row to the raw table and query the view again. If the new row comes out "
+            "clean without any change to the view, your rules are working.",
+            ("cta", "Read: Data Analytics Series, Part 19", "/blog/data-analytics-part-19-first-steps-in-sql/"),
+            ("cta", "Read: Data Analytics Series, Part 16", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 18", "/blog/data-analytics-part-18-text-and-dates/"),
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("ask", "Which column in your office’s data arrives messy every single time?"),
+        ],
+    },
+    {
         "date": "February 10, 2027",
         "title": "Data Analytics Series, Part 19: First Steps in SQL, Asking a Database Questions",
         "slug": "data-analytics-part-19-first-steps-in-sql",
