@@ -62,7 +62,7 @@ PM_POSTS = [
             ("point", "Pull and check the list (A, B)", "The clerk, days 0 to 3; then a revenue staff member, "
              "days 3 to 7."),
             ("point", "Approve the list (D)", "The head of office, days 7 to 9."),
-            ("point", "Notice template (C)", "The clerk drafts, the legal adviser reviews, days 0 to 10."),
+            ("point", "Notice template (C)", "Days 0 to 10. The clerk drafts it on days 3 to 5, after pulling the list, and the legal adviser reviews it on days 5 to 10, within the week assumed in Part 15."),
             ("point", "Fill, print and sign (E, F)", "The clerk, days 10 to 18, with the head of office "
              "signing."),
             ("point", "Delivery routes (G)", "Collector Reyes, days 9 to 12."),
