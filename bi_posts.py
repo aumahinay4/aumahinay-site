@@ -13,6 +13,143 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "February 24, 2027",
+        "title": "Business Intelligence Series, Part 22: Calculated Fields, New Measures Without Touching the Sheet",
+        "slug": "business-intelligence-part-22-calculated-fields",
+        "category": "bi",
+        "summary": "Calculated fields let a dashboard create new measures from the data it already has. This "
+                   "part adds four to the collections dashboard in Data Studio: an area grouping, an average "
+                   "per receipt, a share of total and a size label, and explains why a "
+                   "formula may refuse to save.",
+        "publish_on": "2027-02-24 21:00",
+        "body": [
+            "A week after the dashboard from Part 20 went live, the head of office had three new questions. "
+            "How much does the town center bring in compared with the outer barangays? What is the average "
+            "amount per receipt? And what share of the week’s total did each collector bring in?",
+            "The analyst’s first thought was to add three new columns to the sheet. Then the analyst "
+            "remembered that the sheet feeds other reports, and every new column is one more thing to keep "
+            "in step. The answers could be worked out inside the dashboard instead.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "This part covers calculated fields in Data Studio. By the end of this post you will know what a "
+            "calculated field is, the difference between one saved in the data source and one made for a single "
+            "chart, how to group values with CASE, how to build a ratio that adds up correctly, how to show a "
+            "share of the total, and how to read the errors that stop a formula from saving.",
+            ("photo", "blog/bi-calculated-fields.jpg", "Calculated fields: group with CASE, build ratios from "
+             "sums, show shares of the total, and test each new field. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Calculated Field Is"),
+            "Google’s Data Studio documentation describes calculated fields as formulas that create new metrics "
+            "and dimensions from your data. The formula works on fields that already exist, and the result can "
+            "be used in charts like any other field.",
+            ("point", "A new dimension", "A new way to group rows, such as an area made from barangay names."),
+            ("point", "A new metric", "A new number, such as an amount divided by a count."),
+            "The sheet itself does not change. That keeps the source simple, and it keeps the definitions in "
+            "one place that the dashboard’s readers can trust.",
+            ("quote", "Keep the data plain and put the meaning in a field with a clear name."),
+            ("h", "Two Places to Create One"),
+            ("point", "In the data source", "The field is available in every report that uses that data "
+             "source. The documentation notes that this needs editing rights on the data source. Use it for "
+             "measures several reports share."),
+            ("point", "In one chart", "A chart-specific field exists only in the chart where it is made. Report "
+             "editors can create these, but the data source must allow field editing in reports. Use it for a "
+             "one-time question."),
+            "For a measure the head of office will ask about every week, the data source is the better home. "
+            "One definition, used everywhere, cannot drift into two versions.",
+            ("h", "Adding the Daily Tab’s Missing Column"),
+            "The Daily tab from Part 20 has Date, Barangay, Collector and Amount. For an average per receipt, "
+            "the analyst added one more column to it, Receipts, with the number of receipts behind each row. "
+            "This is a count from the Clean tab, not a calculation, so it belongs in the sheet.",
+            ("point", "Add the field", "Open the data source for editing, choose Add a field, give it a name, "
+             "write the formula and save. The Data Studio tutorial on calculated fields walks through these "
+             "steps."),
+            ("h", "Field 1: Group With CASE"),
+            ("point", "The formula", "Area: CASE WHEN Barangay IN (\"POBLACION\", \"SAN ISIDRO\") THEN \"Town "
+             "center\" ELSE \"Outer barangays\" END"),
+            ("point", "How it reads", "For each row, if the barangay is one of the two named, the area is Town "
+             "center. Otherwise it is Outer barangays. The documentation notes that CASE returns the result of "
+             "the first condition that is true."),
+            ("point", "Always add ELSE", "Without ELSE, a row that matches none of the conditions returns NULL. "
+             "A new barangay name would then fall out of both groups without anyone noticing."),
+            "Write the names exactly as they appear in the data. If the Clean tab writes POBLACION in capitals, "
+            "a formula that says Poblacion will not match it.",
+            ("h", "Field 2: A Ratio That Adds Up"),
+            "The average per receipt looks simple: amount divided by receipts. But there are two ways to "
+            "write it, and only one is right for totals.",
+            ("point", "Ratio of sums", "Average per receipt: SUM(Amount) / SUM(Receipts). For any group of rows, "
+             "it adds up the amounts, adds up the receipts, and divides once."),
+            ("point", "The trap", "Dividing on each row and then averaging those results gives a different "
+             "answer. A day with 2 receipts and a day with 200 receipts would count the same."),
+            ("point", "A worked check", "Day 1: ₱10,000 from 2 receipts, ₱5,000 each. Day 2: ₱200,000 from 200 "
+             "receipts, ₱1,000 each. The ratio of sums is ₱210,000 ÷ 202, about ₱1,040. The average of the two "
+             "daily figures is ₱3,000, nearly three times as much."),
+            "The documentation shows this pattern for ratios: put the aggregation, such as SUM, inside the "
+            "formula for each number, then divide. The field then works for a day, a week or a whole year.",
+            ("h", "Field 3: Share of the Total"),
+            "For each collector’s share of the week, no new formula is needed. Data Studio can apply a "
+            "comparison calculation to a metric in a chart.",
+            ("point", "How to set it", "Select the chart, open the metric’s edit option in the Setup tab, and "
+             "choose Percent of total under Comparison calculation."),
+            ("point", "What it divides by", "The documentation says it divides each row’s value by the column "
+             "total. If a reader filters the chart to one area, the total changes with it, unless the option to "
+             "ignore canvas filters in the total is turned on."),
+            ("point", "Say which total", "Add a short note: “Share of collections for the dates and barangays "
+             "selected.” A percentage without its base invites the wrong reading, as Part 19 explained."),
+            ("h", "Field 4: A Size Label in Words"),
+            ("point", "The formula", "Entry size: CASE WHEN Amount >= 20000 THEN \"Large\" WHEN Amount >= "
+             "5000 THEN \"Medium\" ELSE \"Small\" END"),
+            ("point", "What it labels", "Each row of the Daily tab: one day, one barangay, one collector. A "
+             "table filtered to Large shows the entries worth a second look."),
+            ("point", "Order matters", "CASE stops at the first true condition, so the largest threshold goes "
+             "first. Reversed, every amount of ₱5,000 or more would be labeled Medium."),
+            ("point", "Words, not only colors", "A label in words can be read without color, the habit from "
+             "Part 18."),
+            ("h", "When a Formula Will Not Save"),
+            "The formula editor shows a warning and will not save a field with an error. Two rules from the documentation are worth knowing first.",
+            ("point", "Dimensions or metrics, not both", "A formula can use dimensions or metrics, but not mix "
+             "them. SUM(Amount) / Barangay makes no sense, and the editor refuses it."),
+            ("point", "No second aggregation", "A field that is already aggregated cannot be aggregated again. "
+             "SUM of a field that is itself a SUM is refused."),
+            ("point", "Names must match", "Field names in a formula must match the data source exactly. The "
+             "editor shows a recognized field as a colored chip."),
+            ("h", "Test Every New Field"),
+            ("point", "Check one group by hand", "Pick one week and one collector. Work out the average per "
+             "receipt in the sheet with SUMIFS and compare."),
+            ("point", "Check the edges", "Filter to a barangay that is not in the CASE list and confirm it "
+             "lands in Outer barangays."),
+            ("point", "Write it down", "Add each field’s name, formula and meaning to the data dictionary from "
+             "Part 10."),
+            ("h", "The Three Questions, Answered"),
+            "By Friday, the dashboard had an Area filter, an Average per receipt scorecard and a collector "
+            "chart showing each share of the week. The sheet had gained one column, Receipts. The head of office "
+            "noticed that the outer barangays had fewer receipts but a higher average per receipt, and asked "
+            "why. The answer, larger annual payments made in one visit, became the next week’s briefing.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Averaging ratios", "Divide sums, not row-by-row results."),
+            ("point", "CASE without ELSE", "New values fall into NULL and disappear from both groups."),
+            ("point", "Wrong order in CASE", "Put the strictest condition first."),
+            ("point", "Undocumented fields", "Record every formula in the data dictionary."),
+            ("h", "Key Takeaways"),
+            ("point", "Where to make it", "Data source for shared measures; chart-specific for one-time "
+             "questions."),
+            ("point", "CASE for groups", "First true condition wins; always add ELSE."),
+            ("point", "Ratios", "SUM over SUM, so the field works at every level."),
+            ("point", "Test and record", "Check by hand, then add it to the dictionary."),
+            ("h", "Your Part 22 Exercise"),
+            "Use the practice dashboard from your Part 20 exercise, and add a Receipts column to its sheet.",
+            ("point", "Group", "Create an area field with CASE and an ELSE."),
+            ("point", "Divide", "Create an average per receipt as SUM over SUM."),
+            ("point", "Compare", "Check both against figures worked out in the sheet."),
+            "Then try the wrong ratio once, averaging daily figures, and see how far it is from the right "
+            "one. Seeing the gap makes the rule easy to remember.",
+            ("cta", "Read: Business Intelligence Series, Part 20", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("cta", "Read: Business Intelligence Series, Part 10", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Business Intelligence Series, Part 19", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Which number on your office’s reports is an average of averages?"),
+        ],
+    },
+    {
         "date": "February 19, 2027",
         "title": "Business Intelligence Series, Part 21: Putting It Together, a Treasury BI Setup in Four Weeks",
         "slug": "business-intelligence-part-21-putting-it-together",

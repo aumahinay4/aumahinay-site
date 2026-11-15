@@ -14,6 +14,132 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "February 26, 2027",
+        "title": "Project Management Series, Part 22: Procurement and Suppliers, Planning What You Must Buy",
+        "slug": "project-management-part-22-procurement-and-suppliers",
+        "category": "pm",
+        "summary": "In a government office, anything a project buys has to go through procurement, and "
+                   "procurement takes time. This part shows how to find what must be bought, put it in the plan "
+                   "early, write a clear specification, work with the procurement team, and manage a supplier "
+                   "until the goods are accepted.",
+        "publish_on": "2027-02-26 21:00",
+        "body": [
+            "The plan for next year’s round of notices looked ready. The critical path was clear, the buffer "
+            "was visible, and the budget was approved. Then the clerk asked a simple question at the weekly "
+            "check-in: “Who is buying the envelopes, and when?”",
+            "Nobody had an answer. The envelopes were in the budget from Part 17, ₱3,600 for 1,800 of them, but "
+            "they were not in any work package. And in a government office, money in the budget does not put "
+            "envelopes on a desk. A purchase has to go through procurement first.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Parts 14 to 21 planned the work, the time, the money and the risks. This part adds the things a "
+            "project must buy. By the end of this post you will know how to list what must be procured, why "
+            "procurement belongs in the schedule, how to write a specification a supplier cannot misread, how "
+            "to work with your procurement team, and how to manage a supplier from order to acceptance.",
+            ("photo", "blog/pm-procurement.jpg", "Procurement in a project: list what to buy, plan the lead "
+             "time, specify clearly and accept against the specification. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Rules Come First"),
+            "Government buying in the Philippines follows the procurement law. Today that is Republic Act No. 12009, the New Government Procurement Act, signed "
+            "in July 2024, which revised the earlier law, Republic Act No. 9184. A project manager does not need to master the law, but a few of its provisions shape every "
+            "project plan.",
+            ("point", "The annual plan", "Section 7 says no government procurement shall be undertaken unless "
+             "it is in accordance with the approved Annual Procurement Plan. An item that is not in the plan "
+             "cannot simply be bought when the project needs it."),
+            ("point", "The committee", "Section 41 requires each procuring entity to establish one or more "
+             "Bids and Awards Committees. In practice, this is the team to talk to early."),
+            ("point", "The modes", "Section 26 lists the modes of procurement, from competitive bidding to "
+             "small value procurement. Section 34 describes small value procurement as asking for at least "
+             "three price quotations, for amounts that do not exceed two million pesos."),
+            "Which mode applies, and which forms are needed, is decided by the procurement rules and the "
+            "office’s Bids and Awards Committee, not by the project. The project’s job is to ask early and "
+            "plan for the answer.",
+            ("quote", "In public work, buying is a task with its own duration, not an errand."),
+            ("h", "Step 1: List What Must Be Bought"),
+            "Go through the work breakdown structure from Part 14, package by package, and ask: what does this "
+            "package need that the office does not already have?",
+            ("point", "For the notices project", "Envelopes for delivery, and paper and toner for printing."),
+            ("point", "Check what is on hand", "Supplies already in the office’s stock may be enough. Ask the "
+             "supply officer before treating an item as a purchase."),
+            ("point", "Check the plan", "Ask whether each item is already in the office’s Annual Procurement "
+             "Plan. If it is not, the process to add it is a task of its own."),
+            ("h", "Step 2: Put Procurement in the Schedule"),
+            "A purchase is a chain of steps: a request, the procurement process, the order, delivery, and "
+            "acceptance. Each step takes time, and much of that time is outside the project team’s control. It "
+            "is an external dependency, the kind described in Part 20.",
+            ("point", "Ask for the lead time", "The office’s procurement staff can say how long a purchase of "
+             "this size usually takes from request to delivery. Use their number, not a guess."),
+            ("point", "Work backward", "If the envelopes must be on hand on day 14, when printing and signing begin, the "
+             "request must go in early enough for the whole chain to finish before then."),
+            ("point", "Add it to the network", "Procurement becomes a work package with its own owner, and the "
+             "package that needs the goods depends on it. Run the passes from Part 16 again."),
+            "In this office, the procurement staff advised allowing about four weeks for a small purchase of "
+            "envelopes. That meant the request had to go in before the project formally started, so the clerk "
+            "added a pre-start task: submit the purchase request.",
+            ("h", "Step 3: Write a Clear Specification"),
+            "A supplier delivers what is written, not what was meant. A vague request invites the wrong item, "
+            "and the wrong item invites a delay.",
+            ("point", "Vague", "“Envelopes, 1,800 pieces.”"),
+            ("point", "Clear", "“Envelopes, white, plain, large enough for an A4 notice folded in three, "
+             "1,800 pieces, delivered to the treasury office.” Check that the size "
+             "matches the printed notice before submitting."),
+            ("point", "Include what will be checked", "Quantity, size, color, and anything the notice depends "
+             "on. These become the checklist for acceptance in Step 5."),
+            ("h", "Step 4: Work With the Procurement Team"),
+            ("point", "Talk early", "Bring the list of items to the procurement staff at the planning stage, "
+             "not when the item is needed."),
+            ("point", "Follow their process", "Use the forms and steps they require. A shortcut that skips a "
+             "step can stop the purchase later, or create an audit finding."),
+            ("point", "Keep one contact", "One person on the project follows up on each purchase, so the "
+             "procurement staff are not answering the same question three times."),
+            ("point", "Do not promise suppliers anything", "Only the authorized process can commit the office. "
+             "A project member who tells a supplier “you will get the order” creates a problem for everyone."),
+            ("h", "Step 5: Manage the Supplier to Acceptance"),
+            ("point", "Track the delivery date", "Put it on the tracker from Part 12, with the person "
+             "following it up."),
+            ("point", "Inspect before accepting", "Check the delivered goods against the specification, "
+             "following the office’s inspection and acceptance procedure. A box of the wrong size found on day "
+             "14 is a problem; found on delivery day, it is a phone call."),
+            ("point", "Write changes down", "If anything about the order changes, it goes through the "
+             "procurement process in writing, not by a text message to the supplier."),
+            ("point", "Note how it went", "On time, complete, correct? A short note helps the next project "
+             "plan the next purchase."),
+            ("h", "Procurement Risks in the Register"),
+            "The risk register from Part 19 gained two new lines.",
+            ("point", "R6. Late delivery of envelopes", "Response: mitigate by submitting the request before "
+             "the project starts. Trigger: no delivery date confirmed two weeks before printing."),
+            ("point", "R7. Wrong item delivered", "Response: mitigate with a clear specification and inspection "
+             "on delivery. Owner: the clerk."),
+            ("h", "The Envelopes, This Time"),
+            "The clerk checked with the supply officer, found the envelopes were already in the office’s "
+            "procurement plan, and submitted the request with a clear specification before the project began. "
+            "The envelopes arrived a week before printing. One box held the wrong size, caught at inspection "
+            "and replaced through the supplier before day 14. Nobody on the critical path ever knew.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating budget as stock", "Money in the budget still has to go through procurement."),
+            ("point", "Leaving procurement out of the schedule", "It has a duration and an owner like any task."),
+            ("point", "Vague specifications", "Write what will be checked on delivery."),
+            ("point", "Side deals with suppliers", "Only the authorized process commits the office."),
+            ("h", "Key Takeaways"),
+            ("point", "List early", "Go through the WBS and ask what must be bought."),
+            ("point", "Schedule it", "Procurement is an external dependency with real lead time."),
+            ("point", "Specify clearly", "The specification is also the acceptance checklist."),
+            ("point", "Follow the process", "Work with the procurement team, and inspect before accepting."),
+            ("h", "Your Part 22 Exercise"),
+            "Take the work breakdown structure from your Part 14 exercise.",
+            ("point", "List the purchases", "Write every item a package needs that is not already on hand."),
+            ("point", "Ask the lead time", "For each item, ask your procurement staff how long it usually takes."),
+            ("point", "Work backward", "Write the latest date each request must go in."),
+            "Then compare those dates with today. If any request should already have been submitted, that is "
+            "the first task for tomorrow morning.",
+            ("cta", "Read: Project Management Series, Part 17", "/blog/project-management-part-17-project-budget/"),
+            ("cta", "Read: Project Management Series, Part 20", "/blog/project-management-part-20-dependencies/"),
+            ("cta", "Read: Project Management Series, Part 19", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Project Management Series, Part 14", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("ask", "Which item in your current project still has to be bought, and does anyone know how long that takes?"),
+        ],
+    },
+    {
         "date": "February 21, 2027",
         "title": "Project Management Series, Part 21: Buffers, Not Padding, Adding Safety to a Schedule Honestly",
         "slug": "project-management-part-21-buffers-not-padding",
