@@ -12,6 +12,146 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "February 10, 2027",
+        "title": "Data Analytics Series, Part 19: First Steps in SQL, Asking a Database Questions",
+        "slug": "data-analytics-part-19-first-steps-in-sql",
+        "category": "data",
+        "summary": "SQL lets you ask a database a question in one short sentence. This part walks through six "
+                   "beginner queries on a small treasury database, from listing receipts to totals by "
+                   "collector and barangay, with every result shown and a few safe habits for working on "
+                   "real data.",
+        "publish_on": "2027-02-10 21:00",
+        "body": [
+            "In Part 14, the analyst sketched three linked tables on paper: taxpayers, receipts and "
+            "collectors. The office has since built them in SQLite, the free database engine that keeps a "
+            "whole database in one file.",
+            "Now the head of office asks: “How much did each collector receive in October, and how many "
+            "receipts was that?” In a spreadsheet, the analyst would filter, copy and add up. In the database, "
+            "the answer is one short query.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "This part is a first look at SQL, the language used to ask databases questions. By the end of "
+            "this post you will know how to open a database, choose columns, filter rows, filter by date, "
+            "total by group, join two tables, count distinct values, and keep your data safe while you "
+            "practice. Every query below was run on the sample data, and the results shown are what it "
+            "returned.",
+            ("photo", "blog/data-sql.jpg", "First steps in SQL: SELECT, WHERE, GROUP BY and JOIN on a small "
+             "treasury database. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What SQL Is"),
+            "SQL, short for Structured Query Language, is a language for working with data stored in tables. "
+            "It is used by SQLite and by other database systems such as PostgreSQL and MySQL. The basic "
+            "statements in this post look much the same in each of them.",
+            "A query reads almost like an English sentence: select these columns, from this table, where "
+            "this is true. The database does the searching and adding up.",
+            ("quote", "A good query is a question written so precisely that a computer can answer it."),
+            ("h", "Opening the Database"),
+            ("point", "The program", "The SQLite project provides a free command-line program called sqlite3 "
+             "(sqlite3.exe on Windows), available from its download page."),
+            ("point", "Opening a file", "At the command prompt, sqlite3 treasury.db opens that database. "
+             "SQLite’s documentation notes that if the file does not exist, it is created."),
+            ("point", "Practice on a copy", "Following the habits from Part 15, copy the database file first "
+             "and practice on the copy."),
+            ("h", "The Sample Data"),
+            "The examples use three small tables. To keep them short, the receipts here come from one series, "
+            "so the receipt number alone identifies each receipt.",
+            ("point", "collectors", "C-04 Reyes and C-07 Lim."),
+            ("point", "taxpayers", "Four taxpayers, T-00125, T-00131, T-00140 and T-00152, each with a "
+             "name and a barangay: one in San Isidro and three in Poblacion."),
+            ("point", "receipts", "Six receipts, 004512 to 004517, each with a taxpayer ID, a collector ID, "
+             "a payment date and an amount. Four were paid in October 2026 and two in November."),
+            ("h", "Query 1: Choose the Columns"),
+            ("point", "The query", "SELECT receipt_no, paid_on, amount FROM receipts;"),
+            ("point", "What it returns", "All six receipts, showing only the three columns named. SELECT "
+             "picks the columns, FROM names the table, and the semicolon ends the statement."),
+            "SELECT * returns every column. It is handy for a first look, but naming the columns you need "
+            "keeps the result readable and avoids showing fields nobody asked for.",
+            ("h", "Query 2: Filter the Rows"),
+            ("point", "The query", "SELECT receipt_no, amount FROM receipts WHERE amount >= 1000;"),
+            ("point", "What it returns", "Four receipts: 004512 for 1,250, 004514 for 2,400, 004516 for "
+             "1,250 and 004517 for 1,800."),
+            "WHERE keeps only the rows for which the condition is true. Conditions can use =, <>, <, >, <= "
+            "and >=, and can be combined with AND and OR.",
+            ("h", "Query 3: Filter by Date"),
+            ("point", "The query", "SELECT receipt_no, amount FROM receipts WHERE paid_on BETWEEN "
+             "'2026-10-01' AND '2026-10-31';"),
+            ("point", "What it returns", "The four October receipts, 004512 to 004515."),
+            "The dates are stored as text in year-month-day order, the same order recommended for file names "
+            "in Part 15. In that order, sorting the text also sorts the dates, so BETWEEN works. BETWEEN "
+            "includes both end dates.",
+            ("h", "Query 4: Totals by Group"),
+            ("point", "The query", "SELECT collector_id, COUNT(*) AS receipts, SUM(amount) AS total FROM "
+             "receipts GROUP BY collector_id ORDER BY total DESC;"),
+            ("point", "What it returns", "C-07 with 3 receipts totaling 4,850, then C-04 with 3 receipts "
+             "totaling 3,300."),
+            "GROUP BY puts rows with the same collector together. COUNT and SUM work on each group. AS gives "
+            "a result column a readable name, and ORDER BY ... DESC lists the largest total first. Adding the "
+            "October date condition from Query 3 as a WHERE line answers the head of office’s question for "
+            "October only.",
+            ("h", "Query 5: Join Two Tables"),
+            "The barangay is not in the receipts table. It belongs to the taxpayer, as Part 14 explained. A "
+            "JOIN brings the two tables together through the key they share.",
+            ("point", "The query", "SELECT t.barangay, SUM(r.amount) AS total FROM receipts AS r JOIN "
+             "taxpayers AS t ON r.taxpayer_id = t.taxpayer_id GROUP BY t.barangay ORDER BY total DESC;"),
+            ("point", "What it returns", "Poblacion with 5,650 and San Isidro with 2,500."),
+            "The letters r and t are short names for the two tables, so each column can say which table it "
+            "comes from. The ON line is the foreign key from Part 14 at work: each receipt’s taxpayer ID is "
+            "matched with the same ID in the taxpayers table.",
+            ("h", "Query 6: Count Distinct Values"),
+            ("point", "The query", "SELECT COUNT(DISTINCT taxpayer_id) AS taxpayers_who_paid FROM receipts;"),
+            ("point", "What it returns", "4. Six receipts were issued, but one taxpayer paid twice and "
+             "another paid twice, so four different taxpayers paid."),
+            "This is the count Part 14 promised would be easy once each taxpayer had one ID: no guessing "
+            "which spellings are the same person.",
+            ("h", "Reading a Query in the Right Order"),
+            "A query is written starting with SELECT, but it helps to read it in the order the work happens:",
+            ("point", "FROM and JOIN", "Which tables, and how they connect."),
+            ("point", "WHERE", "Which rows to keep."),
+            ("point", "GROUP BY", "How to group the rows that are left."),
+            ("point", "SELECT and ORDER BY", "What to show, and in what order."),
+            "Reading it this way makes a wrong result easier to trace. If a total is too high, check the "
+            "JOIN and the WHERE first.",
+            ("h", "Safe Habits for Real Data"),
+            ("point", "SELECT only reads", "Every query in this post only reads data. Statements such as "
+             "UPDATE and DELETE change it, and a missing WHERE line can change every row at once."),
+            ("point", "Look before you change", "Before an UPDATE or DELETE, run a SELECT with the same WHERE "
+             "line and check exactly which rows it returns."),
+            ("point", "Work on a copy", "Practice and test on a copy of the database file, and keep backups "
+             "as in Part 15."),
+            ("point", "Check against a known total", "Compare a new query’s grand total with a report you "
+             "trust. If they differ, find out why before sharing the result."),
+            ("h", "The October Question, Answered"),
+            "The analyst added WHERE paid_on BETWEEN '2026-10-01' AND '2026-10-31' to Query 4 and had the "
+            "answer in seconds, with the receipt count beside each total. The query went into a text file "
+            "named with the date and a short description, so next month the same question takes only a "
+            "change of dates.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Dates in mixed formats", "Store dates as year-month-day so they sort and filter "
+             "correctly."),
+            ("point", "Forgetting the JOIN condition", "Without ON, rows can be matched with every row of "
+             "the other table, and totals multiply."),
+            ("point", "Changing data without a SELECT first", "Look at the rows before you change them."),
+            ("point", "Sharing an unchecked total", "Compare it with a figure you already trust."),
+            ("h", "Key Takeaways"),
+            ("point", "SELECT and FROM", "Choose the columns and the table."),
+            ("point", "WHERE", "Keep only the rows you need, including date ranges."),
+            ("point", "GROUP BY with COUNT and SUM", "Totals by collector, barangay or account."),
+            ("point", "JOIN", "Connect tables through their keys, as designed in Part 14."),
+            ("h", "Your Part 19 Exercise"),
+            "Download the sqlite3 program and create a practice file with one small table you make up, such "
+            "as a few receipts.",
+            ("point", "Run three queries", "One SELECT with chosen columns, one WHERE, and one GROUP BY with "
+             "SUM."),
+            ("point", "Check by hand", "Add up the same totals on paper or in a spreadsheet and compare."),
+            ("point", "Save your queries", "Keep them in a text file with a clear name."),
+            "Then write one question your office asks every month, and try to write it as a single query.",
+            ("cta", "Read: Data Analytics Series, Part 14", "/blog/data-analytics-part-14-databases-101/"),
+            ("cta", "Read: Data Analytics Series, Part 15", "/blog/data-analytics-part-15-naming-versions-backups/"),
+            ("cta", "Read: Data Analytics Series, Part 18", "/blog/data-analytics-part-18-text-and-dates/"),
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("ask", "Which monthly question in your office would you most like to answer with one query?"),
+        ],
+    },
+    {
         "date": "February 5, 2027",
         "title": "Data Analytics Series, Part 18: Taming Text and Dates, Names, Pesos and Day-Month Puzzles",
         "slug": "data-analytics-part-18-text-and-dates",

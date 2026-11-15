@@ -13,6 +13,144 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "February 9, 2027",
+        "title": "Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year",
+        "slug": "business-intelligence-part-19-fair-comparisons",
+        "category": "bi",
+        "summary": "“Down 78% from last month” can be true and still mislead. This part shows how to compare "
+                   "periods fairly: the same number of days, the same season, the same working days and the "
+                   "same definitions, with formulas for each and a plain way to label the result.",
+        "publish_on": "2027-02-09 21:00",
+        "body": [
+            "On the morning of February 11, the head of office opens the dashboard and sees a red figure: "
+            "February collections so far, ₱410,000, are down 78% compared with January’s ₱1,850,000.",
+            "A worried meeting is called. Then the analyst points out what the chart compared: ten days of "
+            "February with all thirty-one days of January, a month that includes business permit renewals. "
+            "Compared with the first ten days of February last year, collections were up.",
+            "The number was calculated correctly. The comparison was not fair.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Part 14 built a date table, and Part 18 set thresholds on weekly totals. Both rely on comparing "
+            "one period with another. By the end of this post you will know four questions to ask before any "
+            "comparison, how to compare period-to-date figures, how to adjust for working days, the "
+            "difference between percent and percentage points, and how to label a comparison so nobody "
+            "misreads it.",
+            ("photo", "blog/bi-comparisons.jpg", "Fair comparisons: same length, same season, same working "
+             "days and same definitions. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Four Questions Before Any Comparison"),
+            ("point", "Same length?", "Ten days cannot be compared with thirty-one days as if they were "
+             "equal."),
+            ("point", "Same season?", "Collections follow the calendar. A month with tax deadlines or permit "
+             "renewals is not a fair match for a quiet month."),
+            ("point", "Same working days?", "Two periods with the same dates can have a different number of "
+             "weekdays and holidays."),
+            ("point", "Same definitions?", "If an account was moved to a new group, or a new fee was added, "
+             "last year’s figure may not be counting the same things."),
+            "If the answer to any of these is no, the comparison needs an adjustment, a different choice of "
+            "periods, or a note beside it.",
+            ("quote", "A comparison is only as fair as the two things being compared."),
+            ("h", "Period-to-Date: Compare Like With Like"),
+            "When a month is not finished, compare it with the same days of another period. On February 11, "
+            "that means February 1 to 10 of this year against February 1 to 10 of last year, or against "
+            "January 1 to 10.",
+            ("point", "In a spreadsheet", "=SUMIFS(Amount, PaidOn, \">=\"&Start, PaidOn, \"<=\"&End) adds up "
+             "the amounts between two dates. Here Amount and PaidOn stand for the amount and date columns, "
+             "and Start and End for the cells holding the two dates."),
+            ("point", "Last year’s dates", "=EDATE(Start, -12) gives the same date twelve months earlier. "
+             "Use it for both the start and the end of the comparison period."),
+            ("point", "Label the dates", "Write “February 1 to 10, 2027 compared with February 1 to 10, 2026” "
+             "beside the figure, not just “vs last year.”"),
+            ("h", "Year-to-Date: The Longer View"),
+            "A single month can swing because of one large payment or one slow week. Year-to-date figures, "
+            "from January 1 to the latest date with data, smooth out some of that and show whether the year "
+            "as a whole is on track.",
+            ("point", "Match the dates", "January 1 to February 10, 2027 against January 1 to February 10, "
+             "2026. The same SUMIFS and EDATE formulas work; only the start date changes."),
+            ("point", "Compare with the target too", "If the office has an annual collection target, show how "
+             "much of it has been reached so far, next to the share of the year that has passed."),
+            ("point", "Check the working days again", "A longer period evens out some differences, but not "
+             "all. A holiday that moved from one month to another can still shift the comparison."),
+            ("h", "Same Period Last Year: Respecting the Season"),
+            "Treasury collections have seasons. Business permits are renewed in January, and real property "
+            "tax has quarterly installment deadlines. Comparing February with January mixes a busy "
+            "month with a quieter one. Comparing February with last February keeps the season the same.",
+            "In the example, the first ten days of February brought in ₱410,000. The same ten days last year "
+            "brought in ₱372,000. That is an increase of about 10.2%, very different from the “down 78%” "
+            "that started the meeting.",
+            ("h", "Working Days: The Hidden Difference"),
+            "The same dates do not always hold the same number of working days. February 1, 2027 falls on a "
+            "Monday, so February 1 to 10 has eight weekdays. February 1, 2026 fell on a Sunday, so the same "
+            "dates last year had seven.",
+            "In this example, assume neither period had a holiday. Then the fairer measure is collections per "
+            "working day.",
+            ("point", "This year", "₱410,000 ÷ 8 = ₱51,250 per working day."),
+            ("point", "Last year", "₱372,000 ÷ 7 = about ₱53,143 per working day."),
+            ("point", "The change", "About 3.6% lower per working day, even though the total was 10.2% "
+             "higher."),
+            "Neither figure is wrong. They answer different questions. The total says how much came in. The "
+            "per-day figure says whether the office collected faster or slower. Show both, and say which is "
+            "which.",
+            ("point", "Counting working days", "=NETWORKDAYS(Start, End) counts weekdays between two dates, in "
+             "both Google Sheets and Excel. Add a list of holidays as the third argument to leave them out "
+             "too, or use the working-day column from the date table in Part 14."),
+            ("h", "Percent or Percentage Points?"),
+            "When the measure is itself a percentage, there are two ways to describe a change, and they give "
+            "different numbers.",
+            ("point", "Percentage points", "If collection efficiency rises from 62% to 68%, it rose by 6 "
+             "percentage points."),
+            ("point", "Percent", "The same change is a rise of about 9.7%, because 6 is about 9.7% of 62."),
+            "Both are correct, but they are not the same thing. When a rate changes, say “percentage points” "
+            "for the difference, and avoid writing “6%” where readers could take it either way.",
+            ("h", "Small Bases and One-Off Payments"),
+            ("point", "Small bases", "A fee that went from ₱2,000 to ₱6,000 rose by 200%, but only by ₱4,000. "
+             "Show the amount beside the percentage, so a large percentage of a small number does not "
+             "outshine a small percentage of a large one."),
+            ("point", "One-off payments", "A single large payment, such as a big business settling several "
+             "years of tax at once, can make one month look unusual. Show the total with and without it, or "
+             "add a note naming it."),
+            ("point", "Changed definitions", "If revenue accounts were regrouped, as in Part 15, restate last "
+             "year’s figures under the new grouping before comparing. Otherwise part of the change is only a "
+             "change in labels."),
+            ("h", "Showing a Comparison Clearly"),
+            ("point", "Show both numbers", "The two amounts, then the change. A percentage alone hides the "
+             "size of the money."),
+            ("point", "Name both periods", "Exact dates for each side."),
+            ("point", "Say what was adjusted", "“Per working day” or “excluding one large payment.”"),
+            ("point", "Use words with color", "As in Part 18, a word such as “Higher” or “Lower” beside an "
+             "arrow, not color alone."),
+            ("h", "The February Figure, Corrected"),
+            "The dashboard now shows month-to-date figures against the same days last year, with the dates "
+            "written out. A second line shows collections per working day. The comparison with January was "
+            "removed from the main screen and kept on a separate page for those who need it, with a note that "
+            "January includes permit renewals.",
+            "The next morning’s figure read: “February 1 to 10: ₱410,000, up 10.2% on the same dates last "
+            "year. Per working day: down 3.6%.” The meeting that followed was shorter, and it was about the "
+            "right question: why each working day brought in a little less.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Partial against full periods", "Compare the same number of days."),
+            ("point", "Ignoring the season", "Compare with the same period last year when seasons differ."),
+            ("point", "Mixing percent and points", "Say which one you mean."),
+            ("point", "Percentages without amounts", "Show the money beside the change."),
+            ("h", "Key Takeaways"),
+            ("point", "Four questions", "Same length, same season, same working days, same definitions."),
+            ("point", "Period-to-date", "SUMIFS with matching dates, and EDATE for last year."),
+            ("point", "Per working day", "A fairer pace measure when weekday counts differ."),
+            ("point", "Label everything", "Both periods, both amounts and any adjustment."),
+            ("h", "Your Part 19 Exercise"),
+            "Take one comparison your office reports often, such as this month against last month.",
+            ("point", "Ask the four questions", "Write down where the two periods differ."),
+            ("point", "Rebuild it fairly", "Use the same days, the same season, or a per-working-day figure."),
+            ("point", "Label it", "Write both dates, both amounts and the change in one sentence."),
+            "Then compare the fair version with the original. If they tell different stories, the original "
+            "has been answering a different question than the one people thought.",
+            ("cta", "Read: Business Intelligence Series, Part 14", "/blog/business-intelligence-part-14-the-date-table/"),
+            ("cta", "Read: Business Intelligence Series, Part 18", "/blog/business-intelligence-part-18-thresholds-and-alerts/"),
+            ("cta", "Read: Business Intelligence Series, Part 15", "/blog/business-intelligence-part-15-star-or-snowflake/"),
+            ("cta", "Read: Data Analytics Series, Part 8", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Which comparison in your office’s reports has never been checked for fairness?"),
+        ],
+    },
+    {
         "date": "February 4, 2027",
         "title": "Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look",
         "slug": "business-intelligence-part-18-thresholds-and-alerts",
