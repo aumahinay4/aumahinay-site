@@ -14,6 +14,130 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "February 16, 2027",
+        "title": "Project Management Series, Part 20: Understanding Dependencies, When Task B Is Waiting on Task A",
+        "slug": "project-management-part-20-dependencies",
+        "category": "pm",
+        "summary": "Every schedule is a chain of “this waits for that.” This part explains the four kinds of "
+                   "links between tasks, the difference between links you must keep and links you chose, "
+                   "leads and lags, and what to do when a task is stuck waiting on someone else.",
+        "publish_on": "2027-02-16 21:00",
+        "body": [
+            "On day 7 of the second round, Collector Reyes stopped by the clerk’s desk. “Can I start the "
+            "routes now? I know where most of these households are already.” The clerk checked the schedule: "
+            "routes wait for the approved list, due on day 9. “Not yet,” the clerk said. But the question "
+            "stayed with the clerk. Did the routes really need the approved list, or had the "
+            "schedule only said so?",
+            "Every line in a schedule that says “waits for” is a decision. Some are forced by the work itself. "
+            "Others were chosen, and a choice can be made again.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town, employee or taxpayer is described.)",
+            "Part 16 put the work packages in order and found the critical path, using only the simplest kind "
+            "of link. This part looks at the links themselves. By the end of this post you will know the four "
+            "kinds of links between tasks, how to tell a link you must keep from one you chose, what leads and "
+            "lags are, and what to do when a task is stuck waiting on someone else.",
+            ("photo", "blog/pm-dependencies.jpg", "Dependencies: the four kinds of links between tasks, the "
+             "reasons behind them, and leads and lags. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Predecessors and Successors"),
+            "A dependency is a link between two tasks. The task that comes first is the predecessor, and the "
+            "one that depends on it is the successor. In the notices project, filling the notices (E) is the "
+            "successor of the notice template (C): nobody can fill in a notice before its wording is final.",
+            ("quote", "A schedule is only as honest as the links between its tasks."),
+            ("h", "Four Kinds of Links"),
+            "Project scheduling describes four ways two tasks can be linked. Each one names which end of the "
+            "first task controls which end of the second.",
+            ("point", "Finish-to-start", "B cannot start until A finishes. Printing and signing (F) cannot start "
+             "until the notices are filled (E). Every link in Part 16 was of this kind."),
+            ("point", "Start-to-start", "B cannot start until A starts. Checking the account list (B) could "
+             "begin once pulling the list (A) has begun, working through each batch as it comes out, instead "
+             "of waiting for the whole list."),
+            ("point", "Finish-to-finish", "B cannot finish until A finishes. The list of undelivered notices (J) "
+             "could be kept up to date during delivery, but it cannot be finished until delivery (I) is "
+             "finished."),
+            ("point", "Start-to-finish", "B cannot finish until A starts. It is the least common of the four, "
+             "and this project has none. An example from elsewhere: when a new collection system replaces an "
+             "old one, the old system’s daily work cannot stop until the new system has started."),
+            "Changing the kind of link changes the schedule. A start-to-start link lets two tasks overlap, which "
+            "can shorten the project, but only when the overlap is on the critical path. The list (A, B) has one "
+            "day of float, so overlapping its tasks would not move the finish date.",
+            ("h", "Why the Link Exists"),
+            "Each link also has a reason, and the reason decides whether it can change. PMI’s PMBOK Guide "
+            "groups the reasons into four kinds.",
+            ("point", "Mandatory", "Required by the nature of the work, or by law or contract. A notice cannot "
+             "be printed before it is filled. This link stays."),
+            ("point", "Discretionary", "Chosen because of a good practice, past experience or a preference. "
+             "Routes waiting for the approved list (D) is one: the office prefers routes drawn from a final "
+             "list, but a collector could sketch them from the checked list. Such a link can be changed if "
+             "there is a reason, as long as the risk is understood."),
+            ("point", "External", "Depends on someone or something outside the project team. The legal "
+             "adviser’s review in package C is external: the adviser serves other offices, as risk R1 in "
+             "Part 19 noted."),
+            ("point", "Internal", "Between tasks the team controls itself, such as filling, then printing."),
+            "Writing the reason beside each link takes a minute and saves an argument later. When the schedule "
+            "is under pressure, the discretionary links are the first ones to look at, and the mandatory ones "
+            "are left alone.",
+            ("h", "Leads and Lags"),
+            ("point", "A lead", "The successor starts before the predecessor finishes. Delivery (I) could start "
+             "one day before all notices are printed and signed (F), beginning with the barangays whose notices "
+             "are ready. That is a finish-to-start link with a one-day lead. Part 16 called this kind of overlap "
+             "fast-tracking."),
+            ("point", "A lag", "The successor waits a set time after the predecessor. The cashiers asked to "
+             "receive the counter guide at least two days before the first notices reach taxpayers, so they "
+             "have time to read it. Counter readiness (H) to delivery (I) is a finish-to-start link with a "
+             "two-day lag."),
+            "A lag is not the same as float. Float is time a task may slip without harm. A lag is waiting that "
+            "the plan requires, and it should be written into the link so nobody treats it as spare time.",
+            ("h", "When Task B Is Stuck Waiting on Task A"),
+            ("point", "Check the link", "Is it mandatory or discretionary? If it was a choice, ask whether part "
+             "of B can start now."),
+            ("point", "Ask for part of A", "A predecessor does not always have to be finished in full. The first "
+             "barangays’ notices, the first pages of a list, or a draft for early comments may be enough to "
+             "begin."),
+            ("point", "Talk to A’s owner", "Ask when A will finish, not whether it is late. A date can be planned "
+             "around."),
+            ("point", "Confirm external dates early", "For work outside the team, agree on the date in advance "
+             "and set a trigger, as with risk R1 in Part 19."),
+            ("point", "Raise it on time", "If the wait threatens the finish date, report it to the sponsor "
+             "within a working day, as the communication plan in Part 11 set out, with at least one option."),
+            ("h", "The Third Round, Planned With Better Links"),
+            "For next year’s round, the clerk reviewed every link in the network with the team. Most stayed as "
+            "they were. Two changed.",
+            ("point", "A one-day lead on delivery", "Delivery starts on day 17 instead of day 18, with the "
+             "notices printed and signed so far, while the last batch is finished. Delivery runs from day 17 to 42 and the undelivered list "
+             "from 42 to 44. The project finishes on day 44 instead of 45."),
+            ("point", "A two-day lag before delivery", "Counter readiness still finishes on day 14, three "
+             "days before delivery begins, so the two-day wait is met with a day to spare."),
+            "The lead had a cost, and the clerk found it by running the forward and backward pass again, as Part "
+            "16 advised. The routes (G) run from day 14 to 17 and must now be ready for delivery on day 17. The "
+            "one day of float they had left after Part 18 is gone. The routes are now on the critical path, so "
+            "Collector Reyes knows that a day lost there is a day lost for the whole project.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Linking everything finish-to-start", "Ask whether some tasks can overlap."),
+            ("point", "Treating every link as fixed", "Write down why each link exists."),
+            ("point", "Hiding lags as float", "Write required waiting into the link."),
+            ("point", "Adding a lead without rechecking", "Run the passes again and see what became critical."),
+            ("h", "Key Takeaways"),
+            ("point", "Four kinds", "Finish-to-start, start-to-start, finish-to-finish and start-to-finish."),
+            ("point", "Four reasons", "Mandatory, discretionary, external and internal."),
+            ("point", "Leads and lags", "Start early, or wait on purpose, and write it into the link."),
+            ("point", "Stuck tasks", "Check the link, ask for part of the work, and raise it on time."),
+            ("h", "Your Part 20 Exercise"),
+            "Take the network you drew for your Part 16 exercise.",
+            ("point", "Label each link", "Write the kind of link and the reason: mandatory, discretionary, "
+             "external or internal."),
+            ("point", "Find one change", "Pick one discretionary link on the critical path and ask whether a "
+             "lead or a start-to-start link would be safe."),
+            ("point", "Recalculate", "Run the forward and backward pass again and note what became critical."),
+            "Then list the external links and the person who owns each one. Those are the dates to confirm "
+            "first.",
+            ("cta", "Read: Project Management Series, Part 16", "/blog/project-management-part-16-critical-path/"),
+            ("cta", "Read: Project Management Series, Part 18", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 19", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Project Management Series, Part 11", "/blog/project-management-part-11-communication-plan/"),
+            ("ask", "Which “waits for” in your current plan was a choice, not a rule?"),
+        ],
+    },
+    {
         "date": "February 11, 2027",
         "title": "Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong",
         "slug": "project-management-part-19-risk-register",
