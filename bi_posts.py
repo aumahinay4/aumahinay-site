@@ -13,6 +13,135 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "December 31, 2026",
+        "title": "Business Intelligence Series, Part 11: The Five-Minute Briefing for Decision Makers",
+        "slug": "business-intelligence-part-11-five-minute-briefing",
+        "category": "bi",
+        "summary": "A dashboard is not a briefing. This part shows how to turn BI numbers into a five-minute "
+                   "talk for a busy decision maker: the answer first, three supporting facts, what they mean, "
+                   "and the decision you need, with a year-end treasury example.",
+        "publish_on": "2026-12-31 21:00",
+        "body": [
+            "On the last working day of the year, the analyst gets ten minutes with the head of office to "
+            "present the year’s collections. The analyst opens the dashboard and begins at the top: twelve "
+            "charts, every revenue source, every month. Seven minutes in, the head of office asks, “So, are we "
+            "on target or not?” The answer is on chart nine. There is no time left to discuss what to do "
+            "about it.",
+            "The numbers were correct and the dashboard was well built. What was missing was a briefing: a "
+            "short spoken answer, shaped for one person who has to make a decision.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "Parts 8 to 10 covered how BI views are built and kept trustworthy. This part is about the moment "
+            "someone has to act on them. By the end of this post you will have a five-minute structure, a way "
+            "to choose the three facts that matter, a worked year-end example, and a checklist for the "
+            "questions that follow.",
+            ("photo", "blog/bi-five-minute-briefing.jpg", "A five-minute briefing: the answer, three facts, "
+             "what they mean and the decision needed. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "A Dashboard Is Not a Briefing"),
+            "A dashboard is built for exploring. It lets a reader check many things, in whatever order they choose. A briefing is built for deciding. It shows only what this reader "
+            "needs today, in the order that leads to a decision.",
+            "The same data can serve both. The difference is the work the analyst does before walking in: "
+            "choosing, ordering and cutting.",
+            ("quote", "Start with the answer. The reader can ask how you got there."),
+            ("h", "The Five-Minute Structure"),
+            ("point", "Minute 1: The answer", "One or two sentences that answer the question the decision "
+             "maker cares about. “We collected 96% of the year’s target. Real property tax is on target; "
+             "business tax fell short by ₱1.2 million.”"),
+            ("point", "Minutes 2 and 3: Three facts", "The three numbers that explain the answer, each with "
+             "one picture or one line. No more than three."),
+            ("point", "Minute 4: What it means", "What the facts suggest, and two or three options for "
+             "responding."),
+            ("point", "Minute 5: The decision needed", "Exactly what you are asking for, and by when."),
+            "If you finish early, stop. The remaining time belongs to the decision maker’s questions.",
+            ("h", "Choosing the Three Facts"),
+            "From a dashboard of twelve charts, pick the three that pass this test: if the decision maker "
+            "knew only these, would they understand the answer and the choice in front of them?",
+            ("point", "One fact that confirms", "Shows that the answer is true. For example: total collections "
+             "against target, by month."),
+            ("point", "One fact that explains", "Shows why. For example: business tax renewals in January were "
+             "lower than last year."),
+            ("point", "One fact that points forward", "Shows what can still change. For example: the number "
+             "of businesses that have not renewed, and how much they paid last year."),
+            "Everything else stays in the dashboard, ready if someone asks.",
+            ("h", "The Year-End Briefing, Worked Through"),
+            ("point", "The answer", "“We reached 96% of the collection target. Real property tax met its "
+             "target. Business tax fell short by ₱1.2 million, and most of the gap comes from businesses that "
+             "did not renew.”"),
+            ("point", "Fact 1", "A single bar chart: target and actual for each of the three largest revenue "
+             "sources. One bar is clearly short."),
+            ("point", "Fact 2", "Business permit renewals this year compared with last year: 612 against 689."),
+            ("point", "Fact 3", "Of the 77 businesses that renewed last year but not this year, 41 still "
+             "appear active on the barangay clearance list. Last year they paid a combined ₱740,000."),
+            ("point", "What it means", "The shortfall is concentrated and can be followed up. Options: send "
+             "reminder letters to the 41, add a field visit for the largest 15, or wait for the next renewal "
+             "period."),
+            ("point", "Decision needed", "“I recommend letters to all 41 and visits to the largest 15 in "
+             "January. I need approval for two staff for three afternoons.”"),
+            "Notice that “most of the gap” in the answer is backed by fact 3. In a briefing, every word in "
+            "the answer should be one the analyst can point to.",
+            ("h", "Making Each Fact Easy to See"),
+            ("point", "One message per picture", "Give each chart a title that states the point, such as "
+             "“Business tax is the only source below target,” not “Collections by Source.”"),
+            ("point", "Round the numbers", "Say ₱1.2 million, not ₱1,213,456.78. Keep the exact figure in "
+             "the handout."),
+            ("point", "Compare with something", "A number alone means little. Show it against the target, "
+             "last year or another period."),
+            ("point", "Large enough for the room", "If you show a screen or a printout, check that the "
+             "smallest label can be read from where the decision maker sits."),
+            ("h", "The One-Page Handout"),
+            "Bring one page the decision maker can keep. It repeats the answer, the three facts and the "
+            "decision needed, with the exact numbers and the “data as of” date at the top. Add the definition "
+            "of each measure in small print, from the data dictionary in Part 10.",
+            "The handout is also the record. If someone asks next year what was reported on December 31, the "
+            "page answers, as a static report should.",
+            ("h", "Preparing for the Questions"),
+            "Before the briefing, write down the three questions you would ask if you were the decision maker, "
+            "and have the answer to each ready.",
+            ("point", "“Are these numbers final?”", "Say what date the data is as of, and whether any receipts "
+             "are still being posted."),
+            ("point", "“Compared with what?”", "Have last year’s figure and the target ready for each fact."),
+            ("point", "“What happens if we do nothing?”", "Have a one-sentence answer, using the same numbers."),
+            "If you are asked something you cannot answer, say so and give a time when you will. A guess in "
+            "a briefing can become a fact in the decision maker’s memory.",
+            ("h", "Rehearse It Out Loud"),
+            "A briefing that reads well on paper can still run long when spoken. Rehearse it once, with a "
+            "timer.",
+            ("point", "Say the first sentence from memory", "If the meeting is cut short after one minute, "
+             "that sentence is what the decision maker takes away."),
+            ("point", "Ask a colleague to say “So what?”", "After each fact, a colleague asks it. If you cannot "
+             "answer in one sentence, the fact is not ready, or it is not one of the three."),
+            ("point", "Cut words, not the ask", "When you run over, shorten the facts. The answer and the "
+             "decision needed stay."),
+            "Rehearsing also catches numbers you are not sure about. If you hesitate over one while "
+            "practicing, check it before the meeting.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Walking through the dashboard", "The order of the screen is not the order of the "
+             "argument."),
+            ("point", "Saving the answer for last", "If time runs out, the answer is what gets cut."),
+            ("point", "Too many facts", "Five facts in five minutes leaves little time to decide."),
+            ("point", "No clear ask", "A briefing without a decision needed is only an update."),
+            ("h", "Key Takeaways"),
+            ("point", "Answer first", "Start with the conclusion in one or two sentences."),
+            ("point", "Three facts", "One that confirms, one that explains, one that points forward."),
+            ("point", "End with the decision", "Name the options and what you need, by when."),
+            ("point", "Leave a page", "A one-page handout with exact numbers, definitions and the date."),
+            ("h", "Your Part 11 Exercise"),
+            "Pick one dashboard or report your office reviews regularly.",
+            ("point", "Answer", "Write the one or two sentences that answer the question its main reader cares "
+             "about most."),
+            ("point", "Facts", "Choose three charts or numbers that confirm, explain and point forward."),
+            ("point", "Decision", "Write what you would ask the reader to decide."),
+            "Then time yourself saying it out loud. If it takes more than five minutes, cut a fact, not the "
+            "answer or the decision.",
+            ("cta", "Read: Business Intelligence Series, Part 10", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Business Intelligence Series, Part 8", "/blog/business-intelligence-part-8-report-or-dashboard/"),
+            ("cta", "Read: Project Management Series, Part 10", "/blog/project-management-part-10-business-case/"),
+            ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
+            ("ask", "If you had five minutes with your head of office tomorrow, what would your first sentence be?"),
+        ],
+    },
+    {
         "date": "December 26, 2026",
         "title": "Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log",
         "slug": "business-intelligence-part-10-keeping-bi-honest",

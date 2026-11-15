@@ -14,6 +14,136 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "January 2, 2027",
+        "title": "Project Management Series, Part 11: The Communication Plan, Who Hears What, When",
+        "slug": "project-management-part-11-communication-plan",
+        "category": "pm",
+        "summary": "A project can stall when the right people hear the wrong things, or nothing at all. This part "
+                   "shows how to build a one-page communication plan: who needs what, how, how often and "
+                   "from whom, with a rule for bad news and the treasury encoding project as the example.",
+        "publish_on": "2027-01-02 21:00",
+        "body": [
+            "Three weeks into the encoding project, the assessor calls the head of office. “Why are your "
+            "collectors asking my staff for tax declarations every afternoon? Nobody told me this was "
+            "happening.” The project had been approved, the kickoff was held, and the assessor’s staff "
+            "member was part of the team. But the assessor, who decides what that staff member works on, had "
+            "never been told how much of their time the project needed.",
+            "Nobody had hidden anything. Each person had simply assumed someone else would tell the assessor. "
+            "A communication plan exists to stop that assumption.",
+            "(As in every part of this series, the office, the people and the numbers are made up. No real "
+            "town or employee is described.)",
+            "Part 8 settled who does each task. This part settles who needs to know about it. By the end of "
+            "this post you will have a five-column communication plan, a filled-in example, a rule for "
+            "delivering bad news, and a way to keep updates short enough that people read them.",
+            ("photo", "blog/pm-communication-plan.jpg", "A communication plan answers five questions: who, "
+             "what, how, how often and from whom. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Communication Plan Is"),
+            "A communication plan is a short table that lists everyone who needs information about the "
+            "project and says what each one gets, through which channel, how often and from whom. It turns "
+            "“keep people informed” into specific promises.",
+            "For a small office project, it fits on one page. Its value is not the document. It is the "
+            "five minutes of thinking about each person before something goes wrong.",
+            ("quote", "If a message has no owner, assume nobody will send it."),
+            ("h", "The Five Columns"),
+            ("point", "1. Who", "Each person or group. Start from the stakeholder map in Part 3 and the RACI "
+             "matrix in Part 8: everyone marked C or I needs a row."),
+            ("point", "2. What", "The information they need, in their terms. A sponsor needs progress against "
+             "the date and budget. A team member needs this week’s tasks. An affected office head needs to know "
+             "what their staff will be asked to do."),
+            ("point", "3. How", "The channel: a short meeting, a one-page note, a message in a group chat, a "
+             "printed notice at the window. Match the channel to how the person already works."),
+            ("point", "4. How often", "Weekly, at each milestone, or only when something changes. More often "
+             "is not always better."),
+            ("point", "5. From whom", "One named sender for each row. Shared responsibility for a message is "
+             "how the assessor in the opening story was missed."),
+            ("h", "The Encoding Project’s Plan"),
+            ("point", "Head of office (sponsor)", "What: progress against the January 4 date, any risk to it, "
+             "and decisions needed. How: a five-line note and a ten-minute talk. How often: weekly, Fridays. "
+             "From: the revenue clerk."),
+            ("point", "Project team", "What: this week’s tasks, problems found, changes to the schedule. How: "
+             "the fifteen-minute check-in from Part 7, plus a shared task list. How often: weekly, Tuesdays. "
+             "From: the revenue clerk."),
+            ("point", "Assessor", "What: the hours their staff member is needed, the records being checked "
+             "and any change to either. How: a short note before work starts, then a call when anything "
+             "changes. How often: at the start and at each change. From: the head of office, then the revenue "
+             "clerk."),
+            ("point", "Cashier and counter staff", "What: when the new bills start, what changes at the "
+             "window, and when training happens. How: a short meeting and a printed one-page guide. How often: "
+             "two weeks before go-live and the day before. From: the revenue clerk."),
+            ("point", "Taxpayers", "What: that bills will look different from January 4. How: a notice at "
+             "the window and on the office’s public page, if it has one. How often: once in December, again "
+             "on January 4. From: the head of office."),
+            "Five rows. With this table on the wall, the assessor would have heard about the project before "
+            "the first afternoon of record checks.",
+            ("h", "Choosing the Channel"),
+            "Each channel is good at some things and poor at others. Match the channel to what the message "
+            "needs to do.",
+            ("point", "Meetings", "For decisions, disagreements and anything that needs discussion. Keep them "
+             "short, and write down what was decided."),
+            ("point", "Written notes", "For status, facts and anything that must be kept as a record. A note "
+             "can be read later and forwarded without changing."),
+            ("point", "Group chats", "For quick coordination, such as “The records are ready.” Decisions made "
+             "in a chat can scroll away, so copy them into the weekly note."),
+            ("point", "Printed notices", "For the public at the window. Keep them short, dated and signed by "
+             "the office."),
+            "When a message is both urgent and important, use two channels: a call so it is heard today, and a "
+            "note so it is on record.",
+            ("h", "Writing Updates People Read"),
+            "A plan only works if people read what you send. For a weekly update to a busy sponsor, keep to "
+            "five lines.",
+            ("point", "Status", "One word for each: on track, at risk or off track, for the date and the "
+             "budget."),
+            ("point", "Done this week", "The milestones reached, in one line."),
+            ("point", "Next week", "What will be done, in one line."),
+            ("point", "Risks or issues", "Anything that could move the date, with what you are doing about it."),
+            ("point", "Decisions needed", "What you need from the reader, and by when. Write “none” if there "
+             "are none."),
+            "The last line is the one the sponsor most needs to act on. If it says “none” every week, the update can stay "
+            "short. If it asks for something, the sponsor knows exactly what to do.",
+            ("h", "A Rule for Bad News"),
+            "Bad news can get harder to deliver the longer it waits. Agree on a rule at the start: anything that "
+            "could move the go-live date or the budget is reported to the sponsor within one working day, "
+            "in person or by phone, not saved for the weekly note.",
+            "Bring three things with the bad news: what happened, what it affects, and at least one option. "
+            "“The assessor’s staff member is on leave for a week. That puts the records check five days "
+            "behind. We can add one afternoon a week for three weeks, or move the sample bill review by five "
+            "days. I recommend the extra afternoons.”",
+            ("h", "Listening Is Part of the Plan"),
+            "Communication runs both ways. Give each group a clear way to raise problems: a standing question "
+            "at the weekly check-in, a named person to message, or a box on the counter guide for questions "
+            "from the cashier’s staff.",
+            "When someone raises a concern, answer it and say what happened as a result, even if the answer is "
+            "no. An answered question tells people that it was worth asking.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Forgetting the bosses of team members", "If someone’s time is borrowed, their head of "
+             "office needs a row in the plan."),
+            ("point", "One message for everyone", "The sponsor and the counter staff need different details. "
+             "Write for each reader."),
+            ("point", "Long updates", "A page of detail is easy to skip. Lead with status and decisions needed."),
+            ("point", "Silence when things go well", "A short “on track, no decisions needed” still tells the "
+             "sponsor the project is alive."),
+            ("h", "Key Takeaways"),
+            ("point", "Five columns", "Who, what, how, how often and from whom."),
+            ("point", "One sender per message", "When a message belongs to everyone, someone can be missed."),
+            ("point", "Short updates", "Status, done, next, risks and decisions needed."),
+            ("point", "Bad news within a day", "With what happened, what it affects and an option."),
+            ("h", "Your Part 11 Exercise"),
+            "List everyone your current project affects, including people outside the team whose staff or "
+            "resources it uses.",
+            ("point", "Fill the five columns", "One row per person or group."),
+            ("point", "Find the gaps", "Mark any row where you are not sure who sends the message. Assign a "
+             "name."),
+            ("point", "Send one update", "Write this week’s five-line update to your sponsor."),
+            "Then ask the sponsor one question: “Is this what you need to see each week?” Adjust the plan to "
+            "the answer.",
+            ("cta", "Read: Project Management Series, Part 8", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 3", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Project Management Series, Part 7", "/blog/project-management-part-7-kickoff-meeting/"),
+            ("cta", "Read: Business Intelligence Series, Part 11", "/blog/business-intelligence-part-11-five-minute-briefing/"),
+            ("ask", "Who is the one person your current project has forgotten to tell?"),
+        ],
+    },
+    {
         "date": "December 28, 2026",
         "title": "Project Management Series, Part 10: Writing a Business Case That Gets a Yes",
         "slug": "project-management-part-10-business-case",
