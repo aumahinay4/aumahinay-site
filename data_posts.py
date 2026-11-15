@@ -88,8 +88,7 @@ DATA_POSTS = [
             "Of the five checks, comprehensive is one your own data can fail without anyone noticing. Three "
             "quick tests help.",
             ("point", "Count the days", "For each month, count the days that have at least one receipt and "
-             "compare with the working days. A working day with no receipts is either a closed office or a "
-             "missing file."),
+             "compare with the working days. A working day with no receipts may mean a closed office or a missing file, so check it."),
             ("point", "Compare with signed reports", "Add up each month in your data and compare it with the "
              "monthly collections report that was signed. A difference points to missing or extra records."),
             ("point", "Check every category", "Make sure each revenue account, collector and barangay you "

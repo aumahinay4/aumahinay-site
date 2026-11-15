@@ -73,7 +73,7 @@ PM_POSTS = [
             ("point", "Taxpayers", "What: that bills will look different from January 4. How: a notice at "
              "the window and on the office’s public page, if it has one. How often: once in December, again "
              "on January 4. From: the head of office."),
-            "Five rows. With this table on the wall, the assessor would have heard about the project before "
+            "Five rows. With this table on the wall, the assessor could have heard about the project before "
             "the first afternoon of record checks.",
             ("h", "Choosing the Channel"),
             "Each channel is good at some things and poor at others. Match the channel to what the message "

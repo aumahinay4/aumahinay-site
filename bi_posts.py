@@ -85,7 +85,7 @@ BI_POSTS = [
              "“Business tax is the only source below target,” not “Collections by Source.”"),
             ("point", "Round the numbers", "Say ₱1.2 million, not ₱1,213,456.78. Keep the exact figure in "
              "the handout."),
-            ("point", "Compare with something", "A number alone means little. Show it against the target, "
+            ("point", "Compare with something", "A number on its own is hard to judge. Show it against the target, "
              "last year or another period."),
             ("point", "Large enough for the room", "If you show a screen or a printout, check that the "
              "smallest label can be read from where the decision maker sits."),
@@ -108,7 +108,7 @@ BI_POSTS = [
             "A briefing that reads well on paper can still run long when spoken. Rehearse it once, with a "
             "timer.",
             ("point", "Say the first sentence from memory", "If the meeting is cut short after one minute, "
-             "that sentence is what the decision maker takes away."),
+             "that sentence may be all the decision maker takes away."),
             ("point", "Ask a colleague to say “So what?”", "After each fact, a colleague asks it. If you cannot "
              "answer in one sentence, the fact is not ready, or it is not one of the three."),
             ("point", "Cut words, not the ask", "When you run over, shorten the facts. The answer and the "
@@ -118,7 +118,7 @@ BI_POSTS = [
             ("h", "Mistakes to Avoid"),
             ("point", "Walking through the dashboard", "The order of the screen is not the order of the "
              "argument."),
-            ("point", "Saving the answer for last", "If time runs out, the answer is what gets cut."),
+            ("point", "Saving the answer for last", "If time runs out, the answer can be what gets cut."),
             ("point", "Too many facts", "Five facts in five minutes leaves little time to decide."),
             ("point", "No clear ask", "A briefing without a decision needed is only an update."),
             ("h", "Key Takeaways"),
