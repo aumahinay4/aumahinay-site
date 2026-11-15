@@ -12,6 +12,146 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "date": "January 31, 2027",
+        "title": "Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000",
+        "slug": "data-analytics-part-17-samples-margin-of-error",
+        "category": "data",
+        "summary": "You do not always have to check every record to know how many are wrong. This part explains "
+                   "random samples, the margin of error and how to choose a sample size, with a treasury "
+                   "example worked out step by step and a plain way to report the result.",
+        "publish_on": "2027-01-31 21:00",
+        "body": [
+            "After the cleanup in Part 16, the head of office asks a fair question: how many of last year’s "
+            "12,000 receipts have a wrong barangay code in the system? Checking every receipt against its "
+            "paper copy would take two staff members several weeks.",
+            "The analyst suggests another way. Check 400 receipts chosen at random, count the errors, and "
+            "use that count to estimate the rate for all 12,000, with an honest statement of how far off the "
+            "estimate could be.",
+            "The head of office is doubtful. “Four hundred out of twelve thousand? That is barely three "
+            "percent.” It is a reasonable worry, and this post answers it.",
+            "(As always in this series, the office, the people and every number below are made up. No real "
+            "town or taxpayer is described.)",
+            "Part 13 showed how the way data is collected can tilt a result. This part shows how a small, "
+            "well-chosen sample can describe a large group. By the end of this post you will know what makes "
+            "a sample random, how to draw one in a spreadsheet, what a margin of error means, how to choose a "
+            "sample size, and how to report the result so nobody reads more into it than it holds.",
+            ("photo", "blog/data-sampling.jpg", "Sampling: a random sample, a margin of error, a sample size "
+             "and a careful report. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Population and Sample"),
+            ("point", "Population", "Every record you want to know about: here, all 12,000 receipts from last "
+             "year."),
+            ("point", "Sample", "The records you actually check: here, 400 of them."),
+            ("point", "Estimate", "A number worked out from the sample, used as a stand-in for the true "
+             "number in the population, which nobody knows until every record is checked."),
+            "Checking every record is called a census. A census has no sampling error, but it costs the "
+            "most time. A sample costs far less, and in exchange you accept a known amount of uncertainty.",
+            ("quote", "A sample does not give the exact answer. It gives a close one, with its limits written beside it."),
+            ("h", "What Makes a Sample Random"),
+            "In a simple random sample, every record in the population has the same chance of being chosen. "
+            "That is what lets the sample speak for the whole.",
+            ("point", "Not the first 400", "The first 400 receipts of the year come from January, which may "
+             "have different encoders, workloads or errors than other months."),
+            ("point", "Not the easy 400", "Receipts from the counter nearest the records room are easier to "
+             "pull, but they may not be typical. This is the sampling bias described in Part 13."),
+            ("point", "Not hand-picked", "Choosing receipts that “look normal” quietly removes the unusual "
+             "ones, which may be where the errors are."),
+            ("h", "Drawing a Random Sample in a Spreadsheet"),
+            ("point", "1. Start with the full list", "One row per receipt, as in Part 12: all 12,000."),
+            ("point", "2. Add a random number", "In a new column, type =RAND() and copy it down. In both Google "
+             "Sheets and Excel, RAND returns a random number between 0 and 1."),
+            ("point", "3. Freeze it", "RAND gives new numbers every time the sheet recalculates. Copy the "
+             "column and paste it back as values only, so the sample stays the same."),
+            ("point", "4. Sort and take the top", "Sort the whole list by the random column and take the first "
+             "400 rows. That is your sample."),
+            ("point", "5. Save the list", "Keep the 400 receipt numbers in their own file, so anyone can check "
+             "the same receipts later."),
+            ("h", "The Result, and How Sure We Can Be"),
+            "Two clerks check the 400 receipts against the paper copies and find 24 with a wrong barangay "
+            "code. That is 24 ÷ 400 = 6%.",
+            "But a different random 400 could have given 5% or 7%. The margin of error says how far the "
+            "estimate is likely to be from the true rate. For a percentage from a simple random sample, "
+            "the usual formula at 95% confidence is:",
+            ("point", "Margin of error", "1.96 × √( p × (1 − p) ÷ n ), where p is the sample rate as a "
+             "decimal and n is the sample size."),
+            ("point", "Worked out", "p = 0.06 and n = 400. Then 0.06 × 0.94 ÷ 400 = 0.000141. Its square root "
+             "is about 0.0119. Times 1.96 gives about 0.023, or 2.3 percentage points."),
+            ("point", "The range", "6% minus 2.3 points is 3.7%; 6% plus 2.3 points is 8.3%. Applied to 12,000 "
+             "receipts, that is roughly 440 to 1,000 receipts with a wrong code."),
+            "The 1.96 comes from the normal curve and goes with 95% confidence. The meaning of “95% "
+            "confidence” is easy to misread. It means that if the office drew many random samples the same "
+            "way and built a range from each, about 95% of those ranges would contain the true rate. It does "
+            "not promise that this particular range is correct.",
+            ("h", "How Big Should the Sample Be?"),
+            "The same formula can be turned around to find the sample size for a margin of error you choose. "
+            "When you have no idea what the rate will be, the cautious choice is p = 0.5, which gives the "
+            "largest sample:",
+            ("point", "Sample size", "n = 0.25 × (1.96 ÷ E)², where E is the margin of error you want, as a "
+             "decimal. Round up."),
+            ("point", "E = 5 points", "0.25 × (1.96 ÷ 0.05)² = 384.16, so 385 records."),
+            ("point", "E = 3 points", "0.25 × (1.96 ÷ 0.03)² = 1,067.1, so 1,068 records."),
+            ("point", "E = 2 points", "0.25 × (1.96 ÷ 0.02)² = 2,401 records."),
+            "Notice the pattern: cutting the margin of error in half takes about four times as many records. "
+            "Precision gets expensive quickly, so decide how precise the answer needs to be before choosing "
+            "the size.",
+            ("h", "Does the Population Size Matter?"),
+            "Less than you might expect. The formula above has no population size in it at all. For smaller "
+            "populations, a finite population correction trims the sample a little: divide the starting sample size n by 1 + (n − 1) ÷ N, where N is the population size.",
+            ("point", "For 12,000 receipts", "385 ÷ (1 + 384 ÷ 12,000) is about 373.1, so 374 records instead "
+             "of 385."),
+            "That is why 400 out of 12,000 is not “barely three percent” in the way the head of office feared. "
+            "What sets the precision is mainly the number of records checked, not the share of the population "
+            "they make up.",
+            ("h", "What the Margin of Error Does Not Cover"),
+            "The margin of error measures only one thing: the chance difference between a random sample and "
+            "the whole population. It does not cover other problems.",
+            ("point", "A sample that is not random", "If the 400 were hand-picked, the formula still produces "
+             "a number, but the number means little."),
+            ("point", "Checking mistakes", "If a clerk misreads a paper receipt, that error is not in the "
+             "margin."),
+            ("point", "Missing records", "Receipts never entered into the system cannot be sampled from it."),
+            ("point", "Very few errors found", "The formula is an approximation. When a sample turns up only a "
+             "handful of errors, or none, ask someone with statistics training before reporting a margin."),
+            ("h", "Reporting the Result"),
+            ("point", "Say how the sample was drawn", "“A random sample of 400 of last year’s 12,000 receipts.”"),
+            ("point", "Give the estimate and the range", "“About 6% had a wrong barangay code, with a margin "
+             "of error of about 2.3 percentage points at 95% confidence, or roughly 440 to 1,000 receipts.”"),
+            ("point", "Say what it does not cover", "“This does not include receipts that were never entered.”"),
+            ("point", "Keep the list", "Attach or file the list of sampled receipt numbers."),
+            ("h", "The Receipts Check, Decided"),
+            "The head of office accepted the estimate. A rate between about 4% and 8% was high enough to "
+            "justify fixing the codes, so the office used a mapping table from Part 16 to correct them, then "
+            "drew a fresh random sample of 400 to check the fix. That second sample found 2 errors, and the "
+            "analyst, following the rule above, reported the count plainly instead of a margin.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Sampling the easy records", "Use a random number to choose, not convenience."),
+            ("point", "Judging size by percentage", "The number checked matters more than the share of the "
+             "population."),
+            ("point", "Reporting one number alone", "Give the range and the confidence level with it."),
+            ("point", "Treating the margin as the whole story", "It covers chance, not bias or checking errors."),
+            ("h", "Key Takeaways"),
+            ("point", "Random means equal chance", "Every record must have the same chance of being chosen."),
+            ("point", "Margin of error", "1.96 × √(p(1 − p) ÷ n) at 95% confidence, for a rate from a random "
+             "sample."),
+            ("point", "Size from precision", "About 385 records for ±5 points; four times as many to halve "
+             "that."),
+            ("point", "Report honestly", "Estimate, range, how the sample was drawn, and what it leaves out."),
+            ("h", "Your Part 17 Exercise"),
+            "Pick one list in your office that is too long to check in full, such as receipts, permits or "
+            "notices.",
+            ("point", "Choose a margin", "Decide how precise the answer needs to be, and work out the sample "
+             "size."),
+            ("point", "Draw the sample", "Use RAND, freeze it, sort, and take the top rows."),
+            ("point", "Check and calculate", "Count the problems, work out the rate and its margin of error."),
+            "Then write the result in one sentence that a head of office could read without help, with the "
+            "range included.",
+            ("cta", "Read: Data Analytics Series, Part 13", "/blog/data-analytics-part-13-bias-in-data/"),
+            ("cta", "Read: Data Analytics Series, Part 16", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 12", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Business Intelligence Series, Part 17", "/blog/business-intelligence-part-17-who-sees-what/"),
+            ("ask", "Which list in your office has never been checked because it seemed too long to check?"),
+        ],
+    },
+    {
         "date": "January 26, 2027",
         "title": "Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them",
         "slug": "data-analytics-part-16-dirty-data",
