@@ -13,6 +13,140 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "date": "February 19, 2027",
+        "title": "Business Intelligence Series, Part 21: Putting It Together, a Treasury BI Setup in Four Weeks",
+        "slug": "business-intelligence-part-21-putting-it-together",
+        "category": "bi",
+        "summary": "Twenty parts covered the pieces of business intelligence one at a time. This part puts "
+                   "them in order as a four-week plan for a small treasury office: from the first question to "
+                   "a checked, shared dashboard and a weekly routine, with a checklist for each week.",
+        "publish_on": "2027-02-19 21:00",
+        "body": [
+            "A colleague from another treasury office calls the analyst. “We want what you have: the "
+            "dashboard, the weekly numbers, the alerts. Where do we start?”",
+            "The analyst almost answers “with the dashboard,” then stops. The dashboard was the last thing "
+            "built, not the first. Everything people see on it rests on work they never see: a question agreed "
+            "on, a model, a pipeline, checks and rules about who sees what.",
+            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "taxpayer is described.)",
+            "This part gathers the earlier parts of this series into one plan, in the order the work is "
+            "actually done. By the end of this post you will have a four-week plan for a first treasury BI "
+            "setup, a checklist for each week, the questions to ask before calling it finished, and a routine "
+            "that keeps it trustworthy afterward. Each step links back to the part that explains it.",
+            ("photo", "blog/bi-four-weeks.jpg", "A first treasury BI setup in four weeks: the question, the "
+             "pipeline, the dashboard, then sharing and routine. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Before Week 1: Keep It Small"),
+            "The aim is one working setup, not a complete one. Choose one area, such as daily collections, "
+            "and leave the rest for later. A small setup that people trust does more good than a large one "
+            "that nobody checks.",
+            ("point", "One audience", "The head of office, for example, and the questions they ask each week."),
+            ("point", "One source", "The cashier’s daily export of receipts."),
+            ("point", "Free tools", "Google Sheets for the pipeline and Data Studio for the dashboard, as in "
+             "Parts 16 and 20."),
+            ("quote", "Build the smallest thing people will trust, then let trust pay for the next step."),
+            ("h", "Week 1: The Question and the Measures"),
+            ("point", "Talk to the people", "Ask the head of office what decisions they make each week and "
+             "what they wish they knew sooner. Part 4 explains how, and how to write the answers into a short "
+             "BI brief."),
+            ("point", "Pick what to watch", "Choose three to five measures, such as collections by day, by barangay, by collector and by revenue source. Part 3 "
+             "describes what a treasury can watch every day."),
+            ("point", "Define each measure", "Write one sentence for each: what is counted, from which field, "
+             "over what period. These sentences start the data dictionary from Part 10."),
+            ("point", "Decide who sees what", "Write the access line in the brief now, before any data is "
+             "shared. Part 17 explains why."),
+            "End of week 1: a one-page brief, signed off by the head of office, with the measures defined.",
+            ("h", "Week 2: The Model and the Pipeline"),
+            ("point", "Sketch the model", "One fact table of receipts, and dimension tables for dates, "
+             "barangays, collectors and revenue accounts. Part 5 explains facts and dimensions, Part 14 the "
+             "date table, and Part 15 how to shape the account levels."),
+            ("point", "Build the pipeline", "A Raw tab where the export is pasted as it arrived, a Clean tab of "
+             "formulas, and a Summary tab of totals, as in Part 16. That is the ETL pattern from Part 7 inside "
+             "one file."),
+            ("point", "Add the checks", "A Checks tab that compares row counts and totals, flags duplicates "
+             "and unknown codes, and says READY or STOP. Part 9 explains the tests, and Part 16 builds them."),
+            "End of week 2: a pipeline that turns one real week of exports into a summary, with every check "
+            "passing, or failing for a reason you can explain.",
+            ("h", "Week 3: The Dashboard"),
+            ("point", "Connect a clean table", "Build a sharing file with only what readers may see, and "
+             "connect Data Studio to it, as in Parts 17 and 20."),
+            ("point", "Three pieces first", "A scorecard with a fair comparison, a trend line and a "
+             "breakdown. Part 19 explains fair comparisons, and Part 8 when a report serves better than a "
+             "dashboard."),
+            ("point", "Let readers ask", "Add a date control and one filter. Part 13 explains how far a reader’s "
+             "drill path should go."),
+            ("point", "Fit the phone", "Check it on a phone, since that may be where the head of office opens "
+             "it. Part 12 covers layout and speed."),
+            "End of week 3: a dashboard whose numbers match the sheet, checked by someone other than the person "
+            "who built it.",
+            ("h", "Week 4: Sharing and the Routine"),
+            ("point", "Share by name", "Viewers by name, with the credentials setting chosen on purpose, as in "
+             "Part 17."),
+            ("point", "Add one or two alerts", "A threshold for the measure that matters most, with an owner "
+             "and a first check, as in Part 18."),
+            ("point", "Brief the first reader", "Walk the head of office through it in five minutes: the answer first, "
+             "the few facts behind it, and the decision needed. Part 11 gives the shape."),
+            ("point", "Write it down", "The data dictionary, the owner of each piece, and a change log, as in "
+             "Part 10."),
+            "End of week 4: the first weekly briefing given from the dashboard, and the steps for running the "
+            "pipeline written down for whoever does it next.",
+            ("h", "Before Calling It Finished"),
+            ("point", "Can someone else run it?", "Ask a colleague to paste next week’s export using only the "
+             "written guide."),
+            ("point", "Does every number have a source?", "Pick any figure on the dashboard and trace it back "
+             "to the receipts."),
+            ("point", "Does each reader see only what they should?", "Open it with a viewer’s account and look."),
+            ("point", "Does the brief still match?", "Compare what was built with the questions from week 1. "
+             "Anything built that nobody asked for can go."),
+            ("h", "The Weekly Routine Afterward"),
+            ("point", "Monday", "Paste the export, read the Checks tab, and fix any STOP before anyone looks at "
+             "the dashboard."),
+            ("point", "During the week", "Alerts go to their owners, who record what they found."),
+            ("point", "Friday", "Note any change to a definition, a source or a layout in the change log."),
+            ("point", "Each quarter", "Ask the readers what they use and what they ignore, and remove what "
+             "nobody uses."),
+            ("h", "Questions That Come Up Along the Way"),
+            ("point", "Do we need a database first?", "Not for a first setup. A spreadsheet pipeline can carry "
+             "one office’s daily receipts while the volume is modest. Part 6 explains what a database or a warehouse would add when "
+             "that time comes."),
+            ("point", "What if the export changes?", "The Checks tab should say STOP, because the row counts "
+             "or the columns no longer match. Agree on the export layout with whoever makes it, and record any "
+             "change in the change log."),
+            ("point", "Who should build it?", "Someone who knows the data and has the time. Part 2 describes "
+             "the BI roles, and in a small office one person may hold several of them."),
+            ("point", "How do we know it worked?", "Go back to the brief. If the head of office makes the "
+             "decisions named there sooner, or with fewer phone calls, it worked."),
+            ("h", "The Other Office, Four Weeks Later"),
+            "The colleague followed the plan with one change: their first audience was the revenue unit head, "
+            "not the head of office. In week 2, the checks found that one collector’s receipts came from a "
+            "second export nobody had mentioned. In week 4, the first briefing took six minutes, and the only "
+            "question was why one barangay’s collections had dropped. That was the kind of question the "
+            "dashboard was built to raise.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Starting with the dashboard", "Start with the question and the measures."),
+            ("point", "Building for everyone at once", "One audience, one source, then grow."),
+            ("point", "Skipping the checks", "A dashboard without checks spreads mistakes faster."),
+            ("point", "No written routine", "If only one person knows how it runs, it stops when they are away."),
+            ("h", "Key Takeaways"),
+            ("point", "Week 1", "Brief, measures, definitions and access."),
+            ("point", "Week 2", "Model, pipeline and checks."),
+            ("point", "Week 3", "A dashboard on a clean table, checked by someone else."),
+            ("point", "Week 4", "Sharing, alerts, a briefing and a written routine."),
+            ("h", "Your Part 21 Exercise"),
+            "Plan your own four weeks on one page.",
+            ("point", "Name the scope", "One audience, one source, three to five measures."),
+            ("point", "Write the weekly goals", "One line for what will be finished at the end of each week."),
+            ("point", "Name the checker", "Who, other than you, will test the numbers in week 3?"),
+            "Then show the page to the person you are building it for, and ask one question: “If this works, "
+            "what decision will you make faster?” The answer is the reason to start.",
+            ("cta", "Read: Business Intelligence Series, Part 4", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Business Intelligence Series, Part 16", "/blog/business-intelligence-part-16-pipeline-in-sheets/"),
+            ("cta", "Read: Business Intelligence Series, Part 20", "/blog/business-intelligence-part-20-first-data-studio-dashboard/"),
+            ("cta", "Read: Business Intelligence Series, Part 10", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("ask", "If your office had a dashboard four weeks from now, what is the first question it should answer?"),
+        ],
+    },
+    {
         "date": "February 14, 2027",
         "title": "Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data",
         "slug": "business-intelligence-part-20-first-data-studio-dashboard",
