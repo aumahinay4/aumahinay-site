@@ -9,6 +9,264 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "title": "Cybersecurity Series, Part 37: Physical Security at the Office, Doors, Keys and Visitors",
+        "slug": "cybersecurity-part-37-physical-security",
+        "category": "security",
+        "date": "May 8, 2027",
+        "summary": "Passwords and updates mean little if anyone can walk into the records room or carry out a "
+                   "laptop. This part covers the physical side of security in a small office: who may enter "
+                   "which room, how to handle visitors and keys, what tailgating is, and what the Data Privacy "
+                   "Act’s implementing rules say about physical measures.",
+        "publish_on": "2027-05-08 21:00",
+        "body": [
+            "The man wore a lanyard and carried a toolbox. He said he was from the internet provider, sent to "
+            "check the connection, and asked where the network equipment was. The clerk at the front desk "
+            "pointed him down the hall. It was the room where the records of every real property owner in "
+            "town were kept, and the door had been propped open with a chair because the air conditioner was "
+            "broken.",
+            "He spent twenty minutes inside, alone. Nobody had called the provider to confirm he was coming.",
+            "(The visitor, the office and the events are invented for this post. The rules quoted below are "
+            "from the cited regulations.)",
+            "Part 36 dealt with a fake warning on the screen. This part steps away from the screen to the door. "
+            "Read to the end and you will know why physical security matters as much as passwords, which "
+            "rooms need control, how to handle visitors and keys, what tailgating looks like, and what the "
+            "Data Privacy Act’s implementing rules expect.",
+            ("photo", "blog/cyber-physical.jpg", "Physical security: control who enters each room, escort "
+             "visitors, manage keys, and keep devices and papers out of reach. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why the Door Matters"),
+            "Every protection in this series assumes that a stranger cannot simply touch the equipment.",
+            ("point", "A device in hand", "Someone with a few minutes alone at a computer can plug in a "
+             "drive, read an unlocked screen or take the device. Part 17 explained how encryption limits the "
+             "damage when a device is lost."),
+            ("point", "Paper is data too", "Tax declarations, receipts and payroll sheets hold names, "
+             "addresses and amounts. A file cabinet left open needs no password."),
+            ("point", "Network equipment", "A switch or router in an open room can be connected to, reset or "
+             "unplugged."),
+            ("h", "What the Data Privacy Act Rules Say"),
+            "The implementing rules and regulations of the Data Privacy Act of 2012, Republic Act No. 10173, "
+            "include a section on physical security measures, Section 27. Where appropriate, it expects "
+            "offices that handle personal data to have:",
+            ("point", "Access controls on rooms", "Policies and procedures to monitor and limit access to, "
+             "and activities in, the rooms and workstations where personal data is processed."),
+            ("point", "A sensible layout", "Office space and workstations arranged so that people processing "
+             "personal data have privacy from those who pass by."),
+            ("point", "Defined duties and schedules", "So that only the people doing that work are in the room "
+             "or at the workstation at a given time."),
+            ("point", "Rules for media", "Policies for the transfer, removal, disposal and re-use of electronic "
+             "media."),
+            ("point", "Protection from damage", "Measures that protect rooms and equipment, as far as "
+             "practicable, from disasters, power problems, outside access and similar threats."),
+            "Part 20 covered privacy at your desk. This part is about the rooms and doors around it.",
+            ("h", "Map the Rooms"),
+            "Walk through the office and sort every room into three groups.",
+            ("point", "Public", "The counter area and the waiting area. Anyone may be there during office "
+             "hours."),
+            ("point", "Staff only", "Work areas behind the counter, where computers and current files are."),
+            ("point", "Restricted", "The vault, the records room and the room or cabinet with network "
+             "equipment. Only named people may enter, and the door stays locked."),
+            "Post the rule on each restricted door: who may enter, and who to call if someone else asks.",
+            ("photo", "blog/cyber-physical-zones.jpg", "Three zones in a treasury office: public, staff only "
+             "and restricted, with the rule for each door. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Visitors"),
+            ("point", "Confirm before they arrive", "A real technician’s visit can be confirmed by calling the "
+             "company at the number on your contract or bill, not a number the visitor gives."),
+            ("point", "Log every visitor", "Name, organization, purpose, time in and time out."),
+            ("point", "Escort in staff and restricted areas", "A visitor is never alone in a room with "
+             "records, equipment or cash."),
+            ("point", "Give visitors a badge", "A simple numbered visitor card, returned on the way out, "
+             "makes a stranger without one easy to spot."),
+            ("point", "Ask without embarrassment", "“May I see your work order? I’ll call your office to "
+             "confirm.” A real visitor expects it."),
+            ("h", "Tailgating"),
+            "Tailgating is following an authorized person through a locked door without using your own access. "
+            "It can look like politeness: someone carrying boxes, a smile, a door held open.",
+            ("point", "Let the door close", "Each person opens a restricted door for themselves."),
+            ("point", "Offer to help instead", "“Let me get someone to let you in” is courteous and safe."),
+            ("point", "Never prop a restricted door", "If it must stay open for repairs, a staff member stays "
+             "beside it."),
+            ("h", "Keys and Combinations"),
+            ("point", "A key register", "Who holds which key, signed when issued and when returned."),
+            ("point", "Change when people leave", "When a person with a vault combination or a restricted key "
+             "transfers or retires, change the combination or the lock. Part 18 made “access ends when the "
+             "job ends” one of its rules."),
+            ("point", "No spare keys in drawers", "A spare key in an unlocked drawer is an open door."),
+            ("h", "Devices and Papers"),
+            ("point", "Lock the screen when you stand up", "Part 33 covered the habits for shared computers."),
+            ("point", "Laptops stay locked away", "After hours, laptops go into a locked cabinet or are taken "
+             "home under the office’s rules."),
+            ("point", "Clear the printer", "Collect printouts at once. A report left in the tray can walk out "
+             "with anyone."),
+            ("point", "Dispose properly", "Old drives and papers follow the office’s disposal rules, as "
+             "Part 29 advised for devices, and its records schedule."),
+            ("h", "Power, Water and Fire"),
+            "Section 27 also covers protection from damage. Keep records and equipment off the floor in rooms "
+            "that flood, use a surge protector or uninterruptible power supply for key equipment, and know "
+            "where the fire extinguisher is.",
+            ("h", "A Short Monthly Walk-Through"),
+            "Once a month, the person who owns physical security walks the office with a short list. It takes "
+            "about fifteen minutes.",
+            ("point", "Doors", "Do restricted doors close and lock by themselves? Is any one propped or left "
+             "unlocked?"),
+            ("point", "Logs", "Is the visitor log filled in, with times out as well as times in?"),
+            ("point", "Keys", "Does the key register match the people who still work in the office?"),
+            ("point", "Equipment", "Is anything plugged into the network equipment that nobody recognizes? "
+             "Are cables and power strips in order?"),
+            ("point", "Papers", "Are printers, desks and shared tables clear of documents with personal "
+             "data at the end of the day?"),
+            "Write the date and what was found. A list of small fixes each month is a sign the check works.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting a uniform", "Confirm every unscheduled visitor."),
+            ("point", "Propping doors", "A propped restricted door is an unlocked one."),
+            ("point", "Keys without a register", "Nobody knows who can get in."),
+            ("point", "Leaving visitors alone", "Escort them in staff and restricted areas."),
+            ("h", "Key Takeaways"),
+            ("point", "Three zones", "Public, staff only and restricted."),
+            ("point", "Confirm, log, escort", "Every visitor, every time."),
+            ("point", "Keys and combinations change with people", "When access ends, it really ends."),
+            ("point", "The law expects it", "Section 27 of the Data Privacy Act rules lists physical measures."),
+            ("h", "Your Part 37 Action Plan"),
+            ("point", "Today", "Walk the office and label each room public, staff only or restricted."),
+            ("point", "This week", "Start a visitor log at the front desk and a key register for restricted "
+             "rooms."),
+            ("point", "This month", "Check who holds the vault combination and the records room key, and "
+             "change any that a former staff member knew."),
+            "The internet provider had sent nobody. A technician from the municipal IT office checked the "
+            "network equipment that afternoon and found a small device plugged into the back of the switch. "
+            "The next day, the records room door had a lock, a sign and a visitor log, and the air "
+            "conditioner was finally fixed.",
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 33: Shared Office Computers, Habits That Keep One Desk From Exposing Everyone", "/blog/cybersecurity-part-33-shared-office-computers/"),
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 3: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
+            ("ask", "Who can walk into your office’s records room today without anyone noticing?"),
+        ],
+    },
+    {
+        "title": "Cybersecurity Series, Part 36: Tech Support Scams, the Fake Virus Warning That Wants a Phone Call",
+        "slug": "cybersecurity-part-36-tech-support-scams",
+        "category": "security",
+        "date": "May 3, 2027",
+        "summary": "A loud warning fills the screen, says the computer is infected, and gives a number to call. "
+                   "This part explains how tech support scams work, what the US Federal Trade Commission says "
+                   "real companies do not do, how to close a fake warning safely, and what to do if you "
+                   "already let a stranger into your computer.",
+        "publish_on": "2027-05-03 21:00",
+        "body": [
+            "It was ten minutes before lunch when the screen on the cashier’s computer turned red. A box in "
+            "the middle said the computer was infected, that personal and bank data were at risk, and that "
+            "she must not shut it down. A voice read the warning aloud through the speakers. At the bottom was "
+            "a phone number for “technical support.”",
+            "The browser would not close. The beeping would not stop. Carmen picked up her phone and dialed the "
+            "number, because the screen said that was the only way to fix it.",
+            "(Carmen, the office and the call are made up for this post. The advice below comes from the cited "
+            "government sources.)",
+            "Part 35 looked at fake customer service that waits for you to search. This part looks at a scam "
+            "that interrupts you instead: the fake virus warning. After this post, you will know how tech "
+            "support scams work, the signs that a warning is fake, how to close one safely, and what to do if "
+            "you already called, paid or let someone connect to your computer.",
+            ("photo", "blog/cyber-techsupport.jpg", "Tech support scams: a fake warning, a phone number, a "
+             "request to connect to your computer, and a demand for payment. Real security warnings do not "
+             "ask you to call. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "How the Scam Works"),
+            ("point", "The warning", "A web page, sometimes reached through a bad ad or a mistyped address, fills "
+             "the screen. It may copy a well-known logo, play an alarm, and claim to have found viruses."),
+            ("point", "The number", "The page tells you to call a support line right away. Some versions "
+             "arrive as a phone call instead, from someone who says your computer has been sending errors."),
+            ("point", "The connection", "The “technician” asks you to install a remote-access app, so they "
+             "can see and control your screen."),
+            ("point", "The show", "They open system screens full of warnings that are normal, and call them "
+             "proof of infection."),
+            ("point", "The bill", "They ask for payment for a repair, a license or a protection plan, or they "
+             "ask you to open your bank or e-wallet to “check” for hackers."),
+            ("h", "What the FTC Says Real Companies Do Not Do"),
+            "The US Federal Trade Commission’s guide to tech support scams, dated September 2025, "
+            "is direct about the signs.",
+            ("point", "No surprise contact", "The FTC says legitimate tech companies won’t contact you by "
+             "phone, email or text message to tell you there is a problem with your computer."),
+            ("point", "No phone numbers in warnings", "In an April 2025 consumer alert, the FTC said security "
+             "pop-up warnings from real tech companies will never ask you to call a phone number."),
+            ("point", "Payment methods that are hard to reverse", "The FTC lists gift cards, wire transfers, "
+             "bank transfers, cryptocurrency and payment apps among the methods scammers insist on."),
+            ("point", "Moving money “to protect it”", "The FTC warns that some scammers hand you to a fake "
+             "official who tells you to move your money to keep it safe. That is a scam."),
+            ("h", "Why It Works"),
+            ("point", "Noise and urgency", "An alarm and a countdown make people act before they think."),
+            ("point", "A screen that will not close", "The page uses full-screen mode and pop-ups to look "
+             "like the whole computer is locked."),
+            ("point", "Fear of blame", "At work, a staff member may worry about being blamed and try to fix "
+             "it quietly instead of telling the office’s technical person."),
+            ("photo", "blog/cyber-techsupport-steps.jpg", "What to do when a fake warning appears, and what to "
+             "do if you already called or let someone connect. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "How to Close a Fake Warning"),
+            "A fake warning is a web page. Closing the browser removes it.",
+            ("point", "Do not call, click or type", "Not the number, not the buttons inside the warning, not "
+             "even one that says “Cancel.”"),
+            ("point", "Leave full screen", "In common browsers such as Chrome and Edge, pressing the Esc key exits full-screen mode, so "
+             "the browser’s own close button appears."),
+            ("point", "Close the browser", "If the page will not let go on a Windows computer, press Ctrl, "
+             "Shift and Esc together to open Task Manager, select the browser, and choose End task."),
+            ("point", "Do not restore the old tabs", "When you open the browser again, it may offer to reopen "
+             "the pages. Decline, or the warning returns."),
+            ("point", "Then check properly", "The FTC suggests updating your security software and running a "
+             "scan. Part 11 explained why updates matter."),
+            "On a phone, the same kind of warning appears inside the browser. Close the tab, and do not "
+            "install any app the page recommends.",
+            ("h", "If You Already Called or Let Someone Connect"),
+            ("point", "Disconnect", "Turn off Wi-Fi or unplug the network cable, so the remote session ends."),
+            ("point", "Remove the remote-access app", "Uninstall whatever they told you to install. At the "
+             "office, let the technical person do this and check the computer."),
+            ("point", "Change passwords from another device", "The FTC advises changing your password right "
+             "away, and changing it on any other account that used the same one."),
+            ("point", "Call your bank or e-wallet", "If you paid or opened a banking app during the call, ask "
+             "the bank to block the account or card and reverse what it can."),
+            ("point", "Report it", "In the Philippines, call the CICC hotline 1326. At work, follow the "
+             "incident steps from Part 9 and tell your supervisor."),
+            ("h", "At the Office"),
+            ("point", "Make reporting safe", "Tell staff that a fake warning is not their fault, and that "
+             "reporting it quickly is the right move."),
+            ("point", "Post the rule", "Beside each computer: “A real warning never asks you to call. Close "
+             "the browser and tell IT.”"),
+            ("point", "Limit who can install apps", "If daily work uses a normal account without administrator "
+             "rights, a caller has a harder time talking anyone into installing remote access. Part 18 made "
+             "“fewest possible administrators” rule 3 of its baseline."),
+            ("point", "Keep one trusted contact", "Name the person or office that handles computer problems, "
+             "and make sure staff know that real support at work comes from that person, not from a number "
+             "on a screen."),
+            ("point", "Check the browser", "Blocking pop-ups and removing unknown browser extensions reduces "
+             "the pages that can take over a screen. The office’s technical person can check each computer "
+             "once a quarter."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Calling the number on the screen", "Real warnings do not include one."),
+            ("point", "Letting a stranger connect", "Remote access hands over the computer."),
+            ("point", "Paying to “fix” a warning", "Especially by gift card, transfer or crypto."),
+            ("point", "Hiding it at work", "Report it so others are warned and the computer is checked."),
+            ("h", "Key Takeaways"),
+            ("point", "Warnings with phone numbers are fake", "So says the FTC."),
+            ("point", "Close the browser", "Esc, then close, or Task Manager on Windows."),
+            ("point", "Never allow remote access to a caller", "Disconnect if you already did."),
+            ("point", "Act fast if you paid", "Bank first, then CICC 1326."),
+            ("h", "Your Part 36 Action Plan"),
+            ("point", "Today", "Practice pressing Ctrl, Shift and Esc on a Windows computer, so you know where "
+             "Task Manager is before you need it."),
+            ("point", "This week", "Show a parent or co-worker a picture of a fake warning, and tell them the "
+             "one rule: never call the number."),
+            ("point", "For the office", "Write down who to call when a warning appears, and put that name "
+             "and number beside each computer."),
+            "The “technician” was asking Carmen to download an app when the office’s IT assistant walked past and "
+            "saw the red screen. He ended the call, closed the browser from Task Manager and scanned the "
+            "computer. Nothing had been installed. The next morning, a small card appeared beside every "
+            "computer in the treasury: “A real warning never asks you to call.”",
+            ("cta", "Read: Cybersecurity Series, Part 35: Fake Customer Service, When Help Is the Trap", "/blog/cybersecurity-part-35-fake-customer-service/"),
+            ("cta", "Read: Cybersecurity Series, Part 11: Software Updates, the Fix You Keep Postponing", "/blog/cybersecurity-part-11-software-updates/"),
+            ("cta", "Read: Cybersecurity Series, Part 9: Incident Response, or What to Do When Something Goes Wrong", "/blog/cybersecurity-part-9-incident-response/"),
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("ask", "Has a fake virus warning ever appeared on a computer at your office?"),
+        ],
+    },
+    {
         "date": "April 28, 2027",
         "title": "Cybersecurity Series, Part 35: Fake Customer Service, When Help Is the Trap",
         "slug": "cybersecurity-part-35-fake-customer-service",

@@ -13,6 +13,261 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "title": "Business Intelligence Series, Part 37: The Pareto Chart, Finding the Few Causes Behind Most of a Problem",
+        "slug": "business-intelligence-part-37-pareto-chart",
+        "category": "bi",
+        "date": "May 10, 2027",
+        "summary": "When a problem has many causes, a few of them may deserve attention first. A Pareto "
+                   "chart sorts the causes from biggest to smallest and adds a running total, so the office can "
+                   "see which ones to fix. This part explains where the idea came from, how to build the chart "
+                   "in Google Sheets, and how to read it without overstating the 80/20 rule.",
+        "publish_on": "2027-05-10 21:00",
+        "body": [
+            "In the first quarter, the business permit counter turned back 300 applications. Each one meant a "
+            "taxpayer going home, finding a missing paper, and lining up again. The staff had a list of reasons "
+            "for every rejection, eight of them, and a long meeting about all eight.",
+            "Then someone sorted the list and added one column. The meeting got much shorter.",
+            "(The counter, the reasons and the counts are a made-up example for this lesson. The chart, its "
+            "history and the Google Sheets steps are real.)",
+            "Part 36 kept old reports true when details change. This part is about deciding where to start when "
+            "a problem has many causes. Read to the end, and you will know where the Pareto idea came from, how "
+            "to build a Pareto chart in Google Sheets, how to read it, and the mistakes that turn a useful chart "
+            "into a slogan.",
+            ("photo", "blog/bi-pareto.jpg", "The Pareto idea: sort the causes from biggest to smallest, add a "
+             "running total, and see which few explain most of the problem. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Where the Idea Came From"),
+            "The Clinical Excellence Commission of New South Wales, Australia, explains the history in its "
+            "quality improvement tools. Joseph Juran, a quality management expert, suggested the principle and "
+            "named it after the Italian economist Vilfredo Pareto, who noted the 80/20 connection in 1896. "
+            "Pareto had shown that approximately 80 percent of the land in Italy was owned by 20 percent of the "
+            "population.",
+            "The Commission states the principle as: for many events, roughly 80 percent of the effects come "
+            "from 20 percent of the causes. It also calls it “the law of the vital few & trivial many.”",
+            ("quote", "The point is not the numbers 80 and 20. The point is that causes are not equal in size, so "
+             "they should not get equal attention."),
+            ("h", "What a Pareto Chart Shows"),
+            "The Commission describes the chart in two parts.",
+            ("point", "Bars", "Individual values are shown as bars in descending order, biggest on the left."),
+            ("point", "A line", "The cumulative total is shown as a line rising across the chart to 100 "
+             "percent."),
+            ("point", "An optional cut-off", "A line at 80 percent marks where the running total crosses that "
+             "level. Causes to its left are the vital few."),
+            ("h", "The Counter’s Data"),
+            "Here are the 300 rejections by reason, already sorted from most to least.",
+            ("point", "Missing barangay clearance", "112 (37.3%, running total 37.3%)"),
+            ("point", "Form not signed", "68 (22.7%, running total 60.0%)"),
+            ("point", "Lease contract missing or expired", "41 (13.7%, running total 73.7%)"),
+            ("point", "Gross sales not supported", "27 (9.0%, running total 82.7%)"),
+            ("point", "Missing community tax certificate", "18 (6.0%, running total 88.7%)"),
+            ("point", "Missing sanitary permit", "15 (5.0%, running total 93.7%)"),
+            ("point", "Old balance unpaid", "11 (3.7%, running total 97.3%)"),
+            ("point", "Other", "8 (2.7%, running total 100.0%)"),
+            "Two reasons explain 60 percent of the rejections. Four explain about 83 percent. Notice that four "
+            "of eight causes is half, not 20 percent. Real data need not land exactly on 80/20, and it does not "
+            "need to. What matters is that the top two are worth fixing first.",
+            ("photo", "blog/bi-pareto-chart.jpg", "A Pareto chart of the 300 rejections: sorted bars, a "
+             "running-total line, and an 80 percent cut-off. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Building It in Google Sheets"),
+            "Start with a tab named Reasons. Column A holds each reason, and column B holds its count, in any "
+            "order.",
+            ("point", "Step 1: Sort", "In D2, enter =SORT(A2:B9, 2, FALSE). This copies the list sorted by "
+             "count, largest first, into columns D and E. Part 33 of the Data Analytics series covered SORT."),
+            ("point", "Step 2: Share", "In F2, enter =E2/SUM($E$2:$E$9) and fill down. Format as percent."),
+            ("point", "Step 3: Running total", "In G2, enter =SUM($E$2:E2)/SUM($E$2:$E$9) and fill down. The "
+             "first $E$2 stays fixed while the second E2 moves, so each row adds everything above it. The "
+             "last row should show 100%."),
+            ("point", "Step 4: The chart", "Select D1:E9 and G1:G9, then Insert, Chart. In the chart editor, "
+             "choose Combo chart."),
+            ("point", "Step 5: Two axes", "Under Customize, Series, pick the running total series and set "
+             "its axis to Right axis. Set it to show as a line and the counts as columns."),
+            ("point", "Step 6: Label it", "Give the chart a title that states the finding, such as “Two "
+             "reasons explain 60% of rejections.”"),
+            "If the reasons come from a log of individual rejections rather than a ready count, build column B "
+            "with =COUNTIF(Log!C:C, A2), where column C of the Log tab holds the reason.",
+            ("h", "Reading the Chart Well"),
+            ("point", "Look where the line bends", "The steep part of the line is where each bar adds a lot. "
+             "Where it flattens, extra causes add little."),
+            ("point", "Keep “Other” last", "In this example we placed “Other” at the end even if it were "
+             "large, since it is a mix of causes, not one cause to fix."),
+            ("point", "Check the unit", "Counting rejections treats a small error and a costly one the same. "
+             "If some causes take far longer to fix, a second chart by hours lost may rank them differently."),
+            ("point", "Redo it after changes", "A Pareto chart is a snapshot. After the top causes are fixed, "
+             "the order will change."),
+            ("h", "Where a Pareto Chart Helps in a Treasury"),
+            "The chart fits any problem that can be counted by cause. A few treasury examples:",
+            ("point", "Corrected receipts", "Count cancelled or corrected official receipts by reason: wrong "
+             "amount, wrong name, wrong account code."),
+            ("point", "Taxpayer complaints", "Count complaints by subject, such as long lines, unclear "
+             "assessments or missing notices."),
+            ("point", "Late deposits", "Count the days a collection was deposited late by cause: no vehicle, "
+             "bank cut-off missed, collector out."),
+            ("point", "Arrears by account", "Part 34 sorted arrears by age. A Pareto chart sorts them by size, "
+             "showing whether a handful of accounts hold most of the balance."),
+            "It fits less well when there is one cause, or when the causes cannot be counted the same way. A "
+            "chart is only as honest as the reason codes behind it, so agree on the list of reasons before "
+            "staff start logging them.",
+            ("h", "What the Counter Did"),
+            ("point", "For barangay clearance", "The renewal notice now lists the clearance first, in bold, "
+             "with the barangay hall hours."),
+            ("point", "For unsigned forms", "The intake clerk checks every signature line before the "
+             "application is logged."),
+            "In the example, the next quarter’s chart showed 170 rejections, and the two former leaders had "
+            "dropped to the middle. Lease contracts were now on top, and that became the next fix.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating 80/20 as a law of nature", "It is a rough pattern, not a promise."),
+            ("point", "Leaving bars unsorted", "Without the order, it is just a bar chart."),
+            ("point", "Fixing everything at once", "Start with the vital few and measure again."),
+            ("point", "Ignoring cost", "A rare cause can still be the most expensive one."),
+            ("h", "Key Takeaways"),
+            ("point", "Causes differ in size", "A few can explain most of a problem."),
+            ("point", "Two parts", "Bars from biggest to smallest, plus a running-total line."),
+            ("point", "Built in minutes", "SORT, a running SUM and a combo chart with a right axis."),
+            ("point", "A starting point", "Fix the top causes, then build the chart again."),
+            ("h", "Your Part 37 Exercise"),
+            ("point", "Step 1", "Pick one problem your office counts, such as returned forms, complaints or "
+             "corrected receipts."),
+            ("point", "Step 2", "List at least six reasons with a count for each from last quarter."),
+            ("point", "Step 3", "Build the Pareto chart with the steps above."),
+            ("point", "Step 4", "Write one sentence naming the top two causes and one action for each."),
+            "The counter staff still keep all eight reasons on file. They just stopped discussing all eight at "
+            "every meeting.",
+            ("cta", "Read: Business Intelligence Series, Part 11: The Five-Minute Briefing for Decision Makers", "/blog/business-intelligence-part-11-five-minute-briefing/"),
+            ("cta", "Read: Business Intelligence Series, Part 13: Filters and Drill-Down, Letting Readers Ask the Next Question", "/blog/business-intelligence-part-13-filters-and-drill-down/"),
+            ("cta", "Read: Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited", "/blog/business-intelligence-part-34-aging-of-arrears/"),
+            ("cta", "Read: Data Analytics Series, Part 33: FILTER, SORT and UNIQUE, Lists in Google Sheets That Update Themselves", "/blog/data-analytics-part-33-filter-sort-unique/"),
+            ("ask", "Which problem in your office would you put on a Pareto chart first?"),
+        ],
+    },
+    {
+        "title": "Business Intelligence Series, Part 36: When Details Change, Keeping Last Year’s Report True",
+        "slug": "business-intelligence-part-36-changes-over-time",
+        "category": "bi",
+        "date": "May 5, 2027",
+        "summary": "A business moves to another barangay, a collector changes routes, a fee schedule is "
+                   "revised. If the dashboard simply overwrites the old detail, last year’s numbers change "
+                   "without anyone noticing. This part explains the three common ways to handle changes in a "
+                   "dimension table and how to build the safest one in Google Sheets.",
+        "publish_on": "2027-05-05 21:00",
+        "body": [
+            "The 2026 collections report had been approved in January. Malinao collected ₱1.42 million in "
+            "business taxes that year. In April, someone printed the same report again for a meeting, and "
+            "Malinao showed ₱1.31 million.",
+            "Nobody had touched a single 2026 payment. What changed was one row in the business list: a "
+            "hardware store had moved from Malinao to the poblacion in March 2027, and the clerk updated its "
+            "barangay. The dashboard now credited all of the store’s past payments to its new address.",
+            "(The office, the store and the figures are invented for this lesson. The design approach named "
+            "below is real.)",
+            "Part 35 split one crowded chart into many small ones. This part goes back to the data model. When "
+            "you finish reading, you will know why changing details can rewrite history, the three main ways "
+            "to handle them, how to choose between them, and how to keep a dated history in Google Sheets.",
+            ("photo", "blog/bi-history.jpg", "Changes over time: when a detail changes, overwrite it, keep the "
+             "original, or add a new dated row so old reports stay true. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why This Happens"),
+            "Part 5 split data into facts and dimensions. Facts are events: a payment of ₱8,500 on a date. "
+            "Dimensions describe them: which business, which barangay, which collector.",
+            "Facts rarely change once recorded. Dimensions do. Businesses move, rename, change owners or "
+            "switch lines of business. Collectors are reassigned. When the dashboard joins every payment to "
+            "the current version of the business, every past payment takes on today’s details.",
+            ("point", "Sometimes that is right", "If a business name was simply misspelled, fixing it "
+             "everywhere is what you want."),
+            ("point", "Sometimes it is wrong", "If the business really moved, its 2026 payments were made "
+             "from Malinao and should stay there."),
+            ("h", "Three Ways to Handle a Change"),
+            "Data warehouse designers call these slowly changing dimensions. The Kimball Group, known for "
+            "its work on dimensional modeling, numbers the approaches as types. A 2013 design tip by Margy Ross "
+            "lists them from Type 0 upward. Three are enough for the examples here.",
+            ("point", "Type 0: keep the original", "The value never changes after it is first recorded. Good "
+             "for details that should stay fixed, such as the date a business first registered."),
+            ("point", "Type 1: overwrite", "Replace the old value with the new one. History is lost, and old "
+             "reports change. Good for corrections, such as a misspelled name."),
+            ("point", "Type 2: add a new row", "Close the old row with an end date and add a new row with a "
+             "start date. Old payments stay linked to the old details, and new payments to the new ones."),
+            "There are more types, but these three are enough to make the right choice for each column.",
+            ("h", "Choosing for Each Column"),
+            "Decide column by column, and write the choice in the data dictionary from Part 10.",
+            ("point", "Business name", "Type 1 for spelling fixes. A real change of name may deserve Type 2."),
+            ("point", "Barangay", "Type 2. Collections by barangay must stay true for past years."),
+            ("point", "Line of business", "Type 2, because the business tax schedule depends on it."),
+            ("point", "Date first registered", "Type 0. It should never change."),
+            ("point", "Contact number", "Type 1. Only the latest number matters."),
+            ("point", "Assigned collector", "Type 2 if you report collections by collector, so last year’s "
+             "results stay with the person who earned them."),
+            ("photo", "blog/bi-history-rows.jpg", "One business, two rows: the old address closed on March "
+             "14, 2027, and the new one starts on March 15. Payments find the row that was true on their "
+             "date. Figures are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Building Type 2 in Google Sheets"),
+            "Start with a Businesses tab that has these columns: A business ID, B name, C barangay, D valid "
+            "from, E valid to, and F current.",
+            ("point", "Before the move", "One row: B-0417, Santos Hardware, Malinao, January 1, 2020, blank, "
+             "Yes."),
+            ("point", "Close the old row", "Change E to March 14, 2027, and F to No."),
+            ("point", "Add the new row", "B-0417, Santos Hardware, Poblacion, March 15, 2027, blank, Yes."),
+            "The business ID stays the same. The two rows share it, and the dates decide which one applies.",
+            ("h", "Finding the Right Row for Each Payment"),
+            "In the Payments tab, column A is the payment date and column B the business ID. In column C, "
+            "find the barangay that was true on the payment date:",
+            ("point", "Formula", "=INDEX(FILTER(Businesses!C:C, Businesses!A:A=B2, Businesses!D:D<=A2, "
+             "(Businesses!E:E>=A2)+(Businesses!E:E=\"\")), 1)"),
+            ("point", "Read it in parts", "Same business ID. Valid from on or before the payment date. Valid "
+             "to on or after it, or still blank. INDEX takes the first match."),
+            ("point", "Check it", "A payment dated June 2026 returns Malinao. A payment dated April 2027 "
+             "returns Poblacion."),
+            "Part 33 of the Data Analytics Series explained FILTER, and Part 14 of this series built the date "
+            "table that keeps payment dates clean.",
+            ("h", "The Same Idea for Rates"),
+            "Changes are not only about businesses. When the revenue code revises a fee or a rate, the old "
+            "rate still applies to bills from before the change.",
+            ("point", "Keep a Rates tab", "One row per rate, with the item, the amount, valid from and valid "
+             "to. Never type over an old rate."),
+            ("point", "Look up by date", "Use the same FILTER pattern, matching the item and the bill date, so "
+             "a 2026 bill finds the 2026 rate."),
+            ("point", "Explain the jump", "When a chart shows a step up in collections at the start of a year, "
+             "the Rates tab shows whether a new rate, and not more taxpayers, caused it. Part 25 showed how to "
+             "annotate that on the chart."),
+            ("h", "When Type 2 Is Too Much"),
+            "Not every column needs history. Each extra row is one more thing to check. If nobody will ever "
+            "report by a column over time, such as a contact person’s name, overwrite it and keep the table "
+            "simple.",
+            ("h", "Rules That Keep It Honest"),
+            ("point", "No gaps, no overlaps", "Each new row starts the day after the old one ends. Two rows "
+             "valid on the same day would double a payment."),
+            ("point", "Only one current row", "Each business ID has exactly one row marked Yes. A COUNTIFS "
+             "check can flag any ID with two."),
+            ("point", "Record why", "Add a column for the reason: moved, renamed, corrected. Part 10’s change "
+             "log idea applies here too."),
+            ("point", "Corrections stay Type 1", "If Malinao was entered by mistake from the start, fix the "
+             "row. Do not add a new one."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Overwriting every change", "Old reports will quietly change."),
+            ("point", "Adding rows for typos", "Corrections are not history."),
+            ("point", "Leaving gaps or overlaps in dates", "Payments will be lost or counted twice."),
+            ("point", "Deciding without writing it down", "Record the type for each column."),
+            ("h", "Key Takeaways"),
+            ("point", "Facts stay, dimensions change", "And the join can rewrite history."),
+            ("point", "Three choices", "Keep the original, overwrite, or add a dated row."),
+            ("point", "Type 2 for history that matters", "Barangay, line of business."),
+            ("point", "Dates decide the row", "FILTER on valid from and valid to."),
+            ("h", "Your Part 36 Exercise"),
+            ("point", "Step 1", "Build a Businesses tab with five businesses and the six columns above."),
+            ("point", "Step 2", "Move one business to another barangay using Type 2."),
+            ("point", "Step 3", "Add ten payments across both years and use the formula to find each "
+             "barangay."),
+            ("point", "Step 4", "Total collections by barangay for 2026. The total should not change after "
+             "the move."),
+            "After the fix, the 2026 report showed Malinao at ₱1.42 million again, matching the approved "
+            "version. The reprinted copy from April was shredded, and the data dictionary gained a new line: "
+            "“Barangay: Type 2, keep history.”",
+            ("cta", "Read: Business Intelligence Series, Part 5: Data Modeling 101, Facts, Dimensions and the Star", "/blog/business-intelligence-part-5-data-modeling/"),
+            ("cta", "Read: Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Business Intelligence Series, Part 25: Annotating Charts, Lines, Bands and Notes That Explain the Bumps", "/blog/business-intelligence-part-25-annotating-charts/"),
+            ("cta", "Read: Data Analytics Series, Part 33: FILTER, SORT and UNIQUE, Lists in Google Sheets That Update Themselves", "/blog/data-analytics-part-33-filter-sort-unique/"),
+            ("ask", "When a business moves in your records, do last year’s reports change too?"),
+        ],
+    },
+    {
         "title": "Business Intelligence Series, Part 35: Small Multiples, One Small Chart per Barangay",
         "slug": "business-intelligence-part-35-small-multiples",
         "category": "bi",

@@ -14,6 +14,270 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 36: Kanban Boards and Limits on Work in Progress",
+        "slug": "project-management-part-36-kanban-boards",
+        "category": "pm",
+        "date": "May 7, 2027",
+        "summary": "Some work never stops arriving: certifications, refund requests, corrections, letters. A "
+                   "Kanban board shows that work on one wall, and a limit on work in progress keeps the team "
+                   "finishing instead of only starting. This part explains how to set up a simple board, how to "
+                   "choose limits, and which four numbers to watch.",
+        "publish_on": "2027-05-07 21:00",
+        "body": [
+            "Every desk in the section had a pile. Each pile held requests that had been started: a "
+            "certification half typed, a refund request waiting for a signature, a correction waiting for a "
+            "record from another office. Nobody was idle. Yet a taxpayer who asked about a certification filed "
+            "two weeks earlier was told, again, “It is being processed.”",
+            "The section chief counted. Twenty-three requests were in progress. Four had been finished that "
+            "week.",
+            "(The section, the requests and the counts are made up for this lesson. The Kanban practices "
+            "described below come from the cited guide.)",
+            "Part 35 tracked a project with earned value. Not all work is a project with a start and an end. "
+            "Some of it is a steady stream of requests. After this post, you will know what a Kanban board is, "
+            "how to set one up for a treasury section, why a limit on work in progress speeds things up, and "
+            "which four numbers tell you whether the flow is healthy.",
+            ("photo", "blog/pm-kanban.jpg", "A Kanban board: columns for each step, one card per request, and "
+             "a limit on how many cards each step may hold. Stop starting, start finishing. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Kanban Is"),
+            "Kanban is a way of managing a flow of work by making it visible and controlling how much is in "
+            "progress at once. The Kanban Guide, edition 2025.5 from kanbanguides.org, describes three "
+            "practices.",
+            ("point", "Defining and visualizing a workflow", "The guide calls the visualization a Kanban board."),
+            ("point", "Actively managing items in a workflow", "This includes control of work in progress: Kanban system members “must explicitly control the number "
+             "of work items in a workflow from started to finished.”"),
+            ("point", "Improving a workflow", "Watch a few measures and adjust how the work flows."),
+            "Part 5 compared waterfall, agile and hybrid approaches. Kanban fits work that arrives "
+            "continuously, where a fixed plan made months ahead would be wrong by next week.",
+            ("h", "Setting Up the Board"),
+            "A whiteboard, a wall with sticky notes, or a shared sheet all work. Start with the steps the work "
+            "actually goes through.",
+            ("point", "Received", "Requests logged but not yet started."),
+            ("point", "Checking records", "Someone is pulling the tax declaration, receipts or ledger."),
+            ("point", "Waiting", "Blocked by someone outside the section: another office, the taxpayer, a "
+             "signature."),
+            ("point", "For signature", "Prepared and waiting for the treasurer or an authorized signatory."),
+            ("point", "Released", "Done and given to the taxpayer."),
+            "One card per request. Write the request type, the taxpayer’s reference number, the date "
+            "received and the person working on it. Keep personal details off a board others can see, in "
+            "line with the privacy habits in Part 20 of the Cybersecurity Series.",
+            ("h", "A Board in a Shared Sheet"),
+            "If the section works across two rooms, a shared sheet can stand in for the wall.",
+            ("point", "One row per request", "Columns for reference number, request type, current step, "
+             "person, date received, date started and date released."),
+            ("point", "A count per step", "=COUNTIF(C:C, \"Checking records\"), counting the step column, beside each step’s limit shows "
+             "when a column is full."),
+            ("point", "Age at a glance", "=TODAY()-F2 in a new column gives each open item’s age. Part 31 of the "
+             "Data Analytics Series showed how conditional formatting can color the old ones."),
+            ("h", "Why Limit Work in Progress"),
+            "Starting feels productive. Finishing is what the taxpayer notices.",
+            ("point", "Switching costs time", "A person juggling eight requests spends part of each day "
+             "remembering where each one stood."),
+            ("point", "Waiting hides", "When half the pile is waiting for another office, nobody sees it as "
+             "a problem until a taxpayer complains."),
+            ("point", "Queues grow quietly", "If more work starts than finishes, the pile grows every week "
+             "even though everyone is busy."),
+            "A limit is a simple rule: a column may hold no more than a set number of cards. When it is full, "
+            "nobody starts a new request. They help finish one, or clear a blocker, first.",
+            ("h", "Choosing the Limits"),
+            ("point", "Start from today", "Count the cards now in each column, then set limits a little below "
+             "that number."),
+            ("point", "Think per person", "With three staff checking records, a limit of four leaves room for "
+             "one item that needs two people."),
+            ("point", "Limit Waiting too", "A cap on Waiting forces someone to chase the other office instead "
+             "of letting requests sit."),
+            ("point", "Adjust monthly", "If a column is always empty, the limit may be too low. If the queue "
+             "keeps growing, it may be too high."),
+            ("photo", "blog/pm-kanban-board.jpg", "The section’s board with limits on each column: when "
+             "Checking is full, the next person helps finish instead of starting something new. Figures are "
+             "invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Four Numbers to Watch"),
+            "The Kanban Guide names four flow measures. Each takes a minute to compute from a log of start and "
+            "finish dates.",
+            ("point", "Work in progress", "The number of items started but not finished. In the story: 23."),
+            ("point", "Throughput", "The number finished per unit of time. In the story: 4 a week."),
+            ("point", "Work item age", "How long since an unfinished item was started. The certification "
+             "from two weeks ago was 14 days old."),
+            ("point", "Cycle time", "How long a finished item took from start to finish."),
+            "These four connect. If 23 items are in progress and 4 finish each week, a new request can expect "
+            "to wait more than five weeks, unless something changes.",
+            ("h", "A Short Daily Look"),
+            "Once a day, the section stands at the board for ten minutes.",
+            ("point", "Read from right to left", "Start with For signature, then Waiting. What is closest to "
+             "done gets attention first."),
+            ("point", "Ask about the oldest cards", "Any card older than the section’s promise, for example "
+             "five working days, is discussed first."),
+            ("point", "Name the blockers", "For each card in Waiting, who will follow up, and by when?"),
+            "This is not a status meeting. Part 27 described meetings that decide. The daily look decides one "
+            "thing: what to finish today.",
+            ("h", "What Changed in the Section"),
+            ("point", "Limits set", "Checking: 4. Waiting: 5. For signature: 6."),
+            ("point", "A signing time", "The treasurer agreed to sign at 11 a.m. and 3 p.m., so cards did not "
+             "wait all day."),
+            ("point", "A follow-up owner", "One staff member called other offices about every card in Waiting "
+             "each morning."),
+            ("h", "Kanban Inside a Project"),
+            "Kanban is not only for routine requests. A project team can put its work packages from Part 14 on "
+            "a board too, with the same limits. The project plan still sets the scope and the dates, and the "
+            "board shows what is moving this week.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "A board nobody updates", "Move the cards when the work moves, or the board lies."),
+            ("point", "No limits", "A board without limits only shows the pile more clearly."),
+            ("point", "Hiding Waiting inside Checking", "Blocked work needs its own column."),
+            ("point", "Personal data on a visible board", "Use reference numbers, not names."),
+            ("h", "Key Takeaways"),
+            ("point", "Make the work visible", "One card per request, one column per step."),
+            ("point", "Limit work in progress", "Stop starting, start finishing."),
+            ("point", "Watch four numbers", "Work in progress, throughput, age and cycle time."),
+            ("point", "Look daily", "Right to left, oldest first, blockers named."),
+            ("h", "Your Part 36 Action Plan"),
+            ("point", "Today", "List your section’s steps and count what sits in each one."),
+            ("point", "This week", "Put up a board, even on paper, and set one limit on the busiest column."),
+            ("point", "Next week", "Record start and finish dates, and compute throughput and the oldest item’s "
+             "age."),
+            "Six weeks later, the section had eleven requests in progress and finished nine a week. The "
+            "certification that once waited two weeks now took four working days. Nobody worked longer hours. "
+            "They had simply stopped starting more than they could finish.",
+            ("cta", "Read: Project Management Series, Part 5: Waterfall, Agile or Hybrid? Choosing How to Run the Work", "/blog/project-management-part-5-waterfall-agile-hybrid/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("cta", "Read: Project Management Series, Part 35: Earned Value Made Simple, Are We on Budget and on Schedule?", "/blog/project-management-part-35-earned-value/"),
+            ("ask", "How many requests are in progress in your section right now, and how many finished last week?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 35: Earned Value Made Simple, Are We on Budget and on Schedule?",
+        "slug": "project-management-part-35-earned-value",
+        "category": "pm",
+        "date": "May 2, 2027",
+        "summary": "Money spent and days passed do not tell you whether a project is on track. Earned value "
+                   "compares three numbers, planned value, earned value and actual cost, to show both schedule "
+                   "and budget status. This part explains each one with a treasury example and shows how to "
+                   "forecast the final cost.",
+        "publish_on": "2027-05-02 21:00",
+        "body": [
+            "Four weeks into the eight-week rollout, the project lead gave her update to the department head. "
+            "“We have spent ₱21,000 of the ₱48,000 budget. That is less than half. We are fine.”",
+            "The department head asked how many barangays were finished. Three out of eight. The plan had said "
+            "four by now. Spending less than half sounded good, but less than half of the work was done, and "
+            "the work done had cost more than planned.",
+            "(The project, the office and the figures continue the invented example from Parts 29 to 34. They "
+            "describe no real local government.)",
+            "Part 34 took a project to decision makers and came back with ₱48,000 approved. This part is about "
+            "watching that money once the work starts. By the last section, you will know the three numbers of "
+            "earned value, how to compute the two variances and the two indexes, how to measure work fairly, "
+            "and how to forecast what the project will cost by the end.",
+            ("photo", "blog/pm-earned.jpg", "Earned value: compare what you planned to do, what you actually "
+             "did, and what it cost, to see schedule and budget at the same time. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Spending Alone Misleads"),
+            "Comparing money spent with the budget answers only one question: how much is left? It cannot "
+            "say whether the money bought the work it was supposed to buy.",
+            ("point", "Underspending can be bad news", "If the work is behind, less money goes out simply "
+             "because less work has been done."),
+            ("point", "Overspending can be fine", "If the team is ahead of schedule, spending more than planned "
+             "by this date may be expected."),
+            "Earned value adds the missing piece: the value of the work actually completed.",
+            ("h", "The Three Numbers"),
+            "The Project Management Institute describes earned value with three basic measures.",
+            ("point", "Planned value (PV)", "The budgeted cost of the work scheduled to be done by now."),
+            ("point", "Earned value (EV)", "The budgeted cost of the work actually completed by now. It is "
+             "measured at planned cost, not by hours worked or money spent."),
+            ("point", "Actual cost (AC)", "What was really spent on the work performed."),
+            "All three are in pesos, at the same date. That is what lets you compare them.",
+            ("h", "The Example"),
+            "The rollout sends text reminders to businesses in eight barangays. Each barangay is one work "
+            "package: check and clean its phone list, load it into the texting service, and send the first "
+            "round. Each package is budgeted at ₱6,000, for a total budget of ₱48,000. The plan finishes one "
+            "barangay a week.",
+            ("point", "Planned value at week 4", "Four barangays scheduled × ₱6,000 = ₱24,000."),
+            ("point", "Earned value at week 4", "Three barangays finished × ₱6,000 = ₱18,000. The fourth is "
+             "half done, but it is not counted yet. More on that below."),
+            ("point", "Actual cost at week 4", "₱21,000, from the purchase records and the overtime sheet."),
+            ("h", "Two Variances"),
+            ("point", "Schedule variance = EV − PV", "₱18,000 − ₱24,000 = −₱6,000. Negative means behind "
+             "schedule: one barangay’s worth of work."),
+            ("point", "Cost variance = EV − AC", "₱18,000 − ₱21,000 = −₱3,000. Negative means over budget: "
+             "the finished work cost ₱3,000 more than planned."),
+            ("h", "Two Indexes"),
+            "Variances are in pesos. Indexes turn them into ratios, which are easier to compare across "
+            "projects of different sizes.",
+            ("point", "Schedule performance index, SPI = EV ÷ PV", "₱18,000 ÷ ₱24,000 = 0.75. The team is "
+             "completing work at 75 percent of the planned pace."),
+            ("point", "Cost performance index, CPI = EV ÷ AC", "₱18,000 ÷ ₱21,000 = 0.86. Each peso spent is "
+             "producing about 86 centavos of planned work."),
+            "In PMI’s guide to reading the numbers, an index at or above 1.0 is favorable, and below 1.0 is a "
+            "warning.",
+            "Read the two indexes together, because each tells half the story.",
+            ("point", "Both at 1.0 or above", "On schedule and within budget. Keep measuring."),
+            ("point", "SPI low, CPI fine", "The work is slow but not expensive. Look for waiting, missing "
+             "people or blocked tasks."),
+            ("point", "SPI fine, CPI low", "The work is moving but costing too much. Look at overtime, prices "
+             "and rework."),
+            ("point", "Both low", "The rollout’s case. Find the shared cause first."),
+            ("photo", "blog/pm-earned-chart.jpg", "Week 4 of the rollout: planned value, earned value and "
+             "actual cost on one chart, with the gaps that show schedule and cost variance. Figures are "
+             "invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Forecasting the Final Cost"),
+            "If the work keeps costing what it has cost so far, the project will not finish at ₱48,000.",
+            ("point", "Estimate at completion", "One simple forecast divides the total budget by the CPI: "
+             "₱48,000 ÷ (₱18,000 ÷ ₱21,000) = ₱56,000."),
+            ("point", "What it means", "At the current rate, the project needs about ₱8,000 more than "
+             "approved."),
+            ("point", "What it does not mean", "It is a forecast, not a fate. If the cause of the overrun has "
+             "been fixed, the rest of the work may cost what was planned."),
+            "This is the number that turns a vague worry into a decision: find savings, ask for more money, or "
+            "cut scope, using the change control process from Part 24.",
+            ("h", "Measuring Work Fairly"),
+            "Earned value depends on how you count “done.” Generous guesses make every project look healthy "
+            "until the last week.",
+            ("point", "Use the 0/100 rule for small packages", "A package earns nothing until it is finished, "
+             "then earns its full budget. The half-done fourth barangay earns ₱0 today."),
+            ("point", "Use 50/50 if packages are long", "Half the budget when the work starts, the other half "
+             "when it finishes. Choose one rule and keep it."),
+            ("point", "Keep packages small", "Part 14 broke work into packages. Small packages make earned "
+             "value honest, because few things sit at “90 percent done” for weeks."),
+            ("point", "Record actual cost by package", "Purchases, overtime and load for the texting service, "
+             "each tagged to its barangay, as Part 17 set up the budget."),
+            ("h", "What the Numbers Told the Team"),
+            "Looking at the three finished barangays, the team found the cause. Phone lists in the first two "
+            "had many outdated numbers, which took extra overtime to clean. The stale-list risk from Part 32 had "
+            "come true.",
+            ("point", "Schedule", "Two collectors now clean the next barangay’s list a week ahead, so loading "
+             "and sending is not delayed."),
+            ("point", "Cost", "The overtime rate was replaced by work during regular hours on two quiet "
+             "afternoons a week."),
+            ("point", "Report", "The status report from Part 25 now shows SPI and CPI each week, beside the "
+             "plain-language summary."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Comparing spending only with the budget", "Add the value of work done."),
+            ("point", "Counting half-finished work generously", "Pick the 0/100 or 50/50 rule."),
+            ("point", "Waiting until the end to compute", "Earned value is useful only while there is time to "
+             "act."),
+            ("point", "Hiding a bad CPI", "Report it early, with the cause and the fix."),
+            ("h", "Key Takeaways"),
+            ("point", "Three numbers", "Planned value, earned value and actual cost, all in pesos."),
+            ("point", "Two variances", "EV − PV for schedule, EV − AC for cost."),
+            ("point", "Two indexes", "SPI and CPI, where below 1.0 is a warning."),
+            ("point", "One forecast", "Budget ÷ CPI estimates the final cost."),
+            ("h", "Your Part 35 Action Plan"),
+            ("point", "Pick one current project", "Write its total budget and its work packages with "
+             "budgets."),
+            ("point", "Compute this week’s PV, EV and AC", "Use the 0/100 rule."),
+            ("point", "Find SPI and CPI", "If either is below 1.0, find the cause before the next meeting."),
+            ("point", "Forecast the final cost", "Share it with your sponsor, with one line on what you are "
+             "doing about it."),
+            "At week 8, the rollout finished all eight barangays at a total cost of ₱52,500. That was over "
+            "budget, but ₱3,500 less than the week-4 forecast, and the department head had known about it for "
+            "a month instead of a day.",
+            ("cta", "Read: Project Management Series, Part 17: The Project Budget, Built Package by Package", "/blog/project-management-part-17-project-budget/"),
+            ("cta", "Read: Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early", "/blog/project-management-part-25-status-reports/"),
+            ("cta", "Read: Project Management Series, Part 14: The Work Breakdown Structure, One Bite at a Time", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("cta", "Read: Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan", "/blog/project-management-part-24-change-control/"),
+            ("ask", "Does your office compare spending with the work actually finished, or only with the budget?"),
+        ],
+    },
+    {
         "date": "April 27, 2027",
         "title": "Project Management Series, Part 34: Presenting a Project to Decision Makers in Ten Minutes",
         "slug": "project-management-part-34-presenting-in-ten-minutes",

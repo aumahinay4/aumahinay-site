@@ -7,6 +7,269 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit",
+        "slug": "when-local-governments-borrow",
+        "category": "finance",
+        "date": "May 9, 2027",
+        "summary": "Local governments may borrow to build roads, markets and water systems, but the law sets a "
+                   "ceiling on how much of their income can go to paying debts. This part explains where a local government "
+                   "can borrow, the 20 percent limit, the certificate and opinion a loan needs, and how to check "
+                   "whether a loan fits.",
+        "publish_on": "2027-05-09 21:00",
+        "body": [
+            "The new public market would cost ₱100 million. The municipality had ₱12 million saved for it. At the "
+            "budget hearing, a councilor asked the question everyone was thinking: “Can we borrow the rest, "
+            "and if we do, can we still pay salaries ten years from now?”",
+            "The treasurer had a one-page answer ready. It started with a number: 20 percent.",
+            "(The municipality, the market and every peso amount in this post are made up to show how the rules work. "
+            "The laws, offices and requirements named below are real.)",
+            "Part 19 showed how a local government runs its public market as a business. This part goes one step back, to "
+            "how it may pay for building one. By the end of it, you will know where a local government may "
+            "borrow, what the 20 percent debt service limit means, which papers a loan needs before the money "
+            "is released, and how to test a loan against the limit with simple arithmetic.",
+            ("photo", "blog/finance-borrow.jpg", "Borrowing for a project: the loan funds the building, and "
+             "the yearly payments come back out of regular income for years. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why a Local Government Borrows at All"),
+            "Some projects cost more than a local government collects in a year. A market, a slaughterhouse, a water system "
+            "or a long farm-to-market road can take several years of savings. Borrowing lets it build now "
+            "and pay over the years the project is in use.",
+            "The Department of Finance (DOF) explains that Section 296 of the Local Government Code allows local "
+            "government units to create indebtedness and avail of credit facilities to finance local "
+            "infrastructure and other socio-economic development projects.",
+            ("quote", "Borrowing does not create new money. It moves future income to the present, and the "
+             "future has to pay it back."),
+            ("h", "Where a Local Government May Borrow"),
+            "The DOF page on LGU loans lists the main routes.",
+            ("point", "Banks and lending institutions", "Local governments may obtain credit lines from "
+             "government and private banks and lending institutions."),
+            ("point", "Bonds", "A local government may raise money by selling bonds to investors."),
+            ("point", "Help from the DOF", "The DOF says it is mandated to give LGUs technical assistance "
+             "in availing of credit facilities and in the flotation of bonds."),
+            "Whichever route is taken, the payments become a yearly obligation that the sanggunian must "
+            "appropriate in the budget, the same budget process Part 7 walked through.",
+            ("h", "The 20 Percent Limit"),
+            "The DOF summarizes the key ceiling this way: under Section 324 of the Local Government Code, the "
+            "appropriation for debt servicing shall not exceed 20 percent of the local government’s annual "
+            "regular income.",
+            ("point", "Debt service", "The yearly payments on all of the local government’s loans, principal and interest "
+             "together."),
+            ("point", "Regular income", "The base the law names is annual regular income, not every peso "
+             "received. The BLGF certificate described below states what the ceiling works out to."),
+            ("point", "What the limit protects", "Salaries, services and maintenance. If loan payments could "
+             "take any share of income, a local government could borrow until it had nothing left to run on."),
+            ("h", "The Papers a Loan Needs"),
+            "Before a loan is released, two outside offices look at it.",
+            ("point", "BLGF certificate", "The Bureau of Local Government Finance issues a Certificate of Net "
+             "Debt Service Ceiling and Borrowing Capacity. It states how much room the local government has under the "
+             "limit."),
+            ("point", "Monetary Board opinion", "The DOF page says a favorable opinion of the Monetary Board of "
+             "the Bangko Sentral ng Pilipinas is needed before the loan proceeds are released."),
+            "The DOF also notes that Department Order No. 054-2016 cut the documents needed for the BLGF "
+            "certificate from twelve to four.",
+            ("photo", "blog/finance-borrow-limit.jpg", "Testing a loan against the 20 percent limit: income, "
+             "the ceiling, existing payments, and the room left for a new loan. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Testing the Market Loan"),
+            "Here is the one-page answer the treasurer brought to the hearing, step by step.",
+            ("point", "Step 1: Regular income", "₱120,000,000 a year."),
+            ("point", "Step 2: The ceiling", "20 percent of ₱120,000,000 = ₱24,000,000 a year for all debt "
+             "service."),
+            ("point", "Step 3: Existing payments", "An older road loan already takes ₱9,000,000 a year."),
+            ("point", "Step 4: Room left", "₱24,000,000 − ₱9,000,000 = ₱15,000,000 a year."),
+            ("point", "Step 5: The new payment", "A ₱100,000,000 loan over 10 years at 6 percent a year, paid "
+             "in equal yearly amounts, costs about ₱13,586,796 a year."),
+            ("point", "Step 6: Does it fit?", "Yes. ₱13,586,796 is below the ₱15,000,000 room, with about "
+             "₱1,413,204 to spare."),
+            "In a spreadsheet, Step 5 is one formula: =PMT(6%, 10, -100000000). It returns the equal yearly "
+            "payment for that rate, term and amount.",
+            "The councilor’s second question was harder. Over ten years, the municipality would pay about ₱135.9 million "
+            "in total, so roughly ₱35.9 million would be interest. The treasurer put that line on the same page, "
+            "because a loan that fits under the ceiling can still be a poor deal if the project does not earn "
+            "or save enough to justify it.",
+            ("h", "What the Numbers Do Not Show"),
+            ("point", "Income can fall", "If regular income drops in a bad year, the same payment takes a bigger "
+             "share. A thin margin under the ceiling leaves little room for that."),
+            ("point", "Other projects wait", "Room used by this loan is room no other loan can use until it is "
+             "paid down."),
+            ("point", "The project must work", "A market that stands half empty still has to be paid for. Part "
+             "19 covered how market income and costs should be tracked."),
+            ("h", "How Residents Can Follow Local Government Debt"),
+            "Debt is not hidden from the public. Part 10 listed the documents a local government must post under "
+            "full disclosure, and the statement of debt service is one of them, posted every quarter.",
+            ("point", "Read the statement", "Look for the lender, the amount, and how much is paid each "
+             "quarter."),
+            ("point", "Compare it with income", "Divide the yearly debt service by the local government’s regular income to "
+             "see how close it is to 20 percent."),
+            ("point", "Ask at the hearing", "Budget hearings are the place to ask what a loan is for and how it "
+             "will be repaid."),
+            ("h", "What Each Office Does"),
+            ("point", "Treasurer", "Prepares the computation of debt service and room left, and pays the "
+             "installments on time."),
+            ("point", "Budget officer", "Makes sure each year’s debt service is in the budget."),
+            ("point", "Accountant", "Records the loan and every payment, so the balance owed is always known."),
+            ("point", "Sanggunian", "Decides whether to borrow, and appropriates the payments every year."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Guessing the ceiling", "Use the figure on the BLGF certificate, not an estimate."),
+            ("point", "Forgetting existing loans", "The 20 percent covers all debt service, old and new."),
+            ("point", "Looking only at the yearly payment", "Show the total interest too."),
+            ("point", "Borrowing with no room for a bad year", "Leave a margin below the ceiling."),
+            ("h", "Key Takeaways"),
+            ("point", "Local governments may borrow", "Section 296 allows credit for infrastructure and development "
+             "projects."),
+            ("point", "Twenty percent is the ceiling", "Debt service may not exceed 20 percent of annual regular "
+             "income (Section 324)."),
+            ("point", "Two clearances", "A BLGF certificate and a favorable Monetary Board opinion come before "
+             "release."),
+            ("point", "Debt is public", "The statement of debt service is posted every quarter."),
+            ("h", "Your Part 29 Exercise"),
+            "Try the test yourself. A municipality has regular income of ₱80,000,000 and existing debt service of "
+            "₱11,000,000 a year. It wants a ₱50,000,000 loan over 10 years at 6 percent.",
+            ("point", "Question 1", "What is the ceiling? (Answer: ₱16,000,000.)"),
+            ("point", "Question 2", "How much room is left? (Answer: ₱5,000,000.)"),
+            ("point", "Question 3", "Does the loan fit? (Answer: No. =PMT(6%, 10, -50000000) gives about "
+             "₱6,793,398 a year, which is more than the ₱5,000,000 room.)"),
+            "If your municipality, city or province posts its statement of debt service, try the same test with its real numbers.",
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Would you support your local government borrowing for a project, and which one?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 28: What Local Governments Cannot Tax, the Limits in Section 133",
+        "slug": "what-local-governments-cannot-tax",
+        "category": "finance",
+        "date": "May 4, 2027",
+        "summary": "The Local Government Code gives provinces, cities, municipalities and barangays the power to tax, but Section "
+                   "133 lists what none of them may tax. This part walks through the fifteen limits in plain "
+                   "words, with examples from the counter, and explains why a revenue code should be checked "
+                   "against them.",
+        "publish_on": "2027-05-04 21:00",
+        "body": [
+            "The farmer had two sacks of copra on the back of his tricycle. At the edge of the next municipality, a "
+            "man with a logbook stopped him and asked for ₱20 a sack before he could pass to the buyer’s "
+            "warehouse. The farmer paid, kept the slip, and brought it to the municipal treasury the following "
+            "week. “Is this allowed?”",
+            "The clerk read the slip, then reached for the Local Government Code. The answer was in Section "
+            "133.",
+            "(The farmer, the checkpoint and the amounts are invented for this post. The sections of the Local "
+            "Government Code quoted below are real.)",
+            "Part 27 covered a fee a municipality may charge at the market. This part covers the other side: what "
+            "provinces, cities, municipalities and barangays may not tax at all. Stay with me to the end, and you will "
+            "know what Section 133 says, the fifteen limits in plain words, which ones come up at a municipal "
+            "counter, and what to do when a charge seems to cross the line.",
+            ("photo", "blog/finance-limits.jpg", "Section 133 of the Local Government Code: fifteen things no "
+             "province, city, municipality or barangay may tax, unless the Code itself says otherwise. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Section 133 Says"),
+            "Section 133 is titled “Common Limitations on the Taxing Powers of Local Government Units.” It "
+            "opens with the words “Unless otherwise provided herein,” and then lists what the taxing powers of "
+            "provinces, cities, municipalities and barangays shall not extend to.",
+            ("point", "Common", "The limits apply to every level of local government, not only to municipalities."),
+            ("point", "Unless otherwise provided", "Some limits have exceptions written elsewhere in the Code. "
+             "Those exceptions are the only way around them."),
+            ("point", "Taxes, fees and charges", "Several items cover fees and charges too, so renaming a tax "
+             "as a fee does not escape them. Part 15 explained the difference between the two."),
+            ("h", "The Fifteen Limits, in Plain Words"),
+            ("point", "(a) Income tax", "Except on banks and other financial institutions."),
+            ("point", "(b) Documentary stamp tax", "A national tax."),
+            ("point", "(c) Estate, inheritance and gift taxes", "Including transfers made in anticipation of "
+             "death, except as the Code provides."),
+            ("point", "(d) Customs duties and port charges", "Including wharfage, except on wharves the local "
+             "government built and maintains."),
+            ("point", "(e) Goods passing through", "Taxes, fees or charges on goods carried into, out of, or "
+             "through the territory, whether called wharfage, bridge tolls “or otherwise.”"),
+            ("point", "(f) Products of marginal farmers and fishers", "Taxes, fees or charges on agricultural "
+             "and aquatic products when sold by marginal farmers or fishermen."),
+            ("point", "(g) BOI-registered pioneer and non-pioneer firms", "For six and four years respectively "
+             "from registration."),
+            ("point", "(h) Excise taxes and petroleum", "Excise taxes on articles under the National Internal "
+             "Revenue Code, and taxes, fees or charges on petroleum products."),
+            ("point", "(i) Percentage tax and VAT", "On sales, barters or exchanges, except as the Code "
+             "provides."),
+            ("point", "(j) Carriers’ gross receipts", "Of transportation contractors and common carriers by "
+             "air, land or water, except as the Code provides."),
+            ("point", "(k) Reinsurance premiums", "Premiums paid by way of reinsurance or retrocession."),
+            ("point", "(l) Vehicle registration and driver’s licenses", "Except for tricycles."),
+            ("point", "(m) Exported products", "Philippine products actually exported, except as the Code "
+             "provides."),
+            ("point", "(n) Certain small enterprises and cooperatives", "Countryside and Barangay Business "
+             "Enterprises registered under R.A. No. 6810, and cooperatives registered under R.A. No. 6938."),
+            ("point", "(o) The government itself", "The National Government, its agencies and "
+             "instrumentalities, and local government units."),
+            "Read together, the list has a pattern. Items (a), (b), (c), (h) and (i) are taxes the national "
+            "government collects under the National Internal Revenue Code, and item (d) covers customs. "
+            "Items (e), (f) and (m) protect goods moving to market and abroad. Items (g) and (n) protect "
+            "businesses the law wanted to encourage. Item (o) keeps one level of government from taxing "
+            "another.",
+            ("photo", "blog/finance-limits-check.jpg", "Checking a charge against Section 133: three questions "
+             "before a fee or tax is collected. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Back to the Copra"),
+            "Two items in the list fit the farmer’s slip.",
+            ("point", "Item (e)", "A charge on goods simply passing through a locality, “in the guise of” a "
+             "toll or any other name, is outside a local government’s taxing power."),
+            ("point", "Item (f)", "Section 131 defines a marginal farmer or fisherman as an individual engaged "
+             "in subsistence farming or fishing, limited to selling, bartering or exchanging products produced "
+             "by himself and his immediate family. If the farmer fits that definition, a charge on his copra "
+             "is also barred."),
+            "The clerk advised the farmer to bring the slip to the treasurer of the municipality that issued it, and "
+            "copied it for the municipal treasurer, who could raise it with that local government.",
+            ("h", "Limits That Come Up at a Municipal Counter"),
+            ("point", "Checkpoint fees on produce", "Item (e). A local government may regulate and charge for services it "
+             "actually provides, such as the use of its market, under the rules in Part 19. It may not charge "
+             "goods for crossing its land."),
+            ("point", "Tricycles", "Item (l) bars local charges on vehicle registration and driver’s licenses, "
+             "with one stated exception: tricycles."),
+            ("point", "Cooperatives", "Item (n). A business that says it is a registered cooperative should "
+             "show its registration. The office records it before deciding what applies."),
+            ("point", "Government offices", "Item (o). A national agency’s office in the locality is not billed "
+             "local taxes."),
+            "Other items, such as income tax on banks or taxes on carriers, come up mostly at the city and "
+            "province level, where the Code’s exceptions are written.",
+            ("h", "Why the Revenue Code Must Be Checked"),
+            "A tax ordinance that crosses Section 133 can be challenged. Part 15 described how an ordinance can "
+            "be appealed to the Secretary of Justice under Section 187.",
+            ("point", "For the sanggunian", "Before passing a new tax or fee, check the draft against all "
+             "fifteen items."),
+            ("point", "For the treasurer", "When a new ordinance arrives, read it with Section 133 open. If "
+             "something looks doubtful, raise it in writing before collection starts."),
+            ("point", "For collectors", "If a taxpayer asks why a charge applies, the answer should name the "
+             "ordinance and its section, not only “that is the rule.”"),
+            ("h", "What Each Person Should Check"),
+            ("point", "Farmers and fishers", "Keep proof that you sell what your family produces, and keep "
+             "every slip for a charge you think is wrong."),
+            ("point", "Business owners", "If you are registered with the Board of Investments or as a "
+             "cooperative, bring the registration when you apply for your permit."),
+            ("point", "Treasury staff", "A short list of the Section 133 items most likely to arise, posted "
+             "where assessments are made."),
+            ("point", "The sanggunian", "A Section 133 review of every new revenue measure."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Renaming a barred tax as a fee", "Items (e) and (f) cover fees and charges too."),
+            ("point", "Charging goods for passing through", "Only services the local government provides can be charged."),
+            ("point", "Assuming every cooperative is exempt", "Check the registration first."),
+            ("point", "Skipping the exceptions", "“Unless otherwise provided” sends you to other sections."),
+            ("h", "Key Takeaways"),
+            ("point", "Fifteen common limits", "Section 133 binds provinces, cities, municipalities and barangays."),
+            ("point", "Fees count too", "Several items bar taxes, fees and charges alike."),
+            ("point", "Goods passing through", "May not be charged for crossing a territory."),
+            ("point", "Marginal farmers and fishers", "Their products may not be taxed when they sell them."),
+            ("h", "Your Part 28 Action Plan"),
+            ("point", "If you work in a treasury", "Read your revenue code’s list of fees and mark any that "
+             "touch goods in transit or farm and fish products."),
+            ("point", "If you sit in the sanggunian", "Ask for a one-page Section 133 check with every new "
+             "revenue ordinance."),
+            ("point", "If you farm or fish", "Keep every slip for a charge on your produce, and ask your "
+             "treasury about it."),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 27: Sealing the Market Scales, Fees for Weights and Measures", "/blog/weights-and-measures-fees/"),
+            ("ask", "Have you ever been asked to pay a charge just to bring goods through another municipality or city?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 27: Sealing the Market Scales, Fees for Weights and Measures",
         "date": "April 29, 2027",
         "publish_on": "2027-04-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
