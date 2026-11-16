@@ -14,6 +14,254 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "April 27, 2027",
+        "title": "Project Management Series, Part 34: Presenting a Project to Decision Makers in Ten Minutes",
+        "slug": "project-management-part-34-presenting-in-ten-minutes",
+        "category": "pm",
+        "summary": "A project may get only ten minutes on a crowded agenda. This part shows how "
+                   "to open with the decision you need, build a short presentation around one question, "
+                   "prepare for the hard questions, and leave with a recorded decision instead of “let’s "
+                   "discuss next time.”",
+        "publish_on": "2027-04-27 21:00",
+        "body": [
+            "The project lead had twenty slides. They covered the background, the method, the pilot, the "
+            "adoption numbers and a timeline for the whole year. The council committee gave her ten minutes, "
+            "the fourth item on a long agenda.",
+            "By slide nine, two members were checking their phones. At minute ten, the chair thanked her and "
+            "moved to the next item. Nobody had decided anything, and the funding for text reminders in the "
+            "other barangays waited another month.",
+            "(The office, the committee and the project continue the invented example from Parts 29 to 33. "
+            "They describe no real local government.)",
+            "Part 33 made sure people actually use a new process. This part is about the meeting where a "
+            "project asks for something: money, people, approval or a change. You will learn how to start "
+            "with the decision, how to fit the story into ten minutes, what to put on each slide or page, "
+            "how to prepare for questions, and how to make sure the decision is recorded.",
+            ("photo", "blog/pm-present.jpg", "Presenting in ten minutes: start with the ask, show the "
+             "evidence, name the risk, and leave with a recorded decision. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Start With the Decision You Need"),
+            "Before making a single slide, write one sentence: “I am asking the committee to …” If you cannot "
+            "finish that sentence, the presentation is not ready.",
+            ("point", "A clear ask", "“Approve ₱48,000 to extend text reminders to all barangays from July.”"),
+            ("point", "Not a clear ask", "“Update the committee on the reminders project.” An update without "
+             "an ask can end with nothing decided."),
+            ("point", "Say it first", "Put the ask in the first minute, not at the end. Decision makers then "
+             "listen to the rest as evidence for or against it."),
+            "Part 10 built a business case for approval. A ten-minute presentation is that business case, "
+            "spoken, with the least important parts taken out.",
+            ("h", "Know Who Is Listening"),
+            "A committee is a group of people with different concerns and different questions. Spend fifteen minutes before the "
+            "meeting thinking about each one.",
+            ("point", "What each member cares about", "One watches the budget. One hears complaints from "
+             "market vendors. One asks about the barangays in a particular district. Part 3 mapped "
+             "stakeholders this way."),
+            ("point", "What they already know", "If they approved the pilot, they do not need the background "
+             "again. Start where they left off."),
+            ("point", "Talk to one or two beforehand", "A short visit to the chair or the member who asks the "
+             "hardest questions can surface a concern you can answer before the meeting, not during it."),
+            "Shape the evidence around those concerns. A member worried about cost hears the cost early. A "
+            "member worried about complaints hears that the pilot had one complaint, and why.",
+            ("h", "A Ten-Minute Shape"),
+            "Five parts, in this order, work for a typical request.",
+            ("point", "1. The ask (1 minute)", "What you want, how much, and by when."),
+            ("point", "2. The problem (2 minutes)", "In the listeners’ terms. “Last year, in the pilot barangay, 42 "
+             "percent of businesses paid the quarter late.”"),
+            ("point", "3. The evidence (3 minutes)", "What you tried and what happened. The pilot from "
+             "Part 32: on-time payment rose from 58 to 78 percent in one barangay, while the others barely "
+             "moved."),
+            ("point", "4. The cost and the risk (2 minutes)", "What it costs, what could go wrong, and how "
+             "you will handle it. The stale phone list, and the fix."),
+            ("point", "5. The ask again (1 minute)", "Repeat the decision you need, with the date."),
+            "That leaves one minute of slack. Use it. Meetings run late, and the committee may give you "
+            "eight minutes instead of ten.",
+            ("photo", "blog/pm-present-plan.jpg", "Ten minutes, five parts: the ask comes first and last, "
+             "and the evidence gets the most time. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "One Page, or Five Slides"),
+            "Fewer slides force clearer thinking. For ten minutes, five slides or a one-page handout is "
+            "enough.",
+            ("point", "One message per slide", "Write the message as the slide title: “Reminders raised "
+             "on-time payment by 20 points,” not “Pilot Results.”"),
+            ("point", "One chart, not three", "Part 27 of the Data Analytics Series explained how to choose "
+             "the right chart. Pick the one that proves the message."),
+            ("point", "Numbers they can check", "Give the start and the end, as Part 30 of the Data "
+             "Analytics Series recommended: “from 58 to 78 percent,” not only “up 20 points.”"),
+            ("point", "A one-page handout", "Some members prefer paper. The same five parts on one page let "
+             "them read ahead or follow along."),
+            ("h", "Prepare for the Hard Questions"),
+            "The questions decide more than the slides do. Write down the five questions you least want to "
+            "hear, and answer each in two sentences.",
+            ("point", "“Why not do it for all barangays at once?”", "Because the pilot showed the phone list "
+             "needed fixing first."),
+            ("point", "“What if it doesn’t work elsewhere?”", "The rollout has a check after one quarter, "
+             "with the same targets."),
+            ("point", "“Where does the money come from?”", "Know the budget line, and whether it needs a "
+             "supplemental appropriation. If you are not sure, say who will confirm it and by when."),
+            ("point", "“What happens if we say no?”", "Be honest. The office continues as before, with the "
+             "late payment rate it had last year."),
+            "If you do not know an answer, say so, and promise a written reply by a specific date. A guess "
+            "that turns out wrong costs more trust than “I will confirm and send it by Friday.”",
+            ("h", "Rehearse With a Timer"),
+            ("point", "Say it aloud", "Ten minutes in your head can easily become fifteen out loud."),
+            ("point", "Cut, then cut again", "If it runs long, remove detail from the evidence, never the ask."),
+            ("point", "Practice with a colleague", "Ask them to interrupt with one hard question halfway "
+             "through."),
+            ("h", "Leave With a Recorded Decision"),
+            "Part 27 showed how minutes turn a meeting into decisions and action items. Before you sit "
+            "down, make sure the decision has a place in them.",
+            ("point", "Ask for the decision directly", "“May I ask the committee to approve, defer or "
+             "decline today?”"),
+            ("point", "If it is deferred, ask what is missing", "And when it will be taken up again."),
+            ("point", "Confirm it in writing", "Send a short note the same day: what was decided, by whom, "
+             "and the next step."),
+            ("quote", "If the decision is not in the minutes, it was not made."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Saving the ask for the end", "Say it in the first minute."),
+            ("point", "Twenty slides for ten minutes", "Five slides, one message each."),
+            ("point", "Guessing at a hard question", "Promise a written answer by a date."),
+            ("point", "Leaving without a decision", "Ask for approve, defer or decline, and confirm in writing."),
+            ("h", "Key Takeaways"),
+            ("point", "Ask first", "One sentence, said in the first minute."),
+            ("point", "Five parts", "Ask, problem, evidence, cost and risk, ask again."),
+            ("point", "Prepare the hard questions", "Two-sentence answers, written in advance."),
+            ("point", "Get it recorded", "In the minutes, and in a same-day note."),
+            ("h", "Your Part 34 Action Plan"),
+            ("point", "Write the sentence", "“I am asking … to …” for your next project request."),
+            ("point", "Fill the five parts", "On one page, with the minutes beside each."),
+            ("point", "List five hard questions", "And answer each in two sentences."),
+            ("point", "Rehearse once with a timer", "And cut until it fits in nine minutes."),
+            "A month later, the project lead returned to the committee with five slides and a one-page "
+            "handout. She stated the ask in the first sentence. The chair asked about the phone list, and "
+            "she had the answer ready. At minute eight, the committee approved the funding, and the "
+            "secretary read the decision back for the minutes.",
+            ("cta", "Read: Project Management Series, Part 10: Writing a Business Case That Gets a Yes", "/blog/project-management-part-10-business-case/"),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("cta", "Read: Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big", "/blog/project-management-part-32-running-a-pilot/"),
+            ("cta", "Read: Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question", "/blog/data-analytics-part-27-choosing-the-right-chart/"),
+            ("ask", "What is the one sentence you would say first if you had ten minutes with your decision makers?"),
+        ],
+    },
+    {
+        "date": "April 22, 2027",
+        "title": "Project Management Series, Part 33: Getting People to Use the New Process, Not Just Install It",
+        "slug": "project-management-part-33-adopting-the-new-process",
+        "category": "pm",
+        "summary": "A new process can be finished, approved and launched, and still not be used. This part "
+                   "covers why people hold on to the old way, how to make the new way easier than the old, "
+                   "how to support people in the first weeks, how to measure real use, and when to retire "
+                   "the old way.",
+        "publish_on": "2027-04-22 21:00",
+        "body": [
+            "The new payment plan register went live on a Monday. It was a shared sheet with one row per "
+            "stallholder, the agreed terms written out, and a column for each installment. It replaced the "
+            "notebook in the market supervisor’s drawer, the one that had caused trouble in Part 31.",
+            "Three weeks later, the project lead checked the register against the receipts. Only half of the "
+            "installments paid that month had been entered. The rest were still in the notebook, which was "
+            "back in the drawer.",
+            "(The office, the people and the register continue the invented example from Parts 29 to 32. "
+            "They describe no real local government.)",
+            "Part 32 tested a change with a pilot. This part deals with what comes after the decision to "
+            "use it: getting people to change how they work. You will learn why people hold on to the old "
+            "way, how to make the new way easier, who to involve early, how to support the first weeks, how "
+            "to measure whether the change is really being used, and when to retire the old way.",
+            ("photo", "blog/pm-adopt.jpg", "Adopting a new process: explain why, make it easier than the old "
+             "way, support the first weeks, measure real use, and set a date for the old way to end. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Launched Is Not the Same as Used"),
+            "A project plan can say “register launched, March 1” and mark the task done. But the benefit the "
+            "project promised, payment plans anyone can look up, arrives only when people use the register "
+            "every day. Part 28 closed projects with a handover. This part is about the weeks after the "
+            "handover, when the new way either becomes normal or quietly fades.",
+            ("h", "Why People Hold On to the Old Way"),
+            "When the project lead asked, the reasons were ordinary and fair.",
+            ("point", "It was more work", "Staff wrote the payment in the notebook out of habit, then had to "
+             "type it into the register too. Two entries for one payment."),
+            ("point", "Nobody asked them", "The collectors had not seen the register before launch day, and "
+             "one column used a term they did not use."),
+            ("point", "Fear of mistakes", "A notebook entry can be crossed out quietly. A shared sheet shows "
+             "every edit, and one collector worried about being blamed for a typo."),
+            ("point", "The old way still worked", "The notebook was still there. As long as it was, it was "
+             "the easier choice."),
+            "None of these is stubbornness. Each is a problem the project can fix.",
+            ("h", "Step 1: Explain the Why in Their Terms"),
+            "“The register improves transparency” means little at a busy counter. “When you are on leave, "
+            "nobody has to call you about a stallholder’s plan” means a lot. Explain the change by what it "
+            "does for the person doing the work, and for the taxpayer at the window.",
+            ("h", "Step 2: Make the New Way Easier Than the Old"),
+            "If the new way takes more effort, the old way wins. Look for every extra step and remove it.",
+            ("point", "Remove double entry", "The project lead agreed that payments go into the register "
+             "only. The notebook stopped being a required record."),
+            ("point", "Fix the confusing parts", "The column the collectors did not understand was renamed "
+             "in their words."),
+            ("point", "Put it where the work happens", "A shortcut to the register was added to the "
+             "market office computer, under each collector’s own sign-in."),
+            ("h", "Step 3: Involve People Early, and Use Champions"),
+            "Ask one or two people who will use the process to try it before launch and suggest changes. "
+            "They become champions: colleagues others can ask without feeling they are bothering the boss.",
+            ("point", "Pick respected users", "Not necessarily the most senior, but people others go to for "
+             "help."),
+            ("point", "Give them time", "Being a champion is extra work. Say so, and adjust their load, as "
+             "Part 18 recommended."),
+            ("h", "Step 4: Support the First Weeks"),
+            ("point", "Train by doing", "Short sessions at the actual counter, with real entries, are worth "
+             "more than a long talk in the conference room."),
+            ("point", "A one-page guide", "The steps, with pictures, taped where the work happens."),
+            ("point", "A person to ask", "Name who answers questions during the first month, and when they "
+             "are available."),
+            ("point", "Treat mistakes kindly", "Correct an entry together, without blame. Fear of being "
+             "blamed was one of the reasons for the notebook."),
+            ("h", "Step 5: Tell People What Changed, and Listen"),
+            "Part 11 built a communication plan for the project. Adoption needs its own short version.",
+            ("point", "Before launch", "Who is affected, what changes for them, from what date, and who to ask."),
+            ("point", "Each week of the first month", "A two-line update: what was fixed, and what is next. "
+             "When people see their complaints turn into fixes, they learn that speaking up works."),
+            ("point", "A place for feedback", "A sheet or a box where anyone can write what is hard. Read it "
+             "every week, and answer each item, even if the answer is “not yet.”"),
+            ("h", "Step 6: Measure Real Use"),
+            "Ask whether the new process is used, not only whether it is installed. Pick one number you can "
+            "check each week.",
+            ("point", "The measure", "The share of installments paid that week that appear in the register, "
+             "checked against the official receipts."),
+            ("point", "The target", "At least 95 percent by week 8."),
+            ("point", "Look for the stall", "In this example, use rose to about half by week 3 and stopped. A "
+             "flat line is a signal to ask why, not a reason to give up."),
+            ("photo", "blog/pm-adopt-curve.jpg", "Weekly use of the new register: a stall at week 3, a jump "
+             "after double entry was removed, and the old notebook retired at week 8. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 7: Retire the Old Way, With a Date"),
+            "As long as the old way is still available, some people will use it. Once the new way works and "
+            "people have had support, set a date and announce it.",
+            ("point", "Announce the date", "“From May 1, the register is the only record of payment plans.”"),
+            ("point", "Move what is left", "Copy any remaining plans from the notebook into the register, and "
+             "have a second person check them."),
+            ("point", "Keep the old record safely", "Store the notebook as a record, following your office’s "
+             "rules on keeping documents. Do not throw it away."),
+            ("quote", "If the old way is still easier, it will still be used."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Calling it done at launch", "Measure use for at least the first two months."),
+            ("point", "Adding work without removing any", "Every new step should replace an old one."),
+            ("point", "Blaming people for resisting", "Ask for reasons, and fix them."),
+            ("point", "Keeping the old way forever", "Set a date to retire it."),
+            ("h", "Key Takeaways"),
+            ("point", "Launched is not used", "The benefit comes only with daily use."),
+            ("point", "Easier wins", "Remove double entry and confusing steps."),
+            ("point", "Support and measure", "Champions, a guide, a person to ask, one weekly number."),
+            ("point", "Retire the old way", "With a date, a careful transfer and a stored record."),
+            ("h", "Your Part 33 Action Plan"),
+            ("point", "Pick one change", "A process your office launched in the last year."),
+            ("point", "Measure it", "Find one number that shows whether it is really used."),
+            ("point", "Ask three users", "What makes the new way harder than the old one? Write down the answers."),
+            ("point", "Fix one thing", "Remove the biggest extra step, then measure again in two weeks."),
+            "In week 8, the market supervisor came back from a seminar and asked the clerk about a "
+            "stallholder’s plan. She opened the register on the office computer and read it to him. He asked where his "
+            "notebook was. It was in the records room, labeled and boxed, and he did not ask for it again.",
+            ("cta", "Read: Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big", "/blog/project-management-part-32-running-a-pilot/"),
+            ("cta", "Read: Project Management Series, Part 31: Covering for Absences, a Backup Plan So the Work Does Not Stop", "/blog/project-management-part-31-covering-absences/"),
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("cta", "Read: Project Management Series, Part 11: The Communication Plan, Who Hears What, When", "/blog/project-management-part-11-communication-plan/"),
+            ("ask", "What new process in your office was launched but never quite used, and why?"),
+        ],
+    },
+    {
         "date": "April 17, 2027",
         "title": "Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big",
         "slug": "project-management-part-32-running-a-pilot",

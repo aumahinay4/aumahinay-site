@@ -13,6 +13,258 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "title": "Business Intelligence Series, Part 35: Small Multiples, One Small Chart per Barangay",
+        "slug": "business-intelligence-part-35-small-multiples",
+        "category": "bi",
+        "date": "April 30, 2027",
+        "summary": "Six barangays on one line chart turn into a tangle. This part shows how to split them "
+                   "into a grid of small, matching charts, why the charts should share one scale, when they "
+                   "should not, and two ways to build the grid in Google Sheets.",
+        "publish_on": "2027-04-30 21:00",
+        "body": [
+            "The analyst put six barangays on one line chart, one colored line each, and sent it to the "
+            "council in time for the half-year review. One line ran across the top. The other five crowded "
+            "together in the lower third, crossing and recrossing. Someone asked what happened in Malinao in "
+            "April. Nobody could find Malinao.",
+            "The answer was on the chart. It was lost among five other lines.",
+            "(The barangays’ figures, the analyst and the meeting are invented for this lesson. The Google "
+            "Sheets features and the book mentioned below are real.)",
+            "Part 34 grouped unpaid accounts by age. This part takes on a different problem: too many "
+            "series in one chart. You will learn what small multiples are, how to set them up so they can "
+            "be compared, why a shared scale matters, when to break that rule, and two ways to build them "
+            "in Google Sheets.",
+            ("photo", "blog/bi-multiples.jpg", "Small multiples: split one crowded chart into a grid of "
+             "small matching charts, one per barangay, on the same scale. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What Small Multiples Are"),
+            "A small multiple is a set of small charts of the same type, one for each group, arranged in a "
+            "grid. Each chart uses the same measure, the same time period and the same layout. Only the "
+            "data changes from one to the next.",
+            "Edward Tufte, an American statistician and author, wrote about the idea in his 1990 book "
+            "Envisioning Information. Data visualization guides still use the term today.",
+            ("point", "One chart per group", "Six barangays, six charts. Each line has a box to itself."),
+            ("point", "Same design everywhere", "Once a reader learns how to read one chart, they can read "
+             "all of them."),
+            ("point", "The comparison is the point", "The eye moves across the grid and spots the chart "
+             "that looks different."),
+            ("h", "Why One Crowded Chart Fails"),
+            ("point", "Lines hide each other", "When values are close, lines overlap and cross, and the "
+             "reader cannot follow any single one."),
+            ("point", "Colors run out", "Six colors are hard to tell apart, and some readers cannot "
+             "separate certain pairs at all. Part 26 covered this."),
+            ("point", "The legend becomes a puzzle", "The reader looks back and forth between the legend "
+             "and the lines, and loses the story on the way."),
+            ("point", "Big values flatten small ones", "A barangay collecting ₱400,000 a month sets the "
+             "scale, and one collecting ₱40,000 looks like a flat line on the floor."),
+            ("h", "The Example Data"),
+            "Monthly collections, in thousands of pesos, January to June:",
+            ("point", "Poblacion", "410, 380, 395, 420, 405, 430"),
+            ("point", "San Isidro", "120, 115, 125, 130, 128, 135"),
+            ("point", "Malinao", "95, 98, 92, 60, 58, 55"),
+            ("point", "Bagong Silang", "70, 72, 75, 78, 80, 85"),
+            ("point", "Santa Cruz", "150, 145, 160, 155, 158, 162"),
+            ("point", "Mabini", "40, 42, 41, 43, 90, 95"),
+            "On one chart, Malinao’s fall in April and Mabini’s jump in May both get lost in the "
+            "crowded lower part of the chart. Split into six small charts, they are the first two things a reader sees.",
+            ("photo", "blog/bi-multiples-grid.jpg", "The same six barangays as small multiples on one "
+             "shared scale. Malinao drops in April and Mabini jumps in May. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Rule One: Share the Scale"),
+            "If each small chart picks its own vertical scale, a line that rises from 40 to 95 can look as "
+            "tall as one that rises from 380 to 430. The reader will compare heights, and the heights will "
+            "lie.",
+            ("point", "Same minimum", "Start every chart at the same value. For collections, zero is a "
+             "safe choice."),
+            ("point", "Same maximum", "Use the largest value in the whole table, not in each row. Here "
+             "that is 430."),
+            ("point", "Same size and order", "Keep the charts the same width and height, and arrange them "
+             "in an order the reader expects, such as largest to smallest or the usual order of barangays."),
+            ("h", "When to Break Rule One"),
+            "Sometimes the question is about shape, not size. Did each barangay follow the same seasonal "
+            "pattern? On a shared scale, the small barangays are too flat to show a pattern at all.",
+            ("point", "Use separate scales on purpose", "Let each chart set its own range so each shape is "
+             "visible."),
+            ("point", "Say so in the title", "Write “Each chart has its own scale” above the grid, and show "
+             "the axis numbers on every chart."),
+            ("point", "Do not mix", "A grid where some charts share a scale and some do not misleads even "
+             "careful readers."),
+            ("h", "Building Them in Google Sheets: Sparklines"),
+            "The quickest way is the SPARKLINE function, which draws a tiny chart inside one cell. Put the "
+            "barangays in A2:A7, the month names in B1:G1, and the "
+            "monthly figures in B2:G7. In H2, enter:",
+            ("point", "Formula", "=SPARKLINE(B2:G2, {\"charttype\",\"column\"; \"ymin\",0; \"ymax\",MAX($B$2:$G$7)})"),
+            "Fill it down to H7. The dollar signs keep the MAX pointed at the whole table, so every row "
+            "uses the same scale. Google’s help page for SPARKLINE lists ymin and ymax as options for line "
+            "and column sparklines.",
+            ("point", "Make them bigger", "Widen column H and increase the row height so each sparkline is "
+             "readable."),
+            ("point", "Line instead of column", "Remove the charttype setting, or set it to line. The ymin "
+             "and ymax settings work the same way."),
+            ("point", "Highlight the last month", "Column sparklines accept a lastcolor setting, which "
+             "colors the most recent bar differently."),
+            ("h", "Building Them in Google Sheets: Copied Charts"),
+            "For larger charts with titles and labels, build one chart and copy it.",
+            ("point", "Make the first chart", "Select A1:G2 for Poblacion and insert a chart. Choose a line "
+             "or column chart and give it a short title."),
+            ("point", "Fix the scale", "In the chart editor, open Customize, then Vertical axis, and type "
+             "the same Min and Max, such as 0 and 450."),
+            ("point", "Copy, paste, change the range", "Use the chart’s menu to copy it, paste it beside the "
+             "first, then edit the data range to the next barangay’s row and change the title."),
+            ("point", "Line them up", "Resize and arrange the charts in a grid, two or three across."),
+            "Copied charts look better in a printed report, because each one can carry a title, axis "
+            "numbers and month labels. They also take more care: if one chart is pasted with the wrong "
+            "range, the grid quietly shows the wrong barangay under the right name. Check every title "
+            "against its data range before sharing.",
+            "The copied-chart grid takes longer to build and to update. Sparklines refresh by themselves "
+            "when the data changes, which matters if the table grows every month.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Letting each chart choose its own scale by accident", "Set the minimum and maximum "
+             "yourself."),
+            ("point", "Too many charts", "Thirty tiny charts on a phone are unreadable. Group or filter "
+             "first."),
+            ("point", "Different chart types in the grid", "Use one type throughout so the reader compares "
+             "data, not designs."),
+            ("point", "A grid with no labels", "Each chart needs its barangay name, and the grid needs one "
+             "line saying what is measured and in what unit."),
+            ("h", "Key Takeaways"),
+            ("point", "One crowded chart hides detail", "Small multiples give each group its own space."),
+            ("point", "Share the scale by default", "Same minimum, same maximum, same size."),
+            ("point", "Separate scales only on purpose", "And say so in the title."),
+            ("point", "Sheets can do it two ways", "SPARKLINE with ymin and ymax, or copied charts with a "
+             "fixed axis."),
+            ("h", "Your Part 35 Exercise"),
+            ("point", "Step 1", "Type the example table into a new sheet, barangays in A2:A7 and January to "
+             "June in B1:G1."),
+            ("point", "Step 2", "Add the SPARKLINE formula in H2 and fill it down. Find Malinao and Mabini."),
+            ("point", "Step 3", "Remove the ymin and ymax settings from Mabini’s row only. Notice how its "
+             "May and June bars now reach as high as Poblacion’s, though its numbers are far smaller. Then put the settings back."),
+            ("point", "Step 4", "Build one full line chart with all six barangays and compare it with your "
+             "sparklines. Which one shows Malinao’s April drop faster?"),
+            ("cta", "Read: Business Intelligence Series, Part 27: Maps by Barangay, When Location Is the Point", "/blog/business-intelligence-part-27-maps-by-barangay/"),
+            ("cta", "Read: Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Business Intelligence Series, Part 26: Colors Everyone Can Read, Contrast, Labels and the Red-Green Trap", "/blog/business-intelligence-part-26-accessible-colors/"),
+            ("cta", "Read: Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited", "/blog/business-intelligence-part-34-aging-of-arrears/"),
+            ("ask", "Which chart in your office has too many lines on it?"),
+        ],
+    },
+    {
+        "title": "Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited",
+        "slug": "business-intelligence-part-34-aging-of-arrears",
+        "category": "bi",
+        "date": "April 25, 2027",
+        "summary": "A single total of unpaid taxes hides the question that matters most: how old is the debt? "
+                   "This part shows how to group arrears into age buckets in Google Sheets, chart them, "
+                   "match an action to each bucket, and spot the accounts that are running out of time.",
+        "publish_on": "2027-04-25 21:00",
+        "body": [
+            "The quarterly report said unpaid real property tax stood at ₱3.8 million. The council member "
+            "asked whether that was good or bad. The analyst did not know. ₱3.8 million of last month’s bills "
+            "would be one problem. ₱3.8 million from ten years ago would be a very different one.",
+            "The total was correct. It just could not answer the question he had asked.",
+            "(The office, the accounts and the figures are invented for this lesson. The legal time limit "
+            "mentioned below is real and cited.)",
+            "Part 33 compared collections with a target that follows the calendar. This part looks at the "
+            "other side of the ledger: what has not been paid, and for how long. You will learn what an "
+            "aging report is, how to choose the age buckets, how to build them in Google Sheets, how to "
+            "chart the result, and how to match each bucket with an action.",
+            ("photo", "blog/bi-aging.jpg", "Aging of arrears: group unpaid amounts by age, chart them, give "
+             "each bucket an action, and watch the oldest closely. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What an Aging Report Is"),
+            "An aging report groups unpaid amounts by how long they have been overdue. Businesses use it for "
+            "money customers owe them. A treasury can use it for unpaid taxes and fees.",
+            ("point", "It shows age, not just size", "₱100,000 overdue by a month and ₱100,000 overdue by "
+             "four years need different responses."),
+            ("point", "It shows movement", "Run it every quarter, as of the same day. Money that moves from a young bucket to an "
+             "older one is money the office is not reaching."),
+            ("point", "It points to action", "Each bucket can have its own next step, owner and deadline."),
+            ("h", "Choosing the Buckets"),
+            "Pick buckets that match how the office actually follows up. For real property tax, this set "
+            "works as a start:",
+            ("point", "1 to 90 days", "Recently missed. A reminder may be enough."),
+            ("point", "91 to 365 days", "Missed most of a year. A notice and a visit."),
+            ("point", "1 to 3 years", "A pattern, not an accident. Formal steps under Part 5."),
+            ("point", "3 to 5 years", "Running out of time. See the next section."),
+            ("point", "Over 5 years", "Needs a legal review before any action."),
+            ("h", "Why the Five-Year Mark Matters"),
+            "Section 270 of the Local Government Code says real property tax must be collected within five "
+            "years from the date it became due, or within ten years from discovery when there was fraud or "
+            "intent to evade. Part 5 of Inside the Local Treasury explained that the period stops running in "
+            "some cases, such as when the owner is out of the country or cannot be located. For other local "
+            "taxes, Section 194 sets a similar five-year period.",
+            "That makes the 3-to-5-year bucket the most time-sensitive on the report. An amount there is "
+            "still collectible, but not for long. Amounts over five years old should go to the office’s "
+            "legal adviser before anyone treats them as collectible or as lost.",
+            ("h", "Building It in Google Sheets"),
+            "Start from a table with one row per unpaid bill: the account, the due date and the balance still "
+            "unpaid. Use the remaining balance, not the original bill, so partial payments are counted.",
+            ("point", "Set the as-of date", "Type the date of the report in H1, for example March 31, 2027. "
+             "Using a fixed date, not TODAY(), keeps the report the same each time it is opened."),
+            ("point", "Days overdue", "In column D: =$H$1-B2. Part 29 of the Data Analytics Series covered "
+             "counting days."),
+            ("point", "The bucket", "In column E: =IFS(D2<=0, \"Current\", D2<=90, \"1-90 days\", D2<=365, "
+             "\"91-365 days\", D2<=1095, \"1-3 years\", D2<=1825, \"3-5 years\", TRUE, \"Over 5 years\")."),
+            ("point", "Totals by bucket", "Use SUMIFS and COUNTIFS from Part 23, or a pivot table from "
+             "Part 24, with the bucket as the row and the balance as the value."),
+            ("point", "Flag disputed accounts", "Add a status column for accounts under protest or in "
+             "court. Part 18 of Inside the Local Treasury described protests. Keep those balances visible, "
+             "but report them on a separate line so they are not chased like ordinary arrears."),
+            "IFS checks its conditions in order and stops at the first true one, so the order of the "
+            "buckets in the formula matters. The day counts treat a year as 365 days, which is close enough "
+            "for grouping, but check any account near a boundary by hand.",
+            ("h", "Charting It"),
+            ("point", "A bar chart, oldest at the bottom or top", "Keep the buckets in age order, not sorted "
+             "by size. The order is the point."),
+            ("point", "Show both money and accounts", "₱650,000 over five years might be 25 accounts; "
+             "₱420,000 in the youngest bucket might be 310. Each tells a different story about workload."),
+            ("point", "Add the date", "As in Part 30, write the as-of date beside the chart."),
+            ("photo", "blog/bi-aging-chart.jpg", "An aging chart for real property tax arrears, with the "
+             "action for each bucket. Figures are invented. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Reading the Example"),
+            "In the invented report for March 31, 2027, the ₱3.8 million broke down like this: ₱420,000 at 1 "
+            "to 90 days in 310 accounts, ₱680,000 at 91 to 365 days in 190 accounts, ₱1,150,000 at 1 to 3 "
+            "years in 140 accounts, ₱900,000 at 3 to 5 years in 60 accounts, and ₱650,000 over five years "
+            "in 25 accounts.",
+            ("point", "The biggest bucket is not the most urgent", "₱1.15 million at 1 to 3 years is the "
+             "largest, but ₱900,000 at 3 to 5 years is closer to the time limit."),
+            ("point", "Sixty accounts is a workable list", "A team can visit or write to sixty owners in a "
+             "quarter. That list became the first priority."),
+            ("point", "The youngest bucket is wide but shallow", "Many accounts, small amounts. A text "
+             "reminder, like the pilot in Part 32 of the Project Management Series, fits it."),
+            ("h", "Match an Action to Each Bucket"),
+            ("point", "1 to 90 days", "Reminder by text or letter."),
+            ("point", "91 to 365 days", "Notice, then a visit or a call."),
+            ("point", "1 to 3 years", "Formal notice of delinquency and the remedies in Part 5."),
+            ("point", "3 to 5 years", "Priority list, reviewed monthly, with a named owner."),
+            ("point", "Over 5 years", "Legal review, account by account."),
+            ("quote", "A total tells you how much is owed. An aging report tells you how much time you have."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Reporting only the total", "Break it down by age."),
+            ("point", "Using TODAY() in a saved report", "Fix the as-of date so the report does not change."),
+            ("point", "Using the original bill", "Use the remaining balance after partial payments."),
+            ("point", "Sorting buckets by size", "Keep them in age order."),
+            ("h", "Key Takeaways"),
+            ("point", "Age matters as much as amount", "The same peso has a different urgency at different ages."),
+            ("point", "Watch the five-year mark", "Section 270 for real property tax, Section 194 for other local taxes."),
+            ("point", "IFS builds the buckets", "From days overdue against a fixed as-of date."),
+            ("point", "One action per bucket", "With an owner and a review date."),
+            ("h", "Your Part 34 Exercise"),
+            ("point", "Step 1", "Make a table of ten invented unpaid bills with due dates across several years."),
+            ("point", "Step 2", "Add the as-of date, the days overdue and the IFS bucket formula."),
+            ("point", "Step 3", "Total the balances and count the accounts in each bucket."),
+            ("point", "Step 4", "Write one action and one owner beside each bucket."),
+            "At the next council meeting, the analyst showed one bar chart instead of one number. The council "
+            "member looked at the 3-to-5-year bar for a long time, then asked how many people the office "
+            "needed to work through sixty accounts before the end of the year.",
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("cta", "Read: Business Intelligence Series, Part 33: Targets vs Actual, Bullet Charts, Gauges and the Year-to-Date Trap", "/blog/business-intelligence-part-33-targets-vs-actual/"),
+            ("cta", "Read: Data Analytics Series, Part 29: Counting Days in Google Sheets, Working Days, Due Dates and Days Late", "/blog/data-analytics-part-29-counting-days/"),
+            ("cta", "Read: Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look", "/blog/business-intelligence-part-18-thresholds-and-alerts/"),
+            ("ask", "How old is the oldest unpaid account in your office’s records?"),
+        ],
+    },
+    {
         "title": "Business Intelligence Series, Part 33: Targets vs Actual, Bullet Charts, Gauges and the Year-to-Date Trap",
         "slug": "business-intelligence-part-33-targets-vs-actual",
         "category": "bi",

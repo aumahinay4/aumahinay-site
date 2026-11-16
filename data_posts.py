@@ -12,6 +12,275 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit",
+        "slug": "data-analytics-part-34-outliers",
+        "category": "data",
+        "date": "April 26, 2027",
+        "summary": "One unusual number can pull an average far from the truth, or hide a typing error or a "
+                   "missing remittance. This part shows how to find outliers with quartiles and the 1.5 IQR "
+                   "rule in Google Sheets, how to flag them automatically, and what to do once you find one.",
+        "publish_on": "2027-04-26 21:00",
+        "body": [
+            "The analyst was preparing a chart of one collector’s daily remittances for the first two weeks "
+            "of March. The average was ₱6,892 a day. The head of office was pleased. It was the highest "
+            "average in the office.",
+            "Then the analyst looked at the twelve numbers behind it. Ten of them were between ₱3,700 and "
+            "₱4,500. One day showed ₱41,000. Another showed ₱600. The average described none of them.",
+            "(The collector, the remittances and the figures are invented for practice. No real person or "
+            "office is described.)",
+            "Part 33 built lists that update themselves. This part looks for the numbers in those lists that "
+            "do not fit. You will learn what an outlier is, why it matters, how to find one with quartiles and "
+            "a simple rule, how to flag it automatically in Google Sheets, and, most important, what to do "
+            "after you find it.",
+            ("photo", "blog/data-outliers.jpg", "Outliers: find them with quartiles, flag them, check the "
+             "source document, and never delete one just because it is inconvenient. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What an Outlier Is"),
+            "An outlier is a value far from the rest of the data. It is not automatically an error. It is a "
+            "question.",
+            ("point", "It can be a mistake", "₱41,000 might be ₱4,100 with an extra zero."),
+            ("point", "It can be real and important", "It might be a large business tax payment collected "
+             "in the field that day."),
+            ("point", "It can be a warning", "₱600 might mean a remittance that has not been recorded yet."),
+            "Each of those explanations calls for a different response. The data alone cannot tell you "
+            "which one is true.",
+            ("h", "Why One Number Matters"),
+            "Part 26 showed that the mean can be pulled by extreme values, while the median holds steady. "
+            "In this example, the median of the twelve days is ₱4,150. The mean is ₱6,892, about two-thirds "
+            "higher, because of one day. A report that used the mean would tell the head of office "
+            "something that did not happen on any of the twelve days.",
+            ("h", "The Practice Data"),
+            "Type the twelve daily remittances into column B, from B2 to B13, in this order: 4200, 3900, "
+            "4500, 4100, 3800, 4300, 41000, 4000, 3700, 4400, 600, 4200. Put the dates, March 1 to March 12, "
+            "in column A if you like.",
+            ("h", "Step 1: Find the Quartiles"),
+            "Quartiles split sorted data into four parts. The first quartile, Q1, has a quarter of the values "
+            "below it. The third quartile, Q3, has three quarters below it.",
+            ("point", "Q1", "In E2: =QUARTILE(B2:B13, 1). The result is 3,875."),
+            ("point", "Median", "In E3: =MEDIAN(B2:B13). The result is 4,150."),
+            ("point", "Q3", "In E4: =QUARTILE(B2:B13, 3). The result is 4,325."),
+            ("point", "Interquartile range", "In E5: =E4-E2. The result is 450. This is the spread of the "
+             "middle half of the data."),
+            ("h", "Step 2: Apply the 1.5 IQR Rule"),
+            "A common rule, associated with the statistician John Tukey, treats a value as an outlier if it "
+            "is more than 1.5 interquartile ranges below Q1 or above Q3.",
+            ("point", "Lower fence", "In E6: =E2-1.5*E5. The result is 3,200."),
+            ("point", "Upper fence", "In E7: =E4+1.5*E5. The result is 5,000."),
+            ("point", "The outliers", "Anything below 3,200 or above 5,000: the ₱600 on March 11 and the "
+             "₱41,000 on March 7."),
+            "The rule is a screen, not a verdict. It tells you where to look. It does not tell you what you "
+            "will find.",
+            ("photo", "blog/data-outliers-box.jpg", "The twelve days on a number line, with the quartiles, "
+             "the fences and the two outliers. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Step 3: Flag Them Automatically"),
+            ("point", "A flag column", "In C2: =IF(OR(B2<$E$6, B2>$E$7), \"Check\", \"\"), then fill down "
+             "to C13. Rows 8 and 12 say Check."),
+            ("point", "A color", "Part 31 showed conditional formatting. A custom formula such as "
+             "=OR($B2<$E$6, $B2>$E$7) colors the whole row."),
+            ("point", "It updates itself", "When a new day is added and the ranges are extended, the "
+             "quartiles and fences are recalculated."),
+            ("h", "Step 4: Investigate, Don’t Delete"),
+            "This is the step that matters. An outlier is checked against the source, not removed because "
+            "it spoils a chart.",
+            ("point", "Go to the source document", "For a remittance, that is the official receipts and the "
+             "deposit slip. Part 13 of Inside the Local Treasury explained why deposits are matched to "
+             "collections."),
+            ("point", "If it is a typing error", "Correct it, and note the correction and its source in a "
+             "change log, as Part 10 of the Business Intelligence Series described."),
+            ("point", "If it is real", "Keep it, and explain it in the report. A single large payment is "
+             "news, not noise."),
+            ("point", "If it cannot be explained yet", "Mark it as pending and say so in the report. Do not "
+             "guess."),
+            "In the example, the receipts showed a ₱37,000 business tax payment collected in the field on "
+            "March 7, so the ₱41,000 was real. The ₱600 on March 11 was the collector’s half day before a "
+            "seminar, which the attendance record confirmed. Both stayed in the data, with a note.",
+            ("h", "When the Rule Needs Care"),
+            ("point", "Very few values", "With only five or six numbers, the quartiles move a lot when one "
+             "value changes. Look at the values themselves instead."),
+            ("point", "Data that is naturally lopsided", "Business tax payments in a town can include a few "
+             "large establishments and many small stores. The rule may flag every large payer, although "
+             "those payments are normal. Group the data first, for example large and small businesses, "
+             "and screen each group on its own."),
+            ("point", "Mixed periods", "January payments can be larger because of the deadline rush described "
+             "in Part 2 of Inside the Local Treasury. Compare January with January, not with June."),
+            ("h", "Two Quick Checks Without Formulas"),
+            ("point", "Sort it", "Part 22 showed sorting. Sort the column from smallest to largest and look "
+             "at both ends. Outliers sit there."),
+            ("point", "MIN and MAX", "=MIN(B2:B13) and =MAX(B2:B13) show the extremes in two cells. If either "
+             "surprises you, find the row."),
+            ("h", "Reporting When Outliers Are Real"),
+            ("point", "Use the median for a typical day", "₱4,150 describes the collector’s normal day "
+             "far better than ₱6,892."),
+            ("point", "Show the outlier separately", "“Includes one field collection of ₱37,000 on March 7.”"),
+            ("point", "Don’t hide it", "Removing a real value makes the report less honest, not more accurate."),
+            ("quote", "An outlier is a question. Answer it from the source document before you answer it in a "
+             "chart."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Deleting outliers to make a chart look better", "Check, then correct or explain."),
+            ("point", "Trusting an average without looking", "Look at the values, or the median."),
+            ("point", "Treating the rule as proof", "The 1.5 IQR rule flags; the documents decide."),
+            ("point", "Checking only the high values", "A low value can be the more serious warning."),
+            ("h", "Key Takeaways"),
+            ("point", "Outliers are questions", "Mistake, real event or warning."),
+            ("point", "Quartiles find them", "Fences at 1.5 IQR below Q1 and above Q3."),
+            ("point", "Flag them automatically", "An IF formula or conditional formatting."),
+            ("point", "Investigate, don’t delete", "The source document decides."),
+            ("h", "Your Part 34 Exercise"),
+            ("point", "Step 1", "Enter the twelve values and build E2 to E7."),
+            ("point", "Step 2", "Add the flag column and confirm that rows 8 and 12 say Check."),
+            ("point", "Step 3", "Change 41000 to 4100 and watch the flag on row 8 disappear."),
+            ("point", "Step 4", "Run the same test on one column of real data in your office, and check "
+             "each flag against its source."),
+            "The report that went to the head of office used the median, ₱4,150, and a note about the field "
+            "collection. She asked why the average had been dropped. The analyst showed her the twelve "
+            "numbers, and she agreed the median told the truth.",
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 31: Conditional Formatting, Letting the Sheet Point at the Problems", "/blog/data-analytics-part-31-conditional-formatting/"),
+            ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
+            ("ask", "Which number in your last report would you check first if you were looking for an outlier?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 33: FILTER, SORT and UNIQUE, Lists in Google Sheets That Update Themselves",
+        "slug": "data-analytics-part-33-filter-sort-unique",
+        "category": "data",
+        "date": "April 21, 2027",
+        "summary": "Copying rows into a new tab every time someone asks for a list makes a copy that is out "
+                   "of date by the afternoon. This part shows how FILTER, SORT and UNIQUE in Google Sheets "
+                   "build lists that update themselves, how to combine them, and how to handle the two errors "
+                   "beginners meet first.",
+        "publish_on": "2027-04-21 21:00",
+        "body": [
+            "Every Monday, the budget officer asked for the same thing: last week’s business tax payments of "
+            "₱5,000 or more, largest first. Every Monday, the clerk filtered the payments log, copied the "
+            "rows, pasted them into a new tab, sorted them and sent the file. By Tuesday, three late entries "
+            "had been added to the log, and the copy was already wrong.",
+            "The clerk did not need a new copy each week. She needed one formula that would keep the list "
+            "current by itself.",
+            "(The office, the barangays and the payments in this post are invented for practice. No real "
+            "taxpayer or office is described.)",
+            "Part 32 explained why rounded totals do not always add up. This part returns to everyday "
+            "spreadsheet work. Part 22 showed how to sort and filter by hand. Here you will learn three "
+            "functions that do the same thing with a formula, so the result changes when the data changes: "
+            "FILTER, SORT and UNIQUE. You will also learn how to combine them, how to point them at a cell "
+            "instead of typing the condition, and how to deal with the #N/A and #REF! errors.",
+            ("photo", "blog/data-filter.jpg", "FILTER, SORT and UNIQUE: formulas that keep a list current, "
+             "so nobody has to copy and paste it again. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Practice Sheet"),
+            "Type this payments log into a new sheet, starting in cell A1. Column A is the date, B the "
+            "barangay, C the kind of payment, D the amount and E the collector.",
+            ("point", "Row 1", "Date, Barangay, Kind, Amount, Collector."),
+            ("point", "Row 2", "January 4, 2027, Poblacion, RPT, 3200, Ana."),
+            ("point", "Row 3", "January 4, 2027, San Isidro, Business, 8500, Ben."),
+            ("point", "Row 4", "January 5, 2027, Poblacion, Business, 12000, Ana."),
+            ("point", "Row 5", "January 5, 2027, Malinao, RPT, 1450, Carlo."),
+            ("point", "Row 6", "January 6, 2027, San Isidro, Fees, 600, Ben."),
+            ("point", "Row 7", "January 6, 2027, Poblacion, Fees, 350, Ana."),
+            ("point", "Row 8", "January 7, 2027, Malinao, Business, 5000, Carlo."),
+            ("point", "Row 9", "January 7, 2027, San Isidro, RPT, 2750, Ben."),
+            "Put each formula below in an empty area to the right, such as cell H2, with nothing below or "
+            "beside it. These functions fill as many cells as the result needs.",
+            ("h", "UNIQUE: One of Each"),
+            "Google’s help gives the form UNIQUE(range, by_column, exactly_once). For a simple list, you need "
+            "only the range.",
+            ("point", "Formula", "=UNIQUE(B2:B9)"),
+            ("point", "Result", "Poblacion, San Isidro and Malinao, each once, in the order they first "
+             "appear."),
+            ("point", "Exactly once", "=UNIQUE(B2:B9, FALSE, TRUE) lists only values that appear a single "
+             "time. In this log, none do, so the result is empty."),
+            "Google’s help adds a warning worth remembering: if values that look the same still appear "
+            "twice, check for hidden differences such as extra spaces at the end. Part 18 showed how TRIM "
+            "removes them.",
+            ("h", "SORT: The Same Rows in a New Order"),
+            "The form is SORT(range, sort_column, is_ascending). The sort column can be a number counting "
+            "from the left of the range. TRUE sorts low to high, FALSE high to low.",
+            ("point", "Formula", "=SORT(A2:E9, 4, FALSE)"),
+            ("point", "Result", "All eight rows, largest amount first: ₱12,000, ₱8,500, ₱5,000, ₱3,200, "
+             "₱2,750, ₱1,450, ₱600 and ₱350."),
+            ("point", "Two sort keys", "=SORT(A2:E9, 2, TRUE, 4, FALSE) sorts by barangay first, then by "
+             "amount from largest to smallest within each barangay."),
+            "Unlike sorting with the menu, SORT leaves the original log untouched. The sorted list is a "
+            "view of the data, not a second copy.",
+            ("h", "FILTER: Only the Rows You Want"),
+            "The form is FILTER(range, condition1, condition2, and so on). Each condition is a column of "
+            "TRUE or FALSE values, one for each row of the range.",
+            ("point", "One condition", "=FILTER(A2:E9, B2:B9=\"Poblacion\") returns rows 2, 4 and 7."),
+            ("point", "Two conditions", "=FILTER(A2:E9, B2:B9=\"Poblacion\", D2:D9>=5000) returns row 4 "
+             "only. A row must pass every condition."),
+            ("point", "Same length", "Google’s help says each condition must have exactly the same length "
+             "as the range. B2:B9 matches A2:E9; B2:B10 would not."),
+            ("h", "Putting Them Together"),
+            "The real strength comes from nesting one function inside another. The budget officer’s Monday "
+            "request becomes a single formula.",
+            ("point", "Formula", "=SORT(FILTER(A2:E9, C2:C9=\"Business\", D2:D9>=5000), 4, FALSE)"),
+            ("point", "Result", "₱12,000 from Poblacion, ₱8,500 from San Isidro and ₱5,000 from Malinao, "
+             "largest first."),
+            ("point", "Read it from the inside out", "FILTER keeps business payments of ₱5,000 or more. SORT "
+             "puts what is left in order by column 4, the amount."),
+            ("photo", "blog/data-filter-results.jpg", "One log, three formulas, three lists that update "
+             "themselves when a new payment is entered. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "FILTER or a Pivot Table?"),
+            "Part 24 used pivot tables to summarize. The two tools answer different questions.",
+            ("point", "Use FILTER and SORT for rows", "When the reader needs the actual payments: who paid, "
+             "when and how much."),
+            ("point", "Use a pivot table for totals", "When the reader needs sums or counts by barangay, kind "
+             "or month, and not the rows behind them."),
+            "The budget officer wanted the payments themselves, so FILTER was the right choice.",
+            ("h", "Point the Formula at a Cell"),
+            "Typing “Poblacion” into the formula means editing the formula for every new question. Put the "
+            "condition in a cell instead.",
+            ("point", "Set it up", "Type Poblacion in cell G1. Then use =FILTER(A2:E9, B2:B9=G1)."),
+            ("point", "Change the question", "Type San Isidro in G1, and the list changes at once."),
+            ("point", "Add a dropdown", "Part 12 showed data validation. A dropdown in G1, built from the "
+             "UNIQUE list, lets anyone choose a barangay without typing errors."),
+            ("h", "Let the List Grow"),
+            "A fixed range such as A2:E9 stops at row 9. When the log grows, use an open range that runs to "
+            "the bottom of the column, such as A2:E and B2:B.",
+            ("point", "FILTER with open ranges", "=FILTER(A2:E, B2:B=G1) picks up every new row as it is "
+             "entered."),
+            ("point", "UNIQUE with open ranges", "=UNIQUE(B2:B) also counts the empty rows below the data, "
+             "so the result ends with a blank. Filter the blanks out first: "
+             "=UNIQUE(FILTER(B2:B, B2:B<>\"\"))."),
+            ("h", "The Two Errors You Will Meet First"),
+            ("point", "#N/A: nothing matched", "Google’s help says FILTER returns #N/A when no values meet "
+             "the conditions. Wrap it to show a message instead: =IFERROR(FILTER(A2:E9, B2:B9=G1), "
+             "\"No payments\")."),
+            ("point", "#REF!: no room", "These formulas need empty cells to spill into. If something is "
+             "typed in their way, the result stops with #REF!, and the message says the result would "
+             "overwrite data. Clear the blocking cell, or move the formula."),
+            "One more caution: do not type over the cells a formula filled. They belong to the formula. To "
+            "change the result, change the data or the condition.",
+            ("quote", "A copied list is right once. A formula list is right every time it is opened."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Copying and pasting a weekly list", "Use FILTER and SORT once, and reuse them."),
+            ("point", "Conditions of a different length", "Match the rows of the range exactly."),
+            ("point", "Typing the condition into the formula", "Point it at a cell instead."),
+            ("point", "Leaving no room below", "Keep the space under and beside the formula empty."),
+            ("h", "Key Takeaways"),
+            ("point", "UNIQUE lists each value once", "Watch for hidden spaces."),
+            ("point", "SORT orders without touching the log", "Use FALSE for largest first."),
+            ("point", "FILTER keeps the rows you want", "Every condition must be true."),
+            ("point", "Nest them", "SORT(FILTER(...)) answers a whole request in one formula."),
+            ("h", "Your Part 33 Exercise"),
+            ("point", "Step 1", "Build the practice sheet and try each formula above."),
+            ("point", "Step 2", "Add a tenth row: January 8, 2027, Poblacion, Business, 7000, Ana. Watch "
+             "which lists change on their own."),
+            ("point", "Step 3", "Put a barangay name in G1 and build =IFERROR(FILTER(A2:E, B2:B=G1), "
+             "\"No payments\")."),
+            ("point", "Step 4", "Find one list in your office that someone copies by hand every week, and "
+             "rebuild it as a formula."),
+            "The next Monday, the clerk sent the budget officer a link instead of a file. The tab held one "
+            "formula. When the officer opened it on Tuesday, the three late entries were already there.",
+            ("cta", "Read: Data Analytics Series, Part 22: Sorting and Filtering With Purpose", "/blog/data-analytics-part-22-sorting-and-filtering/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 31: Conditional Formatting, Letting the Sheet Point at the Problems", "/blog/data-analytics-part-31-conditional-formatting/"),
+            ("ask", "Which list in your office is still copied and pasted by hand every week?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 32: Rounding, and Why the Totals Don’t Add Up",
         "slug": "data-analytics-part-32-rounding-and-totals",
         "category": "data",

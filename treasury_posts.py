@@ -7,6 +7,271 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 27: Sealing the Market Scales, Fees for Weights and Measures",
+        "date": "April 29, 2027",
+        "publish_on": "2027-04-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "weights-and-measures-fees",
+        "category": "finance",
+        "summary": "A kilo at the market should be a kilo. This part explains how the Local Government Code "
+                   "lets a town charge fees for sealing and licensing weights and measures, how the "
+                   "sanggunian sets the rules and penalties, when the treasurer may settle a violation, and "
+                   "how the Timbangan ng Bayan scales let buyers check for themselves.",
+        "body": [
+            "Aling Nena bought a kilo of galunggong at the public market and, on her way out, set the bag on "
+            "the large scale near the market office. The needle stopped at 850 grams. She walked back to "
+            "the stall. The vendor weighed it again on his own scale, and it showed exactly one kilo.",
+            "One of the two scales was wrong. The question was which one, and whose job it was to find out.",
+            "(Aling Nena, the market and the vendor are invented for this post. The law and the government "
+            "programs described below are real and cited.)",
+            "Part 26 covered a provincial tax on printing. This part stays in the town, at the public market "
+            "that Part 19 described as a business the town runs. You will learn what the Local Government "
+            "Code says about fees for sealing and licensing weights and measures, who sets the rules and "
+            "penalties, when the municipal treasurer may settle a violation, how the public scales found in "
+            "some markets work, and what vendors, buyers and treasury staff should each check.",
+            ("photo", "blog/finance-scales.jpg", "Weights and measures: the town seals and licenses scales "
+             "for a fee, the sanggunian sets rules and penalties, and buyers can check at a public scale. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What the Code Says"),
+            "Section 148 of the Local Government Code of 1991 covers fees for the sealing and licensing of "
+            "weights and measures.",
+            ("point", "Who levies the fee", "The municipality, at reasonable rates prescribed by the "
+             "sangguniang bayan. Under Section 151, a city may also levy the fees a municipality may."),
+            ("point", "The rules on use", "The sangguniang bayan prescribes the regulations for using weights "
+             "and measures, subject to guidelines of the Department of Science and Technology."),
+            ("point", "Penalties", "The sanggunian, by ordinance, penalizes fraudulent practices and the "
+             "unlawful possession or use of instruments of weights and measures, and sets the criminal "
+             "penalty in line with the Code."),
+            ("point", "Settling a minor case", "The sanggunian may authorize the municipal treasurer to "
+             "settle an offense not involving fraud, before a case is filed in court, upon payment of a "
+             "compromise penalty of not less than ₱200."),
+            ("h", "A Fee, Not a Tax"),
+            "Part 15 explained the difference between a fee and a tax. The sealing fee is a regulatory fee. "
+            "It pays for the work of checking the instruments, not for general revenue.",
+            ("point", "Reasonable rates", "The Code uses those words. The fee should be reasonable for the "
+             "work of testing and sealing, not set mainly to raise money."),
+            ("point", "One instrument, one fee", "A revenue code can charge per scale, per balance or per "
+             "measure, with different rates for different kinds. Check what yours says."),
+            ("point", "A receipt and a seal", "The vendor pays the fee, receives an official receipt, and "
+             "the instrument receives a seal showing it passed."),
+            ("h", "What Sealing Means"),
+            "Sealing is the act of testing an instrument against standard weights or measures and, if it is "
+            "accurate enough, marking it as approved for use in trade.",
+            ("point", "Test", "The inspector places known standard weights on the scale and compares the "
+             "reading."),
+            ("point", "Seal or reject", "An accurate scale is sealed. One that is off must be repaired or "
+             "replaced before it is used."),
+            ("point", "Repeat on schedule", "A seal is not forever. Scales drift and can be tampered with, so "
+             "the ordinance sets how often instruments are rechecked."),
+            "In an August 2018 report by PTV, the Department of Trade and Industry in Antique urged local "
+            "governments to calibrate market scales. The report pointed to the Consumer Act of the "
+            "Philippines, and a DTI engineer said vendors’ scales should be calibrated every six months by "
+            "the treasurer’s office. She added that an ordinance on vendors’ scales would let the town "
+            "collect an inspection fee.",
+            ("photo", "blog/finance-scales-steps.jpg", "From a vendor’s scale to a sealed one, and what "
+             "happens when a scale fails. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Timbangan ng Bayan: Letting Buyers Check"),
+            "The large scale near the market office in the story is a real kind of program. Under Timbangan "
+            "ng Bayan, the Department of Trade and Industry places public weighing scales in markets so "
+            "buyers can check what they bought.",
+            ("point", "A national partnership", "The Department of Science and Technology’s Industrial "
+             "Technology Development Institute reported a memorandum of understanding signed on August 1, "
+            "2024 for the Timbangan ng Bayan project, with DTI, DILG, DOST and a private bank."),
+            ("point", "Accuracy of the public scale", "DOST-ITDI said its National Metrology Laboratory "
+             "supports reliable scales through verification and re-verification against measurement "
+             "standards."),
+            ("point", "Use it", "A buyer who doubts a weight can check at the public scale and bring the "
+             "difference to the market office."),
+            ("h", "Back at the Market"),
+            "The market supervisor tested both scales with the office’s standard weights. The public scale "
+            "was accurate. The vendor’s scale read 150 grams heavy at one kilo. Its seal was more than a year "
+            "old.",
+            ("point", "If it was not fraud", "A worn spring, no sign of tampering. Under the ordinance, the "
+             "treasurer may settle the case with a compromise penalty, if the sanggunian has authorized "
+             "it, and the vendor repairs the scale before using it again."),
+            ("point", "If it was fraud", "A tampered scale is not settled at the counter. The ordinance’s "
+             "penalties apply, and the case can go to court."),
+            "Either way, Aling Nena got her missing 150 grams of galunggong.",
+            ("h", "Why a Few Grams Matter"),
+            "A short weight looks small on one purchase. It adds up over a day of sales. Take the scale in "
+            "the story, which read 150 grams heavy at one kilo. If that scale showed 40 kilos of fish sold in "
+            "a day, buyers would have received about 6 kilos less than they paid for. At ₱200 a "
+            "kilo, that is roughly ₱1,200 of fish paid for and never handed over, in one day, at one stall.",
+            "(These numbers are for illustration only. They show the arithmetic, not the size of any real "
+            "loss.)",
+            ("point", "For buyers", "Each short kilo is money lost on food, and a household that buys "
+             "every day pays the difference every day."),
+            ("point", "For honest vendors", "A vendor with an accurate scale competes with one who gives "
+             "less for the same price. Sealing protects the honest seller too."),
+            ("point", "For the town", "The market is a business the town runs. Buyers who stop trusting "
+             "its scales can take their shopping elsewhere."),
+            ("h", "Keeping the Register"),
+            "Sealing is only as good as the record behind it. A simple register, kept in a spreadsheet or a "
+            "logbook, can hold one row per instrument.",
+            ("point", "Columns to keep", "Stall number, vendor, kind of instrument, its capacity, the date "
+             "sealed, the official receipt number for the fee, the result (passed or rejected) and the "
+             "date of the next check."),
+            ("point", "A monthly look", "Sort by the next-check date. Any row with a date already past is "
+             "an instrument due for a visit."),
+            ("point", "Rejected instruments", "Keep the row, note the defect, and record the date it was "
+             "repaired and passed. The history shows which stalls have repeat problems."),
+            ("h", "What Each Person Should Check"),
+            ("point", "Vendors", "That each scale has a current seal and a receipt for the fee, and that it "
+             "reads zero with nothing on it."),
+            ("point", "Buyers", "That the scale reads zero before your goods go on it, and that you can see "
+             "the display. When in doubt, use the public scale."),
+            ("point", "Treasury and market staff", "A register of sealed instruments with the date of the "
+             "next check, and standard weights that are themselves checked."),
+            ("point", "The sanggunian", "That the ordinance sets the fee, the schedule, the penalties and, "
+             "if desired, the treasurer’s authority to settle non-fraud cases."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the fee as a money-maker", "It is a regulatory fee at reasonable rates."),
+            ("point", "Sealing once and forgetting", "Set and follow a recheck schedule."),
+            ("point", "Settling a fraud case at the counter", "Only non-fraud offenses may be compromised."),
+            ("point", "Ignoring the public scale", "It is there so buyers can check."),
+            ("h", "Key Takeaways"),
+            ("point", "A municipal fee", "Section 148, at reasonable rates set by the sangguniang bayan."),
+            ("point", "Rules follow DOST guidelines", "The sanggunian writes them."),
+            ("point", "Compromise only without fraud", "Not less than ₱200, if authorized, before a court case."),
+            ("point", "Buyers can check", "Timbangan ng Bayan scales in markets."),
+            ("h", "Your Part 27 Action Plan"),
+            ("point", "If you work in a treasury", "Find the weights and measures section of your revenue "
+             "code and check when instruments were last sealed."),
+            ("point", "If you sell at the market", "Look at your seal date, and ask when the next check is."),
+            ("point", "If you shop at the market", "Find the public scale, and use it once to see how it works."),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 26: The Printing and Publication Tax, What the Print Shop Pays the Province", "/blog/printing-and-publication-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("ask", "Have you ever checked your purchase on the public scale at your market?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 26: The Printing and Publication Tax, What the Print Shop Pays the Province",
+        "date": "April 24, 2027",
+        "publish_on": "2027-04-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "printing-and-publication-tax",
+        "category": "finance",
+        "summary": "A print shop or a publisher can owe a business tax to the province, not to the town. This "
+                   "part explains what the Local Government Code covers under the printing and publication "
+                   "tax, the rate ceiling, the rule for a shop in its first year, the exemption for school "
+                   "texts, and how it fits with the town’s permit fees.",
+        "body": [
+            "The print shop beside the town plaza had been busy for a year. It printed wedding invitations, "
+            "certificates for the elementary school, receipts for the stores on the main road, and posters "
+            "for every fiesta. In January, the owner went to renew his business permit and asked the clerk "
+            "at the municipal treasury a question he had been saving: why had a letter from the provincial "
+            "treasurer arrived about a tax on his printing?",
+            "The clerk smiled. It was a question she heard about once a year, usually from someone who had "
+            "just paid the town and assumed that settled everything.",
+            "(The print shop, its owner and the figures are invented for this post. The sections of the Local "
+            "Government Code described below are real and are cited.)",
+            "Part 25 covered the idle land tax. This part returns to taxes on business, and to one that the "
+            "Local Government Code gives to the province rather than the town: the tax on the business of "
+            "printing and publication. You will learn what it covers, who may levy it and at what rate, how "
+            "a shop in its first year is taxed, what is exempt, and how it fits with the fees the town "
+            "collects.",
+            ("photo", "blog/finance-printing.jpg", "The printing and publication tax: levied by the province "
+             "or city, up to half of one percent of last year’s gross receipts, with school texts exempt. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What It Covers"),
+            "Section 136 of the Local Government Code of 1991 allows the province to tax the business of "
+            "persons engaged in printing or publication.",
+            ("point", "What is printed or published", "Books, cards, posters, leaflets, handbills, "
+             "certificates, receipts, pamphlets and others of a similar nature."),
+            ("point", "Printers and publishers", "The section covers both: the shop that prints for "
+             "customers, and the business that publishes its own materials."),
+            "Part 24 showed that the franchise tax in Section 137 has almost the same structure. Both are "
+            "provincial taxes on a particular kind of business, measured by gross receipts.",
+            ("h", "Who May Levy It, and How Much"),
+            ("point", "Who levies it", "The province. Under Section 151, a city may also levy the taxes a "
+             "province may, with rates up to 50 percent higher than the provincial maximum."),
+            ("point", "The base", "The gross annual receipts for the preceding calendar year."),
+            ("point", "The ceiling", "Not more than 50 percent of 1 percent, which is half of one percent, "
+             "or 0.5 percent."),
+            ("point", "A business in its first year", "Not more than one-twentieth of 1 percent of the "
+             "capital investment, or 0.05 percent."),
+            ("point", "From the second year", "The tax is based on the gross receipts for the preceding "
+             "calendar year, regardless of when the business started to operate."),
+            "As always, the provincial or city revenue code sets the actual rate within the ceiling. Read "
+            "it before quoting a number.",
+            ("h", "The Exemption for School Texts"),
+            "Section 136 exempts receipts from the printing or publishing of books or other reading materials "
+            "prescribed by the Department of Education, Culture and Sports as school texts or references. "
+            "Republic Act No. 9155, the Governance of Basic Education Act of 2001, renamed that department the "
+            "Department of Education, so today the question is whether DepEd prescribes the material.",
+            ("point", "What it covers", "Receipts from printing or publishing those prescribed materials, not "
+             "all of the shop’s receipts."),
+            ("point", "Keep the proof", "A shop claiming the exemption should keep the contract or order and "
+             "the document showing the materials are prescribed, and record those receipts separately."),
+            ("point", "Certificates are not school texts", "The school certificates the plaza shop printed "
+             "are printing for a school, but they are not books or reading materials prescribed as texts. "
+             "Those receipts remain taxable."),
+            ("h", "A Worked Example"),
+            "The numbers below are invented to show the arithmetic. They are not any province’s actual rate.",
+            ("point", "Gross receipts, 2026", "₱2,000,000 in total. Of this, ₱400,000 came from printing "
+             "reading materials prescribed as school references, with the documents to prove it."),
+            ("point", "Taxable receipts", "₱2,000,000 − ₱400,000 = ₱1,600,000."),
+            ("point", "The tax for 2027", "If the provincial ordinance uses the full 0.5 percent: "
+             "₱1,600,000 × 0.5% = ₱8,000."),
+            ("point", "The same shop in a city", "A city may go up to 50 percent above the provincial "
+             "ceiling under Section 151. At 0.75 percent, the tax on ₱1,600,000 would be ₱12,000."),
+            ("point", "A new shop", "A shop that opens in 2027 with a capital investment of ₱600,000 owes "
+             "not more than 0.05 percent, or ₱300, for its first year. In 2028 it is taxed on its 2027 "
+             "receipts."),
+            ("photo", "blog/finance-printing-steps.jpg", "Computing the printing and publication tax: "
+             "remove the exempt school-text receipts, then apply the rate. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Town Comes In"),
+            "This is the part of the owner’s question that needs the most care.",
+            ("point", "The tax goes to the province", "Section 142 lets a municipality levy taxes, fees and "
+             "charges “not otherwise levied by provinces.” Since Section 136 gives this tax to the province, "
+             "the town does not levy its own tax on the same printing business."),
+            ("point", "The town still issues the permit", "Section 147 lets a municipality impose reasonable "
+             "fees and charges on business, such as the mayor’s permit fee. Those regulatory fees are "
+             "separate from the provincial tax."),
+            ("point", "Check your own codes", "How the provincial and municipal revenue codes divide the "
+             "work can differ. The provincial treasurer’s office can confirm what the shop owes to each."),
+            "When to pay follows the general rules covered in Part 24: a calendar-year tax, payable in "
+            "quarterly installments within the first 20 days of each quarter under Sections 165 and 167, "
+            "with surcharges and interest for late payment under Section 168.",
+            ("h", "What Each Person Should Check"),
+            ("point", "Print shop owners", "Whether the province or city has a printing and publication "
+             "tax, its rate, and whether any receipts qualify for the school-text exemption."),
+            ("point", "The provincial treasury", "A list of printers and publishers in each town, built "
+             "with the municipal permit records."),
+            ("point", "The municipal treasury", "That the town’s permit fees are charged, and that no "
+             "municipal tax is billed on the printing itself."),
+            ("point", "Customers who order printing", "Nothing to file. The tax falls on the printer’s "
+             "gross receipts, not on the person who orders the invitations, though a shop may consider it "
+             "when it sets its prices."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming the town collects it", "Section 136 gives it to the province, and to cities."),
+            ("point", "Exempting everything printed for a school", "Only prescribed school texts and references."),
+            ("point", "Using this year’s receipts", "The base is the preceding calendar year."),
+            ("point", "No proof for the exemption", "Keep the order and the document that prescribes the material."),
+            ("h", "Key Takeaways"),
+            ("point", "A provincial and city tax", "Section 136, with Section 151 for cities."),
+            ("point", "Half of one percent at most", "Of the preceding year’s gross receipts."),
+            ("point", "First year: capital investment", "Not more than one-twentieth of 1 percent."),
+            ("point", "School texts are exempt", "Receipts from prescribed texts and references."),
+            ("h", "Your Part 26 Action Plan"),
+            ("point", "If you run a print shop", "Ask the provincial treasurer’s office whether you are "
+             "listed, and what records to bring."),
+            ("point", "If you work in a provincial treasury", "Compare your list of printers with the "
+             "towns’ business permit records."),
+            ("point", "If you work in a municipal treasury", "Check that your revenue code does not tax a "
+             "business the province already taxes."),
+            "The clerk walked the print shop owner through it: the permit fee to the town, the printing tax "
+            "to the province, and the school readers he had printed for the district office, which he could "
+            "claim as exempt if he had the papers. He went home to look for the purchase order.",
+            ("cta", "Read: Inside the Local Treasury, Part 24: The Franchise Tax, What Power and Telecom Companies Pay the Province or City", "/blog/franchise-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Does your province tax the printing business, and did you know the town does not?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 25: The Idle Land Tax, When an Empty Lot Costs More Than the Amilyar",
         "date": "April 19, 2027",
         "publish_on": "2027-04-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)

@@ -9,6 +9,259 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "April 28, 2027",
+        "title": "Cybersecurity Series, Part 35: Fake Customer Service, When Help Is the Trap",
+        "slug": "cybersecurity-part-35-fake-customer-service",
+        "category": "security",
+        "summary": "When something goes wrong with a bank, an e-wallet or an online order, people look for "
+                   "help fast, and scammers are waiting with fake pages, fake hotlines and fake agents. This "
+                   "part explains how these traps work, what the Bangko Sentral and the US Federal Trade "
+                   "Commission advise, how to find the real channel, and what to do if you already talked "
+                   "to a fake.",
+        "publish_on": "2027-04-28 21:00",
+        "body": [
+            "Mario’s e-wallet transfer to his sister had been “processing” for an hour. Worried, he typed "
+            "the e-wallet’s name and “customer service” into a social media search. A page with the right "
+            "logo and thousands of followers answered his comment within minutes. An agent sent him a "
+            "message: to release the stuck transfer, he only needed to verify his account by giving the code "
+            "that would arrive by text.",
+            "He gave the code. Ten minutes later, his balance was zero. The original transfer, it turned out, "
+            "had gone through on its own.",
+            "(Mario and the page are invented for this post. The advice quoted below is real and cited.)",
+            "Part 34 looked at fake delivery texts. This part looks at a trap that waits for you to come to "
+            "it: fake customer service. You will learn where these fakes appear, why they work, what the "
+            "Bangko Sentral ng Pilipinas and the US Federal Trade Commission advise, how to find a company’s "
+            "real channel, and what to do if you already shared something.",
+            ("photo", "blog/cyber-help.jpg", "Fake customer service: fake pages, fake numbers and fake "
+             "agents wait for people in a hurry. Find the real channel yourself, and never share a "
+             "one-time PIN. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Fakes Appear"),
+            ("point", "Social media pages and comments", "Pages that copy a bank’s or e-wallet’s name and "
+             "logo, and accounts that reply to public complaints with “Send us a message.”"),
+            ("point", "Search results", "The FTC warned on April 3, 2025 that scammers buy paid search "
+             "placements using another company’s name, and put their own phone number next to a trusted "
+             "name."),
+            ("point", "Calls that come to you", "Someone who says they are from your bank’s fraud team, "
+             "calling to “help” with a problem you did not report."),
+            ("point", "Messaging apps", "An “agent” who moves the conversation to a private chat."),
+            "Banks have warned about this. In a customer advisory, CIMB Bank PH reported “unauthorized social "
+            "media accounts and online profiles falsely claiming to represent” it, and listed its official "
+            "pages and its website so customers could check.",
+            ("h", "Why It Works"),
+            ("point", "You start the contact", "Because you searched or posted first, the reply feels like "
+             "the help you asked for."),
+            ("point", "You are worried", "A stuck transfer, a locked account or a missing parcel makes "
+             "people act fast."),
+            ("point", "It looks right", "A copied logo, a similar name and a quick, polite reply."),
+            ("point", "The request sounds routine", "“Verify your account,” “confirm the code,” “install this "
+             "app so we can check.”"),
+            ("h", "What the Bangko Sentral Advises"),
+            "In an August 2026 #BSPSecuriTips message shared by Standard Chartered Philippines, the BSP said "
+            "banks will never ask for your personal or financial information. Its advice, in short:",
+            ("point", "Don’t give your details to anyone", "Including someone who says they are from the bank."),
+            ("point", "Use only official channels", "Contact your bank or e-wallet only through its official "
+             "customer service channels."),
+            ("point", "Act fast if exposed", "Contact the bank or e-money issuer at once through those "
+             "channels."),
+            ("point", "Report and escalate", "Report scammers to the CICC at 1326 or the PNP Anti-Cybercrime "
+             "Group. If the bank does not address your concern, escalate it to the BSP through its "
+             "online assistant, BSP Online Buddy."),
+            ("h", "What the FTC Advises About Search"),
+            ("point", "The first results may be ads", "They may not be the company you want."),
+            ("point", "Don’t assume a number in search results is legit", "Scroll to the regular results and "
+             "find the company’s own site."),
+            ("point", "Type the address yourself", "If you know the company’s website, type it directly. If "
+             "you are paying a bill, use the address or number printed on the bill."),
+            ("h", "Government Services Are Copied Too"),
+            "The same FTC alert said scammers also buy search ads using the name of a government service. "
+            "Taxpayers looking for how to pay a tax, renew a permit or get a certificate can land on a page "
+            "that charges a “processing fee” or collects personal details.",
+            ("point", "Start from the office itself", "Use the website or page your local government "
+             "announces at its offices or on its official notices."),
+            ("point", "Check the address", "Look for an address ending in .gov.ph, the domain reserved for Philippine government offices. A "
+             "look-alike address is a reason to stop."),
+            ("point", "When unsure, ask at the counter", "A call or a visit to the treasurer’s office costs "
+             "less than a fake fee."),
+            ("photo", "blog/cyber-help-path.jpg", "The safe path to real help, and the shortcuts that lead "
+             "to fakes. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "How to Find the Real Channel"),
+            ("point", "Start inside the app", "Your bank or e-wallet app has a help or contact section. That "
+             "is the safest door, because you did not have to search for it."),
+            ("point", "Use the number on your card or statement", "It was printed by the bank."),
+            ("point", "Type the website yourself", "Part 15 showed how to read a web address. From the real "
+             "site, follow its links to its official social media pages."),
+            ("point", "Don’t trust followers or badges alone", "A page can buy followers, and a name can be "
+             "copied. Check the link from the official website."),
+            ("point", "Hang up and call back", "If someone calls claiming to be your bank, end the call and "
+             "dial the number on your card yourself."),
+            ("h", "What Real Help Will Not Ask For"),
+            ("point", "Your one-time PIN", "Part 13 explained that a one-time PIN is the key to your account. "
+             "Real support does not need it."),
+            ("point", "Your password or full card number", "Support can find your account without them."),
+            ("point", "A remote-access app", "Installing an app that lets someone see or control your phone "
+             "hands them the account."),
+            ("point", "A fee to fix a problem", "Or a transfer to a “safe account.”"),
+            ("h", "If You Already Shared Something"),
+            ("point", "Call your bank or e-wallet through the official channel at once", "Ask them to block "
+             "the account and reverse what they can."),
+            ("point", "Change your password and PIN", "From your own device, through the official app."),
+            ("point", "Uninstall any app they asked for", "And check that nothing else was added."),
+            ("point", "Report it", "CICC 1326 or the PNP Anti-Cybercrime Group, with screenshots of the page, "
+             "the chat and the numbers used. Report the fake page to the platform too."),
+            ("quote", "Help you found by searching might not be help. Help you reached through the app, the "
+             "card or the official website is far safer."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Posting your problem publicly", "It invites fake “agents” to message you."),
+            ("point", "Calling the first number in search results", "Use the app, the card or the bill."),
+            ("point", "Sharing a code to “verify” your account", "Real support does not need it."),
+            ("point", "Staying on a call you did not start", "Hang up and call the official number."),
+            ("h", "Key Takeaways"),
+            ("point", "Fakes wait where you look for help", "Pages, search results, calls and chats."),
+            ("point", "Banks don’t ask for your details", "So says the BSP."),
+            ("point", "Find the real channel yourself", "App, card, statement or typed website."),
+            ("point", "Act fast if exposed", "Bank first, then CICC 1326, then BSP Online Buddy if needed."),
+            ("h", "Your Part 35 Action Plan"),
+            ("point", "Today", "Open your bank and e-wallet apps and find their help sections, so you know "
+             "where they are before you need them."),
+            ("point", "This week", "Save your bank’s official hotline from the back of your card into your "
+             "phone contacts."),
+            ("point", "For your family", "Tell them one rule: never search social media for customer service. "
+             "Start from the app."),
+            "Mario’s e-wallet froze the account that received his money, and he reported the page to the "
+            "platform and to the CICC. Now his bank’s hotline is saved in his phone, copied from the back of "
+            "his card, and the help section in each of his apps is the first place he looks.",
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise", "/blog/cybersecurity-part-14-social-media-accounts/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 34: Fake Delivery Texts, the Parcel That Never Was", "/blog/cybersecurity-part-34-fake-delivery-texts/"),
+            ("ask", "Where do you look first when you need help from your bank or e-wallet?"),
+        ],
+    },
+    {
+        "date": "April 23, 2027",
+        "title": "Cybersecurity Series, Part 34: Fake Delivery Texts, the Parcel That Never Was",
+        "slug": "cybersecurity-part-34-fake-delivery-texts",
+        "category": "security",
+        "summary": "A text says your parcel could not be delivered and asks you to pay a small fee or update "
+                   "your address through a link. This part explains how these messages work, what the "
+                   "Philippine Postal Corporation has said it does not do, the signs of a fake, how to check "
+                   "a real delivery, and what to do if you already clicked.",
+        "publish_on": "2027-04-23 21:00",
+        "body": [
+            "Joy was waiting for a pair of school shoes she had ordered online for her son. On Tuesday "
+            "afternoon, a text arrived: her parcel was on hold because of an incomplete address. To "
+            "reschedule delivery, she only had to confirm her address and pay a redelivery fee of less than "
+            "₱20 through the link. The amount was so small that paying felt easier than asking.",
+            "She opened the link and typed her card number. That evening, her bank sent an alert for a "
+            "₱9,800 purchase she had not made.",
+            "(Joy and her parcel are invented for this post. The warnings quoted below are real and cited.)",
+            "Part 33 kept a shared office computer from exposing everyone who uses it. This part looks at a message that can reach anyone who shops online: the fake delivery text. You will learn how "
+            "these messages work, what the post office has said about them, the signs of a fake, how to "
+            "check a real delivery safely, and what to do if you already clicked or paid.",
+            ("photo", "blog/cyber-parcel.jpg", "Fake delivery texts: a small fee, an urgent deadline and a "
+             "link. Check your order where you bought it, not through the message. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "How the Scam Works"),
+            "The message is built to make one click feel harmless.",
+            ("point", "A believable story", "A failed delivery, an incomplete address, a parcel on hold. Anyone "
+             "who shops online may be waiting for something, so the story can fit."),
+            ("point", "A small amount", "A fee of a few pesos does not feel like a risk. The real target is "
+             "the card number, the bank login or the one-time PIN typed into the fake page."),
+            ("point", "A deadline", "“Update within 24 hours or the parcel will be returned.” Urgency leaves "
+             "less time to think."),
+            ("point", "A link", "The link leads to a page dressed up as a courier or the post office, with a "
+             "logo and a payment form."),
+            "Once the details are typed in, the scammers can use the card, or try to log in to the bank or "
+            "e-wallet. Part 13 explained how one-time PINs protect those accounts, and why nobody should "
+            "ever ask you for one.",
+            ("h", "What the Post Office Has Said"),
+            "The Philippine Postal Corporation, PHLPost, has warned the public about these messages more than "
+            "once.",
+            ("point", "May 2025", "GMA News reported on May 9, 2025 that PHLPost warned of scam messages using "
+             "its name and logo. The messages said a parcel could not be delivered because of an incorrect "
+             "address, and asked for a ₱17.05 fee through a fake website."),
+            ("point", "What PHLPost says it does not do", "In the same report, PHLPost said it “does not send "
+             "text messages, emails, or online notices requesting payment or address updates for "
+             "undelivered parcels.”"),
+            ("point", "A later warning", "In August 2026, the Daily Tribune reported a PHLPost warning about texts "
+             "citing “an incomplete address” and asking for a redelivery fee by card. PHLPost said it does "
+             "not ask for bank details, card information, passwords or one-time passwords by text."),
+            "A private courier has warned its customers too. In November 2023, Philstar reported that PHLPost warned "
+            "against messages using its name to ask for personal information, and that DHL Express "
+            "Philippines had told customers to check the domain names of links and “never disclose sensitive "
+            "information” such as passwords and card numbers. The scammer only needs a "
+            "name people recognize, and the message can use any courier’s name.",
+            ("h", "What the FTC Advises"),
+            "The same trick is reported in other countries. In a consumer alert on December 14, 2023, the US "
+            "Federal Trade Commission described fake messages saying “you missed a delivery attempt” and "
+            "asking you to click a link to reschedule. Its advice:",
+            ("point", "Don’t click", "If a message about an unexpected delivery tells you to click a link, "
+             "don’t."),
+            ("point", "Use contacts you know", "Contact the shipping company through a phone number or website "
+             "you know is real, not the one in the message."),
+            ("point", "Check where you bought it", "If you did order something, go to the site or app where "
+             "you bought it and check the delivery status there."),
+            ("photo", "blog/cyber-parcel-signs.jpg", "Reading a fake delivery text: the warning signs, one "
+             "by one. The message and link are invented. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "The Signs of a Fake"),
+            ("point", "An ordinary mobile number", "The text comes from a personal-looking number, not the "
+             "name of the company."),
+            ("point", "A fee to release a parcel", "Especially a small, oddly exact amount."),
+            ("point", "A strange web address", "Part 15 explained how to read a web address. Look at the "
+             "part just before the first single slash. If it is not the company’s real domain, close the page."),
+            ("point", "A request for card details or a PIN", "A real delivery does not need your one-time "
+             "PIN."),
+            ("point", "No order to match", "You are not expecting anything from that company, or your shop "
+             "app shows the parcel moving normally."),
+            ("h", "How to Check a Real Delivery"),
+            ("point", "Open the shop app or website yourself", "The order page shows the courier and the "
+             "tracking status."),
+            ("point", "Use the courier’s official channel", "Type the courier’s address yourself, or call the "
+             "number on its official website. For PHLPost, GMA News listed the hotline (02) 8288-7678 and "
+             "the website phlpost.gov.ph."),
+            ("point", "Pay cash on delivery only to the rider at your door", "And only for an order you "
+             "recognize."),
+            ("h", "If You Already Clicked or Paid"),
+            ("point", "Call your bank or e-wallet at once", "Report the transaction, ask them to block the "
+             "card, and change your online banking password."),
+            ("point", "If you typed a one-time PIN", "Tell the bank that too. It may mean someone tried to "
+             "log in or approve a payment."),
+            ("point", "Report it", "Call the CICC hotline 1326, and keep a screenshot of the text, the "
+             "sender’s number and the web address."),
+            ("point", "Watch your accounts", "Check statements for the next few weeks. Part 13 described the "
+             "protections under the anti-scam law, Republic Act No. 12010."),
+            "If you clicked but typed nothing, close the page. Do not return to it, and delete the message.",
+            ("quote", "The fee is small because the fee is not the point. Your card number is."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Paying a small fee to be safe", "The fee is the bait."),
+            ("point", "Tracking through the link in the text", "Use the shop app or the courier’s own site."),
+            ("point", "Sharing a one-time PIN", "No real delivery needs it."),
+            ("point", "Waiting to call the bank", "Speed matters when a card is exposed."),
+            ("h", "Key Takeaways"),
+            ("point", "PHLPost does not text for fees", "Or for address updates, according to its 2025 warning."),
+            ("point", "Check at the source", "The shop where you ordered, or the courier’s official site."),
+            ("point", "Read the web address", "The real domain decides, not the logo."),
+            ("point", "Act fast if you paid", "Bank or e-wallet first, then CICC 1326."),
+            ("h", "Your Part 34 Action Plan"),
+            ("point", "Today", "Find the official tracking page of the courier you use most, and bookmark it."),
+            ("point", "This week", "Show a parent or older relative one fake delivery text and the "
+             "signs above."),
+            ("point", "Next time", "When a delivery text arrives, open your shop app before anything else."),
+            ("point", "For the office", "If your office sends or receives official mail and parcels, tell "
+             "staff that a delivery text about an office package is checked with the courier by phone or "
+             "through the official site before anyone pays anything."),
+            "Joy’s bank reversed the charge after she filed a dispute, though it took two weeks. Her son’s "
+            "shoes arrived on Thursday, brought by a rider who did not ask for any fee. Now, when a delivery "
+            "text arrives, she opens the shop app first.",
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 25: Online Marketplace Scams, Buying and Selling Without Getting Burned", "/blog/cybersecurity-part-25-online-marketplace-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 24: QR Code Scams, When a Square of Dots Sends You the Wrong Way", "/blog/cybersecurity-part-24-qr-code-scams/"),
+            ("ask", "Have you received a delivery text for a parcel you never ordered?"),
+        ],
+    },
+    {
         "date": "April 18, 2027",
         "title": "Cybersecurity Series, Part 33: Shared Office Computers, Habits That Keep One Desk From Exposing Everyone",
         "slug": "cybersecurity-part-33-shared-office-computers",
