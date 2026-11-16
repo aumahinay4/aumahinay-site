@@ -12,6 +12,269 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads",
+        "slug": "data-analytics-part-36-weighted-averages",
+        "category": "data",
+        "date": "May 6, 2027",
+        "summary": "Averaging five barangay collection rates does not give the town’s collection rate. This part "
+                   "explains why a plain average of percentages or averages can mislead, how to compute a "
+                   "weighted average in Google Sheets with AVERAGE.WEIGHTED or SUMPRODUCT, and when a simple "
+                   "average is still the right choice.",
+        "publish_on": "2027-05-06 21:00",
+        "body": [
+            "Two reports reached the mayor’s office on the same day. The planning office said the town "
+            "collected 76 percent of its real property tax billings last year. The treasury said 82.5 "
+            "percent. Both used the same five barangay figures, and both had checked their arithmetic.",
+            "The difference was one decision. The planning office averaged the five barangay rates. The "
+            "treasury divided the town’s total collections by its total billings. Only one of them answered "
+            "the question the mayor had asked.",
+            "(The barangays and the amounts are invented for practice. The Google Sheets functions are real.)",
+            "Part 35 showed that two numbers moving together do not prove a cause. This part looks at a "
+            "quieter mistake that hides inside a single average. By the end of this post, you will know when "
+            "a plain average misleads, what a weighted average is, how to compute one in Google Sheets, and "
+            "how to tell which average a question needs.",
+            ("photo", "blog/data-weighted.jpg", "Weighted averages: when groups differ in size, give each one "
+             "a weight in proportion to its size, or compute from the totals. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Practice Data"),
+            "Type this into a new sheet. Column A is the barangay, B the amount billed, C the amount "
+            "collected, and D the collection rate.",
+            ("point", "Poblacion", "Billed ₱2,000,000, collected ₱1,800,000, rate 90%."),
+            ("point", "San Isidro", "Billed ₱500,000, collected ₱400,000, rate 80%."),
+            ("point", "Malinao", "Billed ₱200,000, collected ₱100,000, rate 50%."),
+            ("point", "Santa Cruz", "Billed ₱800,000, collected ₱560,000, rate 70%."),
+            ("point", "Mabini", "Billed ₱350,000, collected ₱315,000, rate 90%."),
+            "Put headers in row 1, so the data runs from row 2 to row 6. In D2, enter =C2/B2 and fill down. "
+            "Format column D as a percent.",
+            ("h", "The Plain Average"),
+            ("point", "Formula", "=AVERAGE(D2:D6)"),
+            ("point", "Result", "76.0 percent."),
+            ("point", "What it treats as equal", "Each barangay counts the same. Malinao’s ₱200,000 billing "
+             "pulls the result as hard as the poblacion’s ₱2,000,000."),
+            "That is the average of the barangays’ rates. It is not the town’s rate.",
+            ("h", "The Town’s Real Rate"),
+            ("point", "From the totals", "=SUM(C2:C6)/SUM(B2:B6) gives ₱3,175,000 ÷ ₱3,850,000 = 82.5 percent."),
+            ("point", "Why it is higher", "The poblacion holds more than half the billings and collected 90 "
+             "percent. Its weight should be larger, and the totals give it that weight automatically."),
+            "When the question is “What share of the town’s billings did we collect?”, the answer is 82.5 "
+            "percent.",
+            ("photo", "blog/data-weighted-bars.jpg", "Five barangays drawn by the size of their billings: "
+             "equal votes give 76 percent, weighting by billings gives 82.5 percent. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Weighted Average Is"),
+            "A weighted average multiplies each value by a weight, adds the results, and divides by the total "
+            "of the weights. Here, each rate is weighted by the amount billed.",
+            ("point", "AVERAGE.WEIGHTED", "Google’s help describes AVERAGE.WEIGHTED(values, weights) as "
+             "finding the weighted average of a set of values. =AVERAGE.WEIGHTED(D2:D6, B2:B6) returns 82.5 "
+             "percent."),
+            ("point", "SUMPRODUCT", "=SUMPRODUCT(D2:D6, B2:B6)/SUM(B2:B6) gives the same answer, and works in "
+             "other spreadsheet programs too."),
+            ("point", "Weights must line up", "The help page notes that the weights range must have the same "
+             "number of rows and columns as the values, and that weights cannot be negative."),
+            "Weighting the rates by billings gives the same result as dividing the totals. That is a useful "
+            "check: if the two do not match, something in the sheet is wrong.",
+            ("h", "A Second Example: Time at the Counter"),
+            "The same trap appears with averages that are not percentages. Suppose Window 1 served 300 "
+            "taxpayers last week with an average of 6 minutes each, and Window 2, which handles complicated "
+            "cases, served 50 with an average of 20 minutes.",
+            ("point", "Plain average of the two windows", "(6 + 20) ÷ 2 = 13 minutes."),
+            ("point", "Weighted by taxpayers served", "(300 × 6 + 50 × 20) ÷ 350 = 2,800 ÷ 350 = 8 minutes."),
+            ("point", "Which one describes a taxpayer’s visit", "The weighted one. Most visitors went to "
+             "Window 1, and an average visit took about 8 minutes, not 13."),
+            "If the question were “Which window is slower?”, you would compare 6 and 20 directly, with no "
+            "average at all.",
+            ("h", "Rates in a Pivot Table"),
+            "Part 24 built pivot tables. If you summarize by barangay and want a rate, add billed and collected "
+            "as two values with SUM, then divide the two sums. Do not put the rate column itself into the pivot "
+            "table and choose AVERAGE, because that gives the plain average of the rows again. Part 22 of the "
+            "Business Intelligence Series showed the same rule for calculated fields: SUM of one divided by SUM "
+            "of the other.",
+            ("h", "Where the Trap Hides"),
+            ("point", "Averages of averages", "An average daily collection for each month, averaged across "
+             "twelve months, ignores that months have different numbers of working days."),
+            ("point", "Rates from different-sized groups", "Collection rates, on-time rates and error rates by "
+             "office, barangay or collector."),
+            ("point", "Summary tabs built from summary tabs", "A table of percentages by barangay, averaged "
+             "again in another tab, loses the sizes behind each percentage."),
+            ("point", "A small group with an extreme rate", "A barangay with only ten businesses and a 20 "
+             "percent rate can drag a plain average down far more than it affects the town’s money."),
+            ("h", "When the Plain Average Is Right"),
+            "A plain average is not wrong. It answers a different question.",
+            ("point", "“How is a typical barangay doing?”", "Each barangay is one unit, and the plain "
+             "average, or better the median from Part 26, describes the typical one."),
+            ("point", "“How much of the town’s money did we collect?”", "Use the totals or the weighted "
+             "average."),
+            ("point", "Say which one you used", "Write it under the number: “weighted by amount billed” or "
+             "“average of barangay rates.”"),
+            "The mayor needed the second answer. A barangay captain asking whether her barangay is behind the "
+            "others might need the first.",
+            ("h", "Three Questions Before You Average"),
+            ("point", "What is one unit?", "A barangay, a taxpayer, a peso or a day. The answer decides the "
+             "weight."),
+            ("point", "Are the groups the same size?", "If yes, plain and weighted averages agree. If not, "
+             "they can differ by several points, as they did here."),
+            ("point", "Can I compute it from totals?", "If the raw amounts exist, divide the totals. It is "
+             "the simplest weighted average there is."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Averaging percentages from groups of different sizes", "Weight them, or use totals."),
+            ("point", "Mismatched ranges", "Values and weights must be the same size and in the same order."),
+            ("point", "Weighting by the wrong thing", "Collection rates weigh by billings, not by number of "
+             "taxpayers, if the question is about pesos."),
+            ("point", "Not labeling the method", "Two honest offices produced two different numbers."),
+            ("h", "Key Takeaways"),
+            ("point", "Plain average", "Every group counts the same."),
+            ("point", "Weighted average", "Each group counts by its size."),
+            ("point", "Totals are the check", "Sum the parts, then divide."),
+            ("point", "Match the question", "Typical group, or the whole town."),
+            ("h", "Your Part 36 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute the plain average, the totals rate and "
+             "AVERAGE.WEIGHTED."),
+            ("point", "Step 2", "Change Malinao’s collection to ₱180,000. Which of the three results moves "
+             "the most, and why?"),
+            ("point", "Step 3", "Weight the rates by number of taxpayers instead, using numbers you invent. "
+             "Write one sentence on what question that average answers."),
+            ("point", "Step 4", "Find one percentage in your office’s reports that is an average of other "
+             "percentages, and check it against the totals."),
+            "The two offices met for fifteen minutes. The final report showed 82.5 percent for the town, "
+            "weighted by billings, with a second line beneath it: “average of barangay rates, 76 percent, "
+            "for comparing barangays.” Nobody had been wrong. They had been answering different questions.",
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("cta", "Read: Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds", "/blog/data-analytics-part-24-pivot-tables/"),
+            ("cta", "Read: Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Which percentage in your office’s reports is really an average of other percentages?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 35: Correlation Is Not Causation, When Two Numbers Move Together",
+        "slug": "data-analytics-part-35-correlation-and-causation",
+        "category": "data",
+        "date": "May 1, 2027",
+        "summary": "Two numbers that rise and fall together are not proof that one causes the other. This part "
+                   "shows how to measure a relationship with CORREL in Google Sheets, how to read the result, "
+                   "the three common reasons a strong correlation misleads, and how to test a cause before "
+                   "spending money on it.",
+        "publish_on": "2027-05-01 21:00",
+        "body": [
+            "The analyst had a chart that looked like an answer. Each dot was a barangay. Across the bottom ran "
+            "the share of businesses with a mobile number on file. Up the side ran the share that renewed their "
+            "permits on time. The dots climbed together in a neat line from the lower left to the upper right.",
+            "The proposal wrote itself: collect a mobile number from every business, and on-time renewals would "
+            "rise everywhere. Before it went to the budget officer, a colleague asked one question. “Which "
+            "barangays are these, and how far are they from the town hall?”",
+            "(The barangays, the figures and the people in this lesson are invented for practice. The Google "
+            "Sheets function is real.)",
+            "Part 34 looked for single numbers that do not fit. This part looks at pairs of numbers that seem to "
+            "fit too well. Read to the end and you will know what correlation measures, how to compute it in "
+            "Google Sheets, how to read the result, why a strong correlation can still mislead, and how to test "
+            "whether one thing really causes another.",
+            ("photo", "blog/data-correlation.jpg", "Correlation is not causation: two numbers can move together "
+             "because of a third factor, by chance, or in the opposite direction from what you assume. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Correlation Measures"),
+            "Correlation measures how closely two sets of numbers move together in a straight-line pattern. "
+            "The usual measure is r, the Pearson correlation coefficient. It runs from −1 to +1.",
+            ("point", "Close to +1", "When one number is high, the other tends to be high too."),
+            ("point", "Close to −1", "When one number is high, the other tends to be low."),
+            ("point", "Close to 0", "No straight-line pattern. There may still be a curved one, so look at the chart."),
+            "Correlation answers one narrow question: do these two numbers move together? It says nothing about "
+            "why.",
+            ("h", "The Practice Data"),
+            "Type this table into a new sheet. Column A is the barangay, B the distance from the town hall in "
+            "kilometers, C the percent of businesses with a mobile number on file, and D the percent that "
+            "renewed on time.",
+            ("point", "Poblacion", "0.5 km, 85, 90"),
+            ("point", "San Isidro", "3 km, 62, 80"),
+            ("point", "Malinao", "6 km, 58, 66"),
+            ("point", "Bagong Silang", "4 km, 70, 74"),
+            ("point", "Santa Cruz", "2 km, 74, 82"),
+            ("point", "Mabini", "9 km, 40, 62"),
+            ("point", "San Roque", "7 km, 51, 61"),
+            ("point", "Bukal", "11 km, 38, 57"),
+            "Put the headers in row 1, so the data runs from row 2 to row 9.",
+            ("h", "Computing It in Google Sheets"),
+            "Google Sheets has a CORREL function. Its help page describes it as calculating r, the Pearson "
+            "product-moment correlation coefficient, and notes that it is the same as PEARSON.",
+            ("point", "Mobile numbers and renewals", "=CORREL(D2:D9, C2:C9) returns about 0.93. A strong positive "
+             "relationship."),
+            ("point", "Distance and renewals", "=CORREL(D2:D9, B2:B9) returns about −0.96. Even stronger, and "
+             "negative: the farther the barangay, the lower the on-time rate."),
+            ("point", "Distance and mobile numbers", "=CORREL(C2:C9, B2:B9) returns about −0.97. Barangays far "
+             "from the town hall also have fewer numbers on file."),
+            "Then make a scatter chart, as Part 27 described. Select C1:D9, insert a chart, and choose Scatter. "
+            "Always look at the chart. A single number cannot show a curve, a cluster or one extreme point "
+            "pulling the line.",
+            ("photo", "blog/data-correlation-hidden.jpg", "The same eight barangays: mobile numbers and on-time "
+             "renewals move together, but distance from the town hall moves with both. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Strong Correlation Can Mislead"),
+            "The colleague’s question pointed at the first of three common traps.",
+            ("point", "1. A third factor", "Distance is related to both numbers. Barangays near the town hall "
+             "may have more established businesses that keep their records updated, and owners who can "
+             "easily drop by to renew. Mobile numbers and renewals may both be results of being close, not causes of each "
+             "other. Analysts call this a confounding variable."),
+            ("point", "2. The arrow points the other way", "A business that renews on time visits the counter "
+             "every year, and each visit is a chance to update its mobile number. Renewing could be causing "
+             "the numbers on file, not the reverse."),
+            ("point", "3. Chance", "With only eight barangays, a strong pattern can appear by luck. Small "
+             "samples make striking correlations easy to find, as Part 17 explained when it discussed sample "
+             "size."),
+            "None of these means the mobile-number idea is wrong. They mean the chart cannot prove it right.",
+            ("h", "Two More Cautions"),
+            ("point", "Look for many comparisons", "If you test twenty pairs of columns, one or two may show a "
+             "strong correlation by chance. Report how many pairs you checked, not only the one that worked."),
+            ("point", "Groups are not individuals", "This data is by barangay. It does not show that a single "
+             "business with a mobile number is more likely to renew on time. A pattern across groups can be "
+             "weaker, or even reversed, inside each group."),
+            ("h", "How to Test a Cause"),
+            "To find out whether one thing causes another, change one thing on purpose and compare.",
+            ("point", "Run a small test", "Part 32 of the Project Management Series ran a pilot: text reminders "
+             "in one barangay, with similar barangays left as they were. That design compares like with like."),
+            ("point", "Compare similar groups", "Test the idea in two barangays at a similar distance, one with "
+             "the change and one without. Distance then cannot explain the difference."),
+            ("point", "Measure before and after", "Record the on-time rate for the same period last year, then "
+             "again after the change. Part 30 showed how to report the difference in percentage points."),
+            ("point", "Write down what else changed", "A new road, a new collector or a deadline extension "
+             "can move the numbers too. Note them in the report."),
+            ("h", "How to Write It in a Report"),
+            "Words matter. Choose verbs that match what the data can show.",
+            ("point", "Say", "“Barangays with more mobile numbers on file also had higher on-time renewal "
+             "rates.”"),
+            ("point", "Do not say", "“Collecting mobile numbers increases on-time renewals.” That claims a "
+             "cause the data has not shown."),
+            ("point", "Add the third factor", "“Both measures were lower in barangays farther from the town "
+             "hall.”"),
+            "A report that separates what moved together from what caused what is a report a decision maker "
+            "can trust.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating r as proof of cause", "Correlation shows a pattern, not a reason."),
+            ("point", "Skipping the chart", "Check the scatter chart for curves, clusters and outliers."),
+            ("point", "Ignoring a third factor", "Ask what else differs between the high and low groups."),
+            ("point", "Spending before testing", "Run a small, fair comparison first."),
+            ("h", "Key Takeaways"),
+            ("point", "CORREL gives r", "From −1 to +1, a measure of straight-line pattern only."),
+            ("point", "Three traps", "A third factor, a reversed arrow, or chance."),
+            ("point", "Test a cause on purpose", "Change one thing and compare similar groups."),
+            ("point", "Write carefully", "Use “moved together,” not “caused,” unless a test showed it."),
+            ("h", "Your Part 35 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute the three CORREL results."),
+            ("point", "Step 2", "Make a scatter chart of mobile numbers against renewals, and another of "
+             "distance against renewals."),
+            ("point", "Step 3", "Write two sentences about the data: one that describes the pattern, and one "
+             "that names a possible third factor."),
+            ("point", "Step 4", "Design a fair test for the mobile-number idea using two barangays at a "
+             "similar distance."),
+            "The proposal went to the budget officer in a different form: a three-month test in two barangays, "
+            "each about six kilometers from the town hall, with mobile numbers collected in only one. The "
+            "colleague’s question had saved the office from paying for a cause it could not yet prove.",
+            ("cta", "Read: Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question", "/blog/data-analytics-part-27-choosing-the-right-chart/"),
+            ("cta", "Read: Data Analytics Series, Part 13: Bias in Data, and How to Catch It", "/blog/data-analytics-part-13-bias-in-data/"),
+            ("cta", "Read: Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big", "/blog/project-management-part-32-running-a-pilot/"),
+            ("cta", "Read: Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000", "/blog/data-analytics-part-17-samples-margin-of-error/"),
+            ("ask", "What two numbers in your office move together, and what else might explain it?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit",
         "slug": "data-analytics-part-34-outliers",
         "category": "data",

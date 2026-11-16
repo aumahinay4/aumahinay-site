@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Business Intelligence Series, Part 2: The BI Team, Role by Role</title>
+      <link>https://aumahinay.dev/blog/business-intelligence-part-2-the-bi-team/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/business-intelligence-part-2-the-bi-team/</guid>
+      <pubDate>Mon, 16 Nov 2026 21:00:00 +0800</pubDate>
+      <description>Behind every dashboard that people trust are three kinds of work: building the pipes, building the screens and explaining what the numbers mean. Here is each BI role in plain words, and how one person in a small treasury can wear all three hats.</description>
+    </item>
     <item>
       <title>The ALTOS Framework, Principle 4: Every Owner Has a Deadline</title>
       <link>https://aumahinay.dev/blog/altos-framework-every-owner-has-a-deadline/</link>
