@@ -76,6 +76,8 @@ TREASURY_POSTS = [
             ("point", "The volume", "A contractor hauls 2,000 cubic meters during the month. The tax is "
              "2,000 times ₱50, or ₱100,000."),
             ("point", "The shares", "Province ₱30,000. Municipality ₱30,000. Barangay ₱40,000."),
+            ("photo", "blog/finance-quarry-split.jpg", "The worked example as a picture: ₱100,000 of quarry tax "
+             "shared 30, 30 and 40 percent under Section 138. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
             "₱40,000 a month is a meaningful amount for a small barangay. It is one reason barangay "
             "officials should know the volume being extracted in their area.",
             ("h", "Quarrying for One’s Own Use Is Still Taxed"),

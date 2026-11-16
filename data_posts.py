@@ -47,6 +47,8 @@ DATA_POSTS = [
              "9 divided by 72 is 0.125, a 12.5 percent increase."),
             "So the press release could say “up 9 percentage points” or “up 12.5 percent.” It could not say "
             "“up 9 percent,” which mixes the two.",
+            ("photo", "blog/data-percent-points.jpg", "The same change, said two ways: from 72 to 81 percent is up 9 "
+             "percentage points, or up 12.5 percent. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
             ("quote", "When the thing you measure is already a percentage, say “points.”"),
             ("h", "The Formulas in Google Sheets"),
             "Put last year’s figure in B2 and this year’s in C2.",
