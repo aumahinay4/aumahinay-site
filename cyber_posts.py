@@ -9,6 +9,269 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "April 8, 2027",
+        "title": "Cybersecurity Series, Part 31: Fake Ayuda Pages, When “Government Aid” Is a Trap",
+        "slug": "cybersecurity-part-31-fake-ayuda-pages",
+        "category": "security",
+        "summary": "Posts and texts promising cash aid from the government can be bait for your personal "
+                   "data or your money. This part explains what the DSWD has said about fake pages and "
+                   "links, how its real assistance programs work, the warning signs of a fake offer, and "
+                   "what to do if you already filled in a form.",
+        "publish_on": "2027-04-08 21:00",
+        "body": [
+            "Aling Mercy runs a small sari-sari store and shares a phone with her daughter. One evening, a "
+            "post appeared in a neighborhood group: “DSWD ₱10,000 cash aid for minimum wage earners. "
+            "Register here before slots run out.” The page had the agency’s logo, a photo of a ribbon "
+            "cutting, and hundreds of comments saying “Done po!” She tapped the link, typed her full name, "
+            "birthday, address and mobile number, and uploaded a photo of her ID.",
+            "The last screen asked for a ₱150 “processing fee” through an e-wallet. That was when her "
+            "daughter took the phone.",
+            "(Aling Mercy and the post are illustrations for this lesson. The warnings from the DSWD quoted "
+            "below are real and are dated.)",
+            "Part 30 looked at lending apps that reach into your contacts. This part looks at offers that "
+            "pretend to give money instead of lending it. You will learn what the Department of Social "
+            "Welfare and Development has said about fake pages and links, how its assistance is actually "
+            "given, the signs that an aid offer is fake, how to check before you click, and the steps to "
+            "take if you already shared your details.",
+            ("photo", "blog/cyber-ayuda.jpg", "Fake ayuda offers: look for an assessment, not a link; "
+             "check the official page; never pay to receive aid; report the post. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Aid Is Used as Bait"),
+            "Aid offers work as bait because they reach people who need help and because real programs "
+            "do exist. A scammer does not have to invent a program. Borrowing the name of a real one is "
+            "enough.",
+            ("point", "The name is familiar", "AKAP, AICS and educational assistance are real programs that "
+             "people have heard of on the news."),
+            ("point", "The need is real", "Someone short of money for tuition or medicine has a strong "
+             "reason to act quickly."),
+            ("point", "The prize is your data", "Even without a fee, a form with your name, birthday, "
+             "address, number and ID photo is useful to someone opening accounts or loans in your name."),
+            ("quote", "If the aid comes with a link and a fee, the only one receiving help is the sender."),
+            ("h", "What the DSWD Has Said"),
+            "The DSWD has warned the public about fake pages and messages several times. Four of those "
+            "warnings show the pattern.",
+            ("point", "June 2024: a fake AKAP page", "The DSWD said a Facebook page using the name “AKAP "
+             "Financial Assistance Program” was not part of its official page, and asked the public not "
+             "to engage with it and to report it (Inquirer, June 11, 2024)."),
+            ("point", "July 2024: TikTok and other accounts", "The DSWD warned that accounts offering "
+             "educational assistance carried false information and might gather personal data that "
+             "scammers could use for theft. It said AICS clients go through an interview and assessment, "
+             "and that the aid is given through its Crisis Intervention Units and field offices "
+             "(Philippine News Agency, July 9, 2024)."),
+            ("point", "November 2024: misleading AKAP posts", "Spokesperson Irene Dumlao warned against "
+             "online posts misinforming the public about AKAP. She said the amount of aid depends on a "
+             "social worker’s assessment after an interview (Daily Tribune, November 2024)."),
+            ("point", "Texts about student aid", "The DSWD has said, “DSWD is not sending out links or any "
+             "survey to avail of an educational assistance,” and asked the public not to click such links "
+             "(Malaya Business Insight)."),
+            ("h", "How Real Assistance Works"),
+            "Programs and rules change, so check the current details with the DSWD. The warnings above "
+            "describe three features to look for, and a fake offer can leave all three out.",
+            ("point", "An assessment", "For AICS and AKAP, the DSWD described an interview and an assessment "
+             "by a social worker before aid is given. A form that approves you in minutes skips the step "
+             "the agency itself describes."),
+            ("point", "An official channel", "The DSWD named its Crisis Intervention Units, its field "
+             "offices and its verified Facebook page, facebook.com/dswdserves, as official sources."),
+            ("point", "An amount that depends on need", "In the November 2024 warning, AKAP aid ranged from "
+             "₱1,000 to ₱10,000 based on the assessment. A post promising the same fixed amount to everyone "
+             "who registers does not match that description."),
+            ("h", "Seven Warning Signs of a Fake Offer"),
+            ("point", "A fee to receive aid", "A processing, release or membership fee before the money "
+             "arrives."),
+            ("point", "A deadline and “limited slots”", "Pressure to act tonight, before you can check."),
+            ("point", "A link in a text or a group post", "Especially a shortened link or a web address that "
+             "is not a .gov.ph site. Part 15 explained how to read a web address."),
+            ("point", "A page that is not the verified one", "A different name, a recent creation date, or "
+             "few posts other than the offer."),
+            ("point", "Requests for an ID photo and a selfie", "Together, these can be used to open an "
+             "e-wallet or a loan in your name."),
+            ("point", "Requests for a one-time PIN", "The aid process the DSWD describes uses interviews, not "
+             "codes. Do not share the code sent to your phone with anyone."),
+            ("point", "Comments that all say “Done”", "Comments are easy to fake, and they prove nothing "
+             "about the page."),
+            ("h", "Check Before You Click"),
+            ("point", "Go to the source yourself", "Open the DSWD’s verified page or website by typing it, "
+             "not through the link in the post, and look for the same announcement."),
+            ("point", "Ask your barangay or municipal social welfare office", "They can tell you which "
+             "programs are open in your area and how to apply."),
+            ("point", "Ask someone else to look", "Aling Mercy’s daughter noticed the fee in seconds. A "
+             "second pair of eyes is a cheap safeguard."),
+            ("h", "If You Already Filled In the Form"),
+            ("point", "Do not pay", "If you have not paid, stop. If you have, keep the receipt and the "
+             "reference number."),
+            ("point", "Report the payment to your e-wallet or bank", "Ask them to flag the receiving account."),
+            ("point", "Watch for follow-up messages", "Scammers with your details may call pretending to be "
+             "the DSWD, a bank or a courier. Never give a one-time PIN."),
+            ("point", "Report the page and the scam", "Report the post on the platform. You can also call "
+             "the Cybercrime Investigation and Coordinating Center (CICC) hotline 1326, mentioned in earlier parts of this series."),
+            ("point", "Check for accounts in your name", "If you sent an ID photo, watch for unfamiliar "
+             "loan or e-wallet messages in the weeks that follow."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Trusting the logo", "Anyone can copy a logo and a photo."),
+            ("point", "Paying a small fee", "A small fee is still a sign of a scam, and it confirms you will pay."),
+            ("point", "Sharing the post to help others", "Check first, or you spread the bait."),
+            ("point", "Staying silent after sharing data", "Act early, while it can still help."),
+            ("h", "Key Takeaways"),
+            ("point", "Real aid involves an assessment", "As the DSWD has described for AICS and AKAP."),
+            ("point", "The DSWD says it does not send aid links", "For educational assistance, in its own words."),
+            ("point", "No fee to receive aid", "Treat any fee as a warning sign."),
+            ("point", "Check at the source", "The verified page, your local social welfare office or a "
+             "field office."),
+            ("h", "Your Part 31 Action Plan"),
+            ("point", "Save the official page", "Follow the DSWD’s verified page so real announcements reach you."),
+            ("point", "Talk to older relatives", "Show them a sample fake post and the seven warning signs."),
+            ("point", "Agree on a rule at home", "Nobody pays or sends an ID photo for “aid” without asking "
+             "someone else first."),
+            "Aling Mercy did not pay the fee. Her daughter reported the page, and the next morning they "
+            "went to the municipal social welfare office and asked which help was really available. The "
+            "answer took longer than ten minutes. It also did not ask for a single peso.",
+            ("cta", "Read: Cybersecurity Series, Part 30: Online Lending Apps, Your Contacts and the Rules Lenders Must Follow", "/blog/cybersecurity-part-30-online-lending-apps/"),
+            ("cta", "Read: Cybersecurity Series, Part 26: Job and Investment Scams, When Easy Money Asks You to Pay First", "/blog/cybersecurity-part-26-job-and-investment-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address", "/blog/cybersecurity-part-15-fake-websites/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("ask", "Have you or someone in your family ever seen an aid post that turned out to be fake? What gave it away?"),
+        ],
+    },
+    {
+        "date": "April 3, 2027",
+        "title": "Cybersecurity Series, Part 30: Online Lending Apps, Your Contacts and the Rules Lenders Must Follow",
+        "slug": "cybersecurity-part-30-online-lending-apps",
+        "category": "security",
+        "summary": "A loan app approves you in minutes, then asks for your contacts, your photos and your "
+                   "location. This part explains what Philippine regulators allow lenders to do, the "
+                   "interest caps on small loans, the collection practices that are prohibited, and how to "
+                   "protect yourself before and after you borrow.",
+        "publish_on": "2027-04-03 21:00",
+        "body": [
+            "Ramon needed ₱5,000 for his son’s school project and a tricycle repair. A lending app on his "
+            "phone promised approval in ten minutes. It asked to see his contacts, his photos and his "
+            "location, and he tapped Allow on every screen. The money arrived, minus a “service fee” he had "
+            "not noticed. Two days after the due date, his sister, his barangay captain and his former "
+            "teacher received the same message: Ramon was a scammer who refused to pay his debts.",
+            "He had been one day short of the full amount. Now half his contact list knew.",
+            "(Ramon and his loan are made up for this post. Any resemblance to a real person or lender is "
+            "unintended.)",
+            "Part 29 cleared old phones before letting them go. This part looks at an app that can reach "
+            "into a phone you still use. Read on, and you will learn what the National Privacy Commission "
+            "says lending apps may and may not take from your phone, what the Securities and Exchange "
+            "Commission lists as unfair collection practices, the caps on interest for small loans, the "
+            "checks to make before you borrow, and what to do if a lender harasses you or your contacts.",
+            ("photo", "blog/cyber-lending.jpg", "Online lending apps: check the lender, deny the contacts, "
+             "read the total cost, and report harassment. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Why Loan Apps Ask for So Much"),
+            "An app can request permissions to read your contacts, photos, camera, location and messages. "
+            "Some of these are needed to verify who you are. Others, the regulators say, are not, and have "
+            "been used to shame borrowers into paying.",
+            ("point", "Your contacts", "A list of the people you know, with their numbers."),
+            ("point", "Your photos", "Including your ID and your face, taken for verification."),
+            ("point", "Your social media", "Friends and family lists, reachable with one message."),
+            ("quote", "A loan should cost you interest, not your privacy or your name."),
+            ("h", "What the Privacy Commission Says"),
+            "In October 2020, the National Privacy Commission announced NPC Circular No. 20-01, its "
+            "guidelines on processing personal data for loan-related transactions. As the NPC described "
+            "it:",
+            ("point", "Contacts are an unnecessary permission", "Accessing a borrower’s phone contacts or "
+             "email list is treated as unnecessary. Lenders may not copy or save contacts for debt "
+             "collection or to harass borrowers or their contacts."),
+            ("point", "Social media is barred too", "Harvesting social media contacts is likewise not "
+             "allowed for collection or harassment."),
+            ("point", "Photos only for identity checks", "Camera access is allowed for know-your-customer "
+             "checks, and the borrower’s photo must not be used to harass or embarrass them over a "
+             "delinquent loan."),
+            ("point", "Turn permissions off", "Apps must prompt users to turn off permissions once their "
+             "purpose is achieved."),
+            "The NPC later amended these guidelines with NPC Circular No. 2022-02. If you need the details "
+            "for a complaint, read both on the NPC’s website.",
+            ("h", "What the SEC Prohibits in Collection"),
+            "SEC Memorandum Circular No. 18, Series of 2019, prohibits unfair debt collection practices by "
+            "financing and lending companies. Among the practices it lists:",
+            ("point", "Threats", "Threatening to take any action that cannot legally be taken."),
+            ("point", "Insults", "Obscene, insulting or profane language meant to abuse the borrower."),
+            ("point", "Public shaming", "Disclosing or publishing the names and personal information of "
+             "borrowers who allegedly refuse to pay, except as the circular allows."),
+            ("point", "False claims", "Any false representation or deceptive means to collect a debt."),
+            ("point", "Late-night calls", "Contact before 6 a.m. or after 10 p.m., unless the account is more "
+             "than 15 days past due or the borrower has expressly agreed."),
+            ("point", "Your contact list", "Contacting people in the borrower’s contact list, other than named "
+             "guarantors or co-makers, is an unfair practice even if the borrower consented."),
+            "The message Ramon’s sister received broke several of these at once.",
+            ("h", "The Caps on Small Loans"),
+            "The Bangko Sentral ng Pilipinas set ceilings on small, short loans in Circular No. 1133, Series "
+            "of 2021. The SEC applied them to lending and financing companies through Memorandum Circular "
+            "No. 3, Series of 2022, effective March 3, 2022, as BusinessWorld reported.",
+            ("point", "Which loans", "Unsecured, general-purpose loans of not more than ₱10,000, with a term "
+             "of up to four months."),
+            ("point", "Interest", "A nominal interest rate of at most 6 percent a month, or 0.2 percent a "
+             "day."),
+            ("point", "Total monthly cost", "An effective interest rate, fees included, of at most 15 percent "
+             "a month."),
+            ("point", "Late penalties", "At most 5 percent a month on the amount due."),
+            ("point", "Overall ceiling", "Total charges capped at 100 percent of the amount borrowed."),
+            "A column in the Daily Tribune in September 2025 reported that the caps were still being "
+            "enforced, and that the SEC was studying whether to lower them. Rules can change, so check the "
+            "SEC’s current advisories before relying on these numbers.",
+            "Here is what the 15 percent ceiling means in pesos. On a ₱5,000 loan for one month, the "
+            "interest and fees together should not exceed ₱750. If an app deducts ₱1,500 as a “service "
+            "fee” before the money reaches you, ask whether it is within the cap, and keep the screenshot.",
+            ("h", "Before You Borrow"),
+            ("point", "Check the lender", "The SEC issues Certificates of Authority to lending and financing "
+             "companies, and can revoke them. Look up the company name, not just the app name, in the "
+             "SEC’s lists and advisories."),
+            ("point", "Read the total cost", "Look for the amount you will receive, the amount you must "
+             "repay, and the due date. If the app cannot show them before you accept, do not accept."),
+            ("point", "Deny what is not needed", "Do not allow access to contacts, messages or social media. "
+             "On Android and iPhone, you can review and remove an app’s permissions in Settings at any time."),
+            ("point", "Borrow from a known source first", "A cooperative, your employer’s loan program or a "
+             "bank you already use may cost less and come with a person you can talk to."),
+            ("h", "If a Lender Harasses You"),
+            ("point", "Save everything", "Screenshots of messages, call logs, the app’s screens and your "
+             "payment records."),
+            ("point", "Warn your contacts", "A short message: “A lending app may send messages about me. "
+             "Please ignore and forward them to me.” This takes away the shame the lender is counting on."),
+            ("point", "Remove permissions", "Turn off the app’s access to contacts, photos and location, "
+             "then uninstall it after saving what you need."),
+            ("point", "Report it", "Unfair collection practices go to the SEC. Misuse of your personal "
+             "data goes to the National Privacy Commission. Threats can be reported to the CICC hotline "
+             "1326 or the PNP Anti-Cybercrime Group."),
+            ("point", "Keep paying what you truly owe", "Harassment does not cancel a valid debt, and "
+             "paying it on record protects you. Pay through official channels and keep the receipt."),
+            ("h", "For Treasury Workers"),
+            "Salary loans and emergencies reach government offices too. If a colleague is being shamed by "
+            "a lending app, the first help is practical: show them how to save the evidence, warn their "
+            "contacts and file a report. And if a lender messages your office phone about a co-worker, do "
+            "not forward it or discuss it. It is personal information, and Part 20 explained the duty to "
+            "protect it.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Tapping Allow on every screen", "Deny contacts, messages and social media access."),
+            ("point", "Borrowing without seeing the total", "Know the amount received and the amount due."),
+            ("point", "Hiding the harassment", "Warn your contacts and report it."),
+            ("point", "Deleting the app first", "Save the evidence, then remove it."),
+            ("h", "Key Takeaways"),
+            ("point", "Contacts are off limits", "The NPC treats contact list access as unnecessary for lending."),
+            ("point", "Shaming is prohibited", "The SEC lists contacting your contacts and publishing names as unfair practices."),
+            ("point", "Small loans have caps", "6 percent nominal and 15 percent effective a month, under the 2021 and 2022 rules."),
+            ("point", "Report to the right office", "SEC for collection, NPC for privacy, CICC 1326 for threats."),
+            ("h", "Your Part 30 Action Plan"),
+            ("point", "Today", "Open Settings on your phone and check which apps can read your contacts. "
+             "Remove access from any app that does not need it."),
+            ("point", "This week", "If you have a loan app installed, find the company name, look it up with "
+             "the SEC, and check the total cost of your loan."),
+            ("point", "Share it", "Send the three reporting offices, SEC, NPC and CICC 1326, to your family "
+             "group chat."),
+            "If you never borrow online, the first step still helps. Other apps can ask for contacts too, "
+            "and the setting to remove that access is the same.",
+            "Ramon saved the screenshots, sent his contacts a short warning, and filed complaints with the "
+            "SEC and the NPC. He paid the remaining balance through the app’s official channel and kept the "
+            "receipt. His sister replied to his warning with a thumbs-up and one line: “Already deleted it.”",
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("cta", "Read: Cybersecurity Series, Part 26: Job and Investment Scams, When Easy Money Asks You to Pay First", "/blog/cybersecurity-part-26-job-and-investment-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost", "/blog/cybersecurity-part-12-securing-your-phone/"),
+            ("ask", "Which apps on your phone can read your contacts right now, and do they need to?"),
+        ],
+    },
+    {
         "date": "March 29, 2027",
         "title": "Cybersecurity Series, Part 29: Before You Sell, Donate or Throw Away a Phone or Laptop",
         "slug": "cybersecurity-part-29-wiping-old-devices",

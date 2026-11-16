@@ -14,6 +14,264 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "April 7, 2027",
+        "title": "Project Management Series, Part 30: The Project Kit, Reusable Templates So the Next Project Starts Faster",
+        "slug": "project-management-part-30-project-kit",
+        "category": "pm",
+        "summary": "Every project in this series produced a document worth keeping. This part shows how to "
+                   "turn them into a small project kit: which templates to include, how to strip and label "
+                   "them, where to keep them, who looks after them, and how to scale the kit down for a "
+                   "small project.",
+        "publish_on": "2027-04-07 21:00",
+        "body": [
+            "The day after the head of office approved two new projects, the clerk opened a blank document "
+            "to write the first charter. Then she stopped. Somewhere on the shared drive was the charter "
+            "from the notices project, with headings she had argued over for an afternoon. There was also a "
+            "risk register, an issue log, a status report everyone had learned to read, and a closing "
+            "report. She spent forty minutes searching folders named “New Folder (3)” and “FINAL final” "
+            "before she found most of them.",
+            "The market supervisor, starting the arrears drive the same week, did not search at all. He "
+            "started from blank pages.",
+            "(The office, its people and its projects are invented for this series. They describe no real "
+            "local government.)",
+            "Part 29 chose the next projects. This part makes sure they do not start from zero. By the end, "
+            "you will know which documents from Parts 1 to 29 belong in a project kit, how to turn a used "
+            "document into a clean template, how to name and store the kit so people can find it, who "
+            "should look after it, and how to use only part of it when a project is small.",
+            ("photo", "blog/pm-kit.jpg", "The project kit: a small set of templates, one shared folder, one "
+             "owner, and a note on which pieces a small project needs. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Project Kit Is"),
+            "A project kit is a short set of blank, ready-to-use documents that every new project in the "
+            "office starts from. It is not a manual and not a software purchase. It is a folder.",
+            ("point", "It saves time", "The headings, the columns and the examples are already there. A "
+             "new project fills in blanks instead of designing a form."),
+            ("point", "It keeps documents comparable", "When every status report has the same layout, the "
+             "head of office can read three projects in the time it once took to read one."),
+            ("point", "It carries lessons forward", "The closing report in Part 28 listed what to repeat. "
+             "A template is one of the easiest places to put a lesson where the next team will see it."),
+            ("quote", "A good template is a lesson learned that nobody has to remember."),
+            ("h", "Step 1: Gather What You Already Have"),
+            "Start with the documents your last project actually used, not with a list from a textbook. "
+            "The clerk’s list, matched to the parts of this series, came to ten.",
+            ("point", "Before the work", "Project charter (Part 2), stakeholder map (Part 3), scope "
+             "statement (Part 4), RACI matrix (Part 8) and business case (Part 10)."),
+            ("point", "Planning", "Work breakdown structure and schedule (Parts 14 to 16), budget (Part 17) "
+             "and risk register (Part 19)."),
+            ("point", "While the work runs", "Status report (Part 25), issue log (Part 26), change request "
+             "(Part 24) and meeting agenda with minutes (Part 27)."),
+            ("point", "At the end", "Closing report with lessons learned (Part 28)."),
+            "That is more than ten if you count every one. She merged the scope statement into the charter "
+            "and the budget into the schedule sheet, which brought the kit to ten files.",
+            ("h", "Step 2: Strip Each Document Into a Template"),
+            "A used document is full of one project’s details. A template keeps the structure and removes "
+            "the content.",
+            ("point", "Keep the headings and columns", "These were the hard part, and they are what the "
+             "next project needs."),
+            ("point", "Replace content with prompts", "Instead of the old objective, write “One sentence: "
+             "what will be different, by how much, by when (see Part 6).”"),
+            ("point", "Keep one short example", "A single sample row in the risk register or the issue log "
+             "shows how much detail is expected. Mark it clearly as an example."),
+            ("point", "Remove personal data", "Names of taxpayers, phone numbers and account details from "
+             "the old project must not travel into a template. Part 20 of the Cybersecurity Series covers "
+             "privacy at work."),
+            ("h", "Step 3: Name Files So People Can Find Them"),
+            "A file named “charter final v2 revised” helps nobody six months later. Agree on one pattern "
+            "and use it everywhere.",
+            ("point", "Number the templates in order of use", "“01 Charter”, “02 Stakeholder map” and so on "
+             "up to “10 Closing report”. Sorting by name then shows them in the order a project needs them."),
+            ("point", "Name project copies with the project and date", "For example, “Arrears drive – 03 "
+             "RACI – 2027-04”. Writing the date as year, month and day keeps files in date order when "
+             "sorted."),
+            ("point", "Put a version on the template itself", "A line at the top such as “Template version "
+             "2, April 2027” tells a user whether they have the latest one."),
+            ("h", "Step 4: Store It in One Place"),
+            ("point", "One shared folder", "On the office drive or the cloud storage your office already "
+             "uses. Two copies of a kit soon become two different kits."),
+            ("point", "Templates are read-only", "Users make a copy for their project and work on the copy. "
+             "If anyone can edit the template, someone eventually will, by accident."),
+            ("point", "A short read-me file", "Half a page: what each template is for, which part of a "
+             "project uses it, and who to ask."),
+            ("h", "Step 5: Give the Kit an Owner"),
+            "A kit with no owner slowly goes out of date. Name one person, with a backup.",
+            ("point", "Collects suggestions", "Anyone who finds a missing column or a confusing heading "
+             "tells the owner, not just their own team."),
+            ("point", "Updates after each closing report", "When a project closes, the owner reads its "
+             "lessons learned and asks one question: should a template change because of this?"),
+            ("point", "Announces changes", "A one-line message is enough: “Status report template, version 3: "
+             "added a row for decisions needed from the head of office.”"),
+            ("h", "Step 6: Scale It to the Project"),
+            "Not every project needs ten documents. Forcing a one-month task through every template can make people avoid the kit.",
+            ("point", "Small project, a few weeks, one team", "Charter, task list with dates, issue log and a "
+             "short closing note. Four files."),
+            ("point", "Medium project, a few months, two or more units", "Add the stakeholder map, RACI, "
+             "risk register, status report and meeting minutes."),
+            ("point", "Large or costly project", "Use all ten, including the business case, the budget and "
+             "the change request."),
+            "Write these three levels in the read-me file, so that the decision is quick and does not "
+            "depend on who is asked.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Building templates nobody used", "Start from documents that worked on a real project."),
+            ("point", "Leaving old project data inside", "Strip names, numbers and taxpayer details."),
+            ("point", "Letting everyone edit the master", "Keep the templates read-only and work on copies."),
+            ("point", "Requiring every file for every project", "Match the kit to the size of the work."),
+            ("h", "Key Takeaways"),
+            ("point", "A kit is a folder", "Ten or so templates from your own past project."),
+            ("point", "Structure stays, content goes", "Headings, columns, prompts and one marked example."),
+            ("point", "One place, one owner", "Read-only templates, a read-me and someone who updates them."),
+            ("point", "Scale to size", "Four files for a small project, all ten for a large one."),
+            ("h", "Your Part 30 Exercise"),
+            "Find the documents from the last project you worked on, finished or not.",
+            ("point", "Pick three", "The charter, the issue log and the status report are a good start."),
+            ("point", "Strip them", "Keep the headings, replace the content with prompts, remove personal "
+             "data, and add one marked example."),
+            ("point", "Name and store them", "Number them, put them in one shared folder, and make them "
+             "read-only."),
+            "Then give the folder to the next person who starts a project, and ask what was missing. Their "
+            "answer is the first update to your kit.",
+            "The market supervisor received the kit link on a Tuesday and copied the charter template that "
+            "afternoon. It took him one hour instead of the morning he had spent on a blank page. At the "
+            "bottom of the issue log template, he found a line the clerk had added from the last closing "
+            "report: “Agree on who closes an issue before you open the first one.” He did.",
+            ("cta", "Read: Project Management Series, Part 29: Too Many Requests? Choosing the Next Project With a Scoring Matrix", "/blog/project-management-part-29-scoring-matrix/"),
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("cta", "Read: Project Management Series, Part 2: The Project Charter on One Page", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("ask", "Which document from your last project would save the next team the most time if it were already a template?"),
+        ],
+    },
+    {
+        "date": "April 2, 2027",
+        "title": "Project Management Series, Part 29: Too Many Requests? Choosing the Next Project With a Scoring Matrix",
+        "slug": "project-management-part-29-scoring-matrix",
+        "category": "pm",
+        "summary": "After one project closes, five more ideas arrive at once. This part shows how to choose "
+                   "among them with a simple scoring matrix: agree on criteria and weights, score each idea, "
+                   "check the result against capacity, and explain the choice to the people whose ideas wait.",
+        "publish_on": "2027-04-02 21:00",
+        "body": [
+            "A week after the notices project closed, the head of office had five new ideas on her desk. A "
+            "councilor wanted the text reminders that had been delayed to this year. The market supervisor "
+            "wanted a drive to collect stall arrears. The records clerk wanted the old property tax cards "
+            "scanned. Someone had suggested an online appointment system for permits, and the cashiers "
+            "wanted queue numbers at the windows. Each idea had a supporter, and each supporter believed "
+            "theirs should go first.",
+            "The office had people for two projects at most.",
+            "(The office, its ideas and every score below are invented for this lesson. They describe no "
+            "real local government.)",
+            "Part 28 closed a project. This part chooses the next one. By the end, you will know why "
+            "choosing needs a written method, how to build a scoring matrix with criteria and weights, how "
+            "to score honestly, how to check the result against the people you have, and how to explain "
+            "the decision so the ideas that wait are not simply forgotten.",
+            ("photo", "blog/pm-scoring.jpg", "Choosing the next project: agree on the criteria, weigh them, "
+             "score each idea, then check capacity before deciding. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Choosing Needs a Method"),
+            "Without a method, the next project can be chosen by whoever asks loudest, most recently or "
+            "most senior. That is not always the idea that helps the office most.",
+            ("point", "It makes the reasons visible", "Everyone can see why one idea went first."),
+            ("point", "It separates the idea from the person", "The scores judge the work, not the one who "
+             "proposed it."),
+            ("point", "It can be repeated", "Next quarter, the same criteria rank the next set of ideas."),
+            ("quote", "Saying yes to everything is the same as saying no to finishing anything."),
+            ("h", "Step 1: Agree on the Criteria"),
+            "Choose three to five questions that matter to your office, and agree on them before looking at "
+            "any idea. The head of office and the clerk chose four.",
+            ("point", "Benefit", "How much does it help taxpayers or collections? 5 means a large, clear "
+             "benefit; 1 means a small one."),
+            ("point", "Urgency", "Is there a deadline, a legal requirement or a cost of waiting? 5 means it "
+             "cannot wait; 1 means it can."),
+            ("point", "Effort", "How much work and money does it take? Scored in reverse: 5 means little "
+             "effort, 1 means a great deal, so that a higher score is always better."),
+            ("point", "Readiness", "Are the data, people and approvals already in place? 5 means ready to "
+             "start; 1 means much is missing."),
+            "Write a one-line meaning for 1, 3 and 5 on each criterion. Without them, two people can give "
+            "the same idea a 2 and a 4 and both be right.",
+            ("h", "Step 2: Give Each Criterion a Weight"),
+            "Not every criterion matters equally. A weight says how much.",
+            ("point", "The office’s weights", "Benefit 3, Urgency 2, Effort 2, Readiness 1. The weights add "
+             "up to 8, so the highest possible score is 8 times 5, or 40."),
+            ("point", "Set them first", "Agree on the weights before scoring. Changing them afterward to "
+             "move a favorite idea up defeats the purpose."),
+            ("point", "Link them to the goals", "If the office’s plan for the year stresses collections, "
+             "benefit to collections deserves the heaviest weight."),
+            ("h", "Step 3: Score Each Idea"),
+            "Each idea gets a score from 1 to 5 on each criterion. Multiply each score by its weight and add.",
+            ("point", "Clean phone numbers, then text reminders", "Benefit 4, Urgency 4, Effort 4, Readiness "
+             "5. Weighted: 12 + 8 + 8 + 5 = 33. The change request from Part 24 had already measured it."),
+            ("point", "Market arrears drive", "Benefit 5, Urgency 3, Effort 3, Readiness 4. Weighted: "
+             "15 + 6 + 6 + 4 = 31."),
+            ("point", "Queue numbers at the windows", "Benefit 3, Urgency 3, Effort 4, Readiness 4. Weighted: "
+             "9 + 6 + 8 + 4 = 27."),
+            ("point", "Scan the old property tax cards", "Benefit 5, Urgency 2, Effort 1, Readiness 3. "
+             "Weighted: 15 + 4 + 2 + 3 = 24."),
+            ("point", "Online appointments for permits", "Benefit 4, Urgency 2, Effort 2, Readiness 2. "
+             "Weighted: 12 + 4 + 4 + 2 = 22."),
+            "Score with at least two people, separately, then compare. Where the scores differ by more than "
+            "one point, talk about why. The discussion can teach more than the number.",
+            ("h", "Step 4: Check Against Capacity"),
+            "A ranking is not a plan until it meets the people available. Part 18 showed how to assign "
+            "people without overloading them.",
+            ("point", "Count the people", "The office could spare one encoder and the clerk for one project, "
+             "and the market staff for another."),
+            ("point", "Check for clashes", "The phone number project needs the encoder; the arrears drive "
+             "needs the market collectors. They do not compete for the same people, so both can run."),
+            ("point", "Watch the calendar", "Avoid starting a project that needs the cashiers during the "
+             "January rush described in Part 2 of Inside the Local Treasury."),
+            ("h", "Step 5: Decide, and Look Again at the Numbers"),
+            "The matrix informs the decision. It does not make it. The head of office looked at the top "
+            "two and asked three questions.",
+            ("point", "Does the order make sense?", "If the top idea feels wrong, find out which score or "
+             "weight is causing it. Either the score is wrong, or the feeling is."),
+            ("point", "Are any ideas linked?", "Clean phone numbers could later help the appointment "
+             "system send reminders. Doing the first now makes the fifth easier later."),
+            ("point", "Is anything required by law or audit?", "An item required by a rule or an audit "
+             "finding may need to go first, whatever its score. Mark it that way rather than bending the "
+             "scores."),
+            "She approved the phone number project and the arrears drive. Each got a one-page charter, as "
+            "in Part 2.",
+            ("h", "Step 6: Tell Everyone, Including Those Who Wait"),
+            ("point", "Share the matrix", "Send the scores and the decision to everyone who proposed an idea."),
+            ("point", "Say what waits, and until when", "“Queue numbers: next review in July.” An idea with a "
+             "date is waiting; an idea without one has been dropped."),
+            ("point", "Invite corrections", "If someone thinks a score is wrong, ask for the facts. A better "
+             "estimate can change the order next time."),
+            ("h", "Keep the Matrix Small"),
+            ("point", "Few criteria", "Three to five. More than that, and every idea scores about the same."),
+            ("point", "One sheet", "A row per idea, a column per criterion, a weighted total, and a notes "
+             "column for the reasons."),
+            ("point", "Review on a schedule", "Once a quarter, add new ideas, rescore the waiting ones, and "
+             "decide again."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Choosing weights after scoring", "Agree on the weights first."),
+            ("point", "Scoring alone", "Two people, scoring separately, then compare."),
+            ("point", "Ignoring capacity", "The top two must have people to do them."),
+            ("point", "Silence for the ideas that wait", "Give each one a review date."),
+            ("h", "Key Takeaways"),
+            ("point", "Criteria first", "Three to five, each with a meaning for 1, 3 and 5."),
+            ("point", "Weights before scores", "So the result cannot be steered."),
+            ("point", "Capacity decides how many", "The ranking decides which."),
+            ("point", "Explain the choice", "Share the matrix and give waiting ideas a date."),
+            ("h", "Your Part 29 Exercise"),
+            "List every idea or request waiting in your office, even the informal ones.",
+            ("point", "Pick criteria and weights", "Use the four here, or your own, and agree on them with "
+             "your head of office."),
+            ("point", "Score them", "With one colleague, separately, then compare."),
+            ("point", "Check capacity", "Choose only as many as you have people for."),
+            "Then send the result to the people who proposed each idea. Notice how the conversation changes "
+            "when the reasons are written down.",
+            "The councilor saw his text reminders at the top of the list and called the clerk the same day. "
+            "The cashiers saw queue numbers in third place, with a July review date, and asked what would "
+            "move the score. They came back a week later with a quote from a supplier, and a better "
+            "readiness score.",
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("cta", "Read: Project Management Series, Part 10: Writing a Business Case That Gets a Yes", "/blog/project-management-part-10-business-case/"),
+            ("cta", "Read: Project Management Series, Part 18: Assigning People Without Overloading Them", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan", "/blog/project-management-part-24-change-control/"),
+            ("ask", "How was the last project in your office chosen, and could anyone explain why it went first?"),
+        ],
+    },
+    {
         "date": "March 28, 2027",
         "title": "Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned",
         "slug": "project-management-part-28-closing-the-project",

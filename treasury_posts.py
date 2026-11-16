@@ -7,6 +7,268 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 23: The Sand and Gravel Tax, and Why the Barangay Gets the Biggest Share",
+        "date": "April 9, 2027",
+        "publish_on": "2027-04-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "sand-and-gravel-tax",
+        "category": "finance",
+        "summary": "Every truckload of sand taken from a river can carry a tax for the province, the town "
+                   "and the barangay. This part explains who may levy the tax on sand, gravel and other "
+                   "quarry resources, the 10 percent ceiling, who issues the permit, how the money is "
+                   "shared 30, 30 and 40, and what the Supreme Court said about quarrying for one’s own use.",
+        "body": [
+            "Every dry season, the trucks lined up at the riverbank below a small barangay. They came "
+            "empty in the morning and left heavy with sand and gravel for a road project two towns away. "
+            "At the barangay assembly, a farmer stood up with a question for the barangay treasurer. The "
+            "trucks were wearing down the barangay road and taking the barangay’s river sand. Did the "
+            "barangay get anything from it?",
+            "The treasurer had the answer in a folder. The barangay got the largest share of all.",
+            "(The barangay, the river and the trucks are illustrations for this post. The law and the court "
+            "case described below are real and are cited.)",
+            "Part 22 covered a tax on tickets to shows. This part covers a tax on what is taken out of the "
+            "ground and the riverbed. You will learn who may levy the tax on sand, gravel and other quarry "
+            "resources and on what, the ceiling on the rate, who issues the permit to extract, how the money "
+            "is divided among the province, the town and the barangay, what the Supreme Court said about a "
+            "company that quarried for its own use, and what treasury workers, contractors and barangay "
+            "officials should each check.",
+            ("photo", "blog/finance-quarry.jpg", "The sand and gravel tax: levied by the province, up to "
+             "10 percent of the local market value, with a permit from the governor, shared 30, 30 and 40. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who May Levy It, and on What"),
+            "Section 138 of the Local Government Code of 1991 gives this tax to the province. Under Section "
+            "151, a city may also levy the taxes that a province may.",
+            ("point", "What is taxed", "Ordinary stones, sand, gravel, earth and other quarry resources, as "
+             "defined under the National Internal Revenue Code."),
+            ("point", "From where", "Resources extracted from public lands, or from the beds of seas, lakes, "
+             "rivers, streams, creeks and other public waters within the province."),
+            ("point", "How much", "Not more than 10 percent of the fair market value in the locality, per "
+             "cubic meter. The provincial ordinance sets the actual rate within that ceiling."),
+            ("point", "Who issues the permit", "Section 138 says the permit to extract shall be issued "
+             "exclusively by the provincial governor, under the ordinance of the sangguniang panlalawigan."),
+            ("h", "Where the Mining Act Comes In"),
+            "The Philippine Mining Act of 1995, Republic Act No. 7942, also deals with quarrying. It sets "
+            "the rules for the permits themselves.",
+            ("point", "Quarry permit", "Under Section 43, applications go to the provincial or city mining "
+             "regulatory board, and the provincial governor grants the permit once the requirements are met. "
+             "The area is limited to five hectares, for a term of five years, renewable up to a total of "
+             "25 years."),
+            ("point", "Commercial sand and gravel permit", "Under Section 46, the provincial governor may "
+             "grant a permit to extract and remove sand and gravel from an area of not more than five "
+             "hectares."),
+            ("point", "Fees and taxes", "Section 44 requires the permittee to pay a quarry fee and the "
+             "excise tax provided by pertinent laws."),
+            "In short, the permit allows the digging, and the provincial tax is paid on what is dug. One "
+            "does not replace the other.",
+            ("h", "How the Money Is Shared"),
+            "Section 138 sets the division of the proceeds. Unlike the amusement tax in Part 22, which is "
+            "split between two levels, this one is split among three.",
+            ("point", "Province", "30 percent."),
+            ("point", "Component city or municipality where the resources are extracted", "30 percent."),
+            ("point", "Barangay where the resources are extracted", "40 percent."),
+            "The barangay’s share is the largest because the barangay lives with the effects: the trucks, "
+            "the dust, the riverbanks and the roads. The law does not state that reason in Section 138, so "
+            "treat it as a reading of the numbers, not as a quoted rule.",
+            ("h", "A Worked Example"),
+            "The numbers below are invented to show the arithmetic. They are not any province’s actual "
+            "values.",
+            ("point", "The value", "Suppose the provincial ordinance values river sand at ₱500 per cubic "
+             "meter in the locality and sets the rate at 10 percent. The tax is ₱50 per cubic meter."),
+            ("point", "The volume", "A contractor hauls 2,000 cubic meters during the month. The tax is "
+             "2,000 times ₱50, or ₱100,000."),
+            ("point", "The shares", "Province ₱30,000. Municipality ₱30,000. Barangay ₱40,000."),
+            "₱40,000 a month is a meaningful amount for a small barangay. It is one reason barangay "
+            "officials should know the volume being extracted in their area.",
+            ("h", "Quarrying for One’s Own Use Is Still Taxed"),
+            "In Lepanto Consolidated Mining Co. v. Ambanloc, G.R. No. 180639, decided June 29, 2010, a "
+            "mining company had taken sand, gravel and earth from its own mining claim in Benguet from 1997 "
+            "to 2000. It used them to backfill mined areas and to build and maintain its tailings dam, "
+            "roads and offices. None of it was sold. The provincial treasurer assessed sand and gravel tax, "
+            "and the company protested.",
+            ("point", "The company’s argument", "The tax covered only commercial extraction, and its "
+             "national mining lease already allowed it to extract."),
+            ("point", "The Court’s answer", "The provincial revenue code exempted only gratuitous permits, "
+             "so use for its own operations was not exempt. The lease showed the national government’s "
+             "consent, but “an exemption from the requirements of the provincial government should have a "
+             "clear basis.”"),
+            ("point", "The kind of tax", "The Court called it an excise tax on the privilege of extracting, "
+             "and said provinces can levy it independently from the national government."),
+            "The lesson for treasuries is to read the provincial revenue code closely. The outcome turned "
+            "on what that code exempted, and on what it did not.",
+            ("h", "What Each Office Should Check"),
+            ("point", "Provincial treasury", "That the revenue code’s rate stays within 10 percent, that "
+             "volumes are recorded per barangay, and that the 30 and 40 percent shares are released to "
+             "the right municipality and barangay."),
+            ("point", "Municipal treasury", "That the municipality’s 30 percent arrives, and that it "
+             "matches the volumes extracted within the town."),
+            ("point", "Barangay treasurer", "That the barangay’s 40 percent arrives, with a breakdown by "
+             "period. Part 17 described how to follow up on the barangay’s share of the amilyar; the same "
+             "habit applies here."),
+            ("point", "Contractors and haulers", "That a permit covers the site, and that the tax is paid "
+             "under the provincial procedure. Some provinces publish these steps in their Citizen’s Charter."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Thinking the permit covers the tax", "A permit allows extraction; the tax is separate."),
+            ("point", "Assuming own use is exempt", "The Supreme Court ruled otherwise in Lepanto."),
+            ("point", "Charging more than 10 percent", "Section 138 sets the ceiling."),
+            ("point", "Forgetting the barangay’s 40 percent", "It is the largest share."),
+            ("h", "Key Takeaways"),
+            ("point", "A provincial tax", "Under Section 138, also open to cities under Section 151."),
+            ("point", "Not more than 10 percent", "Of the fair market value in the locality, per cubic meter."),
+            ("point", "Shared 30, 30 and 40", "Province, city or municipality, and barangay."),
+            ("point", "Own use is not exempt", "G.R. No. 180639, June 29, 2010."),
+            ("h", "Your Part 23 Action Plan"),
+            ("point", "If you work in a treasury", "Find the quarry tax section of your provincial revenue "
+             "code and check the rate, the valuation and the sharing against Section 138."),
+            ("point", "If you are a barangay official", "Ask the provincial or municipal treasury for the "
+             "volumes extracted in your barangay and the share released for the last year."),
+            ("point", "If you hire trucks for a project", "Ask your supplier whether the sand comes from a "
+             "permitted site and whether the tax was paid."),
+            "The farmer at the assembly asked one more question: how much had the barangay actually "
+            "received? The treasurer did not know offhand. She wrote to the provincial treasury the next "
+            "week, asking for the volumes and the shares for the past year. When the reply came, she read "
+            "it aloud at the next assembly.",
+            ("cta", "Read: Inside the Local Treasury, Part 22: The Amusement Tax, Cinemas, Concerts and Why Resorts Are Not Covered", "/blog/amusement-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Is there a river or quarry near you, and do you know how much your barangay receives from it?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 22: The Amusement Tax, Cinemas, Concerts and Why Resorts Are Not Covered",
+        "date": "April 4, 2027",
+        "publish_on": "2027-04-04 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "amusement-tax",
+        "category": "finance",
+        "summary": "Part of every cinema or concert ticket can go to the province and the town. This part "
+                   "explains who may levy the amusement tax, the 10 percent ceiling set in 2009, which shows "
+                   "are exempt, why the Supreme Court said resorts and swimming pools are not covered, and how "
+                   "the money is shared.",
+        "body": [
+            "A businessman in a provincial town opened a small cinema beside the public market and, a few "
+            "months later, a resort with two swimming pools on the edge of town. At the end of his first "
+            "quarter, he came to the treasury with two questions. Did he owe amusement tax on the movie "
+            "tickets? And did he owe it on the resort’s entrance fees too? A neighbor had told him that "
+            "everything people pay for fun is taxed the same way.",
+            "The neighbor was wrong on the second point, and the Supreme Court had said so.",
+            "(The businessman, his cinema and his resort are illustrations, not a real case. The court "
+            "decision discussed later is real and is named.)",
+            "Part 21 covered a tax on professionals. This part covers a tax on entertainment. You will learn "
+            "who may levy the amusement tax and on what, the current ceiling on the rate, which events the "
+            "law exempts, why resorts, swimming pools and tourist spots fall outside it, how the tax is "
+            "withheld and shared, and what treasury workers and business owners should each check.",
+            ("photo", "blog/finance-amusement.jpg", "The amusement tax: on admission to shows, up to 10 percent, "
+             "with exemptions for the arts, and not on resorts. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Who May Levy It, and on What"),
+            "Section 140 of the Local Government Code lets the province levy an amusement tax, collected "
+            "from the proprietors, lessees or operators of theaters, cinemas, concert halls, circuses, boxing "
+            "stadia and other places of amusement. The tax is a percentage of the gross receipts from "
+            "admission fees.",
+            ("point", "Who pays", "The operator of the place, out of the admission fees collected. The tax "
+             "is computed on ticket sales, not on food, drinks or other sales inside."),
+            ("point", "What “amusement” means", "Section 131 defines amusement as a pleasurable diversion "
+             "and entertainment, and amusement places as theaters, cinemas, concert halls, circuses and other "
+             "places where one seeks admission to entertain oneself by seeing or viewing the show or "
+             "performances."),
+            ("point", "Cities too", "Section 151 lets a city levy the taxes a province may impose. Cities may "
+             "set tax rates up to 50 percent above the provincial maximum, but Section 151 makes an "
+             "exception for professional and amusement taxes, so the provincial ceiling also binds cities."),
+            ("quote", "The amusement tax follows the ticket to a show, not every peso spent on a good time."),
+            ("h", "The Rate: Ten Percent Since 2009"),
+            "The Local Government Code of 1991 first set the ceiling at 30 percent of gross receipts from "
+            "admission fees. Republic Act No. 9640, which lapsed into law on May 21, 2009, amended Section "
+            "140(a) and lowered the ceiling to not more than 10 percent.",
+            "Some older copies of the Code online still show 30 percent. When you read the law, check that "
+            "you have the amended text, and read your provincial or city revenue code for the actual rate, "
+            "which can be lower than the ceiling.",
+            ("h", "A Worked Example"),
+            "Say a cinema in a municipality sells ₱500,000 in tickets in a month, and the province’s revenue "
+            "code sets the rate at the 10 percent maximum.",
+            ("point", "The tax", "10 percent of ₱500,000 is ₱50,000."),
+            ("point", "Withheld first", "Section 140(b) says that for theaters and cinemas, the tax is first "
+             "deducted and withheld by the operator and paid to the provincial treasurer before the gross "
+             "receipts are divided with the film distributors. So the ₱50,000 comes off the top, and the "
+             "remaining ₱450,000 is what the cinema and the distributor share."),
+            ("point", "Shared equally", "Section 140(e) says the proceeds are shared equally by the province "
+             "and the municipality where the amusement place is located: ₱25,000 each."),
+            ("point", "When and how", "Section 140(d) leaves the time, manner, terms and conditions of "
+             "payment to the sangguniang panlalawigan, along with surcharges, interest and penalties for "
+             "fraud or failure to pay."),
+            ("h", "What the Law Exempts"),
+            "Section 140(c) exempts the holding of operas, concerts, dramas, recitals, painting and art "
+            "exhibitions, flower shows, musical programs, and literary and oratorical presentations, except "
+            "pop, rock or similar concerts.",
+            ("point", "A school recital or a town art exhibit", "Exempt."),
+            ("point", "A rock concert in the plaza with paid tickets", "Not exempt. The law names pop, rock "
+             "and similar concerts as the exception to the exemption."),
+            ("point", "Films graded by the Film Development Council", "Republic Act No. 9167 of 2002, which "
+             "created the Film Development Council of the Philippines, provides for an amusement tax refund "
+             "on graded films: 100 percent for Grade A films and 65 percent for Grade B, with the remaining "
+             "35 percent going to the Council, as summarized by the legal database Jur.ph. The rules for "
+             "claiming it are with the Council."),
+            ("h", "Why Resorts and Swimming Pools Are Not Covered"),
+            "In Pelizloy Realty Corporation v. Province of Benguet, G.R. No. 183137, decided on April 10, "
+            "2013, the Supreme Court looked at a provincial revenue code that charged amusement tax on "
+            "admission fees to resorts, swimming pools, bath houses, hot springs and tourist spots.",
+            ("point", "The question", "Were these “other places of amusement” under Section 140?"),
+            ("point", "The answer", "No. The Court applied a rule of reading called ejusdem generis: general "
+             "words that follow a list of specific things cover only things of the same kind. Theaters, "
+             "cinemas, concert halls, circuses and boxing stadia are all places where shows or performances "
+             "are staged to be watched. Resorts and swimming pools are not."),
+            ("point", "The result", "The Court declared that part of the provincial revenue code void insofar "
+             "as it imposed amusement tax on admission fees to resorts, swimming pools, bath houses, hot "
+             "springs and tourist spots. The tax on admission to boxing was left standing."),
+            "The Court also repeated a principle worth remembering at every treasury window: taxing powers "
+            "are construed strictly, so a doubt about whether a tax applies is not resolved in favor of "
+            "collecting it.",
+            "A resort can still owe other local taxes and fees, such as the business tax on its gross "
+            "receipts and its permit fees, under the local revenue code. It is the amusement tax on its "
+            "entrance fees that the Court ruled out.",
+            ("h", "For Treasury Workers"),
+            ("point", "Read the amended Section 140", "Confirm that your local revenue code’s rate does not "
+             "exceed 10 percent."),
+            ("point", "Check the list of places", "If your code taxes resorts, pools or tourist spots under "
+             "the amusement tax, raise it with your legal office in light of the Pelizloy decision."),
+            ("point", "Ask for the ticket records", "Gross receipts from admissions are the base. Ticket "
+             "stubs, sales reports and distributor statements support the return."),
+            ("point", "Record the share", "Proceeds are shared equally with the municipality where the place "
+             "is located. Keep the location on every collection, as with the barangay shares in Part 17."),
+            ("h", "For Business Owners"),
+            ("point", "Know your category", "A cinema or a ticketed rock concert is covered. A recital, an "
+             "art exhibit or a resort entrance fee is not covered by the amusement tax."),
+            ("point", "Keep admissions separate", "Record ticket sales apart from food and other sales, so "
+             "the tax base is clear."),
+            ("point", "Ask in writing", "If you are unsure whether an event is exempt, write to the treasurer "
+             "before the event, and keep the reply. Part 18 explained the remedies if you pay too much."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Using the old 30 percent", "The ceiling has been 10 percent since 2009."),
+            ("point", "Taxing resort entrance fees as amusement", "The Supreme Court ruled them out in 2013."),
+            ("point", "Taxing a recital or art exhibit", "Section 140(c) exempts them."),
+            ("point", "Forgetting the municipality’s half", "Proceeds are shared equally."),
+            ("h", "Key Takeaways"),
+            ("point", "Levied by the province or city", "On gross receipts from admission fees."),
+            ("point", "Not more than 10 percent", "Under Republic Act No. 9640."),
+            ("point", "Shows, not resorts", "Pelizloy, G.R. No. 183137, April 10, 2013."),
+            ("point", "Half to the municipality", "Where the amusement place is located."),
+            ("h", "Your Part 22 Action Plan"),
+            ("point", "If you work in a treasury", "Find the amusement tax section of your revenue code and "
+             "check the rate and the list of places against Section 140 and Pelizloy."),
+            ("point", "If you run an event", "Check whether it falls under the exemptions before you print "
+             "tickets."),
+            ("point", "If you buy a ticket", "Know that part of it may fund your province and your town, "
+             "half and half."),
+            "The businessman left with two answers. The cinema owed amusement tax on its ticket sales, "
+            "withheld before the split with the distributor. The resort’s entrance fees did not, though the "
+            "resort still had its business tax to pay. He thanked the cashier, and asked for a copy of the "
+            "court decision to show his neighbor.",
+            ("cta", "Read: Inside the Local Treasury, Part 21: The Professional Tax, What Your PTR Number Means", "/blog/professional-tax-receipt/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests", "/blog/local-tax-refunds-and-credits/"),
+            ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
+            ("ask", "Have you ever paid an entrance fee and wondered which part of it was a tax?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 21: The Professional Tax, What Your PTR Number Means",
         "date": "March 30, 2027",
         "publish_on": "2027-03-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
