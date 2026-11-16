@@ -14,6 +14,396 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 44: Leading Several Projects at Once Without Dropping Any",
+        "slug": "project-management-part-44-several-projects-at-once",
+        "category": "pm",
+        "date": "June 8, 2027",
+        "summary": "In a small office, the same person often leads three projects while doing a regular job. This "
+                   "part shows how to put every project on one page, get a clear order of priority from the "
+                   "people who set it, protect blocks of time instead of switching all day, run one weekly "
+                   "review, and say early when something has to give.",
+        "publish_on": "2027-06-08 21:00",
+        "body": [
+            "The revenue officer led three projects that year: the text reminders for business tax, the cleanup "
+            "of the market stall list, and the new filing room for real property records. She also ran the "
+            "business tax section every day.",
+            "Each project had its own folder, its own group chat and its own Monday meeting. By March, she was "
+            "answering messages from all three during counter hours, and each project lead above her thought "
+            "their project was her first priority. Two deadlines landed in the same week, and both slipped.",
+            "(The office, the projects and the people are invented, continuing the treasury examples of this "
+            "series.)",
+            "Part 43 recovered a single project in trouble. This part looks at a more common problem: one "
+            "person leading several projects at once, alongside regular work. After this post, you will know "
+            "how to see all the work on one page, how to get a clear order of priority, how to plan the week "
+            "in blocks, how to run one weekly review for everything, and how to raise a conflict before it "
+            "becomes a missed date.",
+            ("photo", "blog/pm-several-projects.jpg", "Several projects at once: one list of everything, one "
+             "order of priority agreed with the sponsors, protected blocks of time, and one weekly review. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Several Projects Are Harder Than One Big One"),
+            ("point", "Hidden totals", "Each project looks reasonable on its own. Often nobody sees the sum."),
+            ("point", "Switching costs", "Moving between projects means finding the file, remembering where you "
+             "stopped, and getting back into the problem. Many short switches can eat a large part of the day."),
+            ("point", "Competing sponsors", "Each sponsor sees only their own project and may assume it comes "
+             "first."),
+            ("point", "Regular work does not stop", "Counter duty, reports and deadlines still come first on "
+             "most days."),
+            ("h", "Step 1: One Page for Everything"),
+            "Make one list of every project and every regular duty that takes real time.",
+            ("point", "For each project", "Name, sponsor, next milestone and its date, and hours needed per week "
+             "for the next month."),
+            ("point", "For regular work", "The hours it really takes, including the busy weeks such as January "
+             "and the quarterly deadlines."),
+            ("point", "Add it up", "Compare the total with the hours you actually have. Part 18 warned that "
+             "someone who also works a counter does not have eight hours a day for a project."),
+            "If the total is more than the hours available, the page shows it before a deadline does.",
+            ("h", "Step 2: Get the Order of Priority From the People Who Set It"),
+            "You cannot settle priorities between sponsors yourself. Take the one page to the person above all "
+            "of them, often the department head.",
+            ("point", "Ask for an order, not a ranking of importance", "“If two of these collide in the same "
+             "week, which one goes first?”"),
+            ("point", "Write it down", "Put the order at the top of the page and share it with every sponsor."),
+            ("point", "Revisit it monthly", "Priorities change, but they should change in the open."),
+            "Part 29 used a scoring matrix to choose which project to start. The same thinking helps when "
+            "deciding which running project goes first.",
+            ("h", "Step 3: Plan the Week in Blocks"),
+            ("point", "Give each project a block", "For example, Tuesday afternoon for the stall list, Thursday "
+             "morning for the reminders."),
+            ("point", "Protect the blocks", "Treat them like a meeting with the sponsor. Turn off group chats "
+             "that belong to other projects during that time."),
+            ("point", "Leave slack", "Keep a few hours a week unassigned for surprises, in the spirit of the "
+             "visible buffer from Part 21."),
+            ("point", "Batch the small things", "Answer messages from all projects at set times, such as "
+             "11:30 and 4:30, instead of all day."),
+            ("photo", "blog/pm-several-projects-week.jpg", "One week in blocks: counter duty first, one "
+             "protected block per project, two short message windows and some slack. The schedule is invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: One Weekly Review for Everything"),
+            "Replace three Monday meetings in your head with one 30-minute review on Friday afternoon.",
+            ("point", "Each project in turn", "What moved this week, what is due next week, and what is blocked."),
+            ("point", "Look across projects", "Do two milestones land in the same week? Does one person appear "
+             "in two projects at the same time?"),
+            ("point", "Update the one page", "Dates, hours and any change in priority."),
+            ("point", "Send short notes", "One or two lines to each sponsor, in the shape of the status report "
+             "from Part 25."),
+            ("h", "Step 5: Raise Conflicts Early"),
+            "When two projects need the same week, say so as soon as you see it.",
+            ("point", "Bring options, not only a problem", "“The filing room delivery and the reminder launch "
+             "both fall on March 15. I can move the filing room by one week or ask for help on the reminders.”"),
+            ("point", "Use the agreed order", "Point back to the order of priority from Step 2."),
+            ("point", "Record the decision", "In the one page and in the next note to each sponsor."),
+            "A conflict raised three weeks ahead is a scheduling choice. Raised the day before, it becomes a "
+            "missed date.",
+            ("h", "When to Say No"),
+            "Sometimes the honest answer to a fourth project is “not now.”",
+            ("point", "Show the page", "Let the requester see the hours already committed."),
+            ("point", "Offer a date", "“I can start it in August, after the stall list closes.”"),
+            ("point", "Offer a trade", "“If this one comes first, which of the others should wait?”"),
+            "Part 31 covered planning for absences. The same one page shows who could take over a project if "
+            "the lead is away.",
+            ("h", "Back to the Revenue Officer"),
+            "She made the one page in an afternoon. The total came to 52 hours a week against about 35 she "
+            "could really give. The department head set the order: reminders first, stall list second, filing "
+            "room third, with its date moved by six weeks.",
+            "She blocked Tuesday and Thursday afternoons, moved project chats to two set times a day, and "
+            "replaced the three Monday meetings with one Friday review. By June, all three projects were on "
+            "their new dates, and the business tax section had stopped losing her to messages during counter "
+            "hours.",
+            ("h", "Leaving Each Project Easy to Pick Up"),
+            "Switching costs less when each project is left in a state that is easy to return to.",
+            ("point", "End each block with a note", "Two lines at the top of the project file: where you stopped "
+             "and the very next step."),
+            ("point", "One folder, one log", "Keep each project’s files, issue log and decisions in one place, "
+             "so nothing has to be searched for."),
+            ("point", "Tell the team your blocks", "If people know when you work on their project, they save "
+             "questions for that time."),
+            "These habits also make it easier for someone else to step in, which matters when one person "
+            "carries several projects.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Keeping separate lists", "The total often stays hidden until it is too late."),
+            ("point", "Settling priorities alone", "Ask the person above the sponsors."),
+            ("point", "Switching all day", "Use blocks and set times for messages."),
+            ("point", "Raising conflicts at the last minute", "Say it when you first see it."),
+            ("h", "Key Takeaways"),
+            ("point", "One page", "Every project and regular duty, with hours and next dates."),
+            ("point", "One order of priority", "Set by the person above the sponsors, written down."),
+            ("point", "Blocks, not switching", "Protected time per project and set times for messages."),
+            ("point", "One weekly review", "Look across projects, update the page, raise conflicts early."),
+            ("h", "Your Part 44 Action Plan"),
+            ("point", "Today", "List every project and regular duty with the hours each really takes."),
+            ("point", "This week", "Ask your department head for an order of priority, in writing."),
+            ("point", "Every Friday", "Hold a 30-minute review across all your projects."),
+            ("cta", "Read: Project Management Series, Part 18: Assigning People Without Overloading Them", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 29: Too Many Requests? Choosing the Next Project With a Scoring Matrix", "/blog/project-management-part-29-scoring-matrix/"),
+            ("cta", "Read: Project Management Series, Part 36: Kanban Boards and Limits on Work in Progress", "/blog/project-management-part-36-kanban-boards/"),
+            ("cta", "Read: Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early", "/blog/project-management-part-25-status-reports/"),
+            ("ask", "How many projects are you leading right now, and does anyone above you know the total?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 43: When a Project Is in Trouble, a Recovery Plan in Five Steps",
+        "slug": "project-management-part-43-project-recovery",
+        "category": "pm",
+        "date": "June 5, 2027",
+        "summary": "Some projects slide from amber to red and stay there. This part shows how to pause and take "
+                   "stock, find the few real causes, decide what to cut, keep or move, reset the plan with the "
+                   "sponsor, and watch the first weeks closely, without hunting for someone to blame.",
+        "publish_on": "2027-06-05 21:00",
+        "body": [
+            "The online payment project was six weeks behind. The status report had been amber for two months "
+            "and red for three weeks. The test site worked on some days and not on others, the bank’s "
+            "requirements had changed twice, and the two people doing most of the work had stopped coming to "
+            "the weekly meeting because there was no time.",
+            "The sponsor asked the project lead a direct question: “Can this still be saved, and what will it "
+            "take?” The lead did not know. Nobody had stepped back long enough to find out.",
+            "(The project and the people are invented, continuing the treasury examples of this series.)",
+            "Part 42 tested a new system with its users before launch. This part is for the project that may "
+            "never reach that point without help. After this post, you will know the signs that a project "
+            "needs more than another push, a five-step way to recover it, how to talk to the sponsor about it, "
+            "and when stopping is the better choice.",
+            ("photo", "blog/pm-recovery.jpg", "A project recovery: pause and take stock, find the few real "
+             "causes, decide what to cut, keep or move, reset the plan with the sponsor, and watch the first "
+             "weeks closely. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Signs That a Push Is Not Enough"),
+            "Most projects have bad weeks. A project in trouble shows a pattern.",
+            ("point", "Red that does not move", "The status report from Part 25 has stayed red for several "
+             "reports in a row, and each new date slips again."),
+            ("point", "Earned value keeps falling", "Part 35’s schedule and cost indexes drop month after month, "
+             "not just once."),
+            ("point", "The issue log only grows", "Part 26’s log has more open issues each week than closed ones."),
+            ("point", "People avoid the project", "Meetings are skipped, messages go unanswered, and team members "
+             "quietly return to their regular work."),
+            "One of these is a warning. Two or more together usually call for a deliberate recovery, not more "
+            "overtime.",
+            ("h", "Step 1: Pause and Take Stock"),
+            "Stop adding new work for a few days. That feels wasteful, but working harder on a broken plan "
+            "usually makes it worse.",
+            ("point", "What is really done", "Not “almost done.” Count only what has been finished and accepted."),
+            ("point", "What is left", "List every remaining piece of work from the work breakdown structure of "
+             "Part 14."),
+            ("point", "What has been spent", "Money and staff time, against the budget from Part 17."),
+            ("point", "Talk to the people doing the work", "One by one, ask what is blocking them. They usually "
+             "know before the reports do."),
+            ("h", "Step 2: Find the Few Real Causes"),
+            "Write down every problem people mention, then group them. Most lists shrink to two or three root "
+            "causes.",
+            ("point", "Ask why more than once", "The test site fails. Why? It runs on an old office computer. "
+             "Why? No budget was set aside for a test server. That is the cause to fix."),
+            ("point", "Separate causes from symptoms", "Missed dates are a symptom. Unclear requirements, too "
+             "little time from key people, or a supplier who keeps changing terms are causes."),
+            ("point", "No blame", "The goal is a plan that works, not a name. People hide problems when they "
+             "expect blame, which is how the project got here."),
+            ("photo", "blog/pm-recovery-triage.jpg", "Sorting the remaining work: keep what the main objective "
+             "needs, move what can wait for a second phase, and cut what no one will miss. Tasks are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 3: Decide What to Keep, Move or Cut"),
+            "Go back to the objective in the charter. Then sort every remaining piece of work.",
+            ("point", "Keep", "Work the main objective cannot do without."),
+            ("point", "Move", "Useful work that can wait for a second phase after launch."),
+            ("point", "Cut", "Work that no one will miss, or that was added without going through change "
+             "control."),
+            "Part 24 described how to handle changes properly. A recovery often reveals changes that slipped in "
+            "without that process.",
+            ("h", "Step 4: Reset the Plan With the Sponsor"),
+            "A recovery plan is a new baseline. It needs the sponsor’s agreement, in writing.",
+            ("point", "Tell the truth early", "Bring the stock-take, the causes and the options, not only a new "
+             "date."),
+            ("point", "Offer real choices", "For example: a smaller first release in eight weeks, or the full "
+             "scope in sixteen weeks with one more staff member."),
+            ("point", "Ask for what you need", "Protected time from key people, a decision on the supplier, or "
+             "money for the test server."),
+            ("point", "Record the decision", "In the minutes, with the new dates, scope and budget, as Part 27 "
+             "described."),
+            "Part 34 offered a ten-minute shape for presenting to decision makers. It works well here.",
+            ("h", "Step 5: Watch the First Weeks Closely"),
+            "A new plan needs proof that it is working, quickly.",
+            ("point", "Shorter check-ins", "Fifteen minutes twice a week instead of one long meeting."),
+            ("point", "Small, visible wins", "Pick early milestones that can be finished in the first two weeks."),
+            ("point", "Same honest status", "Report against the new plan with the same green, amber and red "
+             "rules."),
+            ("point", "Clear the blocks fast", "The project lead’s main job now is removing whatever stops the "
+             "team."),
+            ("h", "When Stopping Is the Better Choice"),
+            "Sometimes the honest answer to “Can this be saved?” is no, or not at a price worth paying.",
+            ("point", "The need has gone", "A national system now does what the project was building."),
+            ("point", "The cost has outgrown the benefit", "Part 10’s business case no longer holds."),
+            ("point", "A key condition cannot be met", "The bank will not support the setup the project needs."),
+            "Stopping is a decision, not a failure, when it is made on evidence. Close the project properly, as "
+            "Part 28 described, and keep what was learned.",
+            ("h", "Back to the Payment Project"),
+            "The lead paused new work for three days and talked to each team member. Three causes came out: no "
+            "proper test server, no single contact at the bank, and the two key staff members still carrying "
+            "their full counter duties.",
+            "The sponsor chose a smaller first release: payments for business tax only, with real property tax "
+            "moved to a second phase. The office bought a modest test server, the bank named one contact, and "
+            "the two staff members were relieved of counter duty for two afternoons a week. The status turned "
+            "amber within a month and green two months later.",
+            ("h", "Keeping It From Happening Again"),
+            ("point", "Agree the warning rules early", "Decide at the start how many red reports in a row trigger "
+             "a stock-take."),
+            ("point", "Protect key people from the start", "Write their project hours into the plan, not on top "
+             "of full regular duties."),
+            ("point", "Review causes at closing", "Bring the recovery’s causes to the lessons-learned review."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Pushing harder on the same plan", "Find the causes first."),
+            ("point", "Hiding the trouble", "A sponsor told early has more choices."),
+            ("point", "Looking for someone to blame", "It drives problems underground."),
+            ("point", "Resetting without cutting", "A new date with the same scope often fails again."),
+            ("h", "Key Takeaways"),
+            ("point", "Know the signs", "Steady red, falling earned value, a growing issue log, absent people."),
+            ("point", "Five steps", "Pause, find causes, keep or move or cut, reset with the sponsor, watch "
+             "closely."),
+            ("point", "Real choices for the sponsor", "Scope, time and resources, with honest numbers."),
+            ("point", "Stopping can be right", "When the need, the benefit or a key condition is gone."),
+            ("h", "Your Part 43 Action Plan"),
+            ("point", "For a project in trouble", "Book three days to take stock before promising any new date."),
+            ("point", "For every project", "Agree now on what the sponsor wants to hear, and when, if the status "
+             "stays red."),
+            ("point", "After a recovery", "Add the causes you found to the project kit from Part 30."),
+            ("cta", "Read: Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early", "/blog/project-management-part-25-status-reports/"),
+            ("cta", "Read: Project Management Series, Part 35: Earned Value Made Simple, Are We on Budget and on Schedule?", "/blog/project-management-part-35-earned-value/"),
+            ("cta", "Read: Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan", "/blog/project-management-part-24-change-control/"),
+            ("cta", "Read: Project Management Series, Part 34: Presenting a Project to Decision Makers in Ten Minutes", "/blog/project-management-part-34-presenting-in-ten-minutes/"),
+            ("ask", "What was the first sign that your last troubled project needed more than a push?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 42: User Acceptance Testing, Letting the People Who Will Use It Say Yes",
+        "slug": "project-management-part-42-user-acceptance-testing",
+        "category": "pm",
+        "date": "June 2, 2027",
+        "summary": "Before a new system or process goes live, the people who will use it every day should try it on "
+                   "real work and say whether it is ready. This part explains what user acceptance testing is, "
+                   "how to write simple test cases from the requirements, who should test, how to record "
+                   "results, and how to decide whether to go live.",
+        "publish_on": "2027-06-02 21:00",
+        "body": [
+            "The new collection screen passed every check the developer ran. Totals added up. Receipts printed. "
+            "The project lead scheduled the switch for the first Monday of the month.",
+            "On the Friday before, a cashier sat down to try it with a real line of taxpayers in mind. Her first "
+            "payment was a business tax with a surcharge, paid partly in cash and partly by check. The screen "
+            "had no way to split the payment. She tried three more common cases and found two more gaps. None "
+            "of them had been in the developer’s tests, because the developer had never worked a counter.",
+            "(The project, the system and the people are invented, continuing the treasury examples of this "
+            "series. The definition quoted below comes from the glossary of the International Software Testing "
+            "Qualifications Board.)",
+            "Part 41 made the schedule easy to read. This part looks at the last check before launch. After "
+            "this post, you will know what user acceptance testing is, how it differs from the checks in Part "
+            "23, how to write test cases from the requirements, who should test, how to log what fails, and "
+            "how to make the go-live decision.",
+            ("photo", "blog/pm-uat.jpg", "User acceptance testing: the people who will use the new system try "
+             "it on real cases, record what passes and fails, and decide with the sponsor whether it is ready. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What User Acceptance Testing Is"),
+            "The International Software Testing Qualifications Board’s glossary describes user acceptance "
+            "testing as acceptance testing “conducted in a real or simulated operational environment by "
+            "intended users.” In plain words: the people who will use the thing every day try it on the kind of "
+            "work they really do, and then say whether they accept it.",
+            ("point", "Not the developer’s test", "The developer checks that the system works as built. Users "
+             "check that it works for the job."),
+            ("point", "Not only for software", "A new form, a new counter layout or a new procedure can be "
+             "tested the same way."),
+            ("point", "Ends with a decision", "Accept, accept with conditions, or not yet."),
+            "Part 23 set quality standards and chose checks for each deliverable. User acceptance testing is "
+            "the final check, done by the people the deliverable is for.",
+            ("h", "Start From the Requirements"),
+            "Part 9 asked for requirements that can be tested. This is where that pays off. Each requirement "
+            "becomes one or more test cases.",
+            ("point", "Requirement", "The cashier can accept one payment in cash and check together."),
+            ("point", "Test case", "Business tax of ₱18,450 with surcharge. Pay ₱10,000 in cash and ₱8,450 by "
+             "check. Expected: one official receipt showing both modes, and the check recorded for the deposit "
+             "slip."),
+            ("point", "Pass or fail", "The tester writes what actually happened and marks it."),
+            "Include the ordinary cases that fill most of the day and the awkward ones that cause most of the "
+            "trouble: partial payments, corrections, cancelled receipts, a power interruption, a taxpayer with "
+            "two businesses.",
+            ("h", "Who Should Test"),
+            ("point", "The people who will use it", "Cashiers, collectors, the clerk who prepares the report of "
+             "collections. Not only their supervisor."),
+            ("point", "A mix of experience", "One person who knows every exception, and one who joined recently "
+             "and follows the screen literally."),
+            ("point", "Not the builder", "The developer can sit nearby to watch and take notes, but should not "
+             "touch the keyboard."),
+            ("point", "A sponsor who signs", "The person from Part 2’s charter who can say yes for the office."),
+            ("h", "Set Up a Safe Place to Test"),
+            ("point", "A copy, not the live data", "Test on a copy of the records, so mistakes do not change real "
+             "accounts."),
+            ("point", "Realistic data", "Use real kinds of cases, with names and personal details replaced, as "
+             "Part 6 of the Data Analytics Series advised."),
+            ("point", "The real equipment", "The same printer, the same screen size and the same internet "
+             "connection the counter will have."),
+            ("point", "Set the time aside", "Testing squeezed between taxpayers rarely gets done. Block two "
+             "afternoons."),
+            ("photo", "blog/pm-uat-log.jpg", "A test log on one sheet: each case, the expected result, what "
+             "happened, and pass, fail or the rank of the failure. Cases are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Record Every Result"),
+            "A shared sheet is enough. One row per test case.",
+            ("point", "Columns", "Case number, what to do, expected result, actual result, pass or fail, tester, "
+             "date, and notes."),
+            ("point", "Describe failures exactly", "Write the steps, the amount and what appeared on screen. "
+             "“It doesn’t work” cannot be fixed."),
+            ("point", "Rank each failure", "Blocker: the counter cannot work without a fix. Major: there is a "
+             "workaround, but it is slow or risky. Minor: cosmetic."),
+            ("point", "Retest after each fix", "A fixed case is tested again by the same tester, and the result "
+             "is added to the log."),
+            "Failures go into the issue log from Part 26 with an owner and a date, so none are lost between "
+            "testing and launch.",
+            ("h", "The Go-Live Decision"),
+            "Agree on the rules before testing starts, so the decision is not argued from scratch on the last "
+            "day.",
+            ("point", "Accept", "Every case passed, or only minor failures remain."),
+            ("point", "Accept with conditions", "No blockers. Each major failure has a workaround written down "
+             "and a fix date."),
+            ("point", "Not yet", "Any blocker remains. Set a new date after the fix is retested."),
+            "Record the decision and the sponsor’s signature in the minutes, as Part 27 described. A written "
+            "yes protects both the team and the users.",
+            ("h", "Back to the Split Payment"),
+            "The cashier’s three failures went into the log: the split payment as a blocker, and two others as "
+            "major. The switch moved two weeks. The developer fixed the split payment, and the cashier retested "
+            "it with five variations.",
+            "The second round passed with one minor issue, a misaligned label on the printed receipt. The "
+            "sponsor accepted the system with that condition noted, and the first Monday on the new screen "
+            "went quietly.",
+            ("h", "Questions Testers Should Ask"),
+            ("point", "Can I undo a mistake?", "Cancel a receipt, correct an amount, reverse a wrong posting."),
+            ("point", "What happens at the end of the day?", "Does the report of collections match the receipts "
+             "issued?"),
+            ("point", "What if the power or internet goes out?", "Is there a manual fallback, and can the "
+             "records be entered later?"),
+            ("point", "Is it faster than the old way?", "If not, Part 33 explained why people will drift back."),
+            ("h", "Testing Also Trains"),
+            "User acceptance testing has a useful side effect. The cashiers who tested the screen became the "
+            "first people who knew it well.",
+            ("point", "Use testers as helpers", "On launch day, seat one tester near the counters to answer "
+             "questions from the others."),
+            ("point", "Turn test cases into training", "The awkward cases make good practice exercises for the "
+             "rest of the staff."),
+            ("point", "Feed the procedure", "Steps that confused testers belong in the standard operating "
+             "procedure from Part 37."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Letting the builder test alone", "Builders test what they built, not what the users need."),
+            ("point", "Testing only the easy cases", "The awkward ones cause most of the trouble."),
+            ("point", "No written pass rules", "Decide what counts as ready before testing begins."),
+            ("point", "Testing on live records", "Use a copy with personal details replaced."),
+            ("h", "Key Takeaways"),
+            ("point", "Users decide", "The people who will use it test it on real kinds of work."),
+            ("point", "Cases come from requirements", "Each testable requirement becomes a test case."),
+            ("point", "Log every result", "Expected, actual, pass or fail, and a rank for each failure."),
+            ("point", "Agree the go-live rule early", "Accept, accept with conditions, or not yet."),
+            ("h", "Your Part 42 Action Plan"),
+            ("point", "Today", "List the five most common cases and the five most awkward cases at your counter."),
+            ("point", "Before the next launch", "Turn each requirement into a test case with an expected result."),
+            ("point", "At the test", "Seat the real users, keep the builder’s hands off the keyboard, and log "
+             "everything."),
+            ("cta", "Read: Project Management Series, Part 23: Quality Planning, Deciding What Good Enough Means", "/blog/project-management-part-23-quality-planning/"),
+            ("cta", "Read: Project Management Series, Part 9: Gathering Requirements When Nobody Knows What They Want", "/blog/project-management-part-9-gathering-requirements/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 33: Getting People to Use the New Process, Not Just Install It", "/blog/project-management-part-33-adopting-the-new-process/"),
+            ("ask", "Who in your office should have tested the last new system before it went live?"),
+        ],
+    },
+    {
         "title": "Project Management Series, Part 41: A Timeline Anyone Can Read, Building a Gantt Chart in Google Sheets",
         "slug": "project-management-part-41-gantt-chart-in-sheets",
         "category": "pm",
