@@ -7,6 +7,393 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 34: Raising a Tax Rate, the Once-in-Five-Years Rule",
+        "slug": "adjusting-local-tax-rates",
+        "category": "finance",
+        "date": "May 31, 2027",
+        "summary": "A local government cannot raise its tax rates whenever it wants. Section 191 of the Local "
+                   "Government Code allows an adjustment not more than once every five years, and never more than "
+                   "10 percent of the rates fixed in the Code. This part explains the rule, the publication steps "
+                   "that follow, and the treasury’s work before and after a new rate takes effect.",
+        "publish_on": "2027-05-31 21:00",
+        "body": [
+            "The draft ordinance raised the tax on one class of business by 15 percent. A council member had "
+            "worked hard on it. The new revenue would pay for a second ambulance.",
+            "The treasurer’s note on the draft was one line long: “Section 191 limits the adjustment to 10 "
+            "percent, and the last adjustment was three years ago.” Both problems meant the draft could not pass "
+            "as written.",
+            "(The local government, the ordinance and the figures are invented for this post. The sections of "
+            "the Local Government Code quoted below are real.)",
+            "Part 33 looked at private partners who build public facilities. This part returns to a local "
+            "government’s own taxing power and one of its limits. After this post, you will know what Section "
+            "191 allows, how to compute the most a rate can rise, how often it can happen, what must be done "
+            "after the ordinance passes, and what the treasury contributes at each step.",
+            ("photo", "blog/finance-rate-adjust.jpg", "Adjusting a local tax rate: not more often than once in "
+             "five years, never more than 10 percent of the rate fixed in the Code, and published before it "
+             "takes effect. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Section 191 Says"),
+            "Section 191 of the Local Government Code gives local governments “the authority to adjust the tax "
+            "rates as prescribed herein not oftener than once every five (5) years, but in no case shall such "
+            "adjustment exceed ten percent (10%) of the rates fixed under this Code.”",
+            "Two limits are packed into that sentence.",
+            ("point", "How often", "Not more than once every five years."),
+            ("point", "How much", "The adjustment may not exceed 10 percent of the rate fixed in the Code."),
+            ("h", "Working Out the Ceiling"),
+            "The 10 percent is a share of the rate fixed in the Code, not ten percentage points. A small example "
+            "shows the difference.",
+            ("point", "Rate fixed in the Code", "Suppose it is 1 percent of gross receipts."),
+            ("point", "Most the adjustment can be", "10 percent of 1 percent, which is 0.1 percentage point."),
+            ("point", "Highest adjusted rate", "1.1 percent."),
+            ("point", "What it is not", "11 percent, which would be adding ten percentage points."),
+            "The draft in the story asked for 15 percent more than the current rate, which was already the rate in the Code. That was beyond the "
+            "ceiling, before the five-year question was even asked.",
+            ("h", "Counting the Five Years"),
+            ("point", "Keep the history", "The treasury should keep a list of every tax ordinance, the rates it "
+             "set and the date each took effect."),
+            ("point", "Check before drafting", "Before a new adjustment is proposed, find the date of the last "
+             "one for that tax."),
+            ("point", "Write the date in the draft", "A whereas clause naming the last adjustment and its date "
+             "saves the sanggunian from checking it again."),
+            "In the story, the last adjustment had taken effect three years earlier. The earliest a new one could "
+            "be considered was two years away.",
+            ("photo", "blog/finance-rate-adjust-steps.jpg", "From draft to new rate: check the five-year date and "
+             "the 10 percent ceiling, hold public hearings, approve, publish within ten days, and furnish copies "
+             "to the treasurer. Figures are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Public Hearings Come First"),
+            "Any tax ordinance, including an adjustment, needs public hearings before it is enacted. Part 15 "
+            "explained Section 187, which requires those hearings, and how an ordinance can be appealed. Part "
+            "28 covered what local governments cannot tax at all.",
+            ("h", "After Approval: Publication"),
+            "Section 188 sets the next step. Within ten days after approval, certified true copies of tax "
+            "ordinances and revenue measures “shall be published in full for three (3) consecutive days in a "
+            "newspaper of local circulation.”",
+            ("point", "No local newspaper?", "The same section allows posting “in at least two (2) conspicuous "
+             "and publicly accessible places.”"),
+            ("point", "Copies to the treasurer", "Section 189 says copies of all tax ordinances and revenue "
+             "measures “shall be furnished the respective local treasurers for public dissemination.”"),
+            "The treasurer is the official the Code names to help the public learn about the new rate. The "
+            "counter is one of the first places taxpayers will hear about it.",
+            ("h", "The Treasury’s Work Before the Vote"),
+            ("point", "Estimate the revenue", "Apply the proposed rate to last year’s tax base, business by "
+             "business if possible. Part 31 showed how estimates are built."),
+            ("point", "Check the limits", "Five years and 10 percent, for every rate in the draft."),
+            ("point", "Look at the burden", "Show how much more a typical small, medium and large taxpayer "
+             "would pay in a year."),
+            ("h", "The Treasury’s Work After Approval"),
+            ("point", "Update the systems", "Change the rate tables in the billing system or spreadsheet, and "
+             "test a few computations by hand."),
+            ("point", "Update the forms and notices", "Assessment forms, the counter signboard and the "
+             "office’s posted schedule of rates."),
+            ("point", "Brief the counter staff", "One page with the old and new rates and the effective date."),
+            ("point", "Record the date", "Add the new ordinance to the history list, so the next five-year "
+             "check is easy."),
+            ("h", "A Worked Estimate"),
+            "Suppose one class of business is taxed at 1 percent of gross receipts, the rate in the Code, under the current ordinance.",
+            ("point", "The tax base", "120 businesses with total gross receipts of ₱300,000,000 last year."),
+            ("point", "At the current rate", "₱300,000,000 × 1 percent = ₱3,000,000."),
+            ("point", "At the highest adjusted rate", "₱300,000,000 × 1.1 percent = ₱3,300,000, or ₱300,000 "
+             "more a year."),
+            ("point", "For a small business", "Gross receipts of ₱1,200,000 would pay ₱12,000 now and ₱13,200 "
+             "after the adjustment, ₱1,200 more a year."),
+            "Numbers like these let the sanggunian weigh the extra revenue against the extra burden in pesos, "
+            "not in percentages that are easy to misread.",
+            ("h", "Taxes, Not Fees"),
+            "Section 191 speaks of tax rates. Fees and charges follow their own rules, including the "
+            "requirement that regulatory fees be reasonable and in proportion to the cost of regulation, "
+            "inspection and licensing, which Part 15 explained. Check which kind of "
+            "revenue a draft changes before applying the five-year rule.",
+            ("h", "Back to the Ambulance"),
+            "The council member asked what was possible. The treasurer’s estimate showed that collecting the "
+            "existing tax better, starting with the oldest delinquent accounts listed in Part 30’s action plan, "
+            "could raise a similar amount within a year without any rate change.",
+            "The draft was set aside, and the collection drive began that quarter. Two years later, when the five-year period had passed, a smaller "
+            "adjustment within the 10 percent ceiling went through hearings, publication and the counter "
+            "briefing without a single problem. By then, the second ambulance had already been bought from the better collections.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Confusing percent with percentage points", "10 percent of a 1 percent rate is 0.1 point."),
+            ("point", "Forgetting the last adjustment", "Keep a dated history of every tax ordinance."),
+            ("point", "Skipping publication", "An ordinance must be published or posted as Section 188 requires."),
+            ("point", "Changing the rate but not the system", "Update the billing tables and test them."),
+            ("h", "Key Takeaways"),
+            ("point", "Once every five years", "At most, under Section 191."),
+            ("point", "Ten percent of the Code’s rate", "A share of the rate, not ten points."),
+            ("point", "Hearings, then publication", "Within ten days of approval, for three consecutive days."),
+            ("point", "The treasurer disseminates", "Section 189 furnishes copies for public dissemination."),
+            ("h", "Your Part 34 Action Plan"),
+            ("point", "If you work in a treasury", "Build a dated list of every tax ordinance and the rates it "
+             "set."),
+            ("point", "If you sit in the sanggunian", "Ask for the date of the last adjustment and the 10 percent "
+             "ceiling before debating any new rate."),
+            ("point", "If you are a business owner", "Ask the treasurer’s office for the current schedule of "
+             "rates and the ordinance that set them."),
+            ("cta", "Read: Inside the Local Treasury, Part 28: What Local Governments Cannot Tax, the Limits in Section 133", "/blog/what-local-governments-cannot-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("ask", "When did your local government last adjust its tax rates?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 33: When a Private Partner Builds, Local PPPs Under the 2023 Code",
+        "slug": "local-public-private-partnerships",
+        "category": "finance",
+        "date": "May 28, 2027",
+        "summary": "A local government can let a private company build and run a facility, such as a terminal or "
+                   "a market, under a public-private partnership. Since the PPP Code of 2023, local projects are "
+                   "confirmed by the local development council and approved by the sanggunian. This part explains "
+                   "the basics and what the treasury should watch: promises the government makes, money it "
+                   "receives, and records it must keep.",
+        "publish_on": "2027-05-28 21:00",
+        "body": [
+            "The bus terminal had outgrown its lot ten years ago. A loan would take most of the local "
+            "government’s borrowing room, as Part 29 explained. Then a private company offered to build a new "
+            "terminal, run it for 25 years, and share the fees with the local government.",
+            "The mayor liked the idea. The treasurer had questions: who collects the fees, how the share is "
+            "checked, and what the local government promises to pay if the terminal earns less than expected.",
+            "(The terminal, the company and the figures are invented for this post. The rules quoted below come "
+            "from Republic Act No. 11966, the Public-Private Partnership Code of the Philippines.)",
+            "Part 32 looked at a fund set aside by law. This part looks at a way to build public facilities with "
+            "private money. By the end, you will know what a local PPP project is, who approves it, what a "
+            "government undertaking is, and the questions a treasury should ask before and after the contract "
+            "is signed.",
+            ("photo", "blog/finance-ppp.jpg", "A local public-private partnership: a private partner builds and "
+             "runs a facility, the local government approves and oversees it, and the treasury tracks every "
+             "promise and every peso. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A New Code Since 2023"),
+            "Republic Act No. 11966 was approved on December 5, 2023. It brought the rules for public-private "
+            "partnerships into one code. Its repealing clause lists Republic Act No. 6957, the old "
+            "Build-Operate-and-Transfer Law, as amended by Republic Act No. 7718, among the laws repealed or "
+            "modified.",
+            "The Code also says that after it took effect, no other PPP guidelines, codes or ordinances may be "
+            "used to enter into partnerships, except those made in accordance with the Code and its "
+            "implementing rules. A local government that had its own PPP ordinance should check it against the "
+            "Code.",
+            ("h", "What Counts as a Local PPP Project"),
+            "The Code defines a local PPP project as “a PPP Project that is undertaken by LGUs and LUCs,” "
+            "meaning local governments and local universities and colleges. A PPP project, in turn, covers "
+            "public infrastructure or development projects and services carried out under the Code.",
+            ("point", "Examples", "A transport terminal, a public market, a water system or a waste facility, "
+             "built or run by a private partner under a contract with the local government."),
+            ("point", "Not a simple purchase", "Buying supplies or hiring a contractor to build a road the local "
+             "government will run itself is ordinary procurement, not a PPP."),
+            ("h", "Who Approves"),
+            "Section 7 of the Code sets the approving bodies.",
+            ("point", "The local development council confirms", "“Prior to approval, Local PPP Projects "
+             "implemented by LGUs shall be confirmed by the respective local development councils.”"),
+            ("point", "The sanggunian approves", "“Local PPP Projects shall be approved by the respective local "
+             "Sanggunians in the case of LGUs.”"),
+            ("point", "National funds need national review", "If national government funds are involved, the "
+             "proposed government undertaking goes to the national review body named in the Code."),
+            ("point", "Unsolicited proposals", "A proposal that comes from a private company, like the terminal "
+             "offer, is submitted to the PPP Center to check that it is complete, under Section 10."),
+            ("h", "Government Undertakings: The Promises"),
+            "The Code defines government undertakings as “any form of contribution and/or support, which the "
+            "government may extend to a Private Partner” for a PPP project. These are the part the treasury "
+            "must watch most closely.",
+            ("point", "Land or rights of way", "The local government provides the lot."),
+            ("point", "Payments", "The local government pays the partner a fixed amount each year, for example "
+             "for a facility the public uses for free."),
+            ("point", "Guarantees", "The local government promises to cover a shortfall if fees fall below a "
+             "set level."),
+            "Each promise is a future claim on local money. A guarantee may cost nothing for years, then a great "
+            "deal in a bad one.",
+            ("photo", "blog/finance-ppp-checks.jpg", "What the treasury tracks in a local PPP: promises the "
+             "local government made, money due to it, and the records that prove both. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Questions the Treasury Should Ask Before Signing"),
+            ("point", "What exactly do we promise to pay, and when?", "Each payment should appear in a schedule "
+             "that the budget office can plan around, year by year."),
+            ("point", "What could we owe in a bad year?", "Work out the worst case of any guarantee. Part 31 "
+             "showed why estimates must be realistic."),
+            ("point", "Who collects the fees?", "If the partner collects, how will the local government’s share "
+             "be computed, paid and checked?"),
+            ("point", "What records will we receive?", "Monthly reports, audited statements, ticket counts. The "
+             "contract should name them and their deadlines."),
+            ("point", "What happens at the end?", "Who owns the facility, and in what condition it must be "
+             "handed over."),
+            ("h", "After Signing: The Treasury’s Routine"),
+            ("point", "Record the revenue share", "Issue official receipts for every payment received, as for "
+             "any other local income."),
+            ("point", "Check it against the reports", "Compare the share paid with the partner’s reported "
+             "collections. Part 37 of the Business Intelligence Series showed how to find the few causes behind "
+             "most of a gap."),
+            ("point", "Keep a register of promises", "List every government undertaking, its amount, its "
+             "trigger and its due date."),
+            ("point", "Flag the triggers early", "If fees are trending toward a guarantee level, tell the budget "
+             "office before the year’s budget is set."),
+            ("h", "Back to the Terminal"),
+            "The terminal offer included a guarantee: if annual fees fell below ₱12,000,000, the local "
+            "government would pay the difference. The local government’s share was expected to be about "
+            "₱1,800,000 a year. The treasurer worked out that if fees fell to ₱8,000,000 in a bad year, for "
+            "example during a long road closure, the local government would owe the partner ₱4,000,000, more "
+            "than two years of its expected share.",
+            "The proposal went back for changes before reaching the development council. The final version "
+            "replaced the guarantee with a longer term, and the treasury’s register of promises showed a single "
+            "line: land provided, no payments due.",
+            ("h", "Where to Get Help"),
+            "Local governments do not have to work out a partnership alone.",
+            ("point", "The PPP Center", "The national agency that receives unsolicited proposals under the Code "
+             "also publishes guidelines for local projects on its website."),
+            ("point", "Your own offices", "The planning office prepares the project, the legal office reviews "
+             "the contract, the budget office plans the payments, and the treasury tracks what is promised and "
+             "received. Part 20 described who does what in the treasurer’s office."),
+            "A partnership touches every one of these offices for many years, so each should see the contract "
+            "before it is signed.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Seeing only the free building", "Read every promise the local government makes in return."),
+            ("point", "No worst case", "Price each guarantee before approval, not after the first bad year."),
+            ("point", "Trusting reports without checking", "Compare the share paid with the partner’s numbers."),
+            ("point", "Using an old local PPP ordinance", "Check it against the 2023 Code."),
+            ("h", "Key Takeaways"),
+            ("point", "One code since 2023", "Republic Act No. 11966 replaced the old BOT Law framework."),
+            ("point", "Council confirms, sanggunian approves", "For local PPP projects of local governments."),
+            ("point", "Government undertakings are promises", "Land, payments and guarantees, each a future "
+             "claim on local money."),
+            ("point", "The treasury tracks both sides", "What is promised and what is received."),
+            ("h", "Your Part 33 Action Plan"),
+            ("point", "If you work in a treasury", "Start a register of promises for every PPP or similar "
+             "contract your local government has."),
+            ("point", "If you sit in the sanggunian", "Before approving a PPP, ask for the worst-case cost of "
+             "every guarantee, in pesos per year."),
+            ("point", "If you are a resident", "Ask whether your local government has any PPP projects and how "
+             "their fees are shared."),
+            ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit", "/blog/when-local-governments-borrow/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Business Intelligence Series, Part 37: The Pareto Chart, Finding the Few Causes Behind Most of a Problem", "/blog/business-intelligence-part-37-pareto-chart/"),
+            ("ask", "Does your local government have a facility built or run by a private partner?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 32: The Disaster Fund, Five Percent Set Aside Before the Storm",
+        "slug": "local-disaster-risk-reduction-fund",
+        "category": "finance",
+        "date": "May 24, 2027",
+        "summary": "Every local government must set aside at least 5 percent of its estimated regular revenue for "
+                   "disaster risk reduction and management. Thirty percent of that is a quick response fund, and "
+                   "what is not spent moves to a special trust fund for five years. This part explains the rules "
+                   "in Section 21 of Republic Act No. 10121 and the treasury’s part in keeping the money ready.",
+        "publish_on": "2027-05-24 21:00",
+        "body": [
+            "The typhoon passed on a Tuesday night. By Wednesday morning, the evacuation center held 312 "
+            "families, and the disaster office needed rice, water and sleeping mats before noon.",
+            "The treasurer did not have to search for the money. It had been set aside in January, in a fund "
+            "the law requires every local government to keep, for exactly this kind of morning.",
+            "(The local government, the storm and the amounts are invented for this post. The rules quoted below "
+            "come from Republic Act No. 10121, the Philippine Disaster Risk Reduction and Management Act of "
+            "2010.)",
+            "Part 31 showed how next year’s income is estimated. This part looks at one slice of the budget that "
+            "is fixed by law as a share of that estimate. By the end, you will know how big the disaster fund "
+            "must be, what it may pay for, what the quick response fund is, what happens to money left at "
+            "year-end, and where the treasury fits in.",
+            ("photo", "blog/finance-ldrrmf.jpg", "The disaster fund: at least 5 percent of estimated regular "
+             "revenue, with 30 percent kept as a quick response fund and the unspent balance carried in a "
+             "special trust fund. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "From Calamity Fund to Disaster Fund"),
+            "Section 21 of Republic Act No. 10121 begins by renaming an older fund: “The present Local Calamity "
+            "Fund shall henceforth be known as the Local Disaster Risk Reduction and Management Fund.” The "
+            "law itself shortens it to LDRRMF.",
+            "The new name matches what the law lets the money pay for: not only the day after a calamity, but "
+            "also the months before one.",
+            ("h", "How Much: At Least Five Percent"),
+            "The law sets a floor: “Not less than five percent (5%) of the estimated revenue from regular "
+            "sources shall be set aside as the LDRRMF.”",
+            ("point", "Estimated revenue from regular sources", "₱150,000,000 in this example, taken from the "
+             "budget’s income estimate described in Part 31."),
+            ("point", "LDRRMF, at least 5 percent", "₱7,500,000."),
+            ("point", "Quick response fund, 30 percent of that", "₱2,250,000."),
+            ("point", "The rest, 70 percent", "₱5,250,000 for other disaster risk reduction activities."),
+            "Five percent is the minimum. A local government that faces frequent storms or floods may set aside "
+            "more.",
+            ("h", "What the Fund May Pay For"),
+            "Section 21 says the fund supports disaster risk management activities, “such as, but not limited "
+            "to,” the following:",
+            ("point", "Preparedness", "Pre-disaster preparedness programs, including training."),
+            ("point", "Equipment and supplies", "Purchasing life-saving rescue equipment, supplies and "
+             "medicines."),
+            ("point", "After the event", "Post-disaster activities."),
+            ("point", "Insurance", "Payment of premiums on calamity insurance."),
+            "The law adds that the local disaster risk reduction and management council monitors and evaluates "
+            "the use and disbursement of the fund, based on the local disaster risk reduction and management "
+            "plan.",
+            ("h", "The Quick Response Fund"),
+            "The law states: “Of the amount appropriated for LDRRMF, thirty percent (30%) shall be allocated as "
+            "Quick Response Fund (QRF).” It describes the QRF as a stand-by fund for relief and recovery "
+            "programs, so that living conditions in stricken areas can be normalized as quickly as possible.",
+            "That is the money the treasurer released on Wednesday morning. Because it was already appropriated "
+            "and set aside, the disbursement followed the normal steps in Part 7, from obligation to check, "
+            "without waiting for a new budget.",
+            ("photo", "blog/finance-ldrrmf-flow.jpg", "How the fund moves in a year: set aside in the budget, "
+             "spent on preparedness and response, and any balance carried to a special trust fund for up to five "
+             "years. Figures are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Money Left at Year-End"),
+            "Disasters do not follow the calendar, so the law does not let unused money simply disappear into "
+            "the general fund at year-end.",
+            ("point", "First, a special trust fund", "Section 21 says unexpended LDRRMF “shall accrue to a "
+             "special trust fund solely for the purpose of supporting” disaster risk reduction and management "
+             "activities of the local council."),
+            ("point", "Then, five years", "Money not used within five years after it went into the trust fund "
+             "reverts to the general fund, where the sanggunian may use it for other social services."),
+            "So a balance left at the end of this year can still buy rescue boats three years from now, but not "
+            "seven.",
+            ("h", "Where the Treasury Fits"),
+            ("point", "Keep the balances apart", "Part 16 explained why the Special Education Fund is tracked "
+             "separately. The disaster fund and its trust fund need the same care, so that every peso can be "
+             "traced to its purpose."),
+            ("point", "Track the year each balance came from", "The five-year limit runs from when the money "
+             "went into the trust fund. A simple table by year shows which balances are closest to the limit."),
+            ("point", "Keep cash ready", "The quick response fund is only useful if the cash is there when "
+             "the disbursement voucher arrives. Part 13 covered deposits and bank accounts."),
+            ("point", "Support the reports", "Part 10 listed the reports a local government must post, including "
+             "the use of its disaster risk reduction and management fund."),
+            ("h", "A Simple Monthly Report"),
+            "The disaster office plans the spending. The treasury can make the balances easy to see with one "
+            "short table each month.",
+            ("point", "This year’s fund", "Appropriated, obligated, paid and remaining, shown separately for "
+             "the quick response fund and the rest."),
+            ("point", "The trust fund", "Each balance by the year it arrived, with the year it reaches the "
+             "five-year limit."),
+            ("point", "Cash on hand", "The bank balance available for the fund, so nobody assumes money that "
+             "is not there."),
+            "Shared with the disaster office and the local chief executive, the table answers the first "
+            "question asked on any storm morning: how much can we spend today?",
+            ("h", "Back to Wednesday Morning"),
+            "By noon, the relief goods were at the evacuation center. Over the next month, the QRF paid for food, "
+            "water, mats and repairs to the center’s roof, a total of ₱1,940,000.",
+            "At year-end, ₱1,300,000 of the year’s fund remained, mostly from a training program that had been "
+            "postponed. It moved to the special trust fund. The treasury recorded it under the year it arrived, "
+            "and the next year’s disaster plan used part of it for two rescue boats and life vests.",
+            ("h", "What Residents Can Check"),
+            ("point", "The posted report", "Look for the use of the disaster fund among the reports your local "
+             "government posts."),
+            ("point", "The 5 percent", "Compare the fund with the estimated regular revenue in the budget."),
+            ("point", "Preparedness, not only relief", "Ask how much went to training, equipment and warning "
+             "systems before the season, not only to relief after it."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating 5 percent as a ceiling", "It is a floor."),
+            ("point", "Spending only after disasters", "The law covers preparedness too."),
+            ("point", "Mixing the balances", "Keep the fund and its trust fund separate from the general fund."),
+            ("point", "Losing track of the five years", "Record each balance by the year it arrived."),
+            ("h", "Key Takeaways"),
+            ("point", "At least 5 percent", "Of estimated revenue from regular sources."),
+            ("point", "30 percent is the QRF", "A stand-by fund for relief and recovery."),
+            ("point", "Unspent money stays for disasters", "In a special trust fund for up to five years."),
+            ("point", "The council monitors its use", "Based on the local disaster plan."),
+            ("h", "Your Part 32 Action Plan"),
+            ("point", "If you work in a treasury", "Build a table of trust fund balances by year of accrual and "
+             "mark any that are four years old."),
+            ("point", "If you sit in the sanggunian", "Ask how this year’s fund is split between preparedness "
+             "and response."),
+            ("point", "If you are a resident", "Find your local government’s posted report on the disaster fund "
+             "and ask what it bought before the last storm season."),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar", "/blog/special-education-fund/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("ask", "Do you know what your local government’s disaster fund bought before the last storm?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget",
         "slug": "estimating-next-years-income",
         "category": "finance",

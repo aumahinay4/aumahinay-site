@@ -9,6 +9,130 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "title": "Cybersecurity Series, Part 40: Forty Parts in Ten Habits, the Series Wrap-Up",
+        "slug": "cybersecurity-part-40-series-wrap-up",
+        "category": "security",
+        "date": "May 23, 2027",
+        "summary": "The last part of the Cybersecurity Series gathers forty parts into ten habits: for your "
+                   "accounts, your devices, the scams that reach you, and the office where you work. It ends with "
+                   "a one-page checklist and a map of where to go back for each topic.",
+        "publish_on": "2027-05-23 21:00",
+        "body": [
+            "This series opened with how modern cyberattacks really work. Since then it has covered fake parcels, cloned voices, lost phones, shared office computers, a locked records room "
+            "and a group chat with too many members.",
+            "Forty lessons are hard to keep in mind. Ten short habits, each with a reason, are easier. That is "
+            "what this final part is for.",
+            "(This is a summary of the earlier parts of the series. Each habit points back to the parts that "
+            "explain it, with their sources.)",
+            "Part 39 closed with office group chats. This part looks back over the whole series. When you finish "
+            "reading, you will have ten habits that sum up the series, a one-page checklist "
+            "for an office, a list of where to report problems in the Philippines, and a map of which part to "
+            "reread for each topic.",
+            ("photo", "blog/cyber-wrapup.jpg", "Forty parts in ten habits: protect your accounts, keep devices "
+             "updated and locked, pause before every request for money or codes, and give the office a simple "
+             "baseline. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Habits for Your Accounts"),
+            ("point", "1. One strong, unique password per account, with a second step", "Part 2 explained why "
+             "identity is the new perimeter. Turn on two-step verification wherever it is offered, and keep "
+             "passwords out of notebooks and group chats."),
+            ("point", "2. Never share a one-time PIN", "The code is meant only for you. Treat anyone who asks for it, however official they sound, as a scammer. "
+             "Parts 13, 27 and 35 showed how scammers ask for it while pretending to help."),
+            "Accounts are the keys. In scam after scam in this series, the loss began when someone handed over "
+            "a key.",
+            ("h", "Habits for Your Devices"),
+            ("point", "3. Update, then update again", "Part 11 called updates the fix you keep postponing. Turn "
+             "on automatic updates for the phone, the computer and the apps."),
+            ("point", "4. Lock and encrypt", "A screen lock and encryption, from Parts 12 and 17, turn a lost "
+             "device into only a lost device."),
+            ("point", "5. Wipe before you let go", "Part 29 walked through what to do before selling, donating "
+             "or throwing away a phone or laptop."),
+            ("h", "Habits for the Scams That Reach You"),
+            ("point", "6. Pause when it is urgent", "A deadline, a prize, a threat or a crying voice is a signal "
+             "to slow down. Fake delivery texts, fake aid pages, job offers, romance and tech support scams in "
+             "this series all used urgency."),
+            ("point", "7. Check through a channel you already trust", "Call the number on the back of your "
+             "card or the official website you typed yourself, never the number in the message. Part 15 showed "
+             "how to read a web address, and Part 19 how a sender can be faked."),
+            ("point", "8. Money and codes never move by chat or call alone", "A request for a transfer, load or "
+             "code is confirmed in person or by a known number first. Part 22 explained why even a familiar "
+             "voice is not enough."),
+            ("photo", "blog/cyber-wrapup-map.jpg", "A map of the series: which parts to reread for accounts, "
+             "devices, scams and the office. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Habits for the Office"),
+            ("point", "9. A one-page baseline everyone follows", "Part 18 gave a small office ten rules, from "
+             "one person, one account to access ending when the job ends. Parts 33, 37, 38 and 39 applied them "
+             "to shared computers, doors and keys, departing staff and group chats."),
+            ("point", "10. Report fast, without blame", "Part 9 laid out incident response. A clerk who reports "
+             "a mistake within the hour does more good than one who hides it and hopes. Part 20 added the "
+             "Data Privacy Act duties that apply at every desk."),
+            ("h", "A One-Page Office Checklist"),
+            "Print this, and check it once a quarter.",
+            ("point", "Accounts", "Every person has their own login. Two-step verification is on for email and "
+             "key systems. The access list is current."),
+            ("point", "Devices", "Updates are automatic. Screens lock. Laptops are encrypted."),
+            ("point", "Backups", "Important files have a copy that has been restored at least once as a test."),
+            ("point", "People", "New staff are briefed. Departing staff are closed out on the last day."),
+            ("point", "Places", "Restricted rooms are locked. Keys are listed and returned."),
+            ("point", "Messages", "Work chats have current members only. No personal data is posted there."),
+            ("point", "Reporting", "Everyone knows whom to tell, and how fast."),
+            "Part 23 offered a yearly checkup for individuals. This list is the office version.",
+            ("h", "Where to Report in the Philippines"),
+            ("point", "Scams and cybercrime", "The Cybercrime Investigation and Coordinating Center hotline "
+             "1326, mentioned throughout this series."),
+            ("point", "Bank and e-wallet fraud", "Your bank or e-wallet provider first, through its official "
+             "app or hotline, so it can try to stop the transfer."),
+            ("point", "Personal data breaches at work", "Your office’s Data Protection Officer, as Part 9 explained. Under "
+             "the National Privacy Commission’s breach rules, some breaches must be reported to the Commission within 72 hours."),
+            ("point", "Fake pages and accounts", "Report them on the platform where you found them."),
+            ("h", "Where to Reread"),
+            ("point", "How attacks work", "Part 1, Part 3 on human hacking, Part 5 on ransomware, Part 7 on why "
+             "apps get hacked, and Part 10 on what comes next."),
+            ("point", "Home and personal", "Part 4 on home networks, Part 6 on the cloud, Part 16 on public "
+             "Wi-Fi, and Part 28 on keeping kids safer online."),
+            ("point", "Money and scams", "Parts 13, 24 to 27, 30 to 32 and 34 to 36."),
+            ("point", "Social media and fake identities", "Part 14 on cloned accounts and Part 22 on deepfakes "
+             "and cloned voices."),
+            ("point", "Files and privacy", "Part 21 on sharing files and Part 20 on privacy at work."),
+            ("point", "The office", "Parts 8, 9, 18, 33 and 37 to 39."),
+            ("h", "Passing the Habits On"),
+            "A habit often spreads faster when someone shows it than when someone posts it.",
+            ("point", "One habit per staff meeting", "Spend five minutes on one habit, with one story from this "
+             "series, and ask who has seen something like it."),
+            ("point", "Pair a new staff member with a buddy", "On the first day, the buddy helps set up two-step "
+             "verification and shows where the checklist is kept."),
+            ("point", "Share at home", "Parents, children and older relatives receive the same fake texts and "
+             "calls. Ten minutes at the dinner table may save a family’s savings."),
+            ("h", "Why Habits, Not Tools"),
+            "Tools help, and several parts recommended them. But story after story in this series turned on a "
+            "moment when a person decided: to click, to share a code, to post a screenshot, to leave an account "
+            "open. A habit makes the safe choice automatic in that moment. A checklist keeps the office from "
+            "depending on any one person’s memory.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating security as the technical person’s job", "Every habit above is for everyone."),
+            ("point", "Waiting for a big incident", "Small lapses are the warning."),
+            ("point", "Trying everything at once", "Pick one habit a week until all ten are routine."),
+            ("point", "Blaming the person who reports", "Blame teaches people to stay quiet."),
+            ("h", "Key Takeaways"),
+            ("point", "Accounts", "Unique passwords, two-step verification, and no shared codes."),
+            ("point", "Devices", "Updated, locked, encrypted, and wiped before you let go."),
+            ("point", "Scams", "Pause, check through a trusted channel, and never move money or codes on a "
+             "request alone."),
+            ("point", "The office", "A one-page baseline and fast, blame-free reporting."),
+            ("h", "Your Final Action Plan"),
+            ("point", "This week", "Turn on two-step verification for your email and your main bank or e-wallet "
+             "account."),
+            ("point", "This month", "Print the office checklist and go through it with your supervisor."),
+            ("point", "Every quarter", "Pick the weakest line on the checklist and fix it."),
+            "Thank you for reading all forty parts. The habits are short on purpose. Keep them where you can see "
+            "them, and pass them on to the one person in your office who still writes passwords on a card.",
+            ("cta", "Read: Cybersecurity Series, Part 1: How Modern Cyberattacks Really Work", "/blog/cybersecurity-part-1-how-cyberattacks-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 9: Incident Response, or What to Do When Something Goes Wrong", "/blog/cybersecurity-part-9-incident-response/"),
+            ("cta", "Read: Cybersecurity Series, Part 23: Your Yearly Security Checkup, One Afternoon, Twelve Checks", "/blog/cybersecurity-part-23-yearly-security-checkup/"),
+            ("ask", "Which of the ten habits will you start this week?"),
+        ],
+    },
+    {
         "title": "Cybersecurity Series, Part 39: Office Group Chats, Who Belongs, What to Post and What to Keep",
         "slug": "cybersecurity-part-39-office-group-chats",
         "category": "security",
