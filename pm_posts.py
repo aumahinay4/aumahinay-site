@@ -14,6 +14,390 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 41: A Timeline Anyone Can Read, Building a Gantt Chart in Google Sheets",
+        "slug": "project-management-part-41-gantt-chart-in-sheets",
+        "category": "pm",
+        "date": "May 30, 2027",
+        "summary": "A list of tasks with start and end dates is hard to read. The same list drawn as bars on a "
+                   "calendar shows at a glance what overlaps, what is late and what comes next. This part builds "
+                   "a simple Gantt chart in Google Sheets with conditional formatting, adds a line for today, and "
+                   "notes the built-in timeline view where it is available.",
+        "publish_on": "2027-05-30 21:00",
+        "body": [
+            "The project schedule lived in a sheet with forty rows: task, owner, start date, end date. Every "
+            "Monday, the lead read it aloud at the team meeting, row by row. By the tenth row, nobody was really listening.",
+            "Then the lead added colored bars beside the dates, one column per week. The next Monday, a clerk "
+            "pointed at the screen before the lead had said a word: “Those three bars all land on the same week, "
+            "and they all belong to me.”",
+            "(The project, the tasks and the dates are invented, continuing the treasury examples of this series. "
+            "The Google Sheets features described are real.)",
+            "Part 40 held retrospectives while the work was running. This part makes the schedule itself easy to "
+            "read. After this post, you will know what a Gantt chart shows, how to build one in Google Sheets "
+            "with conditional formatting, how to mark today and late tasks, and what the built-in timeline view "
+            "offers.",
+            ("photo", "blog/pm-gantt.jpg", "A Gantt chart: one row per task, one column per week, and a colored "
+             "bar from each task’s start to its end, so overlaps and delays are visible at a glance. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Gantt Chart Shows"),
+            ("point", "Rows are tasks", "Here, the work packages from the work breakdown structure in Part 14."),
+            ("point", "Columns are time", "Days, weeks or months, depending on the length of the project."),
+            ("point", "Bars are durations", "Each bar starts on the task’s start date and ends on its finish "
+             "date."),
+            "Read across a row, and you see how long each single task takes. Read down a single week, and you see everything "
+            "happening at the same time, which is where overloads hide. Part 18 covered assigning people "
+            "without overloading them.",
+            ("h", "Step 1: The Task Table"),
+            "Set up four columns, with headers in row 2 and tasks from row 3:",
+            ("point", "Column A", "Task, such as “Scan market contracts.”"),
+            ("point", "Column B", "Owner."),
+            ("point", "Column C", "Start date."),
+            ("point", "Column D", "End date."),
+            "Use real dates, not text, so the formulas can compare them correctly. Part 29 of the Data Analytics Series "
+            "covered dates in Google Sheets.",
+            ("h", "Step 2: The Calendar Row"),
+            ("point", "First week", "In F2, type the Monday of the project’s first week, such as March 1, 2027."),
+            ("point", "Next weeks", "In G2, type =F2+7 and fill to the right for as many weeks as the project "
+             "runs."),
+            ("point", "Format", "Show the dates as day and month, and narrow the columns so the weeks fit on "
+             "one screen."),
+            ("h", "Step 3: The Bars"),
+            "Select the grid from F3 to the last week and the last task. Open Format, then Conditional "
+            "formatting, and choose “Custom formula is.”",
+            ("point", "Formula", "=AND(F$2+6>=$C3, F$2<=$D3)"),
+            ("point", "What it means", "Color the cell if any day of that week falls between the task’s start "
+             "and end dates."),
+            ("point", "The dollar signs", "F$2 keeps the row of week dates fixed. $C3 and $D3 keep the date "
+             "columns fixed. Everything else moves as the rule is applied across the grid."),
+            ("point", "Choose a fill color", "One calm color for all bars is enough to start."),
+            "Part 31 of the Data Analytics Series introduced conditional formatting. This is the same tool, "
+            "used to draw.",
+            ("photo", "blog/pm-gantt-sheet.jpg", "The sheet behind the chart: a task table on the left, week "
+             "dates across the top, and one conditional formatting rule that colors each bar. Dates are "
+             "invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: Mark Today"),
+            "Add a rule to the row of week dates, F2 to the last week, so the current week stands out:",
+            ("point", "Formula", "=AND(TODAY()>=F$2, TODAY()<F$2+7)"),
+            ("point", "Format", "Bold text and a gold fill on the date of the current week."),
+            "Now the chart answers the Monday question without anyone reading it aloud: what should be "
+            "happening this week?",
+            ("h", "Step 5: Show Late Tasks"),
+            ("point", "Add a Status column", "In column E, mark each task Done, In progress or Not started."),
+            ("point", "A third rule for the bars", "=AND(F$2+6>=$C3, F$2<=$D3, $D3<TODAY(), $E3<>\"Done\")"),
+            ("point", "Format", "A red fill. Bars of tasks past their end date and not done turn red."),
+            ("point", "Put it first", "Google’s help explains that rules are evaluated in the order listed, "
+             "and the first rule found to be true defines the format. Drag the late rule above the bar rule."),
+            "The red bars become the first items of the status report from Part 25.",
+            ("h", "Keeping It Readable"),
+            ("point", "Group by phase", "Put a bold phase row, such as “Preparation” or “Rollout,” above its "
+             "tasks, and leave its bar cells blank."),
+            ("point", "Freeze the left columns", "Freeze columns A to E, so task names stay visible while you "
+             "scroll across the weeks."),
+            ("point", "One screen if possible", "If the project runs longer than a screen of weeks, show the "
+             "next eight weeks in detail and the rest by month on a second tab."),
+            ("point", "Print for the wall", "Some teams still read best from paper. A printed chart taped near "
+             "the work, updated each Monday, can work as well as a screen."),
+            ("h", "Dependencies and the Critical Path"),
+            "A simple Gantt chart in Sheets does not draw arrows between tasks. Keep the dependencies in a column "
+            "instead, such as “after Task 3,” and set each start date from the predecessor’s end. Part 20 "
+            "explained dependencies, and Part 16 the critical path that sets the finish date. Color the "
+            "critical tasks differently, so a delay on them is noticed first.",
+            ("h", "The Built-In Timeline View"),
+            "Google Sheets also has a timeline view. Google’s help describes it as an interactive visual layer "
+            "in Sheets, created from the Insert menu, that needs a card title, a start date and an end date for "
+            "each task. The same help page lists only Google Workspace editions as eligible, so it may not "
+            "appear in every account.",
+            ("point", "If you have it", "It is quicker to set up and can group cards by owner."),
+            ("point", "If you do not", "The conditional formatting chart works in any version of Sheets."),
+            ("h", "Back to the Clerk’s Three Bars"),
+            "The three tasks in the same week were scanning contracts, updating the stall list and preparing "
+            "the first batch of notices. The lead moved the notices two weeks later, because they depended on "
+            "the updated list anyway, and asked a second clerk to take half the scanning.",
+            "The schedule had held those facts for a month, in plain dates that everyone had heard every Monday. The bars made them visible in a second, to everyone at once.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Dates typed as text", "The rules will not color anything."),
+            ("point", "Too fine a scale", "Daily columns for a six-month project make the chart too wide to read."),
+            ("point", "Never updating it", "A chart that shows last month’s plan misleads."),
+            ("point", "Hiding the owner", "Keep the owner column visible, so overloads show by name."),
+            ("h", "Key Takeaways"),
+            ("point", "Tasks down, weeks across", "One bar per task from start to end."),
+            ("point", "One rule draws the bars", "=AND(F$2+6>=$C3, F$2<=$D3)"),
+            ("point", "Two more rules add meaning", "A column for today and red for late tasks."),
+            ("point", "Timeline view where available", "Conditional formatting everywhere else."),
+            ("h", "Your Part 41 Action Plan"),
+            ("point", "Today", "Copy your project’s task list into a sheet with owner, start and end dates."),
+            ("point", "This week", "Add the calendar row and the bar rule, then the today and late rules."),
+            ("point", "Every Monday", "Update the status column before the meeting and start with the red bars."),
+            "The Monday meeting got shorter. The lead stopped reading the schedule aloud and started each "
+            "meeting with the same question: “Any red bars, and any weeks with too many bars for one person?”",
+            ("cta", "Read: Project Management Series, Part 14: The Work Breakdown Structure, One Bite at a Time", "/blog/project-management-part-14-work-breakdown-structure/"),
+            ("cta", "Read: Project Management Series, Part 16: The Critical Path, Finding the Work That Sets the Finish Date", "/blog/project-management-part-16-critical-path/"),
+            ("cta", "Read: Project Management Series, Part 20: Understanding Dependencies, When Task B Is Waiting on Task A", "/blog/project-management-part-20-dependencies/"),
+            ("cta", "Read: Data Analytics Series, Part 31: Conditional Formatting, Letting the Sheet Point at the Problems", "/blog/data-analytics-part-31-conditional-formatting/"),
+            ("ask", "How does your team see the schedule today: a list, a chart or someone’s memory?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 40: The Retrospective, Improving While the Work Is Still Running",
+        "slug": "project-management-part-40-retrospectives",
+        "category": "pm",
+        "date": "May 27, 2027",
+        "summary": "A lessons-learned review at the end helps the next project. A retrospective every few weeks "
+                   "helps the current one. This part explains what a retrospective is, a simple three-question "
+                   "format, how to keep it short and blame-free, and how to make sure its actions actually happen.",
+        "publish_on": "2027-05-27 21:00",
+        "body": [
+            "The market records project was in its second month. The team was busy, the work was moving, and "
+            "the same small problems kept coming back: scanned contracts saved under different names, a shared "
+            "sheet that two people edited at once, and a weekly meeting that ran long every time.",
+            "Each problem was mentioned in passing, then forgotten until it happened again. Nobody had set aside "
+            "time to fix the way the team worked, only the work itself.",
+            "(The project and the team are invented, continuing the treasury examples of this series. The "
+            "description of a retrospective is quoted from Scrum.org.)",
+            "Part 39 looked at benefits after a project ends. This part looks inside a running project, at how "
+            "a team gets better while there is still time to use what it learns. After this post, you will "
+            "know what a retrospective is, how it differs from lessons learned, a simple format, how to run one "
+            "in under an hour, and how to make its decisions stick.",
+            ("photo", "blog/pm-retro.jpg", "A retrospective: every few weeks, the team looks at how it worked, "
+             "not only what it produced, and picks one or two changes to try. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Retrospective Is"),
+            "The retrospective comes from Scrum, the agile method mentioned in Part 5. Scrum.org states that "
+            "“the purpose of the Sprint Retrospective is to plan ways to increase quality and effectiveness.” "
+            "The team inspects how the last cycle went with regard to individuals, interactions, processes, "
+            "tools and its definition of done.",
+            "A treasury project does not need to run Scrum to borrow the idea. Every two to four weeks, the team "
+            "stops for a short meeting about how it is working.",
+            ("point", "About the way of working", "Not a status report. Part 25 already covered status."),
+            ("point", "Short and regular", "Scrum.org timeboxes it to a maximum of three hours for a one-month "
+             "cycle. A small treasury team can do it in 45 minutes."),
+            ("point", "Ends with actions", "One or two changes to try before the next one."),
+            ("h", "Retrospective or Lessons Learned?"),
+            ("point", "Lessons learned", "Part 28 held it at closing. It helps the next project."),
+            ("point", "Retrospective", "Held during the project. It helps this project, while the lessons can "
+             "still change the outcome."),
+            "The two work well together. Notes from each retrospective make the final lessons-learned review "
+            "faster and more accurate.",
+            ("h", "A Simple Format: Three Questions"),
+            ("point", "What helped us?", "Things to keep doing."),
+            ("point", "What got in the way?", "Problems with the process, tools or handoffs, not with people."),
+            ("point", "What will we try next?", "One or two specific changes, each with an owner."),
+            "Some teams use other labels, such as keep, stop and start. The labels matter less than ending with "
+            "a short list of actions.",
+            ("photo", "blog/pm-retro-board.jpg", "One sheet, three columns: what helped, what got in the way, "
+             "and what we will try next, with an owner and a date for each action. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Running One in 45 Minutes"),
+            ("point", "5 minutes: check last time’s actions", "Did they happen? Did they help? Start here, or "
+             "the meeting turns into a list of wishes."),
+            ("point", "10 minutes: write silently", "Each person writes notes for the first two questions on a "
+             "shared sheet or sticky notes. Writing first lets quieter members be heard."),
+            ("point", "15 minutes: group and discuss", "Put similar notes together. Talk about the biggest "
+             "groups first."),
+            ("point", "10 minutes: choose actions", "Pick one or two. Give each an owner and a date."),
+            ("point", "5 minutes: record", "Copy the actions into the issue log from Part 26 or the minutes from "
+             "Part 27."),
+            ("h", "Keeping It Blame-Free"),
+            "A retrospective works only if people say what really happened.",
+            ("point", "Talk about the process", "“Files were saved under different names” instead of “Ana saves "
+             "files wrong.”"),
+            ("point", "The lead speaks last", "If the most senior person speaks first, others may simply agree."),
+            ("point", "What is said stays useful, not personal", "Notes record problems and actions, not who "
+             "complained."),
+            "Part 38 covered conflict about the work. A retrospective is a regular, calm place to raise it "
+            "before it grows.",
+            ("h", "Back to the Market Records Project"),
+            "The first retrospective took 40 minutes, a little under the time set aside. Three problems got the most notes.",
+            ("point", "File names", "Action: one naming pattern, written at the top of the folder, owned by the "
+             "records clerk. Part 15 of the Data Analytics Series suggested a pattern."),
+            ("point", "Two people editing one sheet", "Action: each person works in their own tab, and one "
+             "person merges on Fridays."),
+            ("point", "Long weekly meeting", "Not chosen this time. Two actions were enough."),
+            "Two weeks later, the second retrospective began by checking both actions. File names were "
+            "consistent. The tab system worked but the Friday merge took an hour, so it became the next "
+            "problem to solve. The long meeting was finally addressed in the third retrospective, with a "
+            "written agenda.",
+            ("h", "Questions That Open the Discussion"),
+            "When the notes are thin, a few extra questions help people remember.",
+            ("point", "Where did we wait?", "For a signature, a file, an answer or a person."),
+            ("point", "What did we do twice?", "Rework can be a sign of an unclear step."),
+            ("point", "What surprised us?", "A surprise is a gap in the plan or the procedure."),
+            ("point", "What would we tell a new member?", "The answer is a lesson worth writing down."),
+            ("h", "A Team of Two or Three"),
+            "Small treasury teams may think a retrospective is too formal. It does not have to be.",
+            ("point", "Fifteen minutes", "Over coffee at the end of every second Friday."),
+            ("point", "One shared sheet", "Three columns, the date at the top, kept for the whole project."),
+            ("point", "One action", "Even a single small change every two weeks adds up to more than twenty in "
+             "a year."),
+            "The format matters less than the habit of stopping, looking and changing one thing.",
+            ("h", "Making Actions Stick"),
+            ("point", "Few actions", "One or two that get done beat ten that never do."),
+            ("point", "An owner and a date", "Every action, no exceptions."),
+            ("point", "Check them first next time", "That one habit keeps retrospectives from becoming "
+             "complaint sessions."),
+            ("point", "Change the procedure", "When an action works, write it into the SOP from Part 37."),
+            ("point", "Make results visible", "Keep a running list of every change the team has made, with the "
+             "date. Seeing the list grow shows the team that the meetings are worth the time."),
+            ("point", "Drop what did not help", "If an action made things worse, say so at the next meeting and "
+             "undo it. A failed experiment is still useful information."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Turning it into a status meeting", "Talk about how you work, not what you finished."),
+            ("point", "Too many actions", "Pick one or two."),
+            ("point", "Skipping it when busy", "Busy periods are when a weak process hurts."),
+            ("point", "Naming and blaming", "Describe the process, not the person."),
+            ("h", "Key Takeaways"),
+            ("point", "A short, regular review", "Every two to four weeks, about how the team works."),
+            ("point", "Three questions", "What helped, what got in the way, what we will try next."),
+            ("point", "Check last time’s actions first", "So each meeting builds on the last."),
+            ("point", "Blame-free", "Process, not people."),
+            ("h", "Your Part 40 Action Plan"),
+            ("point", "This week", "Book 45 minutes with your team for a first retrospective."),
+            ("point", "At the meeting", "Use the three questions and leave with no more than two actions."),
+            ("point", "Next time", "Open by checking those actions."),
+            "By the end of the project, the team had held six retrospectives and made nine small changes. The "
+            "final lessons-learned review took half the usual time, because most of the lessons had already "
+            "been written down, and several had already been applied.",
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("cta", "Read: Project Management Series, Part 5: Waterfall, Agile or Hybrid? Choosing How to Run the Work", "/blog/project-management-part-5-waterfall-agile-hybrid/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 38: When the Team Disagrees, Five Ways to Handle Conflict", "/blog/project-management-part-38-handling-conflict/"),
+            ("ask", "When did your team last stop to talk about how it works, not just what it finished?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 39: After the Project Ends, Checking Whether the Benefits Arrived",
+        "slug": "project-management-part-39-benefits-review",
+        "category": "pm",
+        "date": "May 22, 2027",
+        "summary": "A project can finish on time and on budget and still fail to deliver what it promised. A "
+                   "benefits review, held months after closing, checks whether the promised improvement really "
+                   "happened. This part explains outputs, outcomes and benefits, who owns the review, how to "
+                   "measure against a baseline, and what to do when the numbers fall short.",
+        "publish_on": "2027-05-22 21:00",
+        "body": [
+            "The text reminder project had closed in good order. Every barangay was enrolled, the procedure was "
+            "written, and the lessons-learned review was filed. At the year-end meeting, a council member asked "
+            "a question nobody had prepared for: “So did more people pay on time?”",
+            "The project lead knew the pilot numbers by heart. Nobody had checked the whole municipality since "
+            "the rollout.",
+            "(The project and the figures continue the invented example of earlier parts. The definitions "
+            "quoted below come from a published Project Management Institute paper.)",
+            "Part 38 settled disagreements inside the team. This part steps outside the project, after it has "
+            "ended, to ask whether it did what it was for. After this post, you will know the difference "
+            "between an output, an outcome and a benefit, who should own the benefits, how to measure them "
+            "against a baseline, when to check, and what to do if the benefits did not arrive.",
+            ("photo", "blog/pm-benefits.jpg", "A benefits review: compare the measure after the project with "
+             "the baseline before it, at set times, and name an owner who keeps checking after the team "
+             "disbands. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Finished Is Not the Same as Successful"),
+            "Part 28 closed the project: handover, sign-off and lessons learned. Closing confirms that the work "
+            "was delivered. It does not prove that anyone is better off.",
+            "A paper on benefits realization published by the Project Management Institute defines a benefit "
+            "as a “measurable improvement resulting from the outcome which is perceived as an advantage by a "
+            "stakeholder.” The same paper notes that benefits can be realized significantly after the project "
+            "has closed. That is why the check has to happen later, and why someone has to remember to do it.",
+            ("h", "Output, Outcome, Benefit"),
+            ("point", "Output", "What the project made. Here: a list of business owners’ mobile numbers and a "
+             "procedure for sending reminders."),
+            ("point", "Outcome", "What changed because of it. Here: owners receive a reminder before every "
+             "quarterly deadline."),
+            ("point", "Benefit", "The measurable improvement someone values. Here: more owners pay the "
+             "quarterly business tax on time, and fewer delinquency notices need to be printed and served."),
+            "A project can deliver every output and still miss the benefit, for example if the reminders go to "
+            "old numbers that nobody answers.",
+            ("h", "The Benefit Owner"),
+            "The project team disbands at closing. The benefit stays with the office that runs the work.",
+            ("point", "Name an owner", "A position in the operating office, such as the head of the license "
+             "and permits section, not the project lead."),
+            ("point", "Write it in the handover", "Part 28’s handover note should list each benefit, its measure "
+             "and its owner."),
+            ("point", "Set the review dates", "Put them on the office calendar before the team leaves."),
+            ("h", "Start From the Baseline"),
+            "A benefit can only be measured against what came before. Part 6 asked for objectives with a "
+            "number and a date. The baseline is the starting number.",
+            ("point", "Before the rollout", "About 60 percent of quarterly business tax payments were on time "
+             "across the municipality."),
+            ("point", "Pilot result", "Part 32’s pilot barangay reached 78 percent, while the comparison "
+             "barangays moved only from 59 to 61 percent."),
+            ("point", "The promised benefit", "On-time payment of at least 70 percent across the municipality "
+             "within a year of rollout."),
+            ("h", "When to Check"),
+            ("point", "Three months", "Is the outcome happening? Are reminders going out and arriving?"),
+            ("point", "Six months", "Is the benefit appearing in the numbers?"),
+            ("point", "Twelve months", "Has it lasted through a full cycle of deadlines?"),
+            "Each check takes an hour if the measure was defined at the start. It takes a week if someone has "
+            "to work out what to count.",
+            ("photo", "blog/pm-benefits-chart.jpg", "On-time payment before and after the rollout, checked at "
+             "three, six and twelve months against the baseline and the target. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Back to the Council Member’s Question"),
+            "The head of the license and permits section, named as the owner in the handover, ran the numbers "
+            "the following week.",
+            ("point", "Three months", "96 percent of reminders delivered. The outcome was happening."),
+            ("point", "Six months", "On-time payment 72 percent, up from about 60."),
+            ("point", "Twelve months", "74 percent. The target of 70 was met and held."),
+            ("point", "Printed notices", "Delinquency notices served in the year fell from 410 to 260, which "
+             "saved paper, postage and collectors’ time."),
+            "The answer to the council member was yes, with numbers.",
+            ("h", "Is It Really the Project?"),
+            "Other things change too. A new online payment option, a busy year for the market or a new "
+            "ordinance can lift payments without any reminder.",
+            ("point", "Compare with the pilot", "The pilot’s comparison barangays showed how much on-time "
+             "payment moved without reminders."),
+            ("point", "List other changes", "Write down anything else that changed in the same period, and "
+             "say so in the report."),
+            ("point", "Be modest", "Say “the reminders likely account for most of the gain,” not “the reminders "
+             "caused all of it.” Part 35 of the Data Analytics Series explained why two numbers moving "
+             "together is not proof."),
+            ("h", "Watch for Disbenefits"),
+            "Some results are unwelcome. Name them too.",
+            ("point", "Reminders after payment", "Owners who had already paid still received a reminder, and "
+             "some called to complain."),
+            ("point", "More calls to the counter", "Owners phoned to ask how much they owed."),
+            "The office fixed the first by removing paid accounts from the list on the morning of each send, "
+            "a new step in the procedure from Part 37.",
+            ("h", "When the Benefit Falls Short"),
+            ("point", "Find the weak step", "Were reminders sent? Delivered? Read? Acted on?"),
+            ("point", "Fix the operation, not the history", "The project is closed. Improvements now go through "
+             "the operating office’s normal routine."),
+            ("point", "Report honestly", "A shortfall reported early is a lesson. A shortfall hidden becomes a "
+             "surprise at the next audit."),
+            ("point", "Feed the next project", "Add what was learned to the project kit from Part 30, so the "
+             "next business case promises what can be measured."),
+            ("h", "A One-Page Benefits Report"),
+            "Part 25 kept project status on one page. A benefits report can be just as short.",
+            ("point", "The promise", "The benefit, its measure and its target, copied from the business case."),
+            ("point", "The numbers", "Baseline, target and the latest result, with the date of each."),
+            ("point", "Other changes", "Anything else that could have moved the measure in the same period."),
+            ("point", "Disbenefits", "Unwanted effects and what was done about them."),
+            ("point", "Next review", "The date and the owner."),
+            "One page is easy to file with the project records and easy to hand to a council member who asks.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Stopping at closing", "Delivery is not the same as benefit."),
+            ("point", "No baseline", "Without a starting number, nobody can show improvement."),
+            ("point", "No owner", "If the project lead owns the benefit, it ends when the team does."),
+            ("point", "Claiming every gain", "Note other changes that could explain the numbers."),
+            ("h", "Key Takeaways"),
+            ("point", "Outputs, outcomes, benefits", "What was made, what changed, and what improved."),
+            ("point", "An owner in the operating office", "Named in the handover, with review dates."),
+            ("point", "Baseline and target", "Measured at three, six and twelve months."),
+            ("point", "Honest attribution", "Compare, list other changes, and report disbenefits too."),
+            ("h", "Your Part 39 Action Plan"),
+            ("point", "For a closed project", "Write down what it promised, find the baseline, and measure "
+             "today’s number."),
+            ("point", "For a running project", "Name the benefit owner now and put three review dates in the "
+             "calendar."),
+            ("point", "For the next business case", "Part 10 asked what a project would gain. Add how and when "
+             "that gain will be measured."),
+            "The twelve-month review took one page. The council member kept a copy, and at the next budget "
+            "hearing asked the same question of two other projects that had closed the year before.",
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("cta", "Read: Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big", "/blog/project-management-part-32-running-a-pilot/"),
+            ("cta", "Read: Project Management Series, Part 6: Writing Objectives That Actually Mean Something", "/blog/project-management-part-6-writing-objectives/"),
+            ("cta", "Read: Data Analytics Series, Part 35: Correlation Is Not Causation, When Two Numbers Move Together", "/blog/data-analytics-part-35-correlation-and-causation/"),
+            ("ask", "Which finished project in your office has never been checked for its benefits?"),
+        ],
+    },
+    {
         "title": "Project Management Series, Part 38: When the Team Disagrees, Five Ways to Handle Conflict",
         "slug": "project-management-part-38-handling-conflict",
         "category": "pm",

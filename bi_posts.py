@@ -13,6 +13,130 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "title": "Business Intelligence Series, Part 40: The Closing Checklist, Forty Parts on One Page",
+        "slug": "business-intelligence-part-40-closing-checklist",
+        "category": "bi",
+        "date": "May 25, 2027",
+        "summary": "The last part of the Business Intelligence Series turns forty parts into one checklist to "
+                   "run before any report or dashboard goes out, a map of where each topic was covered, and a "
+                   "simple plan for the first month, quarter and year of treasury BI.",
+        "publish_on": "2027-05-25 21:00",
+        "body": [
+            "The new analyst had read every part of this series, some twice. On her first Monday, the head of "
+            "office handed her a dashboard that was due Friday and asked one question: “Is it ready to show the "
+            "mayor?”",
+            "She did not need to reread forty parts. She needed one page of questions she could answer yes or "
+            "no, with each no pointing to the part that would fix it. That page is this final part.",
+            "(The analyst and the office are invented. Each item points back to the part of the series that "
+            "explains it, with its sources.)",
+            "Part 39 traced a collection funnel step by step. This part steps back from single techniques to the "
+            "whole series. By the end, you will have a closing checklist for any report or dashboard, a map of "
+            "the series by topic, and a plan for building treasury BI over a year.",
+            ("photo", "blog/bi-wrapup.jpg", "The closing checklist: the reader, the data, the numbers, the "
+             "design and the upkeep, checked before any report or dashboard goes out. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Closing Checklist"),
+            "Answer each question yes or no. Every no has a part to go back to.",
+            ("h", "1. The Reader"),
+            ("point", "Do you know who will use it and for what decision?", "Part 4 started every project with "
+             "the people, then the brief."),
+            ("point", "Can the main finding be told in five minutes?", "Part 11 built the five-minute briefing."),
+            ("point", "Does it read well on a phone?", "Part 12 kept dashboards fast and readable on small "
+             "screens."),
+            ("h", "2. The Data"),
+            ("point", "Does every number trace back to its source?", "Part 7 moved data from the counter to the "
+             "report, and Part 16 built a raw, clean and summary pipeline in Google Sheets."),
+            ("point", "Were the pipeline’s checks run?", "Part 9 tested the pipeline before anyone saw a number."),
+            ("point", "Is every measure defined in the data dictionary, with an owner?", "Part 10 kept BI honest "
+             "with a dictionary, owners and a change log."),
+            ("point", "Will last year’s numbers still be true after details change?", "Part 36 kept past reports "
+             "true when a business moved to another barangay or a rate changed."),
+            ("h", "3. The Numbers"),
+            ("point", "Are comparisons fair?", "Part 19 compared this month with last month and last year, on "
+             "equal terms."),
+            ("point", "Are targets shown honestly?", "Part 33 warned about the year-to-date trap."),
+            ("point", "Are trends shown without guessing?", "Part 24 used trend lines and moving averages."),
+            ("point", "Do the bumps have explanations?", "Part 25 annotated charts with lines, bands and notes."),
+            ("h", "4. The Design"),
+            ("point", "Can everyone read the colors?", "Part 26 covered contrast, labels and the red-green trap."),
+            ("point", "Can the reader ask the next question?", "Part 13 added filters and drill-down."),
+            ("point", "Does it say when the data was last updated?", "Part 30 made freshness visible."),
+            ("h", "5. The Upkeep"),
+            ("point", "Does each viewer see only what they should?", "Part 17 shared dashboards without sharing "
+             "too much, and Part 32 kept private data off public pages."),
+            ("point", "Is anyone using it?", "Part 28 measured views and decisions."),
+            ("point", "Is there a plan to retire it when it stops being useful?", "Part 29 turned off what "
+             "nobody uses."),
+            ("photo", "blog/bi-wrapup-map.jpg", "A map of the series by topic, from the BI team and the data "
+             "model to the analyses near the end of the series. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "A Map of the Series"),
+            ("point", "Foundations", "Part 1 on what BI is for, Part 2 on the team, Part 3 on what a treasury "
+             "should watch every day, and Part 4 on the brief."),
+            ("point", "Data and models", "Parts 5, 6 and 15 on models and storage, Part 14 on the date table, "
+             "and Parts 22 and 23 on calculated fields and blending."),
+            ("point", "Reports and dashboards", "Part 8 on report or dashboard, Part 18 on alerts, Part 20 on a "
+             "first live Data Studio dashboard, Part 27 on maps, and Part 31 on scheduled email delivery."),
+            ("point", "Putting it together", "Part 21 on a treasury BI setup in four weeks."),
+            ("point", "Analyses", "Part 34 on aging of arrears, Part 35 on small multiples, Part 37 on the "
+             "Pareto chart, Part 38 on cohorts and Part 39 on the collection funnel."),
+            ("h", "A Plan for the First Year"),
+            ("point", "First month", "Write one brief, build one clean pipeline from the collection records, "
+             "and publish one daily view with its update time. Part 3 suggested what a treasury should watch "
+             "every day."),
+            ("point", "First quarter", "Add the data dictionary, fair comparisons and one alert. Show it in a "
+             "five-minute briefing, and ask what decision it helped."),
+            ("point", "First year", "Add one deeper analysis each quarter, such as aging of arrears, a Pareto "
+             "chart, cohorts or a funnel. Measure use, and retire what nobody opens."),
+            "Part 21 laid out a four-week setup. This plan stretches the same steps over a year, so a small "
+            "office can do them alongside its regular work.",
+            ("h", "Back to Friday"),
+            "The analyst ran the checklist on Tuesday. Three answers were no: the dashboard did not show its "
+            "update time, two colors were hard to tell apart, and a total did not match the official report "
+            "because a business that had moved was counted in two barangays.",
+            "She fixed all three by Thursday. On Friday, the mayor asked why one barangay’s collections had "
+            "dropped in March. The note on the chart already answered it.",
+            ("h", "If You Read Reports Instead of Building Them"),
+            "Not every reader of this series builds dashboards. Some simply receive them. Five questions help "
+            "anyone judge a report someone else made.",
+            ("point", "When was this updated?", "A number without a date may be months old."),
+            ("point", "Compared with what?", "A total means little without last month, last year or a target "
+             "beside it."),
+            ("point", "Where does this number come from?", "The person who built the report should be able to "
+             "say which records were counted."),
+            ("point", "What is not included?", "Late postings, other funds or certain barangays may be left out "
+             "on purpose. The report should say so."),
+            ("point", "What should I do about it?", "A good report points to a decision, not only a fact."),
+            "A builder who can answer all five on the spot has probably run the checklist above.",
+            ("h", "What the Series Was Really About"),
+            "Forty parts covered tools and charts, but the same idea ran through all of them: a number is only "
+            "useful if the right person can trust it, understand it and act on it in time. Each part removed one "
+            "reason a reader might not.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Building before asking", "Start with the reader and the decision."),
+            ("point", "Publishing unchecked numbers", "Test the pipeline every time the data changes."),
+            ("point", "Keeping everything forever", "Measure use and retire old reports."),
+            ("point", "Hiding the date", "Every view should say when its data was last updated."),
+            ("h", "Key Takeaways"),
+            ("point", "Five areas to check", "The reader, the data, the numbers, the design and the upkeep."),
+            ("point", "Every no has a fix", "The checklist points back to the part that explains it."),
+            ("point", "Start small", "One brief, one pipeline and one daily view in the first month."),
+            ("point", "Trust is the goal", "Right person, trusted number, understood, acted on in time."),
+            ("h", "Your Final Exercise"),
+            ("point", "Step 1", "Pick one report or dashboard your office already uses."),
+            ("point", "Step 2", "Run the closing checklist and count the noes."),
+            ("point", "Step 3", "Fix the easiest no this week and the hardest one this month."),
+            ("point", "Step 4", "Print the checklist and keep it beside whoever builds the next report."),
+            "Thank you for reading all forty parts of the Business Intelligence Series. The checklist is short "
+            "on purpose. Run it before the next report leaves your desk, and every time after that.",
+            ("cta", "Read: Business Intelligence Series, Part 21: Putting It Together, a Treasury BI Setup in Four Weeks", "/blog/business-intelligence-part-21-putting-it-together/"),
+            ("cta", "Read: Business Intelligence Series, Part 4: Start With the People, Then Write the Brief", "/blog/business-intelligence-part-4-the-bi-brief/"),
+            ("cta", "Read: Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log", "/blog/business-intelligence-part-10-keeping-bi-honest/"),
+            ("cta", "Read: Business Intelligence Series, Part 28: Is Anyone Using the Dashboard? Measuring Views and Decisions", "/blog/business-intelligence-part-28-dashboard-usage/"),
+            ("ask", "Which question on the checklist would your office’s main report fail first?"),
+        ],
+    },
+    {
         "title": "Business Intelligence Series, Part 39: The Collection Funnel, Finding the Step Where Money Is Lost",
         "slug": "business-intelligence-part-39-collection-funnel",
         "category": "bi",

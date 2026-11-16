@@ -12,6 +12,410 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 41: Real or Nominal Pesos? Adjusting Collections for Inflation",
+        "slug": "data-analytics-part-41-real-and-nominal-pesos",
+        "category": "data",
+        "date": "May 29, 2027",
+        "summary": "A peso collected today buys less than a peso collected four years ago. Comparing amounts across "
+                   "years without adjusting for prices can make a flat year look like growth. This part explains "
+                   "the Consumer Price Index, how to turn nominal pesos into real pesos in Google Sheets, and how "
+                   "to report both honestly.",
+        "publish_on": "2027-05-29 21:00",
+        "body": [
+            "The slide said collections had grown 15 percent in four years, from ₱40.0 million to ₱46.0 million. "
+            "The room applauded.",
+            "The budget officer did not clap. Fuel, rice, office supplies and contractors had all become more "
+            "expensive over the same four years. Her question was simple: “Can we buy 15 percent more with it?” "
+            "Nobody had checked.",
+            "(The collections and the index values below are invented for this lesson, so the arithmetic is easy "
+            "to follow. For real work, use the official Consumer Price Index from the Philippine Statistics "
+            "Authority.)",
+            "Part 40 sorted records into groups with IF, IFS and SWITCH. This part deals with comparisons across "
+            "years, where the peso itself changes value. After this post, you will know what the Consumer Price "
+            "Index measures, the difference between nominal and real amounts, how to convert one to the other "
+            "in Google Sheets, and how to report the result without confusing anyone.",
+            ("photo", "blog/data-real-pesos.jpg", "Real or nominal pesos: divide by a price index to compare "
+             "amounts from different years in the same purchasing power. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What the Consumer Price Index Measures"),
+            "The Philippine Statistics Authority describes the Consumer Price Index, or CPI, as an indicator of "
+            "the change in the average retail prices of a fixed basket of goods and services. It defines the "
+            "inflation rate as the annual or monthly rate of change of the CPI, in percent.",
+            ("point", "A base year equals 100", "The current series uses 2018 as its base year, after the PSA "
+             "rebased it from 2012."),
+            ("point", "A higher index means higher prices", "An index of 120 means the basket costs about 20 "
+             "percent more than in the base year."),
+            ("point", "It is an average", "Your own costs may rise faster or slower than the basket."),
+            ("h", "Nominal and Real"),
+            ("point", "Nominal pesos", "The amounts as recorded on the receipts, in each year’s own pesos."),
+            ("point", "Real pesos", "The same amounts restated in the prices of one chosen year, so they can be "
+             "compared fairly."),
+            "Real pesos answer the budget officer’s question: how much can this money buy, compared with before?",
+            ("h", "The Practice Data"),
+            "Type this into a new sheet, with headers in row 1: Year in column A, Collections in millions in B, "
+            "and the example index in C.",
+            ("point", "2022", "Collections 40.0, index 110"),
+            ("point", "2023", "Collections 41.5, index 116"),
+            ("point", "2024", "Collections 43.0, index 120"),
+            ("point", "2025", "Collections 44.4, index 124"),
+            ("point", "2026", "Collections 46.0, index 128"),
+            "Again, these index values are invented for practice. They are not official figures.",
+            ("h", "Converting to Real Pesos"),
+            "To restate every year in 2022 pesos, multiply each amount by the 2022 index and divide by that "
+            "year’s index.",
+            ("point", "Formula", "In D2: =B2*$C$2/C2, then fill down to D6. The dollar signs keep the 2022 "
+             "index fixed."),
+            ("point", "2022", "40.0 × 110 ÷ 110 = 40.0"),
+            ("point", "2024", "43.0 × 110 ÷ 120 = about 39.4"),
+            ("point", "2026", "46.0 × 110 ÷ 128 = about 39.5"),
+            "In nominal pesos, collections rose 15 percent. In 2022 pesos, they slipped about 1 percent. The "
+            "office was collecting more pesos that bought slightly less.",
+            ("photo", "blog/data-real-pesos-lines.jpg", "Nominal collections rise every year, while the same "
+             "amounts in 2022 pesos stay nearly flat. Figures and index values are invented. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Choosing the Base Year"),
+            "Any year can be the base, as long as you say which one.",
+            ("point", "Use the earliest year", "To ask whether buying power grew since then."),
+            ("point", "Use the latest year", "To restate old amounts in today’s pesos, which readers find "
+             "easier to picture. In E2: =B2*$C$6/C2."),
+            ("point", "Label it", "Write “in 2022 pesos” or “in 2026 pesos” in the column header and the chart "
+             "title."),
+            "The growth rate in real terms is the same whichever year you choose as the base.",
+            ("h", "Real Growth in One Formula"),
+            ("point", "Nominal growth", "=B6/B2-1 returns 15.0 percent."),
+            ("point", "Price growth", "=C6/C2-1 returns about 16.4 percent."),
+            ("point", "Real growth", "=(B6/B2)/(C6/C2)-1 returns about −1.2 percent."),
+            "Part 30 explained how to describe changes like these without mixing up percent and percentage "
+            "points.",
+            ("h", "Where to Find the Official Index"),
+            ("point", "The PSA releases", "The Philippine Statistics Authority publishes the CPI and inflation "
+             "rate each month, with technical notes explaining the method."),
+            ("point", "Annual averages for yearly data", "When your data is by year, use the annual average "
+             "index, not a single month."),
+            ("point", "One series only", "Use indices from the same base year. Mixing a 2012-based figure with "
+             "a 2018-based one gives wrong results."),
+            ("point", "Record the source", "Note the release and the date you copied the numbers in a source "
+             "note, as Part 9 described."),
+            ("h", "The Same Idea for Fees"),
+            "Real pesos also show what happens to a fee that has not changed in years.",
+            ("point", "The example", "A certification fee of ₱100 was set in 2022, when the example index "
+             "was 110. By 2026 the index is 128."),
+            ("point", "Its buying power", "=100*110/128 returns about 86. The same ₱100 now buys what ₱86 "
+             "bought in 2022."),
+            ("point", "What it means", "The fee did not change, but its real value fell by about 14 percent, "
+             "while the cost of paper, printing and staff time to issue the certification may have risen."),
+            "This does not mean a fee should rise automatically. Fees are set by ordinance, within the limits "
+            "of the law. It does give the sanggunian a clear number to look at when it reviews them.",
+            ("h", "Charting Both Lines"),
+            ("point", "One chart, two lines", "Select the Year, nominal and real columns and insert a line chart."),
+            ("point", "Same axis", "Keep both lines on one vertical axis in pesos, so the gap between them is "
+             "honest."),
+            ("point", "A clear title", "“Collections rose in pesos but stayed flat in buying power,” not just "
+             "“Collections, 2022 to 2026.” Part 27 recommended titles that state the finding."),
+            ("h", "When to Adjust, and When Not To"),
+            ("point", "Adjust", "Comparing collections, spending or fees across several years."),
+            ("point", "Do not adjust", "Within a single year, or when checking amounts against receipts, "
+             "ordinances or the budget, which are all in nominal pesos."),
+            ("point", "Show both", "In a report, give the nominal figure first, because it matches the books, "
+             "then the real figure for comparison."),
+            ("h", "Back to the Slide"),
+            "The next version of the slide showed two lines: nominal collections rising, and real collections "
+            "nearly flat. The caption read: “Collections grew 15 percent in pesos, but prices grew about as "
+            "fast. In buying power, collections were about the same as in 2022.”",
+            "Nobody applauded. Instead, the council asked which revenue sources had kept up with prices and "
+            "which had fallen behind, which was the more useful question for the next budget.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Comparing pesos across years without saying so", "Label every amount nominal or real."),
+            ("point", "Hiding the nominal figure", "It is the one that matches the books."),
+            ("point", "Mixing base years", "Use one CPI series throughout."),
+            ("point", "Treating the CPI as your own costs", "It is an average basket, a reasonable guide, not "
+             "an exact measure of your office’s prices."),
+            ("h", "Key Takeaways"),
+            ("point", "CPI tracks average prices", "Base year 2018 equals 100 in the current series."),
+            ("point", "Real = nominal × base index ÷ year’s index", "One formula, filled down."),
+            ("point", "Real growth can be negative", "Even when nominal growth looks healthy."),
+            ("point", "Report both, labeled", "Nominal for the books, real for comparison."),
+            ("h", "Your Part 41 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute real collections in 2022 pesos."),
+            ("point", "Step 2", "Compute them again in 2026 pesos and confirm the real growth is the same."),
+            ("point", "Step 3", "Chart nominal and real collections as two lines."),
+            ("point", "Step 4", "Find the official annual CPI for the same years and repeat with real figures."),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("cta", "Read: Data Analytics Series, Part 9: Where Data Comes From, First-, Second- and Third-Party", "/blog/data-analytics-part-9-where-data-comes-from/"),
+            ("cta", "Read: Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("cta", "Read: Data Analytics Series, Part 40: IF, IFS and SWITCH, Letting the Sheet Sort Records Into Groups", "/blog/data-analytics-part-40-if-ifs-switch/"),
+            ("ask", "Which of your office’s yearly figures would look different in real pesos?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 40: IF, IFS and SWITCH, Letting the Sheet Sort Records Into Groups",
+        "slug": "data-analytics-part-40-if-ifs-switch",
+        "category": "data",
+        "date": "May 26, 2027",
+        "summary": "Typing a category by hand into thousands of rows invites spelling errors and missed rows. IF, "
+                   "IFS and SWITCH in Google Sheets assign the category from a rule instead. This part shows how "
+                   "each one works, why the order of conditions matters, how to avoid the #N/A trap in IFS, and "
+                   "when a lookup table is better.",
+        "publish_on": "2027-05-26 21:00",
+        "body": [
+            "The pivot table showed five payment sizes instead of three. Besides “Large,” “Medium” and “Small,” "
+            "there were “large” and “Meduim.” Two clerks had typed the size of each payment by hand into 3,000 "
+            "rows, and a few rows had been skipped altogether, leaving them in no group at all.",
+            "The rule itself was simple: ₱100,000 or more was large, ₱20,000 or more was medium, and everything "
+            "else was small. A rule that simple belongs in a formula, not in someone’s typing.",
+            "(The office, the payments and the categories are invented for this lesson. The Google Sheets "
+            "functions are real.)",
+            "Part 39 drew the shape of a set of numbers with a histogram. This part sorts each record into a "
+            "named group, so it can be counted, filtered and charted. You will learn how IF makes a choice, how "
+            "to nest it, how IFS reads more cleanly, how SWITCH maps codes to names, how to combine conditions, "
+            "and when to use a lookup table instead.",
+            ("photo", "blog/data-ifs.jpg", "IF, IFS and SWITCH: let a rule assign each row’s category, so the "
+             "same amount always lands in the same group. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "The Practice Data"),
+            "Type these into a new sheet, with headers in row 1. Column A is the receipt number, B the amount, "
+            "and C the fund code.",
+            ("point", "Rows 2 to 5", "R-101, 2,500, GF. R-102, 18,000, GF. R-103, 145,000, SEF. R-104, 7,200, "
+             "GF."),
+            ("point", "Rows 6 to 9", "R-105, 52,000, TF. R-106, 310,000, GF. R-107, 950, SEF. R-108, 99,999, "
+             "GF."),
+            "Type the amounts as plain numbers, without the comma or peso sign, so the formulas can compare "
+            "them. Part 18 covered cleaning amounts that arrive as text.",
+            ("h", "IF: One Question, Two Answers"),
+            "IF asks one yes-or-no question and returns one value for yes and another for no.",
+            ("point", "Formula", "In D2: =IF(B2>=100000, \"Large\", \"Not large\")"),
+            ("point", "Read it as", "If the amount is at least 100,000, write Large. Otherwise, write Not large."),
+            "That handles two groups. The rule has three.",
+            ("h", "Nested IF: A Question Inside a Question"),
+            ("point", "Formula", "=IF(B2>=100000, \"Large\", IF(B2>=20000, \"Medium\", \"Small\"))"),
+            ("point", "How it reads", "If the amount is at least 100,000, Large. If not, ask again: at least "
+             "20,000? Then Medium. Otherwise, Small."),
+            "Nested IF works, but each extra group adds another layer of parentheses, and a missing one breaks "
+            "the whole formula.",
+            ("h", "IFS: Several Questions in a Row"),
+            "Google’s help says IFS evaluates multiple conditions and returns a value that corresponds to the "
+            "first true condition.",
+            ("point", "Formula", "=IFS(B2>=100000, \"Large\", B2>=20000, \"Medium\", TRUE, \"Small\")"),
+            ("point", "The TRUE at the end", "The same help page warns that if all conditions are false, IFS "
+             "returns #N/A. A final TRUE acts as “everything else,” so no row is left without a group."),
+            ("point", "Results", "R-101 Small, R-102 Small, R-103 Large, R-104 Small, R-105 Medium, R-106 "
+             "Large, R-107 Small, R-108 Medium."),
+            ("photo", "blog/data-ifs-order.jpg", "Order matters: IFS stops at the first true condition, so the "
+             "biggest threshold must be checked first. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why the Order Matters"),
+            "IFS stops at the first true condition. Try the conditions the other way around:",
+            ("point", "Wrong order", "=IFS(B2>=20000, \"Medium\", B2>=100000, \"Large\", TRUE, \"Small\")"),
+            ("point", "What goes wrong", "For ₱145,000, the first test, at least 20,000, is already true, so the "
+             "formula returns Medium and never reaches Large. No row would ever be Large."),
+            ("point", "The fix", "Check the largest threshold first, then work down."),
+            ("point", "Test the edges", "Try 99,999, 100,000, 19,999 and 20,000. R-108, at 99,999, should be "
+             "Medium. Change it to 100,000 and it should become Large."),
+            ("h", "SWITCH: Turning Codes Into Names"),
+            "Google’s help says SWITCH tests an expression against a list of cases and returns the value of the "
+            "first matching case, with an optional default when nothing matches.",
+            ("point", "Formula", "In E2: =SWITCH(C2, \"GF\", \"General Fund\", \"SEF\", \"Special Education "
+             "Fund\", \"TF\", \"Trust Fund\", \"Check code\")"),
+            ("point", "The default", "“Check code” appears for any code not on the list, such as a typing error, "
+             "so it stands out instead of hiding."),
+            "SWITCH suits exact matches, such as codes. IFS suits ranges, such as amounts.",
+            ("h", "Combining Conditions With AND and OR"),
+            ("point", "AND", "=IF(AND(C2=\"GF\", B2>=100000), \"Review\", \"\") flags large General Fund "
+             "payments only."),
+            ("point", "OR", "=IF(OR(C2=\"SEF\", C2=\"TF\"), \"Special\", \"General\") groups two codes "
+             "together."),
+            "Keep each formula readable. If it needs more than three conditions, consider a helper column or a "
+            "lookup table.",
+            ("h", "Check the Inputs First"),
+            "A rule is only as good as the values it reads. An amount stored as text will not compare the way "
+            "you expect.",
+            ("point", "Test for numbers", "In a helper column: =ISNUMBER(B2). It returns TRUE for a real number "
+             "and FALSE for text that only looks like one."),
+            ("point", "Count the problems", "=COUNTIF(F2:F9, FALSE) shows how many rows need fixing before "
+             "the categories can be trusted."),
+            ("point", "Flag them in the formula", "=IF(ISNUMBER(B2), IFS(B2>=100000, \"Large\", B2>=20000, "
+             "\"Medium\", TRUE, \"Small\"), \"Check amount\") puts a clear label on any row that is not a "
+             "number."),
+            "Part 31 showed how conditional formatting can color such rows so they stand out.",
+            ("h", "Counting the Groups"),
+            "Once every row has a category, summaries become one formula each.",
+            ("point", "How many in each group", "=COUNTIF(D2:D9, \"Large\") returns 2. Medium also returns 2, "
+             "and Small returns 4."),
+            ("point", "How much in each group", "=SUMIF(D2:D9, \"Large\", B2:B9) returns 455,000."),
+            "Because the categories come from a rule, the counts change by themselves when an amount is "
+            "corrected.",
+            ("h", "When a Lookup Table Is Better"),
+            "If the thresholds change every year, or there are many groups, put the rule in a small table "
+            "instead of inside every formula.",
+            ("point", "Step 1", "In G2:H4, list the lower limits and names: 0 Small, 20000 Medium, 100000 Large."),
+            ("point", "Step 2", "In D2: =XLOOKUP(B2, $G$2:$G$4, $H$2:$H$4, \"\", -1). The -1 tells XLOOKUP to "
+             "take an exact match or the next smaller value."),
+            ("point", "Why it helps", "When the limit for Large changes, edit one cell, and every row updates."),
+            "Part 25 covered XLOOKUP in detail.",
+            ("h", "Back to the Pivot Table"),
+            "The clerks deleted the typed column and filled the IFS formula down all 3,000 rows. The pivot table "
+            "dropped to three groups. A quick ISNUMBER check beside the amounts found two rows typed with a "
+            "letter O instead of a zero. Those two had been given a size by hand before, and nobody had "
+            "noticed that the amounts themselves were not numbers.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Typing categories by hand", "A rule in a formula is consistent on every row."),
+            ("point", "Checking small thresholds first", "IFS and nested IF stop at the first true test."),
+            ("point", "Forgetting the catch-all", "End IFS with TRUE, and give SWITCH a default."),
+            ("point", "Hiding thresholds inside formulas", "Use a lookup table when the rule may change."),
+            ("h", "Key Takeaways"),
+            ("point", "IF", "One question, two answers."),
+            ("point", "IFS", "Several questions, first true wins, TRUE at the end."),
+            ("point", "SWITCH", "Exact codes to names, with a default for anything else."),
+            ("point", "Lookup table", "Best when the rule changes or the groups are many."),
+            ("h", "Your Part 40 Exercise"),
+            ("point", "Step 1", "Enter the practice data and add the IFS formula. Check that R-103 and R-106 "
+             "are Large."),
+            ("point", "Step 2", "Reverse the order of the conditions and see what breaks."),
+            ("point", "Step 3", "Add the SWITCH formula and type a wrong code, such as GG, to see the default."),
+            ("point", "Step 4", "Build the lookup table version and change the Large limit to 150,000."),
+            "With the categories now set by formula, the office added a COUNTIFS summary from Part 23 beside the "
+            "data. It updated itself every morning, and the monthly report no longer needed an afternoon of checking spellings before it could be sent.",
+            ("cta", "Read: Data Analytics Series, Part 39: Histograms, Seeing the Shape of the Data", "/blog/data-analytics-part-39-histograms/"),
+            ("cta", "Read: Data Analytics Series, Part 25: XLOOKUP, Bringing the Right Detail Into Every Row", "/blog/data-analytics-part-25-xlookup/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("ask", "Which column in your office’s sheets is still typed by hand when a rule could fill it?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 39: Histograms, Seeing the Shape of the Data",
+        "slug": "data-analytics-part-39-histograms",
+        "category": "data",
+        "date": "May 21, 2027",
+        "summary": "An average gives one number, and a histogram shows how all the numbers are spread out. "
+                   "This part shows how to group values into bins with COUNTIFS, build a histogram chart in Google "
+                   "Sheets, choose a bin width, and read the common shapes, including a long tail and two peaks.",
+        "publish_on": "2027-05-21 21:00",
+        "body": [
+            "The monthly report said the average waiting time at the payment counter was 15.75 minutes. The "
+            "target was 15. The head of office asked for a second cashier.",
+            "The cashier on duty was puzzled. Most people she served were done in about ten minutes. A few "
+            "waited far longer, and she remembered each of them, because they had come with transactions that "
+            "needed several offices to sign. One chart settled it, and it was not a bar chart of the average.",
+            "(The office, the taxpayers and the waiting times are invented for this lesson. The Google Sheets "
+            "functions and chart settings are real.)",
+            "Part 38 measured spread with the range and the standard deviation. Those are still single numbers. "
+            "This part draws the whole set at once. By the end, you will know what a histogram is, how to build "
+            "one in Google Sheets with a formula and with a chart, how to choose a bin width, how to read the "
+            "common shapes, and what each shape suggests you do next.",
+            ("photo", "blog/data-histogram.jpg", "A histogram: group the values into equal bins, count each bin, "
+             "and draw the counts as touching bars to see the shape of the data. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Histogram Is"),
+            "Google’s help for Sheets says to use a histogram when you want to show the distribution of a data "
+            "set across different buckets or ranges. In plain words, you split the number line into equal "
+            "ranges, called bins or buckets, and count how many values fall into each one.",
+            ("point", "Bars touch", "Each bar covers a range of numbers, and the ranges meet, so the bars sit "
+             "side by side with no gaps."),
+            ("point", "Height is a count", "A tall bar means many values landed in that range."),
+            ("point", "Width is the bin", "Every bin has the same width, such as ten minutes."),
+            "Part 27 matched each question to a chart and paired distribution with the histogram. This part "
+            "shows how to build one.",
+            ("h", "The Practice Data"),
+            "Type these twenty waiting times, in minutes, into A2:A21, with the header “Minutes” in A1.",
+            ("point", "Waiting times", "4, 6, 7, 8, 8, 9, 9, 10, 11, 12, 12, 13, 14, 16, 18, 21, 24, 29, 38, 46"),
+            ("point", "Average", "=AVERAGE(A2:A21) returns 15.75."),
+            ("point", "Median", "=MEDIAN(A2:A21) returns 12."),
+            "The average is higher than the median. Part 26 explained that a few large values pull the average "
+            "up while the median stays in the middle. A histogram shows where those large values sit.",
+            ("h", "Method 1: Count the Bins With a Formula"),
+            "A formula table lets you see the exact counts, which a chart alone does not show.",
+            ("point", "Step 1: List the bin starts", "In C2 to C6, type 0, 10, 20, 30 and 40. Each bin covers ten "
+             "minutes."),
+            ("point", "Step 2: Label each bin", "In D2, type =C2&\"–\"&(C2+9) and fill down, so the labels read "
+             "0–9, 10–19 and so on."),
+            ("point", "Step 3: Count", "In E2, type =COUNTIFS($A$2:$A$21, \">=\"&C2, $A$2:$A$21, \"<\"&C2+10) and "
+             "fill down. Part 23 covered COUNTIFS."),
+            ("point", "Step 4: Check the total", "=SUM(E2:E6) should return 20, the number of values. If it does "
+             "not, a value is outside the bins."),
+            "The counts: 7 people waited 0 to 9 minutes, 8 waited 10 to 19, 3 waited 20 to 29, 1 waited 30 to "
+            "39, and 1 waited 40 to 49. Fifteen of the twenty waited less than 20 minutes.",
+            ("photo", "blog/data-histogram-bins.jpg", "The twenty waiting times in five ten-minute bins. Most "
+             "people waited under 20 minutes, and a thin tail stretches to the right. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Method 2: The Histogram Chart"),
+            ("point", "Step 1", "Select A1:A21."),
+            ("point", "Step 2", "Choose Insert, then Chart. In the Chart editor, set the chart type to "
+             "Histogram chart."),
+            ("point", "Step 3", "On the Customize tab, open Histogram. Google’s help lists options to show item "
+             "dividers and to change the bucket size or the outlier percentile."),
+            ("point", "Step 4", "Set the bucket size to 10, to match the formula table."),
+            ("point", "Step 5", "Give the chart a title that states the finding, such as “Most waits are under "
+             "20 minutes; a few run past 30.”"),
+            "The chart is quick. The formula table is easier to check and to copy into a report. Keeping "
+            "both is useful.",
+            ("h", "Choosing the Bin Width"),
+            "The bin width changes what you see, so try more than one.",
+            ("point", "Too wide", "With bins of 25 minutes, 17 of the 20 land in the first bar and the "
+             "tail shrinks into a single short bar."),
+            ("point", "Too narrow", "With bins of 1 minute, most bars hold zero or one person, and the shape "
+             "turns into noise."),
+            ("point", "A useful middle", "Pick a width that matches how people think about the measure, such "
+             "as five or ten minutes, or ₱1,000 for payments."),
+            ("point", "Keep it fixed when comparing", "Two histograms with different bin widths cannot be "
+             "compared bar by bar."),
+            ("h", "Reading the Shape"),
+            ("point", "A single hump in the middle", "Values cluster around the center and thin out evenly on "
+             "both sides. The average and the median are close."),
+            ("point", "A long tail to the right", "Most values are small, and a few are large. The average sits "
+             "above the median. Waiting times, payment amounts and days late can look like this."),
+            ("point", "Two humps", "Two groups are mixed together. Split the data by a likely cause, such as "
+             "type of transaction or time of day, and draw each group on its own."),
+            ("point", "A sudden wall", "Values pile up at one edge, such as a deadline or a system limit. Ask "
+             "what stops values from going past it."),
+            ("point", "A lonely bar far away", "A value well apart from the rest. Part 34 explained how to check "
+             "whether it is an error or a real case."),
+            ("h", "Back to the Counter"),
+            "The histogram showed a large group of short waits and a thin tail. The cashier pulled the two "
+            "longest cases from the log. Both were business retirements that needed signatures from three "
+            "offices before payment could be taken.",
+            "A second cashier would not have shortened those two waits by much, because the time was spent "
+            "waiting for signatures, not in the payment line. The office instead set up a separate desk for "
+            "transactions that need other offices, with a clerk who walks the papers through. Part 14 of Inside "
+            "the Local Treasury describes what a business retirement involves.",
+            ("h", "Comparing Two Histograms"),
+            "To see whether a change worked, draw the before and after with the same bins.",
+            ("point", "Same bins, same scale", "Use the same bin width and the same height on the vertical "
+             "axis for both."),
+            ("point", "Side by side or stacked", "Place the two charts next to each other, or one above the "
+             "other, so the eye can compare bar heights."),
+            ("point", "Look at the tail", "In the waiting-time case, the goal was to shrink the tail, not to "
+             "move the main hump."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Reporting only the average", "Show the shape, or at least the median beside the average."),
+            ("point", "Gaps between the bars", "A histogram’s bars touch, because the ranges are continuous."),
+            ("point", "Unequal bins", "Bins of different widths make some bars look taller than they should."),
+            ("point", "Trusting one bin width", "Try a wider and a narrower one before deciding what the shape "
+             "is."),
+            ("h", "Key Takeaways"),
+            ("point", "A histogram counts values in equal bins", "And shows the counts as touching bars."),
+            ("point", "Two ways to build it", "COUNTIFS for a checkable table, the Histogram chart for speed."),
+            ("point", "Bin width matters", "Too wide hides detail, too narrow shows noise."),
+            ("point", "The shape suggests the next step", "A long tail, two humps or a wall each point to a "
+             "different question."),
+            ("h", "Your Part 39 Exercise"),
+            ("point", "Step 1", "Enter the practice data and build the formula table with ten-minute bins."),
+            ("point", "Step 2", "Insert a Histogram chart and set the bucket size to 10, then to 5. Note what "
+             "changes."),
+            ("point", "Step 3", "Add five more waits of 40 to 45 minutes. What happens to the shape, the "
+             "average and the median?"),
+            ("point", "Step 4", "Pick one measure in your office, such as payment amounts or days late, and draw "
+             "its histogram."),
+            "Two months after the separate desk opened, the office drew the histogram again with the same bins. "
+            "The main hump had barely moved. The tail past 30 minutes was gone.",
+            ("cta", "Read: Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation", "/blog/data-analytics-part-38-range-and-standard-deviation/"),
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit", "/blog/data-analytics-part-34-outliers/"),
+            ("cta", "Read: Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question", "/blog/data-analytics-part-27-choosing-the-right-chart/"),
+            ("ask", "Which number in your office would look different as a histogram than as an average?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation",
         "slug": "data-analytics-part-38-range-and-standard-deviation",
         "category": "data",
