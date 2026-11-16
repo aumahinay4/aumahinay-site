@@ -224,9 +224,10 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
         t.head(
             t.meta(charset="utf-8"),
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
-            # Google AdSense code, only once SITE["adsense_client"] is set (Butch applies; see content.py)
+            # Google AdSense code, only once SITE["adsense_client"] is set (Butch applies; see content.py).
+            # Never on the 404 page (active is None): AdSense allows no ads on error pages.
             t.script(src=f"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE['adsense_client']}",
-                     crossorigin="anonymous", **{"async": "async"}) if SITE.get("adsense_client") else None,
+                     crossorigin="anonymous", **{"async": "async"}) if SITE.get("adsense_client") and active is not None else None,
             # paint the phone's browser bars in the top bar's navy, so the site looks full-screen
             t.meta(name="theme-color", content="#f3f6fc", media="(prefers-color-scheme: light)"),
             t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
