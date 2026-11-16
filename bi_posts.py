@@ -13,6 +13,253 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "title": "Business Intelligence Series, Part 39: The Collection Funnel, Finding the Step Where Money Is Lost",
+        "slug": "business-intelligence-part-39-collection-funnel",
+        "category": "bi",
+        "date": "May 20, 2027",
+        "summary": "A collection rate tells you how much was collected, but not where the rest was lost. A funnel "
+                   "counts the accounts at each step, from assessed to billed to paid, so the weakest step stands "
+                   "out. This part explains how to build a collection funnel in Google Sheets and how to read it.",
+        "publish_on": "2027-05-20 21:00",
+        "body": [
+            "The real property tax collection rate had stalled at about half of the accounts on the roll. The "
+            "office tried the usual fix: a second round of reminder letters to every unpaid account. The rate "
+            "barely moved.",
+            "A clerk in the records section finally asked the question nobody had asked: “How many of those "
+            "owners ever got the first bill?” Nobody knew. The report showed only the start and the end of the "
+            "process, and the problem was hiding in the middle.",
+            "(The office, the counts and the barangays are invented for this lesson. The method, the chart types "
+            "and the formulas are real.)",
+            "Part 38 followed groups of businesses over the years. This part follows accounts through the steps "
+            "of a single process. Once you finish, you will know what a funnel is, how to count each step "
+            "fairly, how to build a funnel table and chart in Google Sheets, how to read step rates, and how to "
+            "turn the weakest step into a plan.",
+            ("photo", "blog/bi-funnel.jpg", "The collection funnel: count the accounts at each step, from "
+             "assessed to billed to paid, and the step that loses the most stands out. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Funnel Is"),
+            "Microsoft’s Excel help says simply that funnel charts show values across multiple stages in a "
+            "process. Google’s Analytics help describes its funnel exploration as a way to visualize the steps "
+            "users take to complete a task and to see how well they are succeeding or failing at each step.",
+            "Websites use funnels to see where visitors give up before buying. A treasury can use the same idea "
+            "for any process with steps in a fixed order, where some accounts drop out along the way.",
+            ("h", "The Four Steps in This Example"),
+            ("point", "Assessed", "Accounts on the assessment roll for the year: 12,000."),
+            ("point", "Bill delivered", "Accounts whose billing notice reached the owner, confirmed by a "
+             "signed receipt or a delivery log: 8,400."),
+            ("point", "Paid any amount", "Accounts with at least one payment during the year: 7,140."),
+            ("point", "Paid in full", "Accounts with nothing left unpaid for the year: 6,426."),
+            "The overall rate is 6,426 out of 12,000, or 53.6 percent. That was the only number the old report "
+            "showed.",
+            ("h", "Step Rates Tell the Real Story"),
+            "A funnel adds two numbers to each step: the share of the starting count that is still there, and "
+            "the share of the step just before.",
+            ("point", "Assessed to delivered", "8,400 out of 12,000, or 70 percent. 3,600 accounts lost."),
+            ("point", "Delivered to paid any amount", "7,140 out of 8,400, or 85 percent. 1,260 lost."),
+            ("point", "Paid any amount to paid in full", "6,426 out of 7,140, or 90 percent. 714 lost."),
+            "The weakest step was not payment at all. It was delivery. Nearly a third of the owners never "
+            "received a bill, and the second round of reminder letters went out by the same route as the "
+            "first.",
+            ("photo", "blog/bi-funnel-steps.jpg", "The same funnel as a table: count, share of the start, share "
+             "of the previous step and accounts lost at each step. The delivery step loses the most. Figures "
+             "are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Building the Funnel Table in Google Sheets"),
+            ("point", "Step 1: One row per step, in order", "Put the step names in column A, from A2 to A5, "
+             "starting with Assessed."),
+            ("point", "Step 2: Count each step", "In column B, count the accounts. If your account list has a "
+             "column for each step marked Yes or No, a formula such as =COUNTIF(Accounts!D:D, \"Yes\") counts "
+             "the delivered bills."),
+            ("point", "Step 3: Share of the start", "In C2, type =B2/$B$2 and copy it down. Format the column as "
+             "a percentage."),
+            ("point", "Step 4: Share of the previous step", "In D3, type =B3/B2 and copy it down. Leave D2 "
+             "blank, since the first step has nothing before it."),
+            ("point", "Step 5: Accounts lost", "In E3, type =B2-B3 and copy it down. The largest number in "
+             "column E points to the weakest step."),
+            ("point", "Step 6: Chart it", "Select columns A and B and insert a bar chart. Keep the rows in "
+             "process order, never sorted by size, because the order is the point."),
+            "If you work in Excel, Microsoft lists a Funnel chart type under Insert in Office 2021 and Microsoft "
+            "365. A plain bar chart in process order tells the same story in either program.",
+            ("h", "Counting Each Step Fairly"),
+            "A funnel is only honest if every step counts the same thing over the same period.",
+            ("point", "Same unit", "Count accounts at every step, not accounts at one step and owners or "
+             "receipts at another."),
+            ("point", "Same group", "Each step should hold only accounts that passed the step before. An "
+             "account paid without a delivered bill, perhaps by an owner who walked in, should be noted "
+             "separately so the steps still add up."),
+            ("point", "Same period", "Use one tax year for every step. Mixing this year’s bills with last "
+             "year’s payments produces rates that mean nothing."),
+            ("h", "Splitting the Funnel by Barangay"),
+            "One funnel for the whole local government shows the weakest step. Splitting it by barangay shows "
+            "where that step is weakest. In this example, two remote barangays had delivery rates near 40 "
+            "percent, while the poblacion was above 85 percent. The billing notices for the remote areas "
+            "went out with addresses that had not been updated in years.",
+            "Part 35 showed how small multiples put one chart per barangay side by side. The same layout works "
+            "for funnels.",
+            ("h", "Keeping the Funnel Current"),
+            "A funnel built once at year-end tells you what went wrong after it is too late to fix. Built every "
+            "month, it shows the weak step while there is still time to act.",
+            ("point", "Refresh monthly", "Recount each step on the same day each month, from the same account "
+             "list."),
+            ("point", "Keep last year beside it", "Show last year’s step rates in a column next to this year’s, "
+             "so a drop is easy to spot."),
+            ("point", "Show the date", "Part 30 explained why every report should say when its data was last "
+             "updated. A funnel is no different."),
+            "A monthly funnel also shows whether a fix worked. If delivery rises after addresses are updated "
+            "but payment does not follow, the next step needs attention.",
+            ("h", "Back to the Reminder Letters"),
+            "The office stopped sending second letters to every unpaid account. Instead, it spent two months "
+            "updating owner addresses for the two weakest barangays, with help from the barangay offices, and "
+            "redelivered the notices. Delivery for those areas rose, and so did payments.",
+            "The funnel did not collect a single peso. It showed where to spend the effort.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Reporting only the overall rate", "It shows that money is lost, not where."),
+            ("point", "Sorting the steps by size", "A funnel must stay in process order."),
+            ("point", "Counting different things at each step", "Accounts, owners and receipts do not mix."),
+            ("point", "Fixing the last step first", "The largest loss may be early in the process."),
+            ("h", "Key Takeaways"),
+            ("point", "A funnel counts each step", "From assessed to billed to paid, in order."),
+            ("point", "Step rates find the weak point", "Compare each step with the one before it."),
+            ("point", "Accounts lost guide the effort", "Start with the step that loses the most."),
+            ("point", "Split by area", "The same funnel by barangay shows where the weak step is weakest."),
+            ("h", "Your Part 39 Exercise"),
+            "List the steps of one process your office runs, such as real property tax billing or business "
+            "permit renewal. Count the accounts at each step for one year, build the five-column table above, "
+            "and circle the step with the largest number of accounts lost. Then ask the people who handle that "
+            "step what gets in the way.",
+            ("cta", "Read: Business Intelligence Series, Part 37: The Pareto Chart, Finding the Few Causes Behind Most of a Problem", "/blog/business-intelligence-part-37-pareto-chart/"),
+            ("cta", "Read: Business Intelligence Series, Part 35: Small Multiples, One Small Chart per Barangay", "/blog/business-intelligence-part-35-small-multiples/"),
+            ("cta", "Read: Business Intelligence Series, Part 33: Targets vs Actual, Bullet Charts, Gauges and the Year-to-Date Trap", "/blog/business-intelligence-part-33-targets-vs-actual/"),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("ask", "Which step in your office’s collection process do you think loses the most accounts?"),
+        ],
+    },
+    {
+        "title": "Business Intelligence Series, Part 38: Cohorts, Do New Businesses Keep Renewing?",
+        "slug": "business-intelligence-part-38-cohorts",
+        "category": "bi",
+        "date": "May 15, 2027",
+        "summary": "Total renewals can rise while each new group of businesses renews less than the one before. "
+                   "A cohort table follows each year’s new businesses separately, so the change is visible early. "
+                   "This part explains what a cohort is, how to build a cohort table in Google Sheets, and how to "
+                   "read it.",
+        "publish_on": "2027-05-15 21:00",
+        "body": [
+            "The year-end report looked healthy. Business permit renewals had grown for the third year in a "
+            "row. The head of office was ready to sign it when a clerk at the renewal window said something "
+            "that did not fit: “A lot of the new ones from last year did not come back this January.”",
+            "Both statements were true. The total was rising because more new businesses registered each year. "
+            "Underneath it, a smaller share of each new group was returning. Only a cohort table could show both "
+            "at once.",
+            "(The office, the businesses and the counts are invented for this lesson. The method and the Google "
+            "Sheets formulas are real.)",
+            "Part 37 sorted causes from biggest to smallest. This part follows groups over time. When you "
+            "finish reading, you will know what a cohort is, why totals can hide a decline, how to build a "
+            "cohort table in Google Sheets from a list of payments, how to read it, and what to do with what "
+            "it shows.",
+            ("photo", "blog/bi-cohorts.jpg", "Cohorts: group businesses by the year they first registered, then "
+             "follow what share of each group renews in each later year. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Cohort Is"),
+            "Google’s Analytics help describes a cohort as a group of users who share a common characteristic, "
+            "and a cohort report as a way to explore the behavior of these groups over time. In a treasury, the "
+            "users are taxpayers, and one useful shared characteristic is the year they started.",
+            ("point", "The 2024 cohort", "All businesses that registered for the first time in 2024."),
+            ("point", "Retention", "The share of a cohort still renewing in a later year."),
+            ("point", "Year 1, Year 2", "Years since the cohort started, so different cohorts can be compared "
+             "side by side."),
+            ("h", "Why Totals Hide the Story"),
+            "Total renewals mix old and new businesses. If more new businesses register each year, the total "
+            "can rise even while fewer of each group stay. By the time the total finally falls, the decline has "
+            "been running for years.",
+            ("h", "The Example"),
+            ("point", "2023 cohort", "120 new businesses. Renewed: 96 in 2024, 84 in 2025, 78 in 2026."),
+            ("point", "2024 cohort", "140 new businesses. Renewed: 105 in 2025, 91 in 2026."),
+            ("point", "2025 cohort", "150 new businesses. Renewed: 99 in 2026."),
+            "Turned into percentages of each cohort’s starting size:",
+            ("point", "Year 1 retention", "2023: 80%. 2024: 75%. 2025: 66%."),
+            ("point", "Year 2 retention", "2023: 70%. 2024: 65%."),
+            ("point", "Year 3 retention", "2023: 65%."),
+            "Each new cohort keeps fewer of its businesses after the first year. The clerk was right.",
+            ("photo", "blog/bi-cohorts-table.jpg", "The cohort table: one row per starting year, one column per "
+             "year since registration, and the share still renewing in each cell. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Building It in Google Sheets"),
+            "Start with a Payments tab that has one row per business per year paid: column A the business ID, "
+            "column B the year. If a business paid in installments, keep one row per year, for example with "
+            "UNIQUE from Part 33 of the Data Analytics Series.",
+            ("point", "Step 1: First year", "On a Businesses tab, list each ID once in column A. In B2, enter "
+             "=MINIFS(Payments!B:B, Payments!A:A, A2) to find the first year that business paid."),
+            ("point", "Step 2: Tag each payment", "Back on Payments, in C2, enter =XLOOKUP(A2, Businesses!A:A, "
+             "Businesses!B:B) and fill down. Each payment now carries its cohort year. Part 25 of the Data "
+             "Analytics Series covered XLOOKUP."),
+            ("point", "Step 3: Cohort sizes", "On a Cohorts tab, put the cohort years in A2:A4. In B2, enter "
+             "=COUNTIF(Businesses!B:B, A2)."),
+            ("point", "Step 4: Renewals by year", "Put calendar years across row 1 from C1. In C2, enter "
+             "=COUNTIFS(Payments!C:C, $A2, Payments!B:B, C$1) and fill across and down."),
+            ("point", "Step 5: Percentages", "In a second block, divide each count by the cohort size in column "
+             "B, and format as percent."),
+            ("point", "Step 6: Shift to years since start", "Rearrange so the first column after the size is "
+             "Year 1 for every cohort. Now each column compares cohorts at the same age."),
+            ("h", "Reading a Cohort Table"),
+            ("point", "Read down a column", "Year 1 for each cohort in turn: 80, 75, 66. A falling column means "
+             "newer cohorts are doing worse at the same age."),
+            ("point", "Read across a row", "One cohort over time: 80, 70, 65. Look for the "
+             "steepest drop first, since it shows when a group is most likely to stop renewing."),
+            ("point", "Watch the newest row", "It has the fewest years, but it shows the latest change first."),
+            ("point", "Mind the size", "A cohort of 12 can swing widely by chance. Show the count beside each "
+             "percentage."),
+            ("h", "Asking Why"),
+            "A cohort table shows where to look. It does not say why. In the example, the office checked the "
+            "2025 cohort that did not renew.",
+            ("point", "Closed without notice", "Some had simply stopped operating. Part 14 of Inside the Local "
+             "Treasury explains how proper closure keeps the records clean."),
+            ("point", "Moved", "Some had moved to another barangay or municipality. Part 36 showed how to keep a "
+             "business’s history when its details change."),
+            ("point", "Did not know", "Some first-year owners did not know a renewal was due every January."),
+            "The last group was the one the office could reach. Part 37’s Pareto chart could rank these "
+            "reasons once they are counted.",
+            ("h", "Putting It on the Dashboard"),
+            "A cohort table is dense. On a dashboard, two simpler views carry most of its message.",
+            ("point", "One line per cohort", "A line chart with years since start along the bottom and the "
+             "retention percentage up the side. Newer cohorts that sit lower are easy to spot."),
+            ("point", "A single Year 1 figure", "The latest cohort’s Year 1 retention, beside the figure for "
+             "the cohort before it, as a fair comparison of the kind Part 19 described."),
+            ("point", "The full table on request", "Keep the complete table one click away for anyone who "
+             "wants the detail."),
+            "Update it once a year, after the renewal period closes, so every cohort is measured at the same "
+            "point in the calendar.",
+            ("h", "Other Cohorts Worth Building"),
+            ("point", "Property owners by year of first payment", "Do new owners keep paying the amilyar on "
+             "time?"),
+            ("point", "Stallholders by year of contract", "How many are still in the market after two years?"),
+            ("point", "Taxpayers by first payment channel", "Do those who started online renew more than those "
+             "who started at the counter?"),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Watching only totals", "Growth in new registrations can hide falling retention."),
+            ("point", "Comparing by calendar year", "Compare cohorts at the same age, Year 1 with Year 1."),
+            ("point", "Ignoring cohort size", "Show the counts beside the percentages."),
+            ("point", "Stopping at the table", "Ask why, and test a fix."),
+            ("h", "Key Takeaways"),
+            ("point", "A cohort is a starting group", "Here, businesses by year of first registration."),
+            ("point", "Retention by age", "Share still renewing in Year 1, Year 2 and onward."),
+            ("point", "Three formulas", "MINIFS for the first year, XLOOKUP to tag, COUNTIFS to count."),
+            ("point", "Read down the columns", "That is where a decline appears first."),
+            ("h", "Your Part 38 Exercise"),
+            ("point", "Step 1", "Make a Payments tab with 20 invented businesses over three years."),
+            ("point", "Step 2", "Build the cohort sizes and renewal counts with the formulas above."),
+            ("point", "Step 3", "Convert to percentages and arrange by years since start."),
+            ("point", "Step 4", "Write one sentence about Year 1 retention across cohorts."),
+            "The office added a simple step for every new business: a text and a call in December of its "
+            "first year, reminding the owner that renewal is due in January. The 2026 cohort’s Year 1 figure "
+            "would show whether it worked, and the cohort table was ready to tell them.",
+            ("cta", "Read: Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Business Intelligence Series, Part 36: When Details Change, Keeping Last Year’s Report True", "/blog/business-intelligence-part-36-changes-over-time/"),
+            ("cta", "Read: Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited", "/blog/business-intelligence-part-34-aging-of-arrears/"),
+            ("cta", "Read: Data Analytics Series, Part 25: XLOOKUP, Bringing the Right Detail Into Every Row", "/blog/data-analytics-part-25-xlookup/"),
+            ("ask", "Of the businesses that registered in your area last year, how many do you think will renew?"),
+        ],
+    },
+    {
         "title": "Business Intelligence Series, Part 37: The Pareto Chart, Finding the Few Causes Behind Most of a Problem",
         "slug": "business-intelligence-part-37-pareto-chart",
         "category": "bi",

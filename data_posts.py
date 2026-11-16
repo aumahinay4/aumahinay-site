@@ -12,6 +12,276 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation",
+        "slug": "data-analytics-part-38-range-and-standard-deviation",
+        "category": "data",
+        "date": "May 16, 2027",
+        "summary": "Two sets of numbers can share the same average and behave completely differently. This part "
+                   "shows how to measure spread with the range and the standard deviation in Google Sheets, "
+                   "how to compare spread between groups of different sizes, and how to use it to plan.",
+        "publish_on": "2027-05-16 21:00",
+        "body": [
+            "The supervisor compared the two field collectors over ten working days. Both averaged ₱40,000 a "
+            "day. On paper, they were the same.",
+            "The cashier did not agree. One collector arrived every afternoon with almost exactly the same "
+            "amount. The other might bring ₱20,000 one day and ₱65,000 the next, and on the big days the cash "
+            "count took twice as long and the bank run had to wait.",
+            "(The collectors and the amounts are invented for this lesson. The Google Sheets functions are "
+            "real.)",
+            "Part 37 compared places of different sizes with rates. This part looks at what an average leaves "
+            "out: how far the numbers spread around it. By the end of this post, you will know how to measure "
+            "spread with the range and the standard deviation, which Google Sheets function to use, how to "
+            "compare spread fairly, and how spread helps an office plan.",
+            ("photo", "blog/data-spread.jpg", "Spread: two sets of daily collections with the same average, one "
+             "tightly grouped and one widely scattered. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Practice Data"),
+            "Type the daily collections, in thousands of pesos, into two columns. Column A is Collector A, "
+            "column B is Collector B, with headers in row 1 and ten days in rows 2 to 11.",
+            ("point", "Collector A", "40, 42, 38, 41, 39, 40, 43, 37, 40, 40"),
+            ("point", "Collector B", "20, 65, 30, 55, 25, 60, 40, 35, 50, 20"),
+            ("point", "Check the average", "=AVERAGE(A2:A11) and =AVERAGE(B2:B11) both return 40."),
+            "If you stopped at the average, as Part 26 warned, you would miss the difference that matters to "
+            "the cashier.",
+            ("h", "Measure 1: The Range"),
+            "The range is the biggest value minus the smallest.",
+            ("point", "Formula", "=MAX(A2:A11)-MIN(A2:A11)"),
+            ("point", "Collector A", "43 − 37 = 6, or ₱6,000."),
+            ("point", "Collector B", "65 − 20 = 45, or ₱45,000."),
+            ("point", "Strength", "Anyone can understand it at once."),
+            ("point", "Weakness", "It uses only two numbers. One unusual day can make it look wide, even if "
+             "every other day was steady."),
+            ("h", "Measure 2: The Standard Deviation"),
+            "The standard deviation uses every value. In plain words, it is a typical distance between each "
+            "day’s amount and the average. A small number means the days cluster near the average. A large one "
+            "means they scatter.",
+            ("point", "Formula", "=STDEV(A2:A11)"),
+            ("point", "Collector A", "About 1.76, or roughly ₱1,800."),
+            ("point", "Collector B", "About 16.67, or roughly ₱16,700."),
+            "Same average, but Collector B’s days typically land more than nine times as far from it.",
+            ("photo", "blog/data-spread-dots.jpg", "Ten days for each collector, one dot per day, with the "
+             "average line and a band one standard deviation wide on each side. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "STDEV or STDEVP?"),
+            "Google’s help page explains the difference in two lines. STDEV calculates the standard deviation "
+            "based on a sample. To calculate it across an entire population, use STDEVP.",
+            ("point", "Use STDEV", "When the ten days stand for the collector’s usual pattern, which is the "
+             "common case. Here it gives 1.76 and 16.67."),
+            ("point", "Use STDEVP", "When the data is every case there is, such as all twelve months of one "
+             "closed year, and you only want to describe that set. Here it would give 1.67 and 15.81."),
+            ("point", "Say which you used", "The difference is small for large sets and larger for small ones."),
+            ("h", "Comparing Spread Fairly"),
+            "A standard deviation is in the same units as the data. That makes comparisons tricky when the "
+            "averages differ. A spread of ₱5,000 is large for someone averaging ₱10,000 and small for someone "
+            "averaging ₱200,000.",
+            ("point", "Coefficient of variation", "Divide the standard deviation by the average: "
+             "=STDEV(B2:B11)/AVERAGE(B2:B11)."),
+            ("point", "Collector A", "About 4.4 percent."),
+            ("point", "Collector B", "About 41.7 percent."),
+            "Now a collector with a bigger route and a bigger average can be compared with a small one.",
+            ("h", "Why Spread Is Not Bad by Itself"),
+            "A wide spread is a fact, not a fault. It needs a reason.",
+            ("point", "The route", "Collector B covers the market on its busy days and quiet barangays on the "
+             "others. That alone can explain the swings."),
+            ("point", "The calendar", "Deadlines bring big days. Part 24 of the Business Intelligence Series "
+             "showed how moving averages smooth those out."),
+            ("point", "The records", "If neither the route nor the calendar explains it, look closer. Part 34 "
+             "showed how to find single days that do not fit."),
+            ("h", "Using Spread to Plan"),
+            ("point", "Cash handling", "On Collector B’s market days, plan a second counter for the cash count "
+             "and an earlier bank run."),
+            ("point", "Expected amounts", "A rough band of the average plus or minus one standard deviation, "
+             "about ₱23,000 to ₱57,000 for Collector B, describes a typical day. Days far outside it deserve a "
+             "note in the log."),
+            ("point", "Targets", "A single daily target means little for a collector whose days naturally swing "
+             "widely. A weekly or monthly target fits better. Part 8 covered metrics that tell the truth."),
+            ("h", "Spread for Many Groups at Once"),
+            "With twelve collectors or twenty barangays, compute spread in a summary table instead of one "
+            "formula at a time.",
+            ("point", "In a pivot table", "Part 24 built pivot tables. Add the amount twice to Values: once "
+             "summarized by AVERAGE and once by STDEV. Each row then shows a group’s average and its spread "
+             "side by side."),
+            ("point", "With a formula per group", "If the data is in a long table with the collector’s name in "
+             "column A and the amount in column C, a filtered formula works for one name: "
+             "=STDEV(FILTER(C2:C, A2:A=\"Collector B\"))."),
+            ("point", "Sort by the coefficient of variation", "The groups at the top have the least "
+             "predictable days and are where planning matters most."),
+            ("h", "Watching Spread Over Time"),
+            "Spread can change even when the average does not. A collector whose standard deviation doubles from "
+            "one quarter to the next may have a new route, a new schedule or a records problem.",
+            ("point", "Compute it by month", "One standard deviation per month gives a short series you can "
+             "chart."),
+            ("point", "Look for jumps", "A sudden rise is a question to ask, not an answer."),
+            ("point", "Keep the same window", "Compare ten working days with ten working days, or months with "
+             "months, so the measure is fair."),
+            ("h", "Reporting It"),
+            ("point", "Pair the average with the spread", "“Average ₱40,000 a day (standard deviation "
+             "₱16,700).”"),
+            ("point", "Show the dots", "A simple dot chart of each day says more than either number."),
+            ("point", "Explain it in words", "“Collector B’s days vary widely because of the market schedule.”"),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Reporting only the average", "Add the range or the standard deviation."),
+            ("point", "Trusting the range alone", "One odd day can stretch it."),
+            ("point", "Comparing standard deviations of very different averages", "Use the coefficient of "
+             "variation."),
+            ("point", "Treating spread as wrongdoing", "Find the reason first."),
+            ("h", "Key Takeaways"),
+            ("point", "Averages hide spread", "Same average, different behavior."),
+            ("point", "Range is quick", "MAX minus MIN, but sensitive to one value."),
+            ("point", "Standard deviation uses every value", "STDEV for a sample, STDEVP for a whole population."),
+            ("point", "Coefficient of variation compares", "Standard deviation divided by the average."),
+            ("h", "Your Part 38 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute the average, range and STDEV for each "
+             "collector."),
+            ("point", "Step 2", "Change Collector B’s 65 to 45. Which measure changes more, the range or the "
+             "standard deviation?"),
+            ("point", "Step 3", "Compute the coefficient of variation for both."),
+            ("point", "Step 4", "Pick one daily figure in your office and report its average with its spread."),
+            "The supervisor’s next report gave both collectors the same average and a second line beneath it. "
+            "The cashier finally had a number for what she had seen every afternoon, and the market-day bank run "
+            "moved to one o’clock, so the bigger count no longer ran past the bank’s cut-off time.",
+            ("cta", "Read: Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth", "/blog/data-analytics-part-26-mean-or-median/"),
+            ("cta", "Read: Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit", "/blog/data-analytics-part-34-outliers/"),
+            ("cta", "Read: Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("cta", "Read: Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing", "/blog/business-intelligence-part-24-trend-lines-and-moving-averages/"),
+            ("ask", "Which number in your office has a steady average but days that swing widely?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 37: Rates per 1,000, Comparing Barangays of Different Sizes",
+        "slug": "data-analytics-part-37-rates-per-1000",
+        "category": "data",
+        "date": "May 11, 2027",
+        "summary": "A big barangay will have more of almost everything than a small one, so raw counts can point "
+                   "the office in the wrong direction. This part shows how to turn counts into rates per 1,000 "
+                   "residents in Google Sheets, how to read them, and the traps of small populations and "
+                   "mismatched years.",
+        "publish_on": "2027-05-11 21:00",
+        "body": [
+            "The plan for the business registration drive was already on the whiteboard. The two barangays with "
+            "the fewest registered businesses, Mabini with 45 and Bukal with 48, would get the first visits. "
+            "It seemed obvious. Fewer registrations meant more businesses operating without a permit.",
+            "Then the analyst added one column to the sheet, and Mabini dropped off the list.",
+            "(The barangays, the populations and the business counts below are invented for this lesson. The "
+            "method and the Google Sheets formulas are real.)",
+            "Part 36 showed how an average can mislead when groups differ in size. This part deals with the "
+            "same problem in its simplest form: comparing plain counts between places of different sizes. "
+            "When you finish, you will know why raw counts mislead, how to compute a rate per 1,000 "
+            "residents, how to choose the right denominator, and when a rate itself should not be trusted.",
+            ("photo", "blog/data-rates.jpg", "Rates per 1,000: divide each count by the population, then "
+             "multiply by 1,000, so a small barangay and a large one can be compared fairly. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Counts Mislead"),
+            "A count answers “how many?” It does not answer “how many for its size?”",
+            ("point", "Big places have more of everything", "More residents, more stores, more complaints, "
+             "more late payments. A large count may simply mean a large barangay."),
+            ("point", "Small places look quiet", "A low count can hide a high share, because there were few "
+             "people to begin with."),
+            ("point", "Rankings flip", "Once size is taken into account, the barangay at the bottom of the "
+             "count list may be in the middle, or near the top."),
+            ("h", "The Practice Data"),
+            "Type this into a new sheet. Column A is the barangay, B the population, and C the number of "
+            "registered businesses.",
+            ("point", "Poblacion", "Population 8,200, businesses 410"),
+            ("point", "San Isidro", "Population 3,100, businesses 62"),
+            ("point", "Malinao", "Population 2,400, businesses 60"),
+            ("point", "Santa Cruz", "Population 5,600, businesses 84"),
+            ("point", "Mabini", "Population 1,500, businesses 45"),
+            ("point", "Bukal", "Population 4,000, businesses 48"),
+            "Put headers in row 1, so the data runs from row 2 to row 7.",
+            ("h", "Computing the Rate"),
+            ("point", "Formula", "In D2, enter =C2/B2*1000 and fill down to D7."),
+            ("point", "Rounding", "To show one decimal place, use =ROUND(C2/B2*1000, 1). Part 32 covered "
+             "rounding and why totals may not add up."),
+            ("point", "Header", "Name the column “Businesses per 1,000 residents,” not just “Rate.”"),
+            "The results:",
+            ("point", "Poblacion", "50.0 per 1,000"),
+            ("point", "Mabini", "30.0 per 1,000"),
+            ("point", "Malinao", "25.0 per 1,000"),
+            ("point", "San Isidro", "20.0 per 1,000"),
+            ("point", "Santa Cruz", "15.0 per 1,000"),
+            ("point", "Bukal", "12.0 per 1,000"),
+            "Mabini, last by count, is second by rate. Santa Cruz, with the second-highest count, is "
+            "second from the bottom by rate. Bukal is low on both lists, so it stays a priority. The drive "
+            "now starts in Bukal and Santa Cruz.",
+            ("photo", "blog/data-rates-bars.jpg", "The same six barangays ranked two ways: by count of "
+             "registered businesses, and by businesses per 1,000 residents. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why 1,000?"),
+            "Any multiplier works, as long as every row uses the same one. The choice is about readability.",
+            ("point", "Per 100 is a percent", "Useful when the count is a part of the whole, such as businesses "
+             "that renewed out of all businesses."),
+            ("point", "Per 1,000 suits small rates", "Twelve per 1,000 is easier to read than 1.2 percent of "
+             "residents, which sounds like something else."),
+            ("point", "Per 10,000 or 100,000", "Used for rare events, so the numbers are not tiny decimals."),
+            "Pick one, write it in the header, and do not mix them in the same table.",
+            ("h", "Choosing the Right Denominator"),
+            "The number you divide by decides what the rate means. Ask what the count could have come from.",
+            ("point", "Residents", "For businesses, complaints or permits, where people are the source."),
+            ("point", "Households", "For things counted once per home, such as water connections."),
+            ("point", "Businesses", "For late renewals or inspections, divide by registered businesses, not "
+             "by residents."),
+            ("point", "Land area or road length", "For things spread over space, such as market stalls per "
+             "hectare or potholes per kilometer."),
+            "Where official counts are needed, the Philippine Statistics Authority publishes census population "
+            "counts down to the barangay. Use the same census year for every row.",
+            ("h", "When a Rate Should Not Be Trusted"),
+            ("point", "Small populations jump", "In Mabini, one more business moves the rate from 30.0 to about "
+             "30.7. In the Poblacion, one more business moves it by about 0.1. A small barangay’s rate can swing "
+             "a lot from year to year by chance, as Part 17 explained for small samples."),
+            ("point", "Mismatched years", "Dividing this year’s businesses by a population count from many "
+             "years ago overstates the rate wherever the population has grown."),
+            ("point", "Different definitions", "If one barangay counts branches separately and another does "
+             "not, the rates are not comparable. Agree on what is counted first."),
+            ("point", "Rates do not add", "You cannot sum six barangay rates to get a municipal rate. Add the "
+             "counts, add the populations, and divide, as Part 36 showed with totals."),
+            "For the whole municipality here: 709 businesses ÷ 24,800 residents × 1,000 = about 28.6 per "
+            "1,000.",
+            ("h", "Rates Over Time"),
+            "A rate is most useful when it is tracked. One year’s figure says where each barangay stands. "
+            "Several years say which way each one is moving.",
+            ("point", "Keep the same denominator", "If the population is updated with a new census, note the "
+             "year the change took effect, so a jump in the rate is not mistaken for a jump in businesses."),
+            ("point", "Watch the direction", "A barangay whose rate rises from 12 to 15 over two years may "
+             "deserve less attention than one that slipped from 25 to 20."),
+            ("point", "Look at the counts too", "If both the count and the population fell, the rate can stay "
+             "flat while the barangay is shrinking. The rate alone would not show that."),
+            ("h", "Showing It Clearly"),
+            ("point", "Sort by the rate", "A sorted bar chart, as Part 27 suggested for comparisons, puts the "
+             "lowest and highest at the ends."),
+            ("point", "Show the count beside it", "A rate without its count hides how small some groups are. "
+             "“12.0 per 1,000 (48 businesses)” tells the whole story."),
+            ("point", "Mark the overall rate", "A line at 28.6 shows which barangays are above or below the "
+             "municipality as a whole."),
+            ("point", "Color only the outliers", "Conditional formatting from Part 31 can shade rates below a "
+             "chosen level."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Ranking places by raw counts", "Divide by size first."),
+            ("point", "Using the wrong denominator", "Match it to where the count comes from."),
+            ("point", "Trusting tiny populations", "Show the count, and look at more than one year."),
+            ("point", "Averaging or adding rates", "Combine the counts and populations instead."),
+            ("h", "Key Takeaways"),
+            ("point", "Counts reflect size", "A big barangay can have bigger counts just by being big."),
+            ("point", "Rate = count ÷ population × 1,000", "One formula, filled down."),
+            ("point", "The denominator is a choice", "Residents, households, businesses or area."),
+            ("point", "Small groups are noisy", "Report the count beside the rate."),
+            ("h", "Your Part 37 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute businesses per 1,000 residents."),
+            ("point", "Step 2", "Sort by count, then by rate, and note which barangays change places."),
+            ("point", "Step 3", "Compute the municipal rate from the totals and draw it as a line on a bar "
+             "chart."),
+            ("point", "Step 4", "Find one count in your office’s reports that compares places of different "
+             "sizes, and turn it into a rate."),
+            "Three months later, the drive had registered 14 new businesses in Bukal and 11 in Santa Cruz. "
+            "Mabini, the barangay that almost got the first visit, already had one of the highest rates in the "
+            "municipality. Its low count had simply reflected its size.",
+            ("cta", "Read: Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads", "/blog/data-analytics-part-36-weighted-averages/"),
+            ("cta", "Read: Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000", "/blog/data-analytics-part-17-samples-margin-of-error/"),
+            ("cta", "Read: Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question", "/blog/data-analytics-part-27-choosing-the-right-chart/"),
+            ("cta", "Read: Business Intelligence Series, Part 27: Maps by Barangay, When Location Is the Point", "/blog/business-intelligence-part-27-maps-by-barangay/"),
+            ("ask", "Which report in your office compares places by raw counts that should be rates?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads",
         "slug": "data-analytics-part-36-weighted-averages",
         "category": "data",
