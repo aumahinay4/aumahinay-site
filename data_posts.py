@@ -12,6 +12,264 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 32: Rounding, and Why the Totals Don’t Add Up",
+        "slug": "data-analytics-part-32-rounding-and-totals",
+        "category": "data",
+        "date": "April 16, 2027",
+        "summary": "A report can be correct and still show shares that add up to 101 percent, or a peso "
+                   "total that does not match its rows. This part explains where rounding differences come from, "
+                   "how to fix a split so it adds to the centavo, how Google Sheets and Python round "
+                   "halves differently, and how to tell readers what they are looking at.",
+        "publish_on": "2027-04-16 21:00",
+        "body": [
+            "The council member held up the quarterly report and pointed at the pie chart. “Real property "
+            "tax, 43 percent. Business tax, 32 percent. Fees, 26 percent. That is 101 percent,” he said. "
+            "“Where did the extra one percent come from?”",
+            "The analyst checked the sheet that night. Nothing was missing and nothing was counted twice. "
+            "Every number in the report was right. The problem was rounding, and the report had not said so.",
+            "(The council meeting and the figures are invented for this lesson. The rounding rules described "
+            "for Google Sheets and Python come from their official documentation.)",
+            "Part 30 showed how to report change without confusing percent and percentage points. This part "
+            "deals with a smaller problem that can cause just as many questions: totals that don’t match "
+            "their parts. You will learn why it happens, how to split an amount so the pieces add up to the "
+            "centavo, why the same number can round differently in two tools, and what to write in a report "
+            "so readers are not left guessing.",
+            ("photo", "blog/data-rounding.jpg", "Rounding: each part is rounded on its own, so the parts "
+             "can miss the total by a little. Fix the split, or say so in a note. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Rounded Parts Miss the Total"),
+            "Rounding moves each number a little up or down. When you round each part separately, those "
+            "small moves can add up instead of cancelling out.",
+            ("point", "The percent example", "Collections for the quarter were ₱10,000,000: ₱4,260,000 in "
+             "real property tax, ₱3,170,000 in business tax and ₱2,570,000 in fees. The exact shares are "
+             "42.6, 31.7 and 25.7 percent, which add to exactly 100. Rounded to whole numbers, they become "
+             "43, 32 and 26, which add to 101. Each one was rounded up, and the three small moves did not "
+             "cancel out."),
+            ("point", "The peso example", "A table shows amounts in thousands with no decimals. Two "
+             "offices collected ₱1,234,400 and ₱2,345,400, which display as 1,234 and 2,345. The total, "
+             "₱3,579,800, displays as 3,580. A reader who adds the two rows gets 3,579."),
+            "Neither report is wrong. The total was computed from the full amounts, and then each number was "
+            "rounded for display. The parts and the total were rounded separately, and that is where the "
+            "difference comes from.",
+            ("photo", "blog/data-rounding-table.jpg", "Two ways rounding shows up in a report: shares that add "
+             "to 101 percent, and a total one more than its rows. Figures are invented. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Display Rounding vs Stored Rounding"),
+            "Spreadsheets round in two different ways, and it helps to know which one you are using.",
+            ("point", "Display rounding", "Changing the number format, or clicking the button that removes "
+             "decimals, changes only what you see. The cell still holds the full value, and formulas that "
+             "use it work with the full value."),
+            ("point", "Stored rounding", "A formula such as =ROUND(A2, 2) produces a new value rounded to "
+             "two decimals. Formulas that use it work with the rounded value."),
+            "Display rounding is what produces the 3,579 and 3,580 puzzle: the total adds the full values, "
+            "and the screen shows the rounded ones. Stored rounding is what you need when the rounded amount "
+            "is the real amount, such as a peso figure that will be printed on a receipt or a check.",
+            ("h", "Splitting an Amount So It Adds Up"),
+            "Treasury work has several kinds of splits: a fund divided among barangays, a payment allocated across "
+            "accounts, a share computed for each office. Here the parts must add up exactly, because each "
+            "part becomes a real amount of money.",
+            ("point", "The problem", "Divide ₱1,000.00 equally among three barangays. Each exact share is "
+             "₱333.333…, which rounds to ₱333.33. Three of those add up to ₱999.99. One centavo is missing."),
+            ("point", "The remainder fix", "Round all the shares except the last. Compute the last one as "
+             "the total minus the others: ₱1,000.00 − ₱333.33 − ₱333.33 = ₱333.34. Now the shares add up "
+             "to ₱1,000.00 exactly."),
+            ("point", "In Google Sheets", "If the total is in B1 and the shares are in B2 to B4, put "
+             "=ROUND($B$1/3, 2) in B2 and B3, and =B1-SUM(B2:B3) in B4. Then add a check cell, "
+             "=SUM(B2:B4)=B1, which should say TRUE."),
+            ("point", "Decide who gets the extra centavo", "The remainder fix gives it to the last line. "
+             "If the order matters, write down the rule, for example “the largest share absorbs the "
+             "difference,” and use it every time."),
+            "The check cell is easy to skip, but it is the most useful part. If someone later types a number "
+            "over the formula in the last share, the check turns FALSE before the numbers go out.",
+            ("h", "Same Number, Two Answers: How Halves Are Rounded"),
+            "The trickiest case is a number exactly halfway, such as 2.5. Not every tool treats it the same.",
+            ("point", "Google Sheets", "Its help page says ROUND works “according to standard rules”: a 5 "
+             "in the next place rounds up. =ROUND(2.5, 0) gives 3."),
+            ("point", "Python", "The built-in round() rounds halves to the nearest even number. round(2.5) "
+             "gives 2, and round(3.5) gives 4. This is sometimes called banker’s rounding."),
+            ("point", "Hidden decimals", "Computers store numbers such as 2.675 as close binary "
+             "approximations. Python’s documentation gives the example round(2.675, 2), which returns 2.67, "
+             "not 2.68, because 2.675 is stored as a value slightly below it."),
+            "For peso amounts in Python, the decimal module avoids both surprises. Decimal(\"2.675\") "
+            "quantized to two places with ROUND_HALF_UP gives 2.68, the answer taught in school. The "
+            "lesson for an analyst is simple: if two tools disagree by a centavo, check how each one rounds "
+            "before assuming a mistake in the data.",
+            ("h", "Telling the Reader"),
+            "Sometimes the right answer is not to change the numbers but to explain them.",
+            ("point", "Add a note", "A short line under the table or chart, such as “Figures may not add "
+             "up to the total because of rounding,” answers the question before anyone asks it."),
+            ("point", "Show one more decimal", "In the percent example, one decimal place, 42.6, 31.7 and "
+             "25.7, adds up to exactly 100.0. Part 30 also suggested one decimal place, to keep a report "
+             "readable."),
+            ("point", "Don’t force a share", "Changing 43 to 42 so the chart adds to 100 makes one number "
+             "wrong to make the total look right. If you use a method that adjusts shares, say so in the note."),
+            ("quote", "A rounding note costs one line. A council member’s doubt about the whole report "
+             "costs much more."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Hunting for a missing amount that isn’t missing", "Check rounding first when the "
+             "difference is one unit of the last digit shown."),
+            ("point", "Rounding every share in a split", "Use the remainder fix so the parts add up."),
+            ("point", "Assuming tools round the same way", "Sheets and Python treat halves differently."),
+            ("point", "Leaving readers to guess", "Add a rounding note under the table."),
+            ("h", "Key Takeaways"),
+            ("point", "Rounded parts can miss the total", "Each part moves a little on its own."),
+            ("point", "Display is not storage", "Formatting hides decimals; ROUND changes the value."),
+            ("point", "Splits need the remainder fix", "Plus a check cell that says TRUE."),
+            ("point", "Explain it", "One note, or one more decimal place."),
+            ("h", "Your Part 32 Exercise"),
+            ("point", "Step 1", "In a new sheet, put 1000 in B1. Put =ROUND($B$1/3, 2) in B2, B3 and B4, "
+             "and =SUM(B2:B4) in B5. You should see 999.99."),
+            ("point", "Step 2", "Change B4 to =B1-SUM(B2:B3). B5 should now show 1000."),
+            ("point", "Step 3", "Add =SUM(B2:B4)=B1 in B6 and confirm it says TRUE. Try typing 333.35 into B4, "
+             "replacing its formula, and watch the check turn FALSE. Then undo."),
+            ("point", "Step 4", "Find one table in your last report that shows percentages, add them up, and "
+             "decide whether it needs a rounding note."),
+            "The next quarterly report had the same pie chart, with one difference: the shares showed one "
+            "decimal place, and a line underneath said the figures may not add up to the total because of "
+            "rounding. The council member read it, nodded, and moved on to his next question.",
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth", "/blog/data-analytics-part-8-metrics-and-kpis/"),
+            ("ask", "Has a report of yours ever been questioned over a total that was off by one?"),
+        ],
+    },
+    {
+        "date": "April 11, 2027",
+        "title": "Data Analytics Series, Part 31: Conditional Formatting, Letting the Sheet Point at the Problems",
+        "slug": "data-analytics-part-31-conditional-formatting",
+        "category": "data",
+        "summary": "A long list hides the three rows that need attention. This part uses conditional "
+                   "formatting in Google Sheets to color unpaid accounts, late payments and duplicate entries "
+                   "automatically, explains custom formulas and the dollar sign, and shows how rule order "
+                   "decides which color wins.",
+        "publish_on": "2027-04-11 21:00",
+        "body": [
+            "On the first working day of February, the head of office asked a simple question: which "
+            "business permit renewals due on January 20 were still unpaid? The clerk opened the log. It had "
+            "hundreds of rows. She sorted by the paid date, scrolled, filtered, and twenty minutes later had "
+            "a list on a sticky note. By the afternoon, two more people had paid, and the sticky note was "
+            "already wrong.",
+            "The sheet could have answered the question by itself, in color, every time it was opened.",
+            "(The office, the accounts and the amounts in this post are invented for practice. No real "
+            "taxpayer or office is described.)",
+            "Part 30 reported changes in percent and in points. This part makes problems visible before "
+            "anyone asks. You will learn what conditional formatting does in Google Sheets, how to set a "
+            "simple rule, how to write a custom formula that colors a whole row, how to catch duplicate "
+            "entries, why the order of rules matters, and when color helps and when it gets in the way.",
+            ("photo", "blog/data-format.jpg", "Conditional formatting: one rule per question, whole rows "
+             "colored, the most important rule first, and a legend readers can see. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Conditional Formatting Does"),
+            "Conditional formatting changes the look of a cell, such as its fill color or text color, when "
+            "the cell meets a condition you set. The data does not change. Only its appearance does, and "
+            "it updates as the data changes.",
+            ("point", "It answers a standing question", "“Which accounts are unpaid?” is asked every month. "
+             "A rule answers it every time the sheet is opened."),
+            ("point", "It keeps up with edits", "When a payment is entered, the red row turns back to normal "
+             "without anyone touching the formatting."),
+            ("point", "It does not replace a filter", "Color shows where problems are. To count or list them, "
+             "you still need COUNTIFS or a filter, as in Parts 22 and 23."),
+            ("h", "The Practice Sheet"),
+            "Type this small log into a new sheet, starting in cell A1. Column A is the account, B the due "
+            "date, C the date paid (blank if unpaid) and D the amount.",
+            ("point", "Row 1", "Account, Due date, Paid date, Amount."),
+            ("point", "Row 2", "B-101, January 20, 2027, January 18, 2027, ₱2,500."),
+            ("point", "Row 3", "B-102, January 20, 2027, blank, ₱3,200."),
+            ("point", "Row 4", "B-103, January 20, 2027, January 25, 2027, ₱1,800."),
+            ("point", "Row 5", "B-104, January 20, 2027, January 20, 2027, ₱4,100."),
+            ("point", "Row 6", "B-105, January 20, 2027, blank, ₱2,900."),
+            ("point", "Row 7", "B-101, January 20, 2027, January 18, 2027, ₱2,500. This is the same "
+             "payment typed twice, the kind of error Part 16 called a usual suspect."),
+            ("h", "Step 1: Open the Panel"),
+            "Select the range A2:D7. Click Format, then Conditional formatting. A panel opens on the right. "
+            "Under “Format cells if,” choose a condition, then choose a formatting style below it.",
+            "The simple conditions, such as “Less than” or “Text contains,” test each cell on its own. They "
+            "are fine for one column. To color a whole row based on one column, you need a custom formula.",
+            ("h", "Step 2: Color Unpaid Accounts Past Due"),
+            "Choose “Custom formula is” and type:",
+            ("point", "Formula", "=AND($C2=\"\", $B2<TODAY())"),
+            ("point", "What it says", "The paid date is blank, and the due date is before today."),
+            ("point", "The style", "A light red fill."),
+            "On February 1, 2027, rows 3 and 6, accounts B-102 and B-105, turn red. When B-105 pays and the "
+            "date is typed in C6, that row returns to normal by itself.",
+            ("h", "Why the Dollar Sign Matters"),
+            "The formula is written for the first row of the range, row 2, and Sheets moves it down for each "
+            "row. The dollar sign controls what moves.",
+            ("point", "$C2", "The column is locked to C, but the row changes: C2, C3, C4 and so on. Every "
+             "cell in a row looks at that row’s column C, so the whole row gets the same color."),
+            ("point", "C2 without the dollar sign", "The column would also shift as Sheets moves across the "
+             "row: cell A2 would look at C2, but B2 would look at D2 and D2 at F2. Only part of the row would "
+             "follow the rule."),
+            ("point", "$A$2:$A$7", "Both locked. Every row looks at the same full range, which is what a "
+             "duplicate check needs."),
+            ("h", "Step 3: Color Late Payments"),
+            "Click “Add another rule,” choose “Custom formula is,” and type:",
+            ("point", "Formula", "=AND($C2<>\"\", $C2>$B2)"),
+            ("point", "What it says", "There is a paid date, and it is after the due date."),
+            ("point", "The style", "A light orange fill. Row 4, account B-103, paid on January 25, turns "
+             "orange."),
+            "The first part, $C2<>\"\", keeps blank paid dates out of this rule. They belong to the red rule.",
+            ("h", "Step 4: Catch Duplicates"),
+            "Add a third rule with this custom formula, the pattern shown on Google’s help page for "
+            "highlighting duplicates:",
+            ("point", "Formula", "=COUNTIF($A$2:$A$7, $A2)>1"),
+            ("point", "What it says", "This account appears more than once in the list."),
+            ("point", "The style", "A light purple fill. Rows 2 and 7, both B-101, turn purple."),
+            ("h", "Step 5: Put the Rules in Order"),
+            "Google’s help page says rules are evaluated in the order listed, and the first rule that is true "
+            "decides the format. You can drag rules up or down in the panel.",
+            ("point", "Put the most important rule first", "A duplicate can make a total wrong, so this "
+             "office put the duplicate rule at the top."),
+            ("point", "Then the urgent one", "Unpaid and past due came second."),
+            ("point", "Then the informative one", "Paid late came third."),
+            "With this order, row 7 shows purple even if someone later clears its paid date. The duplicate "
+            "is fixed first, and the payment status is checked after.",
+            ("photo", "blog/data-format-sheet.jpg", "The practice sheet on February 1, 2027, with all three rules "
+             "applied in order. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Color Scale for Amounts"),
+            "For numbers, a color scale can shade cells from light to dark by size. Select D2:D7, open the "
+            "panel, choose the “Color scale” tab, and set the minimum and maximum colors. The largest "
+            "amounts stand out without a rule for each.",
+            "Use a scale for size, and single colors for status. Mixing many scales and colors on one sheet "
+            "makes it harder to read, not easier.",
+            ("h", "Keep Color Readable"),
+            ("point", "Add a legend", "A line above the table: “Purple: duplicate. Red: unpaid, past due. "
+             "Orange: paid late.” A color without a meaning is decoration."),
+            ("point", "Do not rely on color alone", "Part 26 of the Business Intelligence Series explained "
+             "that some readers cannot tell red from green. Light fills plus a legend, or a status column "
+             "with words, keep the meaning clear."),
+            ("point", "Use few colors", "Three statuses, three colors. Every extra color asks the reader to "
+             "learn one more thing."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Forgetting the dollar sign", "Write $C2, not C2, when a rule should color a whole row."),
+            ("point", "Writing the formula for the wrong row", "Write it for the first row of the selected "
+             "range."),
+            ("point", "Ignoring rule order", "The first true rule wins. Drag the most important to the top."),
+            ("point", "Color with no legend", "Say what each color means, in words."),
+            ("h", "Key Takeaways"),
+            ("point", "Format, then Conditional formatting", "Rules change the look, not the data."),
+            ("point", "Custom formulas color whole rows", "Lock the column with a dollar sign."),
+            ("point", "COUNTIF finds duplicates", "=COUNTIF($A$2:$A$7, $A2)>1."),
+            ("point", "Order decides", "The first rule that is true sets the format."),
+            ("h", "Your Part 31 Exercise"),
+            "Build the practice sheet, then try these.",
+            ("point", "Add the three rules", "Red for unpaid and past due, orange for late, purple for "
+             "duplicates."),
+            ("point", "Test them", "Type a paid date into C3, then clear C2. Watch the colors change."),
+            ("point", "Use your own log", "Pick one list in your office that someone checks by scrolling, and "
+             "give it one rule that answers that person’s question."),
+            "The next month, the clerk opened the log on the first working day and sent the head of office a "
+            "screenshot of the red rows before she was asked. Two of them were paid by noon. Nobody needed a "
+            "sticky note.",
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("cta", "Read: Data Analytics Series, Part 29: Counting Days in Google Sheets, Working Days, Due Dates and Days Late", "/blog/data-analytics-part-29-counting-days/"),
+            ("cta", "Read: Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS", "/blog/data-analytics-part-23-sumifs-countifs-averageifs/"),
+            ("cta", "Read: Business Intelligence Series, Part 26: Colors Everyone Can Read, Contrast, Labels and the Red-Green Trap", "/blog/business-intelligence-part-26-accessible-colors/"),
+            ("ask", "Which list in your office would be easier to check if the problems lit up by themselves?"),
+        ],
+    },
+    {
         "date": "April 6, 2027",
         "title": "Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion",
         "slug": "data-analytics-part-30-percent-change",
