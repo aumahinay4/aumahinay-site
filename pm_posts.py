@@ -14,6 +14,261 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 38: When the Team Disagrees, Five Ways to Handle Conflict",
+        "slug": "project-management-part-38-handling-conflict",
+        "category": "pm",
+        "date": "May 17, 2027",
+        "summary": "Disagreements in a project are normal: over priorities, people, time and methods. Handled "
+                   "well, they improve the work. Left alone, they stall it. This part explains five common ways "
+                   "people respond to conflict, when each one fits, and a short process for settling a work "
+                   "disagreement before it grows.",
+        "publish_on": "2027-05-17 21:00",
+        "body": [
+            "The meeting was supposed to take fifteen minutes. It took an hour and settled nothing. The records "
+            "clerk wanted the reminder list cleaned before every round. The collector wanted to send on time and "
+            "fix wrong numbers afterward. Each was sure the other was slowing the project down.",
+            "By the next week they were not speaking, and the reminder round was three days late.",
+            "(The project, the people and the disagreement continue the invented example of earlier parts. The "
+            "five conflict-handling modes described below come from the cited source.)",
+            "Part 37 wrote a procedure so a routine could run without depending on one person. This part deals "
+            "with what happens when the people running it disagree. After this post, you will know why "
+            "conflict in a project is not always bad, five ways people respond to it, when each one fits, and "
+            "a short process a project lead can use to settle a disagreement about the work.",
+            ("photo", "blog/pm-conflict.jpg", "Five ways to handle conflict, placed by how much each one pursues "
+             "your own concerns and how much it meets the other person’s. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Conflict Is Not Always Bad"),
+            "Both people in the story cared about the project. The clerk cared about accuracy. The collector "
+            "cared about timing. Their disagreement exposed a real trade-off the plan had not settled.",
+            ("point", "Useful conflict", "About the work: what to do first, how to do it, what good enough "
+             "means. It can lead to a better plan."),
+            ("point", "Harmful conflict", "About the person: blame, tone, old grudges. It slows everything and "
+             "does nothing for the work."),
+            "The lead’s job is to keep the first kind and stop it from turning into the second.",
+            ("h", "Five Ways People Respond"),
+            "The Thomas-Kilmann Conflict Mode Instrument describes behavior in conflict along two dimensions. "
+            "Assertiveness is the extent to which a person tries to satisfy their own concerns. Cooperativeness "
+            "is the extent to which they try to satisfy the other person’s concerns. From these come five "
+            "modes.",
+            ("point", "Competing", "Assertive and uncooperative. A person pursues their own concerns at the other "
+             "person’s expense."),
+            ("point", "Accommodating", "Unassertive and cooperative. The person neglects their own concerns to satisfy the other’s."),
+            ("point", "Avoiding", "Unassertive and uncooperative. Neither side’s concerns are pursued, at least "
+             "for now."),
+            ("point", "Collaborating", "Working with the other person to find a solution that fully satisfies "
+             "both."),
+            ("point", "Compromising", "Finding an expedient, mutually acceptable solution that partially "
+             "satisfies both."),
+            "The instrument’s publisher presents these as behaviors with appropriate uses, not as personality "
+            "types where one is always right. People can use all five.",
+            ("h", "When Each One Fits"),
+            ("point", "Competing", "When a rule or the law decides it. A collector cannot skip an official "
+             "receipt because a taxpayer is in a hurry."),
+            ("point", "Accommodating", "When the issue matters far more to the other person than to you, or "
+             "when you realize you were wrong."),
+            ("point", "Avoiding", "When tempers are high and a short pause will help, or the issue is minor. "
+             "Avoiding a real issue for weeks lets it grow."),
+            ("point", "Collaborating", "When both concerns are important and there is time to find a better "
+             "answer. This was the reminders case."),
+            ("point", "Compromising", "When time is short and a partial answer is better than none."),
+            ("photo", "blog/pm-conflict-steps.jpg", "A short process for settling a disagreement about the work: "
+             "meet early, state the facts, name each need, list options, decide, and write it down. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Short Process for Work Disagreements"),
+            ("point", "1. Meet early and in private", "The first day it shows, not after a week of silence. "
+             "Not in the group chat."),
+            ("point", "2. Start with the facts", "“The last round went out three days late. Forty messages "
+             "failed.” Facts are easier to agree on than opinions."),
+            ("point", "3. Name each person’s need", "The clerk needs accurate numbers. The collector needs to "
+             "send on the date taxpayers expect. Say both out loud."),
+            ("point", "4. List options together", "At least three, before judging any of them."),
+            ("point", "5. Decide, or take it to whoever decides", "If the two cannot agree, the person "
+             "accountable in the RACI matrix from Part 8 decides."),
+            ("point", "6. Write it down", "Record the decision and the reason in the minutes, as Part 27 "
+             "described, or close it in the issue log from Part 26."),
+            ("h", "Back to the Reminders"),
+            "The project lead met the two of them on Monday morning. The facts were not in dispute: late rounds "
+            "and failed messages both hurt the project. The options they listed were cleaning everything first, "
+            "sending first and fixing later, and cleaning only the numbers that failed last time.",
+            "They chose a fourth one that came up while talking: clean the numbers that failed last round two "
+            "days before each send, and send on schedule. The clerk got accuracy where it mattered, and the "
+            "collector got his date. That is collaborating: neither side gave up what mattered most to them.",
+            ("h", "When the Conflict Is About People"),
+            ("point", "Keep it private", "Talk about behavior, not character: “You raised your voice in the "
+             "meeting,” not “You are rude.”"),
+            ("point", "Listen fully first", "Let each person finish before responding."),
+            ("point", "Know when to refer", "Harassment, threats or misconduct are not project issues. They go "
+             "to the supervisor or human resources under the office’s rules."),
+            ("point", "Look at the workload", "Some friction is tiredness. Part 18 covered assigning people "
+             "without overloading them."),
+            ("h", "When the Disagreement Crosses Offices"),
+            "Some conflicts are not between two people in the team but between two offices, such as the "
+            "treasury and the assessor’s office over whose list of property owners is correct.",
+            ("point", "Neither lead can decide alone", "Each office answers to its own head, so the RACI matrix "
+             "of one project may not bind the other."),
+            ("point", "Agree on one shared fact first", "For example, take ten properties and check them "
+             "together against the tax declarations. A small shared check calms a large argument."),
+            ("point", "Take it up together", "If the two leads cannot settle it, bring it to both heads at "
+             "once, with the facts and the options on one page, as Part 34 did for decision makers."),
+            ("point", "Put the result in writing", "A short memo signed by both heads keeps the agreement "
+             "alive after the people who made it move on."),
+            ("h", "Your Own Habits"),
+            "Each person leans toward some modes more than others. Think back to your last two disagreements at "
+            "work. Did you compete, avoid or accommodate? A lead who notices their own habit can choose a "
+            "different mode when the situation calls for it.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Waiting for it to pass", "Avoiding a real issue lets it grow."),
+            ("point", "Settling it in a group chat", "Talk in person, then write the decision down."),
+            ("point", "Always compromising", "Splitting the difference can leave both concerns half met."),
+            ("point", "Letting work turn personal", "Keep the talk on facts and needs."),
+            ("h", "Key Takeaways"),
+            ("point", "Conflict about the work can help", "It exposes trade-offs the plan missed."),
+            ("point", "Five modes", "Competing, accommodating, avoiding, collaborating and compromising."),
+            ("point", "Each has its place", "Match the mode to the situation."),
+            ("point", "Six steps", "Early, facts, needs, options, decide, write it down."),
+            ("h", "Your Part 38 Action Plan"),
+            ("point", "This week", "Think of one disagreement in your section and name which mode each person "
+             "used."),
+            ("point", "Next disagreement", "Meet early, start with the facts and name each person’s need."),
+            ("point", "For your project", "Make sure the RACI matrix names who decides when two people disagree."),
+            "The next reminder round went out on its date, with eight failed messages instead of forty. The "
+            "clerk and the collector now review the failures together every Friday, which is how the project "
+            "lead knew the disagreement was really over.",
+            ("cta", "Read: Project Management Series, Part 8: Who Does What? Building a RACI Matrix", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 18: Assigning People Without Overloading Them", "/blog/project-management-part-18-resource-allocation/"),
+            ("ask", "Which of the five modes do you fall back on most at work?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 37: Writing a Standard Operating Procedure People Actually Follow",
+        "slug": "project-management-part-37-standard-operating-procedure",
+        "category": "pm",
+        "date": "May 12, 2027",
+        "summary": "When a project ends, some of its work becomes a routine that someone must repeat every month "
+                   "or quarter. A standard operating procedure keeps that routine running when people change. "
+                   "This part explains what to put in one, how to write steps anyone can follow, how to test "
+                   "it, and how to keep it current.",
+        "publish_on": "2027-05-12 21:00",
+        "body": [
+            "The text reminders had worked. On-time payments rose in every barangay, and the project closed "
+            "with a handover note, a thank-you and a lessons-learned review. Then, in February, the collector "
+            "who had sent every round was moved to the market office.",
+            "The March reminders never went out. Nobody had forgotten them. Nobody else knew the small "
+            "steps between the taxpayer list and the “Send” button.",
+            "(The office, the reminders and the people continue the invented example of earlier parts. The "
+            "requirements of the Ease of Doing Business Act cited below are real.)",
+            "Part 36 used a Kanban board to keep routine work flowing. This part is about writing that routine "
+            "down so it survives a transfer, a leave or a busy month. After this post, you will know how a "
+            "standard operating procedure differs from a handover note, what belongs in one, how to write steps "
+            "that a newcomer can follow, how to test it, and how to keep it from going stale.",
+            ("photo", "blog/pm-sop.jpg", "A standard operating procedure: one routine task, written as numbered "
+             "steps with an owner, a trigger, checks and a review date. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Standard Operating Procedure Is"),
+            "A standard operating procedure, or SOP, is a written set of steps for one task that is done the "
+            "same way every time. It is meant to be followed by whoever is assigned, not only by the person who "
+            "wrote it.",
+            ("point", "Not a handover note", "Part 28 handed over what continues, and Part 31 kept a one-page "
+             "note of where each task stands. A note describes the present. An SOP describes how the task is "
+             "done, every time."),
+            ("point", "Not a manual", "An SOP covers one task. A binder of everything is rarely opened."),
+            ("point", "Not a Citizen’s Charter", "The charter is for the public. The SOP is for the staff "
+             "doing the work behind it."),
+            ("h", "How It Relates to the Citizen’s Charter"),
+            "Republic Act No. 11032, the Ease of Doing Business Act, requires government agencies to keep an "
+            "updated Citizen’s Charter. A primer on the law lists what it must show for each service: the "
+            "checklist of requirements, the person responsible for each step, the fees, the procedure, the "
+            "maximum time to complete the process, and the procedure for filing complaints.",
+            "If the public is promised a procedure and a time limit, the staff need a way to deliver it. An SOP "
+            "for each charter service turns the public promise into steps someone can follow on a busy day.",
+            ("h", "What Goes Into an SOP"),
+            ("point", "Title and purpose", "One line each. “Quarterly payment reminders by text: to remind "
+             "business owners of the deadline ten days ahead.”"),
+            ("point", "Owner", "The position responsible for running it, and a named backup."),
+            ("point", "Trigger", "When it runs: a date, a request, or an event."),
+            ("point", "What you need", "Files, access, forms and approvals, with where to find each."),
+            ("point", "Steps", "Numbered, in order, one action each."),
+            ("point", "Checks", "What to verify before moving on, such as a count or a test message."),
+            ("point", "Records", "What to save, where, and under what file name."),
+            ("point", "What if", "The two or three problems that come up, and what to do."),
+            ("point", "Version and review date", "So a reader knows whether it is current."),
+            ("h", "Writing Steps People Can Follow"),
+            ("point", "Start with a verb", "“Open,” “Filter,” “Copy,” “Send.” Each step is an action."),
+            ("point", "One action per step", "“Export the list and remove duplicates” is two steps."),
+            ("point", "Use the exact words on the screen", "If the button says “Download as,” write that."),
+            ("point", "Give the number to expect", "“The list should have about 600 rows.” A check catches "
+             "errors early."),
+            ("point", "Add a picture where words fail", "A screenshot of one tricky screen helps more than a "
+             "paragraph. Blur any personal data first."),
+            ("point", "Write for a newcomer", "Assume the reader knows the office but has never done this task."),
+            ("photo", "blog/pm-sop-steps.jpg", "Part of the reminders SOP: each step starts with a verb, does one "
+             "thing, and some steps carry a check. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "The Reminders SOP, Shortened"),
+            ("point", "Trigger", "Ten working days before each quarterly deadline."),
+            ("point", "Step 1", "Open the business list in the shared drive, file “Business list – current.”"),
+            ("point", "Step 2", "Filter to businesses with an unpaid balance for the quarter."),
+            ("point", "Step 3", "Check the count against last quarter. A difference of more than a fifth needs "
+             "a second look."),
+            ("point", "Step 4", "Copy the reference number and mobile number columns to the sending sheet."),
+            ("point", "Step 5", "Send a test message to the office phone and read it."),
+            ("point", "Step 6", "Get the treasurer’s approval of the message text, in writing."),
+            ("point", "Step 7", "Send the round."),
+            ("point", "Step 8", "Save the sending report as “Reminders – year – quarter.”"),
+            ("point", "What if", "If more than a tenth of messages fail, stop and tell the owner before sending "
+             "again."),
+            ("h", "Test It With Someone Who Has Never Done It"),
+            "An SOP is not finished until someone else has followed it.",
+            ("point", "Pick a newcomer", "Someone who knows the office but not this task."),
+            ("point", "Watch silently", "Let them follow the steps. Note every question and every pause."),
+            ("point", "Fix the gaps", "Each question is a missing step or an unclear word."),
+            ("point", "Test again", "Until a person can finish without asking."),
+            "The first test of the reminders SOP found four gaps, including the password to the sending "
+            "service, which was in the old collector’s notebook. Rule 1 of the baseline in Part 18 of the "
+            "Cybersecurity Series, one person, one account, is why the SOP now says who grants access instead "
+            "of passing a password along.",
+            ("h", "Keeping It Current"),
+            ("point", "Give it an owner", "The owner updates it when anything changes."),
+            ("point", "Set a review date", "Once a year at least, or after any change in the system it uses."),
+            ("point", "Keep a short change log", "Date, what changed, who changed it, as Part 24 did for "
+             "project changes."),
+            ("point", "Store one copy", "In the shared project kit from Part 30, not in personal folders. "
+             "Print copies carry their version date, so an old one is easy to spot."),
+            ("h", "Getting People to Use It"),
+            "Part 33 showed how to make a new way of working easier than the old one. The same thinking "
+            "applies to an SOP.",
+            ("point", "Keep it short", "One or two pages. Anything longer is split into smaller SOPs."),
+            ("point", "Put it where the work happens", "A link in the shared sheet, or a printed copy at the "
+             "desk."),
+            ("point", "Use it in training", "New staff learn the task from the SOP, which tests it again."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Writing from memory alone", "Write while doing the task, then test it."),
+            ("point", "Steps that hide several actions", "One verb, one step."),
+            ("point", "No owner or review date", "It will drift out of date unnoticed."),
+            ("point", "Passwords in the document", "Name the role that grants access instead."),
+            ("h", "Key Takeaways"),
+            ("point", "One routine, one SOP", "Written so anyone assigned can follow it."),
+            ("point", "Verb first, one action, a check", "Steps a newcomer can follow."),
+            ("point", "Test with a newcomer", "Every question is a gap to fix."),
+            ("point", "Owner and review date", "So it stays current."),
+            ("h", "Your Part 37 Action Plan"),
+            ("point", "This week", "List the routine tasks in your section that only one person knows how to do."),
+            ("point", "Pick one", "Write its SOP while doing the task the next time it runs."),
+            ("point", "Test it", "Ask a co-worker to follow it while you watch, then fix the gaps."),
+            ("point", "Store it", "Put it in the shared folder with an owner and a review date."),
+            "The June reminders went out on time, sent by a clerk who had never done it before. She followed "
+            "the eight steps, stopped once at the check in Step 3, found that a filter had been left on, and "
+            "fixed it herself. The collector at the market office only heard about it afterward.",
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("cta", "Read: Project Management Series, Part 31: Covering for Absences, a Backup Plan So the Work Does Not Stop", "/blog/project-management-part-31-covering-absences/"),
+            ("cta", "Read: Project Management Series, Part 30: The Project Kit, Reusable Templates So the Next Project Starts Faster", "/blog/project-management-part-30-project-kit/"),
+            ("cta", "Read: Project Management Series, Part 33: Getting People to Use the New Process, Not Just Install It", "/blog/project-management-part-33-adopting-the-new-process/"),
+            ("ask", "Which routine in your office would stop if one person were transferred tomorrow?"),
+        ],
+    },
+    {
         "title": "Project Management Series, Part 36: Kanban Boards and Limits on Work in Progress",
         "slug": "project-management-part-36-kanban-boards",
         "category": "pm",

@@ -9,6 +9,273 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "title": "Cybersecurity Series, Part 39: Office Group Chats, Who Belongs, What to Post and What to Keep",
+        "slug": "cybersecurity-part-39-office-group-chats",
+        "category": "security",
+        "date": "May 18, 2027",
+        "summary": "Office work now happens in group chats too. Those chats also collect "
+                   "screenshots of personal data, former staff who never left, and decisions nobody can find "
+                   "later. This part covers who should be in a work chat, what should never be posted, how to "
+                   "spot a fake message from the boss, and what to keep as a record.",
+        "publish_on": "2027-05-18 21:00",
+        "body": [
+            "It was meant to be helpful. A clerk took a screenshot of the list of delinquent taxpayers, names "
+            "and amounts included, and posted it in the office group chat so the collectors could plan their "
+            "visits. The chat had 63 members.",
+            "Eleven of them worked in other offices. Three more no longer worked in the local government at "
+            "all. By the afternoon, the screenshot had been forwarded to a barangay group, and a taxpayer whose "
+            "name was on it came to the counter, holding his phone.",
+            "(The office, the chat and the people are invented for this post. The privacy principle and the "
+            "government report quoted below are real.)",
+            "Part 38 closed accounts when someone leaves. Group chats are an easy place to miss that "
+            "step. This part looks at the chat itself. Read on to learn who should be in a work chat, "
+            "what should never be posted there, how the Data Privacy Act’s proportionality principle applies, "
+            "how to spot a fake request in a chat, and why some messages are records that must be kept.",
+            ("photo", "blog/cyber-chats.jpg", "Office group chats: the right members, nothing that exposes "
+             "personal data, a check before acting on requests for money, and decisions copied into the "
+             "record. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who Belongs in a Work Chat"),
+            ("point", "One chat, one purpose", "A small chat for the collection team, a separate one for "
+             "announcements. A single chat for everything ends up with everyone in it."),
+            ("point", "Review the members monthly", "Remove anyone who has left or transferred. Part 38 added "
+             "this to the last-day checklist."),
+            ("point", "Name the admins", "Two people who manage members, not everyone."),
+            ("point", "Close the door", "Where the app allows it, require admin approval to join, and reset "
+             "an invite link that has been shared too widely."),
+            ("point", "Keep social chats separate", "Birthday greetings and jokes belong in a different chat "
+             "from work, so work messages are not buried and the work chat stays small."),
+            ("h", "What Should Never Be Posted"),
+            ("point", "Lists of taxpayers with names and amounts", "Share the file through the office drive "
+             "with access limited to those who need it, as Part 21 explained."),
+            ("point", "Photos of IDs, receipts or forms", "They carry names, addresses, signatures and numbers."),
+            ("point", "Passwords, codes and one-time PINs", "Not even “just for today.”"),
+            ("point", "Screenshots of system screens", "They can show more than the part you meant to share."),
+            ("point", "Complaints about named taxpayers", "A chat is not private, and messages can be forwarded "
+             "in seconds."),
+            ("h", "The Proportionality Test"),
+            "The implementing rules of the Data Privacy Act set out three principles for processing personal "
+            "data: transparency, legitimate purpose and proportionality. On proportionality, they say processing "
+            "shall be “adequate, relevant, suitable, necessary, and not excessive in relation to a declared "
+            "and specified purpose.”",
+            "Posting in a chat is processing. Before sharing anything with a name on it, ask three questions.",
+            ("point", "Is it needed?", "Could the collectors plan their visits with barangay totals instead of "
+             "names?"),
+            ("point", "Is the audience right?", "Does every member of this chat need to see it?"),
+            ("point", "Is there a safer channel?", "A shared file with limited access can be safer."),
+            "Part 20 covered the Data Privacy Act at your desk. The same rules follow you into the chat.",
+            ("photo", "blog/cyber-chats-check.jpg", "Three questions before posting anything with a name on it: "
+             "is it needed, is the audience right, and is there a safer channel? (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "When Something Was Already Posted"),
+            "Mistakes happen. What matters is how fast the office responds.",
+            ("point", "Delete it at once", "The person who posted it, or an admin, removes the message for "
+             "everyone if the app allows it."),
+            ("point", "Ask members to delete copies", "Including anything they saved or forwarded. Note who "
+             "confirmed."),
+            ("point", "Tell the supervisor and the Data Protection Officer", "They decide whether it is a "
+             "breach that must be reported. Part 9 explained that the National Privacy Commission’s rules "
+             "require notice within 72 hours for a breach that needs notification."),
+            ("point", "Talk to the people affected", "If a taxpayer’s details reached people who should not "
+             "have them, an honest explanation from the office is better than a rumor."),
+            ("point", "Fix the cause", "A shared file, a smaller chat, or a rule in the chat policy, so the "
+             "same mistake is not repeated."),
+            "Blaming the clerk who posted it in good faith does little. Making the safe way the easy way does "
+            "more.",
+            ("h", "Fake Requests in the Chat"),
+            "Scammers also use chats. A message may appear to come from the head of office, from a new number or "
+            "a copied profile picture, asking for an urgent transfer, load or a code.",
+            ("point", "Check the sender, not the name", "Display names and photos are easy to copy. Part 14 "
+             "showed how accounts are cloned."),
+            ("point", "Confirm by another channel", "Call the person on the number you already have, or ask in "
+             "person."),
+            ("point", "Be wary of voice notes too", "Part 22 explained that a voice can be cloned."),
+            ("point", "No money or codes by chat", "Payments and approvals follow the office’s written process."),
+            ("h", "Messages Can Be Records"),
+            "In February 2025, the Office of the Australian Information Commissioner reported on how Australian "
+            "government agencies use messaging apps. It noted that official information sent or received through "
+            "apps, including disappearing messages, can be government records, and recommended that agencies set "
+            "a clear policy on whether messaging apps may be used for work.",
+            "These are Australian findings, not Philippine rules, but the lesson travels well.",
+            ("point", "Copy decisions out of the chat", "If a decision is made in a chat, write it into the "
+             "minutes or a memo. Part 27 of the Project Management Series described meetings that decide."),
+            ("point", "Avoid disappearing messages for work", "A decision that vanishes cannot be checked "
+             "later."),
+            ("point", "Keep official files in official places", "A chat is a conversation, not a filing "
+             "cabinet."),
+            ("h", "Your Phone Holds the Chat"),
+            "Every work chat lives on someone’s phone.",
+            ("point", "Lock the phone", "A screen lock keeps a lost phone from opening every chat. Part 12 "
+             "covered phone security."),
+            ("point", "Hide previews", "Turn off message previews on the lock screen for work chats."),
+            ("point", "Leave when you leave", "Exit work chats on your last day, and remind others to do the "
+             "same."),
+            ("h", "A One-Page Chat Policy"),
+            "An office can agree on a short policy in one meeting.",
+            ("point", "Which chats exist", "Their purpose and their admins."),
+            ("point", "What not to post", "The list above."),
+            ("point", "How to share files", "The office drive, with limited access."),
+            ("point", "How decisions are recorded", "Minutes or memo, not the chat alone."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "One chat for everything", "Split by purpose and audience."),
+            ("point", "Never reviewing members", "Former staff can stay for years."),
+            ("point", "Posting names and amounts", "Share totals, or use a limited file."),
+            ("point", "Acting on a chat request for money", "Confirm by another channel."),
+            ("h", "Key Takeaways"),
+            ("point", "The right members", "One purpose per chat, reviewed monthly."),
+            ("point", "Proportionality applies", "Share only what is needed, with only who needs it."),
+            ("point", "Confirm before acting", "Names and voices can be faked."),
+            ("point", "Decisions leave the chat", "Into minutes or a memo."),
+            ("h", "Your Part 39 Action Plan"),
+            ("point", "Today", "Open your work chats and count members who no longer belong."),
+            ("point", "This week", "Ask the admins to remove them and to require approval to join."),
+            ("point", "This month", "Agree on a one-page chat policy at your next staff meeting."),
+            "After the screenshot, the office split its chat in two, removed fourteen members and deleted the "
+            "post. The collectors now get a list of barangays and totals in the chat, and the names in a shared "
+            "file only they can open.",
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 21: Sharing Files Safely, Links, Attachments and Who Can See Them", "/blog/cybersecurity-part-21-safe-file-sharing/"),
+            ("cta", "Read: Cybersecurity Series, Part 38: When Someone Leaves or Transfers, Closing Accounts and Access", "/blog/cybersecurity-part-38-closing-access-when-staff-leave/"),
+            ("cta", "Read: Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise", "/blog/cybersecurity-part-14-social-media-accounts/"),
+            ("ask", "How many people in your office group chat still work in your office?"),
+        ],
+    },
+    {
+        "title": "Cybersecurity Series, Part 38: When Someone Leaves or Transfers, Closing Accounts and Access",
+        "slug": "cybersecurity-part-38-closing-access-when-staff-leave",
+        "category": "security",
+        "date": "May 13, 2027",
+        "summary": "People retire, resign and move to other offices. Their accounts, keys and admin rights can "
+                   "stay behind. This part explains what to close, what to keep, and what to change when "
+                   "someone leaves or transfers, using a simple checklist built on a widely used US government "
+                   "security standard.",
+        "publish_on": "2027-05-13 21:00",
+        "body": [
+            "The audit team asked a simple question: who had signed in to the collection system last week? "
+            "The list had eleven names. The office had nine staff.",
+            "One name belonged to a clerk who had transferred to the assessor’s office in January. The other "
+            "belonged to a casual employee whose contract had ended in December. Neither had done anything "
+            "wrong. Their accounts had simply never been closed, and someone had been using one of them "
+            "because it still had the old password written on a card.",
+            "(The office, the people and the system are invented for this post. The security controls quoted "
+            "below are from a published US government standard.)",
+            "Part 37 looked at doors, keys and visitors. This part looks at what happens when a person who had "
+            "those keys walks out of the job for the last time. Read on to learn why access lingers, what a "
+            "widely used standard says to do, a checklist for the last day, how a transfer differs from a "
+            "departure, and how to check that nothing was missed.",
+            ("photo", "blog/cyber-leaving.jpg", "When someone leaves: list their access, close accounts on the "
+             "last day, collect keys and devices, change shared secrets, and keep the office’s files. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Access Lingers"),
+            ("point", "Nobody owns the task", "Human resources processes the papers. The technical person may "
+             "not be told."),
+            ("point", "Access is scattered", "A system login, an email account, a shared drive, a social media "
+             "page, a group chat, a vault combination, a door key."),
+            ("point", "Transfers look harmless", "The person is still in the same local government, so their "
+             "old access feels safe to leave in place."),
+            ("point", "Closing feels rude", "Nobody wants to lock out a colleague who is still having a "
+             "farewell lunch."),
+            "Part 18 made “access ends when the job ends” rule 9 of its one-page baseline. This part turns "
+            "that rule into steps.",
+            ("h", "What a Widely Used Standard Says"),
+            "The US National Institute of Standards and Technology publishes a catalog of security controls, "
+            "SP 800-53. Its control PS-4, Personnel Termination, lists what an organization should do when "
+            "someone leaves. Among them:",
+            ("point", "Disable system access", "Within a time period the organization sets."),
+            ("point", "Revoke credentials", "Terminate or revoke any authenticators and credentials linked to "
+             "the person."),
+            ("point", "Hold an exit interview", "One that includes a discussion of security topics."),
+            ("point", "Retrieve property", "Collect all security-related property, such as keys, cards and "
+             "devices."),
+            ("point", "Keep the office’s information", "Retain access to the information and systems the "
+             "person controlled."),
+            "Its control PS-5, Personnel Transfer, adds that when a person is reassigned, the organization "
+            "should review whether they still need their current access and modify it to match the new job.",
+            "These are not Philippine rules. They are a practical checklist that any office, large or small, "
+            "can borrow.",
+            ("h", "Step 1: Keep an Access List for Every Person"),
+            "You cannot close what you do not know about. For each staff member, keep one row in a sheet:",
+            ("point", "Systems", "Every system login, with the level of access."),
+            ("point", "Email and shared drives", "Office email, shared folders and files they own."),
+            ("point", "Pages and groups", "Office social media pages where they are an admin, and work group "
+             "chats."),
+            ("point", "Physical access", "Keys, combinations, badges, the vault and the records room, from the "
+             "key register in Part 37."),
+            ("point", "Devices", "Office laptop, phone, USB drives, tokens."),
+            "Update the row whenever access is granted. On the last day, the row becomes the checklist.",
+            ("photo", "blog/cyber-leaving-list.jpg", "One row per person becomes the last-day checklist: each item "
+             "is closed, collected or changed, with the time and who did it. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 2: The Last Day"),
+            ("point", "Close system accounts", "Disable them at the end of the last working day, not weeks "
+             "later. Disable first. Delete only after the records are safe."),
+            ("point", "Collect keys and devices", "Against the key register and the property list. Sign for "
+             "each."),
+            ("point", "Change what was shared", "Any password, combination or code the person knew and others "
+             "still use. This step is easy to forget."),
+            ("point", "Remove admin roles", "From office social media pages, the sending service, the Wi-Fi "
+             "router and any shared account."),
+            ("point", "Remove from work chats", "Group chats where office information is discussed."),
+            ("point", "Hold a short exit talk", "Remind the person that personal data handled at work stays "
+             "confidential after they leave, and ask whether any work files sit on "
+             "personal devices."),
+            ("h", "What the Data Privacy Act Says About Leaving"),
+            "The duty to protect personal data does not end with the job. Section 20(e) of the Data Privacy "
+            "Act of 2012, Republic Act No. 10173, says that employees involved in processing personal "
+            "information shall hold it under strict confidentiality if it is not intended for public "
+            "disclosure.",
+            ("quote", "“This obligation shall continue even after leaving the public service, transfer to "
+             "another position or upon termination of employment or contractual relations.”"),
+            "That sentence covers all three cases in this post: leaving, transferring and the end of a contract. "
+            "Reading it aloud during the exit talk takes a minute and makes the point better than a long "
+            "lecture. Closing the accounts is the office’s part. Keeping quiet about what was seen is the "
+            "person’s part, and the law expects both.",
+            ("h", "Step 3: Keep the Office’s Files"),
+            "Closing an account should not lose the work.",
+            ("point", "Move file ownership", "Files the person owned in a shared drive should be transferred to "
+             "the office account or a supervisor before the account is removed. Part 21 covered who can see "
+             "shared files."),
+            ("point", "Handle the mailbox", "Keep the office mailbox accessible to the supervisor for a set "
+             "time, so replies from taxpayers are not lost."),
+            ("point", "Keep the records", "Logs of what the person did stay with the office for audit."),
+            ("h", "Transfers Are Different"),
+            "A transfer is not a departure. The person still needs some access, just not the same access.",
+            ("point", "Review", "List what the old job needed and what the new job needs."),
+            ("point", "Remove what no longer fits", "The collector moving to the market office no longer needs "
+             "the collection system’s cashier role."),
+            ("point", "Grant the new access separately", "Through the normal request, recorded in the access "
+             "list."),
+            "Zero trust, from Part 8, rests on the idea that access should match the current need. A transfer "
+            "is exactly the moment the need changes.",
+            ("h", "Step 4: Check a Week Later"),
+            ("point", "Sign-in reports", "Look for any sign-in by a closed account."),
+            ("point", "Admin lists", "Check each page and service for old names."),
+            ("point", "The access list", "Confirm every item on the person’s row is marked done."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Waiting for the paperwork", "Close access on the last working day."),
+            ("point", "Forgetting shared secrets", "Change every code the person knew."),
+            ("point", "Deleting too fast", "Disable first, move the files, then delete."),
+            ("point", "Ignoring transfers", "Reassignment needs a review too."),
+            ("h", "Key Takeaways"),
+            ("point", "Keep an access list", "One row per person, updated when access is granted."),
+            ("point", "Close on the last day", "Accounts, keys, admin roles and chats."),
+            ("point", "Change shared secrets", "What one person knew, everyone must assume is known."),
+            ("point", "Transfers need a review", "Match access to the new job."),
+            ("h", "Your Part 38 Action Plan"),
+            ("point", "This week", "Start an access list with one row per staff member."),
+            ("point", "This month", "Compare the sign-in list of your main system with the current staff."),
+            ("point", "Next departure", "Use the person’s row as the last-day checklist, and agree with human "
+             "resources that the technical person is told before the last day."),
+            "After the audit, the office closed both accounts, changed the shared password on the card, and "
+            "added one line to the clearance form every departing employee brings around: “Access list "
+            "closed,” with a space for the technical person to sign.",
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 37: Physical Security at the Office, Doors, Keys and Visitors", "/blog/cybersecurity-part-37-physical-security/"),
+            ("cta", "Read: Cybersecurity Series, Part 8: Zero Trust, or Why Every Door Gets Checked", "/blog/cybersecurity-part-8-zero-trust/"),
+            ("cta", "Read: Cybersecurity Series, Part 21: Sharing Files Safely, Links, Attachments and Who Can See Them", "/blog/cybersecurity-part-21-safe-file-sharing/"),
+            ("ask", "When someone left your office last, who closed their accounts, and when?"),
+        ],
+    },
+    {
         "title": "Cybersecurity Series, Part 37: Physical Security at the Office, Doors, Keys and Visitors",
         "slug": "cybersecurity-part-37-physical-security",
         "category": "security",

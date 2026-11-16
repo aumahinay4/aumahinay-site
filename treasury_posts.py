@@ -7,6 +7,277 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget",
+        "slug": "estimating-next-years-income",
+        "category": "finance",
+        "date": "May 19, 2027",
+        "summary": "Every local budget starts with a guess about how much money will come in. The treasury "
+                   "supplies the actual collections and helps estimate the rest, and four officials certify "
+                   "that the estimate is reasonably collectible. This part explains the form, the method and why "
+                   "an estimate that is too hopeful causes trouble all year.",
+        "publish_on": "2027-05-19 21:00",
+        "body": [
+            "In July, the budget officer sent the treasury a one-line request: “Please give us next year’s "
+            "estimated receipts.” Three people had three different ideas. The planning coordinator wanted a "
+            "higher figure to fit more projects. The accountant wanted last year’s actual. The treasurer wanted "
+            "to look at what had changed first.",
+            "All three had a point. Only one approach would hold up when the money had to be spent.",
+            "(The local government, the people and the amounts are invented for this post. The budget form and "
+            "its wording come from the cited memorandum of the Department of Budget and Management.)",
+            "Part 30 covered collecting business taxes that are already overdue. This part looks forward, to "
+            "the income a local government expects next year. By the end, you will know which form carries the "
+            "estimate, what each column means, who certifies it, a simple method for building a realistic "
+            "estimate, and what happens when the estimate is too high.",
+            ("photo", "blog/finance-estimate.jpg", "Estimating next year’s income: start from what was actually "
+             "collected, adjust for what has really changed, and certify only what can reasonably be "
+             "collected. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Form That Carries the Estimate"),
+            "The Department of Budget and Management issues a Local Budget Memorandum each year to guide local "
+            "budget preparation. Local Budget Memorandum No. 90, dated June 13, 2024, includes the Budget of "
+            "Expenditures and Sources of Financing, LBP Form No. 1, for the General Fund. Its columns:",
+            ("point", "Past Year (Actual)", "What was actually received last year."),
+            ("point", "Current Year, First Semester (Actual)", "What has been received from January to June."),
+            ("point", "Current Year, Second Semester (Estimate)", "What is expected from July to December."),
+            ("point", "Current Year, Total", "The two semesters added together."),
+            ("point", "Budget Year (Proposed)", "The estimate for next year."),
+            "Two of those columns are facts, not guesses. The memorandum notes that past-year and first-semester "
+            "receipts are jointly certified by the local treasurer and the local accountant.",
+            ("h", "Who Certifies the Estimate"),
+            "The form is signed by the local budget officer, the local treasurer, the local planning and "
+            "development coordinator and the local accountant, and approved by the local chief executive. Their "
+            "certification includes this sentence:",
+            ("quote", "“We further certify that the foregoing estimated receipts are reasonably projected as "
+             "collectible for the Budget Year.”"),
+            "Reasonably projected as collectible. Not hoped for, not needed to balance the projects. The "
+            "treasurer’s signature puts the treasury’s judgment behind that phrase.",
+            ("h", "A Simple Method for Local Sources"),
+            "Take one source at a time, such as the business tax.",
+            ("point", "Step 1: Start from actuals", "Past year: ₱18,000,000. First semester this year: "
+             "₱12,600,000."),
+            ("point", "Step 2: Estimate the rest of this year", "Use the office’s own records of past "
+             "years to see what share of the year’s business tax the second semester has brought in, and "
+             "apply it. Here: ₱6,200,000, for a current-year total of ₱18,800,000."),
+            ("point", "Step 3: Adjust only for real changes", "A new market wing with 40 stalls opening in "
+             "January, a revised tax ordinance already approved, a large business that has closed. Each "
+             "change is written down with its amount."),
+            ("point", "Step 4: Write the reasons", "One line per adjustment, kept with the working papers, so "
+             "next year’s team knows why."),
+            ("point", "Step 5: Check against history", "Compare the proposed figure with the growth the "
+             "source has actually shown. A sudden jump with no written reason is a warning."),
+            ("photo", "blog/finance-estimate-steps.jpg", "Building one line of the estimate: last year’s actual, "
+             "this year’s first half, an estimate of the second half, then only documented changes. Figures "
+             "are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Back to the Business Tax"),
+            "The treasurer’s working paper for the business tax had three lines.",
+            ("point", "Current-year total", "₱18,800,000."),
+            ("point", "Business closed in March", "Minus ₱300,000 a year, from its last assessment."),
+            ("point", "Revised schedule approved for next year", "Plus ₱900,000, computed business by business "
+             "from this year’s declared gross sales."),
+            "Proposed for the budget year: ₱19,400,000. The planning coordinator had hoped for ₱22,000,000. "
+            "The difference had no reason written beside it, so it stayed out.",
+            ("h", "Fees and Charges: Count Times Rate"),
+            "Fees behave differently from taxes. Their total depends on how many transactions the office "
+            "handles and on the rate set in the local revenue code.",
+            ("point", "Count the transactions", "Use the receipts issued last year for each fee, such as "
+             "permits or certifications, and the count so far this year."),
+            ("point", "Apply the rate in force", "Use the rate in the ordinance that will apply next year, "
+             "not a rate still under discussion."),
+            ("point", "Note any change in volume", "A new office opening, a service moved online or a "
+             "program ending can raise or lower the count. Write the reason, as with taxes."),
+            "For example, 2,400 certifications last year at ₱100 each gave ₱240,000. If the count so far "
+            "this year points to about 2,500, the proposed figure is ₱250,000, with the reason written "
+            "beside it.",
+            ("h", "What the Sanggunian May Ask"),
+            "When the budget reaches the local legislative body, members may ask why a source is projected to "
+            "rise. A treasury that kept the working papers can answer in minutes: the actuals, each "
+            "adjustment and its reason. That record also helps next year’s team start faster.",
+            ("h", "Why Too High Is Worse Than Too Low"),
+            ("point", "Spending runs ahead of cash", "Part 7 explained Section 337, which limits disbursements "
+             "from a fund to actual collections plus half of the estimated revenue not yet collected. An "
+             "inflated estimate makes that limit look roomier than the cash really is."),
+            ("point", "Projects stall midyear", "Contracts are signed against money that never arrives."),
+            ("point", "Trust is lost", "Next year, every figure the treasury signs is doubted."),
+            "An estimate that turns out slightly low leaves room for a supplemental budget later, funded by "
+            "income actually received.",
+            ("h", "Shares From Outside"),
+            "Not every source is estimated by the treasury. A local government’s share of national taxes, "
+            "covered in Part 1, is based on the figures the national government announces. The treasury’s job "
+            "there is to use the announced amount, not to round it up.",
+            ("h", "Measuring Accuracy"),
+            "At year-end, compare each source’s estimate with its actual collection.",
+            ("point", "Within a few percent", "The method is working."),
+            ("point", "Far above actual", "Find the adjustment that did not happen, and remember it."),
+            ("point", "Far below actual", "Find the change that was missed."),
+            "Part 10 listed the reports a local government must post, including its quarterly statement of receipts and expenditures. "
+            "Residents can make the same comparison.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Estimating to fit the projects", "The projects should fit the estimate."),
+            ("point", "Skipping the actuals", "Past year and first semester come first."),
+            ("point", "Adjustments with no written reason", "If it cannot be explained, leave it out."),
+            ("point", "Never checking last year’s estimate", "Accuracy improves only when it is measured."),
+            ("h", "Key Takeaways"),
+            ("point", "One form, five columns", "Past actual, first semester, second-semester estimate, total "
+             "and budget year."),
+            ("point", "Four signatures", "Budget officer, treasurer, planning coordinator and accountant."),
+            ("point", "Reasonably collectible", "The standard the certification promises."),
+            ("point", "Actuals plus documented changes", "A method anyone can check."),
+            ("h", "Your Part 31 Action Plan"),
+            ("point", "If you work in a treasury", "For your three largest local sources, write last year’s "
+             "estimate beside last year’s actual and note the difference."),
+            ("point", "If you sit in the sanggunian", "Ask for the written reasons behind any source projected "
+             "to grow faster than it has in past years."),
+            ("point", "If you are a resident", "Find your local government’s posted statement of receipts and expenditures and "
+             "compare two years."),
+            "The budget passed with the treasury’s figure. In December, the business tax came in at "
+            "₱19,550,000, slightly above the estimate. The planning coordinator’s extra project went into a "
+            "supplemental budget, paid for with money already in the bank.",
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit", "/blog/when-local-governments-borrow/"),
+            ("ask", "Have you ever compared your local government’s estimated income with what it actually collected?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 30: Unpaid Business Taxes, Distraint, Levy and What Cannot Be Seized",
+        "slug": "unpaid-business-taxes-distraint-and-levy",
+        "category": "finance",
+        "date": "May 14, 2027",
+        "summary": "When business taxes stay unpaid, the Local Government Code lets the treasurer seize and sell "
+                   "personal property, levy on real property, or go to court. This part explains the steps and "
+                   "deadlines in Sections 173 to 185, the property that cannot be taken, and how a business "
+                   "owner can stop the process by paying.",
+        "publish_on": "2027-05-14 21:00",
+        "body": [
+            "The hardware store had not paid its business tax for two years. The first notice was ignored. So "
+            "was the second. When the third letter arrived, it came with a draft warrant attached and a short "
+            "line from the treasurer: “Please see me before Friday.”",
+            "The owner came on Thursday, angry. “You cannot take my store.” The treasurer opened the Local "
+            "Government Code and showed him exactly what the law allowed, what it did not, and how he could "
+            "stop all of it.",
+            "(The store, the owner and the amounts are invented for this post. The sections of the Local "
+            "Government Code described below are real.)",
+            "Part 5 followed unpaid real property tax from notice to auction. This part covers the other big "
+            "source of local revenue, business taxes, which follow a separate set of rules in Sections 173 to "
+            "185. By the end, you will know the remedies the law gives, the steps and deadlines for seizing "
+            "personal property and levying on real property, what cannot be seized, and what a business owner "
+            "can do at any point.",
+            ("photo", "blog/finance-distraint.jpg", "Collecting unpaid business taxes: a lien on the property, "
+             "distraint of personal property, levy on real property, or a court case. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Lien Comes First"),
+            "Section 173 makes local taxes, fees and charges a lien on the property subject to them. The lien "
+            "is “superior to all liens, charges or encumbrances in favor of any person.” It ends only when the "
+            "tax, with surcharges and interest, is fully paid.",
+            ("h", "Three Remedies"),
+            "Section 174 lists the civil remedies for collecting local taxes.",
+            ("point", "Distraint of personal property", "Seizing movable property, such as goods or equipment, "
+             "and selling it."),
+            ("point", "Levy on real property", "Placing a hold on land or buildings, and selling them if the tax "
+             "is not paid."),
+            ("point", "Judicial action", "Filing a case in court."),
+            "The section allows these remedies to be pursued at the same time or one after another, as the "
+            "local government chooses.",
+            ("h", "Distraint, Step by Step"),
+            "Section 175 sets out the process.",
+            ("point", "Seizure", "On failure to pay on time, the treasurer may seize enough personal property "
+             "to cover the tax, upon written notice."),
+            ("point", "Accounting", "The officer leaves a signed list of the goods seized with the owner, or "
+             "at the home or place of business with someone of suitable age."),
+            ("point", "Posting", "Notice of the sale is posted in at least three public and conspicuous places, "
+             "one of them at the office of the local chief executive. The sale may not be held until at least "
+             "20 days after notice to the owner and the posting."),
+            ("point", "Release", "If the owner pays the full amount and charges before the sale, the goods are "
+             "returned."),
+            ("point", "Sale", "Otherwise the goods are sold at public auction. The treasurer reports the sale "
+             "to the local chief executive in writing within five days."),
+            ("h", "Levy on Real Property"),
+            "Section 176 allows a levy before, together with or after distraint.",
+            ("point", "Notice of levy", "A written notice goes to the assessor and to the Registrar of Deeds, who "
+             "annotate the records of the property."),
+            ("point", "When distraint is not enough", "If the personal property seized is not enough, the "
+             "treasurer proceeds with a levy on real property within 30 days after the distraint."),
+            ("point", "Advertisement", "Under Section 178, the treasurer advertises the sale within 30 days "
+             "after the levy, for at least 30 days, by posting at the main entrance of the municipal or city "
+             "building and in the barangay, and by publication once a week for three weeks."),
+            ("point", "Redemption", "Section 179 gives the owner one year from the sale to redeem the property "
+             "by paying the taxes, charges and interest of not more than 2 percent a month on the purchase "
+             "price."),
+            ("point", "No bidder", "Under Section 181, if nobody bids enough, the treasurer purchases the "
+             "property for the local government, and the owner still has one year to redeem it."),
+            ("photo", "blog/finance-distraint-steps.jpg", "The timeline for distraint and levy, with the day "
+             "counts set by the Local Government Code. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Cannot Be Seized"),
+            "Section 185 protects certain property from distraint or levy. Among the items it lists:",
+            ("point", "Tools of the trade", "Tools and implements necessarily used by the taxpayer in his trade "
+             "or employment."),
+            ("point", "A work animal", "One draft animal necessarily used in the taxpayer’s occupation."),
+            ("point", "Family needs", "Necessary clothing, and household furniture and utensils up to ₱10,000 "
+             "in value."),
+            ("point", "Food", "Provisions, including crops, for individual or family use, enough for four "
+             "months."),
+            ("point", "Professional libraries", "Of doctors, engineers, lawyers and judges."),
+            ("point", "A fishing boat", "One fishing boat and net, up to ₱10,000 in value, used by a fisherman "
+             "for his livelihood."),
+            ("point", "Parts of a house", "Materials forming part of a house or improvement on real property."),
+            "The list keeps collection from taking away a family’s means of living. When in doubt about an item, "
+            "the treasurer should leave it and check.",
+            ("h", "Distraint or Levy: Which Comes First?"),
+            "The Code leaves the order to the local government, but each remedy fits a different case.",
+            ("point", "Distraint suits a running business", "Goods on the shelves or equipment that is not a "
+             "protected tool can cover a modest debt quickly, and the owner can get them back by paying "
+             "before the sale."),
+            ("point", "Levy suits a larger debt", "When the amount is large, or the business has closed and "
+             "left little stock, a levy on land or a building secures the debt through the Registrar of "
+             "Deeds."),
+            ("point", "Court suits a disputed amount", "When the taxpayer disputes the amount and the "
+             "documents are strong, a case may settle the matter. Section 183 allows the local government to "
+             "sue in any court of competent jurisdiction."),
+            "Section 184 adds that distraint or levy may be repeated until the full amount, including "
+            "expenses, is collected.",
+            ("h", "The Treasurer Must Act"),
+            "The Code does not treat these powers as optional. Section 177 says a treasurer who fails to issue "
+            "or execute a warrant on time, or who abuses the power, shall be dismissed after due notice and "
+            "hearing, without prejudice to criminal prosecution.",
+            ("quote", "The law asks the treasurer to collect firmly, and to stay inside the lines it draws."),
+            ("h", "What the Owner Can Do"),
+            ("point", "Pay before the sale", "Payment of the tax and charges stops a distraint or a sale of real "
+             "property."),
+            ("point", "Ask for the computation", "In writing, showing the tax, surcharge and interest. Part 2 "
+             "covered how business taxes are assessed each January."),
+            ("point", "Question the assessment properly", "Part 18 explained the protest and refund rules. A "
+             "protest has its own deadlines."),
+            ("point", "Close the business properly", "If the store has stopped operating, Part 14 explained how "
+             "retirement is done, so taxes do not keep running."),
+            ("h", "Back to the Hardware Store"),
+            "The owner owed ₱86,400 including surcharges and interest. After seeing the computation, he "
+            "came back the next Monday with the full amount, before the date set for the warrant. No goods were seized. The draft warrant went back into the folder, unsigned.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "For offices: skipping the written notice", "Seizure follows written notice."),
+            ("point", "For offices: seizing exempt items", "Check Section 185 first."),
+            ("point", "For owners: ignoring the letters", "Every notice is a chance to pay before property is "
+             "taken."),
+            ("point", "For owners: waiting for the auction", "Paying earlier costs less."),
+            ("h", "Key Takeaways"),
+            ("point", "A superior lien", "Local taxes come before other claims on the property."),
+            ("point", "Three remedies", "Distraint, levy and court, together or in turn."),
+            ("point", "Fixed steps and deadlines", "Notice, posting, at least 20 days, then sale."),
+            ("point", "Some property is protected", "Tools, food, clothing and other items in Section 185."),
+            ("h", "Your Part 30 Action Plan"),
+            ("point", "If you work in a treasury", "List delinquent business accounts by age, as Part 34 of the "
+             "Business Intelligence Series did, and send written notices to the oldest first."),
+            ("point", "If you own a business", "Check that your business tax for this year and last is paid, "
+             "and keep the official receipts."),
+            ("point", "If you sit in the sanggunian", "Ask the treasurer for a yearly report on distraint and "
+             "levy actions and their results."),
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 14: Closing a Business the Right Way", "/blog/closing-a-business-the-right-way/"),
+            ("cta", "Read: Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests", "/blog/local-tax-refunds-and-credits/"),
+            ("ask", "Did you know which property the law protects from seizure for unpaid taxes?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit",
         "slug": "when-local-governments-borrow",
         "category": "finance",
