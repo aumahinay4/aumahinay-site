@@ -14,6 +14,255 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "date": "April 17, 2027",
+        "title": "Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big",
+        "slug": "project-management-part-32-running-a-pilot",
+        "category": "pm",
+        "summary": "A pilot tries a new way of working with a small group, for a fixed time, against targets "
+                   "set in advance. This part shows how to choose the pilot group, write the success "
+                   "criteria before the start, compare fairly, and decide at the end whether to scale, "
+                   "adjust or stop.",
+        "publish_on": "2027-04-17 21:00",
+        "body": [
+            "The phone numbers had been cleaned, and the text reminders were ready to go. The councilor who "
+            "had asked for them wanted every business in town to get a reminder before the next quarterly "
+            "deadline. The project lead asked for something smaller first: one barangay, one deadline, and "
+            "a written answer at the end to the question “did it work?”",
+            "The councilor agreed, a little impatiently. Three weeks later, the pilot found a problem that "
+            "would have reached every business in town.",
+            "(The office, the reminders and every number below continue the invented example from Part 29. "
+            "They describe no real local government.)",
+            "Part 31 kept a project moving when someone is away. This part covers a way to start a change "
+            "without betting everything on it. You will learn what a pilot is and when it helps, how to "
+            "choose where to run it, why the targets must be written before the start, how to compare "
+            "fairly, and how to make the decision to scale, adjust or stop.",
+            ("photo", "blog/pm-pilot.jpg", "Running a pilot: a small group, a fixed time, targets written "
+             "first, and a clear decision at the end. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Pilot Is"),
+            "A pilot is a small, time-limited trial of a new process, tool or service, run with real people "
+            "in real conditions, to learn whether it works before it is used everywhere.",
+            ("point", "Small", "One barangay, one section of the market, one window, one kind of permit."),
+            ("point", "Time-limited", "A start date and an end date, set in advance."),
+            ("point", "Real", "Actual taxpayers and actual deadlines, not a demonstration in the conference room."),
+            ("point", "Decided", "It ends with a written decision, not with the trial quietly becoming the "
+             "new normal."),
+            "A pilot is not a test of whether the software runs. Part 23 covered quality checks of that kind. A "
+            "pilot tests whether the change does what it was meant to do for the people it serves.",
+            ("h", "When a Pilot Helps"),
+            ("point", "The change affects many people", "A mistake in a reminder sent to every business "
+             "costs more than one sent to a hundred."),
+            ("point", "Nobody knows how people will react", "Will taxpayers read a text? Will they call the "
+             "office instead? Only trying will tell."),
+            ("point", "It costs money or time to undo", "Printed forms, new equipment, a changed procedure."),
+            "A pilot is not needed for every change. Moving a sign or fixing a typo on a form can simply be "
+            "done.",
+            ("h", "Step 1: Write the Question and the Targets First"),
+            "Before the first reminder went out, the project lead wrote a one-page pilot plan. It answered "
+            "one question: “Do text reminders three days before the deadline increase on-time payment of the "
+            "quarterly business tax?”",
+            ("point", "On-time payment", "Last year, 70 of the 120 businesses in the pilot barangay paid the "
+             "same quarter on time, or 58 percent. Target: at least 90 of 120, or 75 percent."),
+            ("point", "Delivery", "No more than 5 percent of messages failing to reach a working number."),
+            ("point", "Staff time", "No more than three hours of staff time for the whole pilot."),
+            ("point", "Complaints", "No more than two complaints about the messages."),
+            "The targets were written and signed before the start, for the same reason Part 29 set the "
+            "weights before scoring: a target chosen after the results are in can be bent to fit them.",
+            ("h", "Step 2: Choose Where, and Who to Compare With"),
+            ("point", "Choose a typical group", "The project lead chose a barangay with a mix of small "
+             "stores and larger businesses, not the one with the best payment record. A pilot run where it is "
+             "easiest can succeed and still fail everywhere else."),
+            ("point", "Keep a comparison group", "The other barangays got no reminders during the pilot. If "
+             "on-time payment rose everywhere, the reminders could not take the credit. Part 13 of the Data "
+             "Analytics Series explains how bias can creep into a comparison like this."),
+            ("point", "Respect consent and privacy", "Messages went only to numbers that business owners had "
+             "given the office for notices, and contained no amounts or account details."),
+            ("h", "Step 3: Run It, and Write Things Down"),
+            "During the pilot, the clerk kept a simple log: messages sent, messages that failed, calls "
+            "received, and anything unexpected. The issue log from Part 26 works for this.",
+            "On the second day, the log showed something the plan had not expected. Nine of the 120 messages "
+            "had failed. Some numbers had been changed since the cleanup, and two belonged to former owners "
+            "of businesses that had closed.",
+            "The project lead resisted the urge to fix the list in the middle of the pilot. Changing the "
+            "process halfway would have made the results hard to read. Instead, the failures were logged, the "
+            "affected owners were reached by phone or by a visit so nobody missed the deadline because of the "
+            "pilot, and the fix waited for the decision.",
+            ("h", "Step 4: Compare the Results With the Targets"),
+            ("photo", "blog/pm-pilot-results.jpg", "The pilot scorecard: targets written before the start, "
+             "results after, and the decision that follows. Figures are invented. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("point", "On-time payment", "94 of 120, or 78 percent. Target met. In the comparison barangays, "
+             "on-time payment moved from 59 to 61 percent, so most of the gain in the pilot barangay is "
+             "likely due to the reminders, not to the season."),
+            ("point", "Delivery", "9 of 120 messages failed, or 7.5 percent. Target missed."),
+            ("point", "Staff time", "Two and a half hours. Target met."),
+            ("point", "Complaints", "One, from a former owner whose business had closed. Target met."),
+            ("h", "Step 5: Decide: Scale, Adjust or Stop"),
+            "A pilot ends with one of three decisions, written down with the reason.",
+            ("point", "Scale", "The targets were met. Roll it out, with the lessons learned."),
+            ("point", "Adjust", "The idea works, but something needs fixing first. Fix it, and if the fix is "
+             "large, run a second, shorter pilot."),
+            ("point", "Stop", "The targets were clearly missed, or the cost was too high. Stopping is a "
+             "valid result. The pilot saved the office from a larger failure."),
+            "The decision here was to adjust. The reminders worked, but the phone list was going stale. The "
+            "office added a step: each business owner confirms the number when renewing the permit, and the "
+            "closure process from Part 14 of Inside the Local Treasury now removes the number. The reminders "
+            "were scheduled for all barangays at the next quarter.",
+            ("quote", "A pilot that finds a problem has done its job. The failure it prevents is the one you "
+             "never see."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Setting targets after the results", "Write them down and sign them first."),
+            ("point", "Choosing the easiest site", "Pick a typical one."),
+            ("point", "No comparison group", "Without one, you can’t tell the pilot from the season."),
+            ("point", "A pilot with no end date", "It drifts into permanent use without a decision."),
+            ("h", "Key Takeaways"),
+            ("point", "Small, short and real", "One group, a fixed period, real conditions."),
+            ("point", "Targets first", "Written before the start, on one page."),
+            ("point", "Compare fairly", "A typical site, and a group without the change."),
+            ("point", "End with a decision", "Scale, adjust or stop, with the reason."),
+            ("h", "Your Part 32 Action Plan"),
+            ("point", "Pick a change", "Choose one change your office is considering."),
+            ("point", "Write the question", "In one sentence, with the result you hope to see."),
+            ("point", "Set three or four targets", "Each with a number, and the baseline you will compare it with."),
+            ("point", "Set the dates", "A start, an end, and the day the decision will be made."),
+            "When the councilor saw the results, he asked why the office had not simply sent the reminders "
+            "to everyone at once. The project lead showed him the nine failed messages. Across the whole "
+            "town, it would have been dozens, and some would have gone to people who had closed their "
+            "businesses years ago.",
+            ("cta", "Read: Project Management Series, Part 29: Too Many Requests? Choosing the Next Project With a Scoring Matrix", "/blog/project-management-part-29-scoring-matrix/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 23: Quality Planning, Deciding What Good Enough Means", "/blog/project-management-part-23-quality-planning/"),
+            ("cta", "Read: Data Analytics Series, Part 13: Bias in Data, and How to Catch It", "/blog/data-analytics-part-13-bias-in-data/"),
+            ("ask", "What change in your office would you test with a small group first?"),
+        ],
+    },
+    {
+        "date": "April 12, 2027",
+        "title": "Project Management Series, Part 31: Covering for Absences, a Backup Plan So the Work Does Not Stop",
+        "slug": "project-management-part-31-covering-absences",
+        "category": "pm",
+        "summary": "When the one person who knows a task goes on leave, the task can stop with them. This part "
+                   "shows how to find those single points of failure, build a simple cross-training grid, "
+                   "write a handover note, give a backup the right access without sharing passwords, and test "
+                   "the plan before anyone is away.",
+        "publish_on": "2027-04-12 21:00",
+        "body": [
+            "The arrears drive was in its third week when the market supervisor’s daughter was rushed to the "
+            "hospital. He was on leave for five days. On the second day, three stallholders came to the "
+            "treasury to settle their arrears under the payment plans he had arranged. Nobody else knew the "
+            "terms. The plans were in a notebook in his drawer, and the drawer was locked.",
+            "The stallholders went home. Two of them did not come back that month.",
+            "(The office, the people and the arrears drive continue the invented example from Part 29. They "
+            "describe no real local government.)",
+            "Part 30 built a project kit so the next project starts faster. This part keeps a running project "
+            "moving when someone is away. You will learn how to find the tasks that depend on one person, how "
+            "to map who can cover what, what a good handover note contains, how to give a backup access "
+            "safely, and how to test the plan while everyone is still at work.",
+            ("photo", "blog/pm-backup.jpg", "Covering for absences: find the one-person tasks, name a backup "
+             "for each, write it down, and practice before anyone leaves. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Absences Stop Projects"),
+            "People get sick, take leave, attend trainings and get reassigned. None of that is a surprise. "
+            "What causes the trouble is a task that only one person can do.",
+            ("point", "Knowledge in one head", "The payment plan terms were agreed in conversations and kept "
+             "in one notebook."),
+            ("point", "Access in one account", "Only one person can open the folder, the system or the drawer."),
+            ("point", "Decisions waiting for one person", "Nobody else is allowed to approve, so the work "
+             "waits."),
+            ("quote", "A task that only one person can do is a risk, even when that person is excellent."),
+            "Part 19 introduced the risk register. “Key person unavailable” belongs on it, with this part as "
+            "the response.",
+            ("h", "Step 1: Find the One-Person Tasks"),
+            "Take the project’s task list or work breakdown structure from Part 14. For each task that will "
+            "run in the next month, ask two questions.",
+            ("point", "Who can do this today?", "Write every name, not only the person assigned."),
+            ("point", "What happens if it waits a week?", "Some tasks can wait. Collecting from a stallholder "
+             "who came in person cannot."),
+            "Any task with one name and a high cost of waiting is a single point of failure. In the arrears "
+            "drive, the clerk found three: applying the payment plan terms, updating the arrears list, and "
+            "signing the weekly summary.",
+            ("h", "Step 2: Build a Cross-Training Grid"),
+            "Draw a small table. Tasks go down the side, people across the top. In each cell, write P for the "
+            "primary person, B for the backup, and leave it blank if that person has not learned the task.",
+            ("point", "Every important task needs a B", "One backup per task is the minimum."),
+            ("point", "Spread the backups", "If one person is the backup for everything, that person becomes "
+             "the next single point of failure."),
+            ("point", "Look at the columns too", "A column full of P’s shows a person carrying too much, the "
+             "overload that Part 18 warned about."),
+            "The arrears drive grid showed the supervisor as P on four tasks and nobody as B on three of them. "
+            "The clerk became B for the payment plans, a market collector became B for the arrears list, and "
+            "the head of office agreed to sign the weekly summary whenever the supervisor was away.",
+            ("photo", "blog/pm-backup-grid.jpg", "The arrears drive grid after the review: every task has a "
+             "named backup. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 3: Write the Handover Note Before It Is Needed"),
+            "A handover note is one page that lets the backup continue without calling the person on leave. "
+            "Keep it updated weekly, not only when leave is filed.",
+            ("point", "Status", "Where each task stands today, in one or two lines."),
+            ("point", "Next steps", "What must happen this week, with dates."),
+            ("point", "Where things are", "The folder, the file names, the logbook, the drawer and who holds "
+             "its key."),
+            ("point", "Rules and agreements", "The payment plan terms, written out, not only remembered."),
+            ("point", "Pending decisions", "What is waiting, and who may decide in the person’s absence."),
+            ("point", "Contacts", "The stallholders, suppliers or offices the backup may need to call."),
+            "Store it where the project files are, as Part 30 suggested, not in a personal email or chat.",
+            ("h", "Step 4: Give Access the Right Way"),
+            "The quickest fix can seem to be sharing a password. It is also the wrong one.",
+            ("point", "Do not share passwords", "Shared passwords make it impossible to tell who did what, and "
+             "they keep working after the person who borrowed them has moved on. Rule 1 of the one-page "
+             "baseline in Part 18 of the Cybersecurity Series is “one person, one account.”"),
+            ("point", "Give the backup their own access", "Add the backup to the shared folder or system "
+             "with their own account, in advance, at the level the task needs."),
+            ("point", "Follow the turnover rules for accountable items", "Cash, official receipts and accountable "
+             "forms are not handed over informally. Follow your office’s procedure for turning them over, with "
+             "a count and a signed record. Parts 11 and 12 of Inside the Local Treasury explain why these items "
+             "are tracked so closely, and what a shortage means for the person accountable."),
+            ("h", "Step 5: Agree Who Decides"),
+            "Some tasks are not blocked by knowledge but by authority. Before anyone is away, agree in "
+            "writing who may decide what.",
+            ("point", "Routine decisions", "The backup may apply agreed rules, such as an existing payment "
+             "plan."),
+            ("point", "New decisions", "A new payment plan or an exception goes to a named alternate, or waits."),
+            ("point", "Signatures", "If a document needs a specific officer’s signature, check your office’s "
+             "rules on who may sign in that officer’s absence. Do not assume."),
+            ("h", "Step 6: Test the Plan While Everyone Is Present"),
+            "A backup who has never done the task is a name on paper. Test the plan before it is needed.",
+            ("point", "Let the backup do it once", "With the primary person nearby to answer questions."),
+            ("point", "Use the handover note only", "If the backup gets stuck, the note is missing something. "
+             "Fix the note."),
+            ("point", "Repeat after changes", "When the task changes, the backup practices again."),
+            "The clerk applied two payment plans with the supervisor watching. She found that the notebook "
+            "did not say what happened when a stallholder paid more than the installment. That rule went into "
+            "the handover note the same day.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Waiting for the leave form", "Write the backup plan before anyone files for leave."),
+            ("point", "Sharing passwords", "Give each backup their own access."),
+            ("point", "One backup for everything", "Spread the backups across the team."),
+            ("point", "Never testing", "Let each backup do the task once while the primary is present."),
+            ("h", "Key Takeaways"),
+            ("point", "Find the one-person tasks", "One name plus a high cost of waiting."),
+            ("point", "Use a P-and-B grid", "Every important task needs a backup."),
+            ("point", "Keep a handover note", "Status, next steps, locations, rules, decisions, contacts."),
+            ("point", "Test it", "A backup who has practiced is a real backup."),
+            ("h", "Your Part 31 Exercise"),
+            "Take the work you are responsible for this month.",
+            ("point", "List your tasks", "Mark each one that only you can do today."),
+            ("point", "Pick a backup for one", "The task that would hurt most if it waited a week."),
+            ("point", "Write the note and practice", "One page, then let your backup do the task once with you "
+             "nearby."),
+            "Then ask your backup what was unclear. Their questions are the gaps in your note. Fill "
+            "them in, and do the same for the next task on your list next month. One task at a time, "
+            "the grid fills in over the following months, without a big training program.",
+            "Two months later, the supervisor took a week of vacation leave. When a stallholder came in to "
+            "pay, the clerk opened the handover note, applied the plan, and sent the stallholder to the cashier for the official receipt. The "
+            "supervisor heard about it on his return, from the stallholder, who said the treasury had been "
+            "easy to deal with.",
+            ("cta", "Read: Project Management Series, Part 30: The Project Kit, Reusable Templates So the Next Project Starts Faster", "/blog/project-management-part-30-project-kit/"),
+            ("cta", "Read: Project Management Series, Part 18: Assigning People Without Overloading Them", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("ask", "Which task in your office stops when one person is on leave?"),
+        ],
+    },
+    {
         "date": "April 7, 2027",
         "title": "Project Management Series, Part 30: The Project Kit, Reusable Templates So the Next Project Starts Faster",
         "slug": "project-management-part-30-project-kit",

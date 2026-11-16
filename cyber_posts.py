@@ -9,6 +9,274 @@ SERIES = "Cybersecurity Series"
 
 CYBER_POSTS = [
     {
+        "date": "April 18, 2027",
+        "title": "Cybersecurity Series, Part 33: Shared Office Computers, Habits That Keep One Desk From Exposing Everyone",
+        "slug": "cybersecurity-part-33-shared-office-computers",
+        "category": "security",
+        "summary": "When several people use one computer, one person’s open email, saved password or "
+                   "forgotten download becomes everyone’s risk. This part covers separate accounts, locking "
+                   "the screen, keeping passwords out of the browser, guest mode for personal browsing, "
+                   "cleaning up files and printouts, and an end-of-day routine.",
+        "publish_on": "2027-04-18 21:00",
+        "body": [
+            "The computer at the front counter was used by three people in two shifts. On Monday morning, "
+            "the first clerk to sit down found the office email still open from Friday, a personal social "
+            "media account signed in on another tab, and a spreadsheet in the Downloads folder titled "
+            "“delinquent list final.” The printer tray beside it held two copies of someone’s payslip.",
+            "Nobody had done anything unusual. Each person had simply left the computer the way they found "
+            "it: open.",
+            "(The office and its counter computer are invented for this post. The tips below follow the "
+            "help pages of Google and the baseline from earlier parts of this series.)",
+            "Part 32 covered romance scams that target people one by one. This part looks at a risk that "
+            "sits on office desks: a computer shared by several people. You will learn why sharing a "
+            "computer is different from sharing a stapler, how separate accounts and screen locks help, why "
+            "passwords should not be saved in a shared browser, when to use guest mode, how to leave no files "
+            "or printouts behind, and a short routine for the end of the day.",
+            ("photo", "blog/cyber-shared.jpg", "Shared office computers: one account per person, lock the "
+             "screen, keep passwords out of the browser, and leave nothing behind. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Shared Computer Is Different"),
+            "A shared computer remembers more than people expect. Browsers keep people signed in, offer to "
+            "save passwords, and fill in forms. Files land in the Downloads folder and stay there. The next "
+            "person inherits all of it.",
+            ("point", "Open sessions", "An email account left signed in lets the next person read, send and "
+             "delete as you."),
+            ("point", "Saved passwords", "A password saved in a shared browser is a password shared with "
+             "everyone who uses that computer."),
+            ("point", "Files left behind", "A list of taxpayers in the Downloads folder is personal "
+             "information sitting where anyone can open it."),
+            ("point", "No way to tell who did what", "If everyone uses one account, a deleted record or a "
+             "strange email can’t be traced to a person, including the person who did nothing wrong."),
+            "Section 20 of the Data Privacy Act of 2012 requires reasonable and appropriate security measures "
+            "for personal information. Part 20 explained what that means at a desk. A shared computer is one "
+            "of the places where it is tested daily.",
+            ("h", "Habit 1: One Person, One Account"),
+            "Rule 1 of the one-page baseline in Part 18 is “one person, one account.” It applies to the "
+            "computer itself, not only to email and systems.",
+            ("point", "Separate sign-ins", "Windows and other operating systems let a computer have more "
+             "than one user account. Each person signs in with their own, and their files and browser stay "
+             "in their own space."),
+            ("point", "Separate system accounts", "The collection system, the email and the shared folders "
+             "should each recognize the person, not the desk."),
+            ("point", "Ask the person in charge of IT", "In an office, setting up accounts is their job. A "
+             "short request listing who uses which computer is a good start."),
+            ("h", "Habit 2: Lock the Screen When You Stand Up"),
+            "A computer left unlocked for five minutes is a computer anyone can use as you for five minutes.",
+            ("point", "The shortcut", "On Windows, hold the Windows logo key and press L. The screen locks "
+             "and shows the sign-in screen."),
+            ("point", "The automatic lock", "Set the screen to lock by itself after a few minutes of no use, "
+             "as a backup for the times you forget."),
+            ("point", "Make it normal", "When everyone locks, nobody feels singled out. A friendly reminder "
+             "beats a written warning."),
+            ("h", "Habit 3: Keep Passwords Out of the Shared Browser"),
+            ("point", "Say no to “save password”", "On a shared computer, choose Never when the browser "
+             "offers to save a password."),
+            ("point", "Sign out, don’t just close", "Closing a tab can leave you signed in. Use the Sign out "
+             "option in the account menu."),
+            ("point", "Use a password manager on your own device", "Part 2 explained password managers and "
+             "two-factor authentication. Your personal manager belongs on your own phone or computer, not "
+             "in a shared browser."),
+            ("h", "Habit 4: Personal Browsing Belongs in Guest Mode"),
+            "Sometimes a person needs to check a personal account on an office computer. Google’s Chrome help "
+            "describes guest mode for exactly this kind of situation: it is meant for shared or public "
+            "computers.",
+            ("point", "What it does", "Google says pages you visit in guest mode won’t appear in the browser "
+             "history, and your history, cookies and site data are deleted when you leave."),
+            ("point", "What it does not do", "The same page says your activity may still be visible to the "
+             "websites you visit, to your internet service provider, and to your employer or the network "
+             "operator."),
+            ("point", "How to open it", "In Chrome on a computer, select the profile icon at the top right, "
+             "then open the Guest profile."),
+            ("point", "Files still need care", "Google’s page does not say that downloaded files are removed. "
+             "Delete anything you downloaded before you close the window."),
+            ("h", "Habit 5: Leave No Files or Printouts Behind"),
+            ("point", "Save work where it belongs", "Office files go to the office’s shared folder, with the "
+             "access settings Part 21 described, not to the desktop or Downloads folder of a shared computer."),
+            ("point", "Clear the Downloads folder", "At least once a day, delete the files you downloaded. "
+             "Empty the Recycle Bin too."),
+            ("point", "Collect printouts at once", "A payslip or a taxpayer list left on the printer is a "
+             "data leak on paper."),
+            ("point", "Be careful with flash drives", "Plug in only drives you trust, and remove yours "
+             "when you leave."),
+            ("h", "If You Find Something Left Open"),
+            "Sooner or later, someone will sit down at a computer where a colleague is still signed in. "
+            "What happens next matters.",
+            ("point", "Don’t look around", "Sign the account out or close the window without reading or "
+             "changing anything."),
+            ("point", "Tell the person", "A quiet word helps more than a group chat message."),
+            ("point", "Report anything sensitive", "If personal information was exposed, tell the person in "
+             "charge, following the incident steps in Part 9."),
+            ("photo", "blog/cyber-shared-routine.jpg", "Two routines for a shared computer: one for a short "
+             "break, one for the end of the day. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "An End-of-Day Routine"),
+            "Habits stick better as a routine. A five-step check, taped beside the monitor, works for the "
+            "whole office.",
+            ("point", "1. Sign out of every account", "Email, the collection system, social media."),
+            ("point", "2. Close the browser", "All windows, including guest windows."),
+            ("point", "3. Clear your files", "Downloads, desktop and the Recycle Bin."),
+            ("point", "4. Collect your papers", "From the printer and the desk."),
+            ("point", "5. Sign out of the computer", "Or shut it down, following office practice."),
+            ("quote", "Leave the shared computer the way you would want to find it: empty."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "One sign-in for the whole counter", "Ask for one account per person."),
+            ("point", "Walking away unlocked", "Windows logo key plus L, every time."),
+            ("point", "Saving passwords in a shared browser", "Choose Never."),
+            ("point", "Trusting guest mode with downloads", "Delete your files yourself."),
+            ("h", "Key Takeaways"),
+            ("point", "One person, one account", "On the computer and in every system."),
+            ("point", "Lock, then leave", "A shortcut plus an automatic lock."),
+            ("point", "Guest mode for personal browsing", "It clears history and cookies, not visibility."),
+            ("point", "Leave nothing behind", "Files, sessions and printouts."),
+            ("h", "Your Part 33 Action Plan"),
+            ("point", "Today", "Press Windows logo key and L the next time you stand up."),
+            ("point", "This week", "Open the browser’s saved passwords on a shared computer, and remove any "
+             "that belong to you."),
+            ("point", "This month", "Tape the five-step routine beside each shared computer, and ask IT for "
+             "separate accounts."),
+            "By Friday, the front counter computer had three user accounts, a screen that locked itself after "
+            "five minutes, and a small card taped to the monitor. On Monday, the first clerk to sit down found "
+            "a sign-in screen, and nothing else.",
+            ("cta", "Read: Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office", "/blog/cybersecurity-part-18-small-office-baseline/"),
+            ("cta", "Read: Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk", "/blog/cybersecurity-part-20-privacy-at-work/"),
+            ("cta", "Read: Cybersecurity Series, Part 21: Sharing Files Safely, Links, Attachments and Who Can See Them", "/blog/cybersecurity-part-21-safe-file-sharing/"),
+            ("cta", "Read: Cybersecurity Series, Part 2: Identity Is the New Perimeter", "/blog/cybersecurity-part-2-passwords-and-mfa/"),
+            ("ask", "How many people share the computer nearest to you, and does each one have their own sign-in?"),
+        ],
+    },
+    {
+        "date": "April 13, 2027",
+        "title": "Cybersecurity Series, Part 32: Romance Scams, When the Person Online Asks for Money",
+        "slug": "cybersecurity-part-32-romance-scams",
+        "category": "security",
+        "summary": "A romance scam can take weeks of kind messages before the first request for money. This "
+                   "part explains how these scams unfold, the excuses that come up in reports to the US "
+                   "Federal Trade Commission, why being asked to receive and forward money can make you part "
+                   "of a crime under Philippine law, and what to do if you have already sent money.",
+        "publish_on": "2027-04-13 21:00",
+        "body": [
+            "Tita Rosa, a retired teacher, had been widowed for three years when a man named Daniel sent her "
+            "a friend request. His profile said he was an engineer on an offshore oil rig. He wrote every "
+            "morning and every night. He remembered the names of her grandchildren and asked about her "
+            "blood pressure. After six weeks, he said he had sent her a package with a gift, and the courier "
+            "needed ₱18,000 for customs before it could be released.",
+            "She paid. Two weeks later, he asked for a bigger favor: a friend would send money to her account, "
+            "and she should send it on to another account, because his own bank was blocked offshore.",
+            "(Tita Rosa and Daniel are invented for this post. The figures from the US Federal Trade "
+            "Commission and the Philippine law quoted below are real and cited.)",
+            "Part 31 looked at fake aid pages that ask for a fee. This part looks at a scam that asks for "
+            "trust first and money later. You will learn how romance scams unfold, the excuses scammers use, "
+            "why the request to pass money along is especially dangerous, how to check a new online friend, "
+            "and what to do if you or someone you love has already paid.",
+            ("photo", "blog/cyber-romance.jpg", "Romance scams: they build trust, then ask for money, and "
+             "sometimes ask you to move money for them. Never send or forward money for someone you have "
+             "not met. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What the Numbers Say"),
+            "Philippine figures for romance scams alone are hard to find, so the clearest numbers come from "
+            "the United States. In a Data Spotlight published February 9, 2023, the Federal Trade "
+            "Commission reported the following for 2022:",
+            ("point", "Reports", "Nearly 70,000 people reported a romance scam."),
+            ("point", "Losses", "Reported losses reached $1.3 billion, with a median loss of $4,400 per person."),
+            ("point", "Where it started", "About 40 percent of people who lost money said the contact began "
+             "on social media, and 19 percent on a website or app."),
+            ("point", "How they paid", "Cryptocurrency and bank wires made up more than 60 percent of "
+             "reported losses. Gift cards were the method reported most often."),
+            "These are reported cases only. The US Commodity Futures Trading Commission, citing the "
+            "same $1.3 billion, says actual losses are likely much higher.",
+            ("h", "How a Romance Scam Unfolds"),
+            "The FTC describes romance scammers as people who “play the long game.” The pattern below is a "
+            "typical one, not a script every scammer follows.",
+            ("point", "1. Contact", "A friend request, a message on a dating app, or a “wrong number” text "
+             "that turns into a friendly chat."),
+            ("point", "2. Trust", "Daily messages, compliments, and attention to your family and health. The "
+             "conversation may move to WhatsApp, Telegram or another private app."),
+            ("point", "3. A reason not to meet", "A job abroad, a military post, an offshore rig. Each time, "
+             "there is a reason the video call fails or the visit is postponed."),
+            ("point", "4. The first request", "A fee for a package, a hospital bill, a plane ticket, or an "
+             "investment they want to “teach” you."),
+            ("point", "5. More requests", "Each payment is followed by a new problem that needs more money."),
+            ("point", "6. Moving money for them", "A request to receive money and send it somewhere else."),
+            ("photo", "blog/cyber-romance-steps.jpg", "How a romance scam unfolds, step by step. The danger "
+             "rises at step 4, when money is first mentioned. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "The Excuses Scammers Use"),
+            "The FTC’s 2023 spotlight listed the lies that came up in reports. A few of them:",
+            ("point", "“I’m on a military base or an oil rig”", "A reason they cannot meet. The FTC called the "
+             "military base the most popular excuse."),
+            ("point", "“I’m sick, hurt or in jail”", "An emergency that needs money now."),
+            ("point", "“Let me teach you to invest”", "The FTC mentions cryptocurrency, and warns that the money "
+             "you “invest” goes straight to the scammer."),
+            ("point", "“I sent you a package”", "And now it needs a customs fee. The FTC says if someone tells "
+             "you to send money to receive a package, “you can bet it’s a scam.”"),
+            ("h", "Why “Just Pass It Along” Is Dangerous"),
+            "Tita Rosa’s second request was the more serious one. The US Commodity Futures Trading "
+            "Commission warns that romance scam victims may be recruited as money mules, people who receive "
+            "and move money obtained through fraud, sometimes without knowing it.",
+            "In the Philippines, Republic Act No. 12010, the Anti-Financial Account Scamming Act, approved "
+            "July 20, 2024, lists money mule acts in Section 4. They include using, borrowing or allowing the "
+            "use of a financial account, and selling or lending one, to obtain, receive, deposit, transfer or "
+            "withdraw proceeds known to come from crimes or social engineering schemes.",
+            ("point", "The money is someone else’s loss", "The “friend’s” money sent to your account may come "
+             "from another victim."),
+            ("point", "Your name is on the account", "Investigators trace the account first. Explaining that "
+             "you were deceived takes time and stress, even when it is true."),
+            ("point", "The rule is simple", "The CFTC’s advice: never agree to move money for someone you "
+             "have never met face to face."),
+            ("h", "Warning Signs"),
+            ("point", "They want to leave the app quickly", "And continue on a private chat."),
+            ("point", "They cannot meet or video call", "Or the video is blurry, short or frozen each time. Part "
+             "22 explained that video and voice can now be faked, so even a call is not proof."),
+            ("point", "Money enters the conversation", "For any reason, after weeks of no money talk."),
+            ("point", "They ask for secrecy", "“Don’t tell your children, they won’t understand.”"),
+            ("point", "They ask you to receive and send money", "Stop at once."),
+            ("h", "Checks You Can Make"),
+            ("point", "Search the photo", "The FTC suggests a reverse image search of profile pictures. If the "
+             "same face appears under other names, the profile is likely fake."),
+            ("point", "Tell someone you trust", "The FTC advises talking to friends or family about a new love "
+             "interest and paying attention if they are worried."),
+            ("point", "Ask for a live meeting in a public place", "Someone who always has a reason to refuse "
+             "is giving you an answer."),
+            ("h", "If Money Has Already Been Sent"),
+            ("point", "Stop sending", "No further payments, whatever the new reason."),
+            ("point", "Do not forward any money you received", "Tell your bank or e-wallet about it instead, as "
+             "the CFTC advises."),
+            ("point", "Contact your bank or e-wallet at once", "Report the transfers and ask what they can do."),
+            ("point", "Report it", "Call the CICC hotline 1326 or go to the PNP Anti-Cybercrime Group. Keep "
+             "screenshots of the profile, the messages and the payment receipts."),
+            ("point", "Watch for “recovery” offers", "Someone who promises to get your money back for a fee "
+             "may be the same scam with a new face."),
+            ("h", "Talk Without Shame"),
+            "People who fall for romance scams are not foolish. Scammers spend weeks earning trust, and "
+            "loneliness is not a weakness. If a parent, aunt or friend is in one, ask questions gently. "
+            "Anger can push a person closer to the scammer, who seems to have endless patience.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Paying “just this once”", "The first payment is followed by the next request."),
+            ("point", "Moving money for an online friend", "It can make you a money mule."),
+            ("point", "Keeping it secret", "Secrecy protects the scammer, not you."),
+            ("point", "Trusting a video call alone", "Faces and voices can be faked."),
+            ("h", "Key Takeaways"),
+            ("point", "Trust first, money later", "That is the pattern."),
+            ("point", "Packages and customs fees are a classic lie", "The FTC calls it a sure sign of a scam."),
+            ("point", "Never receive and forward money", "RA 12010 penalizes money mule acts."),
+            ("point", "Report quickly", "Bank or e-wallet first, then CICC 1326 or the PNP."),
+            ("h", "Your Part 32 Action Plan"),
+            ("point", "Talk to older relatives", "Especially those who live alone or were recently widowed. "
+             "Share the warning signs above."),
+            ("point", "Agree on a family rule", "No money sent to anyone met online without talking to someone "
+             "in the family first."),
+            ("point", "Learn the reverse image search", "Try it once on a photo, so you know how before you "
+             "need it."),
+            "Tita Rosa did not send the money on. Her nephew noticed a large deposit from a stranger and "
+            "asked her about it. Together they searched Daniel’s photo and found it on three other profiles "
+            "under three other names. They called the bank that afternoon and reported the account to the "
+            "CICC. She still checks her messages every morning, but now she also calls her nephew on Sundays.",
+            ("cta", "Read: Cybersecurity Series, Part 31: Fake Ayuda Pages, When “Government Aid” Is a Trap", "/blog/cybersecurity-part-31-fake-ayuda-pages/"),
+            ("cta", "Read: Cybersecurity Series, Part 26: Job and Investment Scams, When Easy Money Asks You to Pay First", "/blog/cybersecurity-part-26-job-and-investment-scams/"),
+            ("cta", "Read: Cybersecurity Series, Part 22: Deepfakes and Cloned Voices, When Seeing and Hearing Is Not Enough", "/blog/cybersecurity-part-22-deepfakes-and-voice-clones/"),
+            ("cta", "Read: Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name", "/blog/cybersecurity-part-13-ewallets-and-the-anti-scam-law/"),
+            ("ask", "Has someone in your family ever been asked for money by a person they met only online?"),
+        ],
+    },
+    {
         "date": "April 8, 2027",
         "title": "Cybersecurity Series, Part 31: Fake Ayuda Pages, When “Government Aid” Is a Trap",
         "slug": "cybersecurity-part-31-fake-ayuda-pages",

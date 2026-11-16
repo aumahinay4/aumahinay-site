@@ -13,6 +13,255 @@ SERIES = "Business Intelligence Series"
 
 BI_POSTS = [
     {
+        "title": "Business Intelligence Series, Part 33: Targets vs Actual, Bullet Charts, Gauges and the Year-to-Date Trap",
+        "slug": "business-intelligence-part-33-targets-vs-actual",
+        "category": "bi",
+        "date": "April 20, 2027",
+        "summary": "A collection target is only useful if the dashboard compares it fairly with what has come "
+                   "in. This part shows how to set a year-to-date target that follows the calendar, how to "
+                   "show actual against target with a bullet chart or a gauge in Data Studio, how to set "
+                   "the ranges, and how to label the gap so nobody misreads it.",
+        "publish_on": "2027-04-20 21:00",
+        "body": [
+            "At the end of March, the head of office looked at the new gauge on the collections dashboard. "
+            "The needle pointed at 35 percent of the year’s target. “A quarter of the year is gone, and we "
+            "have more than a third of the money,” she said. “We’re ahead.”",
+            "The analyst was not so sure. Last year, the first quarter had brought in 40 percent of the "
+            "year’s collections, thanks to the January rush. By that measure, the office was behind.",
+            "(The office, the target and the figures are invented for this lesson. The Data Studio chart "
+            "settings below are from Google’s chart reference pages, and they can change, so check the "
+            "current pages before you rely on a detail.)",
+            "Part 32 put a public report on a website. This part deals with a question that sits at the top "
+            "of internal dashboards: are we on target? You will learn why the full-year target can "
+            "mislead early in the year, how to build a year-to-date target that follows the calendar, how a "
+            "bullet chart and a gauge show actual against target in Data Studio, how to set their ranges, "
+            "and how to label the gap.",
+            ("photo", "blog/bi-target.jpg", "Targets vs actual: compare like with like, choose a compact "
+             "chart, set honest ranges, and label the gap. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "The Year-to-Date Trap"),
+            "Collections in a local treasury can follow the calendar closely. Business taxes and the amilyar bring a rush "
+            "in January, as Part 2 of Inside the Local Treasury described, and quieter months follow. A "
+            "full-year target divided evenly by twelve ignores that pattern.",
+            ("point", "The full-year view", "Annual target ₱60,000,000. Actual by March 31: ₱21,000,000, or "
+             "35 percent. Against an even split, one quarter of ₱60,000,000 is ₱15,000,000, so the office "
+             "looks 40 percent ahead."),
+            ("point", "The calendar view", "Last year, the first quarter brought in 40 percent of the year. "
+             "A year-to-date target built on that pattern is 40 percent of ₱60,000,000, or ₱24,000,000. "
+             "Actual ₱21,000,000 is 87.5 percent of it. The office is behind by ₱3,000,000."),
+            "Both numbers are arithmetic, and both are correct. Only the second compares like with like. "
+            "Part 19 made the same point about comparing this month with the same month last year.",
+            ("photo", "blog/bi-target-ytd.jpg", "The same ₱21 million against two different targets: ahead "
+             "of an even split, behind the calendar. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Building a Year-to-Date Target"),
+            "A year-to-date target needs only a small table and one column of arithmetic.",
+            ("point", "Step 1: Find the pattern", "For each month of last year, or an average of the last "
+             "three years, compute that month’s share of the year’s total. The twelve shares add to 100 "
+             "percent."),
+            ("point", "Step 2: Spread the target", "Multiply the annual target by each month’s share. That "
+             "gives a monthly target that rises in busy months and falls in quiet ones."),
+            ("point", "Step 3: Add them up", "A running total of the monthly targets gives the target for "
+             "each month-end. Put it in the date table from Part 14, so every chart can use it."),
+            ("point", "Step 4: Note the source", "Write down which years the pattern came from. If a rule "
+             "changed a deadline, last year’s pattern may not fit this year."),
+            "Part 32 of the Data Analytics Series explained why rounded monthly targets may not add up "
+            "exactly to the annual one. Use the remainder fix there so the twelve months match the year.",
+            ("h", "Two Charts for Actual Against Target"),
+            "Data Studio offers two chart types built for this question. Both show a single number against a "
+            "target, with colored ranges behind it.",
+            ("point", "Bullet chart", "Google’s reference says bullet charts show “how well a given metric "
+             "is performing against target benchmarks.” A bar shows the actual value, a vertical line marks "
+             "the target, and up to three bands show poor, average and good."),
+            ("point", "Gauge chart", "The gauge reference describes the same purpose: “how well a given "
+             "metric is performing against a target goal.” It has a target, an axis minimum and maximum, "
+             "and up to five ranges, which are turned off by default."),
+            ("point", "One number each", "Both charts take a single metric. For several measures, place "
+             "several charts side by side, or use a table."),
+            "For a treasury dashboard with several measures, the bullet chart is a good default. It is "
+            "compact, it can sit in a row with others, and bars lined up side by side are easier to compare "
+            "than needles on separate dials. A single "
+            "gauge can still work as the headline of a page, where one number matters more than the rest.",
+            ("h", "Setting the Ranges Honestly"),
+            "The colored bands tell the reader how to feel about the number, so they need agreed values, "
+            "not defaults.",
+            ("point", "Change the defaults", "The bullet chart’s default ranges are 1, 2 and 3. Google’s "
+             "reference says to adjust them to fit your data."),
+            ("point", "Tie them to the year-to-date target", "For example: below 90 percent of the "
+             "year-to-date target is poor, 90 to under 100 percent is average, and 100 percent or more is "
+             "good. In the March example, 87.5 percent lands in poor."),
+            ("point", "Agree on them once", "Part 18 set thresholds before anyone looked at the data. Ranges "
+             "work the same way. Changing them after a bad month hides the month, not the problem."),
+            ("point", "Watch the direction", "For a measure where lower is better, such as days to release "
+             "a permit, “good” is the low end. Label it so nobody reads a long bar as a win."),
+            ("h", "Label the Gap"),
+            "A chart shows the gap. A label explains it.",
+            ("point", "Give both numbers", "“Actual ₱21.0M, year-to-date target ₱24.0M.”"),
+            ("point", "Give the difference both ways", "“₱3.0M behind, 87.5 percent of target.”"),
+            ("point", "Say which target", "“Year-to-date target based on the 2024 to 2026 monthly pattern.” "
+             "Without that line, a reader may assume an even split."),
+            ("point", "Keep the date", "Part 30’s “data as of” line belongs beside every target chart."),
+            ("point", "Show the trend below it", "A small line chart of monthly actual and target under the "
+             "bullet shows whether the gap is closing or growing."),
+            ("quote", "Being ahead of the wrong target is not good news. It is a late surprise."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Comparing with the full-year target early in the year", "Use a year-to-date target."),
+            ("point", "Dividing the target by twelve", "Follow the calendar of collections."),
+            ("point", "Leaving the default ranges", "Set them from the target, and agree on them first."),
+            ("point", "A dial for every measure", "Use bullet charts in a row, or a table."),
+            ("h", "Key Takeaways"),
+            ("point", "Compare like with like", "Year-to-date actual against year-to-date target."),
+            ("point", "Spread the target by month", "Using the pattern of recent years."),
+            ("point", "Bullet chart first", "Compact and easy to compare. A gauge for one headline number."),
+            ("point", "Ranges and labels", "Agreed in advance, and stating which target is used."),
+            ("h", "Your Part 33 Exercise"),
+            ("point", "Step 1", "List last year’s collections by month and compute each month’s share of "
+             "the total."),
+            ("point", "Step 2", "Spread this year’s target with those shares, and add a running total."),
+            ("point", "Step 3", "Compare this year’s actual so far with the running total for the same "
+             "month-end."),
+            ("point", "Step 4", "Build one bullet chart with ranges at 90 and 100 percent of the target, "
+             "and a label that names the target."),
+            "At the next meeting, the gauge was gone. In its place was a row of three bullet charts, each "
+            "with a target line set to the year-to-date figure. The first bar stopped short of its line, "
+            "and the label beside it said “₱3.0M behind.” The head of office asked what could be done in "
+            "April, which was exactly the question the chart was built to raise.",
+            ("cta", "Read: Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year", "/blog/business-intelligence-part-19-fair-comparisons/"),
+            ("cta", "Read: Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look", "/blog/business-intelligence-part-18-thresholds-and-alerts/"),
+            ("cta", "Read: Business Intelligence Series, Part 14: The Date Table, a Calendar Your Dashboard Can Count On", "/blog/business-intelligence-part-14-the-date-table/"),
+            ("cta", "Read: Data Analytics Series, Part 32: Rounding, and Why the Totals Don’t Add Up", "/blog/data-analytics-part-32-rounding-and-totals/"),
+            ("ask", "Does your office compare collections with a target that follows the calendar, or with an even split?"),
+        ],
+    },
+    {
+        "title": "Business Intelligence Series, Part 32: Embedding a Report on a Website, Public Numbers Without Private Data",
+        "slug": "business-intelligence-part-32-embedding-a-report",
+        "category": "bi",
+        "date": "April 15, 2027",
+        "summary": "Putting a live report on a website can make public numbers easy to find. This part shows "
+                   "how embedding works in Data Studio, who can see an embedded report, why the report "
+                   "must be built for the public before it is embedded, how to test it as a stranger would, "
+                   "and how to turn it off.",
+        "publish_on": "2027-04-15 21:00",
+        "body": [
+            "The information officer had an idea. The collections dashboard was updated every day, and "
+            "people kept asking how the town was doing. Why not put the dashboard on the town’s website, "
+            "so anyone could see it? She asked the analyst for “the code to paste.”",
+            "The analyst opened the report and paused. The first page showed totals. The third page, built "
+            "for the revenue unit heads, listed accounts with balances. The code would take less than a "
+            "minute to make. Making the report safe for the public would take an afternoon.",
+            "(The office and the report are invented for this lesson. The Data Studio features below are "
+            "from Google’s help page on embedding a report, and they can change, so check the current page "
+            "before you rely on a detail.)",
+            "Part 31 sent a report to people by email. This part puts a report where anyone can find it: on "
+            "a web page. By the end, you will know how embedding works, who can see an embedded report, why "
+            "the public version has to be its own report, how to test it the way a stranger would, and how "
+            "to switch it off when needed.",
+            ("photo", "blog/bi-embed.jpg", "Embedding a report: build a public version, share it on "
+             "purpose, test it as a stranger, and keep the off switch handy. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What Embedding Does"),
+            "Embedding places a live report inside another web page, the way a video can play inside a news "
+            "article. The report stays in Data Studio. The web page simply shows a window into it, using a "
+            "piece of HTML called an iframe.",
+            ("point", "It stays live", "When the report’s data refreshes, the embedded view shows the new "
+             "numbers. Nobody has to copy screenshots to the website."),
+            ("point", "It opens in view mode", "Google’s help says embedded reports can’t be edited, copied "
+             "or shared by the viewer, and there is no menu bar."),
+            ("point", "Some parts can’t be removed", "The help page says the Data Studio watermark and the "
+             "full-screen option always appear."),
+            ("point", "Viewers can’t force a refresh", "The data refreshes when the report’s freshness "
+             "setting allows. Part 30’s “data as of” line matters even more here."),
+            ("h", "Who Can See It: Sharing Decides, Not Embedding"),
+            "This is the most important point in the whole post. Embedding does not change who is allowed to "
+            "see a report. The report’s sharing settings do.",
+            ("point", "A public report", "Google’s help says that if the report is shared publicly, “anyone "
+             "viewing your page can see the embedded report.”"),
+            ("point", "A restricted report", "Only the people, groups or domains it is shared with can see it, "
+             "and they must be signed in to a Google account. Everyone else cannot see the "
+             "numbers."),
+            "So a report for the town website has to be shared publicly, and anything inside a public report "
+            "is public. That includes every page, not only the first one. Google’s help notes that a report "
+            "with several pages shows page navigation at the bottom by default.",
+            ("h", "Build the Public Report First"),
+            "Part 17 separated a working file that holds names from a sharing file that holds only totals. "
+            "Embedding uses the same idea, one step further.",
+            ("point", "Make a new report", "Do not embed the office’s working report. Create a separate report "
+             "for the public, with its own name, such as “Collections Summary (Public).”"),
+            ("point", "Connect it to totals only", "Its data source should be the sharing file with monthly "
+             "totals by kind of tax. If a name or an account number is not in the source, it cannot leak "
+             "through a chart."),
+            ("point", "Mind the credentials", "A public report needs owner’s credentials so strangers can "
+             "see the data. That is exactly why the source behind it must contain nothing private."),
+            ("point", "Watch small numbers", "Part 17 warned that a total of one can point to a person. A "
+             "public report should group small categories, or show them at a level where no single taxpayer "
+             "stands out."),
+            ("point", "Add the context", "A title, a “data as of” date, a one-line note on what is counted, "
+             "and an office to contact with questions."),
+            ("photo", "blog/bi-embed-path.jpg", "From the working file to the website: only the totals "
+             "travel. The working report is never embedded. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Getting the Embed Code"),
+            "Once the public report is ready, the steps are short. Google’s help lists them in this order.",
+            ("point", "Step 1: Share it", "For a public page, use link sharing, such as “Anyone with the link "
+             "can view” or public on the web."),
+            ("point", "Step 2: Open the embed dialog", "Choose File, then Embed report, or click the Embed "
+             "icon at the upper right. Then select Enable embedding."),
+            ("point", "Step 3: Choose the type", "Keep Embed Code to get an iframe for a regular web page. "
+             "Choose Embed URL for Google Sites and similar platforms."),
+            ("point", "Step 4: Set the size", "Adjust the width and height so the report fits the page. Check "
+             "it on a phone, as Part 12 recommended."),
+            ("point", "Step 5: Paste it", "Give the code to whoever manages the website, who pastes it where "
+             "the report should appear."),
+            "Two details from the help page save time. First, you must use the link from the embed dialog; "
+            "the ordinary share link will not work. Second, to embed only one page, go to that page before "
+            "you generate the link.",
+            ("h", "Test It as a Stranger"),
+            "The person who built the report is the worst person to test it, because they can see "
+            "everything. Test it the way the public will.",
+            ("point", "Use a private window", "Open the web page in a private or incognito window, signed out "
+             "of every account. What you see there is what the public sees."),
+            ("point", "Click every page and filter", "If a filter lets a reader narrow a total down to one "
+             "account, fix the report before it goes live."),
+            ("point", "Check on a phone", "Some readers will arrive from a phone. Make sure the numbers can "
+             "be read without zooming."),
+            ("point", "Ask a second person", "Someone who did not build it can spot a label that only makes "
+             "sense inside the office."),
+            ("h", "The Off Switch"),
+            "Google’s help says you can turn embedding off by clearing the Enable embedding box in the same "
+            "dialog. The report stays in Data Studio; it simply stops showing on other sites. Write down who "
+            "can do this and how, before the report goes live. If a wrong number appears on the website at "
+            "night, the office should not have to wait for the analyst to come back from leave.",
+            ("quote", "Anything inside a public report is public, including the pages nobody meant to show."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Embedding the working report", "Build a separate public report."),
+            ("point", "Assuming embedding hides pages", "Readers can move between pages unless you embed only one, and the report itself is still shared."),
+            ("point", "Testing while signed in", "Use a private window to see what strangers see."),
+            ("point", "Leaving out the date", "Readers can’t refresh it, so tell them how current it is."),
+            ("h", "Key Takeaways"),
+            ("point", "Sharing decides who sees it", "Embedding only places it on the page."),
+            ("point", "Public source, public report", "Totals only, with small numbers grouped."),
+            ("point", "Test as a stranger", "Private window, every page, every filter, on a phone."),
+            ("point", "Know the off switch", "Clear Enable embedding, and write down who can."),
+            ("h", "Your Part 32 Exercise"),
+            ("point", "List", "Write down every page of a report you might publish, and every field each "
+             "page shows."),
+            ("point", "Mark", "Circle any field that names a person, an account or a small group."),
+            ("point", "Rebuild", "Make a public copy connected to a totals-only source, with a date and a "
+             "contact line."),
+            ("point", "Test", "Open the shared link in a private window before anyone embeds it."),
+            "The information officer got her report, a week later than she wanted. It had three pages: "
+            "totals by month, totals by kind of tax, and a short note on what the numbers meant. When a "
+            "council member asked whether the website showed who had not paid, the analyst could answer "
+            "with confidence: it could not, because that information was never in the report.",
+            ("cta", "Read: Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much", "/blog/business-intelligence-part-17-who-sees-what/"),
+            ("cta", "Read: Business Intelligence Series, Part 30: Showing When the Data Was Last Updated, Freshness Readers Can See", "/blog/business-intelligence-part-30-data-freshness/"),
+            ("cta", "Read: Business Intelligence Series, Part 31: Scheduled Email Delivery, Sending the Report Before Anyone Asks", "/blog/business-intelligence-part-31-scheduled-email-delivery/"),
+            ("cta", "Read: Business Intelligence Series, Part 12: Fast and Readable on a Phone", "/blog/business-intelligence-part-12-fast-and-readable-on-a-phone/"),
+            ("ask", "If your office published one report on its website, which numbers would the public want first?"),
+        ],
+    },
+    {
         "title": "Business Intelligence Series, Part 31: Scheduled Email Delivery, Sending the Report Before Anyone Asks",
         "slug": "business-intelligence-part-31-scheduled-email-delivery",
         "category": "bi",

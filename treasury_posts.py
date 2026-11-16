@@ -7,6 +7,279 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 25: The Idle Land Tax, When an Empty Lot Costs More Than the Amilyar",
+        "date": "April 19, 2027",
+        "publish_on": "2027-04-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "idle-land-tax",
+        "category": "finance",
+        "summary": "A large lot left empty, or a farm left mostly uncultivated, can carry a tax on top of the "
+                   "amilyar. This part explains who may levy the idle land tax, the 5 percent ceiling, which "
+                   "lands count as idle and which do not, how the assessor lists them and the treasurer "
+                   "gives notice, and when an owner may be exempted.",
+        "body": [
+            "The letter arrived in March. It was from the provincial treasurer, and it said that a lot in the "
+            "town center had been listed as idle land and would be charged an additional tax. The owner, a "
+            "nurse working abroad, called her brother at home. “Idle?” she said. “I’m saving to build on it. "
+            "Isn’t paying the amilyar enough?”",
+            "Her brother went to the assessor’s office the next morning to find out what “idle” meant, and "
+            "whether it could be undone.",
+            "(The letter, the lot and the family are invented for this post. The sections of the Local "
+            "Government Code described below are real and are cited.)",
+            "Part 24 covered a tax on businesses holding a franchise. This part returns to real property, the "
+            "source of the amilyar, and covers a levy that sits on top of it. You will learn who may levy the "
+            "idle land tax and at what rate, which lands the Code treats as idle and which it does not, how "
+            "the assessor and the treasurer share the work, when an owner may be exempted, and what owners and "
+            "treasury workers should each check.",
+            ("photo", "blog/finance-idle.jpg", "The idle land tax: up to 5 percent of assessed value on top "
+             "of the basic tax, on large lots and farms left mostly unused, listed by the assessor and "
+             "noticed by the treasurer. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who May Levy It, and How Much"),
+            "Section 236 of the Local Government Code of 1991 allows a province, a city, or a municipality "
+            "within Metropolitan Manila to levy an annual tax on idle lands.",
+            ("point", "The rate", "Not more than 5 percent of the assessed value of the property."),
+            ("point", "On top of the basic tax", "The idle land tax is in addition to the basic real "
+             "property tax. The Code groups it with the special levies on real property, alongside the "
+             "Special Education Fund tax in Section 235."),
+            ("point", "Who levies it outside Metro Manila", "For land in a municipality outside Metro Manila, "
+             "it is the province that may levy the tax, through its own ordinance."),
+            "As with other local taxes, the levy exists only if the sanggunian passes an ordinance. The rate in "
+            "that ordinance can be lower than 5 percent. Before telling an owner a number, read the current "
+            "revenue code of the province or city.",
+            ("h", "Which Lands Count as Idle"),
+            "Section 237 sets the coverage. It has three parts.",
+            ("point", "Agricultural land", "More than one hectare in area, suitable for cultivation, dairying, "
+             "inland fishery or other agricultural uses, half or more of which remains uncultivated or "
+             "unimproved by the owner or the person having legal interest in it."),
+            ("point", "Other land in a city or municipality", "More than 1,000 square meters in area, half or "
+             "more of which remains unutilized or unimproved by the owner or the person having legal interest."),
+            ("point", "Subdivision lots, regardless of area", "Residential lots in subdivisions approved by "
+             "the proper authorities, once ownership has passed to individual owners, who become liable for the "
+             "tax. Lots not yet transferred to a buyer are treated as part of the subdivision, and the "
+             "subdivision owner or operator pays."),
+            ("h", "What the Code Says Is Not Idle"),
+            "Section 237 also lists two kinds of agricultural land that are not idle, even if they look "
+            "quiet.",
+            ("point", "Permanent or perennial crops", "Land planted to permanent or perennial crops with at "
+             "least 50 trees to a hectare. A coconut farm or a mango orchard at that density is not idle land."),
+            ("point", "Grazing land", "Land actually used for grazing is not idle either."),
+            "The word “actually” matters. An assessor looks at the use of the land on the ground, the same "
+            "rule Section 217 applies to classification in general: property is assessed by its actual use.",
+            ("photo", "blog/finance-idle-check.jpg", "Is the land idle? Check the size, how much is unused, "
+             "and the exceptions, then whether the owner was prevented from using it. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "When an Owner May Be Exempted"),
+            "Section 238 allows the province, city or Metro Manila municipality to exempt idle land from the "
+            "additional levy when the owner, or the person having legal interest, is prevented from using, "
+            "improving or cultivating it. The Code lists force majeure, civil disturbance and natural "
+            "calamity, and adds any cause or circumstance that physically or legally prevents the owner.",
+            ("point", "It is a may, not a must", "Section 238 gives the local government the power to exempt. "
+             "The revenue code is the place to look for how an owner applies and what proof is needed."),
+            ("point", "Keep the proof", "A certification of a calamity, a court order that stops "
+             "construction, or a document showing why the land could not be used. An exemption has to be "
+             "shown, not assumed."),
+            ("h", "How the Assessor and the Treasurer Share the Work"),
+            "Section 239 divides the job between two offices.",
+            ("point", "The assessor lists", "The provincial, city or municipal assessor makes and keeps an "
+             "updated record of all idle lands in the area."),
+            ("point", "The treasurer gives notice", "For collection, the assessor gives a copy of the record "
+             "to the provincial or city treasurer, who notifies the owner or person having legal interest "
+             "that the additional tax is being imposed."),
+            "The list is only as good as its last update. A lot that has been built on since the last "
+            "inspection should come off it, and the owner can help by asking the assessor for a new look.",
+            ("h", "A Worked Example"),
+            "The numbers below are invented to show the arithmetic. They are not any province’s actual "
+            "values or rates.",
+            ("point", "The lot", "A 1,500 square meter commercial lot in the town center, completely vacant. "
+             "It is more than 1,000 square meters, and more than half is unused, so it is covered."),
+            ("point", "The assessed value", "Suppose the market value is ₱4,500,000 and the assessment level "
+             "for commercial land is 50 percent. The assessed value is ₱2,250,000."),
+            ("point", "The idle land tax", "If the provincial ordinance uses the full 5 percent, the "
+             "additional tax is ₱112,500 a year. That is on top of the basic tax and the Special Education "
+             "Fund tax."),
+            ("point", "After building", "If the owner builds on more than half of the lot, it no longer meets "
+             "the definition, and the additional tax should stop once the assessor’s record is updated."),
+            "The guide to the RPT Calculator on this site explains how the market value and the assessment "
+            "level turn into an assessed value. The idle land tax uses the same assessed value.",
+            ("h", "Penalties and the 2024 Amnesty"),
+            "An unpaid idle land tax is part of the unpaid real property tax. Part 6 described Republic Act "
+            "No. 12001, whose Section 30 granted an amnesty on penalties, surcharges and interest on unpaid real "
+            "property taxes, naming the idle land tax among them. That window closed in July 2026. Unpaid "
+            "amounts now follow the ordinary rules, which Part 5 covered.",
+            ("h", "What Each Person Should Check"),
+            ("point", "Owners of large lots or farms", "The current revenue code, whether the land is on the "
+             "idle land list, and the date of the last inspection."),
+            ("point", "The assessor’s office", "That the list is updated after inspections, and that "
+             "exceptions for perennial crops and grazing are applied."),
+            ("point", "The treasury", "That notices go out based on the latest list, and that the "
+             "exemption procedure in the ordinance is clear at the counter."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Thinking the amilyar covers it", "The idle land tax is an additional levy."),
+            ("point", "Assuming a planted farm is idle", "Perennial crops at 50 trees a hectare, or "
+             "actual grazing, are excluded."),
+            ("point", "Waiting for the list to update itself", "Ask the assessor to inspect once the land "
+             "is used or built on."),
+            ("point", "Claiming an exemption without proof", "Section 238 requires a cause that prevented use."),
+            ("h", "Key Takeaways"),
+            ("point", "Up to 5 percent of assessed value", "Section 236, on top of the basic tax."),
+            ("point", "Size and use decide coverage", "Over 1 hectare for farms, over 1,000 square meters for "
+             "other land, half or more unused."),
+            ("point", "Exceptions exist", "Perennial crops, grazing, and causes that prevent use."),
+            ("point", "Assessor lists, treasurer notifies", "Section 239."),
+            ("h", "Your Part 25 Action Plan"),
+            ("point", "If you own land", "Measure how much of it is actually used, and compare it with "
+             "Section 237."),
+            ("point", "If you work in a treasury", "Find out whether your province or city levies the tax, "
+             "and at what rate."),
+            ("point", "If you work in an assessor’s office", "Check when the idle land record was last updated."),
+            "At the assessor’s office, the brother learned that the lot had been listed after an inspection "
+            "two years earlier. He brought the building permit his sister had secured that January, and the "
+            "photos of the foundation being poured. The assessor scheduled a new inspection for the following "
+            "month.",
+            ("cta", "Read: Inside the Local Treasury, Part 24: The Franchise Tax, What Power and Telecom Companies Pay the Province or City", "/blog/franchise-tax/"),
+            ("cta", "Read: How to Use the RPT Calculator: Know Your Amilyar Before You Pay", "/blog/how-to-use-the-rpt-calculator/"),
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("ask", "Is there a large empty lot in your town center, and do you know whether it is on the idle land list?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 24: The Franchise Tax, What Power and Telecom Companies Pay the Province or City",
+        "date": "April 14, 2027",
+        "publish_on": "2027-04-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "slug": "franchise-tax",
+        "category": "finance",
+        "summary": "A business that holds a franchise from the government can owe a franchise tax to the "
+                   "province or city where it earns. This part explains who may levy it, the rate ceiling, "
+                   "how a newly started franchise is taxed, when payment is due, and what the Supreme Court "
+                   "said about the words “in lieu of all taxes.”",
+        "body": [
+            "A young staff member at a provincial treasury was sorting the January payments when she found "
+            "a check from a telephone company that served the province. The memo line said “franchise tax.” She "
+            "turned to the senior examiner beside her. The company already had a business permit "
+            "from the town, so why was it paying the province as well?",
+            "The examiner pulled out the provincial revenue code and opened it to a page with a paper clip "
+            "on it. “Because the company holds something most businesses don’t,” he said. “A franchise.”",
+            "(The treasury, the telephone company and the check are illustrations for this post. The law and the "
+            "court cases described below are real and are cited.)",
+            "Part 23 covered a provincial tax on sand and gravel. This part covers another tax that the Local "
+            "Government Code gives to provinces and cities: the tax on businesses that enjoy a franchise. "
+            "You will learn what a franchise is, who may levy the tax and at what rate, how a business in "
+            "its first year is taxed, when the tax is due, what the Supreme Court has said about franchise "
+            "holders who claimed they were exempt, and what treasury workers and franchise holders should "
+            "each check.",
+            ("photo", "blog/finance-franchise.jpg", "The franchise tax: levied by the province or city, up "
+             "to half of one percent of last year’s gross receipts, with a separate rule for a business in "
+             "its first year. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Franchise Is"),
+            "A franchise, in this sense, is not a fast-food brand. It is a right or privilege that the "
+            "government grants to operate a business affecting the public, through a law passed by "
+            "Congress or a grant by an authorized agency. Examples include electric distribution, "
+            "telecommunications, and radio and television broadcasting.",
+            "In National Power Corporation v. City of Cabanatuan, G.R. No. 149110, decided April 9, 2003, "
+            "the Supreme Court described a franchise tax as “a tax on the privilege of transacting business "
+            "in the state and exercising corporate franchises granted by the state.” The Court added that "
+            "the tax falls on the corporation that exercises the franchise, not on its stockholders.",
+            ("h", "Who May Levy It, and How Much"),
+            "Section 137 of the Local Government Code of 1991 opens with strong words: “Notwithstanding any "
+            "exemption granted by any law or other special law, the province may impose a tax on businesses "
+            "enjoying a franchise.” The section then sets the ceilings.",
+            ("point", "Who levies it", "The province. Under Section 151, a city may also levy the taxes "
+             "that a province may, and its rates may exceed the provincial maximum by not more than 50 "
+             "percent. A municipality does not levy this tax."),
+            ("point", "The base", "The gross annual receipts for the preceding calendar year, based on the "
+             "incoming receipt, or realized, within the province’s territorial jurisdiction."),
+            ("point", "The ceiling", "Not more than 50 percent of 1 percent of those gross receipts. In "
+             "plainer terms, half of one percent, or 0.5 percent."),
+            ("point", "A business in its first year", "For a newly started business, the tax may not exceed "
+             "one-twentieth of 1 percent of the capital investment. That is 0.05 percent."),
+            ("point", "From the second year", "Regardless of when the business started to operate, the tax "
+             "is based on the gross receipts for the preceding calendar year, or any fraction of it."),
+            "The provincial or city revenue code sets the actual rate within those ceilings. Read your own "
+            "code before quoting a number, because the ordinance can be lower than the maximum.",
+            ("h", "A Worked Example"),
+            "The numbers below are invented to show the arithmetic. They are not any company’s actual "
+            "receipts or any province’s actual rate.",
+            ("point", "An established franchise", "A telephone company realized ₱40,000,000 in gross receipts "
+             "within the province during 2026. If the provincial ordinance uses the full 0.5 percent, the "
+             "2027 franchise tax is ₱200,000."),
+            ("point", "The same company in a city", "If the receipts had been realized in a city whose code "
+             "uses the full 50 percent allowance, the rate could reach 0.75 percent, or ₱300,000."),
+            ("point", "A new franchise", "A new radio station starts operating under its franchise in 2027, with a capital investment "
+             "of ₱10,000,000. Its first-year tax may not exceed 0.05 percent, or ₱5,000. In 2028 it is taxed "
+             "on its 2027 gross receipts, even if it operated for only a few months."),
+            ("photo", "blog/finance-franchise-steps.jpg", "How the franchise tax is computed: last year’s "
+             "gross receipts for an established franchise, the capital investment for a new one. Figures are "
+             "invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "When It Is Due"),
+            "The Code also has general rules for paying local taxes. Under Section "
+            "165, the tax period is the calendar year, and the tax may be paid in quarterly installments. "
+            "Under Section 167, unless the Code provides otherwise, local taxes are paid within the first 20 "
+            "days of January or of each following quarter.",
+            "Late payment has a cost. Section 168 allows a surcharge of up to 25 percent of the unpaid amount "
+            "and interest of up to 2 percent a month on the unpaid amount, including the surcharge, for no "
+            "more than 36 months. Part 2 explained the same rules for the business permit, and they work "
+            "the same way here.",
+            ("h", "“In Lieu of All Taxes” and the Courts"),
+            "Some legislative franchises say that the franchise holder pays a national franchise tax “in "
+            "lieu of all taxes.” Franchise holders have argued that those words free them from local taxes. "
+            "The Supreme Court has rejected that argument in several cases.",
+            ("point", "City Government of San Pablo v. Reyes", "G.R. No. 127708, March 25, 1999. Manila "
+             "Electric Company paid the city’s franchise tax under protest for 1994 to 1996, citing its "
+             "older franchise. The Court held that the “magic words” of the clause must give way to Section "
+             "193 of the Code, which withdrew tax exemptions upon its effectivity, except those it listed."),
+            ("point", "National Power Corporation v. City of Cabanatuan", "The city assessed the government "
+             "power company ₱808,606.41 based on its 1992 gross receipts. The Court held the company liable: "
+             "it exercised a franchise, its activities were proprietary, and its old exemption had been "
+             "withdrawn."),
+            ("point", "Smart Communications v. City of Davao", "G.R. No. 155491, September 16, 2008. "
+             "Smart’s franchise was granted after the Code took effect, so the Section 193 withdrawal did "
+             "not reach it. The Court still ruled for the city. It read the “in lieu of all taxes” clause as "
+             "covering national taxes only, and said tax exemptions “are strictly construed against the "
+             "taxpayer.” The Court denied Smart’s motion for reconsideration on July 21, 2009."),
+            "The lesson is not that every franchise holder must pay. A later franchise can grant a clear "
+            "exemption from local taxes, and the Court in Smart noted that another company’s franchise did. "
+            "The lesson is to read the exact words of the franchise. An exemption has to be clear; it is not "
+            "presumed.",
+            ("h", "What Each Office Should Check"),
+            ("point", "Provincial or city treasury", "A list of franchise holders operating in the area, "
+             "the franchise law of each, and whether each one has filed its gross receipts for the year."),
+            ("point", "The examiner", "That the declared receipts are those realized within the province or "
+             "city, and that they match the financial statements filed."),
+            ("point", "The franchise holder", "The rate in the current revenue code, the deadline, and any "
+             "exemption in its own franchise, read word for word, not summarized."),
+            ("point", "Municipal treasury", "That the town does not issue a bill for this tax by mistake, "
+             "since the Code gives it to the province and to cities."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming “in lieu of all taxes” covers local taxes", "The Supreme Court ruled "
+             "otherwise in San Pablo and in Smart."),
+            ("point", "Charging more than the ceiling", "0.5 percent for a province, with the Section 151 "
+             "allowance only for a city."),
+            ("point", "Using this year’s receipts", "The base is the preceding calendar year."),
+            ("point", "Forgetting the first-year rule", "A new franchise is taxed on its capital investment, "
+             "not on receipts it has not earned yet."),
+            ("h", "Key Takeaways"),
+            ("point", "A provincial and city tax", "Section 137, with Section 151 for cities."),
+            ("point", "Half of one percent at most", "Of the preceding year’s gross receipts realized in the area."),
+            ("point", "First year: capital investment", "Not more than one-twentieth of 1 percent."),
+            ("point", "Exemptions must be clear", "G.R. Nos. 127708, 149110 and 155491."),
+            ("h", "Your Part 24 Action Plan"),
+            ("point", "If you work in a treasury", "Open the franchise tax section of your revenue code and "
+             "check the rate and base against Section 137."),
+            ("point", "If you manage a franchise holder", "Ask your accountant how the receipts realized in "
+             "each province or city are separated, and keep that breakdown with the return."),
+            ("point", "If you are studying local taxation", "Read the three cases above in order and note how "
+             "the Court treated an older franchise and a newer one."),
+            "Back at the treasury, the young staff member asked one more question. How did they know the "
+            "telephone company’s receipts were complete? The examiner handed her the company’s financial "
+            "statements. “You compare,” he said. By noon she had found that the figures matched.",
+            ("cta", "Read: Inside the Local Treasury, Part 23: The Sand and Gravel Tax, and Why the Barangay Gets the Biggest Share", "/blog/sand-and-gravel-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests", "/blog/local-tax-refunds-and-credits/"),
+            ("ask", "Which franchise holders operate in your province or city, and do you know which office collects their tax?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 23: The Sand and Gravel Tax, and Why the Barangay Gets the Biggest Share",
         "date": "April 9, 2027",
         "publish_on": "2027-04-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
