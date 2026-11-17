@@ -14,6 +14,532 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 48: The Decision Log, Remembering Why the Project Chose What It Chose",
+        "slug": "project-management-part-48-decision-log",
+        "category": "pm",
+        "date": "June 20, 2027",
+        "summary": "Months into a project, someone asks why it was done this way, and often nobody remembers. A "
+                   "decision log keeps one short record per important choice: the context, the options, the "
+                   "decision, who made it and what follows. This part shows what to record, when, and how to "
+                   "change a decision without erasing the old one.",
+        "publish_on": "2027-06-20 21:00",
+        "body": [
+            "In March, the new treasurer asked why the text reminders went out only to business taxpayers and "
+            "not to real property owners. It looked like an obvious gap.",
+            "The project lead remembered that there had been a reason, discussed at a meeting the year before. "
+            "She could not remember what it was. The minutes said only: “Agreed to start with business tax.” "
+            "The team spent two weeks rediscovering the reason: the real property owner list had too many "
+            "missing and outdated phone numbers to use safely, and cleaning it had been planned for a later "
+            "phase.",
+            "(The office, the project and the people are invented, continuing the treasury examples of this "
+            "series. The format described below draws on the architecture decision record, a practice from "
+            "software teams.)",
+            "Part 47 negotiated with other offices. This part looks at what a project should remember about its "
+            "own choices. Stay with me to the end, and you will know what a decision log is, which decisions "
+            "belong in it, what to write for each, how to change a decision without erasing the old one, and "
+            "how to keep the log small enough that people actually use it.",
+            ("photo", "blog/pm-decision-log.jpg", "A decision log: one short entry per important choice, with "
+             "the context, the options considered, the decision, who made it and what follows. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Idea Comes From"),
+            "Software teams have kept records like this for years. Martin Fowler, a well-known writer on "
+            "software design, describes an architecture decision record as “a short document that captures and "
+            "explains a single decision.” He credits Michael Nygard with coining the term in a 2011 article, "
+            "and notes that Nygard “did not originate the idea of a decision log.”",
+            "The idea works well outside software. Any project that makes choices other people will later "
+            "question can use it.",
+            ("point", "Minutes record that something was decided", "Part 27’s minutes capture the decision and "
+             "the action items."),
+            ("point", "A decision log records why", "The context and the options that lost, which minutes "
+             "rarely have room for."),
+            ("point", "The issue log records problems", "Part 26’s log tracks problems to fix. Some issues end "
+             "in a decision, which then gets its own entry."),
+            ("h", "Which Decisions Belong in the Log"),
+            "Not every choice needs an entry. A log with 200 entries is as hard to use as none.",
+            ("point", "Hard to reverse", "Choosing a supplier, a system, or which taxpayers come first."),
+            ("point", "Likely to be questioned", "Anything a new sponsor, an auditor or the council may ask "
+             "about later."),
+            ("point", "Trading one goal against another", "Speed against completeness, cost against quality."),
+            ("point", "Changes to the charter or plan", "Approved changes from Part 24’s change control."),
+            "A useful test: if someone asked about this choice a year from now, would the team need more than "
+            "one sentence to explain it? If yes, log it.",
+            ("h", "What to Write for Each Decision"),
+            "Fowler says a record should contain “the decision, the context for making it, and significant "
+            "ramifications.” For a treasury project, six short fields are enough.",
+            ("point", "Number and date", "D-07, April 2."),
+            ("point", "Context", "What problem needed a choice, and what was true at the time. “Only 58 percent "
+             "of real property owners have a usable phone number on file.”"),
+            ("point", "Options considered", "Including the ones not chosen. “Start with both groups. Start with "
+             "business tax only. Delay until both lists are clean.”"),
+            ("point", "Decision and reason", "“Start with business tax, where 91 percent of numbers are usable. "
+             "Clean the real property list in phase 2.”"),
+            ("point", "Who decided", "The sponsor, the project lead or the team, and who was consulted."),
+            ("point", "Consequences and review", "What follows from it, and what would make the team look again. "
+             "“Revisit when the real property list reaches 85 percent usable numbers.”"),
+            "Most entries fit in half a page. Write them within a day of the decision, while the reasons are "
+            "fresh.",
+            ("photo", "blog/pm-decision-log-entry.jpg", "One decision log entry: context, options, decision, who "
+             "decided and when to review it. A later entry can supersede it, while the original stays in the "
+             "log. The entry is invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Changing a Decision Without Erasing It"),
+            "Decisions change. The temptation is to edit the old entry. Fowler advises against it: once accepted, a record “should never be reopened or changed.” Instead, he writes, it “should be superseded.”",
+            ("point", "Write a new entry", "D-15: Extend reminders to real property owners. Give its own "
+             "context and reason."),
+            ("point", "Link the two", "Mark D-07 as “superseded by D-15,” and have D-15 refer back to D-07."),
+            ("point", "Keep the old one", "The history shows the project learned, not that it was wrong."),
+            "This matters for audits. A record that shows the reasoning at the time, and when and why it "
+            "changed, is easier to defend than a single entry rewritten after the fact.",
+            ("h", "Keeping the Log Alive"),
+            ("point", "One place", "A single sheet or document in the project folder, next to the issue log."),
+            ("point", "One owner", "The project lead, or a team member named to keep it current."),
+            ("point", "A standing agenda item", "At each weekly or Friday review, ask: did we decide anything "
+             "worth logging?"),
+            ("point", "Read it when people join", "Part 46’s new member learns more from ten decision entries "
+             "than from a hundred old emails."),
+            ("point", "Hand it over at closing", "Part 28’s handover should include the log, so the office that "
+             "runs the result knows why it was built this way."),
+            ("h", "Who Reads the Log"),
+            "A decision log earns its keep when someone outside the team needs an answer quickly.",
+            ("point", "A new sponsor or official", "After an election or a transfer, the people who approved the "
+             "early choices may be gone. The log explains them."),
+            ("point", "Auditors", "Part 9 of Inside the Local Treasury described how audit questions can arrive "
+             "months later. A dated entry with its reasons is a ready answer."),
+            ("point", "The team itself", "When a decision is questioned in a meeting, the log settles what was "
+             "known at the time, so the discussion moves to whether the facts have changed."),
+            ("point", "The next project", "Part 30’s project kit can include the log as an example, so the "
+             "next team starts with the habit."),
+            ("h", "Back to the Treasurer’s Question"),
+            "After the two lost weeks, the project lead started a decision log. Among her first entries, written "
+            "from the rediscovered facts, was D-07: the choice to start with business tax, with 85 percent usable "
+            "numbers on the real property list as the condition for revisiting it.",
+            "When the list cleanup reached that level in May, the team wrote a new entry extending the "
+            "reminders and marked the old one as superseded. When the new treasurer asked a follow-up question "
+            "in June, the answer took two minutes.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Logging everything", "Keep it to choices that are hard to reverse or likely to be "
+             "questioned."),
+            ("point", "Recording only the winner", "Write down the options that lost and why."),
+            ("point", "Editing old entries", "Supersede them with a new entry and link the two."),
+            ("point", "Writing weeks later", "Record the decision within a day, while the reasons are fresh."),
+            ("h", "Key Takeaways"),
+            ("point", "Minutes say what, the log says why", "Context, options, decision and consequences."),
+            ("point", "Log what will be questioned", "Hard-to-reverse choices and trade-offs."),
+            ("point", "Supersede, do not edit", "Keep the history of how thinking changed."),
+            ("point", "Use it", "For new members, audits, sponsors and the handover."),
+            ("h", "Your Part 48 Action Plan"),
+            ("point", "Today", "Start a decision log with six columns in your project folder."),
+            ("point", "This week", "Write entries for the three most important decisions already made, while "
+             "people still remember why."),
+            ("point", "Every Friday", "Ask the team whether anything decided that week belongs in the log."),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("cta", "Read: Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan", "/blog/project-management-part-24-change-control/"),
+            ("cta", "Read: Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned", "/blog/project-management-part-28-closing-the-project/"),
+            ("ask", "Which decision in your current project would nobody be able to explain a year from now?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 47: Negotiating With Other Offices for People, Equipment and Time",
+        "slug": "project-management-part-47-negotiating-with-other-offices",
+        "category": "pm",
+        "date": "June 17, 2027",
+        "summary": "Many treasury projects need people, rooms or equipment that belong to another office. This "
+                   "part uses the four principles of principled negotiation to prepare for the conversation, "
+                   "find what the other office needs, offer options both sides can accept, and write the "
+                   "agreement down.",
+        "publish_on": "2027-06-17 21:00",
+        "body": [
+            "The filing room project needed two things it did not own: the general services office’s pickup "
+            "truck for one Saturday, to move 140 boxes of real property records, and two days of help from the "
+            "assessor’s records clerk, who knew where every folder belonged.",
+            "The revenue officer sent a memo asking for both. The general services chief replied that the truck "
+            "was fully booked. The assessor said the clerk could not be spared. The project stopped for two "
+            "weeks while each side waited for the other to give in.",
+            "(The offices, the people and the dates are invented, continuing the treasury examples of this "
+            "series. The principles quoted below come from Getting to Yes, by Roger Fisher, William Ury and "
+            "Bruce Patton of the Harvard Negotiation Project.)",
+            "Part 46 brought a new person into a project. This part is about borrowing from people who do not "
+            "report to you. When you finish reading, you will know why a request often meets a quick no, how to "
+            "prepare for a negotiation inside your own local government, how to find what the other office "
+            "needs, how to offer options instead of one demand, and how to record what was agreed.",
+            ("photo", "blog/pm-negotiation.jpg", "Negotiating with another office: separate the people from the "
+             "problem, focus on interests, offer several options, and use fair standards. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why the First Answer Is Often No"),
+            ("point", "Your project is not their priority", "Each office has its own deadlines and its own head "
+             "to answer to."),
+            ("point", "A memo invites a position", "“Please lend us the truck on June 26” can only be answered "
+             "yes or no. No is safer."),
+            ("point", "Hidden costs", "Lending the clerk means the assessor’s counter is short. The request did "
+             "not say who would cover that."),
+            "A quick no is often an opening position, not a final answer. The way forward is a conversation "
+            "about what each side actually needs.",
+            ("h", "Four Principles From Getting to Yes"),
+            "The book sets out four principles of what it calls principled negotiation. They work as well "
+            "between two offices of the same local government as between companies.",
+            ("point", "“Separate the People from the Problem”", "The general services chief is not the obstacle. "
+             "The fully booked truck is. Talk about the schedule, not about whether the chief is helpful."),
+            ("point", "“Focus on Interests, Not Positions”", "“The truck is booked” is a position. The interest "
+             "behind it may be that the truck is needed for a market cleanup every Saturday morning."),
+            ("point", "“Invent Options for Mutual Gain”", "Saturday afternoon instead of morning. A Sunday with "
+             "the driver’s overtime paid from the project budget. Two trips on weekday evenings."),
+            ("point", "“Insist on Using Objective Criteria”", "Use fair standards both sides can accept: the vehicle "
+             "request rules, the actual booking log, the cost of fuel and overtime."),
+            "The book also offers a useful idea for preparation: your BATNA, short for “Best Alternative to a "
+            "Negotiated Agreement.” It is what you will do if no agreement is reached.",
+            ("h", "Step 1: Prepare Before You Ask"),
+            ("point", "Know your own interests", "What do you really need? For the filing room, the need was "
+             "140 boxes moved safely within the month, not that particular truck on that particular day."),
+            ("point", "Guess their interests", "What does the other office worry about? Its own deadlines, its "
+             "staff, its budget, and being blamed if something goes wrong."),
+            ("point", "Know your BATNA", "If general services says no, could you rent a truck? At what cost? "
+             "Knowing that keeps you calm and realistic."),
+            ("point", "Bring the facts", "Dates, hours needed, costs, and who will cover them. Part 17’s budget "
+             "may already hold money for such costs."),
+            ("h", "Step 2: Talk, Do Not Only Write"),
+            "A memo is good for recording an agreement. It is a poor way to reach one. Ask for 15 minutes in "
+            "person.",
+            ("point", "Start with their situation", "“How is the truck schedule this month?” Listen before "
+             "asking."),
+            ("point", "Explain the project briefly", "Why the filing room matters: records that taxpayers and "
+             "the assessor’s own staff will find faster."),
+            ("point", "Ask about constraints", "“What would make it possible?” is better than “Can you or can’t "
+             "you?”"),
+            ("photo", "blog/pm-negotiation-options.jpg", "From one demand to several options: each one checked "
+             "against what both offices need. The options are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Step 3: Offer Options, Then Choose Together"),
+            "Bring two or three possible arrangements, and invite theirs.",
+            ("point", "Timing", "Use the truck when it is free, even if that is less convenient for you."),
+            ("point", "Cost", "Offer to cover fuel or overtime from the project budget."),
+            ("point", "Exchange", "Offer something the other office values, such as treasury help with its own "
+             "collections report."),
+            ("point", "Smaller ask", "One day of the clerk instead of two, with a treasury clerk shadowing to "
+             "learn the folder system."),
+            "Check each option against both sides’ interests. The best option is often one neither side "
+            "proposed at first.",
+            ("h", "Step 4: Write It Down"),
+            "Once you agree, send a short note the same day.",
+            ("point", "What was agreed", "The truck and driver, Saturday June 26, 1:00 to 5:00 p.m."),
+            ("point", "Who covers what", "Fuel and the driver’s overtime from the project budget."),
+            ("point", "What happens if plans change", "Notice by Wednesday of the same week."),
+            ("point", "Copy the right people", "The sponsor, and anyone who must approve under office rules."),
+            "If the agreement needs approval from the local chief executive or a department head, get it in "
+            "writing. Part 27 covered minutes that record decisions.",
+            ("h", "When You Cannot Agree"),
+            ("point", "Use your BATNA", "Rent the truck, if the budget allows and the rules permit."),
+            ("point", "Escalate with options, not complaints", "Take the matter to the person above both offices, "
+             "with the options already discussed, as Part 44 advised for conflicts between projects."),
+            ("point", "Keep the relationship", "You will need the same office again next quarter."),
+            ("h", "Back to the Filing Room"),
+            "The revenue officer asked for 15 minutes with the general services chief. The truck was booked for "
+            "the Saturday market cleanup, which ended at noon. They agreed on Saturday afternoon, with fuel and "
+            "overtime paid from the project budget.",
+            "With the assessor, she learned the real worry: the clerk ran the records counter alone on Mondays "
+            "and Tuesdays. They agreed on Wednesday and Thursday, with a treasury clerk shadowing so the "
+            "assessor’s office would also gain a second person who knew the filing system. The boxes moved two "
+            "weeks later than first planned, but the project was moving again.",
+            ("h", "Inside One Local Government"),
+            "Negotiating with a sister office is different from bargaining with a supplier. Both offices serve "
+            "the same public and answer to the same chief executive.",
+            ("point", "Shared goals help", "Point to what the local government as a whole gains, not only your "
+             "project."),
+            ("point", "Rules still apply", "Lending vehicles, staff or rooms usually follows office rules. Check "
+             "them before offering anything."),
+            ("point", "Return the favor", "Help the other office when it asks. Goodwill is built before it is "
+             "needed."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Asking by memo only", "Talk first, then write down the agreement."),
+            ("point", "Arguing positions", "Ask about the interests behind them."),
+            ("point", "One demand, no options", "Bring two or three arrangements."),
+            ("point", "No written record", "Send a short note the same day."),
+            ("h", "Key Takeaways"),
+            ("point", "Four principles", "People apart from the problem, interests over positions, options, "
+             "fair standards."),
+            ("point", "Know your BATNA", "Your best alternative if no agreement is reached."),
+            ("point", "Talk, then write", "Agree in person, record it the same day."),
+            ("point", "Protect the relationship", "Other offices are partners in the next project too."),
+            ("h", "Your Part 47 Action Plan"),
+            ("point", "Before your next request", "Write your interest, their likely interest and your BATNA "
+             "on one page."),
+            ("point", "At the meeting", "Bring three options and ask what would make it possible."),
+            ("point", "After the meeting", "Send a short note of what was agreed."),
+            ("cta", "Read: Project Management Series, Part 3: Mapping Who Holds the Power", "/blog/project-management-part-3-stakeholder-mapping/"),
+            ("cta", "Read: Project Management Series, Part 38: When the Team Disagrees, Five Ways to Handle Conflict", "/blog/project-management-part-38-handling-conflict/"),
+            ("cta", "Read: Project Management Series, Part 44: Leading Several Projects at Once Without Dropping Any", "/blog/project-management-part-44-several-projects-at-once/"),
+            ("cta", "Read: Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items", "/blog/project-management-part-27-meetings-that-decide/"),
+            ("ask", "What do you most often need to borrow from another office, and how do you usually ask?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 46: Bringing a New Person Into a Running Project",
+        "slug": "project-management-part-46-new-team-member",
+        "category": "pm",
+        "date": "June 14, 2027",
+        "summary": "A new team member halfway through a project can speed it up or slow it down for weeks. This "
+                   "part shows how to prepare before the person arrives, what to cover in the first day and the "
+                   "first two weeks, how to pick a first task, and why adding people to a late project needs "
+                   "care.",
+        "publish_on": "2027-06-14 21:00",
+        "body": [
+            "The online payment project from Part 43 had recovered, and the department head sent help: a "
+            "young programmer transferred from the assessor’s office, starting Monday.",
+            "On Monday, nobody had prepared a desk, a login or a task. The project lead spent the morning "
+            "explaining the project from memory, between phone calls. By Wednesday, the new programmer was "
+            "reading old emails to understand why the system worked the way it did. By the end of the second "
+            "week, the team was slower than before, because the two senior members kept stopping to answer "
+            "questions.",
+            "(The office, the project and the people are invented, continuing the treasury examples of this "
+            "series. The law quoted below comes from Fred Brooks’s 1975 book The Mythical Man-Month.)",
+            "Part 45 handed work to people already on the team. This part looks at a person who is new to it. "
+            "By the last section, you will know why a new member can slow a project down at first, how to "
+            "prepare before the first day, what to cover in the first day and the first two weeks, how to "
+            "choose a good first task, and how to tell when the person is fully up to speed.",
+            ("photo", "blog/pm-new-member.jpg", "Bringing someone into a running project: prepare before they "
+             "arrive, give one guide, start with a small real task, and check in on a set schedule. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a New Member Can Slow Things Down at First"),
+            "Fred Brooks, who managed a large software project at IBM in the 1960s, put it bluntly in The "
+            "Mythical Man-Month: “adding manpower to a late software project makes it later.” The idea is now "
+            "often called Brooks’s law. It is a warning about timing and setup, not a rule against adding "
+            "people.",
+            ("point", "Learning takes time", "The new person needs days or weeks to understand the work before "
+             "they add to it."),
+            ("point", "Teaching takes time too", "Someone on the team has to explain things, and that person’s "
+             "own work slows while they do."),
+            ("point", "More people, more conversations", "Each new member adds new pairs of people who need to "
+             "keep each other informed."),
+            "None of this means a project should refuse help. It means the help should arrive early enough, and "
+            "be prepared well enough, that the slowdown is short.",
+            ("h", "Before the First Day"),
+            "Most of the slowdown can be cut before the person walks in.",
+            ("point", "Access ready", "Desk, computer, logins to the shared folder, the test system and the "
+             "group chat, requested at least a week ahead."),
+            ("point", "One guide, not fifty emails", "A short document with the charter from Part 2, the current "
+             "plan, the status report from Part 25 and a list of who does what."),
+            ("point", "A named buddy", "One team member who answers questions for the first two weeks. Lighten "
+             "that person’s own tasks a little to make room."),
+            ("point", "A first task chosen", "See the section below. Waiting for something to do is the worst "
+             "start."),
+            ("point", "Tell the team", "Who is coming, when, and what they will work on, so nobody is "
+             "surprised."),
+            ("h", "The First Day"),
+            "Keep the first day short on detail and long on context.",
+            ("point", "The why", "What problem the project solves and for whom. Ten minutes with the project lead "
+             "is enough."),
+            ("point", "The people", "Introduce the team, the sponsor if possible, and the counter staff who will "
+             "use the result."),
+            ("point", "The rules of the road", "When the team meets, where files live, how decisions are "
+             "recorded, and how to raise a problem."),
+            ("point", "The first task", "Hand it over before the day ends, with the briefing from Part 45: "
+             "result, reason, limits, level and date."),
+            ("photo", "blog/pm-new-member-plan.jpg", "A two-week plan for a new team member: context on day one, "
+             "a small real task in week one, a larger task in week two, and short check-ins on set days. The "
+             "plan is invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Choosing the First Task"),
+            "A good first task is small, real and close to the center of the work.",
+            ("point", "Small", "Something that can be finished in two to three days."),
+            ("point", "Real", "It goes into the actual project, not a practice exercise. Finishing real work "
+             "builds confidence quickly."),
+            ("point", "Close to the center", "It touches the main parts of the system or process, so the person "
+             "learns how they fit together."),
+            ("point", "Checked by the buddy", "Review the result together and explain anything the person "
+             "could not have known."),
+            "For the payment project, a good first task would be fixing a small known bug in the receipt "
+            "screen. It is small, it matters, and it leads straight into the code the team works on every day.",
+            ("h", "The First Two Weeks"),
+            ("point", "Check in on set days", "A 15-minute talk on day 2, day 5 and day 10. Ask what is clear, "
+             "what is confusing, and what they would change."),
+            ("point", "Fresh eyes are useful", "A new person often notices what the team has stopped seeing. "
+             "Write down their questions. Some will point to gaps in the documents or the procedure."),
+            ("point", "Increase the size of tasks", "Week one, a task of two or three days. Week two, a task of "
+             "a week, at a higher level of delegation."),
+            ("point", "Update the guide", "Most questions the new person had to ask point to a line the guide was missing."),
+            ("h", "When Is the Person Up to Speed?"),
+            "There is no fixed number of days. Look for signs instead.",
+            ("point", "They estimate their own tasks", "And the estimates are close to what actually happens."),
+            ("point", "They answer questions", "Other members start asking them."),
+            ("point", "They spot problems early", "They raise risks before being asked."),
+            "When these signs appear, end the buddy arrangement and treat the person like any other member.",
+            ("h", "Back to the Programmer"),
+            "The project lead started again on the third week. He wrote a four-page guide in an afternoon, "
+            "named one senior member as the buddy, and gave the programmer the receipt screen bug, with a "
+            "check-in on day 2.",
+            "The fix was done in three days. In the second week, the programmer took on the payment history "
+            "page that had been moved to phase 2 in Part 43. By the end of the month, the team was completing "
+            "more work each week than before he arrived, and his questions had added nine lines to the guide.",
+            ("h", "When a Member Leaves Instead"),
+            "The same guide helps in the opposite case. When someone leaves the project, a guide that already "
+            "exists makes the handover faster.",
+            ("point", "Ask the leaver to update it", "In their last week, the person adds what only they know."),
+            ("point", "Pair before they go", "The person who will take over sits with the leaver for a few "
+             "days, as Part 31 suggested for absences."),
+            ("point", "Move their open items", "Every open item in the issue log gets a new owner before the "
+             "last day."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "No access on day one", "Request logins and equipment a week ahead."),
+            ("point", "Explaining everything from memory", "Write one short guide and keep it current."),
+            ("point", "Practice tasks only", "Give a small real task in the first days."),
+            ("point", "Adding people too late", "Help that arrives in the last weeks can slow the finish."),
+            ("h", "Key Takeaways"),
+            ("point", "Expect a short slowdown", "Learning and teaching both take time."),
+            ("point", "Prepare before day one", "Access, one guide, a buddy and a first task."),
+            ("point", "Small, real first task", "Checked with the buddy, then larger tasks."),
+            ("point", "Watch for the signs", "Own estimates, answering questions, raising risks early."),
+            ("h", "Your Part 46 Action Plan"),
+            ("point", "Today", "Start a one-page guide for your current project."),
+            ("point", "Before the next new member", "Pick a buddy and a first task in advance."),
+            ("point", "After two weeks", "Ask the new member what the guide was missing, and add it."),
+            ("cta", "Read: Project Management Series, Part 45: Delegating Work Without Losing Track of It", "/blog/project-management-part-45-delegating-work/"),
+            ("cta", "Read: Project Management Series, Part 2: The Project Charter on One Page", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 31: Covering for Absences, a Backup Plan So the Work Does Not Stop", "/blog/project-management-part-31-covering-absences/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("ask", "What do you wish someone had given you on your first day in a project?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 45: Delegating Work Without Losing Track of It",
+        "slug": "project-management-part-45-delegating-work",
+        "category": "pm",
+        "date": "June 11, 2027",
+        "summary": "A project lead who does every task alone becomes the bottleneck. This part shows how to choose "
+                   "what to hand over, how much authority to give with it, how to brief the person so the result "
+                   "comes back right, and how to follow up without hovering or disappearing.",
+        "publish_on": "2027-06-11 21:00",
+        "body": [
+            "The revenue officer had a new rule for herself after Part 44: one page, one order of priority, "
+            "protected blocks. It helped. But the page also showed something she had not wanted to see. Of the "
+            "52 hours of project work on it, she had written her own name beside 41.",
+            "Her two clerks were capable. One had built the stall list spreadsheet from scratch. The other knew "
+            "every taxpayer on the reminder list by name. Yet both were waiting for her to tell them what to do "
+            "next, and she was staying late doing tasks either of them could have done.",
+            "(The office, the people and the hours are invented, continuing the treasury examples of this "
+            "series.)",
+            "Part 44 put several projects on one page. This part looks at the next step: getting some of that "
+            "work off the lead’s desk without losing control of it. When you finish reading, you will know how "
+            "to choose what to delegate, how to match the authority to the person, how to brief a task so it "
+            "comes back right, how to follow up at the right distance, and what to do when a delegated task "
+            "goes wrong.",
+            ("photo", "blog/pm-delegation.jpg", "Delegating well: choose the task, set the level of authority, "
+             "brief it clearly, and agree on check-in points before letting go. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why Leads Hold On"),
+            "Most project leads know they should delegate. Many still do not, for reasons that feel sensible in "
+            "the moment.",
+            ("point", "“It is faster if I do it”", "True for one task, once. False for the tenth time the same "
+             "task comes up."),
+            ("point", "“They might get it wrong”", "Sometimes they will, the first time. A lead who never lets anyone try keeps that risk and never builds the team’s skill."),
+            ("point", "“I do not want to burden them”", "Often the opposite is true. Capable staff who are "
+             "given nothing but small errands tend to lose interest."),
+            ("point", "“I need to know everything”", "A lead needs to know the status of everything, not to do "
+             "everything. Those are different jobs."),
+            "Delegation is not dumping. It is a deliberate choice to grow the team’s capacity, with the lead "
+            "still answerable for the result.",
+            ("h", "Step 1: Choose What to Hand Over"),
+            "Go down the one page and mark each task with one of three labels.",
+            ("point", "Only I can do this", "Decisions that need your authority, conversations with the "
+             "sponsor, and work that depends on information only you hold. Keep these."),
+            ("point", "Someone else could do this with a short briefing", "Data gathering, drafting, updating "
+             "the issue log, preparing a schedule, following up with suppliers. These are the best candidates."),
+            ("point", "Someone else could do this better", "The clerk who knows every taxpayer may write a "
+             "better reminder message than the lead. Hand these over first."),
+            "Repeating tasks are the best place to start. A task that comes up every week pays back the "
+            "briefing many times.",
+            ("h", "Step 2: Match the Authority to the Person"),
+            "The most common delegation failure is a mismatch: the person thinks they may decide, and the lead "
+            "thinks they were only asked to look into it. Say the level out loud.",
+            ("point", "Level 1: Find out and report", "“Look into why the stall list has 14 duplicates and tell "
+             "me what you find.” The lead decides what happens next."),
+            ("point", "Level 2: Recommend", "“Find the duplicates and propose which record to keep for each.” "
+             "The lead approves before anything changes."),
+            ("point", "Level 3: Act, then tell me", "“Clean up the duplicates using the rule we agreed, and send "
+             "me the list of changes.” The person decides within the rule."),
+            ("point", "Level 4: Act on your own", "“The stall list is yours. Keep it accurate.” The lead hears "
+             "about it in the weekly review."),
+            "Start a new person at level 1 or 2, and move up as trust grows. The same person can be at level 4 "
+            "for one task and level 1 for another. Part 8’s RACI matrix records who is responsible. The level "
+            "records how far that responsibility goes.",
+            ("photo", "blog/pm-delegation-levels.jpg", "Four levels of delegation, from finding out and "
+             "reporting to acting alone. Say the level when you hand over the task. Examples are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 3: Brief the Task So It Comes Back Right"),
+            "A good briefing takes five to ten minutes and saves hours of rework. Cover five points.",
+            ("point", "The result", "What “done” looks like. “A clean list of 212 stalls, one row each, in the "
+             "shared folder.”"),
+            ("point", "The reason", "Why it matters. “The market supervisor will use it to bill rentals from "
+             "July.” People make better small decisions when they know the purpose."),
+            ("point", "The limits", "Budget, time and anything that must not change. “Do not delete any "
+             "record. Mark duplicates instead.”"),
+            ("point", "The level", "From Step 2. “Act, then tell me.”"),
+            ("point", "The date and the check-in", "“Due Thursday. Let us look at it together Tuesday "
+             "afternoon.”"),
+            "Then ask the person to say the task back in their own words. If the summary misses something, the "
+            "briefing missed it too. Write the agreed points in one or two lines in the issue log from Part 26 "
+            "or the team’s task list.",
+            ("h", "Step 4: Follow Up at the Right Distance"),
+            "Two mistakes sit on either side of good follow-up. Hovering means checking so often that the "
+            "person cannot work. Disappearing means handing over and hearing nothing until the deadline.",
+            ("point", "Agree the check-ins at the start", "One check-in halfway for a short task, weekly for a "
+             "long one. Then keep to them."),
+            ("point", "Ask about progress, not about method", "“How far along are you? Anything blocking you?” "
+             "Let the person choose how to do it, within the limits."),
+            ("point", "Make it easy to raise problems early", "Say during the briefing: “If you get stuck for "
+             "more than a day, tell me. That is not a failure.”"),
+            ("point", "Look at a sample", "For data work, check ten records instead of all of them. If ten are "
+             "right, the method is probably sound."),
+            ("h", "Step 5: When a Delegated Task Goes Wrong"),
+            "Sooner or later, something comes back late or wrong. How the lead reacts decides whether anyone "
+            "accepts the next task willingly.",
+            ("point", "Look at the briefing first", "Was the result, the limit or the date clear? Many "
+             "delegated tasks fail at the handover, not in the work."),
+            ("point", "Fix it together, not over their head", "Taking the task back silently teaches the person "
+             "that delegated work is not really theirs."),
+            ("point", "Adjust the level, not the person’s worth", "Move the task back one level for a while. "
+             "“Next time, show me the plan before you start.”"),
+            ("point", "Own it upward", "To the sponsor, the lead says “we missed this,” not “my clerk missed "
+             "this.” The lead remains answerable."),
+            ("h", "Back to the Revenue Officer"),
+            "She marked her 41 hours. Fourteen hours were tasks only she could do. Nineteen were tasks the "
+            "clerks could do with a briefing, and eight were tasks the clerks could probably do better.",
+            "She handed the stall list cleanup to the first clerk at level 3, with a rule for duplicates and a "
+            "Tuesday check-in. She asked the second clerk to draft the reminder messages at level 2. Within a "
+            "month, her own project hours had dropped to about 20 a week, and the reminder messages, written by "
+            "someone who knew the taxpayers, drew more replies than her drafts had.",
+            ("h", "Delegation and Growth"),
+            "Delegation is also how people learn. A clerk who cleaned up the stall list now knows how the "
+            "rental records fit together. That knowledge stays in the office if the lead is transferred, which "
+            "is the same concern Part 31 raised about absences.",
+            ("point", "Stretch a little, not too far", "Choose tasks slightly beyond what the person has done "
+             "before."),
+            ("point", "Give the credit in public", "When the sponsor praises the cleaned list, name the person "
+             "who did it."),
+            ("point", "Write down what worked", "If a delegated task becomes routine, turn it into a short "
+             "procedure, as Part 37 described."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Delegating only the dull work", "People notice. Mix in tasks that build skills."),
+            ("point", "No level stated", "Say whether the person reports, recommends, acts and tells, or acts "
+             "alone."),
+            ("point", "No check-in agreed", "Agree it at the start, or the lead ends up hovering or "
+             "disappearing."),
+            ("point", "Taking the task back silently", "Fix it together and adjust the level."),
+            ("h", "Key Takeaways"),
+            ("point", "Choose with three labels", "Only I can, someone could with a briefing, someone could do "
+             "it better."),
+            ("point", "Say the level", "Find out, recommend, act and tell, or act alone."),
+            ("point", "Brief five points", "Result, reason, limits, level and date, then have it said back."),
+            ("point", "Stay answerable", "Follow up at agreed points, and own the result to the sponsor."),
+            ("h", "Your Part 45 Action Plan"),
+            ("point", "Today", "Mark every task with your name on it using the three labels."),
+            ("point", "This week", "Hand over one repeating task, with the level and a check-in date."),
+            ("point", "After a month", "Move one person up one level on a task they handled well."),
+            ("cta", "Read: Project Management Series, Part 44: Leading Several Projects at Once Without Dropping Any", "/blog/project-management-part-44-several-projects-at-once/"),
+            ("cta", "Read: Project Management Series, Part 8: Who Does What? Building a RACI Matrix", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Project Management Series, Part 18: Assigning People Without Overloading Them", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 37: Writing a Standard Operating Procedure People Actually Follow", "/blog/project-management-part-37-standard-operating-procedure/"),
+            ("ask", "Which task on your desk could someone else do better than you?"),
+        ],
+    },
+    {
         "title": "Project Management Series, Part 44: Leading Several Projects at Once Without Dropping Any",
         "slug": "project-management-part-44-several-projects-at-once",
         "category": "pm",
