@@ -90,8 +90,9 @@ NOTES = [
                 "registration fees for motor vehicles and driver's licenses, except for tricycles",
                 "taxes on the national government, its agencies and other local governments",
             ]),
-            ("tip", "A quick test: if the national government already taxes it under the Tax Code (income, "
-                    "estate, excise, VAT), a local government usually cannot tax it again."),
+            ("tip", "Income tax, documentary stamp tax, estate tax, excise taxes and VAT all appear on the "
+                    "Section 133 list, so no local government may levy them, except the income tax on banks "
+                    "and other financial institutions."),
             ("h", "What each level may tax"),
             ("table", ["Level", "Main local taxes (RA 7160)"], [
                 ["Province", "Real property tax (up to 1% of assessed value) and Special Education Fund levy "
@@ -121,8 +122,9 @@ NOTES = [
             "has been called the National Tax Allotment. Section 285 divides it: 23% to provinces, 23% to "
             "cities, 34% to municipalities and 20% to barangays. Within each group, it is shared by population "
             "(50%), land area (25%) and equal sharing (25%).",
-            ("tip", "For most municipalities, the NTA is still the largest source of income. That is why "
-                    "raising local collections matters: it gives the town money it can plan for on its own."),
+            ("tip", "The NTA is set by national collections and the national budget. Local taxes, fees and "
+                    "charges are the part of the income a local government raises through its own ordinances "
+                    "and its own treasury."),
             ("h", "Why this matters at the counter"),
             "A treasury worker who knows these limits can answer a taxpayer's \"Why am I paying this?\" "
             "with the law, and can spot an ordinance that charges something the Code does not allow. An unlawful "
