@@ -12,6 +12,653 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 56: Expected Value, Deciding Which Accounts Are Worth a Visit",
+        "slug": "data-analytics-part-56-expected-value",
+        "category": "data",
+        "date": "July 10, 2027",
+        "summary": "When an action costs money and its result is uncertain, expected value weighs the possible "
+                   "gain by its chance, then subtracts the cost. This part uses expected value in Google Sheets "
+                   "to decide which unpaid accounts deserve a field visit, which deserve a letter, and how to "
+                   "avoid counting payments that would have come anyway.",
+        "publish_on": "2027-07-10 21:00",
+        "body": [
+            "The collection team could make about 100 field visits a month. The list of unpaid business "
+            "accounts had 360 names. Each visit cost about ₱900 in fuel, meals and staff time.",
+            "The team leader’s habit was to start at the top of the list, sorted alphabetically, and work "
+            "down. The analyst asked a different question: which 100 visits would bring in the most money "
+            "for the cost?",
+            "(The office, the accounts, the costs and the chances are invented for this lesson. The method is "
+            "standard arithmetic that any spreadsheet can do.)",
+            "Part 45 built low, likely and high scenarios. This part attaches a chance to each outcome and "
+            "turns them into one number per choice. When you finish reading, you will know what expected "
+            "value is, how to compute it in Google Sheets, how to compare actions with different costs, why "
+            "you should count only the payments an action adds, and the limits of the method.",
+            ("photo", "blog/data-expected-value.jpg", "Expected value: chance of success times the gain, minus "
+             "the cost. It ranks choices when the results are uncertain. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What Expected Value Means"),
+            "Expected value is the average result you would get if you repeated the same choice many times.",
+            ("point", "The formula", "Expected value = chance of success × gain if successful − cost."),
+            ("point", "Example", "A visit that has a 60 percent chance of collecting ₱18,000 and costs ₱900 "
+             "has an expected value of 0.6 × 18,000 − 900 = ₱9,900."),
+            ("point", "What it is not", "No single visit returns ₱9,900. Each one returns ₱18,000 or "
+             "nothing, less the cost. The average over many visits is what approaches ₱9,900."),
+            "That is why expected value suits repeated decisions, like a month of field visits, better than a "
+            "one-time gamble.",
+            ("h", "Step 1: Group the Accounts"),
+            "The analyst sorted the 360 accounts into three groups by balance and history, then used last "
+            "year’s records to estimate how often a visited account paid within 60 days.",
+            ("point", "Group A", "40 accounts, average balance ₱18,000, 60 percent paid after a visit."),
+            ("point", "Group B", "120 accounts, average balance ₱6,500, 35 percent paid after a visit."),
+            ("point", "Group C", "200 accounts, average balance ₱2,400, 20 percent paid after a visit."),
+            "The chances are estimates from past results, not promises. Part 17’s advice on samples applies: "
+            "a chance estimated from ten visits is far less reliable than one estimated from two hundred.",
+            ("h", "Step 2: Compute Expected Value in Google Sheets"),
+            "Put the groups in A2 to A4, the number of accounts in B, the average balance in C, the chance of "
+            "payment in D and the visit cost in E.",
+            ("point", "Expected value per visit", "In F2, type =D2*C2-E2 and fill down."),
+            ("point", "Results", "Group A: ₱9,900. Group B: ₱1,375. Group C: −₱420."),
+            ("point", "Expected value for the group", "In G2, type =B2*F2 and fill down."),
+            "A negative expected value means that, on average, each visit to a Group C account costs more "
+            "than it brings in. That does not mean those accounts should be ignored. It means a visit is the "
+            "wrong tool for them.",
+            ("h", "Step 3: Compare a Cheaper Action"),
+            "Suppose a formal demand letter costs ₱60 to prepare and send, and last year’s records show that "
+            "8 percent of Group C accounts paid after receiving one.",
+            ("point", "Letter to Group C", "0.08 × 2,400 − 60 = ₱132 per account."),
+            ("point", "Visit to Group C", "−₱420 per account."),
+            "For Group C, the letter is the better choice. A separate row for each action and group lets the "
+            "sheet show the best tool for each part of the list.",
+            ("photo", "blog/data-expected-value-bars.jpg", "Expected value per account for each group and "
+             "action. Visits pay for Groups A and B; letters fit Group C. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: Count Only What the Action Adds"),
+            "Some accounts pay without any visit. If 10 percent of Group B would pay anyway, the visit does "
+            "not deserve credit for them.",
+            ("point", "Chance with a visit", "35 percent."),
+            ("point", "Chance without a visit", "10 percent."),
+            ("point", "Extra chance from the visit", "25 percent."),
+            ("point", "Expected value of the visit", "0.25 × 6,500 − 900 = ₱725, not ₱1,375."),
+            "This is a common way for expected value to overstate a result. To estimate the chance without "
+            "action, compare accounts that were not visited last year with similar ones that were, keeping "
+            "in mind that the two groups may differ in other ways.",
+            ("h", "Step 5: Fill the Month’s Capacity"),
+            "With 100 visits available, rank the groups by expected value per visit.",
+            ("point", "First, all of Group A", "40 visits, about ₱396,000 in expected collections net of cost. "
+             "Last year, almost no Group A account paid without a visit, so the ₱9,900 figure stands."),
+            ("point", "Then, 60 of Group B", "Using the ₱725 figure from Step 4, about ₱43,500."),
+            ("point", "Group C", "Demand letters instead of visits."),
+            "Within Group B, the largest balances can go first, since the same visit cost brings a bigger "
+            "expected gain on a bigger balance.",
+            ("h", "Step 6: Test the Estimates"),
+            "Expected value is only as good as its chances. Change them and see whether the ranking holds.",
+            ("point", "If Group A’s chance were 40 percent", "0.4 × 18,000 − 900 = ₱6,300. Still first."),
+            ("point", "If Group C’s letter worked only 3 percent of the time", "0.03 × 2,400 − 60 = ₱12. "
+             "Barely positive."),
+            "When a small change in a chance reverses the ranking, the decision is close. Say so in the "
+            "report, as Part 45 suggested for scenarios.",
+            ("h", "Step 7: Record Outcomes for Next Year"),
+            "The chances will only improve if the office records what happens. A simple log does it.",
+            ("point", "Columns", "Account, group, action (visit, letter or none), date, paid within 60 days "
+             "(Yes or No), and amount paid."),
+            ("point", "Chance per group and action", "Use COUNTIFS to count the Yes rows for each group and "
+             "action, and divide by the number of rows for that group and action."),
+            ("point", "Include the accounts with no action", "They supply the chance without action that "
+             "Step 4 needs."),
+            "After a year, the sheet holds chances based on the office’s own results instead of guesses.",
+            ("h", "Limits of the Method"),
+            ("point", "Averages hide spread", "Two choices with the same expected value can differ a lot in "
+             "risk."),
+            ("point", "Not everything is pesos", "Fairness, the law and the office’s duty to pursue every "
+             "delinquent account still apply. Expected value ranks the order of work; it does not excuse "
+             "anyone from paying."),
+            ("point", "Past chances can change", "A new ordinance or an economic slowdown can shift them."),
+            ("h", "Back to the Collection Team"),
+            "The team leader tried the ranked list for one month. Collections from visits rose, and Group C "
+            "received letters for the first time. The analyst recorded every outcome so that next year’s "
+            "chances would rest on more data.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Working the list alphabetically", "Rank by expected value per visit."),
+            ("point", "Counting payments that would have come anyway", "Use the extra chance."),
+            ("point", "Treating estimates as facts", "Test how sensitive the ranking is."),
+            ("point", "Dropping low-value accounts entirely", "Use a cheaper action instead."),
+            ("h", "Key Takeaways"),
+            ("point", "Chance × gain − cost", "Expected value in one line."),
+            ("point", "Compare actions, not just accounts", "A letter can beat a visit."),
+            ("point", "Count the difference the action makes", "Not every payment after a visit is due to it."),
+            ("point", "Test the chances", "A close ranking deserves a note."),
+            ("h", "Your Part 56 Exercise"),
+            ("point", "Step 1", "Enter the three groups and compute expected value per visit."),
+            ("point", "Step 2", "Add rows for demand letters and compare."),
+            ("point", "Step 3", "Add a column for the chance without action and recompute."),
+            ("point", "Step 4", "Fill 100 visits from the ranked list and total the expected value."),
+            ("cta", "Read: Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets", "/blog/data-analytics-part-45-what-if-scenarios/"),
+            ("cta", "Read: Data Analytics Series, Part 47: Break-Even Analysis, How Many Before It Pays for Itself?", "/blog/data-analytics-part-47-break-even-analysis/"),
+            ("cta", "Read: Data Analytics Series, Part 35: Correlation Is Not Causation, When Two Numbers Move Together", "/blog/data-analytics-part-35-correlation-and-causation/"),
+            ("cta", "Read: Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited", "/blog/business-intelligence-part-34-aging-of-arrears/"),
+            ("ask", "Which decision in your office would change if you weighed it by chance and cost?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 55: The Base-Rate Trap, Why a Good Check Can Still Flag Mostly Clean Records",
+        "slug": "data-analytics-part-55-base-rate-trap",
+        "category": "data",
+        "date": "July 8, 2027",
+        "summary": "A check that catches 90 percent of problem records sounds excellent. But when problems "
+                   "are rare, most of the records it flags can still be clean. This part explains the "
+                   "base-rate trap with a simple table of counts in Google Sheets, shows how to compute the "
+                   "share of flags that are real, and how to use the result to plan follow-up work.",
+        "publish_on": "2027-07-08 21:00",
+        "body": [
+            "The analyst built a rule to catch receipts that might have been entered wrongly. Tested on old "
+            "records with known errors, it caught 9 out of 10 of them. On clean records, it raised a false "
+            "alarm only 5 times in 100.",
+            "The division chief was pleased and asked the staff to check every flagged receipt from the "
+            "past quarter. A week later, the staff came back tired. Of 585 flagged receipts, only 90 had "
+            "real errors. “Your rule is broken,” the chief said.",
+            "The rule was not broken. It was working exactly as tested. What nobody had counted was how rare "
+            "the errors were to begin with.",
+            "(The office, the rule and the counts are invented for this lesson. The arithmetic is standard "
+            "and can be checked in any spreadsheet.)",
+            "Part 52 flagged unusual barangays, and Part 53 flagged unusual days. This part asks what a flag "
+            "is worth. When you finish reading, you will know what a base rate is, how to lay out a check’s "
+            "results in a table of counts, how to compute the share of flags that are real, why rare "
+            "problems produce many false alarms, and how to plan the follow-up work.",
+            ("photo", "blog/data-base-rate.jpg", "The base-rate trap: when problems are rare, even a good "
+             "check flags more clean records than problem ones. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Three Numbers Behind Every Check"),
+            ("point", "The base rate", "How common the problem is. Here, 1 receipt in 100 has an error."),
+            ("point", "The catch rate", "Of the records with a problem, the share the check flags. Here, 90 "
+             "percent."),
+            ("point", "The false alarm rate", "Of the clean records, the share the check flags anyway. Here, "
+             "5 percent."),
+            "The catch rate and the false alarm rate describe the check. The base rate describes the data. "
+            "The trap is judging the check by the first two and forgetting the third.",
+            ("h", "Step 1: Turn Rates Into Counts"),
+            "Percentages are easy to misread. Counts are not. Start with the number of receipts, 10,000, and "
+            "work down.",
+            ("point", "Problem receipts", "1 percent of 10,000 = 100."),
+            ("point", "Clean receipts", "10,000 − 100 = 9,900."),
+            ("point", "Problems caught", "90 percent of 100 = 90."),
+            ("point", "Problems missed", "100 − 90 = 10."),
+            ("point", "False alarms", "5 percent of 9,900 = 495."),
+            ("point", "Clean and not flagged", "9,900 − 495 = 9,405."),
+            ("h", "Step 2: Build the Table in Google Sheets"),
+            "Put the inputs at the top so they can be changed.",
+            ("point", "Inputs", "B1: 10000 (records). B2: 1% (base rate). B3: 90% (catch rate). B4: 5% "
+             "(false alarm rate)."),
+            ("point", "Table headers", "In A7 to A8, type Problem and Clean. In B6 to C6, type Flagged and "
+             "Not flagged."),
+            ("point", "Problem row", "In B7, type =B1*B2*B3. In C7, type =B1*B2*(1-B3)."),
+            ("point", "Clean row", "In B8, type =B1*(1-B2)*B4. In C8, type =B1*(1-B2)*(1-B4)."),
+            ("point", "Totals", "In B9, type =B7+B8. That is all the flags: 585."),
+            "Check that the four cells add up to 10,000. If they do not, a formula is wrong. Fix it before "
+            "reading anything else.",
+            ("h", "Step 3: Compute the Share of Flags That Are Real"),
+            "In B11, type =B7/B9. The result is about 15.4 percent.",
+            "Of every 100 flagged receipts, about 15 have a real error and 85 are clean. That is not a broken "
+            "rule. It is what happens when a good check meets a rare problem: the 5 percent false alarm rate "
+            "applies to 9,900 clean records, while the 90 percent catch rate applies to only 100.",
+            ("photo", "blog/data-base-rate-grid.jpg", "Ten thousand receipts as a table of counts. The flags "
+             "include 90 real errors and 495 false alarms. Figures are invented. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: See How the Base Rate Changes Everything"),
+            "Change only B2 and watch B11.",
+            ("point", "Base rate 1 percent", "About 15 percent of flags are real."),
+            ("point", "Base rate 5 percent", "About 49 percent of flags are real."),
+            ("point", "Base rate 20 percent", "About 82 percent of flags are real."),
+            "The check is the same in all three cases. Only the data changed. The same rule that wastes "
+            "staff time in a clean office can be very efficient in a messy one.",
+            ("h", "Step 5: Lower the False Alarm Rate Where You Can"),
+            "Now change B4 instead. With the base rate back at 1 percent:",
+            ("point", "False alarm rate 5 percent", "About 15 percent of flags are real."),
+            ("point", "False alarm rate 1 percent", "About 48 percent of flags are real."),
+            "When problems are rare, cutting false alarms can help more than catching a few more problems. "
+            "A second, stricter check applied only to flagged records is one way to do it.",
+            ("h", "Using It to Plan the Work"),
+            "The table turns a vague hope into a work plan.",
+            ("point", "Expected workload", "585 receipts to review per 10,000 processed."),
+            ("point", "Expected yield", "About 90 real errors found."),
+            ("point", "Expected misses", "About 10 errors not flagged. Decide whether a random sample, as "
+             "Part 17 described, should look for those."),
+            ("point", "Time per error found", "If each review takes 6 minutes, 585 reviews take about 58.5 "
+             "hours, or about 39 minutes per real error found."),
+            "Present those numbers before the review starts, so that nobody is surprised when most flags "
+            "turn out clean. A short note on the expected yield also protects the analyst’s credibility.",
+            ("h", "Explaining It Without Formulas"),
+            "Some readers will not follow a formula, but they can follow a story about a crowd. Try this "
+            "version in a meeting.",
+            ("point", "Picture 10,000 receipts in a room", "One hundred of them have errors. The other 9,900 "
+             "are clean."),
+            ("point", "Send the check through the room", "It taps 90 of the hundred with errors. It also "
+             "taps 495 of the clean ones by mistake."),
+            ("point", "Count the tapped receipts", "There are 585. Only 90 of them have errors."),
+            "Many listeners grasp the problem at once when they hear it this way. The clean receipts win "
+            "simply because there are so many more of them.",
+            ("h", "Where Else the Trap Appears"),
+            ("point", "Fraud and anomaly flags", "Rare events plus imperfect rules produce many false alarms."),
+            ("point", "Screening lists", "A list of “likely delinquent” businesses can be mostly paying "
+             "businesses if delinquency is rare."),
+            ("point", "Duplicate detection", "A fuzzy match that flags similar names will flag many real, "
+             "different people with similar names."),
+            ("h", "Back to the Division Chief"),
+            "The analyst showed the chief the table of counts. The chief changed the instruction: review the "
+            "flagged receipts in order of amount, largest first, and add a second check on the amount field "
+            "before a receipt reaches the review list. The flag count fell, and the share of real errors "
+            "among them rose.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Judging a check by its catch rate alone", "Ask how common the problem is."),
+            ("point", "Promising that flags are errors", "Say what share of flags are expected to be real."),
+            ("point", "Working in percentages only", "Convert to counts of records."),
+            ("point", "Forgetting the misses", "A check that catches 90 percent misses 10 percent."),
+            ("h", "Key Takeaways"),
+            ("point", "Three numbers", "Base rate, catch rate and false alarm rate."),
+            ("point", "Counts beat percentages", "Build the four-cell table from a round number."),
+            ("point", "Rare problems, many false alarms", "Even a good check can flag mostly clean records."),
+            ("point", "Plan the workload", "Reviews, real finds, misses and time per find."),
+            ("h", "Your Part 55 Exercise"),
+            ("point", "Step 1", "Build the input cells and the four-cell table."),
+            ("point", "Step 2", "Confirm that the four cells add up to 10,000 and B11 shows about 15.4 percent."),
+            ("point", "Step 3", "Try base rates of 5 and 20 percent, then a false alarm rate of 1 percent."),
+            ("point", "Step 4", "Think of one check your office runs, estimate its three numbers, and fill in "
+             "the table."),
+            ("cta", "Read: Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000", "/blog/data-analytics-part-17-samples-margin-of-error/"),
+            ("cta", "Read: Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit", "/blog/data-analytics-part-34-outliers/"),
+            ("cta", "Read: Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them", "/blog/data-analytics-part-16-dirty-data/"),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("ask", "Which check in your office flags more clean records than you expected?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 54: Did the Change Really Help? Comparing Two Averages With T.TEST",
+        "slug": "data-analytics-part-54-t-test",
+        "category": "data",
+        "date": "July 6, 2027",
+        "summary": "After a change, the average often moves a little, and the question is whether the move is "
+                   "real or just chance. Part 42 tested counts with a chi-square test. This part tests "
+                   "averages with T.TEST in Google Sheets: how to lay out the data, which type and tails to "
+                   "choose, how to read the result, and what the test cannot tell you.",
+        "publish_on": "2027-07-06 21:00",
+        "body": [
+            "The treasury tried a numbered queue at the business permit window. Before the change, a staff "
+            "member timed twelve taxpayers from arrival to receipt. After the change, she timed twelve more. "
+            "The average wait fell from 26.5 minutes to 20.75 minutes.",
+            "The treasurer wanted to announce the result. The analyst asked for one more step first: “Twelve "
+            "people is not many. Let’s check whether a gap this size could easily happen by chance.”",
+            "(The office, the people and the times are invented for this lesson. The Google Sheets function "
+            "is real and described in Google’s help pages.)",
+            "Part 42 compared two groups when the data was counts, such as paid or not paid. This part "
+            "compares two groups when the data is measured, such as minutes or pesos. When you finish "
+            "reading, you will know what a t-test checks, how to use T.TEST in Google Sheets, which type and "
+            "tails to choose, how to read the result, and the limits that matter in practice.",
+            ("photo", "blog/data-t-test.jpg", "A t-test asks whether two averages differ by more than chance "
+             "would usually produce, given how spread out the data is. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a T-Test Checks"),
+            "Two averages rarely come out exactly equal, even when nothing has changed. A t-test weighs "
+            "the gap between them against two things: how spread out the values are and how many values each "
+            "group has.",
+            ("point", "Large gap, little spread, many values", "Chance becomes an unlikely explanation."),
+            ("point", "Small gap, wide spread, few values", "Chance remains a likely explanation."),
+            "Google’s help describes T.TEST as returning “the probability associated with t-test,” and says "
+            "it “determines whether two samples are likely to have come from the same two underlying "
+            "populations that have the same mean.” That probability is the p-value, which Part 42 explained.",
+            ("h", "The Practice Data"),
+            "Put the waiting times in two columns, rows 2 to 13.",
+            ("point", "Column A, before (minutes)", "24, 31, 18, 27, 35, 22, 29, 26, 33, 20, 28, 25."),
+            ("point", "Column B, after (minutes)", "19, 23, 15, 26, 21, 17, 24, 20, 28, 16, 22, 18."),
+            ("point", "Averages", "=AVERAGE(A2:A13) gives 26.5. =AVERAGE(B2:B13) gives 20.75."),
+            ("point", "Spread", "=STDEV(A2:A13) gives about 5.1. =STDEV(B2:B13) gives about 4.0."),
+            "Google’s help notes that the two ranges “must have the same number of data points.” Plan the "
+            "sample sizes with that in mind.",
+            ("h", "Step 1: Choose the Type"),
+            "The syntax is T.TEST(range1, range2, tails, type). The type depends on how the data was "
+            "collected.",
+            ("point", "Type 1, paired", "The same people or items measured twice, such as the same twelve "
+             "collectors timed before and after training. Each row is a pair."),
+            ("point", "Type 2, equal variance", "Two separate groups assumed to have the same spread."),
+            ("point", "Type 3, unequal variance", "Two separate groups without assuming the same spread."),
+            "Here, the taxpayers timed after the change were different people from those timed before, so "
+            "the test is not paired. Type 3 is a cautious choice, because it does not require the two groups "
+            "to have the same spread.",
+            ("h", "Step 2: Choose the Tails"),
+            ("point", "Two tails", "Asks whether the averages differ in either direction."),
+            ("point", "One tail", "Asks about one direction only, decided before looking at the data."),
+            "Google’s help notes that the two-tailed result is double the one-tailed result. Choosing one tail "
+            "after seeing which way the data moved makes the result look stronger than it is. When in doubt, "
+            "use two tails.",
+            ("h", "Step 3: Run the Test"),
+            "In D2, type =T.TEST(A2:A13,B2:B13,2,3). The result is about 0.006.",
+            ("point", "How to read it", "If the queue had made no difference, a gap at least this large between two "
+             "groups of twelve would appear only about 6 times in 1,000."),
+            ("point", "What it supports", "The drop in waiting time is unlikely to be chance alone."),
+            ("point", "What it does not say", "It does not say the queue caused the drop. Other changes in "
+             "the same weeks, such as fewer taxpayers, could also explain it."),
+            ("photo", "blog/data-t-test-compare.jpg", "Two practice comparisons. A large gap with moderate "
+             "spread gives a small p-value; a small gap gives a large one. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Second Example: A Small Gap"),
+            "Suppose the after times had been 23, 29, 19, 25, 33, 21, 27, 26, 30, 20, 26 and 24. The average "
+            "would be 25.25 minutes, only 1.25 minutes below the before average.",
+            "T.TEST with two tails and type 3 gives about 0.52. A gap at least this size would show up about half the "
+            "time by chance alone. The data cannot tell a small improvement from no change at all.",
+            "That is not proof that the queue failed. It means twelve taxpayers per group were too few to "
+            "detect a gap of about a minute. A larger sample, or a longer trial, would be needed.",
+            ("h", "When the Data Comes in Pairs"),
+            "Suppose instead that the same twelve collectors were timed counting a standard cash bundle, "
+            "once before a training session and once after. Each collector is a pair: the before time and "
+            "the after time sit in the same row.",
+            "Here, type 1 fits. A paired test looks at the change within each person, so differences between "
+            "fast and slow collectors do not blur the result. Keep the rows matched: if one collector’s "
+            "after time is missing, leave out that collector’s before time too.",
+            ("h", "Step 4: Report It Plainly"),
+            "A good report gives the reader the numbers behind the conclusion.",
+            ("point", "The averages", "26.5 minutes before, 20.75 after."),
+            ("point", "The gap", "5.75 minutes, about 22 percent less."),
+            ("point", "The test", "Two-tailed, unequal variance, p ≈ 0.006."),
+            ("point", "The limits", "Twelve taxpayers per group, timed on weekday mornings only."),
+            "One sentence can carry all of it: “Average waiting time fell from 26.5 to 20.75 minutes; with "
+            "twelve taxpayers timed in each period, a gap this size is unlikely to be chance (p ≈ 0.006).”",
+            ("h", "Practical Limits"),
+            ("point", "Lopsided data", "Waiting times sometimes have a few very long waits. With small groups, "
+             "these can sway the result. Check a histogram, as Part 39 showed."),
+            ("point", "Different conditions", "If the before times were taken in January and the after times "
+             "in March, the season may explain the gap. Time both periods under similar conditions."),
+            ("point", "Statistically real but small", "A gap can be unlikely to be chance and still too small "
+             "to matter to taxpayers. Judge the size separately."),
+            ("point", "Many tests", "Running twenty comparisons and reporting the one with a small p-value "
+             "misleads. Decide the comparison before collecting the data."),
+            ("h", "Back to the Permit Window"),
+            "The analyst’s note went to the treasurer with the averages, the gap, the p-value and one line on "
+            "the limits. The treasurer announced the result with the sample size included, and asked for the "
+            "timing to be repeated in the January rush, when the queue would face its hardest test.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Announcing a gap without a test", "Small groups can produce large gaps by chance."),
+            ("point", "Choosing one tail after seeing the data", "Decide the direction first, or use two tails."),
+            ("point", "Using an unpaired test on paired data", "Same people twice means type 1."),
+            ("point", "Reading a large p-value as failure", "The groups may simply be too small."),
+            ("h", "Key Takeaways"),
+            ("point", "Measured data, two groups", "T.TEST compares their averages."),
+            ("point", "Pick the type from how data was collected", "Paired, equal or unequal variance."),
+            ("point", "Two tails unless decided beforehand", "One tail halves the p-value."),
+            ("point", "Report size and limits too", "Not just the p-value."),
+            ("h", "Your Part 54 Exercise"),
+            ("point", "Step 1", "Enter both practice columns and compute the averages and spreads."),
+            ("point", "Step 2", "Run T.TEST with two tails and type 3, then try type 2 and compare."),
+            ("point", "Step 3", "Replace the after column with the small-gap example and run it again."),
+            ("point", "Step 4", "Write a one-sentence report for each result."),
+            ("cta", "Read: Data Analytics Series, Part 42: Is the Difference Real? Testing Two Groups With a Chi-Square Test", "/blog/data-analytics-part-42-chi-square-test/"),
+            ("cta", "Read: Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation", "/blog/data-analytics-part-38-range-and-standard-deviation/"),
+            ("cta", "Read: Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000", "/blog/data-analytics-part-17-samples-margin-of-error/"),
+            ("cta", "Read: Data Analytics Series, Part 39: Histograms, Seeing the Shape of the Data", "/blog/data-analytics-part-39-histograms/"),
+            ("ask", "Which change in your office would you like to test with real numbers?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 53: The Control Chart, Is Today’s Total Unusual or Just Normal Variation?",
+        "slug": "data-analytics-part-53-control-chart",
+        "category": "data",
+        "date": "July 4, 2027",
+        "summary": "Daily collections go up and down even when nothing is wrong. A control chart draws limits "
+                   "around the normal ups and downs, so the office reacts to real signals and not to every "
+                   "small dip. This part builds an individuals chart in Google Sheets with the moving range "
+                   "method described in the NIST/SEMATECH e-Handbook of Statistical Methods.",
+        "publish_on": "2027-07-04 21:00",
+        "body": [
+            "Every afternoon at four, the treasurer looked at the day’s collection total. A total of ₱136,000 "
+            "brought a worried call to the collectors. A total of ₱153,000 brought a word of praise. Neither "
+            "call changed much, because often both totals were just ordinary days.",
+            "The analyst suggested a different question. Instead of asking whether today was higher or lower "
+            "than yesterday, ask whether today was outside the range that ordinary days produce.",
+            "(The office, the people and the amounts are invented for this lesson. The method comes from the "
+            "NIST/SEMATECH e-Handbook of Statistical Methods, published by the U.S. National Institute of "
+            "Standards and Technology.)",
+            "Part 38 measured spread, and Part 52 counted distance from the average in standard deviations. "
+            "This part watches a number over time. When you finish reading, you will know what a control "
+            "chart is, how to build an individuals chart in Google Sheets, how to read a point outside the "
+            "limits, how to choose a fair baseline, and when not to use one.",
+            ("photo", "blog/data-control-chart.jpg", "A control chart: a center line, an upper limit and a "
+             "lower limit drawn from ordinary days. A point outside the limits is worth a closer look. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Kinds of Variation"),
+            "Collections vary for two kinds of reasons.",
+            ("point", "Ordinary variation", "Many small causes: more walk-in taxpayers on one day, a rainy "
+             "morning, a large payment that happened to fall on Tuesday. No single cause explains the change."),
+            ("point", "Unusual variation", "One identifiable cause: a system outage, a new deadline, a "
+             "missing deposit. Something happened that is worth finding."),
+            "The trouble is that both look the same on a simple list of numbers. A control chart separates "
+            "them by drawing limits around the ordinary variation. Points inside the limits are treated as "
+            "ordinary. Points outside are investigated.",
+            ("h", "The Individuals Chart"),
+            "When there is one number per day, a fitting chart is the individuals chart. The NIST/SEMATECH "
+            "e-Handbook gives the method in its section on individuals control charts.",
+            ("point", "Moving range", "The absolute difference between each day and the day before."),
+            ("point", "Center line", "The average of the daily totals."),
+            ("point", "Upper control limit", "The average plus 3 × (average moving range ÷ 1.128)."),
+            ("point", "Lower control limit", "The average minus 3 × (average moving range ÷ 1.128)."),
+            "The number 1.128 is a constant for ranges of two consecutive values. Dividing the average moving "
+            "range by it gives an estimate of the day-to-day spread. Three times that spread on each side "
+            "marks the limits.",
+            ("h", "Step 1: Choose a Fair Baseline"),
+            "The limits come from a baseline period, so the baseline must be made of ordinary days.",
+            ("point", "Avoid deadline months", "January business tax days and quarter-end deadlines are not "
+             "ordinary, as Part 49 showed with the seasonal index. Build a separate chart for them or leave "
+             "them out."),
+            ("point", "Use enough days", "Twenty working days is a reasonable start. Fewer than that, and the "
+             "limits move a lot when new days are added."),
+            ("point", "Leave out known events", "If a day had a known outage, remove it from the baseline and "
+             "write a note saying why."),
+            ("h", "Step 2: Set Up the Sheet"),
+            "Put the date in column A and the daily total in thousands of pesos in column B, rows 2 to 21.",
+            ("point", "Practice totals (₱ thousands)", "142, 138, 147, 151, 144, 136, 140, 149, 153, 145, "
+             "139, 134, 141, 148, 150, 143, 137, 142, 146, 140."),
+            ("point", "Moving range", "In C3, type =ABS(B3-B2) and fill down to C21. Row 2 has no previous "
+             "day, so C2 stays empty."),
+            ("point", "Averages", "In F2, type =AVERAGE(B2:B21). In F3, type =AVERAGE(C3:C21)."),
+            ("point", "Limits", "In F4, type =F2+3*F3/1.128. In F5, type =F2-3*F3/1.128."),
+            "The results: an average of about ₱143,250, an average moving range of about ₱5,890, an upper "
+            "limit of about ₱158,900 and a lower limit of about ₱127,600.",
+            ("h", "Step 3: Draw the Chart"),
+            ("point", "Copy the lines", "In D2, type =$F$2. In E2, type =$F$4. In G2, type =$F$5. Fill all "
+             "three down to row 21."),
+            ("point", "Insert a line chart", "Select columns A, B, D, E and G, then Insert, then Chart, and "
+             "choose a line chart."),
+            ("point", "Style the lines", "Make the daily totals the boldest line with markers. Make the "
+             "center line plain and the two limits dashed."),
+            "Add new days below the baseline and extend the lines, but keep the limits fixed. Limits that "
+            "are recalculated with every new day can stretch to swallow the very signals they are meant to "
+            "catch.",
+            ("photo", "blog/data-control-chart-lines.jpg", "Twenty baseline days and three new ones. Day 22 "
+             "falls below the lower limit. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Step 4: Read the Chart"),
+            "Three new days arrive: ₱131,000, ₱118,000 and ₱166,000.",
+            ("point", "Day 21, ₱131,000", "Below the average but above the lower limit of ₱127,600. An "
+             "ordinary low day. No call is needed."),
+            ("point", "Day 22, ₱118,000", "Below the lower limit. Something unusual likely happened. The "
+             "analyst found that the payment system had been down for two hours."),
+            ("point", "Day 23, ₱166,000", "Above the upper limit. The taxpayers turned away the day before "
+             "came back. The cause was the same outage."),
+            "Without the chart, Day 21 might have drawn the worried call, and the outage on Day 22 might have "
+            "looked like one more bad day. With the chart, the office reacted to the one event that deserved "
+            "it.",
+            ("h", "Step 5: Keep a Signal Log"),
+            "Each time a point falls outside the limits, write one line in a log next to the chart: the date, "
+            "the value, the cause found and the action taken.",
+            ("point", "Causes repeat", "After a few months, the log shows which causes keep coming back."),
+            ("point", "Unknown causes count too", "Write “cause not found” instead of leaving it blank."),
+            ("point", "Review the baseline yearly", "If the process itself changes, such as a new payment "
+             "channel, build a new baseline after the change settles."),
+            ("h", "When Not to Use a Control Chart"),
+            ("point", "Strong seasons", "Adjust with the seasonal index first, or chart each season separately."),
+            ("point", "A clear trend", "If totals grow every month, a flat center line will flag the later "
+             "months unfairly. Part 24 of the Business Intelligence Series covered trend lines."),
+            ("point", "Very few days", "With only a handful of days, the limits are guesses."),
+            ("point", "Targets", "Control limits describe what the process does. They are not goals. A "
+             "target belongs in a separate line, labeled as a target."),
+            ("h", "Back to the Four O’Clock Call"),
+            "The treasurer kept looking at the total every afternoon, but now with the chart beside it. "
+            "Calls to the collectors became rarer and more useful. When a point fell outside the limits, the "
+            "question was no longer “Why is it low?” but “What happened today?” Twice in the first month, the "
+            "answer was a system problem that the IT staff could fix.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Reacting to every dip", "Points inside the limits are ordinary."),
+            ("point", "Recomputing limits every day", "Fix them from the baseline."),
+            ("point", "Building the baseline from deadline days", "Use ordinary days only."),
+            ("point", "Treating the limits as targets", "They describe the process, not the goal."),
+            ("h", "Key Takeaways"),
+            ("point", "Ordinary vs unusual", "The chart separates the two kinds of variation."),
+            ("point", "Individuals chart", "Average ± 3 × average moving range ÷ 1.128."),
+            ("point", "A fair baseline", "Ordinary days, at least twenty, with known events removed."),
+            ("point", "Investigate signals", "And write the cause in a log."),
+            ("h", "Your Part 53 Exercise"),
+            ("point", "Step 1", "Enter the twenty practice totals and compute the moving ranges."),
+            ("point", "Step 2", "Compute the center line and both limits, and draw the chart."),
+            ("point", "Step 3", "Add the three new days and mark which ones fall outside the limits."),
+            ("point", "Step 4", "Write one line in a signal log for each point outside the limits."),
+            ("cta", "Read: Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation", "/blog/data-analytics-part-38-range-and-standard-deviation/"),
+            ("cta", "Read: Data Analytics Series, Part 49: The Seasonal Index, Telling a Normal March From a Bad One", "/blog/data-analytics-part-49-seasonal-index/"),
+            ("cta", "Read: Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit", "/blog/data-analytics-part-34-outliers/"),
+            ("cta", "Read: Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing", "/blog/business-intelligence-part-24-trend-lines-and-moving-averages/"),
+            ("ask", "Which daily number in your office would you put on a control chart?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 52: Z-Scores, Comparing Numbers That Use Different Scales",
+        "slug": "data-analytics-part-52-z-scores",
+        "category": "data",
+        "date": "July 1, 2027",
+        "summary": "Is 73 percent on one measure worse than 49 percent on another? Raw numbers cannot say, "
+                   "because each measure has its own typical level and spread. A z-score converts a value into "
+                   "standard deviations from the average, so different measures can share one scale. This part "
+                   "shows how to compute z-scores in Google Sheets and how to read them with care.",
+        "publish_on": "2027-07-01 21:00",
+        "body": [
+            "The treasurer had a list of twelve barangays and two numbers for each: the share of real property "
+            "tax due that was collected, and the share of businesses that renewed their permits on time. "
+            "Barangay F stood out. Its tax collection rate was 73 percent, and its renewal rate was 49 percent.",
+            "“So renewals are the bigger problem there,” a staff member said. “Forty-nine is much lower than "
+            "seventy-three.” The analyst was not so sure. The two rates were not designed to be compared "
+            "directly. One measure was usually in the seventies and eighties across barangays; the other was "
+            "usually in the sixties.",
+            "(The barangays, rates and people are invented for this lesson. The Google Sheets functions are "
+            "real and described in Google’s help pages.)",
+            "Part 38 measured spread with the standard deviation. This part puts that number to work. When "
+            "you finish reading, you will know what a z-score is, how to compute one in Google Sheets with a "
+            "simple formula or with STANDARDIZE, how to compare two measures on one scale, how to combine "
+            "them into a single score, and where z-scores can mislead.",
+            ("photo", "blog/data-z-scores.jpg", "Z-scores: subtract the average, divide by the standard "
+             "deviation, and different measures share one scale. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Z-Score Says"),
+            "A z-score answers one question: how far is this value from the average, measured in standard "
+            "deviations?",
+            ("point", "The formula", "z = (value − average) ÷ standard deviation."),
+            ("point", "Zero", "The value equals the average."),
+            ("point", "Positive", "Above the average. A z-score of 1.5 is one and a half standard deviations "
+             "above it."),
+            ("point", "Negative", "Below the average. A z-score of −2 is two standard deviations below it."),
+            "Because the result is counted in standard deviations, the original unit disappears. Pesos, "
+            "percentages and counts all become the same kind of number. That is what makes comparison "
+            "possible.",
+            ("h", "The Practice Data"),
+            "Set up a sheet with the barangay in column A, the tax collection rate in column B and the "
+            "renewal rate in column C, in rows 2 to 13.",
+            ("point", "Barangays A to L, tax collection rate (%)", "78, 84, 69, 81, 88, 73, 91, 86, 76, 82, "
+             "79, 65."),
+            ("point", "Barangays A to L, renewal rate (%)", "62, 70, 58, 66, 71, 49, 80, 75, 61, 68, 64, 55."),
+            ("point", "Averages", "In B15, type =AVERAGE(B2:B13). In C15, type =AVERAGE(C2:C13). The "
+             "results are about 79.3 and 64.9."),
+            ("point", "Standard deviations", "In B16, type =STDEV(B2:B13). In C16, type =STDEV(C2:C13). The "
+             "results are about 7.7 and 8.7."),
+            "Part 38 explained when to use STDEV, for a sample, and STDEVP, for a whole population. The twelve "
+            "barangays here are treated as a sample of the pattern the office expects to see, so this part "
+            "uses STDEV. Whichever you choose, use the same one for every measure you compare.",
+            ("h", "Step 1: Compute the Z-Scores"),
+            "In D2, type =(B2-$B$15)/$B$16 and fill down to D13. In E2, type =(C2-$C$15)/$C$16 and fill "
+            "down. The dollar signs keep the average and the standard deviation fixed as the formula moves.",
+            "Google Sheets also has a function for the same calculation. Google’s help describes STANDARDIZE "
+            "as calculating “the normalized equivalent of a random variable given mean and standard deviation "
+            "of the distribution.” Its syntax is STANDARDIZE(value, mean, standard_deviation).",
+            ("point", "With the function", "=STANDARDIZE(B2,$B$15,$B$16) gives the same result as the formula "
+             "in D2."),
+            ("point", "Which to use", "The written formula shows the idea plainly. The function is shorter. "
+             "Pick one and use it throughout the sheet."),
+            ("h", "Step 2: Compare the Two Measures"),
+            "Now look at Barangay F again.",
+            ("point", "Tax collection", "73 percent, about 6.3 points below an average of 79.3. Divided by "
+             "7.7, the z-score is about −0.82."),
+            ("point", "Renewals", "49 percent, about 15.9 points below an average of 64.9. Divided by 8.7, "
+             "the z-score is about −1.84."),
+            "Both are below average, but not equally. Barangay F’s renewal rate sits nearly two standard "
+            "deviations below the average, while its tax collection rate sits less than one below. "
+            "The staff member’s guess was right this time, but now there is a reason behind it.",
+            "Compare Barangay L. Its rates are 65 and 55 percent. The z-scores are about −1.86 for tax "
+            "collection and −1.14 for renewals. On raw numbers, the renewal rate looks worse. On z-scores, the "
+            "tax collection rate is the more unusual of the two. Without z-scores, the office might have sent "
+            "the wrong team to Barangay L.",
+            ("photo", "blog/data-z-scores-chart.jpg", "Z-scores for twelve barangays on two measures. Bars "
+             "below zero are below the average. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Step 3: Combine Into One Score, Carefully"),
+            "Once two measures share a scale, they can be averaged. In F2, type =AVERAGE(D2,E2) and fill down.",
+            ("point", "Top", "Barangay G, with a combined score of about 1.63."),
+            ("point", "Bottom", "Barangay L at about −1.50 and Barangay F at about −1.33."),
+            "This simple average treats both measures as equally important. If the office decides that tax "
+            "collection matters twice as much, use a weighted average, as Part 36 explained. Write the "
+            "weights down, and say in the report how the combined score was built.",
+            ("h", "Step 4: Flag the Unusual Values"),
+            "A z-score far from zero is a signal to look closer. The office can choose a cutoff, such as 1.5 "
+            "or 2, and flag anything beyond it.",
+            ("point", "A flag formula", "In G2, type =IF(OR(ABS(D2)>=1.5,ABS(E2)>=1.5),\"Check\",\"\") and "
+             "fill down."),
+            ("point", "Conditional formatting", "Color the z-score cells below −1.5 in one color and above "
+             "1.5 in another, as Part 31 showed."),
+            "With the cutoff at 1.5, the flag marks Barangays F, G and L. The cutoff is a choice, not a law of "
+            "nature. A lower cutoff flags more barangays and costs more time to follow up. Choose it before "
+            "looking at the results, so it is not adjusted to fit a story.",
+            ("h", "Where Z-Scores Mislead"),
+            ("point", "Few data points", "With twelve barangays, one unusual value can move the average and "
+             "the standard deviation. The z-scores of everyone else move with it."),
+            ("point", "Lopsided data", "If most values bunch together and a few are very large, as with "
+             "business tax per business, the standard deviation is pulled up by the large ones. Part 39’s "
+             "histogram shows whether the data is lopsided before you rely on z-scores."),
+            ("point", "Relative, not absolute", "A z-score of zero means average for this group, not good. "
+             "If every barangay collects poorly, the average one still scores zero."),
+            ("point", "Different groups, different scales", "A z-score computed among twelve barangays cannot "
+             "be compared with one computed among forty. Each is relative to its own group."),
+            ("h", "Back to the Twelve Barangays"),
+            "The analyst gave the treasurer a one-page table: the two rates, the two z-scores and the "
+            "combined score, sorted from lowest to highest. A note at the bottom explained the formula in one "
+            "sentence and listed the cutoff used for the flags.",
+            "The treasurer sent the renewal team to Barangay F and the real property tax team to Barangay L. "
+            "A year later, the analyst ran the same sheet with the new figures to see whether either "
+            "barangay had moved closer to zero.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Comparing raw numbers across measures", "Put them on one scale first."),
+            ("point", "Mixing STDEV and STDEVP", "Use the same function for every measure."),
+            ("point", "Reading zero as good", "It means average for this group, nothing more."),
+            ("point", "Moving the cutoff after seeing the results", "Choose it first and write it down."),
+            ("h", "Key Takeaways"),
+            ("point", "Standard deviations from the average", "That is all a z-score counts."),
+            ("point", "One formula", "(value − average) ÷ standard deviation, or STANDARDIZE."),
+            ("point", "Different units, one scale", "Percentages, pesos and counts become comparable."),
+            ("point", "Relative to the group", "Check the data’s shape and size before trusting it."),
+            ("h", "Your Part 52 Exercise"),
+            ("point", "Step 1", "Build the practice sheet and compute both averages and standard deviations."),
+            ("point", "Step 2", "Compute the z-scores with the formula, then check one with STANDARDIZE."),
+            ("point", "Step 3", "Add the combined score and sort the barangays from lowest to highest."),
+            ("point", "Step 4", "Pick a cutoff, add the flag column, and write one sentence on what you "
+             "would do for each flagged barangay."),
+            ("cta", "Read: Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation", "/blog/data-analytics-part-38-range-and-standard-deviation/"),
+            ("cta", "Read: Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads", "/blog/data-analytics-part-36-weighted-averages/"),
+            ("cta", "Read: Data Analytics Series, Part 39: Histograms, Seeing the Shape of the Data", "/blog/data-analytics-part-39-histograms/"),
+            ("cta", "Read: Data Analytics Series, Part 31: Conditional Formatting, Letting the Sheet Point at the Problems", "/blog/data-analytics-part-31-conditional-formatting/"),
+            ("ask", "Which two measures in your office would you put on one scale first?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 51: Protected Ranges, Keeping Formulas Safe in a Shared Sheet",
         "slug": "data-analytics-part-51-protected-ranges",
         "category": "data",
