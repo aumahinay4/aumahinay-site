@@ -14,6 +14,411 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 51: Working With a Partner Agency, Putting the Agreement in Writing",
+        "slug": "project-management-part-51-memorandum-of-agreement",
+        "category": "pm",
+        "date": "June 29, 2027",
+        "summary": "When a project depends on another agency, such as a state university, a national office or a "
+                   "bank, a handshake is not enough. This part shows what a memorandum of agreement should "
+                   "cover, who has to approve it before the local chief executive signs, and how to manage "
+                   "the partnership once the work starts.",
+        "publish_on": "2027-06-29 21:00",
+        "body": [
+            "The filing room project had a new idea. A state university nearby offered to send six "
+            "information technology students as interns for eight weeks to help scan the indexed real "
+            "property records. The dean and the revenue officer shook hands on it at a meeting in March.",
+            "By May, nothing had happened. The university wanted to know who would supervise the students, "
+            "whether they would be insured, and who would own the scanned files. The treasury wanted to know "
+            "how the students would handle taxpayers’ personal data. Nobody had written any of it down.",
+            "(The office, the university and the people are invented, continuing the treasury examples of "
+            "this series. The rule on contracts quoted below comes from the Local Government Code of 1991 "
+            "as quoted by the Supreme Court. Ask your legal officer how it applies to a specific agreement.)",
+            "Part 47 negotiated with offices inside the same local government. This part goes outside it. "
+            "Stay with me to the end, and you will know when a partnership needs a written agreement, what a "
+            "memorandum of agreement should contain, who must approve it, how to handle personal data and "
+            "costs, and how to manage the partnership after signing.",
+            ("photo", "blog/pm-moa.jpg", "Working with a partner agency: agree on the purpose, divide the "
+             "duties, settle costs and data, and get the right approvals before signing. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "When a Handshake Is Not Enough"),
+            "A written agreement is worth the effort when any of these is true.",
+            ("point", "Another organization commits people or equipment", "Interns, trainers, servers or "
+             "software from outside the local government."),
+            ("point", "Money moves", "Either side pays for anything, including allowances, insurance or "
+             "transport."),
+            ("point", "Data is shared", "Especially taxpayers’ personal data."),
+            ("point", "The work runs for weeks or longer", "People change jobs. A written agreement outlasts "
+             "the people who shook hands."),
+            "In the Philippine public sector, a common form is a memorandum of agreement, often shortened to "
+            "MOA. It records what each side will do, for how long, and under what conditions.",
+            ("h", "What the Agreement Should Contain"),
+            ("point", "The parties and signatories", "The full names of both organizations and who signs for "
+             "each."),
+            ("point", "Purpose", "One paragraph: what the partnership is for. “To scan indexed real property "
+             "records of the municipal treasury, with student interns of the university.”"),
+            ("point", "Each side’s duties", "A list for each party. Who supervises, who trains, who provides "
+             "computers and scanners, who prepares the work schedule."),
+            ("point", "Duration and schedule", "Start date, end date and working hours."),
+            ("point", "Costs", "Who pays for what, such as allowances, insurance and supplies, and from "
+             "which budget."),
+            ("point", "Data and confidentiality", "What data the partner will see, how it will be protected, "
+             "and what happens to copies at the end."),
+            ("point", "Ownership of outputs", "Who owns the scanned files, reports or software produced."),
+            ("point", "Changes and ending early", "How either side can amend or end the agreement, with "
+             "notice."),
+            ("point", "Contacts", "One named coordinator on each side."),
+            ("h", "Who Must Approve It"),
+            "Section 22(c) of the Local Government Code, as quoted by the Supreme Court, provides that "
+            "“no contract may be entered into by the local chief executive in behalf of the local government "
+            "unit” without prior authorization by the sanggunian concerned, unless the Code provides "
+            "otherwise.",
+            "In Quisumbing v. Garcia, G.R. No. 175527, decided on December 8, 2008, the Court explained that "
+            "“the appropriation passed by the sanggunian may validly serve as the authorization required "
+            "under Sec. 22(c)” when it specifically covers the project or contract. Whether a separate "
+            "authorization is needed depends on the facts.",
+            ("point", "Ask the legal officer early", "Whether this MOA needs a sanggunian resolution, and how "
+             "long that takes."),
+            ("point", "Build the time into the plan", "A sanggunian session may come only once a week. Part "
+             "16’s critical path should include the approval."),
+            ("point", "The partner has its own approvals", "A university may need its president or board. "
+             "Ask early."),
+            ("photo", "blog/pm-moa-path.jpg", "From handshake to signed agreement: draft, review by both legal "
+             "offices, approvals including any sanggunian authorization, signing, then a kickoff. The path "
+             "is a guide. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Handling Personal Data"),
+            "Real property records hold names, addresses and other personal details. A partner who handles "
+            "them takes on responsibilities too.",
+            ("point", "Share only what is needed", "Interns scanning documents need the documents, not access "
+             "to the whole tax system."),
+            ("point", "Write the rules in the MOA", "No copies on personal devices, work only on office "
+             "computers, and return or delete files at the end."),
+            ("point", "Brief every person", "A short session on confidentiality before the first day, with a "
+             "signed acknowledgment."),
+            ("point", "Ask the data protection officer", "The local government’s data protection officer can "
+             "check the arrangement against the Data Privacy Act, as Part 6 of the Data Analytics Series "
+             "discussed."),
+            ("h", "Managing the Partnership After Signing"),
+            "A signed agreement starts the work. It does not run it.",
+            ("point", "Hold a joint kickoff", "Both coordinators, the supervisors and the interns, using "
+             "Part 7’s kickoff agenda."),
+            ("point", "Meet on a schedule", "A short check-in every two weeks between the two "
+             "coordinators."),
+            ("point", "Track the MOA’s duties", "Turn each party’s duties into tasks in the project plan, "
+             "with owners and dates."),
+            ("point", "Raise problems early", "If one side cannot meet a duty, say so and amend the agreement "
+             "in writing, rather than letting it drift."),
+            ("point", "Close properly", "At the end, confirm that files were returned or deleted, thank the "
+             "partner in writing, and record lessons, as Part 28 described."),
+            ("h", "A One-Page Summary for the Team"),
+            "Few people on a project team will read a four-page agreement. They still need to know what it "
+            "says about their own work.",
+            ("point", "Summarize the duties", "One page listing what the partner will do, what the office "
+             "will do, and who the two coordinators are."),
+            ("point", "Highlight the limits", "Working hours, the data rules and anything the partner’s "
+             "people may not do."),
+            ("point", "Add the dates", "Start, end, check-ins and any report due under the agreement."),
+            ("point", "Keep the signed copy safe", "File the original with the legal officer or the records "
+             "unit, and keep a scanned copy in the project folder."),
+            "When a question comes up in the middle of the work, the team can check the summary first and "
+            "go to the full agreement only when the summary does not answer it.",
+            ("h", "Back to the Interns"),
+            "The revenue officer and the dean’s office drafted a four-page MOA in two weeks. The university "
+            "would supervise and insure the students; the treasury would provide two scanning stations, a "
+            "work schedule and a daily supervisor. Scanned files would belong to the municipality, and no "
+            "data would leave the office computers.",
+            "The legal officer advised that the agreement needed a sanggunian resolution authorizing the "
+            "mayor to sign. It passed at the next regular session. The interns started in July, a term "
+            "later than first hoped, and scanned more than 9,000 records in eight weeks.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Starting on a handshake", "Write it down before people or data move."),
+            ("point", "Forgetting approvals", "Ask the legal officer whether sanggunian authorization is "
+             "needed."),
+            ("point", "Vague duties", "List each side’s tasks, not just shared goals."),
+            ("point", "No data rules", "Say what can be seen, copied and kept."),
+            ("h", "Key Takeaways"),
+            ("point", "Write it when it matters", "People, money, data or a long time frame."),
+            ("point", "Cover the essentials", "Purpose, duties, duration, costs, data, outputs, changes, "
+             "contacts."),
+            ("point", "Plan for approvals", "Section 22(c) may require sanggunian authorization."),
+            ("point", "Manage it after signing", "Kickoff, regular check-ins and a proper close."),
+            ("h", "Your Part 51 Action Plan"),
+            ("point", "Today", "List every outside partner your project depends on, and whether there is a "
+             "written agreement."),
+            ("point", "This week", "Ask the legal officer for the office’s usual MOA template and approval "
+             "steps."),
+            ("point", "Before any data moves", "Add data and confidentiality rules to the agreement."),
+            ("cta", "Read: Project Management Series, Part 47: Negotiating With Other Offices for People, Equipment and Time", "/blog/project-management-part-47-negotiating-with-other-offices/"),
+            ("cta", "Read: Project Management Series, Part 22: Procurement and Suppliers, Planning What You Must Buy", "/blog/project-management-part-22-procurement-and-suppliers/"),
+            ("cta", "Read: Project Management Series, Part 8: Who Does What? Building a RACI Matrix", "/blog/project-management-part-8-raci-matrix/"),
+            ("cta", "Read: Data Analytics Series, Part 6: Data Ethics and the Data Privacy Act for Analysts", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("ask", "Which partner does your project rely on without a written agreement?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 50: Keeping a Team Going Through a Long Project",
+        "slug": "project-management-part-50-team-morale",
+        "category": "pm",
+        "date": "June 26, 2027",
+        "summary": "Long projects lose energy in the middle, when the start is forgotten and the finish is far "
+                   "away. This part uses research on daily work life to show how to make progress visible, "
+                   "remove small obstacles, handle setbacks without blame, protect people from overload, and "
+                   "recognize work in ways that fit a government office.",
+        "publish_on": "2027-06-26 21:00",
+        "body": [
+            "Eight months into the filing room project, the boxes of real property records had been moved, "
+            "but only a third had been indexed. The weekly meeting had gone from lively to quiet. Two of the "
+            "four team members came late. The revenue officer heard one of them say, on the way out, that "
+            "the project would “never end.”",
+            "Nothing had gone badly wrong. The work was simply long, repetitive and mostly invisible. Each "
+            "week looked like the week before.",
+            "(The office, the project and the people are invented, continuing the treasury examples of this "
+            "series. The research quoted below comes from Teresa Amabile and Steven Kramer, authors of the "
+            "2011 book The Progress Principle, as quoted in an interview published by the American "
+            "Management Association.)",
+            "Part 49 looked for failure before it happened. This part looks at a quieter risk: a team that "
+            "slowly runs out of energy. By the last section, you will know why the middle of a project is "
+            "the hardest stretch, what research says matters most to people’s daily motivation, how to make "
+            "progress visible, how to handle setbacks, how to guard against overload, and how to recognize "
+            "good work in a government office.",
+            ("photo", "blog/pm-team-morale.jpg", "Keeping a team going: make progress visible, clear small "
+             "obstacles, treat setbacks as lessons, and recognize the work. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Why the Middle Is Hardest"),
+            ("point", "The start has energy", "A new project has a kickoff, a clear purpose and attention "
+             "from the sponsor, as Part 7 described."),
+            ("point", "The finish has a deadline", "The last weeks bring urgency and a visible end."),
+            ("point", "The middle has neither", "The work repeats, the sponsor’s attention moves elsewhere, "
+             "and the end is too far to feel."),
+            ("point", "Regular duties compete", "Many treasury project members also carry counter work, so "
+             "the project can start to feel like an extra burden."),
+            "None of this means the team is lazy. It means the lead has to supply what the calendar does "
+            "not: a sense that the work is moving.",
+            ("h", "What Research Says Matters Most"),
+            "Amabile and Kramer studied “nearly 12,000” daily diary entries “from 238 people working on 26 "
+            "creative teams in seven companies.” They found that “the single most important contributor to "
+            "positive inner work life was simply making progress on meaningful work.” They called this the "
+            "progress principle.",
+            ("point", "Catalysts", "Actions that directly support the work, such as clear goals and enough "
+             "resources."),
+            ("point", "Nourishers", "In their words, “the human connections at work that provide people with "
+             "emotional support and encouragement.”"),
+            ("point", "Setbacks", "The best leaders they studied “did not punish people for setbacks.” They "
+             "asked what could be learned."),
+            "The study was of creative teams in companies, not local governments. The idea still applies to a "
+            "treasury team indexing records: people work better when they can see that today moved the work "
+            "forward.",
+            ("h", "Make Progress Visible"),
+            ("point", "Break the work into small, countable pieces", "Not “index the records” but “index "
+             "barangay 4,” a piece that can be finished in a week."),
+            ("point", "Show the count", "A simple chart on the wall: boxes indexed, by week. A rising line "
+             "is easier to feel than a percentage in a report."),
+            ("point", "Mark milestones out loud", "When half the boxes are done, say so in the meeting, and "
+             "tell the sponsor."),
+            ("point", "Connect the work to its purpose", "Share the first time a taxpayer’s record was found "
+             "in two minutes instead of two days."),
+            ("photo", "blog/pm-team-morale-chart.jpg", "Making progress visible: boxes indexed each week, "
+             "with a milestone marked when half were done. The figures are invented. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Remove the Small Obstacles"),
+            "Big problems get attention. Small, daily ones wear people down quietly.",
+            ("point", "Ask what slowed them down this week", "A missing ladder, a broken scanner, a shared "
+             "computer that is always taken."),
+            ("point", "Fix one thing quickly", "A small fix within days shows that raising problems is worth "
+             "it."),
+            ("point", "Protect project time", "If counter duty keeps pulling people away, agree on set "
+             "project hours with their supervisor, as Part 18 suggested for workloads."),
+            ("h", "Handle Setbacks Without Blame"),
+            "Every long project has bad weeks: a lost box, a wrong label, a batch that must be redone.",
+            ("point", "Ask what happened, not who", "Focus on the step that failed and how to change it."),
+            ("point", "Turn the fix into a small win", "“We found the mislabeled boxes and added a check. "
+             "None since.”"),
+            ("point", "Use the retrospective", "Part 40’s regular retrospectives are a natural place to talk "
+             "about setbacks calmly."),
+            ("h", "Watch for Overload"),
+            "Tiredness looks like low morale but needs a different fix.",
+            ("point", "Look at the hours", "If the same two people carry most of the work, spread it, as "
+             "Part 45 described for delegation."),
+            ("point", "Watch the signs", "Missed meetings, short answers, mistakes from people who rarely "
+             "make them."),
+            ("point", "Plan breaks around peak season", "Do not schedule heavy project work during the "
+             "January rush at the counter."),
+            ("point", "Ask privately", "A five-minute talk often reveals what a meeting will not."),
+            ("h", "Recognize the Work, Within the Rules"),
+            "Government offices have rules on gifts, awards and spending, so recognition has to fit them. "
+            "Some of the most valued recognition costs nothing.",
+            ("point", "Say it specifically", "“Your index for barangay 4 had no errors when we checked it” "
+             "means more than “good job.”"),
+            ("point", "Say it in front of the sponsor", "Name the person when progress is reported upward."),
+            ("point", "Put it in writing", "A short memo or note in the person’s file, if office practice "
+             "allows, can count at performance review time."),
+            ("point", "Use formal channels", "Many offices have an awards and recognition program. Nominate "
+             "people when the work deserves it."),
+            ("h", "Keep the Sponsor in the Story"),
+            "A sponsor who stops asking about a project sends a message, even without meaning to. The team "
+            "reads silence as a sign that the work no longer matters.",
+            ("point", "Send a short update", "Two or three lines every two weeks, with one number that "
+             "moved, using the status report format from Part 25."),
+            ("point", "Invite a visit", "Ten minutes in the filing room says more than a page of figures."),
+            ("point", "Ask for one specific thing", "A decision, a signature or a word at the staff meeting. "
+             "Sponsors respond better to a clear request than to a general plea for support."),
+            ("point", "Share the sponsor’s reply", "When the sponsor says something encouraging, pass it on to "
+             "the team in their words."),
+            "The sponsor does not need to manage the project. A small, regular sign of attention is often "
+            "enough to remind the team that someone above them is watching the work and values it.",
+            ("h", "Back to the Filing Room"),
+            "The revenue officer broke the remaining work into one barangay a week and put a chart on the "
+            "wall. At the next meeting, she asked each member what had slowed them down. Two answers took a "
+            "day to fix: a second step ladder and a fixed time for the shared scanner.",
+            "When the chart passed the halfway mark, she told the sponsor, who walked down to the filing room "
+            "to see it. Attendance at the weekly meeting returned to full, and the indexing finished three "
+            "weeks earlier than the revised plan.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Waiting for the finish to celebrate", "Mark progress along the way."),
+            ("point", "Ignoring small obstacles", "They drain energy every day."),
+            ("point", "Blaming people for setbacks", "Fix the step, not the person."),
+            ("point", "Mistaking overload for low morale", "Check the hours before giving a pep talk."),
+            ("h", "Key Takeaways"),
+            ("point", "Progress matters most", "Help people see that the work moved today."),
+            ("point", "Clear the small obstacles", "Ask weekly, fix quickly."),
+            ("point", "Setbacks are lessons", "Ask what happened and turn the fix into a win."),
+            ("point", "Recognize specifically", "In person, in front of the sponsor, and in writing."),
+            ("h", "Your Part 50 Action Plan"),
+            ("point", "This week", "Break the current work into pieces that can be finished in a week, and "
+             "start a progress chart."),
+            ("point", "At the next meeting", "Ask each person what slowed them down, and fix one thing within "
+             "three days."),
+            ("point", "This month", "Name one person’s specific contribution when you report to the sponsor."),
+            ("cta", "Read: Project Management Series, Part 45: Delegating Work Without Losing Track of It", "/blog/project-management-part-45-delegating-work/"),
+            ("cta", "Read: Project Management Series, Part 18: Assigning People Without Overloading Them", "/blog/project-management-part-18-resource-allocation/"),
+            ("cta", "Read: Project Management Series, Part 40: The Retrospective, Improving While the Work Is Still Running", "/blog/project-management-part-40-retrospectives/"),
+            ("cta", "Read: Project Management Series, Part 38: When the Team Disagrees, Five Ways to Handle Conflict", "/blog/project-management-part-38-handling-conflict/"),
+            ("ask", "What is one small obstacle your team has stopped mentioning because nobody fixed it?"),
+        ],
+    },
+    {
+        "title": "Project Management Series, Part 49: The Pre-Mortem, Imagining Failure Before It Happens",
+        "slug": "project-management-part-49-pre-mortem",
+        "category": "pm",
+        "date": "June 23, 2027",
+        "summary": "A post-mortem explains why a project failed after it is too late to help. A pre-mortem asks "
+                   "the team to imagine the failure first, while the plan can still change. This part shows how "
+                   "to run one in under an hour, how to turn its list into actions, and why it helps quiet "
+                   "team members speak up.",
+        "publish_on": "2027-06-23 21:00",
+        "body": [
+            "The plan to extend text reminders to real property owners looked ready. The phone list had been "
+            "cleaned, the message was drafted, and the sponsor had approved a start date in August. At the "
+            "last planning meeting, the revenue officer asked whether anyone had concerns. Nobody did.",
+            "Two weeks after launch, the treasury counter was crowded with owners holding reminders for "
+            "taxes they had already paid. One of the clerks said later that she had wondered about it. The "
+            "payment records were updated only every Friday, so a reminder sent on Wednesday could miss "
+            "three days of payments. She had not wanted to slow things down by saying so.",
+            "(The office, the project and the people are invented, continuing the treasury examples of this "
+            "series. The method and the research quoted below come from Gary Klein’s article “Performing a "
+            "Project Premortem,” published in Harvard Business Review in September 2007.)",
+            "Part 48 kept a record of why decisions were made. This part looks forward instead. When you "
+            "finish reading, you will know what a pre-mortem is, why it surfaces risks that ordinary "
+            "planning meetings miss, how to run one step by step, how to turn its results into changes to "
+            "the plan, and when it is worth the time.",
+            ("photo", "blog/pm-pre-mortem.jpg", "The pre-mortem: imagine the project has already failed, list "
+             "the reasons, and fix the plan while there is still time. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What a Pre-Mortem Is"),
+            "Klein, a psychologist who studies how people make decisions, calls the pre-mortem “the "
+            "hypothetical opposite of a postmortem.” A post-mortem asks why something failed after the fact. "
+            "A pre-mortem asks the same question before work begins, by imagining that the failure has "
+            "already happened.",
+            "The difference sounds small. It changes the conversation. “What could go wrong?” invites people "
+            "to defend the plan. “It failed. Why?” invites them to explain a failure, and people are often "
+            "better at that.",
+            ("point", "The research behind it", "Klein cites a 1989 study by Deborah Mitchell, Jay Russo and "
+             "Nancy Pennington, which found that imagining an event has already happened “increases the "
+             "ability to correctly identify reasons for future outcomes by 30%.”"),
+            ("point", "Safe to dissent", "Klein writes that the method works by “making it safe for "
+             "dissenters who are knowledgeable about the undertaking” to voice their concerns."),
+            ("point", "Not a risk register replacement", "It feeds the risk register from Part 19 with "
+             "risks that might not otherwise come up."),
+            ("h", "Why Ordinary Planning Meetings Miss Things"),
+            ("point", "Momentum", "Once a plan has a date and a sponsor’s approval, questioning it can feel "
+             "like disloyalty."),
+            ("point", "Rank", "Junior staff may hesitate to contradict the lead in front of others."),
+            ("point", "The question itself", "“Any concerns?” at the end of a long meeting is easy to answer "
+             "with silence."),
+            ("point", "Front-line knowledge", "The people who know where things break, such as counter staff, "
+             "are often not the ones presenting the plan."),
+            ("h", "How to Run a Pre-Mortem in Under an Hour"),
+            "Klein describes the steps. Adapted for a treasury project, they look like this.",
+            ("point", "1. Gather the right people (5 minutes)", "The core team, plus one or two people who "
+             "will live with the result, such as a counter clerk. Make sure everyone knows the plan."),
+            ("point", "2. Declare the failure (2 minutes)", "“Imagine it is three months after launch. The "
+             "project has failed badly. Taxpayers are complaining, and the sponsor wants to stop it.”"),
+            ("point", "3. Write reasons alone (10 minutes)", "Each person writes every reason they can think "
+             "of, without talking. Writing alone keeps the first idea spoken from steering the rest."),
+            ("point", "4. Share one at a time (15 minutes)", "Go around the table. Each person reads one "
+             "reason, then the next person, until every reason is on the board. Klein suggests the project "
+             "manager starts."),
+            ("point", "5. Pick the ones that matter (10 minutes)", "Mark each reason for how likely it is and "
+             "how much damage it would do, as in Part 19."),
+            ("point", "6. Change the plan (15 minutes)", "For the top few, decide what to do: change a step, "
+             "add a check, assign an owner or accept the risk knowingly."),
+            ("photo", "blog/pm-pre-mortem-steps.jpg", "Six steps of a pre-mortem, in under an hour: gather, "
+             "declare the failure, write alone, share one at a time, rank, and change the plan. The timings "
+             "are a guide. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Turning the List Into Action"),
+            "A pre-mortem that ends with a list on a whiteboard has done half its job. Every serious reason "
+            "should leave the room as a change, a task or a conscious decision.",
+            ("point", "Change the plan", "If the reason is a gap in the plan, fix the plan. “Payments are "
+             "updated weekly” becomes “update payments daily before any reminder is sent.”"),
+            ("point", "Add a check", "If the risk cannot be removed, add an early warning. “Count complaints "
+             "at the counter in the first week.”"),
+            ("point", "Name an owner", "Each action gets one person and a date, recorded in the issue log "
+             "from Part 26."),
+            ("point", "Record what you accept", "Some risks are worth taking. Write them in the decision log "
+             "from Part 48 with the reason."),
+            ("h", "Back to the Reminders"),
+            "After the complaints, the revenue officer paused the reminders and ran a pre-mortem on the "
+            "relaunch. She asked the team to imagine that the relaunch had also failed.",
+            "The list took twenty minutes and filled the whiteboard. The clerk’s point about weekly updates "
+            "came first, from the clerk herself, now that she had been asked directly. Others followed: some "
+            "owners had sold their property and the numbers belonged to the new owners’ relatives; the "
+            "message did not say what to do if the tax was already paid; and the counter had not been told "
+            "when the reminders would go out.",
+            "The team changed four things. Payments were updated every morning before reminders went out. "
+            "The message added one line: “If you have already paid, please ignore this message.” Numbers on "
+            "properties transferred in the last year were checked first. The counter received the schedule a "
+            "week ahead. The relaunch drew few complaints.",
+            ("h", "When a Pre-Mortem Is Worth the Time"),
+            ("point", "Before a launch", "A new system, a new process, or anything taxpayers will see."),
+            ("point", "Before a big commitment", "Signing a contract, buying equipment or changing a deadline "
+             "in an ordinance."),
+            ("point", "When the plan feels too smooth", "If nobody has raised a concern, that can be a "
+             "reason to ask in a different way."),
+            ("point", "Not for small routine tasks", "A weekly report does not need one."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Skipping the silent writing", "Without it, the first loud voice sets the list."),
+            ("point", "Leaving out the front line", "Invite at least one person who will use the result."),
+            ("point", "Defending the plan during sharing", "Record each reason without arguing. Discuss "
+             "later."),
+            ("point", "No actions afterward", "Every serious reason needs a change, a check or a recorded "
+             "decision."),
+            ("h", "Key Takeaways"),
+            ("point", "Imagine the failure", "“It failed. Why?” surfaces more than “What could go wrong?”"),
+            ("point", "Write alone, share in turn", "So every person’s reasons reach the board."),
+            ("point", "Rank and act", "Change the plan, add a check, name an owner, or accept knowingly."),
+            ("point", "Make it safe to doubt", "The person with the key worry may be the quietest one."),
+            ("h", "Your Part 49 Action Plan"),
+            ("point", "Before your next launch", "Book 45 minutes for a pre-mortem with the team and one "
+             "front-line user."),
+            ("point", "During it", "Keep the silent writing to ten minutes, and share one reason at a time."),
+            ("point", "Within a day", "Turn the top reasons into tasks, checks or decision log entries."),
+            ("cta", "Read: Project Management Series, Part 48: The Decision Log, Remembering Why the Project Chose What It Chose", "/blog/project-management-part-48-decision-log/"),
+            ("cta", "Read: Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong", "/blog/project-management-part-19-risk-register/"),
+            ("cta", "Read: Project Management Series, Part 40: The Retrospective, Improving While the Work Is Still Running", "/blog/project-management-part-40-retrospectives/"),
+            ("cta", "Read: Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps", "/blog/project-management-part-26-issue-log/"),
+            ("ask", "What would your team write down if you asked them today why your current project failed?"),
+        ],
+    },
+    {
         "title": "Project Management Series, Part 48: The Decision Log, Remembering Why the Project Chose What It Chose",
         "slug": "project-management-part-48-decision-log",
         "category": "pm",

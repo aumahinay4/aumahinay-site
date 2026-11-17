@@ -7,6 +7,549 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 44: Old Treasury Records, Why They Cannot Simply Be Thrown Away",
+        "slug": "disposing-of-treasury-records",
+        "category": "finance",
+        "date": "June 30, 2027",
+        "summary": "Storerooms fill up with old receipts, ledgers and reports. Under the National Archives of the "
+                   "Philippines Act of 2007, public records may be disposed of only with the prior written "
+                   "authority of the National Archives, following a records disposition schedule. This part "
+                   "explains the rules, the steps, and how a treasury can keep its records in order.",
+        "publish_on": "2027-06-30 21:00",
+        "body": [
+            "The storeroom behind the treasury had not been opened properly in years. When the roof leaked "
+            "during a typhoon, the staff found boxes of duplicate official receipts, old cashbooks and "
+            "reports of collections going back two decades, some of them soaked.",
+            "A utility worker offered a quick solution: burn the wet boxes and the oldest dry ones, and use "
+            "the room for the new filing cabinets. The treasurer stopped him at the door.",
+            "(The local government, the storeroom and the people are invented for this post. The rules come "
+            "from Republic Act No. 9470, the National Archives of the Philippines Act of 2007, and an example "
+            "from a city’s published citizen’s charter, cited below. Ask your records officer and the "
+            "National Archives how they apply to your office.)",
+            "Part 11 looked at accountable forms while they are in use. This part looks at what happens to "
+            "treasury records long after. When you finish reading, you will know why treasury records are "
+            "public records, what the law says about disposing of them, what a records disposition schedule "
+            "is, how the disposal process works, and how to keep records in order until then.",
+            ("photo", "blog/finance-records-disposal.jpg", "Old treasury records are public records. They are "
+             "kept according to a disposition schedule and disposed of only with the National Archives’ "
+             "written authority. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Treasury Records Are Public Records"),
+            "Republic Act No. 9470 was approved on May 21, 2007. Section 4 defines public records as those "
+            "created or received “by a government agency in the conduct of its affairs.”",
+            ("point", "Receipts and their duplicates", "Copies of official receipts kept by the office."),
+            ("point", "Books and reports", "Cashbooks, reports of collections and deposits, and abstracts."),
+            ("point", "Correspondence", "Letters, notices and memos about collections and payments."),
+            ("point", "Registers and logbooks", "Such as the registers kept for accountable forms."),
+            "Some public records also have lasting value. The law calls those with “enduring value” archives, "
+            "and they are preserved rather than disposed of.",
+            ("h", "The Central Rule: No Disposal Without Authority"),
+            "Section 18 is short and clear. No government office may “dispose of, destroy or authorize the "
+            "disposal or destruction of any public records” except “with the prior written authority of the "
+            "executive director” of the National Archives.",
+            ("point", "Prior", "The authority comes before disposal, not after."),
+            ("point", "Written", "A verbal go-ahead is not enough."),
+            ("point", "From the National Archives", "Not from the head of office alone."),
+            "The penalties are heavy. Section 41 provides that a public officer who violates the Act may be "
+            "fined “not less than Five hundred thousand pesos,” or “imprisoned for not less than five years "
+            "but not more than fifteen (15) years,” or both, at the court’s discretion.",
+            ("h", "Records Disposition Schedules"),
+            "A disposition schedule lists types of records and how long each must be kept before it may be "
+            "disposed of, transferred or kept permanently.",
+            ("point", "The office’s own schedule", "Section 16 asks each government office to “prepare and "
+             "submit a records disposition schedule in the prescribed form.”"),
+            ("point", "A general schedule", "Section 17 asks the National Archives to develop a general "
+             "schedule that will “prescribe the disposal of public records common to all government "
+             "offices.”"),
+            ("point", "A records officer", "Section 13 provides that a records officer or an archivist heads "
+             "each office’s archives and records unit."),
+            "The schedule answers the question the utility worker skipped: how long must this box be kept? "
+            "Treasury staff should not guess. The records officer should be able to point to the line in the "
+            "schedule that covers each type of record.",
+            ("photo", "blog/finance-records-disposal-steps.jpg", "How valueless records are disposed of, based "
+             "on one city’s published procedure: check the schedule, request authority from the National "
+             "Archives, wait for approval, then dispose with witnesses. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "How Disposal Works in Practice"),
+            "Quezon City’s citizen’s charter publishes its procedure for disposing of valueless records. It "
+            "shows what the process looks like in a local government.",
+            ("point", "Request", "The office submits a letter and three copies of NAP Form No. 3, the "
+             "Request for Authority to Dispose of Records, signed by the head of office."),
+            ("point", "Check against the schedule", "The records unit confirms the records are covered by "
+             "the approved schedule."),
+            ("point", "Endorse to the National Archives", "The request goes to the National Archives for "
+             "evaluation and the authority to dispose."),
+            ("point", "Dispose with witnesses", "Once approved, disposal takes place with witnesses from the "
+             "Commission on Audit, the requesting office and the National Archives. In that city, the "
+             "records go to the National Archives’ accredited buyer, and the proceeds are remitted to the "
+             "city treasury."),
+            ("h", "Before the Retention Period Ends"),
+            "Most of a record’s life is spent waiting. How it waits matters.",
+            ("point", "Label every box", "Type of record, period covered, office and date stored."),
+            ("point", "Keep an inventory", "A simple sheet listing every box and where it is."),
+            ("point", "Protect from water and pests", "Shelves off the floor, away from leaking roofs and "
+             "windows."),
+            ("point", "Keep records needed for audit", "Records connected to an open audit question should "
+             "be kept until the matter is settled. Ask the accountant and the audit team before including "
+             "them in any request."),
+            ("point", "Damaged records", "Report them to the records officer in writing. Section 40 makes it "
+             "an offense to damage a public record willfully or negligently."),
+            ("h", "Questions to Ask the Records Officer"),
+            "Some treasury staff meet the records officer only when something goes wrong. A short "
+            "conversation early, before the storeroom is full, saves trouble for both offices later.",
+            ("point", "Is there an approved schedule?", "Ask for a copy, and for the lines that cover "
+             "receipts, cashbooks and collection reports."),
+            ("point", "Which records are permanent?", "Some records may have to be kept for good. Know which "
+             "ones before any request to dispose."),
+            ("point", "How are electronic files handled?", "If the treasury uses a computerized system, ask "
+             "how its data and backups are covered."),
+            ("point", "Where can old boxes go?", "A central records room may have space the treasury lacks."),
+            ("point", "When was the last disposal?", "A long gap may explain a crowded storeroom."),
+            "The answers turn a storeroom from a problem into a plan: what stays, what moves, and what can "
+            "be requested for disposal once its time has come.",
+            ("h", "Back to the Storeroom"),
+            "The treasurer wrote a memo to the records officer listing the wet boxes, with photographs, and "
+            "asked for help drying and moving them. The staff spent two weekends labeling every box and "
+            "building an inventory.",
+            "The inventory showed that some receipts and reports were past their retention period under the "
+            "schedule. The records officer prepared a request for authority to dispose of them. The rest "
+            "went onto new shelves, labeled, with the oldest at the front.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Burning or selling old records on your own", "Disposal needs the National Archives’ "
+             "prior written authority."),
+            ("point", "Guessing retention periods", "Check the disposition schedule."),
+            ("point", "No inventory", "Without one, nobody knows what is stored or what can go."),
+            ("point", "Ignoring damaged boxes", "Report damage in writing and protect what remains."),
+            ("h", "Key Takeaways"),
+            ("point", "Public records", "Treasury receipts, books, reports and files are covered."),
+            ("point", "Prior written authority", "From the National Archives, before any disposal."),
+            ("point", "Follow the schedule", "Each type of record has a set retention period."),
+            ("point", "Dispose with witnesses", "As the approved procedure requires."),
+            ("h", "Your Part 44 Action Plan"),
+            ("point", "If you work in a treasury", "Ask the records officer for the disposition schedule, "
+             "and start an inventory of the storeroom."),
+            ("point", "If you head an office", "Name a person responsible for records, and check that your "
+             "storeroom is dry and labeled."),
+            ("point", "If you are a resident", "Ask whether your local government has a records officer and "
+             "an approved disposition schedule."),
+            ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("cta", "Read: Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office", "/blog/inside-the-treasurers-office/"),
+            ("cta", "Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means", "/blog/cash-counts-and-shortages/"),
+            ("ask", "When was your office’s storeroom last inventoried?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 43: Barangay Micro Business Enterprises, and What the Certificate Does Not Cover",
+        "slug": "barangay-micro-business-enterprises",
+        "category": "finance",
+        "date": "June 27, 2027",
+        "summary": "A small business with assets of up to ₱3 million can register as a Barangay Micro Business "
+                   "Enterprise and gain an income tax exemption and other benefits. Registration once happened "
+                   "at the city or municipal treasury and now happens at Negosyo Centers. This part explains "
+                   "the law, what changed, and why local taxes are a separate question.",
+        "publish_on": "2027-06-27 21:00",
+        "body": [
+            "On the second day of the January rush, a woman who ran a small bakery reached the business tax "
+            "window with a folder. Inside was a Certificate of Authority as a Barangay Micro Business "
+            "Enterprise. “I am exempt,” she said, and asked why she had received a business tax assessment.",
+            "The clerk was not sure. Neither was the person at the next window. The line behind the woman "
+            "grew while they called the treasurer.",
+            "(The local government, the bakery and the people are invented for this post. The rules come from "
+            "Republic Act No. 9178, the Barangay Micro Business Enterprises Act of 2002, Republic Act No. "
+            "10644, the Go Negosyo Act of 2014, and a guide from the Department of Trade and Industry, cited "
+            "below. Ask the Negosyo Center and your local government how they apply.)",
+            "Part 2 looked at the January rush for business permits, and Part 6 at when a local government "
+            "may forgive a tax. This part brings the two together for one kind of business. Read to the end "
+            "and you will know what a Barangay Micro Business Enterprise is, what benefits the law gives it, "
+            "where it registers now and why that changed, what the certificate does not cover, and how a "
+            "treasury and a sanggunian can handle local tax relief for these businesses.",
+            ("photo", "blog/finance-bmbe.jpg", "Barangay Micro Business Enterprises: registered for free at a "
+             "Negosyo Center, exempt from income tax on their operations, and eligible for local tax relief "
+             "only if the local government grants it. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What a BMBE Is"),
+            "Republic Act No. 9178 was approved on November 13, 2002. It defines a Barangay Micro Business "
+            "Enterprise, or BMBE, as a business engaged in production, processing, manufacturing, trading or "
+            "services, with total assets of not more than ₱3 million.",
+            ("point", "Land is not counted", "The asset limit is computed “exclusive of the land on which the "
+             "particular business entity’s office, plant and equipment are situated.”"),
+            ("point", "Many kinds of small business", "A bakery, a sari-sari store, a repair shop or a small "
+             "food processor can qualify if it fits the limit."),
+            ("point", "Not professional practice", "Services rendered by licensed professionals in the "
+             "practice of their profession are excluded."),
+            ("h", "The Benefits in the Law"),
+            ("point", "Income tax", "Section 7 says BMBEs “shall be exempt from tax for income arising from "
+             "the operations of the enterprise.” This is a national tax."),
+            ("point", "Minimum wage", "Section 8 exempts BMBEs from the Minimum Wage Law, but their employees "
+             "still receive social security and health care benefits."),
+            ("point", "Credit", "Section 9 asks certain government financial institutions to “set up a "
+             "special credit window that will service the financing needs of BMBEs.”"),
+            ("point", "Training and support", "The DTI guide also lists technology, training "
+             "and marketing assistance."),
+            ("h", "Where BMBEs Register, and Why It Changed"),
+            "When the law was passed, Section 4 gave the job to the local treasury: the Office of the "
+            "Treasurer of each city or municipality registered BMBEs and issued the Certificate of Authority "
+            "“promptly and free of charge.” The certificate was valid for two years and renewable.",
+            "In 2014, Republic Act No. 10644, the Go Negosyo Act, changed that. Approved on July 15, 2014, it "
+            "says that “Section 4 of Republic Act No. 9178 is hereby repealed,” and that Negosyo Centers "
+            "“shall have the sole power to issue the Certificate of Authority for BMBEs.”",
+            ("point", "Where to apply now", "The DTI guide tells applicants to “submit to the nearest Negosyo "
+             "Center or DTI Office where business is located.”"),
+            ("point", "Still free", "“The registration and issuance of the CA shall be free of charge.”"),
+            ("point", "Two years at a time", "The certificate is “effective for a period of two (2) years "
+             "commencing from the date of issuance,” and can be renewed."),
+            "Some older treasury staff may still remember registering BMBEs at the treasury. That job now "
+            "belongs to the Negosyo Center, which the Go Negosyo Act asks to work “in coordination with the "
+            "LGUs.”",
+            ("photo", "blog/finance-bmbe-taxes.jpg", "Which taxes a BMBE certificate touches: the national "
+             "income tax on its operations is exempt by law, while local taxes are reduced or waived only if "
+             "a local ordinance says so. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What the Certificate Does Not Cover"),
+            "This is where the bakery owner’s confusion came from. The income tax exemption is national. For "
+            "local taxes, the law does not grant an exemption by itself.",
+            ("point", "Local taxes are left to the local government", "Section 7 says local governments are "
+             "“encouraged either to reduce the amount of local taxes, fees and charges imposed or to exempt” "
+             "BMBEs."),
+            ("point", "Encouraged is not required", "Unless the local government acts, its business tax and "
+             "fees apply to BMBEs like any other business."),
+            ("point", "Relief needs an ordinance", "As Part 6 explained, a local tax exemption is granted by "
+             "ordinance of the sanggunian, not by the treasurer at the counter."),
+            ("h", "If the Sanggunian Wants to Give Relief"),
+            "Some local governments have chosen to help BMBEs. The treasury has a role in shaping the "
+            "ordinance so it works at the counter.",
+            ("point", "Estimate the cost", "Ask the Negosyo Center how many BMBEs in the area hold valid "
+             "certificates, then match them with the business tax records to estimate the revenue that would "
+             "be given up."),
+            ("point", "Be clear on what is covered", "Business tax only, or also regulatory fees? A full "
+             "exemption, or a reduction such as half?"),
+            ("point", "Require a valid certificate", "The ordinance can ask the business to present a "
+             "current Certificate of Authority each year, since it lasts only two years."),
+            ("point", "Keep the permit process", "Relief from a tax is different from relief from "
+             "registration. The business still needs to be on the local government’s records."),
+            ("h", "Where the Treasury Fits Day to Day"),
+            ("point", "Brief the counter", "Every business tax clerk should know the answer: income tax "
+             "exempt by national law, local taxes due unless an ordinance says otherwise."),
+            ("point", "Post a short notice", "A one-paragraph notice at the window saves time during the "
+             "January rush."),
+            ("point", "Check the expiry date", "If an ordinance grants relief, check that the certificate is "
+             "still valid on the payment date."),
+            ("point", "Refer, do not register", "Send owners who want to register to the Negosyo Center."),
+            ("h", "Back to the Bakery"),
+            "The treasurer came to the window and explained the difference: the certificate exempted the "
+            "bakery’s income from national income tax, but the municipality had no ordinance reducing local "
+            "taxes for BMBEs, so the business tax was due. The owner paid, unhappy but clear on the reason.",
+            "That spring, the treasurer brought the question to the finance committee. With a list from the "
+            "Negosyo Center, the treasury found 46 BMBEs in its records, paying a combined ₱310,000 a year in "
+            "business tax. The sanggunian later passed an ordinance cutting their business tax by half, and "
+            "the counter received a one-page guide before the next January rush.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the certificate as a local tax exemption", "Only an ordinance can grant "
+             "that."),
+            ("point", "Sending owners to the treasury to register", "Registration is at the Negosyo Center."),
+            ("point", "Ignoring expiry dates", "A certificate lasts two years."),
+            ("point", "Passing relief without an estimate", "Know the revenue at stake before voting."),
+            ("h", "Key Takeaways"),
+            ("point", "Up to ₱3 million in assets", "Not counting the land under the business."),
+            ("point", "Income tax exempt", "On income from operations, by national law."),
+            ("point", "Registration moved", "From the city or municipal treasurer to Negosyo Centers in "
+             "2014."),
+            ("point", "Local taxes", "Reduced or waived only if the local government passes an ordinance."),
+            ("h", "Your Part 43 Action Plan"),
+            ("point", "If you work in a treasury", "Write a three-line answer on BMBEs for the business tax "
+             "window, and check whether your local government has any ordinance on them."),
+            ("point", "If you sit in the sanggunian", "Ask the treasury how many BMBEs are in its records "
+             "and what relief would cost."),
+            ("point", "If you run a small business", "Ask the nearest Negosyo Center whether you qualify, "
+             "and ask your local government whether it grants any local tax relief."),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 14: Closing a Business the Right Way", "/blog/closing-a-business-the-right-way/"),
+            ("ask", "Does your local government give any local tax relief to registered micro businesses?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 42: The Election Spending Ban, What the Treasury Cannot Release Before Election Day",
+        "slug": "election-spending-ban",
+        "category": "finance",
+        "date": "June 24, 2027",
+        "summary": "For 45 days before a regular election, the Omnibus Election Code bars public officials from "
+                   "releasing public funds for many kinds of projects, with set exceptions. This part explains "
+                   "the rule, a Supreme Court case that applied it to a mayor’s livelihood loans, how the "
+                   "Commission on Elections handles exemptions, and how a treasury can plan around the ban.",
+        "publish_on": "2027-06-24 21:00",
+        "body": [
+            "In early April of an election year, a department head brought a stack of disbursement vouchers "
+            "to the treasury. They were for a livelihood program: small loans to market vendors, approved in "
+            "the budget months before. The checks were ready to sign.",
+            "The treasurer looked at the calendar. Election day was five weeks away. She asked one question "
+            "before signing anything: had the program been exempted from the election spending ban?",
+            "(The local government, the program and the people are invented for this post. The rules come "
+            "from the Omnibus Election Code as quoted by the Supreme Court, and from a resolution of the "
+            "Commission on Elections, cited below. This post is general information, not legal advice. For "
+            "any specific payment, ask the legal officer and check the current COMELEC resolution.)",
+            "Part 7 followed the usual path from budget to check. This part looks at a period when that path "
+            "narrows. Stay with me to the end, and you will know what the election spending ban covers, when "
+            "it applies, what is exempt, what happened in a case the Supreme Court decided in 2019, how "
+            "exemptions are requested, and how a treasury can plan its payments around the ban.",
+            ("photo", "blog/finance-election-ban.jpg", "The election spending ban: for 45 days before a regular "
+             "election, many releases of public funds stop unless an exception applies or COMELEC has "
+             "granted an exemption. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Rule in Section 261(v)"),
+            "Section 261 of the Omnibus Election Code lists election offenses. Paragraph (v), as quoted by "
+            "the Supreme Court, covers “any public official or employee including barangay officials” who, "
+            "“during forty-five days before a regular election and thirty days before a special election, "
+            "releases, disburses or expends any public funds for” the items it lists.",
+            ("point", "Public works", "“Any and all kinds of public works,” with exceptions listed below."),
+            ("point", "Social services", "Spending by offices that perform social welfare functions, "
+             "“except for salaries of personnel, and for such other routine and normal expenses.”"),
+            ("point", "Housing", "Spending by offices handling human settlements, except for salaries and "
+             "“such other necessary administrative or other expenses.”"),
+            "The paragraph applies to local officials as well as national ones. A treasurer who signs a check, "
+            "a department head who certifies a voucher and a mayor who approves it are all public officials "
+            "under the rule.",
+            ("h", "What Is Still Allowed"),
+            "The ban is not a freeze on all spending. For public works, the Code lists exceptions, including "
+            "these.",
+            ("point", "Maintenance", "“Maintenance of existing and/or completed public works project.”"),
+            ("point", "Works already bid out", "“Work undertaken by contract through public bidding held” "
+             "before the ban period, under the conditions the Code sets."),
+            ("point", "Emergencies", "“Emergency work necessitated by the occurrence of a public calamity.”"),
+            ("point", "Salaries and routine expenses", "For social services and housing, salaries and "
+             "routine or necessary administrative expenses continue."),
+            "Because each exception has conditions, the safest habit is to check every unusual payment "
+            "during the period against the current COMELEC resolution before signing.",
+            ("h", "A Case the Supreme Court Decided"),
+            "In Velez v. People, G.R. No. 215136, decided on August 28, 2019, a city mayor had entered into "
+            "loan agreements with two credit cooperatives and a market vendors’ association in April 1998, and "
+            "signed the disbursement vouchers on April 12, 13 and 23. The elections were on May 11, 1998, so "
+            "the vouchers fell within the 45-day period.",
+            "The trial court convicted him, the Court of Appeals affirmed, and the Supreme Court denied his "
+            "appeal. The Court treated the loans as covered by the social services paragraph, explaining that "
+            "it reaches “social welfare and development projects, which include the grant of loan assistance "
+            "as part of a livelihood program.”",
+            ("point", "The lesson", "A program does not escape the ban because it was budgeted earlier or "
+             "because the money is a loan. What matters is the release during the period."),
+            ("point", "The dates matter", "The vouchers’ dates placed the releases inside the ban. Keep "
+             "accurate dates on every document."),
+            ("photo", "blog/finance-election-ban-calendar.jpg", "Planning around the ban: release what you "
+             "can before it starts, file exemption requests early, and pause covered releases during the 45 "
+             "days. Dates shown are from the May 2025 elections. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "How COMELEC Sets the Dates and Exemptions"),
+            "For each election, the Commission on Elections issues a resolution with the exact dates and the "
+            "procedure for exemptions. For the May 12, 2025 national and local elections, Resolution No. "
+            "11060 set these rules.",
+            ("point", "The main ban period", "March 28 to May 11, 2025, for social welfare and services "
+             "projects and for housing-related projects, unless exempted."),
+            ("point", "Crisis assistance", "A shorter period, May 2 to May 12, 2025, for assistance to "
+             "individuals in crisis situations, with exceptions for basic needs normally given."),
+            ("point", "Treasury warrants", "The resolution prohibited the issuance of treasury warrants and "
+             "similar devices from March 28 to May 11, 2025."),
+            ("point", "Exemptions", "Requests went to the COMELEC Law Department, on signed paper, by "
+             "February 11, 2025. Late requests were denied, and no fee was charged."),
+            "The rules for the next election may differ. The next regular national and local elections fall "
+            "in May 2028, so the ban period would begin in late March 2028. Watch for the COMELEC resolution. "
+            "For the 2025 elections, it came out about eight months ahead.",
+            ("h", "Where the Treasury Fits"),
+            ("point", "Know the dates early", "Put the ban period and the exemption deadline on the treasury "
+             "calendar as soon as COMELEC announces them."),
+            ("point", "Release before, not during", "For programs that are ready, plan payments to be made "
+             "before the period begins, if the rules allow."),
+            ("point", "Ask for the exemption on file", "Before releasing a covered payment during the period, "
+             "ask for a copy of the COMELEC exemption and attach it to the voucher."),
+            ("point", "Keep salaries and bills moving", "Salaries and routine expenses continue. The ban "
+             "should not delay them."),
+            ("point", "Refer doubtful cases", "If a payment does not clearly fit an exception, send it to the "
+             "legal officer before signing."),
+            ("h", "Back to the Vendor Loans"),
+            "The department head had not filed for an exemption. The treasurer did not sign the checks. She "
+            "wrote a short memo to the mayor and the legal officer citing the ban and the Velez case, and "
+            "suggested that the loans be released after election day.",
+            "The program went ahead in late May. The next year, the budget office added a line to its "
+            "calendar for election years: a reminder to list every covered program by January, so that "
+            "releases could be scheduled early or exemption requests filed on time.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming budgeted means exempt", "An appropriation is not an exemption from the ban."),
+            ("point", "Missing the exemption deadline", "Late requests can be denied."),
+            ("point", "Stopping everything", "Salaries and routine expenses continue."),
+            ("point", "Backdating documents", "Never. Dates must show when things actually happened."),
+            ("h", "Key Takeaways"),
+            ("point", "Forty-five days", "Before a regular election, thirty before a special one."),
+            ("point", "Covers local officials", "Including barangay officials, under Section 261(v)."),
+            ("point", "Exceptions exist", "Maintenance, works already bid, emergencies, salaries and "
+             "routine expenses."),
+            ("point", "COMELEC sets the details", "Read each election’s resolution for dates and "
+             "exemptions."),
+            ("h", "Your Part 42 Action Plan"),
+            ("point", "If you work in a treasury", "Start a list of programs that may be covered by the ban "
+             "in the next election year, with their expected release dates."),
+            ("point", "If you head an office", "Ask the budget office early whether your program needs an "
+             "exemption."),
+            ("point", "If you are a resident", "Look for your local government’s posted programs, and ask "
+             "whether any release during the ban period had an exemption."),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First", "/blog/supplemental-budgets/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("cta", "Read: Inside the Local Treasury, Part 39: When a Court Orders Payment, Why Public Funds Cannot Simply Be Seized", "/blog/court-judgments-and-public-funds/"),
+            ("ask", "Does your office know which of its programs would be covered by the next spending ban?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 41: The Share in National Wealth, When a Mine or Power Plant Pays the Host",
+        "slug": "share-in-national-wealth",
+        "category": "finance",
+        "date": "June 21, 2027",
+        "summary": "When a mine, a quarry under national permit, a forest concession or a power plant operates "
+                   "inside a local government, part of what the national government collects from it comes back "
+                   "to the host. This part explains the 40 percent share, how it is split among the province, "
+                   "the city or municipality and the barangay, and what the treasury should do with it.",
+        "publish_on": "2027-06-21 21:00",
+        "body": [
+            "The municipal treasurer found the line by accident while reconciling the year’s receipts: a credit "
+            "from the national government labeled as a share in national wealth. It was not in the budget. "
+            "Nobody in the office could say what it was for, whether more would come, or whether it could be "
+            "spent like any other income.",
+            "A small hydroelectric plant had started running in the upland barangays two years before. The "
+            "credit was the municipality’s part of what the national government had collected from it.",
+            "(The local government, the plant and the amounts are invented for this post. The rules come from "
+            "the 1987 Constitution, the Local Government Code of 1991 as quoted by the Supreme Court, the "
+            "National Internal Revenue Code, a joint circular of the Department of the Interior and Local "
+            "Government and the Department of Energy, and guidance from the Department of Budget and "
+            "Management, all cited below. Ask your budget office and the agencies concerned how the rules "
+            "apply to your local government.)",
+            "Part 1 of this series listed where a local government’s money comes from. For many local governments, the "
+            "largest parts are the national tax allotment and local taxes. This part looks at a smaller source that matters a "
+            "great deal to some places. Read to the end and you will know where the share in national wealth "
+            "comes from, how big it is, how it is divided, what the Supreme Court said about where a local "
+            "government’s area ends, and how the treasury should receive, record and report it.",
+            ("photo", "blog/finance-national-wealth.jpg", "The share in national wealth: when resources are "
+             "used inside a local government, 40 percent of what the national government collects from them "
+             "goes back to the local governments where they are found. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Where the Share Comes From"),
+            "The idea starts in the Constitution. Section 7 of Article X says local governments shall be "
+            "entitled to an “equitable share in the proceeds of the utilization and development of the "
+            "national wealth within their respective areas.”",
+            "The Local Government Code puts a number on it. Section 290, as quoted by the Supreme Court, gives "
+            "local governments, “in addition to the internal revenue allotment,” “a share of forty percent "
+            "(40%) of the gross collection derived by the national government from the preceding fiscal year” "
+            "from the use of national wealth in their area.",
+            ("point", "What counts", "Collections such as mining taxes, royalties, and forestry and fishery "
+             "charges, along with the government’s share in agreements to develop resources like energy."),
+            ("point", "From the preceding year", "The share is based on what the national government "
+             "collected the year before, so it arrives a year or more after the activity."),
+            ("point", "On top of the allotment", "It does not replace the national tax allotment. It is a "
+             "separate source."),
+            "For scale, the national budget for 2026 set aside about ₱8.8 billion for local governments’ shares "
+            "in national wealth, a small figure next to the national tax allotment but a large one for the "
+            "places that host the resources.",
+            ("h", "How the Share Is Divided"),
+            "The share does not all go to one office. The National Internal Revenue Code, in Section 287, "
+            "spells out the split among levels of local government.",
+            ("point", "Resource inside a province", "Province, twenty percent. Component city or municipality, "
+             "forty-five percent. Barangay, thirty-five percent."),
+            ("point", "Resource inside a highly urbanized or independent component city", "City, sixty-five "
+             "percent. Barangay, thirty-five percent."),
+            ("point", "Resource spread over two or more local governments", "The shares are divided using a "
+             "formula based on population and land area."),
+            "Notice how large the barangay’s part is. A barangay that hosts a plant or a mine can receive more "
+            "from this source than from many of its other income lines, which is one reason the city or "
+            "municipal treasury should know when the shares arrive.",
+            ("photo", "blog/finance-national-wealth-split.jpg", "How 40 percent of national collections from a "
+             "resource is divided when the resource lies in a province: 20 percent province, 45 percent city "
+             "or municipality, 35 percent barangay. Amounts are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Where a Local Government’s Area Ends"),
+            "The share depends on the resource being within the local government’s area. In Republic v. "
+            "Provincial Government of Palawan, decided by the Supreme Court sitting en banc in December 2018, "
+            "the province claimed 40 percent of the national government’s proceeds from the Camago-Malampaya "
+            "natural gas project. The reservoir lies offshore, about 80 kilometers from the main island of "
+            "Palawan.",
+            "The Court ruled against the province. It read a local government’s territorial jurisdiction as its "
+            "physical boundaries, which “cannot extend beyond the boundaries set by its organic law,” and found "
+            "that the gas field was outside them.",
+            ("point", "The lesson for treasuries", "A share is due only for resources inside the local "
+             "government’s boundaries, as its charter defines them."),
+            ("point", "Keep the boundary papers", "The charter, maps and any boundary settlement are part of "
+             "the evidence if a share is questioned."),
+            ("h", "What the Share Can Be Used For"),
+            "Section 294 of the Code directs how the share is spent. For energy, a joint circular of the "
+            "Department of the Interior and Local Government and the Department of Energy, Joint Circular No. "
+            "95-01 dated October 31, 1995, explains the key rule: at least 80 percent of the share from "
+            "hydrothermal, geothermal and other energy sources “shall be applied solely to lower the cost of "
+            "electricity in the LGU where such source of energy is located.”",
+            ("point", "How the subsidy works", "The circular has the local government agree in writing with "
+             "the electric distributor on how the money will reduce consumers’ bills, and how often it is "
+             "remitted."),
+            ("point", "Still public money", "The share goes through the budget before it is spent. As "
+             "Part 39 noted, Section 305 lets money leave the local treasury only under an appropriation."),
+            ("point", "A capped subsidy", "The circular says the total subsidy may not go beyond the local "
+             "government’s allocated share."),
+            ("h", "Where the Treasury Fits"),
+            "The treasury does not compute the share. The national agencies do. But the treasury receives it, "
+            "and the budget depends on the treasurer’s reading of it.",
+            ("point", "Count it as a special share", "The DBM’s budget guidance for 2025 lists the share in "
+             "national wealth as a special share under Sections 289 to 291 of the Code, and it appears as its "
+             "own line in local and barangay budget forms."),
+            ("point", "Estimate carefully", "Because it depends on last year’s national collections and on "
+             "the operator’s output, the amount can swing. Base the estimate on actual releases, as Part 31 "
+             "advised for other income."),
+            ("point", "Record each release", "Note the date, the period covered and the source, so the "
+             "barangay shares and the energy subsidy can be traced."),
+            ("point", "Pass on the barangay’s part", "When the barangay’s share comes through the city or "
+             "municipality, release it promptly, as Part 17 described for the barangay’s share of the "
+             "amilyar."),
+            ("h", "Back to the Unexpected Credit"),
+            "The treasurer wrote to the budget office and the regional office of the Department of Budget and "
+            "Management, and asked for the basis of the release. The answer showed that the credit was the "
+            "municipality’s 45 percent of the share from the plant, and that the two host barangays had their "
+            "own 35 percent coming.",
+            "Since the plant produced electricity, at least 80 percent of the municipality’s share was bound "
+            "for lowering power bills in the area. The sanggunian appropriated it for that purpose, the "
+            "municipality signed an agreement with the electric cooperative, and the treasury started a "
+            "simple register of every release from that source.",
+            ("h", "Questions Residents and Council Members Can Ask"),
+            ("point", "Is there a resource in our area?", "A mine, a quarry under national permit, a forest "
+             "concession, a fishery, or a power plant."),
+            ("point", "Has a share arrived?", "Ask the treasury for the dates and amounts released in the "
+             "last three years."),
+            ("point", "Did the barangays receive theirs?", "Each host barangay should be able to show its "
+             "own receipts."),
+            ("point", "For energy, are bills lower?", "Ask how the 80 percent was applied and which consumers "
+             "benefited."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the share as regular income", "It can rise or fall with output and prices. "
+             "Estimate from actual releases."),
+            ("point", "Forgetting the barangay’s part", "Thirty-five percent belongs to the host barangays."),
+            ("point", "Spending energy shares on anything", "At least 80 percent goes to lowering the cost of "
+             "electricity."),
+            ("point", "No register of releases", "Without one, it is hard to answer audit questions or check "
+             "for missing releases."),
+            ("h", "Key Takeaways"),
+            ("point", "Forty percent", "Of national collections from resources in the area, on top of the "
+             "national tax allotment."),
+            ("point", "A three-way split", "Province 20, city or municipality 45, barangay 35, within a "
+             "province."),
+            ("point", "Inside the boundaries", "The Supreme Court tied the share to the local government’s "
+             "territory."),
+            ("point", "Energy shares lower bills", "At least 80 percent of them goes to reducing electricity "
+             "costs."),
+            ("h", "Your Part 41 Action Plan"),
+            ("point", "If you work in a treasury", "List every share in national wealth received in the last "
+             "three years, with the date, the source and the barangays concerned."),
+            ("point", "If you sit in the sanggunian", "Ask whether the energy share, if any, has been "
+             "appropriated and applied as the rules require."),
+            ("point", "If you are a resident", "Ask your barangay whether it hosts a resource and whether its "
+             "share has arrived."),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review", "/blog/barangay-budget-review/"),
+            ("ask", "Does your local government host a resource, and do you know what its share was last year?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review",
         "slug": "barangay-budget-review",
         "category": "finance",
