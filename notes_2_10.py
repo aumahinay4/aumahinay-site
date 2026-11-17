@@ -187,7 +187,7 @@ NOTES_2_TO_10 = [
         "title": "Paying real property tax: quarters, discounts and interest",
         "summary": "When real property tax falls due, how the quarterly installments, advance-payment discounts "
                    "and 2% monthly interest work, and what happens when the tax stays unpaid.",
-        "publish_on": "2026-11-20 21:00",
+        "publish_on": "2026-11-18 01:00",  # moved up: Butch asked for 2 more notes today (2026-11-18)
         "body": [
             "Note 2 showed how the real property tax is computed. This note follows the tax bill from January to "
             "December: when it falls due, how to pay it in parts, how to earn a discount, how interest grows, and "
@@ -329,7 +329,7 @@ NOTES_2_TO_10 = [
         "summary": "Who pays the local business tax, how it is computed from last year's gross sales, when it is "
                    "due, the penalties for paying late, and where the mayor's permit and the Business One Stop "
                    "Shop fit in.",
-        "publish_on": "2026-11-27 21:00",
+        "publish_on": "2026-11-18 01:00",  # moved up: Butch asked for 2 more notes today (2026-11-18)
         "body": [
             "Every January, the line at the municipal hall grows long with business owners renewing their "
             "permits. Two different things are paid at that time: the business tax, which is a tax on doing "
