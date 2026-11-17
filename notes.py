@@ -1,4 +1,4 @@
-"""Study Notes: local treasury topics, one note every Friday at 9 pm (Philippine time).
+"""Study Notes: local treasury topics, new notes twice a week, Tuesday and Friday at 9 pm (Philippine time).
 
 Butch chose this for the old Courses page (2026-11-10). Each note explains one part of local
 revenue and treasury work in plain words, cites the law it explains, gives a worked example

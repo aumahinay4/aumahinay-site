@@ -1,6 +1,6 @@
 """Study Notes 2 to 10 (Butch asked 2026-11-10; outline approved earlier, see notes.OUTLINE).
 
-One note every Friday at 9 pm Philippine time, November 13, 2026 to January 8, 2027.
+Notes 5-10 go out Tuesdays and Fridays at 9 pm Philippine time, November 20 to December 8, 2026 (Butch, 2026-11-18).
 Same shape as Note 1 in notes.py, plus "sources" (the laws and rules each note relies on).
 
 Facts checked (November 2026) against the text of RA 7160 Book II (Butch's Drive copy, "lgu code Book II"),
@@ -471,7 +471,7 @@ NOTES_2_TO_10 = [
         "title": "Community tax (cedula)",
         "summary": "Who must pay the community tax, how the basic and additional tax are computed for individuals "
                    "and corporations, when it is due, and when the certificate must be shown.",
-        "publish_on": "2026-12-04 21:00",
+        "publish_on": "2026-11-20 21:00",
         "body": [
             "It is better known as the cedula. Its legal name is the community tax, and the paper you get "
             "after paying is the community tax certificate, or CTC. It is one of the smallest taxes a person pays. "
@@ -610,7 +610,7 @@ NOTES_2_TO_10 = [
         "title": "Fees and charges",
         "summary": "How a fee differs from a tax, which fees and charges local governments may collect, and the "
                    "rules on amounts, ordinances, tolls and late payment.",
-        "publish_on": "2026-12-11 21:00",
+        "publish_on": "2026-11-24 21:00",
         "body": [
             "Taxes are only part of local revenue. A local government also earns from permit fees, market stall rentals, "
             "slaughterhouse charges, burial fees, certifications and many other payments. Together these are "
@@ -752,7 +752,7 @@ NOTES_2_TO_10 = [
         "title": "Collection and deposit",
         "summary": "Who may collect local revenue, the rule that every payment gets an official receipt, how "
                    "collections are reported and deposited intact, and how local funds are kept apart.",
-        "publish_on": "2026-12-18 21:00",
+        "publish_on": "2026-11-27 21:00",
         "body": [
             "Notes 1 to 6 explained what a local government may collect. This note is about the act of collecting "
             "itself: the window where a taxpayer hands over money, and what must happen to that money before the "
@@ -891,7 +891,7 @@ NOTES_2_TO_10 = [
         "summary": "What accountable forms are, how they move from the supplier to the collector and back, and "
                    "how the Report of Accountability for Accountable Forms keeps every serial number accounted "
                    "for.",
-        "publish_on": "2026-12-25 21:00",
+        "publish_on": "2026-12-01 21:00",
         "body": [
             "An official receipt is worth nothing blank, and yet a missing blank receipt can cause more trouble "
             "than missing cash. Anyone holding it could collect money that never reaches the treasury. That is why "
@@ -1026,7 +1026,7 @@ NOTES_2_TO_10 = [
         "title": "Disbursements: vouchers, checks and cash advances",
         "summary": "The certifications every payment needs, who signs the voucher and the check, the limit on "
                    "spending ahead of collections, and the rules for cash advances.",
-        "publish_on": "2027-01-01 21:00",
+        "publish_on": "2026-12-04 21:00",
         "body": [
             "Collecting money is half of treasury work. The other half is paying it out, and the law guards it "
             "closely: an officer responsible for an unlawful "
@@ -1169,7 +1169,7 @@ NOTES_2_TO_10 = [
         "title": "Accountability: bonds, cash counts and shortages",
         "summary": "Who is an accountable officer, why they must be bonded, what happens during a cash count, "
                    "and what the law says when cash or property is short or lost.",
-        "publish_on": "2027-01-08 21:00",
+        "publish_on": "2026-12-08 21:00",
         "body": [
             "Every note in this series ends in the same place: someone must answer for public money. This last "
             "note is about that person, the accountable officer, and the rules that protect both the public and "
