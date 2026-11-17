@@ -7,6 +7,537 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 52: Following One Peso, From Your Tax Bill to the Audit Report",
+        "slug": "following-one-peso",
+        "category": "finance",
+        "date": "July 15, 2027",
+        "summary": "This is the last part of Inside the Local Treasury. It follows one peso of local money "
+                   "through six stages, from the tax or fee that brings it in to the audit report that checks "
+                   "how it was spent, and places each of the 51 earlier parts at the stage where it belongs.",
+        "publish_on": "2027-07-15 21:00",
+        "body": [
+            "A Grade 10 student came to the treasury with a notebook and a school assignment. “My father "
+            "paid our amilyar last week,” she said. “Where does that money go?”",
+            "The treasurer smiled and took a one-peso coin from the change tray. “Let us follow this one. It "
+            "has a long trip ahead.”",
+            "(The student, the treasurer and the local government are invented for this post. The stages "
+            "below summarize the earlier parts of this series, which cite their own sources. Rules can "
+            "change, so check the current law and your own local ordinances, or ask your local treasury.)",
+            "This is the closing part of Inside the Local Treasury. It adds no new tax or rule. Instead, it "
+            "follows one peso of local money through six stages and points to the parts that explain each "
+            "one. When you finish reading, you will have the whole series in one journey, a list of "
+            "questions to ask at your own local treasury, and a short path for readers who can only revisit "
+            "a few parts.",
+            ("photo", "blog/finance-peso-journey.jpg", "One peso’s journey through the local treasury, in "
+             "six stages, from the tax bill to the audit report. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Stage 1: Where the Peso Comes From"),
+            "The peso starts as a tax, a fee or a share of national money. Part 1 gave the big picture. The "
+            "other parts in this stage look at one source at a time.",
+            ("point", "Taxes on property", "On top of the amilyar itself, the transfer tax (Part 4), the idle "
+             "land tax (Part 25) and the socialized housing tax (Part 50)."),
+            ("point", "Taxes on business and activity", "The business permit rush (Part 2), the amusement "
+             "tax (Part 22), sand and gravel (Part 23), franchises (Part 24), and printing and publication "
+             "(Part 26)."),
+            ("point", "Taxes on people", "The cedula (Part 3) and the professional tax (Part 21)."),
+            ("point", "Fees and enterprises", "The public market (Part 19), weights and measures (Part 27) "
+             "and tricycle franchises (Part 51)."),
+            ("point", "Shares from outside", "The share in national wealth from mines and power plants "
+             "(Part 41)."),
+            ("point", "The limits", "Fee or tax (Part 15), what cannot be taxed (Part 28), the rule on "
+             "raising rates (Part 34), forgiving a tax (Part 6), and the micro business certificate "
+             "(Part 43)."),
+            "A local government can only collect what a law and an ordinance allow. That is why the limits "
+            "belong in the same stage as the sources.",
+            ("h", "Stage 2: When the Peso Does Not Arrive on Time"),
+            "Not every peso comes in when it should. These parts cover what happens next.",
+            ("point", "Unpaid taxes", "Notice to auction for the amilyar (Part 5), and distraint and levy "
+             "for business taxes (Part 30)."),
+            ("point", "Payments that fail", "A taxpayer’s check that bounces (Part 45)."),
+            ("point", "Endings and corrections", "Closing a business properly (Part 14), and refunds, credits "
+             "and protests when someone paid too much (Part 18)."),
+            ("h", "Stage 3: Collected and Kept Safe"),
+            "Once the peso reaches the window, the treasury has to account for it.",
+            ("point", "The people", "Who does what in the treasurer’s office (Part 20)."),
+            ("point", "The receipt", "Accountable forms and the report on them (Part 11)."),
+            ("point", "The cash", "The surprise cash count (Part 12) and the deposit that cannot wait "
+             "(Part 13)."),
+            ("point", "The paper trail", "Why old treasury records cannot simply be thrown away (Part 44)."),
+            ("h", "Stage 4: Set Aside and Planned"),
+            "Before the peso can be spent, the budget decides where it may go. Some of it is already "
+            "earmarked by law.",
+            ("point", "Money with a set purpose", "The Special Education Fund (Part 16), the barangay’s share "
+             "of the amilyar (Part 17), the disaster fund (Part 32), the SK fund (Part 46) and the GAD "
+             "budget (Part 48)."),
+            ("point", "Building the budget", "Estimating next year’s income (Part 31), the local finance "
+             "committee (Part 38) and the salary ceiling (Part 35)."),
+            ("point", "Reviewing and changing it", "Budget review (Part 36), supplemental budgets (Part 37) "
+             "and barangay budgets (Part 40)."),
+            ("point", "Money from partners and lenders", "Borrowing (Part 29) and public-private "
+             "partnerships (Part 33)."),
+            ("photo", "blog/finance-peso-journey-stages.jpg", "The six stages with the parts of this series "
+             "placed under each. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Stage 5: Spent"),
+            "Now the peso leaves the treasury, and each release needs a reason and a record.",
+            ("point", "The normal path", "From budget to check (Part 7) and cash advances (Part 8)."),
+            ("point", "What comes first", "GSIS remittances (Part 47)."),
+            ("point", "When the rules tighten", "The election spending ban (Part 42) and court judgments "
+             "against public funds (Part 39)."),
+            ("point", "When the check is not cashed", "Stale checks (Part 49)."),
+            ("h", "Stage 6: Checked and Shown to the Public"),
+            "The journey ends with two kinds of review: the auditor’s, and the citizen’s.",
+            ("point", "The auditor", "How COA findings move from audit memo to disallowance (Part 9)."),
+            ("point", "The citizen", "Where anyone can see how a local government spends (Part 10)."),
+            "Every one of the fifty-one earlier parts now has a place on the journey. Stage 1 holds the "
+            "largest group, because a local treasury deals with a wide range of income sources, and each "
+            "has its own rules.",
+            ("h", "Back to the Student"),
+            "The treasurer walked the student through the six stages with the coin still in hand. Part of her "
+            "father’s amilyar went to the general fund, part to the Special Education Fund, and part to the "
+            "barangay. Each part was recorded on an official receipt, counted, deposited, budgeted, spent "
+            "with a voucher and, in time, reviewed by the auditor.",
+            "The student wrote one line at the bottom of her page: “The peso is not just spent. It is "
+            "accounted for at every step.” Her teacher gave the assignment a high mark.",
+            ("h", "Questions to Ask at Your Own Local Treasury"),
+            "Readers who want to see the journey in their own city or municipality can start with these "
+            "questions.",
+            ("point", "Where does the money come from?", "Ask for the income side of the approved budget "
+             "and see which sources are largest."),
+            ("point", "How is it kept?", "Ask when collections are deposited and how receipts are "
+             "controlled."),
+            ("point", "Where is it set aside?", "Ask how the earmarked funds, such as the SEF and the "
+             "disaster fund, are tracked."),
+            ("point", "How is it checked?", "Read the latest COA annual audit report and the public notices "
+             "described in Part 10."),
+            ("h", "If You Revisit Only Six Parts"),
+            ("point", "Part 1", "The big picture of local income."),
+            ("point", "Part 15", "Why a fee and a tax follow different rules."),
+            ("point", "Part 13", "Why deposits cannot wait."),
+            ("point", "Part 31", "How income estimates shape the budget."),
+            ("point", "Part 7", "How a payment moves from budget to check."),
+            ("point", "Part 9", "What happens when the auditor writes."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Seeing only the collection", "The peso still has five stages to go after the "
+             "receipt is issued."),
+            ("point", "Treating every peso the same", "Earmarked funds can only be used for their purpose."),
+            ("point", "Forgetting the limits", "A charge needs a legal basis before it is collected."),
+            ("point", "Waiting for the audit", "Good records at every stage make the audit easier."),
+            ("h", "Key Takeaways"),
+            ("point", "Six stages", "Comes in, arrives late, kept safe, set aside, spent, checked."),
+            ("point", "Every part has a place", "Read the part for the stage you are dealing with."),
+            ("point", "The law sets the path", "Each stage follows a law, a rule or an ordinance."),
+            ("point", "Citizens can follow it too", "Budgets and audit reports are there to be read."),
+            ("h", "Your Part 52 Action Plan"),
+            ("point", "Pick one peso", "One tax or fee you pay, such as the amilyar or a business permit."),
+            ("point", "Trace its six stages", "Using the parts listed above."),
+            ("point", "Ask one question", "Choose from the list above and ask it at your local treasury."),
+            ("point", "Share what you learned", "With a family member, a classmate or a coworker."),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("ask", "Which stage of the peso’s journey would you like to see more closely in your own local government?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 51: Tricycle Franchises, What the Local Government Collects and Why",
+        "slug": "tricycle-franchise-fees",
+        "category": "finance",
+        "date": "July 14, 2027",
+        "summary": "Tricycles are vehicles that a city or municipality franchises and regulates directly. The Local "
+                   "Government Code lets the sanggunian grant tricycle franchises, while registration and "
+                   "driver’s licenses stay with the LTO. This part explains who does what, the DILG standards "
+                   "for franchise ordinances, the fees the treasury collects, and how to keep franchise records "
+                   "in order.",
+        "publish_on": "2027-07-14 21:00",
+        "body": [
+            "A driver came to the treasury with cash and a deed of sale. He had bought a used tricycle from "
+            "his neighbor and wanted to pay “the transfer of the franchise” so he could start driving the "
+            "next day.",
+            "The cashier could take his money for some fees, but not for that one, at least not yet. The "
+            "transfer of a tricycle franchise needed the approval of the sangguniang bayan first, and only "
+            "then could the treasury collect what the ordinance set for it.",
+            "(The driver, the local government and the fees are invented for this post. The rules come from "
+            "the Local Government Code, a Supreme Court decision and a DILG memorandum circular, cited "
+            "below. Your local tricycle ordinance sets the actual requirements and fees, so ask your "
+            "treasury or your tricycle franchising office.)",
+            "Part 28 noted that the Code bars local charges on vehicle registration and driver’s licenses, "
+            "except for tricycles. This part looks at what that exception means in practice. When you finish "
+            "reading, you will know who grants tricycle franchises, what stays with the LTO, what the DILG "
+            "standards say, what the treasury collects, and how to keep the records useful.",
+            ("photo", "blog/finance-tricycle-franchise.jpg", "Tricycle franchises: granted by the sanggunian, "
+             "valid for a set period, with fees collected by the treasury under a local ordinance. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who Grants the Franchise"),
+            "For cities, Section 458(a)(3)(vi) of the Local Government Code lets the sangguniang panlungsod, "
+            "subject to the guidelines of the national transportation department, “regulate the operation of "
+            "tricycles and grant franchises for the operation thereof within the territorial jurisdiction of "
+            "the city.” Section 447 gives the sangguniang bayan the same power over tricycles within a "
+            "municipality.",
+            ("point", "Before the Code", "The franchising of tricycles was handled by the national "
+             "franchising board."),
+            ("point", "After the Code", "In Land Transportation Office v. City of Butuan (G.R. No. 131512, "
+             "January 20, 2000), the Supreme Court said “the newly delegated powers pertain to the "
+             "franchising and regulatory powers theretofore exercised by the LTFRB.”"),
+            ("h", "What Stays With the LTO"),
+            "The same decision drew a clear line. Registering motor vehicles, including tricycles, and "
+            "issuing driver’s licenses were not devolved. The Court lifted an injunction that had stopped "
+            "the LTO from registering tricycles and licensing their drivers in Butuan.",
+            ("point", "The local government", "Grants and regulates the franchise, known as the MTOP, "
+             "the Motorized Tricycle Operator’s Permit."),
+            ("point", "The LTO", "Registers the vehicle and licenses the driver."),
+            ("point", "The operator", "Needs both: a franchise from the local government and a registered "
+             "unit and licensed driver from the LTO."),
+            ("h", "The DILG Standards for Franchise Ordinances"),
+            "In January 2020, the DILG issued Memorandum Circular No. 2020-004 on minimum standards for "
+            "tricycle and pedicab franchise and regulatory ordinances. As reported at the time, it included "
+            "these points:",
+            ("point", "Validity", "An MTOP is valid for three years and renewable for the same period."),
+            ("point", "Zones", "Local governments set zones, and operators serving an area that crosses into "
+             "another municipality need a permit from each."),
+            ("point", "Changes need approval", "A transfer to another zone, a change in ownership of the unit, "
+             "or a transfer of the MTOP needs the sanggunian’s approval."),
+            ("point", "Equipment", "Units must meet standards such as working horns, signal lights, a tail "
+             "light, a sidecar light and a sticker with the body number."),
+            ("point", "Stopping service", "An operator who stops, or suspends service for more than one "
+             "month, must report it in writing to the sanggunian that granted the MTOP."),
+            "Local ordinances written before 2020 may need a review against these standards, and later "
+            "circulars may add to them.",
+            ("h", "What the Treasury Collects"),
+            "The fees themselves come from the local tricycle ordinance or revenue code, not from a national "
+            "schedule. Items a tricycle ordinance may include:",
+            ("point", "Franchise or MTOP fee", "Paid when the franchise is granted or renewed."),
+            ("point", "Filing or application fee", "For processing the application."),
+            ("point", "Supervision or regulatory fee", "Paid yearly while the franchise is in force."),
+            ("point", "Transfer or amendment fee", "Paid after the sanggunian approves a change."),
+            "Part 15 explained why the difference between a fee and a tax matters. A fee is tied to regulation "
+            "or a service, so each amount should be reasonable for that purpose and trace back to a section "
+            "of the ordinance.",
+            ("photo", "blog/finance-tricycle-franchise-steps.jpg", "From application to renewal: who acts at "
+             "each step, and where the treasury fits. Invented example. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Keeping Franchise Records Useful"),
+            "A franchise office and a treasury that share one clean list can answer questions in minutes.",
+            ("point", "One row per franchise", "MTOP number, operator, body number, zone, date granted, expiry "
+             "date and status."),
+            ("point", "Payments linked by MTOP number", "Each official receipt references the franchise it "
+             "covers."),
+            ("point", "Expiry alerts", "A filter for franchises expiring in the next 60 days lets the office "
+             "send reminders before the deadline."),
+            ("point", "Inspection results", "Note the date of the last check of horns, lights and stickers "
+             "for each unit."),
+            ("point", "A photo of each unit", "A picture showing the body number helps when units are replaced "
+             "or repainted."),
+            ("point", "Counts by zone", "The sanggunian can see how many units serve each zone before granting "
+             "new franchises."),
+            "Part 12 of the Data Analytics Series described one row per record. The same habit turns a "
+            "drawer of franchise papers into a list that can be sorted and checked.",
+            ("h", "Renewals and the Three-Year Cycle"),
+            "If MTOPs run for three years, renewals can bunch up in the years when many franchises were first "
+            "granted. A treasury that knows this can plan for it.",
+            ("point", "Count expiries by month", "From the franchise list, count how many MTOPs expire in each "
+             "month of the coming year."),
+            ("point", "Staff the peak months", "Assign extra help at the window when many renewals fall due."),
+            ("point", "Remind early", "A letter or text two months before expiry gives operators time to "
+             "complete their papers, including any LTO requirements."),
+            ("point", "Check for lapsed franchises", "Units still operating on expired MTOPs are a safety and "
+             "revenue question for the franchising office."),
+            ("h", "Questions an Operator Can Ask"),
+            ("point", "When does my MTOP expire?", "Ask for the date in writing."),
+            ("point", "Which fees apply this year?", "Ask for the ordinance section for each one."),
+            ("point", "What does a transfer require?", "Approval first, then payment, then the LTO update."),
+            ("point", "Which zone may I serve?", "Operating outside it may lead to penalties under the "
+             "ordinance."),
+            ("h", "Back to the Driver"),
+            "The cashier explained the order of steps: file the request to transfer the MTOP with the "
+            "franchising office, wait for the sanggunian’s approval, then pay the transfer fee at the "
+            "treasury. He also needed to update the unit’s registration with the LTO. The driver filed the "
+            "request that day, and paid the transfer fee after the approval came through.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Collecting before approval", "A transfer fee follows the sanggunian’s action, not the "
+             "deed of sale."),
+            ("point", "Mixing up LTO and local roles", "Registration and licenses stay with the LTO."),
+            ("point", "Fees without an ordinance section", "Every charge needs a legal basis."),
+            ("point", "Letting franchises lapse unnoticed", "Track expiry dates and send reminders."),
+            ("h", "Key Takeaways"),
+            ("point", "The sanggunian grants franchises", "Section 458 for cities, Section 447 for "
+             "municipalities."),
+            ("point", "The LTO registers and licenses", "LTO v. City of Butuan, 2000."),
+            ("point", "DILG standards guide ordinances", "MC 2020-004: three-year MTOPs, zones, approvals."),
+            ("point", "Fees come from the ordinance", "And should match the cost of regulating."),
+            ("h", "Your Part 51 Action Plan"),
+            ("point", "If you operate a tricycle", "Check your MTOP’s expiry date and the documents your "
+             "renewal will need."),
+            ("point", "If you work in a treasury", "Ask for the franchise list and check that each payment "
+             "references an MTOP number."),
+            ("point", "If you are a council member", "Ask when the tricycle ordinance was last reviewed "
+             "against the DILG standards."),
+            ("cta", "Read: Inside the Local Treasury, Part 28: What Local Governments Cannot Tax, the Limits in Section 133", "/blog/what-local-governments-cannot-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("ask", "How long does a tricycle franchise transfer take in your local government?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 50: The Socialized Housing Tax, Half a Percent for Homes",
+        "slug": "socialized-housing-tax",
+        "category": "finance",
+        "date": "July 13, 2027",
+        "summary": "Under the Urban Development and Housing Act of 1992, local governments may impose an "
+                   "additional half-percent tax on the assessed value of lands in urban areas, to fund "
+                   "socialized housing. This part explains where the tax comes from, which local governments "
+                   "can use it, how the Supreme Court upheld one city’s version, and what taxpayers and "
+                   "treasuries should check.",
+        "publish_on": "2027-07-13 21:00",
+        "body": [
+            "A homeowner in a city brought her real property tax bill to the treasury window and pointed at a "
+            "line she had never noticed before. “What is this socialized housing tax? I already pay the "
+            "amilyar and the school fund.”",
+            "The collector explained that it was a separate levy, allowed by a national law and imposed by "
+            "the city’s own ordinance, and that it went to housing for families who could not afford a home "
+            "on their own.",
+            "(The homeowner and the amounts are invented for this post. The rules come from Republic Act No. "
+            "7279 and a Supreme Court decision, cited below. Whether the tax applies to you, and at what "
+            "rate, depends on your local ordinance, so ask your treasury.)",
+            "Part 25 looked at the idle land tax, another levy on land with a social purpose. This part "
+            "looks at a different one. When you finish reading, you will know where the socialized housing "
+            "tax comes from, which local governments can impose it, how the Supreme Court treated one city’s "
+            "version, how it shows up on a bill, and what to check before paying or proposing it.",
+            ("photo", "blog/finance-housing-tax.jpg", "The socialized housing tax: up to an additional half "
+             "percent on the assessed value of land in urban areas, imposed by ordinance, for housing "
+             "programs. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Tax Comes From"),
+            "Republic Act No. 7279, the Urban Development and Housing Act of 1992, was approved on March 24, "
+            "1992. Section 43 reads:",
+            ("quote", "“Consistent with the constitutional principle that the ownership and enjoyment of "
+             "property bear a social function and to raise funds for the Program, all local government units "
+             "are hereby authorized to impose an additional one-half percent (0.5%) tax on the assessed value "
+             "of all lands in urban areas in excess of Fifty thousand pesos (P50,000).”"),
+            ("point", "Authorized, not automatic", "The law allows the tax. A local government must pass an "
+             "ordinance before anyone owes it."),
+            ("point", "Land only", "The tax is on the assessed value of land, not of buildings or machinery."),
+            ("point", "Up to half a percent", "On top of the basic real property tax and the Special Education "
+             "Fund levy."),
+            ("point", "For the program", "The money is meant for the law’s urban development and housing "
+             "program."),
+            ("h", "Which Local Governments Can Use It"),
+            "The tax applies to “lands in urban areas,” and Section 3 defines urban areas.",
+            ("point", "All cities", "Urban areas include “all cities regardless of their population density.”"),
+            ("point", "Some municipalities", "Also included are municipalities “with a population density of "
+             "at least five hundred (500) persons per square kilometer.”"),
+            "So a sparsely populated municipality may have no lands that qualify, while a crowded one, or any "
+            "city, does. Before drafting an ordinance, a municipality should check its population density "
+            "against the definition.",
+            ("h", "How the Supreme Court Treated One City’s Version"),
+            "In Ferrer v. Bautista (G.R. No. 210551, June 30, 2015), the Supreme Court, sitting En Banc, ruled "
+            "on a Quezon City ordinance that imposed a special assessment of “one-half percent (0.5%) on the "
+            "assessed value of land” above ₱100,000.",
+            ("point", "The tax was upheld", "The Court said the tax “is not a pure exercise of taxing power "
+             "or merely to raise revenue; it is levied with a regulatory purpose.”"),
+            ("point", "Where the money went", "The Court noted that the collections “accrue to its socialized "
+             "housing programs and projects.”"),
+            ("point", "A tax credit", "The ordinance gave owners a tax credit beginning in the sixth year of "
+             "payment, which the Court found reasonable."),
+            ("point", "Equal protection", "The Court rejected the argument that the tax unfairly singled out "
+             "landowners."),
+            "In the same decision, the Court struck down the city’s separate garbage fee, finding its rates "
+            "“unjust and inequitable.” The housing tax survived because it was tied to a clear purpose, at a "
+            "rate and with a tax credit the Court found reasonable.",
+            ("h", "How It Shows Up on a Bill"),
+            ("point", "A separate line", "The socialized housing tax appears beside the basic tax and the "
+             "Special Education Fund levy, with its own amount."),
+            ("point", "Same assessed value", "It uses the land’s assessed value from the assessor’s records."),
+            ("point", "The threshold", "The law speaks of lands “in excess of” ₱50,000 in assessed value. "
+             "Quezon City set its own threshold at ₱100,000. How the threshold is applied is written in each "
+             "ordinance, so read the local text."),
+            ("point", "Example", "On land with an assessed value of ₱400,000, half a percent of the full "
+             "value is ₱2,000 a year. If the ordinance deducts a threshold first, the amount is lower."),
+            ("photo", "blog/finance-housing-tax-bill.jpg", "One invented land tax bill with the basic tax, the "
+             "Special Education Fund and the socialized housing tax on separate lines. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Is It Fair?"),
+            "Landowners sometimes ask why they should pay for other people’s homes. The law’s answer is in "
+            "Section 43 itself: ownership of property carries a social function. Land in a city gains value "
+            "partly because of the city around it, and the housing needs of a growing city touch everyone "
+            "who lives there.",
+            "Critics point out that the tax adds to the cost of owning land and can be passed on to tenants. "
+            "Both views are worth hearing in a public hearing. What the Court required in Ferrer was a clear "
+            "link between the tax and its purpose, and a burden that is not unreasonable.",
+            ("h", "For the Treasury: Keeping the Money Separate"),
+            "A tax raised for a stated purpose should be easy to trace to that purpose.",
+            ("point", "A separate account or fund", "Quezon City’s ordinance placed the collections in a "
+             "special account under its General Fund. Follow your own ordinance and COA’s rules on where the "
+             "money is kept."),
+            ("point", "Report collections and uses", "Show how much came in and which housing projects it "
+             "funded, year by year."),
+            ("point", "Watch the tax credit", "If the ordinance grants one, the system must track how many "
+             "years each owner has paid."),
+            ("h", "For a Council Thinking of Adopting It"),
+            ("point", "Check the definition of urban areas", "Especially for municipalities."),
+            ("point", "Tie it to a housing program", "The Court’s reasoning leaned on the link between the tax "
+             "and its purpose."),
+            ("point", "Set a reasonable threshold and rate", "Up to half a percent, as the law allows."),
+            ("point", "Follow the steps for tax ordinances", "Public hearings, publication and the other "
+             "requirements discussed in Part 34."),
+            ("h", "Back to the Treasury Window"),
+            "The collector showed the homeowner the ordinance number printed on the back of the bill and the "
+            "city’s report on its housing projects. She paid the full bill, and asked whether the tax credit "
+            "would apply to her in a few years. The collector checked the records: it would, starting in her "
+            "sixth year of payment.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Assuming every local government can impose it", "It covers lands in urban areas only."),
+            ("point", "Imposing it without an ordinance", "The law authorizes; the ordinance imposes."),
+            ("point", "Mixing the money with general collections", "Keep it traceable to housing."),
+            ("point", "Guessing how the threshold works", "Read the ordinance."),
+            ("h", "Key Takeaways"),
+            ("point", "Section 43 of RA 7279", "Up to an additional 0.5 percent on land in urban areas."),
+            ("point", "Cities and dense municipalities", "As the law defines urban areas."),
+            ("point", "Upheld in Ferrer v. Bautista", "A tax with a regulatory, housing purpose."),
+            ("point", "Traceable use", "Collections should be visible in housing programs."),
+            ("h", "Your Part 50 Action Plan"),
+            ("point", "If you own land in a city", "Look for the socialized housing tax on your bill and find "
+             "the ordinance behind it."),
+            ("point", "If you work in a treasury", "Check how the collections are recorded and whether a "
+             "yearly report on their use exists."),
+            ("point", "If you are a council member", "Ask whether your local government qualifies, and what "
+             "housing program the tax would fund."),
+            ("cta", "Read: Inside the Local Treasury, Part 25: The Idle Land Tax, When an Empty Lot Costs More Than the Amilyar", "/blog/idle-land-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar", "/blog/special-education-fund/"),
+            ("cta", "Read: Inside the Local Treasury, Part 34: Raising a Tax Rate, the Once-in-Five-Years Rule", "/blog/adjusting-local-tax-rates/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("ask", "Does your real property tax bill include a socialized housing tax?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 49: Stale Checks, When a Payee Never Cashes the Check",
+        "slug": "stale-government-checks",
+        "category": "finance",
+        "date": "July 11, 2027",
+        "summary": "Sometimes a local government issues a check and the payee never cashes it. After about six "
+                   "months, banks treat such a check as stale. This part explains what a stale check is, why "
+                   "the debt behind it does not simply disappear, what the treasury should do with outstanding "
+                   "checks, and how a payee can get a replacement.",
+        "publish_on": "2027-07-11 21:00",
+        "body": [
+            "During the year-end bank reconciliation, the accountant found a check for ₱38,500 that had been "
+            "outstanding for eight months. It was issued to a caterer for a barangay assembly, and the caterer "
+            "had never deposited it.",
+            "“Can we just keep the money?” a new staff member asked. “It’s been so long.” The treasurer "
+            "shook her head. The check was old, but the debt was not gone.",
+            "(The local government, the caterer and the amounts are invented for this post. The legal points "
+            "come from a Supreme Court decision, cited below. The exact accounting steps follow the "
+            "Commission on Audit’s current rules, so check them with your accountant.)",
+            "Part 45 looked at checks that come into the treasury and bounce. This part looks at checks that "
+            "go out and are never cashed. When you finish reading, you will know what makes a check stale, "
+            "why the obligation behind it remains, how the treasury can track outstanding checks, what "
+            "happens to a stale check in the books, and how a payee can ask for a new one.",
+            ("photo", "blog/finance-stale-checks.jpg", "A stale check: issued, never presented, and past the "
+             "usual six months. The check expires in practice, but the debt behind it does not. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Makes a Check Stale"),
+            "In The International Corporate Bank v. Spouses Gueco (G.R. No. 141968, February 12, 2001), the "
+            "Supreme Court defined it simply: “A stale check is one which has not been presented for payment "
+            "within a reasonable time after its issue.”",
+            ("point", "Reasonable time", "The Court cited Section 186 of the Negotiable Instruments Law: "
+             "“A check must be presented for payment within a reasonable time after its issue.”"),
+            ("point", "Six months in practice", "A footnote in the same decision notes that “by current "
+             "banking practice, a check becomes stale after more than six (6) months.”"),
+            ("point", "What the bank does", "A bank may refuse to pay a check presented after that period, "
+             "and the payee is then left holding paper."),
+            ("h", "The Debt Does Not Disappear"),
+            "The more important part of the Gueco decision is what happens to the obligation. The Court said "
+            "that failing to present a check on time discharges the drawer only to the extent of the loss "
+            "caused by the delay, and that “failure to present on time, thus, does not totally wipe out all "
+            "liability.” In that case, no loss was shown, so “the original obligation to pay certainly has not "
+            "been erased.”",
+            ("point", "For the local government", "If the caterer delivered the food and was owed ₱38,500, "
+             "the local government still owes it, even after the check goes stale."),
+            ("point", "For the payee", "The remedy is to ask for a replacement, not to give up the claim."),
+            ("point", "For the treasury", "The money set aside for that payment is not free money. It "
+             "still answers for a real obligation."),
+            ("h", "Step 1: Track Outstanding Checks Every Month"),
+            "A stale check rarely appears without warning. It sits for months on the list of outstanding "
+            "checks in the bank reconciliation.",
+            ("point", "Keep an aging list", "List every check issued but not yet cleared, with its date, "
+             "payee and amount, sorted by age."),
+            ("point", "Flag checks past 90 days", "These are worth a call or a letter to the payee."),
+            ("point", "Flag checks past five months", "These will go stale soon. Remind the payee in writing "
+             "and keep a copy."),
+            "Part 34 of the Business Intelligence Series sorted unpaid accounts by age. The same idea works "
+            "for checks that have gone out and not come back.",
+            ("h", "Step 2: Find Out Why the Check Was Not Cashed"),
+            ("point", "Never released", "The check may still be in the cashier’s drawer, unclaimed by the "
+             "payee."),
+            ("point", "Lost or forgotten", "The payee may have misplaced it."),
+            ("point", "Disputed", "The payee may be unhappy with the amount and holding the check while "
+             "the dispute is settled."),
+            ("point", "The payee has died or closed", "The claim may now belong to heirs or successors, "
+             "who need to show their right to it."),
+            "Each cause needs a different response, so the reason found should go on the aging list beside the "
+            "check.",
+            ("photo", "blog/finance-stale-checks-steps.jpg", "From issue to replacement: track, contact, cancel "
+             "when stale, and replace on request with the papers in order. The amounts are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 3: Cancel the Stale Check in the Books"),
+            "Government accounting rules allow stale checks to be cancelled, so that the cash balance and "
+            "the obligations in the books both tell the truth. The steps are set by the Commission on Audit "
+            "and carried out by the accountant, with the treasury’s records as support.",
+            ("point", "Checks still with the cashier", "Under rules cited in COA audit reports, unreleased "
+             "checks that have gone stale are marked cancelled on their face and kept on file."),
+            ("point", "The entry", "The accountant records the cancellation, so the check no longer appears "
+             "as outstanding."),
+            ("point", "The obligation", "Cancelling the check does not cancel the debt. The amount owed to "
+             "the payee should still be visible in the records until it is paid or settled."),
+            "Audit reports have flagged offices that left stale checks outstanding for years, which makes "
+            "both the cash balance and the liabilities wrong.",
+            ("h", "Step 4: Replace the Check on Request"),
+            "When a payee comes back with a stale check, the treasury can issue a new one, with the papers "
+            "in order.",
+            ("point", "Surrender the stale check", "The old check is turned over, so two checks for the same "
+             "payment cannot both be cashed."),
+            ("point", "Match it to the original voucher", "The replacement is tied to the voucher already "
+             "approved and paid, with a reference to the cancelled check."),
+            ("point", "Record the new check", "It goes into the record of checks issued like any other."),
+            ("point", "Check the payee’s identity", "Especially when heirs or a new owner of a business "
+             "come to claim it."),
+            ("h", "Preventing Stale Checks"),
+            ("point", "Release checks promptly", "Call or text the payee as soon as the check is ready."),
+            ("point", "Use direct bank credit where available", "Payments credited straight to the payee’s "
+             "account leave no paper check to forget."),
+            ("point", "Print the validity on the check or the letter", "Tell payees how long they have to "
+             "deposit it."),
+            ("point", "Review the aging list monthly", "Not just at year-end, when the backlog is largest."),
+            ("h", "Back to the Caterer"),
+            "The treasury called the caterer, who had misplaced the check during a busy season. She found it "
+            "in a folder and brought it back. The accountant recorded the cancellation, the treasury issued "
+            "a replacement against the original voucher, and the caterer deposited it the same day.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating an old check as found money", "The obligation behind it remains."),
+            ("point", "Leaving stale checks outstanding for years", "The cash balance and liabilities both "
+             "end up wrong."),
+            ("point", "Issuing a replacement without the old check", "Two checks for one payment invite a "
+             "double payment."),
+            ("point", "Waiting for year-end", "Review outstanding checks every month."),
+            ("h", "Key Takeaways"),
+            ("point", "Stale after a reasonable time", "About six months in banking practice."),
+            ("point", "The debt survives", "Gueco: late presentment does not wipe out the obligation."),
+            ("point", "Cancel in the books, not in the obligation", "Follow COA’s rules with the accountant."),
+            ("point", "Replace with the papers in order", "Old check surrendered, original voucher matched."),
+            ("h", "Your Part 49 Action Plan"),
+            ("point", "If you work in a treasury", "Pull this month’s outstanding checks and sort them by age."),
+            ("point", "If you work in accounting", "Check how many stale checks are still listed as "
+             "outstanding, and when they were last reviewed."),
+            ("point", "If you are a supplier or payee", "Deposit government checks promptly, and ask for a "
+             "replacement if one has gone stale."),
+            ("cta", "Read: Inside the Local Treasury, Part 45: When a Taxpayer’s Check Bounces", "/blog/when-a-tax-check-bounces/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("cta", "Read: Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited", "/blog/business-intelligence-part-34-aging-of-arrears/"),
+            ("ask", "Does your office review its outstanding checks every month?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 48: The GAD Budget, Five Percent for Gender and Development",
         "slug": "gender-and-development-budget",
         "category": "finance",

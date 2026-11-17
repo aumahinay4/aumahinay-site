@@ -12,6 +12,136 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 57: Fifty-Six Parts, Six Steps, a Training Plan for Your Office",
+        "slug": "data-analytics-part-57-series-training-plan",
+        "category": "data",
+        "date": "July 12, 2027",
+        "summary": "This is the last part of the Data Analytics Series. It sorts the 56 earlier parts under the "
+                   "six steps of analysis from Part 2, Ask, Prepare, Process, Analyze, Share and Act, and turns "
+                   "them into an in-house training plan that an office can run over a few weeks, with one "
+                   "practice task for each step.",
+        "publish_on": "2027-07-12 21:00",
+        "body": [
+            "The treasurer had a request for the analyst. “Three of our staff want to learn what you do. Can "
+            "you teach them, an hour a week, without taking them away from the window?”",
+            "The analyst opened the list of fifty-six parts of this series and saw the problem at once. "
+            "Nobody would read fifty-six posts in order. But almost every part fit under one of the six "
+            "steps from Part 2. Six steps could become six sessions.",
+            "(The office, the staff and the training plan are invented for this post. The parts listed are "
+            "the earlier posts in this series.)",
+            "This is the closing part of the Data Analytics Series. It adds no new formula. When you finish "
+            "reading, you will have every part sorted under the six steps of analysis, a practice task for "
+            "each step, a six-session plan an office can run, and a short list for readers who can only "
+            "reread a few parts.",
+            ("photo", "blog/data-series-steps.jpg", "The six steps of analysis from Part 2, with the parts of "
+             "this series sorted under each. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Before the Steps: Getting Started"),
+            ("point", "Part 1", "What data analytics is, and why every office already has data."),
+            ("point", "Part 4", "Four questions answered from one data set, end to end."),
+            ("point", "Part 5", "A toolkit on a zero budget."),
+            "Read these first. They show the whole journey before the details.",
+            ("h", "Step 1, Ask: What Exactly Do We Want to Know?"),
+            ("point", "Parts 2 and 3", "The six steps, and deciding with data instead of hunches."),
+            ("point", "Part 7", "Six kinds of problems data can solve."),
+            ("point", "Part 8", "Metrics and KPIs that tell the truth."),
+            ("point", "Practice task", "Write one question your office argues about, in a form data could "
+             "answer: who, what, when and compared with what."),
+            ("h", "Step 2, Prepare: Where Is the Data, and Can We Trust It?"),
+            ("point", "Parts 9, 10 and 11", "Where data comes from, its types and shapes, and the ROCCC test."),
+            ("point", "Parts 13 and 17", "Bias, and samples with a margin of error."),
+            ("point", "Part 14", "Databases, tables and keys."),
+            ("point", "Part 6", "Ethics and the Data Privacy Act."),
+            ("point", "Practice task", "Find the data for your question, note who owns it, and rate it with "
+             "the ROCCC test."),
+            ("h", "Step 3, Process: Making the Data Clean and Usable"),
+            ("point", "Parts 12 and 15", "One row per record, and naming, versions and backups."),
+            ("point", "Parts 16, 18 and 32", "Dirty data, text and dates, and rounding."),
+            ("point", "Parts 19, 20, 21 and 28", "SQL basics, cleaning with SQL, rules in the database, and "
+             "joins."),
+            ("point", "Parts 22, 46 and 51", "Sorting and filtering, named ranges and ARRAYFORMULA, and "
+             "protected ranges."),
+            ("point", "Practice task", "Copy a month of real records, list every problem you find, and fix "
+             "them in a new tab without touching the original."),
+            ("h", "Step 4, Analyze: Describe, Compare Over Time, and Test"),
+            "This step has the most parts, so it splits into three.",
+            ("point", "Describe (Parts 23 to 26, 33, 34, 36 to 40 and 52)", "SUMIFS, pivot tables, XLOOKUP, "
+             "mean or median, FILTER and UNIQUE, outliers, weighted averages, rates per 1,000, spread, "
+             "histograms, IF and IFS, and z-scores."),
+            ("point", "Over time (Parts 29, 30, 41, 48, 49 and 53)", "Counting days, percent change, real "
+             "pesos, average growth, the seasonal index and the control chart."),
+            ("point", "Test (Parts 35, 42, 43, 54 and 55)", "Correlation, the chi-square test, regression, "
+             "T.TEST and the base-rate trap."),
+            ("point", "Practice task", "Answer your question with one summary table, one comparison over "
+             "time, and one sentence on whether the difference could be chance."),
+            ("h", "Step 5, Share: Showing the Answer Clearly"),
+            ("point", "Part 27", "Choosing the right chart, starting from the question."),
+            ("point", "Part 31", "Conditional formatting that points at problems."),
+            ("point", "Part 44", "A first chart in Python."),
+            ("point", "Practice task", "Make one chart and write the one sentence it should make obvious. "
+             "Show it to a colleague and ask what they see."),
+            ("h", "Step 6, Act: Turning the Answer Into a Decision"),
+            ("point", "Parts 45 and 47", "Low, likely and high scenarios, and break-even analysis."),
+            ("point", "Parts 50 and 56", "Present value, and expected value."),
+            ("point", "Practice task", "Write a one-page recommendation: the decision, the numbers behind it, "
+             "the main uncertainty, and what to measure next."),
+            ("photo", "blog/data-series-training.jpg", "A six-session training plan, one step per session, "
+             "with a practice task at the end of each. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Six-Session Plan"),
+            "The analyst’s plan fit into one hour a week.",
+            ("point", "Session 1, Ask", "Fifteen minutes on Parts 2 and 8, then each person writes a "
+             "question from their own work."),
+            ("point", "Session 2, Prepare", "Find the data for each question and rate it."),
+            ("point", "Session 3, Process", "Clean one month of real records together."),
+            ("point", "Session 4, Analyze", "Build a pivot table, a comparison over time and one test."),
+            ("point", "Session 5, Share", "One chart and one sentence each, presented to the group."),
+            ("point", "Session 6, Act", "Each person presents a one-page recommendation to the treasurer."),
+            "Between sessions, each person reads the parts listed for the next step. The questions come from "
+            "their own work, so the practice is rarely wasted.",
+            ("h", "If You Reread Only Six Parts"),
+            ("point", "Part 2", "The six steps hold everything else together."),
+            ("point", "Part 12", "One row per record can prevent a lot of cleaning problems."),
+            ("point", "Part 24", "A pivot table can answer a common everyday question in seconds."),
+            ("point", "Part 26", "Choosing the mean or the median can change the whole story."),
+            ("point", "Part 27", "The right chart starts from the question."),
+            ("point", "Part 6", "Privacy rules apply to every analysis."),
+            ("h", "Back to the Training"),
+            "Six weeks later, three staff members presented their recommendations. One showed that a second "
+            "payment window would cut waiting time in January. Another found that a large share of late renewals came "
+            "from businesses that had moved. The third built a simple control chart for daily collections. "
+            "None of them had read all fifty-six parts. Each had read the ones their question needed.",
+            ("h", "Using the Series as a Reference"),
+            "After the training, the series works best as a shelf of answers, not a course to finish. When "
+            "a question comes up at work, start from the step you are stuck on. If the numbers look strange, "
+            "go to Process and check for dirty data before you trust any total. If two figures seem to move "
+            "together, read Part 35 before you claim one causes the other. If a result looks too good, read "
+            "Part 55 and ask how common the thing was to begin with.",
+            "Keep a short log of which parts each person used and for what question. After a few months, the "
+            "log shows where the office is strong and which step needs another session. It also gives new "
+            "staff a ready list of real examples from their own workplace, which can teach more than any "
+            "invented one.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Starting with the tools", "Start with the question, as Step 1 says."),
+            ("point", "Skipping Prepare and Process", "Clean data matters more than clever formulas."),
+            ("point", "Ending at the chart", "An analysis is finished when someone can act on it."),
+            ("point", "Training without real work", "Use questions from the trainees’ own jobs."),
+            ("h", "Key Takeaways"),
+            ("point", "Six steps", "Ask, Prepare, Process, Analyze, Share, Act."),
+            ("point", "Every part has a place", "Read the parts for the step you are on."),
+            ("point", "Practice beats reading", "One real question, worked through all six steps."),
+            ("point", "The loop continues", "Each answer raises the next question."),
+            ("h", "Your Part 57 Action Plan"),
+            ("point", "Pick one real question", "From your own office."),
+            ("point", "Work it through the six steps", "Using the practice tasks above."),
+            ("point", "Share it with one decision maker", "In one page."),
+            ("point", "Teach someone else", "Run the six sessions with one or two colleagues."),
+            ("cta", "Read: Data Analytics Series, Part 2: The Six Steps of Every Analysis", "/blog/data-analytics-part-2-six-steps/"),
+            ("cta", "Read: Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data", "/blog/data-analytics-part-1-what-it-is/"),
+            ("cta", "Read: Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds", "/blog/data-analytics-part-24-pivot-tables/"),
+            ("ask", "Which part of this series did you use most at work?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 56: Expected Value, Deciding Which Accounts Are Worth a Visit",
         "slug": "data-analytics-part-56-expected-value",
         "category": "data",
