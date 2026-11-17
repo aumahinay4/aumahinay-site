@@ -46,6 +46,8 @@ OUTLINE = [
     "Tax on delivery trucks and vans",
     "Ethics at the collection window",
     "Cashbooks and daily records",
+    "The schedule of market values",
+    "The revenue and tax impact report",
 ]
 
 NOTES = [
@@ -202,6 +204,11 @@ NOTES += NOTES_2_TO_10
 from notes_11_15 import NOTES_11_TO_15  # noqa: E402
 
 NOTES += NOTES_11_TO_15
+
+# Notes 16 and 17 (Butch, 2026-11-18): Tuesday December 29, 2026 and Friday January 1, 2027, 9 pm.
+from notes_16_17 import NOTES_16_TO_17  # noqa: E402
+
+NOTES += NOTES_16_TO_17
 
 
 def note_url(n):
