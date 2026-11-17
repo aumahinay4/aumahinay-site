@@ -69,7 +69,7 @@ NOTES_11_TO_15 = [
             "tax withheld: BIR Form No. 2307 for a supplier and BIR Form No. 2316 for an employee. The supplier "
             "or employee uses it to claim credit for the tax.",
             ("list", [
-                "Withhold when the payment is made, not later.",
+                "Deduct the tax before the payment is released.",
                 "Keep each deduction recorded by payee, type and rate, so the quarterly return and the "
                 "certificates agree.",
                 "Remit the full amount. Withheld tax is never used to pay the local government's own bills.",
@@ -244,7 +244,7 @@ NOTES_11_TO_15 = [
              "₱24,000 ÷ 8 = ₱3,000 a year."),
         ],
         "sources": [
-            "Republic Act No. 7160, Local Government Code of 1991, Sections 240 to 245, 247, 255 and 257",
+            "Republic Act No. 7160, Local Government Code of 1991, Sections 240 to 245, 255, 256 and 257",
         ],
     },
     # ------------------------------------------------------------------ Note 13
@@ -256,8 +256,7 @@ NOTES_11_TO_15 = [
                    "similar products: who pays, how much, and when.",
         "publish_on": "2026-12-18 21:00",
         "body": [
-            "Note 1 listed this tax in one line. It deserves a closer look, because it is one of the few taxes a "
-            "province collects directly from businesses, and because it is easy to confuse with the municipal "
+            "Note 1 listed this tax in one line. It deserves a closer look, because it is easy to confuse with the municipal "
             "business tax. Unless stated otherwise, the sections cited are from the Local Government Code "
             "(RA 7160).",
             ("h", "What the law says"),
