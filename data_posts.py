@@ -12,6 +12,538 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets",
+        "slug": "data-analytics-part-45-what-if-scenarios",
+        "category": "data",
+        "date": "June 10, 2027",
+        "summary": "A single estimate hides how uncertain it is. This part builds a small what-if model in Google "
+                   "Sheets: inputs kept apart from formulas, low, likely and high scenarios, a dropdown to switch "
+                   "between them, and a one-at-a-time test that shows which input matters most.",
+        "publish_on": "2027-06-10 21:00",
+        "body": [
+            "The draft estimate said business tax next year would bring in ₱15.7 million. A council member "
+            "asked what would happen if the collection rate dropped the way it had two years before. Nobody "
+            "could answer without rebuilding the whole computation.",
+            "The estimate had been typed as one long formula with the numbers inside it. To test a different "
+            "collection rate, someone would have to find the right number in the formula, change it, and hope "
+            "nothing else broke.",
+            "(The office, the inputs and the amounts are invented for this lesson. The Google Sheets features "
+            "are real.)",
+            "Part 44 drew a chart in Python. This part returns to Google Sheets to answer a question that "
+            "comes up in many budget meetings: what if? By the end, you will know how to separate inputs from "
+            "formulas, build low, likely and high scenarios, switch between them with a dropdown, find the "
+            "input that moves the answer most, and report a range instead of a single number.",
+            ("photo", "blog/data-scenarios.jpg", "A what-if model: inputs in their own cells, one formula that "
+             "uses them, and three scenarios, so a question in a meeting can be answered in seconds. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 1: Keep the Inputs Apart"),
+            "An input is any number you might want to change. Give each one its own labeled cell.",
+            ("point", "A2: Businesses paying next year", "B2: 1230"),
+            ("point", "A3: Average tax due per business", "B3: 14500"),
+            ("point", "A4: Collection rate", "B4: 88%"),
+            ("point", "A6: Estimated collections", "B6: =B2*B3*B4 returns 15,694,800."),
+            "Now anyone can change B4 to 82% and watch B6 update. The formula stays the same, and the "
+            "assumptions are visible to every reader.",
+            ("point", "Color the inputs", "Give input cells a light fill, such as pale yellow, so readers know "
+             "which cells they may change."),
+            ("point", "Label the units", "Write “per business” and “percent of tax due” beside the inputs."),
+            ("h", "Step 2: Write Down Three Scenarios"),
+            "A scenario is a set of inputs that could happen together. Build a small table to the right.",
+            ("point", "Headers", "Leave D1 blank, and type Low, Likely and High in E1, F1 and G1. Put the input "
+             "names in D2 to D4."),
+            ("point", "Businesses, E2 to G2", "1180, 1230 and 1260."),
+            ("point", "Average tax due, E3 to G3", "13800, 14500 and 15000."),
+            ("point", "Collection rate, E4 to G4", "82%, 88% and 92%."),
+            "Base each value on something you can explain: last year’s count and new registrations, recent "
+            "growth in average tax, and the best and worst collection rates of the past five years. Part 31 "
+            "of Inside the Local Treasury explained why income estimates should be realistic.",
+            ("h", "Step 3: Switch With a Dropdown"),
+            ("point", "A label", "In A1, type Scenario."),
+            ("point", "Make the dropdown", "In B1, choose Data, then Data validation, add a rule, and set the "
+             "criteria to Dropdown with the options Low, Likely and High."),
+            ("point", "Pull the matching input", "In B2, type =INDEX(E2:G2, MATCH($B$1, $E$1:$G$1, 0)) and fill "
+             "down to B4."),
+            ("point", "What it does", "MATCH finds which column holds the chosen scenario, and INDEX takes the "
+             "value from that column."),
+            "Now B6 shows the estimate for whichever scenario is chosen in B1.",
+            ("point", "Low", "₱13,352,880."),
+            ("point", "Likely", "₱15,694,800."),
+            ("point", "High", "₱17,388,000."),
+            ("photo", "blog/data-scenarios-swing.jpg", "Changing one input at a time from low to high, with the "
+             "others kept at likely. The collection rate moves the estimate most. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: Which Input Matters Most?"),
+            "Scenarios change everything at once. To see which input drives the result, change one at a time "
+            "and keep the others at likely.",
+            ("point", "Businesses, low to high", "₱15,056,800 to ₱16,077,600, a swing of about ₱1.0 million."),
+            ("point", "Average tax due, low to high", "₱14,937,120 to ₱16,236,000, a swing of about ₱1.3 "
+             "million."),
+            ("point", "Collection rate, low to high", "₱14,624,700 to ₱16,408,200, a swing of about ₱1.8 "
+             "million."),
+            "The collection rate matters most in this example. That points the office’s effort at follow-up "
+            "on unpaid accounts, which Part 30 of Inside the Local Treasury covered, rather than at counting "
+            "new businesses more precisely.",
+            "To build this table quickly, copy the model to a second tab, change one input in each row, and "
+            "record the result. Part 38 measured spread within a set of numbers. This measures how far the "
+            "answer can move when an assumption changes.",
+            ("h", "Step 5: Report a Range"),
+            ("point", "Lead with the likely figure", "“About ₱15.7 million is likely.”"),
+            ("point", "Give the range", "“It could be as low as ₱13.4 million or as high as ₱17.4 million.”"),
+            ("point", "Name the key assumption", "“The collection rate makes the biggest difference.”"),
+            ("point", "Say what would change your mind", "“If first-quarter collections run below 80 percent of "
+             "the quarterly target, we will revise toward the low case.”"),
+            ("h", "Keeping the Model Honest"),
+            ("point", "One formula, many inputs", "Never type a number inside a formula that someone may need to "
+             "change."),
+            ("point", "Explain each scenario value", "Add a note beside each with its source, such as the year "
+             "the rate was observed."),
+            ("point", "Keep low and high realistic", "Scenarios far beyond anything seen before make the range "
+             "useless."),
+            ("point", "Version the file", "Save a dated copy when the estimate is submitted, as Part 15 "
+             "suggested."),
+            ("h", "Back to the Council Member’s Question"),
+            "The next time the question came up, the analyst changed the dropdown to Low while the council "
+            "watched. The estimate dropped to ₱13.4 million, and the one-at-a-time table showed that most of "
+            "the drop came from the collection rate.",
+            "The council kept the likely estimate in the budget, but asked for a quarterly check against the "
+            "collection rate and a plan for what to defer if collections ran toward the low case.",
+            ("h", "Scenarios for Spending Too"),
+            "The same layout works on the spending side.",
+            ("point", "Fuel and repairs", "Inputs for liters per month, price per liter and the number of "
+             "vehicles in use."),
+            ("point", "Overtime during the January rush", "Inputs for staff, hours per person and the hourly "
+             "rate."),
+            ("point", "Printing of notices", "Inputs for the number of notices, pages each and the cost per "
+             "page."),
+            "Pair an income model with a spending model, and the low case for income can be checked against "
+            "the high case for spending. That pairing is the one most worth discussing before the budget is "
+            "final.",
+            ("h", "Sharing the Model"),
+            ("point", "Protect the formulas", "In Google Sheets, use Data, then Protect sheets and ranges, so "
+             "only the input cells can be edited by others."),
+            ("point", "Add a short guide", "A note at the top: which cells to change, what each scenario "
+             "assumes, and the date the values were last updated."),
+            ("point", "Keep a log of changes", "A small table of who changed which input and why, so the "
+             "estimate can be traced later."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Numbers buried in formulas", "Put every assumption in its own cell."),
+            ("point", "One estimate with no range", "Readers assume it is certain."),
+            ("point", "Changing everything at once", "Test inputs one at a time to find what matters."),
+            ("point", "Unexplained scenario values", "Each low and high should have a reason."),
+            ("h", "Key Takeaways"),
+            ("point", "Inputs apart from formulas", "Labeled, colored and easy to change."),
+            ("point", "Three scenarios", "Low, likely and high, chosen with a dropdown."),
+            ("point", "One at a time", "Shows which input moves the answer most."),
+            ("point", "Report a range", "Likely figure, low and high, and the key assumption."),
+            ("h", "Your Part 45 Exercise"),
+            ("point", "Step 1", "Build the input cells and the formula, and check that B6 returns 15,694,800."),
+            ("point", "Step 2", "Add the scenario table and the dropdown, and switch between Low, Likely and "
+             "High."),
+            ("point", "Step 3", "Build the one-at-a-time table and confirm the collection rate has the largest "
+             "swing."),
+            ("point", "Step 4", "Replace the inputs with your own office’s figures for one revenue source."),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Data Analytics Series, Part 25: XLOOKUP, Bringing the Right Detail Into Every Row", "/blog/data-analytics-part-25-xlookup/"),
+            ("cta", "Read: Data Analytics Series, Part 43: Drawing a Line Through the Points, Simple Regression in Google Sheets", "/blog/data-analytics-part-43-simple-regression/"),
+            ("cta", "Read: Inside the Local Treasury, Part 30: Unpaid Business Taxes, Distraint, Levy and What Cannot Be Seized", "/blog/unpaid-business-taxes-distraint-and-levy/"),
+            ("ask", "Which estimate in your office would be more useful as a range than as one number?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 44: Your First Chart in Python, Monthly Collections With Matplotlib",
+        "slug": "data-analytics-part-44-first-chart-in-python",
+        "category": "data",
+        "date": "June 7, 2027",
+        "summary": "A chart made by code can be rebuilt in seconds when the numbers change. This part walks "
+                   "through a short Python script that uses the Matplotlib library to draw monthly collections "
+                   "as a bar chart, label it clearly and save it as a picture, line by line, for readers who "
+                   "have never drawn a chart in code.",
+        "publish_on": "2027-06-07 21:00",
+        "body": [
+            "Every month, the clerk rebuilt the same collections chart for the report. She copied the new "
+            "figures, fixed the colors that had reset themselves, retyped the title, and adjusted the labels "
+            "that had shifted. It took most of an hour, and it never looked quite the same twice.",
+            "Her officemate, who had finished the site’s Python lessons, offered to try something else: a short "
+            "script that draws the chart the same way every time. The first version was sixteen lines long.",
+            "(The office and the collections are invented for this lesson. The Python code is real, and the "
+            "chart shown in this post is its actual output.)",
+            "Part 43 fitted a line through points in Google Sheets. This part steps into Python for the first "
+            "time in this series. By the end, you will know what Matplotlib is, how to install it, what each "
+            "line of a short chart script does, how to save the chart as a picture, and when a script is worth "
+            "the trouble.",
+            ("photo", "blog/data-matplotlib.jpg", "A chart from code: list the numbers, draw the bars, label "
+             "them, and save the picture, so next month’s chart is one run away. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What You Need"),
+            "Matplotlib’s own website describes it as “a comprehensive library for creating static, animated, "
+            "and interactive visualizations in Python.” It is free and open source.",
+            ("point", "Python", "Lesson 0 of the site’s Python for Treasury Work tutorials walks through "
+             "installing it."),
+            ("point", "Matplotlib", "In a terminal, type py -m pip install matplotlib on Windows, or python3 -m "
+             "pip install matplotlib on a Mac or Linux computer."),
+            ("point", "A text editor", "Any plain-text editor works. Save the file as collections_chart.py."),
+            "Part 5 listed Python among the free tools for analysts. This is a first, small use of it.",
+            ("h", "The Whole Script"),
+            "Here is the script in full. The sections below explain it line by line.",
+            ("point", "Lines 1 to 2", "import matplotlib.pyplot as plt, then a blank line."),
+            ("point", "Lines 3 to 4", "months = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", "
+             "\"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]"),
+            ("point", "Lines 5 to 6", "collections = [9.8, 4.1, 3.6, 5.2, 3.9, 3.4, 4.6, 3.8, 3.5, 4.4, 3.7, "
+             "4.0]"),
+            ("point", "Line 8", "fig, ax = plt.subplots(figsize=(8, 4.5))"),
+            ("point", "Line 9", "ax.bar(months, collections, color=\"#1d58b8\")"),
+            ("point", "Line 10", "ax.set_title(\"January brings in the most: collections by month, 2026\")"),
+            ("point", "Line 11", "ax.set_ylabel(\"Collections (₱ millions)\")"),
+            ("point", "Line 12", "ax.spines[[\"top\", \"right\"]].set_visible(False)"),
+            ("point", "Lines 13 to 14", "for i, value in enumerate(collections): then, indented, "
+             "ax.text(i, value + 0.1, f\"{value:.1f}\", ha=\"center\")"),
+            ("point", "Lines 15 to 16", "fig.tight_layout() then fig.savefig(\"collections.png\", dpi=150)"),
+            "Run it with py collections_chart.py on Windows, or python3 collections_chart.py elsewhere. A file "
+            "named collections.png appears in the same folder.",
+            ("h", "Line by Line"),
+            ("point", "import matplotlib.pyplot as plt", "Loads the charting part of Matplotlib and gives it "
+             "the short name plt, a common habit."),
+            ("point", "The two lists", "months holds the labels and collections holds the amounts, in millions "
+             "of pesos. The two lists must be the same length, in the same order."),
+            ("point", "plt.subplots", "Creates a blank figure, the whole picture, and an axes, the area where "
+             "the bars go. figsize sets the size in inches: 8 wide and 4.5 tall."),
+            ("point", "ax.bar", "Draws one bar per month. The color is a hex code, like the ones used for web "
+             "pages."),
+            ("point", "set_title and set_ylabel", "Add the title and the label on the vertical axis. Part 27 "
+             "recommended titles that state the finding, not only the topic."),
+            ("point", "spines", "The four border lines around the chart. Hiding the top and right ones makes "
+             "the chart lighter."),
+            ("point", "The for loop", "Goes through each amount and writes it just above its bar. enumerate "
+             "gives both the position, i, and the value. The f\"{value:.1f}\" part shows one decimal place."),
+            ("point", "tight_layout and savefig", "Fit everything inside the picture and save it as a PNG file. "
+             "dpi=150 sets the sharpness."),
+            ("photo", "blog/data-matplotlib-output.jpg", "The actual output of the script: twelve bars, a title "
+             "that states the finding, a labeled axis and the value above each bar. Figures are invented. "
+             "(Chart: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Reading the Result"),
+            "January stands far above the rest at ₱9.8 million, while most other months sit between ₱3.4 and "
+            "₱5.2 million. The twelve months add up to ₱54.0 million. The smaller bumps in April, July and "
+            "October fall at the start of each quarter, when quarterly payments may come due.",
+            "The chart did not discover anything new. Its value is that next month, the clerk changes twelve "
+            "numbers and runs the script again, and the chart looks exactly as it did before.",
+            ("h", "When Something Goes Wrong"),
+            ("point", "ModuleNotFoundError: No module named 'matplotlib'", "The install step did not run for "
+             "this Python. Run the pip command again in the same terminal you use to run the script."),
+            ("point", "shape mismatch", "The two lists have different lengths. Count the items in each."),
+            ("point", "SyntaxError", "A missing quote, comma or bracket. Python points to the line where it "
+             "got confused, which is often just after the real mistake."),
+            ("point", "The peso sign shows as a box", "The font in use lacks that character. Write PHP instead, "
+             "or choose a font that has it."),
+            ("h", "Small Changes to Try"),
+            ("point", "A line instead of bars", "Change ax.bar to ax.plot and add marker=\"o\" inside the parentheses."),
+            ("point", "Highlight one month", "Give the bars a list of colors, with gold for January and blue for "
+             "the rest."),
+            ("point", "A wider picture", "Change figsize to (10, 4.5) for a slide."),
+            ("h", "Reading the Numbers From a File"),
+            "Typing twelve numbers into the script each month works, but the figures already exist in a "
+            "spreadsheet. A small change lets the script read them.",
+            ("point", "Save a CSV file", "In Google Sheets, choose File, then Download, then Comma-separated "
+             "values. Keep two columns: Month and Collections."),
+            ("point", "Read it with Python’s csv module", "It comes with Python, so nothing else needs "
+             "installing. Lesson 1 of the site’s tutorials used it to add up a day’s collections."),
+            ("point", "Fill the two lists from the rows", "Then the rest of the script stays exactly the same."),
+            "That way, the numbers live in one place, and the chart always matches the report.",
+            ("h", "When a Script Is Worth It"),
+            ("point", "Worth it", "The same chart every week or month, several charts from one data set, or a "
+             "chart that must look identical across reports."),
+            ("point", "Not worth it", "A one-time chart for a single meeting. Google Sheets is faster for that, "
+             "as Part 27 showed."),
+            ("point", "Keep the numbers private", "A script runs on your own computer. If you use an online "
+             "notebook, remove names and personal details first, as Part 6 advised."),
+            ("h", "Back to the Monthly Report"),
+            "The clerk kept the script in the report folder with a short note on how to run it. The next month, "
+            "the chart took two minutes. The month after, she added a second script that drew the same chart "
+            "for each of the three largest revenue sources.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Lists of different lengths", "Every month needs one amount."),
+            ("point", "A title that only names the topic", "Say what the chart shows."),
+            ("point", "Typing the numbers twice", "Keep them in one place in the script, or read them from a "
+             "file."),
+            ("point", "Uploading personal data", "Charts need totals, not names."),
+            ("h", "Key Takeaways"),
+            ("point", "Matplotlib draws charts in Python", "Install it once with pip."),
+            ("point", "Sixteen lines are enough", "Data, bars, title, labels, values and save."),
+            ("point", "The payoff is repeat use", "Change the numbers and run the script again."),
+            ("point", "Errors are readable", "The message usually names the problem and the line."),
+            ("h", "Your Part 44 Exercise"),
+            ("point", "Step 1", "Install Matplotlib and run the script as shown."),
+            ("point", "Step 2", "Change the title to describe your own office’s pattern."),
+            ("point", "Step 3", "Switch to a line chart with markers."),
+            ("point", "Step 4", "Color January gold and the other months blue."),
+            ("cta", "Read: Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question", "/blog/data-analytics-part-27-choosing-the-right-chart/"),
+            ("cta", "Read: Data Analytics Series, Part 5: The Analyst’s Toolkit on a Zero Budget", "/blog/data-analytics-part-5-zero-budget-toolkit/"),
+            ("cta", "Read: Data Analytics Series, Part 43: Drawing a Line Through the Points, Simple Regression in Google Sheets", "/blog/data-analytics-part-43-simple-regression/"),
+            ("cta", "Read: Data Analytics Series, Part 39: Histograms, Seeing the Shape of the Data", "/blog/data-analytics-part-39-histograms/"),
+            ("ask", "Which chart do you rebuild by hand every month that a script could draw for you?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 43: Drawing a Line Through the Points, Simple Regression in Google Sheets",
+        "slug": "data-analytics-part-43-simple-regression",
+        "category": "data",
+        "date": "June 4, 2027",
+        "summary": "When one number tends to rise with another, a straight line can summarize how much. This part "
+                   "uses SLOPE, INTERCEPT, RSQ and FORECAST in Google Sheets to fit a line, read what it means, "
+                   "use it for a careful estimate, find the points that sit far from it, and avoid stretching it "
+                   "too far.",
+        "publish_on": "2027-06-04 21:00",
+        "body": [
+            "A new subdivision was opening, and the planning office expected about 100 businesses to register "
+            "there within two years. The council wanted to know how much business tax that might bring.",
+            "The analyst had ten barangays to learn from. Each had a number of registered businesses and a "
+            "business tax total for the year. Plotted on a chart, the dots climbed from left to right in a "
+            "rough line. The question was how steep that line was.",
+            "(The barangays and the amounts are invented for this lesson. The Google Sheets functions are real.)",
+            "Part 42 tested whether a gap between two groups was likely to be luck. This part looks at two "
+            "numbers that move together and puts a line through them. By the end, you will know what simple "
+            "regression is, how to compute the slope and intercept in Google Sheets, how to read R-squared, "
+            "how to make a cautious estimate, and where the line should not be trusted.",
+            ("photo", "blog/data-regression.jpg", "Simple regression: fit one straight line through the points, "
+             "read its slope as the change in y for each extra unit of x, and check how closely the points "
+             "follow it. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Practice Data"),
+            "Type the businesses in column A and the business tax, in thousands of pesos, in column B, with "
+            "headers in row 1.",
+            ("point", "Rows 2 to 6", "40 and 520. 52 and 560. 60 and 760. 68 and 700. 75 and 980."),
+            ("point", "Rows 7 to 11", "84 and 900. 90 and 1,180. 102 and 1,150. 115 and 1,420. 128 and 1,500."),
+            "Type the amounts as plain numbers, without commas.",
+            "Start with a picture. Select A1:B11, choose Insert, then Chart, and set the chart type to Scatter "
+            "chart. The dots rise from left to right with some wobble. Part 35 used the same kind of chart to "
+            "look at two numbers that move together.",
+            ("h", "What Regression Does"),
+            "Simple linear regression finds the one straight line that sits closest to all the dots, in the "
+            "sense that the squared vertical gaps between the dots and the line add up to as little as "
+            "possible. That line has two numbers.",
+            ("point", "The slope", "How much y changes, on average, for each extra unit of x. Here: how much "
+             "more business tax comes with each extra business."),
+            ("point", "The intercept", "Where the line crosses the vertical axis, when x is zero."),
+            ("h", "Step 1: The Slope"),
+            "Google’s help describes SLOPE as calculating “the slope of the line resulting from linear "
+            "regression of a dataset.”",
+            ("point", "Formula", "=SLOPE(B2:B11, A2:A11)"),
+            ("point", "Result", "About 11.88."),
+            ("point", "In plain words", "Each extra registered business goes with about ₱11,880 more business "
+             "tax a year, on average, across these barangays."),
+            "Notice the order: y first, then x. Swapping them gives a different line.",
+            ("h", "Step 2: The Intercept"),
+            ("point", "Formula", "=INTERCEPT(B2:B11, A2:A11)"),
+            ("point", "Result", "About 0.19, which is close to zero."),
+            ("point", "In plain words", "A barangay with no businesses would collect almost no business tax. "
+             "That makes sense here, but an intercept does not always mean something real, especially when no "
+             "data sits near zero."),
+            ("h", "Step 3: How Well the Line Fits"),
+            "Google’s help describes RSQ as calculating “the square of r, the Pearson product-moment "
+            "correlation coefficient of a dataset.”",
+            ("point", "Formula", "=RSQ(B2:B11, A2:A11)"),
+            ("point", "Result", "About 0.95."),
+            ("point", "In plain words", "Differences in the number of businesses account for about 95 percent "
+             "of the differences in business tax across these ten barangays. The other 5 percent comes from "
+             "everything else."),
+            "A value near 1 means the dots hug the line. A value near 0 means the line explains little.",
+            ("photo", "blog/data-regression-fit.jpg", "Ten barangays, one fitted line, and the gap between each "
+             "barangay and the line. The largest gaps point to barangays worth a closer look. Figures are "
+             "invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: A Careful Estimate"),
+            "Google’s help describes FORECAST as calculating “the expected y-value for a specified x based on "
+            "a linear regression of a dataset.”",
+            ("point", "Formula", "=FORECAST(100, B2:B11, A2:A11)"),
+            ("point", "Result", "About 1,188, or roughly ₱1.19 million a year."),
+            ("point", "Same as", "Intercept plus slope times 100. You can check it by hand."),
+            "Report it as a range, not a single figure. The dots sit as much as about ₱110,000 above or below "
+            "the line, so a fair statement is “roughly ₱1.1 to ₱1.3 million, once the businesses are "
+            "registered and paying.”",
+            ("h", "Step 5: Look at the Gaps"),
+            "The line is also useful for what it does not explain. In column C, type =FORECAST(A2, $B$2:$B$11, "
+            "$A$2:$A$11) and fill down. In column D, type =B2-C2 and fill down. Column D holds each "
+            "barangay’s gap from the line, often called its residual.",
+            ("point", "Biggest shortfall", "The barangay with 68 businesses collected about ₱108,000 less than the "
+             "line suggests."),
+            ("point", "Biggest surplus", "The barangay with 90 businesses collected about ₱111,000 more."),
+            ("point", "What to do", "Ask why. Smaller businesses, unpaid accounts, a large taxpayer or a "
+             "recording error could each explain a gap. Part 34 covered checking an unusual value before "
+             "deciding what it means."),
+            ("h", "Where the Line Should Not Go"),
+            ("point", "Outside the data", "The barangays had 40 to 128 businesses. An estimate for 300 "
+             "businesses would stretch the line far beyond anything it has seen."),
+            ("point", "Not proof of cause", "Part 35 warned that two numbers moving together do not prove that "
+             "one drives the other. Here the link is plausible, but the line alone does not show it."),
+            ("point", "Not every pattern is straight", "Check the scatter chart first. If the dots curve, a "
+             "straight line will mislead."),
+            ("point", "Few points, shaky line", "Ten points give a rough line. Add more data when you can."),
+            "A quick way to see the fit is to compare the largest residual with the typical amount. Here the "
+            "biggest gap is about ₱111,000 against barangay totals of ₱520,000 to ₱1.5 million.",
+            ("h", "Adding the Line to the Chart"),
+            ("point", "Trendline", "In the Chart editor, open Customize, then Series, and tick Trendline."),
+            ("point", "Show the numbers", "Set the label to use the equation, and tick the option to show "
+             "R-squared, so readers see the slope and the fit."),
+            "Business Intelligence Part 24 used trend lines across time. Here the line runs across a second "
+            "measure instead.",
+            ("h", "Back to the Subdivision"),
+            "The analyst reported a range of roughly ₱1.1 to ₱1.3 million a year, stated that it assumed the "
+            "new businesses would resemble those in existing barangays, and noted that some may take a year or "
+            "more to start paying.",
+            "She also attached the two barangays with the largest gaps. The council asked for a follow-up on the "
+            "one that collected less than its businesses suggested, which turned out to have several accounts "
+            "that had not renewed.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Skipping the scatter chart", "Look at the dots before fitting a line."),
+            ("point", "Swapping x and y", "SLOPE and INTERCEPT take y first."),
+            ("point", "Estimating far outside the data", "The line only knows the range it was built on."),
+            ("point", "Reporting one exact figure", "Give a range, and state the assumptions."),
+            ("h", "Key Takeaways"),
+            ("point", "Slope", "The average change in y for each extra unit of x."),
+            ("point", "RSQ", "How closely the points follow the line, from 0 to 1."),
+            ("point", "FORECAST", "An estimate from the line, best given as a range."),
+            ("point", "Residuals", "The gaps from the line point to cases worth checking."),
+            ("h", "Your Part 43 Exercise"),
+            ("point", "Step 1", "Enter the practice data and draw the scatter chart."),
+            ("point", "Step 2", "Compute SLOPE, INTERCEPT and RSQ, and check them against the numbers above."),
+            ("point", "Step 3", "Use FORECAST for 100 businesses, then add the residual columns and find the "
+             "two largest gaps."),
+            ("point", "Step 4", "Change the 700 in row 5 to 1,000 and see how the slope and RSQ change."),
+            ("cta", "Read: Data Analytics Series, Part 35: Correlation Is Not Causation, When Two Numbers Move Together", "/blog/data-analytics-part-35-correlation-and-causation/"),
+            ("cta", "Read: Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit", "/blog/data-analytics-part-34-outliers/"),
+            ("cta", "Read: Data Analytics Series, Part 42: Is the Difference Real? Testing Two Groups With a Chi-Square Test", "/blog/data-analytics-part-42-chi-square-test/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("ask", "Which two numbers in your office would you put on a scatter chart first?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 42: Is the Difference Real? Testing Two Groups With a Chi-Square Test",
+        "slug": "data-analytics-part-42-chi-square-test",
+        "category": "data",
+        "date": "June 1, 2027",
+        "summary": "When one group does better than another, the gap may be real or may be luck. A chi-square test "
+                   "in Google Sheets gives a number for how likely a gap that size would be by chance alone. This "
+                   "part shows how to set up the counts, compute the expected values, run CHITEST, read the "
+                   "result, and avoid the usual traps.",
+        "publish_on": "2027-06-01 21:00",
+        "body": [
+            "The treasury tried something new with its delinquent business accounts. Half of the 300 owners "
+            "received the usual letter. The other half received the same letter and a phone call two days later.",
+            "Within 30 days, 78 of the 150 who got a call had paid, or 52 percent. Of the 150 who got only the "
+            "letter, 54 had paid, or 36 percent. The collector was pleased. The budget officer asked whether "
+            "16 points could simply be luck, since the calls took two staff members most of a week.",
+            "(The office, the owners and the counts are invented for this lesson. The Google Sheets functions "
+            "are real.)",
+            "Part 41 adjusted pesos for inflation. This part answers a different question: when two groups "
+            "differ, is the gap large enough to take seriously? By the end, you will know what a chi-square "
+            "test checks, how to lay out the counts, how to compute expected values, how to run CHITEST in "
+            "Google Sheets, how to read the result in plain words, and when not to trust it.",
+            ("photo", "blog/data-chi-square.jpg", "A chi-square test: compare the counts you saw with the counts "
+             "you would expect if both groups behaved the same, and ask how often a gap that size happens by "
+             "chance. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why a Gap Can Be Luck"),
+            "Flip a fair coin 150 times and you will rarely get exactly 75 heads. Two groups of taxpayers work the same way: even if calls made no difference at all, the two payment rates would almost never match "
+            "exactly. Some gap is normal. The question is whether this gap is bigger than chance would usually "
+            "produce.",
+            "Part 17 met the same idea as a margin of error around one sample. A chi-square test applies it to "
+            "a comparison between groups.",
+            ("h", "What the Test Asks"),
+            "The test starts from a cautious assumption: the call made no difference, and both groups paid at "
+            "the same rate. It then works out how many payers each group would have under that assumption and "
+            "measures how far the real counts are from it.",
+            ("point", "Observed counts", "What actually happened: paid and not paid, for each group."),
+            ("point", "Expected counts", "What would happen if both groups paid at the same overall rate."),
+            ("point", "The p-value", "The chance of seeing a gap at least this large if the call truly made no "
+             "difference. A small p-value means luck is an unlikely explanation."),
+            ("h", "Step 1: Lay Out the Observed Counts"),
+            "Type a small table with the groups in rows and the outcomes in columns.",
+            ("point", "Row 1 headers", "A1 is blank, B1 is Paid, C1 is Not paid, D1 is Total."),
+            ("point", "Letter and call", "In row 2: 78 in B2 and 72 in C2. In D2: =B2+C2 returns 150."),
+            ("point", "Letter only", "In row 3: 54 in B3 and 96 in C3. In D3: =B3+C3 returns 150."),
+            ("point", "Totals", "In row 4: =B2+B3 returns 132 paid, =C2+C3 returns 168 not paid, and D4 "
+             "returns 300."),
+            "Use counts of people, not percentages. The test needs to know how many owners stand behind each "
+            "rate.",
+            ("h", "Step 2: Compute the Expected Counts"),
+            "Overall, 132 of 300 owners paid, or 44 percent. If the call made no difference, each group of 150 "
+            "would have about 44 percent payers.",
+            ("point", "Formula", "Build a second table in F2:G3. In F2, type =$D2*B$4/$D$4 and fill it across "
+             "to G2 and down to G3."),
+            ("point", "Read it as", "Row total times column total, divided by the grand total."),
+            ("point", "Results", "66 paid and 84 not paid in each group."),
+            "So the call group had 12 more payers than expected, and the letter group had 12 fewer.",
+            ("photo", "blog/data-chi-square-table.jpg", "Observed and expected counts side by side. The call group had 12 more payers than the no-difference assumption predicts. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 3: Run CHITEST"),
+            "Google’s help describes CHITEST as returning “the probability associated with a Pearson’s "
+            "chi-squared test on the two ranges of data.” The newer name CHISQ.TEST works the same way.",
+            ("point", "Formula", "=CHITEST(B2:C3, F2:G3)"),
+            ("point", "Result", "About 0.005."),
+            ("point", "In plain words", "If the call truly made no difference, a gap this large would turn up "
+             "only about 5 times in 1,000 tries."),
+            "Many analysts treat a p-value below 0.05 as strong enough to act on. That line is a habit, not a "
+            "law of nature, so report the number itself, not only whether it passed.",
+            ("h", "When the Groups Are Small"),
+            "Suppose the office had tried the call on only 25 owners and compared them with 25 others. Thirteen "
+            "of the call group paid, against 9 of the letter group, a gap of 16 points again.",
+            ("point", "Same gap, smaller groups", "CHITEST on that table returns about 0.25."),
+            ("point", "In plain words", "A gap that size would turn up about 1 time in 4 by chance. Not enough "
+             "to decide."),
+            "The percentages were the same. The number of people behind them was not. That is why the test "
+            "needs counts.",
+            ("h", "Reading the Result Honestly"),
+            ("point", "A small p-value says the gap is probably not luck", "It does not say the gap is large or "
+             "worth the cost. Sixteen points may or may not justify a week of calls."),
+            ("point", "A large p-value is not proof of no effect", "It may only mean the groups were too small "
+             "to tell."),
+            ("point", "Size and cost still matter", "Report the rates, the gap, the p-value and the staff time "
+             "together."),
+            ("h", "Fair Groups Come First"),
+            "The test checks luck. It cannot fix groups that were different from the start. If the collector "
+            "called only the owners she knew were likely to pay, the call group would look better even if the "
+            "calls did nothing.",
+            ("point", "Assign by chance", "Before any calls, add a column with =RAND(), sort by it, and give the "
+             "top half the call. Part 32 of the Project Management Series kept a comparison group for the same reason."),
+            ("point", "Decide the measure first", "Write down “paid within 30 days” before the trial starts, so "
+             "the measure cannot be chosen after the results are in."),
+            ("point", "Same period", "Run both groups at the same time, so the season and deadlines affect "
+             "them equally."),
+            "Part 35 explained why two numbers moving together do not prove that one caused the other. "
+            "Assigning groups by chance is one of the few ways to get closer to cause.",
+            ("h", "Checks Before You Trust the Test"),
+            ("point", "Expected counts of at least 5", "A common rule of thumb asks for an expected count of 5 "
+             "or more in every cell. With smaller counts, the result becomes less reliable."),
+            ("point", "Each person counted once", "An owner with three businesses should not count three times "
+             "unless each business was assigned separately."),
+            ("point", "Counts, not amounts", "The test compares how many paid, not how many pesos. For amounts, "
+             "a different test is needed."),
+            ("h", "Back to the Calls"),
+            "The office reported all of it on one line: 52 percent paid after a call, 36 percent after a letter "
+            "alone, p about 0.005, and about 60 staff hours for 150 calls.",
+            "The 12 extra payers brought in more than the staff time cost, so the treasurer kept the calls for "
+            "accounts above a set amount and kept letters alone for the rest.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Testing percentages", "Feed the test counts of people, not rates."),
+            ("point", "Choosing who gets the treatment", "Assign by chance, or the groups differ from the start."),
+            ("point", "Treating 0.05 as magic", "Report the p-value and the size of the gap."),
+            ("point", "Reading a large p-value as no effect", "Small groups often cannot tell."),
+            ("h", "Key Takeaways"),
+            ("point", "A gap can be luck", "Some difference between groups is normal."),
+            ("point", "Expected counts", "Row total times column total, divided by the grand total."),
+            ("point", "CHITEST returns a p-value", "A small value means chance is an unlikely explanation."),
+            ("point", "Fair groups matter most", "Assign by chance and fix the measure before you start."),
+            ("h", "Your Part 42 Exercise"),
+            ("point", "Step 1", "Enter the observed table and compute the totals."),
+            ("point", "Step 2", "Build the expected table with =$D2*B$4/$D$4 and check that it gives 66 and "
+             "84."),
+            ("point", "Step 3", "Run =CHITEST(B2:C3, F2:G3) and confirm a result near 0.005."),
+            ("point", "Step 4", "Change the table to 13 and 12 for the call group and 9 and 16 for the letter "
+             "group. Run the test again and explain why the answer changed."),
+            ("cta", "Read: Data Analytics Series, Part 35: Correlation Is Not Causation, When Two Numbers Move Together", "/blog/data-analytics-part-35-correlation-and-causation/"),
+            ("cta", "Read: Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000", "/blog/data-analytics-part-17-samples-margin-of-error/"),
+            ("cta", "Read: Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big", "/blog/project-management-part-32-running-a-pilot/"),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("ask", "Which change in your office was judged a success before anyone checked whether it was luck?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 41: Real or Nominal Pesos? Adjusting Collections for Inflation",
         "slug": "data-analytics-part-41-real-and-nominal-pesos",
         "category": "data",

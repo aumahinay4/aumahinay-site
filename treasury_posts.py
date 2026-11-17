@@ -7,6 +7,408 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First",
+        "slug": "supplemental-budgets",
+        "category": "finance",
+        "date": "June 9, 2027",
+        "summary": "Once the annual budget is in place, adding spending is not as easy as passing another "
+                   "ordinance. Section 321 of the Local Government Code allows a supplemental budget only when "
+                   "the money is really there, as certified by the local treasurer, or comes from new revenue, "
+                   "with a narrow exception for calamities. This part explains the rule and the treasury’s part "
+                   "in it.",
+        "publish_on": "2027-06-09 21:00",
+        "body": [
+            "In July, a council member proposed a supplemental budget for a new covered court. The draft "
+            "listed the source of funds as “expected excess collections from business taxes.”",
+            "The treasurer read it twice. Collections were running ahead of the estimate, but the year was only "
+            "half over, and much of the extra had already gone to an unplanned road repair approved in April. "
+            "She could not sign a certificate for money that existed only as a hope.",
+            "(The local government, the council member and the amounts are invented for this post. The rules "
+            "quoted below come from the Local Government Code of 1991.)",
+            "Part 36 followed the annual budget to its review. This part looks at changing that budget during "
+            "the year. By the end, you will know when a supplemental budget is allowed, what the treasurer "
+            "certifies, what the calamity exception covers, when it takes effect, and how the treasury keeps "
+            "its certificate honest.",
+            ("photo", "blog/finance-supplemental.jpg", "A supplemental budget: allowed only when funds are "
+             "actually available as certified by the local treasurer, or come from new revenue sources, with a "
+             "narrow exception for calamities. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Rule in Section 321"),
+            "Section 321 opens: “All budgetary proposals shall be included and considered in the budget "
+            "preparation process.” The idea is that spending ideas belong in the annual budget, where they can "
+            "be weighed against each other.",
+            "It then sets the limit: after the local chief executive has submitted the executive budget to the "
+            "sanggunian, “no ordinance providing for a supplemental budget shall be enacted, except when "
+            "supported by funds actually available as certified by the local treasurer or by new revenue "
+            "sources.”",
+            ("point", "Funds actually available", "Money that is really there, not an estimate of what may come "
+             "in."),
+            ("point", "Certified by the local treasurer", "The treasurer is the official who vouches for it."),
+            ("point", "Or new revenue sources", "Income from a source that was not in the annual budget, such as "
+             "a new fee created by ordinance."),
+            ("h", "What “Actually Available” Means in Practice"),
+            "The treasurer’s certificate should rest on records, not on trends.",
+            ("point", "Collections already received", "Cash collected beyond the estimate for the year to date, "
+             "after deducting what earlier supplemental budgets already used."),
+            ("point", "Balances from earlier years", "Unappropriated balances confirmed in the accounting "
+             "records."),
+            ("point", "Not projections", "“Collections are trending up” is a forecast. Part 31 explained what happens "
+             "when an estimate is too high."),
+            ("point", "Not money already committed", "Funds set aside for other purposes, such as trust funds, "
+             "cannot be counted again."),
+            "Part 16 explained why the Special Education Fund is kept separate. The same care applies: each "
+            "certificate should name the fund the money sits in.",
+            ("h", "The Calamity Exception"),
+            "Section 321 also allows a supplemental budget “in times of public calamity by way of budgetary "
+            "realignment to set aside appropriations for the purchase of supplies and materials or the payment "
+            "of services which are exceptionally urgent or absolutely indispensable to prevent imminent danger "
+            "to, or loss of, life or property.”",
+            ("point", "By realignment", "Moving existing appropriations, not creating new money."),
+            ("point", "Only urgent needs", "Supplies, materials or services needed to prevent danger or loss."),
+            ("point", "Where", "In the local government’s own area, or in other areas the President has declared "
+             "under a state of calamity."),
+            "Part 32 described the disaster fund, which is set aside in advance. The calamity exception is for "
+            "needs that go beyond it.",
+            ("photo", "blog/finance-supplemental-steps.jpg", "From proposal to effect: the treasurer and "
+             "accountant certify the source of funds under oath, the chief executive attests, the sanggunian "
+             "enacts, and the ordinance goes for review. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "What the Ordinance Must Show"),
+            "The last sentence of Section 321 says the ordinance “shall clearly indicate the sources of funds "
+            "available for appropriations, as certified under oath by the local treasurer and local accountant "
+            "and attested by the local chief executive, and the various items of appropriations affected and "
+            "reasons for the change.”",
+            ("point", "Certified under oath", "By both the treasurer and the accountant."),
+            ("point", "Attested", "By the local chief executive."),
+            ("point", "Items and reasons", "Each appropriation affected, and why it is changing."),
+            "Under Section 320, as the Department of Budget and Management explains it, an ordinance enacting a "
+            "supplemental budget takes effect upon its approval or on the date fixed in it. Like the annual "
+            "budget, it then goes for review, as Part 36 described, and counts toward limits such as the "
+            "personal services ceiling from Part 35.",
+            ("h", "How the Treasury Prepares a Certificate"),
+            ("point", "Start from the books", "Collections to date by source, reconciled with the accountant."),
+            ("point", "Subtract what is spoken for", "Earlier supplemental budgets, realignments and amounts "
+             "needed to meet the rest of the year’s appropriations."),
+            ("point", "Name the fund", "General Fund, Special Education Fund or another fund."),
+            ("point", "Keep a running register", "One table listing every certificate, its date, the amount and "
+             "the ordinance that used it, so the same money is never certified twice."),
+            "A certificate is signed under oath. If the money turns out not to exist, the treasurer’s name is "
+            "on the paper. Part 9 explained how audit findings can follow the people who signed.",
+            ("h", "Back to the Covered Court"),
+            "The treasurer prepared a summary instead of a certificate. Collections were ₱3.1 million above the "
+            "year-to-date estimate, but the road repair supplemental budget in April had already used ₱2.4 "
+            "million of it. Only ₱700,000 was actually available.",
+            "The council member asked for the court to be included in next year’s annual budget instead, with a "
+            "small supplemental budget now for the design. The treasurer certified ₱650,000 for it and noted "
+            "the balance in the register.",
+            ("h", "A Certificate Checklist"),
+            "Before signing, the treasurer can run through a short list.",
+            ("point", "Is the amount backed by cash or confirmed balances?", "Not by a projection."),
+            ("point", "Does the accountant agree?", "Both sign under oath, so the figures should match."),
+            ("point", "Is the fund named?", "General Fund, Special Education Fund or another fund."),
+            ("point", "Is it in the register?", "Check that no earlier certificate used the same money."),
+            ("point", "Are the rest of the year’s needs covered?", "Salaries, utilities and other fixed costs "
+             "still have to be paid until December."),
+            "If any answer is no, the honest response is a written explanation, not a certificate.",
+            ("h", "What Council Members Can Ask"),
+            ("point", "Where exactly is the money?", "Which fund, and from which collections or balances?"),
+            ("point", "Has any of it been certified before?", "Ask to see the register."),
+            ("point", "Is this a calamity realignment?", "If so, does it meet the conditions in Section 321?"),
+            "A supplemental budget is a tool for real changes during the year, not a second chance for "
+            "proposals that missed the annual budget.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Certifying projections", "Only funds actually available count."),
+            ("point", "Certifying the same money twice", "Keep a running register."),
+            ("point", "Skipping the oath and attestation", "The law asks for both."),
+            ("point", "Forgetting the ceilings", "Supplemental budgets count toward annual limits."),
+            ("h", "Key Takeaways"),
+            ("point", "All proposals belong in the annual budget", "Supplemental budgets are the exception."),
+            ("point", "Funds actually available or new revenue", "Certified by the local treasurer."),
+            ("point", "Calamity realignment", "Only for urgent needs, by moving existing appropriations."),
+            ("point", "Sources under oath", "Treasurer and accountant certify, the chief executive attests."),
+            ("h", "Your Part 37 Action Plan"),
+            ("point", "If you work in a treasury", "Start a register of every certificate of available funds "
+             "this year."),
+            ("point", "If you sit in the sanggunian", "Ask for the certificate and the register before voting "
+             "on any supplemental budget."),
+            ("point", "If you are a resident", "Look for supplemental budgets among your local government’s "
+             "ordinances and check what funded them."),
+            ("cta", "Read: Inside the Local Treasury, Part 36: After the Budget Passes, Who Reviews It and Within How Long", "/blog/review-of-local-budgets/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 32: The Disaster Fund, Five Percent Set Aside Before the Storm", "/blog/local-disaster-risk-reduction-fund/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("ask", "Who checks that the money behind a supplemental budget is really there in your local government?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 36: After the Budget Passes, Who Reviews It and Within How Long",
+        "slug": "review-of-local-budgets",
+        "category": "finance",
+        "date": "June 6, 2027",
+        "summary": "A municipal or component city budget does not end its journey at the sanggunian. Sections 326 "
+                   "and 327 of the Local Government Code send it for review, to the provincial board or to the "
+                   "Department of Budget and Management. This part explains who reviews which budgets, the "
+                   "90-day rule, and what the treasury should prepare.",
+        "publish_on": "2027-06-06 21:00",
+        "body": [
+            "The appropriation ordinance passed in December, and the mayor signed it the same week. Some of the staff thought the budget work was over until next July.",
+            "In February, a letter came from the province. The provincial board had found an item that exceeded "
+            "a limit in the Code and asked the municipality to act on it. The treasurer was asked to explain "
+            "the income figures behind the budget, because the ceiling in question depended on them.",
+            "(The local government, the province and the figures are invented for this post. The rules quoted "
+            "below come from the Local Government Code of 1991 and a decision of the Supreme Court.)",
+            "Part 35 looked at the ceiling on personal services. This part follows a budget after it passes, "
+            "to the office that checks it against limits like that one. By the end, you will know who reviews "
+            "which budgets, what the 90-day rule means, how a related rule for other ordinances works, and what "
+            "the treasury should keep ready.",
+            ("photo", "blog/finance-budget-review.jpg", "After the budget passes: municipal and component city "
+             "budgets go to the provincial board, while provinces and highly urbanized cities go to the "
+             "Department of Budget and Management. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Reviewers, Depending on the Local Government"),
+            ("point", "Section 327: the provincial board", "“The sangguniang panlalawigan shall review the "
+             "ordinance authorizing annual or supplemental appropriations of component cities and "
+             "municipalities in the same manner and within the same period prescribed for the review of other "
+             "ordinances.”"),
+            ("point", "Section 326: the Department of Budget and Management", "The department “shall review "
+             "ordinances authorizing the annual or supplemental appropriations of provinces, highly-urbanized "
+             "cities, independent component cities, and municipalities within the Metropolitan Manila Area.”"),
+            "Both sections speak of annual or supplemental appropriations. A supplemental budget goes through "
+            "the same review as the annual one.",
+            ("h", "The 90-Day Rule"),
+            "Section 327 adds a time limit: “If within ninety (90) days from receipt of copies of such "
+            "ordinance, the sangguniang panlalawigan takes no action thereon, the same shall be deemed to have "
+            "been reviewed in accordance with law and shall continue to be in full force and effect.”",
+            ("point", "From receipt", "The clock starts when the reviewing body receives the copies, not when "
+             "the ordinance was signed."),
+            ("point", "Silence means reviewed", "If the reviewer does not act within the period, the budget "
+             "stands."),
+            ("point", "Keep proof of receipt", "A stamped transmittal letter with the date received is the "
+             "evidence that the clock started."),
+            "Section 326 says the department’s review follows the same section. In Dadole v. Commission on "
+            "Audit, decided on December 3, 2002, the Supreme Court said the Department of Budget and Management "
+            "should have acted within 90 days of receipt, and that because it did not, the city’s ordinance was "
+            "deemed reviewed.",
+            ("photo", "blog/finance-budget-review-steps.jpg", "From approval to review: forward copies within "
+             "three days, the reviewer acts, and after 90 days of silence the budget is deemed reviewed. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "How Other Ordinances Are Reviewed"),
+            "Section 327 points to the review of other ordinances. That process is in Section 56.",
+            ("point", "Forward within three days", "Section 56(a) says that within three days after approval, "
+             "the secretary to the city or municipal council forwards copies of approved ordinances to the "
+             "provincial board."),
+            ("point", "Examine within 30 days", "Under Section 56(b), the provincial board examines them within "
+             "30 days, and may ask the provincial attorney or prosecutor for comments."),
+            ("point", "Invalid in whole or in part", "Section 56(c) lets the board declare an ordinance beyond "
+             "the council’s power invalid in whole or in part."),
+            ("point", "Silence for other ordinances", "Section 56(d) presumes an ordinance valid if the board "
+             "takes no action within 30 days after submission."),
+            "For appropriation ordinances, Section 327 adds its own 90-day statement. When the dates matter, "
+            "ask the provincial legal office how it applies the two together.",
+            ("h", "What Reviewers Look For"),
+            "A review checks the budget against the law, not whether each project is a good idea.",
+            ("point", "Limits in Sections 324 and 325", "Such as the personal services ceiling from Part 35 "
+             "and the 20 percent limit on debt service from Part 29."),
+            ("point", "A balanced budget", "Appropriations should not exceed estimated income."),
+            ("point", "Required shares", "Items the law sets aside, such as the disaster fund from Part 32."),
+            ("point", "Income estimates", "Whether the estimates are supported, which is where the treasury "
+             "comes in."),
+            ("h", "Where the Treasury Fits"),
+            ("point", "Income figures with a paper trail", "Keep the summaries behind each income estimate, by "
+             "source, with the year-end figures they came from. Part 31 explained how estimates are built."),
+            ("point", "The base for the ceilings", "Keep a one-page computation of income from regular sources, "
+             "since limits such as the personal services ceiling depend on it."),
+            ("point", "Certifications on file", "Keep copies of any certification of available funds the "
+             "treasurer signed, especially for supplemental budgets."),
+            ("point", "A contact person", "Name one person in the treasury who answers the reviewer’s questions "
+             "on income, so replies are quick and consistent."),
+            ("h", "Back to the Letter From the Province"),
+            "The provincial board had flagged a personal services item that pushed the total over the ceiling. "
+            "The treasurer sent the income summary for the base year, reconciled with the accountant. It showed "
+            "that one large collection had been recorded as regular income when it was a one-time payment.",
+            "With the corrected base, the ceiling was lower, not higher. The council adjusted the item by "
+            "ordinance, and the corrected classification was used for the next budget as well.",
+            ("h", "A Simple Review Calendar"),
+            "A one-page calendar keeps the dates from slipping.",
+            ("point", "Approval date", "When the local chief executive approved the ordinance."),
+            ("point", "Sent date", "When the copies left the council secretary’s office."),
+            ("point", "Received date", "When the reviewer stamped them received."),
+            ("point", "Day 90", "Counted from the received date, with a reminder a week before."),
+            ("point", "Findings and actions", "Any letter from the reviewer, the date it arrived, and what "
+             "the council did about it."),
+            "Keep one row for the annual budget and one for each supplemental budget. The treasury does not run "
+            "the calendar, but it should hold a copy, because questions about income usually arrive there.",
+            ("h", "What Residents Can Check"),
+            ("point", "Was the budget reviewed?", "Ask the council secretary when the copies were sent and when "
+             "the reviewer received them."),
+            ("point", "Any findings?", "Ask whether the review found items to change, and what was done."),
+            ("point", "Supplemental budgets too", "Each one should follow the same path."),
+            "A budget that is reviewed on time, with findings answered quickly, is easier to defend later.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating approval as the end", "Review follows, and findings can come months later."),
+            ("point", "No proof of the date received", "Without it, the end of the 90 days is hard to prove."),
+            ("point", "Income figures without support", "Reviewers can question an estimate that has no paper "
+             "trail."),
+            ("point", "Forgetting supplemental budgets", "They are reviewed the same way."),
+            ("h", "Key Takeaways"),
+            ("point", "Section 327", "The provincial board reviews municipal and component city budgets."),
+            ("point", "Section 326", "The Department of Budget and Management reviews provinces, highly "
+             "urbanized and independent component cities, and Metro Manila municipalities."),
+            ("point", "Ninety days", "No action within 90 days from receipt means the budget is deemed "
+             "reviewed."),
+            ("point", "The treasury supports the income side", "Keep estimates, the base for ceilings and "
+             "certifications ready."),
+            ("h", "Your Part 36 Action Plan"),
+            ("point", "If you work in a treasury", "Assemble a review file for this year’s budget: income "
+             "summaries, the ceiling computations and copies of certifications."),
+            ("point", "If you sit in the sanggunian", "Ask the secretary for the date the reviewer received the "
+             "budget, and diary the 90th day."),
+            ("point", "If you are a resident", "Ask whether last year’s budget review found any items to "
+             "change."),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services", "/blog/personal-services-limit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 32: The Disaster Fund, Five Percent Set Aside Before the Storm", "/blog/local-disaster-risk-reduction-fund/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("ask", "Do you know when your local government’s budget was last reviewed, and by whom?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services",
+        "slug": "personal-services-limit",
+        "category": "finance",
+        "date": "June 3, 2027",
+        "summary": "A local government cannot spend as much as it likes on salaries and benefits. Section 325(a) "
+                   "of the Local Government Code caps personal services at 45 or 55 percent of income from "
+                   "regular sources, depending on the income class. This part explains the rule, which year’s "
+                   "income counts, what may be left out, and why the treasury’s figures matter.",
+        "publish_on": "2027-06-03 21:00",
+        "body": [
+            "The draft budget had room for eight new positions, and every department head wanted at least one. "
+            "The budget officer added them up, ran one more computation, and called the treasurer.",
+            "“Your 2026 figures for regular income are final?” she asked. They were. “Then we are over the "
+            "ceiling by ₱2.4 million before we hire anyone.”",
+            "(The local government, the positions and the amounts are invented for this post. The rule quoted "
+            "below comes from the Local Government Code of 1991, and the guidance on applying it comes from the "
+            "Department of Budget and Management.)",
+            "Part 34 looked at limits on raising tax rates. This part looks at a limit on the spending side "
+            "that depends directly on the treasury’s income figures. By the end, you will know what Section "
+            "325(a) says, which year’s income is the base, how to compute the ceiling, what may be excluded, "
+            "and what the treasury can do to keep the numbers right.",
+            ("photo", "blog/finance-ps-cap.jpg", "The personal services ceiling: total appropriations for "
+             "salaries and benefits may not exceed 45 or 55 percent of income from regular sources realized two "
+             "years before the budget year. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What Section 325(a) Says"),
+            "Section 325 lists general limits on local budgets. The first one reads: “The total "
+            "appropriations, whether annual or supplemental, for personal services of a local government unit "
+            "for one (1) fiscal year shall not exceed forty-five percent (45%) in the case of first to third "
+            "class provinces, cities and municipalities, and fifty-five percent (55%) in the case of the "
+            "fourth class or lower, of the total annual income from regular sources realized in the next "
+            "preceding fiscal year.”",
+            ("point", "Personal services", "Salaries, wages, allowances and other benefits of officials and "
+             "employees."),
+            ("point", "Annual or supplemental", "The ceiling covers the whole year, including any supplemental "
+             "budget."),
+            ("point", "Income class", "First to third class: 45 percent. Fourth class or lower: 55 percent. "
+             "Under Republic Act No. 11964 of 2023, the Department of Finance handles income classification and may reclassify local governments once every three years."),
+            ("h", "Which Year’s Income Counts"),
+            "The phrase “next preceding fiscal year” confuses many readers. The Department of Budget and "
+            "Management’s Local Budget Circular No. 163, dated February 27, 2025, defines it as “the fiscal "
+            "year that is two (2) years before the budget year.” Its own example uses fiscal year 2023 income "
+            "for the 2025 budget.",
+            ("point", "Budget year 2028", "Prepared in 2027, while 2027 is still running."),
+            ("point", "Base year 2026", "The last full year with final figures when the budget is prepared."),
+            ("point", "Regular sources", "Income that comes in at regular intervals, such as local taxes, "
+             "regular fees and the share from national taxes. One-time items such as loans, grants and "
+             "proceeds from selling property are left out."),
+            "That is why the budget officer asked whether the 2026 figures were final. The ceiling for 2028 "
+            "rests on them.",
+            ("h", "Computing the Ceiling"),
+            "Take a fourth-class municipality in this example.",
+            ("point", "Income from regular sources, 2026", "₱120,000,000, from the year-end figures."),
+            ("point", "Ceiling for 2028, at 55 percent", "₱120,000,000 × 55% = ₱66,000,000."),
+            ("point", "Proposed personal services", "₱68,400,000, including the eight new positions."),
+            ("point", "Over the ceiling by", "₱2,400,000."),
+            "A first- to third-class local government with the same income would have a ceiling of "
+            "₱54,000,000, at 45 percent.",
+            ("photo", "blog/finance-ps-cap-bar.jpg", "Proposed personal services against the 55 percent ceiling, "
+             "before and after the changes in the story. Figures are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "What May Be Left Out"),
+            "Not every peso paid to people counts against the ceiling. The Department of Budget and "
+            "Management’s circulars explain the details, and they change, so check the current one.",
+            ("point", "Economic enterprises", "Local Budget Circular No. 145 of 2022 says personal services of "
+             "local government-owned public utilities and economic enterprises are charged to their own "
+             "budgets, not counted in the general limit."),
+            ("point", "Items that are not personal services", "Contract of service and job order workers, for "
+             "example, are charged to other expense classes under the same circular."),
+            ("point", "Waived items", "The yearly General Appropriations Act may waive the limit for certain "
+             "items. Circular No. 163 listed, for 2025, items such as collective negotiation agreement "
+             "incentives and retirement and terminal leave benefits. Later years follow each year’s act."),
+            ("h", "Why the Treasury’s Figures Matter"),
+            "The ceiling is a percentage of real income, so the quality of the income figures decides how much "
+            "room the budget has.",
+            ("point", "Classify income correctly", "A one-time collection recorded as regular income inflates "
+             "the base and the ceiling. The reverse shrinks them."),
+            ("point", "Reconcile with the accountant", "The circulars use the year-end trial balance as the "
+             "basis. Treasury collection reports and accounting records should agree before the budget is "
+             "prepared."),
+            ("point", "Explain big changes", "If regular income jumped or fell, say why. Part 31 showed how "
+             "estimates are built and why they must be realistic."),
+            ("point", "Keep the income class in view", "A local government moving from fourth to third class "
+             "drops from a 55 to a 45 percent ceiling. Plan for that before the reclassification takes effect."),
+            ("h", "Why the Limit Exists"),
+            "Salaries are hard to cut once positions are filled. A local government that spends most of its "
+            "income on personal services has little left for roads, health, schools and maintenance, and "
+            "little room when collections fall. The ceiling forces that trade-off to be faced when positions "
+            "are created, not years later.",
+            ("h", "Back to the Eight Positions"),
+            "The budget office presented the numbers to the local chief executive and the department heads. "
+            "Four positions were dropped, two were moved to the following year, and one vacancy left by a "
+            "retirement was not refilled.",
+            "The final proposal came to ₱65,800,000, about ₱200,000 under the ceiling. The treasurer attached "
+            "the 2026 income summary to the budget papers, so reviewers could see where the base came from.",
+            ("h", "What Residents and Council Members Can Check"),
+            ("point", "The ratio", "Divide total personal services in the budget by income from regular "
+             "sources two years earlier."),
+            ("point", "The trend", "Is the ratio creeping toward the ceiling year after year?"),
+            ("point", "New positions", "Ask how each new position fits under the limit, not only whether it "
+             "is needed."),
+            ("h", "A Yearly Self-Check"),
+            "The ceiling is easier to respect when it is checked early, not when the budget is already drafted.",
+            ("point", "In January", "Once the year-end figures close, compute the new base and the ceiling for "
+             "the budget prepared that year."),
+            ("point", "Before positions are proposed", "Share the ceiling and the current personal services "
+             "total with department heads, so requests start from the real room left."),
+            ("point", "Before any supplemental budget", "Check whether it adds personal services, since the "
+             "ceiling covers the whole year."),
+            ("point", "Keep the computation on file", "One page, signed and dated, with the sources of every "
+             "figure."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Using the wrong base year", "The base is two years before the budget year, not last year’s "
+             "estimate."),
+            ("point", "Counting one-time income as regular", "It inflates the ceiling on paper only."),
+            ("point", "Forgetting supplemental budgets", "The ceiling covers the whole year."),
+            ("point", "Relying on an old circular", "Waived items follow each year’s General Appropriations Act."),
+            ("h", "Key Takeaways"),
+            ("point", "45 or 55 percent", "Depending on the income class, under Section 325(a)."),
+            ("point", "Two years back", "Income from regular sources realized two years before the budget year."),
+            ("point", "Some items are outside", "Economic enterprises and waived items follow the current "
+             "circular."),
+            ("point", "Good income figures give real room", "Classify and reconcile them before the budget is "
+             "prepared."),
+            ("h", "Your Part 35 Action Plan"),
+            ("point", "If you work in a treasury", "Prepare a one-page summary of last full year’s regular "
+             "income, by source, reconciled with the accountant."),
+            ("point", "If you sit in the sanggunian", "Ask for the personal services ratio before approving new "
+             "positions."),
+            ("point", "If you are a resident", "Find your local government’s budget and compute the ratio "
+             "yourself."),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit", "/blog/when-local-governments-borrow/"),
+            ("cta", "Read: Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office", "/blog/inside-the-treasurers-office/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("ask", "How close is your local government to its personal services ceiling?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 34: Raising a Tax Rate, the Once-in-Five-Years Rule",
         "slug": "adjusting-local-tax-rates",
         "category": "finance",
