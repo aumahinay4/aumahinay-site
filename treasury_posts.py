@@ -7,6 +7,393 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review",
+        "slug": "barangay-budget-review",
+        "category": "finance",
+        "date": "June 18, 2027",
+        "summary": "Every barangay passes its own budget, and that budget goes up to the city or municipal "
+                   "sanggunian for review. This part follows a barangay budget from the barangay treasurer’s "
+                   "estimates to the 60-day review, explains the part played by the city or municipal finance "
+                   "committee and budget office, and lists what a barangay can do to avoid delays.",
+        "publish_on": "2027-06-18 21:00",
+        "body": [
+            "In February, a barangay captain came to the municipal treasury with a question. The barangay’s "
+            "share of the amilyar for the last quarter had been released, but the barangay treasurer wanted to "
+            "wait before paying for the new health station roof. “The budget has not come back from the "
+            "municipality,” she had told the captain.",
+            "The barangay had passed its budget in late January and sent it to the sangguniang bayan the "
+            "following week. Nobody at the barangay hall knew how long the review could take, or what would "
+            "happen if the sangguniang bayan did not act.",
+            "(The barangay, the people and the dates are invented for this post. The rules described below come "
+            "from the Local Government Code of 1991, as quoted in a 2020 Supreme Court decision and explained in "
+            "guidance from the Department of Budget and Management. Ask the municipal or city budget office how "
+            "your local government applies them.)",
+            "Part 36 followed a municipal or city budget to its reviewer, and Part 38 met the finance committee "
+            "behind it. This part goes one level down. By the end of this post, you will know who prepares a "
+            "barangay budget, where the barangay treasurer’s figures come in, who reviews the budget and within "
+            "how long, what the city or municipal finance committee and budget office do, and how a barangay "
+            "can keep its budget from waiting.",
+            ("photo", "blog/finance-barangay-budget.jpg", "A barangay budget’s path: the barangay treasurer’s "
+             "estimates, the punong barangay’s proposal, enactment by the sangguniang barangay, and review by the "
+             "city or municipal sanggunian. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who Prepares the Barangay Budget"),
+            "A guide on barangay budgeting from the Department of Budget and Management sums it up: “The Punong "
+            "Barangay, with the assistance of the Barangay Treasurer, prepares the barangay budget.”",
+            ("point", "The barangay treasurer’s statement", "The same guide says the barangay treasurer should "
+             "submit the detailed statements of income and expenditures to the punong barangay on or before "
+             "September 15 of each year."),
+            ("point", "The punong barangay’s proposal", "Built from that statement and the barangay’s plans."),
+            ("point", "Enactment", "In the guide’s words, “The SB passes the barangay budget through the "
+             "enactment of an appropriation ordinance.” SB is the sangguniang barangay."),
+            "As at the municipal level in Part 31, the income figures come first. The barangay’s main income "
+            "sources often include its share of national taxes and its share of the real property tax that "
+            "Part 17 described.",
+            ("h", "Who Reviews It, and Within How Long"),
+            "After the sangguniang barangay passes its budget, the ordinance goes to the sangguniang panlungsod "
+            "or sangguniang bayan for review.",
+            ("point", "Sixty days", "The DBM guide says, “The barangay budget should be reviewed within 60 days "
+             "upon receipt of the appropriation ordinance.”"),
+            ("point", "Silence means the budget stands", "The same guide adds: “The budget is deemed in full "
+             "force and effect if the Sangguniang Panlungsod/Bayan fails to review.”"),
+            ("point", "The section", "News reports on city councils applying the rule cite Section 333 of the "
+             "Local Government Code. In November 2025, for example, the Manila city council adopted a "
+             "resolution affirming that barangay budgets become operative if not acted upon within the 60-day "
+             "review period."),
+            "As with the 90-day rule in Part 36, the clock starts from receipt, so the date the reviewing "
+            "sanggunian received the budget matters.",
+            ("photo", "blog/finance-barangay-budget-review.jpg", "Who helps the reviewing sanggunian: the city or "
+             "municipal budget office checks the documents, and the local finance committee assists, before the "
+             "sanggunian acts within 60 days of receipt. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Who Helps the Reviewer"),
+            "The reviewing sanggunian does not work alone.",
+            ("point", "The local finance committee", "Section 316(f), quoted in Part 38, asks the city or "
+             "municipal finance committee to assist in the review and evaluation of “the barangay budgets in "
+             "the case of city or municipal finance committee, and recommend the appropriate action thereon.”"),
+            ("point", "The budget office", "Section 475 gives the city or municipal budget officer a role in "
+             "helping the sanggunian review approved budgets of component local government units. Many budget "
+             "offices do a preliminary check of each barangay budget before it reaches the council."),
+            ("point", "What they check", "That the budget follows the limits and required allocations in the "
+             "law and the current DBM rules, and that the income estimates are supported."),
+            ("h", "Where the Treasury Fits"),
+            "The city or municipal treasury is not the reviewer, but it holds facts the reviewers need.",
+            ("point", "The barangay’s actual shares", "The treasury knows how much of the real property tax "
+             "share was actually released to each barangay last year, and when."),
+            ("point", "Supporting realistic estimates", "If a barangay budget assumes a share far above what "
+             "was released, the treasurer on the finance committee can flag it."),
+            ("point", "Answering barangay treasurers", "Barangay treasurers often call the municipal treasury "
+             "for figures. A simple yearly summary of releases to each barangay saves many calls."),
+            ("h", "Back to the Health Station Roof"),
+            "The municipal treasurer called the budget office. The barangay budget had been received on "
+            "February 3 and was waiting for one missing attachment from the budget office’s checklist. Nobody "
+            "had told the barangay.",
+            "The barangay secretary sent the attachment the same day. The sangguniang bayan reviewed the "
+            "budget at its next session, well within 60 days of receipt, and the roof work went ahead. The "
+            "budget office added a checklist of attachments to its letter to all barangays for the following "
+            "year.",
+            ("h", "Keeping a Barangay Budget From Waiting"),
+            ("point", "Start early", "Prepare the barangay treasurer’s statement by the September date in the "
+             "DBM guide, so the budget can pass before the year begins."),
+            ("point", "Use the checklist", "Ask the city or municipal budget office for its list of required "
+             "attachments, and send everything at once."),
+            ("point", "Get proof of receipt", "A stamped copy with the date received starts the 60-day count."),
+            ("point", "Keep a calendar", "Mark the date of receipt and day 60, as Part 36 suggested for "
+             "municipal budgets."),
+            ("point", "Follow up in writing", "If a document is missing, ask the reviewer to say so in writing, "
+             "so it can be fixed quickly."),
+            ("h", "Why the Wait Matters to Residents"),
+            "A barangay budget is small next to a city’s, but it pays for things residents notice first: "
+            "barangay health workers, tanods, streetlights, small repairs and day care support.",
+            ("point", "Uncertainty slows decisions", "Some barangay officials prefer to wait for the review "
+             "result before starting new items, as the barangay treasurer did with the roof."),
+            ("point", "Questions get asked twice", "Barangay officials ask the municipality, residents ask the "
+             "barangay, and nobody has the date."),
+            "A clear calendar and a stamped receipt answer most of those questions in one line.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Sending an incomplete budget", "Missing attachments are a common cause of delay."),
+            ("point", "No proof of the date received", "Without it, the 60 days are hard to count."),
+            ("point", "Estimates far above actual shares", "Base income on what was actually released."),
+            ("point", "Assuming the reviewer will call", "Follow up, and keep a copy of every letter."),
+            ("h", "Key Takeaways"),
+            ("point", "Prepared at the barangay", "The punong barangay, with the barangay treasurer’s statement."),
+            ("point", "Reviewed above it", "By the sangguniang panlungsod or bayan."),
+            ("point", "Sixty days from receipt", "If not acted on, the budget takes effect."),
+            ("point", "Helpers", "The finance committee and budget office assist, and the treasury supplies "
+             "the actual shares."),
+            ("h", "Your Part 40 Action Plan"),
+            ("point", "If you work in a city or municipal treasury", "Prepare a one-page summary of last year’s "
+             "releases to each barangay, by source and month."),
+            ("point", "If you work in a barangay", "Ask the budget office for its checklist of attachments now, "
+             "before budget season."),
+            ("point", "If you are a resident", "Ask your barangay when its budget was sent for review and when "
+             "it was received."),
+            ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 36: After the Budget Passes, Who Reviews It and Within How Long", "/blog/review-of-local-budgets/"),
+            ("cta", "Read: Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget", "/blog/local-finance-committee/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("ask", "Do you know when your barangay’s budget was last reviewed, and how long it waited?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 39: When a Court Orders Payment, Why Public Funds Cannot Simply Be Seized",
+        "slug": "court-judgments-and-public-funds",
+        "category": "finance",
+        "date": "June 15, 2027",
+        "summary": "A final court judgment against a local government does not let a sheriff empty its bank "
+                   "account. The Supreme Court has long held that public funds are not subject to garnishment "
+                   "without an appropriation, and that money claims go to the Commission on Audit. This part "
+                   "explains the rule, its exception, and what the treasury should do when a sheriff arrives.",
+        "publish_on": "2027-06-15 21:00",
+        "body": [
+            "The bank called the treasurer just after ten in the morning. A sheriff was at the branch with a "
+            "notice of garnishment for ₱2.6 million, from a case a supplier had won against the municipality "
+            "over an unpaid contract. The branch manager wanted to know whether to freeze the account.",
+            "The treasurer had never seen a garnishment notice before. The account held the salaries due on "
+            "Friday.",
+            "(The local government, the supplier and the amounts are invented for this post. The rules come "
+            "from decisions of the Supreme Court and a circular it issued to judges, quoted below. This post is "
+            "general information, not legal advice. When a notice arrives, call the local government’s legal "
+            "officer at once.)",
+            "Part 37 looked at money that must really be there before a supplemental budget is passed. This "
+            "part looks at a judgment that says money must be paid. Stay with me to the end, and you will know "
+            "why public funds are generally exempt from garnishment, the exception the Court has recognized, "
+            "where a winning party must file its claim, what the treasury should do when a sheriff arrives, and "
+            "how to keep judgments from turning into emergencies.",
+            ("photo", "blog/finance-garnishment.jpg", "When a court orders payment: public funds are generally "
+             "not subject to garnishment without an appropriation, and the claim goes to the Commission on Audit. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The General Rule"),
+            "In Municipality of San Miguel, Bulacan v. Fernandez, G.R. No. L-61744, decided on June 25, 1984, "
+            "a court had ordered the municipal treasurer to pay a money judgment from the municipality’s funds. The "
+            "Supreme Court stopped it: “Well settled is the rule that public funds are not subject to levy and "
+            "execution.”",
+            "The Court explained why. To pay out the money, “there must be a corresponding appropriation in the "
+            "form of an ordinance duly passed by the Sangguniang Bayan.” A court cannot skip that step by "
+            "ordering the treasurer to pay.",
+            ("point", "Public money follows appropriations", "Section 305 of the Local Government Code carries "
+             "the same principle: money leaves the local treasury only under an appropriation ordinance or law."),
+            ("point", "The judgment still stands", "The rule does not erase the debt. It controls how and from "
+             "what funds the debt is paid."),
+            ("h", "The Exception: When Money Has Already Been Appropriated"),
+            "In City of Caloocan v. Allarde, G.R. No. 107271, decided on September 10, 2003, a dismissed city "
+            "official had won back salaries. The city council later passed an ordinance setting aside about "
+            "₱439,000 to pay her, but the money was still not released.",
+            "The Court held that the usual immunity “does not apply” where the funds have already been "
+            "appropriated for the judgment. The ordinance “was the corresponding appropriation as required by "
+            "law,” so the court could enforce payment.",
+            ("point", "Appropriated for that purpose", "Once the sanggunian appropriates money to pay a "
+             "judgment, holding it back can lead to enforcement."),
+            ("point", "Not a way around the council", "Without such an appropriation, the general rule applies."),
+            ("h", "Where the Claim Must Go"),
+            "In University of the Philippines v. Dizon, G.R. No. 171182, decided on August 23, 2012, the Court "
+            "repeated an older rule: “All money claims against the Government must first be filed with the "
+            "Commission on Audit.” It cited Section 26 of the Government Auditing Code, Presidential Decree No. "
+            "1445, on the Commission’s jurisdiction over such claims.",
+            "The winning parties in that case, the Court said, “had no alternative except to first seek the "
+            "approval of the COA of their monetary claim.” A final judgment fixes how much is owed. The claim "
+            "for payment then goes through the Commission on Audit.",
+            ("photo", "blog/finance-garnishment-path.jpg", "The usual path of a money judgment against a local "
+             "government: final judgment, claim filed with the Commission on Audit, an appropriation, then "
+             "payment through the normal voucher process. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "A Warning to Judges"),
+            "The Dizon decision also discussed Supreme Court Administrative Circular No. 10-2000, dated "
+            "October 25, 2000. It directs that “judges are hereby enjoined to observe utmost caution, prudence "
+            "and judiciousness in the issuance of writs of execution” against government agencies and local "
+            "government units, so that the rules on public funds are not bypassed.",
+            "In that case, the Court found that the trial judge had disregarded the circular.",
+            ("h", "When a Sheriff Arrives"),
+            "Treasury staff may be among the first to hear of a garnishment, often from the bank. A calm, written "
+            "response protects everyone.",
+            ("point", "Call the legal officer at once", "The local government’s lawyer decides the legal "
+             "response. The treasury supplies facts and documents."),
+            ("point", "Get copies of every paper", "The writ, the notice of garnishment and the judgment, with "
+             "the date and time received."),
+            ("point", "Tell the bank in writing", "Through the legal officer, inform the bank that the account "
+             "holds public funds and that the matter is being raised with the court."),
+            ("point", "Know what each account holds", "A list of accounts with the fund each belongs to, such "
+             "as the General Fund, the Special Education Fund or trust funds, helps the lawyer act quickly."),
+            ("point", "Inform the chief executive", "And the accountant, who may need to record the matter."),
+            "Do not ignore the notice, and do not move money between accounts to avoid it. Both can create "
+            "problems of their own. Let the legal officer lead.",
+            ("h", "Back to the Garnishment Notice"),
+            "The treasurer asked the branch manager to send a copy of the notice and called the municipal legal "
+            "officer. By two in the afternoon, the legal officer had filed a motion with the court citing the "
+            "rule on public funds, and had written to the bank. The salary account was not frozen.",
+            "The judgment itself was not in dispute. The supplier filed its claim with the Commission on Audit, "
+            "and the sanggunian later included the amount in a supplemental budget, after the treasurer "
+            "certified that funds were available, as Part 37 described.",
+            ("h", "Keeping Judgments From Becoming Emergencies"),
+            ("point", "A list of pending cases with money at stake", "Ask the legal officer for it each quarter, "
+             "so the finance committee can plan."),
+            ("point", "Budget for likely payments", "If a case is likely to be lost, the committee can "
+             "recommend setting aside funds before the judgment becomes final."),
+            ("point", "Pay valid obligations on time", "Many suits begin as unpaid bills. Part 7 followed the "
+             "normal path from budget to check."),
+            ("point", "Keep fund records clean", "Clear records of which account holds which fund make any "
+             "legal response faster."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the rule as a way to avoid paying", "The debt remains. The rule controls the "
+             "process."),
+            ("point", "Responding without the legal officer", "The treasury supplies facts. The lawyer decides "
+             "the response."),
+            ("point", "Moving funds to dodge a notice", "Let the court and the lawyers deal with it."),
+            ("point", "No list of pending cases", "Surprises are harder to handle than planned payments."),
+            ("h", "Key Takeaways"),
+            ("point", "Public funds are generally exempt", "Not subject to levy and execution without an "
+             "appropriation."),
+            ("point", "The exception", "Funds already appropriated for the judgment can be reached."),
+            ("point", "Claims go to COA", "Money claims against the government are filed with the Commission "
+             "on Audit first."),
+            ("point", "Call the lawyer first", "The treasury documents and informs. The legal officer responds."),
+            ("h", "Your Part 39 Action Plan"),
+            ("point", "If you work in a treasury", "Prepare a one-page list of bank accounts and the fund each "
+             "holds, and agree with the legal officer on who calls whom if a notice arrives."),
+            ("point", "If you sit in the sanggunian", "Ask the legal officer for the list of pending cases with "
+             "money at stake."),
+            ("point", "If you are a supplier", "Keep your documents complete and follow up through the normal "
+             "process. A claim that is valid and documented is easier to pay."),
+            ("cta", "Read: Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First", "/blog/supplemental-budgets/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
+            ("ask", "Does your treasury know who to call if a garnishment notice ever arrives?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget",
+        "slug": "local-finance-committee",
+        "category": "finance",
+        "date": "June 12, 2027",
+        "summary": "Before a local budget reaches the sanggunian, three officers have already shaped it. Section 316 "
+                   "of the Local Government Code creates a local finance committee of the planning officer, the "
+                   "budget officer and the treasurer. This part explains what the committee does, where the "
+                   "treasurer fits, and how to make its work count.",
+        "publish_on": "2027-06-12 21:00",
+        "body": [
+            "The new mayor asked a simple question at her first budget meeting: “Who decided that next year’s "
+            "spending should stop at ₱182 million?”",
+            "The budget officer looked at the planning officer. The planning officer looked at the treasurer. "
+            "All three had worked on the figure, in three separate offices, over three weeks of emails. None of "
+            "them could show a paper that said the committee had agreed on it, or how.",
+            "(The local government, the officers and the amounts are invented for this post. The rules quoted "
+            "below come from the Local Government Code of 1991, as reproduced in a 2020 decision of the Supreme "
+            "Court, and from the budget manual of the Department of Budget and Management.)",
+            "Parts 35 to 37 looked at limits on a budget and at changing it during the year. This part steps "
+            "back to the group that shapes the budget in the first place. Read to the end and you will know who "
+            "sits on the local finance committee, what Section 316 asks it to do, where the treasurer’s figures "
+            "come in, why the committee’s work is shared, and how to run its meetings so the record shows what "
+            "was decided.",
+            ("photo", "blog/finance-lfc.jpg", "The local finance committee: the planning officer, the budget "
+             "officer and the treasurer, who together project income, recommend spending levels and help "
+             "review budgets. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who Sits on the Committee"),
+            "Section 316 opens: “There is hereby created in every province, city or municipality a local "
+            "finance committee to be composed of the local planning and development officer, the local budget "
+            "officer, and the local treasurer.”",
+            ("point", "The planning and development officer", "Brings the development plan and the list of "
+             "projects the local government wants to pursue."),
+            ("point", "The budget officer", "Brings the spending side: what each office needs, what the law "
+             "requires, such as the disaster fund from Part 32 and the salary ceiling from Part 35."),
+            ("point", "The treasurer", "Brings the income side: what has been collected, what can reasonably be "
+             "collected next year, and the cash position."),
+            "The design is deliberate. Plans, spending and income meet at one table before the local chief "
+            "executive sees a draft, so that no one office sets the budget alone.",
+            ("h", "What Section 316 Asks the Committee to Do"),
+            "The section lists eight functions. In plain words, they fall into three groups.",
+            ("point", "Income", "(a) “Determine the income reasonably projected as collectible for the ensuing "
+             "fiscal year,” and (b) “recommend the appropriate tax and other revenue measures or borrowings "
+             "which may be appropriate to support the budget.”"),
+            ("point", "Spending", "(c) Recommend the level of annual expenditures and the ceilings of spending, "
+             "“based on the approved local development plans,” (d) the split between current operating "
+             "expenditures and capital outlays, and (e) the amount for capital outlay under each development "
+             "activity or project."),
+            ("point", "Review", "(f) Help review budgets of lower levels: component cities and municipalities "
+             "for a provincial committee, and barangays for a city or municipal committee. (g) Help the "
+             "sanggunian check the annual and supplemental budgets “to determine compliance with statutory and "
+             "administrative requirements.” (h) “Conduct semi-annual review and general examination of cost and "
+             "accomplishments against performance standards.”"),
+            "Notice the word “recommend.” The committee advises the local chief executive. The executive "
+            "budget is still the chief executive’s to submit, and the appropriation ordinance is still the "
+            "sanggunian’s to pass.",
+            ("h", "Where the Treasurer Fits"),
+            "Function (a) is the heart of the treasurer’s role. Every spending ceiling the committee recommends "
+            "rests on the income it projects.",
+            ("point", "Bring the estimate with its working", "The income summaries by source, the year-end "
+             "figures, and the method from Part 31, not only a total."),
+            ("point", "Flag one-time items", "Part 35 showed how a one-time collection counted as regular income "
+             "can inflate a ceiling."),
+            ("point", "Speak on revenue measures", "Function (b) asks for recommendations on taxes, fees and "
+             "borrowing. The treasury sees which taxes are under-collected and which fees no longer cover their "
+             "cost, as Part 15 discussed."),
+            ("point", "Bring the cash view", "A budget can balance on paper and still run short of cash in the "
+             "first quarter. The treasurer is the one who knows the timing of collections."),
+            ("photo", "blog/finance-lfc-cycle.jpg", "The committee’s year: income projected and ceilings "
+             "recommended before the executive budget, help in reviewing budgets after it, and a semi-annual "
+             "look at costs and results. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Shared Responsibility"),
+            "In Rejas v. Office of the Ombudsman, G.R. Nos. 241576 and 241623, decided in 2020, a municipal "
+            "budget officer had been held liable by the Ombudsman over a casual appointment with an upgraded "
+            "salary grade. The Supreme Court cleared her. In doing so, it quoted Section 316 and pointed out "
+            "that the committee’s review function is not the budget officer’s alone: “It is, in other words, a shared responsibility with the local planning "
+            "and development officer and the local treasurer.”",
+            "The case turned on its own facts. The lesson for the treasury is broader: each member of the "
+            "committee carries part of the responsibility for what it recommends, so each should be able to "
+            "show what was checked, by whom, and when.",
+            ("h", "Running the Committee Well"),
+            "The Code says what the committee does. It says little about how it should meet. A few habits make "
+            "the work visible.",
+            ("point", "Meet, do not only email", "Three offices exchanging drafts can each assume another has "
+             "checked a figure. A meeting forces one shared version."),
+            ("point", "Keep minutes", "Date, members present, the figures discussed, what was agreed and who "
+             "will do what next. Part 27 of the Project Management Series covered minutes that decide."),
+            ("point", "Sign the recommendation", "A one-page memo to the local chief executive with the income "
+             "projection, the spending ceiling and the capital outlay amount, signed by all three members."),
+            ("point", "Keep a calendar", "Mark when the income estimate is due, when the ceilings go to the "
+             "chief executive, and when the semi-annual review falls."),
+            ("point", "Hold the semi-annual review", "Function (h) is easy to forget. Compare what projects cost "
+             "and achieved against what was planned, and record the findings."),
+            ("h", "Back to the Mayor’s Question"),
+            "The three officers met the next day, with the treasurer’s income summaries on the table. They found "
+            "that the ₱182 million ceiling had been built on an income estimate from June, before a large "
+            "franchise tax payment was confirmed as one-time. The corrected projection supported a ceiling of "
+            "₱178.5 million.",
+            "They wrote a one-page recommendation, signed it, and attached the minutes. At the next budget "
+            "meeting, when the mayor asked the same question, the budget officer handed her the memo.",
+            ("h", "What Council Members and Residents Can Ask"),
+            ("point", "Did the committee meet?", "Ask for the dates and the minutes."),
+            ("point", "What income did it project?", "And how does that compare with what was actually collected "
+             "in the last two years?"),
+            ("point", "Did it review the barangay budgets?", "For cities and municipalities, function (f) covers "
+             "them."),
+            ("point", "Was there a semi-annual review?", "Ask what it found."),
+            ("h", "Mistakes to Avoid"),
+            ("point", "Three offices, three versions", "Agree on one set of figures in a meeting."),
+            ("point", "No written recommendation", "Without a signed memo, it is hard to show what the committee decided."),
+            ("point", "Income without working papers", "Every projection should come with its sources."),
+            ("point", "Skipping the semi-annual review", "It is one of the eight functions in the law."),
+            ("h", "Key Takeaways"),
+            ("point", "Three members", "Planning officer, budget officer and treasurer, in every province, city "
+             "and municipality."),
+            ("point", "Eight functions", "Project income, recommend revenue measures and spending, and help "
+             "review budgets."),
+            ("point", "It recommends", "The chief executive submits the budget, and the sanggunian enacts it."),
+            ("point", "Shared responsibility", "Each member should be able to show what was checked."),
+            ("h", "Your Part 38 Action Plan"),
+            ("point", "If you work in a treasury", "Prepare the income projection with a one-page summary of "
+             "sources and methods before the committee meets."),
+            ("point", "If you sit on the committee", "Propose a short template for minutes and a signed "
+             "recommendation memo."),
+            ("point", "If you are a resident", "Ask your local government when its finance committee last met "
+             "and what it recommended."),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services", "/blog/personal-services-limit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 36: After the Budget Passes, Who Reviews It and Within How Long", "/blog/review-of-local-budgets/"),
+            ("cta", "Read: Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office", "/blog/inside-the-treasurers-office/"),
+            ("ask", "Has your local finance committee ever put its recommendation in writing?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First",
         "slug": "supplemental-budgets",
         "category": "finance",

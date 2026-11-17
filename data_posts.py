@@ -12,6 +12,388 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 48: Average Growth Over Several Years, and Why Averaging the Percentages Misleads",
+        "slug": "data-analytics-part-48-average-annual-growth",
+        "category": "data",
+        "date": "June 19, 2027",
+        "summary": "Collections grew from ₱12.0 million to ₱16.1 million in five years. What was the average growth "
+                   "per year? Averaging the yearly percentages gives the wrong answer. This part explains the "
+                   "compound annual growth rate, computes it by formula and with RRI in Google Sheets, and shows "
+                   "how to use it honestly.",
+        "publish_on": "2027-06-19 21:00",
+        "body": [
+            "The draft report said business tax collections had grown by “an average of 6.5 percent a year” "
+            "from 2021 to 2026. The treasurer tried the number: ₱12.0 million grown by 6.5 percent five times. "
+            "She got about ₱16.4 million. The actual 2026 figure was ₱16.1 million.",
+            "The analyst had averaged the five yearly growth rates. Each rate was right. The average was not "
+            "the right summary.",
+            "(The office and the collections are invented for this lesson. The Google Sheets function is real.)",
+            "Part 30 separated percent change from percentage points. This part looks at growth across several "
+            "years. Read to the end and you will know why averaging yearly percentages misleads, what the "
+            "compound annual growth rate is, how to compute it with a formula and with RRI, how to use it for "
+            "a careful projection, and which pitfalls to avoid.",
+            ("photo", "blog/data-growth-rate.jpg", "Average growth over several years: the compound annual "
+             "growth rate is the one steady rate that leads from the first value to the last. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Practice Data"),
+            "Type the years in column A and business tax collections, in millions of pesos, in column B.",
+            ("point", "Rows 2 to 7", "2021: 12.0. 2022: 13.8. 2023: 12.4. 2024: 14.3. 2025: 15.2. 2026: 16.1."),
+            ("point", "Yearly change", "In C3, type =B3/B2-1 and fill down to C7. Format as percent."),
+            ("point", "The five changes", "Plus 15.0, minus 10.1, plus 15.3, plus 6.3 and plus 5.9 percent."),
+            "2023 dipped, perhaps because of a delayed renewal deadline or a large business closing. Then "
+            "collections recovered.",
+            ("h", "Why Averaging the Percentages Misleads"),
+            "=AVERAGE(C3:C7) returns about 6.5 percent. It looks reasonable. It is not the rate that turns "
+            "₱12.0 million into ₱16.1 million.",
+            ("point", "Percentages build on each other", "A 15 percent rise followed by a 10 percent fall does "
+             "not bring you back to where you started plus 5. It leaves you about 3.5 percent above the start."),
+            ("point", "Ups and downs inflate the average", "The more the yearly rates swing, the further their "
+             "simple average drifts above the true steady rate."),
+            ("point", "The test", "Apply the average five times. ₱12.0 million times 1.065, five times over, "
+             "gives about ₱16.4 million, about ₱340,000 more than what was actually collected."),
+            "Part 36 showed how averaging averages misleads when groups differ in size. This is a cousin of the "
+            "same problem: rates that compound need a different kind of average.",
+            ("h", "The Compound Annual Growth Rate"),
+            "The compound annual growth rate, often shortened to CAGR, answers a simple question: what single "
+            "steady yearly rate would lead from the first value to the last in the same number of years?",
+            ("point", "The formula", "(last ÷ first) raised to the power of (1 ÷ number of years), minus 1."),
+            ("point", "Count the years correctly", "From 2021 to 2026 is 5 years of growth, not 6. Count the "
+             "gaps between years, not the years listed."),
+            ("point", "In Google Sheets", "=(B7/B2)^(1/5)-1 returns about 6.05 percent."),
+            ("point", "Check it", "₱12.0 million times 1.0605, five times over, gives ₱16.1 million. It lands "
+             "on the actual figure, which the simple average did not."),
+            ("h", "The Same Answer With RRI"),
+            "Google Sheets has a function built for this. Google’s help says “The RRI function returns the "
+            "interest rate needed for an investment to reach a specific value within a given number of "
+            "periods.” Collections are not an investment, but the arithmetic is the same.",
+            ("point", "Syntax", "RRI(number_of_periods, present_value, future_value)"),
+            ("point", "Formula", "=RRI(5, B2, B7) returns about 6.05 percent."),
+            ("point", "Why use it", "It is easier to read than the power formula, and the number of periods is "
+             "written plainly as the first argument."),
+            ("photo", "blog/data-growth-rate-lines.jpg", "Actual collections with their dip in 2023, the steady "
+             "6.05 percent path that ends at the same ₱16.1 million, and the 6.5 percent path that overshoots. "
+             "Figures are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Using the Rate Honestly"),
+            "A compound annual growth rate is a summary, not a description of what happened each year.",
+            ("point", "It hides the path", "Steady growth and a crash followed by a recovery can give the same "
+             "rate. Show the yearly figures or a chart beside it."),
+            ("point", "It depends on the endpoints", "Start in 2022 instead of 2021, and the rate over four "
+             "years is about 3.9 percent. Choosing a start year that makes the rate look good is a common "
+             "trick. Say why you chose the years you did."),
+            ("point", "Nominal or real", "These are nominal pesos. Part 41 showed how to adjust for inflation. "
+             "Growth in real terms will usually be lower."),
+            ("point", "Rate changes and new taxes", "If a rate was raised in the middle of the period, part of "
+             "the growth came from the ordinance, not from more business."),
+            ("h", "Comparing Two Sources Fairly"),
+            "The rate is most useful for comparing things that started at different sizes.",
+            ("point", "Two revenue sources", "Suppose market fees grew from ₱4.0 million to ₱5.6 million, and "
+             "real property tax from ₱8.0 million to ₱10.5 million, over the same five years."),
+            ("point", "Raw increases mislead", "Real property tax rose by ₱2.5 million and market fees by ₱1.6 "
+             "million, so real property tax looks like the faster grower."),
+            ("point", "Rates tell a different story", "=RRI(5, 4.0, 5.6) returns about 7.0 percent for market "
+             "fees, and =RRI(5, 8.0, 10.5) about 5.6 percent for real property tax."),
+            "Market fees grew faster relative to their size. Whether that matters depends on the question, but "
+            "the reader deserves to see both views. Part 30 made the same point about reporting change in pesos "
+            "and in percent.",
+            ("point", "Same period for both", "Compare rates only over the same years. A rate from 2021 to 2026 "
+             "and another from 2023 to 2026 cannot be compared fairly."),
+            ("h", "A Careful Projection"),
+            "The rate can support a rough projection, as long as it is labeled as one.",
+            ("point", "One year ahead", "₱16.1 million times 1.0605 is about ₱17.1 million for 2027."),
+            ("point", "Give a range", "Part 45 built low, likely and high cases. The yearly changes here ranged "
+             "from minus 10 to plus 15 percent, so a single figure claims too much."),
+            ("point", "Compare with other methods", "Part 31 of Inside the Local Treasury described how income "
+             "estimates are built by source. A growth rate is a check on that work, not a replacement for it."),
+            ("h", "Back to the Report"),
+            "The analyst replaced “an average of 6.5 percent a year” with “collections grew from ₱12.0 million "
+            "in 2021 to ₱16.1 million in 2026, equal to about 6 percent a year compounded, with a dip in 2023.” "
+            "She added the yearly table and a small line chart.",
+            "The treasurer checked the new figure the same way as before. This time it landed on ₱16.1 million.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Averaging yearly percentages", "Use the compound rate for growth over several years."),
+            ("point", "Counting years instead of gaps", "2021 to 2026 is 5 periods."),
+            ("point", "Hiding the path", "Show the yearly figures with the rate."),
+            ("point", "Choosing flattering endpoints", "Explain the period, and try another to see how much "
+             "the rate changes."),
+            ("h", "Key Takeaways"),
+            ("point", "Rates compound", "Their simple average overstates steady growth when they swing."),
+            ("point", "CAGR", "(last ÷ first)^(1 ÷ years) − 1, the one steady rate that fits."),
+            ("point", "RRI does it in one step", "=RRI(periods, first, last)."),
+            ("point", "Report it with context", "Yearly figures, the period chosen, and nominal or real pesos."),
+            ("h", "Your Part 48 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute the five yearly changes."),
+            ("point", "Step 2", "Compare =AVERAGE(C3:C7) with =RRI(5, B2, B7)."),
+            ("point", "Step 3", "Grow ₱12.0 million at each rate for five years and see which lands on ₱16.1 "
+             "million."),
+            ("point", "Step 4", "Compute the rate from 2022 instead of 2021 and explain the difference."),
+            ("cta", "Read: Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion", "/blog/data-analytics-part-30-percent-change/"),
+            ("cta", "Read: Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads", "/blog/data-analytics-part-36-weighted-averages/"),
+            ("cta", "Read: Data Analytics Series, Part 41: Real or Nominal Pesos? Adjusting Collections for Inflation", "/blog/data-analytics-part-41-real-and-nominal-pesos/"),
+            ("cta", "Read: Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets", "/blog/data-analytics-part-45-what-if-scenarios/"),
+            ("ask", "Which growth figure in your office’s reports was computed by averaging percentages?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 47: Break-Even Analysis, How Many Before It Pays for Itself?",
+        "slug": "data-analytics-part-47-break-even-analysis",
+        "category": "data",
+        "date": "June 16, 2027",
+        "summary": "Should the office buy its own printer for certified copies, or keep sending the work out? A "
+                   "break-even analysis answers with one number: the volume at which two choices cost the same. "
+                   "This part separates fixed and variable costs, computes the break-even point in Google "
+                   "Sheets, draws it, and tests how sure the answer is.",
+        "publish_on": "2027-06-16 21:00",
+        "body": [
+            "The assessor’s office and the treasury shared a problem. Taxpayers asked for certified copies of "
+            "their tax declarations, and each copy went to a print shop across the street at ₱40 a page, with a "
+            "messenger walking back and forth.",
+            "A supplier offered a printer and scanner for ₱180,000. The administrative officer asked the analyst "
+            "a fair question: “At how many copies a year does buying our own machine become cheaper?”",
+            "(The office, the prices and the volumes are invented for this lesson. The method is standard, and "
+            "the Google Sheets formulas are real. Any fee for copies must come from the local government’s own "
+            "ordinance.)",
+            "Part 45 built low, likely and high scenarios. This part answers a narrower question that comes up "
+            "whenever an office weighs a purchase: how many before it pays for itself? By the end of this post, "
+            "you will know the difference between fixed and variable costs, how to compute a break-even point "
+            "by hand and in Google Sheets, how to compare two options with a crossover point, how to draw it, "
+            "and how to check whether the answer holds up.",
+            ("photo", "blog/data-break-even.jpg", "Break-even analysis: fixed costs, variable costs per unit, "
+             "and the volume where two choices cost the same. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Fixed and Variable Costs"),
+            "Every cost in a break-even analysis goes into one of two groups.",
+            ("point", "Fixed costs", "Costs that stay the same whether the office prints 100 copies or 3,000: "
+             "the machine itself, spread over its useful life, and a yearly maintenance contract."),
+            ("point", "Variable costs", "Costs that rise with every copy: paper, toner and the security paper "
+             "used for certified copies."),
+            "For the printer, the analyst gathered these figures.",
+            ("point", "Machine", "₱180,000, expected to last 5 years, so ₱36,000 a year."),
+            ("point", "Maintenance contract", "₱12,000 a year."),
+            ("point", "Fixed cost per year", "₱36,000 + ₱12,000 = ₱48,000."),
+            ("point", "Variable cost per copy", "₱15 for paper, toner and security paper."),
+            ("point", "Print shop price per copy", "₱40, with no fixed cost."),
+            "Spreading the purchase price over its life is a simplification. It treats the machine as costing "
+            "a fifth of its price each year, which is enough for a first answer.",
+            ("h", "Step 1: The Crossover Point by Hand"),
+            "Write each option as a cost for a given number of copies, which we can call Q.",
+            ("point", "Own printer", "₱48,000 + ₱15 × Q"),
+            ("point", "Print shop", "₱40 × Q"),
+            ("point", "Set them equal", "48,000 + 15Q = 40Q, so 25Q = 48,000, and Q = 1,920 copies a year."),
+            "Below 1,920 copies a year, the print shop is cheaper. Above it, the office’s own machine is "
+            "cheaper. The ₱25 saved on each copy, the difference between ₱40 and ₱15, has to pay back the "
+            "₱48,000 of fixed cost first.",
+            "That ₱25 has a name: the margin per unit. The general rule is break-even volume equals fixed cost "
+            "divided by margin per unit.",
+            ("h", "Step 2: The Same Thing in Google Sheets"),
+            "Put each number in its own labeled cell, as Part 45 advised.",
+            ("point", "Inputs", "B1: 180000 (machine). B2: 5 (years of life). B3: 12000 (maintenance). B4: 15 "
+             "(variable cost per copy). B5: 40 (print shop price)."),
+            ("point", "Fixed cost per year", "In B7: =B1/B2+B3 returns 48,000."),
+            ("point", "Crossover", "In B8: =B7/(B5-B4) returns 1,920."),
+            "Change any input and the crossover moves. If the print shop raised its price to ₱45, B8 would "
+            "drop to 1,600 copies. Part 46 showed how to give cells like these plain names, so the formula "
+            "could read =FixedCost/(ShopPrice-CopyCost).",
+            ("h", "Step 3: Draw It"),
+            "A chart makes the crossover visible to people who do not want to read formulas.",
+            ("point", "A column of volumes", "D2 to D7: 0, 500, 1000, 1500, 2000, 2500."),
+            ("point", "Own printer cost", "E2: =$B$7+$B$4*D2, filled down."),
+            ("point", "Print shop cost", "F2: =$B$5*D2, filled down."),
+            ("point", "The chart", "Select D1:F7 and insert a line chart. The two lines cross between 1,500 "
+             "and 2,000 copies."),
+            "At 2,500 copies, the office’s own printer costs ₱85,500 a year against ₱100,000 at the print shop. "
+            "At 1,000 copies, it costs ₱63,000 against ₱40,000.",
+            ("photo", "blog/data-break-even-chart.jpg", "Two cost lines cross at 1,920 copies a year. Below that, "
+             "the print shop is cheaper. Above it, the office’s own printer is. Figures are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: How Many Copies Does the Office Really Make?"),
+            "A break-even point means little without a good estimate of volume. The analyst counted the print "
+            "shop’s receipts for the past 12 months: 1,240 copies. Requests had grown slowly, by about 5 "
+            "percent a year.",
+            "At about 1,300 copies a year, the office stays well below the crossover. Buying the machine would "
+            "cost about ₱67,500 a year, against ₱52,000 at the print shop.",
+            ("point", "Look at the range, not one guess", "Even at a high estimate of 1,600 copies, the print "
+             "shop is still cheaper."),
+            ("point", "Check the trend", "At 5 percent growth a year, 1,240 copies would take roughly nine "
+             "years to pass 1,920, longer than the machine’s expected life."),
+            ("point", "Count, do not guess", "Receipts, logbooks and request forms give real volumes. Part 12 "
+             "showed how to keep such records one row per request."),
+            ("h", "Step 5: Is the Answer Sturdy?"),
+            "Change one input at a time, as Part 45 did, and see whether the decision flips.",
+            ("point", "Machine lasts 7 years instead of 5", "Fixed cost drops to about ₱37,700. Crossover about "
+             "1,510 copies. Still above 1,300."),
+            ("point", "Print shop raises its price to ₱50", "Crossover 1,371. Close to the current volume."),
+            ("point", "Toner costs more, ₱20 per copy", "Crossover 2,400. The print shop looks even better."),
+            "The decision holds in most cases, but it is close if the print shop raises its price. That is "
+            "worth watching.",
+            ("h", "What the Numbers Leave Out"),
+            ("point", "Time", "The messenger’s walk and the taxpayer’s wait have a cost that is not in the "
+             "formula. If an in-house copy saves a return visit, say so beside the numbers."),
+            ("point", "Control of records", "Keeping certified copies inside the office may reduce the risk of "
+             "documents being mishandled. That is a reason, not a peso figure."),
+            ("point", "Other uses", "A scanner could also serve records digitization. Include that only if the "
+             "work is planned and funded."),
+            "Report these alongside the break-even result, clearly labeled as judgments, not calculations.",
+            ("h", "Back to the Printer"),
+            "The analyst reported that the office would need about 1,920 copies a year to justify the machine, "
+            "and it made about 1,240. She recommended staying with the print shop, asking for a written price "
+            "for the next two years, and checking the volume again in a year.",
+            "She added one line: if the print shop price rose to ₱50 and requests kept growing, the decision "
+            "would be worth revisiting.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Counting the full purchase price in one year", "Spread it over the useful life."),
+            ("point", "Forgetting variable costs", "Paper, toner and security paper add up."),
+            ("point", "Guessing the volume", "Count from records."),
+            ("point", "Ignoring what the formula leaves out", "List time and control separately."),
+            ("h", "Key Takeaways"),
+            ("point", "Fixed and variable", "Sort every cost into one group."),
+            ("point", "Break-even", "Fixed cost divided by the saving per unit."),
+            ("point", "Compare with real volume", "Count from records, and look at a range."),
+            ("point", "Test the inputs", "Change one at a time and see whether the decision flips."),
+            ("h", "Your Part 47 Exercise"),
+            ("point", "Step 1", "Build the input cells and confirm the crossover is 1,920 copies."),
+            ("point", "Step 2", "Draw the two cost lines for 0 to 2,500 copies."),
+            ("point", "Step 3", "Change the print shop price to ₱50 and find the new crossover."),
+            ("point", "Step 4", "Apply the method to a choice in your own office, such as renting or buying a "
+             "vehicle."),
+            ("cta", "Read: Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets", "/blog/data-analytics-part-45-what-if-scenarios/"),
+            ("cta", "Read: Data Analytics Series, Part 46: Named Ranges and ARRAYFORMULA, Formulas Anyone Can Read", "/blog/data-analytics-part-46-named-ranges-arrayformula/"),
+            ("cta", "Read: Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question", "/blog/data-analytics-part-27-choosing-the-right-chart/"),
+            ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
+            ("ask", "Which purchase in your office would look different after a break-even analysis?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 46: Named Ranges and ARRAYFORMULA, Formulas Anyone Can Read",
+        "slug": "data-analytics-part-46-named-ranges-arrayformula",
+        "category": "data",
+        "date": "June 13, 2027",
+        "summary": "=SUM(LastYear)*(1+Growth) is easier to check than =SUM(Sheet2!$B$2:$B$13)*(1+Sheet2!$E$1). "
+                   "This part shows how to give ranges and key cells plain names in Google Sheets, and how one "
+                   "ARRAYFORMULA can fill a whole column, so a sheet is easier to read, check and hand over.",
+        "publish_on": "2027-06-13 21:00",
+        "body": [
+            "The monthly targets sheet had been built by an analyst who had since moved to another office. "
+            "Cell C2 held =Sheet2!$B2*(1+Sheet2!$E$1). Cell C3 held the same formula with a 3. So did the cells "
+            "down to C13, except C8, which someone had overwritten with a typed number months ago.",
+            "The new analyst needed half an hour to work out what Sheet2!$E$1 was. It turned out to be the "
+            "growth target: 5 percent. Nobody had noticed that July’s target no longer followed it.",
+            "(The office and the figures are invented for this lesson. The Google Sheets features are real.)",
+            "Part 45 kept inputs in their own cells. This part makes formulas that use those inputs easier to "
+            "read and harder to break. After this post, you will know how to name a range or a single cell, how "
+            "to use those names in formulas, how ARRAYFORMULA fills a whole column from one formula, how to "
+            "keep blank rows blank, and when plain cell references are still the better choice.",
+            ("photo", "blog/data-named-ranges.jpg", "Readable formulas: give key ranges and input cells plain "
+             "names, and let one ARRAYFORMULA fill a whole column instead of twelve copies. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Practice Sheet"),
+            "Set up a small sheet of monthly business tax collections, in thousands of pesos.",
+            ("point", "Column A", "A1: Month. A2 to A13: Jan to Dec."),
+            ("point", "Column B, last year", "B1: Last year. Then 9800, 4100, 3600, 5200, 3900, 3400, 4600, "
+             "3800, 3500, 4400, 3700, 4000. The total is 54,000."),
+            ("point", "The growth target", "E1: 5%. D1: Growth target, as a label."),
+            ("point", "Column F, this year so far", "F1: Actual. F2 to F7: 10100, 4300, 3500, 5600, 4000, "
+             "3600. Leave F8 to F13 blank, since July to December have not happened yet."),
+            "These are the same twelve monthly figures used in Part 44, written in thousands.",
+            ("h", "Step 1: Name a Range"),
+            "Google’s help explains the steps: select the cells, open Data, then Named ranges, type a name, and "
+            "confirm.",
+            ("point", "Name B2:B13", "Call it LastYear."),
+            ("point", "Name E1", "Call it Growth. A single cell can have a name too."),
+            ("point", "Name F2:F13", "Call it Actual."),
+            "The help page lists the rules. Names “can contain only letters, numbers, and underscores,” “can’t "
+            "start with a number, or the words ‘true’ or ‘false,’” and “can’t contain any spaces or "
+            "punctuation.” So LastYear and Last_Year work, but Last Year does not.",
+            ("h", "Step 2: Use the Names in Formulas"),
+            ("point", "Total last year", "=SUM(LastYear) returns 54,000."),
+            ("point", "Target for the year", "=SUM(LastYear)*(1+Growth) returns 56,700."),
+            ("point", "Actual so far", "=SUM(Actual) returns 31,100."),
+            "Read those formulas aloud. A supervisor who has never opened the sheet can tell what they do. "
+            "Compare =SUM(Sheet2!$B$2:$B$13)*(1+Sheet2!$E$1), which means the same thing.",
+            ("point", "Names are fixed references", "A name always points to the same cells, so there is no need "
+             "for dollar signs."),
+            ("point", "Names work across tabs", "A formula on a Summary tab can use LastYear without naming the "
+             "tab it lives on."),
+            ("h", "Step 3: One Formula for a Whole Column"),
+            "The old sheet had twelve copies of the target formula, and one had been overwritten. ARRAYFORMULA "
+            "replaces all twelve. Google’s help describes it as enabling “the display of values returned from "
+            "an array formula into multiple rows and/or columns.”",
+            ("point", "Target column", "C1: Target. In C2, type =ARRAYFORMULA(LastYear*(1+Growth)). Sheets fills "
+             "C2 to C13 with 10,290, 4,305, 3,780 and so on, down to 4,200 for December."),
+            ("point", "Only C2 holds a formula", "C3 to C13 show results, but they are part of C2’s output. "
+             "Type something in C8 and the formula shows an error instead of quietly accepting the change."),
+            ("point", "Check the total", "=SUM(C2:C13) returns 56,700, the same as Step 2."),
+            "That is the protection the old sheet lacked. A stray number cannot sit unnoticed in the middle of "
+            "a column that one formula controls.",
+            ("photo", "blog/data-named-ranges-sheet.jpg", "One formula in C2 fills the target column, and one in "
+             "G2 fills the gaps while leaving future months blank. Figures are invented. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: Keep Blank Rows Blank"),
+            "A gap column should show actual minus target, but only for months that have actual figures.",
+            ("point", "Without care", "=ARRAYFORMULA(Actual-C2:C13) shows minus 4,830 for July, because a blank "
+             "actual counts as zero. That looks like a disaster that has not happened."),
+            ("point", "With IF", "In G2, type =ARRAYFORMULA(IF(Actual=\"\", \"\", Actual-C2:C13)). Now July to "
+             "December stay blank."),
+            ("point", "Read the result", "January minus 190, February minus 5, March minus 280, April plus 140, "
+             "May minus 95, June plus 30."),
+            "The six gaps add up to minus 400, the same as 31,100 actual against 31,500 targeted for January to "
+            "June. Part 40 used IF to sort records. Here it decides whether there is anything to show.",
+            ("h", "Step 5: Add the Header in the Same Formula"),
+            "Some analysts put the header inside the formula, so a whole column is controlled from row 1.",
+            ("point", "Formula in G1", "={\"Gap\"; ARRAYFORMULA(IF(Actual=\"\", \"\", Actual-C2:C13))}"),
+            ("point", "What the braces do", "They stack the word Gap on top of the twelve results. The "
+             "semicolon means “next row.”"),
+            "This is optional. It helps when rows are added above the data, but it can confuse a beginner. Use "
+            "it only if everyone who maintains the sheet understands it.",
+            ("h", "When Plain References Are Better"),
+            ("point", "A one-time calculation", "A quick check in a scratch tab does not need names."),
+            ("point", "Too many names", "Fifty names are as hard to follow as fifty cell addresses. Name the "
+             "inputs and the main ranges, not every cell."),
+            ("point", "Ranges that will grow", "A name fixed at B2:B13 will not include a new row 14. For a list "
+             "that grows, name the whole column, such as B2:B, and check that blank rows do not break the "
+             "formulas."),
+            ("point", "Shared sheets", "Deleting a named range breaks every formula that uses it. The help page "
+             "warns that formulas referencing a deleted name “will no longer work.”"),
+            ("h", "Back to the Targets Sheet"),
+            "The new analyst named the three ranges, replaced the twelve target formulas with one ARRAYFORMULA, "
+            "and found the typed number in July at once: the formula refused to spill over it. The corrected "
+            "July target was 4,830.",
+            "She added a note at the top of the sheet listing the names and what each held. When the growth "
+            "target changed to 6 percent in the next budget cycle, one cell changed, and every target followed.",
+            ("h", "Leaving a Map for the Next Person"),
+            "The targets sheet became hard to maintain because its builder left without notes. Names help, but "
+            "a short guide helps more.",
+            ("point", "List the names", "On a Notes tab, write each name, the cells it covers and what it holds. "
+             "The Data, then Named ranges panel shows the current list to copy from."),
+            ("point", "Say which cells to edit", "Usually only the inputs, such as Growth and the monthly "
+             "actuals."),
+            ("point", "Say which cells not to touch", "The first cell of each ARRAYFORMULA column."),
+            "Part 15 suggested saving a dated copy before big changes. Do that before renaming or deleting any "
+            "named range.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Names with spaces", "Use LastYear or Last_Year."),
+            ("point", "Typing over spilled results", "Edit the formula in the first cell, not the cells below it."),
+            ("point", "Gaps against blank months", "Wrap the calculation in IF so empty rows stay empty."),
+            ("point", "Deleting a name without checking", "Search for it first. Every formula that uses it will "
+             "break."),
+            ("h", "Key Takeaways"),
+            ("point", "Named ranges", "Data, then Named ranges. Plain names make formulas readable."),
+            ("point", "Name the inputs", "A single cell like Growth is the best first name to create."),
+            ("point", "ARRAYFORMULA", "One formula fills a column and refuses stray typed numbers."),
+            ("point", "IF keeps blanks blank", "Show results only where there is data."),
+            ("h", "Your Part 46 Exercise"),
+            ("point", "Step 1", "Build the practice sheet and name LastYear, Growth and Actual."),
+            ("point", "Step 2", "Check that =SUM(LastYear)*(1+Growth) returns 56,700."),
+            ("point", "Step 3", "Fill the target column with one ARRAYFORMULA, then type 5000 in C9 and see "
+             "what happens."),
+            ("point", "Step 4", "Build the gap column with IF, and confirm the six gaps add up to minus 400."),
+            ("cta", "Read: Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets", "/blog/data-analytics-part-45-what-if-scenarios/"),
+            ("cta", "Read: Data Analytics Series, Part 40: IF, IFS and SWITCH, Letting the Sheet Sort Records Into Groups", "/blog/data-analytics-part-40-if-ifs-switch/"),
+            ("cta", "Read: Data Analytics Series, Part 33: FILTER, SORT and UNIQUE, Lists in Google Sheets That Update Themselves", "/blog/data-analytics-part-33-filter-sort-unique/"),
+            ("cta", "Read: Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("ask", "Which formula in your office’s sheets would be easier to check with a plain name?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets",
         "slug": "data-analytics-part-45-what-if-scenarios",
         "category": "data",
