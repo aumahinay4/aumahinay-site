@@ -63,10 +63,10 @@ NOTES_2_TO_10 = [
                 ["Machinery", "Agricultural 40%, residential 50%, commercial 80%, industrial 80%"],
                 ["Special classes", "Property used for hospitals, cultural or scientific purposes, and that of "
                                     "local water districts and government water or power corporations, at "
-                                    "lower levels of 10% to 15% (Section 216)"],
+                                    "lower levels of 10% to 15% (Sections 216 and 218)"],
             ]),
             ("tip", "These are ceilings, not the rates you will see on a tax bill. Each province or city sets its "
-                    "own levels by ordinance, often much lower. Always read your local revenue code."),
+                    "own levels by ordinance. Always read your local revenue code."),
             ("h", "Actual use, not the title"),
             "Section 217 says property is classified, valued and assessed by its actual use, regardless of "
             "where it is, who owns it, and who uses it. A lot titled as residential but used as a hardware store "
@@ -212,14 +212,13 @@ NOTES_2_TO_10 = [
             ("h", "Discounts for paying early"),
             "If the basic tax and the SEF are paid in advance according to the schedule, the sanggunian may grant "
             "a discount of up to 20% of the annual tax (Section 251). The exact discount is set by the local "
-            "revenue code. Many codes give a smaller discount for paying each quarter on time and a bigger one "
-            "for paying the whole year, or several years, in advance. Discounts usually apply only to properties "
-            "with no unpaid back taxes.",
+            "revenue code, so read it to know what your local government gives.",
             ("h", "Interest for paying late"),
             "An installment not paid by its due date earns interest of 2% a month on the unpaid amount until it is "
             "paid in full. The total interest can never exceed 36 months, so the most interest that can pile up "
-            "is 72% (Section 255). Many local codes count a part of a month as a full month, so paying on the "
-            "first day of a month instead of the last day of the month before costs a full 2%.",
+            "is 72% (Section 255). Check how your local revenue code counts a part of a month. If it counts any "
+            "part as a full month, paying on the first day of a month instead of the last day of the month "
+            "before costs a full 2%.",
             ("h", "When the tax stays unpaid"),
             ("list", [
                 "Notice of delinquency. The treasurer posts it at the main entrance of the provincial capitol or "
@@ -474,13 +473,13 @@ NOTES_2_TO_10 = [
                    "and corporations, when it is due, and when the certificate must be shown.",
         "publish_on": "2026-12-04 21:00",
         "body": [
-            "Most Filipinos still call it the cedula. Its legal name is the community tax, and the paper you get "
-            "after paying is the community tax certificate, or CTC. It is one of the smallest taxes a person pays, "
-            "but it is collected from more people than almost any other local tax. Article Six of Title One, Book "
+            "It is better known as the cedula. Its legal name is the community tax, and the paper you get "
+            "after paying is the community tax certificate, or CTC. It is one of the smallest taxes a person pays. "
+            "Article Six of Title One, Book "
             "II of the Local Government Code (Sections 156 to 164) governs it.",
             ("h", "Who levies it"),
             "Cities and municipalities may levy the community tax (Section 156). Provinces and barangays do not "
-            "levy it, although barangay treasurers often collect it as deputies, as explained below.",
+            "levy it, although barangay treasurers collect it as deputies, as explained below.",
             ("h", "Individuals who must pay (Section 157)"),
             "Every inhabitant of the Philippines aged 18 or over must pay if any one of these is true:",
             ("list", [
@@ -531,19 +530,20 @@ NOTES_2_TO_10 = [
             "A corporation shows its certificate in the same kinds of transactions. From January to April 15, the "
             "previous year's certificate is still accepted. A certificate is never required to register as a "
             "voter.",
-            ("tip", "The CTC is not an ID and does not prove identity. It proves only that the tax for the year has "
-                    "been paid."),
+            ("tip", "The CTC proves that the tax for the year has been paid. It carries no photograph, so it "
+                    "does not meet the notarial rule on proof of identity, which asks for a current ID with the "
+                    "person's photo and signature (2004 Rules on Notarial Practice, as amended on "
+                    "February 19, 2008)."),
             ("h", "Collection and sharing (Section 164)"),
-            "The national government prints the certificates and distributes them through the city and municipal "
+            "The Bureau of Internal Revenue prints the certificates and distributes them through the city and municipal "
             "treasurers. A small part of the proceeds goes to the national government to cover printing and "
             "distribution, and the treasurer remits it within 10 days after the end of each quarter. The city or "
             "municipal treasurer deputizes barangay treasurers to collect the tax in their barangays, but only if "
             "they are bonded. What the city or municipal treasurer collects directly goes entirely to its general "
             "fund. What is collected through barangay treasurers is split 50% to the city or municipality and 50% "
             "to the barangay where it was collected.",
-            ("tip", "For a barangay, deputized CTC collection is real income. A barangay treasurer who collects "
-                    "early in the year, while most people need their cedula, keeps half of every peso for the "
-                    "barangay."),
+            ("tip", "For a barangay, deputized CTC collection is real income: half of every peso its treasurer "
+                    "collects stays with the barangay."),
         ],
         "example": (
             "Worked example: an employee and a small corporation",
@@ -612,7 +612,7 @@ NOTES_2_TO_10 = [
                    "rules on amounts, ordinances, tolls and late payment.",
         "publish_on": "2026-12-11 21:00",
         "body": [
-            "Taxes are only part of local revenue. A town also earns from permit fees, market stall rentals, "
+            "Taxes are only part of local revenue. A local government also earns from permit fees, market stall rentals, "
             "slaughterhouse charges, burial fees, certifications and many other payments. Together these are "
             "called fees and charges. They follow their own rules, and knowing the difference between a fee and a "
             "tax helps a treasury worker defend a charge, or spot one that should not be there.",
@@ -673,7 +673,7 @@ NOTES_2_TO_10 = [
                     "peso must pass through the treasurer or a duly authorized deputy, and every payment gets an "
                     "official receipt (see Note 7)."),
             ("h", "Where the money goes"),
-            "Most fees go to the general fund. Income from a public utility or economic enterprise, such as a "
+            "Fees and charges not set aside by law for another fund go to the general fund (Section 308). Income from a public utility or economic enterprise, such as a "
             "market or slaughterhouse, is recorded in a special account of the general fund; after costs, it "
             "first pays back the loans or advances made for it, and any excess becomes part of the general fund "
             "(Section 313). Money held for a specific purpose, such as a guaranty deposit, is a trust fund and "
@@ -811,7 +811,7 @@ NOTES_2_TO_10 = [
             "public funds and may not profit from public money (Section 312).",
             ("tip", "A collector's cash drawer should hold only the day's collections and, if the treasurer has set "
                     "one up, a fixed change fund. Personal money, wallets and other people's cash belong somewhere "
-                    "else. In a surprise cash count, anything in the drawer is presumed to be public money."),
+                    "else, so a cash count never has to sort out whose money is whose."),
             ("h", "Who checks"),
             "The books, accounts, papers and cash of the treasurer and every accountable officer are open at all "
             "times to COA (Section 348). COA's auditors examine collections, compare the deposits with the bank, "
@@ -900,17 +900,15 @@ NOTES_2_TO_10 = [
             "returned.",
             ("h", "What counts as an accountable form"),
             ("list", [
-                "Official receipts for general collections. Accountable Form No. 51 is the official receipt most "
-                "local treasuries use for taxes, fees and charges.",
-                "Official receipts for real property tax, commonly Accountable Form No. 56, which show the "
+                "Official receipts for general collections, such as taxes, fees and charges: Accountable Form No. 51.",
+                "Official receipts for real property tax, Accountable Form No. 56, which show the "
                 "property, the assessed value, and the basic tax and SEF separately.",
                 "Community tax certificates for individuals and for corporations (Note 5).",
                 "Cash tickets and other forms with a printed money value, such as those sold at markets or "
                 "terminals.",
             ]),
-            "Some forms carry a printed value, like a ₱5 cash ticket; most, like official receipts, do not. Both "
-            "kinds are counted and reported by serial number. For a form with a printed value, a missing piece "
-            "can mean a liability for its face value.",
+            "Some forms carry a printed value, like a ₱5 cash ticket; official receipts do not. Both "
+            "kinds are counted and reported by serial number.",
             ("h", "The life of a booklet"),
             ("list", [
                 "Supply. The treasurer buys the forms either from the provincial treasurer's office, using a "
@@ -943,14 +941,15 @@ NOTES_2_TO_10 = [
             "month. The same accountability section also appears in each Report of Collections and Deposits "
             "(Note 7). "
             "COA auditors match the serial numbers on the RAAF against the receipts, the RCDs and the deposits.",
-            ("tip", "Gaps and repeats are what auditors look for first. If receipt 4517 appears in no RCD and is "
+            ("tip", "Gaps and repeats in serial numbers are warning signs. If receipt 4517 appears in no RCD and is "
                     "not marked cancelled, someone must explain where it went."),
             ("h", "When forms are lost"),
             "A lost booklet or receipt must be reported at once to the treasurer and to the COA auditor. When "
             "government funds or property are lost in transit or through fire, theft or other casualty, the "
             "accountable officer must notify COA immediately and file an application for relief, with "
-            "supporting evidence, within 30 days (PD 1445, Section 73). Credit is given only when the evidence "
-            "shows the loss was not due to the officer's negligence.",
+            "supporting evidence, within 30 days or a longer period that COA or the auditor allows (PD 1445, "
+            "Section 73). Credit is allowed when the evidence warrants it, and an officer who does not "
+            "follow these steps is not relieved of liability.",
             ("h", "Habits that keep a collector safe"),
             ("list", [
                 "Never sign or pre-fill receipts in advance.",
@@ -994,7 +993,7 @@ NOTES_2_TO_10 = [
              ["it is left out", "it is reported among the forms issued, as cancelled",
               "it is added back to the ending balance", "it is reported as lost"], 1,
              "A cancelled receipt is used up; it is reported among the forms issued and kept in the booklet."),
-            ("Which form is commonly used as the official receipt for real property tax?",
+            ("Which accountable form is the official receipt for real property tax?",
              ["Accountable Form No. 51", "Accountable Form No. 56", "the community tax certificate",
               "the cash ticket"], 1,
              "Accountable Form No. 56 shows the property, the assessed value, and the basic tax and SEF."),
@@ -1006,11 +1005,11 @@ NOTES_2_TO_10 = [
              ["lend it and record the numbers", "refuse; the collector who signed for it answers for it",
               "lend it if the supervisor agrees verbally", "give the co-worker a few loose receipts"], 1,
              "Accountability follows the person who signed for the booklet; never lend it."),
-            ("What do auditors look for first when checking receipts?",
+            ("When checking a collector's receipts, what is a warning sign?",
              ["the color of the forms", "gaps and repeats in serial numbers", "the collector's handwriting",
               "the paper quality"], 1,
              "A missing or repeated number signals collections that may not have reached the treasury."),
-            ("How often is the RAAF usually prepared?",
+            ("How often does each collector prepare a RAAF?",
              ["daily", "monthly", "every six months", "once a year"], 1,
              "Each collector prepares one every month; the liquidating officer consolidates them into a CRAAF, "
              "submitted on or before the 5th day of the following month."),
@@ -1029,8 +1028,8 @@ NOTES_2_TO_10 = [
                    "spending ahead of collections, and the rules for cash advances.",
         "publish_on": "2027-01-01 21:00",
         "body": [
-            "Collecting money is half of treasury work. The other half is paying it out, and the law is stricter "
-            "there. A collector who makes a mistake can usually correct it; an officer who approves an unlawful "
+            "Collecting money is half of treasury work. The other half is paying it out, and the law guards it "
+            "closely: an officer responsible for an unlawful "
             "payment may have to pay it back personally (Section 351). This note covers the rules for paying out "
             "local funds under the Local Government Code (RA 7160), the Government Auditing Code (PD 1445) and "
             "COA's rules on cash advances.",
@@ -1084,8 +1083,8 @@ NOTES_2_TO_10 = [
                 "Local travel is liquidated within 30 days after returning to the official station; foreign "
                 "travel within 60 days after returning to the Philippines.",
                 "All cash advances are liquidated at year-end, and unused balances are refunded.",
-                "If an advance is not liquidated on time, the officer's salary may be withheld, and the officer "
-                "may face administrative and criminal charges.",
+                "If an advance is not liquidated on time, that is a valid cause for withholding the officer's "
+                "salary.",
             ]),
             ("h", "Liability and transparency"),
             "The treasurer, accountant, budget officer or other accountable officer who acts on the order of a "
@@ -1127,12 +1126,12 @@ NOTES_2_TO_10 = [
               "a cash advance for travel"], 1,
              "Section 344 exempts regularly recurring expenses such as payrolls for regular employees and "
              "utility bills."),
-            ("A town has collected ₱30 million and expects ₱20 million more. What is the most its fund may "
+            ("A municipality has collected ₱30 million and expects ₱20 million more. What is the most its fund may "
              "disburse now?",
              ["₱30 million", "₱40 million", "₱50 million", "₱60 million"], 1,
              "Section 337: ₱30 million + 50% × ₱20 million = ₱40 million."),
-            ("May a supplier be paid before delivering the goods?",
-             ["yes, if the mayor approves", "no, advance payment is prohibited", "yes, up to 15%",
+            ("Under Section 338 of the Local Government Code, may a supplier be paid before delivering the goods?",
+             ["yes, if the mayor approves", "no, not before the goods are delivered", "yes, if the supplier asks",
               "yes, for emergency purchases only"], 1,
              "Section 338: no money is paid on a contract under which no services were rendered or goods "
              "delivered."),
@@ -1187,12 +1186,11 @@ NOTES_2_TO_10 = [
             "properly bonded (Section 305; PD 1445, Section 101). The bond is a fidelity bond issued through the "
             "Bureau of the Treasury, now under Treasury Circular No. 02-2019, which treats any officer whose "
             "duties involve the possession, custody or control of public funds or property as a bondable officer. "
-            "The amount of the bond is based on the officer's maximum accountability; for a collector, this is "
-            "usually worked out from their average collections. When the city or municipal treasurer deputizes barangay treasurers to collect real "
+            "The amount of the bond is based on the officer's maximum accountability. When the city or municipal treasurer deputizes barangay treasurers to collect real "
             "property tax or the community tax, they must be bonded, and the city or municipality pays the premium "
             "(Sections 164, 170 and 247).",
-            ("tip", "The bond protects the government, not the officer. If a bonded officer is found short, the "
-                    "government may recover from the bond, and the officer remains liable for the full amount."),
+            ("tip", "The bond protects the government, not the officer. It is there so the government can "
+                    "recover a loss caused by the bonded officer."),
             ("h", "Primary and secondary responsibility"),
             "The head of each agency is immediately and primarily responsible for all its government funds and "
             "property; those under the head who hold funds or property are responsible to the head (PD 1445, "
@@ -1223,15 +1221,14 @@ NOTES_2_TO_10 = [
             ]),
             "A shortage is also a criminal matter. Under Article 217 of the Revised Penal Code, the failure of a "
             "public officer to produce public funds or property on demand by an authorized officer is prima facie "
-            "evidence that they used it for personal purposes. That is malversation, one of the most serious "
-            "offenses a treasury worker can face.",
+            "evidence that they used it for personal purposes. The crime is called malversation.",
             ("h", "Losses that are not the officer's fault"),
             "Fire, theft, robbery, flood and other casualties happen. When public funds or property are lost in "
             "transit or through casualty or force majeure, the officer must notify COA immediately and file an "
             "application for relief, with the available evidence, within 30 days (PD 1445, Section 73; Section "
-            "378 of the Code has the same rule for property). Credit is allowed only when the evidence shows the "
-            "loss happened without the officer's fault or negligence. Missing the deadline can cost the officer "
-            "the relief.",
+            "378 of the Code has the same rule for property). COA or the auditor may allow a longer period. "
+            "Credit is allowed when the evidence warrants it, and an officer who does not notify and apply as "
+            "required is not relieved of liability.",
             ("h", "Habits that keep an accountable officer safe"),
             ("list", [
                 "Deposit intact and on time. Cash that stays in the vault longer than it should is exposed to "
@@ -1300,7 +1297,7 @@ NOTES_2_TO_10 = [
             ("What does a fidelity bond protect?",
              ["the officer from any liability", "the government against loss from the bonded officer",
               "the taxpayer's payments", "the bank"], 1,
-             "The bond protects the government; the officer remains liable for any shortage."),
+             "A fidelity bond protects the government against loss caused by the bonded officer."),
         ],
         "sources": [
             "Republic Act No. 7160, Local Government Code of 1991, Sections 164, 170, 247, 305, 312, 340, 342, "
