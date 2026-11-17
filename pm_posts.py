@@ -14,6 +14,142 @@ SERIES = "Project Management Series"
 
 PM_POSTS = [
     {
+        "title": "Project Management Series, Part 52: The Whole Series on One Page, From First Idea to Lessons Learned",
+        "slug": "project-management-part-52-series-on-one-page",
+        "category": "pm",
+        "date": "July 2, 2027",
+        "summary": "This is the last part of the Project Management Series. It arranges the 51 earlier parts "
+                   "into the order a real project needs them, from the first idea to the benefits review, with "
+                   "one question to ask at each stage and a short list of the parts to reread when that "
+                   "question comes up.",
+        "publish_on": "2027-07-02 21:00",
+        "body": [
+            "A colleague from the assessor’s office stopped by the treasury with a printed memo. She had just "
+            "been named to lead the digitization of the property records, a project with a budget, a deadline "
+            "and six people from three offices. “I have never run a project,” she said. “Where do I even "
+            "start?”",
+            "Fifty-one parts of this series had tried to answer that question one piece at a time. What she "
+            "needed was the whole map, in the order she would use it.",
+            "(The colleague and her project are invented for this post. The parts listed are the earlier "
+            "posts in this series, which explain each idea in full.)",
+            "This is the closing part of the Project Management Series. It does not add a new technique. When "
+            "you finish reading, you will have the series arranged into seven stages, a question to ask at "
+            "each stage, the parts to reread when that question comes up, and a short plan for your next "
+            "project.",
+            ("photo", "blog/pm-series-map.jpg", "The series in seven stages, from deciding whether to start "
+             "to checking whether the benefits arrived. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Stage 1: Should We Do This at All?"),
+            ("quote", "Is this worth doing, and is it worth doing now?"),
+            "Some projects that run into trouble were not clearly chosen. Someone had an idea, and work "
+            "started before anyone compared it with the other things the office could do.",
+            ("point", "Part 1", "The accidental project manager: recognizing that a piece of work is a "
+             "project at all."),
+            ("point", "Part 10", "The business case: the problem, the options and the cost of doing nothing."),
+            ("point", "Part 29", "The scoring matrix: choosing among several requests when the office cannot "
+             "do them all."),
+            ("h", "Stage 2: What Exactly Are We Doing?"),
+            ("quote", "What is in, what is out, and how will we know we are done?"),
+            ("point", "Part 2", "The one-page charter: purpose, sponsor, scope, deadline and budget."),
+            ("point", "Part 4", "Drawing the line: writing down what is out of scope as clearly as what is in."),
+            ("point", "Part 6", "Objectives with a number and a date, not just good intentions."),
+            ("point", "Part 9", "Requirements, gathered from the people who will use the result."),
+            ("point", "Part 5", "Waterfall, agile or hybrid: choosing how the work will run."),
+            ("h", "Stage 3: Who Is Involved?"),
+            ("quote", "Who decides, who does the work, and who needs to hear about it?"),
+            ("point", "Part 3", "Mapping who holds power and who is affected."),
+            ("point", "Part 8", "The RACI matrix: one person accountable for each piece of work."),
+            ("point", "Part 11", "The communication plan: who hears what, when and how."),
+            ("point", "Part 51", "Partner agencies: putting the agreement in writing."),
+            ("point", "Part 7", "The kickoff meeting that brings everyone onto the same page."),
+            ("h", "Stage 4: How Will We Get There?"),
+            ("quote", "What are the pieces, how long will they take, and what will they cost?"),
+            ("point", "Part 14", "The work breakdown structure, one bite at a time."),
+            ("point", "Parts 15 and 21", "Estimates that allow for reality, and buffers instead of hidden "
+             "padding."),
+            ("point", "Parts 16 and 20", "Dependencies and the critical path that sets the finish date."),
+            ("point", "Part 41", "A Gantt chart in Google Sheets that anyone can read."),
+            ("point", "Parts 17, 18 and 22", "The budget, the people and the things the project must buy."),
+            ("point", "Parts 19 and 49", "The risk register, and the pre-mortem that finds risks the "
+             "register missed."),
+            ("point", "Part 23", "Quality planning: deciding what good enough means before the work starts."),
+            ("point", "Part 13", "The pre-launch checklist that reviews all of the above."),
+            ("h", "Stage 5: Keeping It on Track"),
+            ("quote", "Are we where we said we would be, and if not, what do we do?"),
+            ("point", "Parts 25 and 35", "The one-page status report, and earned value for budget and "
+             "schedule."),
+            ("point", "Parts 26 and 48", "The issue log and the decision log."),
+            ("point", "Part 24", "Change control: saying yes to a change without losing the plan."),
+            ("point", "Parts 27 and 36", "Meetings that decide, and Kanban boards that limit work in "
+             "progress."),
+            ("point", "Part 40", "Retrospectives while the work is still running."),
+            ("point", "Part 43", "A recovery plan when the project is in trouble."),
+            ("point", "Part 44", "Several projects at once without dropping any."),
+            ("h", "Stage 6: The People Doing the Work"),
+            ("quote", "Does the team have what it needs to keep going?"),
+            ("point", "Parts 45 and 46", "Delegating without losing track, and bringing in a new person."),
+            ("point", "Parts 31 and 47", "Covering for absences, and negotiating with other offices for "
+             "people and time."),
+            ("point", "Parts 38 and 50", "Handling conflict, and keeping morale up through a long project."),
+            ("point", "Part 34", "Presenting to decision makers in ten minutes."),
+            ("h", "Stage 7: Finishing and Checking"),
+            ("quote", "Did it work, will people use it, and what did we learn?"),
+            ("point", "Parts 32 and 42", "A pilot before going big, and acceptance testing by the people who "
+             "will use the result."),
+            ("point", "Parts 33 and 37", "Getting people to adopt the new process, and a procedure they "
+             "actually follow."),
+            ("point", "Part 28", "Closing the project: handover and lessons learned."),
+            ("point", "Part 39", "The benefits review, months after the project ends."),
+            ("point", "Part 30", "The project kit: templates so the next project starts faster."),
+            ("point", "Part 12", "Software, chosen after the process is clear, not before."),
+            ("photo", "blog/pm-series-map-questions.jpg", "One question for each stage. When the question "
+             "comes up, reread the parts listed under it. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Not Every Project Needs Every Part"),
+            "A two-week task with three people does not need earned value or a formal change control board. "
+            "A two-year system rollout with several offices probably needs most of the list.",
+            ("point", "For a small project", "A charter, a task list with owners and dates, a short risk list, "
+             "and a closing note on what was learned."),
+            ("point", "For a medium project", "Add a RACI, a Gantt chart, a status report and an issue log."),
+            ("point", "For a large project", "Add the budget by work package, change control, earned value, "
+             "a pilot, acceptance testing and a benefits review."),
+            "The size of the paperwork should match the size of the risk. Too little, and problems surface "
+            "late. Too much, and the team spends its time filling in forms instead of doing the work.",
+            ("h", "If You Read Only Five Parts"),
+            "Some readers will not have time for the whole series. These five cover the most ground for "
+            "the least reading.",
+            ("point", "Part 2, the charter", "It forces the early decisions onto one page."),
+            ("point", "Part 8, the RACI", "It ends arguments about who was supposed to do what."),
+            ("point", "Part 19, the risk register", "It turns worry into a list with owners."),
+            ("point", "Part 25, the status report", "It tells the truth early, while there is still time."),
+            ("point", "Part 28, closing", "It makes sure the lessons survive the project."),
+            ("h", "Back to the Assessor’s Office"),
+            "The colleague left with three things: the seven questions on one sheet, the list of parts for "
+            "Stages 1 and 2, and an appointment to review her charter the following week. She did not try to "
+            "read all fifty-one parts. She read the ones her project needed, when it needed them.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Starting with the software", "Settle the scope and the process first."),
+            ("point", "Skipping Stage 1", "A project nobody chose has nobody to defend it later."),
+            ("point", "Using every tool on every project", "Match the paperwork to the size and the risk."),
+            ("point", "Stopping at the handover", "Check later whether the benefits arrived."),
+            ("h", "Key Takeaways"),
+            ("point", "Seven stages", "Choose, define, involve, plan, track, support the team, finish and "
+             "check."),
+            ("point", "One question per stage", "Ask it, then reread the parts listed under it."),
+            ("point", "Scale the method", "Small projects need a few tools; large ones need more."),
+            ("point", "People make it work", "Plans succeed when the team, partners and users are on board."),
+            ("h", "Your Part 52 Action Plan"),
+            ("point", "Pick one project", "A real one in your office, starting soon or already running."),
+            ("point", "Find its stage", "Which of the seven questions is it facing now?"),
+            ("point", "Reread two parts", "Choose two from that stage and apply one idea from each this week."),
+            ("point", "Save a kit", "Keep the templates you used, as Part 30 suggested, for the next one."),
+            ("cta", "Read: Project Management Series, Part 1: The Accidental Project Manager in the Treasury", "/blog/project-management-part-1-accidental-project-manager/"),
+            ("cta", "Read: Project Management Series, Part 2: The Project Charter on One Page", "/blog/project-management-part-2-project-charter/"),
+            ("cta", "Read: Project Management Series, Part 13: The Pre-Launch Checklist, a Review of Parts 1 to 12", "/blog/project-management-part-13-pre-launch-checklist/"),
+            ("cta", "Read: Project Management Series, Part 30: The Project Kit, Reusable Templates So the Next Project Starts Faster", "/blog/project-management-part-30-project-kit/"),
+            ("ask", "Which part of this series helped your work the most?"),
+        ],
+    },
+    {
         "title": "Project Management Series, Part 51: Working With a Partner Agency, Putting the Agreement in Writing",
         "slug": "project-management-part-51-memorandum-of-agreement",
         "category": "pm",

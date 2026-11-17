@@ -7,6 +7,535 @@ before each post is approved; per Butch, the posts themselves show no Sources se
 
 TREASURY_POSTS = [
     {
+        "title": "Inside the Local Treasury, Part 48: The GAD Budget, Five Percent for Gender and Development",
+        "slug": "gender-and-development-budget",
+        "category": "finance",
+        "date": "July 9, 2027",
+        "summary": "The Magna Carta of Women asks every local government to set aside at least five percent of "
+                   "its total budget appropriations for gender and development. This part explains where the "
+                   "rule comes from, how the amount is computed, how existing programs can count toward it, "
+                   "what may and may not be charged, and what the treasury and finance offices can contribute.",
+        "publish_on": "2027-07-09 21:00",
+        "body": [
+            "During budget preparation, the planning officer asked the treasury for a list of business "
+            "permit holders by sex. The treasury staff were puzzled. “Why does the budget need that?”",
+            "The answer was the GAD budget. The local government had to show how at least five percent of its "
+            "appropriations served gender and development, and good plans start with data on who is served.",
+            "(The local government, the people and the amounts are invented for this post. The rules come "
+            "from Republic Act No. 9710, the Magna Carta of Women, and PCW-DILG-DBM-NEDA Joint Memorandum "
+            "Circular No. 2016-01, cited below. Newer circulars may apply, so ask your planning office or "
+            "the DILG.)",
+            "Part 32 explained the five percent disaster fund. This part looks at another five percent with a "
+            "different purpose. When you finish reading, you will know where the GAD budget rule comes from, "
+            "how the amount is computed, how existing programs can count toward it, what may and may not be "
+            "charged to it, the deadlines, and how a treasury can help.",
+            ("photo", "blog/finance-gad-budget.jpg", "The GAD budget: at least five percent of total budget "
+             "appropriations, planned in the GAD Plan and Budget and reported in an accomplishment report. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Rule Comes From"),
+            "Republic Act No. 9710, the Magna Carta of Women, was approved on August 14, 2009. Section 36 "
+            "makes gender mainstreaming the strategy for carrying out the law, and requires that the cost of "
+            "GAD programs “shall be at least five percent (5%) of the agency’s or the local government unit’s "
+            "total budget appropriations.”",
+            ("point", "A minimum, not a maximum", "At least five percent. A local government may do more."),
+            ("point", "A focal point system", "Section 36 also sets up a GAD Focal Point System that "
+             "includes the local chief executive."),
+            ("point", "Audit", "The same section says the Commission on Audit “shall conduct an annual audit "
+             "on the use of the GAD budget.”"),
+            ("h", "Step 1: Compute the Amount"),
+            "The 2016 joint circular repeats the rule for local governments: “All LGUs shall allocate at least "
+            "five percent (5%) of their total annual budget appropriations.”",
+            ("point", "Example", "A municipality with total appropriations of ₱250,000,000 needs GAD "
+             "programs worth at least ₱12,500,000."),
+            ("point", "A measure across the budget", "The five percent measures how much of the budget "
+             "serves gender and development. It can be met through programs in many offices, as the GAD "
+             "Plan and Budget lists them."),
+            ("h", "Step 2: Count Existing Programs Through Attribution"),
+            "A local government does not have to create new programs for the entire amount. Part of the "
+            "budget of a major program can be attributed to GAD, based on a score from the Harmonized Gender "
+            "and Development Guidelines, or HGDG. The circular sets the shares:",
+            ("point", "Below 4.0", "“GAD is invisible.” Nothing is attributed."),
+            ("point", "4.0 to 7.9", "“Promising GAD prospects (conditional pass).” 25 percent."),
+            ("point", "8.0 to 14.9", "“Gender-sensitive.” 50 percent."),
+            ("point", "15.0 to 19.9", "“Gender-responsive.” 75 percent."),
+            ("point", "20.0", "“Fully gender-responsive.” 100 percent."),
+            ("point", "Example", "A ₱4,000,000 maternal and child health program that scores 16 is "
+             "gender-responsive, so ₱3,000,000 counts toward the GAD budget."),
+            "Attribution rewards programs designed with both women and men in mind. It also means that a "
+            "program with a low score adds nothing, however large its budget.",
+            ("h", "What May and May Not Be Charged"),
+            "The circular gives examples on both sides.",
+            ("point", "May be charged", "“Capacity development on GAD,” and “consultations conducted by the "
+             "LGU to gather inputs for and/or to disseminate the GAD plan and budget.”"),
+            ("point", "May not be charged", "“Purchase of supplies, materials, equipment and vehicles for the "
+             "general use of the LGU,” and honoraria for focal point members or other employees working on "
+             "GAD programs."),
+            "The circular also notes that GAD expenditures “must still follow government accounting rules and "
+            "regulations.” A GAD label does not relax the usual documents for a disbursement.",
+            ("photo", "blog/finance-gad-budget-attribution.jpg", "How HGDG scores translate into attributed "
+             "amounts, with an invented ₱4 million program. (Illustration: Butch Mahinay, aumahinay.dev)",
+             "medium"),
+            ("h", "Step 3: The Plan, the Report and the Deadline"),
+            ("point", "GAD Plan and Budget", "The GPB lists the programs, the amounts and the expected "
+             "results for the year."),
+            ("point", "GAD Accomplishment Report", "Prepared after the year ends, it reports what was actually "
+             "done and spent."),
+            ("point", "For municipalities and component cities", "The GPB goes through the provincial planning "
+             "and development office and is “submitted not later than March 31 to the DILG Provincial "
+             "Office,” together with the accomplishment report."),
+            ("point", "For provinces and larger cities", "The circular sets March 31 for submission to the "
+             "DILG regional office."),
+            ("h", "Where the Treasury Fits"),
+            "The treasury is not the lead office for GAD, but it holds data and runs services that matter "
+            "to women and men alike.",
+            ("point", "Sex-disaggregated data", "Business permit holders, real property owners and taxpayers "
+             "served at the window, counted by sex where the records allow it."),
+            ("point", "Services", "Clear schedules, priority lanes and help desks that work for working "
+             "mothers, older women and others with limited time."),
+            ("point", "Disbursement", "GAD-funded activities are paid through the same process as any other, "
+             "with the same documents."),
+            ("point", "Its own programs", "A treasury program, such as financial literacy sessions for market "
+             "vendors, can be designed and scored like any other program."),
+            ("h", "Questions a Council Member Can Ask"),
+            "The sanggunian approves the budget, so its members can check the GAD share before they vote.",
+            ("point", "Does the GAD total reach five percent?", "Of total appropriations, not of one fund."),
+            ("point", "Which programs were attributed, and at what score?", "Ask to see the HGDG results."),
+            ("point", "What did last year’s accomplishment report show?", "Compare the amounts planned with "
+             "the amounts actually spent."),
+            ("point", "Is the data disaggregated by sex?", "Plans built on counts of women and men served are "
+             "easier to defend and to review."),
+            ("h", "Planned Is Not Spent"),
+            "A GAD Plan and Budget can reach five percent on paper and fall short in practice, if the "
+            "programs are delayed or the funds are realigned during the year. The yearly accomplishment report is "
+            "where the difference shows. Reading the plan and the report side by side, year after year, "
+            "tells far more than either document alone.",
+            ("h", "Back to the Data Request"),
+            "The treasury staff found that the business permit forms recorded the owner’s sex, but the "
+            "database did not. They added the field, filled it in from the paper forms for the current year, and sent "
+            "the planning officer a one-page table. It showed that most market stall permits were held by "
+            "women, which helped shape the next year’s GAD plan for the public market.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Leaving GAD to one office", "Programs across the budget can count."),
+            ("point", "Attributing without a score", "Use the HGDG to support every share claimed."),
+            ("point", "Charging general office supplies", "The circular lists them as not chargeable."),
+            ("point", "Missing the March 31 deadline", "Prepare the accomplishment report in January and February."),
+            ("h", "Key Takeaways"),
+            ("point", "At least five percent", "Of total budget appropriations, under Section 36 of RA 9710."),
+            ("point", "Attribution", "Part of a major program’s budget can count, based on its HGDG score."),
+            ("point", "Rules on charging", "Some expenses qualify; general-use purchases do not."),
+            ("point", "Data helps", "The treasury can supply sex-disaggregated data for planning."),
+            ("h", "Your Part 48 Action Plan"),
+            ("point", "If you work in a treasury", "Check which of your records note the client’s sex, and "
+             "whether the planning office can use them."),
+            ("point", "If you work in planning or budget", "List the major programs that could be scored "
+             "with the HGDG this year."),
+            ("point", "If you are a resident", "Ask your local government for its GAD Plan and Budget, and "
+             "look for programs that serve your community."),
+            ("cta", "Read: Inside the Local Treasury, Part 32: The Disaster Fund, Five Percent Set Aside Before the Storm", "/blog/local-disaster-risk-reduction-fund/"),
+            ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
+            ("cta", "Read: Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget", "/blog/local-finance-committee/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("ask", "Have you seen your local government’s GAD Plan and Budget?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 47: GSIS Contributions, Why the Remittance Comes Before Other Bills",
+        "slug": "gsis-remittances",
+        "category": "finance",
+        "date": "July 7, 2027",
+        "summary": "Every month, a local government deducts its employees’ GSIS contributions from their pay "
+                   "and adds its own share. The GSIS Act sets a deadline for sending both, puts the remittance "
+                   "ahead of most other obligations, charges interest on late payments, and names the treasurer "
+                   "among the officers who can be held liable. This part explains the rules.",
+        "publish_on": "2027-07-07 21:00",
+        "body": [
+            "It was the first week of December, and the general fund was thin. The suppliers of the road "
+            "materials were asking for payment, the Christmas activities needed funding, and the GSIS "
+            "remittance for November was due within days.",
+            "“Can the GSIS wait a month?” someone at the meeting asked. “It’s just another government "
+            "agency.” The treasurer opened the GSIS Act and read one sentence aloud.",
+            "(The local government, the meeting and the amounts are invented for this post. The rules come "
+            "from Republic Act No. 8291, the GSIS Act of 1997, cited below. GSIS circulars and other laws "
+            "also apply, so check with your accounting office and the GSIS.)",
+            "Part 7 followed a payment from the budget to the check. This part looks at one payment that the "
+            "law treats differently from the rest. When you finish reading, you will know what the "
+            "contributions are, when they must be remitted, why they come before most other bills, what "
+            "happens when they are late, and who can be held liable.",
+            ("photo", "blog/finance-gsis-remittance.jpg", "GSIS contributions: deducted from pay, matched by "
+             "the employer, and remitted within the first ten days of the following month. (Illustration: "
+             "Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Shares Every Month"),
+            "Republic Act No. 8291 was approved on May 30, 1997. Section 5 sets the monthly contributions for "
+            "compensation up to the limit set by the GSIS.",
+            ("point", "The employee’s share", "9 percent of the monthly compensation."),
+            ("point", "The employer’s share", "12 percent, paid by the local government."),
+            ("point", "The deduction", "Section 6(a) says “the employer shall deduct each month from the "
+             "monthly salary or compensation of each employee” the employee’s share."),
+            "That deduction is the employee’s money from the moment it leaves the payslip. The local "
+            "government holds it only long enough to send it on.",
+            ("point", "Example", "If the monthly compensation of all employees totals ₱4,800,000, the "
+             "employees’ share is ₱432,000 and the employer’s share is ₱576,000, for a remittance of "
+             "₱1,008,000."),
+            ("h", "The Deadline and the Priority"),
+            "Section 6(b) sets the deadline: the remittance is due “within the first ten (10) days of the "
+            "calendar month following” the month the contributions cover.",
+            "The same subsection sets the priority. The remittance “shall take priority over and above the "
+            "payment of any and all obligations, except salaries and wages of its employees.”",
+            ("point", "In plain words", "After paying its people, the local government pays the GSIS before "
+             "suppliers, contractors and other creditors."),
+            ("point", "Why it matters", "The contributions fund the members’ social insurance under the "
+             "same law, including retirement and life insurance. The money is theirs, not the office’s."),
+            "The Supreme Court quoted this priority in Orion Water District v. GSIS (G.R. No. 195382, June 15, "
+            "2016), a case about unremitted contributions of a water district’s employees, and said that "
+            "“continued refusal of the employer to remit contributions gives rise to a cause of action.”",
+            ("h", "What Late Remittance Costs"),
+            "Section 7 charges interest on delayed remittances of “not less than two percent (2%) simple "
+            "interest per month,” paid by the employer.",
+            ("point", "Example", "If the ₱1,008,000 above is a month late, the interest is at least ₱20,160. "
+             "Three months late, at least ₱60,480."),
+            ("point", "Who pays", "The local government, from public funds that could have gone elsewhere."),
+            "A delay meant to save cash in December can end up costing more by March.",
+            ("photo", "blog/finance-gsis-remittance-month.jpg", "One month’s cycle: payroll and deduction, the "
+             "employer’s share, remittance by the 10th, and reconciliation. Amounts are invented. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who Can Be Held Liable"),
+            "The GSIS Act does not leave the duty to the office in general. It names people.",
+            ("point", "Heads of offices", "Section 5(c) says “the heads of offices and agencies shall be "
+             "administratively liable” for non-remittance or delayed remittance."),
+            ("point", "Treasurers and other finance officers", "Section 52(d) covers “the treasurer, finance "
+             "officer, cashier, disbursing officer, budget officer or other official or employee” who fails "
+             "to include the contributions in the annual budget, or who delays payment by more than thirty "
+             "days after it becomes due. The penalty includes imprisonment, a fine and “absolute perpetual "
+             "disqualification from holding public office,” upon conviction."),
+            ("point", "Civil liability too", "Section 52(h) says those responsible “shall be liable not only "
+             "criminally but also civilly” to the GSIS and the affected members."),
+            "The list names officers who sit in the treasury. That alone is a good reason for every treasurer "
+            "to know the deadline by heart.",
+            ("h", "It Starts in the Budget"),
+            "Section 52(d) begins with the budget. If the employer’s share is not appropriated, the "
+            "treasurer cannot pay it, however willing.",
+            ("point", "During budget preparation", "Check that the employer’s share is in the personal "
+             "services budget for every position, including new ones."),
+            ("point", "Throughout the year", "Keep cash set aside for the remittance before paying other "
+             "obligations, as Section 6(b) requires."),
+            ("point", "After each payroll", "Match the deductions to the remittance so that no employee is "
+             "left out."),
+            ("h", "Other Deductions"),
+            "GSIS is not the only deduction from a government payslip. Pag-IBIG Fund and PhilHealth "
+            "contributions, and taxes withheld for the BIR, follow their own laws and deadlines. The habit "
+            "is the same: deduct correctly, remit on time, and reconcile every month.",
+            ("h", "A Monthly Routine for the Treasury"),
+            "A remittance that arrives on time each month tends to come from a routine, not from a rush in "
+            "the last week.",
+            ("point", "Day 1 to 3", "Get the payroll register for the previous month and the total of GSIS "
+             "deductions from the accounting office."),
+            ("point", "Day 4 to 5", "Compute the employer’s share and confirm that the cash is in the right "
+             "fund and account."),
+            ("point", "Day 6 to 8", "Prepare and sign the payment, with the list of members and amounts."),
+            ("point", "By Day 10", "Remit, and file the proof of payment with the month’s payroll papers."),
+            ("point", "After remitting", "Note any member whose amount changed from last month, and find out "
+             "why."),
+            ("h", "Questions an Employee Can Ask"),
+            "Employees have a stake in this too. A few questions to ask the accounting office or the GSIS:",
+            ("point", "Are my contributions posted every month?", "Gaps are easier to fix early."),
+            ("point", "Does my salary in the GSIS record match my payslip?", "A wrong salary means a wrong "
+             "contribution."),
+            ("point", "Were any months remitted late?", "If so, the interest falls on the employer, not on "
+             "the employee."),
+            ("h", "Back to the December Meeting"),
+            "The treasurer read Section 6(b) aloud, then the interest rule in Section 7. The meeting agreed to "
+            "remit on time and to schedule the supplier payments over the next two weeks as collections came "
+            "in. Nobody asked the question again.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the GSIS as a creditor who can wait", "The law places it after salaries and "
+             "wages, ahead of other obligations."),
+            ("point", "Holding employees’ deductions", "The employee’s share is not the local government’s "
+             "money."),
+            ("point", "Forgetting new positions in the budget", "The employer’s share must be appropriated."),
+            ("point", "Skipping the monthly reconciliation", "Errors on one member’s record can surface much "
+             "later, when the member files a claim."),
+            ("h", "Key Takeaways"),
+            ("point", "9 and 12 percent", "The employee’s and the employer’s shares under Section 5."),
+            ("point", "By the 10th of the following month", "Section 6(b)."),
+            ("point", "Before other obligations", "Except salaries and wages of employees."),
+            ("point", "Late costs money and can bring liability", "Interest under Section 7, and liability "
+             "under Sections 5(c) and 52."),
+            ("h", "Your Part 47 Action Plan"),
+            ("point", "If you work in a treasury", "Put the remittance deadline in the office calendar, with a "
+             "reminder five days before."),
+            ("point", "If you work in budget or accounting", "Check that every position’s employer share is "
+             "in next year’s budget."),
+            ("point", "If you are a government employee", "Check your GSIS records from time to time to see "
+             "that your contributions are posted."),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services", "/blog/personal-services-limit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget", "/blog/local-finance-committee/"),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
+            ("ask", "Does your office remit GSIS contributions before the 10th of each month?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 46: The SK Fund, Ten Percent of the Barangay’s Money for the Youth",
+        "slug": "sangguniang-kabataan-fund",
+        "category": "finance",
+        "date": "July 5, 2027",
+        "summary": "Ten percent of a barangay’s general fund is set aside for the Sangguniang Kabataan, the "
+                   "youth council. This part explains where the rule comes from, how the amount is estimated, "
+                   "when the barangay must release it, how the SK plans and spends it, and the limits that "
+                   "apply, based on RA 10742 as amended and the 2025 joint guidelines of DBM, DILG and the "
+                   "National Youth Commission.",
+        "publish_on": "2027-07-05 21:00",
+        "body": [
+            "The new SK treasurer was nineteen, a college student, and nervous. She came to the barangay hall "
+            "with a notebook and one question for the barangay treasurer: “How much money do we actually "
+            "have, and when do we get it?”",
+            "The barangay treasurer smiled. She had been asked the same question by three SK treasurers "
+            "before, and she had learned that the answer was easier to understand with the law and the "
+            "calendar side by side.",
+            "(The barangay and the people are invented for this post. The rules come from Republic Act No. "
+            "10742, as amended by Republic Act No. 11768, and DBM-DILG-NYC Joint Memorandum Circular No. 1, "
+            "dated May 23, 2025, cited below. Newer guidelines may apply, so ask your barangay treasurer or "
+            "the DILG.)",
+            "Part 40 followed the barangay budget from the barangay hall to the city or municipal review. "
+            "This part follows one line in that budget. When you finish reading, you will know where the SK "
+            "fund comes from, how it is estimated, when it must be released, how the SK plans and spends it, "
+            "and the limits that keep it focused on the youth.",
+            ("photo", "blog/finance-sk-fund.jpg", "The SK fund: ten percent of the barangay’s general fund, "
+             "released to the SK’s own bank account, planned through the youth investment program. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Where the Ten Percent Comes From"),
+            "The Sangguniang Kabataan Reform Act of 2015, Republic Act No. 10742, was approved on January 15, "
+            "2016. Republic Act No. 11768, approved on May 6, 2022, amended several of its sections, "
+            "including Section 20 on SK funds. As amended, it says: “Ten percent (10%) of the general funds of "
+            "the barangay shall be set aside for the Sangguniang Kabataan.”",
+            ("point", "Lump sum", "The sangguniang barangay appropriates the amount in a lump sum."),
+            ("point", "For the youth only", "The money is for “youth development and empowerment purposes.”"),
+            ("point", "Financial independence", "The 2025 circular cites Section 20(b) as giving the SK "
+             "financial independence in its operations, disbursements and encashment of its fund."),
+            ("point", "Who counts as youth", "Section 3 defines youth as persons aged 15 to 30."),
+            ("h", "Step 1: The Estimate, by September 15"),
+            "Under the 2025 joint circular, the barangay treasurer informs the SK chairperson and the SK "
+            "treasurer in writing, by September 15, of the estimated ten percent for the coming year, "
+            "supported by a certification of income.",
+            ("point", "If no notice arrives", "The SK may use ten percent of the barangay’s National Tax "
+             "Allotment share, as issued by the DBM regional office, as its basis."),
+            ("point", "If the actual amount is higher", "When the approved SK budget turns out short of the "
+             "actual ten percent, the SK prepares a supplemental budget."),
+            ("point", "Example", "A barangay with a general fund of ₱6,200,000 sets aside ₱620,000 for the SK."),
+            ("h", "Step 2: The SK Plans"),
+            "The SK does not simply receive money and spend it. The circular describes two plans.",
+            ("point", "The CBYDP", "The Comprehensive Barangay Youth Development Plan, a “3-year rolling "
+             "plan,” prepared with the concurrence of the Katipunan ng Kabataan, the assembly of the youth "
+             "in the barangay."),
+            ("point", "The ABYIP", "The Annual Barangay Youth Investment Program, “the yearly program based "
+             "on the Comprehensive Barangay Youth Development Plan,” approved by SK resolution before the "
+             "budget is prepared."),
+            "As amended in 2022, Section 20 says both plans “shall give priority to programs, projects and "
+            "activities that will promote and attain the thrusts of the PYDP,” the Philippine Youth "
+            "Development Plan. The areas it lists include health, education, skills training and climate "
+            "action.",
+            ("h", "Step 3: The SK Budget and Its Review"),
+            ("point", "By October 16", "The SK chairperson submits the proposed budget to the SK members for "
+             "authorization."),
+            ("point", "Within ten days of approval", "The SK secretary submits the approved budget to the "
+             "sangguniang panlungsod or bayan."),
+            ("point", "Sixty days", "The city or municipal council reviews it. If the review is not "
+             "finished within that period, the circular says, the budget is deemed approved."),
+            ("photo", "blog/finance-sk-fund-calendar.jpg", "The SK fund calendar, from the estimate in "
+             "September to monthly releases. Amounts are invented. (Illustration: Butch Mahinay, "
+             "aumahinay.dev)", "medium"),
+            ("h", "Step 4: Release, Every Month"),
+            "This is where the barangay treasurer’s role is clearest. The circular says the SK funds “shall "
+            "be automatically released by the barangay to the SK and shall not be subject to any lien or "
+            "holdback.”",
+            ("point", "The account", "The SK opens a current account in a government-owned bank, with the SK "
+             "chairperson and the SK treasurer as signatories."),
+            ("point", "The timing", "The funds are deposited in that account “not later than five (5) "
+             "working days after the crediting of the monthly NTA share of the barangay.”"),
+            ("point", "No SK officials or no account", "The ten percent goes to the barangay’s special trust "
+             "fund, backed by an actual cash deposit, until it can be released."),
+            ("point", "Example", "With ₱620,000 a year, about ₱51,700 is released each month."),
+            ("h", "The Limits on Spending"),
+            ("point", "Personal services", "“Not more than twenty-five (25%) of the SK Fund” may go to personal "
+             "services."),
+            ("point", "Training", "Training may not exceed fifteen percent of the SK fund."),
+            ("point", "Honoraria", "A monthly honorarium may not exceed the monthly compensation of the SK "
+             "chairperson."),
+            ("point", "Public purpose", "Payments must follow an approved budget and be used “solely for "
+             "public purposes.”"),
+            ("point", "Bonds and audit", "The SK chairperson and treasurer must be bonded, the circular "
+             "adds. Like other public money, SK funds are subject to audit by the Commission on Audit."),
+            ("h", "The SK Treasurer’s Job"),
+            "The circular gives the SK treasurer duties that mirror a small treasury: helping prepare the "
+            "budget and its income estimates, certifying that funds are available, keeping the SK’s financial "
+            "records, holding custody of the funds, and refusing payments from items declared inoperative, "
+            "disallowed or reduced.",
+            "For a young officer, the best start is often the barangay treasurer’s own records: the "
+            "certification of income, the NTA crediting dates and the release receipts. They show whether "
+            "the money is arriving on time.",
+            ("h", "Questions an SK Treasurer Can Ask"),
+            ("point", "What is this year’s estimate?", "And which certification of income supports it?"),
+            ("point", "When does the barangay’s NTA arrive?", "The release should follow within five working "
+             "days."),
+            ("point", "Is anything held back?", "The circular rules out liens and holdbacks."),
+            ("point", "Where are the release records?", "Keep copies of each deposit slip in the SK’s files."),
+            ("h", "Back to the Barangay Hall"),
+            "The barangay treasurer drew a calendar on one page: the September estimate, the October budget, "
+            "the sixty-day review, and twelve monthly releases, each within five working days after the NTA "
+            "arrived. The SK treasurer copied it into her notebook and asked for the account details the next "
+            "day.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Holding back the release", "The circular rules out liens and holdbacks."),
+            ("point", "Skipping the written estimate", "Give it by September 15, with the certification of "
+             "income."),
+            ("point", "Spending without the ABYIP", "Projects should trace back to the approved plans."),
+            ("point", "Exceeding the caps", "Check personal services and training against the limits."),
+            ("h", "Key Takeaways"),
+            ("point", "Ten percent of the general funds", "Section 20 of RA 10742, as amended by RA 11768."),
+            ("point", "Released monthly", "Within five working days after the barangay’s NTA arrives."),
+            ("point", "Planned before spent", "CBYDP for three years, ABYIP for each year."),
+            ("point", "Limits apply", "Caps on personal services and training, and full audit rules."),
+            ("h", "Your Part 46 Action Plan"),
+            ("point", "If you are an SK officer", "Ask your barangay treasurer for the written estimate and "
+             "the release dates for this year."),
+            ("point", "If you are a barangay treasurer", "Put the September 15 estimate and the monthly "
+             "release dates in your calendar."),
+            ("point", "If you are a young resident", "Attend the Katipunan ng Kabataan assembly and ask what "
+             "the CBYDP plans for your barangay."),
+            ("cta", "Read: Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review", "/blog/barangay-budget-review/"),
+            ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services", "/blog/personal-services-limit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Does your barangay’s SK receive its fund on time each month?"),
+        ],
+    },
+    {
+        "title": "Inside the Local Treasury, Part 45: When a Taxpayer’s Check Bounces",
+        "slug": "when-a-tax-check-bounces",
+        "category": "finance",
+        "date": "July 3, 2027",
+        "summary": "A check handed over at the treasury window is not yet payment. Under the Civil Code, it "
+                   "pays the tax only when it is cashed. This part explains what happens when a taxpayer’s "
+                   "check is dishonored, why the tax can become late again, what the Bouncing Checks Law "
+                   "adds, and how a treasury can lower the risk.",
+        "publish_on": "2027-07-03 21:00",
+        "body": [
+            "On the last day for paying the first quarter business tax, a hardware store owner paid "
+            "₱186,400 with a personal check. The collector checked the amount and the signature, issued the "
+            "official receipt, and the owner left with his permit papers in order.",
+            "Four days later, the bank returned the check, stamped “Drawn Against Insufficient Funds.” The "
+            "owner was surprised to be told that, as far as the law was concerned, his tax had not been paid.",
+            "(The local government, the store and the amounts are invented for this post. The rules come from "
+            "the Civil Code, the Local Government Code and Batas Pambansa Blg. 22, cited below. Your local "
+            "revenue code and your office’s rules on accepting checks also apply, so ask your treasury.)",
+            "Part 13 followed collections from the cash box to the bank. This part looks at one thing that "
+            "can go wrong on the way. When you finish reading, you will know why a check is not payment until "
+            "it clears, what the taxpayer owes when it bounces, what the Bouncing Checks Law adds, what the "
+            "treasury should do, and how an office can lower the risk.",
+            ("photo", "blog/finance-bounced-check.jpg", "A check pays the tax only when it is cashed. If it "
+             "bounces, the tax is unpaid again, and the late payment rules can apply. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Check Is a Promise, Not Yet Payment"),
+            "Article 1249 of the Civil Code covers payment by instruments such as checks. As quoted by the "
+            "Supreme Court in Capital Insurance & Surety Co. v. Plastic Era Co. (G.R. No. L-22375, July 18, "
+            "1975), it says that “the delivery of promissory notes payable to order, or bills of exchange or "
+            "other mercantile documents shall produce the effect of payment only when they have been cashed, "
+            "or when through the fault of the creditor they have been impaired.”",
+            "The Court added in that case that “it is only when the check is cashed that it is said to effect "
+            "payment.” In an earlier case, GSIS v. Reyes (G.R. No. L-24574, December 29, 1965), the Court "
+            "called it “elementary that a check shall only produce the effect of payment when it is actually "
+            "cashed.”",
+            ("point", "At the window", "The treasury receives a promise that the bank will pay."),
+            ("point", "When the check clears", "The tax is paid."),
+            ("point", "When the check bounces", "The promise failed, so the tax is still owed."),
+            ("h", "What the Taxpayer Owes After a Bounce"),
+            "The tax is the same amount it was before. What changes is the date. If the deadline passed while "
+            "the check was in the bank, the payment may now be late.",
+            "Section 168 of the Local Government Code lets the sanggunian impose a surcharge of up to 25 "
+            "percent on taxes not paid on time, and interest of up to 2 percent a month on the unpaid amount, "
+            "including the surcharge, "
+            "for no more than 36 months. The exact rates are in the local revenue code.",
+            ("point", "Example", "If the revenue code sets a 25 percent surcharge, the hardware store’s "
+             "₱186,400 becomes ₱233,000 once the deadline has passed, before any monthly interest."),
+            ("point", "The official receipt", "The receipt was issued for a check that did not clear. It "
+             "does not prove payment by itself, and the taxpayer’s account shows the tax unpaid again."),
+            ("point", "The permit", "Whether a permit issued on the strength of that payment stays valid is a "
+             "question for the revenue code and the permit office."),
+            ("h", "What the Bouncing Checks Law Adds"),
+            "Batas Pambansa Blg. 22 was approved on April 3, 1979. It makes it a crime to issue a check "
+            "knowing that there are not enough funds to cover it.",
+            ("point", "The penalty", "Section 1 provides imprisonment of “not less than thirty days but not "
+             "more than one (1) year,” or a fine of up to double the amount of the check, which “shall in no "
+             "case exceed Two Hundred Thousand Pesos,” or both, at the court’s discretion."),
+            ("point", "Presentment", "Under Section 2, a check refused for insufficient funds is evidence "
+             "that the drawer knew, if it was presented within 90 days from its date."),
+            ("point", "Five banking days", "That presumption does not apply if the drawer pays the amount in "
+             "full, or arranges for the bank to pay it, within five banking days after receiving notice "
+             "that the check was not paid."),
+            "This is why the notice matters. A written notice of dishonor gives the taxpayer a clear chance to "
+            "make the check good. Filing a case is a separate decision, made with the legal officer, and "
+            "a court case does not by itself collect the tax.",
+            ("h", "What the Treasury Should Do"),
+            ("point", "Record the return at once", "Tell the accounting office the same day, so the books and "
+             "the taxpayer’s account both show the amount as unpaid."),
+            ("point", "Send a written notice", "Name the check, the amount, the bank’s reason and the "
+             "deadline for replacing it. Keep proof of receipt."),
+            ("point", "Ask for cash or a manager’s check", "A replacement personal check from the same "
+             "account carries the same risk."),
+            ("point", "Apply the revenue code", "Compute any surcharge and interest from the original due "
+             "date, as the ordinance provides."),
+            ("point", "Use the collection tools if needed", "If the taxpayer does not pay, the remedies in "
+             "Part 30 remain available."),
+            ("photo", "blog/finance-bounced-check-steps.jpg", "From the bank’s return to settlement, in five "
+             "steps. The amounts are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Deposit Promptly, for the Treasury’s Own Protection"),
+            "Article 1249 has a second part that concerns the treasury. A check counts as payment if, “through "
+            "the fault of the creditor,” it has been “impaired.” A treasury that keeps checks in a drawer for "
+            "weeks invites an argument that any loss was its own fault.",
+            "Prompt deposit, as Part 13 explained, protects both the money and the treasury’s position. It "
+            "also means a bounced check is discovered while the taxpayer can still be reached easily.",
+            ("h", "Lowering the Risk"),
+            "A local government can set its own rules on which checks it accepts, within the law and the "
+            "revenue code. Possible approaches include:",
+            ("point", "Manager’s or cashier’s checks for large amounts", "These are drawn on the bank itself, "
+             "so insufficient funds are unlikely."),
+            ("point", "A list of taxpayers whose checks bounced", "Ask them for cash or a manager’s check "
+             "next time."),
+            ("point", "No postdated checks", "A postdated check is not payment on the date it is handed over."),
+            ("point", "Electronic payment", "Where the office offers it, the treasury can confirm that the "
+             "money has arrived before issuing the receipt."),
+            "Any such rule should be written, posted at the window and applied to everyone the same way.",
+            ("h", "Back to the Hardware Store"),
+            "The treasury sent a written notice the day the check came back. The owner paid the full amount "
+            "with a manager’s check within the week. Because the deadline had passed, the revenue code’s "
+            "surcharge applied. He asked whether it could be waived. The treasurer explained that only an "
+            "ordinance or a law could do that, as Part 6 discussed, and that none applied.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Treating the receipt as proof of payment", "Not when the check behind it bounced."),
+            ("point", "Holding checks before deposit", "It delays discovery and weakens the treasury’s "
+             "position."),
+            ("point", "Accepting a second personal check", "Ask for cash or a manager’s check instead."),
+            ("point", "Waiving the surcharge at the window", "Only an ordinance or a law can grant relief."),
+            ("h", "Key Takeaways"),
+            ("point", "Paid only when cashed", "Article 1249 of the Civil Code."),
+            ("point", "A bounce makes the tax unpaid again", "Late payment rules under Section 168 can apply."),
+            ("point", "BP 22 is separate", "A criminal law on bad checks, with five banking days to make good."),
+            ("point", "Clear rules lower the risk", "Written, posted and applied to all."),
+            ("h", "Your Part 45 Action Plan"),
+            ("point", "If you pay taxes by check", "Make sure the funds are there before the deadline, and keep "
+             "your bank’s confirmation that the check cleared."),
+            ("point", "If you work in a treasury", "Check whether your office has a written policy on checks, "
+             "and a standard notice for returned checks."),
+            ("point", "If you are a resident", "Ask which payment methods your treasury accepts, and which one "
+             "posts fastest."),
+            ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
+            ("cta", "Read: Inside the Local Treasury, Part 30: Unpaid Business Taxes, Distraint, Levy and What Cannot Be Seized", "/blog/unpaid-business-taxes-distraint-and-levy/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("ask", "Does your treasury accept personal checks, and for how much?"),
+        ],
+    },
+    {
         "title": "Inside the Local Treasury, Part 44: Old Treasury Records, Why They Cannot Simply Be Thrown Away",
         "slug": "disposing-of-treasury-records",
         "category": "finance",
