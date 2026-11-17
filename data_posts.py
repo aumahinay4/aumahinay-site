@@ -12,6 +12,393 @@ SERIES = "Data Analytics Series"
 
 DATA_POSTS = [
     {
+        "title": "Data Analytics Series, Part 51: Protected Ranges, Keeping Formulas Safe in a Shared Sheet",
+        "slug": "data-analytics-part-51-protected-ranges",
+        "category": "data",
+        "date": "June 28, 2027",
+        "summary": "A shared Google Sheet lets many people enter data at once, and any of them can type over a "
+                   "formula by accident. Protected ranges let you decide who may edit which cells, or show a "
+                   "warning before a change. This part shows how to set them up, how to plan which cells to "
+                   "lock, and what protection does not do.",
+        "publish_on": "2027-06-28 21:00",
+        "body": [
+            "Six collectors entered their daily totals into one shared sheet. Column H added each day’s "
+            "figures, and a summary at the top added the month. At month-end, the summary was ₱48,600 short "
+            "of the official receipts.",
+            "It took the analyst most of a morning to find why. On the 14th, a collector had typed a number "
+            "into H17, the day’s total, instead of the cell beside it. The formula was gone, and the number "
+            "in its place was that collector’s own total, not the day’s.",
+            "(The office, the people and the amounts are invented for this lesson. The Google Sheets features "
+            "are real and described in Google’s help pages.)",
+            "Part 46 made formulas easier to read. This part makes them harder to break. When you finish "
+            "reading, you will know how to plan which cells to protect, how to protect a range or a whole "
+            "sheet, the difference between a warning and a restriction, how to leave input cells open, and "
+            "why protection is not a security tool.",
+            ("photo", "blog/data-protected-ranges.jpg", "Protected ranges: leave the input cells open, lock "
+             "the formulas and headers, and choose between a warning and a restriction. (Illustration: Butch "
+             "Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 1: Map the Sheet Before You Lock It"),
+            "Before touching any setting, sort the cells of the sheet into three groups.",
+            ("point", "Input cells", "Where people are supposed to type: each collector’s daily figure, in "
+             "B4 to G34 of the practice sheet below."),
+            ("point", "Formula cells", "Totals, summaries and any calculation: the day totals in column H and "
+             "the month summary at the top."),
+            ("point", "Structure", "Headers, labels, dates and the notes tab. These rarely change and should "
+             "not be touched by accident."),
+            "A simple test: if a cell should change every day, it is input. If it should never be typed in, "
+            "protect it.",
+            ("h", "The Practice Sheet"),
+            ("point", "Row 3, headers", "A3: Date. B3 to G3: Collector 1 to Collector 6. H3: Day total."),
+            ("point", "Rows 4 to 34", "One row per day of the month. Type a few sample figures in B to G."),
+            ("point", "Day totals", "In H4, type =SUM(B4:G4) and fill down to H34."),
+            ("point", "Month summary", "In H1, type =SUM(H4:H34). In G1, type the label Month total."),
+            ("h", "Step 2: Protect the Formulas"),
+            "Google’s help gives the steps: open the spreadsheet, click Data, then Protect sheets and ranges. "
+            "In the panel, click Add a sheet or range, choose Range, and select the cells.",
+            ("point", "Select H4:H34", "The day totals. Add a description such as “Day totals, formula.”"),
+            ("point", "Click Set permissions", "Choose who may edit, then save."),
+            ("point", "Repeat for H1 and the headers", "Or protect rows 1 to 3 as one range."),
+            "A description matters. Months later, the list of protected ranges is easier to manage if each "
+            "one says what it holds.",
+            ("h", "Step 3: Choose a Warning or a Restriction"),
+            "The permissions screen offers two kinds of protection.",
+            ("point", "Show a warning when editing this range", "Nobody is blocked. Anyone who tries to "
+             "edit sees a prompt asking them to confirm. Good for a small, careful team."),
+            ("point", "Restrict who can edit this range", "Only the people you choose can edit. You can limit "
+             "it to only you, to people in your organization, or to a custom list."),
+            ("point", "The owner", "Google’s help notes that the owner of the file can still edit protected "
+             "ranges, and editors cannot remove the owner’s permission."),
+            "For the collections sheet, a restriction fits: only the analyst and the chief of the collection "
+            "division may edit the formulas. Collectors keep full access to their own input columns.",
+            ("photo", "blog/data-protected-ranges-sheet.jpg", "A shared collections sheet with input cells "
+             "left open for the collectors, and the day totals, month summary and headers protected. Figures "
+             "are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: Protect a Whole Sheet, Except Some Cells"),
+            "Sometimes it is easier to protect everything and open only the input area.",
+            ("point", "Choose Sheet instead of Range", "Then pick the tab to protect."),
+            ("point", "Tick Except certain cells", "Add B4:G34, the input area. Those cells stay editable."),
+            ("point", "Protect the Notes and Lists tabs", "Tabs that hold dropdown lists or instructions are "
+             "good candidates for full protection."),
+            "This approach is safer for sheets with many formulas, because any new formula added later is "
+            "protected automatically. With range-by-range protection, a new formula is unprotected until "
+            "someone adds it.",
+            ("h", "Step 5: Recover When Something Slips Through"),
+            ("point", "Version history", "File, then Version history, shows earlier versions of the sheet. "
+             "The analyst could have found the changed cell in H17 there in minutes."),
+            ("point", "Show edit history", "Right-click a cell and choose Show edit history to see who "
+             "changed it and when, where the feature is available."),
+            ("point", "Keep a dated copy", "Part 15 suggested saving a copy before big changes. Do it before "
+             "changing protections too."),
+            ("h", "Step 6: Review the Protections Each Quarter"),
+            "Protections that made sense in January may not fit in June. People transfer, new tabs are "
+            "added, and the sheet’s layout changes.",
+            ("point", "Open the list", "Data, then Protect sheets and ranges, shows every protection in the "
+             "file with its description."),
+            ("point", "Check the people", "Remove anyone who has left the office or changed duties, as "
+             "Part 38 of the Cybersecurity Series advised for accounts."),
+            ("point", "Check the ranges", "If rows were added, make sure the protected range still covers "
+             "every formula. A range set to H4:H34 will not cover a new row 35."),
+            ("point", "Test it", "Ask a colleague with edit access to try typing in a protected cell. If "
+             "the sheet accepts it without a prompt, something is missing."),
+            "A ten-minute review four times a year keeps the protections matched to the way the sheet is "
+            "actually used.",
+            ("h", "What Protection Does Not Do"),
+            "Google’s help is direct about the limits: protection “shouldn’t be used as a security measure.” "
+            "People with access can still copy, print, export or import the spreadsheet.",
+            ("point", "It prevents accidents", "Not deliberate copying of the data."),
+            ("point", "Sharing controls access", "Who can open the file is set in the Share settings. Part 17 "
+             "of the Business Intelligence Series discussed sharing dashboards without sharing too much."),
+            ("point", "Private data needs more", "If the sheet holds taxpayers’ personal data, the rules in "
+             "Part 6 on the Data Privacy Act still apply."),
+            ("point", "No passwords", "The help notes that you cannot add a password to a protected range."),
+            ("h", "Back to the Collections Sheet"),
+            "The analyst restored the formula in H17 from version history and found the ₱48,600. Then she "
+            "protected the whole tab except the collectors’ input cells, restricted the formulas to herself "
+            "and the division chief, and added a description to each protected range.",
+            "Two weeks later, a collector tried to type in the day-total column again. The sheet refused the "
+            "edit, and the collector entered the figure in the right cell.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Locking input cells", "People stop using the sheet or start a copy of their own."),
+            ("point", "Protecting without descriptions", "Name each range so it can be managed later."),
+            ("point", "Relying on warnings for critical totals", "Use a restriction for formulas that feed "
+             "reports."),
+            ("point", "Treating protection as security", "Control access through sharing, not protection."),
+            ("h", "Key Takeaways"),
+            ("point", "Map first", "Inputs open, formulas and structure protected."),
+            ("point", "Data, then Protect sheets and ranges", "Add a range, set permissions, describe it."),
+            ("point", "Warning or restriction", "A warning asks for confirmation. A restriction blocks."),
+            ("point", "Not a security tool", "Anyone with access can still copy or export."),
+            ("h", "Your Part 51 Exercise"),
+            ("point", "Step 1", "Build the practice sheet and add the formulas."),
+            ("point", "Step 2", "Protect H4:H34 with a warning, then try typing in H10."),
+            ("point", "Step 3", "Change it to a restriction, and ask a colleague with edit access to try."),
+            ("point", "Step 4", "Protect the whole tab except B4:G34, and test that the inputs still work."),
+            ("cta", "Read: Data Analytics Series, Part 46: Named Ranges and ARRAYFORMULA, Formulas Anyone Can Read", "/blog/data-analytics-part-46-named-ranges-arrayformula/"),
+            ("cta", "Read: Data Analytics Series, Part 15: Naming, Versions and Backups, Keeping Data Files Safe", "/blog/data-analytics-part-15-naming-versions-backups/"),
+            ("cta", "Read: Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record", "/blog/data-analytics-part-12-one-row-per-record/"),
+            ("cta", "Read: Data Analytics Series, Part 6: Data Ethics and the Data Privacy Act for Analysts", "/blog/data-analytics-part-6-data-ethics-privacy/"),
+            ("ask", "Which formula in your office’s shared sheets would you protect first?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 50: Present Value, Why a Peso Saved in Eight Years Is Worth Less Today",
+        "slug": "data-analytics-part-50-present-value",
+        "category": "data",
+        "date": "June 25, 2027",
+        "summary": "A proposal that costs money now and saves money for years can look better on paper than it "
+                   "is, because a peso received years from now is worth less than a peso today. This part "
+                   "explains present value and net present value, computes them in Google Sheets with a "
+                   "simple formula and with NPV, and shows how the answer depends on the rate and the years assumed.",
+        "publish_on": "2027-06-25 21:00",
+        "body": [
+            "The proposal for solar panels on the treasury roof had a simple pitch. The panels cost ₱200,000. "
+            "They would cut the electricity bill by ₱32,000 a year for eight years. Total savings: ₱256,000. "
+            "Net gain: ₱56,000.",
+            "The administrative officer forwarded it to the analyst with a short note: “Is the ₱56,000 "
+            "real?” The analyst’s answer was that it depended on when the money arrived. The ₱200,000 left "
+            "the treasury on day one. The savings trickled in over eight years.",
+            "(The office, the prices and the savings are invented for this lesson. The method is standard, "
+            "and the Google Sheets functions are real.)",
+            "Part 47 asked how many copies a printer had to make to pay for itself. This part adds time to "
+            "that question. After this post, you will know why money later is worth less than money now, "
+            "what present value and net present value mean, how to compute them in Google Sheets, how the "
+            "choice of rate changes the answer, and how to report the result honestly.",
+            ("photo", "blog/data-present-value.jpg", "Present value: a peso that arrives years from now is "
+             "worth less than a peso today, so future savings are discounted before they are compared with "
+             "a cost paid now. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Why Money Later Is Worth Less"),
+            "A peso today can be put to use today. It can pay down a loan, fund a project or earn interest. "
+            "A peso promised in eight years cannot do any of that until it arrives.",
+            ("point", "The rate that measures it", "Analysts call it the discount rate. For a local "
+             "government, a reasonable starting point is what it would cost to borrow the money, or what the "
+             "money could earn if kept in the bank."),
+            ("point", "Compounding in reverse", "Part 48 grew a value forward at a steady rate. Discounting "
+             "does the opposite: it shrinks a future value back to today."),
+            ("point", "The formula", "Present value = future amount ÷ (1 + rate) raised to the number of "
+             "years."),
+            "At 6 percent, ₱100,000 received one year from now is worth about ₱94,340 today. Received in two "
+            "years, about ₱89,000. In three years, about ₱83,962.",
+            ("h", "Step 1: Lay Out the Cash Flows"),
+            "Set up the sheet so each year has its own row.",
+            ("point", "Inputs", "B1: 200000 (cost). B2: 32000 (yearly saving). B3: 8 (years). B4: 6% "
+             "(discount rate)."),
+            ("point", "Years", "A7 to A14: years 1 to 8."),
+            ("point", "Savings", "B7 to B14: =$B$2 in each row, so a later change flows through."),
+            ("point", "Discounted savings", "C7: =B7/(1+$B$4)^A7, filled down to C14."),
+            "Read column C from top to bottom. Year 1’s ₱32,000 is worth about ₱30,189 today. Year 8’s "
+            "₱32,000 is worth only about ₱20,077.",
+            ("h", "Step 2: Add Them Up, Then Subtract the Cost"),
+            ("point", "Present value of the savings", "=SUM(C7:C14) returns about ₱198,713."),
+            ("point", "Net present value", "=SUM(C7:C14)-B1 returns about minus ₱1,287."),
+            "That is the answer to the administrative officer’s question. Counted in today’s pesos, the eight "
+            "years of savings are worth about the same as the cost. The ₱56,000 gain on paper shrinks to "
+            "roughly nothing once time is counted.",
+            ("h", "Step 3: The Same Answer With NPV"),
+            "Google Sheets has a function for this. Google’s help describes NPV as one that “Calculates the "
+            "net present value of an investment based on a series of periodic cash flows and a discount "
+            "rate.” Its form is NPV(discount, cashflow1, [cashflow2, ...]).",
+            ("point", "Formula", "=NPV(B4, B7:B14)-B1 returns about minus ₱1,287."),
+            ("point", "Why subtract the cost outside", "The help calls cashflow1 “The first future cash "
+             "flow,” so NPV discounts every value it is given. The cost is paid today, so it stays outside "
+             "the function."),
+            ("point", "Uneven savings", "If savings differ from year to year, type each one in column B. NPV "
+             "takes them in order."),
+            ("point", "Irregular dates", "The help notes that for irregularly spaced cash flows, XNPV should "
+             "be used instead."),
+            ("photo", "blog/data-present-value-bars.jpg", "Each year’s ₱32,000 saving, and what it is worth "
+             "today at 6 percent. The eight discounted bars add up to about ₱198,700, about the same as the "
+             "₱200,000 cost. Figures are invented. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 4: Test the Rate and the Years"),
+            "The answer is sensitive to two inputs, so test them one at a time, as Part 45 did with "
+            "scenarios.",
+            ("point", "Rate 4 percent", "Net present value about plus ₱15,400."),
+            ("point", "Rate 8 percent", "About minus ₱16,100."),
+            ("point", "Rate 10 percent", "About minus ₱29,300."),
+            ("point", "Panels last 10 years at 6 percent", "About plus ₱35,500."),
+            ("point", "Savings only ₱28,000 a year", "About minus ₱26,100."),
+            "The rate at which the net present value is exactly zero is about 5.8 percent. Analysts call it "
+            "the internal rate of return, and Google Sheets computes it with IRR when the cost and the "
+            "savings are in one column. If the office can borrow for less than 5.8 percent, the panels pay; "
+            "if it pays more, they do not.",
+            ("h", "The Same Idea for Payments"),
+            "Present value also helps when the office is the one paying. Suppose a supplier offers two "
+            "terms for the same equipment: ₱300,000 now, or three yearly installments of ₱110,000.",
+            ("point", "On paper", "The installments total ₱330,000, so paying now looks ₱30,000 cheaper."),
+            ("point", "Installments at the end of each year", "At 6 percent, their present value is about "
+             "₱294,000, about ₱6,000 less than paying now."),
+            ("point", "Installments starting today", "If the first ₱110,000 is due on signing, the present "
+             "value rises to about ₱311,700, and paying now becomes the cheaper choice."),
+            "The same three payments lead to opposite answers depending on when they fall due. Read the "
+            "payment terms closely, and put the actual dates in the sheet. Procurement and budget rules "
+            "also decide which terms an office may accept, so treat the calculation as one input to that "
+            "decision, not the decision itself.",
+            ("h", "Reporting It Honestly"),
+            ("point", "State the rate and why", "“We used 6 percent, close to what the local government "
+             "would pay to borrow.”"),
+            ("point", "Show the range", "Give the results for a lower and a higher rate, and for a shorter "
+             "and a longer life."),
+            ("point", "Name what the numbers leave out", "Cleaner power, protection from future rate "
+             "increases, or maintenance costs that were not counted. Report these beside the figure, as Part 47 advised."),
+            ("point", "Avoid false precision", "“About zero” is more honest than “minus ₱1,287.”"),
+            ("h", "Back to the Solar Panels"),
+            "The analyst’s reply fit on one page. At 6 percent and an eight-year life, the panels roughly "
+            "paid for themselves and no more. The result turned on the panels’ life: at ten years, they "
+            "came out about ₱35,500 ahead in today’s pesos.",
+            "The administrative officer asked the supplier for the warranty period and the expected life in "
+            "writing. The warranty covered ten years. The office went ahead, and noted in the file that the "
+            "decision depended on the panels lasting at least that long.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Adding savings across years without discounting", "A peso in year 8 is not a peso "
+             "today."),
+            ("point", "Putting today’s cost inside NPV", "NPV discounts every value it is given."),
+            ("point", "Choosing a rate without saying why", "State the basis, and test others."),
+            ("point", "Reporting one number", "Show how the answer moves with the rate and the life."),
+            ("h", "Key Takeaways"),
+            ("point", "Discount future pesos", "Present value = amount ÷ (1 + rate)^years."),
+            ("point", "Net present value", "Discounted savings minus today’s cost."),
+            ("point", "NPV in Sheets", "=NPV(rate, future flows) minus the cost paid today."),
+            ("point", "Test the inputs", "The rate and the life can change the answer."),
+            ("h", "Your Part 50 Exercise"),
+            ("point", "Step 1", "Build the sheet and confirm the present value of the savings is about "
+             "₱198,700."),
+            ("point", "Step 2", "Check that =NPV(B4, B7:B14)-B1 gives the same result."),
+            ("point", "Step 3", "Change the rate to 4 and 8 percent and record each result."),
+            ("point", "Step 4", "Add two more years of savings and see how the answer changes."),
+            ("cta", "Read: Data Analytics Series, Part 47: Break-Even Analysis, How Many Before It Pays for Itself?", "/blog/data-analytics-part-47-break-even-analysis/"),
+            ("cta", "Read: Data Analytics Series, Part 48: Average Growth Over Several Years, and Why Averaging the Percentages Misleads", "/blog/data-analytics-part-48-average-annual-growth/"),
+            ("cta", "Read: Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets", "/blog/data-analytics-part-45-what-if-scenarios/"),
+            ("cta", "Read: Data Analytics Series, Part 41: Real or Nominal Pesos? Adjusting Collections for Inflation", "/blog/data-analytics-part-41-real-and-nominal-pesos/"),
+            ("ask", "Which proposal in your office would look different if its future savings were discounted?"),
+        ],
+    },
+    {
+        "title": "Data Analytics Series, Part 49: The Seasonal Index, Telling a Normal March From a Bad One",
+        "slug": "data-analytics-part-49-seasonal-index",
+        "category": "data",
+        "date": "June 22, 2027",
+        "summary": "Collections in a local treasury rise and fall with the calendar. A seasonal index measures "
+                   "how each month usually compares with an average month, so a quiet month can be judged "
+                   "against what is normal for it. This part builds the index in Google Sheets from three "
+                   "years of data and uses it to read the months, set monthly targets and spot real problems.",
+        "publish_on": "2027-06-22 21:00",
+        "body": [
+            "The March report showed business tax collections of ₱3.5 million, down 65 percent from January. "
+            "A council member circled the number and asked what had gone wrong.",
+            "The analyst knew the answer before she opened the file. March is usually quiet, because "
+            "many businesses pay their whole year’s tax in January. But “it is always like this” is not an "
+            "answer a council member can check. She needed a number that said how quiet March usually is.",
+            "(The office and the figures are invented for this lesson. The method is standard, and the "
+            "Google Sheets formulas are real.)",
+            "Part 48 measured growth across several years. This part looks at the pattern inside a year. "
+            "By the end of this post, you will know what a seasonal index is, how to compute one in Google "
+            "Sheets from three years of monthly data, how to use it to compare months fairly, how to turn a "
+            "yearly target into monthly targets, and where the simple method falls short.",
+            ("photo", "blog/data-seasonal-index.jpg", "The seasonal index: how each month usually compares "
+             "with an average month, so a quiet month is judged against what is normal for it. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Seasonal Index Is"),
+            "A seasonal index is one number per month. It says how that month usually compares with an "
+            "average month, where 100 means average.",
+            ("point", "Above 100", "A busy month. An index of 217 means the month usually brings in a little "
+             "more than twice an average month."),
+            ("point", "Below 100", "A quiet month. An index of 80 means the month usually brings in about four "
+             "fifths of an average month."),
+            ("point", "The twelve add up to 1,200", "Twelve months times an average of 100. That is a quick "
+             "check on the arithmetic."),
+            "The index does not predict the year. It describes the usual shape of a year, so that each month "
+            "can be read against that shape.",
+            ("h", "The Practice Sheet"),
+            "Enter three years of monthly business tax collections, in millions of pesos.",
+            ("point", "Column A", "A1: Month. A2 to A13: Jan to Dec."),
+            ("point", "Column B, 2024", "8.9, 3.8, 3.3, 4.7, 3.6, 3.1, 4.2, 3.5, 3.2, 4.0, 3.4, 3.7. The total "
+             "is 49.4."),
+            ("point", "Column C, 2025", "9.3, 4.0, 3.4, 5.0, 3.7, 3.3, 4.4, 3.6, 3.3, 4.2, 3.5, 3.9. The total "
+             "is 51.6."),
+            ("point", "Column D, 2026", "9.8, 4.1, 3.6, 5.2, 3.9, 3.4, 4.6, 3.8, 3.5, 4.4, 3.7, 4.0. The total "
+             "is 54.0."),
+            "The 2026 figures are the same ones charted in Part 44 and used, in thousands, in Part 46.",
+            ("h", "Step 1: Average Each Month"),
+            "In E1, type Average. In E2, type =AVERAGE(B2:D2) and fill down to E13.",
+            ("point", "January", "(8.9 + 9.3 + 9.8) ÷ 3 = 9.33."),
+            ("point", "March", "(3.3 + 3.4 + 3.6) ÷ 3 = 3.43."),
+            "Using three years instead of one keeps a single odd month from setting the pattern. If one year "
+            "had a typhoon in October, the other two years soften its effect.",
+            ("h", "Step 2: Compare Each Month With the Average Month"),
+            "In F1, type Index. In F2, type =E2/AVERAGE($E$2:$E$13)*100 and fill down.",
+            ("point", "The average month", "AVERAGE(E2:E13) is about 4.31, the average of the twelve monthly "
+             "averages."),
+            ("point", "January", "9.33 ÷ 4.31 × 100 gives about 216.8."),
+            ("point", "March", "3.43 ÷ 4.31 × 100 gives about 79.7."),
+            ("point", "Check", "=SUM(F2:F13) returns 1,200."),
+            "Read the column from top to bottom. January stands at about 217, April about 115 because of "
+            "quarterly payments, and the quietest months, March, June and September, sit below 80. The "
+            "quarter-end pattern shows clearly once each month has its own number.",
+            ("photo", "blog/data-seasonal-index-bars.jpg", "Seasonal index by month from three years of "
+             "invented collections. 100 is an average month. January is about 217, and March, June and "
+             "September sit below 80. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Step 3: Read a Month Against Its Own Normal"),
+            "Now the council member’s question has an answer. Divide the actual figure by the month’s index, "
+            "and you get what the month would have been in an average month. Analysts call this a seasonally "
+            "adjusted figure.",
+            ("point", "Formula", "For 2027, with actual figures in G2 to G7, type =G2/(F2/100) in H2 and fill "
+             "down."),
+            ("point", "January 2027", "₱10.1 million ÷ 2.168 = about ₱4.66 million."),
+            ("point", "March 2027", "₱3.5 million ÷ 0.797 = about ₱4.39 million."),
+            ("point", "April to June 2027", "About ₱4.85, ₱4.61 and ₱4.74 million."),
+            "Seen this way, March was not a 65 percent collapse. After adjusting for the season, it was about "
+            "6 percent below January and the lowest of the six months, which is worth a look, but it is not a "
+            "disaster.",
+            ("h", "Step 4: Turn a Yearly Target Into Monthly Targets"),
+            "Part 46 set a 2027 target of ₱56.7 million, 5 percent above 2026. Dividing it by 12 gives ₱4.725 "
+            "million a month, which sets January too low and March too high.",
+            ("point", "Formula", "In I2, type =56.7*F2/1200 and fill down."),
+            ("point", "January", "56.7 × 216.8 ÷ 1,200 = about ₱10.24 million."),
+            ("point", "March", "56.7 × 79.7 ÷ 1,200 = about ₱3.77 million."),
+            ("point", "Check", "The twelve monthly targets add up to ₱56.7 million."),
+            "These match the targets in Part 46 closely, because both start from the same shape. The "
+            "advantage of the index is that it uses three years instead of one, so it is less affected by any "
+            "single unusual month.",
+            ("h", "Where the Simple Method Falls Short"),
+            ("point", "Growth tilts the index", "Collections grew each year, so later months in the same year "
+             "carry a little more growth than earlier ones. Over three years the effect is small. Over ten "
+             "years it would matter, and a more careful method removes the trend first."),
+            ("point", "Calendar changes", "If the ordinance moves a deadline from January to February, the "
+             "old index no longer fits. Rebuild it after any change in due dates."),
+            ("point", "One-time events", "A large one-time payment can inflate a month. Remove it, or note it "
+             "in the sheet, before averaging."),
+            ("point", "Too few years", "Two years can be misleading. Three is a reasonable start. Five is "
+             "better if the rules have not changed."),
+            ("h", "Back to the March Report"),
+            "The analyst added two columns to the monthly report: the seasonal index and the seasonally "
+            "adjusted figure. She wrote one line under the table: “March is usually about 80 percent of an "
+            "average month. Adjusted for the season, March 2027 was about 6 percent below January.”",
+            "The council member asked a better question at the next meeting: why March was the lowest of the "
+            "six adjusted months. The answer turned out to be a delayed batch of renewals, which the "
+            "treasury had already followed up.",
+            ("h", "Mistakes to Avoid"),
+            ("point", "Comparing a quiet month with a busy one", "Compare each month with its own index."),
+            ("point", "Building the index from one year", "Use at least three years."),
+            ("point", "Keeping an old index after deadlines change", "Rebuild it."),
+            ("point", "Dividing the yearly target by 12", "Spread it by the index instead."),
+            ("h", "Key Takeaways"),
+            ("point", "One number per month", "100 is an average month. The twelve add up to 1,200."),
+            ("point", "Average, then compare", "Average each month over three years, then divide by the "
+             "average month."),
+            ("point", "Adjusted figures", "Actual ÷ (index ÷ 100) shows the month on a level footing."),
+            ("point", "Fair monthly targets", "Yearly target × index ÷ 1,200."),
+            ("h", "Your Part 49 Exercise"),
+            ("point", "Step 1", "Enter the practice data and compute the twelve averages."),
+            ("point", "Step 2", "Compute the index and check that it adds up to 1,200."),
+            ("point", "Step 3", "Adjust the six 2027 months and find the lowest."),
+            ("point", "Step 4", "Spread a target of ₱56.7 million by the index and compare it with Part 46."),
+            ("cta", "Read: Data Analytics Series, Part 48: Average Growth Over Several Years, and Why Averaging the Percentages Misleads", "/blog/data-analytics-part-48-average-annual-growth/"),
+            ("cta", "Read: Data Analytics Series, Part 46: Named Ranges and ARRAYFORMULA, Formulas Anyone Can Read", "/blog/data-analytics-part-46-named-ranges-arrayformula/"),
+            ("cta", "Read: Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads", "/blog/data-analytics-part-36-weighted-averages/"),
+            ("cta", "Read: Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets", "/blog/data-analytics-part-45-what-if-scenarios/"),
+            ("ask", "Which month in your office is usually the quietest, and do your reports say so?"),
+        ],
+    },
+    {
         "title": "Data Analytics Series, Part 48: Average Growth Over Several Years, and Why Averaging the Percentages Misleads",
         "slug": "data-analytics-part-48-average-annual-growth",
         "category": "data",
