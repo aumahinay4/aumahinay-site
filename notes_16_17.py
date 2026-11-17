@@ -24,6 +24,7 @@ NOTES_16_TO_17 = [
         "summary": "How the schedule of market values is prepared, reviewed and approved under RA 12001, the "
                    "deadlines at each step, how often it is updated, and who else uses it.",
         "publish_on": "2026-12-29 21:00",
+        "checked_against": "RA 12001 and its implementing rules",
         "body": [
             "A real property tax bill starts with a market value, and for land and buildings that value comes "
             "from the schedule of market values, or SMV. Note 2 showed how the tax is computed from it. This note is "
@@ -66,12 +67,12 @@ NOTES_16_TO_17 = [
                                    "(Section 16)."],
             ]),
             ("tip", "Public consultation is the taxpayer's chance to question a unit value before it becomes "
-                    "official. Watch the local government's website and bulletin boards for the notice."),
+                    "official. Watch the local government's website and its posted notices."),
             ("h", "How often it is updated"),
             "Assessors had to make the first update within two years from the law's effectivity; the implementing "
             "rules (IRR) set that deadline at July 5, 2026 (Section 19; IRR Section 41). After that, the schedule is "
-            "updated and property assessments are generally revised every three years. An interim revision is "
-            "allowed in between when values change sharply, for example when a new road opens, after a calamity or "
+            "updated, and a general revision of property assessments is conducted, every three years. An interim "
+            "revision is allowed in between, for example when a new road opens, after a calamity or "
             "a declared public health emergency, or to correct errors in the schedule (Section 19).",
             ("h", "Where the values come from"),
             "The BLGF keeps a Real Property Information System, an electronic database of sales, leases, "
@@ -85,8 +86,8 @@ NOTES_16_TO_17 = [
                 "Local governments: the approved SMV is the basis of real property taxes and of the general "
                 "revision of assessments (Section 18).",
                 "The BIR: in computing internal revenue taxes, it uses the SMV or the actual gross selling price, "
-                "whichever is higher (Section 18). Until a schedule is updated, it uses the existing SMV, its "
-                "zonal value or the actual price, whichever is higher (Section 29).",
+                "whichever is higher (Section 18). Until a schedule is updated, it uses the existing SMV, the "
+                "zonal values or the actual price, whichever is higher (Section 29).",
                 "Other government agencies use it when they appraise real property (Section 18).",
                 "Compliance with the law is an added indicator for the Seal of Good Local Governance "
                 "(Section 20).",
@@ -106,8 +107,8 @@ NOTES_16_TO_17 = [
                 "(2028 is a leap year, so February has 29 days).",
                 "The Department of Finance publishes the approved schedule on March 10, 2028. It takes effect "
                 "15 days later, on March 25, 2028.",
-                "Now the BIR: a 200 sq m lot with a unit value of ₱3,000 a square meter has an SMV value of "
-                "200 × ₱3,000 = ₱600,000. If the deed of sale says ₱500,000, the BIR computes its taxes on "
+                "Now the BIR: a 200 sq m lot with a unit value of ₱3,000 a square meter has a value under the SMV "
+                "of 200 × ₱3,000 = ₱600,000. If the deed of sale says ₱500,000, the BIR computes its taxes on "
                 "₱600,000, the higher amount.",
             ],
             "Review ends January 15, endorsement February 11, certification March 9, and the schedule takes "
@@ -121,7 +122,7 @@ NOTES_16_TO_17 = [
              ["6 months", "12 months", "18 months", "24 months"], 1,
              "Section 15: within 12 months following the notice from the BLGF."),
             ("How many public consultations must be held before the proposal is submitted?",
-             ["none", "one", "two", "four"], 2,
+             ["1", "2", "3", "4"], 1,
              "Section 15: two mandatory public consultations, within 60 days before submission."),
             ("Within how many days does the BLGF Regional Office review and endorse a proposed SMV?",
              ["15 days", "30 days", "45 days", "60 days"], 2,
@@ -132,8 +133,8 @@ NOTES_16_TO_17 = [
             ("An approved SMV takes effect ____ after its publication by the Department of Finance.",
              ["immediately", "15 days", "30 days", "one year"], 1,
              "Section 16: 15 days after publication."),
-            ("After the first update, how often is the SMV updated?",
-             ["every year", "every two years", "every three years", "every five years"], 2,
+            ("After the first update, the SMV is updated every ____.",
+             ["1 year", "2 years", "3 years", "5 years"], 2,
              "Section 19: every three years, together with a general revision of assessments."),
             ("Which of these allows an interim revision of the SMV?",
              ["a new road right-of-way", "a change of mayor", "a new fiscal year", "a request of one owner"], 0,
@@ -162,6 +163,7 @@ NOTES_16_TO_17 = [
         "summary": "The report that tells the sanggunian what a new schedule of market values will raise and who "
                    "will feel it, the three options it must offer, and how to estimate the revenue.",
         "publish_on": "2027-01-01 21:00",
+        "checked_against": "RA 12001, its implementing rules and RA 7160",
         "body": [
             "A new schedule of market values changes the values on the assessment roll, and with them the tax. "
             "Before the new values reach anyone's tax bill, the law asks for a report that puts numbers on the change. Unless stated otherwise, the sections cited are "
@@ -178,10 +180,10 @@ NOTES_16_TO_17 = [
                 ["Who decides", "The sanggunian. The IRR does not take away its power under RA 7160 to set and "
                                 "adjust assessment levels and tax rates (IRR Section 38)."],
             ]),
-            "In practice, the estimate joins two sets of records: the assessor's values and the treasurer's "
+            "The estimate joins two sets of records: the assessor's values and the treasurer's "
             "billings, collections and arrears.",
             ("h", "The levers in the options"),
-            "Under RA 12001, the Secretary of Finance certifies the values. What the sanggunian controls is how "
+            "Under RA 12001, the Secretary of Finance certifies the values (Section 16). What the sanggunian controls is how "
             "much of that value is taxed:",
             ("table", ["Lever", "Limit"], [
                 ["Assessment level for each class", "Up to the ceilings in Section 218 of RA 7160, such as 20% "
@@ -280,7 +282,7 @@ NOTES_16_TO_17 = [
              "₱900,000 × 10% = ₱90,000 assessed value × 2% = ₱1,800."),
         ],
         "sources": [
-            "Republic Act No. 12001, Real Property Valuation and Assessment Reform Act, Sections 17 and 29",
+            "Republic Act No. 12001, Real Property Valuation and Assessment Reform Act, Sections 16, 17 and 29",
             "Implementing Rules and Regulations of RA 12001 (BLGF Memorandum Circular No. 001.2025), Sections 36, "
             "37, 38 and 55",
             "Republic Act No. 7160, Local Government Code of 1991, Sections 218, 233, 235, 251, 271 and 272",
