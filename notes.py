@@ -41,6 +41,11 @@ OUTLINE = [
     "Accountable forms and the RAAF",
     "Disbursements: vouchers, checks and cash advances",
     "Accountability: bonds, cash counts and shortages",
+    "Taxes the treasury withholds for the BIR",
+    "Special levy on land that gains from public works",
+    "Tax on delivery trucks and vans",
+    "Ethics at the collection window",
+    "Cashbooks and daily records",
 ]
 
 NOTES = [
@@ -192,6 +197,11 @@ NOTES = [
 from notes_2_10 import NOTES_2_TO_10  # noqa: E402
 
 NOTES += NOTES_2_TO_10
+
+# Notes 11 to 15 (Butch, 2026-11-18): Tuesdays and Fridays at 9 pm, December 11 to 25, 2026.
+from notes_11_15 import NOTES_11_TO_15  # noqa: E402
+
+NOTES += NOTES_11_TO_15
 
 
 def note_url(n):
