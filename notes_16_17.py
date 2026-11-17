@@ -25,17 +25,18 @@ NOTES_16_TO_17 = [
                    "deadlines at each step, how often it is updated, and who else uses it.",
         "publish_on": "2026-12-29 21:00",
         "body": [
-            "Every real property tax bill starts with a market value, and every market value starts with the "
-            "schedule of market values, or SMV. Note 2 showed how the tax is computed from it. This note is "
+            "A real property tax bill starts with a market value, and for land and buildings that value comes "
+            "from the schedule of market values, or SMV. Note 2 showed how the tax is computed from it. This note is "
             "about the schedule itself: who makes it, who checks it, and how fast each step must move. Unless "
             "stated otherwise, the sections cited are from the Real Property Valuation and Assessment Reform Act "
             "(Republic Act No. 12001), approved on June 13, 2024.",
             ("h", "What the schedule is"),
             "The SMV is a table of base unit market values for all kinds of real property in a local government, "
-            "except machinery (Section 4). A market value is the estimated amount for which a property would "
-            "change hands on the valuation date between a willing buyer and a willing seller, dealing at arm's "
-            "length and knowing the facts. The assessor multiplies a property's area by the unit value in the "
-            "schedule, with the adjustments the schedule allows, to get its market value.",
+            "except machinery (Section 4). Market value is the estimated amount for which a property would "
+            "change hands on the valuation date between a willing buyer and a willing seller in an arm's length "
+            "transaction, after proper marketing, with both acting knowledgeably, prudently and without "
+            "compulsion (Section 4). The assessor uses the unit values in the schedule to work out each "
+            "property's market value.",
             ("h", "One standard for the whole country"),
             "Schedules must follow the Philippine Valuation Standards, or PVS: national standards based on the "
             "International Valuation Standards and approved by the Secretary of Finance (Section 4). The Bureau "
@@ -49,13 +50,13 @@ NOTES_16_TO_17 = [
                 ["2. Publication", "The proposal is published for at least two weeks before the public "
                                    "consultation, on the local government's website and in two conspicuous "
                                    "places (Section 15)."],
-                ["3. Public consultation", "At least two public consultations are held within 60 days before the "
+                ["3. Public consultation", "Two mandatory public consultations are held within 60 days before the "
                                            "proposal is submitted (Section 15)."],
-                ["4. BLGF review", "Outside Metro Manila, the BLGF Regional Office reviews the proposal and "
-                                   "endorses it to the head of the BLGF within 45 days. The head of the BLGF "
-                                   "endorses it to the Secretary of Finance within 30 days. Proposals of cities "
-                                   "and of the lone municipality in Metro Manila go to the BLGF Central Office "
-                                   "(Section 15)."],
+                ["4. BLGF review", "The assessor submits the proposal to the BLGF Regional Office, which "
+                                   "reviews it and endorses it to the head of the BLGF within 45 days. For cities "
+                                   "and the lone municipality in Metro Manila, the BLGF Central Office receives "
+                                   "and reviews it instead. The head of the BLGF endorses it to the Secretary of "
+                                   "Finance within 30 days (Section 15)."],
                 ["5. Certification", "The Secretary of Finance certifies, within 30 days, that the schedule "
                                      "follows the latest PVS. A schedule that does not is sent back with a "
                                      "written explanation, and the assessor resubmits it within 30 days "
@@ -68,7 +69,7 @@ NOTES_16_TO_17 = [
                     "official. Watch the local government's website and bulletin boards for the notice."),
             ("h", "How often it is updated"),
             "Assessors had to make the first update within two years from the law's effectivity; the implementing "
-            "rules set that deadline at July 5, 2026 (Section 19; IRR Section 41). After that, the schedule is "
+            "rules (IRR) set that deadline at July 5, 2026 (Section 19; IRR Section 41). After that, the schedule is "
             "updated and property assessments are generally revised every three years. An interim revision is "
             "allowed in between when values change sharply, for example when a new road opens, after a calamity or "
             "a declared public health emergency, or to correct errors in the schedule (Section 19).",
@@ -77,7 +78,8 @@ NOTES_16_TO_17 = [
             "mortgages, donations and other transfers, plus construction costs and machinery prices "
             "(Section 22). Registers of deeds give assessors an abstract of their registry every three months "
             "(Section 23), and registers of deeds, the Bureau of Internal Revenue (BIR), notaries public, building "
-            "officials and geodetic engineers send transaction data to the BLGF every quarter (Section 24).",
+            "officials and geodetic engineers send transaction data to the BLGF every quarter once the database "
+            "is running (Section 24).",
             ("h", "Who else uses it"),
             ("list", [
                 "Local governments: the approved SMV is the basis of real property taxes and of the general "
@@ -90,7 +92,7 @@ NOTES_16_TO_17 = [
                 "(Section 20).",
             ]),
             "A new schedule does not by itself set the tax. The sanggunian still sets assessment levels and tax "
-            "rates, and the first-year increase is capped at 6% (Section 29). Note 17 explains the report that "
+            "rates (IRR Section 38), and the first-year increase is capped at 6% (Section 29). Note 17 explains the report that "
             "helps the sanggunian decide.",
         ],
         "example": (
@@ -119,8 +121,8 @@ NOTES_16_TO_17 = [
              ["6 months", "12 months", "18 months", "24 months"], 1,
              "Section 15: within 12 months following the notice from the BLGF."),
             ("How many public consultations must be held before the proposal is submitted?",
-             ["none", "at least one", "at least two", "at least four"], 2,
-             "Section 15: at least two public consultations, within 60 days before submission."),
+             ["none", "one", "two", "four"], 2,
+             "Section 15: two mandatory public consultations, within 60 days before submission."),
             ("Within how many days does the BLGF Regional Office review and endorse a proposed SMV?",
              ["15 days", "30 days", "45 days", "60 days"], 2,
              "Section 15: within 45 days from receipt."),
@@ -148,7 +150,8 @@ NOTES_16_TO_17 = [
         "sources": [
             "Republic Act No. 12001, Real Property Valuation and Assessment Reform Act (approved June 13, 2024), "
             "Sections 4, 5, 13, 15, 16, 18, 19, 20, 22, 23, 24 and 29",
-            "Implementing Rules and Regulations of RA 12001 (BLGF Memorandum Circular No. 001.2025), Section 41",
+            "Implementing Rules and Regulations of RA 12001 (BLGF Memorandum Circular No. 001.2025), Sections 38 "
+            "and 41",
         ],
     },
     # ------------------------------------------------------------------ Note 17
@@ -160,9 +163,8 @@ NOTES_16_TO_17 = [
                    "will feel it, the three options it must offer, and how to estimate the revenue.",
         "publish_on": "2027-01-01 21:00",
         "body": [
-            "A new schedule of market values may raise the values on the assessment roll by a large amount, "
-            "especially where the old schedule has not been updated for years. Before the new values reach anyone's tax bill, the law "
-            "asks for a report that puts numbers on the change. Unless stated otherwise, the sections cited are "
+            "A new schedule of market values changes the values on the assessment roll, and with them the tax. "
+            "Before the new values reach anyone's tax bill, the law asks for a report that puts numbers on the change. Unless stated otherwise, the sections cited are "
             "from RA 12001 and its implementing rules (IRR).",
             ("h", "What the law requires"),
             ("table", ["Item", "Rule"], [
@@ -176,8 +178,8 @@ NOTES_16_TO_17 = [
                 ["Who decides", "The sanggunian. The IRR does not take away its power under RA 7160 to set and "
                                 "adjust assessment levels and tax rates (IRR Section 38)."],
             ]),
-            "The treasurer's part matters. The assessor knows the values; the treasurer knows what is billed, "
-            "what is actually collected, and how much is in arrears. A revenue estimate needs both.",
+            "In practice, the estimate joins two sets of records: the assessor's values and the treasurer's "
+            "billings, collections and arrears.",
             ("h", "The levers in the options"),
             "Under RA 12001, the Secretary of Finance certifies the values. What the sanggunian controls is how "
             "much of that value is taxed:",
@@ -186,7 +188,8 @@ NOTES_16_TO_17 = [
                                                     "for residential land and 40% for agricultural land."],
                 ["Basic tax rate", "Up to 1% for a province, or 2% for a city or a municipality in Metro Manila "
                                    "(RA 7160, Section 233). The Special Education Fund adds 1% (Section 235)."],
-                ["Discount for early payment", "Up to 20% (RA 7160, Section 251)."],
+                ["Discount for paying in advance", "Up to 20%, when the tax is paid in advance according to the "
+                                                   "schedule (RA 7160, Section 251)."],
             ]),
             "Lowering the assessment level of a class lowers the tax for that class only. Lowering the basic rate "
             "lowers it for every class at once. Good options show the trade-off, for example one that keeps the "
@@ -213,8 +216,8 @@ NOTES_16_TO_17 = [
                 "25% to the barangay, and the Special Education Fund is split equally between the provincial and "
                 "municipal school boards (RA 7160, Sections 271 and 272).",
             ]),
-            "The step on collections is where the treasurer's records count most. How the collection rate is "
-            "measured changes the answer; the Data Analytics Series, Part 8, shows why.",
+            "How the collection rate is measured changes the answer; the Data Analytics Series, Part 8, shows "
+            "why.",
         ],
         "link": ("How to measure collection rates honestly:", "Metrics and KPIs That Tell the Truth",
                  "/blog/data-analytics-part-8-metrics-and-kpis/"),
