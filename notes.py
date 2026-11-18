@@ -48,6 +48,7 @@ OUTLINE = [
     "Cashbooks and daily records",
     "The schedule of market values",
     "The revenue and tax impact report",
+    "The real property tax compliance study",
 ]
 
 NOTES = [
@@ -209,6 +210,11 @@ NOTES += NOTES_11_TO_15
 from notes_16_17 import NOTES_16_TO_17  # noqa: E402
 
 NOTES += NOTES_16_TO_17
+
+# Note 18 (Butch, 2026-11-18): the treasurer's compliance study. Tuesday January 5, 2027, 9 pm.
+from notes_18 import NOTES_18  # noqa: E402
+
+NOTES += NOTES_18
 
 
 def note_url(n):
