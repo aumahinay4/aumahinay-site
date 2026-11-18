@@ -1,4 +1,4 @@
-"""Public Finance series (Butch 2026-11-11), "Inside the Local Treasury"; dates follow the daily blog rotation (Butch 2026-11-14).
+"""Inside the Local Treasury series (Butch 2026-11-11; its own blog category since 2026-11-18); dates follow the daily blog rotation (Butch 2026-11-14).
 
 Each post takes a typical treasury situation and explains it in plain words. Cases are composites:
 no real taxpayer, employee, office or amount is named. Facts are checked against official sources
@@ -9,7 +9,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 52: Following One Peso, From Your Tax Bill to the Audit Report",
         "slug": "following-one-peso",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 15, 2027",
         "summary": "This is the last part of Inside the Local Treasury. It follows one peso of local money "
                    "through six stages, from the tax or fee that brings it in to the audit report that checks "
@@ -142,7 +142,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 51: Tricycle Franchises, What the Local Government Collects and Why",
         "slug": "tricycle-franchise-fees",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 14, 2027",
         "summary": "Tricycles are vehicles that a city or municipality franchises and regulates directly. The Local "
                    "Government Code lets the sanggunian grant tricycle franchises, while registration and "
@@ -282,7 +282,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 50: The Socialized Housing Tax, Half a Percent for Homes",
         "slug": "socialized-housing-tax",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 13, 2027",
         "summary": "Under the Urban Development and Housing Act of 1992, local governments may impose an "
                    "additional half-percent tax on the assessed value of lands in urban areas, to fund "
@@ -412,7 +412,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 49: Stale Checks, When a Payee Never Cashes the Check",
         "slug": "stale-government-checks",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 11, 2027",
         "summary": "Sometimes a local government issues a check and the payee never cashes it. After about six "
                    "months, banks treat such a check as stale. This part explains what a stale check is, why "
@@ -540,7 +540,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 48: The GAD Budget, Five Percent for Gender and Development",
         "slug": "gender-and-development-budget",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 9, 2027",
         "summary": "The Magna Carta of Women asks every local government to set aside at least five percent of "
                    "its total budget appropriations for gender and development. This part explains where the "
@@ -672,7 +672,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 47: GSIS Contributions, Why the Remittance Comes Before Other Bills",
         "slug": "gsis-remittances",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 7, 2027",
         "summary": "Every month, a local government deducts its employees’ GSIS contributions from their pay "
                    "and adds its own share. The GSIS Act sets a deadline for sending both, puts the remittance "
@@ -808,7 +808,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 46: The SK Fund, Ten Percent of the Barangay’s Money for the Youth",
         "slug": "sangguniang-kabataan-fund",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 5, 2027",
         "summary": "Ten percent of a barangay’s general fund is set aside for the Sangguniang Kabataan, the "
                    "youth council. This part explains where the rule comes from, how the amount is estimated, "
@@ -943,7 +943,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 45: When a Taxpayer’s Check Bounces",
         "slug": "when-a-tax-check-bounces",
-        "category": "finance",
+        "category": "treasury",
         "date": "July 3, 2027",
         "summary": "A check handed over at the treasury window is not yet payment. Under the Civil Code, it "
                    "pays the tax only when it is cashed. This part explains what happens when a taxpayer’s "
@@ -1069,7 +1069,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 44: Old Treasury Records, Why They Cannot Simply Be Thrown Away",
         "slug": "disposing-of-treasury-records",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 30, 2027",
         "summary": "Storerooms fill up with old receipts, ledgers and reports. Under the National Archives of the "
                    "Philippines Act of 2007, public records may be disposed of only with the prior written "
@@ -1201,7 +1201,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 43: Barangay Micro Business Enterprises, and What the Certificate Does Not Cover",
         "slug": "barangay-micro-business-enterprises",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 27, 2027",
         "summary": "A small business with assets of up to ₱3 million can register as a Barangay Micro Business "
                    "Enterprise and gain an income tax exemption and other benefits. Registration once happened "
@@ -1331,7 +1331,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 42: The Election Spending Ban, What the Treasury Cannot Release Before Election Day",
         "slug": "election-spending-ban",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 24, 2027",
         "summary": "For 45 days before a regular election, the Omnibus Election Code bars public officials from "
                    "releasing public funds for many kinds of projects, with set exceptions. This part explains "
@@ -1458,7 +1458,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 41: The Share in National Wealth, When a Mine or Power Plant Pays the Host",
         "slug": "share-in-national-wealth",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 21, 2027",
         "summary": "When a mine, a quarry under national permit, a forest concession or a power plant operates "
                    "inside a local government, part of what the national government collects from it comes back "
@@ -1612,7 +1612,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review",
         "slug": "barangay-budget-review",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 18, 2027",
         "summary": "Every barangay passes its own budget, and that budget goes up to the city or municipal "
                    "sanggunian for review. This part follows a barangay budget from the barangay treasurer’s "
@@ -1740,7 +1740,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 39: When a Court Orders Payment, Why Public Funds Cannot Simply Be Seized",
         "slug": "court-judgments-and-public-funds",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 15, 2027",
         "summary": "A final court judgment against a local government does not let a sheriff empty its bank "
                    "account. The Supreme Court has long held that public funds are not subject to garnishment "
@@ -1866,7 +1866,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget",
         "slug": "local-finance-committee",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 12, 2027",
         "summary": "Before a local budget reaches the sanggunian, three officers have already shaped it. Section 316 "
                    "of the Local Government Code creates a local finance committee of the planning officer, the "
@@ -1999,7 +1999,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First",
         "slug": "supplemental-budgets",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 9, 2027",
         "summary": "Once the annual budget is in place, adding spending is not as easy as passing another "
                    "ordinance. Section 321 of the Local Government Code allows a supplemental budget only when "
@@ -2132,7 +2132,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 36: After the Budget Passes, Who Reviews It and Within How Long",
         "slug": "review-of-local-budgets",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 6, 2027",
         "summary": "A municipal or component city budget does not end its journey at the sanggunian. Sections 326 "
                    "and 327 of the Local Government Code send it for review, to the provincial board or to the "
@@ -2263,7 +2263,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services",
         "slug": "personal-services-limit",
-        "category": "finance",
+        "category": "treasury",
         "date": "June 3, 2027",
         "summary": "A local government cannot spend as much as it likes on salaries and benefits. Section 325(a) "
                    "of the Local Government Code caps personal services at 45 or 55 percent of income from "
@@ -2401,7 +2401,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 34: Raising a Tax Rate, the Once-in-Five-Years Rule",
         "slug": "adjusting-local-tax-rates",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 31, 2027",
         "summary": "A local government cannot raise its tax rates whenever it wants. Section 191 of the Local "
                    "Government Code allows an adjustment not more than once every five years, and never more than "
@@ -2528,7 +2528,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 33: When a Private Partner Builds, Local PPPs Under the 2023 Code",
         "slug": "local-public-private-partnerships",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 28, 2027",
         "summary": "A local government can let a private company build and run a facility, such as a terminal or "
                    "a market, under a public-private partnership. Since the PPP Code of 2023, local projects are "
@@ -2659,7 +2659,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 32: The Disaster Fund, Five Percent Set Aside Before the Storm",
         "slug": "local-disaster-risk-reduction-fund",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 24, 2027",
         "summary": "Every local government must set aside at least 5 percent of its estimated regular revenue for "
                    "disaster risk reduction and management. Thirty percent of that is a quick response fund, and "
@@ -2788,7 +2788,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget",
         "slug": "estimating-next-years-income",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 19, 2027",
         "summary": "Every local budget starts with a guess about how much money will come in. The treasury "
                    "supplies the actual collections and helps estimate the rest, and four officials certify "
@@ -2920,7 +2920,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 30: Unpaid Business Taxes, Distraint, Levy and What Cannot Be Seized",
         "slug": "unpaid-business-taxes-distraint-and-levy",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 14, 2027",
         "summary": "When business taxes stay unpaid, the Local Government Code lets the treasurer seize and sell "
                    "personal property, levy on real property, or go to court. This part explains the steps and "
@@ -3059,7 +3059,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit",
         "slug": "when-local-governments-borrow",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 9, 2027",
         "summary": "Local governments may borrow to build roads, markets and water systems, but the law sets a "
                    "ceiling on how much of their income can go to paying debts. This part explains where a local government "
@@ -3190,7 +3190,7 @@ TREASURY_POSTS = [
     {
         "title": "Inside the Local Treasury, Part 28: What Local Governments Cannot Tax, the Limits in Section 133",
         "slug": "what-local-governments-cannot-tax",
-        "category": "finance",
+        "category": "treasury",
         "date": "May 4, 2027",
         "summary": "The Local Government Code gives provinces, cities, municipalities and barangays the power to tax, but Section "
                    "133 lists what none of them may tax. This part walks through the fifteen limits in plain "
@@ -3324,7 +3324,7 @@ TREASURY_POSTS = [
         "date": "April 29, 2027",
         "publish_on": "2027-04-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "weights-and-measures-fees",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A kilo at the market should be a kilo. This part explains how the Local Government Code "
                    "lets a town charge fees for sealing and licensing weights and measures, how the "
                    "sanggunian sets the rules and penalties, when the treasurer may settle a violation, and "
@@ -3463,7 +3463,7 @@ TREASURY_POSTS = [
         "date": "April 24, 2027",
         "publish_on": "2027-04-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "printing-and-publication-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A print shop or a publisher can owe a business tax to the province, not to the town. This "
                    "part explains what the Local Government Code covers under the printing and publication "
                    "tax, the rate ceiling, the rule for a shop in its first year, the exemption for school "
@@ -3589,7 +3589,7 @@ TREASURY_POSTS = [
         "date": "April 19, 2027",
         "publish_on": "2027-04-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "idle-land-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A large lot left empty, or a farm left mostly uncultivated, can carry a tax on top of the "
                    "amilyar. This part explains who may levy the idle land tax, the 5 percent ceiling, which "
                    "lands count as idle and which do not, how the assessor lists them and the treasurer "
@@ -3725,7 +3725,7 @@ TREASURY_POSTS = [
         "date": "April 14, 2027",
         "publish_on": "2027-04-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "franchise-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A business that holds a franchise from the government can owe a franchise tax to the "
                    "province or city where it earns. This part explains who may levy it, the rate ceiling, "
                    "how a newly started franchise is taxed, when payment is due, and what the Supreme Court "
@@ -3862,7 +3862,7 @@ TREASURY_POSTS = [
         "date": "April 9, 2027",
         "publish_on": "2027-04-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "sand-and-gravel-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Every truckload of sand taken from a river can carry a tax for the province, the town "
                    "and the barangay. This part explains who may levy the tax on sand, gravel and other "
                    "quarry resources, the 10 percent ceiling, who issues the permit, how the money is "
@@ -3991,7 +3991,7 @@ TREASURY_POSTS = [
         "date": "April 4, 2027",
         "publish_on": "2027-04-04 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "amusement-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Part of every cinema or concert ticket can go to the province and the town. This part "
                    "explains who may levy the amusement tax, the 10 percent ceiling set in 2009, which shows "
                    "are exempt, why the Supreme Court said resorts and swimming pools are not covered, and how "
@@ -4126,7 +4126,7 @@ TREASURY_POSTS = [
         "date": "March 30, 2027",
         "publish_on": "2027-03-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "professional-tax-receipt",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Engineers, nurses, accountants and other licensed professionals see a PTR number under "
                    "signatures on plans, reports and prescriptions. It is the receipt for a local tax. This "
                    "part explains who pays the professional tax, how much, where and when, who is exempt, "
@@ -4262,7 +4262,7 @@ TREASURY_POSTS = [
         "date": "March 25, 2027",
         "publish_on": "2027-03-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "inside-the-treasurers-office",
-        "category": "finance",
+        "category": "treasury",
         "summary": "The treasurer’s office collects taxes, keeps the town’s money and pays its bills, but it "
                    "does not assess property, keep the books or prepare the budget. Here is what the Local "
                    "Government Code assigns to the treasurer, who supervises the office, and which office to "
@@ -4385,7 +4385,7 @@ TREASURY_POSTS = [
         "date": "March 20, 2027",
         "publish_on": "2027-03-20 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "public-market-economic-enterprise",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Stall rentals, slaughterhouse fees and terminal charges come from businesses the town "
                    "itself runs. Here is what the law and the DBM’s manual call these enterprises, how their "
                    "money is kept separate, how to tell whether one pays for itself, and what happens to any "
@@ -4511,7 +4511,7 @@ TREASURY_POSTS = [
         "date": "March 15, 2027",
         "publish_on": "2027-03-15 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "local-tax-refunds-and-credits",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Local taxes can be paid in error, or assessed wrongly. The Local Government Code gives "
                    "taxpayers written remedies with firm deadlines: a claim for refund or credit, a protest "
                    "of assessment, and payment under protest for real property tax. Here is how each works.",
@@ -4635,7 +4635,7 @@ TREASURY_POSTS = [
         "date": "March 10, 2027",
         "publish_on": "2027-03-10 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "barangay-share-of-real-property-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Part of every basic real property tax payment belongs to the barangay where the property "
                    "stands. Here is how the Local Government Code splits the tax, how the share is computed, "
                    "when it must be released, and why a missing report can hold back millions.",
@@ -4762,7 +4762,7 @@ TREASURY_POSTS = [
         "date": "March 5, 2027",
         "publish_on": "2027-03-05 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "special-education-fund",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Part of every real property tax payment goes to local public schools. Here is where the "
                    "Special Education Fund comes from, how it is shared, who decides how it is spent, what it "
                    "may pay for under the 2025 omnibus guidelines, and how you can see where it went.",
@@ -4890,7 +4890,7 @@ TREASURY_POSTS = [
         "date": "February 28, 2027",
         "publish_on": "2027-02-28 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "fee-or-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A fee and a tax both come out of your pocket, but the law treats them differently. Here "
                    "is what the Local Government Code says about each, the test the Supreme Court uses to "
                    "tell them apart, the limits on both, and what you can do if a charge seems wrong.",
@@ -5013,7 +5013,7 @@ TREASURY_POSTS = [
         "date": "February 23, 2027",
         "publish_on": "2027-02-23 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "closing-a-business-the-right-way",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Shutting the door is not the same as closing a business. Here is why the town hall asks "
                    "for this year’s sales when you retire, what Section 145 of the Local Government Code "
                    "requires, the papers for the barangay, the BIR and the DTI, and the mistakes that keep a "
@@ -5140,7 +5140,7 @@ TREASURY_POSTS = [
         "date": "February 18, 2027",
         "publish_on": "2027-02-18 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "deposits-cash-box-to-bank",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Collecting the money is only half the job. Here is how a day’s collections travel from the "
                    "window to the bank, what “deposit intact” means, which banks may hold a town’s money, and "
                    "why a late deposit is a finding even when every peso is there.",
@@ -5265,7 +5265,7 @@ TREASURY_POSTS = [
         "date": "February 13, 2027",
         "publish_on": "2027-02-13 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "cash-counts-and-shortages",
-        "category": "finance",
+        "category": "treasury",
         "summary": "An auditor can walk in and count a collector’s cash at any time. Here is how a cash count "
                    "works, how a shortage is computed, why the law treats a missing peso so seriously, and the "
                    "habits that keep an honest collector safe.",
@@ -5406,7 +5406,7 @@ TREASURY_POSTS = [
         "date": "February 8, 2027",
         "publish_on": "2027-02-08 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "accountable-forms-blank-receipts",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A blank official receipt has no value, yet losing one can cause more trouble than losing "
                    "cash. Here is why receipts are counted by serial number, how a booklet moves through a "
                    "treasury, what the RAAF report shows, and what to do when a form goes missing.",
@@ -5534,7 +5534,7 @@ TREASURY_POSTS = [
         "date": "February 3, 2027",
         "publish_on": "2027-02-03 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "where-to-see-how-your-town-spends",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Your town’s budget, its cash flows, its bids and its audit findings are meant to be public. "
                    "Here is what the law and the Full Disclosure Policy require towns to post, where to find "
                    "it, and how to read the first few numbers.",
@@ -5660,7 +5660,7 @@ TREASURY_POSTS = [
         "date": "January 29, 2027",
         "publish_on": "2027-01-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "when-coa-writes",
-        "category": "finance",
+        "category": "treasury",
         "summary": "An audit memo, a notice of suspension, a notice of disallowance: each letter from the "
                    "Commission on Audit means something different. Here is what each one asks, the deadlines "
                    "the law sets, how an appeal works, and how to keep a memo from becoming a disallowance.",
@@ -5787,7 +5787,7 @@ TREASURY_POSTS = [
         "date": "January 24, 2027",
         "publish_on": "2027-01-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "cash-advances-explained",
-        "category": "finance",
+        "category": "treasury",
         "summary": "A cash advance looks like money in hand, but it is a debt to the town until it is "
                    "liquidated. Here is who may get one, what it may be used for, the deadlines to account for "
                    "it, and what happens when they are missed.",
@@ -5922,7 +5922,7 @@ TREASURY_POSTS = [
         "date": "January 19, 2027",
         "publish_on": "2027-01-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "from-budget-to-check",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Why does a supplier wait weeks for a check after delivering the goods? Follow one payment "
                    "from the budget to the check, through three certifications, an approval and two "
                    "signatures, and see what each one protects.",
@@ -6060,7 +6060,7 @@ TREASURY_POSTS = [
         "date": "January 14, 2027",
         "publish_on": "2027-01-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "can-the-town-forgive-a-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "After a typhoon or a bad harvest, people ask whether the town can forgive their real property "
                    "tax. Here is what the law allows a sanggunian and the President to do, what the 2024 national "
                    "amnesty covered, and what it did not.",
@@ -6193,7 +6193,7 @@ TREASURY_POSTS = [
         "date": "January 9, 2027",
         "publish_on": "2027-01-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "unpaid-amilyar-notice-to-auction",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Real property tax left unpaid does not simply disappear. Here is how interest grows, what a "
                    "notice of delinquency means, how a warrant of levy and an auction work, and the one year an "
                    "owner has to get the property back.",
@@ -6332,7 +6332,7 @@ TREASURY_POSTS = [
         "date": "January 4, 2027",
         "publish_on": "2027-01-04 21:00",
         "slug": "selling-land-transfer-tax",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Before a sale or donation of land can be registered, a local tax must be paid at the treasury. Here is what the tax on transfer of real property is, who must pay it, how "
                    "it is computed, the 60-day clock, and why the Register of Deeds will not move without "
                    "the receipt.",
@@ -6453,7 +6453,7 @@ TREASURY_POSTS = [
         "date": "December 30, 2026",
         "publish_on": "2026-12-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "the-cedula-explained",
-        "category": "finance",
+        "category": "treasury",
         "summary": "The cedula began under Spain, was torn up by the Katipunan, and is still asked for at offices "
                    "today. Here is what it really is, why the clerk asks about your income, and where paying it "
                    "helps your barangay most.",
@@ -6606,7 +6606,7 @@ TREASURY_POSTS = [
         "date": "December 25, 2026",
         "publish_on": "2026-12-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "january-rush-business-permit",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Every January the line for business permits stretches out the door, and some owners still "
                    "miss the deadline by a day. Here is why the rush happens, what being late really costs, "
                    "and how to get through it in one visit.",
@@ -6770,7 +6770,7 @@ TREASURY_POSTS = [
         "date": "December 20, 2026",
         "publish_on": "2026-12-20 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "where-your-towns-money-comes-from",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Taxes are collected at the town hall every day, yet the money never seems enough. The reason "
                    "is in one ratio most residents have never seen: how much of the town's income it raises "
                    "on its own.",

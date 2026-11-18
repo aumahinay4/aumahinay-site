@@ -556,6 +556,7 @@ TRAININGS = [
 BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
+    ("treasury", "Inside the Local Treasury", "amber"),  # Inside the Local Treasury series, separate category (Butch 2026-11-18)
     ("security", "Cybersecurity", "violet"),
     ("data", "Data Analytics", "gold"),  # Data Analytics series (blog rotation, Butch 2026-11-14)
     ("pm", "Project Management", "navy"),  # Project Management series (Butch 2026-11-13: separate from Public Finance)
