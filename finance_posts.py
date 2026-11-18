@@ -11,7 +11,7 @@ FINANCE_POSTS = [
         "date": "November 11, 2026",
         "publish_on": "2026-11-11",
         "slug": "year-end-in-the-treasury",
-        "category": "finance",
+        "category": "treasury",
         "summary": "While most offices slow down for Christmas, the local treasury speeds up. Here is what "
                    "happens in December, from bonuses and last-minute vouchers to unspent budgets, cash counts "
                    "and getting ready for the January rush.",
@@ -191,7 +191,7 @@ FINANCE_POSTS = [
         "date": "November 11, 2026",
         "publish_on": "2026-11-11",
         "slug": "your-data-at-the-treasury-counter",
-        "category": "finance",
+        "category": "treasury",
         "summary": "Every payment at the town hall leaves a trail of personal information. Here is what the "
                    "Data Privacy Act means at the treasury counter, what an office may share, what it must "
                    "protect, and simple habits that keep taxpayers safe.",
