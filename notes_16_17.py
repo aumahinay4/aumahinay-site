@@ -192,6 +192,7 @@ NOTES_16_TO_17 = [
             "A new schedule of market values changes the values on the assessment roll, the assessor's official "
             "list of taxable property and its values. When values change, taxes can change too. So before the "
             "new values reach anyone's tax bill, the law asks for a report that shows the effect in numbers. "
+            "This report is the assessor's task. The treasurer's own study of who actually pays is in Note 18. "
             "Unless stated otherwise, the sections cited are from RA 12001 and its implementing rules (IRR).",
             ("h", "Words to know"),
             ("table", ["Word", "What it means"], [
@@ -212,8 +213,8 @@ NOTES_16_TO_17 = [
             ]),
             ("h", "What the law requires"),
             ("table", ["Item", "Rule"], [
-                ["Who prepares it", "The local assessor, together with the local treasurer (Section 17; IRR "
-                                    "Section 36)."],
+                ["Who prepares it", "The local assessor leads, together with the local treasurer (Section 17; "
+                                    "IRR Section 36)."],
                 ["When", "Within 30 days after the approved schedule is received (Section 17; IRR Section 37)."],
                 ["To whom", "The local chief executive and the sanggunian (Section 17)."],
                 ["Contents", "How much revenue the new schedule will raise, how it will affect taxpayers, and "
@@ -265,8 +266,8 @@ NOTES_16_TO_17 = [
                 "For each option, apply its assessment levels and tax rates to get the new tax.",
                 "Apply the 6% cap, property by property, to get the Year 1 bills.",
                 "Add up the results by class and by barangay. Count how many owners face a large increase.",
-                "Multiply the bills by the collection rate of past years. This turns expected bills into "
-                "expected cash.",
+                "Multiply the bills by the collection rate of past years, from the treasurer's compliance "
+                "study (Note 18). This turns expected bills into expected cash.",
                 "Show how the money is shared. In a province, the basic tax goes 35% to the province, 40% to the "
                 "municipality and 25% to the barangay. The SEF is split equally between the provincial and "
                 "municipal school boards (RA 7160, Sections 271 and 272).",
