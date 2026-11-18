@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Data Analytics Series, Part 2: The Six Steps of Every Analysis</title>
+      <link>https://aumahinay.dev/blog/data-analytics-part-2-six-steps/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/data-analytics-part-2-six-steps/</guid>
+      <pubDate>Tue, 17 Nov 2026 21:00:00 +0800</pubDate>
+      <description>Ask, Prepare, Process, Analyze, Share and Act. Here is what each step means, the mistakes that happen when one is skipped, and a full worked example: deciding whether a treasury office needs a second payment window.</description>
+    </item>
     <item>
       <title>Business Intelligence Series, Part 2: The BI Team, Role by Role</title>
       <link>https://aumahinay.dev/blog/business-intelligence-part-2-the-bi-team/</link>

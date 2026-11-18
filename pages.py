@@ -413,7 +413,8 @@ def home():
     topics = [(key, label, sum(b["category"] == key for b in posts)) for key, label, _ in BLOG_CATEGORIES]
     topic_text = {
         "software": "Building ALTOS, Python, and software that keeps public money accountable.",
-        "finance": "Local treasury work, collections, disbursements and the rules behind them.",
+        "finance": "Stand-alone posts on public money: local taxes, tools like the RPT calculator, and the rules behind them.",
+        "treasury": "Everyday work inside a local treasury: taxes, receipts, budgets, checks, year-end and audits.",
         "personal": "The farm, the province, and life beyond the office.",
         "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
         "data": "A series on data analytics, from asking the right question to acting on the answer.",
