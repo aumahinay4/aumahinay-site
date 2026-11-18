@@ -7133,8 +7133,8 @@ DATA_POSTS = [
             "real town or taxpayer is described.)",
             "This part is about what happens next in an office that thinks like an analyst. It is"
             " not about fancy tools. It is about a habit: checking what the records say before "
-            "deciding, and being honest about what they cannot say. Stay with me to the end, and you will know how to weigh experience against records, five thinking habits analysts "
-            "use, the traps that spoil good data, and how to write a short decision note.",
+            "deciding, and being honest about what they cannot say. Stay with me to the end, and you will know how to weigh experience against records, which "
+            "five thinking habits analysts use, which traps spoil good data, and how to write a short decision note.",
             ("h", "What “Data-Driven” Really Means"),
             "A data-driven decision is one where evidence, gathered and checked with care, "
             "carries real weight in the choice. It does not mean the spreadsheet decides. People "
