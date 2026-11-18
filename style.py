@@ -1150,3 +1150,7 @@ CSS += """
   main .wrap > .hero:first-child { border-left: 0; }
 }
 """
+CSS += """
+/* No line under the top bar on any page or screen (Butch 2026-11-19): the bar blends into the page. */
+header.site { box-shadow: none; }
+"""
