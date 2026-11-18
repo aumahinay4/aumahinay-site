@@ -507,6 +507,7 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-gold { color: var(--gold-ink); background: color-mix(in srgb, var(--gold) 18%, transparent); }
 .cat-violet { color: var(--violet-ink); background: color-mix(in srgb, var(--violet) 18%, transparent); }
 .cat-teal { color: var(--green-ink); background: color-mix(in srgb, var(--blue) 12%, color-mix(in srgb, var(--green) 14%, transparent)); }  /* Business Intelligence */
+.cat-amber { color: var(--coral-ink); background: color-mix(in srgb, var(--gold) 16%, color-mix(in srgb, var(--coral) 12%, transparent)); }  /* Inside the Local Treasury */
 .cat-navy { color: var(--bar-ink); background: color-mix(in srgb, var(--blue) 14%, transparent); }  /* Project Management */
 /* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
 .blog-filters { margin-top: 26px; position: relative; max-width: 340px; }
@@ -646,6 +647,7 @@ ol.series-list li.upcoming .num { filter: grayscale(.6); opacity: .75; }
 }
 .blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
 .blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
+.blog-col:has(#cat-treasury:checked)  .post-card:not([data-cat="treasury"]) { display: none; }
 .blog-col:has(#cat-security:checked)  .post-card:not([data-cat="security"]) { display: none; }
 .blog-col:has(#cat-data:checked)  .post-card:not([data-cat="data"]) { display: none; }
 .blog-col:has(#cat-pm:checked)  .post-card:not([data-cat="pm"]) { display: none; }
@@ -654,6 +656,7 @@ ol.series-list li.upcoming .num { filter: grayscale(.6); opacity: .75; }
 .blog-col:has(#cat-all:checked) .cat-now[data-k="all"] { display: inline; }
 .blog-col:has(#cat-software:checked) .cat-now[data-k="software"] { display: inline; }
 .blog-col:has(#cat-finance:checked) .cat-now[data-k="finance"] { display: inline; }
+.blog-col:has(#cat-treasury:checked) .cat-now[data-k="treasury"] { display: inline; }
 .blog-col:has(#cat-security:checked) .cat-now[data-k="security"] { display: inline; }
 .blog-col:has(#cat-data:checked) .cat-now[data-k="data"] { display: inline; }
 .blog-col:has(#cat-pm:checked) .cat-now[data-k="pm"] { display: inline; }
