@@ -1142,3 +1142,11 @@ CSS += """
 .menu-btn svg .b2, .blog-filters > summary svg .b2 { stroke: var(--blue-ink); }
 .menu-btn svg .b3, .blog-filters > summary svg .b3 { stroke: var(--green-ink); }
 """
+CSS += """
+/* Home on phones (Butch 2026-11-19): the top bar and the banner below it are ONE colour, with no edge lines,
+   so the top of the page reads as a single even block instead of two mismatched boxes. */
+@media (max-width: 640px) {
+  body:has(main .wrap > .hero:first-child) header.site { background: var(--surface); box-shadow: none; }
+  main .wrap > .hero:first-child { border-left: 0; }
+}
+"""
