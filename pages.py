@@ -420,6 +420,7 @@ def home():
         "data": "A series on data analytics, from asking the right question to acting on the answer.",
         "bi": "A series on business intelligence: data models, pipelines and dashboards that keep answers coming.",
         "pm": "A series on running projects in a local treasury, from the first assignment to the handover.",
+        "pa": "Graduate-level public administration ideas, explained plainly and tested against local government work.",
     }
     return part(
         "Home", "/",
