@@ -205,6 +205,15 @@ NOTES_16_TO_17 = [
             "government may enact an ordinance setting its own cap (Section 29).",
             ("tip", "The cap protects owners in Year 1 only. A report that shows only Year 1 hides the real jump, "
                     "which arrives in Year 2 unless the sanggunian adjusts levels, rates or the later-year cap."),
+            ("h", "Two common misconceptions"),
+            ("list", [
+                "\"The tax follows the market value alone.\" It does not. The tax is market value × assessment level "
+                "× tax rate, and the sanggunian sets the levels and rates by ordinance (RA 7160, Sections 218 and "
+                "233; IRR Section 38).",
+                "\"A higher schedule means a proportionally higher tax.\" It does not. In the worked example below, "
+                "the lot's market value rises 250%, but its Year 1 bill rises only 6% because of the cap "
+                "(Section 29), and under Option C its full tax rises 22.5%.",
+            ]),
             ("h", "Estimating the revenue, step by step"),
             ("list", [
                 "List every property on the roll with its class, area and present tax.",
