@@ -21,7 +21,7 @@ NOTES_18 = [
         "summary": "The treasurer's side of real property tax: measuring who pays, who does not, and why, with "
                    "simple formulas, a worked example and the steps of a compliance study.",
         "publish_on": "2027-01-05 21:00",
-        "checked_against": "RA 7160 and the BLGF Local Treasury Operations Manual",
+        "checked_against": "RA 7160, RA 12001 and the BLGF Local Treasury Operations Manual",
         "body": [
             "Note 17 covered the revenue and tax impact report, which the assessor leads. It asks what a new "
             "schedule of market values would raise. This note covers the treasurer's side. It asks a different "
@@ -32,14 +32,17 @@ NOTES_18 = [
             ("table", ["Word", "What it means"], [
                 ["Assessment roll", "The assessor's official list of taxable property, with each property's "
                                     "owner, class and assessed value."],
-                ["Tax due", "The real property tax (basic tax and Special Education Fund) billed for the "
-                            "current year."],
+                ["Tax declaration", "The assessor's record of one property, with its own number, owner, "
+                                    "class and assessed value."],
+                ["Tax due", "The real property tax billed for the current year: the basic tax plus the "
+                            "Special Education Fund (SEF)."],
                 ["Arrears", "Unpaid real property tax from earlier years."],
-                ["Delinquent", "Not paid by the due date. A delinquent property is one with unpaid tax."],
+                ["Delinquent", "Not paid by the due date. A delinquent property is one with tax still unpaid "
+                               "after its due date."],
                 ["Collection efficiency", "How much of the tax due was actually collected, shown as a "
                                           "percentage."],
-                ["Compliance", "Paying the tax in full and on time. A compliant owner owes nothing for the "
-                               "year."],
+                ["Compliance", "Paying the tax that is due. In this note, a compliant property is one whose "
+                               "tax for the year is fully paid."],
             ]),
             ("h", "Who does what"),
             ("table", ["Office", "Role"], [
@@ -72,13 +75,13 @@ NOTES_18 = [
             ("list", [
                 "Start from the assessment roll the assessor gave the treasurer.",
                 "Match each property on the roll with its payment records, using the tax declaration number.",
-                "Sort the properties into four groups: paid in full, partly paid, unpaid this year, and unpaid "
-                "for several years.",
+                "Sort the properties into four groups: paid in full, partly paid, unpaid for this year only, and "
+                "unpaid for more than one year.",
                 "Compute the three measures, for the whole local government and for each barangay and class.",
                 "List the records that do not match: properties on the roll with no payment record, and "
                 "payments with no matching property. Send the list to the assessor so the roll can be "
                 "corrected.",
-                "List the largest delinquent accounts, and check how old each unpaid year is. The tax must be "
+                "List the largest delinquent accounts, and check when each unpaid amount became due. The tax must be "
                 "collected within five years from the date it became due, or within ten years from discovery "
                 "if there was fraud (RA 7160, Section 270).",
                 "Propose actions, such as notices, reminders, payment drives in barangays, and the legal "
@@ -89,8 +92,8 @@ NOTES_18 = [
             ("h", "How the two studies fit together"),
             "The assessor's impact report estimates what a new schedule would bill. The treasurer's compliance "
             "study shows what share of the bills actually turns into cash. The impact report needs that rate to "
-            "turn expected bills into expected cash (Note 17). One without the other gives the sanggunian only "
-            "half the picture.",
+            "turn expected bills into expected cash (Note 17). One without the other gives the sanggunian, the "
+            "local council that sets the tax, only half the picture.",
         ],
         "link": ("How to measure collection rates honestly:", "Metrics and KPIs That Tell the Truth",
                  "/blog/data-analytics-part-8-metrics-and-kpis/"),
@@ -109,7 +112,7 @@ NOTES_18 = [
                 "Unpaid at year end: ₱12,000,000 − ₱8,400,000 = ₱3,600,000 from this year, plus ₱5,000,000 − "
                 "₱1,800,000 = ₱3,200,000 of older arrears, or ₱6,800,000 in all.",
             ],
-            "Current-year efficiency is 70%, the arrears rate is 36%, and 65% of owners paid in full. The "
+            "Current-year efficiency is 70%, the arrears rate is 36%, and 65% of properties are fully paid. The "
             "₱6,800,000 still unpaid is the list to work on next year.",
         ),
         "practice": [

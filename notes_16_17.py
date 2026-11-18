@@ -342,7 +342,7 @@ NOTES_16_TO_17 = [
             "Republic Act No. 12001, Real Property Valuation and Assessment Reform Act, Sections 16, 17 and 29",
             "Implementing Rules and Regulations of RA 12001 (BLGF Memorandum Circular No. 001.2025), Sections 36, "
             "37, 38 and 55",
-            "Republic Act No. 7160, Local Government Code of 1991, Sections 218, 233, 235, 251, 271 and 272",
+            "Republic Act No. 7160, Local Government Code of 1991, Sections 199, 218, 233, 235, 251, 271 and 272",
         ],
     },
 ]
