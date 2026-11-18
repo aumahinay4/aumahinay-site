@@ -7140,9 +7140,10 @@ DATA_POSTS = [
             "carries real weight in the choice. It does not mean the spreadsheet decides. People "
             "still decide. The data simply makes sure they are arguing about facts instead of "
             "memories.",
-            "Some practitioners prefer the phrase data-inspired, and the difference is useful. A "
+            "You may also hear the phrase data-inspired, and the difference is useful. A "
             "data-driven choice follows closely from a clear analysis. A data-inspired choice "
-            "uses data to spark ideas or test a hunch, while leaving room for things the numbers "
+            "looks across several sources of data, along with experience, to spark ideas or test a "
+            "hunch, while leaving room for things the numbers "
             "cannot measure, such as goodwill with taxpayers or the morale of a tired staff. A "
             "decision can land somewhere in between, and that is fine as long as everyone knows "
             "which is which.",
