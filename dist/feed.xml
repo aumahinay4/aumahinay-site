@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Project Management Series, Part 2: The Project Charter on One Page</title>
+      <link>https://aumahinay.dev/blog/project-management-part-2-project-charter/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/project-management-part-2-project-charter/</guid>
+      <pubDate>Wed, 18 Nov 2026 21:00:00 +0800</pubDate>
+      <description>A project charter is a short document that says why a project exists, what it will deliver, who is in charge and who approved it. Here is how to write one on a single page, using a treasury encoding project as the example.</description>
+    </item>
     <item>
       <title>Data Analytics Series, Part 2: The Six Steps of Every Analysis</title>
       <link>https://aumahinay.dev/blog/data-analytics-part-2-six-steps/</link>
