@@ -46,10 +46,11 @@
   function dayOfMonth(d) { return YEAR + '-' + pad(MONTH + 1) + '-' + pad(Math.max(1, Math.min(d, DAY))); }
 
   // ------------------------------------------------------------------ the made-up LGU
-  var LGU = { province: 'Sample Province', name: 'Sample Municipality', office: 'Office of the Municipal Treasurer' };
+  var LGU = { province: 'Sample Province', name: 'Sample Municipality', office: 'Office of the Municipal Treasurer',
+    short: 'SAMPLE MUNICIPALITY, SAMPLE PROVINCE', treasurer: 'Elena Torres', treasurerTitle: 'Municipal Treasurer', bank: 'Sample Bank' };
   var ACCOUNTS = {
-    GF: { name: 'General Fund', bank: 'Current Account ending 0001' },
-    SEF: { name: 'Special Education Fund', bank: 'Current Account ending 0002' }
+    GF: { name: 'General Fund', bank: 'Current Account ending 0001', line: 'GENERAL FUND SAMPLE BANK CA#0000-0000-01' },
+    SEF: { name: 'Special Education Fund', bank: 'Current Account ending 0002', line: 'SPECIAL EDUCATION FUND SAMPLE BANK CA#0000-0000-02' }
   };
   var ROLES = {
     col: { label: 'Collecting Officer', page: 'COLLECTING OFFICER PAGE', a: '#1f6fd1', sel: '#3d8cf0', tint: '#7cc2ff', key: '#2f80d8', user: 'Maria Santos' },
@@ -86,7 +87,7 @@
     S = {
       role: null, page: 'home',
       ors: [], rcds: [], crcds: [], checks: [], log: [], flash: null,
-      next: { or51: 1234505, or56: 5670012, rcd: 3, crcd: 1, check: { GF: 4507, SEF: 1203 }, dv: 87 },
+      next: { or51: 1234504, or56: 5670012, rcd: 3, crcd: 1, check: { GF: 4507, SEF: 1203 }, dv: 87 },
       props: [
         { pin: '001-01-001-01-015', td: 'TD 2026-01-00215', owner: 'Juan dela Cruz', brgy: 'Poblacion', kind: 'Residential land', av: 120000, paid: [YEAR, 2] },
         { pin: '001-01-001-02-044', td: 'TD 2026-01-00344', owner: 'Rosa Mendoza', brgy: 'Poblacion', kind: 'Commercial building', av: 850000, paid: [YEAR, 4] },
@@ -100,7 +101,7 @@
     // Maria Santos (the visitor, as Collecting Officer): four ORs today, not yet reported
     addOr('col', 'Maria Santos', '51', 1234501, 'Liza Fernandez', [["Mayor's Permit Fee", 500, 'GF'], ['Sanitary Inspection Fee', 200, 'GF'], ['Garbage Fee', 300, 'GF']], t8(8, 14));
     addOr('col', 'Maria Santos', '51', 1234502, 'Pedro Aquino', [['Certification Fee', 100, 'GF']], t8(8, 41));
-    addOr('col', 'Maria Santos', '51', 1234503, "Nena's Sari-Sari Store", [['Business Tax (Retailers)', 2350, 'GF'], ["Mayor's Permit Fee", 500, 'GF']], t8(9, 5));
+    addOr('col', 'Maria Santos', '51', 1234503, "Nena's Sari-Sari Store", [['Business Tax (Retailers)', 2350, 'GF'], ["Mayor's Permit Fee", 500, 'GF']], t8(9, 5)).check = '0012345';
     addOr('col', 'Maria Santos', '56', 5670011, 'Rosa Mendoza', [['Real Property Tax – Basic (2026 Q4)', 1912.5, 'GF'], ['Real Property Tax – SEF (2026 Q4)', 1912.5, 'SEF']], t8(9, 32), '001-01-001-02-044');
     // Jose Reyes: today's RCD already remitted to the Liquidating Officer, money complete
     var j = [
@@ -387,34 +388,138 @@
   function rcd() {
     var un = myOrs().filter(function (o) { return !o.reported; });
     var mine = S.rcds.filter(function (r) { return r.officer === 'Maria Santos'; });
-    var past = mine.length ? '<h2>My RCDs today</h2><div class="tbl"><table><thead><tr><th>RCD No.</th><th>Account</th><th class="r">Amount</th><th>Status</th></tr></thead><tbody>' +
+    var view = S.viewRcd && S.rcds.filter(function (r) { return r.no === S.viewRcd; })[0];
+    S.viewRcd = null;
+    var past = mine.length ? '<h2>My RCDs today</h2><div class="tbl"><table><thead><tr><th>RCD No.</th><th>Account</th><th class="r">Amount</th><th>Status</th><th></th></tr></thead><tbody>' +
       mine.map(function (r) {
-        return '<tr><td class="nw">' + esc(r.no) + '</td><td>' + ACCOUNTS[r.account].name + '</td><td class="r">' + money(r.total) + '</td><td>' + statusChip(r.status) + '</td></tr>';
+        return '<tr><td class="nw">' + esc(r.no) + '</td><td>' + ACCOUNTS[r.account].name + '</td><td class="r">' + money(r.total) + '</td><td>' + statusChip(r.status) +
+          '</td><td><button type="button" class="small" data-act="view-rcd" data-v="' + esc(r.no) + '">View RCD</button></td></tr>';
       }).join('') + '</tbody></table></div>' : '';
-    if (!un.length) return '<h1>My RCD</h1><div class="msg ok">All your official receipts are in an RCD. Issue a new OR to start another.</div>' + past;
+    var head = '<h1>My RCD</h1>' +
+      about('Close the day per bank account: the RCD covers all your unreported ORs up to the date, with C. Accountability for Accountable Forms and D. Summary of Collections and Remittances/Deposits. Remit your collections to the Liquidating Officer.');
+    if (view) return head + rcdBlock(view, 'Remitted at ' + view.time + '. Status: ' + view.status + '.') + past;
+    if (!un.length) return head + '<div class="msg ok">All your official receipts are in an RCD. Issue a new OR to start another.</div>' + past;
     var accts = ['GF', 'SEF'].filter(function (k) { return sumOrs(un, k) > 0; });
-    var a = '<div class="tbl"><table><thead><tr><th>Bank account</th><th class="r">Collections</th></tr></thead><tbody>' +
-      accts.map(function (k) { return '<tr><td>' + ACCOUNTS[k].name + ' · ' + ACCOUNTS[k].bank + '</td><td class="r">' + money(sumOrs(un, k)) + '</td></tr>'; }).join('') +
-      '<tr class="sum"><td>Total to remit</td><td class="r">' + money(sumOrs(un)) + '</td></tr></tbody></table></div>';
-    var af = ['51', '56'].map(function (f) {
-      var issued = myOrs().filter(function (o) { return o.form === f; });
-      var end = f === '51' ? 1234550 : 5670060;
-      var used = seriesRange(issued.filter(function (o) { return !o.reported; }));
-      var first = used[2] ? used[0] : (f === '51' ? S.next.or51 : S.next.or56);
-      var nextNo = f === '51' ? S.next.or51 : S.next.or56;
-      return '<tr><td class="nw">AF ' + f + '</td><td class="nw">' + first + '–' + end + ' (' + (end - first + 1) + ')</td><td class="nw">' +
-        (used[2] ? used[0] + '–' + used[1] + ' (' + used[2] + ')' : '—') + '</td><td class="nw">' + nextNo + '–' + end + ' (' + (end - nextNo + 1) + ')</td></tr>';
+    var n = S.next.rcd;
+    var forms = accts.map(function (k, i) {
+      var draftRcd = { no: 'RCD ' + YEAR + '-' + pad(MONTH + 1) + '-' + pad3(n + i), officer: 'Maria Santos', account: k, date: TODAY,
+        ors: un.filter(function (o) { return sumOrs([o], k) > 0; }), total: sumOrs(un, k), cash: sumOrs(un, k), time: timeNow() };
+      return rcdBlock(draftRcd);
     }).join('');
-    var natures = {};
-    un.forEach(function (o) { o.lines.forEach(function (l) { natures[l.nature] = r2((natures[l.nature] || 0) + l.amount); }); });
-    var ab = Object.keys(natures).map(function (k) { return '<tr><td>' + esc(k) + '</td><td class="r">' + money(natures[k]) + '</td></tr>'; }).join('');
-    return '<h1>My RCD</h1>' +
-      about('Close the day per bank account: the RCD covers all your unreported ORs up to the date, with C. Accountability for Accountable Forms and the Abstract of Collections. Remit your collections to the Liquidating Officer.') +
-      '<div class="card"><h2>A. Collections</h2>' + a + '<h2>C. Accountability for Accountable Forms</h2><div class="tbl"><table><thead><tr><th>Form</th><th>Beginning balance</th><th>Issued</th><th>Ending balance</th></tr></thead><tbody>' + af + '</tbody></table></div>' +
-      '<h2>Abstract of Collections</h2><div class="tbl"><table><thead><tr><th>Nature of collection</th><th class="r">Amount</th></tr></thead><tbody>' + ab +
-      '<tr class="sum"><td>Total</td><td class="r">' + money(sumOrs(un)) + '</td></tr></tbody></table></div>' +
-      '<button type="button" class="primary" data-act="remit">Close the day and remit ' + peso(sumOrs(un)) + '</button></div>' + past;
+    return head + '<div class="msg info">Your unreported ORs make ' + (accts.length > 1 ? accts.length + ' RCDs, one per bank account' : 'one RCD') +
+      ', ' + peso(sumOrs(un)) + ' in all. Check them, then remit.</div>' + forms +
+      '<button type="button" class="primary" data-act="remit">Close the day and remit ' + peso(sumOrs(un)) + '</button>' + past;
   }
+  // ------------------------------------------------------------------ the RCD form, laid out as ALTOS prints it (LTOM, Annex 18)
+  var W_ONES = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+  var W_TENS = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+  function bigWords(n) {
+    if (n < 20) return W_ONES[n];
+    if (n < 100) return W_TENS[Math.floor(n / 10)] + (n % 10 ? '-' + W_ONES[n % 10] : '');
+    if (n < 1000) return W_ONES[Math.floor(n / 100)] + ' Hundred' + (n % 100 ? ' ' + bigWords(n % 100) : '');
+    var units = [[1e9, 'Billion'], [1e6, 'Million'], [1000, 'Thousand']];
+    for (var i = 0; i < units.length; i++) {
+      var d = units[i][0];
+      if (n >= d) return bigWords(Math.floor(n / d)) + ' ' + units[i][1] + (n % d ? ' ' + bigWords(n % d) : '');
+    }
+    return '';
+  }
+  // "Fifty thousand three hundred eighty-six pesos & 30/100." as written on the RCD
+  function rcdWords(amount) {
+    var cents = Math.round(amount * 100), p = Math.floor(cents / 100), c = cents % 100;
+    var w = (bigWords(p) || 'Zero').toLowerCase();
+    w = w.charAt(0).toUpperCase() + w.slice(1) + (p === 1 ? ' peso' : ' pesos');
+    return w + (c ? ' & ' + pad(c) + '/100.' : ' only.');
+  }
+  function orAmount(o, acct) { return sumOrs([o], acct); }
+  // the ORs of an RCD grouped into unbroken series per form: [form, from, to, amount]
+  function orRanges(ors, acct) {
+    var out = [];
+    ors.slice().sort(function (a, b) { return a.form === b.form ? +a.no - +b.no : (a.form < b.form ? -1 : 1); }).forEach(function (o) {
+      var last = out[out.length - 1];
+      if (last && last[0] === o.form && last[2] + 1 === +o.no) { last[2] = +o.no; last[3] = r2(last[3] + orAmount(o, acct)); }
+      else out.push([o.form, +o.no, +o.no, orAmount(o, acct)]);
+    });
+    return out;
+  }
+  var SERIES_END = { '51': 1234550, '56': 5670060, '51b': 1234600, '51c': 1234650 };
+  function seriesEnd(o) { return o.officer === 'col2' ? 1234600 : o.officer === 'col3' ? 1234650 : SERIES_END[o.form]; }
+  function accountability(ors) {
+    var forms = {};
+    ors.forEach(function (o) { (forms[o.form] = forms[o.form] || []).push(o); });
+    return Object.keys(forms).sort().map(function (f) {
+      var n = forms[f].map(function (o) { return +o.no; }).sort(function (a, b) { return a - b; });
+      var lo = n[0], hi = n[n.length - 1], end = seriesEnd(forms[f][0]);
+      return { form: 'AF ' + f + (f === '56' ? ' (Real Property Tax Receipt)' : ' (Official Receipt)'), beg: [end - lo + 1, lo, end], rec: null,
+        iss: [hi - lo + 1, lo, hi], end: hi < end ? [end - hi, hi + 1, end] : null };
+    });
+  }
+  function qft(t) { return t ? '<td class="c">' + t[0] + '</td><td class="c">' + t[1] + '</td><td class="c">' + t[2] + '</td>' : '<td></td><td></td><td></td>'; }
+  function sigLine(name, cap, date) {
+    return '<table class="sigline"><tr><td class="nm">' + (esc(name) || '&nbsp;') + '</td><td class="dt">' + date + '</td></tr><tr><td class="cap">' + cap + '</td><td class="cap">Date</td></tr></table>';
+  }
+  // r: an RCD of a Collecting Officer, or a consolidated RCD (r.kids = its Collecting Officers' RCDs)
+  function rcdSheet(r) {
+    var lo = !!r.kids, acct = r.account, when = longDate(r.date);
+    var ors = lo ? r.kids.reduce(function (a, k) { return a.concat(k.ors); }, []) : r.ors;
+    var collections = lo ? r.total : r.total, remitted = lo ? r.total : r.cash;
+    var checks = ors.filter(function (o) { return o.check && orAmount(o, acct) > 0; });
+    var chkTotal = r2(checks.reduce(function (t, o) { return t + orAmount(o, acct); }, 0));
+    var officer = lo ? LGU.treasurer : r.officer;
+    var a1 = lo ? '' : '<div class="ind">1. For Collectors</div><table class="g"><tr><th rowspan="2">Type (Form No.)</th><th colspan="2">Official Receipt/Serial No.</th><th rowspan="2">Amount</th></tr><tr><th>From</th><th>To</th></tr>' +
+      orRanges(ors, acct).map(function (x) { return '<tr><td>AF ' + x[0] + '</td><td class="c">' + x[1] + '</td><td class="c">' + x[2] + '</td><td class="r">' + money(x[3]) + '</td></tr>'; }).join('') + '</table>';
+    var a2rows = lo ? r.kids.map(function (k) { return '<tr><td>' + esc(k.officer) + '</td><td class="c">' + esc(k.no.replace('RCD ', '')) + '</td><td class="r">' + money(k.total) + '</td></tr>'; }).join('')
+      : '<tr><td>&nbsp;</td><td></td><td></td></tr>';
+    var c = lo ? [] : accountability(ors);
+    var cBody = c.length ? c.map(function (x) { return '<tr><td>' + x.form + '</td>' + qft(x.beg) + qft(x.rec) + qft(x.iss) + qft(x.end) + '</tr>'; }).join('')
+      : '<tr><td colspan="13" class="c">None</td></tr>';
+    var bal = r2(collections - remitted);
+    var chkRows = checks.map(function (o) { return '<tr><td>' + esc(o.check) + '</td><td>' + esc(o.payor) + '</td><td class="r">' + money(orAmount(o, acct)) + '</td></tr>'; }).join('') ||
+      '<tr><td class="c">-</td><td></td><td class="r">-</td></tr>';
+    var bWho = lo ? LGU.treasurer : ROLES.lo.user, bRef = lo ? LGU.bank + ' DS# ' + r.slip.replace(/^DS\s*/, '') : LGU.bank;
+    var cert = lo ? [ROLES.lo.user, 'Liquidating Officer'] : [r.officer, 'Collecting Officer'];
+    var ver = lo ? [LGU.treasurer, LGU.treasurerTitle, 'Name and Signature – Cashier/Treasurer'] : [ROLES.lo.user, 'Liquidating Officer', 'Name and Signature'];
+    return '<div class="sheet-wrap"><div class="sheet">' +
+      '<div class="rcdtitle">REPORT OF COLLECTIONS AND DEPOSITS (RCD)</div>' +
+      '<div style="text-align:center"><p class="lgu">' + LGU.short + '</p></div><p class="lgucap">Name of LGU</p>' +
+      '<p class="printed">Printed: ' + longDate(TODAY) + '  ' + timeNow() + ' · Sample from the ALTOS demo, not a real report</p>' +
+      '<table class="hdr"><tr><td style="width:24%;white-space:nowrap">Fund :</td><td class="u">' + ACCOUNTS[acct].line + '</td><td style="width:12%">Date :</td><td class="u" style="width:20%">' + when + '</td></tr>' +
+      '<tr><td style="white-space:nowrap">Name of Accountable Officer :</td><td class="u">' + esc(officer).toUpperCase() + '</td><td>Report No. :</td><td class="u">' + esc(r.no.replace(/^C?RCD /, '')) + '</td></tr></table>' +
+      '<div class="sec">A. COLLECTIONS' + (lo ? '' : ' &nbsp; <span style="font-weight:normal">' + ACCOUNTS[acct].name.toUpperCase() + '</span>') + '</div>' + a1 +
+      '<div class="ind" style="margin-top:6px">2. For Liquidating Officers/Treasurers</div><table class="g"><tr><th>Name of Accountable Officer</th><th>Report No.</th><th>Amount</th></tr>' + a2rows +
+      '<tr><td colspan="2" class="r b">Total</td><td class="r b">' + money(collections) + '</td></tr></table>' +
+      '<div class="sec">B. REMITTANCES/DEPOSITS</div><table class="g"><tr><th>Accountable Officer/Bank</th><th>Reference</th><th>Amount</th></tr>' +
+      '<tr><td>' + esc(bWho) + '</td><td>' + esc(bRef) + '</td><td class="r">' + money(remitted) + '</td></tr><tr><td colspan="2" class="r b">Total</td><td class="r b">' + money(remitted) + '</td></tr></table>' +
+      '<div class="sec">C. ACCOUNTABILITY FOR ACCOUNTABLE FORMS</div><table class="g small"><tr><th rowspan="3">Name of Form &amp; No.</th><th colspan="3">Beginning Balance</th><th colspan="3">Receipts</th><th colspan="3">Issued</th><th colspan="3">Ending Balance</th></tr>' +
+      '<tr>' + '<th rowspan="2">Qty.</th><th colspan="2">Inclusive Serial Nos.</th>'.repeat(4) + '</tr><tr>' + '<th>From</th><th>To</th>'.repeat(4) + '</tr>' + cBody + '</table>' +
+      '<div class="sec">D. SUMMARY OF COLLECTIONS AND REMITTANCES/DEPOSITS</div><table class="two"><tr><td><table class="dsum">' +
+      '<tr><td colspan="2">Beginning Balance:</td><td class="amt">-</td></tr><tr><td colspan="3">Add: Collections</td></tr>' +
+      '<tr><td style="width:20px"></td><td>Cash:</td><td class="amt">' + money(r2(collections - chkTotal)) + '</td></tr>' +
+      '<tr><td></td><td>Checks:</td><td class="amt">' + (chkTotal ? money(chkTotal) : '-') + '</td></tr>' +
+      '<tr><td></td><td class="b">TOTAL:</td><td class="amt b">' + money(collections) + '</td></tr>' +
+      '<tr><td colspan="2">Less: Remittance/Deposit to Cashier/Treasurer/Depository Bank:</td><td class="amt">' + money(remitted) + '</td></tr>' +
+      '<tr><td colspan="2" class="b">Balance:</td><td class="amt b">' + (bal ? money(bal) : '-') + '</td></tr></table></td>' +
+      '<td><div class="ind">List of Checks</div><table class="g small"><tr><th>Check No.</th><th>Payee</th><th>Amount</th></tr>' + chkRows + '</table></td></tr></table>' +
+      '<table class="certbox"><tr><td><div class="b c">CERTIFICATION</div><p>I hereby certify that the foregoing report of collections and deposits and accountability of accountable forms is true and correct.</p>' +
+      sigLine(cert[0].toUpperCase(), 'Name and Signature – Accountable Officer', when) + '<p class="small c" style="margin:0">' + cert[1] + '</p></td>' +
+      '<td><div class="b c">VERIFICATION AND ACKNOWLEDGMENT</div><p>I hereby certify that the foregoing report of the collection has been verified and acknowledge receipt of ' + esc(rcdWords(remitted)) + '</p>' +
+      '<p class="r b">PHP ' + money(remitted) + '</p>' + sigLine(ver[0].toUpperCase(), ver[2], when) + '<p class="small c" style="margin:0">' + ver[1] + '</p></td></tr></table>' +
+      '</div></div>';
+  }
+  // the form keeps its A4 layout and is scaled down to fit a phone; pinch to zoom in
+  function fitSheets() {
+    Array.prototype.forEach.call(root.querySelectorAll('.sheet-wrap'), function (w) {
+      var sh = w.firstChild, k = Math.min(1, w.clientWidth / sh.offsetWidth);
+      sh.style.transform = k < 1 ? 'scale(' + k + ')' : '';
+      w.style.height = (sh.offsetHeight * k) + 'px';
+    });
+  }
+  window.addEventListener('resize', fitSheets);
+  function rcdBlock(r, note) {
+    return '<div class="card"><h2>' + esc(r.no) + ' · ' + ACCOUNTS[r.account].name + '</h2>' + (note ? '<p class="muted">' + note + '</p>' : '') + rcdSheet(r) +
+      '<p class="muted pinch">The form keeps its A4 layout. Pinch to zoom in.</p></div>';
+  }
+
   function statusChip(s) {
     return '<span class="chip ' + ({ Submitted: 'y', Consolidated: 'g', Refused: 'r', Released: 'g', Prepared: 'y' }[s] || '') + '">' + s + '</span>';
   }
@@ -452,14 +557,18 @@
       '. ALTOS will not accept it. Find the report with the difference and <a href="#lo-refused">refuse it</a> with the reason.</div>';
     var rows = sub.map(function (r) {
       return '<tr><td class="nw"><label style="margin:0;font-weight:400"><input type="checkbox" data-f="pick" data-v="' + esc(r.no) + '"' + (c.picked[r.no] ? ' checked' : '') + '>' + esc(r.no) + '</label></td><td>' + esc(r.officer) +
-        '</td><td class="nw">' + r.ors.length + ' ORs</td><td class="r">' + money(r.total) + '</td><td class="nw">' + r.time + '</td></tr>';
+        '</td><td class="nw">' + r.ors.length + ' ORs</td><td class="r">' + money(r.total) + '</td><td class="nw">' + r.time +
+        '</td><td><button type="button" class="small" data-act="view-rcd" data-v="' + esc(r.no) + '">View</button></td></tr>';
     }).join('');
     var done = S.crcds.filter(function (x) { return x.account === c.account; });
+    var view = S.viewRcd && (S.crcds.concat(S.rcds)).filter(function (x) { return x.no === S.viewRcd; })[0];
+    S.viewRcd = null;
     return '<h1>Consolidated RCD</h1>' +
       about("Collecting Officers whose ORs belong to the same bank account are merged into one RCD. Count the money, select the account, tick the RCDs, then record the deposit slip. The deposit enters the Cash Book on the date of the RCD.") +
       '<div class="tabs">' + ['GF', 'SEF'].map(function (k) { return '<button type="button" class="tab' + (k === c.account ? ' on' : '') + '" data-act="cr-acct" data-v="' + k + '">' + ACCOUNTS[k].name + '</button>'; }).join('') + '</div>' +
-      (sub.length ? '<div class="tbl"><table><thead><tr><th>RCD</th><th>Collecting Officer</th><th>ORs</th><th class="r">Amount</th><th>Remitted</th></tr></thead><tbody>' + rows +
-        '<tr class="sum"><td colspan="3">Total of the ticked RCDs</td><td class="r">' + money(tot) + '</td><td></td></tr></tbody></table></div>' +
+      (sub.length ? (view ? rcdBlock(view, view.kids ? 'Consolidated RCD with its deposit slip.' : 'The RCD remitted by ' + esc(view.officer) + '.') : '') +
+      '<div class="tbl"><table><thead><tr><th>RCD</th><th>Collecting Officer</th><th>ORs</th><th class="r">Amount</th><th>Remitted</th><th></th></tr></thead><tbody>' + rows +
+        '<tr class="sum"><td colspan="3">Total of the ticked RCDs</td><td class="r">' + money(tot) + '</td><td></td><td></td></tr></tbody></table></div>' +
         '<div class="card"><h2>Cash count</h2><div class="deno">' + DENOS.map(function (d) {
           return '<div><label for="d' + d + '">' + (d < 1 ? '25¢' : '₱' + d.toLocaleString('en-PH')) + ' ×</label><input id="d' + d + '" inputmode="numeric" data-f="count" data-v="' + d + '" value="' + esc(c.count[d] || '') + '"></div>';
         }).join('') + '</div><p>Counted: <span class="total" id="counted">' + peso(counted) + '</span></p>' +
@@ -468,9 +577,10 @@
         '<div class="row"><div><label for="slip">Deposit slip No.</label><input id="slip" data-f="slip" value="' + esc(c.slip) + '"></div>' +
         '<div><label>Date</label><input readonly value="' + longDate(TODAY) + '"></div></div>' +
         '<button type="button" class="primary" data-act="deposit"' + (anyPicked && counted && diff === 0 ? '' : ' disabled') + '>Record the deposit of ' + peso(tot) + '</button></div>'
-        : '<div class="msg ok">No RCD of the ' + ACCOUNTS[c.account].name + ' is waiting.' + (S.rcds.some(function (r) { return r.status === 'Submitted'; }) ? ' See the other account.' : '') + '</div>') +
-      (done.length ? '<h2>Consolidated today</h2><div class="tbl"><table><thead><tr><th>Consolidated RCD</th><th>Deposit slip</th><th>RCDs</th><th class="r">Amount</th></tr></thead><tbody>' +
-        done.map(function (x) { return '<tr><td class="nw">' + esc(x.no) + '</td><td class="nw">' + esc(x.slip) + '</td><td>' + x.rcds.map(esc).join(', ') + '</td><td class="r">' + money(x.total) + '</td></tr>'; }).join('') + '</tbody></table></div>' : '');
+        : (view ? rcdBlock(view, view.kids ? 'Consolidated RCD with its deposit slip.' : '') : '') + '<div class="msg ok">No RCD of the ' + ACCOUNTS[c.account].name + ' is waiting.' + (S.rcds.some(function (r) { return r.status === 'Submitted'; }) ? ' See the other account.' : '') + '</div>') +
+      (done.length ? '<h2>Consolidated today</h2><div class="tbl"><table><thead><tr><th>Consolidated RCD</th><th>Deposit slip</th><th>RCDs</th><th class="r">Amount</th><th></th></tr></thead><tbody>' +
+        done.map(function (x) { return '<tr><td class="nw">' + esc(x.no) + '</td><td class="nw">' + esc(x.slip) + '</td><td>' + x.rcds.map(esc).join(', ') + '</td><td class="r">' + money(x.total) +
+          '</td><td><button type="button" class="small" data-act="view-rcd" data-v="' + esc(x.no) + '">View RCD</button></td></tr>'; }).join('') + '</tbody></table></div>' : '');
   }
   function refused() {
     var sub = S.rcds.filter(function (r) { return r.status === 'Submitted'; });
@@ -627,6 +737,7 @@
       return;
     }
     root.innerHTML = frame(SCREENS[S.role][S.page]());
+    fitSheets();
     document.title = TITLES[S.page] + ' · ALTOS Demo';
     if (keepScroll) window.scrollTo(0, y);
     var on = root.querySelector('.side a.on');
@@ -659,6 +770,7 @@
     else if (act === 'issue') doIssue();
     else if (act === 'view-or') { e.preventDefault(); S.view = v; draw(false); window.scrollTo(0, 0); }
     else if (act === 'remit') doRemit();
+    else if (act === 'view-rcd') { S.viewRcd = v; draw(false); var t = root.querySelector('.sheet-wrap'); if (t) t.parentNode.scrollIntoView(); else window.scrollTo(0, 0); }
     else if (act === 'cr-acct') { S.cr.account = v; S.cr.picked = {}; S.cr.count = {}; draw(true); }
     else if (act === 'fill') {
       var cash = r2(S.rcds.filter(function (r) { return S.cr.picked[r.no] && r.status === 'Submitted' && r.account === S.cr.account; })
@@ -753,6 +865,7 @@
       made.push(no + ' (' + ACCOUNTS[k].name + ', ' + peso(amt) + ')');
     });
     un.forEach(function (o) { o.reported = true; });
+    S.viewRcd = S.rcds[S.rcds.length - made.length].no;
     flash('ok', 'Remitted ' + made.join(' and ') + ' to the Liquidating Officer. Next: <a href="#lo-crcd">count the money as Liquidating Officer →</a>');
     draw(false); window.scrollTo(0, 0);
   }
@@ -762,7 +875,8 @@
     var no = 'CRCD ' + YEAR + '-' + pad(MONTH + 1) + '-' + pad3(20 + S.next.crcd++);
     var slip = String(c.slip || '').trim() || 'DS (no number)';
     picked.forEach(function (r) { r.status = 'Consolidated'; });
-    S.crcds.push({ no: no, account: c.account, slip: slip, rcds: picked.map(function (r) { return r.no; }), total: tot });
+    S.crcds.push({ no: no, account: c.account, slip: slip, rcds: picked.map(function (r) { return r.no; }), kids: picked, total: tot, date: TODAY, time: timeNow() });
+    S.viewRcd = no;
     cashIn(c.account, TODAY, no + ' / ' + slip, 'Deposit of collections (' + picked.map(function (r) { return r.officer; }).join(', ') + ')', tot);
     log('Consolidated ' + picked.length + ' RCD(s) into ' + no + ' and recorded deposit ' + slip + ' for ' + peso(tot));
     S.cr = { account: c.account, picked: {}, count: {}, slip: 'DS ' + (70300 + S.next.crcd) };

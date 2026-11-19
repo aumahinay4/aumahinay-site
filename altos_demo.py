@@ -217,6 +217,28 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .deno div{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:6px}
 .deno label{margin:0;text-align:right}
 .deno input{padding:7px 8px}
+/* the RCD form, as ALTOS prints it on A4 (LTOM, Annex 18); scaled to fit a phone */
+.sheet-wrap{width:100%;max-width:796px;overflow:hidden;margin:8px 0 4px;border:1px solid #cfd5e2}
+.pinch{display:none}
+.sheet{width:794px;background:#fff;color:#000;padding:30px 34px;font:12px/1.35 "Times New Roman",Times,serif;transform-origin:0 0;position:relative}
+.sheet:after{content:"SAMPLE ONLY · NOT VALID";position:absolute;left:50%;top:45%;transform:translate(-50%,-50%) rotate(-28deg);font:800 64px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:rgba(194,24,91,.10);white-space:nowrap;pointer-events:none}
+.sheet p{margin:0 0 4px}
+.sheet .rcdtitle{text-align:center;font-size:15px;font-weight:bold;margin:2px 0 6px}
+.sheet .lgu{text-align:center;font-weight:bold;font-size:14px;margin:0;border-bottom:1px solid #000;display:inline-block;padding:0 30px}
+.sheet .lgucap{text-align:center;font-size:10px;margin:0}.sheet .printed{text-align:center;font-size:10px;margin:2px 0 8px}
+.sheet .hdr{width:100%;margin:8px 0;border-collapse:collapse;background:transparent}.sheet .hdr td{padding:2px 4px;border:none;font-size:12px;background:transparent!important}
+.sheet .u{border-bottom:1px solid #000!important;font-weight:bold}
+.sheet table.g{width:100%;border-collapse:collapse;margin:4px 0 8px;background:#fff}
+.sheet table.g th,.sheet table.g td{border:1px solid #000;padding:3px 5px;vertical-align:top;font-size:12px;color:#000;background:#fff!important;white-space:normal;font-family:inherit}
+.sheet table.g th{background:#f0f0f0!important;font-weight:bold;text-align:center}
+.sheet .small th,.sheet .small td{font-size:10px!important}
+.sheet .r{text-align:right}.sheet .c{text-align:center}.sheet .b{font-weight:bold}
+.sheet .sec{font-weight:bold;margin-top:10px}.sheet .ind{padding-left:12px}
+.sheet .two{width:100%;border-collapse:collapse;background:transparent}.sheet .two>tbody>tr>td{vertical-align:top;width:50%;padding:0 6px 0 0;border:none;background:transparent!important}
+.sheet .dsum{background:transparent}.sheet .dsum td{border:none;padding:2px 4px;font-size:12px;background:transparent!important}.sheet .dsum .amt{text-align:right;border-bottom:1px solid #000;min-width:90px}
+.sheet .sigline{width:100%;border-collapse:collapse;margin-top:26px;background:transparent}.sheet .sigline td{border:none;padding:1px 4px;text-align:center;font-size:12px;background:transparent!important}
+.sheet .sigline .nm{border-bottom:1px solid #000;font-weight:bold;width:65%}.sheet .sigline .dt{border-bottom:1px solid #000}.sheet .sigline .cap{font-size:10px}
+.sheet .certbox{width:100%;border-collapse:collapse;margin-top:12px;background:transparent}.sheet .certbox>tbody>tr>td{width:50%;vertical-align:top;border:1px solid #000;padding:6px 8px;font-size:12px;background:#fff!important}
 /* sample receipt and check: clearly not valid */
 .paper{position:relative;overflow:hidden;background:#fffdf5;border:1px solid #cfc6a8;max-width:520px;padding:18px 20px;margin:12px 0;font-size:14px}
 .paper.check{background:#f2fbf6;border-color:#9fd2b6;max-width:640px}
@@ -243,6 +265,7 @@ noscript p{max-width:560px;margin:40px auto;padding:0 16px}
  table{font-size:14px}th,td{padding:7px 6px;font-size:14px}
  .row>div{min-width:130px}
  .cb .dr{display:none}.cb .io{display:table-cell}
+ .pinch{display:block;margin:4px 0 0}
  .line{grid-template-columns:1fr 110px 40px}
  .bar{grid-template-columns:44px 1fr 92px;font-size:13px}
  .paper{padding:14px 12px}.paper:after{font-size:24px}
