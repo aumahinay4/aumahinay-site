@@ -1170,3 +1170,8 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
   html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025 * 1.2); }
 }
 """
+
+CSS += """
+/* Three-bar menu icon 25% bigger, every page and screen (Butch 2026-11-20): 15px -> 18.75px; tap area stays 32px */
+.menu-btn svg { width: 18.75px; height: 18.75px; }
+"""
