@@ -1749,7 +1749,7 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
  'slug': 'local-government-income-class',
  'category': 'finance',
  'date': 'November 19, 2026',
- 'publish_on': '2026-11-19 21:00',
+ 'publish_on': '2026-11-19 18:00',
  'summary': 'Every province, city and municipality in the Philippines carries an income class, from first to fifth. '
             'This post explains how the Automatic Income Classification Act (RA 11964) sets that class, what income '
             'is counted, and how moving up a class can change both salaries and the personal services limit.',
