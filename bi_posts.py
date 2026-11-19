@@ -5017,6 +5017,11 @@ BI_POSTS = [
             "treasury, it may be one person. Either way, it helps to know the three jobs apart, "
             "because each one fails in its own way and each one is fixed in its own way. By the end of this post, you will know the three kinds of BI work, how each one fails, and "
             "how one person in a small office can do all three.",
+            ("The one-person case is not theory for me. I built ALTOS, my treasury system, on my own: "
+             "I worked out where each record comes from, built every screen to follow the official "
+             "forms the staff already know, and decided what each report should tell the officer who "
+             "reads it. Those three hats, plus the Google Business Intelligence Professional "
+             "Certificate, shaped the advice in this post."),
             ("photo",
              "blog/bi-roles.jpg",
              "The BI loop: people bring questions, an engineer builds the pipes, a developer "
@@ -5214,6 +5219,13 @@ BI_POSTS = [
             "kind of problem. By the end of this post, you will know how BI differs from data "
             "analytics, where the name came from, the five parts of a BI system, and how a "
             "monthly report can stop being rebuilt by hand.",
+            ("This kind of report is familiar to me. I have spent more than 13 years in local "
+             "government fiscal administration, including two years as Acting Municipal Treasurer of a municipality in "
+             "Quezon, from 2020 to 2022. As I wrote in Why I Built ALTOS, some offices still add up "
+             "their monthly reports with a calculator, and the reports take days to prepare. That is a "
+             "big part of why I went on to earn the Google Business Intelligence Professional "
+             "Certificate, and why ALTOS builds its reports from the receipts already issued instead "
+             "of from a fresh copy every month."),
             ("h", "Why a Second Series?"),
             "My Data Analytics series walks through the full craft of analysis: asking a good "
             "question, preparing and cleaning data, analyzing it and sharing what you found.",

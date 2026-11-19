@@ -7321,6 +7321,11 @@ DATA_POSTS = [
             "the final decision. When you finish reading, you will know the six steps of every "
             "analysis, see them used on a real office question, and know what goes wrong when a "
             "step is skipped.",
+            ("I learned these six steps in the Google Data Analytics Professional Certificate, which I "
+             "completed in 2025, but the habit behind them mattered to me long before that. When I "
+             "headed a municipal treasury office in Quezon from 2020 to 2022, problems came from every "
+             "side, often at once, and the final call was mine. Getting the question right before "
+             "reaching for the numbers is the habit I would most want any new treasurer to have."),
             ("h", "Six Steps, in Plain Words"),
             "The Google Data Analytics Professional Certificate teaches the process as six "
             "phases: Ask, Prepare, Process, Analyze, Share and Act. Other courses and companies "

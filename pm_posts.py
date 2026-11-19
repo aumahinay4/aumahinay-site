@@ -6580,6 +6580,10 @@ PM_POSTS = [
             "This is the problem a project charter solves. It is the first document of a project,"
             " and in a small office it may be the only one you need. After this post, you will know the six parts of a one-page charter, see one written for a treasury "
             "project, and know how to handle changes without arguments.",
+            ("I learned the value of putting things on paper at the very start of my first post as "
+             "Acting Municipal Treasurer. It began with a formal turnover that took two full days, as "
+             "cash, records and responsibility passed from one officer to the next. A charter does the same job at the "
+             "start of a project: it records what everyone will later need to remember."),
             ("h", "What a Project Charter Is"),
             "A project charter is a short, signed document that officially starts a project. It "
             "records why the project exists, what it will deliver, when, with what money and "
