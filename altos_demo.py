@@ -271,7 +271,7 @@ noscript p{max-width:560px;margin:40px auto;padding:0 16px}
  .banner{padding:16px 16px 14px}.banner h1{font-size:21px}
  table{font-size:14px}th,td{padding:7px 6px;font-size:14px}
  .row>div{min-width:130px}
- .cb th,.cb td{padding:6px 4px;font-size:12.5px}
+ .cb th,.cb td{padding:6px 3px;font-size:12px}.cb th{white-space:normal}
  .pinch{display:block;margin:4px 0 0}
  .line{grid-template-columns:1fr 110px 40px}
  .bar{grid-template-columns:44px 1fr 92px;font-size:13px}
