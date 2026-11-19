@@ -26,21 +26,21 @@
       <link>https://aumahinay.dev/blog/project-management-part-2-project-charter/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/project-management-part-2-project-charter/</guid>
       <pubDate>Wed, 18 Nov 2026 21:00:00 +0800</pubDate>
-      <description>A project charter is a short document that says why a project exists, what it will deliver, who is in charge and who approved it. Here is how to write one on a single page, using a treasury encoding project as the example.</description>
+      <description>A project charter is a short document that says why a project exists, what it will deliver, who is in charge and who approved it. This post shows how to write one on a single page, using a treasury encoding project as the example.</description>
     </item>
     <item>
       <title>Data Analytics Series, Part 2: The Six Steps of Every Analysis</title>
       <link>https://aumahinay.dev/blog/data-analytics-part-2-six-steps/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/data-analytics-part-2-six-steps/</guid>
       <pubDate>Tue, 17 Nov 2026 21:00:00 +0800</pubDate>
-      <description>Ask, Prepare, Process, Analyze, Share and Act. Here is what each step means, the mistakes that happen when one is skipped, and a full worked example: deciding whether a treasury office needs a second payment window.</description>
+      <description>Ask, Prepare, Process, Analyze, Share and Act. Each step comes with the mistake that follows when it is skipped, and one worked example runs through all six: does a treasury office need a second payment window?</description>
     </item>
     <item>
       <title>Business Intelligence Series, Part 2: The BI Team, Role by Role</title>
       <link>https://aumahinay.dev/blog/business-intelligence-part-2-the-bi-team/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/business-intelligence-part-2-the-bi-team/</guid>
       <pubDate>Mon, 16 Nov 2026 21:00:00 +0800</pubDate>
-      <description>Behind every dashboard that people trust are three kinds of work: building the pipes, building the screens and explaining what the numbers mean. Here is each BI role in plain words, and how one person in a small treasury can wear all three hats.</description>
+      <description>Behind every dashboard that people trust are three kinds of work: building the pipes, building the screens and explaining what the numbers mean. Each role is explained in plain words, along with how one person in a small treasury can wear all three hats.</description>
     </item>
     <item>
       <title>The ALTOS Framework, Principle 4: Every Owner Has a Deadline</title>
@@ -54,14 +54,14 @@
       <link>https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-2-passwords-and-mfa/</guid>
       <pubDate>Sat, 14 Nov 2026 22:00:00 +0800</pubDate>
-      <description>Attackers no longer break in; they log in. Here is why long passphrases beat complex passwords, how a password manager works, which kinds of two-step login are strongest, and why passkeys are the future.</description>
+      <description>Attackers no longer break in; they log in. That is why long passphrases beat complex passwords, why a password manager helps, which kinds of two-step login are strongest, and why passkeys are coming.</description>
     </item>
     <item>
       <title>Business Intelligence Series, Part 1: Same Data, Different Jobs</title>
       <link>https://aumahinay.dev/blog/business-intelligence-part-1-same-data-different-jobs/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/business-intelligence-part-1-same-data-different-jobs/</guid>
       <pubDate>Sat, 14 Nov 2026 00:00:00 +0800</pubDate>
-      <description>Business intelligence and data analytics use the same records but do different jobs. Here is what BI really means, where the name came from, what a BI system is made of, and how a monthly treasury report can stop being rebuilt by hand.</description>
+      <description>Business intelligence and data analytics use the same records but do different jobs. This post covers what BI really means, where the name came from, what a BI system is made of, and how a monthly treasury report can stop being rebuilt by hand.</description>
     </item>
     <item>
       <title>Lesson 7: Keep a receipts register in SQLite</title>
@@ -75,14 +75,14 @@
       <link>https://aumahinay.dev/blog/data-analytics-part-1-what-it-is/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/data-analytics-part-1-what-it-is/</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0800</pubDate>
-      <description>Data analytics is the craft of turning everyday records into answers people can act on. Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, and why a local treasury is already sitting on a mountain of useful data.</description>
+      <description>Data analytics is the craft of turning everyday records into answers people can act on. Along the way: the four kinds of questions it can answer, a famous cholera map from 1854, and why a local treasury already sits on a mountain of useful data.</description>
     </item>
     <item>
       <title>Project Management Series, Part 1: The Accidental Project Manager in the Treasury</title>
       <link>https://aumahinay.dev/blog/project-management-part-1-accidental-project-manager/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/project-management-part-1-accidental-project-manager/</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0800</pubDate>
-      <description>A project can land on your desk without the title. Here is how a project differs from daily work, the three limits every project lives with, and four moves to make in your first two weeks.</description>
+      <description>A project can land on your desk without the title. Learn how a project differs from daily work, the three limits every project lives with, and four moves to make in your first two weeks.</description>
     </item>
     <item>
       <title>Lesson 6: Make a formatted Excel report with openpyxl</title>
@@ -96,14 +96,14 @@
       <link>https://aumahinay.dev/blog/year-end-in-the-treasury/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/year-end-in-the-treasury/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 +0800</pubDate>
-      <description>While most offices slow down for Christmas, the local treasury speeds up. Here is what happens in December, from bonuses and last-minute vouchers to unspent budgets, cash counts and getting ready for the January rush.</description>
+      <description>While most offices slow down for Christmas, the local treasury speeds up. December brings bonuses, last-minute vouchers, unspent budgets and cash counts, and the office must also get ready for the January rush.</description>
     </item>
     <item>
       <title>Your Data at the Treasury Counter: What an Office May Share, and What It Must Protect</title>
       <link>https://aumahinay.dev/blog/your-data-at-the-treasury-counter/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/your-data-at-the-treasury-counter/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 +0800</pubDate>
-      <description>Every payment at the town hall leaves a trail of personal information. Here is what the Data Privacy Act means at the treasury counter, what an office may share, what it must protect, and simple habits that keep taxpayers safe.</description>
+      <description>Every payment at the town hall leaves a trail of personal information. The Data Privacy Act decides what an office may share and what it must protect, and a few simple habits keep taxpayers safe.</description>
     </item>
     <item>
       <title>Cybersecurity Series, Part 1: How Modern Cyberattacks Really Work</title>
@@ -173,7 +173,7 @@
       <link>https://aumahinay.dev/blog/why-dev-and-not-com/</link>
       <guid isPermaLink="true">https://aumahinay.dev/blog/why-dev-and-not-com/</guid>
       <pubDate>Thu, 05 Nov 2026 00:00:00 +0800</pubDate>
-      <description>Most people expect a .com. I chose aumahinay.dev. Here is why, in plain words, and what it taught me about building things that are safe by default.</description>
+      <description>Most people expect a .com. I chose aumahinay.dev. I explain why, in plain words, and what it taught me about building things that are safe by default.</description>
     </item>
     <item>
       <title>200 Kilometers and Five Years Later: Coming Home to the Farm</title>

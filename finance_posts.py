@@ -12,9 +12,9 @@ FINANCE_POSTS = [
         "publish_on": "2026-11-11",
         "slug": "year-end-in-the-treasury",
         "category": "treasury",
-        "summary": "While most offices slow down for Christmas, the local treasury speeds up. Here is what "
-                   "happens in December, from bonuses and last-minute vouchers to unspent budgets, cash counts "
-                   "and getting ready for the January rush.",
+        "summary": ("While most offices slow down for Christmas, the local treasury speeds up. December brings "
+                   "bonuses, last-minute vouchers, unspent budgets and cash counts, and the office must also get "
+                   "ready for the January rush."),
         "body": [
             "On a Friday afternoon in mid-December, the office smells of pancit from someone’s "
             "early Christmas party. Down the hall, the treasury is quiet in a different way. "
@@ -162,7 +162,7 @@ FINANCE_POSTS = [
             "It is also why I believe treasury systems should make year-end easier, not harder. A"
             " good system keeps the records complete every day, so December becomes a review, not"
             " a rescue.",
-            ("h", "Key Takeaways"),
+            ("h", "What to Remember"),
             ("point",
              "Unspent money reverts",
              "Except for capital outlay, unexpended appropriations go back to the general fund at year-end."),
@@ -192,9 +192,9 @@ FINANCE_POSTS = [
         "publish_on": "2026-11-11",
         "slug": "your-data-at-the-treasury-counter",
         "category": "treasury",
-        "summary": "Every payment at the town hall leaves a trail of personal information. Here is what the "
-                   "Data Privacy Act means at the treasury counter, what an office may share, what it must "
-                   "protect, and simple habits that keep taxpayers safe.",
+        "summary": ("Every payment at the town hall leaves a trail of personal information. The Data Privacy Act "
+                   "decides what an office may share and what it must protect, and a few simple habits keep "
+                   "taxpayers safe."),
         "body": [
             "A man walks up to the treasury window and asks a simple question. “Magkano po ba ang"
             " utang sa amilyar ng kapitbahay ko?” How much does my neighbor still owe in real "
@@ -342,7 +342,7 @@ FINANCE_POSTS = [
             "She can also tell him the general rules, such as when real property tax is due and "
             "how the discounts work, because that information is for everyone.",
             "That answer protects the neighbor, respects the visitor and keeps the office within the law.",
-            ("h", "Key Takeaways"),
+            ("h", "What to Remember"),
             ("point",
              "Private accounts stay private",
              "Share a taxpayer's account only with the owner, or someone with written authority and an ID."),
@@ -371,8 +371,8 @@ FINANCE_POSTS = [
 FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account, No Idle Cash, How a Treasury Manages Cash',
   'slug': 'local-finance-part-1-cash-management',
   'category': 'finance',
-  'date': 'December 12, 2026',
-  'publish_on': '2026-12-12 21:00',
+  'date': "December 2, 2026",
+  'publish_on': "2026-12-02 21:00",
   'summary': 'A local government must have cash ready when a bill falls due. This part explains the treasury single '
              'account idea from the IMF, the two cash tests in the PEFA framework, and how a Philippine local '
              'treasury can build a daily cash position and a monthly cash forecast.',
@@ -497,7 +497,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Forecasting once a year',
             'PEFA’s top score asks for monthly updates based on actual inflows and outflows.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'One picture of all cash',
             'The treasury single account idea from the IMF is about control and visibility, not only about the '
@@ -533,8 +533,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 2: How Big Should the Rainy-Day Reserve Be?',
   'slug': 'local-finance-part-2-rainy-day-reserve',
   'category': 'finance',
-  'date': 'December 19, 2026',
-  'publish_on': '2026-12-19 21:00',
+  'date': "December 7, 2026",
+  'publish_on': "2026-12-07 21:00",
   'summary': 'A reserve is money set aside for the year that goes wrong. This part explains the two-month benchmark '
              'recommended by the Government Finance Officers Association, what the Philippine Local Government Code '
              'says about surplus and balanced budgets, and how to measure the real reserve of a local government.',
@@ -642,7 +642,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'When it may be used',
             'Sudden revenue loss or urgent costs that the regular budget cannot absorb.'),
            ('point', 'How it is rebuilt', 'For example, over the next two or three budgets.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Two months as a minimum',
             'GFOA recommends no less than two months of regular general fund revenues or spending, with more where '
@@ -681,8 +681,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 3: When the Government Pays Late, Preventing Unpaid Bills',
   'slug': 'local-finance-part-3-expenditure-arrears',
   'category': 'finance',
-  'date': 'December 26, 2026',
-  'publish_on': '2026-12-26 21:00',
+  'date': "December 14, 2026",
+  'publish_on': "2026-12-14 21:00",
   'summary': 'Unpaid bills to suppliers, also called expenditure arrears, are described by the IMF as one of the '
              'most common problems in public financial management. This part explains how the IMF and the PEFA '
              'framework look at arrears, the Philippine rules that are meant to prevent them, and a simple monthly '
@@ -792,7 +792,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Put the cash on the forecast',
             'Large payments should appear on the monthly cash forecast from Part 1.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point', 'Arrears are overdue obligations', 'Bills past their due date, not bills in normal processing.'),
            ('point',
             'A common problem',
@@ -826,8 +826,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 4: Cash or Accrual? Why Public Accounting Changed',
   'slug': 'local-finance-part-4-cash-or-accrual',
   'category': 'finance',
-  'date': 'January 2, 2027',
-  'publish_on': '2027-01-02 21:00',
+  'date': "December 18, 2026",
+  'publish_on': "2026-12-18 21:00",
   'summary': 'A growing share of governments report on an accrual basis instead of a cash basis. This part explains '
              'the difference with simple examples, what the international standards (IPSAS) say, how the Philippines '
              'adopted them as PPSAS, and why the treasurer’s cash records and the accountant’s financial statements '
@@ -919,7 +919,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'answer the council’s yearly question: what did our services really cost, and what do we owe? When the '
            'two disagree, the difference is not necessarily a mistake. Ask what explains it, such as bills waiting '
            'to be paid or the depreciation of assets.',
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point', 'Cash basis', 'Records money when it is received or paid.'),
            ('point',
             'Accrual basis',
@@ -955,8 +955,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 5: Grading a Local Government’s Finances, the PEFA Check',
   'slug': 'local-finance-part-5-pefa-check',
   'category': 'finance',
-  'date': 'January 9, 2027',
-  'publish_on': '2027-01-09 21:00',
+  'date': "December 25, 2026",
+  'publish_on': "2026-12-25 21:00",
   'summary': 'PEFA is a framework for grading how well a government manages public money, used in 151 countries at '
              'national and local level. This part explains its seven pillars, 31 indicators and A-to-D scores, how '
              'it is adapted for local governments, and how the Philippines uses it through the Public Financial '
@@ -1063,7 +1063,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'One office doing it alone',
             'Public financial management crosses offices. The PFM team must include all of them.'),
            ('point', 'Skipping the improvement plan', 'The report describes problems. Only the plan fixes them.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'A shared yardstick',
             'PEFA has seven pillars and 31 indicators, scored from D to A, and has been used in 151 countries.'),
@@ -1100,8 +1100,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 6: Budgeting for Results, Not Just Inputs',
   'slug': 'local-finance-part-6-budgeting-for-results',
   'category': 'finance',
-  'date': 'January 16, 2027',
-  'publish_on': '2027-01-16 21:00',
+  'date': "December 30, 2026",
+  'publish_on': "2026-12-30 21:00",
   'summary': 'A line-item budget lists what will be bought. Performance budgeting also asks what the money will '
              'achieve. This part explains the idea as the OECD describes it, the ladder from inputs to outcomes, '
              'what the Philippine Local Government Code already says about expected results, and a worked example '
@@ -1196,7 +1196,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Reporting without using',
             'Performance information that nobody reads at budget time is wasted effort.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'A shift in focus',
             'The OECD describes performance budgeting as moving from managing inputs toward the results of '
@@ -1229,8 +1229,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 7: Participatory Budgeting, Letting Residents Help Decide',
   'slug': 'local-finance-part-7-participatory-budgeting',
   'category': 'finance',
-  'date': 'January 23, 2027',
-  'publish_on': '2027-01-23 21:00',
+  'date': "January 4, 2027",
+  'publish_on': "2027-01-04 21:00",
   'summary': 'Participatory budgeting lets residents help decide how part of a public budget is spent. This part '
              'looks at an early example in Porto Alegre, Brazil, what a World Bank case study found, how the '
              'Philippines built participation into local development councils and the Bottom-up Budgeting program, '
@@ -1324,7 +1324,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Reaching beyond the usual voices',
             'Hold meetings at times and places where workers, parents and older residents can come.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'An early model',
             'Porto Alegre’s participatory budget took shape after 1989, and the case study counts more than 80 '
@@ -1362,8 +1362,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 8: Climate Budget Tagging, Knowing What You Spend on Climate',
   'slug': 'local-finance-part-8-climate-budget-tagging',
   'category': 'finance',
-  'date': 'January 30, 2027',
-  'publish_on': '2027-01-30 21:00',
+  'date': "January 11, 2027",
+  'publish_on': "2027-01-11 21:00",
   'summary': 'Climate budget tagging marks the parts of a budget that help a community adapt to climate change or '
              'reduce emissions, so leaders can see how much is really spent. This part explains the idea using UNDP '
              'and World Bank guidance, the Philippine rules for local governments under JMC 2015-01, and a worked '
@@ -1461,7 +1461,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'public market from floods protect market income. Drainage that keeps business districts dry protects '
            'business tax collections. When climate spending is visible, it is easier to see the link between '
            'protecting the community and protecting the revenue that serves it.',
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Tags make spending visible',
             'Climate budget tagging adds up spending on adaptation and mitigation scattered across offices.'),
@@ -1498,8 +1498,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 9: The Hidden Bill, Maintaining What Was Already Built',
   'slug': 'local-finance-part-9-maintaining-assets',
   'category': 'finance',
-  'date': 'February 6, 2027',
-  'publish_on': '2027-02-06 21:00',
+  'date': "January 15, 2027",
+  'publish_on': "2027-01-15 21:00",
   'summary': 'New roads and buildings get ribbon cuttings. Maintenance needs a budget too. This part explains why '
              'the World Bank and the IMF treat maintenance as a core part of public investment, and how a local '
              'government can build a simple asset list and a yearly maintenance budget, with a worked Philippine '
@@ -1583,7 +1583,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'Some assets earn money. A public market with a leaking roof loses stallholders, and a water system with '
            'broken meters loses income. Maintaining these assets protects local revenue directly. A well-kept asset '
            'also avoids sudden, large repair bills that upset the cash forecast.',
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Maintenance pays',
             'The World Bank’s Beyond the Gap finds that good maintenance can cut the life-cycle cost of transport '
@@ -1617,8 +1617,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'Line',
   'slug': 'local-finance-part-10-fraud-reporting-line',
   'category': 'finance',
-  'date': 'February 13, 2027',
-  'publish_on': '2027-02-13 21:00',
+  'date': "January 22, 2027",
+  'publish_on': "2027-01-22 21:00",
   'summary': 'A global study of nearly 2,000 fraud cases found that tips uncover more fraud than any other method, '
              'and that organizations with a reporting line lose less and catch fraud sooner. This part explains the '
              'findings of the 2024 ACFE Report to the Nations, including those for government, and how a local '
@@ -1710,7 +1710,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('cta',
             'Read the study note: Ethics at the collection window',
             '/study-notes/ethics-at-the-collection-window/'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Tips find the most fraud',
             '43 percent of cases in the 2024 ACFE study, more than three times the next method.'),
@@ -1886,7 +1886,7 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
           ('cta',
            'Read: Year-End in the Treasury: What Really Happens in December',
            '/blog/year-end-in-the-treasury/'),
-          ('h', 'Key Takeaways'),
+          ('h', "The Short Version"),
           ('point',
            'One measure',
            'The class is based on the three-year average of annual regular income, under RA 11964.'),

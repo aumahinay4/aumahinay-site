@@ -12,11 +12,11 @@ CYBER_POSTS = [
         "title": "Cybersecurity Series, Part 40: Forty Parts in Ten Habits, the Series Wrap-Up",
         "slug": "cybersecurity-part-40-series-wrap-up",
         "category": "security",
-        "date": "May 23, 2027",
+        "date": "April 5, 2028",
         "summary": "The last part of the Cybersecurity Series gathers forty parts into ten habits: for your "
                    "accounts, your devices, the scams that reach you, and the office where you work. It ends with "
                    "a one-page checklist and a map of where to go back for each topic.",
-        "publish_on": "2027-05-23 21:00",
+        "publish_on": "2028-04-05 21:00",
         "body": [
             "This series opened with how modern cyberattacks really work. Since then it has covered fake parcels, cloned voices, lost phones, shared office computers, a locked records room "
             "and a group chat with too many members.",
@@ -112,7 +112,7 @@ CYBER_POSTS = [
             ("point", "Waiting for a big incident", "Small lapses are the warning."),
             ("point", "Trying everything at once", "Pick one habit a week until all ten are routine."),
             ("point", "Blaming the person who reports", "Blame teaches people to stay quiet."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Accounts", "Unique passwords, two-step verification, and no shared codes."),
             ("point", "Devices", "Updated, locked, encrypted, and wiped before you let go."),
             ("point", "Scams", "Pause, check through a trusted channel, and never move money or codes on a "
@@ -136,12 +136,12 @@ CYBER_POSTS = [
         "title": "Cybersecurity Series, Part 39: Office Group Chats, Who Belongs, What to Post and What to Keep",
         "slug": "cybersecurity-part-39-office-group-chats",
         "category": "security",
-        "date": "May 18, 2027",
+        "date": "March 27, 2028",
         "summary": "Office work now happens in group chats too. Those chats also collect "
                    "screenshots of personal data, former staff who never left, and decisions nobody can find "
                    "later. This part covers who should be in a work chat, what should never be posted, how to "
                    "spot a fake message from the boss, and what to keep as a record.",
-        "publish_on": "2027-05-18 21:00",
+        "publish_on": "2028-03-27 21:00",
         "body": [
             "It was meant to be helpful. A clerk took a screenshot of the list of delinquent taxpayers, names "
             "and amounts included, and posted it in the office group chat so the collectors could plan their "
@@ -244,7 +244,7 @@ CYBER_POSTS = [
             ("point", "Never reviewing members", "Former staff can stay for years."),
             ("point", "Posting names and amounts", "Share totals, or use a limited file."),
             ("point", "Acting on a chat request for money", "Confirm by another channel."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "The right members", "One purpose per chat, reviewed monthly."),
             ("point", "Proportionality applies", "Share only what is needed, with only who needs it."),
             ("point", "Confirm before acting", "Names and voices can be faked."),
@@ -267,12 +267,12 @@ CYBER_POSTS = [
         "title": "Cybersecurity Series, Part 38: When Someone Leaves or Transfers, Closing Accounts and Access",
         "slug": "cybersecurity-part-38-closing-access-when-staff-leave",
         "category": "security",
-        "date": "May 13, 2027",
+        "date": "March 17, 2028",
         "summary": "People retire, resign and move to other offices. Their accounts, keys and admin rights can "
                    "stay behind. This part explains what to close, what to keep, and what to change when "
                    "someone leaves or transfers, using a simple checklist built on a widely used US government "
                    "security standard.",
-        "publish_on": "2027-05-13 21:00",
+        "publish_on": "2028-03-17 21:00",
         "body": [
             "The audit team asked a simple question: who had signed in to the collection system last week? "
             "The list had eleven names. The office had nine staff.",
@@ -379,7 +379,7 @@ CYBER_POSTS = [
             ("point", "Forgetting shared secrets", "Change every code the person knew."),
             ("point", "Deleting too fast", "Disable first, move the files, then delete."),
             ("point", "Ignoring transfers", "Reassignment needs a review too."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Keep an access list", "One row per person, updated when access is granted."),
             ("point", "Close on the last day", "Accounts, keys, admin roles and chats."),
             ("point", "Change shared secrets", "What one person knew, everyone must assume is known."),
@@ -403,12 +403,12 @@ CYBER_POSTS = [
         "title": "Cybersecurity Series, Part 37: Physical Security at the Office, Doors, Keys and Visitors",
         "slug": "cybersecurity-part-37-physical-security",
         "category": "security",
-        "date": "May 8, 2027",
+        "date": "March 8, 2028",
         "summary": "Passwords and updates mean little if anyone can walk into the records room or carry out a "
                    "laptop. This part covers the physical side of security in a small office: who may enter "
                    "which room, how to handle visitors and keys, what tailgating is, and what the Data Privacy "
                    "Act’s implementing rules say about physical measures.",
-        "publish_on": "2027-05-08 21:00",
+        "publish_on": "2028-03-08 21:00",
         "body": [
             "The man wore a lanyard and carried a toolbox. He said he was from the internet provider, sent to "
             "check the connection, and asked where the network equipment was. The clerk at the front desk "
@@ -512,7 +512,7 @@ CYBER_POSTS = [
             ("point", "Propping doors", "A propped restricted door is an unlocked one."),
             ("point", "Keys without a register", "Nobody knows who can get in."),
             ("point", "Leaving visitors alone", "Escort them in staff and restricted areas."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Three zones", "Public, staff only and restricted."),
             ("point", "Confirm, log, escort", "Every visitor, every time."),
             ("point", "Keys and combinations change with people", "When access ends, it really ends."),
@@ -538,12 +538,12 @@ CYBER_POSTS = [
         "title": "Cybersecurity Series, Part 36: Tech Support Scams, the Fake Virus Warning That Wants a Phone Call",
         "slug": "cybersecurity-part-36-tech-support-scams",
         "category": "security",
-        "date": "May 3, 2027",
+        "date": "February 28, 2028",
         "summary": "A loud warning fills the screen, says the computer is infected, and gives a number to call. "
                    "This part explains how tech support scams work, what the US Federal Trade Commission says "
                    "real companies do not do, how to close a fake warning safely, and what to do if you "
                    "already let a stranger into your computer.",
-        "publish_on": "2027-05-03 21:00",
+        "publish_on": "2028-02-28 21:00",
         "body": [
             "It was ten minutes before lunch when the screen on the cashier’s computer turned red. A box in "
             "the middle said the computer was infected, that personal and bank data were at risk, and that "
@@ -634,7 +634,7 @@ CYBER_POSTS = [
             ("point", "Letting a stranger connect", "Remote access hands over the computer."),
             ("point", "Paying to “fix” a warning", "Especially by gift card, transfer or crypto."),
             ("point", "Hiding it at work", "Report it so others are warned and the computer is checked."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Warnings with phone numbers are fake", "So says the FTC."),
             ("point", "Close the browser", "Esc, then close, or Task Manager on Windows."),
             ("point", "Never allow remote access to a caller", "Disconnect if you already did."),
@@ -658,7 +658,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "April 28, 2027",
+        "date": "February 18, 2028",
         "title": "Cybersecurity Series, Part 35: Fake Customer Service, When Help Is the Trap",
         "slug": "cybersecurity-part-35-fake-customer-service",
         "category": "security",
@@ -667,7 +667,7 @@ CYBER_POSTS = [
                    "part explains how these traps work, what the Bangko Sentral and the US Federal Trade "
                    "Commission advise, how to find the real channel, and what to do if you already talked "
                    "to a fake.",
-        "publish_on": "2027-04-28 21:00",
+        "publish_on": "2028-02-18 21:00",
         "body": [
             "Mario’s e-wallet transfer to his sister had been “processing” for an hour. Worried, he typed "
             "the e-wallet’s name and “customer service” into a social media search. A page with the right "
@@ -764,7 +764,7 @@ CYBER_POSTS = [
             ("point", "Calling the first number in search results", "Use the app, the card or the bill."),
             ("point", "Sharing a code to “verify” your account", "Real support does not need it."),
             ("point", "Staying on a call you did not start", "Hang up and call the official number."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Fakes wait where you look for help", "Pages, search results, calls and chats."),
             ("point", "Banks don’t ask for your details", "So says the BSP."),
             ("point", "Find the real channel yourself", "App, card, statement or typed website."),
@@ -787,7 +787,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "April 23, 2027",
+        "date": "February 9, 2028",
         "title": "Cybersecurity Series, Part 34: Fake Delivery Texts, the Parcel That Never Was",
         "slug": "cybersecurity-part-34-fake-delivery-texts",
         "category": "security",
@@ -795,7 +795,7 @@ CYBER_POSTS = [
                    "your address through a link. This part explains how these messages work, what the "
                    "Philippine Postal Corporation has said it does not do, the signs of a fake, how to check "
                    "a real delivery, and what to do if you already clicked.",
-        "publish_on": "2027-04-23 21:00",
+        "publish_on": "2028-02-09 21:00",
         "body": [
             "Joy was waiting for a pair of school shoes she had ordered online for her son. On Tuesday "
             "afternoon, a text arrived: her parcel was on hold because of an incomplete address. To "
@@ -887,7 +887,7 @@ CYBER_POSTS = [
             ("point", "Tracking through the link in the text", "Use the shop app or the courier’s own site."),
             ("point", "Sharing a one-time PIN", "No real delivery needs it."),
             ("point", "Waiting to call the bank", "Speed matters when a card is exposed."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "PHLPost does not text for fees", "Or for address updates, according to its 2025 warning."),
             ("point", "Check at the source", "The shop where you ordered, or the courier’s official site."),
             ("point", "Read the web address", "The real domain decides, not the logo."),
@@ -911,7 +911,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "April 18, 2027",
+        "date": "January 31, 2028",
         "title": "Cybersecurity Series, Part 33: Shared Office Computers, Habits That Keep One Desk From Exposing Everyone",
         "slug": "cybersecurity-part-33-shared-office-computers",
         "category": "security",
@@ -919,7 +919,7 @@ CYBER_POSTS = [
                    "forgotten download becomes everyone’s risk. This part covers separate accounts, locking "
                    "the screen, keeping passwords out of the browser, guest mode for personal browsing, "
                    "cleaning up files and printouts, and an end-of-day routine.",
-        "publish_on": "2027-04-18 21:00",
+        "publish_on": "2028-01-31 21:00",
         "body": [
             "The computer at the front counter was used by three people in two shifts. On Monday morning, "
             "the first clerk to sit down found the office email still open from Friday, a personal social "
@@ -1024,7 +1024,7 @@ CYBER_POSTS = [
             ("point", "Walking away unlocked", "Windows logo key plus L, every time."),
             ("point", "Saving passwords in a shared browser", "Choose Never."),
             ("point", "Trusting guest mode with downloads", "Delete your files yourself."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "One person, one account", "On the computer and in every system."),
             ("point", "Lock, then leave", "A shortcut plus an automatic lock."),
             ("point", "Guest mode for personal browsing", "It clears history and cookies, not visibility."),
@@ -1046,7 +1046,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "April 13, 2027",
+        "date": "January 21, 2028",
         "title": "Cybersecurity Series, Part 32: Romance Scams, When the Person Online Asks for Money",
         "slug": "cybersecurity-part-32-romance-scams",
         "category": "security",
@@ -1054,7 +1054,7 @@ CYBER_POSTS = [
                    "part explains how these scams unfold, the excuses that come up in reports to the US "
                    "Federal Trade Commission, why being asked to receive and forward money can make you part "
                    "of a crime under Philippine law, and what to do if you have already sent money.",
-        "publish_on": "2027-04-13 21:00",
+        "publish_on": "2028-01-21 21:00",
         "body": [
             "Tita Rosa, a retired teacher, had been widowed for three years when a man named Daniel sent her "
             "a friend request. His profile said he was an engineer on an offshore oil rig. He wrote every "
@@ -1155,7 +1155,7 @@ CYBER_POSTS = [
             ("point", "Moving money for an online friend", "It can make you a money mule."),
             ("point", "Keeping it secret", "Secrecy protects the scammer, not you."),
             ("point", "Trusting a video call alone", "Faces and voices can be faked."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Trust first, money later", "That is the pattern."),
             ("point", "Packages and customs fees are a classic lie", "The FTC calls it a sure sign of a scam."),
             ("point", "Never receive and forward money", "RA 12010 penalizes money mule acts."),
@@ -1179,7 +1179,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "April 8, 2027",
+        "date": "January 12, 2028",
         "title": "Cybersecurity Series, Part 31: Fake Ayuda Pages, When “Government Aid” Is a Trap",
         "slug": "cybersecurity-part-31-fake-ayuda-pages",
         "category": "security",
@@ -1187,7 +1187,7 @@ CYBER_POSTS = [
                    "data or your money. This part explains what the DSWD has said about fake pages and "
                    "links, how its real assistance programs work, the warning signs of a fake offer, and "
                    "what to do if you already filled in a form.",
-        "publish_on": "2027-04-08 21:00",
+        "publish_on": "2028-01-12 21:00",
         "body": [
             "Aling Mercy runs a small sari-sari store and shares a phone with her daughter. One evening, a "
             "post appeared in a neighborhood group: “DSWD ₱10,000 cash aid for minimum wage earners. "
@@ -1281,7 +1281,7 @@ CYBER_POSTS = [
             ("point", "Paying a small fee", "A small fee is still a sign of a scam, and it confirms you will pay."),
             ("point", "Sharing the post to help others", "Check first, or you spread the bait."),
             ("point", "Staying silent after sharing data", "Act early, while it can still help."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Real aid involves an assessment", "As the DSWD has described for AICS and AKAP."),
             ("point", "The DSWD says it does not send aid links", "For educational assistance, in its own words."),
             ("point", "No fee to receive aid", "Treat any fee as a warning sign."),
@@ -1303,7 +1303,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "April 3, 2027",
+        "date": "January 3, 2028",
         "title": "Cybersecurity Series, Part 30: Online Lending Apps, Your Contacts and the Rules Lenders Must Follow",
         "slug": "cybersecurity-part-30-online-lending-apps",
         "category": "security",
@@ -1311,7 +1311,7 @@ CYBER_POSTS = [
                    "location. This part explains what Philippine regulators allow lenders to do, the "
                    "interest caps on small loans, the collection practices that are prohibited, and how to "
                    "protect yourself before and after you borrow.",
-        "publish_on": "2027-04-03 21:00",
+        "publish_on": "2028-01-03 21:00",
         "body": [
             "Ramon needed ₱5,000 for his son’s school project and a tricycle repair. A lending app on his "
             "phone promised approval in ten minutes. It asked to see his contacts, his photos and his "
@@ -1417,7 +1417,7 @@ CYBER_POSTS = [
             ("point", "Borrowing without seeing the total", "Know the amount received and the amount due."),
             ("point", "Hiding the harassment", "Warn your contacts and report it."),
             ("point", "Deleting the app first", "Save the evidence, then remove it."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Contacts are off limits", "The NPC treats contact list access as unnecessary for lending."),
             ("point", "Shaming is prohibited", "The SEC lists contacting your contacts and publishing names as unfair practices."),
             ("point", "Small loans have caps", "6 percent nominal and 15 percent effective a month, under the 2021 and 2022 rules."),
@@ -1442,7 +1442,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "March 29, 2027",
+        "date": "December 24, 2027",
         "title": "Cybersecurity Series, Part 29: Before You Sell, Donate or Throw Away a Phone or Laptop",
         "slug": "cybersecurity-part-29-wiping-old-devices",
         "category": "security",
@@ -1450,7 +1450,7 @@ CYBER_POSTS = [
                    "files. This part walks through what to do before a device leaves your hands: back up, "
                    "sign out, remove cards, reset properly, and handle office devices and broken drives with "
                    "extra care.",
-        "publish_on": "2027-03-29 21:00",
+        "publish_on": "2027-12-24 21:00",
         "body": [
             "Liza bought a new phone and sold her old one to a neighbor’s son for a fair price. She "
             "deleted her photos one by one the night before, closed her apps, and handed it over. Two "
@@ -1561,7 +1561,7 @@ CYBER_POSTS = [
             ("point", "Resetting before signing out", "The buyer may be locked out, or your account may stay linked."),
             ("point", "Forgetting the cards", "Take out the SIM and memory card."),
             ("point", "Throwing a broken drive away", "It may still hold your data."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Back up first", "And check the backup on the new device."),
             ("point", "Sign out before the reset", "Google, Apple, e-wallets, social media and email."),
             ("point", "Remove the SIM and memory card", "Destroy a SIM you will not reuse."),
@@ -1583,7 +1583,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "March 24, 2027",
+        "date": "December 15, 2027",
         "title": "Cybersecurity Series, Part 28: Kids Online, Settings, Talks and Habits That Keep Them Safer",
         "slug": "cybersecurity-part-28-kids-online",
         "category": "security",
@@ -1591,7 +1591,7 @@ CYBER_POSTS = [
                    "covers the parental controls built into Android and iPhone, the scams aimed at young "
                    "gamers, what children should never share, and how to keep them talking to you when "
                    "something goes wrong.",
-        "publish_on": "2027-03-24 21:00",
+        "publish_on": "2027-12-15 21:00",
         "body": [
             "Ten-year-old Paolo wanted a rare skin for his character in an online game. A player he had "
             "met in the game offered him one for free. All Paolo had to do was log in on a website the "
@@ -1683,7 +1683,7 @@ CYBER_POSTS = [
             ("point", "Sharing a parent’s e-wallet on a child’s phone", "Keep payment apps off it, or locked."),
             ("point", "Punishing a child for telling", "Thank them, then fix the problem."),
             ("point", "Deleting evidence in anger", "Save it first, then block and report."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Use the built-in controls", "Family Link on Android, Screen Time on iPhone."),
             ("point", "Free gifts are bait", "Fake logins and code requests target young gamers."),
             ("point", "Some things stay private", "Passwords, codes, location and family money details."),
@@ -1707,7 +1707,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "March 19, 2027",
+        "date": "December 6, 2027",
         "title": "Cybersecurity Series, Part 27: Your SIM Is a Key, Registration, SIM Swaps and Lost Phones",
         "slug": "cybersecurity-part-27-sim-registration-and-sim-swaps",
         "category": "security",
@@ -1715,7 +1715,7 @@ CYBER_POSTS = [
                    "explains what the SIM Registration Act requires, how a SIM swap lets someone else "
                    "receive those codes, the warning signs, and what to do in the first hour if your number "
                    "stops working.",
-        "publish_on": "2027-03-19 21:00",
+        "publish_on": "2027-12-06 21:00",
         "body": [
             "On a Thursday afternoon, the signal bars on Nora’s phone disappeared. She assumed the network "
             "was down and kept working. By the time she noticed that her officemates still had signal, "
@@ -1810,7 +1810,7 @@ CYBER_POSTS = [
             ("point", "Lending a registered SIM", "It stays in your name."),
             ("point", "Relying only on text codes", "Use an app or passkey where offered."),
             ("point", "Posting verification details", "Birthdates and IDs help impostors."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Your number is a key", "Text codes follow the number, not the phone."),
             ("point", "Registration is the law", "RA 11934, with 24-hour deactivation on report."),
             ("point", "SIM swaps move the number", "Watch for signal loss and unexpected notices."),
@@ -1835,14 +1835,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "March 14, 2027",
+        "date": "November 26, 2027",
         "title": "Cybersecurity Series, Part 26: Job and Investment Scams, When Easy Money Asks You to Pay First",
         "slug": "cybersecurity-part-26-job-and-investment-scams",
         "category": "security",
         "summary": "A message offers easy work from home, or a plan that doubles your money in weeks. This "
                    "part explains how task scams and investment scams work, the numbers the FTC has "
                    "reported, how to check an investment offer with the SEC, and the one rule that applies to both: never pay to get paid.",
-        "publish_on": "2027-03-14 21:00",
+        "publish_on": "2027-11-26 21:00",
         "body": [
             "The message arrived on a Tuesday night: “Hi! We are hiring part-time online staff. Just like "
             "and rate products, 30 minutes a day, ₱500 to ₱2,000 daily.” Carla, a job order employee saving "
@@ -1935,7 +1935,7 @@ CYBER_POSTS = [
             ("point", "Paying to unlock earnings", "In the FTC’s description, that is the scam."),
             ("point", "Recruiting others", "You may share the legal risk."),
             ("point", "Paying a “recovery agent”", "It is the same trick in a new costume."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Never pay to get paid", "The FTC’s rule, and the simplest one."),
             ("point", "Same script for jobs and investments", "Contact, fake gains, small payout, deposit."),
             ("point", "Check the secondary license", "A business registration is not enough to take "
@@ -1958,7 +1958,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "March 9, 2027",
+        "date": "November 17, 2027",
         "title": "Cybersecurity Series, Part 25: Online Marketplace Scams, Buying and Selling Without Getting Burned",
         "slug": "cybersecurity-part-25-online-marketplace-scams",
         "category": "security",
@@ -1966,7 +1966,7 @@ CYBER_POSTS = [
                    "it. This part covers the fake payment screenshot, the overpayment refund, the shared "
                    "code, the deal that is too cheap, and the habits and the law that protect buyers and "
                    "sellers.",
-        "publish_on": "2027-03-09 21:00",
+        "publish_on": "2027-11-17 21:00",
         "body": [
             "Lito posted his old phone for sale on a Sunday night. By Monday morning, a buyer had agreed to "
             "the price without haggling and sent a screenshot of an e-wallet transfer for the full amount. "
@@ -2052,7 +2052,7 @@ CYBER_POSTS = [
             ("point", "Refunding an overpayment", "Cancel the deal instead."),
             ("point", "Sharing a verification code", "No real buyer needs it."),
             ("point", "Paying outside the platform", "You may lose its records and protection."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Sellers check the app", "Money is real only when your own balance shows it."),
             ("point", "Buyers check the seller", "Search the name with “scam,” and question deep discounts."),
             ("point", "Pressure is a warning sign", "A real buyer or seller can wait for your checks."),
@@ -2077,14 +2077,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "March 4, 2027",
+        "date": "November 8, 2027",
         "title": "Cybersecurity Series, Part 24: QR Code Scams, When a Square of Dots Sends You the Wrong Way",
         "slug": "cybersecurity-part-24-qr-code-scams",
         "category": "security",
-        "summary": "A QR code hides where it leads, which is why scammers like it. Here is how QR code scams work, "
-                   "from stickers pasted over a store’s payment code to fake delivery messages, and the habits "
-                   "that keep a quick scan from becoming a costly one.",
-        "publish_on": "2027-03-04 21:00",
+        "summary": ("A QR code hides where it leads, which is why scammers like it. From stickers pasted over a "
+                   "store’s payment code to fake delivery messages, these scams follow a pattern, and a few "
+                   "habits keep a quick scan from becoming a costly one."),
+        "publish_on": "2027-11-08 21:00",
         "body": [
             "A small eatery near the town plaza accepted payments by QR code. A printed code stood on the "
             "counter in a little acrylic stand. For two days, customers scanned it, paid and left. On the "
@@ -2175,7 +2175,7 @@ CYBER_POSTS = [
             ("point", "Opening links without reading them", "Preview the address first."),
             ("point", "Logging in from a scanned link", "Use the official app."),
             ("point", "Confirming payment without reading the name", "Check the recipient every time."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "QR codes hide their destination", "That is why scammers use them."),
             ("point", "Look, preview, check the name", "Three habits that stop the tricks above."),
             ("point", "Unexpected codes deserve suspicion", "Especially those that come with urgency."),
@@ -2197,14 +2197,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "February 27, 2027",
+        "date": "October 29, 2027",
         "title": "Cybersecurity Series, Part 23: Your Yearly Security Checkup, One Afternoon, Twelve Checks",
         "slug": "cybersecurity-part-23-yearly-security-checkup",
         "category": "security",
-        "summary": "Security habits fade unless someone checks them. Here is a yearly checkup you can finish in "
-                   "one afternoon: twelve checks covering accounts, devices, money, files and family, each "
-                   "linked to the part of this series that explains it.",
-        "publish_on": "2027-02-27 21:00",
+        "summary": ("Security habits fade unless someone checks them. This yearly checkup takes one afternoon: "
+                   "twelve checks covering accounts, devices, money, files and family, each linked to the part "
+                   "of this series that explains it."),
+        "publish_on": "2027-10-29 21:00",
         "body": [
             "Every year, a retired teacher brings her car in for a tune-up before the long drive to her "
             "province for the holidays. The mechanic checks the brakes, the tires and the oil, even when "
@@ -2289,7 +2289,7 @@ CYBER_POSTS = [
             ("point", "Skipping the backup test", "A backup is only proven when a file comes back."),
             ("point", "Checking your own devices but not your family’s", "A scammer needs only one person in the family to believe them."),
             ("point", "Trying to fix everything in one sitting", "Fix the quick things, schedule the rest."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Security needs a yearly review", "Settings drift and new risks appear."),
             ("point", "Twelve checks cover the basics", "Accounts, devices, money, files and family."),
             ("point", "A notebook makes next year easier", "Write down what you changed."),
@@ -2312,14 +2312,13 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "February 22, 2027",
+        "date": "October 20, 2027",
         "title": "Cybersecurity Series, Part 22: Deepfakes and Cloned Voices, When Seeing and Hearing Is Not Enough",
         "slug": "cybersecurity-part-22-deepfakes-and-voice-clones",
         "category": "security",
-        "summary": "A familiar face on a video call or a familiar voice on the phone can now be faked. Here is "
-                   "how deepfake and voice-clone scams work, a real case that cost a company about US$25 "
-                   "million, and the simple checks that still work.",
-        "publish_on": "2027-02-22 21:00",
+        "summary": ("A familiar face on a video call or a familiar voice on the phone can now be faked. A real "
+                   "case cost one company about US$25 million, yet simple checks still work against these scams."),
+        "publish_on": "2027-10-20 21:00",
         "body": [
             "The phone rang just after dinner. The voice on the line belonged to a woman’s son, who was "
             "working in another city. He was crying. He said he had been in an accident, that the other "
@@ -2414,7 +2413,7 @@ CYBER_POSTS = [
             ("point", "Trusting a familiar face on video", "The Arup employee did, and it cost about US$25 million."),
             ("point", "Calling back the number that called you", "Use the number you already have."),
             ("point", "Keeping it secret because you were asked to", "Secrecy is the scammer’s tool."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Faces and voices can be faked", "Video and audio are no longer proof."),
             ("point", "The situation gives it away", "Urgency, secrecy and a new way to pay."),
             ("point", "Verify through another channel", "Call back on a known number, or ask a question only "
@@ -2438,14 +2437,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "February 17, 2027",
+        "date": "October 11, 2027",
         "title": "Cybersecurity Series, Part 21: Sharing Files Safely, Links, Attachments and Who Can See Them",
         "slug": "cybersecurity-part-21-safe-file-sharing",
         "category": "security",
-        "summary": "A shared link can reach far more people than you meant. Here is how to choose between a "
-                   "link and an attachment, set who can open a file, give access that ends on its own, "
-                   "protect a file with a password, and clean up old shares.",
-        "publish_on": "2027-02-17 21:00",
+        "summary": ("A shared link can reach far more people than you meant. Choose between a link and an "
+                   "attachment, set who can open a file, give access that ends on its own, protect a file with a "
+                   "password and clean up old shares."),
+        "publish_on": "2027-10-11 21:00",
         "body": [
             "An office needed to send a list of beneficiaries to three partner offices, so a staff member "
             "uploaded the spreadsheet to a cloud drive and set the link to “Anyone with the link can view.” "
@@ -2534,7 +2533,7 @@ CYBER_POSTS = [
             ("point", "Giving Editor when Viewer is enough", "Start with the least access."),
             ("point", "Sending the password with the file", "Use another channel."),
             ("point", "Never reviewing old shares", "Check who still has access."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Links keep control, attachments do not", "Prefer a restricted link for sensitive "
              "files."),
             ("point", "Choose who and how much", "Restricted access, and the smallest role that works."),
@@ -2559,14 +2558,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "February 12, 2027",
+        "date": "October 1, 2027",
         "title": "Cybersecurity Series, Part 20: Privacy at Work, and the Data Privacy Act at Your Desk",
         "slug": "cybersecurity-part-20-privacy-at-work",
         "category": "security",
-        "summary": "Offices hold other people’s names, addresses, IDs and money records. Here is what the Data "
-                   "Privacy Act asks of the people who handle them, the desk habits that keep records safe, and "
-                   "what to do when personal data leaks.",
-        "publish_on": "2027-02-12 21:00",
+        "summary": ("Offices hold other people’s names, addresses, IDs and money records. The Data Privacy Act "
+                   "asks certain things of the people who handle them, a few desk habits keep records safe, and "
+                   "there are clear steps when personal data leaks."),
+        "publish_on": "2027-10-01 21:00",
         "body": [
             "A frontline clerk wanted to be helpful. A client had asked for a copy of a requirement she had "
             "submitted, so the clerk took a photo of the client’s ID and application form with her own phone "
@@ -2681,7 +2680,7 @@ CYBER_POSTS = [
             ("point", "Leaving forms on the counter overnight", "Lock them away."),
             ("point", "Posting lists of names in large chats", "Share only with those who need them."),
             ("point", "Keeping quiet about a leak", "Report it the same day."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "The Data Privacy Act covers offices too", "RA 10173 applies to government and private "
              "organizations alike."),
             ("point", "Some information is sensitive", "Age, marital status, health and government ID numbers "
@@ -2706,13 +2705,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "February 7, 2027",
+        "date": "September 22, 2027",
         "title": "Cybersecurity Series, Part 19: Email Security, Fake Senders and the Changed Bank Account",
         "slug": "cybersecurity-part-19-email-security",
         "category": "security",
-        "summary": "An email can show any name it likes. Here is how fake senders work, why a request to change bank details deserves special care, how to handle attachments "
-                   "and links, and what an office can set up so others cannot pretend to be it.",
-        "publish_on": "2027-02-07 21:00",
+        "summary": ("An email can show any name it likes. Learn how fake senders work, why a request to change "
+                   "bank details deserves special care, how to handle attachments and links, and what an office "
+                   "can set up so others cannot pretend to be it."),
+        "publish_on": "2027-09-22 21:00",
         "body": [
             "The email came from a supplier the office had paid for years. Same name, same signature, same "
             "friendly tone. “Please note that we have changed banks,” it said. “Kindly send this month’s "
@@ -2802,7 +2802,7 @@ CYBER_POSTS = [
             ("point", "Calling the number in the email", "It may lead straight to the criminal."),
             ("point", "Enabling content to read a document", "Close it and ask the sender."),
             ("point", "Running official business on personal email", "It is harder to protect and to verify."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Business email compromise is expensive", "Close to $2.8 billion in losses reported "
              "to the FBI in 2024 alone."),
             ("point", "A changed bank account means a phone call", "Using a number already on file."),
@@ -2825,14 +2825,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "February 2, 2027",
+        "date": "September 13, 2027",
         "title": "Cybersecurity Series, Part 18: A One-Page Security Baseline for a Small Office",
         "slug": "cybersecurity-part-18-small-office-baseline",
         "category": "security",
-        "summary": "A small office does not need a security department to be hard to break into. Here are ten "
-                   "rules that fit on one page, drawn from this series, with who owns each one and how to "
-                   "check it in an afternoon.",
-        "publish_on": "2027-02-02 21:00",
+        "summary": ("A small office does not need a security department to be hard to break into. Ten rules drawn "
+                   "from this series fit on one page, each with an owner and a check you can finish in an "
+                   "afternoon."),
+        "publish_on": "2027-09-13 21:00",
         "body": [
             "The new office head of a small government unit asked her staff a simple question at their "
             "Monday meeting: “If our computers were attacked tonight, who would we call, and what would we "
@@ -2929,7 +2929,7 @@ CYBER_POSTS = [
             ("point", "Buying tools before setting habits", "The first checks cost nothing but time."),
             ("point", "Leaving rules without owners", "Everyone’s job is nobody’s job."),
             ("point", "Checking once and stopping", "Review every three months."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Ten rules, one page", "Accounts, passwords, admin rights, updates, backups, "
              "encryption, Wi-Fi, verification, leavers and a plan."),
             ("point", "Every rule has an owner", "The owner checks; the work can be shared."),
@@ -2949,14 +2949,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 28, 2027",
+        "date": "September 3, 2027",
         "title": "Cybersecurity Series, Part 17: Encryption Made Simple, Locking Data So a Lost Device Is Only a Lost Device",
         "slug": "cybersecurity-part-17-encryption-made-simple",
         "category": "security",
-        "summary": "Encryption turns readable data into scrambled data that only the right key can open. Here "
-                   "is how it protects your phone, laptop, USB drive and messages, how to turn it on, and the "
-                   "one mistake that can lock you out of your own files.",
-        "publish_on": "2027-01-28 21:00",
+        "summary": ("Encryption turns readable data into scrambled data that only the right key can open. It "
+                   "protects your phone, laptop, USB drive and messages once it is turned on, but one mistake "
+                   "can lock you out of your own files."),
+        "publish_on": "2027-09-03 21:00",
         "body": [
             "A treasury clerk took a USB drive home to finish a report over the weekend. On it was a "
             "spreadsheet of taxpayers with names, addresses and amounts paid. On the jeepney ride back on "
@@ -3054,7 +3054,7 @@ CYBER_POSTS = [
             ("point", "Sending the password with the file", "Use a different channel."),
             ("point", "A weak screen lock", "It is the key to your phone’s encryption."),
             ("point", "Trusting SMS with secrets", "Text messages are not end-to-end encrypted."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Encryption makes lost data unreadable", "With a strong key, a lost device is only a "
              "lost device."),
             ("point", "Phones encrypt; laptops need checking", "Turn on Device encryption, BitLocker or "
@@ -3077,14 +3077,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 23, 2027",
+        "date": "August 25, 2027",
         "title": "Cybersecurity Series, Part 16: Public Wi-Fi, Charging Stations and Staying Safe While Traveling",
         "slug": "cybersecurity-part-16-public-wifi-and-travel",
         "category": "security",
-        "summary": "Is the free Wi-Fi at the airport or café safe? Mostly, yes, for a reason worth "
-                   "knowing. Here is what the real risks are today, what the FBI said about charging stations, "
-                   "and a simple travel routine for your phone and laptop.",
-        "publish_on": "2027-01-23 21:00",
+        "summary": ("Is the free Wi-Fi at the airport or café safe? Mostly, yes, for a reason worth knowing. This "
+                   "post explains the real risks today, what the FBI said about charging stations, and a simple "
+                   "travel routine for your phone and laptop."),
+        "publish_on": "2027-08-25 21:00",
         "body": [
             "A treasury employee on her way to a seminar in Manila waited at the bus terminal with an hour "
             "to spare and a phone at 15%. Two networks appeared: “Terminal_Free_WiFi” and “Terminal Free "
@@ -3180,7 +3180,7 @@ CYBER_POSTS = [
              "password."),
             ("point", "Leaving files at the print shop", "Delete them from the computer and log out."),
             ("point", "Leaving sharing open to everyone", "Set it to contacts only."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Encryption made public Wi-Fi safer", "The FTC now calls it usually safe."),
             ("point", "Fake pages remain a risk", "Read the address, as Part 15 showed."),
             ("point", "Use your own charger", "The FBI warning was debated, but the habit is free."),
@@ -3202,14 +3202,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 18, 2027",
+        "date": "August 16, 2027",
         "title": "Cybersecurity Series, Part 15: Fake Websites, and How to Read a Web Address",
         "slug": "cybersecurity-part-15-fake-websites",
         "category": "security",
-        "summary": "A fake login page can look perfect and still carry the padlock. Here is what the padlock "
+        "summary": ("A fake login page can look perfect and still carry the padlock. Learn what the padlock "
                    "really means, how to read a web address in ten seconds, why the top search result can be a "
-                   "trap, and the browser habits that keep you on the real site.",
-        "publish_on": "2027-01-18 21:00",
+                   "trap, and which browser habits keep you on the real site."),
+        "publish_on": "2027-08-16 21:00",
         "body": [
             "An office clerk needed to pay a bill online before lunch. She typed her bank’s name into a "
             "search engine and clicked the first result. The page looked exactly right: the logo, the colors, "
@@ -3303,7 +3303,7 @@ CYBER_POSTS = [
              "first single slash."),
             ("point", "Clicking the top result for your bank", "It may be a paid ad. Use a bookmark."),
             ("point", "Clicking past a browser warning", "The warning means the site has been reported as deceptive or harmful."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "The padlock is about privacy", "It does not prove who runs the site."),
             ("point", "The address is the truth", "Read the part just before the first single slash, from "
              "the right."),
@@ -3327,14 +3327,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 13, 2027",
+        "date": "August 6, 2027",
         "title": "Cybersecurity Series, Part 14: Your Social Media Account Is a Scammer’s Best Disguise",
         "slug": "cybersecurity-part-14-social-media-accounts",
         "category": "security",
-        "summary": "A hacked social media account lets a scammer borrow your face and your friends’ trust. Here is "
-                   "how accounts are taken, how to lock yours down, what to stop posting, and what to do in the "
-                   "first hour if it happens.",
-        "publish_on": "2027-01-13 21:00",
+        "summary": ("A hacked social media account lets a scammer borrow your face and your friends’ trust. "
+                   "Accounts are taken in a few common ways. Lock yours down, stop posting certain things, and "
+                   "know what to do in the first hour if it happens."),
+        "publish_on": "2027-08-06 21:00",
         "body": [
             "The message came from a cousin, with his photo and his name, in the middle of a workday. “Pa-help "
             "naman, emergency lang. Can you send ₱3,000 to this e-wallet number? I’ll pay you back tonight.” "
@@ -3436,7 +3436,7 @@ CYBER_POSTS = [
              "intercept."),
             ("point", "Leaving old devices logged in", "An old phone sold or lost can still be signed in."),
             ("point", "Posting while away", "Share the trip after you are back."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Your account carries your friends’ trust", "That trust is what scammers steal."),
             ("point", "A takeover can start with a simple trick", "A fake warning, a reused password or a "
              "code sent “back.”"),
@@ -3457,14 +3457,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 8, 2027",
+        "date": "July 28, 2027",
         "title": "Cybersecurity Series, Part 13: E-Wallets and the Anti-Scam Law, Guarding Your Money and Your Name",
         "slug": "cybersecurity-part-13-ewallets-and-the-anti-scam-law",
         "category": "security",
-        "summary": "Lending your e-wallet account for a small fee can make you a money mule under Republic Act "
-                   "No. 12010. Here is what the anti-scam law says, what banks and e-wallets must do, and the "
-                   "habits that keep your money and your name safe.",
-        "publish_on": "2027-01-08 21:00",
+        "summary": ("Lending your e-wallet account for a small fee can make you a money mule under Republic Act "
+                   "No. 12010. The anti-scam law also tells banks and e-wallets what they must do, and a few "
+                   "habits keep your money and your name safe."),
+        "publish_on": "2027-07-28 21:00",
         "body": [
             "A college student gets a message from a friendly stranger. He runs a small online business, he "
             "says, and his own e-wallet has reached its limit. Could she let him use her verified account for a "
@@ -3567,7 +3567,7 @@ CYBER_POSTS = [
             ("point", "Waiting a day to report", "Every hour gives the scammer time to move the money on."),
             ("point", "Assuming the bank will pay it back", "Section 6 protects institutions that have "
              "adequate controls. Prevention is your best protection."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "An account is a key", "Scammers need real names to receive stolen money. Do not "
              "lend yours."),
             ("point", "RA 12010 has teeth", "Six to eight years for money mules, ten to twelve for social "
@@ -3591,7 +3591,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "January 3, 2027",
+        "date": "July 19, 2027",
         "title": "Cybersecurity Series, Part 12: Your Phone Is Your Wallet, Securing It Before It Is Lost",
         "slug": "cybersecurity-part-12-securing-your-phone",
         "category": "security",
@@ -3599,7 +3599,7 @@ CYBER_POSTS = [
                    "everything else. This part shows how to lock it properly, keep harmful apps off it, hide "
                    "one-time codes from a stranger’s view, and what to do in the first hour after it is lost "
                    "or stolen.",
-        "publish_on": "2027-01-03 21:00",
+        "publish_on": "2027-07-19 21:00",
         "body": [
             "A jeepney ride home after a long day. A phone in the back pocket, then not. By the time its owner "
             "notices, the phone is gone, and with it the e-wallet, the bank app, the email account, the "
@@ -3706,7 +3706,7 @@ CYBER_POSTS = [
             "Keep work documents in the office’s approved storage rather than in the phone’s gallery. Delete "
             "photos of IDs and forms once they are filed. And tell the office right away if a phone with work "
             "data is lost. A quick report makes containment possible.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "The phone is the master key", "It receives codes and holds signed-in apps."),
             ("point", "Two locks for money", "A strong screen lock, and a different PIN for wallets and banks."),
             ("point", "Hide codes and trust only the store", "Codes off the lock screen, apps from the "
@@ -3731,7 +3731,7 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 29, 2026",
+        "date": "July 9, 2027",
         "title": "Cybersecurity Series, Part 11: Software Updates, the Fix You Keep Postponing",
         "slug": "cybersecurity-part-11-software-updates",
         "category": "security",
@@ -3739,7 +3739,7 @@ CYBER_POSTS = [
                    "explains what an update fixes, why the WannaCry outbreak spread through machines that were "
                    "two months behind, what end of support means for an old computer, and how a small office "
                    "can keep every device current without stopping work.",
-        "publish_on": "2026-12-29 21:00",
+        "publish_on": "2027-07-09 21:00",
         "body": [
             "Picture the computer in the corner of the office, with a small message that has been waiting for weeks. “Updates are ready. Restart now?” And every day, someone clicks “Remind me tomorrow,” "
             "because there is a line at the window and the restart takes too long.",
@@ -3839,7 +3839,7 @@ CYBER_POSTS = [
             "One more caution: install updates only from the device itself, the official app store or the "
             "maker’s website. A pop-up on a web page that says your computer needs an urgent update is a "
             "trick for getting people to install malware, the kind of lure Part 3 described.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point", "Updates close known doors", "Once a fix is public, attackers study it and target "
              "devices that have not installed it."),
             ("point", "WannaCry’s fix was two months old", "The damage came from updates not installed, not "
@@ -3863,14 +3863,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 24, 2026",
+        "date": "June 30, 2027",
         "title": "Cybersecurity Series, Part 10: AI, Quantum Computers and the Next Wave of Threats",
         "slug": "cybersecurity-part-10-future-threats",
         "category": "security",
         "summary": "How artificial intelligence helps both scammers and defenders, why quantum computers are already "
                    "changing the way the internet is locked, what billions of smart gadgets mean for your home, and the "
                    "habits that will still protect you ten years from now.",
-        "publish_on": "2026-12-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2027-06-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Every few years, a new technology arrives with two promises at once. It will make "
             "life easier, and it will make crime easier too. Email gave us faster letters and "
@@ -4014,7 +4014,7 @@ CYBER_POSTS = [
             "If you followed the action plans, your digital life is already far safer than "
             "before. If you skipped a few, that is fine. Pick one part, do its action plan this "
             "week, and come back to the others when you can.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Verify, do not judge by looks",
              "AI makes fakes convincing, so confirm requests through a channel you already trust."),
@@ -4051,14 +4051,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 19, 2026",
+        "date": "June 21, 2027",
         "title": "Cybersecurity Series, Part 9: Incident Response, or What to Do When Something Goes Wrong",
         "slug": "cybersecurity-part-9-incident-response",
         "category": "security",
         "summary": "What to do in the first hour after a hacked account, a lost phone, a scam transfer or an office "
                    "breach, how to keep evidence intact, where to report in the Philippines, and how to write a "
                    "one-page response plan before you need it.",
-        "publish_on": "2026-12-19 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2027-06-21 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Offices hold fire drills. People know where the exits are, who carries the logbook "
             "and where to gather outside. But how many offices, or families, have ever practiced "
@@ -4208,7 +4208,7 @@ CYBER_POSTS = [
             "quickly: nobody knows the IT provider's after-hours number, or the backups are kept "
             "on the same network. Finding those gaps in a meeting room is much cheaper than "
             "finding them during a real attack.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Plan before the bad day",
              "A one-page plan with phone numbers beats improvising under stress."),
@@ -4242,14 +4242,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 14, 2026",
+        "date": "June 11, 2027",
         "title": "Cybersecurity Series, Part 8: Zero Trust, or Why Every Door Gets Checked",
         "slug": "cybersecurity-part-8-zero-trust",
         "category": "security",
         "summary": "Why the old idea of a safe inside network no longer works, what zero trust really means in "
                    "plain language, how it echoes the internal controls of a well-run treasury, and simple ways to "
                    "apply it at home and in a small office.",
-        "publish_on": "2026-12-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2027-06-11 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "For a long time, computer security was built like an old fortress. There was a "
             "strong wall around the office network, with firewalls at the gate. Anyone outside "
@@ -4402,7 +4402,7 @@ CYBER_POSTS = [
              "\"It makes work slower\"",
              "Done well, it can make work smoother. Signing in once with a passkey on a trusted "
              "device is faster than juggling many passwords and a VPN."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Location is not proof",
              "Being inside the office network does not make a request safe."),
@@ -4439,14 +4439,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 9, 2026",
+        "date": "June 2, 2027",
         "title": "Cybersecurity Series, Part 7: Why Apps Get Hacked, Explained with the OWASP Top 10",
         "slug": "cybersecurity-part-7-why-apps-get-hacked",
         "category": "security",
         "summary": "A plain-language tour of the ten most serious risks in web applications, as listed in the OWASP "
                    "Top 10:2025, with everyday examples, questions to ask before your office buys a system, and "
                    "habits for anyone who builds software.",
-        "publish_on": "2026-12-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2027-06-02 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Every app you use was written by people. Your bank's mobile app, the online payment "
             "page of your local government, the school portal and the delivery app all started as"
@@ -4581,7 +4581,7 @@ CYBER_POSTS = [
             " not use. Log important events, and decide in advance what the system should do when"
             " something fails. Most of all, ask \"How could this be abused?\" before you write the "
             "first line.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Permissions are the top risk",
              "An app must check what you may see, not only who you are."),
@@ -4619,14 +4619,14 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "December 4, 2026",
+        "date": "May 24, 2027",
         "title": "Cybersecurity Series, Part 6: Keeping Your Life in the Cloud Safe and Private",
         "slug": "cybersecurity-part-6-cloud-and-privacy",
         "category": "security",
         "summary": "Who is responsible for keeping your cloud files safe, why a single \"anyone with the link\" "
                    "setting can expose a whole office, how to check which apps can reach your accounts, and the "
                    "privacy rights every Filipino has under the Data Privacy Act.",
-        "publish_on": "2026-12-04 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2027-05-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Your family photos, your scanned IDs, the spreadsheets from work and years of "
             "messages probably live somewhere you have never seen: in the cloud. There is a "
@@ -4768,7 +4768,7 @@ CYBER_POSTS = [
             "These rights also remind those of us who handle other people's data at work of our "
             "duty. Every taxpayer list, payroll file and application form is someone's personal "
             "information, entrusted to us for a specific purpose.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Security in the cloud is your part",
              "The provider guards the data center; you guard the sign-in, the sharing and the "
@@ -4800,13 +4800,13 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "November 29, 2026",
+        "date": "May 14, 2027",
         "title": "Cybersecurity Series, Part 5: Inside a Ransomware Attack",
         "slug": "cybersecurity-part-5-ransomware",
         "category": "security",
         "summary": "How ransomware gangs break in, steal before they lock, and pressure victims to pay, what the "
                    "PhilHealth attack of 2023 taught the country, and the backup habit that takes away their leverage.",
-        "publish_on": "2026-11-29 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2027-05-14 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "Imagine coming to the office on a Monday and finding every computer showing the same"
             " message: your files are encrypted, your records have been copied, and you have a "
@@ -4974,7 +4974,7 @@ CYBER_POSTS = [
             " and Coordinating Center through its hotline 1326, or to the PNP Anti-Cybercrime "
             "Group. If personal data was involved, an organization may also have to notify the "
             "National Privacy Commission and the people affected.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Steal first, lock last",
              "Modern gangs copy data before encrypting it, so prevention matters as much as recovery."),
@@ -5016,14 +5016,13 @@ CYBER_POSTS = [
         ],
     },
     {
-        "date": "November 24, 2026",
+        "date": "May 5, 2027",
         "title": "Cybersecurity Series, Part 4: Securing Your Home and Remote Network",
         "slug": "cybersecurity-part-4-home-network",
         "category": "security",
-        "summary": "Your Wi-Fi router is the front door of your digital home. Here is how to lock it, separate your "
-                   "smart devices from your work laptop, filter dangerous websites, and understand what a VPN can "
-                   "and cannot do.",
-        "publish_on": "2026-11-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "summary": ("Your Wi-Fi router is the front door of your digital home. Lock it, keep smart devices apart "
+                   "from your work laptop, filter dangerous websites, and learn what a VPN can and cannot do."),
+        "publish_on": "2027-05-05 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "body": [
             "At home, the internet may arrive through one small box with blinking lights. The "
             "technician installs it, writes the Wi-Fi password on a piece of paper, and leaves. "
@@ -5168,7 +5167,7 @@ CYBER_POSTS = [
             ("point",
              "Mind your surroundings",
              "Video calls and screens can be seen and heard by others in cafés and shared spaces."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "The router is the front door",
              "Change its admin password, update it, and turn off WPS, UPnP and remote management."),
@@ -5356,7 +5355,7 @@ CYBER_POSTS = [
              "Report it to your office IT team if it involved work, and warn family or colleagues"
              " who may receive the same message. There is no shame in reporting; the shame "
              "belongs to the scammer."),
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Your feelings are the warning",
              "Urgency, fear, authority and greed are levers. When you feel rushed, slow down."),
@@ -5404,9 +5403,9 @@ CYBER_POSTS = [
         "title": "Cybersecurity Series, Part 2: Identity Is the New Perimeter",
         "slug": "cybersecurity-part-2-passwords-and-mfa",
         "category": "security",
-        "summary": "Attackers no longer break in; they log in. Here is why long passphrases beat complex passwords, "
-                   "how a password manager works, which kinds of two-step login are strongest, and why passkeys "
-                   "are the future.",
+        "summary": ("Attackers no longer break in; they log in. That is why long passphrases beat complex "
+                   "passwords, why a password manager helps, which kinds of two-step login are strongest, and "
+                   "why passkeys are coming."),
         "publish_on": "2026-11-14 22:00",
         "body": [
             "A firewall cannot stop someone who walks in with your username and password. That is"
@@ -5535,7 +5534,7 @@ CYBER_POSTS = [
             "recovery details and MFA settings, and remove anything you did not add. If money is "
             "involved, call your bank or e-wallet right away using the number on its official "
             "website or on the back of your card.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Length beats complexity",
              "A long, random passphrase is stronger and easier to remember than a short, complex password."),
@@ -5725,7 +5724,7 @@ CYBER_POSTS = [
             "(Republic Act No. 10175), the Data Privacy Act of 2012 (Republic Act No. 10173) and,"
             " more recently, the Anti-Financial Account Scamming Act of 2024 (Republic Act No. "
             "12010). Laws punish criminals after the fact, though. Habits protect us before.",
-            ("h", "Key Takeaways"),
+            ("h", "Stay-Safe Reminders"),
             ("point",
              "Security protects three things",
              "Confidentiality, integrity and availability: who can see data, whether it can be "

@@ -112,7 +112,7 @@ ABOUT = {
         "Google AI Professional Certificate",
     ],
     "writing": (
-        "I publish new articles on aumahinay.dev every day and produce English-language educational "
+        "I publish articles on aumahinay.dev and produce English-language educational "
         "topics covering public administration, Real Property Tax compliance, local treasury operations, "
         "and Python automation for public finance learners and civil service examinees."
     ),
@@ -723,7 +723,7 @@ BLOG = [
             "Your amilyar does not vanish into one big pot. A quarter of the basic tax goes "
             "straight to your own barangay, and the SEF supports public schools, from school "
             "buildings to books and sports.",
-            ("h", "Key Takeaways"),
+            ("h", "The Short Version"),
             ("point",
              "Early payment pays you back",
              "The law allows a discount of up to 20% for paying early or on time, and each "
@@ -883,20 +883,6 @@ BLOG = [
             "else's bangka, looking out at the sea, waiting for the right day.",
             ("quote",
              "The island has waited almost twenty years for me to come back. It can wait a little longer."),
-            ("h", "Key Takeaways"),
-            ("point",
-             "Give special places a day of their own",
-             "Some trips cannot be squeezed into two hours. Plan them like they matter."),
-            ("point",
-             "Plan around the sea",
-             "Arrange the bangka the day before, check the weather, and leave early while the water is calm."),
-            ("point",
-             "Slow days count too",
-             "A few quiet days by the coast can restore you, even without the trip you hoped for."),
-            ("point",
-             "Know the story behind the holiday",
-             "Hermano Puli Day honors a son of Quezon who stood up for the dignity and faith of "
-             "ordinary Filipinos."),
             "If you are ever in Quezon, put Alibijaban on your list. Check the weather, choose a "
             "calm day, leave early, and go. And if you see a man staring out at the sea from a "
             "bangka in San Andres, that might just be me, still planning my return.",
@@ -916,7 +902,8 @@ BLOG = [
         "title": "Why .dev and Not .com: How I Chose My Website's Address",
         "slug": "why-dev-and-not-com",
         "category": "software",
-        "summary": "Most people expect a .com. I chose aumahinay.dev. Here is why, in plain words, and what it taught me about building things that are safe by default.",
+        "summary": ("Most people expect a .com. I chose aumahinay.dev. I explain why, in plain words, and what it "
+                   "taught me about building things that are safe by default."),
         "publish_on": "2026-11-05",  # Butch said go, 2026-11-05 8 pm PH
         "body": [
             "When I bought the address for this website on October 25, 2026, I did not pick a "
@@ -1033,19 +1020,6 @@ BLOG = [
             "began requiring HTTPS for .dev, those setups suddenly stopped working. The lesson "
             "for any builder: do not borrow a name that belongs to someone else, even when it "
             "seems unused.",
-            ("h", "Key Takeaways"),
-            ("point",
-             "A TLD is a label",
-             ".dev tells visitors, in four letters, that the site is about software and technology."),
-            ("point",
-             "HTTPS is built in",
-             "Every .dev site must use a secure connection, and the browser itself enforces it."),
-            ("point",
-             "No ranking penalty",
-             "Google says its systems treat new TLDs like .com and .org in search."),
-            ("point",
-             "Safe by default beats safe by setting",
-             "A safeguard you cannot forget is stronger than one you must remember."),
             ("h", "If You Are Choosing Your Own Address"),
             ("point",
              "Make it about you or your work",
@@ -1078,9 +1052,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 15, 2026",
+        "date": "December 4, 2026",
         "title": "The ALTOS Framework, Principle 10: Build to Outlast the Builder",
-        "publish_on": "2026-12-15 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2026-12-04 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-build-to-outlast-the-builder",
         "category": "software",
         "summary": "Records, rules and systems must keep working after the person who set them up has left. A reform "
@@ -1188,7 +1162,7 @@ BLOG = [
             "treasury, digital transformation means that the rules of public finance are carried "
             "out, recorded and reported by a system that any authorized person can check, and "
             "that keeps working when the people change.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Plan for your own exit",
              "Ask what would stop working if you left tomorrow, then fix that first."),
@@ -1267,9 +1241,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 10, 2026",
+        "date": "November 30, 2026",
         "title": "The ALTOS Framework, Principle 9: Evidence Before Decision",
-        "publish_on": "2026-12-10 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2026-11-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-evidence-before-decision",
         "category": "software",
         "summary": "Targets, forecasts and control checks should inform the treasurer's judgment, never replace it. "
@@ -1418,7 +1392,7 @@ BLOG = [
             "The safeguard is to pair every target with a control measure. Track collections "
             "together with RCD timeliness. Track notices sent together with complaints received. "
             "And never let a number make the decision on its own.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Records are evidence",
              "The same records that prove accountability also guide management."),
@@ -1458,9 +1432,9 @@ BLOG = [
         ],
 },
     {
-        "date": "December 5, 2026",
+        "date": "November 27, 2026",
         "title": "The ALTOS Framework, Principle 8: The Taxpayer Is a Citizen",
-        "publish_on": "2026-12-05 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2026-11-27 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-the-taxpayer-is-a-citizen",
         "category": "software",
         "summary": "Assess fairly, collect conveniently and disclose fully. The person at the counter is not a "
@@ -1586,7 +1560,7 @@ BLOG = [
             "None of these costs much. A receipt, a clear computation and equal treatment are the"
             " everyday proof that the office sees the person at the window as a citizen, not as a"
             " source of collections.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Four tests still work",
              "Equality, certainty, convenience and economy, as Adam Smith set them out."),
@@ -1620,9 +1594,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 30, 2026",
+        "date": "November 25, 2026",
         "title": "The ALTOS Framework, Principle 7: Keep Money in Its Fund",
-        "publish_on": "2026-11-30 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2026-11-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-keep-money-in-its-fund",
         "category": "software",
         "summary": "A peso raised for schools should reach schools. Each peso belongs to the fund the law assigns it, "
@@ -1740,7 +1714,7 @@ BLOG = [
             "bank account. If the two numbers match, the day is clean. If they do not, the "
             "difference is found while the receipts are still fresh, not months later during the "
             "audit.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Every peso has a fund",
              "The law or ordinance that created the money also decides which fund it belongs to."),
@@ -1778,9 +1752,9 @@ BLOG = [
         ],
 },
     {
-        "date": "November 25, 2026",
+        "date": "November 23, 2026",
         "title": "The ALTOS Framework, Principle 6: Separate the Hands",
-        "publish_on": "2026-11-25 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "publish_on": "2026-11-23 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "altos-framework-separate-the-hands",
         "category": "software",
         "summary": "No one person should both approve and release public money, or both hold it and record it. "
@@ -1924,7 +1898,7 @@ BLOG = [
             "new duties. Staff changes are exactly when two steps quietly end up in the same "
             "hands, and a fresh map catches it before an auditor does. A duty map that is a year "
             "old describes an office that no longer exists.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Design trust, do not assume it",
              "Checks protect honest staff as much as they deter dishonest ones."),
@@ -2098,7 +2072,7 @@ BLOG = [
             "receipt. A good system answers in seconds, and the answer includes the reason.",
             "If it cannot, the system is only a faster typewriter, and the old paper habits are "
             "still your best protection.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Digital records need a new seal",
              "Without a tamper-evident log, an electronic record is weaker evidence than a bound,"
@@ -2275,7 +2249,7 @@ BLOG = [
             "each month.",
             "A late report is not always about laziness. The work may have piled up without "
             "anyone seeing it.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "A deadline limits hidden mistakes",
              "The sooner a report is due, the younger any shortage is when it is found."),
@@ -2443,7 +2417,7 @@ BLOG = [
             "If any of these is missing, the gap is not a sign of bad people. It is a sign that "
             "ownership has not yet been written down, and that is the easiest kind of problem to "
             "fix.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Accountability needs a name",
              "Every booklet of receipts, every check and every peso in hand should have one "
@@ -2626,7 +2600,7 @@ BLOG = [
              "is already in an RCI."),
             "In the ALTOS Framework self-assessment, one of the first things the system shows for"
             " this principle is any check that has no voucher number.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "No form, no peso",
              "Every collection needs an official receipt and every payment needs a voucher, or it"
@@ -2768,7 +2742,6 @@ BLOG = [
             "What made that possible was the people. We worked well together across the whole "
             "municipality, from the department heads to the frontline staff. In the middle of a "
             "pandemic, that kind of teamwork is not a bonus. It is how a town keeps running.",
-            ("h", "Key Takeaways"),
             "The work of a municipal treasurer is not easy, and the accountability is high. Every"
             " collection, every disbursement and every signature carries your name, and you "
             "answer for all of it. That post taught me three lessons I still carry:",
@@ -2954,7 +2927,7 @@ BLOG = [
             "items that have no revenue code reference, so gaps surface before an auditor finds "
             "them. The office then rates itself from 1 to 4 on each principle and starts with its"
             " two weakest areas.",
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Authority comes in a chain",
              "Constitution, Local Government Code, local ordinances, then the receipt or the "
@@ -3123,7 +3096,7 @@ BLOG = [
              "A clear agreement is not a sign of distrust. It is how both sides keep their "
              "promises: the office keeps a working system and its records, the builder keeps the "
              "authorship, and taxpayers keep uninterrupted service."),
-            ("h", "Key Takeaways"),
+            ("h", "In Brief"),
             ("point",
              "Build the rules into the tool",
              "A system that follows the office's own forms and rules catches mistakes as they "
@@ -3230,19 +3203,6 @@ BLOG = [
             "and gone without me. If I am going to plant new coconut trees, I also want to be "
             "there to watch them grow.",
             "One thing is for sure: I won't wait another five years for my next visit.",
-            ("h", "Key Takeaways"),
-            ("point",
-             "Go back to your roots",
-             "Five years can slip by unnoticed. Make the trip before more seasons pass."),
-            ("point",
-             "Value the steady harvest",
-             "Some crops, like copra, are quiet and dependable, and a family can count on them."),
-            ("point",
-             "Thank the people who keep things going",
-             "A caretaker's daily work is why the land stayed productive while I was away."),
-            ("point",
-             "Plant for the next generation",
-             "The trees that feed us today were planted by others. Now it is our turn."),
             ("cta", "Read: So Close to Alibijaban Island", "/blog/so-close-to-alibijaban/"),
             ("cta",
              "Read: 360 Degrees: My First Post as Acting Municipal Treasurer",
