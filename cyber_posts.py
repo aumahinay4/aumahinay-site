@@ -5223,6 +5223,11 @@ CYBER_POSTS = [
             "defeat them, including scams that now use artificial intelligence to copy voices and"
             " faces. Read to the end and you will be able to spot the pressure tricks in a "
             "message within seconds and know exactly what to do if you already clicked.",
+            ("Treasury work is a natural target for this kind of pressure, because it is where "
+             "requests turn into money. The rule I lean on most is the second principle of my ALTOS "
+             "Framework: no release without a voucher. A payment that rests only on a phone call or a "
+             "message has no document behind it, and that gap is exactly what human hackers try to "
+             "use."),
             ("h", "Why Smart People Get Fooled"),
             "Falling for a scam is not a sign of low intelligence. Scammers design messages to "
             "push us into acting before we think. Scams lean on levers like these:",
@@ -5418,6 +5423,12 @@ CYBER_POSTS = [
             " passkeys. By the end of this post, you will know how to build a password that "
             "resists cracking, which login protections are strongest, and what to do if an "
             "account is taken over.",
+            ("These are not just rules I read about for the Google Cybersecurity Professional "
+             "Certificate. When I built ALTOS, several of the safeguards I wrote into it were about "
+             "logins: passwords are stored only in scrambled form, accounts lock after repeated wrong "
+             "attempts, and idle sessions close on their own. I also chose a .dev address for this "
+             "website partly because every .dev site must use a secure connection. Small rules that "
+             "work without anyone remembering them do most of the protecting."),
             ("h", "Why the Old Password Rules Failed"),
             "For years, we were told to create passwords with at least eight characters, a "
             "capital letter, a number and a symbol, and to change them every few months. The "
