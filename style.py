@@ -1156,3 +1156,17 @@ CSS += """
 /* No line under the top bar on any page or screen (Butch 2026-11-19): the bar blends into the page. */
 header.site { box-shadow: none; }
 """
+
+CSS += """
+/* Menu panel words 20% bigger, all screens (Butch 2026-11-20); spacing unchanged */
+html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(16px, 4vw, 17px) * 1.2); }
+html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.2); }
+@media (min-width: 1025px) {
+  html.menu-js.menu-open header.site #site-menu a { font-size: calc(clamp(16px, 4vw, 17px) * 1.025 * 1.2); }
+  html.menu-js.menu-open header.site #site-menu a[href="/contact/"],
+  html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
+  html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025 * 1.2); }
+}
+"""
