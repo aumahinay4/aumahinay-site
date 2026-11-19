@@ -17,12 +17,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 52: The Whole Series on One Page, From First Idea to Lessons Learned",
         "slug": "project-management-part-52-series-on-one-page",
         "category": "pm",
-        "date": "July 2, 2027",
+        "date": "June 7, 2028",
         "summary": "This is the last part of the Project Management Series. It arranges the 51 earlier parts "
                    "into the order a real project needs them, from the first idea to the benefits review, with "
                    "one question to ask at each stage and a short list of the parts to reread when that "
                    "question comes up.",
-        "publish_on": "2027-07-02 21:00",
+        "publish_on": "2028-06-07 21:00",
         "body": [
             "A colleague from the assessor’s office stopped by the treasury with a printed memo. She had just "
             "been named to lead the digitization of the property records, a project with a budget, a deadline "
@@ -131,7 +131,7 @@ PM_POSTS = [
             ("point", "Skipping Stage 1", "A project nobody chose has nobody to defend it later."),
             ("point", "Using every tool on every project", "Match the paperwork to the size and the risk."),
             ("point", "Stopping at the handover", "Check later whether the benefits arrived."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Seven stages", "Choose, define, involve, plan, track, support the team, finish and "
              "check."),
             ("point", "One question per stage", "Ask it, then reread the parts listed under it."),
@@ -153,12 +153,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 51: Working With a Partner Agency, Putting the Agreement in Writing",
         "slug": "project-management-part-51-memorandum-of-agreement",
         "category": "pm",
-        "date": "June 29, 2027",
+        "date": "June 2, 2028",
         "summary": "When a project depends on another agency, such as a state university, a national office or a "
                    "bank, a handshake is not enough. This part shows what a memorandum of agreement should "
                    "cover, who has to approve it before the local chief executive signs, and how to manage "
                    "the partnership once the work starts.",
-        "publish_on": "2027-06-29 21:00",
+        "publish_on": "2028-06-02 21:00",
         "body": [
             "The filing room project had a new idea. A state university nearby offered to send six "
             "information technology students as interns for eight weeks to help scan the indexed real "
@@ -271,7 +271,7 @@ PM_POSTS = [
              "needed."),
             ("point", "Vague duties", "List each side’s tasks, not just shared goals."),
             ("point", "No data rules", "Say what can be seen, copied and kept."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Write it when it matters", "People, money, data or a long time frame."),
             ("point", "Cover the essentials", "Purpose, duties, duration, costs, data, outputs, changes, "
              "contacts."),
@@ -294,12 +294,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 50: Keeping a Team Going Through a Long Project",
         "slug": "project-management-part-50-team-morale",
         "category": "pm",
-        "date": "June 26, 2027",
+        "date": "May 29, 2028",
         "summary": "Long projects lose energy in the middle, when the start is forgotten and the finish is far "
                    "away. This part uses research on daily work life to show how to make progress visible, "
                    "remove small obstacles, handle setbacks without blame, protect people from overload, and "
                    "recognize work in ways that fit a government office.",
-        "publish_on": "2027-06-26 21:00",
+        "publish_on": "2028-05-29 21:00",
         "body": [
             "Eight months into the filing room project, the boxes of real property records had been moved, "
             "but only a third had been indexed. The weekly meeting had gone from lively to quiet. Two of the "
@@ -413,7 +413,7 @@ PM_POSTS = [
             ("point", "Ignoring small obstacles", "They drain energy every day."),
             ("point", "Blaming people for setbacks", "Fix the step, not the person."),
             ("point", "Mistaking overload for low morale", "Check the hours before giving a pep talk."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Progress matters most", "Help people see that the work moved today."),
             ("point", "Clear the small obstacles", "Ask weekly, fix quickly."),
             ("point", "Setbacks are lessons", "Ask what happened and turn the fix into a win."),
@@ -435,12 +435,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 49: The Pre-Mortem, Imagining Failure Before It Happens",
         "slug": "project-management-part-49-pre-mortem",
         "category": "pm",
-        "date": "June 23, 2027",
+        "date": "May 24, 2028",
         "summary": "A post-mortem explains why a project failed after it is too late to help. A pre-mortem asks "
                    "the team to imagine the failure first, while the plan can still change. This part shows how "
                    "to run one in under an hour, how to turn its list into actions, and why it helps quiet "
                    "team members speak up.",
-        "publish_on": "2027-06-23 21:00",
+        "publish_on": "2028-05-24 21:00",
         "body": [
             "The plan to extend text reminders to real property owners looked ready. The phone list had been "
             "cleaned, the message was drafted, and the sponsor had approved a start date in August. At the "
@@ -537,7 +537,7 @@ PM_POSTS = [
              "later."),
             ("point", "No actions afterward", "Every serious reason needs a change, a check or a recorded "
              "decision."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Imagine the failure", "“It failed. Why?” surfaces more than “What could go wrong?”"),
             ("point", "Write alone, share in turn", "So every person’s reasons reach the board."),
             ("point", "Rank and act", "Change the plan, add a check, name an owner, or accept knowingly."),
@@ -558,12 +558,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 48: The Decision Log, Remembering Why the Project Chose What It Chose",
         "slug": "project-management-part-48-decision-log",
         "category": "pm",
-        "date": "June 20, 2027",
+        "date": "May 19, 2028",
         "summary": "Months into a project, someone asks why it was done this way, and often nobody remembers. A "
                    "decision log keeps one short record per important choice: the context, the options, the "
                    "decision, who made it and what follows. This part shows what to record, when, and how to "
                    "change a decision without erasing the old one.",
-        "publish_on": "2027-06-20 21:00",
+        "publish_on": "2028-05-19 21:00",
         "body": [
             "In March, the new treasurer asked why the text reminders went out only to business taxpayers and "
             "not to real property owners. It looked like an obvious gap.",
@@ -662,7 +662,7 @@ PM_POSTS = [
             ("point", "Recording only the winner", "Write down the options that lost and why."),
             ("point", "Editing old entries", "Supersede them with a new entry and link the two."),
             ("point", "Writing weeks later", "Record the decision within a day, while the reasons are fresh."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Minutes say what, the log says why", "Context, options, decision and consequences."),
             ("point", "Log what will be questioned", "Hard-to-reverse choices and trade-offs."),
             ("point", "Supersede, do not edit", "Keep the history of how thinking changed."),
@@ -683,12 +683,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 47: Negotiating With Other Offices for People, Equipment and Time",
         "slug": "project-management-part-47-negotiating-with-other-offices",
         "category": "pm",
-        "date": "June 17, 2027",
+        "date": "May 15, 2028",
         "summary": "Many treasury projects need people, rooms or equipment that belong to another office. This "
                    "part uses the four principles of principled negotiation to prepare for the conversation, "
                    "find what the other office needs, offer options both sides can accept, and write the "
                    "agreement down.",
-        "publish_on": "2027-06-17 21:00",
+        "publish_on": "2028-05-15 21:00",
         "body": [
             "The filing room project needed two things it did not own: the general services office’s pickup "
             "truck for one Saturday, to move 140 boxes of real property records, and two days of help from the "
@@ -794,7 +794,7 @@ PM_POSTS = [
             ("point", "Arguing positions", "Ask about the interests behind them."),
             ("point", "One demand, no options", "Bring two or three arrangements."),
             ("point", "No written record", "Send a short note the same day."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Four principles", "People apart from the problem, interests over positions, options, "
              "fair standards."),
             ("point", "Know your BATNA", "Your best alternative if no agreement is reached."),
@@ -816,12 +816,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 46: Bringing a New Person Into a Running Project",
         "slug": "project-management-part-46-new-team-member",
         "category": "pm",
-        "date": "June 14, 2027",
+        "date": "May 10, 2028",
         "summary": "A new team member halfway through a project can speed it up or slow it down for weeks. This "
                    "part shows how to prepare before the person arrives, what to cover in the first day and the "
                    "first two weeks, how to pick a first task, and why adding people to a late project needs "
                    "care.",
-        "publish_on": "2027-06-14 21:00",
+        "publish_on": "2028-05-10 21:00",
         "body": [
             "The online payment project from Part 43 had recovered, and the department head sent help: a "
             "young programmer transferred from the assessor’s office, starting Monday.",
@@ -922,7 +922,7 @@ PM_POSTS = [
             ("point", "Explaining everything from memory", "Write one short guide and keep it current."),
             ("point", "Practice tasks only", "Give a small real task in the first days."),
             ("point", "Adding people too late", "Help that arrives in the last weeks can slow the finish."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Expect a short slowdown", "Learning and teaching both take time."),
             ("point", "Prepare before day one", "Access, one guide, a buddy and a first task."),
             ("point", "Small, real first task", "Checked with the buddy, then larger tasks."),
@@ -942,11 +942,11 @@ PM_POSTS = [
         "title": "Project Management Series, Part 45: Delegating Work Without Losing Track of It",
         "slug": "project-management-part-45-delegating-work",
         "category": "pm",
-        "date": "June 11, 2027",
+        "date": "May 5, 2028",
         "summary": "A project lead who does every task alone becomes the bottleneck. This part shows how to choose "
                    "what to hand over, how much authority to give with it, how to brief the person so the result "
                    "comes back right, and how to follow up without hovering or disappearing.",
-        "publish_on": "2027-06-11 21:00",
+        "publish_on": "2028-05-05 21:00",
         "body": [
             "The revenue officer had a new rule for herself after Part 44: one page, one order of priority, "
             "protected blocks. It helped. But the page also showed something she had not wanted to see. Of the "
@@ -1063,7 +1063,7 @@ PM_POSTS = [
             ("point", "No check-in agreed", "Agree it at the start, or the lead ends up hovering or "
              "disappearing."),
             ("point", "Taking the task back silently", "Fix it together and adjust the level."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Choose with three labels", "Only I can, someone could with a briefing, someone could do "
              "it better."),
             ("point", "Say the level", "Find out, recommend, act and tell, or act alone."),
@@ -1084,12 +1084,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 44: Leading Several Projects at Once Without Dropping Any",
         "slug": "project-management-part-44-several-projects-at-once",
         "category": "pm",
-        "date": "June 8, 2027",
+        "date": "May 1, 2028",
         "summary": "In a small office, the same person often leads three projects while doing a regular job. This "
                    "part shows how to put every project on one page, get a clear order of priority from the "
                    "people who set it, protect blocks of time instead of switching all day, run one weekly "
                    "review, and say early when something has to give.",
-        "publish_on": "2027-06-08 21:00",
+        "publish_on": "2028-05-01 21:00",
         "body": [
             "The revenue officer led three projects that year: the text reminders for business tax, the cleanup "
             "of the market stall list, and the new filing room for real property records. She also ran the "
@@ -1191,7 +1191,7 @@ PM_POSTS = [
             ("point", "Settling priorities alone", "Ask the person above the sponsors."),
             ("point", "Switching all day", "Use blocks and set times for messages."),
             ("point", "Raising conflicts at the last minute", "Say it when you first see it."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "One page", "Every project and regular duty, with hours and next dates."),
             ("point", "One order of priority", "Set by the person above the sponsors, written down."),
             ("point", "Blocks, not switching", "Protected time per project and set times for messages."),
@@ -1211,11 +1211,11 @@ PM_POSTS = [
         "title": "Project Management Series, Part 43: When a Project Is in Trouble, a Recovery Plan in Five Steps",
         "slug": "project-management-part-43-project-recovery",
         "category": "pm",
-        "date": "June 5, 2027",
+        "date": "April 26, 2028",
         "summary": "Some projects slide from amber to red and stay there. This part shows how to pause and take "
                    "stock, find the few real causes, decide what to cut, keep or move, reset the plan with the "
                    "sponsor, and watch the first weeks closely, without hunting for someone to blame.",
-        "publish_on": "2027-06-05 21:00",
+        "publish_on": "2028-04-26 21:00",
         "body": [
             "The online payment project was six weeks behind. The status report had been amber for two months "
             "and red for three weeks. The test site worked on some days and not on others, the bank’s "
@@ -1316,7 +1316,7 @@ PM_POSTS = [
             ("point", "Hiding the trouble", "A sponsor told early has more choices."),
             ("point", "Looking for someone to blame", "It drives problems underground."),
             ("point", "Resetting without cutting", "A new date with the same scope often fails again."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Know the signs", "Steady red, falling earned value, a growing issue log, absent people."),
             ("point", "Five steps", "Pause, find causes, keep or move or cut, reset with the sponsor, watch "
              "closely."),
@@ -1338,12 +1338,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 42: User Acceptance Testing, Letting the People Who Will Use It Say Yes",
         "slug": "project-management-part-42-user-acceptance-testing",
         "category": "pm",
-        "date": "June 2, 2027",
+        "date": "April 21, 2028",
         "summary": "Before a new system or process goes live, the people who will use it every day should try it on "
                    "real work and say whether it is ready. This part explains what user acceptance testing is, "
                    "how to write simple test cases from the requirements, who should test, how to record "
                    "results, and how to decide whether to go live.",
-        "publish_on": "2027-06-02 21:00",
+        "publish_on": "2028-04-21 21:00",
         "body": [
             "The new collection screen passed every check the developer ran. Totals added up. Receipts printed. "
             "The project lead scheduled the switch for the first Monday of the month.",
@@ -1453,7 +1453,7 @@ PM_POSTS = [
             ("point", "Testing only the easy cases", "The awkward ones cause most of the trouble."),
             ("point", "No written pass rules", "Decide what counts as ready before testing begins."),
             ("point", "Testing on live records", "Use a copy with personal details replaced."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Users decide", "The people who will use it test it on real kinds of work."),
             ("point", "Cases come from requirements", "Each testable requirement becomes a test case."),
             ("point", "Log every result", "Expected, actual, pass or fail, and a rank for each failure."),
@@ -1474,12 +1474,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 41: A Timeline Anyone Can Read, Building a Gantt Chart in Google Sheets",
         "slug": "project-management-part-41-gantt-chart-in-sheets",
         "category": "pm",
-        "date": "May 30, 2027",
+        "date": "April 17, 2028",
         "summary": "A list of tasks with start and end dates is hard to read. The same list drawn as bars on a "
                    "calendar shows at a glance what overlaps, what is late and what comes next. This part builds "
                    "a simple Gantt chart in Google Sheets with conditional formatting, adds a line for today, and "
                    "notes the built-in timeline view where it is available.",
-        "publish_on": "2027-05-30 21:00",
+        "publish_on": "2028-04-17 21:00",
         "body": [
             "The project schedule lived in a sheet with forty rows: task, owner, start date, end date. Every "
             "Monday, the lead read it aloud at the team meeting, row by row. By the tenth row, nobody was really listening.",
@@ -1575,7 +1575,7 @@ PM_POSTS = [
             ("point", "Too fine a scale", "Daily columns for a six-month project make the chart too wide to read."),
             ("point", "Never updating it", "A chart that shows last month’s plan misleads."),
             ("point", "Hiding the owner", "Keep the owner column visible, so overloads show by name."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Tasks down, weeks across", "One bar per task from start to end."),
             ("point", "One rule draws the bars", "=AND(F$2+6>=$C3, F$2<=$D3)"),
             ("point", "Two more rules add meaning", "A column for today and red for late tasks."),
@@ -1597,11 +1597,11 @@ PM_POSTS = [
         "title": "Project Management Series, Part 40: The Retrospective, Improving While the Work Is Still Running",
         "slug": "project-management-part-40-retrospectives",
         "category": "pm",
-        "date": "May 27, 2027",
+        "date": "April 12, 2028",
         "summary": "A lessons-learned review at the end helps the next project. A retrospective every few weeks "
                    "helps the current one. This part explains what a retrospective is, a simple three-question "
                    "format, how to keep it short and blame-free, and how to make sure its actions actually happen.",
-        "publish_on": "2027-05-27 21:00",
+        "publish_on": "2028-04-12 21:00",
         "body": [
             "The market records project was in its second month. The team was busy, the work was moving, and "
             "the same small problems kept coming back: scanned contracts saved under different names, a shared "
@@ -1701,7 +1701,7 @@ PM_POSTS = [
             ("point", "Too many actions", "Pick one or two."),
             ("point", "Skipping it when busy", "Busy periods are when a weak process hurts."),
             ("point", "Naming and blaming", "Describe the process, not the person."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "A short, regular review", "Every two to four weeks, about how the team works."),
             ("point", "Three questions", "What helped, what got in the way, what we will try next."),
             ("point", "Check last time’s actions first", "So each meeting builds on the last."),
@@ -1724,12 +1724,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 39: After the Project Ends, Checking Whether the Benefits Arrived",
         "slug": "project-management-part-39-benefits-review",
         "category": "pm",
-        "date": "May 22, 2027",
+        "date": "April 3, 2028",
         "summary": "A project can finish on time and on budget and still fail to deliver what it promised. A "
                    "benefits review, held months after closing, checks whether the promised improvement really "
                    "happened. This part explains outputs, outcomes and benefits, who owns the review, how to "
                    "measure against a baseline, and what to do when the numbers fall short.",
-        "publish_on": "2027-05-22 21:00",
+        "publish_on": "2028-04-03 21:00",
         "body": [
             "The text reminder project had closed in good order. Every barangay was enrolled, the procedure was "
             "written, and the lessons-learned review was filed. At the year-end meeting, a council member asked "
@@ -1833,7 +1833,7 @@ PM_POSTS = [
             ("point", "No baseline", "Without a starting number, nobody can show improvement."),
             ("point", "No owner", "If the project lead owns the benefit, it ends when the team does."),
             ("point", "Claiming every gain", "Note other changes that could explain the numbers."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Outputs, outcomes, benefits", "What was made, what changed, and what improved."),
             ("point", "An owner in the operating office", "Named in the handover, with review dates."),
             ("point", "Baseline and target", "Measured at three, six and twelve months."),
@@ -1858,12 +1858,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 38: When the Team Disagrees, Five Ways to Handle Conflict",
         "slug": "project-management-part-38-handling-conflict",
         "category": "pm",
-        "date": "May 17, 2027",
+        "date": "March 24, 2028",
         "summary": "Disagreements in a project are normal: over priorities, people, time and methods. Handled "
                    "well, they improve the work. Left alone, they stall it. This part explains five common ways "
                    "people respond to conflict, when each one fits, and a short process for settling a work "
                    "disagreement before it grows.",
-        "publish_on": "2027-05-17 21:00",
+        "publish_on": "2028-03-24 21:00",
         "body": [
             "The meeting was supposed to take fifteen minutes. It took an hour and settled nothing. The records "
             "clerk wanted the reminder list cleaned before every round. The collector wanted to send on time and "
@@ -1962,7 +1962,7 @@ PM_POSTS = [
             ("point", "Settling it in a group chat", "Talk in person, then write the decision down."),
             ("point", "Always compromising", "Splitting the difference can leave both concerns half met."),
             ("point", "Letting work turn personal", "Keep the talk on facts and needs."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Conflict about the work can help", "It exposes trade-offs the plan missed."),
             ("point", "Five modes", "Competing, accommodating, avoiding, collaborating and compromising."),
             ("point", "Each has its place", "Match the mode to the situation."),
@@ -1986,12 +1986,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 37: Writing a Standard Operating Procedure People Actually Follow",
         "slug": "project-management-part-37-standard-operating-procedure",
         "category": "pm",
-        "date": "May 12, 2027",
+        "date": "March 15, 2028",
         "summary": "When a project ends, some of its work becomes a routine that someone must repeat every month "
                    "or quarter. A standard operating procedure keeps that routine running when people change. "
                    "This part explains what to put in one, how to write steps anyone can follow, how to test "
                    "it, and how to keep it current.",
-        "publish_on": "2027-05-12 21:00",
+        "publish_on": "2028-03-15 21:00",
         "body": [
             "The text reminders had worked. On-time payments rose in every barangay, and the project closed "
             "with a handover note, a thank-you and a lessons-learned review. Then, in February, the collector "
@@ -2089,7 +2089,7 @@ PM_POSTS = [
             ("point", "Steps that hide several actions", "One verb, one step."),
             ("point", "No owner or review date", "It will drift out of date unnoticed."),
             ("point", "Passwords in the document", "Name the role that grants access instead."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "One routine, one SOP", "Written so anyone assigned can follow it."),
             ("point", "Verb first, one action, a check", "Steps a newcomer can follow."),
             ("point", "Test with a newcomer", "Every question is a gap to fix."),
@@ -2113,12 +2113,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 36: Kanban Boards and Limits on Work in Progress",
         "slug": "project-management-part-36-kanban-boards",
         "category": "pm",
-        "date": "May 7, 2027",
+        "date": "March 6, 2028",
         "summary": "Some work never stops arriving: certifications, refund requests, corrections, letters. A "
                    "Kanban board shows that work on one wall, and a limit on work in progress keeps the team "
                    "finishing instead of only starting. This part explains how to set up a simple board, how to "
                    "choose limits, and which four numbers to watch.",
-        "publish_on": "2027-05-07 21:00",
+        "publish_on": "2028-03-06 21:00",
         "body": [
             "Every desk in the section had a pile. Each pile held requests that had been started: a "
             "certification half typed, a refund request waiting for a signature, a correction waiting for a "
@@ -2221,7 +2221,7 @@ PM_POSTS = [
             ("point", "No limits", "A board without limits only shows the pile more clearly."),
             ("point", "Hiding Waiting inside Checking", "Blocked work needs its own column."),
             ("point", "Personal data on a visible board", "Use reference numbers, not names."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Make the work visible", "One card per request, one column per step."),
             ("point", "Limit work in progress", "Stop starting, start finishing."),
             ("point", "Watch four numbers", "Work in progress, throughput, age and cycle time."),
@@ -2245,12 +2245,12 @@ PM_POSTS = [
         "title": "Project Management Series, Part 35: Earned Value Made Simple, Are We on Budget and on Schedule?",
         "slug": "project-management-part-35-earned-value",
         "category": "pm",
-        "date": "May 2, 2027",
+        "date": "February 25, 2028",
         "summary": "Money spent and days passed do not tell you whether a project is on track. Earned value "
                    "compares three numbers, planned value, earned value and actual cost, to show both schedule "
                    "and budget status. This part explains each one with a treasury example and shows how to "
                    "forecast the final cost.",
-        "publish_on": "2027-05-02 21:00",
+        "publish_on": "2028-02-25 21:00",
         "body": [
             "Four weeks into the eight-week rollout, the project lead gave her update to the department head. "
             "“We have spent ₱21,000 of the ₱48,000 budget. That is less than half. We are fine.”",
@@ -2351,7 +2351,7 @@ PM_POSTS = [
             ("point", "Waiting until the end to compute", "Earned value is useful only while there is time to "
              "act."),
             ("point", "Hiding a bad CPI", "Report it early, with the cause and the fix."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Three numbers", "Planned value, earned value and actual cost, all in pesos."),
             ("point", "Two variances", "EV − PV for schedule, EV − AC for cost."),
             ("point", "Two indexes", "SPI and CPI, where below 1.0 is a warning."),
@@ -2374,7 +2374,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "April 27, 2027",
+        "date": "February 16, 2028",
         "title": "Project Management Series, Part 34: Presenting a Project to Decision Makers in Ten Minutes",
         "slug": "project-management-part-34-presenting-in-ten-minutes",
         "category": "pm",
@@ -2382,7 +2382,7 @@ PM_POSTS = [
                    "to open with the decision you need, build a short presentation around one question, "
                    "prepare for the hard questions, and leave with a recorded decision instead of “let’s "
                    "discuss next time.”",
-        "publish_on": "2027-04-27 21:00",
+        "publish_on": "2028-02-16 21:00",
         "body": [
             "The project lead had twenty slides. They covered the background, the method, the pilot, the "
             "adoption numbers and a timeline for the whole year. The council committee gave her ten minutes, "
@@ -2479,7 +2479,7 @@ PM_POSTS = [
             ("point", "Twenty slides for ten minutes", "Five slides, one message each."),
             ("point", "Guessing at a hard question", "Promise a written answer by a date."),
             ("point", "Leaving without a decision", "Ask for approve, defer or decline, and confirm in writing."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Ask first", "One sentence, said in the first minute."),
             ("point", "Five parts", "Ask, problem, evidence, cost and risk, ask again."),
             ("point", "Prepare the hard questions", "Two-sentence answers, written in advance."),
@@ -2501,7 +2501,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "April 22, 2027",
+        "date": "February 7, 2028",
         "title": "Project Management Series, Part 33: Getting People to Use the New Process, Not Just Install It",
         "slug": "project-management-part-33-adopting-the-new-process",
         "category": "pm",
@@ -2509,7 +2509,7 @@ PM_POSTS = [
                    "covers why people hold on to the old way, how to make the new way easier than the old, "
                    "how to support people in the first weeks, how to measure real use, and when to retire "
                    "the old way.",
-        "publish_on": "2027-04-22 21:00",
+        "publish_on": "2028-02-07 21:00",
         "body": [
             "The new payment plan register went live on a Monday. It was a shared sheet with one row per "
             "stallholder, the agreed terms written out, and a column for each installment. It replaced the "
@@ -2601,7 +2601,7 @@ PM_POSTS = [
             ("point", "Adding work without removing any", "Every new step should replace an old one."),
             ("point", "Blaming people for resisting", "Ask for reasons, and fix them."),
             ("point", "Keeping the old way forever", "Set a date to retire it."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Launched is not used", "The benefit comes only with daily use."),
             ("point", "Easier wins", "Remove double entry and confusing steps."),
             ("point", "Support and measure", "Champions, a guide, a person to ask, one weekly number."),
@@ -2622,7 +2622,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "April 17, 2027",
+        "date": "January 28, 2028",
         "title": "Project Management Series, Part 32: Running a Pilot, Testing Small Before Going Big",
         "slug": "project-management-part-32-running-a-pilot",
         "category": "pm",
@@ -2630,7 +2630,7 @@ PM_POSTS = [
                    "set in advance. This part shows how to choose the pilot group, write the success "
                    "criteria before the start, compare fairly, and decide at the end whether to scale, "
                    "adjust or stop.",
-        "publish_on": "2027-04-17 21:00",
+        "publish_on": "2028-01-28 21:00",
         "body": [
             "The phone numbers had been cleaned, and the text reminders were ready to go. The councilor who "
             "had asked for them wanted every business in town to get a reminder before the next quarterly "
@@ -2722,7 +2722,7 @@ PM_POSTS = [
             ("point", "Choosing the easiest site", "Pick a typical one."),
             ("point", "No comparison group", "Without one, you can’t tell the pilot from the season."),
             ("point", "A pilot with no end date", "It drifts into permanent use without a decision."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Small, short and real", "One group, a fixed period, real conditions."),
             ("point", "Targets first", "Written before the start, on one page."),
             ("point", "Compare fairly", "A typical site, and a group without the change."),
@@ -2744,7 +2744,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "April 12, 2027",
+        "date": "January 19, 2028",
         "title": "Project Management Series, Part 31: Covering for Absences, a Backup Plan So the Work Does Not Stop",
         "slug": "project-management-part-31-covering-absences",
         "category": "pm",
@@ -2752,7 +2752,7 @@ PM_POSTS = [
                    "shows how to find those single points of failure, build a simple cross-training grid, "
                    "write a handover note, give a backup the right access without sharing passwords, and test "
                    "the plan before anyone is away.",
-        "publish_on": "2027-04-12 21:00",
+        "publish_on": "2028-01-19 21:00",
         "body": [
             "The arrears drive was in its third week when the market supervisor’s daughter was rushed to the "
             "hospital. He was on leave for five days. On the second day, three stallholders came to the "
@@ -2845,7 +2845,7 @@ PM_POSTS = [
             ("point", "Sharing passwords", "Give each backup their own access."),
             ("point", "One backup for everything", "Spread the backups across the team."),
             ("point", "Never testing", "Let each backup do the task once while the primary is present."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Find the one-person tasks", "One name plus a high cost of waiting."),
             ("point", "Use a P-and-B grid", "Every important task needs a backup."),
             ("point", "Keep a handover note", "Status, next steps, locations, rules, decisions, contacts."),
@@ -2871,7 +2871,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "April 7, 2027",
+        "date": "January 10, 2028",
         "title": "Project Management Series, Part 30: The Project Kit, Reusable Templates So the Next Project Starts Faster",
         "slug": "project-management-part-30-project-kit",
         "category": "pm",
@@ -2879,7 +2879,7 @@ PM_POSTS = [
                    "turn them into a small project kit: which templates to include, how to strip and label "
                    "them, where to keep them, who looks after them, and how to scale the kit down for a "
                    "small project.",
-        "publish_on": "2027-04-07 21:00",
+        "publish_on": "2028-01-10 21:00",
         "body": [
             "The day after the head of office approved two new projects, the clerk opened a blank document "
             "to write the first charter. Then she stopped. Somewhere on the shared drive was the charter "
@@ -2972,7 +2972,7 @@ PM_POSTS = [
             ("point", "Leaving old project data inside", "Strip names, numbers and taxpayer details."),
             ("point", "Letting everyone edit the master", "Keep the templates read-only and work on copies."),
             ("point", "Requiring every file for every project", "Match the kit to the size of the work."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "A kit is a folder", "Ten or so templates from your own past project."),
             ("point", "Structure stays, content goes", "Headings, columns, prompts and one marked example."),
             ("point", "One place, one owner", "Read-only templates, a read-me and someone who updates them."),
@@ -2998,14 +2998,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "April 2, 2027",
+        "date": "December 31, 2027",
         "title": "Project Management Series, Part 29: Too Many Requests? Choosing the Next Project With a Scoring Matrix",
         "slug": "project-management-part-29-scoring-matrix",
         "category": "pm",
         "summary": "After one project closes, five more ideas arrive at once. This part shows how to choose "
                    "among them with a simple scoring matrix: agree on criteria and weights, score each idea, "
                    "check the result against capacity, and explain the choice to the people whose ideas wait.",
-        "publish_on": "2027-04-02 21:00",
+        "publish_on": "2027-12-31 21:00",
         "body": [
             "A week after the notices project closed, the head of office had five new ideas on her desk. A "
             "councilor wanted the text reminders that had been delayed to this year. The market supervisor "
@@ -3104,7 +3104,7 @@ PM_POSTS = [
             ("point", "Scoring alone", "Two people, scoring separately, then compare."),
             ("point", "Ignoring capacity", "The top two must have people to do them."),
             ("point", "Silence for the ideas that wait", "Give each one a review date."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Criteria first", "Three to five, each with a meaning for 1, 3 and 5."),
             ("point", "Weights before scores", "So the result cannot be steered."),
             ("point", "Capacity decides how many", "The ranking decides which."),
@@ -3129,7 +3129,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "March 28, 2027",
+        "date": "December 22, 2027",
         "title": "Project Management Series, Part 28: Closing the Project, Handover and Lessons Learned",
         "slug": "project-management-part-28-closing-the-project",
         "category": "pm",
@@ -3137,7 +3137,7 @@ PM_POSTS = [
                    "confirm the objectives against the charter, hand over what continues, close the logs "
                    "and the budget, hold a lessons-learned review that changes the next project, and thank "
                    "the people who did the work.",
-        "publish_on": "2027-03-28 21:00",
+        "publish_on": "2027-12-22 21:00",
         "body": [
             "The last batch of notices went out on a Friday. On Monday, the runners were back at their "
             "regular work, the clerk was at the counter, and the project folder sat on a shelf. Six "
@@ -3247,7 +3247,7 @@ PM_POSTS = [
             ("point", "No owner for what continues", "Hand each item over in writing."),
             ("point", "A review that blames people", "Look for causes in the process and the plan."),
             ("point", "Lessons nobody reads", "Write them as actions, and read them at the next kickoff."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Check against the charter", "Planned, actual and evidence, including approved changes."),
             ("point", "Hand over in writing", "Every continuing task gets a named owner."),
             ("point", "Close every log", "Risks, issues, changes, budget and files."),
@@ -3268,14 +3268,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "March 23, 2027",
+        "date": "December 13, 2027",
         "title": "Project Management Series, Part 27: Meetings That Decide, Agendas, Minutes and Action Items",
         "slug": "project-management-part-27-meetings-that-decide",
         "category": "pm",
         "summary": "A project meeting is worth its hour only if something is decided or unblocked. This part "
                    "shows how to decide whether to meet at all, write an agenda that ends in decisions, run "
                    "the hour, and send short minutes with owners and dates the same day.",
-        "publish_on": "2027-03-23 21:00",
+        "publish_on": "2027-12-13 21:00",
         "body": [
             "The weekly project meeting started at two and ended at four. Six people attended. Everyone gave "
             "an update, the encoders described their week in detail, and a long discussion about envelope "
@@ -3357,7 +3357,7 @@ PM_POSTS = [
             ("point", "Topics instead of questions", "Write each item as a question to answer."),
             ("point", "No decider in the room", "Reschedule, or the decision waits anyway."),
             ("point", "Minutes a week later", "Send them the same day."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Meet to decide or solve", "Not to read status aloud."),
             ("point", "Questions, times and outcomes", "On an agenda sent a day ahead."),
             ("point", "Say each decision aloud", "With an owner and a date."),
@@ -3381,14 +3381,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "March 18, 2027",
+        "date": "December 3, 2027",
         "title": "Project Management Series, Part 26: The Issue Log, Turning Problems Into Next Steps",
         "slug": "project-management-part-26-issue-log",
         "category": "pm",
         "summary": "Risks are what might happen; issues are what already did. This part shows how to keep an "
                    "issue log on one page: what to record, how to rate urgency, who owns each issue, when to "
                    "escalate to the sponsor, and how to close an issue so it stays closed.",
-        "publish_on": "2027-03-18 21:00",
+        "publish_on": "2027-12-03 21:00",
         "body": [
             "By the second week of delivery, the clerk had problems written in four places. A sticky note on "
             "her monitor said “San Roque runner sick.” A message in the team chat said two notices came back "
@@ -3481,7 +3481,7 @@ PM_POSTS = [
             ("point", "A team as owner", "One name per issue."),
             ("point", "A solution instead of a next step", "Write the very next action and its date."),
             ("point", "Closing without checking", "Confirm the fix, then record it."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Issues have happened", "Risks might; keep them in separate lists."),
             ("point", "One row, one owner, one next step", "With a due date and an urgency set by rules."),
             ("point", "Escalate with options", "Through the status report, with a decision date."),
@@ -3503,14 +3503,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "March 13, 2027",
+        "date": "November 24, 2027",
         "title": "Project Management Series, Part 25: The Status Report, One Page That Tells the Truth Early",
         "slug": "project-management-part-25-status-reports",
         "category": "pm",
         "summary": "A status report should let the sponsor see a problem while there is still time to act. "
                    "This part gives a one-page format, a green, amber and red rating with written rules, "
                    "and a worked example from the notices project.",
-        "publish_on": "2027-03-13 21:00",
+        "publish_on": "2027-11-24 21:00",
         "body": [
             "The clerk’s weekly update said what it had said for three weeks: “All on track.” Then a "
             "councilor mentioned to the head of office that no notices had reached San Roque yet, though "
@@ -3603,7 +3603,7 @@ PM_POSTS = [
             ("point", "Activity instead of progress", "Report finished deliverables, not busy days."),
             ("point", "A long report", "One page, the same layout every time."),
             ("point", "No decision requested", "If you need something, ask for it with a date."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Four questions", "Where are we, what changed, what could go wrong, what do you need?"),
             ("point", "Colors with rules", "Agree in advance what makes a project amber or red."),
             ("point", "Numbers and dates", "Replace adjectives with facts."),
@@ -3629,14 +3629,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "March 8, 2027",
+        "date": "November 15, 2027",
         "title": "Project Management Series, Part 24: Change Control, Saying Yes to a Change Without Losing the Plan",
         "slug": "project-management-part-24-change-control",
         "category": "pm",
         "summary": "New requests can arrive at any point once a project starts. This part shows a simple way to "
                    "handle them: write the request down, measure what it does to scope, time, cost, risk "
                    "and quality, let the right person decide, and update the plan and the change log.",
-        "publish_on": "2027-03-08 21:00",
+        "publish_on": "2027-11-15 21:00",
         "body": [
             "Two weeks into the round of notices from Part 23, a councilor stopped the clerk in the hallway. “Can you also "
             "send a text message to every taxpayer before the notice arrives? It would only take a minute.” "
@@ -3739,7 +3739,7 @@ PM_POSTS = [
             ("point", "Approving without updating the plan", "The documents must match the decision."),
             ("point", "Rejecting without a reason", "The requester should hear why, and when it may come "
              "back."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Changes are normal", "Change control makes each one a decision, not an accident."),
             ("point", "Four steps", "Write it down, measure the impact, decide, then update."),
             ("point", "One named decider", "The sponsor, with a small limit for the project lead."),
@@ -3765,14 +3765,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "March 3, 2027",
+        "date": "November 5, 2027",
         "title": "Project Management Series, Part 23: Quality Planning, Deciding What Good Enough Means",
         "slug": "project-management-part-23-quality-planning",
         "category": "pm",
         "summary": "Quality is easier to plan than to inspect at the end. This part shows how to write what "
                    "“good” means for each deliverable, decide how and when it will be checked, weigh what "
                    "quality costs against what mistakes cost, and fit the checks into the schedule.",
-        "publish_on": "2027-03-03 21:00",
+        "publish_on": "2027-11-05 21:00",
         "body": [
             "In the last round of notices, a sample check caught wrong amounts on part of the first printed "
             "batch. Only that part had to be reprinted, for ₱800, and the project still stayed within its budget. "
@@ -3872,7 +3872,7 @@ PM_POSTS = [
             ("point", "Relying only on the final check", "Remove the causes of errors first."),
             ("point", "Checking your own work", "Give the check to someone else."),
             ("point", "Leaving checks out of the plan", "They need time, money and an owner."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Quality is agreed", "Meeting the requirements, written down before the work starts."),
             ("point", "Prevent, then check", "Build it in at the source, and confirm with a check."),
             ("point", "Four costs", "Prevention, appraisal, internal and external failure."),
@@ -3894,7 +3894,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "February 26, 2027",
+        "date": "October 27, 2027",
         "title": "Project Management Series, Part 22: Procurement and Suppliers, Planning What You Must Buy",
         "slug": "project-management-part-22-procurement-and-suppliers",
         "category": "pm",
@@ -3902,7 +3902,7 @@ PM_POSTS = [
                    "procurement takes time. This part shows how to find what must be bought, put it in the plan "
                    "early, write a clear specification, work with the procurement team, and manage a supplier "
                    "until the goods are accepted.",
-        "publish_on": "2027-02-26 21:00",
+        "publish_on": "2027-10-27 21:00",
         "body": [
             "The plan for next year’s round of notices looked ready. The critical path was clear, the buffer "
             "was visible, and the budget was approved. Then the clerk asked a simple question at the weekly "
@@ -3999,7 +3999,7 @@ PM_POSTS = [
             ("point", "Leaving procurement out of the schedule", "It has a duration and an owner like any task."),
             ("point", "Vague specifications", "Write what will be checked on delivery."),
             ("point", "Side deals with suppliers", "Only the authorized process commits the office."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "List early", "Go through the WBS and ask what must be bought."),
             ("point", "Schedule it", "Procurement is an external dependency with real lead time."),
             ("point", "Specify clearly", "The specification is also the acceptance checklist."),
@@ -4019,14 +4019,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "February 21, 2027",
+        "date": "October 18, 2027",
         "title": "Project Management Series, Part 21: Buffers, Not Padding, Adding Safety to a Schedule Honestly",
         "slug": "project-management-part-21-buffers-not-padding",
         "category": "pm",
         "summary": "Most schedules already hold extra time, hidden inside each estimate where nobody can see or "
                    "manage it. This part shows how to bring that safety into the open as a visible buffer, who "
                    "should own it, and how to watch it week by week.",
-        "publish_on": "2027-02-21 21:00",
+        "publish_on": "2027-10-18 21:00",
         "body": [
             "When the clerk asked Collector Lim how long delivery would take for next year’s round, the answer "
             "came quickly: “Twenty-five days.” Later, over coffee, Lim added, “Twenty, most likely. I put in five extra, just in case.”",
@@ -4118,7 +4118,7 @@ PM_POSTS = [
              "task that wants it."),
             ("point", "Blaming people for using it", "A draw on the buffer is information, not a fault."),
             ("point", "Hiding the buffer from the sponsor", "Show it, explain it, and report its use."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Padding hides", "Safety inside tasks tends to be used up where it sits."),
             ("point", "Buffers show", "One visible buffer, with an owner and a rule."),
             ("point", "Plan at likely", "Tasks get achievable targets; the buffer absorbs what goes wrong."),
@@ -4139,14 +4139,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "February 16, 2027",
+        "date": "October 8, 2027",
         "title": "Project Management Series, Part 20: Understanding Dependencies, When Task B Is Waiting on Task A",
         "slug": "project-management-part-20-dependencies",
         "category": "pm",
         "summary": "Every schedule is a chain of “this waits for that.” This part explains the four kinds of "
                    "links between tasks, the difference between links you must keep and links you chose, "
                    "leads and lags, and what to do when a task is stuck waiting on someone else.",
-        "publish_on": "2027-02-16 21:00",
+        "publish_on": "2027-10-08 21:00",
         "body": [
             "On day 7 of the second round, Collector Reyes stopped by the clerk’s desk. “Can I start the "
             "routes now? I know where most of these households are already.” The clerk checked the schedule: "
@@ -4240,7 +4240,7 @@ PM_POSTS = [
             ("point", "Treating every link as fixed", "Write down why each link exists."),
             ("point", "Hiding lags as float", "Write required waiting into the link."),
             ("point", "Adding a lead without rechecking", "Run the passes again and see what became critical."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Four kinds", "Finish-to-start, start-to-start, finish-to-finish and start-to-finish."),
             ("point", "Two pairs of reasons", "Mandatory or discretionary, external or internal."),
             ("point", "Leads and lags", "Start early, or wait on purpose, and write it into the link."),
@@ -4262,14 +4262,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "February 11, 2027",
+        "date": "September 29, 2027",
         "title": "Project Management Series, Part 19: The Risk Register, Planning for What Could Go Wrong",
         "slug": "project-management-part-19-risk-register",
         "category": "pm",
         "summary": "Every project has things that might go wrong. The difference is whether they are written "
                    "down with an owner and a plan before they happen. This part builds a risk register for a "
                    "treasury project, scores each risk, and explains the four classic ways to respond.",
-        "publish_on": "2027-02-11 21:00",
+        "publish_on": "2027-09-29 21:00",
         "body": [
             "During the first round of notices, three things went wrong. The legal "
             "review came back late. A batch of notices had to be reprinted. A collector was out sick during "
@@ -4373,7 +4373,7 @@ PM_POSTS = [
             ("point", "Risks without owners", "Every risk needs one person to watch it."),
             ("point", "Writing it once", "Review the register every week."),
             ("point", "Mixing risks and issues", "A risk might happen; an issue already has."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Write it clearly", "Cause, event and effect."),
             ("point", "Score it", "Probability times impact, to decide what to look at first."),
             ("point", "Four responses", "Avoid, mitigate, transfer or accept."),
@@ -4394,7 +4394,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "February 6, 2027",
+        "date": "September 20, 2027",
         "title": "Project Management Series, Part 18: Assigning People Without Overloading Them",
         "slug": "project-management-part-18-resource-allocation",
         "category": "pm",
@@ -4402,7 +4402,7 @@ PM_POSTS = [
                    "needed in two places at once. This part shows how to list who is really available, "
                    "assign the work, spot overloads, and fix them with float before the finish date has to "
                    "move.",
-        "publish_on": "2027-02-06 21:00",
+        "publish_on": "2027-09-20 21:00",
         "body": [
             "The schedule for the notices project is approved: 45 working days, with the critical path "
             "worked out in Part 16 and the budget from Part 17. On paper, everything fits.",
@@ -4510,7 +4510,7 @@ PM_POSTS = [
             ("point", "Using float without noticing", "Note how much float each fix uses up."),
             ("point", "Ignoring people outside the team", "Signatures, reviews and shared equipment take time "
              "too."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Real availability", "A resource calendar shows when people can actually work on the "
              "project."),
             ("point", "Find overloads early", "A person-by-day grid shows double bookings."),
@@ -4532,7 +4532,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "February 1, 2027",
+        "date": "September 10, 2027",
         "title": "Project Management Series, Part 17: The Project Budget, Built Package by Package",
         "slug": "project-management-part-17-project-budget",
         "category": "pm",
@@ -4540,7 +4540,7 @@ PM_POSTS = [
                    "This part builds a project budget from the work packages, explains three ways to "
                    "estimate cost, separates cash from staff time, and shows how contingency and management "
                    "reserves protect the plan.",
-        "publish_on": "2027-02-01 21:00",
+        "publish_on": "2027-09-10 21:00",
         "body": [
             "The head of office approves the nine-week schedule for the notices project. Then comes the next "
             "question: “How much will this cost, and do we have the funds?”",
@@ -4651,7 +4651,7 @@ PM_POSTS = [
             ("point", "One pot for everything", "Keep contingency and management reserves separate, with "
              "different owners."),
             ("point", "Checking funds too late", "Ask the budget officer before the plan is approved."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Bottom-up", "A budget built from each work package leaves fewer costs out."),
             ("point", "Cash and time", "Show both, so the full cost of the project is visible."),
             ("point", "Two reserves", "Contingency for listed risks; management reserve for the unforeseen."),
@@ -4672,7 +4672,7 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "January 27, 2027",
+        "date": "September 1, 2027",
         "title": "Project Management Series, Part 16: The Critical Path, Finding the Work That Sets the Finish Date",
         "slug": "project-management-part-16-critical-path",
         "category": "pm",
@@ -4680,7 +4680,7 @@ PM_POSTS = [
                    "part explains the critical path method in plain words, works through the forward and "
                    "backward pass on a treasury project, and shows how float helps you decide where to watch "
                    "and where to act.",
-        "publish_on": "2027-01-27 21:00",
+        "publish_on": "2027-09-01 21:00",
         "body": [
             "The revenue clerk has estimates for every work package in the notices project. Now the head of "
             "office wants to know two things: when the notices will be out, and which part of the work to "
@@ -4804,7 +4804,7 @@ PM_POSTS = [
              "delivery, can hide the real critical path."),
             ("point", "Ignoring near-critical paths", "One day of float can disappear in one bad week."),
             ("point", "Calculating once", "Update the passes when packages finish early or late."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Critical path", "The longest chain of dependent work sets the earliest finish."),
             ("point", "Two passes", "Forward for earliest dates, backward for latest dates."),
             ("point", "Float", "Latest start minus earliest start; zero float means critical."),
@@ -4825,14 +4825,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "January 22, 2027",
+        "date": "August 23, 2027",
         "title": "Project Management Series, Part 15: Why Estimates Run Short, and Four Ways to Fix Them",
         "slug": "project-management-part-15-estimating-time",
         "category": "pm",
         "summary": "People tend to underestimate how long their own work will take, even when they know their "
                    "past projects ran late. This part explains why, then gives four practical fixes: ask the "
                    "doer, estimate from the WBS, compare with the past, and use three-point estimates.",
-        "publish_on": "2027-01-22 21:00",
+        "publish_on": "2027-08-23 21:00",
         "body": [
             "The revenue clerk looks at the work breakdown structure for the notices project and fills in the "
             "estimates quickly. Checking the account list: two days. Notice template: one day. Printing: one "
@@ -4932,7 +4932,7 @@ PM_POSTS = [
             ("point", "Forgetting the waiting", "Reviews, approvals and signatures take calendar time."),
             ("point", "Never comparing with actuals", "Record how long things really took, so the next "
              "estimate starts from facts."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "We tend to underestimate", "The planning fallacy affects careful people too."),
             ("point", "Four fixes", "Ask the doer, build from the WBS, compare with the past, use three "
              "points."),
@@ -4953,14 +4953,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "January 17, 2027",
+        "date": "August 13, 2027",
         "title": "Project Management Series, Part 14: The Work Breakdown Structure, One Bite at a Time",
         "slug": "project-management-part-14-work-breakdown-structure",
         "category": "pm",
         "summary": "A project that feels too big to plan becomes manageable once it is broken into pieces. "
                    "This part explains the work breakdown structure, the 100% rule, work packages and the WBS "
                    "dictionary, and breaks down a treasury project from a single goal to tasks people can own.",
-        "publish_on": "2027-01-17 21:00",
+        "publish_on": "2027-08-13 21:00",
         "body": [
             "The encoding project is done, and the head of office approves the next one: sending notices to "
             "taxpayers with unpaid real property tax from past years. The revenue clerk is asked for a plan "
@@ -5065,7 +5065,7 @@ PM_POSTS = [
             ("point", "Forgetting project management", "Plans, updates and reports are work too."),
             ("point", "Going too deep", "Packages of an hour each can create tracking work without adding clarity."),
             ("point", "Building it alone", "The people doing the work know the pieces the planner forgets."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Break the lump", "A WBS splits the whole scope into manageable pieces."),
             ("point", "The 100% rule", "Nothing missing, nothing extra, nothing counted twice."),
             ("point", "Work packages", "One owner, can be estimated, can be checked."),
@@ -5087,14 +5087,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "January 12, 2027",
+        "date": "August 4, 2027",
         "title": "Project Management Series, Part 13: The Pre-Launch Checklist, a Review of Parts 1 to 12",
         "slug": "project-management-part-13-pre-launch-checklist",
         "category": "pm",
         "summary": "Before the real work starts, one short review can catch the gaps that cause trouble later. "
                    "This part turns the first twelve parts of the series into a pre-launch checklist, shows "
                    "how to run it in one meeting, and applies it to the treasury encoding project.",
-        "publish_on": "2027-01-12 21:00",
+        "publish_on": "2027-08-04 21:00",
         "body": [
             "The encoding project is about to move from planning into full execution. The charter is signed, "
             "the team is named, the tracker is set up. The revenue clerk who leads it feels ready, and the "
@@ -5194,7 +5194,7 @@ PM_POSTS = [
             ("point", "Leaving the sponsor out", "Only the sponsor can decide whether to start with gaps open."),
             ("point", "Gaps without owners", "A gap with no name and no date can easily stay a gap."),
             ("point", "Never looking again", "Run a shorter version of the checklist at each major milestone."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "One list, four groups", "Purpose, boundaries, people and ways of working."),
             ("point", "Three ratings", "Ready, Partly or Missing. “Not sure” counts as Missing."),
             ("point", "Every gap gets an owner", "With a date, and a decision on when it must be fixed."),
@@ -5214,14 +5214,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "January 7, 2027",
+        "date": "July 26, 2027",
         "title": "Project Management Series, Part 12: Choosing PM Software, and Why Tools Don’t Fix Broken Processes",
         "slug": "project-management-part-12-choosing-pm-software",
         "category": "pm",
         "summary": "A new project tool does not fix a process nobody has agreed on. This part shows how to get the "
                    "process working on paper first, what a PM tool actually needs to do, how to compare "
                    "options fairly, and how to try one without moving the whole office at once.",
-        "publish_on": "2027-01-07 21:00",
+        "publish_on": "2027-07-26 21:00",
         "body": [
             "A month into the encoding project, the team is frustrated. Tasks are scattered across a group "
             "chat, a spreadsheet and two notebooks. Someone suggests the answer: “Let’s get a proper project "
@@ -5318,7 +5318,7 @@ PM_POSTS = [
             ("point", "Running two trackers", "If the old spreadsheet and the new board both stay in use, "
              "people may not know which one to trust. Pick one."),
             ("point", "Moving everything at once", "Try it on one project before rolling it out."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Process before tool", "Agree on stages, owners, the update rule and one place."),
             ("point", "Five jobs", "Show tasks, show what is late, keep history, hold files, work where the "
              "team works."),
@@ -5342,14 +5342,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "January 2, 2027",
+        "date": "July 16, 2027",
         "title": "Project Management Series, Part 11: The Communication Plan, Who Hears What, When",
         "slug": "project-management-part-11-communication-plan",
         "category": "pm",
         "summary": "A project can stall when the right people hear the wrong things, or nothing at all. This part "
                    "shows how to build a one-page communication plan: who needs what, how, how often and "
                    "from whom, with a rule for bad news and the treasury encoding project as the example.",
-        "publish_on": "2027-01-02 21:00",
+        "publish_on": "2027-07-16 21:00",
         "body": [
             "Three weeks into the encoding project, the assessor calls the head of office. “Why are your "
             "collectors asking my staff for tax declarations every afternoon? Nobody told me this was "
@@ -5449,7 +5449,7 @@ PM_POSTS = [
             ("point", "Long updates", "A page of detail is easy to skip. Lead with status and decisions needed."),
             ("point", "Silence when things go well", "A short “on track, no decisions needed” still tells the "
              "sponsor the project is alive."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Five columns", "Who, what, how, how often and from whom."),
             ("point", "One sender per message", "When a message belongs to everyone, someone can be missed."),
             ("point", "Short updates", "Status, done, next, risks and decisions needed."),
@@ -5471,13 +5471,13 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "December 28, 2026",
+        "date": "July 7, 2027",
         "title": "Project Management Series, Part 10: Writing a Business Case That Gets a Yes",
         "slug": "project-management-part-10-business-case",
         "category": "pm",
         "summary": "A good idea still needs a reason to spend time and money on it. This part walks through "
                    "the six parts of a business case, a worked treasury example with simple numbers, and how to present it so a decision maker can say yes or no quickly.",
-        "publish_on": "2026-12-28 21:00",
+        "publish_on": "2027-07-07 21:00",
         "body": [
             "The revenue clerk asks the head of office for a second receipt printer and a part-time encoder "
             "for the January rush. The answer is a polite no: “The budget is tight this year.” The clerk is "
@@ -5574,7 +5574,7 @@ PM_POSTS = [
              "be the same taxpayers. Count them once."),
             ("point", "No check afterward", "Say how you will know, after the project, whether the benefit "
              "really came."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Compare, do not argue", "A business case weighs options, always including doing "
              "nothing."),
             ("point", "Six parts", "Problem, options, costs, benefits, risks and recommendation."),
@@ -5596,14 +5596,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "December 23, 2026",
+        "date": "June 28, 2027",
         "title": "Project Management Series, Part 9: Gathering Requirements When Nobody Knows What They Want",
         "slug": "project-management-part-9-gathering-requirements",
         "category": "pm",
         "summary": "“Make the daily report faster” is a wish, not a requirement. This part shows five ways to "
                    "find out what people really need, the questions that get useful answers, and how to write "
                    "requirements that can be checked and agreed on.",
-        "publish_on": "2026-12-23 21:00",
+        "publish_on": "2027-06-28 21:00",
         "body": [
             "The cashier stops the revenue clerk in the hallway. “Can you make something that makes the daily "
             "report faster? It takes me forever every afternoon.” The clerk says yes, and two weeks later "
@@ -5701,7 +5701,7 @@ PM_POSTS = [
              "need first, then choose the tool."),
             ("point", "Gathering once", "New needs appear as people see the work take shape. Plan a short "
              "check-in to review the list."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "A wish is not a requirement", "A requirement says what or how well, and can be checked."),
             ("point", "Use several methods", "Interview, observe, read the documents, hold a workshop and "
              "show a prototype."),
@@ -5725,14 +5725,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "December 18, 2026",
+        "date": "June 18, 2027",
         "title": "Project Management Series, Part 8: Who Does What? Building a RACI Matrix",
         "slug": "project-management-part-8-raci-matrix",
         "category": "pm",
         "summary": "When everyone thinks someone else is handling a task, it can go undone. This part explains "
                    "the four RACI roles, walks through a RACI matrix for the treasury encoding project, and "
                    "gives four checks that help catch gaps early.",
-        "publish_on": "2026-12-18 21:00",
+        "publish_on": "2027-06-18 21:00",
         "body": [
             "Two weeks into the encoding project, the revenue clerk asks for the list of records that did not "
             "match the assessor’s tax declarations. One collector thought the assessor’s staff member was "
@@ -5831,7 +5831,7 @@ PM_POSTS = [
              "A, split it into smaller tasks."),
             ("point", "Writing it without the team", "A matrix filled in alone is a guess about other people’s "
              "time. Agreement in the room helps the letters stick."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Four roles", "Responsible does, Accountable owns, Consulted is asked before, and "
              "Informed is told after."),
             ("point", "One A per task", "Many people can share the work, but exactly one person answers for "
@@ -5855,14 +5855,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "December 13, 2026",
+        "date": "June 9, 2027",
         "title": "Project Management Series, Part 7: The Kickoff Meeting Blueprint",
         "slug": "project-management-part-7-kickoff-meeting",
         "category": "pm",
         "summary": "A kickoff meeting can launch a project or waste an hour. This part gives a one-hour "
                    "agenda, what to prepare beforehand, how to run each segment, and what to send afterward, "
                    "using the treasury encoding project as the example.",
-        "publish_on": "2026-12-13 21:00",
+        "publish_on": "2027-06-09 21:00",
         "body": [
             "The revenue clerk calls the first meeting of the encoding project for 2 p.m. At 2:20, three of "
             "the seven people have arrived. The head of office speaks for twenty minutes about how important "
@@ -5956,7 +5956,7 @@ PM_POSTS = [
              "goes to reading instead of discussing."),
             ("point", "No follow-up", "Without a written note, each person remembers a slightly different "
              "meeting."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Five questions, one hour", "Why, what, who, how and next, each with a fixed time."),
             ("point", "Prepare more than you present", "Send the documents early and bring a draft schedule "
              "to correct."),
@@ -5978,14 +5978,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "December 8, 2026",
+        "date": "May 31, 2027",
         "title": "Project Management Series, Part 6: Writing Objectives That Actually Mean Something",
         "slug": "project-management-part-6-writing-objectives",
         "category": "pm",
         "summary": "“Improve billing” is a wish, not an objective. This part shows where the SMART idea came "
                    "from, why a SMART objective can still miss the point, and how to write objectives that "
                    "name a real outcome, a starting point and a target everyone can check.",
-        "publish_on": "2026-12-08 21:00",
+        "publish_on": "2027-05-31 21:00",
         "body": [
             "At the end of the encoding project, the team reports success. Every record in the four poblacion "
             "barangays is in the system. Fifty sample bills were printed and checked. The deadline was met. "
@@ -6088,7 +6088,7 @@ PM_POSTS = [
             ("point", "Objectives that punish honesty", "A target that staff can meet by recording numbers "
              "differently, rather than by improving the work, invites exactly that. Part 3 of the Business "
              "Intelligence series covered the same trap for dashboards."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "SMART is a start, not the finish", "A SMART objective can still describe the wrong "
              "thing."),
             ("point", "Aim at outcomes", "Write the change people should feel, then list the outputs as "
@@ -6108,14 +6108,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "December 3, 2026",
+        "date": "May 21, 2027",
         "title": "Project Management Series, Part 5: Waterfall, Agile or Hybrid? Choosing How to Run the Work",
         "slug": "project-management-part-5-waterfall-agile-hybrid",
         "category": "pm",
-        "summary": "Some projects should be planned in full before work begins. Others should be built in short "
-                   "cycles and shown to users early. Some need a little of both. Here is how "
-                   "to tell which is which, with two treasury projects as examples.",
-        "publish_on": "2026-12-03 21:00",
+        "summary": ("Some projects should be planned in full before work begins. Others should be built in short "
+                   "cycles and shown to users early. Some need a little of both. Two treasury projects show how "
+                   "to tell which is which."),
+        "publish_on": "2027-05-21 21:00",
         "body": [
             "Two projects land on the revenue clerk’s desk in the same month. The first is the encoding "
             "project from earlier parts: a fixed deadline of January 4, a signed scope statement, and rules "
@@ -6216,7 +6216,7 @@ PM_POSTS = [
              "at each milestone, as Part 4’s acceptance tests did."),
             ("point", "“We must pick one for the whole office.”", "The approach is chosen per project, and "
              "often per part of a project."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Match the approach to what is known", "Predictive for fixed, clear work; adaptive for "
              "work that must be discovered."),
             ("point", "Hybrid is a deliberate choice", "Keep a predictive frame for budget, deadline and "
@@ -6237,14 +6237,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "November 28, 2026",
+        "date": "May 12, 2027",
         "title": "Project Management Series, Part 4: Drawing the Line Before Work Begins",
         "slug": "project-management-part-4-defining-scope",
         "category": "pm",
-        "summary": "The charter says what a project is for. The scope statement says exactly what it will deliver, "
-                   "how everyone will know it is done, and what it will not do. Here is how to write one, using "
-                   "the treasury encoding project as the example.",
-        "publish_on": "2026-11-28 21:00",
+        "summary": ("The charter says what a project is for. The scope statement says exactly what it will "
+                   "deliver, how everyone will know it is done, and what it will not do. This post shows how to "
+                   "write one, using the treasury encoding project as the example."),
+        "publish_on": "2027-05-12 21:00",
         "body": [
             "The encoding project has a charter and a stakeholder map. The work is under way. Then, in the same "
             "week, three small requests arrive. The assessor’s office asks whether the team could also add the "
@@ -6343,7 +6343,7 @@ PM_POSTS = [
             "such as a team member adding a feature they think would be nice.",
             "Both have the same cost: time and effort spent outside the agreed scope, which puts the agreed "
             "work at risk. The scope statement is the reference that makes both visible.",
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point", "Write what is out as clearly as what is in", "A plain list of what is out settles many requests before they become arguments."),
             ("point", "Make acceptance checkable by someone else", "If nobody can test it, nobody can agree it is finished."),
             ("point", "Answer extra requests with the scope, not your opinion", "Log the idea, state the cost, and let the sponsor decide."),
@@ -6362,14 +6362,14 @@ PM_POSTS = [
         ],
     },
     {
-        "date": "November 23, 2026",
+        "date": "May 3, 2027",
         "title": "Project Management Series, Part 3: Mapping Who Holds the Power",
         "slug": "project-management-part-3-stakeholder-mapping",
         "category": "pm",
-        "summary": "Every project has people who can help it, stop it or simply be affected by it. Here is how to "
-                   "list them, place them on a power and interest grid, and decide how to work with each one, "
-                   "using the treasury encoding project as the example.",
-        "publish_on": "2026-11-23 21:00",
+        "summary": ("Every project has people who can help it, stop it or simply be affected by it. List them, "
+                   "place them on a power and interest grid, and decide how to work with each one, with the "
+                   "treasury encoding project as the example."),
+        "publish_on": "2027-05-03 21:00",
         "body": [
             "The real property tax encoding project now has a signed one-page charter. The "
             "revenue clerk feels ready. Then, a week later, a message arrives from the office of "
@@ -6516,7 +6516,7 @@ PM_POSTS = [
              "Leaving the map lying around",
              "A stakeholder map is a working note. Keep it respectful and factual, and share it "
              "only with the project team."),
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point",
              "Stakeholders are wider than approvers",
              "Anyone who can help, block or feel the project belongs on the list."),
@@ -6562,9 +6562,9 @@ PM_POSTS = [
         "title": "Project Management Series, Part 2: The Project Charter on One Page",
         "slug": "project-management-part-2-project-charter",
         "category": "pm",
-        "summary": "A project charter is a short document that says why a project exists, what it will deliver, "
-                   "who is in charge and who approved it. Here is how to write one on a single page, using a "
-                   "treasury encoding project as the example.",
+        "summary": ("A project charter is a short document that says why a project exists, what it will deliver, "
+                   "who is in charge and who approved it. This post shows how to write one on a single page, "
+                   "using a treasury encoding project as the example."),
         "publish_on": "2026-11-18 21:00",
         "body": [
             "Three weeks into the real property tax encoding project from Part 1, the revenue "
@@ -6703,7 +6703,7 @@ PM_POSTS = [
             "who decides when it is ready. Software invites endless small additions, and the “not"
             " included” list is what lets the first version ever be finished. Everything else can"
             " wait for the next version, with its own page.",
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point",
              "One page, signed",
              "A short charter approved by the sponsor gives the project a goal, a deadline and a leader."),
@@ -6748,9 +6748,9 @@ PM_POSTS = [
         "category": "pm",
         "summary": (
             (
-                "A project can land on your desk without the title. Here is how a project differs"
-                " from daily work, the three limits every project lives with, and four moves to "
-                "make in your first two weeks."
+                ("A project can land on your desk without the title. Learn how a project differs from daily "
+                "work, the three limits every project lives with, and four moves to make in your first two "
+                "weeks.")
             )
         ),
         "publish_on": "2026-11-13",
@@ -6916,7 +6916,7 @@ PM_POSTS = [
             "cleared, and whether the project reaches the end.",
             "You may still do some of the work, especially in a small office. Just know which hat"
             " you are wearing at any moment, and never let the doing crowd out the steering.",
-            ("h", "Key Takeaways"),
+            ("h", "Quick Recap"),
             ("point",
              "Projects are not operations",
              "A project has a finish line and a new result. Running it like routine work lets it drift."),
