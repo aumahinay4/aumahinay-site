@@ -166,7 +166,7 @@ td{border-bottom:1px solid #e3e8f1;padding:6px 8px;font-size:15px;vertical-align
 tr:nth-child(even) td{background:#f2f6ff}
 tr.sum td{font-weight:800;background:#e8eefb}
 .r{text-align:right;white-space:nowrap}
-.cb .io{display:none}.c{text-align:center}.nw{white-space:nowrap}
+.c{text-align:center}.nw{white-space:nowrap}
 .muted{color:#5b6b84;font-size:14px}
 label{display:block;font-weight:600;font-size:14px;margin:10px 0 4px}
 input,select,textarea{font:inherit;font-size:16px;padding:9px 10px;border:1px solid #c6cddb;border-radius:2px;width:100%;background:#fff;color:#1d2433}
@@ -271,7 +271,7 @@ noscript p{max-width:560px;margin:40px auto;padding:0 16px}
  .banner{padding:16px 16px 14px}.banner h1{font-size:21px}
  table{font-size:14px}th,td{padding:7px 6px;font-size:14px}
  .row>div{min-width:130px}
- .cb .dr{display:none}.cb .io{display:table-cell}
+ .cb th,.cb td{padding:6px 4px;font-size:12.5px}
  .pinch{display:block;margin:4px 0 0}
  .line{grid-template-columns:1fr 110px 40px}
  .bar{grid-template-columns:44px 1fr 92px;font-size:13px}

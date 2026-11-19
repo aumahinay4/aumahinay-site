@@ -731,15 +731,19 @@
       '</td><td class="r">' + money(sumOrs(list)) + '</td></tr></tbody></table></div>';
   }
   function cashbook() {
-    var k = S.cbAcct || 'GF', rows = S.cash[k];
+    var k = S.cbAcct || 'GF', rows = S.cash[k], td = 0, tc = 0;
+    var body = rows.map(function (e) {
+      td += e.dr; tc += e.cr;
+      return '<tr><td class="nw">' + shortDate(e.date) + '</td><td>' + esc(e.what) + (e.ref ? '<div class="muted">' + esc(e.ref) + '</div>' : '') + '</td><td class="r nw">' + (e.dr ? money(e.dr) : '') +
+        '</td><td class="r nw">' + (e.cr ? money(e.cr) : '') + '</td><td class="r nw">' + money(e.bal) + '</td></tr>';
+    }).join('');
     return '<h1>Cash Book</h1>' + about('Cash Book, Cash in Bank per account: DEBIT, deposits per consolidated RCD; CREDIT, checks issued; with the running balance.') +
       '<div class="tabs">' + ['GF', 'SEF'].map(function (a) { return '<button type="button" class="tab' + (a === k ? ' on' : '') + '" data-act="cb-acct" data-v="' + a + '">' + ACCOUNTS[a].name + '</button>'; }).join('') + '</div>' +
       '<p class="muted">' + ACCOUNTS[k].name + ' · ' + ACCOUNTS[k].bank + ' · ' + MONTHS[MONTH] + ' ' + YEAR + '</p>' +
-      '<div class="tbl"><table class="cb"><thead><tr><th>Date</th><th>Particulars</th><th class="r dr">Deposits</th><th class="r dr">Checks</th><th class="r io">In / out</th><th class="r">Balance</th></tr></thead><tbody>' +
-      rows.map(function (e) {
-        return '<tr><td class="nw">' + shortDate(e.date) + '</td><td>' + esc(e.what) + (e.ref ? '<div class="muted">' + esc(e.ref) + '</div>' : '') + '</td><td class="r dr">' + (e.dr ? money(e.dr) : '') +
-          '</td><td class="r dr">' + (e.cr ? money(e.cr) : '') + '</td><td class="r io">' + (e.dr ? '+' + money(e.dr) : e.cr ? '−' + money(e.cr) : '') + '</td><td class="r">' + money(e.bal) + '</td></tr>';
-      }).join('') + '<tr class="sum"><td colspan="2">Balance</td><td class="dr"></td><td class="dr"></td><td class="io"></td><td class="r">' + money(balance(k)) + '</td></tr></tbody></table></div>';
+      '<div class="tbl"><table class="cb"><thead><tr><th rowspan="2">Date</th><th rowspan="2">Particulars</th><th colspan="3" class="c">Cash in Bank</th></tr>' +
+      '<tr><th class="r">Debit</th><th class="r">Credit</th><th class="r">Balance</th></tr></thead><tbody>' + body +
+      '<tr class="sum"><td colspan="2">Totals / Balance as of ' + shortDate(TODAY) + '</td><td class="r nw">' + money(r2(td)) + '</td><td class="r nw">' + money(r2(tc)) + '</td><td class="r nw">' + money(balance(k)) + '</td></tr></tbody></table></div>' +
+      '<p class="muted">Debit: money into the bank account (deposits of collections). Credit: money out (checks issued). Balance: what is left after each entry.</p>';
   }
 
   // ------------------------------------------------------------------ Disbursing Officer
