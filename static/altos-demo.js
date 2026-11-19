@@ -226,7 +226,7 @@
     MENUS[S.role].forEach(function (m) {
       if (m[0] === '#') { menu += '<div class="head">' + esc(m[1]) + '</div>'; return; }
       var cls = (m[0] === S.page ? 'on' : '') + (m[0] === 'home' ? ' homelink' : '');
-      menu += '<a href="#' + S.role + '/' + m[0] + '" class="' + cls.trim() + '"' + (m[0] === S.page ? ' aria-current="page"' : '') + '>' + esc(m[1]) + '</a>';
+      menu += '<a href="#' + S.role + '-' + m[0] + '" class="' + cls.trim() + '"' + (m[0] === S.page ? ' aria-current="page"' : '') + '>' + esc(m[1]) + '</a>';
     });
     var fl = S.flash ? '<div class="msg ' + S.flash[0] + '">' + S.flash[1] + '</div>' : '';
     S.flash = null;
@@ -237,7 +237,7 @@
       '<div class="wrap"><nav class="side" aria-label="' + esc(R.label) + ' menu">' + menu + '</nav><div class="content"><main class="fadein">' + fl + body + '</main></div></div></div>';
   }
   function about(text) { return '<div class="about"><i></i><p>' + text + '</p></div>'; }
-  function go(role, page) { location.hash = role + '/' + page; }
+  function go(role, page) { location.hash = role + '-' + page; }
   function flash(kind, html) { S.flash = [kind, html]; }
 
   // ------------------------------------------------------------------ the sign-in page: pick a working page
@@ -279,23 +279,23 @@
     var R = ROLES[S.role], todo = [];
     if (S.role === 'col') {
       var un = myOrs().filter(function (o) { return !o.reported; });
-      todo.push(un.length ? ['', un.length + ' official receipts not yet in an RCD (' + peso(sumOrs(un)) + '). <a href="#col/rcd">Close the day →</a>']
+      todo.push(un.length ? ['', un.length + ' official receipts not yet in an RCD (' + peso(sumOrs(un)) + '). <a href="#col-rcd">Close the day →</a>']
         : ['done', 'All your official receipts are in an RCD. The Liquidating Officer has your collections.']);
-      todo.push(['', 'A taxpayer is at the window. <a href="#col/issue">Issue an official receipt →</a>']);
+      todo.push(['', 'A taxpayer is at the window. <a href="#col-issue">Issue an official receipt →</a>']);
     } else if (S.role === 'lo') {
       var sub = S.rcds.filter(function (r) { return r.status === 'Submitted'; });
       sub.forEach(function (r) {
-        todo.push(['', esc(r.officer) + ' remitted ' + esc(r.no) + ' (' + ACCOUNTS[r.account].name + ', ' + peso(r.total) + '). <a href="#lo/crcd">Count the money →</a>']);
+        todo.push(['', esc(r.officer) + ' remitted ' + esc(r.no) + ' (' + ACCOUNTS[r.account].name + ', ' + peso(r.total) + '). <a href="#lo-crcd">Count the money →</a>']);
       });
       if (!sub.length) todo.push(['done', 'No RCD is waiting. Every remittance today has been counted.']);
     } else if (S.role === 'do') {
       var prep = S.checks.filter(function (c) { return c.status === 'Prepared'; });
-      prep.forEach(function (c) { todo.push(['', 'Check No. ' + c.no + ' to ' + esc(c.payee) + ' (' + peso(c.amount) + ') is ready for release. <a href="#do/checks">Release it →</a>']); });
-      todo.push(['', 'General Fund balance in the Cash Book: <b>' + peso(balance('GF')) + '</b>. <a href="#do/prepare">Prepare a check →</a>']);
+      prep.forEach(function (c) { todo.push(['', 'Check No. ' + c.no + ' to ' + esc(c.payee) + ' (' + peso(c.amount) + ') is ready for release. <a href="#do-checks">Release it →</a>']); });
+      todo.push(['', 'General Fund balance in the Cash Book: <b>' + peso(balance('GF')) + '</b>. <a href="#do-prepare">Prepare a check →</a>']);
     } else {
       var t = S.ors.filter(function (o) { return o.date === TODAY; });
-      todo.push(['', 'Collections today: <b>' + peso(sumOrs(t)) + '</b> on ' + t.length + ' official receipts. <a href="#sys/dashboard">Open the dashboard →</a>']);
-      todo.push(['', S.log.length + ' actions recorded today. <a href="#sys/log">Open the Activity Log →</a>']);
+      todo.push(['', 'Collections today: <b>' + peso(sumOrs(t)) + '</b> on ' + t.length + ' official receipts. <a href="#sys-dashboard">Open the dashboard →</a>']);
+      todo.push(['', S.log.length + ' actions recorded today. <a href="#sys-log">Open the Activity Log →</a>']);
     }
     return '<div class="banner"><h1>Welcome, ' + esc(R.user) + '!</h1><div class="pos">' + R.label + '</div><ul>' +
       DUTIES[S.role].map(function (d) { return '<li>' + d + '</li>'; }).join('') + '</ul></div>' +
@@ -358,7 +358,7 @@
       (sel ? orPaper(sel) : '') +
       '<div class="tbl"><table><thead><tr><th>OR No.</th><th>Form</th><th>Time</th><th>Payor</th><th class="r">Amount</th><th>In an RCD?</th></tr></thead><tbody>' +
       mine.slice().reverse().map(function (o) {
-        return '<tr><td><a href="#col/collections" data-act="view-or" data-v="' + o.no + '">' + o.no + '</a></td><td class="nw">AF ' + o.form + '</td><td class="nw">' + o.time +
+        return '<tr><td><a href="#col-collections" data-act="view-or" data-v="' + o.no + '">' + o.no + '</a></td><td class="nw">AF ' + o.form + '</td><td class="nw">' + o.time +
           '</td><td>' + esc(o.payor) + '</td><td class="r">' + money(o.total) + '</td><td>' + (o.reported ? '<span class="chip g">Yes</span>' : '<span class="chip y">Not yet</span>') + '</td></tr>';
       }).join('') + '<tr class="sum"><td colspan="4">Total, ' + mine.length + ' receipts</td><td class="r">' + money(sumOrs(mine)) + '</td><td></td></tr></tbody></table></div>';
   }
@@ -433,7 +433,7 @@
     else if (!counted) state = '<div class="msg info">Count the money: type how many of each bill and coin, or tap "Fill in the money received".</div>';
     else if (diff === 0) state = '<div class="msg ok">The count agrees with the RCDs to the last centavo. Record the deposit.</div>';
     else state = '<div class="msg bad">The count is ' + (diff < 0 ? 'short by ' + peso(-diff) : 'over by ' + peso(diff)) +
-      '. ALTOS will not accept it. Find the report with the difference and <a href="#lo/refused">refuse it</a> with the reason.</div>';
+      '. ALTOS will not accept it. Find the report with the difference and <a href="#lo-refused">refuse it</a> with the reason.</div>';
     var rows = sub.map(function (r) {
       return '<tr><td class="nw"><label style="margin:0;font-weight:400"><input type="checkbox" data-f="pick" data-v="' + esc(r.no) + '"' + (c.picked[r.no] ? ' checked' : '') + '>' + esc(r.no) + '</label></td><td>' + esc(r.officer) +
         '</td><td class="nw">' + r.ors.length + ' ORs</td><td class="r">' + money(r.total) + '</td><td class="nw">' + r.time + '</td></tr>';
@@ -617,7 +617,7 @@
     if (on && on.scrollIntoView && window.innerWidth <= 820) on.scrollIntoView({ block: 'nearest', inline: 'center' });
   }
   function route() {
-    var h = location.hash.replace(/^#/, '').split('/');
+    var h = location.hash.replace(/^#/, '').split('-');
     if (ROLES[h[0]]) {
       var first = S.role !== h[0];
       S.role = h[0];
@@ -721,7 +721,7 @@
     }
     log('Issued OR No. ' + o.no + ' (AF ' + o.form + ') for ' + peso(o.total));
     newDraft(d.form);
-    flash('ok', 'OR No. ' + o.no + ' issued for ' + peso(o.total) + '. Issue another, or <a href="#col/rcd">close the day in My RCD</a>.');
+    flash('ok', 'OR No. ' + o.no + ' issued for ' + peso(o.total) + '. Issue another, or <a href="#col-rcd">close the day in My RCD</a>.');
     S.view = o.no;
     go('col', 'collections');
   }
@@ -737,7 +737,7 @@
       made.push(no + ' (' + ACCOUNTS[k].name + ', ' + peso(amt) + ')');
     });
     un.forEach(function (o) { o.reported = true; });
-    flash('ok', 'Remitted ' + made.join(' and ') + ' to the Liquidating Officer. Next: <a href="#lo/crcd">count the money as Liquidating Officer →</a>');
+    flash('ok', 'Remitted ' + made.join(' and ') + ' to the Liquidating Officer. Next: <a href="#lo-crcd">count the money as Liquidating Officer →</a>');
     draw(false); window.scrollTo(0, 0);
   }
   function doDeposit() {
@@ -750,7 +750,7 @@
     cashIn(c.account, TODAY, no + ' / ' + slip, 'Deposit of collections (' + picked.map(function (r) { return r.officer; }).join(', ') + ')', tot);
     log('Consolidated ' + picked.length + ' RCD(s) into ' + no + ' and recorded deposit ' + slip + ' for ' + peso(tot));
     S.cr = { account: c.account, picked: {}, count: {}, slip: 'DS ' + (70300 + S.next.crcd) };
-    flash('ok', no + ' recorded: ' + peso(tot) + ' deposited to the ' + ACCOUNTS[c.account].name + '. It is now in the <a href="#lo/cashbook">Cash Book</a>.');
+    flash('ok', no + ' recorded: ' + peso(tot) + ' deposited to the ' + ACCOUNTS[c.account].name + '. It is now in the <a href="#lo-cashbook">Cash Book</a>.');
     draw(false); window.scrollTo(0, 0);
   }
   function doRefuse() {
@@ -779,7 +779,7 @@
     log('Prepared Check No. ' + k.no + ' (' + ACCOUNTS[c.account].name + ') to ' + k.payee + ' for ' + peso(amt));
     S.lastCheck = k;
     S.ck = { account: c.account, payee: '', what: '', amount: '' };
-    flash('ok', 'Check No. ' + k.no + ' prepared. The Cash Book balance is now ' + peso(balance(c.account)) + '. <a href="#do/checks">Release it →</a>');
+    flash('ok', 'Check No. ' + k.no + ' prepared. The Cash Book balance is now ' + peso(balance(c.account)) + '. <a href="#do-checks">Release it →</a>');
     draw(false); window.scrollTo(0, 0);
   }
 
