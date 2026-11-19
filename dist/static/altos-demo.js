@@ -60,8 +60,8 @@
   };
   // the menus as in ALTOS's web pages (same labels and order; the demo shows only some of each)
   var MENUS = {
-    col: [['home', 'Home'], ['issue', 'Issue Official Receipt'], ['rptcalc', 'RPT Tax Calculator'], ['collections', 'My Collections'], ['rcd', 'My RCD']],
-    lo: [['home', 'Home'], ['crcd', 'Consolidated RCD'], ['refused', 'Refused Reports'], ['register', 'Collections Register'], ['cashbook', 'Cash Book']],
+    col: [['home', 'Home'], ['issue', 'Issue Official Receipt'], ['rptcalc', 'RPT Tax Calculator'], ['collections', 'My Collections'], ['rcd', 'My RCD'], ['raaf', 'My RAAF']],
+    lo: [['home', 'Home'], ['crcd', 'Consolidated RCD'], ['refused', 'Refused Reports'], ['craaf', 'RAAF & CRAAF'], ['register', 'Collections Register'], ['cashbook', 'Cash Book']],
     do: [['home', 'Home'], ['prepare', 'Prepare Check'], ['checks', 'Check Issuance'], ['cashbook', 'Cash Book']],
     sys: [['home', 'Home'], ['#', 'CONTROL & SECURITY'], ['log', 'Activity Log'], ['#', 'COLLECTIONS'], ['dashboard', 'Collections Dashboard'],
       ['register', 'Collections Register'], ['#', 'REPORTING'], ['cashbook', 'Cash Book']]
@@ -86,7 +86,7 @@
   function fresh() {
     S = {
       role: null, page: 'home',
-      ors: [], rcds: [], crcds: [], checks: [], log: [], flash: null,
+      ors: [], rcds: [], crcds: [], raaf: {}, checks: [], log: [], flash: null,
       next: { or51: 1234504, or56: 5670012, rcd: 3, crcd: 1, check: { GF: 4507, SEF: 1203 }, dv: 87 },
       props: [
         { pin: '001-01-001-01-015', td: 'TD 2026-01-00215', owner: 'Juan dela Cruz', brgy: 'Poblacion', kind: 'Residential land', av: 120000, paid: [YEAR, 2] },
@@ -297,12 +297,16 @@
       todo.push(un.length ? ['', un.length + ' official receipts not yet in an RCD (' + peso(sumOrs(un)) + '). <a href="#col-rcd">Close the day →</a>']
         : ['done', 'All your official receipts are in an RCD. The Liquidating Officer has your collections.']);
       todo.push(['', 'A taxpayer is at the window. <a href="#col-issue">Issue an official receipt →</a>']);
+      todo.push(S.raaf.col ? ['done', 'Your RAAF for ' + RAAF_MONTH + ' is with the Liquidating Officer.']
+        : ['', 'Your RAAF for ' + RAAF_MONTH + ' is due on or before ' + RAAF_DUE + '. <a href="#col-raaf">Prepare it →</a>']);
     } else if (S.role === 'lo') {
       var sub = S.rcds.filter(function (r) { return r.status === 'Submitted'; });
       sub.forEach(function (r) {
         todo.push(['', esc(r.officer) + ' remitted ' + esc(r.no) + ' (' + ACCOUNTS[r.account].name + ', ' + peso(r.total) + '). <a href="#lo-crcd">Count the money →</a>']);
       });
       if (!sub.length) todo.push(['done', 'No RCD is waiting. Every remittance today has been counted.']);
+      var nr = OFFICERS.filter(function (o) { return S.raaf[o[0]]; }).length;
+      todo.push(['', 'RAAFs for ' + RAAF_MONTH + ': ' + nr + ' of ' + OFFICERS.length + ' received, due on or before ' + RAAF_DUE + '. <a href="#lo-craaf">RAAF &amp; CRAAF →</a>']);
     } else if (S.role === 'do') {
       var prep = S.checks.filter(function (c) { return c.status === 'Prepared'; });
       prep.forEach(function (c) { todo.push(['', 'Check No. ' + c.no + ' to ' + esc(c.payee) + ' (' + peso(c.amount) + ') is ready for release. <a href="#do-checks">Release it →</a>']); });
@@ -520,6 +524,119 @@
       '<p class="muted pinch">The form keeps its A4 layout. Pinch to zoom in.</p></div>';
   }
 
+  // ------------------------------------------------------------------ RAAF and CRAAF (LTOM Book II, Annexes 16 and 17), as ALTOS prints them
+  // The OR booklets of the month. beg: the first serial in the officer's hands when the month began (null: received this month);
+  // upto: the booklet was used up earlier this month, before the demo's records start.
+  var BOOKLETS = [
+    { off: 'col', name: 'Maria Santos', form: '51', from: 1234451, to: 1234500, beg: 1234478, upto: 1234500 },
+    { off: 'col', name: 'Maria Santos', form: '51', from: 1234501, to: 1234550, beg: null },
+    { off: 'col', name: 'Maria Santos', form: '56', from: 5670011, to: 5670060, beg: 5670011 },
+    { off: 'col2', name: 'Jose Reyes', form: '51', from: 1234401, to: 1234450, beg: 1234436, upto: 1234450 },
+    { off: 'col2', name: 'Jose Reyes', form: '51', from: 1234551, to: 1234600, beg: null },
+    { off: 'col3', name: 'Luz Ramos', form: '51', from: 1234351, to: 1234400, beg: 1234390, upto: 1234400 },
+    { off: 'col3', name: 'Luz Ramos', form: '51', from: 1234601, to: 1234650, beg: null }
+  ];
+  // the Treasurer's stock: forms bought from the supplier, then issued to the officers in booklets of 50
+  var STOCK = [
+    { form: '51', from: 1234001, to: 1235000, beg: 1234501 },
+    { form: '56', from: 5670011, to: 5670510, beg: 5670061 }
+  ];
+  var OFFICERS = [['col', 'Maria Santos'], ['col2', 'Jose Reyes'], ['col3', 'Luz Ramos']];
+  function afName(f) { return 'AF ' + f + (f === '56' ? ' (Real Property Tax Receipt)' : ' (Official Receipt)'); }
+  var RAAF_MONTH = MONTHS[MONTH] + ' ' + YEAR;
+  var RAAF_DUE = longDate((MONTH === 11 ? YEAR + 1 : YEAR) + '-' + pad(MONTH === 11 ? 1 : MONTH + 2) + '-05');
+  function bookletRow(b) {
+    var nums = S.ors.filter(function (o) { return o.officer === b.off && o.form === b.form && +o.no >= b.from && +o.no <= b.to; })
+      .map(function (o) { return +o.no; });
+    var start = b.beg != null ? b.beg : b.from, hi = Math.max.apply(null, nums.concat([b.upto || 0]));
+    var whole = [b.to - start + 1, start, b.to];
+    var used = hi >= start;
+    return { first: afName(b.form), beg: b.beg != null ? whole : null, rec: b.beg != null ? null : whole,
+      iss: used ? [hi - start + 1, start, hi] : null, end: !used ? whole : hi < b.to ? [b.to - hi, hi + 1, b.to] : null };
+  }
+  function stockRows() {
+    var out = BOOKLETS.filter(function (b) { return b.beg == null; });
+    return STOCK.map(function (p) {
+      var mine = out.filter(function (b) { return b.form === p.form; });
+      var n = mine.reduce(function (s, b) { return s + b.to - b.from + 1; }, 0);
+      var whole = [p.to - p.beg + 1, p.beg, p.to], left = whole[0] - n;
+      return { first: afName(p.form) + " – Treasurer's stock", beg: whole, rec: null,
+        iss: n ? [n, p.beg, p.beg + n - 1] : null, end: left > 0 ? [left, p.to - left + 1, p.to] : null };
+    });
+  }
+  function accTable(rows) {
+    return '<table class="g small"><tr><th rowspan="3">Name of Form &amp; No.</th><th colspan="3">Beginning Balance</th><th colspan="3">Receipt</th>' +
+      '<th colspan="3">Issued</th><th colspan="3">Ending Balance</th></tr><tr>' + '<th rowspan="2">Qty.</th><th colspan="2">Inclusive Serial Nos.</th>'.repeat(4) +
+      '</tr><tr>' + '<th>From</th><th>To</th>'.repeat(4) + '</tr>' +
+      rows.map(function (r) { return '<tr><td>' + esc(r.first) + '</td>' + qft(r.beg) + qft(r.rec) + qft(r.iss) + qft(r.end) + '</tr>'; }).join('') + '</table>';
+  }
+  function ltSig(name, cap) { return '<div class="ltsig"><div class="b">' + (esc(name) || '&nbsp;') + '</div><div class="ln">' + cap + '</div></div>'; }
+  function ltHead(title, ref) {
+    return '<p class="ref">' + ref + ' · LTOM, 2nd Edition</p><div class="lth">' + title + '</div>' +
+      '<p class="ltlgu"><span>' + LGU.short + '</span></p><p class="ltcap">LGU</p>' +
+      '<p class="printed">Printed: ' + longDate(TODAY) + '  ' + timeNow() + ' · Sample from the ALTOS demo, not a real report</p>' +
+      '<p class="c">Month of <span class="fld">' + MONTHS[MONTH] + '</span> ' + YEAR + '</p>';
+  }
+  function raafSheet(off) {
+    var who = OFFICERS.filter(function (x) { return x[0] === off; })[0][1];
+    var rows = BOOKLETS.filter(function (b) { return b.off === off; }).map(bookletRow);
+    return '<div class="sheet-wrap wide"><div class="sheet wide">' +
+      ltHead('REPORT OF ACCOUNTABILITY FOR ACCOUNTABLE FORMS', 'Annex 16 – Report of Accountability for Accountable Forms (RAAF) – Annex 42 of MNGAS for LGUs, Vol. II') +
+      '<p>Accountable Officer: <span class="fld">' + esc(who) + '</span> &nbsp;&nbsp; Designation: <span class="fld">Collecting Officer</span>' +
+      '<span style="float:right">Report No.: <span class="fld">&nbsp;</span></span></p>' + accTable(rows) +
+      '<p class="b" style="margin-top:12px">CERTIFICATION:</p><p>I hereby certify that the foregoing is a true statement of all accountable forms received, ' +
+      'issued and transferred by me during the period above-stated and the correctness of the beginning balances.</p>' +
+      '<div>' + ltSig(who, 'Name and Signature of the Accountable Officer') + ltSig(S.raaf[off] ? longDate(S.raaf[off].date) : '', 'Date') + '</div>' +
+      '</div></div>';
+  }
+  function craafSheet() {
+    var rows = stockRows();
+    OFFICERS.forEach(function (o) {
+      BOOKLETS.filter(function (b) { return b.off === o[0]; }).forEach(function (b) {
+        var r = bookletRow(b); r.first = afName(b.form) + ' – ' + o[1]; rows.push(r);
+      });
+    });
+    return '<div class="sheet-wrap wide"><div class="sheet wide">' +
+      ltHead('CONSOLIDATED REPORT OF ACCOUNTABILITY FOR ACCOUNTABLE FORMS (CRAAF)', 'Annex 17 – Consolidated Report of Accountability for Accountable Forms (CRAAF) – Annex 43 of MNGAS for LGUs, Vol. II') +
+      '<p>Treasurer: <span class="fld">' + esc(LGU.treasurer) + '</span><span style="float:right">Report No.: <span class="fld">&nbsp;</span></span></p>' + accTable(rows) +
+      '<p class="b" style="margin-top:12px">Certified Correct:</p><div>' + ltSig(LGU.treasurer, LGU.treasurerTitle) + ltSig('', 'Date') + '</div>' +
+      '</div></div>';
+  }
+  function raafBlock(off, title, note) {
+    return '<div class="card"><h2>' + title + '</h2>' + (note ? '<p class="muted">' + note + '</p>' : '') + (off ? raafSheet(off) : craafSheet()) +
+      '<p class="muted pinch">The form keeps its landscape layout. Pinch to zoom in.</p></div>';
+  }
+  function raaf() {
+    var done = S.raaf.col;
+    return '<h1>My RAAF</h1>' +
+      about('Every month you render the Report of Accountability for Accountable Forms (RAAF, LTOM Book II Annex 16): the official receipts in your custody ' +
+        'at the start of the month, received, issued and left at the end. Submit it to the Liquidating Officer on or before the 5th of the following month.') +
+      (done ? '<div class="msg ok">Submitted to the Liquidating Officer on ' + longDate(done.date) + ' at ' + done.time + '.</div>'
+        : '<div class="msg info">Your RAAF for ' + RAAF_MONTH + ' is due on or before ' + RAAF_DUE + '. It counts every OR you issue, so issue one and come back to see it change.</div>') +
+      raafBlock('col', 'RAAF · ' + RAAF_MONTH, 'Issued: the ORs used this month, the last one being the latest you issued. Ending Balance: the ORs still in your hands.') +
+      (done ? '' : '<button type="button" class="primary" data-act="submit-raaf">Submit my RAAF to the Liquidating Officer</button>');
+  }
+  function craaf() {
+    var view = S.viewRaaf; S.viewRaaf = null;
+    var rows = OFFICERS.map(function (o) {
+      var s = S.raaf[o[0]];
+      return '<tr><td>' + esc(o[1]) + '<div class="muted">Collecting Officer</div></td><td>' +
+        (s ? '<span class="chip g">Submitted</span><div class="muted nw">' + shortDate(s.date) + ', ' + s.time + '</div>' : '<span class="chip y">Not yet</span><div class="muted nw">due ' + RAAF_DUE + '</div>') +
+        (s ? ' <button type="button" class="small" data-act="view-raaf" data-v="' + o[0] + '">View RAAF</button>' : '') + '</td></tr>';
+    }).join('');
+    var n = OFFICERS.filter(function (o) { return S.raaf[o[0]]; }).length;
+    var who = view && OFFICERS.filter(function (o) { return o[0] === view; })[0][1];
+    return '<h1>RAAF &amp; CRAAF</h1>' +
+      about('Every accountable officer submits his or her RAAF (Annex 16) and the Liquidating Officer the Consolidated RAAF (CRAAF, Annex 17) on or before the 5th of ' +
+        'the following month. This page shows who has submitted, who is late and what is still missing.') +
+      '<div class="card"><h2>RAAFs for ' + RAAF_MONTH + '</h2><p class="muted">' + n + ' of ' + OFFICERS.length + ' submitted. Nobody is late: they are due on or before ' + RAAF_DUE + '.' +
+      (S.raaf.col ? '' : ' Sign in as Collecting Officer and submit Maria Santos\'s RAAF to see it arrive here.') + '</p>' +
+      '<div class="tbl"><table><thead><tr><th>Accountable Officer</th><th>RAAF</th></tr></thead><tbody>' + rows + '</tbody></table></div></div>' +
+      (view ? raafBlock(view, 'RAAF of ' + esc(who) + ' · ' + RAAF_MONTH, 'Submitted on ' + longDate(S.raaf[view].date) + ' at ' + S.raaf[view].time + '.') : '') +
+      raafBlock(null, 'CRAAF · ' + RAAF_MONTH, 'Prepared by the Liquidating Officer and certified correct by the Treasurer: the Treasurer\'s stock of forms, then the forms in the hands of every accountable officer.' +
+        ' It goes to the Treasurer once every RAAF is in.');
+  }
+
   function statusChip(s) {
     return '<span class="chip ' + ({ Submitted: 'y', Consolidated: 'g', Refused: 'r', Released: 'g', Prepared: 'y' }[s] || '') + '">' + s + '</span>';
   }
@@ -719,12 +836,12 @@
 
   // ------------------------------------------------------------------ drawing and routing
   var SCREENS = {
-    col: { home: home, issue: issue, rptcalc: rptcalc, collections: collections, rcd: rcd },
-    lo: { home: home, crcd: crcd, refused: refused, register: register, cashbook: cashbook },
+    col: { home: home, issue: issue, rptcalc: rptcalc, collections: collections, rcd: rcd, raaf: raaf },
+    lo: { home: home, crcd: crcd, refused: refused, craaf: craaf, register: register, cashbook: cashbook },
     do: { home: home, prepare: prepare, checks: checks, cashbook: cashbook },
     sys: { home: home, dashboard: dashboard, register: register, cashbook: cashbook, log: activity }
   };
-  var TITLES = { home: 'Home', issue: 'Issue Official Receipt', rptcalc: 'RPT Tax Calculator', collections: 'My Collections', rcd: 'My RCD',
+  var TITLES = { home: 'Home', issue: 'Issue Official Receipt', rptcalc: 'RPT Tax Calculator', collections: 'My Collections', rcd: 'My RCD', raaf: 'My RAAF', craaf: 'RAAF & CRAAF',
     crcd: 'Consolidated RCD', refused: 'Refused Reports', register: 'Collections Register', cashbook: 'Cash Book', prepare: 'Prepare Check',
     checks: 'Check Issuance', dashboard: 'Collections Dashboard', log: 'Activity Log' };
   var LOGIN = root.innerHTML;
@@ -770,6 +887,12 @@
     else if (act === 'issue') doIssue();
     else if (act === 'view-or') { e.preventDefault(); S.view = v; draw(false); window.scrollTo(0, 0); }
     else if (act === 'remit') doRemit();
+    else if (act === 'submit-raaf') {
+      S.raaf.col = { date: TODAY, time: timeNow() };
+      log('Submitted RAAF for ' + RAAF_MONTH + ' to the Liquidating Officer');
+      draw(true);
+    }
+    else if (act === 'view-raaf') { S.viewRaaf = v; draw(false); var w = root.querySelectorAll('.sheet-wrap')[0]; if (w) w.parentNode.scrollIntoView(); }
     else if (act === 'view-rcd') { S.viewRcd = v; draw(false); var t = root.querySelector('.sheet-wrap'); if (t) t.parentNode.scrollIntoView(); else window.scrollTo(0, 0); }
     else if (act === 'cr-acct') { S.cr.account = v; S.cr.picked = {}; S.cr.count = {}; draw(true); }
     else if (act === 'fill') {

@@ -239,6 +239,13 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .sheet .sigline{width:100%;border-collapse:collapse;margin-top:26px;background:transparent}.sheet .sigline td{border:none;padding:1px 4px;text-align:center;font-size:12px;background:transparent!important}
 .sheet .sigline .nm{border-bottom:1px solid #000;font-weight:bold;width:65%}.sheet .sigline .dt{border-bottom:1px solid #000}.sheet .sigline .cap{font-size:10px}
 .sheet .certbox{width:100%;border-collapse:collapse;margin-top:12px;background:transparent}.sheet .certbox>tbody>tr>td{width:50%;vertical-align:top;border:1px solid #000;padding:6px 8px;font-size:12px;background:#fff!important}
+/* RAAF and CRAAF: landscape forms (LTOM Annexes 16-17) */
+.sheet-wrap.wide{max-width:1125px}.sheet.wide{width:1123px}
+.sheet .ref{font-size:9px;color:#444;text-align:right;margin:0}.sheet .lth{font-size:15px;text-align:center;margin:2px 0 0;font-weight:bold;color:#000;font-family:inherit}
+.sheet .ltlgu{text-align:center;margin:8px 0 0}.sheet .ltlgu span{display:inline-block;min-width:260px;border-bottom:1px solid #000;font-weight:bold;padding:0 10px}
+.sheet .ltcap{text-align:center;font-size:10px;font-style:italic;font-weight:bold;margin:0 0 4px}
+.sheet .fld{display:inline-block;min-width:170px;border-bottom:1px solid #000;padding:0 6px;font-weight:bold;text-align:center}
+.sheet .ltsig{display:inline-block;text-align:center;width:250px;margin:34px 40px 0 0;vertical-align:top}.sheet .ltsig .ln{border-top:1px solid #000;padding-top:2px;font-size:11px}
 /* sample receipt and check: clearly not valid */
 .paper{position:relative;overflow:hidden;background:#fffdf5;border:1px solid #cfc6a8;max-width:520px;padding:18px 20px;margin:12px 0;font-size:14px}
 .paper.check{background:#f2fbf6;border-color:#9fd2b6;max-width:640px}
