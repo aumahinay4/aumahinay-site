@@ -204,7 +204,9 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .feature-cover { display: block; width: 100%; border-radius: 4px 10px 10px 4px; box-shadow: 0 18px 36px -18px rgba(11, 42, 99, .6); }
 .feature-body { min-width: 0; display: flex; flex-direction: column; }
 .feature-body h3 { font-size: 1.4623rem; }
-.feature .foot { padding-top: 22px; }
+.feature .foot { padding-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }  /* Explore ALTOS + Try the demo (2026-11-19) */
+.altos-hero .demo-cta { margin: 18px 0 6px; }
+.altos-hero .demo-cta + .muted { text-align: left; hyphens: none; -webkit-hyphens: none; }
 .feature-art.wide { width: 23%; max-width: 220px; }
 .feature-shot { display: block; width: 100%; height: auto; border-radius: 0;  /* square (90-degree) corners, Butch 2026-11-04 */  border: 1px solid var(--line); box-shadow: 0 18px 36px -18px rgba(11, 42, 99, .5); }
 @media (max-width: 640px) { .card.feature { flex-direction: column; align-items: flex-start; padding: 24px; } .feature-art { display: none; } .feature-art.wide { display: block; width: 50%; max-width: none; } .card.feature { gap: 14px; } }  /* phones: label sits half as far under the ALTOS picture */

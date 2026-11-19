@@ -15,6 +15,7 @@ from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
+from altos_demo import DEMO_URL, demo_page
 from style import CSS
 from tags import Raw
 
@@ -340,7 +341,8 @@ def altos_feature_card():
             t.p(ALTOS["where"], class_="eyebrow"),
             t.h3(t.span(wordmark(), class_="wordmark"), " ", ALTOS["full_name"]),
             tag_list(ALTOS["stack"]),
-            t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn white"), class_="foot"),
+            t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn white"),
+                  t.a("Try the demo →", href=DEMO_URL, class_="btn primary"), class_="foot"),
             class_="feature-body",
         ),
         class_="card feature",
@@ -570,6 +572,9 @@ def projects():
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
+                # the click-through demo with made-up data (Butch 2026-11-19)
+                t.p(t.a("Try the ALTOS demo →", href=DEMO_URL, class_="btn primary"), class_="demo-cta"),
+                t.p("Runs in your browser with a made-up municipality, officers and taxpayers. Nothing is saved.", class_="muted"),
             ),
             class_="altos-hero",
         ),
@@ -1991,6 +1996,7 @@ def _full_page(build):
 ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}.items()}
 ROUTES[BOOK_URL] = _full_page(book_reader)
 ROUTES[SERIES_URL] = _full_page(series_page)
+ROUTES[DEMO_URL] = demo_page  # a whole page of its own: no site layout, so no ads on the demo
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
 ROUTES.update({module_url(m): _full_page(lambda m=m: module_page(m)) for m in MODULES if module_is_live(m)})
