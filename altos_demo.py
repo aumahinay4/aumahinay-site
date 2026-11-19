@@ -190,6 +190,8 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .banner h1{color:#fff;font-size:26px;margin:0;position:relative}.banner h1:after{display:none}
 .banner .pos{color:var(--tint);font-weight:700;font-size:15px;margin-top:2px;position:relative}
 .banner ul{margin:12px 0 0;padding-left:20px;color:#e3e9f5;font-size:14px;line-height:1.5;position:relative}
+.banner .note{color:#e3e9f5;font-size:13px;margin-top:8px;opacity:.9;position:relative}
+.acts{margin:-4px 0 14px}.acts .btn{margin:6px 8px 0 0}
 .about{display:flex;background:#e6efff;margin:0 0 16px;overflow:hidden}
 .about i{flex:none;width:4px;background:#8fa6d6}.about p{margin:0;padding:10px 14px;color:#33405c;font-size:14px;line-height:1.45}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:12px 0}

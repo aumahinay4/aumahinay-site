@@ -57,14 +57,13 @@
     do: { label: 'Disbursing Officer', page: 'DISBURSING OFFICER PAGE', a: '#c23a4f', sel: '#e05568', tint: '#ff8a8a', key: '#bf4040', user: 'Ramon Garcia' },
     sys: { label: 'System Administrator', page: 'SYSADMIN PAGE', a: '#6a3fc8', sel: '#8a63e6', tint: '#d1b6ff', key: '#7d58d6', user: 'Leo Mercado' }
   };
+  // the menus as in ALTOS's web pages (same labels and order; the demo shows only some of each)
   var MENUS = {
-    col: [['home', 'Home'], ['#', 'COLLECT'], ['issue', 'Issue Official Receipt'], ['rptcalc', 'RPT Tax Calculator'],
-      ['collections', 'My Collections'], ['rcd', 'My RCD']],
-    lo: [['home', 'Home'], ['#', 'COLLECT'], ['crcd', 'Consolidated RCD'], ['refused', 'Refused Reports'], ['register', 'Collections Register'],
-      ['#', 'REPORT'], ['cashbook', 'Cash Book']],
-    do: [['home', 'Home'], ['#', 'DISBURSE'], ['prepare', 'Prepare Check'], ['checks', 'Check Issuance'], ['#', 'REPORT'], ['cashbook', 'Cash Book']],
-    sys: [['home', 'Home'], ['#', 'MONITOR'], ['dashboard', 'Collections Dashboard'], ['register', 'Collections Register'],
-      ['cashbook', 'Cash Book'], ['#', 'CONTROL & SECURITY'], ['log', 'Activity Log']]
+    col: [['home', 'Home'], ['issue', 'Issue Official Receipt'], ['rptcalc', 'RPT Tax Calculator'], ['collections', 'My Collections'], ['rcd', 'My RCD']],
+    lo: [['home', 'Home'], ['crcd', 'Consolidated RCD'], ['refused', 'Refused Reports'], ['register', 'Collections Register'], ['cashbook', 'Cash Book']],
+    do: [['home', 'Home'], ['prepare', 'Prepare Check'], ['checks', 'Check Issuance'], ['cashbook', 'Cash Book']],
+    sys: [['home', 'Home'], ['#', 'CONTROL & SECURITY'], ['log', 'Activity Log'], ['#', 'COLLECTIONS'], ['dashboard', 'Collections Dashboard'],
+      ['register', 'Collections Register'], ['#', 'REPORTING'], ['cashbook', 'Cash Book']]
   };
   // Revenue Code schedule (sample fees; a real LGU's amounts are in its own Revenue Code)
   var FEES = [
@@ -228,11 +227,12 @@
       var cls = (m[0] === S.page ? 'on' : '') + (m[0] === 'home' ? ' homelink' : '');
       menu += '<a href="#' + S.role + '-' + m[0] + '" class="' + cls.trim() + '"' + (m[0] === S.page ? ' aria-current="page"' : '') + '>' + esc(m[1]) + '</a>';
     });
+    if (S.role !== 'sys') menu = '<div class="head">MY WORK</div>' + menu;
     var fl = S.flash ? '<div class="msg ' + S.flash[0] + '">' + S.flash[1] + '</div>' : '';
     S.flash = null;
     return '<div style="' + vars + '"><div class="top"><span class="badge">' + R.page + '</span>' +
       '<span class="app">Automated Local Treasury Operations System · ' + esc(R.user) + '</span>' +
-      '<a class="pill" href="#">Switch page</a></div>' +
+      '<a class="pill" href="#" title="Back to the sign-in page, to pick another working page">Log Out</a></div>' +
       '<div class="strip"><i style="background:#7cc2ff"></i><i style="background:#4be3a8"></i><i style="background:#ff8a8a"></i><i style="background:#d1b6ff"></i></div>' +
       '<div class="wrap"><nav class="side" aria-label="' + esc(R.label) + ' menu">' + menu + '</nav><div class="content"><main class="fadein">' + fl + body + '</main></div></div></div>';
   }
@@ -267,13 +267,27 @@
   }
 
   // ------------------------------------------------------------------ Home of each working page
+  // the Home banner's words, as in ALTOS's web pages (DUTIES and ACTIONS)
   var DUTIES = {
-    col: ['issue official receipts from the OR series assigned to you, in serial order', 'see your own collections',
-      'close the day with your RCD per bank account and remit it to the Liquidating Officer'],
-    lo: ["receive the Collecting Officers' RCDs and their money", 'count the money to the last centavo, then consolidate the RCDs of one bank account and record the deposit',
+    col: ['As Collecting Officer you may:', ['issue official receipts from the OR series assigned to you, in serial order', 'view your own collections',
+      'prepare your own daily RCD per bank account and remit it to the Liquidating Officer'],
+      "You cannot see other collecting officers' records or change system settings."],
+    lo: ['As Liquidating Officer you may:', ['receive the RCDs and collections of all collecting officers',
+      "consolidate the collecting officers' RCDs of the same bank account into one RCD and record the bank deposit",
       'refuse a short remittance or a wrong report, with the reason', 'keep the Cash Book'],
-    do: ['prepare checks in serial order from the check booklet assigned to you', 'release checks to the payees', 'keep the Cash Book'],
-    sys: ['watch the collections of the whole office', 'read every action in the Activity Log', 'set up users, OR series, bank accounts and fees (not in this demo)']
+      "You cannot manage users, OR series or bank accounts: that is the System Administrator's page."],
+    do: ['As Disbursing Officer you may:', ['prepare checks from the check booklets assigned to you, in serial order',
+      'release checks to payees', 'keep the Cash Book'],
+      'Every check you prepare is captured automatically in the Cash Book.'],
+    sys: ['As System Administrator, on the web you may:', ['monitor all collections, RCDs, checks and disbursements',
+      'read everything done in the system in the Activity Log', 'follow the Cash Book'],
+      'In ALTOS the System Administrator also manages users, OR series, check booklets, bank accounts and every setting of the system.']
+  };
+  var ACTIONS = {
+    col: [['issue', 'Issue Official Receipt'], ['rcd', 'Prepare My RCD'], ['collections', 'My Collections']],
+    lo: [['crcd', 'Consolidated RCD'], ['register', 'Collections Register'], ['refused', 'Refused Reports']],
+    do: [['prepare', 'Prepare Check'], ['checks', 'Check Issuance'], ['cashbook', 'Cash Book']],
+    sys: [['register', 'Collections Register'], ['dashboard', 'Collections Dashboard'], ['log', 'Activity Log']]
   };
   function home() {
     var R = ROLES[S.role], todo = [];
@@ -297,8 +311,10 @@
       todo.push(['', 'Collections today: <b>' + peso(sumOrs(t)) + '</b> on ' + t.length + ' official receipts. <a href="#sys-dashboard">Open the dashboard →</a>']);
       todo.push(['', S.log.length + ' actions recorded today. <a href="#sys-log">Open the Activity Log →</a>']);
     }
-    return '<div class="banner"><h1>Welcome, ' + esc(R.user) + '!</h1><div class="pos">' + R.label + '</div><ul>' +
-      DUTIES[S.role].map(function (d) { return '<li>' + d + '</li>'; }).join('') + '</ul></div>' +
+    var D = DUTIES[S.role];
+    return '<div class="banner"><h1>WELCOME!</h1><div class="pos">' + esc(R.user) + ' · ' + R.label + '</div><ul><li style="list-style:none;margin-left:-20px"><b>' + D[0] + '</b></li>' +
+      D[1].map(function (d) { return '<li>' + d + '</li>'; }).join('') + '</ul><div class="note">' + D[2] + '</div></div>' +
+      '<div class="acts">' + ACTIONS[S.role].map(function (a) { return '<a class="btn primary" href="#' + S.role + '-' + a[0] + '">' + a[1] + '</a>'; }).join('') + '</div>' +
       '<h2>What needs attention today</h2><ul class="todo">' + todo.map(function (x) { return '<li class="' + x[0] + '">' + x[1] + '</li>'; }).join('') + '</ul>' +
       '<p class="muted">' + DAYS[phNow().getUTCDay()] + ', ' + longDate(TODAY) + ' · ' + LGU.name + ' (a made-up LGU)</p>';
   }
@@ -315,7 +331,7 @@
     if (d.form === '51') {
       form = d.lines.map(function (l, i) {
         total += num(l.amount);
-        return '<div class="line"><div><label for="fee' + i + '">Nature of collection</label><select id="fee' + i + '" data-line="' + i + '" data-f="fee">' +
+        return '<div class="line"><div><label for="fee' + i + '">Nature of Payment</label><select id="fee' + i + '" data-line="' + i + '" data-f="fee">' +
           FEES.map(function (f, k) { return '<option value="' + k + '"' + (k === +l.fee ? ' selected' : '') + '>' + esc(f.name) + '</option>'; }).join('') +
           '</select></div><div><label for="amt' + i + '">Amount</label><input id="amt' + i + '" inputmode="decimal" data-line="' + i + '" data-f="amount" value="' +
           (l.amount === '' ? '' : esc(l.amount)) + '"></div><div><button type="button" class="small" data-act="del-line" data-line="' + i + '" aria-label="Remove line"' +
@@ -332,7 +348,7 @@
     }
     var can = total > 0 && (d.form === '56' || String(d.payor).trim());
     return '<h1>Issue Official Receipt</h1>' +
-      about('Issue the official receipt in serial order: the payor, then the nature of collection from the Revenue Code schedule. For the AF 56, pick the property: the real property tax due is computed for you.') +
+      about('Issue the official receipt in serial order: the payor, then the Nature of Payment from the Revenue Code Schedule (the amount fills in). For the AF 56, pick the PIN: the real property tax due is computed for you.') +
       '<div class="tabs"><button type="button" class="tab' + (d.form === '51' ? ' on' : '') + '" data-act="form" data-v="51">AF 51 · General</button>' +
       '<button type="button" class="tab' + (d.form === '56' ? ' on' : '') + '" data-act="form" data-v="56">AF 56 · Real Property Tax</button></div>' +
       '<div class="card"><div class="row"><div><label>Next OR No.</label><input readonly value="' + next + '"></div>' +
@@ -354,7 +370,7 @@
   function collections() {
     var mine = myOrs(), sel = S.view && findOr(S.view);
     S.view = null;
-    return '<h1>My Collections</h1>' + about('Your official receipts for the day, with the total. Tap an OR No. to see it.') +
+    return '<h1>My Collections</h1>' + about('Your official receipts for the period, with the total. Tap an OR No. to see it.') +
       (sel ? orPaper(sel) : '') +
       '<div class="tbl"><table><thead><tr><th>OR No.</th><th>Form</th><th>Time</th><th>Payor</th><th class="r">Amount</th><th>In an RCD?</th></tr></thead><tbody>' +
       mine.slice().reverse().map(function (o) {
@@ -393,7 +409,7 @@
     un.forEach(function (o) { o.lines.forEach(function (l) { natures[l.nature] = r2((natures[l.nature] || 0) + l.amount); }); });
     var ab = Object.keys(natures).map(function (k) { return '<tr><td>' + esc(k) + '</td><td class="r">' + money(natures[k]) + '</td></tr>'; }).join('');
     return '<h1>My RCD</h1>' +
-      about('Close the day per bank account: the Report of Collections and Deposits covers all your official receipts not yet reported. Then remit the money to the Liquidating Officer with the RCD.') +
+      about('Close the day per bank account: the RCD covers all your unreported ORs up to the date, with C. Accountability for Accountable Forms and the Abstract of Collections. Remit your collections to the Liquidating Officer.') +
       '<div class="card"><h2>A. Collections</h2>' + a + '<h2>C. Accountability for Accountable Forms</h2><div class="tbl"><table><thead><tr><th>Form</th><th>Beginning balance</th><th>Issued</th><th>Ending balance</th></tr></thead><tbody>' + af + '</tbody></table></div>' +
       '<h2>Abstract of Collections</h2><div class="tbl"><table><thead><tr><th>Nature of collection</th><th class="r">Amount</th></tr></thead><tbody>' + ab +
       '<tr class="sum"><td>Total</td><td class="r">' + money(sumOrs(un)) + '</td></tr></tbody></table></div>' +
@@ -406,7 +422,7 @@
     if (!S.calc) S.calc = { pin: S.props[0].pin, date: TODAY, whole: false };
     var c = S.calc, p = findProp(c.pin), rows = rptDue(p, c.date, c.whole);
     return '<h1>RPT Tax Calculator</h1>' +
-      about('Pick the property: its tax due appears, with the discount for paying on time or the interest for paying late. Change the date to see what the owner would pay on another day.') +
+      about('Pick the PIN: the property and its tax due appear, with the discount for paying on time or the interest for paying late. Change the date to see what the owner would pay on another day.') +
       '<div class="card"><label for="cpin">Property</label><select id="cpin" data-f="cpin">' +
       S.props.map(function (q) { return '<option value="' + q.pin + '"' + (q.pin === c.pin ? ' selected' : '') + '>' + esc(propLabel(q)) + '</option>'; }).join('') +
       '</select><div class="row"><div><label for="cdate">Date of payment</label><input type="date" id="cdate" data-f="cdate" min="' + YEAR + '-01-01" max="' + (YEAR + 1) + '-12-31" value="' + c.date + '"></div>' +
@@ -440,7 +456,7 @@
     }).join('');
     var done = S.crcds.filter(function (x) { return x.account === c.account; });
     return '<h1>Consolidated RCD</h1>' +
-      about("Collecting Officers whose ORs belong to the same bank account are merged into one RCD. Tick the RCDs, count the money to the last centavo, then record the deposit slip. The deposit goes into the Cash Book.") +
+      about("Collecting Officers whose ORs belong to the same bank account are merged into one RCD. Count the money, select the account, tick the RCDs, then record the deposit slip. The deposit enters the Cash Book on the date of the RCD.") +
       '<div class="tabs">' + ['GF', 'SEF'].map(function (k) { return '<button type="button" class="tab' + (k === c.account ? ' on' : '') + '" data-act="cr-acct" data-v="' + k + '">' + ACCOUNTS[k].name + '</button>'; }).join('') + '</div>' +
       (sub.length ? '<div class="tbl"><table><thead><tr><th>RCD</th><th>Collecting Officer</th><th>ORs</th><th class="r">Amount</th><th>Remitted</th></tr></thead><tbody>' + rows +
         '<tr class="sum"><td colspan="3">Total of the ticked RCDs</td><td class="r">' + money(tot) + '</td><td></td></tr></tbody></table></div>' +
@@ -477,7 +493,7 @@
     var f = S.regFilter || 'all';
     var list = S.ors.filter(function (o) { return f === 'all' || o.name === f; });
     var names = S.ors.map(function (o) { return o.name; }).filter(function (n, i, a) { return a.indexOf(n) === i; });
-    return '<h1>Collections Register</h1>' + about('Every official receipt of the office today, by officer and fund.') +
+    return '<h1>Collections Register</h1>' + about('All official receipts of all collecting officers for the period.') +
       '<div class="row"><div><label for="regf">Collecting Officer</label><select id="regf" data-f="regf"><option value="all">All officers</option>' +
       names.map(function (n) { return '<option' + (n === f ? ' selected' : '') + '>' + esc(n) + '</option>'; }).join('') + '</select></div><div></div></div>' +
       '<div class="tbl"><table><thead><tr><th>OR No.</th><th>Form</th><th>Officer</th><th>Payor</th><th class="r">General Fund</th><th class="r">SEF</th><th class="r">Total</th></tr></thead><tbody>' +
@@ -489,7 +505,7 @@
   }
   function cashbook() {
     var k = S.cbAcct || 'GF', rows = S.cash[k];
-    return '<h1>Cash Book</h1>' + about('Cash in Bank per account: deposits of collections in, checks out, with the running balance.') +
+    return '<h1>Cash Book</h1>' + about('Cash Book, Cash in Bank per account: DEBIT, deposits per consolidated RCD; CREDIT, checks issued; with the running balance.') +
       '<div class="tabs">' + ['GF', 'SEF'].map(function (a) { return '<button type="button" class="tab' + (a === k ? ' on' : '') + '" data-act="cb-acct" data-v="' + a + '">' + ACCOUNTS[a].name + '</button>'; }).join('') + '</div>' +
       '<p class="muted">' + ACCOUNTS[k].name + ' · ' + ACCOUNTS[k].bank + ' · ' + MONTHS[MONTH] + ' ' + YEAR + '</p>' +
       '<div class="tbl"><table class="cb"><thead><tr><th>Date</th><th>Particulars</th><th class="r dr">Deposits</th><th class="r dr">Checks</th><th class="r io">In / out</th><th class="r">Balance</th></tr></thead><tbody>' +
@@ -504,7 +520,7 @@
     if (!S.ck) S.ck = { account: 'GF', payee: '', what: '', amount: '' };
     var c = S.ck, nextNo = pad4(S.next.check[c.account]), bal = balance(c.account);
     return '<h1>Prepare Check</h1>' +
-      about('Prepare the next check in serial order from your check booklet. A check above the Cash Book balance of its account is refused.') +
+      about('Prepare the next check in serial order from your check booklet. A check above the Cash Book balance is refused.') +
       '<div class="card"><div class="row"><div><label for="ck-acct">Bank account</label><select id="ck-acct" data-f="ck-account">' +
       ['GF', 'SEF'].map(function (k) { return '<option value="' + k + '"' + (k === c.account ? ' selected' : '') + '>' + ACCOUNTS[k].name + '</option>'; }).join('') +
       '</select></div><div><label>Cash Book balance</label><input readonly value="' + peso(bal) + '"></div></div>' +
