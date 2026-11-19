@@ -1752,7 +1752,7 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
  'publish_on': '2026-11-19 21:00',
  'summary': 'Every province, city and municipality in the Philippines carries an income class, from first to fifth. '
             'This post explains how the Automatic Income Classification Act (RA 11964) sets that class, what income '
-            'is counted, and how moving up a class can change both salaries and the personal services ceiling.',
+            'is counted, and how moving up a class can change both salaries and the personal services limit.',
  'body': ['A municipal budget officer reads a new order from the Department of Finance and calls the treasury. “We '
           'moved up to third class,” she says. Someone in the office cheers. The budget officer does not, at least '
           'not yet. She already knows that the same news brings a higher salary rate for employees and a tighter '
@@ -1771,7 +1771,7 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
            'medium'),
           ('h', 'The Law Behind the Class'),
           'Republic Act No. 11964, the Automatic Income Classification of Local Government Units Act, was signed on '
-          'October 26, 2023. When it was signed, the Department of Finance described it as resolving “the '
+          'October 26, 2023. When it was signed, then Finance Secretary Benjamin Diokno said it resolves “the '
           'long-standing issue of outdated LGU income classification.”',
           'The law puts provinces, cities and municipalities into five income classes. It uses the average annual '
           'regular income of the local government over three fiscal years. The Department of Finance, through the '
@@ -1784,8 +1784,8 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
           'including fees and receipts, actually realized and reported yearly on a cash basis. It includes the '
           'National Tax Allotment and shares from national wealth, along with other shares the law names.',
           'Just as important is what is left out. Non-recurring receipts are excluded, such as national aids, '
-          'grants, financial assistance, loan proceeds and sales of assets. A local government that sells a lot or '
-          'receives a large grant in one year does not climb a class because of it.',
+          'grants, financial assistance, loan proceeds and sales of assets. A local government that sells a parcel '
+          'of land or receives a large grant in one year does not climb a class because of it.',
           ('quote', 'The class follows money that comes in year after year, not money that arrives once.'),
           'Notice the words “cash basis” and “actually realized.” A tax that was assessed but never collected does '
           'not count. This is where the work of the treasury shows up directly. Every peso collected and properly '
@@ -1806,8 +1806,9 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
            'First class, ₱200 million or more. Second, ₱160 million to under ₱200 million. Third, ₱130 million to '
            'under ₱160 million. Fourth, ₱90 million to under ₱130 million. Fifth, below ₱90 million.'),
           'These ranges are not fixed forever. Under Section 5, the Secretary of Finance, in consultation with the '
-          'national economic planning agency and the leagues of local governments, may adjust them based on the '
-          'actual growth of regular income. Always check the latest department order before relying on a number.',
+          'National Economic and Development Authority (as named in the law) and the leagues of local governments, '
+          'may adjust them based on the actual growth of regular income. Always check the latest department order '
+          'before relying on a number.',
           ('h', 'Why the Class Matters'),
           'Section 7 of the law lists what the class is used for. Among them: identifying aids, grants and other '
           'assistance; determining financial capability for development programs; the personal services limit in '
@@ -1852,10 +1853,10 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
           'Now look at the personal services limit, using ₱145.4 million as the previous year’s regular income.',
           ('point', 'As a fourth-class municipality', '55% × ₱145.4M = ₱79.97 million.'),
           ('point', 'As a third-class municipality', '45% × ₱145.4M = ₱65.43 million.'),
-          'The ceiling drops by ₱14.54 million, even though income went up. If the municipality was already spending '
+          'The limit drops by ₱14.54 million, even though income went up. If the municipality was already spending '
           'more than ₱65.43 million on personal services, it is suddenly over the new limit.',
-          ('h', 'The Law’s Cushion for Moving Up'),
-          'The law saw this problem coming. Section 8 covers a fourth class or lower local government that is '
+          ('h', 'The Law’s Cushions When the Class Changes'),
+          'The law saw this problem coming. Section 8 covers a fourth-class or lower local government that is '
           'reclassified as first, second or third class. It is exempted from providing for additional personal '
           'services and may keep its existing personal services until the next fiscal year. Positions that become '
           'vacant through transfer, resignation or death may not be filled or funded until the succeeding fiscal '
@@ -1868,8 +1869,9 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
           'still below the range in the next reclassification. During that first reclassification, no official or '
           'employee may suffer a cut in salary and benefits.',
           ('h', 'What the Treasury Can Do'),
-          'The class is computed by the national government, but the figures come from the local government’s own '
-          'reports of income actually collected. That makes the treasury’s records the starting point.',
+          'The class is computed by the national government, but Section 3 says the figures are computed from the '
+          'local government’s statement of receipts, under guidelines of the Department of Finance, and only income '
+          'actually collected counts. That makes the treasury’s records the starting point.',
           ('point',
            'Record every collection under the right account',
            'Regular income and one-time receipts must be kept apart, because only regular income counts.'),
@@ -1880,7 +1882,7 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
           ('point',
            'Share the table early',
            'Give the budget officer and the local finance committee the projected class and the effect on the '
-           'personal services ceiling while next year’s budget is still being prepared.'),
+           'personal services limit while next year’s budget is still being prepared.'),
           ('cta',
            'Read: Year-End in the Treasury: What Really Happens in December',
            '/blog/year-end-in-the-treasury/'),
