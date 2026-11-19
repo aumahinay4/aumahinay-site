@@ -1742,3 +1742,172 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means',
             '/blog/cash-counts-and-shortages/'),
            ('ask', 'Does your office have a safe way to report a concern? I would be glad to hear how it works.')]}]
+
+
+# Stand-alone Public Finance post (Butch 2026-11-19: add one more Public Finance post today)
+FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s Income Class Is Decided, and Why It Matters',
+ 'slug': 'local-government-income-class',
+ 'category': 'finance',
+ 'date': 'November 19, 2026',
+ 'publish_on': '2026-11-19 18:00',
+ 'summary': 'Every province, city and municipality in the Philippines carries an income class, from first to fifth. '
+            'This post explains how the Automatic Income Classification Act (RA 11964) sets that class, what income '
+            'is counted, and how moving up a class can change both salaries and the personal services limit.',
+ 'body': ['A municipal budget officer reads a new order from the Department of Finance and calls the treasury. “We '
+          'moved up to third class,” she says. Someone in the office cheers. The budget officer does not, at least '
+          'not yet. She already knows that the same news brings a higher salary rate for employees and a tighter '
+          'limit on what the whole office may spend on salaries.',
+          '(The municipality, the people and the figures in this post are invented for teaching. No real local '
+          'government is described.)',
+          'A “first-class municipality” can sound like a mark of size or prestige. In law, the class is about one '
+          'thing: regular income. After this post, you will know how the class is computed under Republic Act No. '
+          '11964, which income counts and which does not, and how to check, with a few lines of arithmetic, where '
+          'your own local government stands before the next reclassification.',
+          ('photo',
+           'blog/finance-income-class.jpg',
+           'Income classification in four parts: five classes, a three-year average, a review every three years, and '
+           'the Department of Finance as the body that issues the schedule. (Illustration: Butch Mahinay, '
+           'aumahinay.dev)',
+           'medium'),
+          ('h', 'The Law Behind the Class'),
+          'Republic Act No. 11964, the Automatic Income Classification of Local Government Units Act, was signed on '
+          'October 26, 2023. When it was signed, then Finance Secretary Benjamin Diokno said it resolves “the '
+          'long-standing issue of outdated LGU income classification.”',
+          'The law puts provinces, cities and municipalities into five income classes. It uses the average annual '
+          'regular income of the local government over three fiscal years. The Department of Finance, through the '
+          'Bureau of Local Government Finance (BLGF), updates the schedule, and a general reclassification is made '
+          'every three years.',
+          'The first general reclassification under the law came through Department Order No. 074-2024, signed by '
+          'Finance Secretary Ralph Recto on November 5, 2024. It took effect on January 1, 2025.',
+          ('h', 'What Counts as Regular Income'),
+          'The class depends on what the law calls annual regular income. Section 3 defines it as revenues, '
+          'including fees and receipts, actually realized and reported yearly on a cash basis. It includes the '
+          'National Tax Allotment and shares from national wealth, along with other shares the law names.',
+          'Just as important is what is left out. Non-recurring receipts are excluded, such as national aids, '
+          'grants, financial assistance, loan proceeds and sales of assets. A local government that sells a parcel '
+          'of land or receives a large grant in one year does not climb a class because of it.',
+          ('quote', 'The class follows money that comes in year after year, not money that arrives once.'),
+          'Notice the words “cash basis” and “actually realized.” A tax that was assessed but never collected does '
+          'not count. This is where the work of the treasury shows up directly. Every peso collected and properly '
+          'recorded is part of the figure that decides the class.',
+          ('h', 'The Five Income Ranges'),
+          'Section 4 of the law sets the ranges. Each class is based on the three-year average of annual regular '
+          'income.',
+          ('point',
+           'Provinces',
+           'First class, ₱1.5 billion or more. Second, ₱900 million to under ₱1.5 billion. Third, ₱700 million to '
+           'under ₱900 million. Fourth, ₱500 million to under ₱700 million. Fifth, below ₱500 million.'),
+          ('point',
+           'Cities',
+           'First class, ₱1.3 billion or more. Second, ₱1 billion to under ₱1.3 billion. Third, ₱800 million to '
+           'under ₱1 billion. Fourth, ₱500 million to under ₱800 million. Fifth, below ₱500 million.'),
+          ('point',
+           'Municipalities',
+           'First class, ₱200 million or more. Second, ₱160 million to under ₱200 million. Third, ₱130 million to '
+           'under ₱160 million. Fourth, ₱90 million to under ₱130 million. Fifth, below ₱90 million.'),
+          'These ranges are not fixed forever. Under Section 5, the Secretary of Finance, in consultation with the '
+          'National Economic and Development Authority (as named in the law) and the leagues of local governments, '
+          'may adjust them based on the actual growth of regular income. Always check the latest department order '
+          'before relying on a number.',
+          ('h', 'Why the Class Matters'),
+          'Section 7 of the law lists what the class is used for. Among them: identifying aids, grants and other '
+          'assistance; determining financial capability for development programs; the personal services limit in '
+          'Section 325(a) of the Local Government Code; and salary adjustments under the Salary Standardization Law '
+          'of 2019 (Republic Act No. 11466). The same section also says that dividing or merging an existing local '
+          'government does not downgrade the class of the original unit.',
+          'Two of these uses touch every employee and every budget, so they deserve a closer look.',
+          ('point',
+           'The salary rate',
+           'Under Executive Order No. 64 of 2024, as applied in Department of Budget and Management Local Budget '
+           'Circular No. 172 dated July 16, 2026, the pay of local personnel is set as a percentage of the national '
+           'salary schedule, according to income class. For municipalities, first class is at 90 percent, and each '
+           'class below steps down by five points: 85, 80, 75 and 70 percent for second to fifth class. The circular '
+           'calls these percentages ceilings. A local government may adopt the full schedule instead, but only if it '
+           'stays within the personal services limit, has the needed budget authorization and applies the schedule '
+           'to all positions.'),
+          ('point',
+           'The personal services limit',
+           'Section 325(a) of the Local Government Code caps spending on personal services at 45 percent of the '
+           'previous year’s regular income for first to third class local governments, and 55 percent for fourth '
+           'class or lower.'),
+          'Put the two side by side and you see the budget officer’s worry. Moving from fourth to third class allows '
+          'a higher rate of pay, but it also lowers the share of income that may go to salaries and benefits.',
+          ('cta',
+           'Read: How to Use the RPT Calculator: Know Your Amilyar Before You Pay',
+           '/blog/how-to-use-the-rpt-calculator/'),
+          ('h', 'A Worked Example, Step by Step'),
+          'Take the invented municipality from the opening. Its annual regular income for the three fiscal years '
+          'before the last reclassification was ₱118.4 million, ₱126.0 million and ₱139.6 million.',
+          ('point', 'Add the three years', '₱118.4M + ₱126.0M + ₱139.6M = ₱384.0 million.'),
+          ('point', 'Divide by three', '₱384.0M ÷ 3 = ₱128.0 million.'),
+          ('point', 'Find the range', '₱128.0 million falls in ₱90 million to under ₱130 million: fourth class.'),
+          'Three years later, the oldest year drops off and a new one is added. The figures are now ₱126.0 million, '
+          '₱139.6 million and ₱145.4 million.',
+          ('photo',
+           'blog/finance-income-class-example.jpg',
+           'The same municipality at two reclassifications. A rise in the three-year average moves it from fourth to '
+           'third class. (Illustration: Butch Mahinay, aumahinay.dev)',
+           'medium'),
+          ('point', 'New average', '₱411.0M ÷ 3 = ₱137.0 million.'),
+          ('point', 'New range', '₱130 million to under ₱160 million: third class.'),
+          'Now look at the personal services limit, using ₱145.4 million as the previous year’s regular income.',
+          ('point', 'As a fourth-class municipality', '55% × ₱145.4M = ₱79.97 million.'),
+          ('point', 'As a third-class municipality', '45% × ₱145.4M = ₱65.43 million.'),
+          'The limit drops by ₱14.54 million, even though income went up. If the municipality was already spending '
+          'more than ₱65.43 million on personal services, it is suddenly over the new limit.',
+          ('h', 'The Law’s Cushions When the Class Changes'),
+          'The law saw this problem coming. Section 8 covers a fourth-class or lower local government that is '
+          'reclassified as first, second or third class. It is exempted from providing for additional personal '
+          'services and may keep its existing personal services until the next fiscal year. Positions that become '
+          'vacant through transfer, resignation or death may not be filled or funded until the succeeding fiscal '
+          'year.',
+          'Under Section 9, a reclassification takes effect on January 1 of the year after the Secretary of Finance '
+          'issues the table of income classification. That gives the budget officer, the treasurer and the local '
+          'chief executive a short window to plan.',
+          'There is also protection on the way down. Under Section 10, a local government whose income falls below '
+          'its range in the first reclassification keeps its current class. It is downgraded only if its income is '
+          'still below the range in the next reclassification. During that first reclassification, no official or '
+          'employee may suffer a cut in salary and benefits.',
+          ('h', 'What the Treasury Can Do'),
+          'The class is computed by the national government, but Section 3 says the figures are computed from the '
+          'local government’s statement of receipts, under guidelines of the Department of Finance, and only income '
+          'actually collected counts. That makes the treasury’s records the starting point.',
+          ('point',
+           'Record every collection under the right account',
+           'Regular income and one-time receipts must be kept apart, because only regular income counts.'),
+          ('point',
+           'Keep a three-year table',
+           'Each year, add the latest regular income and drop the oldest year. You will see the class coming before '
+           'the order arrives.'),
+          ('point',
+           'Share the table early',
+           'Give the budget officer and the local finance committee the projected class and the effect on the '
+           'personal services limit while next year’s budget is still being prepared.'),
+          ('cta',
+           'Read: Year-End in the Treasury: What Really Happens in December',
+           '/blog/year-end-in-the-treasury/'),
+          ('h', 'Key Takeaways'),
+          ('point',
+           'One measure',
+           'The class is based on the three-year average of annual regular income, under RA 11964.'),
+          ('point', 'Only regular income', 'Grants, aids, loan proceeds and sales of assets are excluded.'),
+          ('point',
+           'Every three years',
+           'The Department of Finance, through the BLGF, issues the schedule; the first general reclassification '
+           'took effect January 1, 2025.'),
+          ('point',
+           'Two sides of moving up',
+           'A higher class can raise the salary rate and lower the personal services limit at the same time.'),
+          ('h', 'Try It Yourself'),
+          'Find your local government’s regular income for the last three fiscal years in its published financial '
+          'reports. Add them, divide by three and compare the result with the ranges above. Then compute the '
+          'personal services limit at both 45 and 55 percent. If the two numbers are far apart and your average is '
+          'near a boundary, that is a conversation worth starting before the next budget.',
+          ('cta', 'Read: Study Note: Sources of Local Revenue', '/study-notes/sources-of-local-revenue/'),
+          ('cta',
+           'Read: Inside the Local Treasury, Part 1: Where Your Town’s Money Comes From',
+           '/blog/where-your-towns-money-comes-from/'),
+          ('cta',
+           'Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services',
+           '/blog/personal-services-limit/'),
+          ('ask', 'Is your local government close to a class boundary? Tell me what your three-year table shows.')]}]
