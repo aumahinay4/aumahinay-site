@@ -308,6 +308,7 @@ def demo_page():
             # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
             t.link(rel="canonical", href=url),
+            t.meta(name="robots", content="noindex"),  # drawn by JavaScript: no text for Google (Butch, 2026-11-20)
             t.meta(name="description", content=DEMO_DESCRIPTION),
             t.meta(property="og:type", content="website"),
             t.meta(property="og:site_name", content=SITE["short_name"]),

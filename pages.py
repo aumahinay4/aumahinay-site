@@ -238,7 +238,8 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             t.link(rel="alternate", type="application/rss+xml", title=f"{SITE['short_name']}: new posts and lessons", href="/feed.xml"),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{url}") if url else None,
             t.meta(name="description", content=description or SITE["tagline"]),
-            t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
+            # the 404 page, and pages Google can't read as text (AdSense "low-value content", Butch 2026-11-20)
+            t.meta(name="robots", content="noindex") if active is None or url in NOINDEX_URLS else None,
             t.script(Raw(person_json_ld()), type="application/ld+json") if active == "/" else None,
             t.script(Raw(json.dumps(json_ld, ensure_ascii=False).replace("</", "<\\/")), type="application/ld+json") if json_ld else None,
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
@@ -616,6 +617,9 @@ def projects():
 
 BOOK_PREVIEW_PAGES = 20  # cover, title, copyright, contents, Part I, Chapters 1-3 and start of Chapter 4 = PDF pp. 1-4, 9-24 (preface left out at Butch's request) (static/book/page-NN.jpg)
 BOOK_URL = "/projects/altos-book/"
+# Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
+# ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
+NOINDEX_URLS = {BOOK_URL, DEMO_URL}
 # visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
 BOOK_FIRST_DAYS, BOOK_MORE_DAYS = 3, 2  # reading time per approved request (Butch, 2026-11-04)
 BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
@@ -1407,8 +1411,8 @@ def listen_box(b):
         t.div(
             t.button(LISTEN_ICON, t.span("Listen", class_="listen-word"), type="button", class_="listen-play",
                      aria_pressed="false"),
-            t.span(f"{listen_minutes(b, rec)} min · AI voice", class_="listen-time muted",
-                   title="Read aloud by a computer voice, not by the author"),  # be open that it is not Butch reading (Butch, 2026-11-15)
+            t.span(f"{listen_minutes(b, rec)} min", class_="listen-time muted",
+                   title="Read aloud by a computer voice, not by the author"),  # be open that it is not Butch reading (Butch, 2026-11-15); visible 'AI voice' dropped for AdSense (Butch, 2026-11-20)
             t.span(class_="listen-clock muted", aria_hidden="true"),
             t.button("1\u00d7", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
             t.button(STOP_ICON, type="button", class_="listen-stop", aria_label="Stop reading", title="Stop", hidden=True),

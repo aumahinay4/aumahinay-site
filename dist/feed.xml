@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Cybersecurity Series, Part 3: The Art of Human Hacking</title>
+      <link>https://aumahinay.dev/blog/cybersecurity-part-3-human-hacking/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/cybersecurity-part-3-human-hacking/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:00:00 +0800</pubDate>
+      <description>Most scams do not break into computers; they persuade people. Learn the pressure tricks behind phishing, smishing, fake bosses and deepfake calls, and the simple rules that stop them.</description>
+    </item>
     <item>
       <title>First Class or Fifth? How a Local Government’s Income Class Is Decided, and Why It Matters</title>
       <link>https://aumahinay.dev/blog/local-government-income-class/</link>
