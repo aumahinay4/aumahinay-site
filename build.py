@@ -12,7 +12,7 @@ from datetime import datetime
 from email.utils import format_datetime
 from html import escape
 
-from pages import ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
+from pages import NOINDEX_URLS, ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
 
 DIST = Path(__file__).parent / "dist"
 
@@ -25,7 +25,7 @@ def sitemap(site):
     """Every live page (scheduled posts and lessons appear on their date, with the nightly build)."""
     # Study Notes stays out of the sitemap until its first note is live (no empty hub pages for AdSense)
     urls = "".join(f"  <url><loc>{site}{route}</loc></url>\n" for route in ROUTES
-                   if route != "/study-notes/" or live_notes())
+                   if (route != "/study-notes/" or live_notes()) and route not in NOINDEX_URLS)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
 
