@@ -60,8 +60,8 @@
   };
   // the menus as in ALTOS's web pages (same labels and order; the demo shows only some of each)
   var MENUS = {
-    col: [['home', 'Home'], ['issue', 'Issue Official Receipt'], ['rptcalc', 'RPT Tax Calculator'], ['collections', 'My Collections'], ['rcd', 'My RCD'], ['raaf', 'My RAAF']],
-    lo: [['home', 'Home'], ['crcd', 'Consolidated RCD'], ['refused', 'Refused Reports'], ['craaf', 'RAAF & CRAAF'], ['register', 'Collections Register'], ['cashbook', 'Cash Book']],
+    col: [['home', 'Home'], ['issue', 'Issue Official Receipt'], ['rptcalc', 'RPT Tax Calculator'], ['collections', 'My Collections'], ['rcd', 'My RCD'], ['raaf', 'My RAAF'], ['cashbook', 'My Cash Book']],
+    lo: [['home', 'Home'], ['crcd', 'Consolidated RCD'], ['refused', 'Refused Reports'], ['craaf', 'RAAF & CRAAF'], ['register', 'Collections Register'], ['locash', 'My Cash Book'], ['cashbook', 'Cash Book']],
     do: [['home', 'Home'], ['prepare', 'Prepare Check'], ['checks', 'Check Issuance'], ['cashbook', 'Cash Book']],
     sys: [['home', 'Home'], ['#', 'CONTROL & SECURITY'], ['log', 'Activity Log'], ['#', 'COLLECTIONS'], ['dashboard', 'Collections Dashboard'],
       ['register', 'Collections Register'], ['#', 'REPORTING'], ['cashbook', 'Cash Book']]
@@ -87,7 +87,7 @@
     S = {
       role: null, page: 'home',
       ors: [], rcds: [], crcds: [], raaf: {}, checks: [], log: [], flash: null,
-      next: { or51: 1234504, or56: 5670012, rcd: 3, crcd: 1, check: { GF: 4507, SEF: 1203 }, dv: 87 },
+      next: { or51: 1234504, or56: 5670012, rcd: 43, crcd: 1, check: { GF: 4507, SEF: 1203 }, dv: 87 },
       props: [
         { pin: '001-01-001-01-015', td: 'TD 2026-01-00215', owner: 'Juan dela Cruz', brgy: 'Poblacion', kind: 'Residential land', av: 120000, paid: [YEAR, 2] },
         { pin: '001-01-001-02-044', td: 'TD 2026-01-00344', owner: 'Rosa Mendoza', brgy: 'Poblacion', kind: 'Commercial building', av: 850000, paid: [YEAR, 4] },
@@ -112,7 +112,7 @@
       addOr('col2', 'Jose Reyes', '51', 1234555, 'Daniel Ocampo', [['Certification Fee', 100, 'GF'], ['Garbage Fee', 300, 'GF']], t8(10, 47)),
       addOr('col2', 'Jose Reyes', '51', 1234556, 'Alma Pascual', [['Sanitary Inspection Fee', 200, 'GF'], ['Market Stall Rental (1 month)', 1500, 'GF']], t8(11, 3))
     ];
-    S.rcds.push({ no: 'RCD ' + YEAR + '-' + pad(MONTH + 1) + '-001', officer: 'Jose Reyes', account: 'GF', date: TODAY, ors: j,
+    S.rcds.push({ no: 'RCD ' + YEAR + '-' + pad(MONTH + 1) + '-041', officer: 'Jose Reyes', account: 'GF', date: TODAY, ors: j,
       total: sumOrs(j, 'GF'), cash: sumOrs(j, 'GF'), status: 'Submitted', time: t8(11, 30) });
     // Luz Ramos (market collector): remitted ₱50.00 less than her report
     var l = [
@@ -120,7 +120,7 @@
       addOr('col3', 'Luz Ramos', '51', 1234602, 'Stall 27, Public Market', [['Market Stall Rental (1 month)', 1500, 'GF']], t8(8, 6)),
       addOr('col3', 'Luz Ramos', '51', 1234603, 'Fish Section, Vendor 4', [['Garbage Fee', 250, 'GF']], t8(8, 30))
     ];
-    S.rcds.push({ no: 'RCD ' + YEAR + '-' + pad(MONTH + 1) + '-002', officer: 'Luz Ramos', account: 'GF', date: TODAY, ors: l,
+    S.rcds.push({ no: 'RCD ' + YEAR + '-' + pad(MONTH + 1) + '-042', officer: 'Luz Ramos', account: 'GF', date: TODAY, ors: l,
       total: sumOrs(l, 'GF'), cash: r2(sumOrs(l, 'GF') - 50), status: 'Submitted', time: t8(11, 45) });
     l.concat(j).forEach(function (o) { o.reported = true; });
     // the Cash Book this month
@@ -128,20 +128,20 @@
     ['GF', 'SEF'].forEach(function (k) {
       S.cash[k].push({ date: dayOfMonth(1), ref: '', what: 'Balance brought forward', dr: 0, cr: 0, bal: ob[k] });
     });
-    cashIn('GF', dayOfMonth(3), 'CRCD 2026-11-004 / DS 70211', 'Deposit of collections', 186420.5);
-    cashOut('GF', dayOfMonth(4), 'Check 0004503', 'Sample Office Supply Co. – office supplies (DV 2026-11-071)', 48500);
-    cashIn('SEF', dayOfMonth(5), 'CRCD 2026-11-006 / DS 70218', 'Deposit of collections (SEF share of RPT)', 23880);
-    cashOut('GF', dayOfMonth(6), 'Check 0004504', 'Sample Electric Cooperative – electricity, October (DV 2026-11-076)', 32180.55);
-    cashIn('GF', dayOfMonth(10), 'CRCD 2026-11-011 / DS 70240', 'Deposit of collections', 142310);
-    cashOut('SEF', dayOfMonth(11), 'Check 0001202', 'Sample Printing Press – school forms (DV 2026-11-080)', 18750);
-    cashOut('GF', dayOfMonth(12), 'Check 0004505', 'Sample Fuel Station – fuel for service vehicles (DV 2026-11-082)', 15600);
-    cashOut('GF', dayOfMonth(14), 'Check 0004506', 'Sample Hardware – repair of the public market roof (DV 2026-11-085)', 96375);
+    cashIn('GF', dayOfMonth(3), 'CRCD ' + MO + '004 / DS 70211', 'Deposit of collections', 186420.5);
+    cashOut('GF', dayOfMonth(4), 'Check 0004503', 'Sample Office Supply Co. – office supplies (DV ' + MO + '071)', 48500);
+    cashIn('SEF', dayOfMonth(5), 'CRCD ' + MO + '006 / DS 70218', 'Deposit of collections (SEF share of RPT)', 23880);
+    cashOut('GF', dayOfMonth(6), 'Check 0004504', 'Sample Electric Cooperative – electricity, October (DV ' + MO + '076)', 32180.55);
+    cashIn('GF', dayOfMonth(10), 'CRCD ' + MO + '011 / DS 70240', 'Deposit of collections', 142310);
+    cashOut('SEF', dayOfMonth(11), 'Check 0001202', 'Sample Printing Press – school forms (DV ' + MO + '080)', 18750);
+    cashOut('GF', dayOfMonth(12), 'Check 0004505', 'Sample Fuel Station – fuel for service vehicles (DV ' + MO + '082)', 15600);
+    cashOut('GF', dayOfMonth(14), 'Check 0004506', 'Sample Hardware – repair of the public market roof (DV ' + MO + '085)', 96375);
     S.checks.push(
-      { no: '0004503', account: 'GF', date: dayOfMonth(4), payee: 'Sample Office Supply Co.', what: 'Office supplies', dv: 'DV 2026-11-071', amount: 48500, status: 'Released', to: 'Sample Office Supply Co.' },
-      { no: '0004504', account: 'GF', date: dayOfMonth(6), payee: 'Sample Electric Cooperative', what: 'Electricity, October', dv: 'DV 2026-11-076', amount: 32180.55, status: 'Released', to: 'Sample Electric Cooperative' },
-      { no: '0001202', account: 'SEF', date: dayOfMonth(11), payee: 'Sample Printing Press', what: 'School forms', dv: 'DV 2026-11-080', amount: 18750, status: 'Released', to: 'Sample Printing Press' },
-      { no: '0004505', account: 'GF', date: dayOfMonth(12), payee: 'Sample Fuel Station', what: 'Fuel for service vehicles', dv: 'DV 2026-11-082', amount: 15600, status: 'Released', to: 'Sample Fuel Station' },
-      { no: '0004506', account: 'GF', date: dayOfMonth(14), payee: 'Sample Hardware', what: 'Repair of the public market roof', dv: 'DV 2026-11-085', amount: 96375, status: 'Prepared', to: '' }
+      { no: '0004503', account: 'GF', date: dayOfMonth(4), payee: 'Sample Office Supply Co.', what: 'Office supplies', dv: 'DV ' + MO + '071', amount: 48500, status: 'Released', to: 'Sample Office Supply Co.' },
+      { no: '0004504', account: 'GF', date: dayOfMonth(6), payee: 'Sample Electric Cooperative', what: 'Electricity, October', dv: 'DV ' + MO + '076', amount: 32180.55, status: 'Released', to: 'Sample Electric Cooperative' },
+      { no: '0001202', account: 'SEF', date: dayOfMonth(11), payee: 'Sample Printing Press', what: 'School forms', dv: 'DV ' + MO + '080', amount: 18750, status: 'Released', to: 'Sample Printing Press' },
+      { no: '0004505', account: 'GF', date: dayOfMonth(12), payee: 'Sample Fuel Station', what: 'Fuel for service vehicles', dv: 'DV ' + MO + '082', amount: 15600, status: 'Released', to: 'Sample Fuel Station' },
+      { no: '0004506', account: 'GF', date: dayOfMonth(14), payee: 'Sample Hardware', what: 'Repair of the public market roof', dv: 'DV ' + MO + '085', amount: 96375, status: 'Prepared', to: '' }
     );
     S.log = [
       { time: t8(7, 46), user: 'Luz Ramos', role: 'Collecting Officer', what: 'Signed in' },
@@ -150,8 +150,8 @@
       { time: t8(8, 14), user: 'Maria Santos', role: 'Collecting Officer', what: 'Issued OR No. 1234501 (AF 51) for ₱1,000.00' },
       { time: t8(8, 20), user: 'Jose Reyes', role: 'Collecting Officer', what: 'Issued OR No. 1234551 (AF 51) for ₱3,250.00' },
       { time: t8(9, 32), user: 'Maria Santos', role: 'Collecting Officer', what: 'Issued OR No. 5670011 (AF 56) for ₱3,825.00' },
-      { time: t8(11, 30), user: 'Jose Reyes', role: 'Collecting Officer', what: 'Remitted RCD ' + YEAR + '-' + pad(MONTH + 1) + '-001 (General Fund) for ' + peso(sumOrs(j, 'GF')) },
-      { time: t8(11, 45), user: 'Luz Ramos', role: 'Collecting Officer', what: 'Remitted RCD ' + YEAR + '-' + pad(MONTH + 1) + '-002 (General Fund) for ' + peso(sumOrs(l, 'GF')) }
+      { time: t8(11, 30), user: 'Jose Reyes', role: 'Collecting Officer', what: 'Remitted RCD ' + YEAR + '-' + pad(MONTH + 1) + '-041 (General Fund) for ' + peso(sumOrs(j, 'GF')) },
+      { time: t8(11, 45), user: 'Luz Ramos', role: 'Collecting Officer', what: 'Remitted RCD ' + YEAR + '-' + pad(MONTH + 1) + '-042 (General Fund) for ' + peso(sumOrs(l, 'GF')) }
     ];
   }
   function addOr(officer, name, form, no, payor, lines, time, pin) {
@@ -731,15 +731,73 @@
       '</td><td class="r">' + money(sumOrs(list)) + '</td></tr></tbody></table></div>';
   }
   function cashbook() {
-    var k = S.cbAcct || 'GF', rows = S.cash[k];
+    var k = S.cbAcct || 'GF', rows = S.cash[k], td = 0, tc = 0;
+    var body = rows.map(function (e) {
+      td += e.dr; tc += e.cr;
+      return '<tr><td class="nw">' + shortDate(e.date) + '</td><td>' + esc(e.what) + (e.ref ? '<div class="muted">' + esc(e.ref) + '</div>' : '') + '</td><td class="r nw">' + (e.dr ? money(e.dr) : '') +
+        '</td><td class="r nw">' + (e.cr ? money(e.cr) : '') + '</td><td class="r nw">' + money(e.bal) + '</td></tr>';
+    }).join('');
     return '<h1>Cash Book</h1>' + about('Cash Book, Cash in Bank per account: DEBIT, deposits per consolidated RCD; CREDIT, checks issued; with the running balance.') +
       '<div class="tabs">' + ['GF', 'SEF'].map(function (a) { return '<button type="button" class="tab' + (a === k ? ' on' : '') + '" data-act="cb-acct" data-v="' + a + '">' + ACCOUNTS[a].name + '</button>'; }).join('') + '</div>' +
       '<p class="muted">' + ACCOUNTS[k].name + ' · ' + ACCOUNTS[k].bank + ' · ' + MONTHS[MONTH] + ' ' + YEAR + '</p>' +
-      '<div class="tbl"><table class="cb"><thead><tr><th>Date</th><th>Particulars</th><th class="r dr">Deposits</th><th class="r dr">Checks</th><th class="r io">In / out</th><th class="r">Balance</th></tr></thead><tbody>' +
-      rows.map(function (e) {
-        return '<tr><td class="nw">' + shortDate(e.date) + '</td><td>' + esc(e.what) + (e.ref ? '<div class="muted">' + esc(e.ref) + '</div>' : '') + '</td><td class="r dr">' + (e.dr ? money(e.dr) : '') +
-          '</td><td class="r dr">' + (e.cr ? money(e.cr) : '') + '</td><td class="r io">' + (e.dr ? '+' + money(e.dr) : e.cr ? '−' + money(e.cr) : '') + '</td><td class="r">' + money(e.bal) + '</td></tr>';
-      }).join('') + '<tr class="sum"><td colspan="2">Balance</td><td class="dr"></td><td class="dr"></td><td class="io"></td><td class="r">' + money(balance(k)) + '</td></tr></tbody></table></div>';
+      '<div class="tbl"><table class="cb"><thead><tr><th rowspan="2">Date</th><th rowspan="2">Particulars</th><th colspan="3" class="c">Cash in Bank</th></tr>' +
+      '<tr><th class="r">Debit</th><th class="r">Credit</th><th class="r">Balance</th></tr></thead><tbody>' + body +
+      '<tr class="sum"><td colspan="2">Totals / Balance as of ' + shortDate(TODAY) + '</td><td class="r nw">' + money(r2(td)) + '</td><td class="r nw">' + money(r2(tc)) + '</td><td class="r nw">' + money(balance(k)) + '</td></tr></tbody></table></div>' +
+      '<p class="muted">Debit: money into the bank account (deposits of collections). Credit: money out (checks issued). Balance: what is left after each entry.</p>';
+  }
+
+  // ------------------------------------------------------------------ the accountable officers' own cash books (LTOM Forms 1 and 2)
+  var MO = YEAR + '-' + pad(MONTH + 1) + '-';
+  // Maria Santos's RCDs earlier this month, all remitted in full
+  var COL_PAST = [[3, '007', 'GF', 12350], [5, '012', 'GF', 8940.5], [5, '013', 'SEF', 1980], [10, '027', 'GF', 15275]];
+  // the Liquidating Officer's consolidated RCDs earlier this month: received from the collectors, then deposited the same day
+  var LO_PAST = [[3, '004', 'GF', 'DS 70211', 186420.5], [5, '006', 'SEF', 'DS 70218', 23880], [10, '011', 'GF', 'DS 70240', 142310]];
+  function bookTable(heads, rows, note) {
+    var bal = 0, td = 0, tc = 0;
+    var body = rows.map(function (e) {
+      bal = r2(bal + e.dr - e.cr); td += e.dr; tc += e.cr;
+      return '<tr><td class="nw">' + shortDate(e.date) + '</td><td>' + e.ref + (e.what ? '<div class="muted">' + e.what + '</div>' : '') + '</td><td class="r nw">' + (e.dr ? money(e.dr) : '') +
+        '</td><td class="r nw">' + (e.cr ? money(e.cr) : '') + '</td><td class="r nw">' + money(bal) + '</td></tr>';
+    }).join('') || '<tr><td colspan="5" class="c muted">No entries yet this month.</td></tr>';
+    return '<div class="tbl"><table class="cb"><thead><tr><th>Date</th><th>' + heads + '</th><th class="r">Debit</th><th class="r">Credit</th><th class="r">Balance<br>on Hand</th></tr></thead><tbody>' + body +
+      '<tr class="sum"><td colspan="2">Totals</td><td class="r nw">' + money(r2(td)) + '</td><td class="r nw">' + money(r2(tc)) + '</td><td class="r nw">' + money(bal) + '</td></tr></tbody></table></div>' +
+      '<p class="muted">' + note + '</p>';
+  }
+  function colCashbook() {
+    var rows = COL_PAST.map(function (x) {
+      return { date: dayOfMonth(x[0]), ref: 'RCD ' + MO + x[1], what: ACCOUNTS[x[2]].name, dr: x[3], cr: x[3] };
+    });
+    S.rcds.filter(function (r) { return r.officer === 'Maria Santos' && r.status !== 'Refused'; }).forEach(function (r) {
+      rows.push({ date: r.date, ref: esc(r.no), what: ACCOUNTS[r.account].name, dr: r.total, cr: r.cash });
+    });
+    rows.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    var un = myOrs().filter(function (o) { return !o.reported; });
+    return '<h1>My Cash Book</h1>' +
+      about('Cashbook of the Collecting Officer (LTOM Form No. 1): DEBIT, your collections per RCD; CREDIT, what you remitted to the Liquidating Officer; BALANCE ON HAND, the money still with you.') +
+      '<p class="muted">Collector: ' + esc(ROLES.col.user) + ' · ' + MONTHS[MONTH] + ' ' + YEAR + '</p>' +
+      bookTable('Report No.', rows, 'Debit: collections per RCD. Credit: remitted to the Liquidating Officer, ' + esc(ROLES.lo.user) + '. Balance on Hand: money you still hold.') +
+      (un.length ? '<div class="msg info">' + peso(sumOrs(un)) + ' on ' + un.length + ' ORs today is not yet in an RCD. It enters this cash book when you <a href="#col-rcd">close the day</a>.</div>'
+        : '<div class="msg ok">All your ORs are in an RCD and remitted. Nothing is left on hand.</div>');
+  }
+  function loCashbook() {
+    var k = S.loAcct || 'GF', rows = [];
+    LO_PAST.filter(function (x) { return x[2] === k; }).forEach(function (x) {
+      rows.push({ date: dayOfMonth(x[0]), ref: 'CRCD ' + MO + x[1], what: 'From the collecting officers', dr: x[4], cr: 0 });
+      rows.push({ date: dayOfMonth(x[0]), ref: 'CRCD ' + MO + x[1], what: 'Deposited, ' + x[3], dr: 0, cr: x[4] });
+    });
+    S.rcds.filter(function (r) { return r.account === k && r.status !== 'Refused'; }).forEach(function (r) {
+      rows.push({ date: r.date, ref: esc(r.no), what: 'From ' + esc(r.officer) + (r.cash !== r.total ? ' (short ' + peso(r2(r.total - r.cash)) + ')' : ''), dr: r.cash, cr: 0 });
+    });
+    S.crcds.filter(function (c) { return c.account === k; }).forEach(function (c) {
+      rows.push({ date: c.date, ref: esc(c.no), what: 'Deposited, ' + esc(c.slip), dr: 0, cr: c.total });
+    });
+    rows.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    return '<h1>My Cash Book</h1>' +
+      about('Cashbook of the Liquidating Officer (LTOM Form No. 2), per fund: DEBIT, collections turned over to you by the collecting officers; CREDIT, what you deposited in the bank; BALANCE ON HAND, the money still with you.') +
+      '<div class="tabs">' + ['GF', 'SEF'].map(function (a) { return '<button type="button" class="tab' + (a === k ? ' on' : '') + '" data-act="lo-acct" data-v="' + a + '">' + ACCOUNTS[a].name + '</button>'; }).join('') + '</div>' +
+      '<p class="muted">Liquidating Officer: ' + esc(ROLES.lo.user) + ' · Fund: ' + ACCOUNTS[k].name + ' · ' + MONTHS[MONTH] + ' ' + YEAR + '</p>' +
+      bookTable('Report No.', rows, 'Debit: money received from the collecting officers. Credit: deposited in ' + LGU.bank + '. Balance on Hand: money received but not yet deposited. ' +
+        '<a href="#lo-crcd">Count and deposit it in Consolidated RCD →</a>');
   }
 
   // ------------------------------------------------------------------ Disbursing Officer
@@ -836,12 +894,12 @@
 
   // ------------------------------------------------------------------ drawing and routing
   var SCREENS = {
-    col: { home: home, issue: issue, rptcalc: rptcalc, collections: collections, rcd: rcd, raaf: raaf },
-    lo: { home: home, crcd: crcd, refused: refused, craaf: craaf, register: register, cashbook: cashbook },
+    col: { home: home, issue: issue, rptcalc: rptcalc, collections: collections, rcd: rcd, raaf: raaf, cashbook: colCashbook },
+    lo: { home: home, crcd: crcd, refused: refused, craaf: craaf, register: register, locash: loCashbook, cashbook: cashbook },
     do: { home: home, prepare: prepare, checks: checks, cashbook: cashbook },
     sys: { home: home, dashboard: dashboard, register: register, cashbook: cashbook, log: activity }
   };
-  var TITLES = { home: 'Home', issue: 'Issue Official Receipt', rptcalc: 'RPT Tax Calculator', collections: 'My Collections', rcd: 'My RCD', raaf: 'My RAAF', craaf: 'RAAF & CRAAF',
+  var TITLES = { home: 'Home', issue: 'Issue Official Receipt', rptcalc: 'RPT Tax Calculator', collections: 'My Collections', rcd: 'My RCD', raaf: 'My RAAF', craaf: 'RAAF & CRAAF', locash: 'My Cash Book',
     crcd: 'Consolidated RCD', refused: 'Refused Reports', register: 'Collections Register', cashbook: 'Cash Book', prepare: 'Prepare Check',
     checks: 'Check Issuance', dashboard: 'Collections Dashboard', log: 'Activity Log' };
   var LOGIN = root.innerHTML;
@@ -906,6 +964,7 @@
     else if (act === 'deposit') doDeposit();
     else if (act === 'refuse') doRefuse();
     else if (act === 'cb-acct') { S.cbAcct = v; draw(true); }
+    else if (act === 'lo-acct') { S.loAcct = v; draw(true); }
     else if (act === 'check') doCheck();
     else if (act === 'release') {
       var c = S.checks.filter(function (x) { return x.no === v; })[0];
