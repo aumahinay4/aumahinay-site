@@ -217,6 +217,10 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .deno div{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:6px}
 .deno label{margin:0;text-align:right}
 .deno input{padding:7px 8px}
+/* the Simulation & Non-Affiliation Notice on the sign-in page (Butch's wording) */
+.notice{width:min(400px,100%);margin:16px 0 0;padding:14px 16px;background:#fff;border:1px solid #dde3ee;border-left:4px solid #c2185b;color:#3b4357;font-size:13.5px;line-height:1.5}
+.notice .nt{font:700 14px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1d2433;margin-bottom:6px}
+.notice p{margin:0 0 8px}.notice p.lk{margin:0}.notice a{color:#1a56c4}
 /* guided tour box */
 .tour{--tk:#2f80d8;background:#fff;border:1px solid #dde3ee;border-left:5px solid var(--tk);padding:12px 14px;margin:0 0 16px;box-shadow:0 2px 8px rgba(20,40,90,.06)}
 .tour .th{display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -329,7 +333,7 @@ def demo_page():
             # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
             t.link(rel="canonical", href=url),
-            t.meta(name="robots", content="noindex"),  # drawn by JavaScript: no text for Google (Butch, 2026-11-20)
+            t.meta(name="robots", content="noindex, nofollow"),  # drawn by JavaScript: no text for Google (Butch, 2026-11-20)
             t.meta(name="description", content=DEMO_DESCRIPTION),
             t.meta(property="og:type", content="website"),
             t.meta(property="og:site_name", content=SITE["short_name"]),

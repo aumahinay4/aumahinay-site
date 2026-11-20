@@ -264,6 +264,11 @@
       '<ol class="tourlist">' + TOUR.map(function (t, k) { return '<li class="' + (t.done() ? 'ok' : '') + '"><span style="color:' + ROLES[t.role].key + '">' + ROLES[t.role].label + ':</span> ' + t.title + '</li>'; }).join('') + '</ol>' +
       (function () { var i = tourAt(); return i < TOUR.length ? '<a class="tourgo" href="#' + TOUR[i].role + '-' + TOUR[i].page + '">' + (i ? 'Continue the tour at step ' + (i + 1) : 'Start the guided tour') + ' →</a>' : '<p class="note"><b>Tour complete.</b> <a href="#" data-act="restart">Start the demo again</a>.</p>'; })() +
       '</div>' +
+      // Butch's wording, from his Google Doc "aumahinay.dev Educational & Tax Disclaimers", part 4 (2026-11-20)
+      '<div class="notice"><div class="nt">Software Demonstration &amp; Simulation Notice</div>' +
+      '<p>This interactive demo of the Automated Local Treasury Operations System (ALTOS) runs on 100% fictitious sample data in a temporary browser session—nothing you enter or modify is saved, and this environment is not connected to any Local Government Unit (LGU) or treasury database.</p>' +
+      '<p>Developed independently by Ambrosio U. Mahinay in his private capacity for educational and architectural evaluation only. Not an official system or endorsement of any LGU, BLGF, DOF, or COA. Do not enter real taxpayer or official government records.</p>' +
+      '<p class="lk"><a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></p></div>' +
       '<div class="lfoot"><div>' + DAYS[now.getUTCDay()] + ', ' + longDate(TODAY) + '</div>' +
       '<div class="cp">© ' + YEAR + ' aumahinay. All rights reserved. · <a href="/projects/">About ALTOS</a></div></div>';
   }
