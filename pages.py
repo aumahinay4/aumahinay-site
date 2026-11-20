@@ -350,7 +350,7 @@ def family():
     return t.div(
         t.div(
             t.div(t.span(t.span(wordmark(), class_="wordmark"), class_="code"), class_="node-head"),
-            t.h3(ALTOS["full_name"]),
+            # full name left out: the ALTOS box below shows it (no duplicates, Butch 2026-11-20)
             t.p("Collect, Disburse and Report in one database, with the ALTOS Framework built in."),
             class_="node mother",
         ),
@@ -446,9 +446,7 @@ def home():
                         "Local treasury work in plain words: revenue, taxes, collections and payments, "
                         "each note with a short quiz.",
                         "Read the notes →", NOTES_INFO["url"])] if live_notes() else []),  # Butch 2026-11-14: right after Tutorials
-                    ("ALTOS",
-                     "The Automated Local Treasury Operations System, a working treasury system for "
-                     "Philippine local treasuries, written in Python.", "See the project →", ALTOS_URL),
+                    # ALTOS card removed: the full ALTOS section is further down this page (no duplicates, Butch 2026-11-20)
                 )
             ],
             class_="grid three find",
@@ -558,14 +556,11 @@ def altos_section():
         t.h2("ALTOS, the mother system"),
         t.div(
             t.div(
-                t.p("Mother system", class_="eyebrow"),
                 t.p(wordmark(), class_="wordmark big-wordmark", aria_label="ALTOS"),  # a p, so the page keeps one h1
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
-                # the click-through demo with made-up data (Butch 2026-11-19)
-                t.p(t.a("Try the ALTOS demo →", href=DEMO_URL, class_="btn primary"), class_="demo-cta"),
-                t.p("Runs in your browser with a made-up municipality, officers and taxpayers. Nothing is saved.", class_="muted"),
+                # demo button left out here: the Home hero already has "ALTOS Demo" (no duplicates, Butch 2026-11-20)
             ),
             class_="altos-hero",
         ),
