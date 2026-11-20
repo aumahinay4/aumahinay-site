@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
+from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, LEARN_SERIES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
 from highlight import highlight
 from share_cards import card_for
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
@@ -408,10 +408,8 @@ def home():
         "finance": "Stand-alone posts on public money: local taxes, tools like the RPT calculator, and the rules behind them.",
         "treasury": "Everyday work inside a local treasury: taxes, receipts, budgets, checks, year-end and audits.",
         "personal": "The farm, the province, and life beyond the office.",
-        "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
-        "data": "A series on data analytics, from asking the right question to acting on the answer.",
-        "bi": "A series on business intelligence: data models, pipelines and dashboards that keep answers coming.",
-        "pm": "A series on running projects in a local treasury, from the first assignment to the handover.",
+        "learn": "Short series on cybersecurity, data analytics, business intelligence and project management, "
+                 "in plain words for people who work in local government.",
     }
     return part(
         "Home", "/",
@@ -1191,6 +1189,8 @@ CATEGORY = {key: (label, colour) for key, label, colour in BLOG_CATEGORIES}
 
 def category_label(b):
     label, colour = CATEGORY[b["category"]]
+    if b.get("series"):  # Learn posts keep their series name (Butch 2026-11-20)
+        label = f"{label} · {LEARN_SERIES[b['series']]}"
     return t.span(label, class_=f"cat cat-{colour}")
 
 
@@ -1516,7 +1516,8 @@ def blog():
             ),
             series_banner() if posts_live else "",
             posts,
-            t.script(Raw('(function(){var m=/^#cat-(\\w+)$/.exec(location.hash);var r=m&&document.getElementById("cat-"+m[1]);if(r)r.checked=true;'
+            t.script(Raw(f'(function(){{var m=/^#cat-(\\w+)$/.exec(location.hash);var o={json.dumps({k: "learn" for k in LEARN_SERIES})};'
+                         'var r=m&&document.getElementById("cat-"+(o[m[1]]||m[1]));if(r)r.checked=true;'
                          'var d=document.getElementById("blog-cats");if(d)d.addEventListener("change",function(){d.open=false;});})();')),
             t.p(
                 "Views here are my own and do not represent any government office.",
@@ -1665,7 +1666,8 @@ def post_photo(b):
 def related_posts(b, posts, skip=()):
     """'Keep reading': up to three other live posts, same category first (newest first), then the newest others."""
     others = sorted((p for p in posts if p is not b and p not in skip), key=post_day, reverse=True)
-    picks = [p for p in others if p["category"] == b["category"]][:3]
+    picks = [p for p in others if b.get("series") and p.get("series") == b["series"]][:3]  # same Learn series first
+    picks += [p for p in others if p["category"] == b["category"] and p not in picks][:3 - len(picks)]
     picks += [p for p in others if p not in picks][:3 - len(picks)]
     if not picks:
         return ""
