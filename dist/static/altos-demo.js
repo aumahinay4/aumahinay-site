@@ -257,7 +257,7 @@
       '</ol></details>' +
       '<div class="rule"></div><div class="wp">WORKING PAGES</div><div class="wpg">' + wp('col') + wp('lo') + wp('do') + wp('sys') + '</div></div>' +
       '<div class="lfoot"><div>' + DAYS[now.getUTCDay()] + ', ' + longDate(TODAY) + '</div>' +
-      '<div class="cp">© ' + YEAR + ' aumahinay. All rights reserved. · <a href="/projects/">About ALTOS</a></div></div>' +
+      '<div class="cp">© ' + YEAR + ' aumahinay. All rights reserved. · <a href="/#altos">About ALTOS</a></div></div>' +
       // Butch's wording, from his Google Doc "aumahinay.dev Educational & Tax Disclaimers", part 4 (2026-11-20)
       '<div class="notice"><div class="nt">Software Demonstration &amp; Simulation Notice</div>' +
       '<p>This interactive demo of the Automated Local Treasury Operations System (ALTOS) runs on 100% fictitious sample data in a temporary browser session—nothing you enter or modify is saved, and this environment is not connected to any Local Government Unit (LGU) or treasury database.</p>' +

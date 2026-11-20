@@ -313,6 +313,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 
 /* Projects: ALTOS as the mother system, subsystems branching below */
 .family { margin-top: 36px; }
+#altos { scroll-margin-top: 80px; }  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .node h3 { margin: 12px 0 4px; }
 .node p { margin: 10px 0 0; color: var(--muted); font-size: 15.6312px; line-height: 1.5; }
