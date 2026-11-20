@@ -104,7 +104,7 @@ h1,h2,h3,label,th,button,.btn,.badge,.pill,.side,.tab,.total,.banner h1,.banner 
 a{color:#1a56c4}
 .demo-bar{background:#f2c230;color:#1b1b1b;font:600 14px/1.35 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:7px 14px;display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
 .demo-bar b{font-weight:800;letter-spacing:.04em}
-.demo-bar a{margin-left:auto;color:#1b1b1b;font-weight:700;white-space:nowrap}
+.demo-bar,.demotag{text-decoration:none;cursor:pointer}.demo-bar:hover,.demotag:hover{background:#ffd54a}
 /* sign-in page, with role buttons instead of a username and password */
 .lg{display:flex;min-height:calc(100vh - 34px)}
 .lg .panel{flex:56;position:relative;overflow:hidden;background:linear-gradient(180deg,#17418f,#5a33a8);color:#fff;padding:40px 6.7vw;display:flex;flex-direction:column;justify-content:center}
@@ -222,7 +222,7 @@ body.signin .demo-bar{display:none}
 body.signin .lg{min-height:100vh}
 .lg{position:relative}
 .demotag{position:absolute;top:12px;right:14px;z-index:3;background:#f2c230;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
-.demotag b{font-weight:800;letter-spacing:.04em}.demotag a{color:#1b1b1b;font-weight:700;margin-left:6px}
+.demotag b{font-weight:800;letter-spacing:.04em}
 .lg .panel .dev{position:absolute;left:6.7vw;bottom:26px;margin:0}
 .lcard .steps{margin:10px 0 0;font-size:14px;color:#4a5266}.lcard .steps summary{cursor:pointer;color:#1a56c4}
 .wpg{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:8px}
@@ -360,11 +360,12 @@ def demo_page():
             t.style(Raw(CSS)),
         ),
         t.body(
-            t.div(t.span(t.b("DEMO"), " Made-up sample data. Not connected to any treasury. Nothing you do is saved."),
-                  t.a("Leave demo ✕", href="/projects/"), class_="demo-bar", role="note"),
+            # the whole yellow bar is the way out: tap it to go back to Projects (no close mark)
+            Raw('<a class="demo-bar" href="/projects/" title="Back to Projects"><span><b>DEMO</b> Made-up sample data. '
+                'Not connected to any treasury. Nothing you do is saved.</span></a>'),
             t.div(
                 # the sign-in page, also what a visitor sees before the script runs
-                Raw('<div class="lg"><div class="demotag"><b>DEMO</b> Sample data only. Nothing is saved. <a href="/projects/">Leave demo ✕</a></div>'
+                Raw('<div class="lg"><a class="demotag" href="/projects/" title="Back to Projects"><b>DEMO</b> Sample data only. Nothing is saved.</a>'
                     + login_panel + '<div class="side2" id="pick"></div></div>'),
                 id="altos-demo",
             ),
