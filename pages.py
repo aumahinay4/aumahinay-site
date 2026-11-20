@@ -63,7 +63,8 @@ FULLSCREEN_ICON = Raw(
     '<svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>'
 )
 
-NAV = [("/", "Home"), ("/projects/", "Projects"), ("/study-notes/", "Study Notes"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
+# Projects page removed (Butch 2026-11-20): ALTOS now lives on Home at /#altos
+NAV = [("/", "Home"), ("/study-notes/", "Study Notes"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
 CERT_SCRIPT = """
 (function () {
@@ -97,7 +98,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
-MENU = NAV[:3] + [(RPT_URL, "RPT Calculator")] + NAV[3:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
+MENU = NAV[:2] + [(RPT_URL, "RPT Calculator")] + NAV[2:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
 
 
 def menu_items():
@@ -335,26 +336,13 @@ def cover_img(class_):
     return t.img(src=asset_url("altos-cover.jpg"), alt=f"Cover of {ALTOS['book']['title']}", class_=class_, width="600", height="900")
 
 
-def altos_feature_card():
-    return t.div(
-        t.div(t.img(src=asset_url("altos-screen.jpg"), alt="The ALTOS sign-in page", class_="feature-shot", width="1600", height="1001", loading="lazy"), class_="feature-art wide"),
-        t.div(
-            t.p(ALTOS["where"], class_="eyebrow"),
-            t.h3(t.span(wordmark(), class_="wordmark"), " ", ALTOS["full_name"]),
-            tag_list(ALTOS["stack"]),
-            t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn white"),
-                  t.a("Try the demo →", href=DEMO_URL, class_="btn primary"), class_="foot"),
-            class_="feature-body",
-        ),
-        class_="card feature",
-    )
-
-
 def subsystem_node(sub, summary=True):
     return t.div(
         t.div(t.span(sub["code"], class_="code"), t.span(sub["status"], class_="status" if sub["status"] == "Planned" else "status live"), class_="node-head"),
         t.p(sub["summary"]) if summary else None,
         t.div(sub["movement"], class_="forms"),
+        # the whole box opens that officer's side of the demo (Butch 2026-11-20: Home as clickable as possible)
+        t.a("Open it in the demo →", href=DEMO_URL + ("#do-home" if "Disbursement" in sub["code"] else "#col-home"), class_="go stretch"),
         class_="node child",
     )
 
@@ -364,8 +352,9 @@ def family():
     return t.div(
         t.div(
             t.div(t.span(t.span(wordmark(), class_="wordmark"), class_="code"), class_="node-head"),
-            t.h3(ALTOS["full_name"]),
+            # full name left out: the ALTOS box below shows it (no duplicates, Butch 2026-11-20)
             t.p("Collect, Disburse and Report in one database, with the ALTOS Framework built in."),
+            t.a("Try the demo →", href=DEMO_URL, class_="go stretch"),
             class_="node mother",
         ),
         t.div(class_="branch", aria_hidden="true"),
@@ -460,9 +449,7 @@ def home():
                         "Local treasury work in plain words: revenue, taxes, collections and payments, "
                         "each note with a short quiz.",
                         "Read the notes →", NOTES_INFO["url"])] if live_notes() else []),  # Butch 2026-11-14: right after Tutorials
-                    ("ALTOS",
-                     "The Automated Local Treasury Operations System, a working treasury system for "
-                     "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
+                    # ALTOS card removed: the full ALTOS section is further down this page (no duplicates, Butch 2026-11-20)
                 )
             ],
             class_="grid three find",
@@ -486,8 +473,7 @@ def home():
         ),
         section_head(TUTORIAL["title"], "All lessons", "/tutorials/"),
         t.div([lesson_card(x, mini=True) for x in lessons[::-1][:3]], class_="grid three"),
-        section_head("Project", "All about ALTOS", "/projects/"),
-        t.div(altos_feature_card(), class_="grid one"),
+        *altos_section(),
         t.h2("About the author"),
         author_card(),
         description="Plain-language writing on Philippine local treasury work and public finance, free Python "
@@ -500,9 +486,10 @@ def author_card():
     "be consistent"): same name, same violet roles line and the same facts, in third person ("he", Butch 2026-11-10) as the About intro."""
     return t.div(
         t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo", loading="lazy"),
+            t.a(t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo", loading="lazy"),
+                href="/about/", aria_label="About Ambrosio “Butch” U. Mahinay"),
             t.div(
-                t.p("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"),
+                t.p(t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), class_="author-name"),
                 t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
             ),
             class_="author-top",
@@ -512,8 +499,8 @@ def author_card():
             "work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
             "He writes, teaches and builds software in his personal capacity, outside official working hours.",
             class_="author-bio"),
-        t.p(t.a("Full profile", href="/about/"), t.a("Contact", href="/contact/"),
-            t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
+        # Contact and Privacy Policy left out: the menu and the footer already have them (Butch 2026-11-20)
+        t.p(t.a("Full profile", href="/about/"), class_="author-links"),
         class_="card author",
     )
 
@@ -552,12 +539,34 @@ def contact():
     )
 
 
-def projects():
+# where each Home ALTOS box leads in the demo (/projects/altos-demo/#<role>-<screen>)
+MOVEMENT_DEMO = {"Collect": "#col-issue", "Disburse": "#do-prepare", "Report": "#lo-craaf"}
+FEATURE_DEMO = {"Built from the forms": "#col-issue", "Rules, not just records": "#col-issue",
+                "Deadlines that count down": "#lo-craaf", "The sealed ledger": "#sys-log",
+                "Security Center": "#sys-home", "Correction without concealment": "#sys-log",
+                "Turnover built in": "#sys-home", "Data Analytics and Insights": "#sys-dashboard"}
+
+
+def principle_url(n):
+    """Principle n's blog post when it is live, else the series page (never a link to an unpublished post)."""
+    for label, _, b, live in series_posts():
+        if label == f"Principle {n}":
+            return post_url(b) if live else SERIES_URL
+    return SERIES_URL
+
+
+ALTOS_URL = "/#altos"  # the ALTOS section of Home (was the Projects page, /projects/, until 2026-11-20)
+
+
+def altos_section():
+    """ALTOS on Home (Butch 2026-11-20: the Projects page is no longer needed; its content moved here).
+    /projects/ now redirects to /#altos."""
     book = ALTOS["book"]
-    return part(
-        "Projects", "/projects/",
-        t.p("Software", class_="eyebrow"),
-        photo_title("Projects"),
+    return [
+        t.h2("Project: ALTOS", id="altos", class_="altos-anchor"),
+        # after pictures above it load, land on the heading again (old /projects/ links come here)
+        t.script(Raw('addEventListener("load",function(){if(location.hash==="#altos")'
+                     'document.getElementById("altos").scrollIntoView();});')),
         t.p(
             "ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections "
             "and the Treasury Disbursement System for disbursements, each with its own reports.",
@@ -567,34 +576,39 @@ def projects():
         t.h2("ALTOS, the mother system"),
         t.div(
             t.div(
-                t.p("Mother system", class_="eyebrow"),
                 t.p(wordmark(), class_="wordmark big-wordmark", aria_label="ALTOS"),  # a p, so the page keeps one h1
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
-                # the click-through demo with made-up data (Butch 2026-11-19)
-                t.p(t.a("Try the ALTOS demo →", href=DEMO_URL, class_="btn primary"), class_="demo-cta"),
-                t.p("Runs in your browser with a made-up municipality, officers and taxpayers. Nothing is saved.", class_="muted"),
+                # no second demo button (the Home hero has "ALTOS Demo"); the whole box opens the demo instead
+                t.a("", href=DEMO_URL, class_="stretch", aria_label="Try the ALTOS demo"),
             ),
             class_="altos-hero",
         ),
-        t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
+        t.blockquote(t.p(ALTOS["principle"]), t.footer(t.a("The ALTOS principle →", href=SERIES_URL, class_="stretch"))),
         t.figure(
-            t.img(src=asset_url("altos-loop.png"), alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step.", width="1395", height="680", loading="lazy"),
-            t.figcaption("Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step."),
+            t.a(t.img(src=asset_url("altos-loop.png"), alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step.", width="1395", height="680", loading="lazy"),
+                href=BOOK_URL, aria_label="Read Chapter 1 of the ALTOS book, where this figure comes from"),
+            t.figcaption("Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step. ",
+                         t.a("See it in the book preview →", href=BOOK_URL)),
             class_="screenshot diagram",
         ),
         t.h2("Three movements of public money"),
         t.p("Every transaction in a local treasury belongs to one of three movements. ALTOS follows each one, with a named officer answerable at every step.", class_="muted"),
         t.div(
-            [t.div(t.h3(name), t.p(desc), t.div(forms, class_="forms"), class_="card") for name, desc, forms in ALTOS["movements"]],
+            [t.div(t.h3(name), t.p(desc), t.div(forms, class_="forms"),
+                   t.a("See it in the demo →", href=DEMO_URL + MOVEMENT_DEMO.get(name, ""), class_="go stretch"), class_="card")
+             for name, desc, forms in ALTOS["movements"]],
             class_="grid three",
         ),
         t.h2("What ALTOS does"),
-        t.div([t.div(t.h3(title), t.p(desc), class_="card") for title, desc in ALTOS["features"]], class_="grid four"),
-        t.h2("The ALTOS Framework"),
+        t.div([t.div(t.h3(title), t.p(desc), t.a("See it in the demo →", href=DEMO_URL + FEATURE_DEMO.get(title, ""), class_="go stretch"), class_="card")
+               for title, desc in ALTOS["features"]], class_="grid four"),
+        section_head("The ALTOS Framework", "Read the series", SERIES_URL),
         t.p("Ten principles for Philippine public fiscal administration. ALTOS checks its own records against each one in a quarterly self-assessment.", class_="muted"),
-        t.ol([t.li(t.b(name), t.span(desc)) for name, desc in ALTOS["principles"]], class_="principles"),
+        # each principle opens its blog post once that part is live, otherwise the series page
+        t.ol([t.li(t.b(t.a(name, href=principle_url(i), class_="stretch")), t.span(desc))
+              for i, (name, desc) in enumerate(ALTOS["principles"], 1)], class_="principles"),
         t.h2("The book"),
         t.div(
             t.a(cover_img("book-cover"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"),
@@ -607,11 +621,8 @@ def projects():
             ),
             class_="card book",
         ),
-        t.p(t.em(ALTOS["motto"]), class_="motto"),
-        description=f"{ALTOS['name']}, the {ALTOS['full_name']}: software for Philippine local treasuries that "
-                    "handles collections, official receipts, the RCD, disbursements, vouchers, checks and reports.",
-        seo_title=f"ALTOS: Treasury Software for Philippine LGUs · {SITE['short_name']}",
-    )
+        t.p(t.a(t.em(ALTOS["motto"]), href=BOOK_URL), class_="motto"),
+    ]
 
 
 BOOK_PREVIEW_PAGES = 20  # cover, title, copyright, contents, Part I, Chapters 1-3 and start of Chapter 4 = PDF pp. 1-4, 9-24 (preface left out at Butch's request) (static/book/page-NN.jpg)
@@ -673,8 +684,8 @@ def book_reader():
     book = ALTOS["book"]
     pages = [asset_url(f"book/page-{n:02d}.jpg") for n in range(1, BOOK_PREVIEW_PAGES + 1)]
     return part(
-        "ALTOS book preview", "/projects/",
-        t.a("← Back to Projects", href="/projects/", class_="crumb"),
+        "ALTOS book preview", "/",
+        t.a("← Back to ALTOS", href=ALTOS_URL, class_="crumb"),
         t.p("Book preview", class_="eyebrow"),
         t.h1(book["title"]),
         t.p(f"{book['subtitle']} · {book['status']} · {book['pages']} pages. Read the first 20 pages here: the contents, Chapters 1 to 3 and the start of Chapter 4.", class_="lead"),
@@ -1778,7 +1789,7 @@ def series_page():
                     t.i(ALTOS["book"]["title"].split(":")[0]), ". You can read its first pages for free, or see what "
                     "the ALTOS software does for collections and disbursements."),
                 t.div(t.a("Preview the book", href=BOOK_URL, class_="btn primary"),
-                      t.a("About ALTOS", href="/projects/", class_="btn white"), class_="actions"),
+                      t.a("About ALTOS", href=ALTOS_URL, class_="btn white"), class_="actions"),
                 class_="card series-more",
             ),
             t.p("Views here are my own and do not represent any government office.", class_="muted note"),
@@ -1984,7 +1995,7 @@ def terms():
         "calculator are for learning, not legal or financial advice, and are written in a personal capacity.")
 
 
-PARTS = {"/": home, "/projects/": projects, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, RPT_URL: rpt_page}
+PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, RPT_URL: rpt_page}
 
 
 def _full_page(build):

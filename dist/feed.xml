@@ -6,7 +6,14 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 21:00:00 +0800</lastBuildDate>
+    <item>
+      <title>The ALTOS Framework, Principle 5: Every Record Has a Seal</title>
+      <link>https://aumahinay.dev/blog/altos-framework-every-record-has-a-seal/</link>
+      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-every-record-has-a-seal/</guid>
+      <pubDate>Fri, 20 Nov 2026 21:00:00 +0800</pubDate>
+      <description>Once a record is posted, it can be corrected, but only in the open: with a reason, a name and a trace that anyone can check.</description>
+    </item>
     <item>
       <title>Cybersecurity Series, Part 3: The Art of Human Hacking</title>
       <link>https://aumahinay.dev/blog/cybersecurity-part-3-human-hacking/</link>

@@ -17,6 +17,14 @@ from pages import NOINDEX_URLS, ROUTES, live_notes, TUTORIALS, lesson_is_live, l
 DIST = Path(__file__).parent / "dist"
 
 
+MOVED_PAGE = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<title>ALTOS moved to the home page</title><link rel="canonical" href="%(canonical)s">
+<meta http-equiv="refresh" content="0; url=%(to)s"><script>location.replace("%(to)s")</script></head>
+<body><p>ALTOS is now on the <a href="%(to)s">home page</a>.</p></body></html>
+"""
+
+
 # IndexNow (Butch, 2026-11-10): the deploy tells Bing about new pages; the key is public by design
 INDEXNOW_KEY = "b555a2cf9c5446677189c26e434c02e7"
 
@@ -75,6 +83,11 @@ def build():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render(), encoding="utf-8")
         print("wrote", out.relative_to(DIST.parent))
+    # fallback if the host serves files before _redirects: a tiny page that jumps to the ALTOS section of Home
+    gone = DIST / "projects" / "index.html"
+    if not gone.exists():
+        gone.parent.mkdir(parents=True, exist_ok=True)
+        gone.write_text(MOVED_PAGE % {"to": "/#altos", "canonical": f"https://{SITE['domain']}/"}, encoding="utf-8")
     (DIST / "404.html").write_text(not_found(), encoding="utf-8")
     shutil.copytree(Path(__file__).parent / "static", DIST / "static", dirs_exist_ok=True)
     shutil.copy(DIST / "static" / "favicon.ico", DIST / "favicon.ico")  # browsers look for it at the root
@@ -85,7 +98,9 @@ def build():
                 if f.suffix in (".py", ".csv"):
                     shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
-    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n/courses/ /study-notes/ 301\n/courses /study-notes/ 301\n")
+    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n/courses/ /study-notes/ 301\n/courses /study-notes/ 301\n"
+                                      # Projects page removed (Butch 2026-11-20): its ALTOS content is on Home now
+                                      "/projects/ /#altos 301\n/projects /#altos 301\n")
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")

@@ -173,8 +173,8 @@ h3 { font-size: 1.1597rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -0
 .grid.three { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid.four { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
 /* Home "What you'll find here" (4 cards since Treasury Study Notes, 2026-11-14): 4 across on computers, 2 x 2 on tablets, never a lonely card */
-.grid.three.find { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 1024px) { .grid.three.find { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.grid.three.find { grid-template-columns: repeat(3, minmax(0, 1fr)); }  /* 3 cards since the ALTOS card left (2026-11-20) */
+@media (max-width: 1024px) { .grid.three.find { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .grid.three.find { grid-template-columns: 1fr; } }
 .grid > *:nth-child(5n+1) { --c: var(--gold); --ci: var(--gold-ink); }
 .grid > *:nth-child(5n+2) { --c: var(--blue); --ci: var(--blue-ink); }
@@ -313,6 +313,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 
 /* Projects: ALTOS as the mother system, subsystems branching below */
 .family { margin-top: 36px; }
+#altos { scroll-margin-top: 80px; }  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .node h3 { margin: 12px 0 4px; }
 .node p { margin: 10px 0 0; color: var(--muted); font-size: 15.6312px; line-height: 1.5; }
@@ -1183,4 +1184,23 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 CSS += """
 /* Three-bar menu icon 25% bigger, every page and screen (Butch 2026-11-20): 15px -> 18.75px; tap area stays 32px */
 .menu-btn svg { width: 18.75px; height: 18.75px; }
+"""
+
+CSS += """
+/* Home: whole boxes are links (Butch 2026-11-20 "as much as possible clickable"): a.stretch covers its box */
+a.stretch::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.altos-hero > div { position: relative; }
+.altos-hero a.stretch { position: static; }
+ol.principles li { position: relative; transition: border-color .15s, transform .15s; }
+ol.principles li a.stretch { color: inherit; text-decoration: none; }
+.node .go, .grid .card > .go { display: inline-block; margin-top: 12px; font-size: 14.6227px; font-weight: 700; color: var(--ci, var(--blue-ink)); text-decoration: none; }
+.card > .go { margin-top: auto; padding-top: 12px; }
+.node.mother .go { color: var(--gold); }
+.node:has(a.stretch):hover, .card:has(> a.stretch):hover, ol.principles li:hover, .post-card:hover, .altos-hero:has(a.stretch):hover { border-color: var(--gold); transform: translateY(-2px); }
+.node, .card, .altos-hero { transition: border-color .15s, transform .15s; }
+blockquote footer a.stretch { color: inherit; text-decoration: none; }
+.post-card h2 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.motto a { color: inherit; text-decoration: none; }
+.motto a:hover, figure.screenshot figcaption a { color: var(--blue-ink); }
+.card.author .author-name a { color: inherit; text-decoration: none; }
 """

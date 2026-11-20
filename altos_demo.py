@@ -1,4 +1,4 @@
-"""ALTOS demo: /projects/altos-demo/ (Butch 2026-11-19, "Four-role tour").
+"""ALTOS demo: /projects/altos-demo/ (URL kept; the Projects page itself moved to Home /#altos on 2026-11-20) (Butch 2026-11-19, "Four-role tour").
 
 A click-through copy of ALTOS that runs only in the visitor's browser: made-up LGU, officers, taxpayers and
 amounts, no server, no database, nothing saved (reloading starts fresh). It copies the LOOK and the steps of
@@ -360,17 +360,17 @@ def demo_page():
             t.style(Raw(CSS)),
         ),
         t.body(
-            # the whole yellow bar is the way out: tap it to go back to Projects (no close mark)
-            Raw('<a class="demo-bar" href="/projects/" title="Back to Projects"><span><b>DEMO</b> Made-up sample data. '
+            # the whole yellow bar is the way out: tap it to go back to the ALTOS section of Home (no close mark)
+            Raw('<a class="demo-bar" href="/#altos" title="Back to ALTOS"><span><b>DEMO</b> Made-up sample data. '
                 'Not connected to any treasury. Nothing you do is saved.</span></a>'),
             t.div(
                 # the sign-in page, also what a visitor sees before the script runs
-                Raw('<div class="lg"><a class="demotag" href="/projects/" title="Back to Projects"><b>DEMO</b> Sample data only. Nothing is saved.</a>'
+                Raw('<div class="lg"><a class="demotag" href="/#altos" title="Back to ALTOS"><b>DEMO</b> Sample data only. Nothing is saved.</a>'
                     + login_panel + '<div class="side2" id="pick"></div></div>'),
                 id="altos-demo",
             ),
             t.noscript(t.p("This demo runs in your browser. Please turn on JavaScript to try it, or read about ALTOS on the ",
-                           t.a("Projects page", href="/projects/"), ".")),
+                           t.a("home page", href="/#altos"), ".")),
             t.script(Raw("window.ALTOS_BRAND = " + json.dumps(login_panel).replace("</", "<\\/") + ";")),
             t.script(src=asset_url("altos-demo.js")),
             class_="signin",
