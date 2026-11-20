@@ -102,9 +102,9 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;color:#1d2433;background:#f3f6fc;line-height:1.45}
 h1,h2,h3,label,th,button,.btn,.badge,.pill,.side,.tab,.total,.banner h1,.banner .pos{font-family:"Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 a{color:#1a56c4}
-.demo-bar{background:#f2c230;color:#1b1b1b;font:600 14px/1.35 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:7px 14px;display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
+.demo-bar{background:#fff;color:#1b1b1b;border-bottom:1px solid #dfe3ec;font:600 14px/1.35 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:7px 14px;display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
 .demo-bar b{font-weight:800;letter-spacing:.04em}
-.demo-bar,.demotag{text-decoration:none;cursor:pointer}.demo-bar:hover,.demotag:hover{background:#ffd54a}
+.demo-bar,.demotag{text-decoration:none;cursor:pointer}.demo-bar:hover,.demotag:hover{background:#f4f6fb}
 /* sign-in page, with role buttons instead of a username and password */
 .lg{display:flex;min-height:calc(100vh - 34px)}
 .lg .panel{flex:56;position:relative;overflow:hidden;background:linear-gradient(180deg,#17418f,#5a33a8);color:#fff;padding:40px 6.7vw;display:flex;flex-direction:column;justify-content:center}
@@ -221,7 +221,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 body.signin .demo-bar{display:none}
 body.signin .lg{min-height:100vh}
 .lg{position:relative}
-.demotag{position:absolute;top:12px;right:14px;z-index:3;background:#f2c230;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.demotag{position:absolute;top:12px;right:14px;z-index:3;background:#fff;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
 .demotag b{font-weight:800;letter-spacing:.04em}
 .lg .panel .dev{position:absolute;left:6.7vw;bottom:26px;margin:0}
 .lcard .steps{margin:10px 0 0;font-size:14px;color:#4a5266}.lcard .steps summary{cursor:pointer;color:#1a56c4}
@@ -338,7 +338,7 @@ def demo_page():
         t.head(
             t.meta(charset="utf-8"),
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
-            t.meta(name="theme-color", content="#f2c230"),
+            t.meta(name="theme-color", content="#ffffff"),
             t.title(title),
             # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),

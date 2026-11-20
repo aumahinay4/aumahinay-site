@@ -1169,6 +1169,40 @@
   }
 
   fresh();
+  // phones: swipe left for the next working page, right for the previous one, like the rest of the site.
+  // Order: sign-in page, then each officer's menu (Collecting, Liquidating, Disbursing, System Administrator), wrapping around.
+  // Ignored on things that scroll sideways, form fields, screen edges, two fingers or while zoomed in.
+  var SWIPE = [''];
+  ['col', 'lo', 'do', 'sys'].forEach(function (r) { MENUS[r].forEach(function (m) { if (m[0] !== '#') SWIPE.push(r + '-' + m[0]); }); });
+  (function () {
+    var x0, y0, t0, ok;
+    function blocked(el) {
+      for (; el && el !== document.body; el = el.parentElement) {
+        var ox = getComputedStyle(el).overflowX;
+        if ((ox === 'auto' || ox === 'scroll') && el.scrollWidth > el.clientWidth + 1) return true;
+        if (/^(TEXTAREA|SELECT)$/.test(el.tagName) || (el.tagName === 'INPUT' && !/^(radio|checkbox)$/.test(el.type))) return true;
+      }
+      return false;
+    }
+    document.addEventListener('touchstart', function (e) {
+      var p = e.touches[0], edge = 24;
+      ok = e.touches.length === 1 && p.clientX > edge && p.clientX < innerWidth - edge &&
+        !(window.visualViewport && visualViewport.scale > 1.05) && !blocked(e.target);
+      x0 = p.clientX; y0 = p.clientY; t0 = Date.now();
+    }, { passive: true });
+    document.addEventListener('touchmove', function (e) { if (e.touches.length > 1) ok = false; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+      if (!ok) return;
+      ok = false;
+      var p = e.changedTouches[0], dx = p.clientX - x0, dy = p.clientY - y0;
+      if (Date.now() - t0 > 700 || Math.abs(dx) < Math.min(90, innerWidth * 0.25) || Math.abs(dx) < 2 * Math.abs(dy)) return;
+      if (window.getSelection && String(getSelection())) return;
+      var here = S.role ? SWIPE.indexOf(S.role + '-' + S.page) : 0;
+      if (here < 0) here = SWIPE.indexOf(S.role + '-home');
+      var n = SWIPE.length, next = SWIPE[(here + (dx < 0 ? 1 : -1) + n) % n];
+      location.hash = next ? '#' + next : '#';
+    }, { passive: true });
+  })();
   window.addEventListener('hashchange', route);
   route();
 })();
