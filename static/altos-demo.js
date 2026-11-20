@@ -243,34 +243,26 @@
 
   // ------------------------------------------------------------------ the sign-in page: pick a working page
   function pickPage() {
-    var b = function (r, what) {
-      var R = ROLES[r];
-      return '<button type="button" class="role-btn" data-role="' + r + '" style="background:' + R.key + '">' +
-        '<span>' + R.label + '<small>' + what + '</small></span></button>';
-    };
-    var now = phNow();
-    return '<div class="lguh"><div class="rp">REPUBLIC OF THE PHILIPPINES</div><div class="pv">' + LGU.province + ' (sample)</div>' +
-      '<div class="nm">' + LGU.name.toUpperCase() + '</div><div class="of">' + LGU.office + '</div></div>' +
-      '<div class="lcard"><h1>WELCOME<span style="color:#c2185b">!</span></h1><div class="acc4"><i style="background:#2f80d8"></i>' +
+    var now = phNow(), i = tourAt();
+    var wp = function (r) { return '<button type="button" class="wpb" data-role="' + r + '"><i style="background:' + ROLES[r].key + '"></i>' + ROLES[r].label + '</button>'; };
+    var start = i < TOUR.length
+      ? '<a class="tourgo" href="#' + TOUR[i].role + '-' + TOUR[i].page + '">' + (i ? 'Continue the tour, step ' + (i + 1) : 'Start the guided tour') + '</a>'
+      : '<p class="note"><b>Tour complete.</b> <a href="#" data-act="restart">Start the demo again</a>.</p>';
+    return '<div class="lcard"><h1>WELCOME<span style="color:#c2185b">!</span></h1><div class="acc4"><i style="background:#2f80d8"></i>' +
       '<i style="background:#22a06b"></i><i style="background:#bf4040"></i><i style="background:#7d58d6"></i></div>' +
-      '<p class="note">This is a demo of ALTOS with a made-up municipality, officers and taxpayers. In the real system each officer signs in ' +
-      'with a username and password. Here, pick a working page to explore freely, or follow the guided tour below.</p>' +
-      b('col', 'Issue official receipts and close the day') +
-      b('lo', 'Count the money and deposit it') +
-      b('do', 'Write checks and keep the Cash Book') +
-      b('sys', 'Watch the collections and the Activity Log') +
-      '<div class="rule"></div><div class="wp">NEW HERE? TAKE THE GUIDED TOUR</div>' +
-      '<p class="note">Nine short steps through one working day, from the first receipt to the bank deposit and a check. A box at the top of each page tells you what to tap next.</p>' +
-      '<ol class="tourlist">' + TOUR.map(function (t, k) { return '<li class="' + (t.done() ? 'ok' : '') + '"><span style="color:' + ROLES[t.role].key + '">' + ROLES[t.role].label + ':</span> ' + t.title + '</li>'; }).join('') + '</ol>' +
-      (function () { var i = tourAt(); return i < TOUR.length ? '<a class="tourgo" href="#' + TOUR[i].role + '-' + TOUR[i].page + '">' + (i ? 'Continue the tour at step ' + (i + 1) : 'Start the guided tour') + ' →</a>' : '<p class="note"><b>Tour complete.</b> <a href="#" data-act="restart">Start the demo again</a>.</p>'; })() +
-      '</div>' +
+      '<p class="note">In ALTOS each officer signs in with the username and password given by the System Administrator. ' +
+      'In this demo, follow the guided tour or open a working page.</p>' + start +
+      '<details class="steps"><summary>The 9 steps of the tour</summary><ol class="tourlist">' +
+      TOUR.map(function (t) { return '<li class="' + (t.done() ? 'ok' : '') + '"><span style="color:' + ROLES[t.role].key + '">' + ROLES[t.role].label + ':</span> ' + t.title + '</li>'; }).join('') +
+      '</ol></details>' +
+      '<div class="rule"></div><div class="wp">WORKING PAGES</div><div class="wpg">' + wp('col') + wp('lo') + wp('do') + wp('sys') + '</div></div>' +
+      '<div class="lfoot"><div>' + DAYS[now.getUTCDay()] + ', ' + longDate(TODAY) + '</div>' +
+      '<div class="cp">© ' + YEAR + ' aumahinay. All rights reserved. · <a href="/projects/">About ALTOS</a></div></div>' +
       // Butch's wording, from his Google Doc "aumahinay.dev Educational & Tax Disclaimers", part 4 (2026-11-20)
       '<div class="notice"><div class="nt">Software Demonstration &amp; Simulation Notice</div>' +
       '<p>This interactive demo of the Automated Local Treasury Operations System (ALTOS) runs on 100% fictitious sample data in a temporary browser session—nothing you enter or modify is saved, and this environment is not connected to any Local Government Unit (LGU) or treasury database.</p>' +
       '<p>Developed independently by Ambrosio U. Mahinay in his private capacity for educational and architectural evaluation only. Not an official system or endorsement of any LGU, BLGF, DOF, or COA. Do not enter real taxpayer or official government records.</p>' +
-      '<p class="lk"><a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></p></div>' +
-      '<div class="lfoot"><div>' + DAYS[now.getUTCDay()] + ', ' + longDate(TODAY) + '</div>' +
-      '<div class="cp">© ' + YEAR + ' aumahinay. All rights reserved. · <a href="/projects/">About ALTOS</a></div></div>';
+      '<p class="lk"><a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy Policy</a></p></div>';
   }
 
   // ------------------------------------------------------------------ Home of each working page
@@ -982,10 +974,12 @@
     var y = window.scrollY;
     if (!S.role) {
       root.innerHTML = LOGIN;
+      document.body.classList.add('signin');
       root.querySelector('#pick').innerHTML = pickPage();
       document.title = 'ALTOS Demo: Try the Treasury Software · Butch Mahinay';
       return;
     }
+    document.body.classList.remove('signin');
     root.innerHTML = frame(SCREENS[S.role][S.page]());
     stackTables();
     fitSheets();

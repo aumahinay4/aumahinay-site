@@ -104,7 +104,7 @@ h1,h2,h3,label,th,button,.btn,.badge,.pill,.side,.tab,.total,.banner h1,.banner 
 a{color:#1a56c4}
 .demo-bar{background:#f2c230;color:#1b1b1b;font:600 14px/1.35 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:7px 14px;display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
 .demo-bar b{font-weight:800;letter-spacing:.04em}
-.demo-bar a{margin-left:auto;color:#1b1b1b;font-weight:700;white-space:nowrap}
+.demo-bar,.demotag{text-decoration:none;cursor:pointer}.demo-bar:hover,.demotag:hover{background:#ffd54a}
 /* sign-in page, with role buttons instead of a username and password */
 .lg{display:flex;min-height:calc(100vh - 34px)}
 .lg .panel{flex:56;position:relative;overflow:hidden;background:linear-gradient(180deg,#17418f,#5a33a8);color:#fff;padding:40px 6.7vw;display:flex;flex-direction:column;justify-content:center}
@@ -217,6 +217,17 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .deno div{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:6px}
 .deno label{margin:0;text-align:right}
 .deno input{padding:7px 8px}
+/* sign-in page like ALTOS's own: no full-width yellow bar, a small DEMO tag instead (Butch 2026-11-20) */
+body.signin .demo-bar{display:none}
+body.signin .lg{min-height:100vh}
+.lg{position:relative}
+.demotag{position:absolute;top:12px;right:14px;z-index:3;background:#f2c230;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.demotag b{font-weight:800;letter-spacing:.04em}
+.lg .panel .dev{position:absolute;left:6.7vw;bottom:26px;margin:0}
+.lcard .steps{margin:10px 0 0;font-size:14px;color:#4a5266}.lcard .steps summary{cursor:pointer;color:#1a56c4}
+.wpg{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:8px}
+.wpb{display:flex;align-items:center;gap:8px;background:none;border:0;padding:6px 0;font:600 14px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1d2433;cursor:pointer;text-align:left}
+.wpb i{width:9px;height:9px;border-radius:50%;flex:none}.wpb:hover{color:#c2185b}
 /* the Simulation & Non-Affiliation Notice on the sign-in page (Butch's wording) */
 .notice{width:min(400px,100%);margin:16px 0 0;padding:14px 16px;background:#fff;border:1px solid #dde3ee;border-left:4px solid #c2185b;color:#3b4357;font-size:13.5px;line-height:1.5}
 .notice .nt{font:700 14px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1d2433;margin-bottom:6px}
@@ -232,7 +243,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .tour.done{border-left-color:#22a06b}.tour.off{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;font-size:14px;color:#4a5266}
 .lcard .tourlist{list-style:decimal}.lcard .tourlist li{margin:3px 0}.lcard .tourlist li span{font-weight:700}
 .lcard .tourlist li.ok{color:#8a93a6;text-decoration:line-through}
-.lcard .tourgo{display:block;text-align:center;background:#1a2f66;color:#fff;text-decoration:none;font:700 16px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:13px 14px;margin:14px 0 2px}
+.lcard .tourgo{display:block;text-align:center;background:#c2185b;color:#fff;text-decoration:none;font:700 16px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:13px 14px;margin:14px 0 2px}
 /* the RCD form, as ALTOS prints it on A4 (LTOM, Annex 18); scaled to fit a phone */
 .sheet-wrap{width:100%;max-width:796px;overflow:hidden;margin:8px 0 4px;border:1px solid #cfd5e2}
 .pinch{display:none}
@@ -274,7 +285,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .fadein{animation:fadein .22s ease-out}@keyframes fadein{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:none}}
 noscript p{max-width:560px;margin:40px auto;padding:0 16px}
 @media(max-width:820px){
- .lg{display:block}.lg .panel{padding:26px 18px 22px}.lg .c1,.lg .c2,.lg .c3{display:none}
+ .lg{display:block}.lg .panel{padding:52px 18px 22px}.lg .panel .dev{position:static;margin-top:18px;width:max-content}.demotag{left:12px;right:12px;text-align:center}.lg .c1,.lg .c2,.lg .c3{display:none}
  .lg .tag{font-size:17px;margin-top:14px}.lg .ttl{margin-top:16px}.dev{margin-top:16px}
  .lg .side2{padding:20px 12px 36px}.lcard{padding:24px 18px 22px}
  .top{padding:8px 10px;gap:6px 8px}.badge{font-size:14px;padding:2px 8px}.top .app{display:none}.pill{font-size:12px;padding:5px 10px}
@@ -321,8 +332,7 @@ def demo_page():
         f'<i style="background:{t_["do"]}"></i><i style="background:{t_["sys"]}"></i></div>'
         '<div class="tag">Collect &nbsp;&#183;&nbsp; Disburse &nbsp;&#183;&nbsp; Report</div>'
         '<div class="motto">A 360&#176; accountability for every peso<br>the taxpayers pay to the treasury.</div>'
-        '<div class="dev"><div class="by">Developed by:</div><span class="nm">aumahinay</span></div>'
-        '</div></div>'
+        '</div><div class="dev"><div class="by">Developed by:</div><span class="nm">aumahinay</span></div></div>'
     )
     doc = t.html(
         t.head(
@@ -350,17 +360,20 @@ def demo_page():
             t.style(Raw(CSS)),
         ),
         t.body(
-            t.div(t.span(t.b("DEMO"), " Made-up sample data. Not connected to any treasury. Nothing you do is saved."),
-                  t.a("Leave demo ✕", href="/projects/"), class_="demo-bar", role="note"),
+            # the whole yellow bar is the way out: tap it to go back to Projects (no close mark)
+            Raw('<a class="demo-bar" href="/projects/" title="Back to Projects"><span><b>DEMO</b> Made-up sample data. '
+                'Not connected to any treasury. Nothing you do is saved.</span></a>'),
             t.div(
                 # the sign-in page, also what a visitor sees before the script runs
-                Raw('<div class="lg">' + login_panel + '<div class="side2" id="pick"></div></div>'),
+                Raw('<div class="lg"><a class="demotag" href="/projects/" title="Back to Projects"><b>DEMO</b> Sample data only. Nothing is saved.</a>'
+                    + login_panel + '<div class="side2" id="pick"></div></div>'),
                 id="altos-demo",
             ),
             t.noscript(t.p("This demo runs in your browser. Please turn on JavaScript to try it, or read about ALTOS on the ",
                            t.a("Projects page", href="/projects/"), ".")),
             t.script(Raw("window.ALTOS_BRAND = " + json.dumps(login_panel).replace("</", "<\\/") + ";")),
             t.script(src=asset_url("altos-demo.js")),
+            class_="signin",
         ),
         lang="en",
     )
