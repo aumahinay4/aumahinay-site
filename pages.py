@@ -495,8 +495,8 @@ def author_card():
             "work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
             "He writes, teaches and builds software in his personal capacity, outside official working hours.",
             class_="author-bio"),
-        t.p(t.a("Full profile", href="/about/"), t.a("Contact", href="/contact/"),
-            t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
+        # Contact and Privacy Policy left out: the menu and the footer already have them (Butch 2026-11-20)
+        t.p(t.a("Full profile", href="/about/"), class_="author-links"),
         class_="card author",
     )
 
