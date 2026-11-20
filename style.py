@@ -1094,9 +1094,16 @@ CSS += """
 CSS += """
 /* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
 .hero h1 .k1 { color: #b98200; }
-.hero h1 .l2 { color: var(--blue-ink); }
+.hero h1 .k2 { color: var(--blue-ink); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
 :root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
+"""
+CSS += """
+/* Home title (Butch 2026-11-20): banner picture removed; "Where public finance" / "meets Python" on two lines,
+   twice as big. Phones: as big as still fits on one line each. */
+.hero h1 { font-size: clamp(4.437rem, 8.834vw, 5.728rem); line-height: 1.08; }
+@media (max-width: 1024px) { .hero h1 { font-size: min(4.437rem, 8.6vw); } }
+@media (max-width: 640px) { .hero h1 { font-size: min(4.437rem, 9.3vw); } }
 """
 CSS += _desktop_text_rules(CSS, DESKTOP_TEXT_SCALE)
 

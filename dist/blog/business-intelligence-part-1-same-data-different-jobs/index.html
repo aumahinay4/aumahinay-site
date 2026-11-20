@@ -1001,9 +1001,15 @@ html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:foc
 
 /* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
 .hero h1 .k1 { color: #b98200; }
-.hero h1 .l2 { color: var(--blue-ink); }
+.hero h1 .k2 { color: var(--blue-ink); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
 :root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
+
+/* Home title (Butch 2026-11-20): banner picture removed; "Where public finance" / "meets Python" on two lines,
+   twice as big. Phones: as big as still fits on one line each. */
+.hero h1 { font-size: clamp(4.437rem, 8.834vw, 5.728rem); line-height: 1.08; }
+@media (max-width: 1024px) { .hero h1 { font-size: min(4.437rem, 8.6vw); } }
+@media (max-width: 640px) { .hero h1 { font-size: min(4.437rem, 9.3vw); } }
 @media (min-width: 1025px) {
 body { font-size: 17.5726px; }
 .brand { font-size: 1.2404rem; }
@@ -1108,6 +1114,7 @@ html.menu-js.menu-open header.site #site-menu a[href="/privacy/"],
 html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: calc(clamp(.81rem, 3.51vw, .945rem) * 1.025); }
 .about-name { font-size: calc(clamp(1.2rem, 4.6vw, 1.55rem) * 1.025); }
 .hero h1 { font-size: calc(clamp(2.2185rem, 4.417vw, 2.864rem) * 1.025); }
+.hero h1 { font-size: calc(clamp(4.437rem, 8.834vw, 5.728rem) * 1.025); }
 }
 
 /* Privacy Policy link at the bottom of every page (Butch 2026-11-10): plain, small, no navy footer */

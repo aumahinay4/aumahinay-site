@@ -428,15 +428,14 @@ def home():
         "Home", "/",
         t.div(
             t.div(
-                t.div(t.h1(t.span("Where ", t.span("public finance", class_="k1"), " meets", class_="l1"), " ", t.span("Python", class_="l2")), class_="hero-name"),
-                t.img(src=asset_url("home-banner.svg"), alt="Coins, a rising bar chart and a receipt flowing into "
-                      "a short Python program that adds up the fees", width="1200", height="470", class_="hero-art"),
+                t.div(t.h1(t.span("Where ", t.span("public finance", class_="k1"), class_="l1"), " ", t.span("meets ", t.span("Python", class_="k2"), class_="l2")), class_="hero-name"),
                 t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
                     "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
                     "and notes from building ALTOS. Everything here, this website included, is the work of a "
                     "treasury worker who builds software and websites.",
                     class_="lead"),
                 t.div(
+                    t.a("ALTOS Demo", href=DEMO_URL, class_="btn ghost"),
                     t.a("RPT Calculator", href=RPT_URL, class_="btn ghost"),
                     t.a("Tutorials", href="/tutorials/", class_="btn ghost"),
                     t.a("Blog", href="/blog/", class_="btn ghost"),
