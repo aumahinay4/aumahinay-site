@@ -1181,6 +1181,23 @@ html.menu-js.menu-open header.site #site-menu a[href="/terms/"] { font-size: cal
 
 /* Three-bar menu icon 25% bigger, every page and screen (Butch 2026-11-20): 15px -> 18.75px; tap area stays 32px */
 .menu-btn svg { width: 18.75px; height: 18.75px; }
+
+/* Home: whole boxes are links (Butch 2026-11-20 "as much as possible clickable"): a.stretch covers its box */
+a.stretch::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.altos-hero > div { position: relative; }
+.altos-hero a.stretch { position: static; }
+ol.principles li { position: relative; transition: border-color .15s, transform .15s; }
+ol.principles li a.stretch { color: inherit; text-decoration: none; }
+.node .go, .grid .card > .go { display: inline-block; margin-top: 12px; font-size: 14.6227px; font-weight: 700; color: var(--ci, var(--blue-ink)); text-decoration: none; }
+.card > .go { margin-top: auto; padding-top: 12px; }
+.node.mother .go { color: var(--gold); }
+.node:has(a.stretch):hover, .card:has(> a.stretch):hover, ol.principles li:hover, .post-card:hover, .altos-hero:has(a.stretch):hover { border-color: var(--gold); transform: translateY(-2px); }
+.node, .card, .altos-hero { transition: border-color .15s, transform .15s; }
+blockquote footer a.stretch { color: inherit; text-decoration: none; }
+.post-card h2 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.motto a { color: inherit; text-decoration: none; }
+.motto a:hover, figure.screenshot figcaption a { color: var(--blue-ink); }
+.card.author .author-name a { color: inherit; text-decoration: none; }
 </style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="lesson-page"><a href="/tutorials/" class="crumb">← Python for Treasury Work</a><p class="eyebrow">Lesson 3 · Beginner · 20 min</p><h1 class="lesson-title">Compute real property tax penalties with Decimal</h1><p class="lead">See why floats are unsafe for money, then compute 2% monthly penalties with a 36-month cap, rounded correctly.</p><p class="checked">✓ Last checked: November 2026 · code run, output real, facts checked</p><div class="tags"><span class="tag">Decimal</span><span class="tag">functions</span><span class="tag">rounding</span><span class="tag">min()</span></div><div class="card learn"><p class="eyebrow">In this lesson</p><ul><li>See the rounding errors that floats introduce</li><li>Write a small, reusable function</li><li>Round to the centavo with ROUND_HALF_UP</li><li>Apply a ceiling with min()</li></ul></div><p>RA 7160 charges interest of 2% a month on delinquent real property tax, for at most 36 months; most offices simply call it the penalty. The computation looks simple until the centavos stop matching. Before writing the penalty function, it is worth seeing why money in Python should be handled with the Decimal type and not with ordinary float numbers.</p><h2>Why not float?</h2><figure class="codebox code"><figcaption><span class="fname">why_decimal.py</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button><a href="/tutorials/rpt-penalty-with-decimal/why_decimal.py" download>Download</a></span></figcaption><pre><code><span class="s">"""Why money should not be stored as float."""</span>
 
 <span class="k">from</span> decimal <span class="k">import</span> Decimal

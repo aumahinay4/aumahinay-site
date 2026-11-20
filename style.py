@@ -1185,3 +1185,22 @@ CSS += """
 /* Three-bar menu icon 25% bigger, every page and screen (Butch 2026-11-20): 15px -> 18.75px; tap area stays 32px */
 .menu-btn svg { width: 18.75px; height: 18.75px; }
 """
+
+CSS += """
+/* Home: whole boxes are links (Butch 2026-11-20 "as much as possible clickable"): a.stretch covers its box */
+a.stretch::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.altos-hero > div { position: relative; }
+.altos-hero a.stretch { position: static; }
+ol.principles li { position: relative; transition: border-color .15s, transform .15s; }
+ol.principles li a.stretch { color: inherit; text-decoration: none; }
+.node .go, .grid .card > .go { display: inline-block; margin-top: 12px; font-size: 14.6227px; font-weight: 700; color: var(--ci, var(--blue-ink)); text-decoration: none; }
+.card > .go { margin-top: auto; padding-top: 12px; }
+.node.mother .go { color: var(--gold); }
+.node:has(a.stretch):hover, .card:has(> a.stretch):hover, ol.principles li:hover, .post-card:hover, .altos-hero:has(a.stretch):hover { border-color: var(--gold); transform: translateY(-2px); }
+.node, .card, .altos-hero { transition: border-color .15s, transform .15s; }
+blockquote footer a.stretch { color: inherit; text-decoration: none; }
+.post-card h2 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.motto a { color: inherit; text-decoration: none; }
+.motto a:hover, figure.screenshot figcaption a { color: var(--blue-ink); }
+.card.author .author-name a { color: inherit; text-decoration: none; }
+"""
