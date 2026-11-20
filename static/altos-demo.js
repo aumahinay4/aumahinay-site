@@ -86,7 +86,7 @@
   function fresh() {
     S = {
       role: null, page: 'home',
-      ors: [], rcds: [], crcds: [], raaf: {}, checks: [], log: [], flash: null,
+      ors: [], rcds: [], crcds: [], raaf: {}, seen: {}, checks: [], log: [], flash: null,
       next: { or51: 1234504, or56: 5670012, rcd: 43, crcd: 1, check: { GF: 4507, SEF: 1203 }, dv: 87 },
       props: [
         { pin: '001-01-001-01-015', td: 'TD 2026-01-00215', owner: 'Juan dela Cruz', brgy: 'Poblacion', kind: 'Residential land', av: 120000, paid: [YEAR, 2] },
@@ -235,7 +235,7 @@
       '<span class="app">Automated Local Treasury Operations System · ' + esc(R.user) + '</span>' +
       '<a class="pill" href="#" title="Back to the sign-in page, to pick another working page">Log Out</a></div>' +
       '<div class="strip"><i style="background:#7cc2ff"></i><i style="background:#4be3a8"></i><i style="background:#ff8a8a"></i><i style="background:#d1b6ff"></i></div>' +
-      '<div class="wrap"><nav class="side" aria-label="' + esc(R.label) + ' menu">' + menu + '</nav><div class="content"><main class="fadein">' + fl + body + '</main></div></div></div>';
+      '<div class="wrap"><nav class="side" aria-label="' + esc(R.label) + ' menu">' + menu + '</nav><div class="content"><main class="fadein">' + tourBar() + fl + body + '</main></div></div></div>';
   }
   function about(text) { return '<div class="about"><i></i><p>' + text + '</p></div>'; }
   function go(role, page) { location.hash = role + '-' + page; }
@@ -254,15 +254,16 @@
       '<div class="lcard"><h1>WELCOME<span style="color:#c2185b">!</span></h1><div class="acc4"><i style="background:#2f80d8"></i>' +
       '<i style="background:#22a06b"></i><i style="background:#bf4040"></i><i style="background:#7d58d6"></i></div>' +
       '<p class="note">This is a demo of ALTOS with a made-up municipality, officers and taxpayers. In the real system each officer signs in ' +
-      'with a username and password. Here, just pick a working page.</p>' +
+      'with a username and password. Here, pick a working page to explore freely, or follow the guided tour below.</p>' +
       b('col', 'Issue official receipts and close the day') +
       b('lo', 'Count the money and deposit it') +
       b('do', 'Write checks and keep the Cash Book') +
       b('sys', 'Watch the collections and the Activity Log') +
-      '<div class="rule"></div><div class="wp">A GOOD WAY TO TRY IT</div><ol>' +
-      '<li>As Collecting Officer, issue an official receipt, then close the day in My RCD.</li>' +
-      '<li>As Liquidating Officer, count the money and record the deposit.</li>' +
-      '<li>As Disbursing Officer, write a check and see the Cash Book.</li></ol></div>' +
+      '<div class="rule"></div><div class="wp">NEW HERE? TAKE THE GUIDED TOUR</div>' +
+      '<p class="note">Nine short steps through one working day, from the first receipt to the bank deposit and a check. A box at the top of each page tells you what to tap next.</p>' +
+      '<ol class="tourlist">' + TOUR.map(function (t, k) { return '<li class="' + (t.done() ? 'ok' : '') + '"><span style="color:' + ROLES[t.role].key + '">' + ROLES[t.role].label + ':</span> ' + t.title + '</li>'; }).join('') + '</ol>' +
+      (function () { var i = tourAt(); return i < TOUR.length ? '<a class="tourgo" href="#' + TOUR[i].role + '-' + TOUR[i].page + '">' + (i ? 'Continue the tour at step ' + (i + 1) : 'Start the guided tour') + ' →</a>' : '<p class="note"><b>Tour complete.</b> <a href="#" data-act="restart">Start the demo again</a>.</p>'; })() +
+      '</div>' +
       '<div class="lfoot"><div>' + DAYS[now.getUTCDay()] + ', ' + longDate(TODAY) + '</div>' +
       '<div class="cp">© ' + YEAR + ' aumahinay. All rights reserved. · <a href="/projects/">About ALTOS</a></div></div>';
   }
@@ -887,9 +888,78 @@
   }
   function activity() {
     return '<h1>Activity Log</h1>' + about('Every action, by whom and when. In ALTOS the log is sealed: no one can change or delete an entry, not even the System Administrator.') +
-      '<div class="tbl"><table><thead><tr><th>Time</th><th>User</th><th>Account</th><th>Action</th></tr></thead><tbody>' +
-      S.log.slice().reverse().map(function (x) { return '<tr><td class="nw">' + x.time + '</td><td class="nw">' + esc(x.user) + '</td><td class="nw">' + esc(x.role) + '</td><td>' + esc(x.what) + '</td></tr>'; }).join('') +
+      '<div class="tbl"><table><thead><tr><th>Time</th><th>User</th><th>Action</th></tr></thead><tbody>' +
+      S.log.slice().reverse().map(function (x) { return '<tr><td class="nw">' + x.time + '</td><td class="nw">' + esc(x.user) + '<div class="muted">' + esc(x.role) + '</div></td><td>' + esc(x.what) + '</td></tr>'; }).join('') +
       '</tbody></table></div><p class="muted">What you do in this demo appears here too. It is gone when you reload the page.</p>';
+  }
+
+  // ------------------------------------------------------------------ the guided tour: one day's work in ALTOS, step by step
+  // Each step names the working page, what to do there, and when it counts as done (read from the demo's records).
+  var TOUR = [
+    { role: 'col', page: 'issue', title: 'Issue an official receipt',
+      how: 'Type any name in <b>Payor</b>, keep the fee or pick another one, then tap <b>Issue OR</b>.',
+      done: function () { return myOrs().length > 4; } },
+    { role: 'col', page: 'rcd', title: 'Close the day in My RCD',
+      how: 'Your receipts are now on the Report of Collections and Deposits (RCD). Scroll down and tap <b>Close the day and remit</b>.',
+      done: function () { return S.rcds.some(function (r) { return r.officer === 'Maria Santos'; }); } },
+    { role: 'col', page: 'raaf', title: 'Submit your RAAF',
+      how: 'The RAAF shows the receipts you used this month and the ones left. Tap <b>Submit my RAAF</b>.',
+      done: function () { return !!S.raaf.col; } },
+    { role: 'lo', page: 'refused', title: 'Refuse a short remittance',
+      how: 'Luz Ramos handed in ₱50.00 less than her RCD says. Her RCD and the reason are already filled in. Tap <b>Refuse this report</b>.',
+      done: function () { return S.rcds.some(function (r) { return r.status === 'Refused'; }); } },
+    { role: 'lo', page: 'crcd', title: 'Count the money and deposit it',
+      how: 'Tick every RCD on the list, tap <b>Fill in the money received</b>, then tap <b>Record the deposit</b>.',
+      done: function () { return S.crcds.length > 0; } },
+    { role: 'lo', page: 'cashbook', title: 'See the deposit in the Cash Book',
+      how: 'Your deposit is the newest line, under <b>Debit</b> (money into the bank). Scroll down to see it.',
+      done: function () { return !!S.seen['lo-cashbook'] && S.crcds.length > 0; } },
+    { role: 'do', page: 'prepare', title: 'Write a check',
+      how: 'Type a payee, what it is for and an amount, then tap <b>Prepare Check</b>. Try an amount above the balance first to see ALTOS refuse it.',
+      done: function () { return S.checks.length > 5; } },
+    { role: 'do', page: 'checks', title: 'Release the check',
+      how: 'Tap <b>Release</b> beside a check that says Prepared, as if the payee came to receive it.',
+      done: function () { return S.checks.filter(function (c) { return c.status === 'Released'; }).length > 4; } },
+    { role: 'sys', page: 'log', title: 'Read the Activity Log',
+      how: 'Everything you just did is recorded here, with the time and the officer. In ALTOS nothing escapes this log.',
+      done: function () { return !!S.seen['sys-log']; } }
+  ];
+  function tourAt() { for (var i = 0; i < TOUR.length; i++) if (!TOUR[i].done()) return i; return TOUR.length; }
+  function tourBar() {
+    var i = tourAt(), n = TOUR.length;
+    if (S.tourOff) return '<div class="tour off"><span>Guided tour: step ' + Math.min(i + 1, n) + ' of ' + n + '</span><button type="button" class="small" data-act="tour-on">Show</button></div>';
+    var dots = TOUR.map(function (t, k) { return '<i class="' + (k < i ? 'd' : k === i ? 'c' : '') + '" style="background:' + (k <= i ? ROLES[t.role].key : '') + '"></i>'; }).join('');
+    if (i >= n) {
+      return '<div class="tour done"><div class="th"><b>Guided tour complete</b><button type="button" class="small" data-act="tour-off">Hide</button></div>' +
+        '<p>That was one day in a local treasury: receipts issued, the day closed, the money counted and deposited, a check written and released, and every step in the log. ' +
+        'Keep exploring the menus, or <a href="#" data-act="restart">start the demo again</a>.</p><div class="dots">' + dots + '</div></div>';
+    }
+    var t = TOUR[i], here = S.role === t.role && S.page === t.page, R = ROLES[t.role];
+    return '<div class="tour" style="--tk:' + R.key + '"><div class="th"><span class="tn">Step ' + (i + 1) + ' of ' + n + ' · ' + R.label + '</span>' +
+      '<button type="button" class="small" data-act="tour-off">Hide</button></div>' +
+      '<div class="tt">' + t.title + '</div><p>' + (here ? t.how : 'Go to the <b>' + R.label + '</b> page, <b>' + TITLES[t.page] + '</b>.') + '</p>' +
+      (here ? '' : '<a class="go" href="#' + t.role + '-' + t.page + '">Take me there →</a>') + '<div class="dots">' + dots + '</div></div>';
+  }
+  // on phones a wide table becomes one small card per row, each value with its column name
+  function stackTables() {
+    Array.prototype.forEach.call(root.querySelectorAll('.tbl table:not(.cb)'), function (tb) {
+      var heads = Array.prototype.map.call(tb.querySelectorAll('thead th'), function (th) { return th.textContent; });
+      if (heads.length < 5 && !tb.classList.contains('stk')) return;
+      tb.classList.add('stk');
+      Array.prototype.forEach.call(tb.querySelectorAll('tbody tr'), function (tr) {
+        var col = 0;
+        Array.prototype.forEach.call(tr.children, function (td) {
+          var span = td.colSpan || 1, l = span === 1 ? (heads[col] || '') : '';
+          col += span;
+          td.setAttribute('data-l', l);
+          if (l && td.childNodes.length) {  // one box for the value, so the column name sits on the left and the value on the right
+            var v = document.createElement('span'); v.className = 'v';
+            while (td.firstChild) v.appendChild(td.firstChild);
+            td.appendChild(v);
+          }
+        });
+      });
+    });
   }
 
   // ------------------------------------------------------------------ drawing and routing
@@ -912,6 +982,7 @@
       return;
     }
     root.innerHTML = frame(SCREENS[S.role][S.page]());
+    stackTables();
     fitSheets();
     document.title = TITLES[S.page] + ' · ALTOS Demo';
     if (keepScroll) window.scrollTo(0, y);
@@ -924,6 +995,7 @@
       var first = S.role !== h[0];
       S.role = h[0];
       S.page = SCREENS[S.role][h[1]] ? h[1] : 'home';
+      S.seen[S.role + '-' + S.page] = true;
       if (first) log('Signed in (demo)');
       draw(false);
       window.scrollTo(0, 0);
@@ -939,6 +1011,8 @@
     if (!b) return;
     if (b.dataset.role) { go(b.dataset.role, 'home'); return; }
     var act = b.dataset.act, v = b.dataset.v;
+    if (act === 'tour-off' || act === 'tour-on') { S.tourOff = act === 'tour-off'; draw(true); return; }
+    if (act === 'restart') { e.preventDefault(); fresh(); history.replaceState(null, '', location.pathname); route(); window.scrollTo(0, 0); return; }
     if (act === 'form') { newDraft(v); draw(true); }
     else if (act === 'add-line') { draft.lines.push({ fee: 0, amount: FEES[0].amount }); draw(true); }
     else if (act === 'del-line') { draft.lines.splice(+b.dataset.line, 1); draw(true); }

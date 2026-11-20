@@ -217,6 +217,18 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .deno div{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:6px}
 .deno label{margin:0;text-align:right}
 .deno input{padding:7px 8px}
+/* guided tour box */
+.tour{--tk:#2f80d8;background:#fff;border:1px solid #dde3ee;border-left:5px solid var(--tk);padding:12px 14px;margin:0 0 16px;box-shadow:0 2px 8px rgba(20,40,90,.06)}
+.tour .th{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tour .tn{font:700 12px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--tk)}
+.tour .tt{font:700 18px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1d2433;margin:4px 0 2px}
+.tour p{margin:4px 0 8px;color:#3b4357;font-size:15px}
+.tour .go{display:inline-block;background:var(--tk);color:#fff;text-decoration:none;font-weight:700;padding:9px 14px;margin:2px 0 10px}
+.tour .dots{display:flex;gap:4px}.tour .dots i{flex:1;height:5px;background:#e3e7ef}.tour .dots i.c{opacity:.45}
+.tour.done{border-left-color:#22a06b}.tour.off{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;font-size:14px;color:#4a5266}
+.lcard .tourlist{list-style:decimal}.lcard .tourlist li{margin:3px 0}.lcard .tourlist li span{font-weight:700}
+.lcard .tourlist li.ok{color:#8a93a6;text-decoration:line-through}
+.lcard .tourgo{display:block;text-align:center;background:#1a2f66;color:#fff;text-decoration:none;font:700 16px "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:13px 14px;margin:14px 0 2px}
 /* the RCD form, as ALTOS prints it on A4 (LTOM, Annex 18); scaled to fit a phone */
 .sheet-wrap{width:100%;max-width:796px;overflow:hidden;margin:8px 0 4px;border:1px solid #cfd5e2}
 .pinch{display:none}
@@ -273,6 +285,15 @@ noscript p{max-width:560px;margin:40px auto;padding:0 16px}
  .row>div{min-width:130px}
  .cb th,.cb td{padding:6px 3px;font-size:12px}.cb th{white-space:normal}
  .pinch{display:block;margin:4px 0 0}
+ .tbl table.stk,.tbl table.stk tbody,.tbl table.stk tr,.tbl table.stk td{display:block;width:100%}
+ .tbl table.stk thead{display:none}
+ .tbl table.stk tr{background:#fff!important;border:1px solid #dde3ee;margin:0 0 8px;padding:6px 10px}
+ .tbl table.stk td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border:none;padding:4px 0;text-align:right;white-space:normal;min-width:0!important}
+ .tbl table.stk td:before{content:attr(data-l);font-weight:600;color:#5b6477;text-align:left;flex:none}
+ .tbl table.stk td[data-l=""]{justify-content:flex-end}.tbl table.stk td[data-l=""]:before{display:none}
+ .tbl table.stk td{background:transparent!important}.tbl table.stk td .v{text-align:right;min-width:0}
+ .tbl table.stk tr.sum{background:#eef2fa!important}.tbl table.stk tr.sum td:first-child{justify-content:flex-start;font-weight:700}
+ .tbl table.stk td:empty{display:none}
  .line{grid-template-columns:1fr 110px 40px}
  .bar{grid-template-columns:44px 1fr 92px;font-size:13px}
  .paper{padding:14px 12px}.paper:after{font-size:24px}
