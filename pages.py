@@ -435,6 +435,7 @@ def home():
                     "treasury worker who builds software and websites.",
                     class_="lead"),
                 t.div(
+                    t.a("ALTOS Demo", href=DEMO_URL, class_="btn ghost"),
                     t.a("RPT Calculator", href=RPT_URL, class_="btn ghost"),
                     t.a("Tutorials", href="/tutorials/", class_="btn ghost"),
                     t.a("Blog", href="/blog/", class_="btn ghost"),
