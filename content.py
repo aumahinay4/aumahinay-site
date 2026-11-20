@@ -557,13 +557,20 @@ BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
     ("treasury", "Inside the Local Treasury", "amber"),  # Inside the Local Treasury series, separate category (Butch 2026-11-18)
-    ("security", "Cybersecurity", "violet"),
-    ("data", "Data Analytics", "gold"),  # Data Analytics series (blog rotation, Butch 2026-11-14)
-    ("pm", "Project Management", "navy"),  # Project Management series (Butch 2026-11-13: separate from Public Finance)
-    ("bi", "Business Intelligence", "teal"),  # Business Intelligence series, separate from Data Analytics (Butch 2026-11-14)
+    ("learn", "Learn", "violet"),  # the four tech series in one category (Butch 2026-11-20), see LEARN_SERIES
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
 
+# Learn (Butch 2026-11-20): four short tech series share one blog category, so each looks like part of one
+# solid section instead of a thin category of its own. The post files keep their own key in "category"
+# (security, data, bi, pm); when the blog list is built below, that key moves to "series" and the post's
+# category becomes "learn". Each post still shows its series name, e.g. "Learn · Cybersecurity".
+LEARN_SERIES = {
+    "security": "Cybersecurity",
+    "data": "Data Analytics",
+    "bi": "Business Intelligence",
+    "pm": "Project Management",
+}
 # The ALTOS Framework series page (Butch 2026-11-11): one page at /blog/altos-framework/ that lists the
 # series in reading order. Parts that are not live yet show as "Coming" with their date and turn into
 # links on their own, with the hourly build. Wording is the blog's own, not the book's.
@@ -3244,3 +3251,8 @@ def _blog_day(b):
 
 
 BLOG.sort(key=_blog_day, reverse=True)
+
+for _p in BLOG:
+    if _p["category"] in LEARN_SERIES:
+        _p["series"] = _p["category"]
+        _p["category"] = "learn"
