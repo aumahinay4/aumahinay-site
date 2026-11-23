@@ -676,8 +676,12 @@ def altos_section():
     return [
         t.h2("Project: ALTOS", id="altos", class_="altos-anchor"),
         # after pictures above it load, land on the heading again (old /projects/ links come here)
-        t.script(Raw('addEventListener("load",function(){if(location.hash==="#altos")'
-                     'document.getElementById("altos").scrollIntoView();});')),
+        # Explore ALTOS jumps there at once, not a slow smooth scroll down Home (Butch 2026-11-24: "direct it immediately")
+        t.script(Raw('(function(){var go=function(){document.getElementById("altos").scrollIntoView({behavior:"instant"});};'
+                     'addEventListener("load",function(){if(location.hash==="#altos")go();});'
+                     'document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(\'a[href="/#altos"],a[href="#altos"]\');'
+                     'if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.button)return;e.preventDefault();'
+                     'if(location.hash!=="#altos")history.pushState(null,"","#altos");go();});})();')),
         t.p(
             "ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections "
             "and the Treasury Disbursement System for disbursements, each with its own reports.",
