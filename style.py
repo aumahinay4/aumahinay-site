@@ -1678,3 +1678,10 @@ CSS += """
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .post-card h2 a, :root:not([data-theme="light"]) .post-card .more { color: var(--blue-ink); } }
 :root[data-theme="dark"] .post-card h2 a, :root[data-theme="dark"] .post-card .more { color: var(--blue-ink); }
 """
+# ---- Phone menu button on the LEFT of "Butch Mahinay" (Butch 2026-11-23) ----
+CSS += """
+@media (max-width: 1024px) {
+  html.menu-js .menu-btn { order: -1; margin: 10px 12px 0 0; }
+  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(10px, env(safe-area-inset-left, 0px)) !important; }
+}
+"""
