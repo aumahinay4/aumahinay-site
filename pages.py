@@ -16,6 +16,7 @@ from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
 from altos_demo import DEMO_URL, demo_page
+import book as BOOK
 from style import CSS
 from tags import Raw
 
@@ -533,7 +534,7 @@ def contact():
                  "probably wondering too, and I may answer it in a future post."),
             t.li(t.b("A correction. "), "Laws, rates and procedures change. If you spot an error or an outdated "
                  "rule, tell me and I will check it and fix it."),
-            t.li(t.b("The ALTOS book. "), "Requests to read the full book and feedback on the preview."),
+            t.li(t.b("The ALTOS book. "), "Questions and feedback on any chapter of the book."),
             t.li(t.b("Talks and trainings. "), "Invitations to speak about treasury work, Python for government "
                  "offices or staying safe online."),
             class_="reasons",
@@ -598,9 +599,9 @@ def altos_section():
         t.blockquote(t.p(ALTOS["principle"]), t.footer(t.a("The ALTOS principle →", href=SERIES_URL, class_="stretch"))),
         t.figure(
             t.a(t.img(src=asset_url("altos-loop.png"), alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step.", width="1395", height="680", loading="lazy"),
-                href=BOOK_URL, aria_label="Read Chapter 1 of the ALTOS book, where this figure comes from"),
+                href=BOOK.chapter_url(1), aria_label="Read Chapter 1 of the ALTOS book, where this figure comes from"),
             t.figcaption("Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step. ",
-                         t.a("See it in the book preview →", href=BOOK_URL)),
+                         t.a("Read Chapter 1 of the book →", href=BOOK.chapter_url(1))),
             class_="screenshot diagram",
         ),
         t.h2("Three movements of public money"),
@@ -621,13 +622,13 @@ def altos_section():
               for i, (name, desc) in enumerate(ALTOS["principles"], 1)], class_="principles"),
         t.h2("The book"),
         t.div(
-            t.a(cover_img("book-cover"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"),
+            t.a(cover_img("book-cover"), href=BOOK_URL, aria_label="Read the ALTOS book", class_="book-link"),
             t.div(
                 t.span(book["status"], class_="badge spec"),
                 t.h3(book["title"]),
                 t.p(book["subtitle"], t.br(), f"{book['pages']} pages", class_="muted"),
                 t.p(book["blurb"]),
-                t.a("Read a preview →", href=BOOK_URL, class_="btn white"),
+                t.a("Read the book →", href=BOOK_URL, class_="btn white"),
             ),
             class_="card book",
         ),
@@ -639,7 +640,7 @@ BOOK_PREVIEW_PAGES = 20  # cover, title, copyright, contents, Part I, Chapters 1
 BOOK_URL = "/projects/altos-book/"
 # Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
 # ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
-NOINDEX_URLS = {BOOK_URL, DEMO_URL}
+NOINDEX_URLS = {DEMO_URL}  # the book is text now (Butch 2026-11-23), so Google may read it
 # visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
 BOOK_FIRST_DAYS, BOOK_MORE_DAYS = 3, 2  # reading time per approved request (Butch, 2026-11-04)
 BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
@@ -733,6 +734,188 @@ def book_reader():
         description=f"Read the first 20 pages of {book['title']}, a book by {SITE['name']}.",
         seo_title=f"ALTOS Book Preview: 360° Accountability · {SITE['short_name']}",
         url=BOOK_URL,
+    )
+
+
+# ---- The book as web pages (Butch 2026-11-23: "All chapter now are open for adsense") ----
+LOOP_ALT = ("The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to "
+            "Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. "
+            "At the center: 360° accountability, a named officer at every step.")
+# read online only: no right-click menu, copying or text selection on the book text (casual protection only)
+BOOK_TEXT_SCRIPT = """
+(function () {
+  var el = document.querySelector('.book-text');
+  if (!el) return;
+  ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (k) {
+    el.addEventListener(k, function (e) { e.preventDefault(); });
+  });
+})();
+"""
+
+
+def book_rich(rich):
+    out = []
+    for style, text in rich:
+        out.append(t.strong(text) if style == "b" else t.em(text) if style == "i" else text)
+    return out
+
+
+def book_block(b):
+    k = b["t"]
+    if k == "h":
+        return t.h2(b["text"], id=heading_id(b["text"]))
+    if k == "p":
+        return t.p(book_rich(b["r"]))
+    if k in ("ul", "ol"):
+        items = [t.li(book_rich(it)) for it in b["items"]]
+        return t.ul(items) if k == "ul" else t.ol(items)
+    if k == "box":
+        label = b["label"].capitalize().replace("Altos", "ALTOS")
+        return t.aside(t.p(t.b(label + "."), " ", book_rich(b["r"])), class_="book-box")
+    if k == "table":
+        return t.div(t.table(t.thead(t.tr([t.th(h) for h in b["head"]])),
+                             t.tbody([t.tr([t.td(book_rich(c), data_label=h) for h, c in zip(b["head"], row)]) for row in b["rows"]])),
+                     class_="table-wrap")
+    if k == "fig":
+        return t.figure(t.img(src=asset_url("altos-loop.png"), alt=LOOP_ALT, width="1395", height="680", loading="lazy"),
+                        t.figcaption("Figure 1.1. The ALTOS loop: three movements, one accountable officer at each step."),
+                        class_="screenshot diagram")
+    if k == "ref":
+        return t.li(book_rich(b["r"]))
+    raise ValueError(k)
+
+
+def book_blocks(blocks):
+    """Book blocks to HTML; consecutive references become one list."""
+    out, refs = [], []
+    for b in blocks:
+        if b["t"] == "ref":
+            refs.append(book_block(b))
+            continue
+        if refs:
+            out.append(t.ul(refs, class_="refs")); refs = []
+        out.append(book_block(b))
+    if refs:
+        out.append(t.ul(refs, class_="refs"))
+    return out
+
+
+def book_pages():
+    """Every web page of the book in reading order: (url, label, title)."""
+    pages = [(BOOK.chapter_url(c["n"]), f"Chapter {c['n']}", c["title"]) for c in BOOK.CHAPTERS]
+    return pages + [(BOOK.GLOSSARY_URL, "Glossary", "Glossary"), (BOOK.REFERENCES_URL, "References", "References")]
+
+
+def book_nav(url):
+    pages = book_pages()
+    i = next(n for n, p in enumerate(pages) if p[0] == url)
+
+    def step(n, word, cls):
+        if not 0 <= n < len(pages):
+            return t.span()
+        u, label, title = pages[n]
+        return t.a(t.span(f"{word} · {label}", class_="muted"), t.b(title), href=u, class_=cls)
+
+    return t.nav(step(i - 1, "Previous", "newer"), step(i + 1, "Next", "older"), class_="post-steps book-steps",
+                 aria_label="Book pages")
+
+
+def book_crumbs(trail):
+    return t.nav(t.ol([t.li(t.a(label, href=href) if href else t.span(label, aria_current="page")) for label, href in trail]),
+                 class_="crumbs", aria_label="Breadcrumb")
+
+
+def book_home():
+    """The book's contents page: every part and chapter, each chapter a page of its own."""
+    b = ALTOS["book"]
+    return part(
+        "360° Accountability", BOOK_URL,
+        t.div(
+            book_crumbs([("Home", "/"), ("ALTOS", ALTOS_URL), ("The book", None)]),
+            t.div(
+                cover_img("book-cover"),
+                t.div(
+                    t.p("The book · free to read online", class_="eyebrow"),
+                    t.h1(b["title"]),
+                    t.p(b["subtitle"], " · ", b["status"], class_="muted"),
+                    t.p(b["blurb"]),
+                    t.a("Start with Chapter 1 →", href=BOOK.chapter_url(1), class_="btn primary"),
+                ),
+                class_="book-head",
+            ),
+            t.h2("Contents"),
+            [t.section(
+                t.h3(f"Part {num} · {name}"),
+                t.p(sub, class_="muted"),
+                t.ol([t.li(t.a(t.span(f"Chapter {c['n']}", class_="muted"), t.b(c["title"]), href=BOOK.chapter_url(c["n"])))
+                      for c in BOOK.CHAPTERS if c["n"] in rng], class_="book-toc"),
+                class_="book-part", id=f"part-{num.lower()}")
+             for num, name, sub, rng in BOOK.PARTS],
+            t.section(t.h3("At the back of the book"),
+                      t.ol(t.li(t.a(t.b("Glossary"), href=BOOK.GLOSSARY_URL)), t.li(t.a(t.b("References"), href=BOOK.REFERENCES_URL)),
+                           class_="book-toc"), class_="book-part"),
+            t.p("Read online only. Please quote short parts with a link back instead of copying whole pages. "
+                "Laws and circulars change: confirm the current text before relying on any rule described here.",
+                class_="muted note"),
+            class_="blog-col book-col",
+        ),
+        description=f"Read {b['title']} by {SITE['name']} free online: fifteen chapters joining public administration "
+                    "theory with Philippine local treasury law and the lessons of building ALTOS.",
+        seo_title=f"360° Accountability: The ALTOS Book, Free to Read Online · {SITE['short_name']}",
+        url=BOOK_URL,
+        json_ld={"@context": "https://schema.org", "@type": "Book", "name": b["title"], "alternativeHeadline": b["subtitle"],
+                 "author": {"@type": "Person", "name": SITE["name"]}, "bookEdition": b["status"], "inLanguage": "en",
+                 "url": f"https://{SITE['domain']}{BOOK_URL}"},
+    )
+
+
+def book_chapter(c):
+    num, name, _, _ = BOOK.part_of(c["n"])
+    url = BOOK.chapter_url(c["n"])
+    heads = [b["text"] for b in c["blocks"] if b["t"] == "h"]
+    minutes = max(1, round(BOOK.words(c) / 200))
+    title = f"Chapter {c['n']}: {c['title']}"
+    lead = BOOK.plain(next(b["r"] for b in c["blocks"] if b["t"] == "p"))
+    return part(
+        title, BOOK_URL,
+        t.div(
+            book_crumbs([("The book", BOOK_URL), (f"Part {num}", BOOK_URL + f"#part-{num.lower()}"), (f"Chapter {c['n']}", None)]),
+            t.article(
+                t.p(f"Part {num} · {name}", class_="eyebrow"),
+                t.h1(title),
+                t.p("By ", t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), f" · {minutes} min read", class_="byline"),
+                t.details(t.summary("In this chapter"), t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+                          class_="toc", open=True) if len(heads) >= 3 else "",
+                book_blocks(c["blocks"]),
+                class_="post book-text",
+            ),
+            book_nav(url),
+            t.p(t.a("All chapters", href=BOOK_URL), " · From ", t.em(ALTOS["book"]["title"]), ", ", ALTOS["book"]["status"], ".",
+                class_="muted note"),
+            t.script(Raw(BOOK_TEXT_SCRIPT)),
+            class_="blog-col book-col",
+        ),
+        description=lead if len(lead) <= 160 else lead[:157].rsplit(" ", 1)[0] + "…",
+        seo_title=f"{title} · 360° Accountability",
+        url=url,
+        json_ld=article_ld(title, lead, url, kind="Article"),
+    )
+
+
+def book_back(section, url, intro):
+    return part(
+        section["title"], BOOK_URL,
+        t.div(
+            book_crumbs([("The book", BOOK_URL), (section["title"], None)]),
+            t.article(t.p("360° Accountability", class_="eyebrow"), t.h1(section["title"]), t.p(intro, class_="lead"),
+                      book_blocks(section["blocks"]), class_="post book-text"),
+            book_nav(url),
+            t.script(Raw(BOOK_TEXT_SCRIPT)),
+            class_="blog-col book-col",
+        ),
+        description=intro,
+        seo_title=f"{section['title']} · 360° Accountability",
+        url=url,
     )
 
 
@@ -2124,7 +2307,12 @@ def _full_page(build):
 
 
 ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}.items()}
-ROUTES[BOOK_URL] = _full_page(book_reader)
+ROUTES[BOOK_URL] = _full_page(book_home)
+ROUTES.update({BOOK.chapter_url(c["n"]): _full_page(lambda c=c: book_chapter(c)) for c in BOOK.CHAPTERS})
+ROUTES[BOOK.GLOSSARY_URL] = _full_page(lambda: book_back(BOOK.GLOSSARY, BOOK.GLOSSARY_URL,
+    "The terms used in 360° Accountability, from accountable forms to the Seal of Good Local Governance."))
+ROUTES[BOOK.REFERENCES_URL] = _full_page(lambda: book_back(BOOK.REFERENCES, BOOK.REFERENCES_URL,
+    "The books, articles, laws and issuances behind 360° Accountability."))
 ROUTES[SERIES_URL] = _full_page(series_page)
 ROUTES[DEMO_URL] = demo_page  # a whole page of its own: no site layout, so no ads on the demo
 # one page per published lesson; scheduled lessons appear on their publish_on date
