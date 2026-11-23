@@ -1723,3 +1723,12 @@ main .author-top:has(h1) .author-roles { font-size: clamp(15.2px, 1.6vw, 18px); 
   main .author-top:has(h1) .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
 }
 """
+# ---- Book About the Author: the same author head, short text (Butch 2026-11-24) ----
+CSS += """
+.book-text .author-top { margin-top: 16px; }
+.book-text .author-top p, .book-text .author-top .author-name { text-align: left !important; hyphens: manual; }
+@media (max-width: 640px) {
+  .book-text .author-top .author-name { white-space: nowrap; font-size: min(1.2em, calc((100vw - 150px) / 16.2)); }
+  .book-text .author-top .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
+}
+"""
