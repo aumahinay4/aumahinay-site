@@ -1742,6 +1742,7 @@ def blog_post(b):
         series_line(b),
         listen_box(b),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
+        t.hr(class_="lead-rule") if b.get("summary") else "",
         post_contents(b),
         [blog_block(x) for x in b["body"]],
         class_="post",
@@ -1940,9 +1941,10 @@ def post_page(b):
         b["title"], "/blog/",
         # computers: the post at the left, a side column at the right that stays in view (In this article,
         # the series, the author), as in the downloaded desktop pattern (Butch 2026-11-23). Phones: one column, as before.
+        # "← All posts" at the left, the breadcrumb at the right, above both columns (Butch's post pattern file, 2026-11-23)
+        t.div(t.a("← All posts", href="/blog/", class_="back-all"), breadcrumb(b), class_="post-top"),
         t.div(
             t.div(
-                breadcrumb(b),
                 blog_post(b),
                 series_steps(b),
                 t.div(learn_series_box(b), class_="narrow-only"),
@@ -1954,8 +1956,9 @@ def post_page(b):
                 t.p("Views here are my own and do not represent any government office.", class_="muted note"),
                 class_="blog-col read-main",
             ),
-            t.aside(side_contents([x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "h"], "In this article"),
-                    learn_series_box(b), side_author(), class_="read-side", aria_label="About this post"),
+            t.aside(t.div(side_contents([x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "h"], "In this article"),
+                          side_series(b), side_author(), class_="side-card"),
+                    class_="read-side", aria_label="About this post"),
             class_="read-grid",
         ),
         description=b.get("description") or b.get("summary") or post_teaser(b),
@@ -1975,14 +1978,44 @@ def side_contents(heads, label):
                  class_="side-box side-toc", aria_label=label)
 
 
+def side_series(b):
+    """Series box for the side column: published parts only, this one highlighted ('2 / 3')."""
+    if b.get("series"):
+        parts = learn_parts(b)
+        name, href = LEARN_SERIES[b["series"]] + " Series", f"/blog/#cat-{b['category']}"
+        rows = [(p, (learn_part(p) or "") + ": " + (p["title"].split(": ", 1)[1] if ": " in p["title"] else p["title"])) for p in parts]
+    else:
+        sp = series_posts()
+        if not any(p[2] is b for p in sp):
+            return ""
+        live = live_posts()
+        parts = [p[2] for p in sp if p[2] in live]  # published parts only, never "coming" ones
+        name, href = ALTOS_SERIES["title"], SERIES_URL
+        rows = [(p, ("Introduction" if n == 0 else f"Principle {n}") + ": " + (p["title"].split(": ", 1)[1] if ": " in p["title"] else p["title"]))
+                for n, p in enumerate(parts)]  # parts go live in order, so position n is Principle n
+    if len(parts) < 2:
+        return ""
+    here = next(n for n, p in enumerate(parts) if p is b) + 1
+    return t.nav(
+        t.div(t.a(name, href=href, class_="eyebrow"), t.span(f"{here} / {len(parts)}", class_="muted"), class_="side-series-head"),
+        t.ol([t.li(t.span(label, aria_current="page"), class_="here") if p is b else t.li(t.a(label, href=post_url(p)))
+              for p, label in rows]),
+        class_="side-box side-series", aria_label=name)
+
+
+def learn_parts(b):
+    return sorted((p for p in live_posts() if p.get("series") == b["series"]), key=post_day)
+
+
 def side_author():
     """Short author box for the side column on computers; phones get the full author card under the post."""
     return t.div(
         t.p("About the author", class_="eyebrow"),
         t.p(t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), class_="side-name"),
-        t.p("Over 15 years in government service, more than 13 of them in local treasury work in Quezon Province. "
-            "He writes, teaches and builds software in his personal capacity, outside official working hours."),
-        t.p(t.a("Full profile →", href="/about/")),
+        t.p("15+ years in government service (13+ years in public finance and local treasury work in Quezon Province), "
+            "holder of 7 Google Professional Certificates, and a self-taught software developer. He writes in his personal "
+            "capacity, outside official working hours."),
+        t.p(t.a("Explore ALTOS & 360° Accountability →", href=ALTOS_URL)),
         class_="side-box side-author",
     )
 
@@ -2093,6 +2126,13 @@ def series_count():
 
 def series_line(b):
     """Small line under a series post's byline: which part it is, linking to the series page."""
+    if b.get("series") and learn_part(b):
+        parts = learn_parts(b)
+        if len(parts) < 2:
+            return ""
+        n = next(k for k, p in enumerate(parts) if p is b) + 1
+        return t.p(f"Part {n} of {len(parts)} in the series ", t.a(LEARN_SERIES[b["series"]] + " Series", href=f"/blog/#cat-{b['category']}"),
+                   class_="series-line")
     parts = series_posts()
     i = next((n for n, p in enumerate(parts) if p[2] is b), None)
     if i is None:
