@@ -544,9 +544,11 @@ def home():
                      [("Open the calculator →", RPT_URL)]),
                     ("Learn and practice", "Study Notes and Tutorials",
                      "Local treasury work in plain words, each note with a short quiz, plus beginner-friendly "
-                     "Python lessons and Civil Service exam vocabulary.",
+                     "Python lessons and English vocabulary for the Civil Service exam.",
                      [*([("Read the study notes →", NOTES_INFO["url"])] if live_notes() else []),
-                      ("Start the tutorials →", "/tutorials/")]),
+                      ("Start the tutorials →", "/tutorials/"),
+                      # English vocabulary link (Butch 2026-11-23: "add in the learn & practice the english vocabulary")
+                      *([("Practice English vocabulary →", f"/tutorials/#{VOCAB['slug']}")] if live_modules() else [])]),
                     ("The project", "ALTOS and the Book",
                      "The Automated Local Treasury Operations System, a browser demo with made-up data, and the "
                      "book behind it, 360° Accountability.",
