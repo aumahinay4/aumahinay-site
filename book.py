@@ -81,7 +81,7 @@ AUTHOR = {"title": "About the Author", "blocks": [
        "Learning Center (2000)."),
     _p(("b", "Teaching. "), "Part-time lecturer, Manuel S. Enverga University Foundation, Catanauan (2010)."),
     _p(("b", "Eligibility. "), "Career Service Professional (2012); Basic Competency on Local Treasury Examination "
-       "(2018); Intermediate Competency on Local Treasury Examination (2019)."),
+       "(2017); Intermediate Competency on Local Treasury Examination (2018)."),
     _p(("b", "Google Professional Certificates. "), "Cybersecurity, Project Management, Data Analytics, Advanced Data "
        "Analytics, Business Intelligence, AI and IT Support (2025–2026)."),
     _p(("b", "Public finance training. "), "Bureau of Local Government Finance programs on local revenue forecasting "
