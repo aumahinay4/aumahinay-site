@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, LEARN_SERIES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
+from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, DISCLAIMER, LEARN_SERIES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
 from highlight import highlight
 from share_cards import card_for
 from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
@@ -280,14 +280,21 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             ),
             t.main(t.div(body, class_="wrap")),
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
-            t.footer(t.div(t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+            t.footer(t.div(
+                           # short disclaimer on every page (Butch 2026-11-23, AdSense blueprint); full text on /disclaimer/
+                           t.p("Written in a personal capacity, outside official working hours, for learning only. "
+                               "Not an official issuance or legal advice, and not endorsed by any government office.",
+                               class_="disclaimer-line"),
+                           t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
                                   " · ",
                                   t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
+                                  " · ",
+                                  t.a("Disclaimer", href="/disclaimer/", aria_current="page" if active == "/disclaimer/" else None),
                                   class_="legal-links"),
                            t.span("Built in Python", class_="built"),  # below the Privacy Policy line (Butch 2026-11-12)
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/")]))),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/", "/disclaimer/")]))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
@@ -396,6 +403,9 @@ def section_head(title, link_text, href):
     return t.div(t.h2(title), t.a(f"{link_text} →", href=href, class_="more"), class_="section-head")
 
 
+ESSENTIAL_GUIDES = ["how-to-use-the-rpt-calculator", "year-end-in-the-treasury", "why-i-built-altos"]
+
+
 def home():
     """Home: what the site offers (blog, free Python lessons, ALTOS), the newest writing first,
     then topics, lessons, the project and a short note about the author (Butch 2026-11-09:
@@ -403,6 +413,8 @@ def home():
     posts = sorted(live_posts(), key=post_day, reverse=True)
     lessons = [x for x in LESSONS if lesson_is_live(x)]
     topics = [(key, label, sum(b["category"] == key for b in posts)) for key, label, _ in BLOG_CATEGORIES]
+    # cornerstone posts picked by hand; a scheduled one shows only once it is live
+    guides = [b for slug in ESSENTIAL_GUIDES for b in posts if b["slug"] == slug]
     topic_text = {
         "software": "Building ALTOS, Python, and software that keeps public money accountable.",
         "finance": "Stand-alone posts on public money: local taxes, tools like the RPT calculator, and the rules behind them.",
@@ -432,37 +444,37 @@ def home():
             ),
             class_="hero",
         ),
-        t.h2("What you'll find here"),
+        # "Start here" (Butch 2026-11-23, AdSense blueprint): three ways in, replacing "What you'll find here"
+        # and the separate "Free tool" box, so nothing on Home is listed twice
+        t.h2("Start here"),
         t.div(
             [
-                t.a(t.h3(title), t.p(text), t.span(go, class_="go"), href=href, class_="card focus")
-                for title, text, go, href in (
-                    ("Blog",
-                     "Stories and notes on public finance, treasury work, cybersecurity and building software.",
-                     "Read the blog →", "/blog/"),
-                    ("Tutorials",
-                     "Free, beginner-friendly lessons: Python for treasury work and Civil Service exam "
-                     "vocabulary with practice questions.", "Start learning →", "/tutorials/"),
-                    *([("Treasury Study Notes",
-                        "Local treasury work in plain words: revenue, taxes, collections and payments, "
-                        "each note with a short quiz.",
-                        "Read the notes →", NOTES_INFO["url"])] if live_notes() else []),  # Butch 2026-11-14: right after Tutorials
-                    # ALTOS card removed: the full ALTOS section is further down this page (no duplicates, Butch 2026-11-20)
+                t.div(t.p(kicker, class_="eyebrow"), t.h3(title), t.p(text),
+                      t.p([t.a(go, href=href) for go, href in links], class_="go-links"), class_="card start")
+                for kicker, title, text, links in (
+                    ("Free tool", "Real Property Tax Calculator",
+                     "Work out the basic real property tax and the Special Education Fund on any assessed value, "
+                     "with the discount or interest, and see how the tax is shared.",
+                     [("Open the calculator →", RPT_URL)]),
+                    ("Learn and practice", "Study Notes and Tutorials",
+                     "Local treasury work in plain words, each note with a short quiz, plus beginner-friendly "
+                     "Python lessons and Civil Service exam vocabulary.",
+                     [*([("Read the study notes →", NOTES_INFO["url"])] if live_notes() else []),
+                      ("Start the tutorials →", "/tutorials/")]),
+                    ("The project", "ALTOS and the Book",
+                     "The Automated Local Treasury Operations System, a browser demo with made-up data, and the "
+                     "book behind it, 360° Accountability.",
+                     [("Explore ALTOS →", ALTOS_URL), ("Read the book →", BOOK_URL)]),
                 )
             ],
-            class_="grid three find",
+            class_="grid three start-here",
         ),
-        t.h2("Free tool"),
-        t.div(
-            t.a(t.h3("Real Property Tax Calculator"),
-                t.p("Work out the basic real property tax and the Special Education Fund on any assessed value, "
-                    "with the discount or interest, and see how much goes to the province, municipality, "
-                    "barangay and school boards."),
-                t.span("Open the calculator →", class_="go"), href=RPT_URL, class_="card focus tool"),
-            class_="grid one",
-        ),
+        *([t.h2("Essential guides"),
+           t.div([t.a(t.span(category_label(p), t.span(f"{reading_minutes(p)} min read", class_="muted")),
+                      t.b(p["title"]), href=post_url(p), class_="related-card") for p in guides],
+                 class_="related guides")] if guides else []),
         section_head("Latest posts", f"All {len(posts)} posts", "/blog/"),
-        t.div([post_card(b) for b in posts[:4]], class_="post-list home-posts"),
+        t.div([post_card(b) for b in [p for p in posts if p not in guides][:4]], class_="post-list home-posts"),
         t.h2("Browse by topic"),
         t.div(
             [t.a(t.h3(label), t.p(topic_text.get(key, "")), t.span(f"{n} post{'s' if n != 1 else ''} →", class_="go"),
@@ -863,11 +875,20 @@ def lesson_meta(x):
     return f"Lesson {x['number']} · {x['level']} · {x['minutes']} min"
 
 
+def short_month(text):
+    """'November 2026' -> 'Nov 2026'."""
+    month, _, year = text.partition(" ")
+    return f"{month[:3]} {year}".strip()
+
+
 def lesson_card(x, mini=False):
     open_ = SHOW_SCHEDULED or lesson_is_live(x)
     when = None if lesson_is_live(x) else t.span("Coming " + nice_date(x["publish_on"]) if x.get("publish_on") else "Coming soon", class_="badge soon")
     inner = [
-        t.div(t.span(f"Lesson {x['number']}", class_="badge"), when, t.span(f"{x['level']} · {x['minutes']} min", class_="muted"), class_="meta"),
+        t.div(t.span(f"Lesson {x['number']}", class_="badge"), when, t.span(f"{x['level']} · {x['minutes']} min", class_="muted"),
+              # "Checked Nov 2026" from LAST_CHECKED (Butch 2026-11-23, AdSense blueprint)
+              t.span("Checked " + short_month(LAST_CHECKED[x["number"]]), class_="badge checked") if LAST_CHECKED.get(x["number"]) and not mini else None,
+              class_="meta"),
         t.h3(x["title"]),
         None if mini else t.p(x["summary"]),
         None if mini else tag_list(x["topics"]),
@@ -999,7 +1020,8 @@ def live_modules():
 
 def module_card(m):
     return t.a(
-        t.div(t.span(f"Module {m['number']}", class_="badge"), t.span(f"{len(m['words'])} words · practice", class_="muted"), class_="meta"),
+        t.div(t.span(f"Module {m['number']}", class_="badge"), t.span(f"{len(m['words'])} words · practice", class_="muted"),
+              t.span("Checked " + short_month(VOCAB_CHECKED), class_="badge checked"), class_="meta"),
         t.h3(m["title"][:1].upper() + m["title"][1:]),
         t.p(m["summary"]),
         t.span("Start the module →", class_="go"),
@@ -1156,12 +1178,31 @@ def lesson_page(x):
     )
 
 
+def heading_id(text):
+    """Anchor for a post heading, so "In this article" can link to it: "1. Why It Matters" -> "why-it-matters"."""
+    words = "".join(c.lower() if c.isalnum() else " " for c in text).split()
+    return "-".join(w for w in words if not w.isdigit()) or "section"
+
+
+def post_contents(b):
+    """'In this article' box: the post's headings as links (Butch 2026-11-23, AdSense blueprint).
+    Only on posts with four or more headings."""
+    heads = [x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "h"]
+    if len(heads) < 4:
+        return ""
+    return t.details(
+        t.summary("In this article"),
+        t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+        class_="toc", open=True,
+    )
+
+
 def blog_block(x):
     if isinstance(x, str):
         return t.p(x)
     kind, *rest = x
     if kind == "h":
-        return t.h3(rest[0])
+        return t.h3(rest[0], id=heading_id(rest[0]))
     if kind == "quote":
         return t.blockquote(t.p(rest[0]))
     if kind == "photo":
@@ -1441,6 +1482,7 @@ def blog_post(b):
         series_line(b),
         listen_box(b),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
+        post_contents(b),
         [blog_block(x) for x in b["body"]],
         class_="post",
         data_cat=b["category"],
@@ -1637,9 +1679,10 @@ def post_page(b):
     return part(
         b["title"], "/blog/",
         t.div(
-            t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
+            breadcrumb(b),
             blog_post(b),
             series_steps(b),
+            learn_series_box(b),
             react_box(post_url(b)),
             t.h2("About the author", class_="post-section"),
             author_card(),
@@ -1652,9 +1695,70 @@ def post_page(b):
         description=b.get("description") or b.get("summary") or post_teaser(b),
         url=post_url(b),
         og_type="article",
-        json_ld=article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
-                           post_day(b), post_photo(b)),
+        json_ld=[article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
+                            post_day(b), post_photo(b)), breadcrumb_ld(b)],
         share_image=card_for(post_photo(b)) if post_photo(b) else None,  # link previews show the post's own picture
+    )
+
+
+def crumbs(b):
+    """Blog / the post's series or topic / this part: (label, link) pairs, the last one without a link."""
+    trail = [("Blog", "/blog/")]
+    parts = series_posts()
+    i = next((n for n, p in enumerate(parts) if p[2] is b), None)
+    if i is not None:
+        trail += [(ALTOS_SERIES["title"], SERIES_URL), ("Introduction" if i == 0 else f"Principle {i}", None)]
+    elif b.get("series"):
+        name = LEARN_SERIES[b["series"]]
+        trail += [(name, f"/blog/#cat-{b['category']}"), (learn_part(b) or b["title"], None)]
+    else:
+        trail += [(CATEGORY[b["category"]][0], f"/blog/#cat-{b['category']}"), (b["title"], None)]
+    return trail
+
+
+def breadcrumb(b):
+    """Line at the top of a post: Blog / series or topic / part (Butch 2026-11-23, AdSense blueprint)."""
+    items = []
+    for label, href in crumbs(b):
+        items.append(t.li(t.a(label, href=href) if href else t.span(label, aria_current="page")))
+    return t.nav(t.ol(items), class_="crumbs", aria_label="Breadcrumb")
+
+
+def breadcrumb_ld(b):
+    site = f"https://{SITE['domain']}"
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": n + 1, "name": label, "item": site + (href or post_url(b))}
+        for n, (label, href) in enumerate(crumbs(b))]}
+
+
+def learn_part(b):
+    """'Part 2' from 'Cybersecurity Series, Part 2: Identity Is the New Perimeter', or None."""
+    head = b["title"].split(":", 1)[0]
+    return head.split(", ", 1)[1] if ", Part " in head else None
+
+
+def learn_series_box(b):
+    """Box under a Learn series post: every PUBLISHED part of that series in order, this one marked.
+    Parts not out yet are never named or counted (no "under construction", Butch 2026-11-14)."""
+    if not b.get("series"):
+        return ""
+    parts = sorted((p for p in live_posts() if p.get("series") == b["series"]), key=post_day)
+    if len(parts) < 2:
+        return ""
+
+    def row(p):
+        short = p["title"].split(": ", 1)[1] if ": " in p["title"] else p["title"]
+        inner = [t.span(learn_part(p) or "", class_="muted"), t.b(short)]
+        if p is b:
+            return t.li(t.span(inner, aria_current="page"), class_="here")
+        return t.li(t.a(inner, href=post_url(p)))
+
+    return t.section(
+        t.div(t.p("Series", class_="eyebrow"), t.b(LEARN_SERIES[b["series"]], class_="series-name"),
+              t.span(f"{len(parts)} parts", class_="muted"), class_="series-head"),
+        t.ol([row(p) for p in parts], class_="learn-parts"),
+        class_="series-box learn-series",
+        aria_label=LEARN_SERIES[b["series"]],
     )
 
 
@@ -1784,7 +1888,7 @@ def series_page():
             t.p(ALTOS_SERIES["tagline"] + ".", class_="lead"),
             [t.p(x) for x in ALTOS_SERIES["intro"]],
             t.p(status, class_="series-status"),
-            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="series-list"),
+            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="learn-parts"),
             t.div(
                 t.h2("Want to go deeper?"),
                 t.p("The ten principles also form the closing part of my book, ",
@@ -1997,7 +2101,17 @@ def terms():
         "calculator are for learning, not legal or financial advice, and are written in a personal capacity.")
 
 
-PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, RPT_URL: rpt_page}
+DISCLAIMER_URL = "/disclaimer/"
+
+
+def disclaimer():
+    return _policy_page(
+        "Disclaimer", DISCLAIMER_URL, "Disclaimer", DISCLAIMER,
+        f"Disclaimer of {SITE['domain']}: everything here is written in a personal capacity for learning, "
+        "is not an official government issuance or legal advice, and is not endorsed by any office.")
+
+
+PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, DISCLAIMER_URL: disclaimer, RPT_URL: rpt_page}
 
 
 def _full_page(build):

@@ -1204,3 +1204,44 @@ blockquote footer a.stretch { color: inherit; text-decoration: none; }
 .motto a:hover, figure.screenshot figcaption a { color: var(--blue-ink); }
 .card.author .author-name a { color: inherit; text-decoration: none; }
 """
+
+CSS += """
+/* ---- New site structure (Butch 2026-11-23, from his AdSense blueprint) ---- */
+/* short disclaimer above the footer links, every page */
+footer.legal .disclaimer-line { max-width: 640px; margin: 0 auto 4px; padding: 0 12px; font-size: 13px; line-height: 1.5;
+  color: var(--muted); text-align: center !important; text-wrap: balance; }
+@media (max-width: 640px) { footer.legal .disclaimer-line { font-size: 12.5px; } }
+/* breadcrumb at the top of a post: Blog / series or topic / part */
+.crumbs { margin-top: 8px; font-size: 14.5px; }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 0; }
+.crumbs li { display: inline; color: var(--muted); }
+.crumbs li + li::before { content: "/"; margin: 0 8px; color: var(--muted); opacity: .7; }
+.crumbs a { font-weight: 600; color: var(--blue-ink); }
+.crumbs span[aria-current] { overflow-wrap: anywhere; }
+.blog-col > .crumbs + .post { margin-top: 16px; }
+/* "In this article" box, open by default, tap the title to fold it */
+.post .toc { margin: 18px 0 8px; padding: 12px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--blue-ink); border-radius: var(--radius); }
+.post .toc summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: 16.5px; }
+.post .toc ol { margin: 8px 0 2px; padding-left: 22px; }
+.post .toc li { margin: 3px 0; text-align: left; line-height: 1.4; }
+.post .toc a { color: var(--text); text-decoration: none; }
+.post .toc a:hover { color: var(--blue-ink); text-decoration: underline; }
+.post h3[id] { scroll-margin-top: 56px; }
+@media (max-width: 640px) { .post .toc { padding: 10px 12px; } .post .toc ol { padding-left: 20px; } }
+/* Learn series box: every published part, this one marked */
+.learn-series .learn-parts { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+.learn-series .learn-parts a, .learn-series .learn-parts .here > span { display: flex; flex-direction: column; gap: 2px; padding: 9px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--text); }
+.learn-series .learn-parts a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.learn-series .learn-parts .here > span { border-color: var(--gold-ink); border-left-width: 4px; }
+.learn-series .learn-parts .muted { font-size: 14px; }
+.learn-series .learn-parts b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+/* Home "Start here" cards with one or two links each */
+.start-here .card.start { display: flex; flex-direction: column; }
+.start-here .card.start .eyebrow { margin: 0 0 4px; }
+.start-here .card.start h3 { margin-top: 0; }
+.start-here .go-links { margin: auto 0 0; padding-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 16px; text-align: left; }
+.start-here .go-links a { font-weight: 600; }
+.related.guides { margin-top: 12px; }
+/* "Checked Nov 2026" on lesson and module cards */
+.badge.checked { --c: var(--green); --ci: var(--green-ink); }
+"""
