@@ -11,7 +11,8 @@ import tags as t
 from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, DISCLAIMER, LEARN_SERIES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
 from highlight import highlight
 from share_cards import card_for
-from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
+from glossary import GLOSSARY, GLOSSARY_INTRO
+from lessons import LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
@@ -1197,6 +1198,39 @@ document.addEventListener("click", function (e) {
 """
 
 
+def glossary_id(g):
+    return "word-" + "".join(c if c.isalnum() else "-" for c in g["term"].lower())
+
+
+def glossary_card(g):
+    """One 'Words to know' entry: meaning, why it matters in treasury work, a real example and its output."""
+    lesson = next((x for x in LESSONS if x["number"] == g["lesson"]), None)
+    shown = lesson in visible_lessons()
+    python = g["term"] not in ("pip", "CSV")  # these two show a terminal command and a data file
+    code = highlight(g["code"]) if python else escape(g["code"], quote=False)
+    return t.div(
+        t.dt(g["term"], t.a(f"Lesson {g['lesson']}", href=lesson_url(lesson), class_="word-lesson") if shown else None),
+        t.dd(
+            t.p(g["means"]),
+            t.p(t.b("Why it matters in treasury work. "), g["why"], class_="word-why"),
+            code_box(g.get("label", "Example"), code, kind="code" if python else "data"),
+            t.figure(t.figcaption(t.span("What it prints", class_="fname")), t.pre(g["output"]), class_="codebox output")
+            if g.get("output") else None,
+            t.p(g["after"], class_="word-after") if g.get("after") else None,
+        ),
+        class_="term", id=glossary_id(g),
+    )
+
+
+def words_to_know():
+    return [
+        t.h2("Words to know", id="words-to-know"),
+        t.p(GLOSSARY_INTRO),
+        t.p([t.a(g["term"], href="#" + glossary_id(g), class_="tag") for g in GLOSSARY], class_="word-index"),
+        t.dl([glossary_card(g) for g in GLOSSARY], class_="glossary"),
+    ]
+
+
 def tutorials():
     shown = visible_lessons()
     return part(
@@ -1208,8 +1242,7 @@ def tutorials():
         t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
         t.div([lesson_card(x) for x in shown], class_="lesson-list"),  # lessons not yet published stay hidden
         vocab_section(),
-        t.h2("Words to know"),
-        t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
+        *words_to_know(),
         t.p(
             "New lessons are added regularly. "
             "All names, receipt numbers and amounts in the examples are made up.",
