@@ -110,7 +110,7 @@ def menu_items():
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
 
 
-CLOSE_ICON = Raw('<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>')
+CLOSE_ICON = Raw('<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>')  # a check mark, not an X, while the phone menu is open (Butch 2026-11-24)
 
 
 def page_label(active):
@@ -331,7 +331,7 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                         href="/", class_="brand-line", aria_label=f"{SITE['short_name']}, home"),
                     top_nav(active),
                     # phones and tablets (Butch 2026-11-23, mobile pattern file): a second line in the top bar with a round
-                    # menu button beside the page's label; it opens a small rounded card and turns into an X
+                    # menu button beside the page's label; it opens a small rounded card and turns into a check mark
                     t.div(
                         t.button(MENU_ICON, CLOSE_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
                                  aria_controls="site-menu", aria_expanded="false"),
