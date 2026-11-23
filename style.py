@@ -1694,3 +1694,32 @@ CSS += """
   html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(6px, env(safe-area-inset-left, 0px)) !important; }
 }
 """
+# ---- One author head everywhere: About page, author card, side box (Butch 2026-11-24) ----
+CSS += """
+.author-top { display: flex; align-items: center; gap: 16px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.author-top .author-photo { width: 76px; height: 76px; min-width: 0; max-width: none; margin: 0; flex: none; aspect-ratio: 1 / 1; object-fit: cover; }
+.author-top p, .author-top h1 { margin: 0; text-align: left; }
+.author-top .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); letter-spacing: 0; }
+.author-top .author-name a { color: var(--text); }
+.author-top .author-name::after { display: none; }
+.author-top .author-roles { margin-top: 4px !important; font: 600 15.2px/1.4 var(--font-display); color: var(--violet-ink); }
+.author-top .author-roles span { display: block; }
+/* About page: the same head, a little larger, in a card */
+main .author-top:has(h1) { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; margin: 4px 0 18px; gap: 22px; }
+main .author-top:has(h1) .author-photo { width: 110px; height: 110px; }
+main .author-top h1.author-name { font-size: clamp(1.35rem, 2.6vw, 1.9rem); }
+main .author-top:has(h1) .author-roles { font-size: clamp(15.2px, 1.6vw, 18px); margin-top: 6px !important; }
+/* Side box on computers: smaller photo, name may wrap */
+.side-author .author-top { gap: 12px; padding-bottom: 12px; margin-bottom: 12px; }
+.side-author .author-top .author-photo { width: 54px; height: 54px; }
+.side-author .author-top .author-name { font-size: 1rem; white-space: normal; }
+.side-author .author-top .author-roles { font-size: 12.6px; }
+@media (max-width: 640px) {
+  .author-top { gap: 12px; }
+  .author-top .author-photo { width: 60px; height: 60px; }
+  main .author-top:has(h1) { padding: 16px 14px; gap: 14px; }
+  main .author-top:has(h1) .author-photo { width: 76px; height: 76px; }
+  main .author-top h1.author-name { white-space: nowrap; font-size: min(1.25rem, calc((100vw - 150px) / 16.2)); }
+  main .author-top:has(h1) .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
+}
+"""
