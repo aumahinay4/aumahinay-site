@@ -503,10 +503,22 @@ details.answer { margin: 14px 0 0; font-size: inherit; }
 details.answer > summary { display: inline-block; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--green); color: var(--green-ink); background: var(--surface); }
 details.answer > summary:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
 details.answer[open] > summary { margin-bottom: 4px; }
-.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 24px 0 0; }
-.glossary dt { font: 600 1.0085rem var(--font-display); color: var(--violet-ink); }
-.glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-.glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15.127px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.word-index { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; text-align: left; }
+.word-index .tag { text-decoration: none; }
+.word-index .tag:hover { border-color: var(--gold); }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 14px; margin: 20px 0 0; }
+.glossary dt { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font: 600 1.15rem var(--font-display); color: var(--violet-ink); }
+.glossary .word-lesson { flex: none; font: 500 13.1101px var(--font-body); color: var(--blue-ink); text-decoration: none; }
+.glossary .word-lesson:hover { text-decoration: underline; }
+.glossary .term { min-width: 0; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: 80px; }
+.glossary .term:target { border-color: var(--gold); box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 35%, transparent); }
+.glossary dd { margin: 6px 0 0; }
+.glossary dd p { margin: 8px 0 0; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.glossary dd .word-why b { color: var(--green-ink); }
+.glossary dd .codebox { margin: 12px 0 0; }
+.glossary dd .codebox pre { font-size: 14.1185px; padding: 12px 14px; }
+.glossary dd .word-after { color: var(--muted); font-size: 15.127px; }
+@media (max-width: 640px) { .glossary .term { padding: 14px 12px; } .glossary dd .codebox pre { font-size: 13.1101px; padding: 12px; } }
 
 /* Blog categories: a small coloured label on each post, and filter pills above the posts */
 .post > .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -830,7 +842,7 @@ footer.site .sep { opacity: .6; }
 .vocab-page .card.word { margin-top: 16px; }
 .vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
 .vocab-page .card.word h2::after { display: none; }
-.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body, inherit); color: var(--muted); }
+.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body); color: var(--muted); }
 .vocab-page .card.word p, .practice p, .practice li { margin: 6px 0; text-align: left; hyphens: manual; }  /* short lines: left-aligned so words are not stretched apart */
 .vocab-page .card.word .meaning { font-weight: 600; }
 .vocab-page .card.word .source { font-size: .9em; text-align: left; }
