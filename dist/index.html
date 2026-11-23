@@ -309,6 +309,8 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 /* Projects: ALTOS as the mother system, subsystems branching below */
 .family { margin-top: 36px; }
 #altos { scroll-margin-top: 80px; }  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
+#civil-service-vocabulary { scroll-margin-top: 96px; }  /* Home "Practice English vocabulary" link lands with the heading below the sticky top bar */
+@media (max-width: 1024px) { #civil-service-vocabulary { scroll-margin-top: 130px; } }
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .node h3 { margin: 12px 0 4px; }
 .node p { margin: 10px 0 0; color: var(--muted); font-size: 15.6312px; line-height: 1.5; }
@@ -496,10 +498,22 @@ details.answer { margin: 14px 0 0; font-size: inherit; }
 details.answer > summary { display: inline-block; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--green); color: var(--green-ink); background: var(--surface); }
 details.answer > summary:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
 details.answer[open] > summary { margin-bottom: 4px; }
-.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 24px 0 0; }
-.glossary dt { font: 600 1.0085rem var(--font-display); color: var(--violet-ink); }
-.glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-.glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15.127px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.word-index { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; text-align: left; }
+.word-index .tag { text-decoration: none; }
+.word-index .tag:hover { border-color: var(--gold); }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 14px; margin: 20px 0 0; }
+.glossary dt { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font: 600 1.15rem var(--font-display); color: var(--violet-ink); }
+.glossary .word-lesson { flex: none; font: 500 13.1101px var(--font-body); color: var(--blue-ink); text-decoration: none; }
+.glossary .word-lesson:hover { text-decoration: underline; }
+.glossary .term { min-width: 0; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: 80px; }
+.glossary .term:target { border-color: var(--gold); box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 35%, transparent); }
+.glossary dd { margin: 6px 0 0; }
+.glossary dd p { margin: 8px 0 0; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.glossary dd .word-why b { color: var(--green-ink); }
+.glossary dd .codebox { margin: 12px 0 0; }
+.glossary dd .codebox pre { font-size: 14.1185px; padding: 12px 14px; }
+.glossary dd .word-after { color: var(--muted); font-size: 15.127px; }
+@media (max-width: 640px) { .glossary .term { padding: 14px 12px; } .glossary dd .codebox pre { font-size: 13.1101px; padding: 12px; } }
 
 /* Blog categories: a small coloured label on each post, and filter pills above the posts */
 .post > .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -749,7 +763,7 @@ footer.site .sep { opacity: .6; }
 .vocab-page .card.word { margin-top: 16px; }
 .vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
 .vocab-page .card.word h2::after { display: none; }
-.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body, inherit); color: var(--muted); }
+.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body); color: var(--muted); }
 .vocab-page .card.word p, .practice p, .practice li { margin: 6px 0; text-align: left; hyphens: manual; }  /* short lines: left-aligned so words are not stretched apart */
 .vocab-page .card.word .meaning { font-weight: 600; }
 .vocab-page .card.word .source { font-size: .9em; text-align: left; }
@@ -1057,8 +1071,10 @@ figure.screenshot figcaption { font-size: 14.4715px; }
 .codebox .fname { font-size: 13.4379px; }
 .codebox button, .codebox .actions a { font-size: 12.9209px; }
 .codebox pre { font-size: 15.5052px; }
-.glossary dt { font-size: 1.0337rem; }
-.glossary dd { font-size: 15.5052px; }
+.glossary dt { font-size: 1.1787rem; }
+.glossary .word-lesson { font-size: 13.4379px; }
+.glossary dd .codebox pre { font-size: 14.4715px; }
+.glossary dd .word-after { font-size: 15.5052px; }
 .cat { font-size: 13.7824px; }
 .blog-filters > summary { font-size: 16.4815px; }
 .blog-filters label { font-size: 16.4815px; }
@@ -1192,7 +1208,490 @@ blockquote footer a.stretch { color: inherit; text-decoration: none; }
 .motto a { color: inherit; text-decoration: none; }
 .motto a:hover, figure.screenshot figcaption a { color: var(--blue-ink); }
 .card.author .author-name a { color: inherit; text-decoration: none; }
-</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/" class="active" aria-current="page">Home</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><div class="hero"><div class="hero-text"><div class="hero-name"><h1><span class="l1">Where <span class="k1">public finance</span></span> <span class="l2">meets <span class="k2">Python</span></span></h1></div><p class="lead">Plain-language writing on local treasury work and public finance, free tutorials (Python for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, and notes from building ALTOS. Everything here, this website included, is the work of a treasury worker who builds software and websites.</p><div class="btns"><a href="/projects/altos-demo/" class="btn ghost">ALTOS Demo</a><a href="/tools/rpt-calculator/" class="btn ghost">RPT Calculator</a><a href="/tutorials/" class="btn ghost">Tutorials</a><a href="/blog/" class="btn ghost">Blog</a></div></div></div><h2>What you&#x27;ll find here</h2><div class="grid three find"><a href="/blog/" class="card focus"><h3>Blog</h3><p>Stories and notes on public finance, treasury work, cybersecurity and building software.</p><span class="go">Read the blog →</span></a><a href="/tutorials/" class="card focus"><h3>Tutorials</h3><p>Free, beginner-friendly lessons: Python for treasury work and Civil Service exam vocabulary with practice questions.</p><span class="go">Start learning →</span></a><a href="/study-notes/" class="card focus"><h3>Treasury Study Notes</h3><p>Local treasury work in plain words: revenue, taxes, collections and payments, each note with a short quiz.</p><span class="go">Read the notes →</span></a></div><h2>Free tool</h2><div class="grid one"><a href="/tools/rpt-calculator/" class="card focus tool"><h3>Real Property Tax Calculator</h3><p>Work out the basic real property tax and the Special Education Fund on any assessed value, with the discount or interest, and see how much goes to the province, municipality, barangay and school boards.</p><span class="go">Open the calculator →</span></a></div><div class="section-head"><h2>Latest posts</h2><a href="/blog/" class="more">All 23 posts →</a></div><div class="post-list home-posts"><article class="post-card" id="altos-framework-every-record-has-a-seal" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">November 20, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h2><a href="/blog/altos-framework-every-record-has-a-seal/">The ALTOS Framework, Principle 5: Every Record Has a Seal</a></h2><p class="teaser">Once a record is posted, it can be corrected, but only in the open: with a reason, a name and a trace that anyone can check.</p><a href="/blog/altos-framework-every-record-has-a-seal/" class="more">Read the post &rarr;</a></article><article class="post-card" id="cybersecurity-part-3-human-hacking" data-cat="learn"><div class="meta"><span class="cat cat-violet">Learn · Cybersecurity</span><span class="muted">November 19, 2026</span><span class="muted dot">·</span><span class="muted">8 min read</span></div><h2><a href="/blog/cybersecurity-part-3-human-hacking/">Cybersecurity Series, Part 3: The Art of Human Hacking</a></h2><p class="teaser">Most scams do not break into computers; they persuade people. Learn the pressure tricks behind phishing, smishing, fake bosses and deepfake calls, and the simple rules that stop them.</p><a href="/blog/cybersecurity-part-3-human-hacking/" class="more">Read the post &rarr;</a></article><article class="post-card" id="local-government-income-class" data-cat="finance"><div class="meta"><span class="cat cat-green">Public Finance</span><span class="muted">November 19, 2026</span><span class="muted dot">·</span><span class="muted">8 min read</span></div><h2><a href="/blog/local-government-income-class/">First Class or Fifth? How a Local Government’s Income Class Is Decided, and Why It Matters</a></h2><p class="teaser">Every province, city and municipality in the Philippines carries an income class, from first to fifth. This post explains how the Automatic Income Classification Act (RA 11964) sets that class, what income is counted, and how moving up a class can change both salaries and the personal services limit.</p><a href="/blog/local-government-income-class/" class="more">Read the post &rarr;</a></article><article class="post-card" id="project-management-part-2-project-charter" data-cat="learn"><div class="meta"><span class="cat cat-violet">Learn · Project Management</span><span class="muted">November 18, 2026</span><span class="muted dot">·</span><span class="muted">8 min read</span></div><h2><a href="/blog/project-management-part-2-project-charter/">Project Management Series, Part 2: The Project Charter on One Page</a></h2><p class="teaser">A project charter is a short document that says why a project exists, what it will deliver, who is in charge and who approved it. This post shows how to write one on a single page, using a treasury encoding project as the example.</p><a href="/blog/project-management-part-2-project-charter/" class="more">Read the post &rarr;</a></article></div><h2>Browse by topic</h2><div class="grid three"><a href="/blog/#cat-software" class="card focus topic"><h3>Software &amp; ALTOS</h3><p>Building ALTOS, Python, and software that keeps public money accountable.</p><span class="go">7 posts →</span></a><a href="/blog/#cat-finance" class="card focus topic"><h3>Public Finance</h3><p>Stand-alone posts on public money: local taxes, tools like the RPT calculator, and the rules behind them.</p><span class="go">3 posts →</span></a><a href="/blog/#cat-treasury" class="card focus topic"><h3>Inside the Local Treasury</h3><p>Everyday work inside a local treasury: taxes, receipts, budgets, checks, year-end and audits.</p><span class="go">2 posts →</span></a><a href="/blog/#cat-learn" class="card focus topic"><h3>Learn</h3><p>Short series on cybersecurity, data analytics, business intelligence and project management, in plain words for people who work in local government.</p><span class="go">9 posts →</span></a><a href="/blog/#cat-personal" class="card focus topic"><h3>Personal</h3><p>The farm, the province, and life beyond the office.</p><span class="go">2 posts →</span></a></div><div class="section-head"><h2>Python for Treasury Work</h2><a href="/tutorials/" class="more">All lessons →</a></div><div class="grid three"><a href="/tutorials/receipts-register-with-sqlite/" class="card lesson mini"><div class="meta"><span class="badge">Lesson 7</span><span class="muted">Intermediate · 25 min</span></div><h3>Keep a receipts register in SQLite</h3><span class="go">Start the lesson →</span></a><a href="/tutorials/excel-report-with-openpyxl/" class="card lesson mini"><div class="meta"><span class="badge">Lesson 6</span><span class="muted">Beginner · 20 min</span></div><h3>Make a formatted Excel report with openpyxl</h3><span class="go">Start the lesson →</span></a><a href="/tutorials/tamper-evident-log-with-hmac/" class="card lesson mini"><div class="meta"><span class="badge">Lesson 5</span><span class="muted">Intermediate · 25 min</span></div><h3>Make a tamper-evident log with HMAC</h3><span class="go">Start the lesson →</span></a></div><h2 id="altos" class="altos-anchor">Project: ALTOS</h2><script>addEventListener("load",function(){if(location.hash==="#altos")document.getElementById("altos").scrollIntoView();});</script><p class="lead">ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections and the Treasury Disbursement System for disbursements, each with its own reports.</p><div class="family"><div class="node mother"><div class="node-head"><span class="code"><span class="wordmark"><span class="l0">A</span><span class="l1">L</span><span class="l2">T</span><span class="l3">O</span><span class="l4">S</span></span></span></div><p>Collect, Disburse and Report in one database, with the ALTOS Framework built in.</p><a href="/projects/altos-demo/" class="go stretch">Try the demo →</a></div><div class="branch" aria-hidden="true"></div><div class="children"><div class="node child"><div class="node-head"><span class="code">Treasury Collection System</span><span class="status live">Ready</span></div><p>A subsystem of ALTOS for collections and their reports: official receipts, collectors and their OR series, remittances and deposits, the daily RCD, and the monthly RAAF and CRAAF.</p><div class="forms">Collect + Report</div><a href="/projects/altos-demo/#col-home" class="go stretch">Open it in the demo →</a></div><div class="node child"><div class="node-head"><span class="code">Treasury Disbursement System</span><span class="status live">Ready</span></div><p>A subsystem of ALTOS for disbursements and their reports: vouchers, checks, cash advances and their liquidation, the check register and disbursement reports.</p><div class="forms">Disburse + Report</div><a href="/projects/altos-demo/#do-home" class="go stretch">Open it in the demo →</a></div></div></div><h2>ALTOS, the mother system</h2><div class="altos-hero"><div><p class="wordmark big-wordmark" aria-label="ALTOS"><span class="l0">A</span><span class="l1">L</span><span class="l2">T</span><span class="l3">O</span><span class="l4">S</span></p><p class="subtitle">Automated Local Treasury Operations System</p><p class="lead">Much of the daily work in a Philippine local treasury is still done by hand, from receipts and cash books to monthly reports, so reporting is slow and errors are hard to catch. ALTOS is my answer to that gap. It automates the full cycle of public money: official receipts, remittances and deposits, checks and cash advances, the monthly reports of accountable officers, and collection targets and results. One database serves both a desktop application and a web application across the office network.</p><div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Desktop app</span><span class="tag">Web app</span><span class="tag">HMAC-SHA256 audit log</span><span class="tag">AES-256 backups</span><span class="tag">NIST CSF</span></div><a href="/projects/altos-demo/" class="stretch" aria-label="Try the ALTOS demo"></a></div></div><blockquote><p>Public money must be traceable in a full circle, from the moment it is collected to the moment it is reported, with a named officer answerable at every point. Accountability that covers 300 degrees leaves a gap, and money leaks through gaps.</p><footer><a href="/blog/altos-framework/" class="stretch">The ALTOS principle →</a></footer></blockquote><figure class="screenshot diagram"><a href="/projects/altos-book/" aria-label="Read Chapter 1 of the ALTOS book, where this figure comes from"><img src="/static/altos-loop.png?v=9b98ae94" alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step." width="1395" height="680" loading="lazy"></a><figcaption>Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step. <a href="/projects/altos-book/">See it in the book preview →</a></figcaption></figure><h2>Three movements of public money</h2><p class="muted">Every transaction in a local treasury belongs to one of three movements. ALTOS follows each one, with a named officer answerable at every step.</p><div class="grid three"><div class="card"><h3>Collect</h3><p>Taxes, fees and charges, each acknowledged by an official receipt from a bonded collector.</p><div class="forms">OR · RCD · deposit</div><a href="/projects/altos-demo/#col-issue" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Disburse</h3><p>Releases by check, cash advance or transfer, each resting on an appropriation and a voucher.</p><div class="forms">Voucher · check · cash advance</div><a href="/projects/altos-demo/#do-prepare" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Report</h3><p>Every collection and release summarized, reconciled and reported on fixed dates.</p><div class="forms">RAAF · CRAAF · RCI · BRS · SRE</div><a href="/projects/altos-demo/#lo-craaf" class="go stretch">See it in the demo →</a></div></div><h2>What ALTOS does</h2><div class="grid four"><div class="card"><h3>Built from the forms</h3><p>Every screen starts from an LTOM or COA form, so the system stays auditable.</p><a href="/projects/altos-demo/#col-issue" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Rules, not just records</h3><p>The next OR number is always the next in series, a check cannot predate its booklet, and the 20% Development Fund cannot be switched off.</p><a href="/projects/altos-demo/#col-issue" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Deadlines that count down</h3><p>RAAF and CRAAF reports are due on the 5th, and the days remaining are visible to the officer and the supervisor.</p><a href="/projects/altos-demo/#lo-craaf" class="go stretch">See it in the demo →</a></div><div class="card"><h3>The sealed ledger</h3><p>Every activity-log entry carries an HMAC-SHA256 code chained to the one before it, so any deletion or change shows.</p><a href="/projects/altos-demo/#sys-log" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Security Center</h3><p>Organized by the NIST Cybersecurity Framework: hashed passwords (PBKDF2-SHA256), lock-out, 15-minute auto log-out, AES-256 encrypted backups and a restore drill.</p><a href="/projects/altos-demo/#sys-home" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Correction without concealment</h3><p>Posted records are corrected only through a logged Data Correction with a reason and an author.</p><a href="/projects/altos-demo/#sys-log" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Turnover built in</h3><p>Assembles and verifies the records and produces a certificate for the incoming treasurer.</p><a href="/projects/altos-demo/#sys-home" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Data Analytics and Insights</h3><p>Targets, forecasts and control checks that inform the treasurer&#x27;s decisions, plus a quarterly ALTOS Framework self-assessment that prints as a signed report.</p><a href="/projects/altos-demo/#sys-dashboard" class="go stretch">See it in the demo →</a></div></div><div class="section-head"><h2>The ALTOS Framework</h2><a href="/blog/altos-framework/" class="more">Read the series →</a></div><p class="muted">Ten principles for Philippine public fiscal administration. ALTOS checks its own records against each one in a quarterly self-assessment.</p><ol class="principles"><li><b><a href="/blog/altos-framework-legality-first/" class="stretch">Legality first</a></b><span>Every collection and release traces to a law, ordinance or appropriation.</span></li><li><b><a href="/blog/altos-framework-every-peso-has-a-document/" class="stretch">Every peso has a document</a></b><span>No collection without a receipt, no release without a voucher.</span></li><li><b><a href="/blog/altos-framework-every-document-has-an-owner/" class="stretch">Every document has an owner</a></b><span>A named, bonded officer answers for each form and each peso.</span></li><li><b><a href="/blog/altos-framework-every-owner-has-a-deadline/" class="stretch">Every owner has a deadline</a></b><span>Reports fall due on fixed dates, and the days remaining are visible.</span></li><li><b><a href="/blog/altos-framework-every-record-has-a-seal/" class="stretch">Every record has a seal</a></b><span>Posted records change only through a visible, logged correction.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Separate the hands</a></b><span>No one person both authorizes and releases public money.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Keep money in its fund</a></b><span>Each peso stays in the fund the law assigns it, including SEF and the 20% DF.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">The taxpayer is a citizen</a></b><span>Assess fairly, collect conveniently and disclose fully.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Evidence before decision</a></b><span>Targets and forecasts inform the treasurer&#x27;s judgment but never replace it.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Build to outlast the builder</a></b><span>Systems must work after the incumbent leaves.</span></li></ol><h2>The book</h2><div class="card book"><a href="/projects/altos-book/" aria-label="Read a preview of the ALTOS book" class="book-link"><img src="/static/altos-cover.jpg?v=fd542360" alt="Cover of 360° Accountability: Public Fiscal Administration in Philippine Local Treasuries" class="book-cover" width="600" height="900"></a><div><span class="badge spec">1st Edition, October 2026</span><h3>360° Accountability: Public Fiscal Administration in Philippine Local Treasuries</h3><p class="muted">The ALTOS Principles<br>80 pages</p><p>A book that joins public administration theory, from Wilson and Weber to New Public Governance, with Philippine treasury law and the lessons of building ALTOS. It ends with the ALTOS Framework: ten principles any local treasury can adopt, with or without software.</p><a href="/projects/altos-book/" class="btn white">Read a preview →</a></div></div><p class="motto"><a href="/projects/altos-book/"><em>Every peso, every step, every officer: 360°.</em></a></p><h2>About the author</h2><div class="card author"><div class="author-top"><a href="/about/" aria-label="About Ambrosio “Butch” U. Mahinay"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="Ambrosio “Butch” U. Mahinay" width="400" height="400" class="hero-photo author-photo" loading="lazy"></a><div><p class="author-name"><a href="/about/">Ambrosio “Butch” U. Mahinay, MPA</a></p><p class="author-roles"><span>Public Administration Specialist</span><span>Local Treasury Practitioner</span><span>Civic Tech Developer</span></p></div></div><p class="author-bio">He is a public administration practitioner, author, and self-taught software developer in Quezon Province, Philippines, with over 15 years in government service, more than 13 of them in local treasury work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. He writes, teaches and builds software in his personal capacity, outside official working hours.</p><p class="author-links"><a href="/about/">Full profile</a></p></div></div></main><footer class="legal"><div class="wrap"><span class="legal-links"><a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms of Use</a></span><span class="built">Built in Python</span></div></footer><script>
+
+/* ---- New site structure (Butch 2026-11-23, from his AdSense blueprint) ---- */
+/* short disclaimer above the footer links, every page */
+footer.legal .disclaimer-line { max-width: 640px; margin: 0 auto 4px; padding: 0 12px; font-size: 13px; line-height: 1.5;
+  color: var(--muted); text-align: center !important; text-wrap: balance; }
+@media (max-width: 640px) { footer.legal .disclaimer-line { font-size: 12.5px; } }
+/* breadcrumb at the top of a post: Blog / series or topic / part */
+.crumbs { margin-top: 8px; font-size: 14.5px; }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 0; }
+.crumbs li { display: inline; color: var(--muted); }
+.crumbs li + li::before { content: "/"; margin: 0 8px; color: var(--muted); opacity: .7; }
+.crumbs a { font-weight: 600; color: var(--blue-ink); }
+.crumbs span[aria-current] { overflow-wrap: anywhere; }
+.blog-col > .crumbs + .post { margin-top: 16px; }
+/* "In this article" box, open by default, tap the title to fold it */
+.post .toc { margin: 18px 0 8px; padding: 12px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--blue-ink); border-radius: var(--radius); }
+.post .toc summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: 16.5px; }
+.post .toc ol { margin: 8px 0 2px; padding-left: 22px; }
+.post .toc li { margin: 3px 0; text-align: left; line-height: 1.4; }
+.post .toc a { color: var(--text); text-decoration: none; }
+.post .toc a:hover { color: var(--blue-ink); text-decoration: underline; }
+.post h3[id] { scroll-margin-top: 56px; }
+@media (max-width: 640px) { .post .toc { padding: 10px 12px; } .post .toc ol { padding-left: 20px; } }
+/* Learn series box: every published part, this one marked */
+.learn-series .learn-parts { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+.learn-series .learn-parts a, .learn-series .learn-parts .here > span { display: flex; flex-direction: column; gap: 2px; padding: 9px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--text); }
+.learn-series .learn-parts a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.learn-series .learn-parts .here > span { border-color: var(--gold-ink); border-left-width: 4px; }
+.learn-series .learn-parts .muted { font-size: 14px; }
+.learn-series .learn-parts b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+/* Home "Start here" cards with one or two links each */
+.start-here .card.start { display: flex; flex-direction: column; }
+.start-here .card.start .eyebrow { margin: 0 0 4px; }
+.start-here .card.start h3 { margin-top: 0; }
+.start-here .go-links { margin: auto 0 0; padding-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 16px; text-align: left; }
+.start-here .go-links a { font-weight: 600; }
+.related.guides { margin-top: 12px; }
+/* "Checked Nov 2026" on lesson and module cards */
+.badge.checked { --c: var(--green); --ci: var(--green-ink); }
+
+/* ---- The book as web pages (Butch 2026-11-23) ---- */
+.book-col .book-head { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; align-items: start; margin-top: 16px; }
+.book-col .book-head .book-cover { width: 150px; height: auto; border-radius: 6px; box-shadow: var(--shadow); }
+.book-col .book-head h1 { margin: 2px 0 6px; }
+.book-col .book-head p { margin: 0 0 10px; }
+@media (max-width: 640px) { .book-col .book-head { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; } .book-col .book-head .book-cover { width: 96px; } }
+.book-part { margin-top: 22px; scroll-margin-top: 56px; }
+.book-part h3 { margin: 0; }
+.book-part > p { margin: 2px 0 8px; }
+.book-toc { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.book-toc a { display: flex; flex-direction: column; gap: 2px; padding: 11px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.book-toc a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.book-toc .muted { font-size: 14px; }
+.book-toc b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+.book-text { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.book-text h2 { font-size: 1.18rem; margin: 26px 0 8px; scroll-margin-top: 56px; }
+.book-text h2::after { display: none; }
+.book-text .book-box { margin: 16px 0; padding: 12px 16px; background: color-mix(in srgb, var(--gold) 10%, var(--surface)); border: 1px solid var(--line); border-left: 4px solid var(--gold-ink); }
+.book-text .book-box p { margin: 0; }
+.book-text .table-wrap { overflow-x: auto; margin: 14px 0; }
+.book-text table { font-size: 14.5px; min-width: 520px; }
+.book-text th, .book-text td { text-align: left !important; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); hyphens: auto; }
+.book-text th { font-family: var(--font-display); font-weight: 700; background: color-mix(in srgb, var(--navy) 8%, var(--surface)); }
+.book-text ul.refs { padding-left: 20px; }
+.book-text ul.refs li { text-align: left; margin: 4px 0; }
+.book-text ol, .book-text ul { padding-left: 24px; }
+.book-text li { margin: 5px 0; }
+.book-steps { margin-top: 20px; }
+
+.book-col .book-head p, .book-part > p, .book-col .note { text-align: left !important; }
+/* phones: each table row becomes a small card, column name above each value */
+@media (max-width: 640px) {
+  .book-text table { min-width: 0; border: 0; box-shadow: none; background: transparent; }
+  .book-text thead { display: none; }
+  .book-text table, .book-text tbody, .book-text tr, .book-text td { display: block; width: 100%; }
+  .book-text tr { margin: 0 0 10px; background: var(--surface); border: 1px solid var(--line); }
+  .book-text td { border: 0; padding: 6px 12px; }
+  .book-text td + td { border-top: 1px dashed var(--line); }
+  .book-text td::before { content: attr(data-label); display: block; font: 700 12.5px var(--font-display); letter-spacing: .03em; color: var(--muted); text-transform: uppercase; }
+  .book-text td:first-child { font-weight: 600; }
+}
+
+.book-text td, .book-text td:last-child { white-space: normal; color: var(--text); font-variant-numeric: normal; overflow-wrap: break-word; }
+.book-text td { hyphens: manual; }
+.book-text table { box-sizing: border-box; }
+@media (max-width: 640px) { .book-text td { box-sizing: border-box; } }
+.crumbs li { margin: 0; padding: 0; }
+.crumbs a, .crumbs span { padding: 0 !important; font-size: inherit !important; white-space: normal; background: none; border: 0; }
+.crumbs ol { align-items: baseline; }
+
+:root { --radius: 12px; --orange-ink: #b45309; --orange-soft: #fff7ed; --primary: #1d4ed8; }  /* rounded boxes, as in the pattern */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --orange-ink: #f5a35c; --orange-soft: rgba(245, 163, 92, .12); --primary: #3b6fe8; } }
+:root[data-theme="dark"] { --orange-ink: #f5a35c; --orange-soft: rgba(245, 163, 92, .12); --primary: #3b6fe8; }
+.eyebrow { color: var(--orange-ink); }
+
+/* Top bar: name and tagline at the left; the menu in one line on computers, the three bars at the right on phones and tablets */
+header.site { background: var(--surface); box-shadow: 0 1px 0 var(--line); }
+header.site .wrap { min-height: 72px; flex-wrap: nowrap; gap: 16px; }
+.brand-line { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; color: var(--text); padding: 10px 0; }
+.brand-line:hover { text-decoration: none; }
+.brand-line:hover .bn { color: var(--blue-ink); }
+.brand-line .bn { font: 700 1.16rem var(--font-display); letter-spacing: -0.015em; color: var(--text); transition: color .15s; }
+.brand-line .bt { font: 400 12.75px var(--font-body); color: var(--muted); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.top-nav { display: none; }
+html.menu-js .menu-btn { order: 3; margin: 0 -6px 0 auto; width: 40px; height: 40px; }
+.menu-btn svg { width: 22px; height: 22px; }
+.menu-btn .b2, .menu-btn .b3 { d: path("M3 12h18"); }
+.menu-btn .b3 { d: path("M3 18h18"); }
+@media (min-width: 1025px) {
+  header.site .wrap { min-height: 80px; align-items: stretch; }
+  .brand-line { justify-content: center; }
+  .top-nav { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; }
+  header.site .top-nav a { display: flex; align-items: center; padding: 0 12px; margin-bottom: -1px; color: var(--muted); font-size: 15px; font-weight: 500;
+                           border-bottom: 2px solid transparent; white-space: nowrap; }
+  header.site .top-nav a:hover { color: var(--text); text-decoration: none; }
+  header.site .top-nav a.active { color: var(--orange-ink); border-bottom-color: var(--orange-ink); font-weight: 600; }
+  html.menu-js .menu-btn { display: none; }
+}
+
+/* Buttons from the pattern: solid blue, and a white outline one */
+.btn.blue { background: var(--primary); color: #fff; box-shadow: 0 1px 2px rgba(29, 78, 216, .25); }
+.btn.blue:hover { background: #1e40af; }
+.btn.outline { background: var(--surface); color: var(--text); border-color: var(--line); }
+.btn.outline:hover { border-color: var(--muted); }
+
+/* Home hero: words left, picture right (picture under the words on phones) */
+.home-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; padding: 44px 0 12px; }
+.home-hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.55rem); line-height: 1.04; letter-spacing: -0.035em; font-weight: 800; margin: 0 0 18px; }
+.home-hero h1 .k1 { color: var(--gold-ink); } .home-hero h1 .k2 { color: var(--blue-ink); }
+.home-hero .lead { color: var(--muted); max-width: 600px; margin: 0; text-align: justify; hyphens: auto; }
+.home-hero .btns { margin-top: 26px; }
+.home-art { background: color-mix(in srgb, var(--bg) 60%, var(--surface)); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+.art-in { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; }
+.art-bars { position: relative; display: flex; align-items: flex-end; gap: 9px; height: 96px; padding-top: 30px; }
+.art-bars i { display: block; width: 9px; border-radius: 2px; background: var(--line); height: 34px; }
+.art-bars i:nth-child(3) { height: 62px; background: #f59e0b; } .art-bars i:nth-child(4) { height: 82px; background: var(--text); }
+.art-bars .peso { position: absolute; top: -6px; left: 14px; width: 26px; height: 26px; border-radius: 50%; border: 2px solid #f59e0b; color: var(--orange-ink);
+                  font: 700 13px/22px var(--font-body); text-align: center; }
+.art-doc { display: grid; gap: 7px; width: 48px; padding: 9px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); }
+.art-doc i { display: block; height: 4px; border-radius: 3px; background: var(--line); }
+.art-doc i:first-child { background: #f59e0b; width: 70%; } .art-doc i:last-child { background: var(--primary); width: 55%; margin-left: auto; }
+.art-arrow { color: var(--primary); font-weight: 700; }
+.art-code { flex: 1; min-width: 0; background: #0f172a; border-radius: 10px; padding: 12px 14px 14px; box-shadow: 0 10px 24px -12px rgba(15, 23, 42, .6); }
+.art-code .dots { display: flex; gap: 6px; margin-bottom: 10px; }
+.art-code .dots i { width: 9px; height: 9px; border-radius: 50%; background: #f87171; } .art-code .dots i:nth-child(2) { background: #fbbf24; } .art-code .dots i:nth-child(3) { background: #34d399; }
+.art-code pre { margin: 0; font: 12px/1.6 ui-monospace, "JetBrains Mono", Menlo, monospace; color: #e2e8f0; white-space: pre; overflow: hidden; background: none; border: 0; padding: 0; box-shadow: none; }
+.art-code pre b { color: #60a5fa; font-weight: 400; } .art-code pre em { color: #fcd34d; font-style: normal; } .art-code pre u { color: #6ee7b7; text-decoration: none; }
+@media (max-width: 900px) { .home-hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 28px; } }
+@media (max-width: 640px) {
+  .home-hero { padding-top: 18px; }
+  .home-hero h1 { font-size: clamp(2rem, 9.6vw, 2.5rem); }
+  .home-hero .btns { flex-wrap: nowrap; gap: 10px; } .home-hero .btn { padding: 12px 16px; white-space: nowrap; }
+  .home-art { padding: 16px; } .art-in { padding: 18px 12px; gap: 10px; } .art-doc { display: none; }
+}
+
+/* Section headings with a small orange label above (Home) */
+.kick { margin-top: 52px; }
+.kick .eyebrow { margin: 0 0 4px; letter-spacing: .14em; font-weight: 700; }
+.kick h2, .kick .section-head h2 { margin-top: 0; }
+.kick h2::after { display: none; }
+.kick .section-head { margin-top: 0; }
+.kick + * { margin-top: 22px !important; }
+
+/* Cards: thin border, softer shadow, rounded */
+.card, .post-card, .related-card, .post .toc, .series-box, .topic-box, .side-box { border-radius: var(--radius); }
+.card, .post-card { box-shadow: 0 1px 2px rgba(15, 23, 42, .04); }
+.related-card { padding: 18px 20px; }
+.start-here .card { padding: 28px; }
+
+/* Latest posts on Home: three cards in a row on computers */
+.home-posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.home-posts .post-card { display: flex; flex-direction: column; padding: 22px 24px; }
+.home-posts .post-card h2 { font-size: 1.18rem; }
+.home-posts .post-card .meta { font-size: 13.5px; }
+.home-posts .post-card .teaser { font-size: 15.5px; text-align: left; }
+.home-posts .post-card .more { margin-top: auto; padding-top: 14px; font-size: 15px; }
+@media (max-width: 1024px) { .home-posts { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+
+/* Browse by topic: one box, topics as buttons with their counts */
+.topic-box { margin-top: 44px; padding: 28px 32px 32px; background: var(--surface); border: 1px solid var(--line); }
+.topic-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.topic-box h2 { margin: 0; font-size: 1.35rem; } .topic-box h2::after { display: none; }
+.topic-box .muted { margin: 4px 0 0 !important; font-size: 15px; }
+.topic-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 22px; }
+.topic-pill { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 10px; color: var(--text); background: var(--surface); }
+.topic-pill b { font-weight: 600; font-size: 15.5px; line-height: 1.3; }
+.topic-pill span { color: var(--muted); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.topic-pill:hover { text-decoration: none; border-color: var(--blue-ink); } .topic-pill:hover span { color: var(--blue-ink); }
+@media (max-width: 1024px) { .topic-pills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .topic-box { padding: 20px 16px; } .topic-pills { grid-template-columns: minmax(0, 1fr); gap: 8px; } .topic-top .badge { display: none; } }
+
+/* Posts and book chapters on computers: the text plus a side column that stays in view */
+.read-side, .read-side + * .x { display: none; }
+@media (min-width: 1025px) {
+  .read-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 36px; align-items: start; }
+  .read-grid.side-left { grid-template-columns: 300px minmax(0, 1fr); }
+  .read-grid .read-main { max-width: none; margin: 0; min-width: 0; }
+  .read-side { display: grid; gap: 18px; position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow: auto; padding-top: 44px; scrollbar-width: thin; }
+  .read-grid .narrow-only { display: none; }
+  .read-side .series-box { margin: 0; }
+}
+.side-box { background: var(--surface); border: 1px solid var(--line); padding: 20px 22px; }
+.side-box .eyebrow { margin: 0 0 10px; font-weight: 700; letter-spacing: .14em; font-size: 12px; }
+.side-box ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.side-toc ol { counter-reset: s; }
+.side-toc li { counter-increment: s; }
+.side-toc a { display: block; padding: 4px 0; color: var(--text); font-weight: 500; font-size: 14px; line-height: 1.4; }
+.side-toc a::before { content: counter(s) ". "; color: var(--muted); }
+.side-toc a:hover { color: var(--blue-ink); text-decoration: none; }
+.side-author .side-name { margin: 0 0 8px; font: 700 1.05rem var(--font-display); }
+.side-author .side-name a { color: var(--text); }
+.side-author p { margin: 0 0 10px; font-size: 14px; color: var(--muted); line-height: 1.5; }
+.side-author p:last-child { margin: 0; font-size: 14px; }
+.side-chapters a, .side-chapters .here > span { display: block; padding: 7px 10px; border-radius: 8px; color: var(--text); font-size: 13.75px; line-height: 1.35; border: 1px solid transparent; }
+.side-chapters .muted { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; }
+.side-chapters b { font-weight: 500; }
+.side-chapters a:hover { background: var(--bg); text-decoration: none; }
+.side-chapters .here > span { background: var(--orange-soft); border-color: color-mix(in srgb, var(--orange-ink) 35%, transparent); color: var(--orange-ink); }
+.side-chapters .here b { font-weight: 700; }
+
+/* The book's contents page: navy banner, as in the downloaded book reader */
+.book-col .book-head.book-banner { background: radial-gradient(130% 120% at 0% 0%, #1b2f66 0%, #0f1c42 55%, #0a1330 100%); color: #e8eefc;
+  border-radius: 18px; padding: 32px; gap: 28px; align-items: center; box-shadow: 0 18px 40px -24px rgba(10, 19, 48, .8); }
+.book-banner h1 { color: #fff; }
+.book-banner .eyebrow { color: #fbbf24; }
+.book-banner .muted { color: #b8c4e0 !important; }
+.book-banner p { color: #dbe4f7; }
+@media (max-width: 640px) { .book-col .book-head.book-banner { padding: 20px 16px; gap: 14px; border-radius: 14px; } }
+
+/* Footer: the disclaimer in a box with an orange edge, then the copyright and the policy links */
+footer.legal { text-align: left; border-top: 1px solid var(--line); padding: 36px 0 30px; margin-top: 24px; font-size: 13.5px; }
+footer.legal .wrap { display: block; }
+footer.legal .disclaimer-box { margin: 0; padding: 18px 22px; background: color-mix(in srgb, var(--bg) 70%, var(--surface)); border: 1px solid var(--line);
+  border-left: 4px solid var(--orange-ink); border-radius: var(--radius); color: var(--muted); line-height: 1.6; text-align: left; }
+footer.legal .disclaimer-box b { color: var(--text); }
+footer.legal .disclaimer-box a { color: var(--blue-ink); }
+footer.legal .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 20px; margin-top: 20px; }
+footer.legal .legal-links { display: flex; flex-wrap: wrap; gap: 6px 18px; white-space: normal; }
+footer.legal .built { opacity: .75; }
+@media (max-width: 640px) { footer.legal { padding-top: 24px; font-size: 13px; } footer.legal .disclaimer-box { padding: 14px 14px; } footer.legal .foot-row { flex-direction: column; align-items: flex-start; } }
+
+.section-head h2 + .more { margin-top: 0; }
+.home-posts .post-card .meta { gap: 4px 8px; }
+
+.side-box .eyebrow a { color: inherit; font: inherit; padding: 0; }
+.side-box nav, .read-side nav { display: block; }
+.read-side .side-box { padding: 18px 16px; }
+.read-side nav a { padding: 7px 10px; font-size: 13.75px; border-bottom: 0; }
+.read-side .side-toc a { padding: 4px 0; font-size: 14px; }
+.read-side .series-box { padding: 18px 16px; border-left-width: 1px; }
+.read-side .series-box .series-name { font-size: 1.05rem; }
+.read-side .learn-parts { gap: 6px; }
+.read-side .learn-parts a, .read-side .learn-parts .here > span { padding: 8px 10px; font-size: 13.5px; }
+.read-side .learn-parts b { font-size: 13.75px; line-height: 1.35; }
+.book-toc a, .book-toc li > * { border-radius: 10px; }
+
+footer.legal .foot-row { width: 100%; }
+.home-hero h1 { color: var(--text); }
+body:has(.home-hero) { --bg: var(--surface); }
+body:has(.home-hero) header.site { box-shadow: 0 1px 0 var(--line); }
+.top-drop { position: relative; display: flex; }
+header.site .drop-btn { display: flex; align-items: center; gap: 4px; padding: 0 12px; margin-bottom: -1px; background: none; border: 0; border-bottom: 2px solid transparent;
+  font: 500 15px var(--font-body); color: var(--muted); cursor: pointer; white-space: nowrap; }
+.drop-btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
+.drop-btn:hover { color: var(--text); }
+.drop-btn.active { color: var(--orange-ink); border-bottom-color: var(--orange-ink); font-weight: 600; }
+.top-drop .drop { display: none; position: absolute; top: calc(100% - 6px); left: 0; min-width: 250px; padding: 8px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: 0 16px 36px -18px rgba(15, 23, 42, .35); z-index: 30; }
+.top-drop:hover .drop, .top-drop:focus-within .drop { display: grid; gap: 2px; }
+.top-drop:hover .drop-btn svg, .top-drop:focus-within .drop-btn svg { transform: rotate(180deg); }
+header.site .top-drop .drop a { display: block; padding: 9px 12px; border: 0; margin: 0; border-radius: 8px; color: var(--text); font-size: 14.5px; font-weight: 500; }
+header.site .top-drop .drop a:hover { background: var(--bg); text-decoration: none; }
+header.site .top-drop .drop a[aria-current] { color: var(--orange-ink); }
+
+/* the three bars sit at the right now (pattern), so the menu panel opens from the right */
+@media (max-width: 1024px) {
+  html.menu-js.menu-open header.site #site-menu { inset: 0 0 auto auto; padding-left: 14px; padding-right: max(12px, env(safe-area-inset-right, 0px));
+    box-shadow: -8px 0 32px rgba(7, 22, 49, .35); border-radius: 0 0 0 12px; }
+}
+
+.card.lesson:not(.mini) .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.card.lesson:not(.mini) .badge.checked { margin-left: auto; background: none; border: 0; padding: 0; color: var(--muted); text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 13px; }
+
+/* Phones, as in the mobile pattern file (Butch 2026-11-23): picture right after the words, then the two buttons full width, one under the other;
+   the three bars in a small grey circle */
+@media (max-width: 640px) {
+  .home-hero { display: flex; flex-direction: column; gap: 0; }
+  .home-copy { display: contents; }
+  .home-hero .eyebrow { order: 1; } .home-hero h1 { order: 2; } .home-hero .lead { order: 3; }
+  .home-art { order: 4; margin-top: 22px; }
+  .home-hero .btns { order: 5; flex-direction: column; flex-wrap: nowrap; gap: 10px; margin-top: 22px; }
+  .home-hero .btn { display: block; width: 100%; text-align: center; padding: 14px 16px; }
+}
+@media (max-width: 1024px) {
+  html.menu-js .menu-btn { width: 36px; height: 36px; margin-right: 0; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+  .menu-btn svg { width: 17px; height: 17px; }
+  .menu-btn svg path { stroke: currentColor !important; }
+}
+
+@media (max-width: 640px) { .home-hero { align-items: stretch; text-align: left; } .home-hero .btns { align-items: stretch; } .home-art { align-self: stretch; } }
+
+.post-top { display: flex; align-items: center; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; }
+.post-top .back-all { font-size: 15.5px; font-weight: 600; white-space: nowrap; }
+.post-top .crumbs { margin: 0; font-size: 14px; }
+.post-top .crumbs a { color: var(--muted); font-weight: 500; }
+.post-top .crumbs li:nth-child(2) a { color: var(--orange-ink); }
+.post-top .crumbs [aria-current] { color: var(--text); font-weight: 500; }
+.post-top + .post { margin-top: 18px; }
+/* post card: rounded, dark-green-blue-violet bar across the top */
+.blog-col .post { border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(15, 23, 42, .04); padding-top: 44px; }
+.blog-col .post::before { left: 0; right: 0; top: 0; height: 5px; border-radius: 0; background: linear-gradient(90deg, #0f172a, #059669 35%, #10b981 50%, #3b82f6 75%, #7c3aed); }
+.post h1 { font-weight: 800; letter-spacing: -0.03em; }
+.post .byline { margin-top: 10px; }
+.post .series-line { margin-top: 2px; }
+/* Listen: a panel with the progress line always shown */
+.post .listen { border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--surface)); padding: 12px 14px 22px; margin: 18px 0 4px; position: relative; }
+.post .listen .listen-progress { display: block; left: 14px; right: 14px; bottom: 10px; }
+.post .listen button { font-size: 14.5px; }
+.post .listen-time { margin-left: auto; }
+.post .listen:not([data-state="idle"]) { position: sticky; padding: 10px 14px 22px; }
+.post .lead { color: var(--text); opacity: .88; margin-top: 22px; }
+.post hr.lead-rule { border: 0; border-top: 1px solid var(--line); margin: 22px 0 26px; }
+/* side column: one card holding In this article, the series and the author */
+.side-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 18px; }
+.side-card > .side-box { border-radius: 14px; }
+.side-card > .side-toc { border: 0; padding: 0; background: none; }
+.side-series-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+.side-series-head .eyebrow { margin: 0; color: var(--violet-ink); font: 700 12px var(--font-body); letter-spacing: .14em; text-transform: uppercase; padding: 0; border: 0; }
+.side-series-head .muted { font-size: 12.5px; font-weight: 600; }
+.read-side .side-series a, .read-side .side-series .here > span { display: block; padding: 6px 10px; border-radius: 8px; color: var(--muted); font-size: 13.75px; font-weight: 500; line-height: 1.4; border: 1px solid transparent; }
+.read-side .side-series a:hover { color: var(--text); background: var(--bg); text-decoration: none; }
+.read-side .side-series .here > span { color: var(--violet-ink); font-weight: 700; background: color-mix(in srgb, var(--violet) 14%, var(--surface)); border-color: color-mix(in srgb, var(--violet) 45%, transparent); }
+.side-author .side-name { font-size: 1.1rem; line-height: 1.3; }
+.side-author p { text-align: justify; hyphens: auto; }
+.side-author p:last-child { text-align: left; }
+@media (min-width: 1025px) { .read-side { padding-top: 48px; } }
+@media (max-width: 640px) {
+  .post-top .back-all { font-size: 14.5px; } .post-top .crumbs { font-size: 13px; }
+  .blog-col .post { border-radius: 14px; padding-top: 32px; }
+  .post .listen { padding: 10px 10px 20px; } .post .listen .listen-progress { left: 10px; right: 10px; }
+}
+
+.read-side .side-series-head a.eyebrow { padding: 0; margin: 0; border: 0; color: var(--violet-ink); font: 700 12px var(--font-body); letter-spacing: .14em; line-height: 1.4; }
+.side-series-head .muted { white-space: nowrap; }
+.post-top { max-width: var(--max); }
+.post-top + .read-grid .post { margin-top: 18px; }
+.post .lead { text-align: left; hyphens: manual; }
+@media (min-width: 1025px) { .read-grid:not(.side-left) .read-side { position: static; max-height: none; overflow: visible; padding-top: 18px; } }
+
+.read-side .side-author .side-name { text-align: left; hyphens: manual; }
+.read-side .side-author .eyebrow { color: var(--orange-ink); }
+.post .lead { max-width: none; }
+
+.phone-row { display: none; }
+@media (max-width: 1024px) {
+  header.site .wrap { flex-wrap: wrap; row-gap: 0; min-height: 0; }
+  header.site .brand-line { padding: 12px 0 10px; }
+  .phone-row { display: flex; align-items: center; gap: 10px; width: 100%; position: relative; padding: 9px 0; border-top: 1px solid var(--line); }
+  html.menu-js .menu-btn { order: 0; margin: 0; width: 32px; height: 32px; flex: none; border-radius: 50%; border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 70%, var(--surface)); color: var(--text); display: grid; place-content: center; }
+  .menu-btn svg { width: 16px; height: 16px; }
+  .menu-btn .i-close { display: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+  html.menu-open .menu-btn svg:not(.i-close) { display: none; }
+  html.menu-open .menu-btn .i-close { display: block; }
+  .page-label { color: var(--orange-ink); font: 700 12px/1.3 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+  .home-hero > .home-copy > .eyebrow, .home-hero > .eyebrow { display: none; }
+  html.menu-open, html.menu-open body { overflow: visible; }
+  html.menu-js.menu-open header.site::before { content: none; }
+  html.menu-js header.site #site-menu { display: none; }
+  html.menu-js.menu-open header.site #site-menu {
+    display: grid !important; gap: 2px; position: absolute !important; inset: calc(100% - 2px) auto auto 0 !important; width: min(300px, 82vw) !important;
+    height: auto; max-height: 72dvh; overflow-y: auto; margin: 0; padding: 8px !important; box-sizing: border-box; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 18px 40px -16px rgba(15, 23, 42, .4); z-index: 50; }
+  html.menu-js.menu-open header.site #site-menu a[href], html.menu-js.menu-open header.site #site-menu summary {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 0; padding: 10px 14px; border: 1px solid transparent; border-top: 1px solid transparent;
+    border-radius: 10px; color: var(--text); font: 600 15.5px/1.3 var(--font-body); white-space: nowrap; cursor: pointer; }
+  html.menu-js.menu-open header.site #site-menu a[href]:hover, html.menu-js.menu-open header.site #site-menu summary:hover { background: var(--bg); text-decoration: none; }
+  html.menu-js.menu-open header.site #site-menu > a.active { background: #fefce8; border-color: #fde68a; color: var(--orange-ink); }
+  html.menu-js.menu-open header.site #site-menu .pm-group a[href] { padding: 8px 14px 8px 28px; font-weight: 500; font-size: 14.5px; }
+  html.menu-js.menu-open header.site #site-menu .pm-group a.active, html.menu-js.menu-open header.site #site-menu summary.active { color: var(--orange-ink); }
+  .pm-group summary { list-style: none; }
+  .pm-group summary::-webkit-details-marker { display: none; }
+  .pm-group summary svg { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-90deg); transition: transform .15s; }
+  .pm-group[open] summary svg { transform: none; }
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) html.menu-js.menu-open header.site #site-menu > a.active { background: rgba(250, 204, 21, .12); border-color: rgba(250, 204, 21, .35); } }
+
+@media (max-width: 1024px) {
+  html.menu-js.menu-open header.site #site-menu > *, html.menu-js.menu-open header.site #site-menu .pm-group > * { width: 100%; box-sizing: border-box; margin: 0; }
+  html.menu-js.menu-open header.site #site-menu details { padding: 0; border: 0; background: none; display: block; }
+}
+
+@media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu a[href], html.menu-js.menu-open header.site #site-menu summary { width: 100% !important; max-width: none !important; } }
+
+@media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu { grid-template-columns: minmax(0, 1fr) !important; justify-content: stretch !important; align-items: stretch !important; } }
+
+.book-text, .book-text * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.book-text img { pointer-events: none; }
+@media print {
+  body:has(.book-col) header.site, body:has(.book-col) main, body:has(.book-col) footer.legal { display: none !important; }
+  body:has(.book-col)::before { content: "Printing is turned off for the ALTOS book. Please read it online at aumahinay.dev."; display: block; padding: 40px; font: 16px/1.5 sans-serif; }
+}
+
+@media (min-width: 1025px) {
+  header.site .top-nav a, header.site .drop-btn { padding-bottom: 15px; }  /* links sit level with the name, not the tagline */
+}
+@media (max-width: 1024px) {
+  header.site .wrap { position: relative; flex-wrap: nowrap; align-items: flex-start; }
+  .phone-row { display: contents; }
+  .phone-row .page-label { display: none; }
+  html.menu-js .menu-btn { margin: 10px 0 0 auto; }
+  .home-hero > .home-copy > .eyebrow, .home-hero > .eyebrow { display: block; }
+  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) max(10px, env(safe-area-inset-right, 0px)) auto auto !important; }
+}
+
+.post-card { border-radius: 16px; padding: 34px 40px 30px; box-shadow: 0 1px 3px rgba(15, 23, 42, .06), 0 1px 2px rgba(15, 23, 42, .04); }
+.post-card h2 { margin-top: 16px; font-weight: 800; letter-spacing: -.01em; text-wrap: pretty; }
+.post-card h2 a { color: var(--primary); font-weight: 800; }
+.post-card h2 a:hover { color: color-mix(in srgb, var(--primary) 75%, #000); }
+.post-card .teaser { margin-top: 14px; line-height: 1.65; }
+.post-card .more { margin-top: 18px; color: var(--primary); font-weight: 700; }
+.home-posts .post-card { padding: 22px 24px; }
+footer.legal { font-size: 14.5px; }
+footer.legal .disclaimer-box { padding: 22px 28px; line-height: 1.75; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+footer.legal .legal-links { gap: 6px 26px; }
+footer.legal .legal-links a { font-weight: 400; }
+@media (max-width: 640px) {
+  .post-card { padding: 22px 20px 20px; }
+  footer.legal { font-size: 13.5px; }
+  footer.legal .disclaimer-box { padding: 16px 16px; line-height: 1.65; }
+}
+
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .post-card h2 a, :root:not([data-theme="light"]) .post-card .more { color: var(--blue-ink); } }
+:root[data-theme="dark"] .post-card h2 a, :root[data-theme="dark"] .post-card .more { color: var(--blue-ink); }
+
+@media (max-width: 1024px) {
+  html.menu-js .menu-btn { order: -1; margin: 10px 12px 0 0; }
+  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(10px, env(safe-area-inset-left, 0px)) !important; }
+}
+
+@media (max-width: 1024px) {
+  header.site .wrap { gap: 0 6px; padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }
+  html.menu-js .menu-btn { margin: 3px 0 0 0; }
+  header.site .brand-line { padding: 8px 0 7px; }
+  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(6px, env(safe-area-inset-left, 0px)) !important; }
+}
+
+.author-top { display: flex; align-items: center; gap: 16px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.author-top .author-photo { width: 76px; height: 76px; min-width: 0; max-width: none; margin: 0; flex: none; aspect-ratio: 1 / 1; object-fit: cover; }
+.author-top p, .author-top h1 { margin: 0; text-align: left; }
+.author-top .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); letter-spacing: 0; }
+.author-top .author-name a { color: var(--text); }
+.author-top .author-name::after { display: none; }
+.author-top .author-roles { margin-top: 4px !important; font: 600 15.2px/1.4 var(--font-display); color: var(--violet-ink); }
+.author-top .author-roles span { display: block; }
+/* About page: the same head, a little larger, in a card */
+main .author-top:has(h1) { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; margin: 4px 0 18px; gap: 22px; }
+main .author-top:has(h1) .author-photo { width: 110px; height: 110px; }
+main .author-top h1.author-name { font-size: clamp(1.35rem, 2.6vw, 1.9rem); }
+main .author-top:has(h1) .author-roles { font-size: clamp(15.2px, 1.6vw, 18px); margin-top: 6px !important; }
+/* Side box on computers: smaller photo, name may wrap */
+.side-author .author-top { gap: 12px; padding-bottom: 12px; margin-bottom: 12px; }
+.side-author .author-top .author-photo { width: 54px; height: 54px; }
+.side-author .author-top .author-name { font-size: 1rem; white-space: normal; }
+.side-author .author-top .author-roles { font-size: 12.6px; }
+@media (max-width: 640px) {
+  .author-top { gap: 12px; }
+  .author-top .author-photo { width: 60px; height: 60px; }
+  main .author-top:has(h1) { padding: 16px 14px; gap: 14px; }
+  main .author-top:has(h1) .author-photo { width: 76px; height: 76px; }
+  main .author-top h1.author-name { white-space: nowrap; font-size: min(1.25rem, calc((100vw - 150px) / 16.2)); }
+  main .author-top:has(h1) .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
+}
+
+.book-text .author-top { margin-top: 16px; }
+.book-text .author-top p, .book-text .author-top .author-name { text-align: left !important; hyphens: manual; }
+@media (max-width: 640px) {
+  .book-text .author-top .author-name { white-space: nowrap; font-size: min(1.2em, calc((100vw - 150px) / 16.2)); }
+  .book-text .author-top .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
+}
+</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand-line" aria-label="Butch Mahinay, home"><span class="bn">Butch Mahinay</span><span class="bt">Public finance and software for local treasuries</span></a><nav class="top-nav" aria-label="Top menu"><a href="/" class="active" aria-current="page">Home</a><div class="top-drop"><button type="button" class="drop-btn" aria-haspopup="true">Free Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="drop"><a href="/tools/rpt-calculator/">Real Property Tax Calculator</a><a href="/projects/altos-demo/">ALTOS Browser Demo</a></div></div><a href="/tutorials/">Tutorials</a><div class="top-drop"><button type="button" class="drop-btn" aria-haspopup="true">Study Notes &amp; Book<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="drop"><a href="/study-notes/">Study Notes</a><a href="/projects/altos-book/">The ALTOS Book</a></div></div><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><div class="phone-row"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><span class="page-label">Public finance &amp; civic tech</span><nav id="site-menu" aria-label="Main menu"><a href="/" class="active" aria-current="page">Home</a><details class="pm-group"><summary>Free Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><a href="/tools/rpt-calculator/">Real Property Tax Calculator</a><a href="/projects/altos-demo/">ALTOS Browser Demo</a></details><a href="/tutorials/">Tutorials</a><details class="pm-group"><summary>Study Notes &amp; Book<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><a href="/study-notes/">Study Notes</a><a href="/projects/altos-book/">The ALTOS Book</a></details><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div></div></header><main><div class="wrap"><div class="home-hero"><div class="home-copy"><p class="eyebrow">Public finance &amp; civic tech</p><h1>Where public finance meets Python</h1><p class="lead">Plain-language writing on local treasury work and public finance, free tutorials (Python for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, and notes from building ALTOS. Everything here, this website included, is the work of a treasury worker who builds software and websites.</p><div class="btns"><a href="/tools/rpt-calculator/" class="btn blue">Open RPT Calculator →</a><a href="/#altos" class="btn outline">Explore ALTOS</a></div></div><div class="home-art" aria-hidden="true"><div class="art-in"><div class="art-bars"><span class="peso">₱</span><i></i><i></i><i></i></div><div class="art-doc"><i></i><i></i><i></i><i></i></div><span class="art-arrow">→</span><div class="art-code"><span class="dots"><i></i><i></i><i></i></span><pre><b>def</b> <em>compute_rpt</em>(av):
+    basic = av * <u>0.01</u>
+    sef = av * <u>0.01</u>
+    <b>return</b> basic + sef</pre></div></div></div></div><div class="kick"><p class="eyebrow">Quick entry</p><h2>Start Here</h2></div><div class="grid three start-here"><div class="card start"><p class="eyebrow">Free tool</p><h3>Real Property Tax Calculator</h3><p>Work out the basic real property tax and the Special Education Fund on any assessed value, with the discount or interest, and see how the tax is shared.</p><p class="go-links"><a href="/tools/rpt-calculator/">Open the calculator →</a></p></div><div class="card start"><p class="eyebrow">Learn and practice</p><h3>Study Notes and Tutorials</h3><p>Local treasury work in plain words, each note with a short quiz, plus beginner-friendly Python lessons and English vocabulary for the Civil Service exam.</p><p class="go-links"><a href="/study-notes/">Read the study notes →</a><a href="/tutorials/">Start the tutorials →</a><a href="/tutorials/#civil-service-vocabulary">Practice English vocabulary →</a></p></div><div class="card start"><p class="eyebrow">The project</p><h3>ALTOS and the Book</h3><p>The Automated Local Treasury Operations System, a browser demo with made-up data, and the book behind it, 360° Accountability.</p><p class="go-links"><a href="/#altos">Explore ALTOS →</a><a href="/projects/altos-book/">Read the book →</a></p></div></div><div class="kick"><p class="eyebrow">Cornerstone reading</p><h2>Essential Guides</h2></div><div class="related guides"><a href="/blog/how-to-use-the-rpt-calculator/" class="related-card"><span><span class="cat cat-green">Public Finance</span><span class="muted">9 min read</span></span><b>How to Use the RPT Calculator: Know Your Amilyar Before You Pay</b></a><a href="/blog/year-end-in-the-treasury/" class="related-card"><span><span class="cat cat-amber">Inside the Local Treasury</span><span class="muted">9 min read</span></span><b>Year-End in the Treasury: What Really Happens in December</b></a><a href="/blog/why-i-built-altos/" class="related-card"><span><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">7 min read</span></span><b>Why I Built ALTOS: Bringing Automation to Philippine Local Treasuries</b></a></div><div class="kick"><p class="eyebrow">Writing</p><div class="section-head"><h2>Latest posts</h2><a href="/blog/" class="more">All 24 posts →</a></div></div><div class="post-list home-posts"><article class="post-card" id="altos-framework-separate-the-hands" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">November 23, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h2><a href="/blog/altos-framework-separate-the-hands/">The ALTOS Framework, Principle 6: Separate the Hands</a></h2><p class="teaser">No one person should both approve and release public money, or both hold it and record it. Trust in a treasury has to be designed, not assumed.</p><a href="/blog/altos-framework-separate-the-hands/" class="more">Read the post &rarr;</a></article><article class="post-card" id="altos-framework-every-record-has-a-seal" data-cat="software"><div class="meta"><span class="cat cat-blue">Software &amp; ALTOS</span><span class="muted">November 20, 2026</span><span class="muted dot">·</span><span class="muted">7 min read</span></div><h2><a href="/blog/altos-framework-every-record-has-a-seal/">The ALTOS Framework, Principle 5: Every Record Has a Seal</a></h2><p class="teaser">Once a record is posted, it can be corrected, but only in the open: with a reason, a name and a trace that anyone can check.</p><a href="/blog/altos-framework-every-record-has-a-seal/" class="more">Read the post &rarr;</a></article><article class="post-card" id="cybersecurity-part-3-human-hacking" data-cat="learn"><div class="meta"><span class="cat cat-violet">Learn · Cybersecurity</span><span class="muted">November 19, 2026</span><span class="muted dot">·</span><span class="muted">8 min read</span></div><h2><a href="/blog/cybersecurity-part-3-human-hacking/">Cybersecurity Series, Part 3: The Art of Human Hacking</a></h2><p class="teaser">Most scams do not break into computers; they persuade people. Learn the pressure tricks behind phishing, smishing, fake bosses and deepfake calls, and the simple rules that stop them.</p><a href="/blog/cybersecurity-part-3-human-hacking/" class="more">Read the post &rarr;</a></article></div><div class="topic-box"><div class="topic-top"><div><h2>Browse by topic</h2><p class="muted">Each topic opens the blog with only its posts.</p></div><span class="badge checked">24 posts</span></div><div class="topic-pills"><a href="/blog/#cat-software" class="topic-pill" title="Building ALTOS, Python, and software that keeps public money accountable."><b>Software &amp; ALTOS</b><span>8 posts →</span></a><a href="/blog/#cat-finance" class="topic-pill" title="Stand-alone posts on public money: local taxes, tools like the RPT calculator, and the rules behind them."><b>Public Finance</b><span>3 posts →</span></a><a href="/blog/#cat-treasury" class="topic-pill" title="Everyday work inside a local treasury: taxes, receipts, budgets, checks, year-end and audits."><b>Inside the Local Treasury</b><span>2 posts →</span></a><a href="/blog/#cat-learn" class="topic-pill" title="Short series on cybersecurity, data analytics, business intelligence and project management, in plain words for people who work in local government."><b>Learn</b><span>9 posts →</span></a><a href="/blog/#cat-personal" class="topic-pill" title="The farm, the province, and life beyond the office."><b>Personal</b><span>2 posts →</span></a></div></div><div class="kick"><p class="eyebrow">Learn</p><div class="section-head"><h2>Python for Treasury Work</h2><a href="/tutorials/" class="more">All lessons →</a></div></div><div class="grid three"><a href="/tutorials/check-data-before-you-trust-it/" class="card lesson mini"><div class="meta"><span class="badge">Lesson 8</span><span class="muted">Beginner · 20 min</span></div><h3>Check a collections file before you trust it</h3><span class="go">Start the lesson →</span></a><a href="/tutorials/receipts-register-with-sqlite/" class="card lesson mini"><div class="meta"><span class="badge">Lesson 7</span><span class="muted">Intermediate · 25 min</span></div><h3>Keep a receipts register in SQLite</h3><span class="go">Start the lesson →</span></a><a href="/tutorials/excel-report-with-openpyxl/" class="card lesson mini"><div class="meta"><span class="badge">Lesson 6</span><span class="muted">Beginner · 20 min</span></div><h3>Make a formatted Excel report with openpyxl</h3><span class="go">Start the lesson →</span></a></div><h2 id="altos" class="altos-anchor">Project: ALTOS</h2><script>(function(){var go=function(){document.getElementById("altos").scrollIntoView({behavior:"instant"});};addEventListener("load",function(){if(location.hash==="#altos")go();});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="/#altos"],a[href="#altos"]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.button)return;e.preventDefault();if(location.hash!=="#altos")history.pushState(null,"","#altos");go();});})();</script><p class="lead">ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections and the Treasury Disbursement System for disbursements, each with its own reports.</p><div class="family"><div class="node mother"><div class="node-head"><span class="code"><span class="wordmark"><span class="l0">A</span><span class="l1">L</span><span class="l2">T</span><span class="l3">O</span><span class="l4">S</span></span></span></div><p>Collect, Disburse and Report in one database, with the ALTOS Framework built in.</p><a href="/projects/altos-demo/" class="go stretch">Try the demo →</a></div><div class="branch" aria-hidden="true"></div><div class="children"><div class="node child"><div class="node-head"><span class="code">Treasury Collection System</span><span class="status live">Ready</span></div><p>A subsystem of ALTOS for collections and their reports: official receipts, collectors and their OR series, remittances and deposits, the daily RCD, and the monthly RAAF and CRAAF.</p><div class="forms">Collect + Report</div><a href="/projects/altos-demo/#col-home" class="go stretch">Open it in the demo →</a></div><div class="node child"><div class="node-head"><span class="code">Treasury Disbursement System</span><span class="status live">Ready</span></div><p>A subsystem of ALTOS for disbursements and their reports: vouchers, checks, cash advances and their liquidation, the check register and disbursement reports.</p><div class="forms">Disburse + Report</div><a href="/projects/altos-demo/#do-home" class="go stretch">Open it in the demo →</a></div></div></div><h2>ALTOS, the mother system</h2><div class="altos-hero"><div><p class="wordmark big-wordmark" aria-label="ALTOS"><span class="l0">A</span><span class="l1">L</span><span class="l2">T</span><span class="l3">O</span><span class="l4">S</span></p><p class="subtitle">Automated Local Treasury Operations System</p><p class="lead">Much of the daily work in a Philippine local treasury is still done by hand, from receipts and cash books to monthly reports, so reporting is slow and errors are hard to catch. ALTOS is my answer to that gap. It automates the full cycle of public money: official receipts, remittances and deposits, checks and cash advances, the monthly reports of accountable officers, and collection targets and results. One database serves both a desktop application and a web application across the office network.</p><div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Desktop app</span><span class="tag">Web app</span><span class="tag">HMAC-SHA256 audit log</span><span class="tag">AES-256 backups</span><span class="tag">NIST CSF</span></div><a href="/projects/altos-demo/" class="stretch" aria-label="Try the ALTOS demo"></a></div></div><blockquote><p>Public money must be traceable in a full circle, from the moment it is collected to the moment it is reported, with a named officer answerable at every point. Accountability that covers 300 degrees leaves a gap, and money leaks through gaps.</p><footer><a href="/blog/altos-framework/" class="stretch">The ALTOS principle →</a></footer></blockquote><figure class="screenshot diagram"><a href="/projects/altos-book/chapter-1/" aria-label="Read Chapter 1 of the ALTOS book, where this figure comes from"><img src="/static/altos-loop.png?v=9b98ae94" alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step." width="1395" height="680" loading="lazy"></a><figcaption>Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step. <a href="/projects/altos-book/chapter-1/">Read Chapter 1 of the book →</a></figcaption></figure><h2>Three movements of public money</h2><p class="muted">Every transaction in a local treasury belongs to one of three movements. ALTOS follows each one, with a named officer answerable at every step.</p><div class="grid three"><div class="card"><h3>Collect</h3><p>Taxes, fees and charges, each acknowledged by an official receipt from a bonded collector.</p><div class="forms">OR · RCD · deposit</div><a href="/projects/altos-demo/#col-issue" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Disburse</h3><p>Releases by check, cash advance or transfer, each resting on an appropriation and a voucher.</p><div class="forms">Voucher · check · cash advance</div><a href="/projects/altos-demo/#do-prepare" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Report</h3><p>Every collection and release summarized, reconciled and reported on fixed dates.</p><div class="forms">RAAF · CRAAF · RCI · BRS · SRE</div><a href="/projects/altos-demo/#lo-craaf" class="go stretch">See it in the demo →</a></div></div><h2>What ALTOS does</h2><div class="grid four"><div class="card"><h3>Built from the forms</h3><p>Every screen starts from an LTOM or COA form, so the system stays auditable.</p><a href="/projects/altos-demo/#col-issue" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Rules, not just records</h3><p>The next OR number is always the next in series, a check cannot predate its booklet, and the 20% Development Fund cannot be switched off.</p><a href="/projects/altos-demo/#col-issue" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Deadlines that count down</h3><p>RAAF and CRAAF reports are due on the 5th, and the days remaining are visible to the officer and the supervisor.</p><a href="/projects/altos-demo/#lo-craaf" class="go stretch">See it in the demo →</a></div><div class="card"><h3>The sealed ledger</h3><p>Every activity-log entry carries an HMAC-SHA256 code chained to the one before it, so any deletion or change shows.</p><a href="/projects/altos-demo/#sys-log" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Security Center</h3><p>Organized by the NIST Cybersecurity Framework: hashed passwords (PBKDF2-SHA256), lock-out, 15-minute auto log-out, AES-256 encrypted backups and a restore drill.</p><a href="/projects/altos-demo/#sys-home" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Correction without concealment</h3><p>Posted records are corrected only through a logged Data Correction with a reason and an author.</p><a href="/projects/altos-demo/#sys-log" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Turnover built in</h3><p>Assembles and verifies the records and produces a certificate for the incoming treasurer.</p><a href="/projects/altos-demo/#sys-home" class="go stretch">See it in the demo →</a></div><div class="card"><h3>Data Analytics and Insights</h3><p>Targets, forecasts and control checks that inform the treasurer&#x27;s decisions, plus a quarterly ALTOS Framework self-assessment that prints as a signed report.</p><a href="/projects/altos-demo/#sys-dashboard" class="go stretch">See it in the demo →</a></div></div><div class="section-head"><h2>The ALTOS Framework</h2><a href="/blog/altos-framework/" class="more">Read the series →</a></div><p class="muted">Ten principles for Philippine public fiscal administration. ALTOS checks its own records against each one in a quarterly self-assessment.</p><ol class="principles"><li><b><a href="/blog/altos-framework-legality-first/" class="stretch">Legality first</a></b><span>Every collection and release traces to a law, ordinance or appropriation.</span></li><li><b><a href="/blog/altos-framework-every-peso-has-a-document/" class="stretch">Every peso has a document</a></b><span>No collection without a receipt, no release without a voucher.</span></li><li><b><a href="/blog/altos-framework-every-document-has-an-owner/" class="stretch">Every document has an owner</a></b><span>A named, bonded officer answers for each form and each peso.</span></li><li><b><a href="/blog/altos-framework-every-owner-has-a-deadline/" class="stretch">Every owner has a deadline</a></b><span>Reports fall due on fixed dates, and the days remaining are visible.</span></li><li><b><a href="/blog/altos-framework-every-record-has-a-seal/" class="stretch">Every record has a seal</a></b><span>Posted records change only through a visible, logged correction.</span></li><li><b><a href="/blog/altos-framework-separate-the-hands/" class="stretch">Separate the hands</a></b><span>No one person both authorizes and releases public money.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Keep money in its fund</a></b><span>Each peso stays in the fund the law assigns it, including SEF and the 20% DF.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">The taxpayer is a citizen</a></b><span>Assess fairly, collect conveniently and disclose fully.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Evidence before decision</a></b><span>Targets and forecasts inform the treasurer&#x27;s judgment but never replace it.</span></li><li><b><a href="/blog/altos-framework/" class="stretch">Build to outlast the builder</a></b><span>Systems must work after the incumbent leaves.</span></li></ol><h2>The book</h2><div class="card book"><a href="/projects/altos-book/" aria-label="Read the ALTOS book" class="book-link"><img src="/static/altos-cover.jpg?v=fd542360" alt="Cover of 360° Accountability: Public Fiscal Administration in Philippine Local Treasuries" class="book-cover" width="600" height="900"></a><div><span class="badge spec">1st Edition, October 2026</span><h3>360° Accountability: Public Fiscal Administration in Philippine Local Treasuries</h3><p class="muted">The ALTOS Principles<br>80 pages</p><p>A book that joins public administration theory, from Wilson and Weber to New Public Governance, with Philippine treasury law and the lessons of building ALTOS. It ends with the ALTOS Framework: ten principles any local treasury can adopt, with or without software.</p><a href="/projects/altos-book/" class="btn white">Read the book →</a></div></div><p class="motto"><a href="/projects/altos-book/"><em>Every peso, every step, every officer: 360°.</em></a></p><h2>About the author</h2><div class="card author"><div class="author-top"><a href="/about/" aria-label="About Ambrosio “Butch” U. Mahinay"><img src="/static/hero-photo.jpg?v=51ab15a1" alt="Ambrosio “Butch” U. Mahinay" width="400" height="400" class="hero-photo author-photo" loading="lazy"></a><div><p class="author-name"><a href="/about/">Ambrosio “Butch” U. Mahinay, MPA</a></p><p class="author-roles"><span>Public Administration Specialist</span><span>Local Treasury Practitioner</span><span>Civic Tech Developer</span></p></div></div><p class="author-bio">He is a public administration practitioner, author, and self-taught software developer in Quezon Province, Philippines, with over 15 years in government service, more than 13 of them in local treasury work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. He writes, teaches and builds software in his personal capacity, outside official working hours.</p><p class="author-links"><a href="/about/">Full profile</a></p></div></div></main><footer class="legal"><div class="wrap"><p class="disclaimer-box"><b>Disclaimer: </b>All book chapters, articles, calculators, code samples and study notes on <b>aumahinay.dev</b> are written and published by Ambrosio U. Mahinay strictly in his personal capacity, outside official working hours, for educational and informational purposes. Content reflects the personal views and independent technical work of the author and does not constitute an official government issuance, legal advice, a formal tax assessment, or an endorsement by any Local Government Unit (LGU), the Bureau of Local Government Finance (BLGF), the Commission on Audit (COA) or any government agency. Always consult your local treasurer&#x27;s office or qualified professionals for official transactions. <a href="/disclaimer/">Full disclaimer</a></p><div class="foot-row"><span class="copy">© 2026 Ambrosio U. Mahinay</span><span class="legal-links"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="/disclaimer/">Disclaimer</a><span class="built">Built in Python</span></span></div></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
@@ -1204,7 +1703,7 @@ blockquote footer a.stretch { color: inherit; text-decoration: none; }
     if (open) { var a = menu.querySelector("a.active") || menu.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
     else btn.focus({ preventScroll: true });
   }
-  btn.addEventListener("click", function () { set(true); });
+  btn.addEventListener("click", function () { set(!root.classList.contains("menu-open")); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
   // tap anywhere outside the half-screen menu to close it
   document.addEventListener("click", function (e) {
