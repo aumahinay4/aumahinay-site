@@ -1522,3 +1522,60 @@ CSS += """
 CSS += """
 @media (max-width: 640px) { .home-hero { align-items: stretch; text-align: left; } .home-hero .btns { align-items: stretch; } .home-art { align-self: stretch; } }
 """
+
+# ---- Blog post pattern (Butch 2026-11-23, cybersecurity_series_part_2_desktop_blog_preview) ----
+CSS += """
+.post-top { display: flex; align-items: center; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; }
+.post-top .back-all { font-size: 15.5px; font-weight: 600; white-space: nowrap; }
+.post-top .crumbs { margin: 0; font-size: 14px; }
+.post-top .crumbs a { color: var(--muted); font-weight: 500; }
+.post-top .crumbs li:nth-child(2) a { color: var(--orange-ink); }
+.post-top .crumbs [aria-current] { color: var(--text); font-weight: 500; }
+.post-top + .post { margin-top: 18px; }
+/* post card: rounded, dark-green-blue-violet bar across the top */
+.blog-col .post { border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(15, 23, 42, .04); padding-top: 44px; }
+.blog-col .post::before { left: 0; right: 0; top: 0; height: 5px; border-radius: 0; background: linear-gradient(90deg, #0f172a, #059669 35%, #10b981 50%, #3b82f6 75%, #7c3aed); }
+.post h1 { font-weight: 800; letter-spacing: -0.03em; }
+.post .byline { margin-top: 10px; }
+.post .series-line { margin-top: 2px; }
+/* Listen: a panel with the progress line always shown */
+.post .listen { border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--surface)); padding: 12px 14px 22px; margin: 18px 0 4px; position: relative; }
+.post .listen .listen-progress { display: block; left: 14px; right: 14px; bottom: 10px; }
+.post .listen button { font-size: 14.5px; }
+.post .listen-time { margin-left: auto; }
+.post .listen:not([data-state="idle"]) { position: sticky; padding: 10px 14px 22px; }
+.post .lead { color: var(--text); opacity: .88; margin-top: 22px; }
+.post hr.lead-rule { border: 0; border-top: 1px solid var(--line); margin: 22px 0 26px; }
+/* side column: one card holding In this article, the series and the author */
+.side-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 18px; }
+.side-card > .side-box { border-radius: 14px; }
+.side-card > .side-toc { border: 0; padding: 0; background: none; }
+.side-series-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+.side-series-head .eyebrow { margin: 0; color: var(--violet-ink); font: 700 12px var(--font-body); letter-spacing: .14em; text-transform: uppercase; padding: 0; border: 0; }
+.side-series-head .muted { font-size: 12.5px; font-weight: 600; }
+.read-side .side-series a, .read-side .side-series .here > span { display: block; padding: 6px 10px; border-radius: 8px; color: var(--muted); font-size: 13.75px; font-weight: 500; line-height: 1.4; border: 1px solid transparent; }
+.read-side .side-series a:hover { color: var(--text); background: var(--bg); text-decoration: none; }
+.read-side .side-series .here > span { color: var(--violet-ink); font-weight: 700; background: color-mix(in srgb, var(--violet) 14%, var(--surface)); border-color: color-mix(in srgb, var(--violet) 45%, transparent); }
+.side-author .side-name { font-size: 1.1rem; line-height: 1.3; }
+.side-author p { text-align: justify; hyphens: auto; }
+.side-author p:last-child { text-align: left; }
+@media (min-width: 1025px) { .read-side { padding-top: 48px; } }
+@media (max-width: 640px) {
+  .post-top .back-all { font-size: 14.5px; } .post-top .crumbs { font-size: 13px; }
+  .blog-col .post { border-radius: 14px; padding-top: 32px; }
+  .post .listen { padding: 10px 10px 20px; } .post .listen .listen-progress { left: 10px; right: 10px; }
+}
+"""
+CSS += """
+.read-side .side-series-head a.eyebrow { padding: 0; margin: 0; border: 0; color: var(--violet-ink); font: 700 12px var(--font-body); letter-spacing: .14em; line-height: 1.4; }
+.side-series-head .muted { white-space: nowrap; }
+.post-top { max-width: var(--max); }
+.post-top + .read-grid .post { margin-top: 18px; }
+.post .lead { text-align: left; hyphens: manual; }
+@media (min-width: 1025px) { .read-grid:not(.side-left) .read-side { position: static; max-height: none; overflow: visible; padding-top: 18px; } }
+"""
+CSS += """
+.read-side .side-author .side-name { text-align: left; hyphens: manual; }
+.read-side .side-author .eyebrow { color: var(--orange-ink); }
+.post .lead { max-width: none; }
+"""
