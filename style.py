@@ -1640,3 +1640,18 @@ CSS += """
   body:has(.book-col)::before { content: "Printing is turned off for the ALTOS book. Please read it online at aumahinay.dev."; display: block; padding: 40px; font: 16px/1.5 sans-serif; }
 }
 """
+
+# ---- Menu on the same line as "Butch Mahinay" (Butch 2026-11-23) ----
+CSS += """
+@media (min-width: 1025px) {
+  header.site .top-nav a, header.site .drop-btn { padding-bottom: 15px; }  /* links sit level with the name, not the tagline */
+}
+@media (max-width: 1024px) {
+  header.site .wrap { position: relative; flex-wrap: nowrap; align-items: flex-start; }
+  .phone-row { display: contents; }
+  .phone-row .page-label { display: none; }
+  html.menu-js .menu-btn { margin: 10px 0 0 auto; }
+  .home-hero > .home-copy > .eyebrow, .home-hero > .eyebrow { display: block; }
+  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) max(10px, env(safe-area-inset-right, 0px)) auto auto !important; }
+}
+"""
