@@ -680,9 +680,9 @@ BLOG = [
              "How your payment is shared by the province, the municipality, the barangay and the "
              "local school boards."),
             "It follows the Local Government Code of 1991 (Republic Act No. 7160) and has the "
-            "Quezon Provincial Revenue Code of 2022 built in. For a property in a Quezon "
-            "municipality, it fills in the assessment level and the discount for you. Elsewhere, "
-            "you type in the rates from your local ordinance.",
+            "rates of a provincial revenue code built in. Choose the built-in rates and it fills "
+            "in the assessment level and the discount for you. Otherwise, you type in the rates "
+            "from your local ordinance.",
             ("cta", "Open the RPT Calculator", "/tools/rpt-calculator/"),
             ("h", "Before You Start: Find Your Tax Declaration"),
             "The most useful paper for this exercise is your tax declaration, often called the "
@@ -693,32 +693,32 @@ BLOG = [
             "The number that matters most is the assessed value. Real property tax is not charged"
             " on what your property would sell for. It is charged on the assessed value, which is"
             " the market value multiplied by an assessment level that the local ordinance sets "
-            "for each class of property. For a residential lot in Quezon Province, the assessment"
-            " level is 5%. So a lot with a market value of ₱500,000 has an assessed value of only"
+            "for each class of property. Under the built-in rates, the assessment level for a "
+            "residential lot is 5%. So a lot with a market value of ₱500,000 has an assessed value of only"
             " ₱25,000, and that smaller figure is the one that gets taxed.",
             ("h", "Step 1: Tell It Where the Property Is"),
-            "Choose one of three: a municipality in Quezon Province, a municipality in another "
-            "province, or a city. This choice sets the highest basic rate allowed (1% in a "
+            "Choose one of three: a municipality with the built-in provincial rates, a "
+            "municipality where you type your own rates, or a city. This choice sets the highest basic rate allowed (1% in a "
             "province, 2% in a city) and decides how the money is shared. If you choose a city, "
             "you can also type its number of barangays to see each one's share.",
             ("h", "Step 2: Enter the Assessed Value"),
             "If your tax declaration shows the assessed value, choose \"I know the assessed value\""
             " and type it in. That is the most accurate route.",
-            "If you only know the market value, choose \"Compute it from the market value.\" For "
-            "Quezon Province, pick the kind of property (land, building, machinery or special "
+            "If you only know the market value, choose \"Compute it from the market value.\" With "
+            "the built-in rates, pick the kind of property (land, building, machinery or special "
             "class) and its use. The calculator then fills in the assessment level from Section "
-            "25 of the provincial code. Buildings deserve a closer look, because their level "
-            "rises with their value. In Quezon, a residential building worth ₱175,000 or less has"
+            "the built-in provincial code. Buildings deserve a closer look, because their level "
+            "rises with their value. Under the built-in rates, a residential building worth ₱175,000 or less has"
             " an assessment level of 0%, while one worth ₱1.5 million falls in the 25% bracket. "
             "You can always change the level by hand if your own ordinance says something "
             "different.",
             ("h", "Step 3: Check the Tax Rates"),
             "The calculator starts with a basic rate of 1% for municipalities and 2% for cities, "
             "plus 1% for the Special Education Fund. These are the highest rates the Local "
-            "Government Code allows. Quezon Province charges the full 1% basic tax and the 1% "
+            "Government Code allows. The built-in provincial rates charge the full 1% basic tax and the 1% "
             "SEF. Each city sets its own basic rate, up to 2%, so if your city charges less, type"
             " the lower rate.",
-            "For our ₱25,000 lot in Quezon, that means a basic tax of ₱250 and an SEF tax of "
+            "For our ₱25,000 lot, that means a basic tax of ₱250 and an SEF tax of "
             "₱250, or ₱500 for the year.",
             ("h", "Step 4: Enter the Tax Year and the Target Date of Payment"),
             "This is where the calculator does its best work. The year's tax is split into four "
@@ -732,7 +732,7 @@ BLOG = [
             "pay the fourth by December 31, mark Q1 to Q3 \"Paid\" and the 10% discount applies to "
             "Q4.",
             ("h", "Three Ways to Pay the Same ₱500"),
-            "Let us take the same residential lot in a Quezon municipality: market value "
+            "Let us take the same residential lot, with the built-in rates: market value "
             "₱500,000, assessed value ₱25,000, yearly tax ₱500. Here is what the calculator shows"
             " for three different payment habits.",
             ("point",
@@ -741,19 +741,19 @@ BLOG = [
              "time, so the 10% discount applies. You pay ₱450."),
             ("point",
              "Paid in advance",
-             "Tax year 2027, paid in full on September 30, 2026. In Quezon, paying the whole of "
+             "Tax year 2027, paid in full on September 30, 2026. Under the built-in rates, paying the whole of "
              "next year on or before September 30 earns a 15% discount, so you pay ₱425. Pay two "
              "or more years ahead and the discount reaches 20%: ₱400 for the year."),
             ("point",
              "Paid late",
-             "Tax year 2026, nothing paid until November 20, 2026. In Quezon, interest is counted"
+             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, interest is counted"
              " by quarter: each quarter or part of a quarter after the due date adds 6%. The "
              "first quarter is three quarters late, so it carries 18% interest. The second is two"
              " quarters late (12%) and the third is one quarter late (6%). The fourth quarter is "
              "not yet due, but there is no discount while the other quarters are late. You pay "
              "₱545."),
             "On this small lot, the gap between the best habit and the worst is ₱145 a year. It "
-            "grows with the property. A ₱1.5 million house in Quezon has an assessed value of "
+            "grows with the property. A ₱1.5 million house has an assessed value of "
             "₱375,000 and a yearly tax of ₱7,500. Paid two years ahead, it costs ₱6,000. Paid as "
             "late as in the third example, it costs ₱8,175. That is a difference of more than "
             "₱2,000, every year, for the same house.",
@@ -775,7 +775,7 @@ BLOG = [
             ("point",
              "Early payment pays you back",
              "The law allows a discount of up to 20% for paying early or on time, and each "
-             "province or city sets its own rates. In Quezon, it is 10% for paying on time, 15% "
+             "province or city sets its own rates. Under the built-in rates, it is 10% for paying on time, 15% "
              "for paying next year's tax by September 30, and 20% for paying two or more years "
              "ahead."),
             ("point",
