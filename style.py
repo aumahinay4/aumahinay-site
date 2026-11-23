@@ -1579,3 +1579,52 @@ CSS += """
 .read-side .side-author .eyebrow { color: var(--orange-ink); }
 .post .lead { max-width: none; }
 """
+
+# ---- Phone menu from the mobile pattern file (Butch 2026-11-23): round button + page label, floating rounded card ----
+CSS += """
+.phone-row { display: none; }
+@media (max-width: 1024px) {
+  header.site .wrap { flex-wrap: wrap; row-gap: 0; min-height: 0; }
+  header.site .brand-line { padding: 12px 0 10px; }
+  .phone-row { display: flex; align-items: center; gap: 10px; width: 100%; position: relative; padding: 9px 0; border-top: 1px solid var(--line); }
+  html.menu-js .menu-btn { order: 0; margin: 0; width: 32px; height: 32px; flex: none; border-radius: 50%; border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 70%, var(--surface)); color: var(--text); display: grid; place-content: center; }
+  .menu-btn svg { width: 16px; height: 16px; }
+  .menu-btn .i-close { display: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+  html.menu-open .menu-btn svg:not(.i-close) { display: none; }
+  html.menu-open .menu-btn .i-close { display: block; }
+  .page-label { color: var(--orange-ink); font: 700 12px/1.3 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+  .home-hero > .home-copy > .eyebrow, .home-hero > .eyebrow { display: none; }
+  html.menu-open, html.menu-open body { overflow: visible; }
+  html.menu-js.menu-open header.site::before { content: none; }
+  html.menu-js header.site #site-menu { display: none; }
+  html.menu-js.menu-open header.site #site-menu {
+    display: grid !important; gap: 2px; position: absolute !important; inset: calc(100% - 2px) auto auto 0 !important; width: min(300px, 82vw) !important;
+    height: auto; max-height: 72dvh; overflow-y: auto; margin: 0; padding: 8px !important; box-sizing: border-box; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 18px 40px -16px rgba(15, 23, 42, .4); z-index: 50; }
+  html.menu-js.menu-open header.site #site-menu a[href], html.menu-js.menu-open header.site #site-menu summary {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 0; padding: 10px 14px; border: 1px solid transparent; border-top: 1px solid transparent;
+    border-radius: 10px; color: var(--text); font: 600 15.5px/1.3 var(--font-body); white-space: nowrap; cursor: pointer; }
+  html.menu-js.menu-open header.site #site-menu a[href]:hover, html.menu-js.menu-open header.site #site-menu summary:hover { background: var(--bg); text-decoration: none; }
+  html.menu-js.menu-open header.site #site-menu > a.active { background: #fefce8; border-color: #fde68a; color: var(--orange-ink); }
+  html.menu-js.menu-open header.site #site-menu .pm-group a[href] { padding: 8px 14px 8px 28px; font-weight: 500; font-size: 14.5px; }
+  html.menu-js.menu-open header.site #site-menu .pm-group a.active, html.menu-js.menu-open header.site #site-menu summary.active { color: var(--orange-ink); }
+  .pm-group summary { list-style: none; }
+  .pm-group summary::-webkit-details-marker { display: none; }
+  .pm-group summary svg { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-90deg); transition: transform .15s; }
+  .pm-group[open] summary svg { transform: none; }
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) html.menu-js.menu-open header.site #site-menu > a.active { background: rgba(250, 204, 21, .12); border-color: rgba(250, 204, 21, .35); } }
+"""
+CSS += """
+@media (max-width: 1024px) {
+  html.menu-js.menu-open header.site #site-menu > *, html.menu-js.menu-open header.site #site-menu .pm-group > * { width: 100%; box-sizing: border-box; margin: 0; }
+  html.menu-js.menu-open header.site #site-menu details { padding: 0; border: 0; background: none; display: block; }
+}
+"""
+CSS += """
+@media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu a[href], html.menu-js.menu-open header.site #site-menu summary { width: 100% !important; max-width: none !important; } }
+"""
+CSS += """
+@media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu { grid-template-columns: minmax(0, 1fr) !important; justify-content: stretch !important; align-items: stretch !important; } }
+"""
