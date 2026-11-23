@@ -740,11 +740,6 @@ BOOK_URL = "/projects/altos-book/"
 # Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
 # ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
 NOINDEX_URLS = {DEMO_URL}  # the book is text now (Butch 2026-11-23), so Google may read it
-# visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
-BOOK_FIRST_DAYS, BOOK_MORE_DAYS = 3, 2  # reading time per approved request (Butch, 2026-11-04)
-BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
-    "Hello Butch,\n\nI would like to read the full book, 360° Accountability: The ALTOS Principles.\n\n"
-    "Name:\nGoogle (Gmail) address to share it with:\nOffice or school:\nWhy I want to read it:\nFirst request or more time:\n\nThank you."))
 
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
 # Saving is made harder (no download link, no right-click or long-press save, no dragging),
@@ -756,7 +751,7 @@ LOOP_ALT = ("The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (vouch
 BOOK_TEXT_SCRIPT = """
 (function () {
   // The book is read online only (Butch 2026-11-23): no download, print, save or copy. Google still reads the text.
-  var el = document.querySelector('.book-text');
+  var el = document.querySelector('.book-text') || document.querySelector('.book-col');
   if (!el) return;
   ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (k) {
     el.addEventListener(k, function (e) { e.preventDefault(); });
@@ -877,6 +872,7 @@ def book_home():
             t.p("Read online only: the book cannot be downloaded, printed or copied. Please quote short parts with a link back. "
                 "Laws and circulars change: confirm the current text before relying on any rule described here.",
                 class_="muted note"),
+            t.script(Raw(BOOK_TEXT_SCRIPT)),  # same no-copy guard as the chapters
             class_="blog-col book-col",
         ),
         description=f"Read {b['title']} by {SITE['name']} free online: fifteen chapters joining public administration "
@@ -2219,7 +2215,7 @@ def series_page():
                 t.p("The ten principles also form the closing part of my book, ",
                     t.i(ALTOS["book"]["title"].split(":")[0]), ". You can read its first pages for free, or see what "
                     "the ALTOS software does for collections and disbursements."),
-                t.div(t.a("Preview the book", href=BOOK_URL, class_="btn primary"),
+                t.div(t.a("Read the book online", href=BOOK_URL, class_="btn primary"),
                       t.a("About ALTOS", href=ALTOS_URL, class_="btn white"), class_="actions"),
                 class_="card series-more",
             ),
