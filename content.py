@@ -292,6 +292,47 @@ TERMS = {
     ],
 }
 
+# Disclaimer page (/disclaimer/), linked from the footer of every page (Butch 2026-11-23, from his AdSense
+# blueprint: a disclaimer visible across the whole site). Same shape as PRIVACY and TERMS.
+DISCLAIMER = {
+    "effective": "November 23, 2026",
+    "intro": (
+        "Everything on aumahinay.dev, including the blog posts, study notes, tutorials, the RPT calculator, "
+        "the ALTOS demo and the book preview, is written and built by Ambrosio U. Mahinay in his personal "
+        "capacity, outside official working hours, for learning and general information."
+    ),
+    "sections": [
+        ("Not an Official Issuance", [
+            "Nothing on this Website is an official issuance, ruling, opinion or assessment of any local "
+            "government, the Bureau of Local Government Finance (BLGF), the Commission on Audit (COA) or any "
+            "other government office. No office has reviewed or endorsed this content.",
+        ]),
+        ("Not Legal, Tax or Financial Advice", [
+            "The posts, notes and tools explain how things generally work. They are not legal, tax, accounting "
+            "or financial advice. Laws, rates and procedures change, and local ordinances differ from one local "
+            "government to another. For an actual payment, assessment or transaction, ask your local "
+            "treasurer's or assessor's office, or a qualified professional.",
+        ]),
+        ("Calculator Results Are Estimates", [
+            "The real property tax calculator gives an estimate from the rules shown on its page. Your tax "
+            "declaration and your local treasurer's office have the final figures.",
+        ]),
+        ("Examples Are Made Up", [
+            "Names, offices, receipt numbers and amounts in the examples, lessons and the ALTOS demo are made "
+            "up for teaching. ALTOS is shown here as a personal software project tested by its developer.",
+        ]),
+        ("Views Are My Own", [
+            ["The opinions here are mine and do not represent any government office I have worked in or work "
+             "with. How the Website may be used is covered in the ", ("Terms of Use", "/terms/"),
+             ", and how ads and cookies work in the ", ("Privacy Policy", "/privacy/"), "."],
+        ]),
+        ("Contact", [
+            "If you find an error or have a question about this disclaimer, please write to me at:",
+            ("contact",),
+        ]),
+    ],
+}
+
 # The one featured project. Source: "360° Accountability – The ALTOS Principles" (1st Edition, Oct 2026).
 ALTOS = {
     "name": "ALTOS",
