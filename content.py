@@ -87,8 +87,8 @@ ABOUT = {
         ("Bachelor of Science in Public Administration (BSPA-ETEEAP)", ""),
     ],
     "eligibilities": [
-        "Intermediate Competency in Local Treasury Examination (ICLTE) – 2019",
-        "Basic Competency in Local Treasury Examination (BCLTE) – 2018",
+        "Intermediate Competency in Local Treasury Examination (ICLTE) – 2018",
+        "Basic Competency in Local Treasury Examination (BCLTE) – 2017",
         "Career Service Professional Eligibility – 2012",
     ],
     "technical": (

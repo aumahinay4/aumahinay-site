@@ -725,7 +725,6 @@ def altos_section():
     ]
 
 
-BOOK_PREVIEW_PAGES = 20  # cover, title, copyright, contents, Part I, Chapters 1-3 and start of Chapter 4 = PDF pp. 1-4, 9-24 (preface left out at Butch's request) (static/book/page-NN.jpg)
 BOOK_URL = "/projects/altos-book/"
 # Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
 # ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
@@ -739,105 +738,24 @@ BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
 # Saving is made harder (no download link, no right-click or long-press save, no dragging),
 # but no website can block the phone's or computer's own screenshot keys.
-BOOK_SCRIPT = """
-(function () {
-  var r = document.getElementById("reader");
-  if (!r) return;
-  var pages = JSON.parse(r.getAttribute("data-pages")), i = 0;
-  var img = r.querySelector(".page img"), counts = r.querySelectorAll(".count");
-  var prevs = r.querySelectorAll(".prev"), nexts = r.querySelectorAll(".next");
-  function each(list, f) { for (var k = 0; k < list.length; k++) f(list[k]); }
-  function show(n) {
-    i = Math.max(0, Math.min(pages.length - 1, n));
-    img.src = pages[i];
-    img.alt = "Page " + (i + 1) + " of the preview";
-    each(counts, function (c) { c.textContent = "Page " + (i + 1) + " of " + pages.length; });
-    each(prevs, function (b) { b.disabled = i === 0; });
-    each(nexts, function (b) { b.disabled = i === pages.length - 1; });
-    if (i + 1 < pages.length) (new Image()).src = pages[i + 1];  // load the next page ahead
-  }
-  function turn(d) {  // a new page starts at its top line
-    show(i + d);
-    if (r.getBoundingClientRect().top < 0) r.scrollIntoView({ block: "start" });
-  }
-  each(prevs, function (b) { b.addEventListener("click", function () { turn(-1); }); });
-  each(nexts, function (b) { b.addEventListener("click", function () { turn(1); }); });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowRight") show(i + 1);
-    if (e.key === "ArrowLeft") show(i - 1);
-  });
-  var x0, y0;
-  var stage = r.querySelector(".page");
-  stage.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
-  stage.addEventListener("touchend", function (e) {
-    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > 2 * Math.abs(dy)) turn(dx < 0 ? 1 : -1);
-  }, { passive: true });
-  r.addEventListener("contextmenu", function (e) { e.preventDefault(); });
-  r.addEventListener("dragstart", function (e) { e.preventDefault(); });
-  show(0);
-})();
-"""
-
-
-def book_reader():
-    book = ALTOS["book"]
-    pages = [asset_url(f"book/page-{n:02d}.jpg") for n in range(1, BOOK_PREVIEW_PAGES + 1)]
-    return part(
-        "ALTOS book preview", "/",
-        t.a("← Back to ALTOS", href=ALTOS_URL, class_="crumb"),
-        t.p("Book preview", class_="eyebrow"),
-        t.h1(book["title"]),
-        t.p(f"{book['subtitle']} · {book['status']} · {book['pages']} pages. Read the first 20 pages here: the contents, Chapters 1 to 3 and the start of Chapter 4.", class_="lead"),
-        t.div(
-            t.div(
-                t.button("← Previous", type="button", class_="btn prev"),
-                t.span(class_="count", aria_live="polite"),
-                t.button("Next →", type="button", class_="btn next"),
-                class_="controls",
-            ),
-            t.div(
-                t.img(src=pages[0], alt="Page 1 of the preview", width="900", height="1350", draggable="false"),
-                t.div(class_="shield"),  # sits on top of the page, so a long-press or right-click finds no picture to save
-                class_="page",
-            ),
-            t.div(
-                t.button("← Previous", type="button", class_="btn prev"),
-                t.span(class_="count"),
-                t.button("Next →", type="button", class_="btn next"),
-                class_="controls bottom",
-            ),
-            id="reader", class_="reader", data_pages=json.dumps(pages), data_noswipe="",
-        ),
-        t.div(
-            t.h2("Want to read the whole book?"),
-            t.p(f"This is a preview of the 1st Edition. The full book has {book['pages']} pages. To read all of it, send a request. Once I approve it, "
-                "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
-            t.p(f"Reading time: once your request is approved, you can read the whole book for {BOOK_FIRST_DAYS} days. "
-                f"Need more time? Send another request; each one after that gives you {BOOK_MORE_DAYS} more days. "
-                "Access ends automatically when the time is up. There is no limit on requests."),
-            t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
-            class_="reader-request",
-        ),
-        t.script(Raw(BOOK_SCRIPT)),
-        description=f"Read the first 20 pages of {book['title']}, a book by {SITE['name']}.",
-        seo_title=f"ALTOS Book Preview: 360° Accountability · {SITE['short_name']}",
-        url=BOOK_URL,
-    )
-
-
-# ---- The book as web pages (Butch 2026-11-23: "All chapter now are open for adsense") ----
 LOOP_ALT = ("The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to "
             "Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. "
             "At the center: 360° accountability, a named officer at every step.")
 # read online only: no right-click menu, copying or text selection on the book text (casual protection only)
 BOOK_TEXT_SCRIPT = """
 (function () {
+  // The book is read online only (Butch 2026-11-23): no download, print, save or copy. Google still reads the text.
   var el = document.querySelector('.book-text');
   if (!el) return;
   ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (k) {
     el.addEventListener(k, function (e) { e.preventDefault(); });
   });
+  document.addEventListener('contextmenu', function (e) { if (e.target.closest('.book-col')) e.preventDefault(); });
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && (k === 's' || k === 'p' || k === 'c' || k === 'a' || k === 'x')) e.preventDefault();
+  });
+  el.querySelectorAll('img').forEach(function (i) { i.setAttribute('draggable', 'false'); });
 })();
 """
 
@@ -892,7 +810,8 @@ def book_blocks(blocks):
 def book_pages():
     """Every web page of the book in reading order: (url, label, title)."""
     pages = [(BOOK.chapter_url(c["n"]), f"Chapter {c['n']}", c["title"]) for c in BOOK.CHAPTERS]
-    return pages + [(BOOK.GLOSSARY_URL, "Glossary", "Glossary"), (BOOK.REFERENCES_URL, "References", "References")]
+    return pages + [(BOOK.GLOSSARY_URL, "Glossary", "Glossary"), (BOOK.REFERENCES_URL, "References", "References"),
+                    (BOOK.AUTHOR_URL, "About the Author", "About the Author")]
 
 
 def book_nav(url):
@@ -942,8 +861,9 @@ def book_home():
              for num, name, sub, rng in BOOK.PARTS],
             t.section(t.h3("At the back of the book"),
                       t.ol(t.li(t.a(t.b("Glossary"), href=BOOK.GLOSSARY_URL)), t.li(t.a(t.b("References"), href=BOOK.REFERENCES_URL)),
+                           t.li(t.a(t.b("About the Author"), href=BOOK.AUTHOR_URL)),
                            class_="book-toc"), class_="book-part"),
-            t.p("Read online only. Please quote short parts with a link back instead of copying whole pages. "
+            t.p("Read online only: the book cannot be downloaded, printed or copied. Please quote short parts with a link back. "
                 "Laws and circulars change: confirm the current text before relying on any rule described here.",
                 class_="muted note"),
             class_="blog-col book-col",
@@ -2487,6 +2407,8 @@ ROUTES[BOOK.GLOSSARY_URL] = _full_page(lambda: book_back(BOOK.GLOSSARY, BOOK.GLO
     "The terms used in 360° Accountability, from accountable forms to the Seal of Good Local Governance."))
 ROUTES[BOOK.REFERENCES_URL] = _full_page(lambda: book_back(BOOK.REFERENCES, BOOK.REFERENCES_URL,
     "The books, articles, laws and issuances behind 360° Accountability."))
+ROUTES[BOOK.AUTHOR_URL] = _full_page(lambda: book_back(BOOK.AUTHOR, BOOK.AUTHOR_URL,
+    "Who wrote 360° Accountability, and the work and study behind it."))
 ROUTES[SERIES_URL] = _full_page(series_page)
 ROUTES[DEMO_URL] = demo_page  # a whole page of its own: no site layout, so no ads on the demo
 # one page per published lesson; scheduled lessons appear on their publish_on date

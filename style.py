@@ -1630,3 +1630,13 @@ CSS += """
 CSS += """
 @media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu { grid-template-columns: minmax(0, 1fr) !important; justify-content: stretch !important; align-items: stretch !important; } }
 """
+
+# ---- The ALTOS book is read online only (Butch 2026-11-23): no long-press menu, no selecting, no printing ----
+CSS += """
+.book-text, .book-text * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.book-text img { pointer-events: none; }
+@media print {
+  body:has(.book-col) header.site, body:has(.book-col) main, body:has(.book-col) footer.legal { display: none !important; }
+  body:has(.book-col)::before { content: "Printing is turned off for the ALTOS book. Please read it online at aumahinay.dev."; display: block; padding: 40px; font: 16px/1.5 sans-serif; }
+}
+"""
