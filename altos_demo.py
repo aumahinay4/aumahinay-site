@@ -223,6 +223,9 @@ body.signin .lg{min-height:100vh}
 .lg{position:relative}
 .demotag{position:absolute;top:12px;right:14px;z-index:3;background:#f2c230;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
 .demotag b{font-weight:800;letter-spacing:.04em}
+.demo-bar .home,.demotag .home{font-weight:800;white-space:nowrap;padding-right:10px;margin-right:10px;border-right:1.5px solid rgba(27,27,27,.45)}
+.demo-bar .home{margin-right:0}
+@media (max-width:640px){.demo-bar,.demotag{font-size:min(14px,3.05vw);white-space:nowrap;flex-wrap:nowrap}.demo-bar{padding:7px 10px}.demotag{padding:6px 8px;font-size:min(13.5px,2.85vw)}.demo-bar .home,.demotag .home{padding-right:7px;margin-right:7px}.demo-bar .home{margin-right:0}.demo-bar{gap:7px}}
 .lg .panel .dev{position:absolute;left:6.7vw;bottom:26px;margin:0}
 .lcard .steps{margin:10px 0 0;font-size:14px;color:#4a5266}.lcard .steps summary{cursor:pointer;color:#1a56c4}
 .wpg{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:8px}
@@ -360,11 +363,11 @@ def demo_page():
             t.style(Raw(CSS)),
         ),
         t.body(
-            # the whole yellow bar (yellow again, Butch 2026-11-23) is the way out: tap it to go back to the ALTOS section of Home (no close mark)
-            Raw('<a class="demo-bar" href="/#altos" title="Back to ALTOS"><span><b>DEMO</b> Sample data only. Nothing is saved.</span></a>'),
+            # the whole yellow bar (yellow again, Butch 2026-11-23) is the way out: '<- Back to home' on the left, tap it to go to the homepage (Butch 2026-11-24) (no close mark)
+            Raw('<a class="demo-bar" href="/" title="Back to home"><span class="home">&larr; Back to home</span><span><b>DEMO</b> Sample data only. Nothing is saved.</span></a>'),
             t.div(
                 # the sign-in page, also what a visitor sees before the script runs
-                Raw('<div class="lg"><a class="demotag" href="/#altos" title="Back to ALTOS"><b>DEMO</b> Sample data only. Nothing is saved.</a>'
+                Raw('<div class="lg"><a class="demotag" href="/" title="Back to home"><span class="home">&larr; Back to home</span><b>DEMO</b> Sample data only. Nothing is saved.</a>'
                     + login_panel + '<div class="side2" id="pick"></div></div>'),
                 id="altos-demo",
             ),
