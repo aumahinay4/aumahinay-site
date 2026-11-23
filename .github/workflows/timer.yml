@@ -1,0 +1,46 @@
+# Puts the Cloudflare timer (timer/worker.js, Worker "aumahinay-timer") online.
+# It starts the site's deploy at 9:02 pm PH every day and checks hourly,
+# because GitHub's own scheduled runs are often skipped.
+# Needs two repo secrets:
+#   CLOUDFLARE_API_TOKEN  (already used by deploy.yml; must also allow
+#                          Account > Workers Scripts > Edit)
+#   GH_DISPATCH_TOKEN     (fine-grained GitHub token: Actions read/write on this repo)
+name: Cloudflare timer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "timer/**"
+      - ".github/workflows/timer.yml"
+  workflow_dispatch:
+
+jobs:
+  timer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      GH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Put the timer online
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: e523875678b6bea173fd8e84c1c53ba1
+          workingDirectory: timer
+          command: deploy
+      - name: Give the timer its GitHub key
+        if: env.GH_TOKEN != ''
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: e523875678b6bea173fd8e84c1c53ba1
+          workingDirectory: timer
+          command: deploy
+          secrets: |
+            GH_TOKEN
+      - name: Is the GitHub key there?
+        if: env.GH_TOKEN == ''
+        run: echo "::warning::GH_DISPATCH_TOKEN repo secret is missing, so the timer cannot start deploys yet."

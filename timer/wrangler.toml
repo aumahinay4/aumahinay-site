@@ -1,0 +1,12 @@
+# Cloudflare Worker "aumahinay-timer": starts the site's deploy on time.
+name = "aumahinay-timer"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+account_id = "e523875678b6bea173fd8e84c1c53ba1"
+# no public web address; it only runs on its timer
+workers_dev = false
+
+[triggers]
+# Times are UTC. 13:02 UTC = 9:02 pm Philippine time, right after posts are due.
+# The hourly run at minute 40 is a backup; it publishes only if something is due.
+crons = ["2 13 * * *", "40 * * * *"]

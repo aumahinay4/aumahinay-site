@@ -23,9 +23,10 @@ on:
     # Every scheduled post, lesson, note and vocabulary module goes live at the
     # same time, 9 pm PH (13:00 UTC), so run right after it every day.
     - cron: "2 13 * * *"
-    # GitHub also skips some of these runs, so a Claude scheduled task starts
-    # this workflow at 9:01 pm PH every day with timer=true (it behaves like a
-    # scheduled run). The two crons above stay as a backup.
+    # GitHub also skips or delays some of these runs, so a Cloudflare timer
+    # (timer/worker.js, Worker "aumahinay-timer") starts this workflow at
+    # 9:02 pm PH every day with timer=true (it behaves like a scheduled run).
+    # The two crons above stay as a backup.
 
 jobs:
   deploy:
