@@ -583,19 +583,27 @@ def home():
     )
 
 
+def author_head(h1=False):
+    """Ringed photo, name and the three roles one per line, then a thin line under them. The same head on the
+    About page, the author card and the side author box (Butch 2026-11-24: "for uniformity")."""
+    name = "Ambrosio “Butch” U. Mahinay, MPA"
+    photo = t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400",
+                  class_="hero-photo author-photo", loading=None if h1 else "lazy")
+    return t.div(
+        photo if h1 else t.a(photo, href="/about/", aria_label="About Ambrosio “Butch” U. Mahinay"),
+        t.div(
+            t.h1(name, class_="author-name") if h1 else t.p(t.a(name, href="/about/"), class_="author-name"),
+            t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
+        ),
+        class_="author-top",
+    )
+
+
 def author_card():
     """Short author box: on Home and at the end of every blog post. Matches the About page (Butch 2026-11-10:
     "be consistent"): same name, same violet roles line and the same facts, in third person ("he", Butch 2026-11-10) as the About intro."""
     return t.div(
-        t.div(
-            t.a(t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo", loading="lazy"),
-                href="/about/", aria_label="About Ambrosio “Butch” U. Mahinay"),
-            t.div(
-                t.p(t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), class_="author-name"),
-                t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
-            ),
-            class_="author-top",
-        ),
+        author_head(),
         t.p("He is a public administration practitioner, author, and self-taught software developer in Quezon "
             "Province, Philippines, with over 15 years in government service, more than 13 of them in local treasury "
             "work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
@@ -884,7 +892,7 @@ def book_side(url):
     """Every chapter in a list for the side column on computers, this one marked."""
     rows = []
     for u, label, title in book_pages():
-        inner = [t.span(label.replace("Chapter ", "Ch. ") if label.startswith("Chapter") else "", class_="muted"), t.b(title)]
+        inner = [t.span(label if label.startswith("Chapter") else "", class_="muted"), t.b(title)]
         rows.append(t.li(t.span(inner, aria_current="page"), class_="here") if u == url else t.li(t.a(inner, href=u)))
     return t.nav(t.p(t.a("The book", href=BOOK_URL), class_="eyebrow"), t.ol(rows, class_="side-chapters"),
                  class_="side-box", aria_label="Chapters")
@@ -1964,7 +1972,7 @@ def side_author():
     """Short author box for the side column on computers; phones get the full author card under the post."""
     return t.div(
         t.p("About the author", class_="eyebrow"),
-        t.p(t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), class_="side-name"),
+        author_head(),
         t.p("15+ years in government service (13+ years in public finance and local treasury work in Quezon Province), "
             "holder of 7 Google Professional Certificates, and a self-taught software developer. He writes in his personal "
             "capacity, outside official working hours."),
@@ -2257,8 +2265,7 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title("Ambrosio “Butch” U. Mahinay, MPA", photo=True, class_="name-title"),  # name beside the photo instead of "About" (Butch 2026-11-10)
-        t.p(ABOUT["roles"], class_="roles"),
+        author_head(h1=True),  # same head as the author card (Butch 2026-11-24)
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
         # everything below hides together with the story's rest; Contact and the disclaimer always show
