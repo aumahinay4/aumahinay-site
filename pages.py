@@ -937,14 +937,19 @@ def book_chapter(c):
 
 
 def book_back(section, url, intro):
+    is_author = url == BOOK.AUTHOR_URL
     return part(
         section["title"], BOOK_URL,
         t.div(
             t.aside(book_side(url), class_="read-side", aria_label="Book chapters"),
             t.div(
                 book_crumbs([("The book", BOOK_URL), (section["title"], None)]),
-                t.article(t.p("360° Accountability", class_="eyebrow"), t.h1(section["title"]), t.p(intro, class_="lead"),
-                          book_blocks(section["blocks"]), class_="post book-text"),
+                t.article(t.p("360° Accountability", class_="eyebrow"), t.h1(section["title"]),
+                          None if is_author else t.p(intro, class_="lead"),
+                          author_head() if is_author else None,  # same head as the About page (short version, Butch 2026-11-24)
+                          book_blocks(section["blocks"]),
+                          t.p(t.a("Full profile on the About page →", href="/about/")) if is_author else None,
+                          class_="post book-text"),
                 book_nav(url),
                 t.script(Raw(BOOK_TEXT_SCRIPT)),
                 class_="blog-col book-col read-main",
