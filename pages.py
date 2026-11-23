@@ -109,6 +109,33 @@ def menu_items():
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
 
 
+CLOSE_ICON = Raw('<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>')
+
+
+def page_label(active):
+    """The small orange label beside the phone menu button."""
+    labels = {"/": "Public finance & civic tech", "/blog/": "Blog", "/tutorials/": "Tutorials", "/study-notes/": "Study Notes",
+              BOOK_URL: "The ALTOS Book", "/about/": "About", "/contact/": "Contact", RPT_URL: "Free Tools",
+              "/privacy/": "Privacy Policy", "/terms/": "Terms of Use", "/disclaimer/": "Disclaimer"}
+    return labels.get(active, "Menu")
+
+
+def phone_menu(active):
+    """The phone menu card: the same entries as the computer menu; Free Tools and Study Notes & Book open in place."""
+    out = []
+    for a, b in top_items():
+        if isinstance(b, list):
+            here = any(href == active for href, _ in b)
+            out.append(t.details(
+                t.summary(a, CHEVRON, class_="active" if here else None),
+                [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
+                 for href, label in b],
+                class_="pm-group", open=here or None))
+        else:
+            out.append(t.a(b, href=a, class_="active" if a == active else None, aria_current="page" if a == active else None))
+    return out
+
+
 CHEVRON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>')
 
 
@@ -152,7 +179,7 @@ MENU_SCRIPT = """
     if (open) { var a = menu.querySelector("a.active") || menu.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
     else btn.focus({ preventScroll: true });
   }
-  btn.addEventListener("click", function () { set(true); });
+  btn.addEventListener("click", function () { set(!root.classList.contains("menu-open")); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
   // tap anywhere outside the half-screen menu to close it
   document.addEventListener("click", function (e) {
@@ -302,12 +329,14 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                     t.a(t.span(SITE["short_name"], class_="bn"), t.span(SITE["tagline_short"], class_="bt"),
                         href="/", class_="brand-line", aria_label=f"{SITE['short_name']}, home"),
                     top_nav(active),
-                    t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
-                             aria_controls="site-menu", aria_expanded="false"),
-                    t.nav(
-                        [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
-                         for href, label in menu_items()],
-                        id="site-menu", aria_label="Main menu",
+                    # phones and tablets (Butch 2026-11-23, mobile pattern file): a second line in the top bar with a round
+                    # menu button beside the page's label; it opens a small rounded card and turns into an X
+                    t.div(
+                        t.button(MENU_ICON, CLOSE_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
+                                 aria_controls="site-menu", aria_expanded="false"),
+                        t.span(page_label(active), class_="page-label"),
+                        t.nav(phone_menu(active), id="site-menu", aria_label="Main menu"),
+                        class_="phone-row",
                     ),
                     class_="wrap",
                 ),
