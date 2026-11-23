@@ -36,7 +36,26 @@ jobs:
       HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
       # a timer run counts as a scheduled run: deploy only when something is due
       RUN_KIND: ${{ (github.event_name == 'schedule' || inputs.timer) && 'schedule' || github.event_name }}
+    # long enough for a scheduled run to wait from 3:30 pm until 9 pm PH
+    timeout-minutes: 350
     steps:
+      # GitHub runs the schedule only a few times a day, so the first run after
+      # 9 pm PH can come the next morning. A scheduled run that starts in the
+      # afternoon (3:30-9 pm PH) waits until 9 pm, so the 9 pm post still goes
+      # out the same day even if no other run comes. Runs before checkout, so
+      # the newest code is used.
+      - name: Afternoon run waits for 9 pm PH
+        if: github.event_name == 'schedule'
+        run: |
+          now=$(date -u +%s)
+          nine=$(TZ=Asia/Manila date -d 'today 21:00:30' +%s)
+          wait=$(( nine - now ))
+          if [ "$wait" -gt 0 ] && [ "$wait" -le 19800 ]; then
+            echo "Waiting $wait seconds, until 9 pm PH."
+            sleep "$wait"
+          else
+            echo "No wait needed."
+          fi
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
