@@ -1245,3 +1245,59 @@ footer.legal .disclaimer-line { max-width: 640px; margin: 0 auto 4px; padding: 0
 /* "Checked Nov 2026" on lesson and module cards */
 .badge.checked { --c: var(--green); --ci: var(--green-ink); }
 """
+
+CSS += """
+/* ---- The book as web pages (Butch 2026-11-23) ---- */
+.book-col .book-head { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; align-items: start; margin-top: 16px; }
+.book-col .book-head .book-cover { width: 150px; height: auto; border-radius: 6px; box-shadow: var(--shadow); }
+.book-col .book-head h1 { margin: 2px 0 6px; }
+.book-col .book-head p { margin: 0 0 10px; }
+@media (max-width: 640px) { .book-col .book-head { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; } .book-col .book-head .book-cover { width: 96px; } }
+.book-part { margin-top: 22px; scroll-margin-top: 56px; }
+.book-part h3 { margin: 0; }
+.book-part > p { margin: 2px 0 8px; }
+.book-toc { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.book-toc a { display: flex; flex-direction: column; gap: 2px; padding: 11px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.book-toc a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
+.book-toc .muted { font-size: 14px; }
+.book-toc b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
+.book-text { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.book-text h2 { font-size: 1.18rem; margin: 26px 0 8px; scroll-margin-top: 56px; }
+.book-text h2::after { display: none; }
+.book-text .book-box { margin: 16px 0; padding: 12px 16px; background: color-mix(in srgb, var(--gold) 10%, var(--surface)); border: 1px solid var(--line); border-left: 4px solid var(--gold-ink); }
+.book-text .book-box p { margin: 0; }
+.book-text .table-wrap { overflow-x: auto; margin: 14px 0; }
+.book-text table { font-size: 14.5px; min-width: 520px; }
+.book-text th, .book-text td { text-align: left !important; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); hyphens: auto; }
+.book-text th { font-family: var(--font-display); font-weight: 700; background: color-mix(in srgb, var(--navy) 8%, var(--surface)); }
+.book-text ul.refs { padding-left: 20px; }
+.book-text ul.refs li { text-align: left; margin: 4px 0; }
+.book-text ol, .book-text ul { padding-left: 24px; }
+.book-text li { margin: 5px 0; }
+.book-steps { margin-top: 20px; }
+"""
+
+CSS += """
+.book-col .book-head p, .book-part > p, .book-col .note { text-align: left !important; }
+/* phones: each table row becomes a small card, column name above each value */
+@media (max-width: 640px) {
+  .book-text table { min-width: 0; border: 0; box-shadow: none; background: transparent; }
+  .book-text thead { display: none; }
+  .book-text table, .book-text tbody, .book-text tr, .book-text td { display: block; width: 100%; }
+  .book-text tr { margin: 0 0 10px; background: var(--surface); border: 1px solid var(--line); }
+  .book-text td { border: 0; padding: 6px 12px; }
+  .book-text td + td { border-top: 1px dashed var(--line); }
+  .book-text td::before { content: attr(data-label); display: block; font: 700 12.5px var(--font-display); letter-spacing: .03em; color: var(--muted); text-transform: uppercase; }
+  .book-text td:first-child { font-weight: 600; }
+}
+"""
+
+CSS += """
+.book-text td, .book-text td:last-child { white-space: normal; color: var(--text); font-variant-numeric: normal; overflow-wrap: break-word; }
+.book-text td { hyphens: manual; }
+.book-text table { box-sizing: border-box; }
+@media (max-width: 640px) { .book-text td { box-sizing: border-box; } }
+.crumbs li { margin: 0; padding: 0; }
+.crumbs a, .crumbs span { padding: 0 !important; font-size: inherit !important; white-space: normal; background: none; border: 0; }
+.crumbs ol { align-items: baseline; }
+"""

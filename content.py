@@ -264,7 +264,7 @@ TERMS = {
             "will check it and correct it.",
         ]),
         ("6. Copyright", [
-            "The writing, pictures and the ALTOS book preview on this Website belong to Ambrosio U. Mahinay "
+            "The writing, pictures and the ALTOS book on this Website belong to Ambrosio U. Mahinay "
             "unless stated otherwise. You may quote short parts with a link back to the page. Please don't "
             "copy or republish whole posts, notes or book pages without written permission.",
             "The example code in the Python tutorials is there for you to learn from: you are welcome to use "
@@ -298,7 +298,7 @@ DISCLAIMER = {
     "effective": "November 23, 2026",
     "intro": (
         "Everything on aumahinay.dev, including the blog posts, study notes, tutorials, the RPT calculator, "
-        "the ALTOS demo and the book preview, is written and built by Ambrosio U. Mahinay in his personal "
+        "the ALTOS demo and the book, is written and built by Ambrosio U. Mahinay in his personal "
         "capacity, outside official working hours, for learning and general information."
     ),
     "sections": [
