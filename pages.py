@@ -99,7 +99,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
-MENU = NAV[:2] + [(RPT_URL, "RPT Calculator")] + NAV[2:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
+MENU = NAV[:2] + [(RPT_URL, "RPT Calculator"), ("/projects/altos-book/", "The ALTOS Book")] + NAV[2:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
 
 
 def menu_items():
@@ -107,6 +107,36 @@ def menu_items():
     empty hub page (AdSense "under construction" risk, Butch's audit 2026-11-10). The hourly build adds it on
     the first note's publish time."""
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
+
+
+CHEVRON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>')
+
+
+def top_items():
+    """Menu across the top on computers, as in Butch's chosen pattern file aumahinay_dev_homepage_preview
+    (Butch 2026-11-23): Home, Free Tools (drop-down), Tutorials, Study Notes & Book, Blog, About, Contact.
+    Each entry is (href, label) or (label, [(href, label), ...]) for a drop-down. Phones keep the three-bar menu."""
+    books = [("/study-notes/", "Study Notes")] if live_notes() else []
+    books.append((BOOK_URL, "The ALTOS Book"))
+    return [("/", "Home"),
+            ("Free Tools", [(RPT_URL, "Real Property Tax Calculator"), (DEMO_URL, "ALTOS Browser Demo")]),
+            ("/tutorials/", "Tutorials"),
+            ("Study Notes & Book", books) if len(books) > 1 else (BOOK_URL, "Book"),
+            ("/blog/", "Blog"), ("/about/", "About"), ("/contact/", "Contact")]
+
+
+def top_nav(active):
+    out = []
+    for a, b in top_items():
+        if isinstance(b, list):
+            here = any(href == active for href, _ in b)
+            out.append(t.div(
+                t.button(a, CHEVRON, type="button", class_="drop-btn" + (" active" if here else ""), aria_haspopup="true"),
+                t.div([t.a(label, href=href, aria_current="page" if href == active else None) for href, label in b], class_="drop"),
+                class_="top-drop"))
+        else:
+            out.append(t.a(b, href=a, class_="active" if a == active else None, aria_current="page" if a == active else None))
+    return t.nav(out, class_="top-nav", aria_label="Top menu")
 
 
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg>')  # bars long, medium, short, left-aligned (Butch 2026-11-14)
@@ -268,6 +298,10 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
         t.body(
             t.header(
                 t.div(
+                    # name and tagline at the left of the top bar, as in the downloaded pattern (Butch 2026-11-23)
+                    t.a(t.span(SITE["short_name"], class_="bn"), t.span(SITE["tagline_short"], class_="bt"),
+                        href="/", class_="brand-line", aria_label=f"{SITE['short_name']}, home"),
+                    top_nav(active),
                     t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
                              aria_controls="site-menu", aria_expanded="false"),
                     t.nav(
@@ -281,21 +315,27 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             ),
             t.main(t.div(body, class_="wrap")),
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
+            # footer: the disclaimer in a box, then the copyright and policy links (Butch 2026-11-23, downloaded pattern)
             t.footer(t.div(
-                           # short disclaimer on every page (Butch 2026-11-23, AdSense blueprint); full text on /disclaimer/
-                           t.p("Written in a personal capacity, outside official working hours, for learning only. "
-                               "Not an official issuance or legal advice, and not endorsed by any government office.",
-                               class_="disclaimer-line"),
-                           t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
-                                  " · ",
-                                  t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
-                                  " · ",
-                                  t.a("Disclaimer", href="/disclaimer/", aria_current="page" if active == "/disclaimer/" else None),
-                                  class_="legal-links"),
-                           t.span("Built in Python", class_="built"),  # below the Privacy Policy line (Butch 2026-11-12)
+                           t.p(t.b("Disclaimer: "), "Everything on ", t.b(SITE["domain"]), ", including the book, "
+                               "articles, calculator, code and study notes, is written by Ambrosio U. Mahinay in his "
+                               "personal capacity, outside official working hours, for learning and information only. "
+                               "It is not an official issuance, legal or tax advice, or a formal tax assessment, and it "
+                               "is not endorsed by any local government, the Bureau of Local Government Finance, the "
+                               "Commission on Audit or any other government office. For official transactions, ask "
+                               "your local treasurer's office. ", t.a("Full disclaimer", href="/disclaimer/"),
+                               class_="disclaimer-box"),
+                           t.div(
+                               t.span(f"© {ph_today()[:4]} Ambrosio U. Mahinay", class_="copy"),
+                               t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+                                      t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
+                                      t.a("Disclaimer", href="/disclaimer/", aria_current="page" if active == "/disclaimer/" else None),
+                                      t.span("Built in Python", class_="built"),
+                                      class_="legal-links"),
+                               class_="foot-row"),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/", "/disclaimer/")]))),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/", "/disclaimer/", "/projects/altos-book/")]))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
@@ -404,6 +444,20 @@ def section_head(title, link_text, href):
     return t.div(t.h2(title), t.a(f"{link_text} →", href=href, class_="more"), class_="section-head")
 
 
+def kicked(kicker, head):
+    """Small orange label above a section heading (Butch 2026-11-23, downloaded pattern)."""
+    return t.div(t.p(kicker, class_="eyebrow"), head, class_="kick")
+
+
+HERO_ART = Raw(
+    '<div class="home-art" aria-hidden="true"><div class="art-in">'
+    '<div class="art-bars"><span class="peso">₱</span><i></i><i></i><i></i></div>'
+    '<div class="art-doc"><i></i><i></i><i></i><i></i></div><span class="art-arrow">→</span>'
+    '<div class="art-code"><span class="dots"><i></i><i></i><i></i></span>'
+    '<pre><b>def</b> <em>compute_rpt</em>(av):\n    basic = av * <u>0.01</u>\n    sef = av * <u>0.01</u>\n    <b>return</b> basic + sef</pre>'
+    '</div></div></div>')
+
+
 ESSENTIAL_GUIDES = ["how-to-use-the-rpt-calculator", "year-end-in-the-treasury", "why-i-built-altos"]
 
 
@@ -426,28 +480,30 @@ def home():
     }
     return part(
         "Home", "/",
+        # hero as in the downloaded desktop/phone pattern (Butch 2026-11-23): words at the left, two buttons,
+        # a small treasury-and-code picture at the right (below the words on phones)
         t.div(
             t.div(
-                t.div(t.h1(t.span("Where ", t.span("public finance", class_="k1"), class_="l1"), " ", t.span("meets ", t.span("Python", class_="k2"), class_="l2")), class_="hero-name"),
+                t.p("Public finance & civic tech", class_="eyebrow"),
+                t.h1("Where public finance meets Python"),
                 t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
                     "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
                     "and notes from building ALTOS. Everything here, this website included, is the work of a "
                     "treasury worker who builds software and websites.",
                     class_="lead"),
                 t.div(
-                    t.a("ALTOS Demo", href=DEMO_URL, class_="btn ghost"),
-                    t.a("RPT Calculator", href=RPT_URL, class_="btn ghost"),
-                    t.a("Tutorials", href="/tutorials/", class_="btn ghost"),
-                    t.a("Blog", href="/blog/", class_="btn ghost"),
+                    t.a("Open RPT Calculator →", href=RPT_URL, class_="btn blue"),
+                    t.a("Explore ALTOS", href=ALTOS_URL, class_="btn outline"),
                     class_="btns",
                 ),
-                class_="hero-text",
+                class_="home-copy",
             ),
-            class_="hero",
+            HERO_ART,
+            class_="home-hero",
         ),
         # "Start here" (Butch 2026-11-23, AdSense blueprint): three ways in, replacing "What you'll find here"
         # and the separate "Free tool" box, so nothing on Home is listed twice
-        t.h2("Start here"),
+        kicked("Quick entry", t.h2("Start Here")),
         t.div(
             [
                 t.div(t.p(kicker, class_="eyebrow"), t.h3(title), t.p(text),
@@ -470,19 +526,21 @@ def home():
             ],
             class_="grid three start-here",
         ),
-        *([t.h2("Essential guides"),
+        *([kicked("Cornerstone reading", t.h2("Essential Guides")),
            t.div([t.a(t.span(category_label(p), t.span(f"{reading_minutes(p)} min read", class_="muted")),
                       t.b(p["title"]), href=post_url(p), class_="related-card") for p in guides],
                  class_="related guides")] if guides else []),
-        section_head("Latest posts", f"All {len(posts)} posts", "/blog/"),
-        t.div([post_card(b) for b in [p for p in posts if p not in guides][:4]], class_="post-list home-posts"),
-        t.h2("Browse by topic"),
+        kicked("Writing", section_head("Latest posts", f"All {len(posts)} posts", "/blog/")),
+        t.div([post_card(b) for b in [p for p in posts if p not in guides][:3]], class_="post-list home-posts"),
+        # every topic in one box, as buttons with their post counts (downloaded pattern)
         t.div(
-            [t.a(t.h3(label), t.p(topic_text.get(key, "")), t.span(f"{n} post{'s' if n != 1 else ''} →", class_="go"),
-                 href=f"/blog/#cat-{key}", class_="card focus topic") for key, label, n in topics if n],
-            class_="grid three",
+            t.div(t.div(t.h2("Browse by topic"), t.p("Each topic opens the blog with only its posts.", class_="muted")),
+                  t.span(f"{len(posts)} posts", class_="badge checked"), class_="topic-top"),
+            t.div([t.a(t.b(label), t.span(f"{n} post{'s' if n != 1 else ''} →"), href=f"/blog/#cat-{key}", class_="topic-pill",
+                       title=topic_text.get(key)) for key, label, n in topics if n], class_="topic-pills"),
+            class_="topic-box",
         ),
-        section_head(TUTORIAL["title"], "All lessons", "/tutorials/"),
+        kicked("Learn", section_head(TUTORIAL["title"], "All lessons", "/tutorials/")),
         t.div([lesson_card(x, mini=True) for x in lessons[::-1][:3]], class_="grid three"),
         *altos_section(),
         t.h2("About the author"),
@@ -835,13 +893,13 @@ def book_home():
             t.div(
                 cover_img("book-cover"),
                 t.div(
-                    t.p("The book · free to read online", class_="eyebrow"),
+                    t.p("The ALTOS principles · free to read online", class_="eyebrow"),
                     t.h1(b["title"]),
                     t.p(b["subtitle"], " · ", b["status"], class_="muted"),
                     t.p(b["blurb"]),
                     t.a("Start with Chapter 1 →", href=BOOK.chapter_url(1), class_="btn primary"),
                 ),
-                class_="book-head",
+                class_="book-head book-banner",
             ),
             t.h2("Contents"),
             [t.section(
@@ -869,6 +927,16 @@ def book_home():
     )
 
 
+def book_side(url):
+    """Every chapter in a list for the side column on computers, this one marked."""
+    rows = []
+    for u, label, title in book_pages():
+        inner = [t.span(label.replace("Chapter ", "Ch. ") if label.startswith("Chapter") else "", class_="muted"), t.b(title)]
+        rows.append(t.li(t.span(inner, aria_current="page"), class_="here") if u == url else t.li(t.a(inner, href=u)))
+    return t.nav(t.p(t.a("The book", href=BOOK_URL), class_="eyebrow"), t.ol(rows, class_="side-chapters"),
+                 class_="side-box", aria_label="Chapters")
+
+
 def book_chapter(c):
     num, name, _, _ = BOOK.part_of(c["n"])
     url = BOOK.chapter_url(c["n"])
@@ -878,22 +946,27 @@ def book_chapter(c):
     lead = BOOK.plain(next(b["r"] for b in c["blocks"] if b["t"] == "p"))
     return part(
         title, BOOK_URL,
+        # computers: chapter list at the left, the chapter at the right (downloaded book-reader pattern, Butch 2026-11-23)
         t.div(
-            book_crumbs([("The book", BOOK_URL), (f"Part {num}", BOOK_URL + f"#part-{num.lower()}"), (f"Chapter {c['n']}", None)]),
-            t.article(
-                t.p(f"Part {num} · {name}", class_="eyebrow"),
-                t.h1(title),
-                t.p("By ", t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), f" · {minutes} min read", class_="byline"),
-                t.details(t.summary("In this chapter"), t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
-                          class_="toc", open=True) if len(heads) >= 3 else "",
-                book_blocks(c["blocks"]),
-                class_="post book-text",
+            t.aside(book_side(url), class_="read-side", aria_label="Book chapters"),
+            t.div(
+                book_crumbs([("The book", BOOK_URL), (f"Part {num}", BOOK_URL + f"#part-{num.lower()}"), (f"Chapter {c['n']}", None)]),
+                t.article(
+                    t.p(f"Part {num} · {name}", class_="eyebrow"),
+                    t.h1(title),
+                    t.p("By ", t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), f" · {minutes} min read", class_="byline"),
+                    t.details(t.summary("In this chapter"), t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+                              class_="toc", open=True) if len(heads) >= 3 else "",
+                    book_blocks(c["blocks"]),
+                    class_="post book-text",
+                ),
+                book_nav(url),
+                t.p(t.a("All chapters", href=BOOK_URL), " · From ", t.em(ALTOS["book"]["title"]), ", ", ALTOS["book"]["status"], ".",
+                    class_="muted note"),
+                t.script(Raw(BOOK_TEXT_SCRIPT)),
+                class_="blog-col book-col read-main",
             ),
-            book_nav(url),
-            t.p(t.a("All chapters", href=BOOK_URL), " · From ", t.em(ALTOS["book"]["title"]), ", ", ALTOS["book"]["status"], ".",
-                class_="muted note"),
-            t.script(Raw(BOOK_TEXT_SCRIPT)),
-            class_="blog-col book-col",
+            class_="read-grid side-left",
         ),
         description=lead if len(lead) <= 160 else lead[:157].rsplit(" ", 1)[0] + "…",
         seo_title=f"{title} · 360° Accountability",
@@ -906,12 +979,16 @@ def book_back(section, url, intro):
     return part(
         section["title"], BOOK_URL,
         t.div(
-            book_crumbs([("The book", BOOK_URL), (section["title"], None)]),
-            t.article(t.p("360° Accountability", class_="eyebrow"), t.h1(section["title"]), t.p(intro, class_="lead"),
-                      book_blocks(section["blocks"]), class_="post book-text"),
-            book_nav(url),
-            t.script(Raw(BOOK_TEXT_SCRIPT)),
-            class_="blog-col book-col",
+            t.aside(book_side(url), class_="read-side", aria_label="Book chapters"),
+            t.div(
+                book_crumbs([("The book", BOOK_URL), (section["title"], None)]),
+                t.article(t.p("360° Accountability", class_="eyebrow"), t.h1(section["title"]), t.p(intro, class_="lead"),
+                          book_blocks(section["blocks"]), class_="post book-text"),
+                book_nav(url),
+                t.script(Raw(BOOK_TEXT_SCRIPT)),
+                class_="blog-col book-col read-main",
+            ),
+            class_="read-grid side-left",
         ),
         description=intro,
         seo_title=f"{section['title']} · 360° Accountability",
@@ -1376,7 +1453,7 @@ def post_contents(b):
     return t.details(
         t.summary("In this article"),
         t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
-        class_="toc", open=True,
+        class_="toc narrow-only", open=True,
     )
 
 
@@ -1861,19 +1938,25 @@ def post_page(b):
 
     return part(
         b["title"], "/blog/",
+        # computers: the post at the left, a side column at the right that stays in view (In this article,
+        # the series, the author), as in the downloaded desktop pattern (Butch 2026-11-23). Phones: one column, as before.
         t.div(
-            breadcrumb(b),
-            blog_post(b),
-            series_steps(b),
-            learn_series_box(b),
-            react_box(post_url(b)),
-            t.h2("About the author", class_="post-section"),
-            author_card(),
-            related_posts(b, posts, skip=(newer, older)),  # the Newer/Older links below already show those two
-            t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
-                  aria_label="More posts"),
-            t.p("Views here are my own and do not represent any government office.", class_="muted note"),
-            class_="blog-col",
+            t.div(
+                breadcrumb(b),
+                blog_post(b),
+                series_steps(b),
+                t.div(learn_series_box(b), class_="narrow-only"),
+                react_box(post_url(b)),
+                t.div(t.h2("About the author", class_="post-section"), author_card(), class_="narrow-only"),
+                related_posts(b, posts, skip=(newer, older)),  # the Newer/Older links below already show those two
+                t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
+                      aria_label="More posts"),
+                t.p("Views here are my own and do not represent any government office.", class_="muted note"),
+                class_="blog-col read-main",
+            ),
+            t.aside(side_contents([x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "h"], "In this article"),
+                    learn_series_box(b), side_author(), class_="read-side", aria_label="About this post"),
+            class_="read-grid",
         ),
         description=b.get("description") or b.get("summary") or post_teaser(b),
         url=post_url(b),
@@ -1881,6 +1964,26 @@ def post_page(b):
         json_ld=[article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
                             post_day(b), post_photo(b)), breadcrumb_ld(b)],
         share_image=card_for(post_photo(b)) if post_photo(b) else None,  # link previews show the post's own picture
+    )
+
+
+def side_contents(heads, label):
+    """'In this article' list for the side column on computers (four or more headings)."""
+    if len(heads) < 4:
+        return ""
+    return t.nav(t.p(label, class_="eyebrow"), t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+                 class_="side-box side-toc", aria_label=label)
+
+
+def side_author():
+    """Short author box for the side column on computers; phones get the full author card under the post."""
+    return t.div(
+        t.p("About the author", class_="eyebrow"),
+        t.p(t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), class_="side-name"),
+        t.p("Over 15 years in government service, more than 13 of them in local treasury work in Quezon Province. "
+            "He writes, teaches and builds software in his personal capacity, outside official working hours."),
+        t.p(t.a("Full profile →", href="/about/")),
+        class_="side-box side-author",
     )
 
 
