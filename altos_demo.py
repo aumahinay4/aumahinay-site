@@ -102,9 +102,9 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;color:#1d2433;background:#f3f6fc;line-height:1.45}
 h1,h2,h3,label,th,button,.btn,.badge,.pill,.side,.tab,.total,.banner h1,.banner .pos{font-family:"Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 a{color:#1a56c4}
-.demo-bar{background:#fff;color:#1b1b1b;border-bottom:1px solid #dfe3ec;font:600 14px/1.35 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:7px 14px;display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
+.demo-bar{background:#f2c230;color:#1b1b1b;border-bottom:1px solid #d9a91a;font:600 14px/1.35 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:7px 14px;display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap}
 .demo-bar b{font-weight:800;letter-spacing:.04em}
-.demo-bar,.demotag{text-decoration:none;cursor:pointer}.demo-bar:hover,.demotag:hover{background:#f4f6fb}
+.demo-bar,.demotag{text-decoration:none;cursor:pointer}.demo-bar:hover,.demotag:hover{background:#ffd54a}
 /* sign-in page, with role buttons instead of a username and password */
 .lg{display:flex;min-height:calc(100vh - 34px)}
 .lg .panel{flex:56;position:relative;overflow:hidden;background:linear-gradient(180deg,#17418f,#5a33a8);color:#fff;padding:40px 6.7vw;display:flex;flex-direction:column;justify-content:center}
@@ -221,7 +221,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 body.signin .demo-bar{display:none}
 body.signin .lg{min-height:100vh}
 .lg{position:relative}
-.demotag{position:absolute;top:12px;right:14px;z-index:3;background:#fff;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.demotag{position:absolute;top:12px;right:14px;z-index:3;background:#f2c230;color:#1b1b1b;font:600 12.5px/1.3 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:5px 10px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
 .demotag b{font-weight:800;letter-spacing:.04em}
 .lg .panel .dev{position:absolute;left:6.7vw;bottom:26px;margin:0}
 .lcard .steps{margin:10px 0 0;font-size:14px;color:#4a5266}.lcard .steps summary{cursor:pointer;color:#1a56c4}
@@ -360,9 +360,8 @@ def demo_page():
             t.style(Raw(CSS)),
         ),
         t.body(
-            # the whole yellow bar is the way out: tap it to go back to the ALTOS section of Home (no close mark)
-            Raw('<a class="demo-bar" href="/#altos" title="Back to ALTOS"><span><b>DEMO</b> Made-up sample data. '
-                'Not connected to any treasury. Nothing you do is saved.</span></a>'),
+            # the whole yellow bar (yellow again, Butch 2026-11-23) is the way out: tap it to go back to the ALTOS section of Home (no close mark)
+            Raw('<a class="demo-bar" href="/#altos" title="Back to ALTOS"><span><b>DEMO</b> Sample data only. Nothing is saved.</span></a>'),
             t.div(
                 # the sign-in page, also what a visitor sees before the script runs
                 Raw('<div class="lg"><a class="demotag" href="/#altos" title="Back to ALTOS"><b>DEMO</b> Sample data only. Nothing is saved.</a>'
