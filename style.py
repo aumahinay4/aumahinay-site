@@ -1655,3 +1655,26 @@ CSS += """
   html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) max(10px, env(safe-area-inset-right, 0px)) auto auto !important; }
 }
 """
+# ---- Blog list cards + footer, from Butch's mock-up (2026-11-23) ----
+CSS += """
+.post-card { border-radius: 16px; padding: 34px 40px 30px; box-shadow: 0 1px 3px rgba(15, 23, 42, .06), 0 1px 2px rgba(15, 23, 42, .04); }
+.post-card h2 { margin-top: 16px; font-weight: 800; letter-spacing: -.01em; text-wrap: pretty; }
+.post-card h2 a { color: var(--primary); font-weight: 800; }
+.post-card h2 a:hover { color: color-mix(in srgb, var(--primary) 75%, #000); }
+.post-card .teaser { margin-top: 14px; line-height: 1.65; }
+.post-card .more { margin-top: 18px; color: var(--primary); font-weight: 700; }
+.home-posts .post-card { padding: 22px 24px; }
+footer.legal { font-size: 14.5px; }
+footer.legal .disclaimer-box { padding: 22px 28px; line-height: 1.75; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+footer.legal .legal-links { gap: 6px 26px; }
+footer.legal .legal-links a { font-weight: 400; }
+@media (max-width: 640px) {
+  .post-card { padding: 22px 20px 20px; }
+  footer.legal { font-size: 13.5px; }
+  footer.legal .disclaimer-box { padding: 16px 16px; line-height: 1.65; }
+}
+"""
+CSS += """
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .post-card h2 a, :root:not([data-theme="light"]) .post-card .more { color: var(--blue-ink); } }
+:root[data-theme="dark"] .post-card h2 a, :root[data-theme="dark"] .post-card .more { color: var(--blue-ink); }
+"""

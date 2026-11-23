@@ -346,13 +346,15 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
             # footer: the disclaimer in a box, then the copyright and policy links (Butch 2026-11-23, downloaded pattern)
             t.footer(t.div(
-                           t.p(t.b("Disclaimer: "), "Everything on ", t.b(SITE["domain"]), ", including the book, "
-                               "articles, calculator, code and study notes, is written by Ambrosio U. Mahinay in his "
-                               "personal capacity, outside official working hours, for learning and information only. "
-                               "It is not an official issuance, legal or tax advice, or a formal tax assessment, and it "
-                               "is not endorsed by any local government, the Bureau of Local Government Finance, the "
-                               "Commission on Audit or any other government office. For official transactions, ask "
-                               "your local treasurer's office. ", t.a("Full disclaimer", href="/disclaimer/"),
+                           t.p(t.b("Disclaimer: "), "All book chapters, articles, calculators, code samples and study notes on ",
+                               t.b(SITE["domain"]), " are written and published by Ambrosio U. Mahinay strictly in his "
+                               "personal capacity, outside official working hours, for educational and informational "
+                               "purposes. Content reflects the personal views and independent technical work of the "
+                               "author and does not constitute an official government issuance, legal advice, a formal "
+                               "tax assessment, or an endorsement by any Local Government Unit (LGU), the Bureau of Local "
+                               "Government Finance (BLGF), the Commission on Audit (COA) or any government agency. "
+                               "Always consult your local treasurer's office or qualified professionals for official "
+                               "transactions. ", t.a("Full disclaimer", href="/disclaimer/"),
                                class_="disclaimer-box"),
                            t.div(
                                t.span(f"© {ph_today()[:4]} Ambrosio U. Mahinay", class_="copy"),
