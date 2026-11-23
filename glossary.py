@@ -38,7 +38,7 @@ GLOSSARY = [
                  "Python (the standard library, such as csv, decimal and sqlite3). Others, such as pandas, "
                  "openpyxl, pytest and Flask, are installed separately with pip.",
         "why": "You do not have to write your own Excel writer or CSV reader. A library gives you a tool that "
-               "thousands of people already use, so you can spend your time on the treasury rules instead.",
+               "is already written and tested, so you can spend your time on the treasury rules instead.",
         "code": "import pandas",
         "label": "If a library is not installed yet",
         "output": "ModuleNotFoundError: No module named 'pandas'",
@@ -82,8 +82,8 @@ GLOSSARY = [
         "lesson": 1,
         "means": "One file of ready-made code that you bring into your script with import. A library is "
                  "usually made of one or more modules.",
-        "why": "Modules that come with Python cover most everyday office work: csv reads files, decimal keeps "
-               "peso amounts exact, datetime works with dates, and sqlite3 keeps a database.",
+        "why": "Python comes with many modules ready to use, with nothing to install: csv reads files, decimal "
+               "keeps peso amounts exact, datetime works with dates, and sqlite3 keeps a database.",
         "code": "from datetime import date\n\ncollected = date(2026, 11, 2)\ndeposited = date(2026, 11, 3)\n"
                 "print((deposited - collected).days, \"day(s) from collection to deposit\")",
         "output": "1 day(s) from collection to deposit",
@@ -94,9 +94,9 @@ GLOSSARY = [
         "means": "Comma-separated values: a table saved as plain text, one row per line, with commas between "
                  "the columns. The first line usually holds the column names. A value that has a comma "
                  "inside it is wrapped in double quotes.",
-        "why": "Excel, Google Sheets and most office systems can save or export a CSV, and Python reads it "
-               "without installing anything. That makes it the easiest way to move collections data from "
-               "one system into a script.",
+        "why": "Excel and Google Sheets can both save a sheet as a CSV file, and Python reads it without "
+               "installing anything. That makes it a simple way to move collections data from a spreadsheet "
+               "into a script.",
         "code": "or_number,date,payor,fund,amount\n7650101,2026-11-02,\"Santos Bakery, Inc.\",General Fund,4500.00\n"
                 "7650102,2026-11-02,Juan Dela Cruz,General Fund,1250.75",
         "label": "collections.csv",
@@ -106,7 +106,7 @@ GLOSSARY = [
     {
         "term": "Dictionary",
         "lesson": 1,
-        "means": "A set of pairs, each a key and a value, written with braces: {\"General Fund\": 4500}. You "
+        "means": "A collection of pairs, each a key and a value, written with braces: {\"General Fund\": 4500}. You "
                  "look a value up by its key. Each key appears only once.",
         "why": "A dictionary is a ready lookup table, such as which fund each kind of collection goes to, or a "
                "running total for each fund while a script reads the day's receipts.",
@@ -121,7 +121,7 @@ GLOSSARY = [
         "term": "Decimal",
         "lesson": 1,
         "means": "A number type from Python's decimal module that stores amounts exactly as written, centavo "
-                 "for centavo. Ordinary decimal numbers in Python (called float) are stored in binary and "
+                 "for centavo. Ordinary numbers with a decimal point (called float) are stored in binary and "
                  "cannot hold most centavo amounts exactly.",
         "why": "Totals, penalties and reports must agree to the centavo. With float, tiny errors build up as "
                "amounts are added and can show up as a centavo difference. Decimal avoids that.",
@@ -134,8 +134,8 @@ GLOSSARY = [
         "term": "f-string",
         "lesson": 1,
         "means": "Text that starts with the letter f and fills in values written inside braces. After a colon "
-                 "you can say how the value should look: ,.2f means thousands separators and two decimal "
-                 "places.",
+                 "you can say how the value should look: ,.2f means a comma between the thousands "
+                 "and two decimal places.",
         "why": "It is how a script prints amounts the way a report shows them, such as 21,986.15, and lines "
                "up columns so a printed summary is easy to check.",
         "code": "from decimal import Decimal\n\ntotal = Decimal(\"21986.15\")\nprint(f\"Total collections: {total:,.2f}\")",
@@ -187,7 +187,7 @@ GLOSSARY = [
                 "    \"amount\": [4500.00, 1250.75, 105.00],\n})\n"
                 "print(df.groupby(\"fund\")[\"amount\"].sum().to_string())",
         "output": "fund\nGeneral Fund              4605.00\nSpecial Education Fund    1250.75",
-        "after": "pandas uses float for amounts, so round its results to two decimals before you put them in a "
+        "after": "pandas reads amounts as float, so round its results to two decimals before you put them in a "
                  "report.",
     },
     {
@@ -195,7 +195,7 @@ GLOSSARY = [
         "lesson": 5,
         "means": "A short fingerprint worked out from some data. The same data always gives the same "
                  "fingerprint, but change even one character and the fingerprint changes completely. "
-                 "SHA-256, used in Lesson 5, gives a fingerprint 64 characters long.",
+                 "SHA-256, used in Lesson 5, gives a fingerprint written as 64 characters.",
         "why": "Keep the hash of a file when you submit it. Later, hash the file again: if the two do not "
                "match, the file was changed after it was submitted.",
         "code": "import hashlib\n\nfor text in [\"OR 7650101 4500.00\", \"OR 7650101 4600.00\"]:\n"
@@ -224,8 +224,8 @@ GLOSSARY = [
         "lesson": 6,
         "means": "An Excel file (.xlsx). It holds one or more sheets, which the openpyxl library calls "
                  "worksheets. A new workbook starts with one sheet named Sheet.",
-        "why": "Most offices still pass reports around in Excel. A script that writes a workbook gives the "
-               "same tidy report every day, with no copying and pasting.",
+        "why": "A script that writes a workbook gives the same tidy report every day, with no copying and "
+               "pasting, and anyone with Excel can open it.",
         "code": "from openpyxl import Workbook\n\nwb = Workbook()\nws = wb.active\nws.title = \"Collections\"\n"
                 "ws.append([\"OR number\", \"Payor\", \"Amount\"])\nws.append([7650101, \"Santos Bakery\", 4500.00])\n"
                 "print(wb.sheetnames, ws.max_row, \"rows\")",
@@ -320,7 +320,7 @@ GLOSSARY = [
         "lesson": 9,
         "means": "A small function that runs your code with an input whose answer you already know, and "
                  "checks that the code gives that answer. pytest finds every function whose name starts "
-                 "with test_ and runs them all at once.",
+                 "with test_, in files whose names start with test_, and runs them all at once.",
         "why": "Treasury rules have edge cases, such as a cap on months or a rounding rule. Tests check those "
                "cases every time you change the code, so a mistake is caught on your computer, not in an "
                "official computation.",
@@ -349,8 +349,8 @@ GLOSSARY = [
         "lesson": 10,
         "means": "A program that answers requests from a web browser with web pages. Flask is a small library "
                  "for writing one in Python. While you practise, it runs only on your own computer.",
-        "why": "A web page lets others in the office see the day's collections in their browser, without "
-               "running a script or opening a file themselves.",
+        "why": "A web page shows the day's collections in a browser, which is easier to read than a script's "
+               "printout. Sharing it with the whole office takes more setup and your IT office's approval.",
         "code": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef home():\n"
                 "    return \"<h1>Collections today</h1>\"\n\n"
                 "print(app.test_client().get(\"/\").get_data(as_text=True))",
