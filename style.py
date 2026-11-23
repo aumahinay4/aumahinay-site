@@ -1685,3 +1685,12 @@ CSS += """
   html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(10px, env(safe-area-inset-left, 0px)) !important; }
 }
 """
+# ---- Tight top row: menu button nearly touching "Butch Mahinay" (Butch 2026-11-24) ----
+CSS += """
+@media (max-width: 1024px) {
+  header.site .wrap { gap: 0 6px; padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }
+  html.menu-js .menu-btn { margin: 3px 0 0 0; }
+  header.site .brand-line { padding: 8px 0 7px; }
+  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(6px, env(safe-area-inset-left, 0px)) !important; }
+}
+"""
