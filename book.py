@@ -57,3 +57,38 @@ def words(section):
         for r in ([b["r"]] if "r" in b else []) + b.get("items", []) + [c for row in b.get("rows", []) for c in row]:
             total += len(plain(r).split())
     return total
+
+
+# About the Author, from the book's page 79 (Butch 2026-11-23: "Just add the author"), matched to the About page:
+# no municipality named, eligibility years as on the About page, all seven Google certificates.
+AUTHOR_URL = f"{BOOK_BASE}about-the-author/"
+
+
+def _p(*runs):
+    return {"t": "p", "r": [list(r) if isinstance(r, tuple) else ["", r] for r in runs]}
+
+
+AUTHOR = {"title": "About the Author", "blocks": [
+    _p("Ambrosio “Butch” U. Mahinay, MPA, works in the local treasury service of Quezon Province, with more than 15 "
+       "years in government service, over 13 of them in public finance. He has been designated Acting Municipal "
+       "Treasurer of municipalities in Quezon (2020–2022, and since September 2024). Outside official working hours "
+       "he designed and built ALTOS, the Automated Local Treasury Operations System."),
+    _p(("b", "Treasury career. "), "Administrative Assistant II (Disbursing Officer II), Office of the Provincial "
+       "Treasurer (2013–2019); Local Revenue Collection Officer III (2019 to the present); designated Acting "
+       "Municipal Treasurer (2020–2022, and since September 2024)."),
+    _p(("b", "Education. "), "Master in Public Administration (2014) and Bachelor of Science in Public Administration "
+       "(2008), Manuel S. Enverga University Foundation; Computer System Design and Programming, AMA Computer "
+       "Learning Center (2000)."),
+    _p(("b", "Teaching. "), "Part-time lecturer, Manuel S. Enverga University Foundation, Catanauan (2010)."),
+    _p(("b", "Eligibility. "), "Career Service Professional (2012); Basic Competency on Local Treasury Examination "
+       "(2018); Intermediate Competency on Local Treasury Examination (2019)."),
+    _p(("b", "Google Professional Certificates. "), "Cybersecurity, Project Management, Data Analytics, Advanced Data "
+       "Analytics, Business Intelligence, AI and IT Support (2025–2026)."),
+    _p(("b", "Public finance training. "), "Bureau of Local Government Finance programs on local revenue forecasting "
+       "and resource mobilization, devolution transition planning, property tax, local fees and charges, integrity "
+       "in local government, treasury and assessment service excellence, and revenue target setting; Department of "
+       "Information and Communications Technology (DICT) training for users of the electronic Business Permits and "
+       "Licensing System (eBPLS); Civil Service Institute financial education; data privacy orientation."),
+    _p(("b", "Organizations. "), "Member, Philippine Association of Local Treasurers and Assessors (PHALTRA); Vice "
+       "President, UNIKA sa Quezon (2019–2025)."),
+]}

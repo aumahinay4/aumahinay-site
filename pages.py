@@ -810,7 +810,8 @@ def book_blocks(blocks):
 def book_pages():
     """Every web page of the book in reading order: (url, label, title)."""
     pages = [(BOOK.chapter_url(c["n"]), f"Chapter {c['n']}", c["title"]) for c in BOOK.CHAPTERS]
-    return pages + [(BOOK.GLOSSARY_URL, "Glossary", "Glossary"), (BOOK.REFERENCES_URL, "References", "References")]
+    return pages + [(BOOK.GLOSSARY_URL, "Glossary", "Glossary"), (BOOK.REFERENCES_URL, "References", "References"),
+                    (BOOK.AUTHOR_URL, "About the Author", "About the Author")]
 
 
 def book_nav(url):
@@ -860,6 +861,7 @@ def book_home():
              for num, name, sub, rng in BOOK.PARTS],
             t.section(t.h3("At the back of the book"),
                       t.ol(t.li(t.a(t.b("Glossary"), href=BOOK.GLOSSARY_URL)), t.li(t.a(t.b("References"), href=BOOK.REFERENCES_URL)),
+                           t.li(t.a(t.b("About the Author"), href=BOOK.AUTHOR_URL)),
                            class_="book-toc"), class_="book-part"),
             t.p("Read online only: the book cannot be downloaded, printed or copied. Please quote short parts with a link back. "
                 "Laws and circulars change: confirm the current text before relying on any rule described here.",
@@ -2405,6 +2407,8 @@ ROUTES[BOOK.GLOSSARY_URL] = _full_page(lambda: book_back(BOOK.GLOSSARY, BOOK.GLO
     "The terms used in 360° Accountability, from accountable forms to the Seal of Good Local Governance."))
 ROUTES[BOOK.REFERENCES_URL] = _full_page(lambda: book_back(BOOK.REFERENCES, BOOK.REFERENCES_URL,
     "The books, articles, laws and issuances behind 360° Accountability."))
+ROUTES[BOOK.AUTHOR_URL] = _full_page(lambda: book_back(BOOK.AUTHOR, BOOK.AUTHOR_URL,
+    "Who wrote 360° Accountability, and the work and study behind it."))
 ROUTES[SERIES_URL] = _full_page(series_page)
 ROUTES[DEMO_URL] = demo_page  # a whole page of its own: no site layout, so no ads on the demo
 # one page per published lesson; scheduled lessons appear on their publish_on date
