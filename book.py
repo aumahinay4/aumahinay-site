@@ -76,7 +76,7 @@ AUTHOR = {"title": "About the Author", "blocks": [
        "working hours he designed and built ALTOS, the Automated Local Treasury Operations System."),
     # Exams passed (Butch 2026-11-24: "add ... all examinations that the author have passed"). Names and years
     # only, never ratings; names as printed on his CSC certificates.
-    _p("He has passed three Civil Service Commission examinations:"),
+    _p("He has passed three government examinations:"),
     {"t": "ul", "items": [
         [["", "Intermediate Competency on Local Treasury Examination (ICLTE), 2018"]],
         [["", "Basic Competency on Local Treasury Examination (BCLTE), 2017"]],
