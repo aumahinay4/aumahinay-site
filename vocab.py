@@ -1,6 +1,7 @@
-"""Civil Service Exam Vocabulary: a second tutorial series on /tutorials/civil-service-vocabulary/.
+"""English Exam Vocabulary: a second tutorial series on /tutorials/english-exam-vocabulary/.
+(Renamed from its first title on 2026-11-24, Butch: keep the site free of any tie to one exam agency.)
 
-Based on Butch's Google Doc "Civil Service Exam Vocabulary Masterclass" (2026-11-07),
+Based on Butch's vocabulary Google Doc (2026-11-07),
 edited: plainer meanings, real example sentences, accurate government context, and
 exam-style practice questions with answers behind "Show answer".
 
@@ -11,20 +12,20 @@ Meanings were checked against Merriam-Webster (linked on each word).
 """
 
 VOCAB = {
-    "title": "Civil Service Exam Vocabulary",
-    "slug": "civil-service-vocabulary",
+    "title": "English Exam Vocabulary",
+    "slug": "english-exam-vocabulary",
     "intro": (
-        "Ten words at a time for the Career Service Examination (Professional and Subprofessional). "
-        "The exam's verbal part tests vocabulary, analogies and how words are used in a sentence, so each "
+        "Ten words at a time to help you prepare for the English part of written exams. Vocabulary tests often ask for a "
+        "word's meaning, its synonyms and antonyms, analogies and how the word is used in a sentence, so each "
         "word comes with a plain meaning, an example from government work, words that mean the same "
-        "and the opposite, and practice questions in the exam's style."
+        "and the opposite, and practice questions in that style."
     ),
     "note": (
-        "I earned my Career Service Professional eligibility in 2012 and have spent more than 15 years in "
-        "government service. These are study notes, not official exam material: for the exam schedule, rules and "
-        "coverage, always check the Civil Service Commission."
+        "These are independent study notes written from more than 15 years of government work. They are not "
+        "official material of any exam or office, they do not contain actual exam questions, and they do not "
+        "guarantee any exam result. For an exam's schedule, rules and coverage, always check the office that "
+        "gives it."
     ),
-    "csc_url": "https://csc.gov.ph/",
 }
 
 MODULES = [
@@ -1067,9 +1068,9 @@ MODULES = [
              "Careful: \"inhabitable\" also means livable. It is NOT the opposite of habitable."),
             ("habitual", "adjective",
              "Done often or regularly, as a habit.",
-             "Habitual tardiness is an offense under the civil service rules.",
+             "Habitual tardiness can lead to a written warning from the office.",
              ["regular", "frequent", "customary"], ["occasional", "rare", "infrequent"],
-             "The Civil Service Commission defines habitual tardiness and habitual absenteeism by the number of "
+             "Office rules usually count habitual tardiness and habitual absenteeism by the number of "
              "times they happen in a set period."),
             ("hackneyed", "adjective",
              "Used so often that it has lost its freshness or effect; overused.",

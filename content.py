@@ -35,7 +35,7 @@ ABOUT = {
     "paragraphs": [
         (
             "Through aumahinay.dev, I write about public finance workflows, publish educational "
-            "tutorials on civil service and treasury competencies, build practical software utilities "
+            "tutorials on English vocabulary and treasury competencies, build practical software utilities "
             "using Python and modern web technologies, and share reflections from my three-hectare "
             "fruit farm in Quezon."
         ),
@@ -114,7 +114,7 @@ ABOUT = {
     "writing": (
         "I publish articles on aumahinay.dev and produce English-language educational "
         "topics covering public administration, Real Property Tax compliance, local treasury operations, "
-        "and Python automation for public finance learners and civil service examinees."
+        "and Python automation for public finance learners and exam takers."
     ),
     "beyond": (
         "When I am not writing code or reviewing public finance frameworks, I take time whenever my "
@@ -127,11 +127,11 @@ ABOUT = {
     "disclaimer": (
         "All articles, tutorials, books, and software architectures published on aumahinay.dev are "
         "created strictly in the author's personal and independent capacity outside of official "
-        "government hours and without the use of government resources. Academic credentials, civil "
-        "service eligibilities, and career history are provided solely for biographical context. "
+        "government hours and without the use of government resources. Academic credentials, "
+        "eligibilities, and career history are provided solely for biographical context. "
         "Nothing on this website represents the official views, policies, or endorsements of the "
-        "Provincial Government of Quezon, the Department of Finance (BLGF), the Civil Service "
-        "Commission (CSC), or any local government unit."
+        "Provincial Government of Quezon, the Department of Finance (BLGF), any other "
+        "national government agency, or any local government unit."
     ),
 }
 
@@ -249,8 +249,8 @@ TERMS = {
         ]),
         ("3. Exam Reviewers and Study Notes", [
             "The vocabulary modules and study notes are independent material written by the author. They are "
-            "not official materials of the Civil Service Commission, the Bureau of Local Government Finance or "
-            "any other office, they do not contain actual exam questions, and they do not guarantee any exam "
+            "not official materials of the Bureau of Local Government Finance or any other "
+            "office, they do not contain actual exam questions, and they do not guarantee any exam "
             "result.",
         ]),
         ("4. Personal Capacity", [

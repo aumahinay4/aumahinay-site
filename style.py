@@ -315,8 +315,8 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 .family { margin-top: 36px; }
 #altos { scroll-margin-top: 80px; }
 #blog-cats { scroll-margin-top: 72px; }  /* /blog/#cat-... topic links land on the category button below the sticky top bar */  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
-#civil-service-vocabulary { scroll-margin-top: 96px; }  /* Home "Practice English vocabulary" link lands with the heading below the sticky top bar */
-@media (max-width: 1024px) { #civil-service-vocabulary { scroll-margin-top: 130px; } }
+#english-exam-vocabulary { scroll-margin-top: 96px; }  /* Home "Practice English vocabulary" link lands with the heading below the sticky top bar */
+@media (max-width: 1024px) { #english-exam-vocabulary { scroll-margin-top: 130px; } }
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .node h3 { margin: 12px 0 4px; }
 .node p { margin: 10px 0 0; color: var(--muted); font-size: 15.6312px; line-height: 1.5; }
@@ -839,7 +839,7 @@ footer.site .sep { opacity: .6; }
 .disclaimer p + p { margin-top: 8px; }
 .rpt-disclaimer p { font-style: normal; }
 .policy-meta { text-align: left; }
-/* Civil Service Exam Vocabulary pages */
+/* English Exam Vocabulary pages */
 .vocab-page .card.word { margin-top: 16px; }
 .vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
 .vocab-page .card.word h2::after { display: none; }
@@ -1749,6 +1749,6 @@ CSS += """
 CSS += """
 @media (min-width: 1025px) {
   #altos, #blog-cats, .post h3[id], .book-part, .book-text h2, .glossary .term { scroll-margin-top: 96px; }
-  #civil-service-vocabulary { scroll-margin-top: 104px; }
+  #english-exam-vocabulary { scroll-margin-top: 104px; }
 }
 """

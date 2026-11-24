@@ -22,8 +22,8 @@ NOTES_INFO = {
     ),
     "disclaimer": (
         "These are independent study notes written from the law and from years of treasury work. They are "
-        "not official materials of the Bureau of Local Government Finance (BLGF), the Civil Service "
-        "Commission or any office, and they do not contain actual exam questions. Always check the law and "
+        "not official materials of the Bureau of Local Government Finance (BLGF) or any "
+        "other office, and they do not contain actual exam questions. Always check the law and "
         "your local revenue code."
     ),
     "checked": "November 2026",
