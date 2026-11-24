@@ -283,8 +283,7 @@ def _explanations():
     tax are linked, not repeated. Every example below was run in the calculator before publishing."""
     return [
         t.h2("How the calculator works it out"),
-        t.p("The calculator follows the same five steps a treasurer's office follows when it prepares a tax bill. "
-            "Knowing them helps you check your own bill."),
+        t.p("The calculator works in five steps. Knowing them helps you check your own tax bill."),
         t.ol(
             t.li(t.b("Assessed value. "), "Real property tax is charged on the assessed value, not on what the property "
                  "would sell for. Assessed value is the market value times the assessment level that the local ordinance "
@@ -296,12 +295,12 @@ def _explanations():
                  "highest rates, a property in a municipality pays 2% of its assessed value a year, and one in a city pays 3%."),
             t.li(t.b("Four equal quarters. "), "The year's tax may be paid without interest in four equal installments, "
                  "due on or before March 31, June 30, September 30 and December 31 (Sec. 250). The calculator divides "
-                 "the basic tax and the SEF by four; when a peso amount does not divide evenly, the last quarter takes "
-                 "the extra centavo."),
+                 "the basic tax and the SEF by four; if the amount does not divide evenly, the last quarter takes "
+                 "the centavos left over."),
             t.li(t.b("Discount or interest, quarter by quarter. "), "Each quarter marked \"Not paid\" is compared with the "
                  "target date of payment. Paid on or before its due date, it can earn the discount for prompt or advance "
-                 "payment, which the law caps at 20% of the tax (Sec. 251). Paid after its due date, it earns interest of 2% "
-                 "for each month or part of a month, never more than 36 months, or 72% (Sec. 255). With the built-in "
+                 "payment, which the law caps at 20% of the annual tax (Sec. 251). Paid after its due date, it earns interest of 2% "
+                 "for each month or part of a month, for at most 36 months, or 72% in all (Sec. 255). With the built-in "
                  "provincial rates, interest is counted by quarter instead: each quarter or part of a quarter late adds 6%."),
             t.li(t.b("No discount while anything is overdue. "), "The calculator gives the discount only when the property "
                  "has no delinquency: no unpaid earlier year and no quarter of this year already past due. This follows the "
@@ -315,12 +314,13 @@ def _explanations():
             t.li(t.b("Amount to pay. "), "The big figure is what you would bring to the treasurer's office on the target "
                  "date: the tax for every quarter marked \"Not paid\", less any discount or plus any interest. Quarters "
                  "marked \"Paid\" are left out."),
-            t.li(t.b("The line under the assessed value. "), "It repeats the tax year, the tax for the whole year before any "
+            t.li(t.b("The line under the assessed value. "), "It shows the tax year, the tax for the whole year before any "
                  "discount or interest, and the target date, so you can see at a glance which case you are looking at."),
             t.li(t.b("Notes in the result box. "), "When a quarter is past due, a short note says which one and why there "
                  "is interest or no discount. If the note names a quarter you have already paid, set it to \"Paid\"."),
             t.li(t.b("Quarter by quarter. "), "Each row shows one installment and its status. \"On time −10%\" means it earns "
-                 "a 10% discount. \"2 mo late +4%\" means two months or parts of months have passed since its due date. "
+                 "a 10% discount. \"2 mo late +4%\" means the quarter is two months late (a part of a month counts as a whole "
+                 "month), so 4% is added. "
                  "\"1 qtr late +6%\" is the same idea counted by quarter, under the built-in provincial rates. \"On time, "
                  "no discount\" means the quarter is not yet due, but another quarter is overdue."),
             t.li(t.b("Basic RPT and SEF columns. "), "The summary table keeps the two taxes apart because they go to "
@@ -335,7 +335,7 @@ def _explanations():
             "guide has more examples with the built-in provincial rates."),
         _example(
             "1. A lot in a city, paid in full early",
-            "In a city with 20 barangays. Assessed value ₱80,000. Basic rate 2%, SEF 1%, discount 10%. Tax year 2027, "
+            "A city with 20 barangays. Assessed value ₱80,000. Basic rate 2%, SEF 1%, discount 10%. Tax year 2027, "
             "target date February 15, 2027, all four quarters \"Not paid\".",
             ["Basic tax: ₱80,000 × 2% = ₱1,600. SEF: ₱80,000 × 1% = ₱800. Tax for the year: ₱2,400, or ₱600 a quarter.",
              "Every quarter is paid before its due date, so each one earns 10%: ₱60 off each, ₱240 in all.",
@@ -345,20 +345,20 @@ def _explanations():
             "₱2,160 to pay, ₱240 less than the full tax."),
         _example(
             "2. Two quarters left, one of them late",
-            "In a municipality, typing your own rates. Assessed value ₱40,000. Basic rate 1%, SEF 1%, discount 10%. "
+            "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%, discount 10%. "
             "Tax year 2026, Q1 and Q2 \"Paid\", Q3 and Q4 \"Not paid\", target date November 5, 2026.",
             ["Tax for the year: ₱400 basic + ₱400 SEF = ₱800, or ₱200 a quarter.",
              "Q3 was due September 30. October and part of November count as two months: 2 × 2% = 4%, or ₱8 interest.",
-             "Q4 is not due until December 31, but because Q3 is overdue there is no discount on it. It stays at ₱200.",
+             "Q4 is not due until December 31, but because Q3 is overdue, Q4 gets no discount. It stays at ₱200.",
              "Had the same two quarters been paid on September 25, both would have been on time: ₱180 each, or ₱360."],
             "₱408 to pay. Paying six weeks earlier would have saved ₱48."),
         _example(
             "3. An old year and the 36-month cap",
-            "In a municipality, typing your own rates. Assessed value ₱40,000. Basic rate 1%, SEF 1%. Tax year 2023, "
-            "all four quarters \"Not paid\", target date November 24, 2026. Every other year is paid, so the box for "
-            "earlier years stays ticked.",
+            "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%. Tax year 2023, "
+            "all four quarters \"Not paid\", target date November 24, 2026. All the other years are paid, so the box "
+            "for earlier years stays ticked.",
             ["Each quarter's tax is ₱200, and all four are late.",
-             "Q1, Q2 and Q3 of 2023 are 38 to 44 months late, but interest stops at 36 months: 72%, or ₱144 each.",
+             "Q1, Q2 and Q3 of 2023 are 44, 41 and 38 months late, but interest stops at 36 months: 72%, or ₱144 each.",
              "Q4 was due December 31, 2023, so it is 35 months late: 70%, or ₱140.",
              "Interest: ₱144 × 3 + ₱140 = ₱572 on a tax of ₱800."],
             "₱1,372 to pay. The interest has stopped growing, but the tax itself stays a lien on the property until paid."),
@@ -378,14 +378,14 @@ def _faq():
          "unpaid, or an earlier year is unpaid, the calculator treats the property as delinquent and gives no discount. "
          "Mark the quarters you have paid as \"Paid\" and tick the box if earlier years are settled."),
         ("I paid last year's tax late. Do I lose this year's discount?",
-         "Not because of that alone. Once last year is fully paid, including its interest, the property has no unpaid "
+         "In the calculator, not by itself. Once last year is fully paid, including its interest, the property has no unpaid "
          "earlier year, so leave the box for earlier years ticked."),
         ("Does interest keep growing forever?",
          "No. The law stops it at 36 months, so the most interest on any unpaid amount is 72% (Sec. 255). The unpaid tax "
-         "itself does not go away, and the local government may collect it through the remedies the law allows."),
+         "itself remains a lien on the property until paid (Sec. 257), and the local government may collect it through the remedies the law allows."),
         ("Can I pay only one quarter at a time?",
-         "Yes. The law allows four equal installments (Sec. 250). In the calculator, mark the quarters you already paid "
-         "as \"Paid\" and leave only the one you are paying now as \"Not paid\"."),
+         "Yes. The law allows four equal installments (Sec. 250). The \"Quarter by quarter\" table shows what each "
+         "quarter costs on your target date, so you can read off the one you are paying now."),
         ("Where do I find the rates for my local government?",
          "In the revenue code of the province (for a municipality) or of the city, passed by its sanggunian. The "
          "treasurer's or assessor's office can tell you the current assessment levels, basic rate and discount."),
@@ -403,16 +403,16 @@ def _read_more():
     links = []
     if post_is_live(RPT_GUIDE_URL):
         links.append(t.li(t.a("How to Use the RPT Calculator", href=RPT_GUIDE_URL),
-                          ": a step-by-step guide with the built-in provincial rates."))
+                          " walks through the calculator step by step, using the built-in provincial rates."))
     notes = {n["slug"]: n for n in live_notes()}
-    for slug, what in [("real-property-tax-basics", ": valuation, assessment levels, exemptions and appeals."),
-                       ("paying-real-property-tax", ": due dates, discounts, interest, and what happens when the tax stays unpaid.")]:
+    for slug, what in [("real-property-tax-basics", " explains valuation, assessment levels, exemptions and appeals."),
+                       ("paying-real-property-tax", " explains due dates, discounts, interest, and what happens when the tax stays unpaid.")]:
         if slug in notes:
             links.append(t.li(t.a("Study Note: " + notes[slug]["title"], href="/study-notes/%s/" % slug), what))
     try:
         import altos_guide  # noqa: F401  the ALTOS Demo Guide page, once it is added
         links.append(t.li(t.a("ALTOS Demo Guide", href="/tools/altos-demo-guide/"),
-                          ": see how a treasury system computes the same tax at the counter."))
+                          " shows how a treasury system computes the same tax at the counter."))
     except ImportError:
         pass
     if not links:
@@ -588,7 +588,7 @@ def rpt_page():
             *_faq(),
             _read_more(),
             t.p("Sources: ", t.a("Local Government Code of 1991 (RA 7160)", href=law, rel="noopener"), ", Secs. 218, 233, 235, "
-                "250, 251, 255, 271 and 272; ",
+                "250, 251, 255, 257, 271 and 272; ",
                 t.a("RA 12001", href="https://lawphil.net/statutes/repacts/ra2024/ra_12001_2024.html", rel="noopener"),
                 ", Sec. 29; built-in provincial rates from a provincial Revised Revenue Code of 2022, "
                 "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
