@@ -504,7 +504,8 @@ HERO_ART = Raw(
     '</div></div></div>')
 
 
-ESSENTIAL_GUIDES = ["how-to-use-the-rpt-calculator", "year-end-in-the-treasury", "why-i-built-altos"]
+# the three guides named in Butch's Doc "aumahinay.dev Updated Site Preview" (2026-11-24)
+ESSENTIAL_GUIDES = ["how-to-use-the-rpt-calculator", "why-i-built-altos", "altos-framework-legality-first"]
 
 
 def home():
@@ -569,7 +570,7 @@ def home():
                     ("The project", "ALTOS and the Book",
                      "The Automated Local Treasury Operations System, a browser demo with made-up data, and the "
                      "book behind it, 360° Accountability.",
-                     [("Explore ALTOS →", ALTOS_URL), ("Read the book →", BOOK_URL)]),
+                     [("Explore ALTOS →", ALTOS_URL), ("Try the demo →", DEMO_URL), ("Read the book →", BOOK_URL)]),
                 )
             ],
             class_="grid three start-here",
@@ -592,7 +593,7 @@ def home():
         t.div([lesson_card(x, mini=True) for x in lessons[::-1][:3]], class_="grid three"),
         *altos_section(),
         t.h2("About the author"),
-        author_card(),
+        author_card(contact=True),
         description="Plain-language writing on Philippine local treasury work and public finance, free Python "
                     "lessons, English exam vocabulary and a real property tax calculator.",
     )
@@ -614,7 +615,7 @@ def author_head(h1=False):
     )
 
 
-def author_card():
+def author_card(contact=False):
     """Short author box: on Home and at the end of every blog post. Matches the About page (Butch 2026-11-10:
     "be consistent"): same name, same violet roles line and the same facts, in third person ("he", Butch 2026-11-10) as the About intro."""
     return t.div(
@@ -625,7 +626,9 @@ def author_card():
             "He writes, teaches and builds software in his personal capacity, outside official working hours.",
             class_="author-bio"),
         # Contact and Privacy Policy left out: the menu and the footer already have them (Butch 2026-11-20)
-        t.p(t.a("Full profile", href="/about/"), class_="author-links"),
+        # Home also gets "Get in touch" (Butch's Doc, 2026-11-24); posts keep only Full profile
+        t.p(t.a("Full profile", href="/about/"), t.a("Get in touch", href="/contact/") if contact else None,
+            class_="author-links"),
         class_="card author",
     )
 

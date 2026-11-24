@@ -326,6 +326,14 @@ DISCLAIMER = {
              "with. How the Website may be used is covered in the ", ("Terms of Use", "/terms/"),
              ", and how ads and cookies work in the ", ("Privacy Policy", "/privacy/"), "."],
         ]),
+        ("External Links & Software Code", [
+            "Some pages may link to other websites, such as laws and government pages, for convenience. "
+            "I do not control those sites and am not responsible for their content, availability or privacy "
+            "practices; a link does not mean an endorsement.",
+            "The code samples in the tutorials are for learning. They are given as is, without any warranty, and "
+            "should be tested on copies of your files before you use them for real work. The ALTOS demo is a "
+            "browser copy that runs on made-up data; the source code of ALTOS itself is not published here.",
+        ]),
         ("Contact", [
             "If you find an error or have a question about this disclaimer, please write to me at:",
             ("contact",),
