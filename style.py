@@ -1752,3 +1752,18 @@ CSS += """
   #english-exam-vocabulary { scroll-margin-top: 104px; }
 }
 """
+# ---- ALTOS Demo Guide page /tools/altos-demo-guide/ (drafted 2026-11-24) ----
+CSS += """
+.guide-note { margin: 18px 0 8px; padding: 12px 16px; background: color-mix(in srgb, var(--gold) 14%, var(--surface)); border-left: 4px solid var(--gold); border-radius: 12px; }
+.guide-note p { margin: 0; }
+.guide ul { padding-left: 22px; }
+.guide ul li { margin: 6px 0; }
+.guide figure.guide-shot { margin: 18px 0 6px; }
+.guide figure.guide-shot.small { max-width: 440px; margin-left: auto; margin-right: auto; }
+.guide-try { margin: 10px 0 0; text-align: left !important; }
+.guide-try a { display: inline-block; font-weight: 600; padding: 7px 14px; border: 1.5px solid var(--line); border-radius: 999px; text-decoration: none; }
+.guide-try a:hover { border-color: var(--gold); }
+.guide-more { margin: 10px 0 0; text-align: left !important; font-size: .94em; color: var(--muted); }
+.guide h3 { margin: 20px 0 6px; }
+.guide h3 + p { margin-top: 0; }
+"""
