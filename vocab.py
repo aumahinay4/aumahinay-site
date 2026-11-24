@@ -15,7 +15,7 @@ VOCAB = {
     "title": "English Exam Vocabulary",
     "slug": "english-exam-vocabulary",
     "intro": (
-        "Ten words at a time for the English part of written exams. Vocabulary tests often ask for a "
+        "Ten words at a time to help you prepare for the English part of written exams. Vocabulary tests often ask for a "
         "word's meaning, its synonyms and antonyms, analogies and how the word is used in a sentence, so each "
         "word comes with a plain meaning, an example from government work, words that mean the same "
         "and the opposite, and practice questions in that style."
