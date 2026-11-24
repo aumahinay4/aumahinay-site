@@ -33,7 +33,8 @@ SHORT_LINKS = [
     ("/calculator/", "/tools/rpt-calculator/"),
     ("/demo/", "/tools/altos-demo/"),
     ("/projects/altos-demo/", "/tools/altos-demo/"),  # its address until 2026-11-24 (demo screens like #col-issue carry over)
-    ("/tutorials/civil-service-vocabulary/", "/tutorials/#civil-service-vocabulary"),
+    ("/tutorials/civil-service-vocabulary/", "/tutorials/#english-exam-vocabulary"),  # the series' first address (renamed 2026-11-24)
+    ("/tutorials/english-exam-vocabulary/", "/tutorials/#english-exam-vocabulary"),
     ("/blog/the-altos-framework-principle-1-legality-first/", "/blog/altos-framework-legality-first/"),
     ("/feed/", "/feed.xml"),
     ("/rss/", "/feed.xml"),
@@ -119,7 +120,9 @@ def build():
                                       # short or guessed addresses that used to show "Page not found" (Butch 2026-11-24)
                                       + "".join(f"{a} {b} 301\n{a.rstrip('/')} {b} 301\n" for a, b in SHORT_LINKS)
                                       # the book's own address until 2026-11-24: every chapter keeps working
-                                      + "/projects/altos-book/* /book/:splat 301\n/projects/altos-book /book/ 301\n")
+                                      + "/projects/altos-book/* /book/:splat 301\n/projects/altos-book /book/ 301\n"
+                                      # vocabulary modules' first address until 2026-11-24: every module keeps working
+                                      "/tutorials/civil-service-vocabulary/* /tutorials/english-exam-vocabulary/:splat 301\n")
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")

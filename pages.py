@@ -533,7 +533,7 @@ def home():
                 t.p("Public finance & civic tech", class_="eyebrow"),
                 t.h1("Where public finance meets Python"),
                 t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
-                    "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
+                    "for treasury staff and English exam vocabulary), a free real property tax calculator, "
                     "and notes from building ALTOS. Everything here, this website included, is the work of a "
                     "treasury worker who builds software and websites.",
                     class_="lead"),
@@ -561,7 +561,7 @@ def home():
                      [("Open the calculator →", RPT_URL)]),
                     ("Learn and practice", "Study Notes and Tutorials",
                      "Local treasury work in plain words, each note with a short quiz, plus beginner-friendly "
-                     "Python lessons and English vocabulary for the Civil Service exam.",
+                     "Python lessons and English vocabulary for exams.",
                      [*([("Read the study notes →", NOTES_INFO["url"])] if live_notes() else []),
                       ("Start the tutorials →", "/tutorials/"),
                       # English vocabulary link (Butch 2026-11-23: "add in the learn & practice the english vocabulary")
@@ -594,7 +594,7 @@ def home():
         t.h2("About the author"),
         author_card(),
         description="Plain-language writing on Philippine local treasury work and public finance, free Python "
-                    "lessons, Civil Service exam vocabulary and a real property tax calculator.",
+                    "lessons, English exam vocabulary and a real property tax calculator.",
     )
 
 
@@ -1263,12 +1263,12 @@ def tutorials():
             class_="muted note",
         ),
         description="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury "
-                    "examples, plus Civil Service exam vocabulary modules with practice questions.",
+                    "examples, plus English exam vocabulary modules with practice questions.",
         seo_title=f"Free Python Lessons for Treasury Work · {SITE['short_name']}",
     )
 
 
-# ---- Civil Service Exam Vocabulary (second tutorial series, Butch 2026-11-09) ----
+# ---- English Exam Vocabulary (second tutorial series, Butch 2026-11-09) ----
 
 VOCAB_CHECKED = "November 2026"
 
@@ -1387,14 +1387,14 @@ def module_page(m):
     nxt = MODULES[i + 1] if i + 1 < len(MODULES) else None
     letters = "ABCD"
     return part(
-        f"Civil Service Exam Vocabulary, Module {m['number']}: {m['title']}", module_url(m),
+        f"{VOCAB['title']}, Module {m['number']}: {m['title']}", module_url(m),
         t.div(
             t.a("← " + VOCAB["title"], href=f"/tutorials/#{VOCAB['slug']}", class_="crumb"),
             t.p(f"{VOCAB['title']} · Module {m['number']}", class_="eyebrow"),
             t.h1(m["title"][:1].upper() + m["title"][1:], class_="lesson-title"),
             t.p(m["summary"], class_="lead"),
             t.p("✓ Last checked: " + VOCAB_CHECKED + " · meanings checked against Merriam-Webster", class_="checked"),
-            t.p(VOCAB["note"].replace("Civil Service Commission.", ""), t.a("Civil Service Commission", href=VOCAB["csc_url"], target="_blank", rel="noopener"), ".", class_="muted"),
+            t.p(VOCAB["note"], class_="muted"),
             [word_card(w) for w in m["words"]],
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
@@ -1410,7 +1410,7 @@ def module_page(m):
             class_="lesson-page vocab-page",
         ),
         description=f"{VOCAB['title']}, Module {m['number']}: {m['summary']}",
-        seo_title=f"{m['title'][:1].upper() + m['title'][1:]} · Civil Service Exam Vocabulary",
+        seo_title=f"{m['title'][:1].upper() + m['title'][1:]} · " + VOCAB["title"],
         og_type="article",
         json_ld=article_ld(f"{VOCAB['title']}, Module {m['number']}: {m['title']}", m["summary"], module_url(m),
                            kind="LearningResource"),
