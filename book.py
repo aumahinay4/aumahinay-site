@@ -74,4 +74,12 @@ AUTHOR = {"title": "About the Author", "blocks": [
        "than 15 years in government service, over 13 of them in public finance and local treasury work."),
     _p("He holds a Master in Public Administration and seven Google Professional Certificates. Outside official "
        "working hours he designed and built ALTOS, the Automated Local Treasury Operations System."),
+    # Exams passed (Butch 2026-11-24: "add ... all examinations that the author have passed"). Names and years
+    # only, never ratings; names as printed on his CSC certificates.
+    _p("He has passed three Civil Service Commission examinations:"),
+    {"t": "ul", "items": [
+        [["", "Intermediate Competency on Local Treasury Examination (ICLTE), 2018"]],
+        [["", "Basic Competency on Local Treasury Examination (BCLTE), 2017"]],
+        [["", "Career Service Professional Examination, 2012"]],
+    ]},
 ]}
