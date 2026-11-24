@@ -1,4 +1,4 @@
-"""ALTOS demo: /projects/altos-demo/ (URL kept; the Projects page itself moved to Home /#altos on 2026-11-20) (Butch 2026-11-19, "Four-role tour").
+"""ALTOS demo: /tools/altos-demo/ (was /projects/altos-demo/ until 2026-11-24; the Projects page itself moved to Home /#altos on 2026-11-20) (Butch 2026-11-19, "Four-role tour").
 
 A click-through copy of ALTOS that runs only in the visitor's browser: made-up LGU, officers, taxpayers and
 amounts, no server, no database, nothing saved (reloading starts fresh). It copies the LOOK and the steps of
@@ -17,7 +17,7 @@ import tags as t
 from content import SITE
 from tags import Raw
 
-DEMO_URL = "/projects/altos-demo/"
+DEMO_URL = "/tools/altos-demo/"  # was /projects/altos-demo/ until 2026-11-24 (it sits under Free Tools in the menu); old links redirect
 DEMO_TITLE = "ALTOS Demo"
 DEMO_DESCRIPTION = ("Try a demo of ALTOS, the Automated Local Treasury Operations System, with made-up data: issue an "
                     "official receipt, close the day's RCD, count the money, write a check and see the Cash Book.")

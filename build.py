@@ -31,8 +31,8 @@ SHORT_LINKS = [
     ("/tools/", "/tools/rpt-calculator/"),       # the only free tool so far
     ("/rpt-calculator/", "/tools/rpt-calculator/"),
     ("/calculator/", "/tools/rpt-calculator/"),
-    ("/demo/", "/projects/altos-demo/"),
-    ("/book/", "/projects/altos-book/"),
+    ("/demo/", "/tools/altos-demo/"),
+    ("/projects/altos-demo/", "/tools/altos-demo/"),  # its address until 2026-11-24 (demo screens like #col-issue carry over)
     ("/tutorials/civil-service-vocabulary/", "/tutorials/#civil-service-vocabulary"),
     ("/blog/the-altos-framework-principle-1-legality-first/", "/blog/altos-framework-legality-first/"),
     ("/feed/", "/feed.xml"),
@@ -117,7 +117,9 @@ def build():
                                       # Projects page removed (Butch 2026-11-20): its ALTOS content is on Home now
                                       "/projects/ /#altos 301\n/projects /#altos 301\n"
                                       # short or guessed addresses that used to show "Page not found" (Butch 2026-11-24)
-                                      + "".join(f"{a} {b} 301\n{a.rstrip('/')} {b} 301\n" for a, b in SHORT_LINKS))
+                                      + "".join(f"{a} {b} 301\n{a.rstrip('/')} {b} 301\n" for a, b in SHORT_LINKS)
+                                      # the book's own address until 2026-11-24: every chapter keeps working
+                                      + "/projects/altos-book/* /book/:splat 301\n/projects/altos-book /book/ 301\n")
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")
