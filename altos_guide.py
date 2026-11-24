@@ -114,8 +114,8 @@ def guide_page():
             _read_more(("Principle 6: Separate the Hands", "/blog/altos-framework-separate-the-hands/")),
 
             t.h2("Step 1. Issue an official receipt"),
-            t.p("Every peso that enters the treasury begins with an official receipt, or OR. The demo has the two "
-                "receipts a collecting officer uses most:"),
+            t.p("Money paid at the treasury window begins with an official receipt, or OR. The demo has two kinds "
+                "of receipt:"),
             t.ul(
                 t.li(t.b("AF 51 (Accountable Form No. 51). "), "The general receipt, for business taxes, permit fees, "
                      "market rentals, certifications and other taxes, fees and charges."),
@@ -145,7 +145,7 @@ def guide_page():
                 "Metro Manila, plus 1 percent for the SEF."),
             t.p("Change the date of payment and watch the amount move. A quarter paid on time may earn the discount "
                 "set by the local ordinance, while a late quarter adds interest of 2 percent a month, up to 36 months, "
-                "as Section 255 of the Code provides. The same property can then be paid on an AF 56 in Step 1."),
+                "as Section 255 of the Code provides. The owner then pays on an AF 56, the second tab of the Issue Official Receipt screen in Step 1."),
             _shot("col-rptcalc", "The RPT Tax Calculator: a property chosen by PIN, a date of payment, the assessed "
                   "value, and a table of quarters with the tax, the interest for a late quarter and the amount to pay.",
                   "The RPT Tax Calculator. The third quarter here is two months late, so 4 percent interest is added."),
@@ -185,7 +185,7 @@ def guide_page():
             t.p("Now switch to the Liquidating Officer. One collecting officer in the demo, Luz Ramos, handed in "
                 "₱50.00 less than her RCD says. ALTOS does not let the Liquidating Officer quietly accept the "
                 "difference or fix the figure. Instead, the report is refused with a written reason and sent back "
-                "to the collecting officer to settle and correct. The refusal stays on record, so the shortage "
+                "to the collecting officer to correct. The refusal stays on record, so the shortage "
                 "cannot simply disappear."),
             _shot("lo-refused", "The Refused Reports screen: RCD 2026-11-042 of Luz Ramos chosen, with the reason "
                   "Short by 50 pesos, and a Refuse this report button.",
@@ -196,7 +196,7 @@ def guide_page():
             t.p("The Consolidated RCD screen is where the money from all the collecting officers comes together. "
                 "The Liquidating Officer ticks the RCDs received for one bank account, counts the cash by "
                 "denomination (how many ₱1,000 bills, how many ₱500 bills, and so on), and records the deposit "
-                "slip. ALTOS will not accept the deposit until the count matches the reports exactly."),
+                "slip. ALTOS will not accept the deposit until the count matches the reports to the last centavo."),
             _shot("lo-crcd", "The Consolidated RCD screen: tabs for the General Fund and the Special Education Fund, "
                   "a list of RCDs to tick, and a cash count by denomination from 1,000 pesos to 25 centavos.",
                   "Consolidated RCD. Tick the reports, count the money, then record the deposit."),
@@ -208,8 +208,8 @@ def guide_page():
             t.p("The Cash Book is the running record of money in the bank, one for each fund. A deposit is written "
                 "under Debit, because money comes in; a check is written under Credit, because money goes out; and "
                 "the Balance column keeps a running total after every line. After Step 6, your deposit is the newest "
-                "line. Each officer also has a My Cash Book, which shows the cash still in their own hands, the "
-                "balance on hand."),
+                "line. The Collecting Officer and the Liquidating Officer also each have a My Cash Book, which shows "
+                "the cash still in their own hands, called the balance on hand."),
             _shot("lo-cashbook", "The Cash Book of the General Fund: date, particulars, and Cash in Bank columns for "
                   "Debit, Credit and Balance, with deposits of collections and checks to suppliers.",
                   "The Cash Book. Deposits under Debit, checks under Credit, and the balance after each line."),
@@ -241,14 +241,14 @@ def guide_page():
 
             t.h2("Step 10. See the whole picture as System Administrator"),
             t.p("The System Administrator's Collections Dashboard sums up the collections of the day and of the year: "
-                "by month, by source and by collecting officer. Every chart has a table beside it, and all the figures "
+                "by month, by source and by collecting officer. Every chart comes with a table, and all the figures "
                 "come from the same receipts you issued earlier, so the dashboard cannot say something the records do "
                 "not."),
             _shot("sys-dashboard", "The Collections Dashboard: tiles for collections today, this month, year to date "
                   "and waiting for deposit, and a bar chart of collections by month.",
                   "The Collections Dashboard. The figures come straight from the receipts."),
             t.p("Finally, open the Activity Log. Every action in the demo is there: who did it, as which officer, and "
-                "when, including the receipt, the refusal, the deposit and the check you made a few minutes ago. In "
+                "when, including any receipt, refusal, deposit or check you made a few minutes ago. In "
                 "ALTOS this log is sealed. No one can change or delete an entry, not even the System Administrator."),
             _shot("sys-log", "The Activity Log: a table of time, user and action, showing sign-ins and an issued "
                   "official receipt.",
