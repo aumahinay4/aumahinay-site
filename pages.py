@@ -1048,7 +1048,8 @@ def note_page(n):
             t.p("✓ Last checked: " + NOTES_INFO["checked"] + " · against " + n.get("checked_against", "RA 7160 (Local Government Code) and its amendments"), class_="checked"),
             [note_block(b) for b in n["body"]],
             t.div(t.h3(ex_title), t.ol([t.li(s_) for s_ in steps]), t.p(t.b("Answer: "), ex_answer), class_="card example"),
-            t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") else None,
+            # a link to a blog post shows only once that post is live (no links to unpublished pages)
+            t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") and post_is_live(n["link"][2]) else None,
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
             practice_list(n["practice"]),
@@ -1776,7 +1777,14 @@ def live_posts():
 
 
 def post_is_live(url):
-    """True when url is a blog post that is live now (or not a blog post at all)."""
+    """True when url is a blog post, study note, vocabulary module or lesson that is live now
+    (or any other page). A link to a scheduled page shows only once that page is live."""
+    url = url.split("#")[0]
+    if url.startswith("/study-notes/") and url != NOTES_INFO["url"]:
+        return any(note_url(n) == url and note_is_live(n) for n in NOTES) or not any(note_url(n) == url for n in NOTES)
+    if url.startswith("/tutorials/") and url != "/tutorials/":
+        scheduled = [(module_url(m), module_is_live(m)) for m in MODULES] + [(lesson_url(x), lesson_is_live(x)) for x in LESSONS]
+        return all(live for u, live in scheduled if u == url)
     if not url.startswith("/blog/") or url in ("/blog/", SERIES_URL):
         return True
     return any(post_url(b) == url for b in live_posts())
