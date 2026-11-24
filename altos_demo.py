@@ -1,4 +1,4 @@
-"""ALTOS demo: /projects/altos-demo/ (URL kept; the Projects page itself moved to Home /#altos on 2026-11-20) (Butch 2026-11-19, "Four-role tour").
+"""ALTOS demo: /tools/altos-demo/ (was /projects/altos-demo/ until 2026-11-24; the Projects page itself moved to Home /#altos on 2026-11-20) (Butch 2026-11-19, "Four-role tour").
 
 A click-through copy of ALTOS that runs only in the visitor's browser: made-up LGU, officers, taxpayers and
 amounts, no server, no database, nothing saved (reloading starts fresh). It copies the LOOK and the steps of
@@ -17,7 +17,7 @@ import tags as t
 from content import SITE
 from tags import Raw
 
-DEMO_URL = "/projects/altos-demo/"
+DEMO_URL = "/tools/altos-demo/"  # was /projects/altos-demo/ until 2026-11-24 (it sits under Free Tools in the menu); old links redirect
 DEMO_TITLE = "ALTOS Demo"
 DEMO_DESCRIPTION = ("Try a demo of ALTOS, the Automated Local Treasury Operations System, with made-up data: issue an "
                     "official receipt, close the day's RCD, count the money, write a check and see the Cash Book.")
@@ -343,8 +343,8 @@ def demo_page():
             t.meta(name="viewport", content="width=device-width, initial-scale=1"),
             t.meta(name="theme-color", content="#ffffff"),
             t.title(title),
-            # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
-            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            # https://aumahinay.dev is the only address: test copies on *.pages.dev, www. and plain http jump to it
+            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || location.hostname === "www.{SITE["domain"]}" || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
             t.link(rel="canonical", href=url),
             t.meta(name="robots", content="noindex, nofollow"),  # drawn by JavaScript: no text for Google (Butch, 2026-11-20)
             t.meta(name="description", content=DEMO_DESCRIPTION),

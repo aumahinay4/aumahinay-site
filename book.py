@@ -18,7 +18,7 @@ from pathlib import Path
 
 _DATA = json.loads((Path(__file__).parent / "book_text.json").read_text(encoding="utf-8"))
 
-BOOK_BASE = "/projects/altos-book/"
+BOOK_BASE = "/book/"  # was /projects/altos-book/ until 2026-11-24 (no Projects menu any more); old links redirect
 
 PARTS = [
     ("I", "Foundations", "The ALTOS principle and the theory behind it", range(1, 5)),
