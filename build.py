@@ -25,6 +25,21 @@ MOVED_PAGE = """<!doctype html>
 """
 
 
+# Addresses people type or trim that have no page of their own: each one goes to the right page.
+SHORT_LINKS = [
+    ("/altos/", "/#altos"),                      # the very first site had an ALTOS page here
+    ("/tools/", "/tools/rpt-calculator/"),       # the only free tool so far
+    ("/rpt-calculator/", "/tools/rpt-calculator/"),
+    ("/calculator/", "/tools/rpt-calculator/"),
+    ("/demo/", "/projects/altos-demo/"),
+    ("/book/", "/projects/altos-book/"),
+    ("/tutorials/civil-service-vocabulary/", "/tutorials/#civil-service-vocabulary"),
+    ("/blog/the-altos-framework-principle-1-legality-first/", "/blog/altos-framework-legality-first/"),
+    ("/feed/", "/feed.xml"),
+    ("/rss/", "/feed.xml"),
+]
+
+
 # IndexNow (Butch, 2026-11-10): the deploy tells Bing about new pages; the key is public by design
 INDEXNOW_KEY = "b555a2cf9c5446677189c26e434c02e7"
 
@@ -100,7 +115,9 @@ def build():
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
     (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n/courses/ /study-notes/ 301\n/courses /study-notes/ 301\n"
                                       # Projects page removed (Butch 2026-11-20): its ALTOS content is on Home now
-                                      "/projects/ /#altos 301\n/projects /#altos 301\n")
+                                      "/projects/ /#altos 301\n/projects /#altos 301\n"
+                                      # short or guessed addresses that used to show "Page not found" (Butch 2026-11-24)
+                                      + "".join(f"{a} {b} 301\n{a.rstrip('/')} {b} 301\n" for a, b in SHORT_LINKS))
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")

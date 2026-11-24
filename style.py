@@ -313,7 +313,8 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 
 /* Projects: ALTOS as the mother system, subsystems branching below */
 .family { margin-top: 36px; }
-#altos { scroll-margin-top: 80px; }  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
+#altos { scroll-margin-top: 80px; }
+#blog-cats { scroll-margin-top: 72px; }  /* /blog/#cat-... topic links land on the category button below the sticky top bar */  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
 #civil-service-vocabulary { scroll-margin-top: 96px; }  /* Home "Practice English vocabulary" link lands with the heading below the sticky top bar */
 @media (max-width: 1024px) { #civil-service-vocabulary { scroll-margin-top: 130px; } }
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
@@ -1240,7 +1241,7 @@ footer.legal .disclaimer-line { max-width: 640px; margin: 0 auto 4px; padding: 0
 .post .toc li { margin: 3px 0; text-align: left; line-height: 1.4; }
 .post .toc a { color: var(--text); text-decoration: none; }
 .post .toc a:hover { color: var(--blue-ink); text-decoration: underline; }
-.post h3[id] { scroll-margin-top: 56px; }
+.post h3[id] { scroll-margin-top: 72px; }
 @media (max-width: 640px) { .post .toc { padding: 10px 12px; } .post .toc ol { padding-left: 20px; } }
 /* Learn series box: every published part, this one marked */
 .learn-series .learn-parts { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
@@ -1267,7 +1268,7 @@ CSS += """
 .book-col .book-head h1 { margin: 2px 0 6px; }
 .book-col .book-head p { margin: 0 0 10px; }
 @media (max-width: 640px) { .book-col .book-head { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; } .book-col .book-head .book-cover { width: 96px; } }
-.book-part { margin-top: 22px; scroll-margin-top: 56px; }
+.book-part { margin-top: 22px; scroll-margin-top: 72px; }
 .book-part h3 { margin: 0; }
 .book-part > p { margin: 2px 0 8px; }
 .book-toc { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
@@ -1276,7 +1277,7 @@ CSS += """
 .book-toc .muted { font-size: 14px; }
 .book-toc b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
 .book-text { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
-.book-text h2 { font-size: 1.18rem; margin: 26px 0 8px; scroll-margin-top: 56px; }
+.book-text h2 { font-size: 1.18rem; margin: 26px 0 8px; scroll-margin-top: 72px; }
 .book-text h2::after { display: none; }
 .book-text .book-box { margin: 16px 0; padding: 12px 16px; background: color-mix(in srgb, var(--gold) 10%, var(--surface)); border: 1px solid var(--line); border-left: 4px solid var(--gold-ink); }
 .book-text .book-box p { margin: 0; }
@@ -1742,5 +1743,12 @@ CSS += """
 @media (max-width: 640px) {
   .book-text .author-top .author-name { white-space: nowrap; font-size: min(1.2em, calc((100vw - 150px) / 16.2)); }
   .book-text .author-top .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
+}
+"""
+# ---- Jump-to spots clear the taller computer top bar (Butch 2026-11-24: pages that don't direct properly) ----
+CSS += """
+@media (min-width: 1025px) {
+  #altos, #blog-cats, .post h3[id], .book-part, .book-text h2, .glossary .term { scroll-margin-top: 96px; }
+  #civil-service-vocabulary { scroll-margin-top: 104px; }
 }
 """

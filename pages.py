@@ -25,6 +25,17 @@ STATIC = Path(__file__).parent / "static"
 TUTORIALS = Path(__file__).parent / "tutorials"
 
 
+ANCHOR_SCRIPT = (
+    '(function(){if(location.hash.length<2)return;var stop=false;'
+    'var el=function(){var id=decodeURIComponent(location.hash.slice(1));'
+    'return document.getElementById(/^cat-/.test(id)?"blog-cats":id);};'  # blog topic links: the category button, not its hidden radio
+    'var go=function(){var e=!stop&&el();if(e)e.scrollIntoView({behavior:"instant"});};'
+    '["wheel","touchstart","keydown","mousedown"].forEach(function(n){addEventListener(n,function(){stop=true;},{passive:true});});'
+    'document.addEventListener("DOMContentLoaded",function(){go();if(window.ResizeObserver){var r=new ResizeObserver(go);'
+    'r.observe(document.body);setTimeout(function(){r.disconnect();},5000);}});addEventListener("load",go);})();'
+)
+
+
 def asset_url(name):
     """URL of a file in static/, with ?v=<content hash> so phones and Cloudflare
     fetch a changed picture right away instead of showing an old cached copy.
@@ -293,8 +304,11 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             t.meta(name="theme-color", content="#f3f6fc", media="(prefers-color-scheme: light)"),
             t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
             t.title(page_title),
-            # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
-            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            # https://aumahinay.dev is the only address: test copies on *.pages.dev, www. and plain http jump to it
+            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || location.hostname === "www.{SITE["domain"]}" || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            # links to a spot on a page (/#altos, /blog/#cat-finance, "In this article") land on that spot even when
+            # pictures and fonts load later and push it down; stops as soon as the visitor scrolls or taps (Butch 2026-11-24)
+            t.script(Raw(ANCHOR_SCRIPT)),
             t.link(rel="alternate", type="application/rss+xml", title=f"{SITE['short_name']}: new posts and lessons", href="/feed.xml"),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{url}") if url else None,
             t.meta(name="description", content=description or SITE["tagline"]),
