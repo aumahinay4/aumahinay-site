@@ -75,6 +75,9 @@ def spoken(text):
                lambda m: ("R A" if m.group(1) in ("RA", "R.A.") else m.group(1)) + " " + ra_words(m.group(2)), s)
     s = re.sub(r"\bCRAA[FP](s?)\b", r"Cra-ap\1", s)  # Butch 2026-11-15: CRAAF/CRAAP read "Cra-ap"
     s = re.sub(r"\bRAAF(s?)\b", r"Ra-ap\1", s)  # Butch 2026-11-15: RAAF read "Ra-ap"
+    # Butch 2026-11-24: Filipino "ng" (Bangko Sentral ng Pilipinas) is said "nang", not "N G".
+    # Voice only; the page keeps the correct spelling "ng". "nahng" makes this voice say the Filipino "nang".
+    s = re.sub(r"\bng\b", "nahng", s)
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)

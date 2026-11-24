@@ -1677,7 +1677,8 @@ LISTEN_SCRIPT = r"""
     }
     function speak() {
       if (at >= chunks.length) { done(); return; }
-      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+      // Filipino "ng" is said "nang" (Butch 2026-11-24); the page text is not changed.
+      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text.replace(/\bng\b/g, "nang"));
       if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
       u.rate = speeds[sp];
       u.onend = function () { if (on && u === current) { at += 1; speak(); } };
