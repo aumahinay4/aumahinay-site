@@ -2211,6 +2211,11 @@ def series_page():
     done, total = series_count()
     # only published parts are listed; each new part appears on its own day (no "Coming" dates, Butch 2026-11-14)
     status = "Read them in order from the top."
+    if done < total:
+        # the tagline promises ten; until every part is out, point to the book chapter that lists all ten,
+        # so the page reads as complete rather than half-built (AdSense; Butch 2026-11-25)
+        status = t.span("Read them in order from the top. All ten principles are also summed up on one page in ",
+                        t.a("Chapter 14 of the book", href=f"{BOOK_URL}chapter-14/"), ".")
 
     def row(n, label, short, p, live):
         inner = [
@@ -2238,7 +2243,7 @@ def series_page():
             t.p(ALTOS_SERIES["tagline"] + ".", class_="lead"),
             [t.p(x) for x in ALTOS_SERIES["intro"]],
             t.p(status, class_="series-status"),
-            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="learn-parts"),
+            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="series-list"),
             t.div(
                 t.h2("Want to go deeper?"),
                 t.p("The ten principles also form the closing part of my book, ",
