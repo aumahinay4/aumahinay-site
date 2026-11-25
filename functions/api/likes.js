@@ -1,4 +1,5 @@
-// Heart, Like, Follow and Share counts for blog posts and tutorial lessons (Cloudflare Pages Function).
+// Heart, Like, Follow and Share counts for blog posts, tutorial lessons, study notes and
+// vocabulary modules (Cloudflare Pages Function).
 // Heart, Like and Share are counted per page; Follow is one count for the whole site.
 // Share counts every tap of the Share button (it is not an on/off button).
 // Lives at https://aumahinay.dev/api/likes. Needs a Workers KV namespace bound
@@ -15,7 +16,9 @@
 // Each browser gets a random visitor id (kept in its own storage), so one
 // browser counts once per button per page. Nobody signs in and no names or emails are kept.
 
-const PAGE = /^\/(blog|tutorials)\/[a-z0-9-]+\/$/;
+// blog posts, lessons, study notes, and vocabulary modules (one level deeper, under
+// /tutorials/english-exam-vocabulary/); every one must also be listed in the sitemap
+const PAGE = /^\/(blog|tutorials|study-notes)\/[a-z0-9-]+\/([a-z0-9-]+\/)?$/;
 const VISITOR = /^[a-f0-9]{32}$/;
 const KINDS = ["heart", "like", "follow"];  // on/off buttons, one per browser
 const TAPS = ["share"];                      // every tap counts
