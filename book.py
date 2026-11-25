@@ -18,7 +18,10 @@ from pathlib import Path
 
 _DATA = json.loads((Path(__file__).parent / "book_text.json").read_text(encoding="utf-8"))
 
-BOOK_BASE = "/book/"  # was /projects/altos-book/ until 2026-11-24 (no Projects menu any more); old links redirect
+# the full book title in the link (Butch 2026-11-26); was /book/ until then and /projects/altos-book/ until 2026-11-24.
+# Every old address redirects (OLD_BASES, used by build.py).
+BOOK_BASE = "/book/360-accountability-public-fiscal-administration-in-philippine-local-treasuries/"
+OLD_BASES = ["/book/", "/projects/altos-book/"]
 
 PARTS = [
     ("I", "Foundations", "The ALTOS principle and the theory behind it", range(1, 5)),

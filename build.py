@@ -13,6 +13,8 @@ from email.utils import format_datetime
 from html import escape
 
 from pages import NOINDEX_URLS, ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
+import book as BOOK
+BOOK_PAGES = [r for r in ROUTES if r.startswith(BOOK.BOOK_BASE)]  # every page of the book, contents page first
 
 DIST = Path(__file__).parent / "dist"
 
@@ -119,10 +121,12 @@ def build():
                                       "/projects/ /#altos 301\n/projects /#altos 301\n"
                                       # short or guessed addresses that used to show "Page not found" (Butch 2026-11-24)
                                       + "".join(f"{a} {b} 301\n{a.rstrip('/')} {b} 301\n" for a, b in SHORT_LINKS)
-                                      # the book's own address until 2026-11-24: every chapter keeps working
-                                      + "/projects/altos-book/* /book/:splat 301\n/projects/altos-book /book/ 301\n"
+                                      # the book's earlier addresses (/projects/altos-book/ until 2026-11-24, /book/ until 2026-11-26):
+                                      # each old page goes straight to its new address, which has the full book title in it
+                                      + "".join(f"{old} {u} 301\n{old.rstrip('/')} {u} 301\n"
+                                                for o in BOOK.OLD_BASES for u in BOOK_PAGES for old in [o + u[len(BOOK.BOOK_BASE):]])
                                       # vocabulary modules' first address until 2026-11-24: every module keeps working
-                                      "/tutorials/civil-service-vocabulary/* /tutorials/english-exam-vocabulary/:splat 301\n")
+                                      + "/tutorials/civil-service-vocabulary/* /tutorials/english-exam-vocabulary/:splat 301\n")
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")
