@@ -2161,7 +2161,7 @@ def series_line(b):
     i = next((n for n, p in enumerate(parts) if p[2] is b), None)
     if i is None:
         return ""
-    where = "The introduction to" if i == 0 else f"Principle {i} of 10 in"
+    where = "The introduction to" if i == 0 else f"Principle {i} in"  # no "of 10": a total ahead of the published parts reads as unfinished (AdSense; Butch 2026-11-25)
     return t.p(where, " the series ", t.a(ALTOS_SERIES["title"], href=SERIES_URL), class_="series-line")
 
 
