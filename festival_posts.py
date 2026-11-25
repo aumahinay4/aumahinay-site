@@ -113,4 +113,118 @@ FESTIVAL_POSTS = [
              "Mindanao? I'd love to hear what it was like."),
         ],
     },
+    {
+        "date": "January 4, 2027",
+        "title": "January Festivals in the Philippines: Black Nazarene, Ati-Atihan, Sinulog and Dinagyang",
+        "slug": "philippine-festivals-january",
+        "category": "personal",
+        "summary": "A visitor's guide to January's four great festivals: what you will see, hear and feel at the "
+                   "Traslacion in Manila, the Ati-Atihan in Kalibo, the Sinulog in Cebu and the Dinagyang in "
+                   "Iloilo, and how to enjoy them safely.",
+        "publish_on": "2027-01-04 21:00",
+        "body": [
+            ("h", "A Month of Faith in the Streets"),
+            "January opens the Philippine festival year with a burst of faith. In just three weeks, millions "
+            "of people follow the Black Nazarene in Manila, and three places in the Visayas dance for the "
+            "Santo Niño, the image of the Child Jesus.",
+            "If you are planning a trip, this guide is for you. By the end of this post, you will know when "
+            "each festival happens, what you will actually see when you arrive, and the simple rules that "
+            "keep visitors safe in very large crowds. The dates below are from the 2026 celebrations, so "
+            "always check this year's official schedule before you book.",
+
+            ("h", "The Traslacion of the Black Nazarene: Quiapo, Manila"),
+            "The Feast of the Black Nazarene falls on January 9, and its heart is the Traslacion, a long "
+            "procession that carries the image of Jesus bearing the cross back to Quiapo Church, officially "
+            "the Minor Basilica and National Shrine of Jesus Nazareno. The image is more than 400 years old. "
+            "It was brought to the Philippines from Mexico in the 1600s, and the procession recalls its "
+            "transfer from Intramuros to Quiapo.",
+            "What you will see: before dawn, a sea of people fills the area around the Quirino Grandstand in "
+            "Rizal Park. In 2026, the wooden carriage, called the andas, left the grandstand at 4 a.m. on "
+            "January 9 and began a 5.8-kilometer route through the streets of Manila.",
+            "The procession is slow. The 2026 Traslacion took 30 hours and 49 minutes, the longest on record, "
+            "and the image reached Quiapo Church at 10:49 a.m. the next day. The police estimated at least 2.8 "
+            "million devotees in Manila for the procession, and more than 18,000 police officers were "
+            "deployed.",
+            "Before the feast day, there is a gentler way to take part. The Pahalik, the public veneration of "
+            "the image at the Quirino Grandstand, ran for two days in 2026. It lets visitors see the image up "
+            "close without joining the crush of the procession.",
+            "Rules for visitors: in 2026, participants were told not to bring umbrellas, sharp objects, "
+            "firecrackers, glass bottles, face covers such as caps, helmets and hoodies, or replicas of the "
+            "Black Nazarene. A transparent bag was allowed if a bag was really needed. Alcohol was not "
+            "allowed, and families were discouraged from bringing children or sick relatives. Roads around "
+            "the route close the night before, so plan to walk.",
+
+            ("h", "The Ati-Atihan: Kalibo, Aklan"),
+            "The Ati-Atihan of Kalibo is held in honor of the Santo Niño and peaks on the third Sunday of "
+            "January. In 2026, the festivities ran from January 10 to 18, with the biggest days on January 17 "
+            "and 18.",
+            "What you will see: dancers with faces and bodies darkened with soot, dressed in tribal costumes "
+            "with tasseled headdresses. The look honors the Ati, the people considered the first inhabitants "
+            "of Aklan, and local writers describe the blackened faces as an act of respect, not a disguise. "
+            "Local tradition connects the festival to the arrival of ten Bornean datus on Panay centuries "
+            "ago.",
+            "What you will hear: drums, whistles and a chant that rolls through the streets: \"Hala Bira! "
+            "Pwera Pasma! Viva kay Señor Santo Niño!\" \"Hala bira\" roughly means \"let's go and dance.\"",
+            "What makes the Ati-Atihan different is that you are not only a spectator. There is no fixed "
+            "stage. The street dancing, called the sadsad, invites everyone to join the moving crowd. On the "
+            "final Sunday, devotees walk barefoot in the grand procession, carrying images of the Santo "
+            "Niño.",
+            "For visitors: police deployed an average of about 2,980 personnel a day for the 2026 festival, "
+            "with the largest presence on the last day. Expect packed streets, and wear clothes you do not "
+            "mind getting smudged with soot.",
+
+            ("h", "The Sinulog: Cebu City"),
+            "The Sinulog is Cebu's great celebration of the Santo Niño, held on the third Sunday of January. "
+            "Its story begins in 1521, when Ferdinand Magellan gave an image of the Child Jesus as a "
+            "baptismal gift to Hara Amihan, the wife of Rajah Humabon, who took the Christian name Juana. In "
+            "1565, a soldier with Miguel López de Legazpi's expedition found the same image in a wooden box. "
+            "It is kept today at the Basilica Minore del Santo Niño.",
+            "The name comes from the Cebuano word sulog, a water current. The traditional dance moves "
+            "forward and backward like the current of a river, to the beat of drums. Long before the big "
+            "parades, candle vendors danced it outside the Basilica as an offering, and they still do. The "
+            "modern festival began in 1980, when David Odilao Jr. organized the first Sinulog parade, a small "
+            "one that went around the Basilica.",
+            "What you will see: in 2026, the weekend began with a fluvial procession on Saturday, January 17. "
+            "The Santo Niño crossed from Mactan Island back to Cebu City at dawn, followed by hundreds of "
+            "boats; 392 vessels signed up. That day also included a reenactment of the first Mass and "
+            "baptism, and an afternoon foot procession of about seven kilometers.",
+            "On Sunday, January 18, the Grand Parade began at 8:30 a.m. Thousands of spectators lined Osmeña "
+            "Boulevard, at least 40 contingents danced to drums, some with giant puppets, and the main "
+            "performances were held at the Cebu City Sports Center. Everywhere, you will hear devotees shout \"Pit "
+            "Señor!\" to the Santo Niño.",
+            "For visitors: check the organizers' announcements for ticketed shows, and come early if you "
+            "want a good spot along the parade route.",
+
+            ("h", "The Dinagyang: Iloilo City"),
+            "The Dinagyang closes January's festivals on the fourth Sunday of the month. The name comes from "
+            "dagyang, a Hiligaynon word for merrymaking. The festival traces its roots to 1968, when Fr. "
+            "Sulpicio Enderes brought a replica of the Santo Niño de Cebu to Iloilo City. The image is "
+            "enshrined at San Jose Parish, and the name Dinagyang was suggested in 1977.",
+            "What you will see: the main event is the Ati tribe competition. In 2026, it was held on Sunday, "
+            "January 25, at the Iloilo Freedom Grandstand, after a high Mass at San Jose Parish. Seven tribes "
+            "from public schools and communities competed. Dancers in dark brown body paint perform tightly "
+            "choreographed routines to pounding drums, facing an audience on all sides. The stakes are high: "
+            "the 2026 champion was promised a ₱1.5 million cash prize and ₱10 million in school projects.",
+            "Around the main day, the festival also features street dancing along Calle Real and other "
+            "events such as the Kasadyahan sa Kabanwahanan and ILOmination, so there is plenty to see "
+            "even outside the competition.",
+
+            ("h", "Planning Your January Trip"),
+            "If you can only choose one, choose by what you want to feel. The Traslacion is pure devotion, "
+            "and it is demanding. The Ati-Atihan lets you dance in the street with everyone else. The Sinulog "
+            "is a grand parade of dance and devotion. The Dinagyang is a judged competition of choreographed "
+            "tribes.",
+            "Book early, since the Ati-Atihan and the Sinulog share the same weekend. Wear light clothes and comfortable shoes, carry water in a plastic "
+            "bottle, and keep your phone and money in a front pocket.",
+            "Most of all, remember that these are religious celebrations first. You are welcome to watch, "
+            "take photos and join the dancing where it is open to all. Give way to devotees, follow police "
+            "and marshals, and respect the moments of prayer.",
+            ("quote",
+             "In January, the whole country seems to move to one rhythm: faith, drums and the Santo Niño."),
+            ("cta", "Read: A Year of Philippine Festivals Begins With December's Lights",
+             "/blog/philippine-festivals-december/"),
+            ("ask",
+             "Which January festival would you love to see first, and why? Tell me in a message."),
+        ],
+    },
 ]
