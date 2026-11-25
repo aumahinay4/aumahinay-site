@@ -14,15 +14,15 @@ FESTIVAL_POSTS = [
                    "seen in Quezon.",
         "publish_on": "2026-12-07 21:00",
         "body": [
-            ("h", "Two Festivals I Have Seen With My Own Eyes"),
-            "I have joined the crowds at two festivals in our province of Quezon. At the Bulihan Festival "
+            ("h", "Three Festivals I Have Seen With My Own Eyes"),
+            "I have joined the crowds at three festivals in our province of Quezon. At the Bulihan Festival "
             "in Sampaloc, I watched the parade of arches, one from each of the town's 14 barangays. At the "
             "Niyogyugan Festival, I walked from one beautiful booth to the next, each built by a "
-            "participating municipality.",
+            "participating municipality. And in Lucban, I was there for the Pahiyas Festival.",
             "To me, a festival is the moment when a community decides to show its best face all at once. "
             "Barangays, municipalities and their people put their work side by side, and visitors get to "
             "see a place the way its people want it to be remembered.",
-            "Those two days made me curious about the rest of the country. The Philippine calendar is "
+            "Those days made me curious about the rest of the country. The Philippine calendar is "
             "full of festivals, from the Santo Niño celebrations of January to the Christmas lights of "
             "December. I wanted to learn their stories properly, from reliable sources, and share them "
             "here in my own words.",
