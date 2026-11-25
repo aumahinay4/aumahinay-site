@@ -18,7 +18,9 @@ FESTIVAL_POSTS = [
             "I have joined the crowds at three festivals in our province of Quezon. At the Bulihan Festival "
             "in Sampaloc, I watched the parade of arches, one from each of the town's 14 barangays. At the "
             "Niyogyugan Festival, I walked from one beautiful booth to the next, each built by a "
-            "participating municipality. And in Lucban, I was there for the Pahiyas Festival.",
+            "participating municipality. And in Lucban, I was there for the Pahiyas Festival, where "
+            "people displayed their products, mostly agricultural, to show how abundant their harvest "
+            "had been.",
             "To me, a festival is the moment when a community decides to show its best face all at once. "
             "Barangays, municipalities and their people put their work side by side, and visitors get to "
             "see a place the way its people want it to be remembered.",
