@@ -2162,7 +2162,7 @@ def series_line(b):
     i = next((n for n, p in enumerate(parts) if p[2] is b), None)
     if i is None:
         return ""
-    where = "The introduction to" if i == 0 else f"Principle {i} of 10 in"
+    where = "The introduction to" if i == 0 else f"Principle {i} in"  # no "of 10": a total ahead of the published parts reads as unfinished (AdSense; Butch 2026-11-25)
     return t.p(where, " the series ", t.a(ALTOS_SERIES["title"], href=SERIES_URL), class_="series-line")
 
 
@@ -2212,6 +2212,11 @@ def series_page():
     done, total = series_count()
     # only published parts are listed; each new part appears on its own day (no "Coming" dates, Butch 2026-11-14)
     status = "Read them in order from the top."
+    if done < total:
+        # the tagline promises ten; until every part is out, point to the book chapter that lists all ten,
+        # so the page reads as complete rather than half-built (AdSense; Butch 2026-11-25)
+        status = t.span("Read them in order from the top. All ten principles are also summed up on one page in ",
+                        t.a("Chapter 14 of the book", href=f"{BOOK_URL}chapter-14/"), ".")
 
     def row(n, label, short, p, live):
         inner = [
@@ -2239,7 +2244,7 @@ def series_page():
             t.p(ALTOS_SERIES["tagline"] + ".", class_="lead"),
             [t.p(x) for x in ALTOS_SERIES["intro"]],
             t.p(status, class_="series-status"),
-            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="learn-parts"),
+            t.ol([row(n, *p) for n, p in enumerate(parts) if p[3]], class_="series-list"),
             t.div(
                 t.h2("Want to go deeper?"),
                 t.p("The ten principles also form the closing part of my book, ",
