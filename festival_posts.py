@@ -16,9 +16,11 @@ FESTIVAL_POSTS = [
         "body": [
             ("h", "Three Festivals I Have Seen With My Own Eyes"),
             "I have joined the crowds at three festivals in our province of Quezon. At the Bulihan Festival "
-            "in Sampaloc, I watched the parade of arches, one from each of the town's 14 barangays. At the "
-            "Niyogyugan Festival, I walked from one beautiful booth to the next, each built by a "
-            "participating municipality. And in Lucban, I was there for the Pahiyas Festival, where "
+            "in Sampaloc, I watched the parade and saw the arches of the town's 14 barangays. Each arch "
+            "stood in the area assigned to its barangay, made of woven buri and other materials and lit "
+            "with beautiful lights. At the Niyogyugan Festival, I walked from one beautiful booth to the "
+            "next, each built by a participating municipality. The booths were made from coconut, and "
+            "so were most of the products on display. And in Lucban, I was there for the Pahiyas Festival, where "
             "people displayed their products, mostly agricultural, to show how abundant their harvest "
             "had been.",
             "To me, a festival is the moment when a community decides to show its best face all at once. "
