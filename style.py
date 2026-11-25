@@ -700,7 +700,7 @@ main.swipe-prev { transform: translateX(28%); opacity: 0; }
 @media (prefers-reduced-motion: reduce) { main.swipe-next, main.swipe-prev { transform: none; } }
 """
 
-# ALTOS book reader (/book/, was /projects/altos-book/)
+# ALTOS book reader (/book/<full title>/, was /book/ and /projects/altos-book/)
 CSS += """
 .book-link { display: block; flex: none; }
 .book-link:hover img { filter: brightness(1.05); }

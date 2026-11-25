@@ -111,7 +111,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
-MENU = NAV[:2] + [(RPT_URL, "RPT Calculator"), ("/book/", "The ALTOS Book")] + NAV[2:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
+MENU = NAV[:2] + [(RPT_URL, "RPT Calculator"), (BOOK.BOOK_BASE, "The ALTOS Book")] + NAV[2:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
 
 
 def menu_items():
@@ -381,7 +381,7 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                                class_="foot-row"),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/", "/disclaimer/", "/book/")]))),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/", "/disclaimer/", BOOK.BOOK_BASE)]))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
@@ -757,7 +757,7 @@ def altos_section():
     ]
 
 
-BOOK_URL = "/book/"
+BOOK_URL = BOOK.BOOK_BASE
 # Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
 # ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
 NOINDEX_URLS = {DEMO_URL}  # the book is text now (Butch 2026-11-23), so Google may read it
