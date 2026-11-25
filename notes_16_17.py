@@ -272,8 +272,7 @@ NOTES_16_TO_17 = [
                 "municipality and 25% to the barangay. The SEF is split equally between the provincial and "
                 "municipal school boards (RA 7160, Sections 271 and 272).",
             ]),
-            "How the collection rate is measured changes the answer. The Data Analytics Series, Part 8, shows "
-            "why.",
+            "How the collection rate is measured changes the answer, so say which rate the estimate uses.",
         ],
         "link": ("How to measure collection rates honestly:", "Metrics and KPIs That Tell the Truth",
                  "/blog/data-analytics-part-8-metrics-and-kpis/"),

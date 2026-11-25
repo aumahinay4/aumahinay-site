@@ -1008,6 +1008,11 @@ CSS += """
 .rpt-table tr.total th, .rpt-table tr.total td { font-weight: 800; border-bottom: 0; border-top: 2px solid var(--text); }
 .rpt-table small { font-weight: 400; color: var(--muted); }
 .rpt-notes li { margin-bottom: 8px; }
+.rpt-steps li { margin-bottom: 8px; }
+.rpt-example { margin: 14px 0; }
+.rpt-example h3 { margin-top: 0; }
+.rpt-example ul { padding-left: 20px; }
+h3.rpt-q { margin-bottom: 4px; }
 .sources-line { text-align: left; }
 @media (max-width: 640px) { .rpt-table th, .rpt-table td { padding: 7px 4px; } .rpt-table { font-size: .86em; } }
 """
