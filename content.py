@@ -3283,8 +3283,9 @@ from finance_posts import FINANCE_POSTS  # noqa: E402
 from data_posts import DATA_POSTS  # noqa: E402
 from pm_posts import PM_POSTS  # noqa: E402
 from bi_posts import BI_POSTS  # noqa: E402
+from festival_posts import FESTIVAL_POSTS  # noqa: E402
 
-for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + PM_POSTS + BI_POSTS:
+for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + PM_POSTS + BI_POSTS + FESTIVAL_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)
