@@ -16,14 +16,12 @@ FESTIVAL_POSTS = [
         "body": [
             ("h", "Two Festivals I Have Seen With My Own Eyes"),
             "I have joined the crowds at two festivals in our province of Quezon. At the Bulihan Festival "
-            "in Sampaloc, I watched the parade of arches, one from each of the town's 14 barangays, every "
-            "arch trying to outshine the one before it. At the Niyogyugan Festival, I walked from one "
-            "beautiful booth to the next, each built by a participating municipality to show what its "
-            "people make from the coconut.",
-            "Both times I noticed the same thing. A festival is the moment when a community decides to "
-            "show its best face all at once. Barangays, families, farmers, artists and local government "
-            "offices put their work side by side on the same street, and visitors get to see a place the "
-            "way its people want to be remembered.",
+            "in Sampaloc, I watched the parade of arches, one from each of the town's 14 barangays. At the "
+            "Niyogyugan Festival, I walked from one beautiful booth to the next, each built by a "
+            "participating municipality.",
+            "To me, a festival is the moment when a community decides to show its best face all at once. "
+            "Barangays, municipalities and their people put their work side by side, and visitors get to "
+            "see a place the way its people want it to be remembered.",
             "Those two days made me curious about the rest of the country. The Philippine calendar is "
             "full of festivals, from the Santo Niño celebrations of January to the Christmas lights of "
             "December. I wanted to learn their stories properly, from reliable sources, and share them "
@@ -31,63 +29,61 @@ FESTIVAL_POSTS = [
             "This post starts at the end of the calendar, with two December festivals at opposite ends "
             "of the country. One is the Giant Lantern Festival of San Fernando, Pampanga, in Luzon. The "
             "other is the Shariff Kabunsuan Festival of Cotabato City, in Mindanao. One honors the "
-            "Christmas star. The other remembers the arrival of Islam in mainland Mindanao. By the end of "
+            "Christmas star. The other remembers the arrival of Islam in Mindanao. By the end of "
             "this post, you will know where each one comes from, what makes it special, and how to plan "
             "a visit.",
 
             ("h", "The Giant Lantern Festival of San Fernando, Pampanga"),
             "San Fernando proudly calls itself the Christmas Capital of the Philippines, and its giant "
             "lanterns are the reason. Locals call the competition the Ligligan Parul, which means "
-            "\"lantern competition.\" Each December, barangays of the city build a giant parol and "
-            "bring it out for one night to see whose lantern shines brightest.",
+            "\"lantern competition.\" Each December, competing barangays of the city each build a giant parol and "
+            "bring it out for a night of competition to see whose lantern shines brightest.",
             "These are not the paper stars you hang by the window. In recent years, news reports have "
             "described the lanterns as discs about 20 feet across, covered with thousands of light bulbs. "
-            "One report on the 2024 competition counted from 7,000 to more than 10,000 bulbs on a single "
+            "A report on the 2024 competition put the count at 7,000 to more than 10,000 bulbs per "
             "lantern.",
             "The secret behind the show is a Kapampangan invention called the rotor. It is a metal sheet "
             "rolled into a barrel, and it works like a sequencer. As a team turns the barrel by hand, it "
-            "switches groups of bulbs on and off, so patterns of light seem to bloom, spin and ripple "
-            "across the whole lantern. Reports trace the rotor back to the 1950s. In 2024, LED lights "
+            "switches groups of bulbs on and off, so patterns of light move across the whole "
+            "lantern. Reports trace the rotor back to the 1950s. In 2024, LED lights "
             "were used in the competition for the first time.",
             "The tradition is much older than the rotor. It grew out of the lubenas, a nine-day novena "
-            "before Christmas when people walked in procession carrying lanterns. Its roots are in the "
-            "nearby town of Bacolor. After the provincial capital moved to San Fernando in 1904, the "
+            "before Christmas, and the nighttime religious processions of the Spanish era. Its roots are "
+            "in the town of Bacolor. After the provincial capital moved to San Fernando in 1904, the "
             "lantern contest followed. Accounts differ on whether the first competition in San Fernando "
             "was held in 1904 or 1908. Either way, it has now run for more than a century. The 2025 "
             "competition was the 117th edition.",
             "The competition has become a proud rivalry among barangays. Ten barangays competed in both "
             "2024 and 2025. Barangay San Nicolas took the top prize in 2024, and Barangay Bulaon won in "
             "2025.",
-            "For a visitor, the best moment is when the lanterns come alive one after another. Picture "
-            "a field of giant stars in the dark, each one bursting into moving patterns of color, while "
-            "the teams behind them turn their rotors to bring every design to life.",
+            "Picture giant stars glowing in the dark, each one bursting into moving patterns of color, "
+            "while the teams behind them turn their rotors by hand to bring every design to life.",
 
             ("h", "The Shariff Kabunsuan Festival of Cotabato City"),
             "Far to the south, Cotabato City spends the middle of December remembering a man who changed "
             "the history of Mindanao. Shariff Kabunsuan was a Muslim missionary of Arab and Malay descent "
-            "from Johor. Bangsamoro history credits him with spreading Islam in mainland Mindanao and "
-            "founding the Sultanate of Maguindanao, where he became the first sultan. Reports place his "
-            "arrival about five centuries ago.",
+            "from Johor. Bangsamoro history credits him with spreading Islam in Mindanao and founding the "
+            "Sultanate of Maguindanao, becoming its first sultan.",
             "In recent years, the festival has run from December 15 to 19. It is organized with the "
             "Bangsamoro government's Ministry of Trade, Investments and Tourism and the city government "
             "of Cotabato.",
-            "Its highlight is the Guinakit, a Maguindanaon word for a convoy of boats. Decorated boats "
-            "move along the Rio Grande de Mindanao to reenact the arrival of Shariff Kabunsuan by water. "
-            "The boats are dressed in Maguindanaon-inspired cloth in vivid yellow, red and green. In "
-            "2023, more than 90 boats joined the parade.",
+            "Its highlight is the Guinakit, a Maguindanaon word for a convoy of boats. The parade reenacts "
+            "the arrival of Shariff Kabunsuan by water. In 2023, more than 90 decorated boats sailed the "
+            "Rio Grande de Mindanao. The boats are dressed in Maguindanaon-inspired cloth in vivid "
+            "yellow, red and green.",
             "On land, the festival week has included a trade fair of local products, street dancing, a "
             "Qur'an reading exhibition and fashion shows of Bangsamoro weaving. It is a celebration of "
             "faith, culture and history at the same time.",
             "Imagine standing on the riverbank as the convoy comes into view, a long line of boats "
-            "wrapped in bright colors, moving slowly with the current. It shows how a people's story can "
+            "wrapped in bright colors, moving downstream. It shows how a people's story can "
             "be told without a single word.",
 
             ("h", "What These Two Festivals Share"),
             "On paper, the two festivals could not be more different. One is Catholic and built around "
-            "Christmas. The other is Islamic and built around a river landing that shaped a whole region. "
+            "Christmas. The other is Islamic and built around an arrival that shaped a whole region. "
             "But both are rooted in faith, and both are carried by communities, not by a single "
             "organizer. A lantern needs a whole barangay team behind its rotor. A river convoy needs "
-            "every boat owner who decorates and steers.",
+            "every crew that decorates and steers a boat.",
             "Working in local government finance, I tend to see a municipality through its records: "
             "budgets, receipts and reports. Festivals remind me of the other side of the ledger. Behind "
             "every line item is a living community with a story worth keeping.",
@@ -95,10 +91,10 @@ FESTIVAL_POSTS = [
             ("h", "If You Plan to Go"),
             "Dates change from year to year, so check before you travel. The Giant Lantern competition "
             "has recently been held on a Saturday in mid-December: December 14 in 2024 and December 13 in "
-            "2025. Watch the City of San Fernando's official announcements for this year's date and "
+            "2025. Watch for the City of San Fernando's official announcements for this year's date and "
             "venue.",
             "For the Shariff Kabunsuan Festival, follow the announcements of the Bangsamoro government "
-            "and the city government of Cotabato. The Guinakit date can move within the festival week.",
+            "and the city government of Cotabato.",
             "Wherever you go, remember that you are a guest in someone else's celebration. Arrive early, "
             "follow the marshals, and treat religious moments with respect.",
 
