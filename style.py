@@ -1769,4 +1769,7 @@ CSS += """
 .loan-sched summary { cursor: pointer; font-weight: 700; color: var(--panel-ink); }
 .loan-sched .table-scroll { max-height: 420px; overflow: auto; margin-top: 8px; }
 .loan-steps li { margin-bottom: 8px; }
+/* Car Loan Calculator (/tools/car-loan-calculator/): same styles as the Salary Loan Calculator */
+.car-h { margin: 16px 0 6px; font-size: 1rem; }
+#car-details[hidden], #d-ins-row[hidden], #c-other-row[hidden], #c-ins-row[hidden], #c-adv-row[hidden], #term-dim-note[hidden] { display: none; }
 """
