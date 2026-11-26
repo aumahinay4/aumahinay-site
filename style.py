@@ -1765,9 +1765,21 @@ CSS += """
 .loan-after td { text-align: right; }
 .loan-line { margin-top: 10px; text-align: left; }
 .loan-line[hidden], #d-old-row[hidden], #loan-details[hidden] { display: none; }
-.loan-sched { margin-top: 14px; }
-.loan-sched summary { cursor: pointer; font-weight: 700; color: var(--panel-ink); }
-.loan-sched .table-scroll { max-height: 420px; overflow: auto; margin-top: 8px; }
+.loan-sched-title { margin-top: 18px; }
+.loan-sched-wrap { margin-top: 8px; }
+.loan-sched-wrap.short tbody tr:nth-child(n+13) { display: none; }
+.loan-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.loan-btn { font: 600 .9em var(--font-body); padding: 8px 14px; border-radius: 10px; border: 1.5px solid var(--line);
+  background: var(--bg); color: var(--panel-ink); cursor: pointer; }
+.loan-btn:hover, .loan-btn:focus-visible { border-color: var(--gold); outline: none; }
+.loan-btn[hidden], .loan-pill[hidden] { display: none; }
+.loan-pill { display: inline-block; margin: 6px 0 0; padding: 3px 12px; border-radius: 999px; font-weight: 700; font-size: .88em;
+  background: color-mix(in srgb, var(--gold) 24%, var(--surface)); color: var(--text); }
+.loan-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; }
+.loan-tabs a { padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--line); font-weight: 600; font-size: .92em;
+  color: var(--text); text-decoration: none; background: var(--surface); }
+.loan-tabs a:hover { border-color: var(--gold); }
+.loan-tabs a[aria-current] { background: var(--panel-ink); border-color: var(--panel-ink); color: var(--bg); }
 .loan-steps li { margin-bottom: 8px; }
 /* Housing Loan Calculator (/tools/housing-loan-calculator/): reuses the salary loan styles */
 .loan-warn { color: var(--coral-ink, #c2410c); font-weight: 600; }

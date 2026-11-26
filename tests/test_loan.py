@@ -180,6 +180,9 @@ def main():
     # 9. the browser side: run the page's own Python (loan_math.py + LOAN_UI_PY) against a stand-in page
     check_browser_python()
 
+    # 10. same answers as Butch's own Decimal code (his Google Doc "Philippine Loan Calculators", 2026-11-26)
+    check_against_decimal()
+
     print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
     sys.exit(1 if FAILS else 0)
 
@@ -194,38 +197,165 @@ def check_browser_python():
              "rate": "1.5", "rate-unit": "month", "term": "24", "fee-pct": "3", "fee-fixed": "", "amount": "150000",
              "cap": "abc"}
     radios = {"who": "gov", "method": "addon", "mode": "check"}
-    els, handlers = {}, []
+    els, handlers, clicked = {}, {}, []
+
+    class ClassList:
+        def __init__(self, names):
+            self.names = set(names)
+
+        def contains(self, c):
+            return c in self.names
+
+        def toggle(self, c):
+            self.names ^= {c}
+
+        def add(self, c):
+            self.names.add(c)
 
     class El:
         def __init__(self, i):
+            self.id = i
             self.value, self.hidden, self.textContent, self.className, self.innerHTML = typed.get(i, ""), False, "", "", ""
             self.checked = i == "renew"
+            self.classList = ClassList(["short"] if i == "sched-wrap" else [])
+            self.href = self.download = ""
 
         def addEventListener(self, kind, fn):
-            handlers.append(fn)
+            handlers.setdefault(self.id, []).append(fn)
+
+        def click(self):
+            clicked.append((self.download, self.href))
+
+        def remove(self):
+            pass
 
     def get(i):
         return els.setdefault(i, El(i))
 
-    def query(q):
-        return types.SimpleNamespace(value=radios[re.search(r'name="(\w+)"', q).group(1)])
+    class Radio:
+        def __init__(self, name, value=None):
+            self.name, self.v = name, value
 
+        @property
+        def value(self):
+            return radios[self.name]
+
+        @property
+        def checked(self):
+            return radios[self.name] == self.v
+
+        @checked.setter
+        def checked(self, on):
+            if on:
+                radios[self.name] = self.v
+
+    def query(q):
+        m = re.search(r'name="(\w+)"(?:\]\[value="(\w+)")?', q)
+        return Radio(m.group(1), m.group(2))
+
+    from urllib.parse import quote
+    doc = types.SimpleNamespace(getElementById=get, querySelector=query, createElement=lambda tag: El("new-a"),
+                                body=types.SimpleNamespace(appendChild=lambda e: None))
     saved = sys.modules.get("js")
-    sys.modules["js"] = types.SimpleNamespace(document=types.SimpleNamespace(getElementById=get, querySelector=query))
+    sys.modules["js"] = types.SimpleNamespace(document=doc, encodeURIComponent=lambda x: quote(x, safe=""))
     try:
         exec(compile(src, "loan-py", "exec"), {"__name__": "loan_py"})
         ok1 = (els["out-big"].textContent == "₱8,500.00" and els["d-cash"].textContent == "₱95,500.00"
-               and els["loan-status"].hidden and els["sched-body"].innerHTML.count("<tr>") == 24 and len(handlers) == 2)
+               and els["loan-status"].hidden and els["sched-body"].innerHTML.count("<tr>") == 24
+               and len(handlers["loan"]) == 2 and not els["loan-reset"].hidden)
         check("page Python fills the page (example 3)", ok1, {k: els[k].textContent for k in ("out-big", "d-cash")})
+        check("page Python: effective-rate pill", els["out-pill"].textContent.startswith("Effective rate ") and not els["out-pill"].hidden,
+              els["out-pill"].textContent)
+        check("page Python: Show all 24 months button", els["sched-toggle"].textContent == "Show all 24 months")
+        handlers["sched-toggle"][0](None)
+        check("page Python: Show all opens the table", not els["sched-wrap"].classList.contains("short")
+              and els["sched-toggle"].textContent == "Show first 12 months", els["sched-toggle"].textContent)
+        handlers["sched-csv"][0](None)
+        name, href = clicked[-1]
+        body = href.split(",", 1)[1]
+        from urllib.parse import unquote
+        lines = unquote(body).strip().split("\n")
+        check("page Python: CSV export has header + 24 rows", name == "aumahinay-salary-loan-schedule.csv"
+              and lines[0] == "Month,Payment,Interest,Principal,Balance" and len(lines) == 25
+              and lines[-1].endswith(",0.00"), (name, lines[:2], lines[-1]))
         radios["who"] = "other"  # switching to private sets the floor to 0, then recomputes
-        handlers[0](None)
+        handlers["loan"][0](None)
         check("page Python: switching to private sets floor 0", els["floor"].value == "0" and not els["floor-other"].hidden
               and els["out-note"].textContent.startswith("This loan fits"), els["out-note"].textContent)
+        handlers["loan-reset"][0](None)
+        check("page Python: Reset brings back the sample (₱423,000)", els["out-big"].textContent == "₱423,000"
+              and radios == {"who": "gov", "method": "addon", "mode": "max"} and els["floor"].value == "5000"
+              and els["sched-wrap"].classList.contains("short") and not els["renew"].checked, els["out-big"].textContent)
     finally:
         if saved is None:
             sys.modules.pop("js", None)
         else:
             sys.modules["js"] = saved
+
+
+def check_against_decimal():
+    """Butch's spec asks for decimal.Decimal with ROUND_HALF_UP. MicroPython (the browser's Python) has no decimal
+    module, so loan_math uses floats rounded half-up to centavos. This checks the two agree on thousands of loans:
+    the monthly payment, and for diminishing loans every row of the schedule."""
+    import random
+    from decimal import ROUND_HALF_UP, Decimal as D
+
+    def q(x):
+        return x.quantize(D("0.01"), rounding=ROUND_HALF_UP)
+
+    def dec_dim(p, annual, n):  # from Butch's compute_diminishing_balance_loan
+        r = annual / D(100) / D(12)
+        if r == 0:
+            m = q(p / D(n))
+        else:
+            f = (1 + r) ** n
+            m = q(p * (r * f) / (f - 1))
+        bal, rows = p, []
+        for k in range(1, n + 1):
+            # bal * annual / 1200 instead of bal * r: r = annual/1200 is cut to 28 digits, which turns an exact
+            # half-centavo (e.g. 9,697.675) into 9,697.67499... and rounds it the wrong way (14 rows in 277,023)
+            i = q(bal * annual / D(1200))
+            if k == n:
+                pr = bal
+                pay = q(pr + i)
+            else:
+                pay = m
+                pr = q(pay - i)
+            bal = q(bal - pr)
+            rows.append((pay, i, pr, max(D("0.00"), bal)))
+        return m, rows
+
+    def dec_addon(p, monthly_pct, n):  # from Butch's compute_addon_rate_loan
+        ti = q(p * (monthly_pct / D(100)) * D(n))
+        return q((p + ti) / D(n)), ti
+
+    rnd = random.Random(2026)
+    bad_dim = bad_add = rows_checked = 0
+    for _ in range(3000):
+        p = rnd.randrange(5000, 5000000, 100)
+        n = rnd.choice([6, 12, 18, 24, 36, 48, 60, 120, 240, 360])
+        annual = D(rnd.choice(["0", "5.75", "6.25", "6.5", "8", "10", "12", "18", "24"]))
+        m, rows = dec_dim(D(p), annual, n)
+        ours = LM.schedule(p, float(annual) / 1200, n, "dim")
+        if D("%.2f" % LM.r2(LM.payment(p, float(annual) / 1200, n, "dim"))) != m:
+            bad_dim += 1
+        for (pay, i, pr, b), r in zip(rows, ours):
+            rows_checked += 1
+            if (D("%.2f" % r["payment"]), D("%.2f" % r["interest"]), D("%.2f" % r["principal"]), D("%.2f" % r["balance"])) != (pay, i, pr, b):
+                bad_dim += 1
+                break
+        mp = D(rnd.choice(["0.5", "0.75", "1", "1.25", "1.5", "2"]))
+        am, ti = dec_addon(D(p), mp, n)
+        if D("%.2f" % LM.r2(LM.payment(p, float(mp) / 100, n, "addon"))) != am:
+            bad_add += 1
+    check("diminishing: payment + every schedule row match Butch's Decimal code (3,000 loans, %d rows)" % rows_checked,
+          bad_dim == 0, bad_dim)
+    check("add-on: monthly payment matches Butch's Decimal code (3,000 loans)", bad_add == 0, bad_add)
+    # his three sample loans
+    check("Butch's samples: ₱4,614.49 / ₱14,618.56 / ₱18,700.00",
+          LM.r2(LM.payment(100000, 0.10 / 12, 24, "dim")) == 4614.49
+          and LM.r2(LM.payment(2000000, 0.0625 / 12, 240, "dim")) == 14618.56
+          and LM.r2(LM.payment(880000, 0.055 / 12, 60, "addon")) == 18700.0)
 
 
 if __name__ == "__main__":
