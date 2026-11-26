@@ -208,7 +208,8 @@ SWIPE_SCRIPT = """
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
   var pages = %s;
   var path = location.pathname, here = -1;
-  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
+  var best = 0;  // the longest matching menu entry wins; posts and lessons count as their menu page
+  pages.forEach(function (p, i) { if ((path === p || (p !== "/" && path.indexOf(p) === 0)) && p.length > best) { here = i; best = p.length; } });
   if (here < 0) return;  // e.g. the "page not found" page
   var x0, y0, t0, ok;
   function scrollsSideways(el) {
@@ -242,7 +243,19 @@ SWIPE_SCRIPT = """
   // coming back with the Back button: undo the slide-out
   addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
-"""  # filled in at build time with the menu order (incl. RPT Calculator), see layout()
+"""  # filled in at build time with the menu order, see swipe_pages()
+
+
+def swipe_pages():
+    """Phone swipe order = the menu as people see it (top_items), drop-downs opened in place, so swiping always
+    follows the menu, even when entries are added (Butch 2026-11-27: "Swipe functions do not follow the menu").
+    Hidden pages are never in the menu, so swipe never leads to them."""
+    out = []
+    for a, b in top_items():
+        for href, _ in (b if isinstance(b, list) else [(a, b)]):
+            if href.startswith("/") and "#" not in href and href not in out:
+                out.append(href)
+    return out
 
 
 
@@ -381,7 +394,7 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                                class_="foot-row"),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/", "/disclaimer/", "/book/")]))),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps(swipe_pages()))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
