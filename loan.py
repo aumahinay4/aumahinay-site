@@ -1,4 +1,4 @@
-"""Salary Loan Calculator: /tools/loan-calculator/ (Butch 2026-11-26).
+"""Salary Loan Calculator: /tools/salary-loan-calculator/ (Butch 2026-11-26).
 
 Estimates how much a person can borrow from a monthly salary or income without pushing the take-home pay
 below a floor, or checks one loan amount. Two ways of charging interest are covered:
@@ -26,7 +26,7 @@ import tags as t
 from loan_math import DEFAULTS, view
 from tags import Raw
 
-LOAN_URL = "/tools/loan-calculator/"
+LOAN_URL = "/tools/salary-loan-calculator/"  # own address for search (Butch 2026-11-26); /tools/loan-calculator/ redirects here
 LOAN_CHECKED = "November 2026"
 # MicroPython for the web (MIT licence), PyScript build, pinned to one version on the jsDelivr CDN
 MICROPYTHON = "https://cdn.jsdelivr.net/npm/@micropython/micropython-webassembly-pyscript@1.29.0-6/"
