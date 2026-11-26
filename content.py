@@ -656,6 +656,108 @@ ALTOS_SERIES = {
 
 BLOG = [
     {
+        "date": "December 31, 2099",
+        "title": "Borrowing on a Government Salary: Why I Built Three Loan Calculators",
+        "slug": "why-i-built-the-loan-calculators",
+        "category": "software",
+        "summary": ("I have taken a salary loan and a housing loan, and a car loan may come next. Here is why I built "
+                    "a free calculator for each, and the questions they help a borrower answer before signing."),
+        # HELD (Butch 2026-11-26): goes live only after AdSense approval, once the three calculators
+        # (PRs #302, #303, #304) are live and Butch says go. Set the real date and publish_on then.
+        "publish_on": "2099-12-31 21:00",
+        "body": [
+            "I have borrowed against my salary. I have a housing loan. And if the budget allows, a car loan "
+            "comes next. Each of these loans came with the same three questions before anything was signed: "
+            "How much can I borrow? How much of my pay will be left? And what will this loan really cost?",
+            "I work in the treasury service, where the day is spent with numbers that must agree to the last "
+            "centavo: collections, disbursements, reports. A loan offer does not always lay out its numbers "
+            "that clearly. So I built three free calculators on this website, one for each kind of loan I have "
+            "faced or plan to face: the Salary Loan Calculator, the Car Loan Calculator and the Housing Loan "
+            "Calculator. This post explains why each one exists, the question it answers, and the one check "
+            "that matters in every loan offer.",
+            ("h", "The Salary Loan: What Is Left on Payday?"),
+            "A salary loan looks simple. You borrow, and the payment comes out of your pay every month until "
+            "the loan is done. The real question is not the payment. It is what remains after it.",
+            "For government employees, the law sets a floor. The General Provisions of the national budget, "
+            "the General Appropriations Act, say that authorized deductions shall in no case reduce an "
+            "employee's monthly net take-home pay below ₱5,000. The same provision puts taxes and the GSIS, "
+            "PhilHealth and Pag-IBIG contributions first, and the other deductions after them in the order "
+            "they were incurred. A new loan stands at the end of that line.",
+            "₱5,000 is a legal floor, not a comfortable living. That is why the Salary Loan Calculator starts "
+            "from the take-home pay you need, not from the most a lender will give. You type your gross pay, "
+            "the deductions you already have, and the least you want to bring home each month. It shows the "
+            "biggest loan that leaves that amount untouched, or whether an amount you already have in mind "
+            "fits. If the new loan pays off an old one, it counts the old payment that will stop.",
+            ("cta", "Open the Salary Loan Calculator", "/tools/loan-calculator/"),
+            ("h", "The Check That Matters in Every Offer"),
+            "One question decides how much a loan really costs: how is the interest charged? Two offers can "
+            "both say \"1% a month\" and still cost very different amounts.",
+            ("point", "Add-on rate",
+             "Interest is charged on the full loan for the whole term. On ₱200,000 at 1% a month for 24 "
+             "months, that is ₱200,000 × 1% × 24 = ₱48,000 in interest, paid in 24 payments of ₱10,333.33."),
+            ("point", "Diminishing balance",
+             "Each month's interest is charged only on what is still unpaid. The same ₱200,000 at 1% a month "
+             "for 24 months costs ₱9,414.69 a month, or about ₱25,953 in interest."),
+            "Same rate on paper, and the add-on loan charges nearly twice the interest, because you keep paying "
+            "interest on money you have already paid back. Worked out on a diminishing balance, that add-on "
+            "offer costs about 1.8% a month, or roughly 21.6% a year. Fees taken out of the loan push the real "
+            "cost higher still, since you pay interest on money you never received.",
+            "The Salary Loan and Car Loan Calculators show this true cost, the effective rate, below the "
+            "results, so two offers can be compared side by side. The figures to type in come from the "
+            "lender's own disclosure. Under the Truth in Lending Act (Republic Act No. 3765), a lender must give "
+            "the borrower, before the deal is closed, a written statement of the amount financed, the charges, "
+            "the finance charge in pesos and centavos, and that charge as a simple annual rate. Ask for it, and "
+            "read it before you sign.",
+            ("h", "The Car Loan: The Cash You Need Before You Drive Home"),
+            "The car loan is the one still in my plans, if the budget allows. That makes now the right time to "
+            "run the numbers: before visiting a dealer, not after.",
+            "A car loan asks for more than a monthly payment. On release day there is the down payment, the "
+            "chattel mortgage fee and other fees, the first year's insurance if you pay it in cash, and the "
+            "first monthly payment if the lender asks for it in advance. The Car Loan Calculator adds these up "
+            "into one figure: the cash you need before you drive the car home. It also shows the monthly "
+            "income that keeps all your loan payments, old and new, within a share of income you choose.",
+            "Car loan quotations can state an add-on rate per month, per year or for the whole term, and the "
+            "calculator takes all three, so you can type exactly what the quotation says. And if the lender "
+            "requires comprehensive insurance for as long as the loan runs, the renewals from the second year "
+            "on are yours to budget.",
+            ("cta", "Open the Car Loan Calculator", "/tools/car-loan-calculator/"),
+            ("h", "The Housing Loan: A Promise That Runs for Decades"),
+            "A housing loan is a long commitment. Pag-IBIG, for example, lends for up to 30 years. Two things "
+            "deserve a close look over that span.",
+            ("point", "The income test",
+             "Pag-IBIG's rule is that the monthly payment must not be more than 35% of the borrower's gross "
+             "monthly income (HDMF Circular No. 402). Banks set their own figure."),
+            ("point", "The rate after the fixing period",
+             "The rate stays fixed only for the period you choose. When it ends, the lender sets a new rate on "
+             "the balance left, so a low first rate with a short fixing period can turn into a higher payment."),
+            "The Housing Loan Calculator shows the monthly amortization with the insurance premiums included, "
+            "the income that payment needs, and what the payment could become if the rate goes up after the "
+            "fixing period. It works for a Pag-IBIG loan or a bank offer, using the figures from your own "
+            "written offer.",
+            ("cta", "Open the Housing Loan Calculator", "/tools/housing-loan-calculator/"),
+            ("h", "What the Three Calculators Share"),
+            ("point", "Your figures, not a lender's",
+             "No lender is named and no lender's offer is built in. The rates in the forms are examples only; "
+             "type the ones from your own written offer."),
+            ("point", "Written in Python",
+             "The math is written in Python and runs right in your browser. Nothing you type is sent anywhere."),
+            ("point", "Estimates for planning",
+             "The results help you plan and compare. They are not financial advice, and the lender's written "
+             "offer and its own rules decide the final figures."),
+            "If you would like to see how this kind of math is written in Python, the Python for Treasury Work "
+            "lessons on this site start from the very beginning, with examples from treasury work.",
+            ("cta", "Start the Python for Treasury Work lessons", "/tutorials/"),
+            ("h", "A Loan Is Paid From Future Paydays"),
+            "I built these calculators because I needed their answers myself. A loan is a promise paid out of "
+            "paydays that have not come yet. Before making that promise, it is worth knowing exactly what will "
+            "be left on each of them.",
+            ("cta", "Read: How to Use the RPT Calculator", "/blog/how-to-use-the-rpt-calculator/"),
+            ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit",
+             "/blog/when-local-governments-borrow/"),
+            ("cta", "Read: Why .dev and Not .com: How I Chose My Website's Address", "/blog/why-dev-and-not-com/"),
+        ],
+    },
+    {
         "date": "November 10, 2026",
         "title": "How to Use the RPT Calculator: Know Your Amilyar Before You Pay",
         "slug": "how-to-use-the-rpt-calculator",
@@ -3183,7 +3285,7 @@ BLOG = [
             ("cta",
              "Read: The ALTOS Framework, Principle 10: Build to Outlast the Builder",
              "/blog/altos-framework-build-to-outlast-the-builder/"),
-            ("cta", "Read: Why .dev and Not .com", "/blog/why-dev-and-not-com/"),
+            ("cta", "Read: Why .dev and Not .com: How I Chose My Website's Address", "/blog/why-dev-and-not-com/"),
         ],
     },
     {
