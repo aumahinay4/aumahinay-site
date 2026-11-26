@@ -21,7 +21,7 @@ from pathlib import Path
 
 import tags as t
 from housing_math import BANK_LTV, DEFAULTS, FIX_CHOICES, INCOME_RATIO, PAGIBIG_CAP, PAGIBIG_LTV, view
-from loan import MICROPYTHON, _example, _field, _num, _radio
+from loan import MICROPYTHON, _example, _field, _num, _radio, loan_tabs
 from tags import Raw
 
 HOUSING_URL = "/tools/housing-loan-calculator/"
@@ -74,17 +74,59 @@ def show(v):
         el(k).className = v["class"][k]
     if v["rows"]:
         el("h-sched-body").innerHTML = v["rows"]
+    if not el("sched-wrap").classList.contains("short"):
+        el("sched-toggle").textContent = "Show first 12 months"
+    last[0] = v
+
+
+last = [None]
 
 
 def calc(*args):
     show(view(read_form()))
 
 
+def toggle_rows(*args):
+    el("sched-wrap").classList.toggle("short")
+    calc()
+
+
+def export_csv(*args):
+    if not last[0] or not last[0]["csv"]:
+        return
+    a = doc.createElement("a")
+    a.href = "data:text/csv;charset=utf-8," + js.encodeURIComponent(last[0]["csv"])
+    a.download = "aumahinay-housing-loan-schedule.csv"
+    doc.body.appendChild(a)
+    a.click()
+    a.remove()
+
+
+FIELDS = {"price": "price", "down": "down", "ltv": "ltv", "cap": "cap", "rate": "rate", "fixYears": "fix",
+          "rateAfter": "rate-after", "years": "years", "mriYear": "mri", "fireYear": "fire", "income": "income",
+          "ratio": "ratio"}
+
+
+def reset(*args):
+    for k in FIELDS:
+        d = DEFAULTS[k]
+        el(FIELDS[k]).value = str(d) if d else ""
+    doc.querySelector('input[name="lender"][value="' + DEFAULTS["lender"] + '"]').checked = True
+    last_lender[0] = DEFAULTS["lender"]
+    el("sched-wrap").classList.add("short")
+    calc()
+
+
 form = el("housing")
 form.addEventListener("input", calc)
 form.addEventListener("change", calc)
+el("sched-toggle").addEventListener("click", toggle_rows)
+el("sched-csv").addEventListener("click", export_csv)
+el("h-reset").addEventListener("click", reset)
 calc()
 el("h-status").hidden = True
+for i in ("sched-csv", "h-reset"):
+    el(i).hidden = False
 """.replace("__PLTV__", str(PAGIBIG_LTV)).replace("__BLTV__", str(BANK_LTV)).replace("__PCAP__", str(PAGIBIG_CAP))
 
 
@@ -177,6 +219,8 @@ def _form():
                 class_="field-pair",
             ),
         ),
+        t.div(t.button("Reset sample values", type="button", id="h-reset", class_="loan-btn", hidden=True),
+              class_="loan-btns"),
         id="housing", class_="card rpt-form", novalidate=True,
     )
 
@@ -194,6 +238,7 @@ def _results():
     return t.div(
         t.p(tx("h-label"), id="h-label", class_="rpt-due-label"),
         t.p(tx("h-big"), id="h-big", class_=v["class"]["h-big"]),
+        t.p(v["text"].get("out-pill", ""), id="out-pill", class_="loan-pill", hidden=v["hidden"]["out-pill"]),
         t.p(tx("h-note"), id="h-note", class_="rpt-av"),
         t.p(tx("h-gap"), id="h-gap", class_="rpt-av loan-line loan-warn", hidden=v["hidden"]["h-gap"]),
         t.p("Starting the calculator…", id="h-status", class_="rpt-av loan-line"),
@@ -219,17 +264,20 @@ def _results():
             ),
             t.p(v["text"].get("d-reprice", ""), id="d-reprice", class_="rpt-av h-para",
                 hidden=v["hidden"].get("d-reprice", True)),
-            t.details(
-                t.summary("Year-by-year payments"),
-                t.div(
-                    t.table(
-                        t.thead(t.tr(t.th("Year"), t.th("Paid"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
-                        t.tbody(Raw(v["rows"]), id="h-sched-body"),
-                        class_="rpt-table",
-                    ),
-                    class_="table-scroll",
+            t.h3("Month-by-month payments", class_="loan-sched-title"),
+            t.div(
+                t.table(
+                    t.thead(t.tr(t.th("Month"), t.th("Payment"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
+                    t.tbody(Raw(v["rows"]), id="h-sched-body"),
+                    class_="rpt-table",
                 ),
-                class_="loan-sched",
+                id="sched-wrap", class_="table-scroll loan-sched-wrap short",
+            ),
+            t.div(
+                t.button(v["text"]["sched-toggle"], type="button", id="sched-toggle", class_="loan-btn",
+                         hidden=v["hidden"]["sched-toggle"]),
+                t.button("Export CSV", type="button", id="sched-csv", class_="loan-btn", hidden=True),
+                class_="loan-btns",
             ),
             id="h-details", hidden=v["hidden"]["h-details"],
         ),
@@ -253,6 +301,9 @@ def _explanations():
                  "lender sets a new rate and works out a new payment on the balance left for the years left."),
             t.li(t.b("The income needed. "), "The monthly amortization ÷ the share of income allowed. At 35%, a "
                  "₱14,000 payment needs ₱40,000 gross income a month."),
+            t.li(t.b("The effective rate. "), "The small label under the monthly amortization is the yearly rate "
+                 "that the loan really costs you once the insurance premiums and any new rate after the fixing "
+                 "period are counted. With no insurance and no change of rate, it equals the rate you typed."),
             class_="rpt-notes loan-steps",
         ),
         t.h2("Pag-IBIG housing loan rules to know"),
@@ -342,6 +393,7 @@ def housing_page():
         "description": "Free housing loan calculator for the Philippines: monthly amortization for a Pag-IBIG or bank "
                        "loan, down payment, fixing period and repricing, insurance, and the income you need.",
         "body": [
+            loan_tabs(HOUSING_URL),
             t.p("Free tool", class_="eyebrow"),
             t.h1("Housing Loan Calculator"),
             t.p("See the monthly amortization of a Pag-IBIG or bank housing loan before you apply: how much down "

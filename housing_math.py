@@ -15,7 +15,7 @@ again on the balance left, for the months left.
 import math
 
 try:  # CPython (build and tests). In the browser loan_math.py is already part of the same script.
-    from loan_math import r2, payment, principal, round_down, peso, peso0, pct
+    from loan_math import r2, payment, principal, round_down, peso, peso0, pct, schedule_csv
 except ImportError:
     pass
 
@@ -58,19 +58,23 @@ def schedule(p, rate1, rate2, k, n):
     return rows, pay1, pay2
 
 
-def by_year(rows):
-    """Yearly totals of the month rows: year, paid, interest, principal, balance at year end."""
-    out = []
-    for r in rows:
-        y = (r["month"] - 1) // 12 + 1
-        if not out or out[-1]["year"] != y:
-            out.append({"year": y, "payment": 0.0, "interest": 0.0, "principal": 0.0, "balance": 0.0})
-        o = out[-1]
-        o["payment"] = r2(o["payment"] + r["payment"])
-        o["interest"] = r2(o["interest"] + r["interest"])
-        o["principal"] = r2(o["principal"] + r["principal"])
-        o["balance"] = r["balance"]
-    return out
+def true_rate(cash, pays):
+    """Monthly rate at which the payments made (amortization plus insurance, month by month) are worth exactly the
+    loan received: the effective rate. Equals the loan's own rate when there is no insurance and no repricing."""
+    if cash <= 0 or not pays or sum(pays) <= cash:
+        return 0.0
+    lo, hi = 0.0, 1.0
+    for _ in range(80):
+        mid = (lo + hi) / 2
+        d, f, pv = 1 / (1 + mid), 1.0, 0.0
+        for p in pays:
+            f *= d
+            pv += p * f
+        if pv > cash:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
 
 
 def compute(f):
@@ -110,6 +114,8 @@ def compute(f):
     o["totalPI"] = r2(sum([r["payment"] for r in rows]))
     o["interest"] = r2(sum([r["interest"] for r in rows]))
     o["insTotal"] = r2(o["ins"] * len(rows))
+    o["eirMonth"] = true_rate(o["loan"], [r["payment"] + o["ins"] for r in rows])
+    o["eirYear"] = o["eirMonth"] * 12
     # the other way round: what the income can carry (at the first rate)
     room = f["income"] * ratio - o["ins"]
     exact = principal(room, r1, n, "dim") if room > 0 and n > 0 else 0
@@ -184,6 +190,10 @@ def view(f):
     hidden["h-gap"] = not gap
     hidden["h-details"] = not ok
     rows = ""
+    csv = ""
+    hidden["out-pill"] = True
+    hidden["sched-toggle"] = o["n"] <= 12
+    text["sched-toggle"] = "Show all " + str(o["n"]) + " months"
     if ok:
         text["d-price"] = peso(f["price"])
         text["d-down"] = "−" + peso(f["price"] - o["loan"]) + " (" + pct(1 - o["loan"] / f["price"], 1) + ")"
@@ -211,9 +221,13 @@ def view(f):
                        "payment. The totals above assume the rate stays the same.")
         text["d-reprice"] = rep
         hidden["d-reprice"] = not rep
-        for y in by_year(o["rows"]):
-            rows += ("<tr><th scope=\"row\">" + str(y["year"]) + "</th><td>" + peso(y["payment"]) + "</td><td>"
-                     + peso(y["interest"]) + "</td><td>" + peso(y["principal"]) + "</td><td>" + peso(y["balance"])
+        if o["eirMonth"]:
+            text["out-pill"] = "Effective rate " + pct(o["eirYear"]) + " a year"
+            hidden["out-pill"] = False
+        csv = schedule_csv(o["rows"])
+        for r in o["rows"]:
+            rows += ("<tr><th scope=\"row\">" + str(r["month"]) + "</th><td>" + peso(r["payment"]) + "</td><td>"
+                     + peso(r["interest"]) + "</td><td>" + peso(r["principal"]) + "</td><td>" + peso(r["balance"])
                      + "</td></tr>")
     # what the income can carry
     if f["income"] > 0 and o["n"] > 0:
@@ -230,4 +244,4 @@ def view(f):
             text["h-afford"] += " The loan is held at the lender's maximum of " + peso0(f["cap"]) + "."
     else:
         text["h-afford"] = "Type your gross monthly income to see the biggest loan and house price it can carry."
-    return {"text": text, "hidden": hidden, "class": cls, "rows": rows, "o": o}
+    return {"text": text, "hidden": hidden, "class": cls, "rows": rows, "csv": csv, "o": o}

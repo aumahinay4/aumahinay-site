@@ -61,10 +61,9 @@ def main():
         if prin != o["loan"] or rows[-1]["balance"] != 0 or len(rows) != yrs * 12 \
                 or abs(rows[-1]["payment"] - rows[-2]["payment"]) > 10:
             bad.append((rate, after, fix, yrs, prin, rows[-1]))
-        yr = H.by_year(rows)
-        if len(yr) != yrs or abs(sum(y["payment"] for y in yr) - o["totalPI"]) > 0.05:
-            bad.append(("yearly", rate, after))
-    check("schedules add up, end at 0, last payment within P10 of the others, yearly totals match", not bad, bad[:2])
+        if abs(sum(r["payment"] for r in rows) - o["totalPI"]) > 0.05:
+            bad.append(("total", rate, after))
+    check("schedules add up, end at 0, last payment within P10 of the others, totals match", not bad, bad[:2])
 
     # 3. repricing: balance after the fixing period and the new payment match the closed form
     o = H.compute(f(rateAfter=8))
@@ -122,8 +121,21 @@ def main():
     v = H.view(H.DEFAULTS)
     check("default view: big figure and label", v["text"]["h-big"] == "₱13,853.64"
           and v["text"]["h-label"] == "Monthly amortization for the first 3 years", v["text"]["h-label"])
-    check("default view: 30 yearly rows, fixing-period note shown",
-          v["rows"].count("<tr>") == 30 and not v["hidden"]["d-reprice"] and "fixed for 3 years" in v["text"]["d-reprice"])
+    check("default view: 360 month rows, fixing-period note shown",
+          v["rows"].count("<tr>") == 360 and not v["hidden"]["d-reprice"] and "fixed for 3 years" in v["text"]["d-reprice"])
+    check("default view: Show all 360 months button, CSV of 361 lines",
+          v["text"]["sched-toggle"] == "Show all 360 months" and not v["hidden"]["sched-toggle"]
+          and v["csv"].count("\n") == 361 and v["csv"].startswith("Month,Payment,Interest,Principal,Balance\n1,13853.64,11718.75,"),
+          v["csv"][:80])
+    check("effective-rate pill: 6.25% with no insurance (same as the rate)",
+          v["text"]["out-pill"] == "Effective rate 6.25% a year" and not v["hidden"]["out-pill"], v["text"]["out-pill"])
+    vi = H.view(f(mriYear=6000, fireYear=3000))
+    check("effective-rate pill counts insurance: 6.76%", vi["text"]["out-pill"] == "Effective rate 6.76% a year",
+          vi["text"]["out-pill"])
+    e = H.true_rate(2250000, [13853.64] * 359 + [H.compute(H.DEFAULTS)["rows"][-1]["payment"]])
+    check("true_rate of the plain loan = 6.25%/12", abs(e * 12 - 0.0625) < 2e-6, e * 12)
+    vs = H.view(f(years=1))
+    check("1-year loan: no Show all button", vs["hidden"]["sched-toggle"] and vs["rows"].count("<tr>") == 12)
     vb = H.view(f(income=30000))
     check("too little income is flagged", "loan-bad" in vb["class"]["h-big"] and "₱39,582" in vb["text"]["h-note"], vb["text"]["h-note"])
     vg = H.view(f(down=100000))
@@ -138,8 +150,11 @@ def main():
     src = (ROOT / "housing_math.py").read_text(encoding="utf-8")
     imports = [ln.strip() for ln in src.splitlines() if ln.lstrip().startswith(("import ", "from "))]
     check("housing_math imports only math (and loan_math)",
-          imports == ["import math", "from loan_math import r2, payment, principal, round_down, peso, peso0, pct"], imports)
+          imports == ["import math", "from loan_math import r2, payment, principal, round_down, peso, peso0, pct, schedule_csv"], imports)
     check("housing_math has no f-strings or format(',')", not re.search(r"(?<![\w\"'])f[\"']|\{[^}]*:,", src))
+
+    # 8b. every schedule row against a decimal.Decimal version (ROUND_HALF_UP), with and without repricing
+    check_against_decimal()
 
     # 8. the browser side, joined exactly as the page joins it, with a stand-in `js` page
     check_browser_python()
@@ -149,40 +164,103 @@ def main():
 
 
 def check_browser_python():
+    """Runs the exact Python the page hands to MicroPython (loan_math + housing_math + HOUSING_UI_PY, joined), in
+    CPython, with a small fake `js` module standing in for the page (example 3 typed in), and checks what it writes."""
+    from urllib.parse import quote, unquote
     from housing import page_python
     src = page_python()
     typed = {"price": "3,000,000", "down": "600000", "ltv": "80", "cap": "", "rate": "7", "fix": "5", "rate-after": "",
              "years": "20", "mri": "6000", "fire": "3000", "income": "60000", "ratio": "35"}
     radios = {"lender": "bank"}
-    els, handlers = {}, []
+    els, handlers, clicked = {}, {}, []
+
+    class ClassList:
+        def __init__(self, names):
+            self.names = set(names)
+
+        def contains(self, c):
+            return c in self.names
+
+        def toggle(self, c):
+            self.names ^= {c}
+
+        def add(self, c):
+            self.names.add(c)
 
     class El:
         def __init__(self, i):
+            self.id = i
             self.value, self.hidden, self.textContent, self.className, self.innerHTML = typed.get(i, ""), False, "", "", ""
+            self.classList = ClassList(["short"] if i == "sched-wrap" else [])
+            self.href = self.download = ""
 
         def addEventListener(self, kind, fn):
-            handlers.append(fn)
+            handlers.setdefault(self.id, []).append(fn)
+
+        def click(self):
+            clicked.append((self.download, self.href))
+
+        def remove(self):
+            pass
 
     def get(i):
         return els.setdefault(i, El(i))
 
-    def query(q):
-        return types.SimpleNamespace(value=radios[re.search(r'name="(\w+)"', q).group(1)])
+    class Radio:
+        def __init__(self, name, value=None):
+            self.name, self.v = name, value
 
+        @property
+        def value(self):
+            return radios[self.name]
+
+        @property
+        def checked(self):
+            return radios[self.name] == self.v
+
+        @checked.setter
+        def checked(self, on):
+            if on:
+                radios[self.name] = self.v
+
+    def query(q):
+        m = re.search(r'name="(\w+)"(?:\]\[value="(\w+)")?', q)
+        return Radio(m.group(1), m.group(2))
+
+    doc = types.SimpleNamespace(getElementById=get, querySelector=query, createElement=lambda tag: El("new-a"),
+                                body=types.SimpleNamespace(appendChild=lambda e: None))
     saved_js, saved_lm = sys.modules.get("js"), sys.modules.pop("loan_math", None)
-    sys.modules["js"] = types.SimpleNamespace(document=types.SimpleNamespace(getElementById=get, querySelector=query))
+    sys.modules["js"] = types.SimpleNamespace(document=doc, encodeURIComponent=lambda x: quote(x, safe=""))
     # In the browser there is no loan_math module to import: block it, so the joined script must stand on its own
     sys.modules["loan_math"] = None
     try:
         exec(compile(src, "housing-py", "exec"), {"__name__": "housing_py"})
         ok = (els["h-big"].textContent == "₱19,357.17" and els["d-income"].textContent == "₱55,307 a month"
-              and els["h-status"].hidden and els["h-sched-body"].innerHTML.count("<tr>") == 20 and len(handlers) == 2)
+              and els["h-status"].hidden and els["h-sched-body"].innerHTML.count("<tr>") == 240
+              and len(handlers["housing"]) == 2 and not els["h-reset"].hidden and not els["sched-csv"].hidden)
         check("page Python fills the page (example 3, typed with a comma)", ok,
               {k: els[k].textContent for k in ("h-big", "d-income")})
+        check("page Python: effective-rate pill counts insurance",
+              els["out-pill"].textContent == "Effective rate 7.52% a year" and not els["out-pill"].hidden, els["out-pill"].textContent)
+        check("page Python: Show all 240 months button", els["sched-toggle"].textContent == "Show all 240 months")
+        handlers["sched-toggle"][0](None)
+        check("page Python: Show all opens the table", not els["sched-wrap"].classList.contains("short")
+              and els["sched-toggle"].textContent == "Show first 12 months", els["sched-toggle"].textContent)
+        handlers["sched-csv"][0](None)
+        name, href = clicked[-1]
+        lines = unquote(href.split(",", 1)[1]).strip().split("\n")
+        check("page Python: CSV export has header + 240 rows", name == "aumahinay-housing-loan-schedule.csv"
+              and lines[0] == "Month,Payment,Interest,Principal,Balance" and len(lines) == 241
+              and lines[1].startswith("1,18607.17,14000.00,") and lines[-1].endswith(",0.00"), (name, lines[:2], lines[-1]))
         radios["lender"] = "pagibig"  # switching lender fills in Pag-IBIG's limits, then recomputes
-        handlers[0](None)
+        handlers["housing"][0](None)
         check("page Python: switching to Pag-IBIG sets 90% and P10M", els["ltv"].value == "90" and els["cap"].value == "10000000"
               and els["h-bank-note"].hidden and not els["h-pagibig-note"].hidden, (els["ltv"].value, els["cap"].value))
+        handlers["h-reset"][0](None)
+        check("page Python: Reset brings back the sample (P13,853.64)", els["h-big"].textContent == "₱13,853.64"
+              and radios == {"lender": "pagibig"} and els["price"].value == "2500000" and els["mri"].value == ""
+              and els["fix"].value == "3" and els["sched-wrap"].classList.contains("short")
+              and els["sched-toggle"].textContent == "Show all 360 months", els["h-big"].textContent)
     finally:
         sys.modules.pop("loan_math", None)
         if saved_lm is not None:
@@ -191,6 +269,61 @@ def check_browser_python():
             sys.modules.pop("js", None)
         else:
             sys.modules["js"] = saved_js
+
+
+def check_against_decimal():
+    """MicroPython has no decimal module, so housing_math uses floats rounded half-up to centavos. This rebuilds the
+    schedule with decimal.Decimal and ROUND_HALF_UP (repricing included) and compares every row."""
+    import random
+    from decimal import ROUND_HALF_UP, Decimal as D
+
+    def q(x):
+        return x.quantize(D("0.01"), rounding=ROUND_HALF_UP)
+
+    def pay(p, annual, n):
+        if annual == 0:
+            return q(p / D(n))
+        r = annual / D(1200)
+        f = (1 + r) ** n
+        return q(p * r * f / (f - 1))
+
+    def dec_rows(p, a1, a2, k, n):
+        bal, rows = p, []
+        m, annual = pay(p, a1, n), a1
+        for i in range(1, n + 1):
+            if i == k + 1 and 0 < k < n and a2 != a1:
+                annual = a2
+                m = pay(bal, a2, n - k)
+            interest = q(bal * annual / D(1200))
+            pr, amt = q(m - interest), m
+            if i == n or pr > bal:
+                pr = bal
+                amt = q(pr + interest)
+            bal = q(bal - pr)
+            rows.append((amt, interest, pr, max(bal, D("0.00"))))
+            if bal <= 0:
+                break
+        return rows
+
+    rnd = random.Random(304)
+    bad, count = 0, 0
+    for _ in range(600):
+        p = rnd.randrange(300000, 10000000, 1000)
+        yrs = rnd.choice([5, 10, 15, 20, 25, 30])
+        a1 = D(rnd.choice(["3", "5.75", "6.25", "6.5", "7", "7.125", "8.5", "9.75"]))
+        a2 = D(rnd.choice(["0", "6", "8", "9.5", "11"]))
+        fix = rnd.choice(H.FIX_CHOICES)
+        o = H.compute(f(price=p, down=0, ltv=100, cap=0, rate=float(a1), rateAfter=float(a2), fixYears=fix, years=yrs))
+        want = dec_rows(D(p), a1, a2 if a2 > 0 else a1, fix * 12, yrs * 12)
+        if len(want) != len(o["rows"]):
+            bad += 1
+            continue
+        for w, r in zip(want, o["rows"]):
+            count += 1
+            if tuple(D("%.2f" % r[k]) for k in ("payment", "interest", "principal", "balance")) != w:
+                bad += 1
+                break
+    check("every schedule row matches a Decimal ROUND_HALF_UP version (600 loans, %d rows)" % count, bad == 0, bad)
 
 
 if __name__ == "__main__":
