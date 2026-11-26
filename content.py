@@ -689,6 +689,16 @@ BLOG = [
             "the deductions you already have, and the least you want to bring home each month. It shows the "
             "biggest loan that leaves that amount untouched, or whether an amount you already have in mind "
             "fits. If the new loan pays off an old one, it counts the old payment that will stop.",
+            ("point", "Worked example",
+             "A government employee earns ₱35,000 a month, and ₱10,000 is already deducted, so ₱25,000 reaches "
+             "the account. The employee wants at least ₱8,000 left each month, more than the ₱5,000 floor. That leaves "
+             "₱25,000 − ₱8,000 = ₱17,000 a month for a new payment. At an add-on rate of 1% a month for 24 "
+             "months, the biggest loan is ₱17,000 × 24 ÷ 1.24 = ₱329,032, rounded down to ₱329,000. Its payment "
+             "is ₱16,998.33, which leaves ₱8,001.67 on payday. (The figures are for practice only.)"),
+            ("point", "Mistake to avoid",
+             "Borrowing up to the last peso of room. One price increase or emergency and the payslip is short. "
+             "Also remember that fees, and the balance of any old loan being renewed, are taken out first, so "
+             "the cash you receive is less than the loan you pay back."),
             ("point", "Expert advice",
              "Registered financial planner Efren Ll. Cruz, in his \"Ask Efren\" column in the Philippine Daily "
              "Inquirer, lists questions to ask before you borrow. The first: is the interest quoted on a simple "
@@ -708,6 +718,16 @@ BLOG = [
             "the income that payment needs, and what the payment could become if the rate goes up after the "
             "fixing period. It works for a Pag-IBIG loan or a bank offer, using the figures from your own "
             "written offer.",
+            ("point", "Worked example",
+             "A house costs ₱1,800,000. With 10% down (₱180,000), the loan is ₱1,620,000. At 6.5% a year fixed "
+             "for 3 years, over 25 years, the monthly amortization is ₱10,938.36 before insurance. At 35%, that "
+             "payment needs a gross income of about ₱31,252 a month. Now suppose the rate is repriced to 8.5% "
+             "after 3 years. The balance left, about ₱1,534,263, is spread over the 22 years left, and the "
+             "payment rises to about ₱12,863, nearly ₱1,925 more every month. (The rates are for practice only, "
+             "not any lender's offer.)"),
+            ("point", "Mistake to avoid",
+             "Budgeting only for the first rate. Test a higher rate after the fixing period, and add the yearly "
+             "insurance premiums, before deciding that the payment fits."),
             ("point", "Expert advice",
              "The Consumer Financial Protection Bureau, the United States agency that protects borrowers, puts "
              "it simply: \"Choosing the right home loan is just as important as choosing the right home.\" It "
@@ -726,6 +746,18 @@ BLOG = [
             "calculator takes all three, so you can type exactly what the quotation says. And if the lender "
             "requires comprehensive insurance for as long as the loan runs, the renewals from the second year "
             "on are yours to budget.",
+            ("point", "Worked example",
+             "A car costs ₱900,000. With 20% down (₱180,000), the loan is ₱720,000. At an add-on rate of 6% a "
+             "year for 48 months, the interest is ₱720,000 × 6% × 4 = ₱172,800, so the monthly payment is "
+             "(₱720,000 + ₱172,800) ÷ 48 = ₱18,600. If the chattel mortgage and other fees come to ₱15,000, the "
+             "first year's insurance is ₱30,000 paid in cash, and the first payment is due in advance, the cash "
+             "needed on release day is ₱180,000 + ₱15,000 + ₱30,000 + ₱18,600 = ₱243,600. That 6% add-on rate "
+             "works out to about 11% a year on a diminishing balance, before fees. To keep the payment within "
+             "30% of income, with no other loans, takes ₱18,600 ÷ 30% = ₱62,000 a month. (The fees, insurance "
+             "and rate are for practice only; ask for the exact amounts in writing.)"),
+            ("point", "Mistake to avoid",
+             "Comparing offers by the monthly payment alone. A longer term lowers the payment but raises the "
+             "interest, and the release-day cash and the yearly insurance renewals still have to be found."),
             ("point", "Expert advice",
              "The Consumer Financial Protection Bureau's 2024 auto loan guide advises thinking of a car loan "
              "\"in terms of the total cost of financing a vehicle, not just the monthly payment.\" A low monthly "
