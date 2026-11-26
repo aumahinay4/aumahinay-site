@@ -1769,4 +1769,10 @@ CSS += """
 .loan-sched summary { cursor: pointer; font-weight: 700; color: var(--panel-ink); }
 .loan-sched .table-scroll { max-height: 420px; overflow: auto; margin-top: 8px; }
 .loan-steps li { margin-bottom: 8px; }
+/* Housing Loan Calculator (/tools/housing-loan-calculator/): reuses the salary loan styles */
+.loan-warn { color: var(--coral-ink, #c2410c); font-weight: 600; }
+.loan-warn[hidden], #d-reprice[hidden], #d-ins-row[hidden], #d-instotal-row[hidden], #h-details[hidden],
+#h-pagibig-note[hidden], #h-bank-note[hidden] { display: none; }
+.h-afford-title { margin: 18px 0 0; font-size: 1.02rem; }
+.h-para { margin-top: 10px; }
 """
