@@ -1756,7 +1756,7 @@ CSS += """
   #altos, #blog-cats, .post h3[id], .book-part, .book-text h2, .glossary .term { scroll-margin-top: 96px; }
   #english-exam-vocabulary { scroll-margin-top: 104px; }
 }
-/* Salary Loan Calculator (/tools/loan-calculator/): reuses the RPT calculator's form and result styles */
+/* Salary Loan Calculator (/tools/salary-loan-calculator/): reuses the RPT calculator's form and result styles */
 .rpt-due.loan-bad, .loan-after tr.loan-bad td { color: var(--coral-ink, #c2410c); }
 .loan-sum td, .loan-after td { width: 40%; }
 .loan-after { margin-top: 10px; }

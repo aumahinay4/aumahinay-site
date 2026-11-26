@@ -1,6 +1,6 @@
 """Salary Loan Calculator math, in plain Python (Butch 2026-11-26: "use python language, for consistency").
 
-This one file does all the computing for /tools/loan-calculator/:
+This one file does all the computing for /tools/salary-loan-calculator/:
 - build.py runs it (CPython) to fill the page with a worked example before anyone types;
 - the visitor's browser runs the very same file in MicroPython (a small Python made for the web), every time a number changes;
 - tests/test_loan.py checks it in both.
