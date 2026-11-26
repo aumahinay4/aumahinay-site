@@ -759,7 +759,7 @@ BLOG = [
             "results, so two offers can be compared side by side.",
             ("h", "What the Three Calculators Share"),
             ("point", "Your figures, not a lender's",
-             "No lender is named and no lender's offer is built in. The rates in the forms are examples only; "
+             "No bank is named and no lender's offer is built in. The rates in the forms are examples only; "
              "type the ones from your own written offer."),
             ("point", "Written in Python",
              "The math is written in Python and runs right in your browser. Nothing you type is sent anywhere."),
