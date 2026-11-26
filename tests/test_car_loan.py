@@ -116,6 +116,12 @@ def main():
     check("no term asks for months", view(term=0)["text"]["out-label"].startswith("Type the number"))
     check("diminishing + whole term shows a warning", not view(method="dim", rateUnit="term")["hidden"]["term-dim-note"])
     check("60 schedule rows", view()["rows"].count("<tr>") == 60)
+    dv = view()
+    check("view: pill, Show all 60 months, CSV with 60 rows", dv["text"]["out-pill"] == "Effective rate 11.7% a year"
+          and not dv["hidden"]["out-pill"] and dv["text"]["sched-toggle"] == "Show all 60 months"
+          and not dv["hidden"]["sched-toggle"] and dv["csv"].count("\n") == 61, (dv["text"]["out-pill"], dv["csv"][:60]))
+    check("view: 12 months hides Show all; no loan hides the pill and CSV",
+          view(term=12)["hidden"]["sched-toggle"] and view(dpPct=100)["hidden"]["out-pill"] and view(dpPct=100)["csv"] == "")
     s = C.schedule(960000, 0.005, 60, "addon")
     check("schedule ends at 0, principal sums to loan", s[-1]["balance"] == 0 and close(sum(x["principal"] for x in s), 960000))
 
@@ -133,43 +139,116 @@ def main():
 
 
 def check_browser_python():
+    """Runs the exact Python the page hands to MicroPython (loan_math + car_math + CAR_UI_PY), in CPython, with a
+    small fake `js` module standing in for the page, and checks what it writes and what the buttons do."""
+    from urllib.parse import quote, unquote
     from car import page_python
     src = page_python()
     typed = {"price": "1,200,000", "dp-pct": "20", "dp-amt": "", "rate": "6", "rate-unit": "year", "term": "60",
              "mortgage-fee": "10000", "insurance": "30000", "other-fees": "", "income": "60000", "other-debts": "5000",
              "share": "30"}
     radios = {"dpmode": "pct", "method": "addon"}
-    els, handlers = {}, []
+    els, handlers, clicked = {}, {}, []
+
+    class ClassList:
+        def __init__(self, names):
+            self.names = set(names)
+
+        def contains(self, c):
+            return c in self.names
+
+        def toggle(self, c):
+            self.names ^= {c}
+
+        def add(self, c):
+            self.names.add(c)
 
     class El:
         def __init__(self, i):
+            self.id = i
             self.value, self.hidden, self.textContent, self.className, self.innerHTML = typed.get(i, ""), False, "", "", ""
             self.checked = i == "advance"
+            self.classList = ClassList(["short"] if i == "sched-wrap" else [])
+            self.href = self.download = ""
 
         def addEventListener(self, kind, fn):
-            handlers.append(fn)
+            handlers.setdefault(self.id, []).append(fn)
+
+        def click(self):
+            clicked.append((self.download, self.href))
+
+        def remove(self):
+            pass
 
     def get(i):
         return els.setdefault(i, El(i))
 
-    def query(q):
-        return types.SimpleNamespace(value=radios[re.search(r'name="(\w+)"', q).group(1)])
+    class Radio:
+        def __init__(self, name, value=None):
+            self.name, self.v = name, value
 
+        @property
+        def value(self):
+            return radios[self.name]
+
+        @property
+        def checked(self):
+            return radios[self.name] == self.v
+
+        @checked.setter
+        def checked(self, on):
+            if on:
+                radios[self.name] = self.v
+
+    def query(q):
+        m = re.search(r'name="(\w+)"(?:\]\[value="(\w+)")?', q)
+        return Radio(m.group(1), m.group(2))
+
+    doc = types.SimpleNamespace(getElementById=get, querySelector=query, createElement=lambda tag: El("new-a"),
+                                body=types.SimpleNamespace(appendChild=lambda e: None))
     saved_js, saved_lm = sys.modules.get("js"), sys.modules.pop("loan_math", None)
-    sys.modules["js"] = types.SimpleNamespace(document=types.SimpleNamespace(getElementById=get, querySelector=query))
+    sys.modules["js"] = types.SimpleNamespace(document=doc, encodeURIComponent=lambda x: quote(x, safe=""))
     sys.modules["loan_math"] = None  # as in the browser: there is no loan_math module, only the code above
     try:
         exec(compile(src, "car-py", "exec"), {"__name__": "car_py"})
         ok = (els["out-big"].textContent == "₱20,800.00" and els["c-total"].textContent == "₱300,800.00"
               and "₱750,000" in els["i-note"].textContent and els["car-status"].hidden
-              and els["sched-body"].innerHTML.count("<tr>") == 60 and len(handlers) == 2)
+              and els["sched-body"].innerHTML.count("<tr>") == 60 and len(handlers["car"]) == 2
+              and not els["car-reset"].hidden and not els["sched-csv"].hidden)
         check("page Python fills the page", ok, {k: els[k].textContent for k in ("out-big", "c-total", "i-note")})
+        check("page Python: effective-rate pill 11.7% a year", els["out-pill"].textContent == "Effective rate 11.7% a year"
+              and not els["out-pill"].hidden, els["out-pill"].textContent)
+        check("page Python: Show all 60 months button", els["sched-toggle"].textContent == "Show all 60 months"
+              and not els["sched-toggle"].hidden, els["sched-toggle"].textContent)
+        handlers["sched-toggle"][0](None)
+        check("page Python: Show all opens the table", not els["sched-wrap"].classList.contains("short")
+              and els["sched-toggle"].textContent == "Show first 12 months", els["sched-toggle"].textContent)
+        handlers["sched-toggle"][0](None)
+        check("page Python: Show first 12 closes it", els["sched-wrap"].classList.contains("short")
+              and els["sched-toggle"].textContent == "Show all 60 months", els["sched-toggle"].textContent)
+        handlers["sched-csv"][0](None)
+        name, href = clicked[-1]
+        lines = unquote(href.split(",", 1)[1]).strip().split("\n")
+        check("page Python: CSV export, header + 60 rows", name == "aumahinay-car-loan-schedule.csv"
+              and href.startswith("data:text/csv") and lines[0] == "Month,Payment,Interest,Principal,Balance"
+              and len(lines) == 61 and lines[1] == "1,20800.00,4800.00,16000.00,944000.00" and lines[-1].endswith(",0.00"),
+              (name, lines[:2], lines[-1]))
         radios["dpmode"] = "peso"
-        typed_el = els["dp-amt"]
-        typed_el.value = "600000"
-        handlers[0](None)
-        check("page Python: switch to peso down payment", els["d-loan"].textContent == "₱600,000.00"
-              and els["dp-pct-row"].hidden and not els["dp-amt-row"].hidden, els["d-loan"].textContent)
+        els["dp-amt"].value = "600000"
+        els["term"].value = "12"
+        handlers["car"][0](None)
+        check("page Python: peso down payment, 12 months hides Show all", els["d-loan"].textContent == "₱600,000.00"
+              and els["dp-pct-row"].hidden and not els["dp-amt-row"].hidden and els["sched-toggle"].hidden,
+              els["d-loan"].textContent)
+        els["ins-financed"].checked = True
+        els["sched-wrap"].classList.toggle("short")
+        handlers["car-reset"][0](None)
+        check("page Python: Reset brings back the sample", els["out-big"].textContent == "₱20,800.00"
+              and radios == {"dpmode": "pct", "method": "addon"} and els["price"].value == "1200000"
+              and els["dp-amt"].value == "240000" and els["income"].value == "" and els["term"].value == "60"
+              and not els["ins-financed"].checked and els["advance"].checked
+              and els["sched-wrap"].classList.contains("short") and els["c-total"].textContent == "₱300,800.00",
+              (els["out-big"].textContent, radios, els["price"].value))
     finally:
         sys.modules.pop("loan_math", None)
         if saved_lm is not None:

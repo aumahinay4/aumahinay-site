@@ -12,7 +12,7 @@ Rates are decimals per month (1% a month = 0.01).
 """
 
 try:
-    from loan_math import effective_rate, payment, pct, peso, peso0, principal, r2, round_down, schedule
+    from loan_math import effective_rate, payment, pct, peso, peso0, principal, r2, round_down, schedule, schedule_csv
 except ImportError:  # in the browser, loan_math.py has already run in the same script
     pass
 
@@ -110,6 +110,10 @@ def car_view(f):
     hidden["term-dim-note"] = not (f["method"] == "dim" and f["rateUnit"] == "term")
     note = ""
     show = False
+    hidden["out-pill"] = True
+    hidden["sched-toggle"] = n <= 12
+    text["sched-toggle"] = "Show all " + str(n) + " months"
+    csv = ""
     if not f["price"]:
         text["out-label"], text["out-big"] = "Type the price of the car to begin", "—"
     elif not n:
@@ -173,9 +177,14 @@ def car_view(f):
             inote = "Type your monthly income below to see if it carries this payment."
             cls["i-note"] = "rpt-av loan-line"
         text["i-note"] = inote
-        for r in schedule(o["loan"], rate, n, f["method"]):
+        if o["eirMonth"]:
+            text["out-pill"] = "Effective rate " + pct(o["eirYear"], 1) + " a year"
+            hidden["out-pill"] = False
+        table = schedule(o["loan"], rate, n, f["method"])
+        csv = schedule_csv(table)
+        for r in table:
             rows += ("<tr><th scope=\"row\">" + str(r["month"]) + "</th><td>" + peso(r["payment"]) + "</td><td>"
                      + peso(r["interest"]) + "</td><td>" + peso(r["principal"]) + "</td><td>" + peso(r["balance"])
                      + "</td></tr>")
     cls["out-big"] = "rpt-due"
-    return {"text": text, "hidden": hidden, "class": cls, "rows": rows, "o": o}
+    return {"text": text, "hidden": hidden, "class": cls, "rows": rows, "csv": csv, "o": o}

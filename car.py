@@ -27,7 +27,7 @@ from pathlib import Path
 
 import tags as t
 from car_math import CAR_DEFAULTS, car_view
-from loan import MICROPYTHON, _field, _num, _radio
+from loan import MICROPYTHON, _field, _num, _radio, loan_tabs
 from tags import Raw
 
 CAR_URL = "/tools/car-loan-calculator/"
@@ -77,17 +77,61 @@ def show(v):
         el(k).className = v["class"][k]
     if v["rows"]:
         el("sched-body").innerHTML = v["rows"]
+    if not el("sched-wrap").classList.contains("short"):
+        el("sched-toggle").textContent = "Show first 12 months"
+    last[0] = v
+
+
+last = [None]
 
 
 def calc(*args):
     show(car_view(read_form()))
 
 
+def toggle_rows(*args):
+    el("sched-wrap").classList.toggle("short")
+    calc()
+
+
+def export_csv(*args):
+    if not last[0] or not last[0]["csv"]:
+        return
+    a = doc.createElement("a")
+    a.href = "data:text/csv;charset=utf-8," + js.encodeURIComponent(last[0]["csv"])
+    a.download = "aumahinay-car-loan-schedule.csv"
+    doc.body.appendChild(a)
+    a.click()
+    a.remove()
+
+
+FIELDS = {"price": "price", "dpPct": "dp-pct", "dpAmt": "dp-amt", "rate": "rate", "rateUnit": "rate-unit",
+          "term": "term", "mortgageFee": "mortgage-fee", "insurance": "insurance", "otherFees": "other-fees",
+          "income": "income", "otherDebts": "other-debts", "share": "share"}
+
+
+def reset(*args):
+    for k in FIELDS:
+        d = CAR_DEFAULTS[k]
+        el(FIELDS[k]).value = "" if (k in ("income", "otherDebts") and not d) else str(d)
+    doc.querySelector('input[name="dpmode"][value="' + CAR_DEFAULTS["dpMode"] + '"]').checked = True
+    doc.querySelector('input[name="method"][value="' + CAR_DEFAULTS["method"] + '"]').checked = True
+    el("ins-financed").checked = CAR_DEFAULTS["insFinanced"]
+    el("advance").checked = CAR_DEFAULTS["advance"]
+    el("sched-wrap").classList.add("short")
+    calc()
+
+
 form = el("car")
 form.addEventListener("input", calc)
 form.addEventListener("change", calc)
+el("sched-toggle").addEventListener("click", toggle_rows)
+el("sched-csv").addEventListener("click", export_csv)
+el("car-reset").addEventListener("click", reset)
 calc()
 el("car-status").hidden = True
+for i in ("sched-csv", "car-reset"):
+    el(i).hidden = False
 """
 
 
@@ -188,6 +232,8 @@ def _form():
             _field("Most of your income for all loan payments (%)", _num("share", str(d["share"]), maximum="100"),
                    "A careful limit you choose. Lenders use their own figure, so ask."),
         ),
+        t.div(t.button("Reset sample values", type="button", id="car-reset", class_="loan-btn", hidden=True),
+              class_="loan-btns"),
         id="car", class_="card rpt-form", novalidate=True,
     )
 
@@ -209,6 +255,7 @@ def _results():
     return t.div(
         t.p(tx("out-label"), id="out-label", class_="rpt-due-label"),
         t.p(tx("out-big"), id="out-big", class_=v["class"]["out-big"]),
+        t.p(v["text"].get("out-pill", ""), id="out-pill", class_="loan-pill", hidden=v["hidden"]["out-pill"]),
         t.p(tx("out-note"), id="out-note", class_="rpt-av"),
         t.p("Starting the calculator…", id="car-status", class_="rpt-av loan-line"),
         t.div(
@@ -238,17 +285,20 @@ def _results():
             t.h3("Income a lender may look for", class_="car-h"),
             t.p("Monthly income for this payment: ", t.b(tx("i-needed"), id="i-needed"), class_="rpt-av loan-line"),
             t.p(tx("i-note"), id="i-note", class_=v["class"].get("i-note", "rpt-av loan-line")),
-            t.details(
-                t.summary("Month-by-month payments"),
-                t.div(
-                    t.table(
-                        t.thead(t.tr(t.th("Month"), t.th("Payment"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
-                        t.tbody(Raw(v["rows"]), id="sched-body"),
-                        class_="rpt-table",
-                    ),
-                    class_="table-scroll",
+            t.h3("Month-by-month payments", class_="loan-sched-title"),
+            t.div(
+                t.table(
+                    t.thead(t.tr(t.th("Month"), t.th("Payment"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
+                    t.tbody(Raw(v["rows"]), id="sched-body"),
+                    class_="rpt-table",
                 ),
-                class_="loan-sched",
+                id="sched-wrap", class_="table-scroll loan-sched-wrap short",
+            ),
+            t.div(
+                t.button(v["text"]["sched-toggle"], type="button", id="sched-toggle", class_="loan-btn",
+                         hidden=v["hidden"]["sched-toggle"]),
+                t.button("Export CSV", type="button", id="sched-csv", class_="loan-btn", hidden=True),
+                class_="loan-btns",
             ),
             id="car-details", hidden=v["hidden"]["car-details"],
         ),
@@ -357,6 +407,7 @@ def car_page():
         "description": "Free car loan calculator for the Philippines: monthly payment, cash needed on release day, "
                        "chattel mortgage fee, insurance, total cost, true interest rate and the income you need.",
         "body": [
+            loan_tabs(CAR_URL),
             t.p("Free tool", class_="eyebrow"),
             t.h1("Car Loan Calculator"),
             t.p("Planning to buy a car on loan? Find out the monthly payment, the cash you need on release day, what "
