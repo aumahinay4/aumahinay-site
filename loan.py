@@ -73,6 +73,9 @@ def read_form():
             "mode": picked("mode"), "amount": num("amount"), "cap": num("cap")}
 
 
+last = [None]
+
+
 def show(v):
     for k in v["hidden"]:
         el(k).hidden = v["hidden"][k]
@@ -82,17 +85,58 @@ def show(v):
         el(k).className = v["class"][k]
     if v["rows"]:
         el("sched-body").innerHTML = v["rows"]
+    if not el("sched-wrap").classList.contains("short"):
+        el("sched-toggle").textContent = "Show first 12 months"
+    last[0] = v
 
 
 def calc(*args):
     show(view(read_form()))
 
 
+def toggle_rows(*args):
+    el("sched-wrap").classList.toggle("short")
+    calc()
+
+
+def export_csv(*args):
+    if not last[0] or not last[0]["csv"]:
+        return
+    a = doc.createElement("a")
+    a.href = "data:text/csv;charset=utf-8," + js.encodeURIComponent(last[0]["csv"])
+    a.download = "aumahinay-salary-loan-schedule.csv"
+    doc.body.appendChild(a)
+    a.click()
+    a.remove()
+
+
+FIELDS = {"gross": "gross", "deductions": "deductions", "floor": "floor", "oldPay": "old-pay", "oldBal": "old-bal",
+          "rate": "rate", "rateUnit": "rate-unit", "term": "term", "feePct": "fee-pct", "feeFixed": "fee-fixed",
+          "amount": "amount", "cap": "cap"}
+
+
+def reset(*args):
+    for k in FIELDS:
+        d = DEFAULTS[k]
+        el(FIELDS[k]).value = "" if (k in ("oldPay", "oldBal", "cap") and not d) else str(d)
+    for name in ("who", "method", "mode"):
+        doc.querySelector('input[name="' + name + '"][value="' + DEFAULTS[name] + '"]').checked = True
+    el("renew").checked = DEFAULTS["renew"]
+    last_who[0] = DEFAULTS["who"]
+    el("sched-wrap").classList.add("short")
+    calc()
+
+
 form = el("loan")
 form.addEventListener("input", calc)
 form.addEventListener("change", calc)
+el("sched-toggle").addEventListener("click", toggle_rows)
+el("sched-csv").addEventListener("click", export_csv)
+el("loan-reset").addEventListener("click", reset)
 calc()
 el("loan-status").hidden = True
+for i in ("sched-csv", "loan-reset"):
+    el(i).hidden = False
 """.replace("__FLOOR__", str(NTHP_FLOOR))
 
 
@@ -115,6 +159,22 @@ def _loader():
             "  console.error(e);\n"
             "}\n" % (MICROPYTHON + "micropython.mjs", MICROPYTHON + "micropython.wasm")), type="module"),
     ]
+
+
+# The three loan calculators are separate pages joined by one tab row (Butch 2026-11-26 chose
+# "Separate pages, linked by tabs"). A tab shows only once its page is in the site, so no tab ever leads to a 404.
+LOAN_TABS = [(LOAN_URL, "Salary loan", "loan"), ("/tools/housing-loan-calculator/", "Housing loan", "housing"),
+             ("/tools/car-loan-calculator/", "Car loan", "car")]
+
+
+def loan_tabs(active):
+    """Tab row for the top of each loan calculator page; empty while only one of the pages exists."""
+    import importlib.util
+    tabs = [(u, label) for u, label, module in LOAN_TABS if importlib.util.find_spec(module)]
+    if len(tabs) < 2:
+        return ""
+    return t.nav([t.a(label, href=u, aria_current="page" if u == active else None) for u, label in tabs],
+                 class_="loan-tabs", aria_label="Loan calculators")
 
 
 def _field(label, control, hint=None, row_id=None, hidden=False):
@@ -198,6 +258,8 @@ def _form():
             _field("Most the lender allows (₱, optional)", _num("cap", "", placeholder="e.g. 500000"),
                    "Some lenders cap the loan, for example at a number of months of your salary. Leave blank if you do not know."),
         ),
+        t.div(t.button("Reset sample values", type="button", id="loan-reset", class_="loan-btn", hidden=True),
+              class_="loan-btns"),
         id="loan", class_="card rpt-form", novalidate=True,
     )
 
@@ -219,6 +281,7 @@ def _results():
         t.p("Room for a new loan payment ", t.b(tx("out-room"), id="out-room"), class_="rpt-av"),
         t.p(tx("out-label"), id="out-label", class_="rpt-due-label"),
         t.p(tx("out-big"), id="out-big", class_=v["class"]["out-big"]),
+        t.p(v["text"].get("out-pill", ""), id="out-pill", class_="loan-pill", hidden=v["hidden"]["out-pill"]),
         t.p(tx("out-note"), id="out-note", class_="rpt-av"),
         t.p("Starting the calculator…", id="loan-status", class_="rpt-av loan-line"),
         t.div(
@@ -246,17 +309,20 @@ def _results():
             t.p(t.b("True cost (effective rate): "), t.span(tx("d-eir"), id="d-eir"), class_="rpt-av loan-line"),
             t.p(v["text"].get("d-compare", ""), id="d-compare", class_="rpt-av loan-line",
                 hidden=v["hidden"].get("d-compare", True)),
-            t.details(
-                t.summary("Month-by-month payments"),
-                t.div(
-                    t.table(
-                        t.thead(t.tr(t.th("Month"), t.th("Payment"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
-                        t.tbody(Raw(v["rows"]), id="sched-body"),
-                        class_="rpt-table",
-                    ),
-                    class_="table-scroll",
+            t.h3("Month-by-month payments", class_="loan-sched-title"),
+            t.div(
+                t.table(
+                    t.thead(t.tr(t.th("Month"), t.th("Payment"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
+                    t.tbody(Raw(v["rows"]), id="sched-body"),
+                    class_="rpt-table",
                 ),
-                class_="loan-sched",
+                id="sched-wrap", class_="table-scroll loan-sched-wrap short",
+            ),
+            t.div(
+                t.button(v["text"]["sched-toggle"], type="button", id="sched-toggle", class_="loan-btn",
+                         hidden=v["hidden"]["sched-toggle"]),
+                t.button("Export CSV", type="button", id="sched-csv", class_="loan-btn", hidden=True),
+                class_="loan-btns",
             ),
             id="loan-details", hidden=v["hidden"]["loan-details"],
         ),
@@ -374,6 +440,7 @@ def loan_page():
         "description": "Free salary loan calculator for the Philippines: how much you can borrow from your pay while "
                        "keeping the ₱5,000 minimum take-home pay, with add-on and diminishing rates, fees and renewals.",
         "body": [
+            loan_tabs(LOAN_URL),
             t.p("Free tool", class_="eyebrow"),
             t.h1("Salary Loan Calculator"),
             t.p("Find out how much you can borrow from your salary before you go to the bank, and what the loan will "

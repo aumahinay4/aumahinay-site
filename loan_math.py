@@ -142,6 +142,14 @@ def pct(x, d=2):
     return s + "%"
 
 
+def schedule_csv(rows):
+    """The payment table as CSV text, plain numbers, for the Export CSV button."""
+    out = "Month,Payment,Interest,Principal,Balance\n"
+    for r in rows:
+        out += ",".join([str(r["month"])] + ["%.2f" % r[k] for k in ("payment", "interest", "principal", "balance")]) + "\n"
+    return out
+
+
 DEFAULTS = {"who": "gov", "gross": 30000, "deductions": 9000, "floor": 5000, "renew": False, "oldPay": 0,
             "oldBal": 0, "method": "addon", "rate": 1, "rateUnit": "month", "term": 36, "feePct": 0, "feeFixed": 0,
             "mode": "max", "amount": 100000, "cap": 0}
@@ -197,6 +205,10 @@ def view(f):
     show = bool(f["gross"] and n and o["loan"] > 0)
     hidden["loan-details"] = not show
     rows = ""
+    csv = ""
+    hidden["out-pill"] = True
+    hidden["sched-toggle"] = n <= 12
+    text["sched-toggle"] = "Show all " + str(n) + " months"
     if show:
         text["d-loan"] = peso(o["loan"])
         text["d-pay"] = peso(o["pay"])
@@ -216,8 +228,13 @@ def view(f):
                    + pct(o["sameAsDim"]) + " a month (" + pct(o["sameAsDim"] * 12, 1) + " a year), before fees.")
         text["d-compare"] = cmp
         hidden["d-compare"] = not cmp
-        for r in schedule(o["loan"], rate, n, f["method"]):
+        if o["eirMonth"]:
+            text["out-pill"] = "Effective rate " + pct(o["eirYear"], 1) + " a year"
+            hidden["out-pill"] = False
+        table = schedule(o["loan"], rate, n, f["method"])
+        csv = schedule_csv(table)
+        for r in table:
             rows += ("<tr><th scope=\"row\">" + str(r["month"]) + "</th><td>" + peso(r["payment"]) + "</td><td>"
                      + peso(r["interest"]) + "</td><td>" + peso(r["principal"]) + "</td><td>" + peso(r["balance"])
                      + "</td></tr>")
-    return {"text": text, "hidden": hidden, "class": cls, "rows": rows, "o": o}
+    return {"text": text, "hidden": hidden, "class": cls, "rows": rows, "csv": csv, "o": o}
