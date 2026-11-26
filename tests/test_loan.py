@@ -1,20 +1,29 @@
-"""Checks the Salary Loan Calculator's math (loan.LOAN_MATH, run in Node) against an independent Python version,
-and the worked examples printed on the page. Run:  python tests/test_loan.py   (needs node on the PATH)."""
+"""Checks the Salary Loan Calculator's math (loan_math.py) against an independent reference version written
+here, and every figure in the worked examples printed on the page. Run:  python tests/test_loan.py"""
 
 import json
-import subprocess
+import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from loan import LOAN_MATH  # noqa: E402
+import loan_math as LM  # noqa: E402
+
+
+class _LoanMath:
+    """Lets the checks below call loan_math with the same names the page uses."""
+    r2 = staticmethod(LM.r2)
+    payment = staticmethod(lambda p, r, n, m: LM.payment(p, r, n, m))
+    principal = staticmethod(lambda a, r, n, m: LM.principal(a, r, n, m))
+    effectiveRate = staticmethod(LM.effective_rate)
+    schedule = staticmethod(LM.schedule)
+    compute = staticmethod(LM.compute)
 
 
 def js(expr_list):
-    """Evaluate a list of JavaScript expressions that use LoanMath; returns their JSON values."""
-    code = LOAN_MATH + "\nconsole.log(JSON.stringify([" + ",".join(expr_list) + "]));"
-    out = subprocess.run(["node"], input=code, capture_output=True, text=True, check=True).stdout
-    return json.loads(out)
+    """Evaluate each check expression against loan_math (they were first written for the JavaScript version)."""
+    env = {"LoanMath": _LoanMath, "true": True, "false": False, "null": None}
+    return [eval(e, env) for e in expr_list]
 
 
 # ---- independent Python reference ----
@@ -142,8 +151,81 @@ def main():
         1000 if o["maxExact"] >= 10000 else 100, x["rate"], x["n"], x["method"]) + 0.01]
     check("max loan is within one rounding step of the limit", not tight, tight[:1])
 
+    # 7. what the page shows (loan_math.view), and the number formats
+    check("peso format", LM.peso(1234567.005) == "₱1,234,567.01" and LM.peso(-5) == "−₱5.00" and LM.peso(0) == "₱0.00",
+          (LM.peso(1234567.005), LM.peso(-5)))
+    check("peso0 / pct formats", LM.peso0(423000) == "₱423,000" and LM.pct(0.0177) == "1.77%" and LM.pct(0.212, 1) == "21.2%"
+          and LM.pct(0.01) == "1%", (LM.peso0(423000), LM.pct(0.0177)))
+    v = LM.view(LM.DEFAULTS)
+    check("default view: ₱423,000 and ₱5,020.00 after",
+          v["text"]["out-big"] == "₱423,000" and v["text"]["d-netafter"] == "₱5,020.00" and not v["hidden"]["loan-details"], v["text"])
+    check("default view: add-on vs diminishing line says 1.77%", "1.77% a month" in v["text"]["d-compare"], v["text"]["d-compare"])
+    check("default view: 36 schedule rows", v["rows"].count("<tr>") == 36, v["rows"].count("<tr>"))
+    f = dict(LM.DEFAULTS, gross=28000, deductions=20000, renew=True, oldPay=4000, oldBal=50000, rate=1.5, term=24,
+             feePct=3, mode="check", amount=150000)
+    v3 = LM.view(f)
+    check("example 3 view: too big, short ₱1,500", v3["text"]["out-big"] == "₱8,500.00" and "₱1,500.00 below" in v3["text"]["out-note"]
+          and "loan-bad" in v3["class"]["out-big"], v3["text"]["out-note"])
+    vy = LM.view(dict(LM.DEFAULTS, method="dim", rate=12, rateUnit="year"))
+    check("yearly rate 12% = 1% a month diminishing: ₱481,000", vy["text"]["out-big"] == "₱481,000", vy["text"]["out-big"])
+    v0 = LM.view(dict(LM.DEFAULTS, gross=0))
+    check("empty pay asks for pay", v0["text"]["out-label"].startswith("Type your monthly pay") and v0["hidden"]["loan-details"])
+
+    # 8. loan_math.py must stay simple enough for MicroPython in the browser
+    src = (Path(__file__).resolve().parent.parent / "loan_math.py").read_text(encoding="utf-8")
+    imports = [ln.strip() for ln in src.splitlines() if ln.startswith(("import ", "from "))]
+    check("loan_math imports only math", imports == ["import math"], imports)
+    check("loan_math has no f-strings or format(',')", not re.search(r"(?<![\w\"'])f[\"']|\{[^}]*:,", src))
+
+    # 9. the browser side: run the page's own Python (loan_math.py + LOAN_UI_PY) against a stand-in page
+    check_browser_python()
+
     print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
     sys.exit(1 if FAILS else 0)
+
+
+def check_browser_python():
+    """Runs the exact Python the page hands to MicroPython, in CPython, with a small fake `js` module standing in
+    for the browser page (example 3 typed in), and checks what it writes on the page."""
+    import types
+    from loan import LOAN_UI_PY
+    src = (Path(__file__).resolve().parent.parent / "loan_math.py").read_text(encoding="utf-8") + "\n" + LOAN_UI_PY
+    typed = {"gross": "28,000", "deductions": "20000", "floor": "5000", "old-pay": "4000", "old-bal": "50000",
+             "rate": "1.5", "rate-unit": "month", "term": "24", "fee-pct": "3", "fee-fixed": "", "amount": "150000",
+             "cap": "abc"}
+    radios = {"who": "gov", "method": "addon", "mode": "check"}
+    els, handlers = {}, []
+
+    class El:
+        def __init__(self, i):
+            self.value, self.hidden, self.textContent, self.className, self.innerHTML = typed.get(i, ""), False, "", "", ""
+            self.checked = i == "renew"
+
+        def addEventListener(self, kind, fn):
+            handlers.append(fn)
+
+    def get(i):
+        return els.setdefault(i, El(i))
+
+    def query(q):
+        return types.SimpleNamespace(value=radios[re.search(r'name="(\w+)"', q).group(1)])
+
+    saved = sys.modules.get("js")
+    sys.modules["js"] = types.SimpleNamespace(document=types.SimpleNamespace(getElementById=get, querySelector=query))
+    try:
+        exec(compile(src, "loan-py", "exec"), {"__name__": "loan_py"})
+        ok1 = (els["out-big"].textContent == "₱8,500.00" and els["d-cash"].textContent == "₱95,500.00"
+               and els["loan-status"].hidden and els["sched-body"].innerHTML.count("<tr>") == 24 and len(handlers) == 2)
+        check("page Python fills the page (example 3)", ok1, {k: els[k].textContent for k in ("out-big", "d-cash")})
+        radios["who"] = "other"  # switching to private sets the floor to 0, then recomputes
+        handlers[0](None)
+        check("page Python: switching to private sets floor 0", els["floor"].value == "0" and not els["floor-other"].hidden
+              and els["out-note"].textContent.startswith("This loan fits"), els["out-note"].textContent)
+    finally:
+        if saved is None:
+            sys.modules.pop("js", None)
+        else:
+            sys.modules["js"] = saved
 
 
 if __name__ == "__main__":

@@ -14,190 +14,107 @@ Bulletin, May 20, 2024: COA audit of a provincial government, citing Sec. 56 of 
 Truth in Lending Act (RA 3765), Sec. 4: the lender must give a written statement of the finance charges and
 the finance charge as a simple annual rate before the loan is made.
 
-The math lives in LOAN_MATH (plain JavaScript, no page code) so tests/test_loan.py can run it in Node and
-check it against an independent Python version.
+Written in Python, like the rest of the site (Butch 2026-11-26): loan_math.py does every computation. The
+build runs it to fill the page with a worked example, and the browser runs the same file in MicroPython
+(MicroPython's WebAssembly build, PyScript variant 1.29.0-6, loaded from the jsDelivr CDN) each time a number changes.
+tests/test_loan.py checks it in CPython and in MicroPython.
 """
 
+from pathlib import Path
+
 import tags as t
+from loan_math import DEFAULTS, view
 from tags import Raw
 
 LOAN_URL = "/tools/loan-calculator/"
 LOAN_CHECKED = "November 2026"
+# MicroPython for the web (MIT licence), PyScript build, pinned to one version on the jsDelivr CDN
+MICROPYTHON = "https://cdn.jsdelivr.net/npm/@micropython/micropython-webassembly-pyscript@1.29.0-6/"
 NTHP_FLOOR = 5000  # GAA General Provisions: minimum monthly net take-home pay of a government employee
 
-# Pure math, shared by the page and the tests. Rates are decimals per month (1% a month = 0.01).
-LOAN_MATH = r"""
-var LoanMath = (function () {
-  function r2(n) { return Math.round((n + Number.EPSILON) * 100) / 100; }
-  // equal monthly payment for a loan of p over n months
-  function payment(p, rate, n, method) {
-    if (p <= 0 || n <= 0) return 0;
-    if (method === 'addon') return p * (1 + rate * n) / n;
-    if (rate === 0) return p / n;
-    return p * rate / (1 - Math.pow(1 + rate, -n));
-  }
-  // the largest loan whose monthly payment is at most a
-  function principal(a, rate, n, method) {
-    if (a <= 0 || n <= 0) return 0;
-    if (method === 'addon') return a * n / (1 + rate * n);
-    if (rate === 0) return a * n;
-    return a * (1 - Math.pow(1 + rate, -n)) / rate;
-  }
-  // monthly rate that makes n payments of a worth exactly `cash` today (the real cost of the loan)
-  function effectiveRate(cash, a, n) {
-    if (cash <= 0 || a <= 0 || n <= 0 || a * n <= cash) return 0;
-    var lo = 0, hi = 1;
-    for (var k = 0; k < 200; k++) {
-      var mid = (lo + hi) / 2;
-      if (principal(a, mid, n, 'dim') > cash) lo = mid; else hi = mid;
-    }
-    return (lo + hi) / 2;
-  }
-  // round a loan amount down to a step (lenders lend round figures)
-  function roundDown(x, step) { return x <= 0 ? 0 : Math.floor(x / step + 1e-9) * step; }
-  // month-by-month table; add-on interest is spread evenly (straight line), the way most add-on loans show it
-  function schedule(p, rate, n, method) {
-    var a = r2(payment(p, rate, n, method)), bal = p, rows = [];
-    var addonInt = method === 'addon' ? r2(p * rate) : 0;
-    for (var m = 1; m <= n; m++) {
-      var interest = method === 'addon' ? addonInt : r2(bal * rate);
-      var prin = r2(a - interest);
-      var pay = a;
-      if (m === n) { prin = r2(bal); pay = r2(prin + interest); }  // last payment absorbs the centavos
-      bal = r2(bal - prin);
-      rows.push({ month: m, payment: pay, interest: interest, principal: prin, balance: Math.max(bal, 0) });
-    }
-    return rows;
-  }
-  // everything the page shows, from plain numbers
-  // inp: {gross, deductions, floor, freed, oldBalance, method, rate (per month), n, feePct, feeFixed, mode, amount, cap}
-  function compute(inp) {
-    var out = {};
-    out.netNow = r2(inp.gross - inp.deductions);
-    out.room = r2(Math.max(out.netNow + inp.freed - inp.floor, 0));  // most the new loan's payment can be
-    var exact = principal(out.room, inp.rate, inp.n, inp.method);
-    out.maxExact = r2(exact);
-    var step = exact >= 10000 ? 1000 : 100;
-    var maxLoan = roundDown(exact, step);
-    // make sure the rounded payment of the rounded loan still fits
-    while (maxLoan > 0 && r2(payment(maxLoan, inp.rate, inp.n, inp.method)) > out.room) maxLoan -= step;
-    out.capped = false;
-    if (inp.cap > 0 && maxLoan > inp.cap) { maxLoan = inp.cap; out.capped = true; }
-    out.maxLoan = maxLoan;
-    var loan = inp.mode === 'check' ? inp.amount : maxLoan;
-    out.loan = loan;
-    out.pay = r2(payment(loan, inp.rate, inp.n, inp.method));
-    out.perPayday = r2(out.pay / 2);
-    out.totalPaid = r2(out.pay * inp.n);
-    out.interest = r2(out.totalPaid - loan);
-    out.fees = loan > 0 ? r2(loan * inp.feePct / 100 + inp.feeFixed) : 0;
-    out.cash = r2(loan - out.fees - (loan > 0 ? inp.oldBalance : 0));
-    out.netAfter = r2(out.netNow + (loan > 0 ? inp.freed : 0) - out.pay);
-    out.fits = out.netAfter >= inp.floor - 0.005;
-    out.short = out.fits ? 0 : r2(inp.floor - out.netAfter);
-    var e = effectiveRate(loan - out.fees, out.pay, inp.n);
-    out.eirMonth = e;
-    out.eirYear = e * 12;
-    out.sameAsDim = inp.method === 'addon' ? effectiveRate(loan, out.pay, inp.n) : inp.rate;
-    return out;
-  }
-  return { r2: r2, payment: payment, principal: principal, effectiveRate: effectiveRate, roundDown: roundDown,
-           schedule: schedule, compute: compute };
-})();
-"""
 
-LOAN_SCRIPT = r"""
-(function () {
-  var f = document.getElementById('loan');
-  if (!f) return;
-  var $ = function (id) { return document.getElementById(id); };
-  var peso = function (n) { return (n < 0 ? '−' : '') + '₱' + Math.abs(n).toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
-  var peso0 = function (n) { return '₱' + Math.round(n).toLocaleString('en-PH'); };
-  var pct = function (x, d) { return (x * 100).toLocaleString('en-PH', { maximumFractionDigits: d === undefined ? 2 : d }) + '%'; };
-  var num = function (id) { var v = parseFloat(String($(id).value).replace(/,/g, '')); return isFinite(v) && v > 0 ? v : 0; };
-  var val = function (name) { var c = f.querySelector('input[name="' + name + '"]:checked'); return c ? c.value : ''; };
-  var lastWho = val('who');
+# The browser side, also in Python. It runs in MicroPython after loan_math.py: it reads the
+# form, asks loan_math.view() what to show, and puts it on the page. `js` is MicroPython's door to the page.
+LOAN_UI_PY = r"""
+import js
 
-  function calc() {
-    var who = val('who');
-    if (who !== lastWho) {  // switching sets a sensible floor; the person can still change it
-      $('floor').value = who === 'gov' ? '__FLOOR__' : '0';
-      lastWho = who;
-    }
-    $('floor-gov').hidden = who !== 'gov';
-    $('floor-other').hidden = who === 'gov';
-    var mode = val('mode');
-    $('amount-row').hidden = mode !== 'check';
-    var renew = $('renew').checked;
-    $('renew-rows').hidden = !renew;
-    var method = val('method');
-    var rate = num('rate') / 100;
-    if ($('rate-unit').value === 'year') rate = rate / 12;
-    var n = Math.round(num('term'));
-    var inp = {
-      gross: num('gross'), deductions: num('deductions'), floor: num('floor'),
-      freed: renew ? num('old-pay') : 0, oldBalance: renew ? num('old-bal') : 0,
-      method: method, rate: rate, n: n, feePct: num('fee-pct'), feeFixed: num('fee-fixed'),
-      mode: mode, amount: num('amount'), cap: num('cap')
-    };
-    var o = LoanMath.compute(inp);
-    $('out-net').textContent = peso(o.netNow);
-    $('out-room').textContent = peso(o.room);
-    var msg = '';
-    if (!inp.gross) {
-      $('out-label').textContent = 'Type your monthly pay to begin';
-      $('out-big').textContent = '—';
-    } else if (!n) {
-      $('out-label').textContent = 'Type the number of months';
-      $('out-big').textContent = '—';
-    } else if (mode === 'max') {
-      $('out-label').textContent = 'You may borrow up to about';
-      $('out-big').textContent = peso0(o.maxLoan);
-      if (o.maxLoan <= 0) msg = 'Your take-home pay is already at or below the lowest amount you set, so there is no room for a new loan payment.';
-      else if (o.capped) msg = 'This is the lender\'s limit you typed. Your pay alone would allow about ' + peso0(LoanMath.roundDown(o.maxExact, 1000)) + '.';
-      else msg = 'Rounded down to a round figure. The exact most is ' + peso(o.maxExact) + '.';
-    } else {
-      $('out-label').textContent = 'Monthly payment for ' + peso0(o.loan);
-      $('out-big').textContent = peso(o.pay);
-      if (!o.loan) msg = 'Type the amount you want to borrow.';
-      else if (o.fits) msg = 'This loan fits: your take-home pay stays at or above ' + peso(inp.floor) + '.';
-      else msg = 'This loan is too big: your take-home pay would fall ' + peso(o.short) + ' below ' + peso(inp.floor) + '. The most that fits is about ' + peso0(o.maxLoan) + '.';
-    }
-    $('out-note').textContent = msg;
-    $('out-big').className = 'rpt-due' + (mode === 'check' && o.loan && !o.fits ? ' loan-bad' : '');
-    var show = inp.gross && n && o.loan > 0;
-    $('loan-details').hidden = !show;
-    if (!show) return;
-    $('d-loan').textContent = peso(o.loan);
-    $('d-pay').textContent = peso(o.pay);
-    $('d-payday').textContent = peso(o.perPayday);
-    $('d-total').textContent = peso(o.totalPaid);
-    $('d-interest').textContent = peso(o.interest);
-    $('d-fees').textContent = o.fees ? '−' + peso(o.fees) : peso(0);
-    $('d-old-row').hidden = !inp.oldBalance;
-    $('d-old').textContent = '−' + peso(inp.oldBalance);
-    $('d-cash').textContent = peso(o.cash);
-    $('d-netafter').textContent = peso(o.netAfter);
-    $('d-netafter-row').className = o.fits ? 'total' : 'total loan-bad';
-    $('d-eir').textContent = o.eirMonth ? pct(o.eirMonth) + ' a month, about ' + pct(o.eirYear, 1) + ' a year' : 'none';
-    var cmp = '';
-    if (method === 'addon' && o.sameAsDim > rate + 1e-9)
-      cmp = 'An add-on rate of ' + pct(rate) + ' a month costs the same as a diminishing rate of about ' + pct(o.sameAsDim) + ' a month (' + pct(o.sameAsDim * 12, 1) + ' a year), before fees.';
-    $('d-compare').textContent = cmp;
-    $('d-compare').hidden = !cmp;
-    var rows = LoanMath.schedule(o.loan, rate, n, method), html = '';
-    rows.forEach(function (r) {
-      html += '<tr><th scope="row">' + r.month + '</th><td>' + peso(r.payment) + '</td><td>' + peso(r.interest) +
-              '</td><td>' + peso(r.principal) + '</td><td>' + peso(r.balance) + '</td></tr>';
-    });
-    $('sched-body').innerHTML = html;
-  }
-  f.addEventListener('input', calc);
-  f.addEventListener('change', calc);
-  f.addEventListener('submit', function (e) { e.preventDefault(); });
-  calc();
-})();
+doc = js.document
+
+
+def el(i):
+    return doc.getElementById(i)
+
+
+def num(i):
+    try:
+        v = float(str(el(i).value).replace(",", ""))
+    except ValueError:
+        return 0.0
+    return v if 0 < v < 1e12 else 0.0
+
+
+def picked(name):
+    c = doc.querySelector('input[name="' + name + '"]:checked')
+    return c.value if c else ""
+
+
+last_who = [picked("who")]
+
+
+def read_form():
+    who = picked("who")
+    if who != last_who[0]:  # switching sets a sensible floor; the person can still change it
+        el("floor").value = "__FLOOR__" if who == "gov" else "0"
+        last_who[0] = who
+    return {"who": who, "gross": num("gross"), "deductions": num("deductions"), "floor": num("floor"),
+            "renew": bool(el("renew").checked), "oldPay": num("old-pay"), "oldBal": num("old-bal"),
+            "method": picked("method"), "rate": num("rate"), "rateUnit": el("rate-unit").value,
+            "term": num("term"), "feePct": num("fee-pct"), "feeFixed": num("fee-fixed"),
+            "mode": picked("mode"), "amount": num("amount"), "cap": num("cap")}
+
+
+def show(v):
+    for k in v["hidden"]:
+        el(k).hidden = v["hidden"][k]
+    for k in v["text"]:
+        el(k).textContent = v["text"][k]
+    for k in v["class"]:
+        el(k).className = v["class"][k]
+    if v["rows"]:
+        el("sched-body").innerHTML = v["rows"]
+
+
+def calc(*args):
+    show(view(read_form()))
+
+
+form = el("loan")
+form.addEventListener("input", calc)
+form.addEventListener("change", calc)
+calc()
+el("loan-status").hidden = True
 """.replace("__FLOOR__", str(NTHP_FLOOR))
+
+
+def _loader():
+    """Starts MicroPython in the browser, then runs loan_math.py and LOAN_UI_PY. The only JavaScript on the page
+    besides the site's own menu code: it loads Python and hands it the form."""
+    py = (Path(__file__).parent / "loan_math.py").read_text(encoding="utf-8") + "\n" + LOAN_UI_PY
+    assert "</script" not in py.lower(), "the Python source would end its <script> tag early"
+    return [
+        t.script(Raw(py), type="text/x-python", id="loan-py"),
+        t.script(Raw(
+            "document.getElementById('loan').addEventListener('submit', e => e.preventDefault());\n"
+            "try {\n"
+            "  const { loadMicroPython } = await import('%s');\n"
+            "  const mp = await loadMicroPython({ url: '%s', stdout: () => {} });\n"
+            "  mp.runPython(document.getElementById('loan-py').textContent);\n"
+            "} catch (e) {\n"
+            "  const s = document.getElementById('loan-status');\n"
+            "  s.textContent = 'The calculator could not start. Please reload the page.';\n"
+            "  console.error(e);\n"
+            "}\n" % (MICROPYTHON + "micropython.mjs", MICROPYTHON + "micropython.wasm")), type="module"),
+    ]
 
 
 def _field(label, control, hint=None, row_id=None, hidden=False):
@@ -286,49 +203,62 @@ def _form():
 
 
 def _results():
+    """The results card, already filled in by loan_math (CPython, at build time) for the example values in the
+    form, so the page reads complete before MicroPython starts; the browser then updates it as you type."""
+    v = view(DEFAULTS)
+
+    def tx(i):
+        return v["text"].get(i, "—")
+
+    def row(label, i, row_id=None, cls=None):
+        return t.tr(t.th(label, scope="row"), t.td(tx(i), id=i), id=row_id, class_=cls,
+                    hidden=v["hidden"].get(row_id, False) if row_id else False)
+
     return t.div(
-        t.p("Take-home pay now ", t.b("—", id="out-net"), class_="rpt-av"),
-        t.p("Room for a new loan payment ", t.b("—", id="out-room"), class_="rpt-av"),
-        t.p("—", id="out-label", class_="rpt-due-label"),
-        t.p("—", id="out-big", class_="rpt-due"),
-        t.p("", id="out-note", class_="rpt-av"),
+        t.p("Take-home pay now ", t.b(tx("out-net"), id="out-net"), class_="rpt-av"),
+        t.p("Room for a new loan payment ", t.b(tx("out-room"), id="out-room"), class_="rpt-av"),
+        t.p(tx("out-label"), id="out-label", class_="rpt-due-label"),
+        t.p(tx("out-big"), id="out-big", class_=v["class"]["out-big"]),
+        t.p(tx("out-note"), id="out-note", class_="rpt-av"),
+        t.p("Starting the calculator…", id="loan-status", class_="rpt-av loan-line"),
         t.div(
             t.div(
                 t.table(
                     t.tbody(
-                        t.tr(t.th("Loan amount", scope="row"), t.td(id="d-loan")),
-                        t.tr(t.th("Monthly payment", scope="row"), t.td(id="d-pay")),
-                        t.tr(t.th("Per payday (paid twice a month)", scope="row"), t.td(id="d-payday")),
-                        t.tr(t.th("Total you will pay back", scope="row"), t.td(id="d-total")),
-                        t.tr(t.th("Total interest", scope="row"), t.td(id="d-interest")),
-                        t.tr(t.th("Fees taken out", scope="row"), t.td(id="d-fees")),
-                        t.tr(t.th("Old loan paid off", scope="row"), t.td(id="d-old"), id="d-old-row"),
-                        t.tr(t.th("Cash in your hand", scope="row"), t.td(id="d-cash"), class_="total"),
+                        row("Loan amount", "d-loan"),
+                        row("Monthly payment", "d-pay"),
+                        row("Per payday (paid twice a month)", "d-payday"),
+                        row("Total you will pay back", "d-total"),
+                        row("Total interest", "d-interest"),
+                        row("Fees taken out", "d-fees"),
+                        row("Old loan paid off", "d-old", row_id="d-old-row"),
+                        row("Cash in your hand", "d-cash", cls="total"),
                     ),
                     class_="rpt-table loan-sum",
                 ),
                 class_="table-scroll",
             ),
             t.div(
-                t.table(t.tbody(t.tr(t.th("Take-home pay after the loan", scope="row"), t.td(id="d-netafter"),
-                                     id="d-netafter-row"))),
+                t.table(t.tbody(row("Take-home pay after the loan", "d-netafter", row_id="d-netafter-row",
+                                    cls=v["class"].get("d-netafter-row", "total")))),
                 class_="table-scroll loan-after",
             ),
-            t.p(t.b("True cost (effective rate): "), t.span("—", id="d-eir"), class_="rpt-av loan-line"),
-            t.p("", id="d-compare", class_="rpt-av loan-line"),
+            t.p(t.b("True cost (effective rate): "), t.span(tx("d-eir"), id="d-eir"), class_="rpt-av loan-line"),
+            t.p(v["text"].get("d-compare", ""), id="d-compare", class_="rpt-av loan-line",
+                hidden=v["hidden"].get("d-compare", True)),
             t.details(
                 t.summary("Month-by-month payments"),
                 t.div(
                     t.table(
                         t.thead(t.tr(t.th("Month"), t.th("Payment"), t.th("Interest"), t.th("Principal"), t.th("Balance"))),
-                        t.tbody(id="sched-body"),
+                        t.tbody(Raw(v["rows"]), id="sched-body"),
                         class_="rpt-table",
                     ),
                     class_="table-scroll",
                 ),
                 class_="loan-sched",
             ),
-            id="loan-details",
+            id="loan-details", hidden=v["hidden"]["loan-details"],
         ),
         class_="card rpt-result", aria_live="polite",
     )
@@ -469,7 +399,7 @@ def loan_page():
                 "; ",
                 t.a("Truth in Lending Act (RA 3765)", href="https://lawphil.net/statutes/repacts/ra1963/ra_3765_1963.html", rel="noopener"),
                 ", Sec. 4. Last checked " + LOAN_CHECKED + ".", class_="muted note sources-line"),
-            t.p("Figures are worked out in your browser and nothing you type is sent or saved.", class_="muted note"),
-            t.script(Raw(LOAN_MATH + LOAN_SCRIPT)),
+            t.p("The figures are worked out in Python, right in your browser. Nothing you type is sent or saved.", class_="muted note"),
+            *_loader(),
         ],
     }
