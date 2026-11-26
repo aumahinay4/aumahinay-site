@@ -32,6 +32,9 @@ SHORT_LINKS = [
     ("/rpt-calculator/", "/tools/rpt-calculator/"),
     ("/calculator/", "/tools/rpt-calculator/"),
     ("/demo/", "/tools/altos-demo/"),
+    ("/tools/loan-calculator/", "/tools/salary-loan-calculator/"),  # the salary calculator's first address (2026-11-26)
+    ("/loan-calculator/", "/tools/salary-loan-calculator/"),
+    ("/salary-loan-calculator/", "/tools/salary-loan-calculator/"),
     ("/projects/altos-demo/", "/tools/altos-demo/"),  # its address until 2026-11-24 (demo screens like #col-issue carry over)
     ("/tutorials/civil-service-vocabulary/", "/tutorials/#english-exam-vocabulary"),  # the series' first address (renamed 2026-11-24)
     ("/tutorials/english-exam-vocabulary/", "/tutorials/#english-exam-vocabulary"),
