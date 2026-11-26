@@ -253,7 +253,8 @@ def swipe_pages():
     out = []
     for a, b in top_items():
         for href, _ in (b if isinstance(b, list) else [(a, b)]):
-            if href.startswith("/") and "#" not in href and href not in out:
+            # the ALTOS demo is left out of swipe (Butch 2026-11-27: "Do not include ALTOS Demo in menu swipe")
+            if href.startswith("/") and "#" not in href and href != DEMO_URL and href not in out:
                 out.append(href)
     return out
 
