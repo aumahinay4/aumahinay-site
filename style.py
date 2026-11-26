@@ -1756,4 +1756,17 @@ CSS += """
   #altos, #blog-cats, .post h3[id], .book-part, .book-text h2, .glossary .term { scroll-margin-top: 96px; }
   #english-exam-vocabulary { scroll-margin-top: 104px; }
 }
+/* Salary Loan Calculator (/tools/loan-calculator/): reuses the RPT calculator's form and result styles */
+.rpt-due.loan-bad, .loan-after tr.loan-bad td { color: var(--coral-ink, #c2410c); }
+.loan-sum td, .loan-after td { width: 40%; }
+.loan-after { margin-top: 10px; }
+.loan-after table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.loan-after th, .loan-after td { padding: 8px; font-weight: 800; text-align: left; border-top: 2px solid var(--text); }
+.loan-after td { text-align: right; }
+.loan-line { margin-top: 10px; text-align: left; }
+.loan-line[hidden], #d-old-row[hidden], #loan-details[hidden] { display: none; }
+.loan-sched { margin-top: 14px; }
+.loan-sched summary { cursor: pointer; font-weight: 700; color: var(--panel-ink); }
+.loan-sched .table-scroll { max-height: 420px; overflow: auto; margin-top: 8px; }
+.loan-steps li { margin-bottom: 8px; }
 """

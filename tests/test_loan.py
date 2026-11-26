@@ -1,0 +1,150 @@
+"""Checks the Salary Loan Calculator's math (loan.LOAN_MATH, run in Node) against an independent Python version,
+and the worked examples printed on the page. Run:  python tests/test_loan.py   (needs node on the PATH)."""
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from loan import LOAN_MATH  # noqa: E402
+
+
+def js(expr_list):
+    """Evaluate a list of JavaScript expressions that use LoanMath; returns their JSON values."""
+    code = LOAN_MATH + "\nconsole.log(JSON.stringify([" + ",".join(expr_list) + "]));"
+    out = subprocess.run(["node"], input=code, capture_output=True, text=True, check=True).stdout
+    return json.loads(out)
+
+
+# ---- independent Python reference ----
+def py_payment(p, r, n, method):
+    if method == "addon":
+        return p * (1 + r * n) / n
+    return p / n if r == 0 else p * r / (1 - (1 + r) ** -n)
+
+
+def py_pv(a, r, n):
+    return a * n if r == 0 else a * (1 - (1 + r) ** -n) / r
+
+
+def py_irr(cash, a, n):
+    lo, hi = 0.0, 1.0
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        lo, hi = (mid, hi) if py_pv(a, mid, n) > cash else (lo, mid)
+    return (lo + hi) / 2
+
+
+def close(a, b, tol=0.005):
+    return abs(a - b) <= tol
+
+
+def base(**kw):
+    d = dict(gross=30000, deductions=9000, floor=5000, freed=0, oldBalance=0, method="addon", rate=0.01, n=36,
+             feePct=0, feeFixed=0, mode="max", amount=0, cap=0)
+    d.update(kw)
+    return d
+
+
+FAILS = []
+
+
+def check(name, ok, detail=""):
+    print(("PASS " if ok else "FAIL ") + name + ("" if ok else "  " + str(detail)))
+    if not ok:
+        FAILS.append(name)
+
+
+def main():
+    # 1. payment and principal against Python, many combinations
+    cases = [(p, r, n, m) for p in (5000, 100000, 423000) for r in (0, 0.005, 0.01, 0.0175, 0.03)
+             for n in (1, 6, 12, 36, 60) for m in ("addon", "dim")]
+    exprs = []
+    for p, r, n, m in cases:
+        exprs += ["LoanMath.payment(%r,%r,%r,'%s')" % (p, r, n, m), "LoanMath.principal(%r,%r,%r,'%s')" % (1000, r, n, m)]
+    got = js(exprs)
+    bad = 0
+    for i, (p, r, n, m) in enumerate(cases):
+        pay, prin = got[2 * i], got[2 * i + 1]
+        if not close(pay, py_payment(p, r, n, m), 1e-6):
+            bad += 1
+        if not close(py_payment(prin, r, n, m), 1000, 1e-6):  # principal is the inverse of payment
+            bad += 1
+    check("payment/principal vs Python, %d cases" % len(cases), bad == 0, bad)
+
+    # 2. effective rate: a diminishing loan with no fees has effective rate = its own rate; add-on 1%/36 = ~1.8%
+    e1, e2, e3 = js(["LoanMath.effectiveRate(100000, LoanMath.payment(100000,0.01,36,'dim'), 36)",
+                     "LoanMath.effectiveRate(100000, 100000*1.36/36, 36)",
+                     "LoanMath.effectiveRate(97000, 8500, 24)"])
+    check("EIR of 1%/month diminishing = 1%", close(e1, 0.01, 1e-9), e1)
+    check("EIR add-on 1%/36 ~ 1.77%/month", close(e2, py_irr(100000, 100000 * 1.36 / 36, 36), 1e-9) and 0.0176 < e2 < 0.0178, e2)
+    check("EIR with fees matches Python", close(e3, py_irr(97000, 8500, 24), 1e-9), e3)
+
+    # 3. schedule: principal sums to the loan, balance ends at 0, diminishing interest sums to total interest
+    s_dim, s_add = js(["LoanMath.schedule(100000,0.01,36,'dim')", "LoanMath.schedule(100000,0.01,36,'addon')"])
+    check("dim schedule principal sums to loan", close(sum(r["principal"] for r in s_dim), 100000), sum(r["principal"] for r in s_dim))
+    check("dim schedule ends at 0", s_dim[-1]["balance"] == 0, s_dim[-1])
+    check("dim schedule total interest ~ 19,571.48", close(sum(r["interest"] for r in s_dim), 19571.48, 0.05),
+          sum(r["interest"] for r in s_dim))
+    check("add-on schedule interest = 36,000", close(sum(r["interest"] for r in s_add), 36000), sum(r["interest"] for r in s_add))
+    check("add-on schedule principal sums to loan", close(sum(r["principal"] for r in s_add), 100000))
+    check("add-on schedule ends at 0", s_add[-1]["balance"] == 0, s_add[-1])
+
+    # 4. the page's explanation figures
+    p_add, p_dim = js(["LoanMath.r2(LoanMath.payment(100000,0.01,36,'addon'))", "LoanMath.r2(LoanMath.payment(100000,0.01,36,'dim'))"])
+    check("₱100,000 add-on 1%/36 = ₱3,777.78", p_add == 3777.78, p_add)
+    check("₱100,000 diminishing 1%/36 = ₱3,321.43", p_dim == 3321.43, p_dim)
+    check("diminishing interest = ₱19,571.48", close(p_dim * 36 - 100000, 19571.48), p_dim * 36 - 100000)
+
+    # 5. worked examples
+    ex1, ex2, ex3, ex3max = js([
+        "LoanMath.compute(%s)" % json.dumps(base()),
+        "LoanMath.compute(%s)" % json.dumps(base(method="dim")),
+        "LoanMath.compute(%s)" % json.dumps(base(gross=28000, deductions=20000, freed=4000, oldBalance=50000,
+                                                 rate=0.015, n=24, feePct=3, mode="check", amount=150000)),
+        "LoanMath.compute(%s)" % json.dumps(base(gross=28000, deductions=20000, freed=4000, oldBalance=50000,
+                                                 rate=0.015, n=24, feePct=3, mode="check", amount=123000)),
+    ])
+    check("ex1 net now 21,000 / room 16,000", ex1["netNow"] == 21000 and ex1["room"] == 16000, ex1)
+    check("ex1 exact max 423,529.41", ex1["maxExact"] == 423529.41, ex1["maxExact"])
+    check("ex1 max loan 423,000", ex1["maxLoan"] == 423000, ex1["maxLoan"])
+    check("ex1 payment 15,980 and net after 5,020", ex1["pay"] == 15980 and ex1["netAfter"] == 5020, ex1)
+    check("ex2 exact 481,720.08, max 481,000", ex2["maxExact"] == 481720.08 and ex2["maxLoan"] == 481000, ex2)
+    check("ex2 payment 15,976.08", ex2["pay"] == 15976.08, ex2["pay"])
+    check("ex3 room 7,000", ex3["room"] == 7000, ex3["room"])
+    check("ex3 ₱150,000 pays 8,500, net after 3,500, short 1,500, not fit",
+          ex3["pay"] == 8500 and ex3["netAfter"] == 3500 and ex3["short"] == 1500 and not ex3["fits"], ex3)
+    check("ex3 max that fits 123,000", ex3["maxLoan"] == 123000, ex3["maxLoan"])
+    check("ex3 ₱123,000 pays 6,970, fits", ex3max["pay"] == 6970 and ex3max["fits"], ex3max)
+    check("ex3 ₱123,000 cash 69,310 (fees 3,690)", ex3max["cash"] == 69310 and ex3max["fees"] == 3690, ex3max)
+
+    # 6. edge cases and the floor guarantee
+    edge = js([
+        "LoanMath.compute(%s)" % json.dumps(base(deductions=26000)),           # net 4,000: below floor
+        "LoanMath.compute(%s)" % json.dumps(base(cap=200000)),                 # lender cap
+        "LoanMath.compute(%s)" % json.dumps(base(rate=0, method="dim", n=10, gross=10000, deductions=0)),  # zero rate
+        "LoanMath.compute(%s)" % json.dumps(base(gross=7000, deductions=1500, n=12)),  # small room -> ₱100 steps
+    ])
+    check("no room -> max 0", edge[0]["maxLoan"] == 0 and edge[0]["room"] == 0, edge[0])
+    check("cap applied", edge[1]["maxLoan"] == 200000 and edge[1]["capped"], edge[1])
+    check("zero rate: 5,000 x 10 = 50,000", edge[2]["maxLoan"] == 50000 and edge[2]["pay"] == 5000, edge[2])
+    check("small room rounds to ₱100", edge[3]["maxLoan"] % 100 == 0 and edge[3]["maxLoan"] < 10000 and edge[3]["fits"], edge[3])
+
+    # every rounded max loan keeps take-home pay at or above the floor, across many inputs
+    grid = [base(gross=g, deductions=d, method=m, rate=r, n=n, feePct=3)
+            for g in (12000, 18500, 25000, 40000, 73210) for d in (2000, 6500, 9999)
+            for m in ("addon", "dim") for r in (0.005, 0.01, 0.0125, 0.02) for n in (6, 12, 24, 36, 48, 60)]
+    res = js(["LoanMath.compute(%s)" % json.dumps(x) for x in grid])
+    broke = [(x, o) for x, o in zip(grid, res) if o["maxLoan"] and (not o["fits"] or o["netAfter"] < 5000)]
+    check("floor kept for every max loan (%d cases)" % len(grid), not broke, broke[:1])
+    tight = [o for x, o in zip(grid, res) if o["maxLoan"] and o["room"] - o["pay"] > py_payment(
+        1000 if o["maxExact"] >= 10000 else 100, x["rate"], x["n"], x["method"]) + 0.01]
+    check("max loan is within one rounding step of the limit", not tight, tight[:1])
+
+    print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
+    sys.exit(1 if FAILS else 0)
+
+
+if __name__ == "__main__":
+    main()
