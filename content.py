@@ -660,19 +660,19 @@ BLOG = [
         "title": "Borrowing on a Government Salary: Why I Built Three Loan Calculators",
         "slug": "why-i-built-the-loan-calculators",
         "category": "software",
-        "summary": ("I have taken a salary loan and a housing loan, and a car loan may come next. Here is why I built "
-                    "a free calculator for each, and the questions they help a borrower answer before signing."),
+        "summary": ("A salary loan, a car loan, a housing loan: each one raises the same questions before signing. Here is "
+                    "why I built a free calculator for each, and what they help a borrower answer."),
         # HELD (Butch 2026-11-26): goes live only after AdSense approval, once the three calculators
         # (PRs #302, #303, #304) are live and Butch says go. Set the real date and publish_on then.
         "publish_on": "2099-12-31 21:00",
         "body": [
-            "I have borrowed against my salary. I have a housing loan. And if the budget allows, a car loan "
-            "comes next. Each of these loans came with the same three questions before anything was signed: "
+            "I have borrowed against my salary, and if the budget allows, a car loan comes next. Every loan "
+            "comes with the same three questions before anything is signed: "
             "How much can I borrow? How much of my pay will be left? And what will this loan really cost?",
             "I work in the treasury service, where the day is spent with numbers that must agree to the last "
             "centavo: collections, disbursements, reports. A loan offer does not always lay out its numbers "
-            "that clearly. So I built three free calculators on this website, one for each kind of loan I have "
-            "faced or plan to face: the Salary Loan Calculator, the Car Loan Calculator and the Housing Loan "
+            "that clearly. So I built three free calculators on this website, one for each of three kinds of "
+            "loan: the Salary Loan Calculator, the Car Loan Calculator and the Housing Loan "
             "Calculator. This post explains why each one exists, the question it answers, and the one check "
             "that matters in every loan offer.",
             ("h", "The Salary Loan: What Is Left on Payday?"),
@@ -748,7 +748,7 @@ BLOG = [
             "lessons on this site start from the very beginning, with examples from treasury work.",
             ("cta", "Start the Python for Treasury Work lessons", "/tutorials/"),
             ("h", "A Loan Is Paid From Future Paydays"),
-            "I built these calculators because I needed their answers myself. A loan is a promise paid out of "
+            "I built these calculators to answer a borrower's questions before the papers are signed. A loan is a promise paid out of "
             "paydays that have not come yet. Before making that promise, it is worth knowing exactly what will "
             "be left on each of them.",
             ("cta", "Read: How to Use the RPT Calculator", "/blog/how-to-use-the-rpt-calculator/"),
