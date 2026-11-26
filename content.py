@@ -659,22 +659,23 @@ BLOG = [
         "date": "December 31, 2099",
         "title": "Borrowing on a Government Salary: Why I Built Three Loan Calculators",
         "slug": "why-i-built-the-loan-calculators",
-        "category": "software",
-        "summary": ("A salary loan, a car loan, a housing loan: each one raises the same questions before signing. Here is "
-                    "why I built a free calculator for each, and what they help a borrower answer."),
+        "category": "finance",
+        "summary": ("A salary loan, a housing loan, a car loan: each one raises the same questions before signing. Here "
+                    "is why I built a free calculator for each, with advice from regulators and a financial planner."),
         # HELD (Butch 2026-11-26): goes live only after AdSense approval, once the three calculators
         # (PRs #302, #303, #304) are live and Butch says go. Set the real date and publish_on then.
+        # RULE (Butch 2026-11-26): mention only his salary loan; never say he has a housing loan or plans a car loan.
         "publish_on": "2099-12-31 21:00",
         "body": [
-            "I have borrowed against my salary, and if the budget allows, a car loan comes next. Every loan "
-            "comes with the same three questions before anything is signed: "
-            "How much can I borrow? How much of my pay will be left? And what will this loan really cost?",
+            "I have borrowed against my salary. Before signing, I had to answer three questions, and every loan "
+            "raises the same ones: How much can I borrow? How much of my pay will be left? And what will this "
+            "loan really cost?",
             "I work in the treasury service, where the day is spent with numbers that must agree to the last "
             "centavo: collections, disbursements, reports. A loan offer does not always lay out its numbers "
             "that clearly. So I built three free calculators on this website, one for each of three kinds of "
-            "loan: the Salary Loan Calculator, the Car Loan Calculator and the Housing Loan "
-            "Calculator. This post explains why each one exists, the question it answers, and the one check "
-            "that matters in every loan offer.",
+            "loan: the Salary Loan Calculator, the Housing Loan Calculator and the Car Loan Calculator. This "
+            "post explains why each one exists, the question it answers, what regulators and a financial "
+            "planner advise for each, and the one check that matters in every loan offer.",
             ("h", "The Salary Loan: What Is Left on Payday?"),
             "A salary loan looks simple. You borrow, and the payment comes out of your pay every month until "
             "the loan is done. The real question is not the payment. It is what remains after it.",
@@ -688,39 +689,12 @@ BLOG = [
             "the deductions you already have, and the least you want to bring home each month. It shows the "
             "biggest loan that leaves that amount untouched, or whether an amount you already have in mind "
             "fits. If the new loan pays off an old one, it counts the old payment that will stop.",
+            ("point", "Expert advice",
+             "Registered financial planner Efren Ll. Cruz, in his \"Ask Efren\" column in the Philippine Daily "
+             "Inquirer, lists questions to ask before you borrow. The first: is the interest quoted on a simple "
+             "or an effective basis? He also advises asking whether the lender charges fees if you pay the loan "
+             "early, in part or in full."),
             ("cta", "Open the Salary Loan Calculator", "/tools/loan-calculator/"),
-            ("h", "The Check That Matters in Every Offer"),
-            "One question decides how much a loan really costs: how is the interest charged? Two offers can "
-            "both say \"1% a month\" and still cost very different amounts.",
-            ("point", "Add-on rate",
-             "Interest is charged on the full loan for the whole term. On ₱200,000 at 1% a month for 24 "
-             "months, that is ₱200,000 × 1% × 24 = ₱48,000 in interest, paid in 24 payments of ₱10,333.33."),
-            ("point", "Diminishing balance",
-             "Each month's interest is charged only on what is still unpaid. The same ₱200,000 at 1% a month "
-             "for 24 months costs ₱9,414.69 a month, or about ₱25,953 in interest."),
-            "Same rate on paper, and the add-on loan charges nearly twice the interest, because you keep paying "
-            "interest on money you have already paid back. Worked out on a diminishing balance, that add-on "
-            "offer costs about 1.8% a month, or roughly 21.6% a year. Fees taken out of the loan push the real "
-            "cost higher still, since you pay interest on money you never received.",
-            "The Salary Loan and Car Loan Calculators show this true cost, the effective rate, below the "
-            "results, so two offers can be compared side by side. The figures to type in come from the "
-            "lender's own disclosure. Under the Truth in Lending Act (Republic Act No. 3765), a lender must give "
-            "the borrower, before the deal is closed, a written statement of the amount financed, the charges, "
-            "the finance charge in pesos and centavos, and that charge as a simple annual rate. Ask for it, and "
-            "read it before you sign.",
-            ("h", "The Car Loan: The Cash You Need Before You Drive Home"),
-            "The car loan is the one still in my plans, if the budget allows. That makes now the right time to "
-            "run the numbers: before visiting a dealer, not after.",
-            "A car loan asks for more than a monthly payment. On release day there is the down payment, the "
-            "chattel mortgage fee and other fees, the first year's insurance if you pay it in cash, and the "
-            "first monthly payment if the lender asks for it in advance. The Car Loan Calculator adds these up "
-            "into one figure: the cash you need before you drive the car home. It also shows the monthly "
-            "income that keeps all your loan payments, old and new, within a share of income you choose.",
-            "Car loan quotations can state an add-on rate per month, per year or for the whole term, and the "
-            "calculator takes all three, so you can type exactly what the quotation says. And if the lender "
-            "requires comprehensive insurance for as long as the loan runs, the renewals from the second year "
-            "on are yours to budget.",
-            ("cta", "Open the Car Loan Calculator", "/tools/car-loan-calculator/"),
             ("h", "The Housing Loan: A Promise That Runs for Decades"),
             "A housing loan is a long commitment. Pag-IBIG, for example, lends for up to 30 years. Two things "
             "deserve a close look over that span.",
@@ -734,7 +708,55 @@ BLOG = [
             "the income that payment needs, and what the payment could become if the rate goes up after the "
             "fixing period. It works for a Pag-IBIG loan or a bank offer, using the figures from your own "
             "written offer.",
+            ("point", "Expert advice",
+             "The Consumer Financial Protection Bureau, the United States agency that protects borrowers, puts "
+             "it simply: \"Choosing the right home loan is just as important as choosing the right home.\" It "
+             "advises getting official loan offers from lenders and comparing them before you choose. It also "
+             "reminds borrowers that lenders measure your ability to pay by your debt-to-income ratio: all your "
+             "monthly debt payments divided by your gross monthly income."),
             ("cta", "Open the Housing Loan Calculator", "/tools/housing-loan-calculator/"),
+            ("h", "The Car Loan: The Cash You Need Before You Drive Home"),
+            "A car loan is best planned before visiting a dealer, not after. It asks for more than a monthly "
+            "payment. On release day there is the down payment, the chattel mortgage fee and other fees, the "
+            "first year's insurance if you pay it in cash, and the first monthly payment if the lender asks for "
+            "it in advance. The Car Loan Calculator adds these up into one figure: the cash you need before you "
+            "drive the car home. It also shows the monthly income that keeps all your loan payments, old and "
+            "new, within a share of income you choose.",
+            "Car loan quotations can state an add-on rate per month, per year or for the whole term, and the "
+            "calculator takes all three, so you can type exactly what the quotation says. And if the lender "
+            "requires comprehensive insurance for as long as the loan runs, the renewals from the second year "
+            "on are yours to budget.",
+            ("point", "Expert advice",
+             "The Consumer Financial Protection Bureau's 2024 auto loan guide advises thinking of a car loan "
+             "\"in terms of the total cost of financing a vehicle, not just the monthly payment.\" A low monthly "
+             "payment usually means a longer term, and a longer term can mean more interest. The guide adds "
+             "that a larger down payment lowers the total cost, and suggests getting loan quotes from a bank or "
+             "other lender before going to the dealership."),
+            ("cta", "Open the Car Loan Calculator", "/tools/car-loan-calculator/"),
+            ("h", "The Check That Matters in Every Offer"),
+            "One question decides how much a loan really costs: how is the interest charged? Two offers can "
+            "both say \"1% a month\" and still cost very different amounts.",
+            ("point", "Add-on rate",
+             "Interest is charged on the full loan for the whole term. On ₱200,000 at 1% a month for 24 "
+             "months, that is ₱200,000 × 1% × 24 = ₱48,000 in interest, paid in 24 payments of ₱10,333.33."),
+            ("point", "Diminishing balance",
+             "Each month's interest is charged only on what is still unpaid. The same ₱200,000 at 1% a month "
+             "for 24 months costs ₱9,414.69 a month, or about ₱25,953 in interest."),
+            "Same rate on paper, and the add-on loan charges nearly twice the interest, because you keep paying "
+            "interest on money you have already paid back. Worked out on a diminishing balance, that add-on "
+            "offer costs about 1.8% a month, or roughly 21.6% a year. Fees taken out of the loan push the real "
+            "cost higher still, since you pay interest on money you never received.",
+            "The Philippine rules are on the borrower's side here. Under the Truth in Lending Act (Republic Act "
+            "No. 3765), a lender must give the borrower, before the deal is closed, a written statement of the "
+            "amount financed, the charges, and the finance charge in pesos and centavos and as a rate. The "
+            "Bangko Sentral ng Pilipinas went further in Circular No. 730 (2011): where a loan's terms call for "
+            "it, banks must disclose the effective interest rate in that statement as the true cost of the loan.",
+            ("point", "Expert advice",
+             "When those rules took effect in 2012, BSP Deputy Governor Nestor Espenilla said, \"Informed "
+             "clients make informed decisions and avoid over-indebtedness,\" and added, \"It is the right of "
+             "the borrowers to demand for this statement.\" Ask for it, and read it before you sign."),
+            "The Salary Loan and Car Loan Calculators show this true cost, the effective rate, below the "
+            "results, so two offers can be compared side by side.",
             ("h", "What the Three Calculators Share"),
             ("point", "Your figures, not a lender's",
              "No lender is named and no lender's offer is built in. The rates in the forms are examples only; "
@@ -748,9 +770,9 @@ BLOG = [
             "lessons on this site start from the very beginning, with examples from treasury work.",
             ("cta", "Start the Python for Treasury Work lessons", "/tutorials/"),
             ("h", "A Loan Is Paid From Future Paydays"),
-            "I built these calculators to answer a borrower's questions before the papers are signed. A loan is a promise paid out of "
-            "paydays that have not come yet. Before making that promise, it is worth knowing exactly what will "
-            "be left on each of them.",
+            "I built these calculators to answer a borrower's questions before the papers are signed. A loan is "
+            "a promise paid out of paydays that have not come yet. Before making that promise, it is worth "
+            "knowing exactly what will be left on each of them.",
             ("cta", "Read: How to Use the RPT Calculator", "/blog/how-to-use-the-rpt-calculator/"),
             ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit",
              "/blog/when-local-governments-borrow/"),
