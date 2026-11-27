@@ -124,6 +124,16 @@ def main():
           view(term=12)["hidden"]["sched-toggle"] and view(dpPct=100)["hidden"]["out-pill"] and view(dpPct=100)["csv"] == "")
     s = C.schedule(960000, 0.005, 60, "addon")
     check("schedule ends at 0, principal sums to loan", s[-1]["balance"] == 0 and close(sum(x["principal"] for x in s), 960000))
+    # interest on the balance (BSP Circ. 730, MORB X305.5): falls every month, same payment, same P288,000 total
+    check("add-on table: interest falls every month, payment fixed, total P288,000",
+          all(s[i]["interest"] > s[i + 1]["interest"] for i in range(59)) and all(x["payment"] == 20800 for x in s)
+          and close(sum(x["interest"] for x in s), 288000), (s[0], s[-1]))
+    import tags as tg
+    from car import car_page
+    html = tg.render(car_page()["body"])
+    for needle in ("The Python behind the calculator", "def monthly_rate", "def payment", "BSP Circular No. 730",
+                   "₱8,678.35", "monthly rate × 12"):
+        check("page shows: " + needle, needle in html, needle)
 
     # 10. MicroPython-friendly source
     src = (ROOT / "car_math.py").read_text(encoding="utf-8")
@@ -231,7 +241,7 @@ def check_browser_python():
         lines = unquote(href.split(",", 1)[1]).strip().split("\n")
         check("page Python: CSV export, header + 60 rows", name == "aumahinay-car-loan-schedule.csv"
               and href.startswith("data:text/csv") and lines[0] == "Month,Payment,Interest,Principal,Balance"
-              and len(lines) == 61 and lines[1] == "1,20800.00,4800.00,16000.00,944000.00" and lines[-1].endswith(",0.00"),
+              and len(lines) == 61 and lines[1] == "1,20800.00,8678.35,12121.65,947878.35" and lines[-1].endswith(",0.00"),
               (name, lines[:2], lines[-1]))
         radios["dpmode"] = "peso"
         els["dp-amt"].value = "600000"

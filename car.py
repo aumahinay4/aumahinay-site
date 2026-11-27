@@ -26,8 +26,10 @@ MicroPython, as the Salary Loan Calculator does.
 from pathlib import Path
 
 import tags as t
+import car_math
+import loan_math
 from car_math import CAR_DEFAULTS, car_view
-from loan import MICROPYTHON, _field, _num, _radio, loan_tabs
+from loan import MICROPYTHON, _field, _num, _radio, loan_tabs, python_box
 from tags import Raw
 
 CAR_URL = "/tools/car-loan-calculator/"
@@ -306,6 +308,26 @@ def _results():
     )
 
 
+def _python_section():
+    return t.div(
+        t.h2("The Python behind the calculator"),
+        t.p("This page runs on two small Python files. loan_math.py holds the loan formulas shared with the Salary "
+            "Loan Calculator: the monthly payment, the effective rate and the month-by-month table. car_math.py adds "
+            "what is special to a car: the down payment, the fees, the cash needed on release day and the three ways "
+            "an add-on rate can be quoted. The same files fill in the example when the page is built and run in your "
+            "browser, in MicroPython, each time you change a number. Here are two key parts, copied straight from "
+            "the files:"),
+        t.ol(
+            t.li(t.b("monthly_rate "), "turns the rate you type, per year, per month or for the whole term, into a "
+                 "rate per month."),
+            t.li(t.b("payment "), "works out the equal monthly payment. For an add-on loan it is the loan plus all "
+                 "the interest, divided by the months."),
+            class_="rpt-notes",
+        ),
+        python_box("car_math.py and loan_math.py (parts)", [car_math.monthly_rate, loan_math.payment]),
+    )
+
+
 def _explanations():
     return [
         t.h2("How it works"),
@@ -333,6 +355,19 @@ def _explanations():
         t.p("Because you keep paying interest on money you have already paid back, an add-on rate costs more than it "
             "looks. The calculator shows the effective rate: 6% a year add-on for 60 months works out to about 10.8% a "
             "year on a diminishing balance, and higher still once the fees and the advance payment are counted."),
+        t.h3("Why the interest in the table gets smaller"),
+        t.p("The Bangko Sentral ng Pilipinas (BSP Circular No. 730) says banks may charge interest only on the "
+            "balance still owed at the start of each month. So a bank turns an add-on rate into the diminishing rate "
+            "that gives the same monthly payment, and its payment table shows the interest falling every month. The "
+            "calculator's table does the same. In example 1 below, the first month's interest is ₱8,678.35 and the "
+            "last month's is ₱186.33. The payment stays ₱20,800 every month, and the total interest is still "
+            "₱288,000."),
+        t.h3("How the yearly effective rate is shown"),
+        t.p("The effective rate counts the fees and the advance payment, because they reduce the money you really "
+            "borrow. Example 1 works out to about 0.98% a month. The yearly figure is the monthly rate × 12, which "
+            "gives 11.7% a year. BSP rules allow the effective rate to be stated per month or per year. If a lender "
+            "compounds the monthly rate instead, the yearly figure looks a little higher, about 12.4% here, for the "
+            "same loan."),
         t.h2("What is the chattel mortgage fee?"),
         t.p("When a lender pays for your car, it keeps a claim on the car until the loan is paid. People still call "
             "this a chattel mortgage. Under the Personal Property Security Act (Republic Act No. 11057), the claim is "
@@ -370,6 +405,7 @@ def _explanations():
              "Biggest loan for ₱13,000 a month: ₱13,000 × 60 ÷ (1 + 0.5% × 60) = ₱780,000 ÷ 1.3 = ₱600,000.",
              "With 20% down, the loan is 80% of the price: ₱600,000 ÷ 80% = ₱750,000."],
             "The ₱1.2 million car is too much for this income, but a car of about ₱750,000 fits."),
+        _python_section(),
         t.h2("Before you sign"),
         t.ul(
             t.li(t.b("Ask for the disclosure statement. "), "Under the Truth in Lending Act (RA 3765), the lender must "
@@ -431,7 +467,10 @@ def car_page():
                 t.a("LRA Circular No. 02-2025, operation of the Personal Property Security Registry", href="https://lra.gov.ph/wp-content/uploads/2025/07/02-2025-OPERATIONALIZATION-OF-THE-PERSONAL-PROPERTY-SECURITY-REGISTRY.pdf", rel="noopener"),
                 "; ",
                 t.a("Truth in Lending Act (RA 3765)", href="https://lawphil.net/statutes/repacts/ra1963/ra_3765_1963.html", rel="noopener"),
-                ", Sec. 4. Last checked " + CAR_CHECKED + ".", class_="muted note sources-line"),
+                ", Sec. 4; ",
+                t.a("BSP Circular No. 730, s. 2011", href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/56725", rel="noopener"),
+                " (effective rate; interest on the outstanding balance). Last checked " + CAR_CHECKED + ".",
+                class_="muted note sources-line"),
             t.p("The figures are worked out in Python, right in your browser. Nothing you type is sent or saved.", class_="muted note"),
             *_loader(),
         ],
