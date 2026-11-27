@@ -64,9 +64,20 @@ def ra_words(n):
     return _two(int(n[:2])) + " " + " ".join(_DIG[int(d)] for d in n[2:])
 
 
+def year_words(n):
+    """How a year is said (Butch 2026-11-27): 1776 -> "seventeen seventy-six", 1905 -> "nineteen oh five",
+    1900 -> "nineteen hundred", 2000 -> "two thousand", 2005 -> "two thousand five", 2024 -> "twenty twenty-four"."""
+    y = int(n)
+    if 2000 <= y <= 2009:
+        return "two thousand" + (" " + _DIG[y - 2000] if y > 2000 else "")
+    hi, lo = divmod(y, 100)
+    return _two(hi) + " " + ("hundred" if lo == 0 else _two(lo))
+
+
 def spoken(text):
     """Small fixes so the voice reads the way a person would."""
     s = text
+    s = re.sub(r"\b(1[1-9]\d\d|20\d\d)[-–](1[1-9]\d\d|20\d\d)\b", r"\1 to \2", s)  # 2023-2024
     s = re.sub(r"₱\s?([\d,]+(?:\.\d+)?)(\s?(?:million|billion|thousand))?", lambda m: m.group(1) + (m.group(2) or "") + " pesos", s)
     s = s.replace("₱", "pesos ")
     s = re.sub(r"\bNos\.\s*(?=\d)", "Numbers ", s)  # "Republic Act No. 7160" -> "Republic Act Number 7160" (Butch, 2026-11-15)
@@ -91,6 +102,10 @@ def spoken(text):
     s = re.sub(r"\s*[—–]\s*", ", ", s)  # dashes become a short pause
     s = s.replace("“", '"').replace("”", '"').replace("’", "'").replace("‘", "'")
     s = s.replace("/", " / ") if re.search(r"\w/\w", s) and "http" not in s else s
+    # Years (1100-2099, four digits, no comma) are said like years, not "one thousand seven hundred ...".
+    # Not money ("1500 pesos"), not a number in a list of IDs ("Number 1776"), not part of a longer number.
+    s = re.sub(r"(?<![\d,.₱/-])(?<!Number )(?<!Numbers )\b(1[1-9]\d\d|20\d\d)\b(?![\d,]\d|\.\d| pesos)",
+               lambda m: year_words(m.group(1)), s)
     return re.sub(r"\s+", " ", s).strip()
 
 
