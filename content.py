@@ -606,6 +606,7 @@ BLOG_CATEGORIES = [
     ("software", "Software & ALTOS", "blue"),
     ("finance", "Public Finance", "green"),
     ("treasury", "Inside the Local Treasury", "amber"),  # Inside the Local Treasury series, separate category (Butch 2026-11-18)
+    ("pa", "Public Administration", "indigo"),  # Public Administration in Practice series, Saturdays 9 pm (Butch 2026-11-19, day changed 2026-11-27)
     ("learn", "Learn", "violet"),  # the four tech series in one category (Butch 2026-11-20), see LEARN_SERIES
     ("personal", "Personal", "coral"),  # Personal stays last (Butch 2026-11-10)
 ]
@@ -3271,8 +3272,9 @@ from finance_posts import FINANCE_POSTS  # noqa: E402
 from data_posts import DATA_POSTS  # noqa: E402
 from pm_posts import PM_POSTS  # noqa: E402
 from bi_posts import BI_POSTS  # noqa: E402
+from pa_posts import PA_POSTS  # noqa: E402
 
-for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + PM_POSTS + BI_POSTS:
+for _p in TREASURY_POSTS + FINANCE_POSTS + DATA_POSTS + PM_POSTS + BI_POSTS + PA_POSTS:
     _i = next((i for i, b in enumerate(BLOG) if (b.get("publish_on") or "")[:10] < _p["publish_on"][:10]
                and b.get("publish_on")), len(BLOG))
     BLOG.insert(_i, _p)

@@ -572,6 +572,7 @@ def home():
         "personal": "The farm, the province, and life beyond the office.",
         "learn": "Short series on cybersecurity, data analytics, business intelligence and project management, "
                  "in plain words for people who work in local government.",
+        "pa": "Graduate-level public administration ideas, explained plainly and tested against local government work.",
     }
     return part(
         "Home", "/",
