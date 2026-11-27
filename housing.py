@@ -19,9 +19,11 @@ on the Supreme Court E-Library and the 2026 changes in the news):
 
 from pathlib import Path
 
+import housing_math
+import loan_math
 import tags as t
 from housing_math import BANK_LTV, DEFAULTS, FIX_CHOICES, INCOME_RATIO, PAGIBIG_CAP, PAGIBIG_LTV, view
-from loan import MICROPYTHON, _example, _field, _num, _radio, loan_tabs
+from loan import MICROPYTHON, _example, _field, _num, _radio, loan_tabs, python_box
 from tags import Raw
 
 HOUSING_URL = "/tools/housing-loan-calculator/"
@@ -287,6 +289,26 @@ def _results():
     )
 
 
+def _python_section():
+    return t.div(
+        t.h2("The Python behind the calculator"),
+        t.p("This page runs on two small Python files. loan_math.py holds the loan formulas shared with the Salary "
+            "and Car Loan Calculators. housing_math.py adds what is special to a house: the share of the price the "
+            "lender lends, the fixing period, the insurance and the income needed. The same files fill in the example "
+            "when the page is built and run in your browser, in MicroPython, each time you change a number. Here are "
+            "two key parts, copied straight from the files:"),
+        t.ol(
+            t.li(t.b("payment "), "works out the equal monthly payment on a diminishing balance, the standard "
+                 "amortization formula."),
+            t.li(t.b("schedule "), "builds the month-by-month table: each month's interest is the balance × the "
+                 "monthly rate. When the fixing period ends, it works out a new payment on the balance left, at the "
+                 "new rate, for the months left."),
+            class_="rpt-notes",
+        ),
+        python_box("loan_math.py and housing_math.py (parts)", [loan_math.payment, housing_math.schedule]),
+    )
+
+
 def _explanations():
     return [
         t.h2("How it works"),
@@ -303,7 +325,8 @@ def _explanations():
                  "₱14,000 payment needs ₱40,000 gross income a month."),
             t.li(t.b("The effective rate. "), "The small label under the monthly amortization is the yearly rate "
                  "that the loan really costs you once the insurance premiums and any new rate after the fixing "
-                 "period are counted. With no insurance and no change of rate, it equals the rate you typed."),
+                 "period are counted. With no insurance and no change of rate, it equals the rate you typed. The "
+                 "yearly figure is the monthly effective rate × 12, as BSP rules allow a rate per month or per year."),
             class_="rpt-notes loan-steps",
         ),
         t.h2("Pag-IBIG housing loan rules to know"),
@@ -360,6 +383,7 @@ def _explanations():
              "Insurance: (₱6,000 + ₱3,000) ÷ 12 = ₱750 a month. Monthly amortization: ₱19,357.17.",
              "Income needed at 35%: about ₱55,307. ₱60,000 is enough."],
             "₱19,357.17 a month. The total interest over 20 years is ₱2,065,723.39 if the rate stays at 7%."),
+        _python_section(),
         t.h2("Before you sign"),
         t.ul(
             t.li(t.b("Ask for the disclosure statement. "), "Under the Truth in Lending Act (RA 3765), the lender must "

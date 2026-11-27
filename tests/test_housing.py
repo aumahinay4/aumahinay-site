@@ -159,6 +159,13 @@ def main():
     # 8. the browser side, joined exactly as the page joins it, with a stand-in `js` page
     check_browser_python()
 
+    # the page explains the effective rate and shows the real Python behind it (Butch 2026-11-27)
+    import tags as tg
+    from housing import housing_page
+    html = tg.render(housing_page()["body"])
+    for needle in ("The Python behind the calculator", "def payment", "def schedule", "monthly effective rate × 12"):
+        check("page shows: " + needle, needle in html, needle)
+
     print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
     sys.exit(1 if FAILS else 0)
 
