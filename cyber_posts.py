@@ -5371,7 +5371,7 @@ CYBER_POSTS = [
              "Seeing is no longer believing",
              "Voices and video can be faked; a family safe word helps."),
             ("point", "Act fast if you clicked", "Change passwords, call your bank, and report to 1326."),
-            ("h", "Your Part 3 Action Plan"),
+            ("h", "Habits That Stop a Scam"),
             ("point",
              "Adopt a call-back rule",
              "Never change bank details, approve a payment or share sensitive files based only on"
@@ -5420,9 +5420,7 @@ CYBER_POSTS = [
             "account is how well you prove that you are you.",
             "In Part 2 of this series, we look at passwords, why the old rules failed, and the "
             "tools that make logins far safer: password managers, multi-factor authentication and"
-            " passkeys. By the end of this post, you will know how to build a password that "
-            "resists cracking, which login protections are strongest, and what to do if an "
-            "account is taken over.",
+            " passkeys. Along the way, you will see how to build a password that resists cracking, which login protections are strongest, and what to do if an account is taken over.",
             ("These are not just rules I read about for the Google Cybersecurity Professional "
              "Certificate. When I built ALTOS, several of the safeguards I wrote into it were about "
              "logins: passwords are stored only in scrambled form, accounts lock after repeated wrong "
@@ -5556,7 +5554,7 @@ CYBER_POSTS = [
             ("point",
              "Guard your email first",
              "Whoever controls your inbox can reset almost everything else."),
-            ("h", "Your Part 2 Action Plan"),
+            ("h", "Lock Down Your Logins"),
             ("point",
              "Start a password manager",
              "Install one and move your five most important accounts into it, each with a new, "
@@ -5605,9 +5603,7 @@ CYBER_POSTS = [
             "and build software on the side, and both jobs have taught me the same lesson: what "
             "protects public money and public records is not one strong lock but many good "
             "habits. The series is written for everyone: parents, students, office workers, small"
-            " business owners and anyone who uses a phone. By the end of this post, you will know"
-            " what security protects, who the attackers are, how a typical breach unfolds, and "
-            "why layers of defense work better than one strong wall.",
+            " business owners and anyone who uses a phone. We begin with the basics: what security protects, who the attackers are, how a typical breach unfolds, and why layers of defense work better than one strong wall.",
             ("h", "What Security Protects: The CIA Triad"),
             "Security professionals sum up their work in three words, known as the CIA triad. (It"
             " has nothing to do with the spy agency.)",
@@ -5749,7 +5745,7 @@ CYBER_POSTS = [
             ("point",
              "Layers beat walls",
              "Several imperfect defenses together stop what any single one would miss."),
-            ("h", "Your Part 1 Action Plan"),
+            ("h", "Three Steps for This Week"),
             ("point",
              "Check your exposure",
              "Visit haveibeenpwned.com and enter your main email address. The free service shows "
