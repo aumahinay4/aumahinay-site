@@ -16,11 +16,11 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 40: The Closing Checklist, Forty Parts on One Page",
         "slug": "business-intelligence-part-40-closing-checklist",
         "category": "bi",
-        "date": "May 25, 2027",
+        "date": "April 7, 2028",
         "summary": "The last part of the Business Intelligence Series turns forty parts into one checklist to "
                    "run before any report or dashboard goes out, a map of where each topic was covered, and a "
                    "simple plan for the first month, quarter and year of treasury BI.",
-        "publish_on": "2027-05-25 21:00",
+        "publish_on": "2028-04-07 21:00",
         "body": [
             "The new analyst had read every part of this series, some twice. On her first Monday, the head of "
             "office handed her a dashboard that was due Friday and asked one question: “Is it ready to show the "
@@ -117,7 +117,7 @@ BI_POSTS = [
             ("point", "Publishing unchecked numbers", "Test the pipeline every time the data changes."),
             ("point", "Keeping everything forever", "Measure use and retire old reports."),
             ("point", "Hiding the date", "Every view should say when its data was last updated."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Five areas to check", "The reader, the data, the numbers, the design and the upkeep."),
             ("point", "Every no has a fix", "The checklist points back to the part that explains it."),
             ("point", "Start small", "One brief, one pipeline and one daily view in the first month."),
@@ -140,11 +140,11 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 39: The Collection Funnel, Finding the Step Where Money Is Lost",
         "slug": "business-intelligence-part-39-collection-funnel",
         "category": "bi",
-        "date": "May 20, 2027",
+        "date": "March 29, 2028",
         "summary": "A collection rate tells you how much was collected, but not where the rest was lost. A funnel "
                    "counts the accounts at each step, from assessed to billed to paid, so the weakest step stands "
                    "out. This part explains how to build a collection funnel in Google Sheets and how to read it.",
-        "publish_on": "2027-05-20 21:00",
+        "publish_on": "2028-03-29 21:00",
         "body": [
             "The real property tax collection rate had stalled at about half of the accounts on the roll. The "
             "office tried the usual fix: a second round of reminder letters to every unpaid account. The rate "
@@ -240,7 +240,7 @@ BI_POSTS = [
             ("point", "Sorting the steps by size", "A funnel must stay in process order."),
             ("point", "Counting different things at each step", "Accounts, owners and receipts do not mix."),
             ("point", "Fixing the last step first", "The largest loss may be early in the process."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "A funnel counts each step", "From assessed to billed to paid, in order."),
             ("point", "Step rates find the weak point", "Compare each step with the one before it."),
             ("point", "Accounts lost guide the effort", "Start with the step that loses the most."),
@@ -261,12 +261,12 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 38: Cohorts, Do New Businesses Keep Renewing?",
         "slug": "business-intelligence-part-38-cohorts",
         "category": "bi",
-        "date": "May 15, 2027",
+        "date": "March 20, 2028",
         "summary": "Total renewals can rise while each new group of businesses renews less than the one before. "
                    "A cohort table follows each year’s new businesses separately, so the change is visible early. "
                    "This part explains what a cohort is, how to build a cohort table in Google Sheets, and how to "
                    "read it.",
-        "publish_on": "2027-05-15 21:00",
+        "publish_on": "2028-03-20 21:00",
         "body": [
             "The year-end report looked healthy. Business permit renewals had grown for the third year in a "
             "row. The head of office was ready to sign it when a clerk at the renewal window said something "
@@ -363,7 +363,7 @@ BI_POSTS = [
             ("point", "Comparing by calendar year", "Compare cohorts at the same age, Year 1 with Year 1."),
             ("point", "Ignoring cohort size", "Show the counts beside the percentages."),
             ("point", "Stopping at the table", "Ask why, and test a fix."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "A cohort is a starting group", "Here, businesses by year of first registration."),
             ("point", "Retention by age", "Share still renewing in Year 1, Year 2 and onward."),
             ("point", "Three formulas", "MINIFS for the first year, XLOOKUP to tag, COUNTIFS to count."),
@@ -387,12 +387,12 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 37: The Pareto Chart, Finding the Few Causes Behind Most of a Problem",
         "slug": "business-intelligence-part-37-pareto-chart",
         "category": "bi",
-        "date": "May 10, 2027",
+        "date": "March 10, 2028",
         "summary": "When a problem has many causes, a few of them may deserve attention first. A Pareto "
                    "chart sorts the causes from biggest to smallest and adds a running total, so the office can "
                    "see which ones to fix. This part explains where the idea came from, how to build the chart "
                    "in Google Sheets, and how to read it without overstating the 80/20 rule.",
-        "publish_on": "2027-05-10 21:00",
+        "publish_on": "2028-03-10 21:00",
         "body": [
             "In the first quarter, the business permit counter turned back 300 applications. Each one meant a "
             "taxpayer going home, finding a missing paper, and lining up again. The staff had a list of reasons "
@@ -491,7 +491,7 @@ BI_POSTS = [
             ("point", "Leaving bars unsorted", "Without the order, it is just a bar chart."),
             ("point", "Fixing everything at once", "Start with the vital few and measure again."),
             ("point", "Ignoring cost", "A rare cause can still be the most expensive one."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Causes differ in size", "A few can explain most of a problem."),
             ("point", "Two parts", "Bars from biggest to smallest, plus a running-total line."),
             ("point", "Built in minutes", "SORT, a running SUM and a combo chart with a right axis."),
@@ -515,12 +515,12 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 36: When Details Change, Keeping Last Year’s Report True",
         "slug": "business-intelligence-part-36-changes-over-time",
         "category": "bi",
-        "date": "May 5, 2027",
+        "date": "March 1, 2028",
         "summary": "A business moves to another barangay, a collector changes routes, a fee schedule is "
                    "revised. If the dashboard simply overwrites the old detail, last year’s numbers change "
                    "without anyone noticing. This part explains the three common ways to handle changes in a "
                    "dimension table and how to build the safest one in Google Sheets.",
-        "publish_on": "2027-05-05 21:00",
+        "publish_on": "2028-03-01 21:00",
         "body": [
             "The 2026 collections report had been approved in January. Malinao collected ₱1.42 million in "
             "business taxes that year. In April, someone printed the same report again for a meeting, and "
@@ -616,7 +616,7 @@ BI_POSTS = [
             ("point", "Adding rows for typos", "Corrections are not history."),
             ("point", "Leaving gaps or overlaps in dates", "Payments will be lost or counted twice."),
             ("point", "Deciding without writing it down", "Record the type for each column."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Facts stay, dimensions change", "And the join can rewrite history."),
             ("point", "Three choices", "Keep the original, overwrite, or add a dated row."),
             ("point", "Type 2 for history that matters", "Barangay, line of business."),
@@ -642,11 +642,11 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 35: Small Multiples, One Small Chart per Barangay",
         "slug": "business-intelligence-part-35-small-multiples",
         "category": "bi",
-        "date": "April 30, 2027",
+        "date": "February 21, 2028",
         "summary": "Six barangays on one line chart turn into a tangle. This part shows how to split them "
                    "into a grid of small, matching charts, why the charts should share one scale, when they "
                    "should not, and two ways to build the grid in Google Sheets.",
-        "publish_on": "2027-04-30 21:00",
+        "publish_on": "2028-02-21 21:00",
         "body": [
             "The analyst put six barangays on one line chart, one colored line each, and sent it to the "
             "council in time for the half-year review. One line ran across the top. The other five crowded "
@@ -752,7 +752,7 @@ BI_POSTS = [
              "data, not designs."),
             ("point", "A grid with no labels", "Each chart needs its barangay name, and the grid needs one "
              "line saying what is measured and in what unit."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "One crowded chart hides detail", "Small multiples give each group its own space."),
             ("point", "Share the scale by default", "Same minimum, same maximum, same size."),
             ("point", "Separate scales only on purpose", "And say so in the title."),
@@ -777,11 +777,11 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited",
         "slug": "business-intelligence-part-34-aging-of-arrears",
         "category": "bi",
-        "date": "April 25, 2027",
+        "date": "February 11, 2028",
         "summary": "A single total of unpaid taxes hides the question that matters most: how old is the debt? "
                    "This part shows how to group arrears into age buckets in Google Sheets, chart them, "
                    "match an action to each bucket, and spot the accounts that are running out of time.",
-        "publish_on": "2027-04-25 21:00",
+        "publish_on": "2028-02-11 21:00",
         "body": [
             "The quarterly report said unpaid real property tax stood at ₱3.8 million. The council member "
             "asked whether that was good or bad. The analyst did not know. ₱3.8 million of last month’s bills "
@@ -870,7 +870,7 @@ BI_POSTS = [
             ("point", "Using TODAY() in a saved report", "Fix the as-of date so the report does not change."),
             ("point", "Using the original bill", "Use the remaining balance after partial payments."),
             ("point", "Sorting buckets by size", "Keep them in age order."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Age matters as much as amount", "The same peso has a different urgency at different ages."),
             ("point", "Watch the five-year mark", "Section 270 for real property tax, Section 194 for other local taxes."),
             ("point", "IFS builds the buckets", "From days overdue against a fixed as-of date."),
@@ -894,12 +894,12 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 33: Targets vs Actual, Bullet Charts, Gauges and the Year-to-Date Trap",
         "slug": "business-intelligence-part-33-targets-vs-actual",
         "category": "bi",
-        "date": "April 20, 2027",
+        "date": "February 2, 2028",
         "summary": "A collection target is only useful if the dashboard compares it fairly with what has come "
                    "in. This part shows how to set a year-to-date target that follows the calendar, how to "
                    "show actual against target with a bullet chart or a gauge in Data Studio, how to set "
                    "the ranges, and how to label the gap so nobody misreads it.",
-        "publish_on": "2027-04-20 21:00",
+        "publish_on": "2028-02-02 21:00",
         "body": [
             "At the end of March, the head of office looked at the new gauge on the collections dashboard. "
             "The needle pointed at 35 percent of the year’s target. “A quarter of the year is gone, and we "
@@ -987,7 +987,7 @@ BI_POSTS = [
             ("point", "Dividing the target by twelve", "Follow the calendar of collections."),
             ("point", "Leaving the default ranges", "Set them from the target, and agree on them first."),
             ("point", "A dial for every measure", "Use bullet charts in a row, or a table."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Compare like with like", "Year-to-date actual against year-to-date target."),
             ("point", "Spread the target by month", "Using the pattern of recent years."),
             ("point", "Bullet chart first", "Compact and easy to compare. A gauge for one headline number."),
@@ -1015,12 +1015,12 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 32: Embedding a Report on a Website, Public Numbers Without Private Data",
         "slug": "business-intelligence-part-32-embedding-a-report",
         "category": "bi",
-        "date": "April 15, 2027",
+        "date": "January 24, 2028",
         "summary": "Putting a live report on a website can make public numbers easy to find. This part shows "
                    "how embedding works in Data Studio, who can see an embedded report, why the report "
                    "must be built for the public before it is embedded, how to test it as a stranger would, "
                    "and how to turn it off.",
-        "publish_on": "2027-04-15 21:00",
+        "publish_on": "2028-01-24 21:00",
         "body": [
             "The information officer had an idea. The collections dashboard was updated every day, and "
             "people kept asking how the town was doing. Why not put the dashboard on the town’s website, "
@@ -1116,7 +1116,7 @@ BI_POSTS = [
             ("point", "Assuming embedding hides pages", "Readers can move between pages unless you embed only one, and the report itself is still shared."),
             ("point", "Testing while signed in", "Use a private window to see what strangers see."),
             ("point", "Leaving out the date", "Readers can’t refresh it, so tell them how current it is."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Sharing decides who sees it", "Embedding only places it on the page."),
             ("point", "Public source, public report", "Totals only, with small numbers grouped."),
             ("point", "Test as a stranger", "Private window, every page, every filter, on a phone."),
@@ -1143,12 +1143,12 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 31: Scheduled Email Delivery, Sending the Report Before Anyone Asks",
         "slug": "business-intelligence-part-31-scheduled-email-delivery",
         "category": "bi",
-        "date": "April 10, 2027",
+        "date": "January 14, 2028",
         "summary": "A dashboard helps only the people who open it. This part shows how to schedule Data "
                    "Studio to email a report as a PDF on a set day and time: the steps, the options, the "
                    "limits on recipients and frequency, the privacy questions to ask first, and how to "
                    "check that the email arrives with current data.",
-        "publish_on": "2027-04-10 21:00",
+        "publish_on": "2028-01-14 21:00",
         "body": [
             "Every Monday at eight, the head of office asked the same question: “How did collections do "
             "last week?” Every Monday, the analyst opened the dashboard, took screenshots, pasted them into "
@@ -1245,7 +1245,7 @@ BI_POSTS = [
             ("point", "Ignoring the default date range", "The PDF follows the report’s defaults."),
             ("point", "Scheduling before the data is in", "Set the time after the last update lands."),
             ("point", "Forgetting the schedule exists", "Review recipients and pages every quarter."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Share, then Schedule delivery", "Recipients, pages, start time and repeat."),
             ("point", "A PDF, a preview and a link", "Using the report’s default filters."),
             ("point", "Up to 50 recipients", "One schedule per report, at most daily, without Pro."),
@@ -1270,14 +1270,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "April 5, 2027",
+        "date": "January 5, 2028",
         "title": "Business Intelligence Series, Part 30: Showing When the Data Was Last Updated, Freshness Readers Can See",
         "slug": "business-intelligence-part-30-data-freshness",
         "category": "bi",
         "summary": "A dashboard that refreshes every 15 minutes can still show week-old data. This part "
                    "explains Data Studio’s data freshness settings, the difference between a refreshed report "
                    "and current data, and how to put a clear “data as of” date on every page.",
-        "publish_on": "2027-04-05 21:00",
+        "publish_on": "2028-01-05 21:00",
         "body": [
             "On Monday, the head of office opened the collections dashboard and frowned. Real property tax "
             "collections had not moved since the previous Tuesday. Six days of nothing, in a month when payments had been coming in steadily. She called the analyst, who checked the report: it had "
@@ -1379,7 +1379,7 @@ BI_POSTS = [
             ("point", "No date on the page", "Add a data-as-of scorecard to every page."),
             ("point", "Alerts for amounts but not for age", "Stale data deserves a warning too."),
             ("point", "No backup for the person who updates", "Name one in the data dictionary."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Two times", "Refresh time and data age are different."),
             ("point", "Freshness settings", "15 minutes by default for Sheets, up to 12 hours."),
             ("point", "Data as of", "A Max-date scorecard shows the newest record."),
@@ -1400,7 +1400,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 31, 2027",
+        "date": "December 27, 2027",
         "title": "Business Intelligence Series, Part 29: Retiring Reports, Turning Off What Nobody Uses",
         "slug": "business-intelligence-part-29-retiring-reports",
         "category": "bi",
@@ -1408,7 +1408,7 @@ BI_POSTS = [
                    "how to decide which reports to retire, test the decision before acting, tell people "
                    "ahead, keep a copy, remove the report in Data Studio safely, and update the records so "
                    "nothing breaks later.",
-        "publish_on": "2027-03-31 21:00",
+        "publish_on": "2027-12-27 21:00",
         "body": [
             "Every Monday morning, the analyst spent forty minutes on a report called “Weekly Collections "
             "by Collector, Old Format.” It had been built two years earlier for a head of office who had "
@@ -1519,7 +1519,7 @@ BI_POSTS = [
             ("point", "Deleting forever right away", "Leave the report in the trash until you are sure."),
             ("point", "Forgetting hidden users", "Check for other reports and processes that depend on it."),
             ("point", "Retiring the report and the data together", "Keep the data under the office’s records rules."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Retire on evidence", "Usage, readers’ answers and the decision log."),
             ("point", "Pause, then tell", "One full cycle of silence, then a notice with a date."),
             ("point", "Keep a copy", "A snapshot and the definitions, before removing anything."),
@@ -1541,14 +1541,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 26, 2027",
+        "date": "December 17, 2027",
         "title": "Business Intelligence Series, Part 28: Is Anyone Using the Dashboard? Measuring Views and Decisions",
         "slug": "business-intelligence-part-28-dashboard-usage",
         "category": "bi",
         "summary": "A dashboard can be accurate, readable and still unused. This part shows how to find out "
                    "who opens it and what they do with it: Google Analytics for usage counts, a short "
                    "monthly question to readers, and a decision log that ties pages to actions.",
-        "publish_on": "2027-03-26 21:00",
+        "publish_on": "2027-12-17 21:00",
         "body": [
             "The analyst had spent three months on the treasury dashboard. It had six pages, a date table, "
             "fair comparisons, thresholds, annotations and colors everyone could read. At the monthly "
@@ -1659,7 +1659,7 @@ BI_POSTS = [
             ("point", "Reading views as value", "Pair counts with readers’ answers and the decision log."),
             ("point", "Measuring quietly", "Tell readers in the footer that visits are counted."),
             ("point", "Counting your own visits", "The builder may be the top viewer."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Google Analytics 4", "One measurement ID per report, set in File, Report settings."),
             ("point", "Counts show attention", "Which pages, and when."),
             ("point", "Readers explain why", "Three questions, once a month."),
@@ -1681,7 +1681,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 21, 2027",
+        "date": "December 8, 2027",
         "title": "Business Intelligence Series, Part 27: Maps by Barangay, When Location Is the Point",
         "slug": "business-intelligence-part-27-maps-by-barangay",
         "category": "bi",
@@ -1689,7 +1689,7 @@ BI_POSTS = [
                    "built carefully. This part covers when a map helps, which Data Studio map types fit "
                    "barangay data, how to supply locations, the limits in Google’s documentation, and the "
                    "privacy line a treasury map must not cross.",
-        "publish_on": "2027-03-21 21:00",
+        "publish_on": "2027-12-08 21:00",
         "body": [
             "A councilor asked for “a map of collections,” so the analyst built one. Every barangay got a "
             "bubble sized by its real property tax collections. The Poblacion bubble was enormous and covered "
@@ -1778,7 +1778,7 @@ BI_POSTS = [
             ("point", "Raw totals only", "Large barangays hide small ones; add a rate or percent."),
             ("point", "Mapping individuals", "Aggregate by barangay and watch small counts."),
             ("point", "Unchecked coordinates", "One typo can put a barangay in the sea."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Maps answer where", "Bar charts answer how much."),
             ("point", "Bubbles for barangays", "Using a latitude and longitude field for each center."),
             ("point", "Size and color mean different things", "Amount and performance."),
@@ -1801,7 +1801,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 16, 2027",
+        "date": "November 29, 2027",
         "title": "Business Intelligence Series, Part 26: Colors Everyone Can Read, Contrast, Labels and the Red-Green Trap",
         "slug": "business-intelligence-part-26-accessible-colors",
         "category": "bi",
@@ -1809,7 +1809,7 @@ BI_POSTS = [
                    "part covers how common color vision deficiency is, the contrast levels in the W3C’s "
                    "accessibility guidelines, and practical ways to choose colors, labels and checks so "
                    "every reader gets the same message.",
-        "publish_on": "2027-03-16 21:00",
+        "publish_on": "2027-11-29 21:00",
         "body": [
             "The barangay status chart was the pride of the dashboard: green dots for barangays on target, "
             "red dots for those behind. At the briefing, one councilor studied it for a long time, then "
@@ -1890,7 +1890,7 @@ BI_POSTS = [
             ("point", "Pale text on pale backgrounds", "Check the 4.5 to 1 ratio for text."),
             ("point", "A rainbow of series", "Fewer colors, more labels."),
             ("point", "Skipping the test", "Grayscale and simulation take only a few minutes."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "It affects real readers", "About 1 in 12 men and 1 in 200 women, per Colour Blind "
              "Awareness."),
             ("point", "Three WCAG rules", "Not color alone, 4.5 to 1 for text, 3 to 1 for chart parts."),
@@ -1914,14 +1914,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 11, 2027",
+        "date": "November 19, 2027",
         "title": "Business Intelligence Series, Part 25: Annotating Charts, Lines, Bands and Notes That Explain the Bumps",
         "slug": "business-intelligence-part-25-annotating-charts",
         "category": "bi",
         "summary": "A chart shows what happened; a note tells the reader why. This part shows how to add "
                    "reference lines and bands in Data Studio, which kind of line to use for a target or an "
                    "average, the limits to know, and how to write short notes that keep a chart honest.",
-        "publish_on": "2027-03-11 21:00",
+        "publish_on": "2027-11-19 21:00",
         "body": [
             "At the quarterly review, a councilor pointed at the collections chart. “What happened in the "
             "second week of July? It nearly drops to nothing.” The analyst who built the chart had moved to "
@@ -2006,7 +2006,7 @@ BI_POSTS = [
             ("point", "Too many lines", "Two or three per chart is easier to read than ten."),
             ("point", "Average lines that ignore filters", "Label them as calculated from the selection."),
             ("point", "Notes without dates or sources", "A note no one can check is another guess."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Lines compare", "A constant for a target, a metric for context."),
             ("point", "Bands mark periods", "Use the date-range selector to shade deadlines and closures."),
             ("point", "Know the limits", "Numeric axes only for lines, and metric lines follow filters."),
@@ -2031,14 +2031,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 6, 2027",
+        "date": "November 10, 2027",
         "title": "Business Intelligence Series, Part 24: Trend Lines and Moving Averages, Seeing the Direction Without Guessing",
         "slug": "business-intelligence-part-24-trend-lines-and-moving-averages",
         "category": "bi",
         "summary": "Daily collections jump up and down, and a busy chart hides the direction. This part shows how "
                    "to add a trend line or a moving average in Data Studio, which type to choose, why missing "
                    "days can drag a line to zero, and why a trend is not a forecast.",
-        "publish_on": "2027-03-06 21:00",
+        "publish_on": "2027-11-10 21:00",
         "body": [
             "The daily collections chart looked like a saw blade. Up on Monday, down on Wednesday, up on "
             "Friday, flat on weekends. The head of office squinted at it and asked the only question that "
@@ -2138,7 +2138,7 @@ BI_POSTS = [
             ("point", "Reading a trend as a forecast", "It describes the past only."),
             ("point", "Fitting curves without a reason", "Default to linear unless you can explain the curve."),
             ("point", "Hiding the raw data", "Show the daily values in a lighter color."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Trend line and moving average answer different questions", "Overall direction versus "
              "recent level."),
             ("point", "Missing dates need a decision", "The default draws them as zero."),
@@ -2163,7 +2163,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "March 1, 2027",
+        "date": "November 1, 2027",
         "title": "Business Intelligence Series, Part 23: Blending Data, Two Sources in One Chart",
         "slug": "business-intelligence-part-23-blending-data",
         "category": "bi",
@@ -2171,7 +2171,7 @@ BI_POSTS = [
                    "collections sheet with a barangay list kept by another office in Data Studio: choosing the "
                    "join key and the join type, avoiding doubled totals, and checking the result before anyone "
                    "reads it.",
-        "publish_on": "2027-03-01 21:00",
+        "publish_on": "2027-11-01 21:00",
         "body": [
             "The head of office looked at the collections dashboard and asked a fair question: “Poblacion "
             "brings in the most money, but it also has the most properties. Which barangay collects the most "
@@ -2288,7 +2288,7 @@ BI_POSTS = [
             ("point", "A reference list with repeats", "One row per key, or totals double."),
             ("point", "Inner join on money", "Use left outer so missing matches show as blanks."),
             ("point", "Skipping the total check", "Compare with a scorecard built on one source."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "What a blend is", "Up to five sources, joined on equal values, inside one report."),
             ("point", "The key", "Same spelling, one row per key, nothing missing."),
             ("point", "The grouping", "Decide what one row of each table means before joining."),
@@ -2310,7 +2310,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "February 24, 2027",
+        "date": "October 22, 2027",
         "title": "Business Intelligence Series, Part 22: Calculated Fields, New Measures Without Touching the Sheet",
         "slug": "business-intelligence-part-22-calculated-fields",
         "category": "bi",
@@ -2318,7 +2318,7 @@ BI_POSTS = [
                    "part adds four to the collections dashboard in Data Studio: an area grouping, an average "
                    "per receipt, a share of total and a size label, and explains why a "
                    "formula may refuse to save.",
-        "publish_on": "2027-02-24 21:00",
+        "publish_on": "2027-10-22 21:00",
         "body": [
             "A week after the dashboard from Part 20 went live, the head of office had three new questions. "
             "How much does the town center bring in compared with the outer barangays? What is the average "
@@ -2425,7 +2425,7 @@ BI_POSTS = [
             ("point", "CASE without ELSE", "New values fall into NULL and disappear from both groups."),
             ("point", "Wrong order in CASE", "Put the strictest condition first."),
             ("point", "Undocumented fields", "Record every formula in the data dictionary."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Where to make it", "Data source for shared measures; chart-specific for one-time "
              "questions."),
             ("point", "CASE for groups", "First true condition wins; always add ELSE."),
@@ -2446,14 +2446,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "February 19, 2027",
+        "date": "October 13, 2027",
         "title": "Business Intelligence Series, Part 21: Putting It Together, a Treasury BI Setup in Four Weeks",
         "slug": "business-intelligence-part-21-putting-it-together",
         "category": "bi",
         "summary": "Twenty parts covered the pieces of business intelligence one at a time. This part puts "
                    "them in order as a four-week plan for a small treasury office: from the first question to "
                    "a checked, shared dashboard and a weekly routine, with a checklist for each week.",
-        "publish_on": "2027-02-19 21:00",
+        "publish_on": "2027-10-13 21:00",
         "body": [
             "A colleague from another treasury office calls the analyst. “We want what you have: the "
             "dashboard, the weekly numbers, the alerts. Where do we start?”",
@@ -2560,7 +2560,7 @@ BI_POSTS = [
             ("point", "Building for everyone at once", "One audience, one source, then grow."),
             ("point", "Skipping the checks", "A dashboard without checks can show a mistake to every reader at once."),
             ("point", "No written routine", "If only one person knows how it runs, it stops when they are away."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Week 1", "Brief, measures, definitions and access."),
             ("point", "Week 2", "Model, pipeline and checks."),
             ("point", "Week 3", "A dashboard on a clean table, checked by someone else."),
@@ -2580,14 +2580,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "February 14, 2027",
+        "date": "October 4, 2027",
         "title": "Business Intelligence Series, Part 20: Your First Data Studio Dashboard, Connected to Live Data",
         "slug": "business-intelligence-part-20-first-data-studio-dashboard",
         "category": "bi",
         "summary": "A step-by-step build of a small collections dashboard in Google’s free Data Studio, "
                    "connected to a Google Sheets tab: preparing the data, connecting it, checking the fields, "
                    "adding a scorecard, a trend line, a bar chart and a date control, and sharing it safely.",
-        "publish_on": "2027-02-14 21:00",
+        "publish_on": "2027-10-04 21:00",
         "body": [
             "Every Monday, the analyst copies the week’s totals from the spreadsheet into a slide, saves it as "
             "a file and sends it to the head of office. By Wednesday, someone asks for the same chart for a "
@@ -2696,7 +2696,7 @@ BI_POSTS = [
             ("point", "Dates stored as text", "Fix them in the sheet, so the date settings work as expected."),
             ("point", "Trusting the default aggregation", "Check that Amount is summed, not averaged or counted."),
             ("point", "Sharing before checking", "Match one total with the sheet before anyone else sees it."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Prepare first", "A simple, long table with complete dates and no totals rows."),
             ("point", "Connect and check", "Google Sheets connector, then dimensions, metrics and their types."),
             ("point", "Three pieces", "A scorecard with a fair comparison, a trend line and a breakdown."),
@@ -2719,14 +2719,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "February 9, 2027",
+        "date": "September 24, 2027",
         "title": "Business Intelligence Series, Part 19: Fair Comparisons, This Month, Last Month and Last Year",
         "slug": "business-intelligence-part-19-fair-comparisons",
         "category": "bi",
         "summary": "“Down 78% from last month” can be true and still mislead. This part shows how to compare "
                    "periods fairly: the same number of days, the same season, the same working days and the "
                    "same definitions, with formulas for each and a plain way to label the result.",
-        "publish_on": "2027-02-09 21:00",
+        "publish_on": "2027-09-24 21:00",
         "body": [
             "On the morning of February 11, the head of office opens the dashboard and sees a red figure: "
             "February collections so far, ₱410,000, are down 78% compared with January’s ₱1,850,000.",
@@ -2836,7 +2836,7 @@ BI_POSTS = [
             ("point", "Ignoring the season", "Compare with the same period last year when seasons differ."),
             ("point", "Mixing percent and points", "Say which one you mean."),
             ("point", "Percentages without amounts", "Show the money beside the change."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Four questions", "Same length, same season, same working days, same definitions."),
             ("point", "Period-to-date", "SUMIFS with matching dates, and EDATE for last year."),
             ("point", "Per working day", "A fairer pace measure when weekday counts differ."),
@@ -2856,7 +2856,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "February 4, 2027",
+        "date": "September 15, 2027",
         "title": "Business Intelligence Series, Part 18: Thresholds and Alerts, Letting the Dashboard Say When to Look",
         "slug": "business-intelligence-part-18-thresholds-and-alerts",
         "category": "bi",
@@ -2864,7 +2864,7 @@ BI_POSTS = [
                    "explains how to set thresholds that mean something, give every alert an owner and an "
                    "action, keep alerts few, and build a simple status column with conditional formatting in "
                    "Google Sheets.",
-        "publish_on": "2027-02-04 21:00",
+        "publish_on": "2027-09-15 21:00",
         "body": [
             "The head of office opens the collections dashboard every morning. Twelve collectors, twelve "
             "lines on a chart, totals by week. Everything looks roughly the way it looked last month.",
@@ -2960,7 +2960,7 @@ BI_POSTS = [
             ("point", "Too many flags", "Start with a few, and remove any that never lead to action."),
             ("point", "Color only", "Write the status in words as well."),
             ("point", "Skipping the data check", "Confirm the numbers are complete before chasing a drop."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Thresholds point", "They say where to look, not what is wrong."),
             ("point", "Four sources", "A target, last year, a normal range, or a rule."),
             ("point", "Owner and action", "Every alert needs a person, a first check and a deadline."),
@@ -2980,14 +2980,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "January 30, 2027",
+        "date": "September 6, 2027",
         "title": "Business Intelligence Series, Part 17: Who Sees What, Sharing Dashboards Without Sharing Too Much",
         "slug": "business-intelligence-part-17-who-sees-what",
         "category": "bi",
         "summary": "A dashboard link can open far more than the dashboard. This part shows how sharing settings, "
                    "separate files, report credentials and small-number rules decide who sees what, with a "
                    "treasury example and an access list you can keep up to date.",
-        "publish_on": "2027-01-30 21:00",
+        "publish_on": "2027-09-06 21:00",
         "body": [
             "The collections dashboard from Part 16 is working, and people have noticed. The budget officer "
             "wants the monthly totals. The heads of the revenue units want their own accounts. A staff member "
@@ -3098,7 +3098,7 @@ BI_POSTS = [
             ("point", "Too many editors", "Editors can share further, and on an IMPORTRANGE file they can reach "
              "the source."),
             ("point", "Forgetting small groups", "Check whether any total describes only one or two people."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Readers first", "List who needs what before choosing any setting."),
             ("point", "Separate files", "Share a file that holds only what readers need."),
             ("point", "Know the credentials", "A report using the owner’s access shows its data to every reader."),
@@ -3120,14 +3120,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "January 25, 2027",
+        "date": "August 27, 2027",
         "title": "Business Intelligence Series, Part 16: A Small Pipeline in Google Sheets, Raw to Clean to Summary",
         "slug": "business-intelligence-part-16-pipeline-in-sheets",
         "category": "bi",
         "summary": "A pipeline does not have to start with servers or paid tools. This part builds a small, free "
                    "pipeline inside one Google Sheets file: a Raw tab that is never edited, a Clean tab of "
                    "formulas, a Summary tab built with QUERY, and a Checks tab that shows when something is off.",
-        "publish_on": "2027-01-25 21:00",
+        "publish_on": "2027-08-27 21:00",
         "body": [
             "Every Monday morning, the analyst opens the cashier’s export of last week’s receipts, copies it into "
             "a working sheet, deletes the extra spaces in the collector names by hand, retypes a few amounts "
@@ -3243,7 +3243,7 @@ BI_POSTS = [
              "Summary as formulas."),
             ("point", "Leaving amounts as text", "Convert them with VALUE before any QUERY totals them."),
             ("point", "Skipping the Checks tab", "A pipeline without checks moves mistakes faster."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "One tab per stage", "Raw, Clean, Summary and Checks, with formulas between them."),
             ("point", "Raw stays raw", "People paste; formulas clean."),
             ("point", "QUERY for totals", "Group and total the Clean tab without typing a number."),
@@ -3265,14 +3265,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "January 20, 2027",
+        "date": "August 18, 2027",
         "title": "Business Intelligence Series, Part 15: Star or Snowflake? Shaping Dimensions for a Treasury Model",
         "slug": "business-intelligence-part-15-star-or-snowflake",
         "category": "bi",
         "summary": "When a dimension has levels inside it, such as revenue accounts grouped into kinds of tax, "
                    "you can keep it in one table or split it into several. This part explains star and "
                    "snowflake designs in plain words, what each costs, and how to choose for a treasury model.",
-        "publish_on": "2027-01-20 21:00",
+        "publish_on": "2027-08-18 21:00",
         "body": [
             "The analyst is extending the collections model from Part 5. The revenue account table has grown: "
             "each account now belongs to a group, such as real property tax or business tax, and each group "
@@ -3376,7 +3376,7 @@ BI_POSTS = [
              "rebuild the dimension."),
             ("point", "Mixing levels in one column", "Keep class, group and account in separate columns, so "
              "each can be filtered on its own."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Star", "Each dimension is one table linked directly to the facts."),
             ("point", "Snowflake", "A dimension split into a chain of tables, one per level."),
             ("point", "Trade-off", "A snowflake saves repetition; a star is simpler and quicker to use."),
@@ -3397,7 +3397,7 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "January 15, 2027",
+        "date": "August 9, 2027",
         "title": "Business Intelligence Series, Part 14: The Date Table, a Calendar Your Dashboard Can Count On",
         "slug": "business-intelligence-part-14-the-date-table",
         "category": "bi",
@@ -3405,7 +3405,7 @@ BI_POSTS = [
                    "can go quietly wrong. This part explains the date table: one row per day, the columns it needs, "
                    "how to build one in a spreadsheet, and how it fixes missing days, odd sorting and unfair "
                    "comparisons.",
-        "publish_on": "2027-01-15 21:00",
+        "publish_on": "2027-08-09 21:00",
         "body": [
             "The analyst builds a chart of daily collections for the month. It looks fine until the head of "
             "office asks why the line jumps straight from Friday to Monday, as if the weekend never happened. "
@@ -3506,7 +3506,7 @@ BI_POSTS = [
              "announced."),
             ("point", "Each chart with its own calendar", "Calculate months and quarters once, in the date "
              "table, not in every chart."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "One row per day", "Including days when nothing happened."),
             ("point", "The right columns", "Year, quarter, month, day, working day, holiday and tax period."),
             ("point", "Built once, used everywhere", "Every view reads its calendar from the same table."),
@@ -3527,14 +3527,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "January 10, 2027",
+        "date": "July 30, 2027",
         "title": "Business Intelligence Series, Part 13: Filters and Drill-Down, Letting Readers Ask the Next Question",
         "slug": "business-intelligence-part-13-filters-and-drill-down",
         "category": "bi",
         "summary": "A good BI view answers the first question and lets the reader ask the next one. This part "
                    "explains filters and drill-down in plain words, how to choose them, how to keep them "
                    "honest, and where to stop so private details stay private.",
-        "publish_on": "2027-01-10 21:00",
+        "publish_on": "2027-07-30 21:00",
         "body": [
             "The head of office opens the collections view on Monday morning. Business tax collections are "
             "down 8% from the same month last year. The next question comes at once: where? Which barangays, "
@@ -3638,7 +3638,7 @@ BI_POSTS = [
              "sees a screenshot."),
             ("point", "Percentages of unclear wholes", "Always say what the percentage is a share of."),
             ("point", "Drilling past privacy", "Plan where each reader’s path stops before building it."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Filter or drill", "A filter narrows the whole view; a drill-down opens one number."),
             ("point", "Few and chosen", "Pick filters from the questions readers actually ask."),
             ("point", "Honest under filters", "Show the active filters, label percentages and keep the date "
@@ -3662,14 +3662,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "January 5, 2027",
+        "date": "July 21, 2027",
         "title": "Business Intelligence Series, Part 12: Fast and Readable on a Phone",
         "slug": "business-intelligence-part-12-fast-and-readable-on-a-phone",
         "category": "bi",
         "summary": "A dashboard built on a wide office monitor can be unreadable on the phone where it is "
                    "actually opened. This part shows how to design BI views for small screens and slow "
                    "connections: one column, fewer charts, bigger numbers and lighter data.",
-        "publish_on": "2027-01-05 21:00",
+        "publish_on": "2027-07-21 21:00",
         "body": [
             "The analyst builds the collections dashboard on a wide monitor in the office: six charts in two "
             "rows, a table of collectors on the right and four filters along the top. It looks clean. The next "
@@ -3770,7 +3770,7 @@ BI_POSTS = [
             ("point", "Every chart on one page", "More charts mean more scrolling and more loading."),
             ("point", "Reading straight from raw receipts", "Summarize first, then display."),
             ("point", "Tiny text to fit more in", "If the text must shrink to fit, the page has too much on it."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Phone first", "One column, the answer at the top, details at the bottom."),
             ("point", "Simple charts", "Number tiles, horizontal bars, simple lines and short tables."),
             ("point", "Light pages", "Summary tables, fewer charts per page and sensible default filters."),
@@ -3790,14 +3790,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 31, 2026",
+        "date": "July 12, 2027",
         "title": "Business Intelligence Series, Part 11: The Five-Minute Briefing for Decision Makers",
         "slug": "business-intelligence-part-11-five-minute-briefing",
         "category": "bi",
         "summary": "A dashboard is not a briefing. This part shows how to turn BI numbers into a five-minute "
                    "talk for a busy decision maker: the answer first, three supporting facts, what they mean, "
                    "and the decision you need, with a year-end treasury example.",
-        "publish_on": "2026-12-31 21:00",
+        "publish_on": "2027-07-12 21:00",
         "body": [
             "On the last working day of the year, the analyst gets ten minutes with the head of office to "
             "present the year’s collections. The analyst opens the dashboard and begins at the top: twelve "
@@ -3898,7 +3898,7 @@ BI_POSTS = [
             ("point", "Saving the answer for last", "If time runs out, the answer can be what gets cut."),
             ("point", "Too many facts", "Five facts in five minutes leaves little time to decide."),
             ("point", "No clear ask", "A briefing without a decision needed is only an update."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Answer first", "Start with the conclusion in one or two sentences."),
             ("point", "Three facts", "One that confirms, one that explains, one that points forward."),
             ("point", "End with the decision", "Name the options and what you need, by when."),
@@ -3919,14 +3919,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 26, 2026",
+        "date": "July 2, 2027",
         "title": "Business Intelligence Series, Part 10: Keeping BI Honest With a Data Dictionary, Owners and a Change Log",
         "slug": "business-intelligence-part-10-keeping-bi-honest",
         "category": "bi",
         "summary": "Dashboards stay trustworthy only if someone can say what each number means, who answers "
                    "for it and what changed. This part shows how to write a data dictionary, name owners and "
                    "keep a change log for a small treasury BI setup.",
-        "publish_on": "2026-12-26 21:00",
+        "publish_on": "2027-07-02 21:00",
         "body": [
             "In March, the head of office compares two screens. The collections dashboard says real property "
             "tax collected in February was ₱1.84 million. The revenue unit’s spreadsheet says ₱1.97 million. "
@@ -4030,7 +4030,7 @@ BI_POSTS = [
             ("point", "Logging the change but not its effect", "Name every view that must be checked."),
             ("point", "Owners in name only", "An owner who never reviews changes is not an owner. Ask them to "
              "approve each log entry."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Meaning needs protecting too", "Correct data can still mislead when definitions drift."),
             ("point", "Write the dictionary", "Field, meaning, type, allowed values, source and notes, plus the "
              "five parts for each measure."),
@@ -4053,14 +4053,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 21, 2026",
+        "date": "June 23, 2027",
         "title": "Business Intelligence Series, Part 9: Testing the Pipeline Before Anyone Sees a Number",
         "slug": "business-intelligence-part-9-testing-the-pipeline",
         "category": "bi",
         "summary": "A pipeline can run without errors and still load wrong numbers. This part gives a test plan "
                    "for a small treasury pipeline: schema, uniqueness, validity, consistency and freshness "
                    "checks, what to do when one fails, and how to test a change before it goes live.",
-        "publish_on": "2026-12-21 21:00",
+        "publish_on": "2027-06-23 21:00",
         "body": [
             "On Tuesday morning, the head of office opens the collections dashboard and sees that Monday’s collections were zero. The cashier is sure that was not true and remembers a "
             "busy day at the window.",
@@ -4154,7 +4154,7 @@ BI_POSTS = [
             ("point", "Silent set-asides", "Rows set aside and never reviewed are collections missing from the reports. Show the count on the dashboard and review the list daily."),
             ("point", "Tests nobody reads", "A failed test only helps if someone sees it. Name the person who "
              "reads the run log each morning."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Quiet failures are the danger", "A run that finishes can still load wrong data."),
             ("point", "Five more tests", "Schema, uniqueness, validity, consistency and freshness, on top of "
              "count, total and completeness."),
@@ -4176,14 +4176,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 16, 2026",
+        "date": "June 14, 2027",
         "title": "Business Intelligence Series, Part 8: Report or Dashboard? Static, Live and Self-Service Views",
         "slug": "business-intelligence-part-8-report-or-dashboard",
         "category": "bi",
         "summary": "Not every question needs a live dashboard. This part explains the three kinds of BI views, "
                    "static reports, live dashboards and self-service views, with a treasury example of each, "
                    "and a simple test for choosing the right one.",
-        "publish_on": "2026-12-16 21:00",
+        "publish_on": "2027-06-14 21:00",
         "body": [
             "The head of office asks for “a dashboard for the year-end report.” The analyst spends two weeks "
             "building a live screen with filters, date pickers and twelve charts. On the day of the meeting, "
@@ -4283,7 +4283,7 @@ BI_POSTS = [
              "BI brief in Part 4 on the screen."),
             ("point", "No date on the screen", "Every view, of every kind, should say when its data was "
              "current."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Three kinds of views", "Static reports record, live dashboards watch, and "
              "self-service views answer follow-up questions."),
             ("point", "Fixed numbers need a static report", "Anything signed or filed must not change after "
@@ -4306,14 +4306,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 11, 2026",
+        "date": "June 4, 2027",
         "title": "Business Intelligence Series, Part 7: ETL or ELT? Moving Data From the Counter to the Report",
         "slug": "business-intelligence-part-7-etl-or-elt",
         "category": "bi",
         "summary": "Data has to travel from the system that records it to the warehouse that reports on it. "
                    "This part explains the two ways to make that trip, ETL and ELT, with a worked treasury "
                    "example of each, and a checklist for deciding which fits your office.",
-        "publish_on": "2026-12-11 21:00",
+        "publish_on": "2027-06-04 21:00",
         "body": [
             "Every evening, the analyst downloads the day’s collections from the counter system, opens the "
             "file, fixes the date format, replaces barangay names with codes, deletes the cancelled receipts "
@@ -4403,7 +4403,7 @@ BI_POSTS = [
              "not add them again. Otherwise one accidental rerun doubles a day’s collections."),
             ("point", "Name an owner", "Someone must read the run log each morning and act when a check fails. A "
              "pipeline nobody watches only fails more quietly."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Same steps, different order", "ETL transforms before loading; ELT loads raw data and "
              "transforms inside the warehouse."),
             ("point", "ETL keeps the warehouse clean", "Good when the warehouse cannot run transforms, or "
@@ -4426,14 +4426,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 6, 2026",
+        "date": "May 26, 2027",
         "title": "Business Intelligence Series, Part 6: Databases, Warehouses, Marts and Lakes, in Plain Words",
         "slug": "business-intelligence-part-6-warehouses-marts-lakes",
         "category": "bi",
         "summary": "Where should the data behind a dashboard live? This part explains the difference between a "
                    "database, a data warehouse, a data mart and a data lake, with a treasury example for each, "
                    "and shows how a small office can start without buying anything.",
-        "publish_on": "2026-12-06 21:00",
+        "publish_on": "2027-05-26 21:00",
         "body": [
             "The cashier is closing the day. At the same moment, the head of office opens the collections "
             "dashboard, and the dashboard asks the collection system to add up every receipt of the year by "
@@ -4527,7 +4527,7 @@ BI_POSTS = [
             "not to keep records.",
             "Use made-up or fully aggregated data for practice. Real taxpayer records should stay inside the "
             "systems and rules your office has approved.",
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Separate running from reporting", "The counter’s database records the day; the "
              "warehouse answers questions about it."),
             ("point", "A warehouse keeps history", "It is integrated, organized by subject and not changed by "
@@ -4552,14 +4552,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "December 1, 2026",
+        "date": "May 17, 2027",
         "title": "Business Intelligence Series, Part 5: Data Modeling 101, Facts, Dimensions and the Star",
         "slug": "business-intelligence-part-5-data-modeling",
         "category": "bi",
         "summary": "A dashboard can only be as right as the tables behind it. This part explains facts, "
                    "dimensions, grain and keys in plain words, and shows how one star-shaped model turns a "
                    "messy collections spreadsheet into numbers everyone can trust.",
-        "publish_on": "2026-12-01 21:00",
+        "publish_on": "2027-05-17 21:00",
         "body": [
             "The new dashboard says Barangay 1 collected ₱412,000 last month. The cashier’s report says "
             "₱356,500. Both people are sure they are right, and the meeting turns into an argument about "
@@ -4660,7 +4660,7 @@ BI_POSTS = [
             ("point", "Names as keys", "Spellings drift and names change. Link with codes."),
             ("point", "Calculating dates in every chart", "Put month, quarter and year in the date table "
              "once, so every chart groups dates the same way."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Shape before charts", "A dashboard can only be as accurate as the tables behind it."),
             ("point", "Facts are added, dimensions describe", "Amounts go in the fact table; dates, people, "
              "places and accounts go in dimensions."),
@@ -4684,14 +4684,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "November 26, 2026",
+        "date": "May 7, 2027",
         "title": "Business Intelligence Series, Part 4: Start With the People, Then Write the Brief",
         "slug": "business-intelligence-part-4-the-bi-brief",
         "category": "bi",
-        "summary": "Before anyone builds a dashboard, someone has to ask the people who will use it what they "
-                   "need to decide. Here is how to run those conversations and turn the answers into a "
-                   "one-page BI brief that everyone can agree on.",
-        "publish_on": "2026-11-26 21:00",
+        "summary": ("Before anyone builds a dashboard, someone has to ask the people who will use it what they "
+                   "need to decide. Those conversations can be run in a simple way, and the answers fit on a "
+                   "one-page BI brief that everyone can agree on."),
+        "publish_on": "2027-05-07 21:00",
         "body": [
             "The head of office calls the clerk who is good with spreadsheets. “I want a dashboard for "
             "collections. Can you have it ready by the end of the month?” The clerk says yes, goes back to her "
@@ -4786,7 +4786,7 @@ BI_POSTS = [
             "to be less useful than expected. When that happens, update the brief first, confirm it with the "
             "readers, and only then change the dashboard. The brief stays the single place where everyone can "
             "see what the dashboard is meant to do.",
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point", "Ask about decisions, not charts", "A dashboard is only worth building if it changes what someone does."),
             ("point", "Talk to every kind of reader", "The head of office, the cashier and the collectors need different views of the same data."),
             ("point", "Put it on one page and get it confirmed", "Decisions, readers, measures, sources, refresh and access, agreed before anything is built."),
@@ -4805,14 +4805,14 @@ BI_POSTS = [
         ],
     },
     {
-        "date": "November 21, 2026",
+        "date": "April 28, 2027",
         "title": "Business Intelligence Series, Part 3: What a Treasury Should Watch Every Day",
         "slug": "business-intelligence-part-3-what-to-watch",
         "category": "bi",
-        "summary": "A dashboard that shows everything helps no one. Here are six measures worth watching every day "
-                   "in a local treasury, how to tell an early warning from an after-the-fact report, and how to "
-                   "set limits that tell you when to act.",
-        "publish_on": "2026-11-21 21:00",
+        "summary": ("A dashboard that shows everything helps no one. Six measures are worth watching every day in "
+                   "a local treasury. This post shows how to tell an early warning from an after-the-fact report "
+                   "and how to set limits that tell you when to act."),
+        "publish_on": "2027-04-28 21:00",
         "body": [
             "A newly built treasury dashboard has forty-two charts. There are collections by "
             "every revenue account, by every collector, by every barangay, by week, by month and "
@@ -4957,7 +4957,7 @@ BI_POSTS = [
             "complete and checked every morning, as described in Part 2. Agree on its limit and "
             "its owner. Then add the next one.",
             "A single trusted measure does more good than forty-two charts nobody reads.",
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point",
              "Watch only what changes decisions",
              "If a measure has not changed anyone's choice in three months, take it off the main screen."),
@@ -4997,9 +4997,9 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 2: The BI Team, Role by Role",
         "slug": "business-intelligence-part-2-the-bi-team",
         "category": "bi",
-        "summary": "Behind every dashboard that people trust are three kinds of work: building the pipes, building "
-                   "the screens and explaining what the numbers mean. Here is each BI role in plain words, and "
-                   "how one person in a small treasury can wear all three hats.",
+        "summary": ("Behind every dashboard that people trust are three kinds of work: building the pipes, "
+                   "building the screens and explaining what the numbers mean. Each role is explained in plain "
+                   "words, along with how one person in a small treasury can wear all three hats."),
         "publish_on": "2026-11-16 21:00",
         "body": [
             "A head of office opens a collections dashboard on a Monday morning and sees that "
@@ -5015,8 +5015,12 @@ BI_POSTS = [
             "real town or taxpayer is described.)",
             "In a large organization, three different people might take that call. In a small "
             "treasury, it may be one person. Either way, it helps to know the three jobs apart, "
-            "because each one fails in its own way and each one is fixed in its own way. By the end of this post, you will know the three kinds of BI work, how each one fails, and "
-            "how one person in a small office can do all three.",
+            "because each one fails in its own way and each one is fixed in its own way. This post separates the three kinds of BI work, shows how each one fails, and explains how one person in a small office can cover all three.",
+            ("The one-person case is not theory for me. I built ALTOS, my treasury system, on my own: "
+             "I worked out where each record comes from, built every screen to follow the official "
+             "forms the staff already know, and decided what each report should tell the officer who "
+             "reads it. Those three hats, plus the Google Business Intelligence Professional "
+             "Certificate, shaped the advice in this post."),
             ("photo",
              "blog/bi-roles.jpg",
              "The BI loop: people bring questions, an engineer builds the pipes, a developer "
@@ -5152,7 +5156,7 @@ BI_POSTS = [
              "Plain communication",
              "Explain what changed, why it matters and what to do, in words a busy official can "
              "read in one minute."),
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point",
              "Start with the people who ask",
              "A good BI question names what to watch and what someone will do when it changes."),
@@ -5167,7 +5171,7 @@ BI_POSTS = [
              "Titles vary; the work does not",
              "Whatever the job is called, all three kinds of work must be done, even if one "
              "person does them."),
-            ("h", "Your Part 2 Exercise"),
+            ("h", "Three Lines About Your Report"),
             "Take the repeated report you circled in Part 1, or pick one now. Then write three short lines:",
             ("point",
              "Engineer",
@@ -5196,9 +5200,9 @@ BI_POSTS = [
         "title": "Business Intelligence Series, Part 1: Same Data, Different Jobs",
         "slug": "business-intelligence-part-1-same-data-different-jobs",
         "category": "bi",
-        "summary": "Business intelligence and data analytics use the same records but do different jobs. "
-                   "Here is what BI really means, where the name came from, what a BI system is made of, "
-                   "and how a monthly treasury report can stop being rebuilt by hand.",
+        "summary": ("Business intelligence and data analytics use the same records but do different jobs. This "
+                   "post covers what BI really means, where the name came from, what a BI system is made of, and "
+                   "how a monthly treasury report can stop being rebuilt by hand."),
         "publish_on": "2026-11-14",
         "body": [
             "On the first working day of every month, a clerk in a municipal treasury starts the "
@@ -5211,9 +5215,14 @@ BI_POSTS = [
             "Nothing is wrong with the clerk's work. The totals are correct. The problem is that "
             "the same questions are asked every month, and every month the answers are built from"
             " scratch. Business intelligence, or BI, is the discipline that fixes exactly this "
-            "kind of problem. By the end of this post, you will know how BI differs from data "
-            "analytics, where the name came from, the five parts of a BI system, and how a "
-            "monthly report can stop being rebuilt by hand.",
+            "kind of problem. Here I explain how BI differs from data analytics, where the name came from, the five parts of a BI system, and how a monthly report can stop being rebuilt by hand.",
+            ("This kind of report is familiar to me. I have spent more than 13 years in local "
+             "government fiscal administration, including two years as Acting Municipal Treasurer of a municipality in "
+             "Quezon, from 2020 to 2022. As I wrote in Why I Built ALTOS, some offices still add up "
+             "their monthly reports with a calculator, and the reports take days to prepare. That is a "
+             "big part of why I went on to earn the Google Business Intelligence Professional "
+             "Certificate, and why ALTOS builds its reports from the receipts already issued instead "
+             "of from a fresh copy every month."),
             ("h", "Why a Second Series?"),
             "My Data Analytics series walks through the full craft of analysis: asking a good "
             "question, preparing and cleaning data, analyzing it and sharing what you found.",
@@ -5320,7 +5329,7 @@ BI_POSTS = [
             "That last point is the same one I made when I built ALTOS: every number the system "
             "produces is a prompt for a person to look and decide, never an automatic action.",
             "All examples in this series use made-up data, and each step can be started with free tools.",
-            ("h", "Key Takeaways"),
+            ("h", "In a Nutshell"),
             ("point",
              "Analytics answers once; BI keeps answering",
              "An analysis ends with a finding. A BI system keeps the same answers current for "
@@ -5335,7 +5344,7 @@ BI_POSTS = [
             ("point",
              "Judgment stays human",
              "A dashboard shows that a number moved. People still decide what to do about it."),
-            ("h", "Your Part 1 Exercise"),
+            ("h", "A Ten-Minute Task"),
             "Take ten minutes and do this:",
             ("point",
              "List your repeated reports",

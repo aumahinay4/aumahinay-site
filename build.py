@@ -12,9 +12,33 @@ from datetime import datetime
 from email.utils import format_datetime
 from html import escape
 
-from pages import ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
+from pages import NOINDEX_URLS, ROUTES, live_notes, TUTORIALS, lesson_is_live, lesson_url, live_posts, not_found, post_teaser, post_url, PH, TUTORIAL
 
 DIST = Path(__file__).parent / "dist"
+
+
+MOVED_PAGE = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<title>ALTOS moved to the home page</title><link rel="canonical" href="%(canonical)s">
+<meta http-equiv="refresh" content="0; url=%(to)s"><script>location.replace("%(to)s")</script></head>
+<body><p>ALTOS is now on the <a href="%(to)s">home page</a>.</p></body></html>
+"""
+
+
+# Addresses people type or trim that have no page of their own: each one goes to the right page.
+SHORT_LINKS = [
+    ("/altos/", "/#altos"),                      # the very first site had an ALTOS page here
+    ("/tools/", "/tools/rpt-calculator/"),       # the only free tool so far
+    ("/rpt-calculator/", "/tools/rpt-calculator/"),
+    ("/calculator/", "/tools/rpt-calculator/"),
+    ("/demo/", "/tools/altos-demo/"),
+    ("/projects/altos-demo/", "/tools/altos-demo/"),  # its address until 2026-11-24 (demo screens like #col-issue carry over)
+    ("/tutorials/civil-service-vocabulary/", "/tutorials/#english-exam-vocabulary"),  # the series' first address (renamed 2026-11-24)
+    ("/tutorials/english-exam-vocabulary/", "/tutorials/#english-exam-vocabulary"),
+    ("/blog/the-altos-framework-principle-1-legality-first/", "/blog/altos-framework-legality-first/"),
+    ("/feed/", "/feed.xml"),
+    ("/rss/", "/feed.xml"),
+]
 
 
 # IndexNow (Butch, 2026-11-10): the deploy tells Bing about new pages; the key is public by design
@@ -25,7 +49,7 @@ def sitemap(site):
     """Every live page (scheduled posts and lessons appear on their date, with the nightly build)."""
     # Study Notes stays out of the sitemap until its first note is live (no empty hub pages for AdSense)
     urls = "".join(f"  <url><loc>{site}{route}</loc></url>\n" for route in ROUTES
-                   if route != "/study-notes/" or live_notes())
+                   if (route != "/study-notes/" or live_notes()) and route not in NOINDEX_URLS)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
 
@@ -75,6 +99,11 @@ def build():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render(), encoding="utf-8")
         print("wrote", out.relative_to(DIST.parent))
+    # fallback if the host serves files before _redirects: a tiny page that jumps to the ALTOS section of Home
+    gone = DIST / "projects" / "index.html"
+    if not gone.exists():
+        gone.parent.mkdir(parents=True, exist_ok=True)
+        gone.write_text(MOVED_PAGE % {"to": "/#altos", "canonical": f"https://{SITE['domain']}/"}, encoding="utf-8")
     (DIST / "404.html").write_text(not_found(), encoding="utf-8")
     shutil.copytree(Path(__file__).parent / "static", DIST / "static", dirs_exist_ok=True)
     shutil.copy(DIST / "static" / "favicon.ico", DIST / "favicon.ico")  # browsers look for it at the root
@@ -85,7 +114,15 @@ def build():
                 if f.suffix in (".py", ".csv"):
                     shutil.copy(f, DIST / lesson_url(x).strip("/") / f.name)
     # the old IT News page now points to the tutorials (Cloudflare Pages reads this file)
-    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n/courses/ /study-notes/ 301\n/courses /study-notes/ 301\n")
+    (DIST / "_redirects").write_text("/news/ /tutorials/ 301\n/news /tutorials/ 301\n/courses/ /study-notes/ 301\n/courses /study-notes/ 301\n"
+                                      # Projects page removed (Butch 2026-11-20): its ALTOS content is on Home now
+                                      "/projects/ /#altos 301\n/projects /#altos 301\n"
+                                      # short or guessed addresses that used to show "Page not found" (Butch 2026-11-24)
+                                      + "".join(f"{a} {b} 301\n{a.rstrip('/')} {b} 301\n" for a, b in SHORT_LINKS)
+                                      # the book's own address until 2026-11-24: every chapter keeps working
+                                      + "/projects/altos-book/* /book/:splat 301\n/projects/altos-book /book/ 301\n"
+                                      # vocabulary modules' first address until 2026-11-24: every module keeps working
+                                      "/tutorials/civil-service-vocabulary/* /tutorials/english-exam-vocabulary/:splat 301\n")
     # help search engines find every page
     site = f"https://{SITE['domain']}"
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site}/sitemap.xml\n")

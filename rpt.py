@@ -37,8 +37,8 @@ RPT_URL = "/tools/rpt-calculator/"
 RPT_CHECKED = "November 2026"
 RPT_GUIDE_URL = "/blog/how-to-use-the-rpt-calculator/"  # step-by-step guide post (Butch 2026-11-11)
 
-# Quezon Provincial Revenue Code of 2022, Sec. 25 (levels in %; building brackets: [up to market value, level])
-QUEZON_LEVELS = {
+# Built-in provincial revenue code of 2022, Sec. 25 (levels in %; building brackets: [up to market value, level])
+PROV_LEVELS = {
     "land": {"Residential": 5, "Agricultural": 15, "Commercial": 17, "Industrial": 30},
     "building": {
         "Residential": [[175000, 0], [300000, 5], [500000, 10], [750000, 15], [1000000, 20], [2000000, 25],
@@ -78,7 +78,7 @@ RPT_SCRIPT = r"""
     Object.keys(LEVELS[kind]).forEach(function (k) { var o = document.createElement('option'); o.value = k; o.textContent = k; sel.appendChild(o); });
     if (LEVELS[kind][keep] !== undefined) sel.value = keep;
   }
-  function quezonLevel(mv) {
+  function provLevel(mv) {
     var v = LEVELS[$('kind').value][$('klass').value];
     if (typeof v === 'number') return v;
     for (var i = 0; i < v.length; i++) if (v[i][0] === null || mv <= v[i][0]) return v[i][1];
@@ -96,23 +96,23 @@ RPT_SCRIPT = r"""
       [1, 2, 3, 4].forEach(function (q) { $('qs' + q).value = 'now'; });
       rolledNote = 'Tax year ' + y0 + ' is fully paid, so this shows the next payment: tax year ' + (y0 + 1) + '.';
     }
-    var lgu = f.lgu.value, city = lgu === 'city', qz = lgu === 'quezon';
+    var lgu = f.lgu.value, city = lgu === 'city', qz = lgu === 'prov';
     if (lgu !== lastLgu) { $('basic-rate').value = city ? '2' : '1'; lastLgu = lgu; }
     $('brgy-count-row').hidden = !city;
     var useMv = f.basis.value === 'mv';
     $('mv-rows').hidden = !useMv; $('av-row').hidden = useMv;
-    $('qz-class').hidden = !(useMv && qz);
+    $('prov-class').hidden = !(useMv && qz);
     var mv = num('mv');
     if (useMv && qz) {
       var key = $('kind').value + '|' + $('klass').value + '|' + mv;
-      if (key !== lastLevelKey) { $('level').value = quezonLevel(mv); lastLevelKey = key; }
+      if (key !== lastLevelKey) { $('level').value = provLevel(mv); lastLevelKey = key; }
     }
     var av = useMv ? r2(mv * Math.min(num('level'), 100) / 100) : num('av');
     var bRate = Math.min(num('basic-rate'), city ? 2 : 1), sRate = Math.min(num('sef-rate'), 1);
     var basic = r2(av * bRate / 100), sef = r2(av * sRate / 100);
 
     // payment date and tax year
-    $('disc-row').hidden = qz; $('qz-disc').hidden = !qz;
+    $('disc-row').hidden = qz; $('prov-disc').hidden = !qz;
     var year = Math.floor(num('taxyear')) || ph.getUTCFullYear();
     var pd = ($('paydate').value || today).split('-').map(Number);  // [y, m, d]
     var payIdx = pd[0] * 12 + (pd[1] - 1);
@@ -130,7 +130,7 @@ RPT_SCRIPT = r"""
       if (st === 'now') anyNow = true;
       if (st === 'now' && past) {  // late: every month or part of a month after the due date counts, up to 36
         months = Math.max(payIdx - (year * 12 + DUE[q][0]), 1);
-        if (qz) months = Math.ceil(months / 3) * 3;  // Quezon practice: by quarter, a part of a quarter counts as a whole quarter (6%)
+        if (qz) months = Math.ceil(months / 3) * 3;  // built-in provincial practice: by quarter, a part of a quarter counts as a whole quarter (6%)
         months = Math.min(months, 36);
         anyLate = true; lateNow.push('Q' + (q + 1));
       }
@@ -138,7 +138,7 @@ RPT_SCRIPT = r"""
       quarters.push({ q: q + 1, due: MONTHS[DUE[q][0]] + ' ' + DUE[q][1], b: b, s: s, months: months, st: st, past: past });
     }
     // discount: only for quarters paid now on or before their due date, and only when the property has no
-    // delinquency: no unpaid earlier year and no quarter of this year past due before this payment (Quezon Sec. 44)
+    // delinquency: no unpaid earlier year and no quarter of this year past due before this payment (built-in provincial code)
     var delinquent = !priorClear || anyLate || unpaidLate.length > 0;
     var disc = 0, discNote = '';
     if (!delinquent) {
@@ -146,7 +146,7 @@ RPT_SCRIPT = r"""
         var advYears = year - pd[0];
         if (advYears >= 2) { disc = 20; discNote = 'paid two or more years in advance'; }
         else if (advYears === 1 && fullYear && (pd[1] < 9 || (pd[1] === 9 && pd[2] <= 30))) { disc = 15; discNote = 'whole year paid on or before September 30, one year in advance'; }
-        else { disc = 10; discNote = 'paid on or before the Sec. 43 deadlines'; }
+        else { disc = 10; discNote = 'paid on or before the quarterly deadlines'; }
       } else { disc = Math.min(num('disc'), 20); discNote = 'paid on time'; }
     }
     var tb = 0, ts = 0, tbAdj = 0, tsAdj = 0;
@@ -236,7 +236,7 @@ RPT_SCRIPT = r"""
   fillClasses();
   calc();
 })();
-""".replace("__LEVELS__", json.dumps(QUEZON_LEVELS))
+""".replace("__LEVELS__", json.dumps(PROV_LEVELS))
 
 
 def _field(label, control, hint=None, row_id=None, hidden=False):
@@ -266,26 +266,180 @@ def _guide_link():
                t.a("How to Use the RPT Calculator", href=RPT_GUIDE_URL), ".", class_="rpt-guide")
 
 
+def _example(title, setup, lines, result):
+    """One worked example: what was typed in, what the calculator shows, and the lesson."""
+    return t.div(
+        t.h3(title),
+        t.p(t.b("What you type: "), setup),
+        t.ul([t.li(x) for x in lines], class_="rpt-steps"),
+        t.p(t.b("Result: "), result),
+        class_="card rpt-example",
+    )
+
+
+def _explanations():
+    """How the calculator works, how to read its results, and worked examples (Butch 2026-11-24: "make more
+    explanations to get useful information"). The step-by-step how-to post and the Study Notes on real property
+    tax are linked, not repeated. Every example below was run in the calculator before publishing."""
+    return [
+        t.h2("How the calculator works it out"),
+        t.p("The calculator works in five steps. Knowing them helps you check your own tax bill."),
+        t.ol(
+            t.li(t.b("Assessed value. "), "Real property tax is charged on the assessed value, not on what the property "
+                 "would sell for. Assessed value is the market value times the assessment level that the local ordinance "
+                 "sets for the property's class and actual use (Sec. 218). If you know the assessed value from your tax "
+                 "declaration, the calculator uses it as it is."),
+            t.li(t.b("Basic tax and SEF. "), "The basic tax is the assessed value times the basic rate: up to 1% when the "
+                 "province levies it (for property in a municipality), or up to 2% in a city or a Metro Manila municipality "
+                 "(Sec. 233). The Special Education Fund (SEF) tax is another 1% of the assessed value (Sec. 235). So at the "
+                 "highest rates, a property in a municipality pays 2% of its assessed value a year, and one in a city pays 3%."),
+            t.li(t.b("Four equal quarters. "), "The year's tax may be paid without interest in four equal installments, "
+                 "due on or before March 31, June 30, September 30 and December 31 (Sec. 250). The calculator divides "
+                 "the basic tax and the SEF by four; if the amount does not divide evenly, the last quarter takes "
+                 "the centavos left over."),
+            t.li(t.b("Discount or interest, quarter by quarter. "), "Each quarter marked \"Not paid\" is compared with the "
+                 "target date of payment. Paid on or before its due date, it can earn the discount for prompt or advance "
+                 "payment, which the law caps at 20% of the annual tax (Sec. 251). Paid after its due date, it earns interest of 2% "
+                 "for each month or part of a month, for at most 36 months, or 72% in all (Sec. 255). With the built-in "
+                 "provincial rates, interest is counted by quarter instead: each quarter or part of a quarter late adds 6%."),
+            t.li(t.b("No discount while anything is overdue. "), "The calculator gives the discount only when the property "
+                 "has no delinquency: no unpaid earlier year and no quarter of this year already past due. This follows the "
+                 "built-in provincial revenue code. Other local codes may word it differently, so check yours."),
+            class_="rpt-steps",
+        ),
+        t.p("The discount or interest is rounded to the centavo once, on the total, and the result is then shared out "
+            "as shown in \"Who gets what\"."),
+        t.h2("Reading your results"),
+        t.ul(
+            t.li(t.b("Amount to pay. "), "The big figure is what you would bring to the treasurer's office on the target "
+                 "date: the tax for every quarter marked \"Not paid\", less any discount or plus any interest. Quarters "
+                 "marked \"Paid\" are left out."),
+            t.li(t.b("The line under the assessed value. "), "It shows the tax year, the tax for the whole year before any "
+                 "discount or interest, and the target date, so you can see at a glance which case you are looking at."),
+            t.li(t.b("Notes in the result box. "), "When a quarter is past due, a short note says which one and why there "
+                 "is interest or no discount. If the note names a quarter you have already paid, set it to \"Paid\"."),
+            t.li(t.b("Quarter by quarter. "), "Each row shows one installment and its status. \"On time −10%\" means it earns "
+                 "a 10% discount. \"2 mo late +4%\" means the quarter is two months late (a part of a month counts as a whole "
+                 "month), so 4% is added. "
+                 "\"1 qtr late +6%\" is the same idea counted by quarter, under the built-in provincial rates. \"On time, "
+                 "no discount\" means the quarter is not yet due, but another quarter is overdue."),
+            t.li(t.b("Basic RPT and SEF columns. "), "The summary table keeps the two taxes apart because they go to "
+                 "different funds. The basic tax and its interest go to the general funds of the local governments; the "
+                 "SEF goes to the school boards."),
+            t.li(t.b("Who gets what. "), "This table splits the amount you pay among the local governments and school "
+                 "boards, as explained in \"How the tax is shared\" below."),
+            class_="plain-list rpt-notes",
+        ),
+        t.h2("Worked examples"),
+        t.p("These three cases use rates you type in yourself, so they work for any local government. The step-by-step "
+            "guide has more examples with the built-in provincial rates."),
+        _example(
+            "1. A lot in a city, paid in full early",
+            "A city with 20 barangays. Assessed value ₱80,000. Basic rate 2%, SEF 1%, discount 10%. Tax year 2027, "
+            "target date February 15, 2027, all four quarters \"Not paid\".",
+            ["Basic tax: ₱80,000 × 2% = ₱1,600. SEF: ₱80,000 × 1% = ₱800. Tax for the year: ₱2,400, or ₱600 a quarter.",
+             "Every quarter is paid before its due date, so each one earns 10%: ₱60 off each, ₱240 in all.",
+             "Who gets what: the basic tax after discount is ₱1,440. The city gets 70% (₱1,008), the barangay where the "
+             "lot is gets 15% (₱216), and the other 15% (₱216) is shared by all 20 barangays, ₱10.80 each. The city "
+             "school board gets the whole SEF after discount, ₱720."],
+            "₱2,160 to pay, ₱240 less than the full tax."),
+        _example(
+            "2. Two quarters left, one of them late",
+            "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%, discount 10%. "
+            "Tax year 2026, Q1 and Q2 \"Paid\", Q3 and Q4 \"Not paid\", target date November 5, 2026.",
+            ["Tax for the year: ₱400 basic + ₱400 SEF = ₱800, or ₱200 a quarter.",
+             "Q3 was due September 30. October and part of November count as two months: 2 × 2% = 4%, or ₱8 interest.",
+             "Q4 is not due until December 31, but because Q3 is overdue, Q4 gets no discount. It stays at ₱200.",
+             "Had the same two quarters been paid on September 25, both would have been on time: ₱180 each, or ₱360."],
+            "₱408 to pay. Paying six weeks earlier would have saved ₱48."),
+        _example(
+            "3. An old year and the 36-month cap",
+            "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%. Tax year 2023, "
+            "all four quarters \"Not paid\", target date November 24, 2026. All the other years are paid, so the box "
+            "for earlier years stays ticked.",
+            ["Each quarter's tax is ₱200, and all four are late.",
+             "Q1, Q2 and Q3 of 2023 are 44, 41 and 38 months late, but interest stops at 36 months: 72%, or ₱144 each.",
+             "Q4 was due December 31, 2023, so it is 35 months late: 70%, or ₱140.",
+             "Interest: ₱144 × 3 + ₱140 = ₱572 on a tax of ₱800."],
+            "₱1,372 to pay. The interest has stopped growing, but the tax itself stays a lien on the property until paid."),
+    ]
+
+
+def _faq():
+    """Short answers to questions taxpayers ask about the calculator's figures."""
+    qa = [
+        ("Why is the calculator's amount different from my official receipt?",
+         "Usually for one of four reasons: your local ordinance uses a different rate, discount or assessment level; the "
+         "assessed value on your tax declaration has changed; part of your payment went to an older unpaid year first; "
+         "or your bill includes something the calculator leaves out, such as an idle land tax or a special levy. Your "
+         "treasurer's office can show you how its figure was computed."),
+        ("I am paying before the deadline. Why is there no discount?",
+         "Check the quarters in step 4 and the box for earlier years. If any quarter of the year is past due and "
+         "unpaid, or an earlier year is unpaid, the calculator treats the property as delinquent and gives no discount. "
+         "Mark the quarters you have paid as \"Paid\" and tick the box if earlier years are settled."),
+        ("I paid last year's tax late. Do I lose this year's discount?",
+         "In the calculator, not by itself. Once last year is fully paid, including its interest, the property has no unpaid "
+         "earlier year, so leave the box for earlier years ticked."),
+        ("Does interest keep growing forever?",
+         "No. The law stops it at 36 months, so the most interest on any unpaid amount is 72% (Sec. 255). The unpaid tax "
+         "itself remains a lien on the property until paid (Sec. 257), and the local government may collect it through the remedies the law allows."),
+        ("Can I pay only one quarter at a time?",
+         "Yes. The law allows four equal installments (Sec. 250). The \"Quarter by quarter\" table shows what each "
+         "quarter costs on your target date, so you can read off the one you are paying now."),
+        ("Where do I find the rates for my local government?",
+         "In the revenue code of the province (for a municipality) or of the city, passed by its sanggunian. The "
+         "treasurer's or assessor's office can tell you the current assessment levels, basic rate and discount."),
+    ]
+    out = [t.h2("Questions people ask")]
+    for q, a in qa:
+        out += [t.h3(q, class_="rpt-q"), t.p(a)]
+    return out
+
+
+def _read_more():
+    """Links to the site's longer pieces on real property tax, shown only once each is live, so this page does not
+    repeat them."""
+    from pages import post_is_live, live_notes  # imported here: pages.py imports this module
+    links = []
+    if post_is_live(RPT_GUIDE_URL):
+        links.append(t.li(t.a("How to Use the RPT Calculator", href=RPT_GUIDE_URL),
+                          " walks through the calculator step by step, using the built-in provincial rates."))
+    notes = {n["slug"]: n for n in live_notes()}
+    for slug, what in [("real-property-tax-basics", " explains valuation, assessment levels, exemptions and appeals."),
+                       ("paying-real-property-tax", " explains due dates, discounts, interest, and what happens when the tax stays unpaid.")]:
+        if slug in notes:
+            links.append(t.li(t.a("Study Note: " + notes[slug]["title"], href="/study-notes/%s/" % slug), what))
+    try:
+        import altos_guide  # noqa: F401  the ALTOS Demo Guide page, once it is added
+        links.append(t.li(t.a("ALTOS Demo Guide", href="/tools/altos-demo-guide/"),
+                          " shows how a treasury system computes the same tax at the counter."))
+    except ImportError:
+        pass
+    if not links:
+        return ""
+    return t.div(t.h2("Read more"), t.ul(links, class_="plain-list rpt-notes"))
+
+
 def rpt_page():
     law = "https://lawphil.net/statutes/repacts/ra1991/ra_7160_1991.html"
     return {
         "title": "RPT Calculator", "active": RPT_URL, "url": RPT_URL, "og_type": "website",
         "seo_title": "Real Property Tax (Amilyar) Calculator, Philippines · Butch Mahinay",
         "description": "Free real property tax (amilyar) calculator for the Philippines: basic tax, SEF, discount or "
-                       "interest by date of payment, and each share for the province, town and barangay.",
+                       "interest by date of payment, and each share for the province, municipality and barangay.",
         "body": [
             t.p("Free tool", class_="eyebrow"),
             t.h1("Real Property Tax Calculator"),
             t.p("Work out the yearly real property tax (amilyar) on a piece of land or a building, then see where "
                 "every peso goes: the province, the municipality, the barangay and the school boards. "
-                "Based on the Local Government Code of 1991 (RA 7160), with the rules of the Quezon Provincial "
-                "Revenue Code built in.", class_="lead"),
+                "Based on the Local Government Code of 1991 (RA 7160), with the rules of a provincial "
+                "revenue code built in.", class_="lead"),
             _guide_link(),
             t.form(
                 t.fieldset(
                     t.legend("1. Where is the property?"),
-                    t.div(_radio("lgu", "quezon", "In a municipality of Quezon Province", True),
-                          _radio("lgu", "mun", "In a municipality of another province"),
+                    t.div(_radio("lgu", "prov", "In a municipality (built-in provincial rates)", True),
+                          _radio("lgu", "mun", "In a municipality (type your own rates)"),
                           _radio("lgu", "city", "In a city"), class_="choices"),
                     _field("Number of barangays in the city (optional)", _num("brgy-count", step="1", placeholder="e.g. 33"),
                            "Used to show each barangay's equal share.", row_id="brgy-count-row", hidden=True),
@@ -302,8 +456,8 @@ def rpt_page():
                                                         t.option("Machinery", value="machinery"),
                                                         t.option("Special class", value="special"), id="kind", name="kind")),
                             _field("Class or use", t.select(id="klass", name="klass"),
-                                   "Fills in the assessment level from the Quezon Provincial Revenue Code (Sec. 25)."),
-                            id="qz-class", class_="field-pair",
+                                   "Fills in the assessment level from the built-in provincial revenue code."),
+                            id="prov-class", class_="field-pair",
                         ),
                         t.div(
                             _field("Market value (₱)", _num("mv", "500000")),
@@ -342,15 +496,15 @@ def rpt_page():
                             "Taxes of earlier years are fully paid", class_="choice prior-paid"),
                     _field("Discount for paying on time (%)", _num("disc", "10", maximum="20"),
                            "Set by your local ordinance, up to 20%.", row_id="disc-row", hidden=True),
-                    t.p("Quezon Province discount (Sec. 44), worked out from the date: 10% if paid on or before the "
-                        "installment deadlines of Sec. 43, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
+                    t.p("Built-in provincial discount, worked out from the date: 10% if paid on or before the "
+                        "installment deadlines, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
                         "if paid two or more years in advance. The discount is only for quarters paid now on or before their due "
                         "date, and only when the property has no delinquency: no unpaid earlier year and no quarter "
                         "of this year past due and unpaid.",
-                        id="qz-disc", class_="hint block-hint"),
+                        id="prov-disc", class_="hint block-hint"),
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
                         "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
-                        "a month, up to 36 months; in Quezon Province it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters already paid as \"Paid\"; every quarter "
+                        "a month, up to 36 months; with the built-in provincial rates it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters already paid as \"Paid\"; every quarter "
                         "marked \"Not paid\" is added to the amount to pay: 10% off if paid on time, 6% more for each quarter late.", class_="hint block-hint"),
                 ),
                 id="rpt", class_="card rpt-form", novalidate=True,
@@ -394,6 +548,22 @@ def rpt_page():
                 ),
                 class_="card rpt-result", aria_live="polite",
             ),
+            # Butch's wording, from his Google Doc "aumahinay.dev Educational & Tax Disclaimers", part 1 (2026-11-20):
+            # right under the calculator, in a callout box
+            t.div(
+                t.h3("Educational & Estimation Disclaimer"),
+                t.p("The Real Property Tax (RPT) Calculator on aumahinay.dev is provided strictly for educational, informational, "
+                    "and general estimation purposes only. While the computation logic reflects standard principles under the "
+                    "Local Government Code of 1991 (Republic Act No. 7160) and the Real Property Valuation and Assessment Reform "
+                    "Act (Republic Act No. 12001), actual tax liabilities vary based on your local government unit's (LGU) "
+                    "prevailing Revenue Code, Schedule of Fair Market Values (SMV), assessment levels, Special Education Fund "
+                    "(SEF) rates, idle land levies, prompt-payment discounts, and accrued delinquency penalties."),
+                t.p("Output generated by this tool does not constitute an official tax assessment, billing statement, or legal "
+                    "opinion. Always verify your exact real property tax dues directly with your local Municipal, City, or "
+                    "Provincial Treasurer's Office and Assessor's Office before making any payment or financial decision."),
+                class_="disclaimer rpt-disclaimer",
+            ),
+            *_explanations(),
             t.h2("How the tax is shared"),
             t.p("The basic real property tax, including any interest, is divided by law. In a municipality, the "
                 "province gets 35%, the municipality 40% and the barangay where the property is 25%. In a city, the "
@@ -404,36 +574,25 @@ def rpt_page():
                 "(Sec. 272)."),
             t.h2("Good to know"),
             t.ul(
-                t.li(t.b("Assessed value. "), "Tax is charged on the assessed value, not the market value. Assessed value "
-                     "is the market value times the assessment level set by ordinance for the property's class and use "
-                     "(Sec. 218). For buildings in Quezon Province, the level depends on the market value bracket."),
-                t.li(t.b("Installments. "), "The tax may be paid in four equal quarterly installments, due on or before "
-                     "March 31, June 30, September 30 and December 31 (Sec. 250)."),
-                t.li(t.b("Discount. "), "A province or city may give a discount of up to 20% for paying in advance "
-                     "or on time; the rates are in the local ordinance (Sec. 251). Each quarter paid on or before its due date "
-                     "earns the discount, so a taxpayer who pays quarter by quarter on time gets it on every quarter."),
-                t.li(t.b("Interest. "), "Unpaid tax earns interest of 2% a month, up to 36 months, until it is paid in full "
-                     "(Sec. 255). In Quezon Province, interest is counted by quarter: each quarter or part of a quarter after "
-                     "the due date counts as three months, or 6%."),
                 t.li(t.b("Older unpaid taxes first. "), "Payments are applied first to unpaid taxes, interest and penalties of "
-                     "earlier years, and only then to the current year (Sec. 250). This calculator works out one tax year at a time."),
-                t.li(t.b("Not included. "), "The idle land tax (3% in Quezon Province), special levies, and the lower SEF rate for "
-                     "renewable energy property (0.5% in Quezon Province, under RA 9513) are not covered here."),
+                     "earlier years, and only then to the current year (Sec. 250). This calculator works out one tax year at a time, "
+                     "so if you owe more than one year, run it once for each year, oldest first."),
+                t.li(t.b("Not included. "), "The idle land tax (3% under the built-in provincial rates), special levies, and the lower SEF rate for "
+                     "renewable energy property (0.5% under the built-in provincial rates, under RA 9513) are not covered here."),
                 t.li(t.b("New property values. "), "Under the Real Property Valuation and Assessment Reform Act (RA 12001, 2024), "
                      "the increase in real property tax in the first year of a new schedule of market values is capped at 6%."),
                 t.li(t.b("Metro Manila. "), "Municipalities in Metro Manila follow a different sharing rule, so this "
                      "calculator does not cover them."),
                 class_="plain-list rpt-notes",
             ),
+            *_faq(),
+            _read_more(),
             t.p("Sources: ", t.a("Local Government Code of 1991 (RA 7160)", href=law, rel="noopener"), ", Secs. 218, 233, 235, "
-                "250, 251, 255, 271 and 272; ",
+                "250, 251, 255, 257, 271 and 272; ",
                 t.a("RA 12001", href="https://lawphil.net/statutes/repacts/ra2024/ra_12001_2024.html", rel="noopener"),
-                ", Sec. 29; Province of Quezon, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022), "
+                ", Sec. 29; built-in provincial rates from a provincial Revised Revenue Code of 2022, "
                 "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
-            t.p("This calculator is a study aid, not an official assessment. Your actual tax depends on your local "
-                "ordinances and the tax declaration; your municipal, city or provincial treasurer's office has the final "
-                "figures. Figures are worked out in your browser and nothing you type is sent or saved.",
-                class_="disclaimer"),
+            t.p("Figures are worked out in your browser and nothing you type is sent or saved.", class_="muted note"),
             t.script(Raw(RPT_SCRIPT)),
         ],
     }

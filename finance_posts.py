@@ -12,9 +12,9 @@ FINANCE_POSTS = [
         "publish_on": "2026-11-11",
         "slug": "year-end-in-the-treasury",
         "category": "treasury",
-        "summary": "While most offices slow down for Christmas, the local treasury speeds up. Here is what "
-                   "happens in December, from bonuses and last-minute vouchers to unspent budgets, cash counts "
-                   "and getting ready for the January rush.",
+        "summary": ("While most offices slow down for Christmas, the local treasury speeds up. December brings "
+                   "bonuses, last-minute vouchers, unspent budgets and cash counts, and the office must also get "
+                   "ready for the January rush."),
         "body": [
             "On a Friday afternoon in mid-December, the office smells of pancit from someone’s "
             "early Christmas party. Down the hall, the treasury is quiet in a different way. "
@@ -24,9 +24,7 @@ FINANCE_POSTS = [
             "(As in my other treasury posts, the scenes here are composites. No real person, "
             "office or amount is described.)",
             "December is the season of parties and bonuses. For a local treasury, it is the "
-            "busiest closing month of the year. By the end of this post, you will know the rules "
-            "that drive December, from unspent budgets to cash advances, and a short checklist "
-            "any office or supplier can use before the year closes.",
+            "busiest closing month of the year. Let me take you through the rules that drive December, from unspent budgets to cash advances, along with the steps any office or supplier can take before the year closes.",
             ("h", "Why December Matters So Much"),
             "Local governments in the Philippines follow a fiscal year that runs with the "
             "calendar, from January 1 to December 31. Every peso the town plans to spend is "
@@ -162,7 +160,7 @@ FINANCE_POSTS = [
             "It is also why I believe treasury systems should make year-end easier, not harder. A"
             " good system keeps the records complete every day, so December becomes a review, not"
             " a rescue.",
-            ("h", "Key Takeaways"),
+            ("h", "What to Remember"),
             ("point",
              "Unspent money reverts",
              "Except for capital outlay, unexpended appropriations go back to the general fund at year-end."),
@@ -192,9 +190,9 @@ FINANCE_POSTS = [
         "publish_on": "2026-11-11",
         "slug": "your-data-at-the-treasury-counter",
         "category": "treasury",
-        "summary": "Every payment at the town hall leaves a trail of personal information. Here is what the "
-                   "Data Privacy Act means at the treasury counter, what an office may share, what it must "
-                   "protect, and simple habits that keep taxpayers safe.",
+        "summary": ("Every payment at the town hall leaves a trail of personal information. The Data Privacy Act "
+                   "decides what an office may share and what it must protect, and a few simple habits keep "
+                   "taxpayers safe."),
         "body": [
             "A man walks up to the treasury window and asks a simple question. “Magkano po ba ang"
             " utang sa amilyar ng kapitbahay ko?” How much does my neighbor still owe in real "
@@ -203,10 +201,7 @@ FINANCE_POSTS = [
             " described.)",
             "The clerk smiles and says she cannot give that information. The man is annoyed. "
             "Isn’t the government supposed to be transparent?",
-            "Both of them have a point, and that is what makes this topic worth explaining. By "
-            "the end of this post, you will know what the Data Privacy Act protects at the "
-            "counter, what stays public, when the law requires names to be posted, and simple "
-            "habits that keep taxpayer data safe.",
+            "Both of them have a point, and that is what makes this topic worth explaining. What follows covers what the Data Privacy Act protects at the counter, what stays public, when the law requires names to be posted, and simple habits that keep taxpayer data safe.",
             ("h", "What a Treasury Knows About You"),
             "Think about everything you hand over at the counter in a year. Your full name, "
             "address and birthday for the cedula. Your income, because the community tax depends "
@@ -342,7 +337,7 @@ FINANCE_POSTS = [
             "She can also tell him the general rules, such as when real property tax is due and "
             "how the discounts work, because that information is for everyone.",
             "That answer protects the neighbor, respects the visitor and keeps the office within the law.",
-            ("h", "Key Takeaways"),
+            ("h", "What to Remember"),
             ("point",
              "Private accounts stay private",
              "Share a taxpayer's account only with the owner, or someone with written authority and an ID."),
@@ -371,8 +366,8 @@ FINANCE_POSTS = [
 FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account, No Idle Cash, How a Treasury Manages Cash',
   'slug': 'local-finance-part-1-cash-management',
   'category': 'finance',
-  'date': 'December 12, 2026',
-  'publish_on': '2026-12-12 21:00',
+  'date': "December 2, 2026",
+  'publish_on': "2026-12-02 21:00",
   'summary': 'A local government must have cash ready when a bill falls due. This part explains the treasury single '
              'account idea from the IMF, the two cash tests in the PEFA framework, and how a Philippine local '
              'treasury can build a daily cash position and a monthly cash forecast.',
@@ -386,8 +381,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'explains what international bodies such as the International Monetary Fund (IMF), the World Bank and the '
            'PEFA program recommend, and then works through it with a Philippine example. The first problem is having '
            'cash in the right place at the right time.',
-           'By the end of this post, you will know what a treasury single account is, how the PEFA framework tests '
-           'cash management, and how to build two simple tools: a daily cash position and a monthly cash forecast.',
+           'This post explains what a treasury single account is and how the PEFA framework tests cash management, then shows how to build two simple tools: a daily cash position and a monthly cash forecast.',
            ('photo',
             'blog/finance-lfwb-cash.jpg',
             'Four habits of good cash management: know every account, see one position each day, forecast every '
@@ -497,7 +491,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Forecasting once a year',
             'PEFA’s top score asks for monthly updates based on actual inflows and outflows.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'One picture of all cash',
             'The treasury single account idea from the IMF is about control and visibility, not only about the '
@@ -533,8 +527,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 2: How Big Should the Rainy-Day Reserve Be?',
   'slug': 'local-finance-part-2-rainy-day-reserve',
   'category': 'finance',
-  'date': 'December 19, 2026',
-  'publish_on': '2026-12-19 21:00',
+  'date': "December 7, 2026",
+  'publish_on': "2026-12-07 21:00",
   'summary': 'A reserve is money set aside for the year that goes wrong. This part explains the two-month benchmark '
              'recommended by the Government Finance Officers Association, what the Philippine Local Government Code '
              'says about surplus and balanced budgets, and how to measure the real reserve of a local government.',
@@ -642,7 +636,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'When it may be used',
             'Sudden revenue loss or urgent costs that the regular budget cannot absorb.'),
            ('point', 'How it is rebuilt', 'For example, over the next two or three budgets.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Two months as a minimum',
             'GFOA recommends no less than two months of regular general fund revenues or spending, with more where '
@@ -654,7 +648,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Philippine rules',
             'Sections 305, 321, 322 and 324 of the Local Government Code shape how surplus is created and used.'),
            ('point', 'Agree in advance', 'A written policy turns a tense debate into a simple rule.'),
-           ('h', 'Your Part 2 Action Plan'),
+           ('h', 'One Question for Each Reader'),
            ('point',
             'If you work in a treasury',
             'Ask the accountant for last year-end’s general fund cash, continuing appropriations and unpaid '
@@ -681,8 +675,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 3: When the Government Pays Late, Preventing Unpaid Bills',
   'slug': 'local-finance-part-3-expenditure-arrears',
   'category': 'finance',
-  'date': 'December 26, 2026',
-  'publish_on': '2026-12-26 21:00',
+  'date': "December 14, 2026",
+  'publish_on': "2026-12-14 21:00",
   'summary': 'Unpaid bills to suppliers, also called expenditure arrears, are described by the IMF as one of the '
              'most common problems in public financial management. This part explains how the IMF and the PEFA '
              'framework look at arrears, the Philippine rules that are meant to prevent them, and a simple monthly '
@@ -792,7 +786,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Put the cash on the forecast',
             'Large payments should appear on the monthly cash forecast from Part 1.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point', 'Arrears are overdue obligations', 'Bills past their due date, not bills in normal processing.'),
            ('point',
             'A common problem',
@@ -826,8 +820,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 4: Cash or Accrual? Why Public Accounting Changed',
   'slug': 'local-finance-part-4-cash-or-accrual',
   'category': 'finance',
-  'date': 'January 2, 2027',
-  'publish_on': '2027-01-02 21:00',
+  'date': "December 18, 2026",
+  'publish_on': "2026-12-18 21:00",
   'summary': 'A growing share of governments report on an accrual basis instead of a cash basis. This part explains '
              'the difference with simple examples, what the international standards (IPSAS) say, how the Philippines '
              'adopted them as PPSAS, and why the treasurer’s cash records and the accountant’s financial statements '
@@ -919,7 +913,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'answer the council’s yearly question: what did our services really cost, and what do we owe? When the '
            'two disagree, the difference is not necessarily a mistake. Ask what explains it, such as bills waiting '
            'to be paid or the depreciation of assets.',
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point', 'Cash basis', 'Records money when it is received or paid.'),
            ('point',
             'Accrual basis',
@@ -955,8 +949,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 5: Grading a Local Government’s Finances, the PEFA Check',
   'slug': 'local-finance-part-5-pefa-check',
   'category': 'finance',
-  'date': 'January 9, 2027',
-  'publish_on': '2027-01-09 21:00',
+  'date': "December 25, 2026",
+  'publish_on': "2026-12-25 21:00",
   'summary': 'PEFA is a framework for grading how well a government manages public money, used in 151 countries at '
              'national and local level. This part explains its seven pillars, 31 indicators and A-to-D scores, how '
              'it is adapted for local governments, and how the Philippines uses it through the Public Financial '
@@ -1063,7 +1057,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'One office doing it alone',
             'Public financial management crosses offices. The PFM team must include all of them.'),
            ('point', 'Skipping the improvement plan', 'The report describes problems. Only the plan fixes them.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'A shared yardstick',
             'PEFA has seven pillars and 31 indicators, scored from D to A, and has been used in 151 countries.'),
@@ -1075,7 +1069,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'LBC No. 147 adopted the enhanced PFMAT for LGUs, based on PEFA 2016, with seven areas including '
             'citizens’ participation.'),
            ('point', 'The plan is the point', 'Every weak score should become a dated action with an owner.'),
-           ('h', 'Your Part 5 Action Plan'),
+           ('h', 'Where to Start'),
            ('point',
             'If you work in a local government',
             'Ask whether your PFM team has completed the PFMAT, and read the improvement plan for your office.'),
@@ -1100,8 +1094,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 6: Budgeting for Results, Not Just Inputs',
   'slug': 'local-finance-part-6-budgeting-for-results',
   'category': 'finance',
-  'date': 'January 16, 2027',
-  'publish_on': '2027-01-16 21:00',
+  'date': "December 30, 2026",
+  'publish_on': "2026-12-30 21:00",
   'summary': 'A line-item budget lists what will be bought. Performance budgeting also asks what the money will '
              'achieve. This part explains the idea as the OECD describes it, the ladder from inputs to outcomes, '
              'what the Philippine Local Government Code already says about expected results, and a worked example '
@@ -1196,7 +1190,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Reporting without using',
             'Performance information that nobody reads at budget time is wasted effort.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'A shift in focus',
             'The OECD describes performance budgeting as moving from managing inputs toward the results of '
@@ -1229,8 +1223,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 7: Participatory Budgeting, Letting Residents Help Decide',
   'slug': 'local-finance-part-7-participatory-budgeting',
   'category': 'finance',
-  'date': 'January 23, 2027',
-  'publish_on': '2027-01-23 21:00',
+  'date': "January 4, 2027",
+  'publish_on': "2027-01-04 21:00",
   'summary': 'Participatory budgeting lets residents help decide how part of a public budget is spent. This part '
              'looks at an early example in Porto Alegre, Brazil, what a World Bank case study found, how the '
              'Philippines built participation into local development councils and the Bottom-up Budgeting program, '
@@ -1324,7 +1318,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Reaching beyond the usual voices',
             'Hold meetings at times and places where workers, parents and older residents can come.'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'An early model',
             'Porto Alegre’s participatory budget took shape after 1989, and the case study counts more than 80 '
@@ -1362,8 +1356,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 8: Climate Budget Tagging, Knowing What You Spend on Climate',
   'slug': 'local-finance-part-8-climate-budget-tagging',
   'category': 'finance',
-  'date': 'January 30, 2027',
-  'publish_on': '2027-01-30 21:00',
+  'date': "January 11, 2027",
+  'publish_on': "2027-01-11 21:00",
   'summary': 'Climate budget tagging marks the parts of a budget that help a community adapt to climate change or '
              'reduce emissions, so leaders can see how much is really spent. This part explains the idea using UNDP '
              'and World Bank guidance, the Philippine rules for local governments under JMC 2015-01, and a worked '
@@ -1461,7 +1455,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'public market from floods protect market income. Drainage that keeps business districts dry protects '
            'business tax collections. When climate spending is visible, it is easier to see the link between '
            'protecting the community and protecting the revenue that serves it.',
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Tags make spending visible',
             'Climate budget tagging adds up spending on adaptation and mitigation scattered across offices.'),
@@ -1498,8 +1492,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
  {'title': 'Local Finance Without Borders, Part 9: The Hidden Bill, Maintaining What Was Already Built',
   'slug': 'local-finance-part-9-maintaining-assets',
   'category': 'finance',
-  'date': 'February 6, 2027',
-  'publish_on': '2027-02-06 21:00',
+  'date': "January 15, 2027",
+  'publish_on': "2027-01-15 21:00",
   'summary': 'New roads and buildings get ribbon cuttings. Maintenance needs a budget too. This part explains why '
              'the World Bank and the IMF treat maintenance as a core part of public investment, and how a local '
              'government can build a simple asset list and a yearly maintenance budget, with a worked Philippine '
@@ -1509,9 +1503,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'second road costs more than the first, and the money that could have kept the first one working was '
            'never budgeted.',
            '(The road, the municipality and the costs in this post are invented. The studies are real and named.)',
-           'This is the hidden bill of public investment. By the end of this post, you will know what international '
-           'studies say about maintenance, why it can be left unfunded, and how a local government can plan for it '
-           'with two simple tools: an asset list and a yearly maintenance budget.',
+           'This is the hidden bill of public investment. This post looks at what international studies say about maintenance, why it can be left unfunded, and how a local government can plan for it with two simple tools: an asset list and a yearly maintenance budget.',
            ('photo',
             'blog/finance-lfwb-maintenance.jpg',
             'Maintenance in four steps: know what you own, check its condition, budget every year, fix early. '
@@ -1583,7 +1575,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'Some assets earn money. A public market with a leaking roof loses stallholders, and a water system with '
            'broken meters loses income. Maintaining these assets protects local revenue directly. A well-kept asset '
            'also avoids sudden, large repair bills that upset the cash forecast.',
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Maintenance pays',
             'The World Bank’s Beyond the Gap finds that good maintenance can cut the life-cycle cost of transport '
@@ -1595,7 +1587,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Show the gap',
             'Compare the yearly maintenance need with the budget, and close the gap step by step.'),
-           ('h', 'Your Part 9 Action Plan'),
+           ('h', 'Who Can Do What'),
            ('point',
             'If you work in engineering or general services',
             'Start an asset list with condition ratings for the five most important assets.'),
@@ -1617,8 +1609,8 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'Line',
   'slug': 'local-finance-part-10-fraud-reporting-line',
   'category': 'finance',
-  'date': 'February 13, 2027',
-  'publish_on': '2027-02-13 21:00',
+  'date': "January 22, 2027",
+  'publish_on': "2027-01-22 21:00",
   'summary': 'A global study of nearly 2,000 fraud cases found that tips uncover more fraud than any other method, '
              'and that organizations with a reporting line lose less and catch fraud sooner. This part explains the '
              'findings of the 2024 ACFE Report to the Nations, including those for government, and how a local '
@@ -1710,7 +1702,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('cta',
             'Read the study note: Ethics at the collection window',
             '/study-notes/ethics-at-the-collection-window/'),
-           ('h', 'Key Takeaways'),
+           ('h', "The Short Version"),
            ('point',
             'Tips find the most fraud',
             '43 percent of cases in the 2024 ACFE study, more than three times the next method.'),
@@ -1742,3 +1734,172 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means',
             '/blog/cash-counts-and-shortages/'),
            ('ask', 'Does your office have a safe way to report a concern? I would be glad to hear how it works.')]}]
+
+
+# Stand-alone Public Finance post (Butch 2026-11-19: add one more Public Finance post today)
+FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s Income Class Is Decided, and Why It Matters',
+ 'slug': 'local-government-income-class',
+ 'category': 'finance',
+ 'date': 'November 19, 2026',
+ 'publish_on': '2026-11-19 18:00',
+ 'summary': 'Every province, city and municipality in the Philippines carries an income class, from first to fifth. '
+            'This post explains how the Automatic Income Classification Act (RA 11964) sets that class, what income '
+            'is counted, and how moving up a class can change both salaries and the personal services limit.',
+ 'body': ['A municipal budget officer reads a new order from the Department of Finance and calls the treasury. “We '
+          'moved up to third class,” she says. Someone in the office cheers. The budget officer does not, at least '
+          'not yet. She already knows that the same news brings a higher salary rate for employees and a tighter '
+          'limit on what the whole office may spend on salaries.',
+          '(The municipality, the people and the figures in this post are invented for teaching. No real local '
+          'government is described.)',
+          'A “first-class municipality” can sound like a mark of size or prestige. In law, the class is about one '
+          'thing: regular income. After this post, you will know how the class is computed under Republic Act No. '
+          '11964, which income counts and which does not, and how to check, with a few lines of arithmetic, where '
+          'your own local government stands before the next reclassification.',
+          ('photo',
+           'blog/finance-income-class.jpg',
+           'Income classification in four parts: five classes, a three-year average, a review every three years, and '
+           'the Department of Finance as the body that issues the schedule. (Illustration: Butch Mahinay, '
+           'aumahinay.dev)',
+           'medium'),
+          ('h', 'The Law Behind the Class'),
+          'Republic Act No. 11964, the Automatic Income Classification of Local Government Units Act, was signed on '
+          'October 26, 2023. When it was signed, then Finance Secretary Benjamin Diokno said it resolves “the '
+          'long-standing issue of outdated LGU income classification.”',
+          'The law puts provinces, cities and municipalities into five income classes. It uses the average annual '
+          'regular income of the local government over three fiscal years. The Department of Finance, through the '
+          'Bureau of Local Government Finance (BLGF), updates the schedule, and a general reclassification is made '
+          'every three years.',
+          'The first general reclassification under the law came through Department Order No. 074-2024, signed by '
+          'Finance Secretary Ralph Recto on November 5, 2024. It took effect on January 1, 2025.',
+          ('h', 'What Counts as Regular Income'),
+          'The class depends on what the law calls annual regular income. Section 3 defines it as revenues, '
+          'including fees and receipts, actually realized and reported yearly on a cash basis. It includes the '
+          'National Tax Allotment and shares from national wealth, along with other shares the law names.',
+          'Just as important is what is left out. Non-recurring receipts are excluded, such as national aids, '
+          'grants, financial assistance, loan proceeds and sales of assets. A local government that sells a parcel '
+          'of land or receives a large grant in one year does not climb a class because of it.',
+          ('quote', 'The class follows money that comes in year after year, not money that arrives once.'),
+          'Notice the words “cash basis” and “actually realized.” A tax that was assessed but never collected does '
+          'not count. This is where the work of the treasury shows up directly. Every peso collected and properly '
+          'recorded is part of the figure that decides the class.',
+          ('h', 'The Five Income Ranges'),
+          'Section 4 of the law sets the ranges. Each class is based on the three-year average of annual regular '
+          'income.',
+          ('point',
+           'Provinces',
+           'First class, ₱1.5 billion or more. Second, ₱900 million to under ₱1.5 billion. Third, ₱700 million to '
+           'under ₱900 million. Fourth, ₱500 million to under ₱700 million. Fifth, below ₱500 million.'),
+          ('point',
+           'Cities',
+           'First class, ₱1.3 billion or more. Second, ₱1 billion to under ₱1.3 billion. Third, ₱800 million to '
+           'under ₱1 billion. Fourth, ₱500 million to under ₱800 million. Fifth, below ₱500 million.'),
+          ('point',
+           'Municipalities',
+           'First class, ₱200 million or more. Second, ₱160 million to under ₱200 million. Third, ₱130 million to '
+           'under ₱160 million. Fourth, ₱90 million to under ₱130 million. Fifth, below ₱90 million.'),
+          'These ranges are not fixed forever. Under Section 5, the Secretary of Finance, in consultation with the '
+          'National Economic and Development Authority (as named in the law) and the leagues of local governments, '
+          'may adjust them based on the actual growth of regular income. Always check the latest department order '
+          'before relying on a number.',
+          ('h', 'Why the Class Matters'),
+          'Section 7 of the law lists what the class is used for. Among them: identifying aids, grants and other '
+          'assistance; determining financial capability for development programs; the personal services limit in '
+          'Section 325(a) of the Local Government Code; and salary adjustments under the Salary Standardization Law '
+          'of 2019 (Republic Act No. 11466). The same section also says that dividing or merging an existing local '
+          'government does not downgrade the class of the original unit.',
+          'Two of these uses touch every employee and every budget, so they deserve a closer look.',
+          ('point',
+           'The salary rate',
+           'Under Executive Order No. 64 of 2024, as applied in Department of Budget and Management Local Budget '
+           'Circular No. 172 dated July 16, 2026, the pay of local personnel is set as a percentage of the national '
+           'salary schedule, according to income class. For municipalities, first class is at 90 percent, and each '
+           'class below steps down by five points: 85, 80, 75 and 70 percent for second to fifth class. The circular '
+           'calls these percentages ceilings. A local government may adopt the full schedule instead, but only if it '
+           'stays within the personal services limit, has the needed budget authorization and applies the schedule '
+           'to all positions.'),
+          ('point',
+           'The personal services limit',
+           'Section 325(a) of the Local Government Code caps spending on personal services at 45 percent of the '
+           'previous year’s regular income for first to third class local governments, and 55 percent for fourth '
+           'class or lower.'),
+          'Put the two side by side and you see the budget officer’s worry. Moving from fourth to third class allows '
+          'a higher rate of pay, but it also lowers the share of income that may go to salaries and benefits.',
+          ('cta',
+           'Read: How to Use the RPT Calculator: Know Your Amilyar Before You Pay',
+           '/blog/how-to-use-the-rpt-calculator/'),
+          ('h', 'A Worked Example, Step by Step'),
+          'Take the invented municipality from the opening. Its annual regular income for the three fiscal years '
+          'before the last reclassification was ₱118.4 million, ₱126.0 million and ₱139.6 million.',
+          ('point', 'Add the three years', '₱118.4M + ₱126.0M + ₱139.6M = ₱384.0 million.'),
+          ('point', 'Divide by three', '₱384.0M ÷ 3 = ₱128.0 million.'),
+          ('point', 'Find the range', '₱128.0 million falls in ₱90 million to under ₱130 million: fourth class.'),
+          'Three years later, the oldest year drops off and a new one is added. The figures are now ₱126.0 million, '
+          '₱139.6 million and ₱145.4 million.',
+          ('photo',
+           'blog/finance-income-class-example.jpg',
+           'The same municipality at two reclassifications. A rise in the three-year average moves it from fourth to '
+           'third class. (Illustration: Butch Mahinay, aumahinay.dev)',
+           'medium'),
+          ('point', 'New average', '₱411.0M ÷ 3 = ₱137.0 million.'),
+          ('point', 'New range', '₱130 million to under ₱160 million: third class.'),
+          'Now look at the personal services limit, using ₱145.4 million as the previous year’s regular income.',
+          ('point', 'As a fourth-class municipality', '55% × ₱145.4M = ₱79.97 million.'),
+          ('point', 'As a third-class municipality', '45% × ₱145.4M = ₱65.43 million.'),
+          'The limit drops by ₱14.54 million, even though income went up. If the municipality was already spending '
+          'more than ₱65.43 million on personal services, it is suddenly over the new limit.',
+          ('h', 'The Law’s Cushions When the Class Changes'),
+          'The law saw this problem coming. Section 8 covers a fourth-class or lower local government that is '
+          'reclassified as first, second or third class. It is exempted from providing for additional personal '
+          'services and may keep its existing personal services until the next fiscal year. Positions that become '
+          'vacant through transfer, resignation or death may not be filled or funded until the succeeding fiscal '
+          'year.',
+          'Under Section 9, a reclassification takes effect on January 1 of the year after the Secretary of Finance '
+          'issues the table of income classification. That gives the budget officer, the treasurer and the local '
+          'chief executive a short window to plan.',
+          'There is also protection on the way down. Under Section 10, a local government whose income falls below '
+          'its range in the first reclassification keeps its current class. It is downgraded only if its income is '
+          'still below the range in the next reclassification. During that first reclassification, no official or '
+          'employee may suffer a cut in salary and benefits.',
+          ('h', 'What the Treasury Can Do'),
+          'The class is computed by the national government, but Section 3 says the figures are computed from the '
+          'local government’s statement of receipts, under guidelines of the Department of Finance, and only income '
+          'actually collected counts. That makes the treasury’s records the starting point.',
+          ('point',
+           'Record every collection under the right account',
+           'Regular income and one-time receipts must be kept apart, because only regular income counts.'),
+          ('point',
+           'Keep a three-year table',
+           'Each year, add the latest regular income and drop the oldest year. You will see the class coming before '
+           'the order arrives.'),
+          ('point',
+           'Share the table early',
+           'Give the budget officer and the local finance committee the projected class and the effect on the '
+           'personal services limit while next year’s budget is still being prepared.'),
+          ('cta',
+           'Read: Year-End in the Treasury: What Really Happens in December',
+           '/blog/year-end-in-the-treasury/'),
+          ('h', "The Short Version"),
+          ('point',
+           'One measure',
+           'The class is based on the three-year average of annual regular income, under RA 11964.'),
+          ('point', 'Only regular income', 'Grants, aids, loan proceeds and sales of assets are excluded.'),
+          ('point',
+           'Every three years',
+           'The Department of Finance, through the BLGF, issues the schedule; the first general reclassification '
+           'took effect January 1, 2025.'),
+          ('point',
+           'Two sides of moving up',
+           'A higher class can raise the salary rate and lower the personal services limit at the same time.'),
+          ('h', 'Try It Yourself'),
+          'Find your local government’s regular income for the last three fiscal years in its published financial '
+          'reports. Add them, divide by three and compare the result with the ranges above. Then compute the '
+          'personal services limit at both 45 and 55 percent. If the two numbers are far apart and your average is '
+          'near a boundary, that is a conversation worth starting before the next budget.',
+          ('cta', 'Read: Study Note: Sources of Local Revenue', '/study-notes/sources-of-local-revenue/'),
+          ('cta',
+           'Read: Inside the Local Treasury, Part 1: Where Your Town’s Money Comes From',
+           '/blog/where-your-towns-money-comes-from/'),
+          ('cta',
+           'Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services',
+           '/blog/personal-services-limit/'),
+          ('ask', 'Is your local government close to a class boundary? Tell me what your three-year table shows.')]}]

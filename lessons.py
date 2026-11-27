@@ -44,36 +44,7 @@ TUTORIAL = {
     ),
 }
 
-# Shown at the bottom of the Tutorials page
-GLOSSARY = [
-    ("Script", "A text file of Python code, saved with the .py ending, that you run from start to finish."),
-    ("Variable", "A name that holds a value, like receipts = 10. You can change it later."),
-    ("Loop", "Code that repeats for each item, written with for. It is how a script goes through every row of a file."),
-    ("Function", "A named set of steps you can reuse, written with def. You give it inputs and it gives back a result."),
-    ("Module", "A file of ready-made code you bring in with import, such as csv or decimal."),
-    ("CSV", "Comma-separated values: a plain text table, one row per line, that Excel and most systems can export."),
-    ("List", "An ordered collection, written with square brackets: [7650101, 7650102]."),
-    ("Dictionary", "Pairs of keys and values, written with braces: {\"General Fund\": 21986.15}. You look a value up by its key."),
-    ("Set", "A collection with no repeats and no order. Good for comparing what you have with what you expected."),
-    ("Decimal", "A number type that keeps peso amounts exact, so centavos never drift."),
-    ("f-string", "Text that starts with f and fills in values inside braces: f\"Total: {total}\"."),
-    ("DataFrame", "The table that the pandas library works with: rows and named columns, like a sheet in Excel."),
-    ("Library", "A collection of modules someone else wrote, such as pandas. Some come with Python; others you install."),
-    ("pip", "Python's installer for extra libraries: pip install pandas."),
-    ("Hash", "A short fingerprint of some data. Change one character and the fingerprint changes completely."),
-    ("HMAC", "A hash made with a secret key. Only someone with the key can make a matching one."),
-    ("Workbook", "An Excel file. It holds one or more sheets, which openpyxl calls worksheets."),
-    ("Formula", "A calculation stored in a cell, such as =SUM(E2:E11). Excel or another spreadsheet app works out its value when the file is opened."),
-    ("Database", "An organised store of records that a program can search, add to and total quickly. SQLite keeps a whole database in one file."),
-    ("SQL", "Structured Query Language: short commands such as SELECT, INSERT and GROUP BY that ask a database for data or change it."),
-    ("Placeholder", "A ? in an SQL command that the database fills in with a value you pass separately. It keeps typed-in text from being run as a command."),
-    ("Exception", "Python's way of reporting an error while a script runs. try and except let the script catch it and carry on."),
-    ("Validation", "Checking that data follows the rules (right format, allowed values, sensible amounts) before using it."),
-    ("Test", "A small function that runs your code with a known input and checks the answer. pytest runs all of them at once."),
-    ("assert", "A Python statement that stops with an error if something is not true: assert total == 100."),
-    ("Web app", "A program that answers a browser's requests with web pages. Flask is a library for writing one in Python."),
-    ("Route", "In Flask, the link between an address such as /receipt/7650101 and the function that makes that page."),
-]
+# The 'Words to know' glossary on the Tutorials page lives in glossary.py
 
 LESSONS = [
     {

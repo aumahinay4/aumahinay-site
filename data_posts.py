@@ -15,12 +15,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 57: Fifty-Six Parts, Six Steps, a Training Plan for Your Office",
         "slug": "data-analytics-part-57-series-training-plan",
         "category": "data",
-        "date": "July 12, 2027",
+        "date": "June 19, 2028",
         "summary": "This is the last part of the Data Analytics Series. It sorts the 56 earlier parts under the "
                    "six steps of analysis from Part 2, Ask, Prepare, Process, Analyze, Share and Act, and turns "
                    "them into an in-house training plan that an office can run over a few weeks, with one "
                    "practice task for each step.",
-        "publish_on": "2027-07-12 21:00",
+        "publish_on": "2028-06-19 21:00",
         "body": [
             "The treasurer had a request for the analyst. “Three of our staff want to learn what you do. Can "
             "you teach them, an hour a week, without taking them away from the window?”",
@@ -124,7 +124,7 @@ DATA_POSTS = [
             ("point", "Skipping Prepare and Process", "Clean data matters more than clever formulas."),
             ("point", "Ending at the chart", "An analysis is finished when someone can act on it."),
             ("point", "Training without real work", "Use questions from the trainees’ own jobs."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Six steps", "Ask, Prepare, Process, Analyze, Share, Act."),
             ("point", "Every part has a place", "Read the parts for the step you are on."),
             ("point", "Practice beats reading", "One real question, worked through all six steps."),
@@ -145,12 +145,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 56: Expected Value, Deciding Which Accounts Are Worth a Visit",
         "slug": "data-analytics-part-56-expected-value",
         "category": "data",
-        "date": "July 10, 2027",
+        "date": "June 16, 2028",
         "summary": "When an action costs money and its result is uncertain, expected value weighs the possible "
                    "gain by its chance, then subtracts the cost. This part uses expected value in Google Sheets "
                    "to decide which unpaid accounts deserve a field visit, which deserve a letter, and how to "
                    "avoid counting payments that would have come anyway.",
-        "publish_on": "2027-07-10 21:00",
+        "publish_on": "2028-06-16 21:00",
         "body": [
             "The collection team could make about 100 field visits a month. The list of unpaid business "
             "accounts had 360 names. Each visit cost about ₱900 in fuel, meals and staff time.",
@@ -252,7 +252,7 @@ DATA_POSTS = [
             ("point", "Counting payments that would have come anyway", "Use the extra chance."),
             ("point", "Treating estimates as facts", "Test how sensitive the ranking is."),
             ("point", "Dropping low-value accounts entirely", "Use a cheaper action instead."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Chance × gain − cost", "Expected value in one line."),
             ("point", "Compare actions, not just accounts", "A letter can beat a visit."),
             ("point", "Count the difference the action makes", "Not every payment after a visit is due to it."),
@@ -273,12 +273,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 55: The Base-Rate Trap, Why a Good Check Can Still Flag Mostly Clean Records",
         "slug": "data-analytics-part-55-base-rate-trap",
         "category": "data",
-        "date": "July 8, 2027",
+        "date": "June 14, 2028",
         "summary": "A check that catches 90 percent of problem records sounds excellent. But when problems "
                    "are rare, most of the records it flags can still be clean. This part explains the "
                    "base-rate trap with a simple table of counts in Google Sheets, shows how to compute the "
                    "share of flags that are real, and how to use the result to plan follow-up work.",
-        "publish_on": "2027-07-08 21:00",
+        "publish_on": "2028-06-14 21:00",
         "body": [
             "The analyst built a rule to catch receipts that might have been entered wrongly. Tested on old "
             "records with known errors, it caught 9 out of 10 of them. On clean records, it raised a false "
@@ -382,7 +382,7 @@ DATA_POSTS = [
             ("point", "Promising that flags are errors", "Say what share of flags are expected to be real."),
             ("point", "Working in percentages only", "Convert to counts of records."),
             ("point", "Forgetting the misses", "A check that catches 90 percent misses 10 percent."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Three numbers", "Base rate, catch rate and false alarm rate."),
             ("point", "Counts beat percentages", "Build the four-cell table from a round number."),
             ("point", "Rare problems, many false alarms", "Even a good check can flag mostly clean records."),
@@ -404,12 +404,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 54: Did the Change Really Help? Comparing Two Averages With T.TEST",
         "slug": "data-analytics-part-54-t-test",
         "category": "data",
-        "date": "July 6, 2027",
+        "date": "June 12, 2028",
         "summary": "After a change, the average often moves a little, and the question is whether the move is "
                    "real or just chance. Part 42 tested counts with a chi-square test. This part tests "
                    "averages with T.TEST in Google Sheets: how to lay out the data, which type and tails to "
                    "choose, how to read the result, and what the test cannot tell you.",
-        "publish_on": "2027-07-06 21:00",
+        "publish_on": "2028-06-12 21:00",
         "body": [
             "The treasury tried a numbered queue at the business permit window. Before the change, a staff "
             "member timed twelve taxpayers from arrival to receipt. After the change, she timed twelve more. "
@@ -508,7 +508,7 @@ DATA_POSTS = [
             ("point", "Choosing one tail after seeing the data", "Decide the direction first, or use two tails."),
             ("point", "Using an unpaired test on paired data", "Same people twice means type 1."),
             ("point", "Reading a large p-value as failure", "The groups may simply be too small."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Measured data, two groups", "T.TEST compares their averages."),
             ("point", "Pick the type from how data was collected", "Paired, equal or unequal variance."),
             ("point", "Two tails unless decided beforehand", "One tail halves the p-value."),
@@ -529,12 +529,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 53: The Control Chart, Is Today’s Total Unusual or Just Normal Variation?",
         "slug": "data-analytics-part-53-control-chart",
         "category": "data",
-        "date": "July 4, 2027",
+        "date": "June 9, 2028",
         "summary": "Daily collections go up and down even when nothing is wrong. A control chart draws limits "
                    "around the normal ups and downs, so the office reacts to real signals and not to every "
                    "small dip. This part builds an individuals chart in Google Sheets with the moving range "
                    "method described in the NIST/SEMATECH e-Handbook of Statistical Methods.",
-        "publish_on": "2027-07-04 21:00",
+        "publish_on": "2028-06-09 21:00",
         "body": [
             "Every afternoon at four, the treasurer looked at the day’s collection total. A total of ₱136,000 "
             "brought a worried call to the collectors. A total of ₱153,000 brought a word of praise. Neither "
@@ -637,7 +637,7 @@ DATA_POSTS = [
             ("point", "Recomputing limits every day", "Fix them from the baseline."),
             ("point", "Building the baseline from deadline days", "Use ordinary days only."),
             ("point", "Treating the limits as targets", "They describe the process, not the goal."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Ordinary vs unusual", "The chart separates the two kinds of variation."),
             ("point", "Individuals chart", "Average ± 3 × average moving range ÷ 1.128."),
             ("point", "A fair baseline", "Ordinary days, at least twenty, with known events removed."),
@@ -658,12 +658,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 52: Z-Scores, Comparing Numbers That Use Different Scales",
         "slug": "data-analytics-part-52-z-scores",
         "category": "data",
-        "date": "July 1, 2027",
+        "date": "June 5, 2028",
         "summary": "Is 73 percent on one measure worse than 49 percent on another? Raw numbers cannot say, "
                    "because each measure has its own typical level and spread. A z-score converts a value into "
                    "standard deviations from the average, so different measures can share one scale. This part "
                    "shows how to compute z-scores in Google Sheets and how to read them with care.",
-        "publish_on": "2027-07-01 21:00",
+        "publish_on": "2028-06-05 21:00",
         "body": [
             "The treasurer had a list of twelve barangays and two numbers for each: the share of real property "
             "tax due that was collected, and the share of businesses that renewed their permits on time. "
@@ -770,7 +770,7 @@ DATA_POSTS = [
             ("point", "Mixing STDEV and STDEVP", "Use the same function for every measure."),
             ("point", "Reading zero as good", "It means average for this group, nothing more."),
             ("point", "Moving the cutoff after seeing the results", "Choose it first and write it down."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Standard deviations from the average", "That is all a z-score counts."),
             ("point", "One formula", "(value − average) ÷ standard deviation, or STANDARDIZE."),
             ("point", "Different units, one scale", "Percentages, pesos and counts become comparable."),
@@ -792,12 +792,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 51: Protected Ranges, Keeping Formulas Safe in a Shared Sheet",
         "slug": "data-analytics-part-51-protected-ranges",
         "category": "data",
-        "date": "June 28, 2027",
+        "date": "May 31, 2028",
         "summary": "A shared Google Sheet lets many people enter data at once, and any of them can type over a "
                    "formula by accident. Protected ranges let you decide who may edit which cells, or show a "
                    "warning before a change. This part shows how to set them up, how to plan which cells to "
                    "lock, and what protection does not do.",
-        "publish_on": "2027-06-28 21:00",
+        "publish_on": "2028-05-31 21:00",
         "body": [
             "Six collectors entered their daily totals into one shared sheet. Column H added each day’s "
             "figures, and a summary at the top added the month. At month-end, the summary was ₱48,600 short "
@@ -900,7 +900,7 @@ DATA_POSTS = [
             ("point", "Relying on warnings for critical totals", "Use a restriction for formulas that feed "
              "reports."),
             ("point", "Treating protection as security", "Control access through sharing, not protection."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Map first", "Inputs open, formulas and structure protected."),
             ("point", "Data, then Protect sheets and ranges", "Add a range, set permissions, describe it."),
             ("point", "Warning or restriction", "A warning asks for confirmation. A restriction blocks."),
@@ -921,12 +921,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 50: Present Value, Why a Peso Saved in Eight Years Is Worth Less Today",
         "slug": "data-analytics-part-50-present-value",
         "category": "data",
-        "date": "June 25, 2027",
+        "date": "May 26, 2028",
         "summary": "A proposal that costs money now and saves money for years can look better on paper than it "
                    "is, because a peso received years from now is worth less than a peso today. This part "
                    "explains present value and net present value, computes them in Google Sheets with a "
                    "simple formula and with NPV, and shows how the answer depends on the rate and the years assumed.",
-        "publish_on": "2027-06-25 21:00",
+        "publish_on": "2028-05-26 21:00",
         "body": [
             "The proposal for solar panels on the treasury roof had a simple pitch. The panels cost ₱200,000. "
             "They would cut the electricity bill by ₱32,000 a year for eight years. Total savings: ₱256,000. "
@@ -1030,7 +1030,7 @@ DATA_POSTS = [
             ("point", "Putting today’s cost inside NPV", "NPV discounts every value it is given."),
             ("point", "Choosing a rate without saying why", "State the basis, and test others."),
             ("point", "Reporting one number", "Show how the answer moves with the rate and the life."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Discount future pesos", "Present value = amount ÷ (1 + rate)^years."),
             ("point", "Net present value", "Discounted savings minus today’s cost."),
             ("point", "NPV in Sheets", "=NPV(rate, future flows) minus the cost paid today."),
@@ -1052,12 +1052,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 49: The Seasonal Index, Telling a Normal March From a Bad One",
         "slug": "data-analytics-part-49-seasonal-index",
         "category": "data",
-        "date": "June 22, 2027",
+        "date": "May 22, 2028",
         "summary": "Collections in a local treasury rise and fall with the calendar. A seasonal index measures "
                    "how each month usually compares with an average month, so a quiet month can be judged "
                    "against what is normal for it. This part builds the index in Google Sheets from three "
                    "years of data and uses it to read the months, set monthly targets and spot real problems.",
-        "publish_on": "2027-06-22 21:00",
+        "publish_on": "2028-05-22 21:00",
         "body": [
             "The March report showed business tax collections of ₱3.5 million, down 65 percent from January. "
             "A council member circled the number and asked what had gone wrong.",
@@ -1157,7 +1157,7 @@ DATA_POSTS = [
             ("point", "Building the index from one year", "Use at least three years."),
             ("point", "Keeping an old index after deadlines change", "Rebuild it."),
             ("point", "Dividing the yearly target by 12", "Spread it by the index instead."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "One number per month", "100 is an average month. The twelve add up to 1,200."),
             ("point", "Average, then compare", "Average each month over three years, then divide by the "
              "average month."),
@@ -1179,12 +1179,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 48: Average Growth Over Several Years, and Why Averaging the Percentages Misleads",
         "slug": "data-analytics-part-48-average-annual-growth",
         "category": "data",
-        "date": "June 19, 2027",
+        "date": "May 17, 2028",
         "summary": "Collections grew from ₱12.0 million to ₱16.1 million in five years. What was the average growth "
                    "per year? Averaging the yearly percentages gives the wrong answer. This part explains the "
                    "compound annual growth rate, computes it by formula and with RRI in Google Sheets, and shows "
                    "how to use it honestly.",
-        "publish_on": "2027-06-19 21:00",
+        "publish_on": "2028-05-17 21:00",
         "body": [
             "The draft report said business tax collections had grown by “an average of 6.5 percent a year” "
             "from 2021 to 2026. The treasurer tried the number: ₱12.0 million grown by 6.5 percent five times. "
@@ -1279,7 +1279,7 @@ DATA_POSTS = [
             ("point", "Hiding the path", "Show the yearly figures with the rate."),
             ("point", "Choosing flattering endpoints", "Explain the period, and try another to see how much "
              "the rate changes."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Rates compound", "Their simple average overstates steady growth when they swing."),
             ("point", "CAGR", "(last ÷ first)^(1 ÷ years) − 1, the one steady rate that fits."),
             ("point", "RRI does it in one step", "=RRI(periods, first, last)."),
@@ -1301,12 +1301,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 47: Break-Even Analysis, How Many Before It Pays for Itself?",
         "slug": "data-analytics-part-47-break-even-analysis",
         "category": "data",
-        "date": "June 16, 2027",
+        "date": "May 12, 2028",
         "summary": "Should the office buy its own printer for certified copies, or keep sending the work out? A "
                    "break-even analysis answers with one number: the volume at which two choices cost the same. "
                    "This part separates fixed and variable costs, computes the break-even point in Google "
                    "Sheets, draws it, and tests how sure the answer is.",
-        "publish_on": "2027-06-16 21:00",
+        "publish_on": "2028-05-12 21:00",
         "body": [
             "The assessor’s office and the treasury shared a problem. Taxpayers asked for certified copies of "
             "their tax declarations, and each copy went to a print shop across the street at ₱40 a page, with a "
@@ -1408,7 +1408,7 @@ DATA_POSTS = [
             ("point", "Forgetting variable costs", "Paper, toner and security paper add up."),
             ("point", "Guessing the volume", "Count from records."),
             ("point", "Ignoring what the formula leaves out", "List time and control separately."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Fixed and variable", "Sort every cost into one group."),
             ("point", "Break-even", "Fixed cost divided by the saving per unit."),
             ("point", "Compare with real volume", "Count from records, and look at a range."),
@@ -1430,11 +1430,11 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 46: Named Ranges and ARRAYFORMULA, Formulas Anyone Can Read",
         "slug": "data-analytics-part-46-named-ranges-arrayformula",
         "category": "data",
-        "date": "June 13, 2027",
+        "date": "May 8, 2028",
         "summary": "=SUM(LastYear)*(1+Growth) is easier to check than =SUM(Sheet2!$B$2:$B$13)*(1+Sheet2!$E$1). "
                    "This part shows how to give ranges and key cells plain names in Google Sheets, and how one "
                    "ARRAYFORMULA can fill a whole column, so a sheet is easier to read, check and hand over.",
-        "publish_on": "2027-06-13 21:00",
+        "publish_on": "2028-05-08 21:00",
         "body": [
             "The monthly targets sheet had been built by an analyst who had since moved to another office. "
             "Cell C2 held =Sheet2!$B2*(1+Sheet2!$E$1). Cell C3 held the same formula with a 3. So did the cells "
@@ -1539,7 +1539,7 @@ DATA_POSTS = [
             ("point", "Gaps against blank months", "Wrap the calculation in IF so empty rows stay empty."),
             ("point", "Deleting a name without checking", "Search for it first. Every formula that uses it will "
              "break."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Named ranges", "Data, then Named ranges. Plain names make formulas readable."),
             ("point", "Name the inputs", "A single cell like Growth is the best first name to create."),
             ("point", "ARRAYFORMULA", "One formula fills a column and refuses stray typed numbers."),
@@ -1561,11 +1561,11 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 45: What If? Low, Likely and High Scenarios in Google Sheets",
         "slug": "data-analytics-part-45-what-if-scenarios",
         "category": "data",
-        "date": "June 10, 2027",
+        "date": "May 3, 2028",
         "summary": "A single estimate hides how uncertain it is. This part builds a small what-if model in Google "
                    "Sheets: inputs kept apart from formulas, low, likely and high scenarios, a dropdown to switch "
                    "between them, and a one-at-a-time test that shows which input matters most.",
-        "publish_on": "2027-06-10 21:00",
+        "publish_on": "2028-05-03 21:00",
         "body": [
             "The draft estimate said business tax next year would bring in ₱15.7 million. A council member "
             "asked what would happen if the collection rate dropped the way it had two years before. Nobody "
@@ -1676,7 +1676,7 @@ DATA_POSTS = [
             ("point", "One estimate with no range", "Readers assume it is certain."),
             ("point", "Changing everything at once", "Test inputs one at a time to find what matters."),
             ("point", "Unexplained scenario values", "Each low and high should have a reason."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Inputs apart from formulas", "Labeled, colored and easy to change."),
             ("point", "Three scenarios", "Low, likely and high, chosen with a dropdown."),
             ("point", "One at a time", "Shows which input moves the answer most."),
@@ -1699,12 +1699,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 44: Your First Chart in Python, Monthly Collections With Matplotlib",
         "slug": "data-analytics-part-44-first-chart-in-python",
         "category": "data",
-        "date": "June 7, 2027",
+        "date": "April 28, 2028",
         "summary": "A chart made by code can be rebuilt in seconds when the numbers change. This part walks "
                    "through a short Python script that uses the Matplotlib library to draw monthly collections "
                    "as a bar chart, label it clearly and save it as a picture, line by line, for readers who "
                    "have never drawn a chart in code.",
-        "publish_on": "2027-06-07 21:00",
+        "publish_on": "2028-04-28 21:00",
         "body": [
             "Every month, the clerk rebuilt the same collections chart for the report. She copied the new "
             "figures, fixed the colors that had reset themselves, retyped the title, and adjusted the labels "
@@ -1811,7 +1811,7 @@ DATA_POSTS = [
             ("point", "Typing the numbers twice", "Keep them in one place in the script, or read them from a "
              "file."),
             ("point", "Uploading personal data", "Charts need totals, not names."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Matplotlib draws charts in Python", "Install it once with pip."),
             ("point", "Sixteen lines are enough", "Data, bars, title, labels, values and save."),
             ("point", "The payoff is repeat use", "Change the numbers and run the script again."),
@@ -1832,12 +1832,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 43: Drawing a Line Through the Points, Simple Regression in Google Sheets",
         "slug": "data-analytics-part-43-simple-regression",
         "category": "data",
-        "date": "June 4, 2027",
+        "date": "April 24, 2028",
         "summary": "When one number tends to rise with another, a straight line can summarize how much. This part "
                    "uses SLOPE, INTERCEPT, RSQ and FORECAST in Google Sheets to fit a line, read what it means, "
                    "use it for a careful estimate, find the points that sit far from it, and avoid stretching it "
                    "too far.",
-        "publish_on": "2027-06-04 21:00",
+        "publish_on": "2028-04-24 21:00",
         "body": [
             "A new subdivision was opening, and the planning office expected about 100 businesses to register "
             "there within two years. The council wanted to know how much business tax that might bring.",
@@ -1941,7 +1941,7 @@ DATA_POSTS = [
             ("point", "Swapping x and y", "SLOPE and INTERCEPT take y first."),
             ("point", "Estimating far outside the data", "The line only knows the range it was built on."),
             ("point", "Reporting one exact figure", "Give a range, and state the assumptions."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Slope", "The average change in y for each extra unit of x."),
             ("point", "RSQ", "How closely the points follow the line, from 0 to 1."),
             ("point", "FORECAST", "An estimate from the line, best given as a range."),
@@ -1963,12 +1963,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 42: Is the Difference Real? Testing Two Groups With a Chi-Square Test",
         "slug": "data-analytics-part-42-chi-square-test",
         "category": "data",
-        "date": "June 1, 2027",
+        "date": "April 19, 2028",
         "summary": "When one group does better than another, the gap may be real or may be luck. A chi-square test "
                    "in Google Sheets gives a number for how likely a gap that size would be by chance alone. This "
                    "part shows how to set up the counts, compute the expected values, run CHITEST, read the "
                    "result, and avoid the usual traps.",
-        "publish_on": "2027-06-01 21:00",
+        "publish_on": "2028-04-19 21:00",
         "body": [
             "The treasury tried something new with its delinquent business accounts. Half of the 300 owners "
             "received the usual letter. The other half received the same letter and a phone call two days later.",
@@ -2070,7 +2070,7 @@ DATA_POSTS = [
             ("point", "Choosing who gets the treatment", "Assign by chance, or the groups differ from the start."),
             ("point", "Treating 0.05 as magic", "Report the p-value and the size of the gap."),
             ("point", "Reading a large p-value as no effect", "Small groups often cannot tell."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "A gap can be luck", "Some difference between groups is normal."),
             ("point", "Expected counts", "Row total times column total, divided by the grand total."),
             ("point", "CHITEST returns a p-value", "A small value means chance is an unlikely explanation."),
@@ -2093,12 +2093,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 41: Real or Nominal Pesos? Adjusting Collections for Inflation",
         "slug": "data-analytics-part-41-real-and-nominal-pesos",
         "category": "data",
-        "date": "May 29, 2027",
+        "date": "April 14, 2028",
         "summary": "A peso collected today buys less than a peso collected four years ago. Comparing amounts across "
                    "years without adjusting for prices can make a flat year look like growth. This part explains "
                    "the Consumer Price Index, how to turn nominal pesos into real pesos in Google Sheets, and how "
                    "to report both honestly.",
-        "publish_on": "2027-05-29 21:00",
+        "publish_on": "2028-04-14 21:00",
         "body": [
             "The slide said collections had grown 15 percent in four years, from ₱40.0 million to ₱46.0 million. "
             "The room applauded.",
@@ -2208,7 +2208,7 @@ DATA_POSTS = [
             ("point", "Mixing base years", "Use one CPI series throughout."),
             ("point", "Treating the CPI as your own costs", "It is an average basket, a reasonable guide, not "
              "an exact measure of your office’s prices."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "CPI tracks average prices", "Base year 2018 equals 100 in the current series."),
             ("point", "Real = nominal × base index ÷ year’s index", "One formula, filled down."),
             ("point", "Real growth can be negative", "Even when nominal growth looks healthy."),
@@ -2229,12 +2229,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 40: IF, IFS and SWITCH, Letting the Sheet Sort Records Into Groups",
         "slug": "data-analytics-part-40-if-ifs-switch",
         "category": "data",
-        "date": "May 26, 2027",
+        "date": "April 10, 2028",
         "summary": "Typing a category by hand into thousands of rows invites spelling errors and missed rows. IF, "
                    "IFS and SWITCH in Google Sheets assign the category from a rule instead. This part shows how "
                    "each one works, why the order of conditions matters, how to avoid the #N/A trap in IFS, and "
                    "when a lookup table is better.",
-        "publish_on": "2027-05-26 21:00",
+        "publish_on": "2028-04-10 21:00",
         "body": [
             "The pivot table showed five payment sizes instead of three. Besides “Large,” “Medium” and “Small,” "
             "there were “large” and “Meduim.” Two clerks had typed the size of each payment by hand into 3,000 "
@@ -2340,7 +2340,7 @@ DATA_POSTS = [
             ("point", "Checking small thresholds first", "IFS and nested IF stop at the first true test."),
             ("point", "Forgetting the catch-all", "End IFS with TRUE, and give SWITCH a default."),
             ("point", "Hiding thresholds inside formulas", "Use a lookup table when the rule may change."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "IF", "One question, two answers."),
             ("point", "IFS", "Several questions, first true wins, TRUE at the end."),
             ("point", "SWITCH", "Exact codes to names, with a default for anything else."),
@@ -2364,11 +2364,11 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 39: Histograms, Seeing the Shape of the Data",
         "slug": "data-analytics-part-39-histograms",
         "category": "data",
-        "date": "May 21, 2027",
+        "date": "March 31, 2028",
         "summary": "An average gives one number, and a histogram shows how all the numbers are spread out. "
                    "This part shows how to group values into bins with COUNTIFS, build a histogram chart in Google "
                    "Sheets, choose a bin width, and read the common shapes, including a long tail and two peaks.",
-        "publish_on": "2027-05-21 21:00",
+        "publish_on": "2028-03-31 21:00",
         "body": [
             "The monthly report said the average waiting time at the payment counter was 15.75 minutes. The "
             "target was 15. The head of office asked for a second cashier.",
@@ -2470,7 +2470,7 @@ DATA_POSTS = [
             ("point", "Unequal bins", "Bins of different widths make some bars look taller than they should."),
             ("point", "Trusting one bin width", "Try a wider and a narrower one before deciding what the shape "
              "is."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "A histogram counts values in equal bins", "And shows the counts as touching bars."),
             ("point", "Two ways to build it", "COUNTIFS for a checkable table, the Histogram chart for speed."),
             ("point", "Bin width matters", "Too wide hides detail, too narrow shows noise."),
@@ -2497,11 +2497,11 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 38: Same Average, Different Story, Range and Standard Deviation",
         "slug": "data-analytics-part-38-range-and-standard-deviation",
         "category": "data",
-        "date": "May 16, 2027",
+        "date": "March 22, 2028",
         "summary": "Two sets of numbers can share the same average and behave completely differently. This part "
                    "shows how to measure spread with the range and the standard deviation in Google Sheets, "
                    "how to compare spread between groups of different sizes, and how to use it to plan.",
-        "publish_on": "2027-05-16 21:00",
+        "publish_on": "2028-03-22 21:00",
         "body": [
             "The supervisor compared the two field collectors over ten working days. Both averaged ₱40,000 a "
             "day. On paper, they were the same.",
@@ -2606,7 +2606,7 @@ DATA_POSTS = [
             ("point", "Comparing standard deviations of very different averages", "Use the coefficient of "
              "variation."),
             ("point", "Treating spread as wrongdoing", "Find the reason first."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Averages hide spread", "Same average, different behavior."),
             ("point", "Range is quick", "MAX minus MIN, but sensitive to one value."),
             ("point", "Standard deviation uses every value", "STDEV for a sample, STDEVP for a whole population."),
@@ -2632,12 +2632,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 37: Rates per 1,000, Comparing Barangays of Different Sizes",
         "slug": "data-analytics-part-37-rates-per-1000",
         "category": "data",
-        "date": "May 11, 2027",
+        "date": "March 13, 2028",
         "summary": "A big barangay will have more of almost everything than a small one, so raw counts can point "
                    "the office in the wrong direction. This part shows how to turn counts into rates per 1,000 "
                    "residents in Google Sheets, how to read them, and the traps of small populations and "
                    "mismatched years.",
-        "publish_on": "2027-05-11 21:00",
+        "publish_on": "2028-03-13 21:00",
         "body": [
             "The plan for the business registration drive was already on the whiteboard. The two barangays with "
             "the fewest registered businesses, Mabini with 45 and Bukal with 48, would get the first visits. "
@@ -2741,7 +2741,7 @@ DATA_POSTS = [
             ("point", "Using the wrong denominator", "Match it to where the count comes from."),
             ("point", "Trusting tiny populations", "Show the count, and look at more than one year."),
             ("point", "Averaging or adding rates", "Combine the counts and populations instead."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Counts reflect size", "A big barangay can have bigger counts just by being big."),
             ("point", "Rate = count ÷ population × 1,000", "One formula, filled down."),
             ("point", "The denominator is a choice", "Residents, households, businesses or area."),
@@ -2767,12 +2767,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 36: Weighted Averages, and Why Averaging Averages Misleads",
         "slug": "data-analytics-part-36-weighted-averages",
         "category": "data",
-        "date": "May 6, 2027",
+        "date": "March 3, 2028",
         "summary": "Averaging five barangay collection rates does not give the town’s collection rate. This part "
                    "explains why a plain average of percentages or averages can mislead, how to compute a "
                    "weighted average in Google Sheets with AVERAGE.WEIGHTED or SUMPRODUCT, and when a simple "
                    "average is still the right choice.",
-        "publish_on": "2027-05-06 21:00",
+        "publish_on": "2028-03-03 21:00",
         "body": [
             "Two reports reached the mayor’s office on the same day. The planning office said the town "
             "collected 76 percent of its real property tax billings last year. The treasury said 82.5 "
@@ -2873,7 +2873,7 @@ DATA_POSTS = [
             ("point", "Weighting by the wrong thing", "Collection rates weigh by billings, not by number of "
              "taxpayers, if the question is about pesos."),
             ("point", "Not labeling the method", "Two honest offices produced two different numbers."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Plain average", "Every group counts the same."),
             ("point", "Weighted average", "Each group counts by its size."),
             ("point", "Totals are the check", "Sum the parts, then divide."),
@@ -2901,12 +2901,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 35: Correlation Is Not Causation, When Two Numbers Move Together",
         "slug": "data-analytics-part-35-correlation-and-causation",
         "category": "data",
-        "date": "May 1, 2027",
+        "date": "February 23, 2028",
         "summary": "Two numbers that rise and fall together are not proof that one causes the other. This part "
                    "shows how to measure a relationship with CORREL in Google Sheets, how to read the result, "
                    "the three common reasons a strong correlation misleads, and how to test a cause before "
                    "spending money on it.",
-        "publish_on": "2027-05-01 21:00",
+        "publish_on": "2028-02-23 21:00",
         "body": [
             "The analyst had a chart that looked like an answer. Each dot was a barangay. Across the bottom ran "
             "the share of businesses with a mobile number on file. Up the side ran the share that renewed their "
@@ -3003,7 +3003,7 @@ DATA_POSTS = [
             ("point", "Skipping the chart", "Check the scatter chart for curves, clusters and outliers."),
             ("point", "Ignoring a third factor", "Ask what else differs between the high and low groups."),
             ("point", "Spending before testing", "Run a small, fair comparison first."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "CORREL gives r", "From −1 to +1, a measure of straight-line pattern only."),
             ("point", "Three traps", "A third factor, a reversed arrow, or chance."),
             ("point", "Test a cause on purpose", "Change one thing and compare similar groups."),
@@ -3030,11 +3030,11 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 34: Outliers, Finding the Number That Doesn’t Fit",
         "slug": "data-analytics-part-34-outliers",
         "category": "data",
-        "date": "April 26, 2027",
+        "date": "February 14, 2028",
         "summary": "One unusual number can pull an average far from the truth, or hide a typing error or a "
                    "missing remittance. This part shows how to find outliers with quartiles and the 1.5 IQR "
                    "rule in Google Sheets, how to flag them automatically, and what to do once you find one.",
-        "publish_on": "2027-04-26 21:00",
+        "publish_on": "2028-02-14 21:00",
         "body": [
             "The analyst was preparing a chart of one collector’s daily remittances for the first two weeks "
             "of March. The average was ₱6,892 a day. The head of office was pleased. It was the highest "
@@ -3136,7 +3136,7 @@ DATA_POSTS = [
             ("point", "Trusting an average without looking", "Look at the values, or the median."),
             ("point", "Treating the rule as proof", "The 1.5 IQR rule flags; the documents decide."),
             ("point", "Checking only the high values", "A low value can be the more serious warning."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Outliers are questions", "Mistake, real event or warning."),
             ("point", "Quartiles find them", "Fences at 1.5 IQR below Q1 and above Q3."),
             ("point", "Flag them automatically", "An IF formula or conditional formatting."),
@@ -3161,12 +3161,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 33: FILTER, SORT and UNIQUE, Lists in Google Sheets That Update Themselves",
         "slug": "data-analytics-part-33-filter-sort-unique",
         "category": "data",
-        "date": "April 21, 2027",
+        "date": "February 4, 2028",
         "summary": "Copying rows into a new tab every time someone asks for a list makes a copy that is out "
                    "of date by the afternoon. This part shows how FILTER, SORT and UNIQUE in Google Sheets "
                    "build lists that update themselves, how to combine them, and how to handle the two errors "
                    "beginners meet first.",
-        "publish_on": "2027-04-21 21:00",
+        "publish_on": "2028-02-04 21:00",
         "body": [
             "Every Monday, the budget officer asked for the same thing: last week’s business tax payments of "
             "₱5,000 or more, largest first. Every Monday, the clerk filtered the payments log, copied the "
@@ -3273,7 +3273,7 @@ DATA_POSTS = [
             ("point", "Conditions of a different length", "Match the rows of the range exactly."),
             ("point", "Typing the condition into the formula", "Point it at a cell instead."),
             ("point", "Leaving no room below", "Keep the space under and beside the formula empty."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "UNIQUE lists each value once", "Watch for hidden spaces."),
             ("point", "SORT orders without touching the log", "Use FALSE for largest first."),
             ("point", "FILTER keeps the rows you want", "Every condition must be true."),
@@ -3299,12 +3299,12 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 32: Rounding, and Why the Totals Don’t Add Up",
         "slug": "data-analytics-part-32-rounding-and-totals",
         "category": "data",
-        "date": "April 16, 2027",
+        "date": "January 26, 2028",
         "summary": "A report can be correct and still show shares that add up to 101 percent, or a peso "
                    "total that does not match its rows. This part explains where rounding differences come from, "
                    "how to fix a split so it adds to the centavo, how Google Sheets and Python round "
                    "halves differently, and how to tell readers what they are looking at.",
-        "publish_on": "2027-04-16 21:00",
+        "publish_on": "2028-01-26 21:00",
         "body": [
             "The council member held up the quarterly report and pointed at the pie chart. “Real property "
             "tax, 43 percent. Business tax, 32 percent. Fees, 26 percent. That is 101 percent,” he said. "
@@ -3395,7 +3395,7 @@ DATA_POSTS = [
             ("point", "Rounding every share in a split", "Use the remainder fix so the parts add up."),
             ("point", "Assuming tools round the same way", "Sheets and Python treat halves differently."),
             ("point", "Leaving readers to guess", "Add a rounding note under the table."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Rounded parts can miss the total", "Each part moves a little on its own."),
             ("point", "Display is not storage", "Formatting hides decimals; ROUND changes the value."),
             ("point", "Splits need the remainder fix", "Plus a check cell that says TRUE."),
@@ -3419,7 +3419,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "April 11, 2027",
+        "date": "January 17, 2028",
         "title": "Data Analytics Series, Part 31: Conditional Formatting, Letting the Sheet Point at the Problems",
         "slug": "data-analytics-part-31-conditional-formatting",
         "category": "data",
@@ -3427,7 +3427,7 @@ DATA_POSTS = [
                    "formatting in Google Sheets to color unpaid accounts, late payments and duplicate entries "
                    "automatically, explains custom formulas and the dollar sign, and shows how rule order "
                    "decides which color wins.",
-        "publish_on": "2027-04-11 21:00",
+        "publish_on": "2028-01-17 21:00",
         "body": [
             "On the first working day of February, the head of office asked a simple question: which "
             "business permit renewals due on January 20 were still unpaid? The clerk opened the log. It had "
@@ -3531,7 +3531,7 @@ DATA_POSTS = [
              "range."),
             ("point", "Ignoring rule order", "The first true rule wins. Drag the most important to the top."),
             ("point", "Color with no legend", "Say what each color means, in words."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Format, then Conditional formatting", "Rules change the look, not the data."),
             ("point", "Custom formulas color whole rows", "Lock the column with a dollar sign."),
             ("point", "COUNTIF finds duplicates", "=COUNTIF($A$2:$A$7, $A2)>1."),
@@ -3554,7 +3554,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "April 6, 2027",
+        "date": "January 7, 2028",
         "title": "Data Analytics Series, Part 30: Percent Change or Percentage Points? Reporting Growth Without Confusion",
         "slug": "data-analytics-part-30-percent-change",
         "category": "data",
@@ -3562,7 +3562,7 @@ DATA_POSTS = [
                    "percent one? This part separates percent change from percentage points, shows the "
                    "formulas in Google Sheets, and covers the small-base, reverse-change and averaging traps "
                    "that make honest numbers mislead.",
-        "publish_on": "2027-04-06 21:00",
+        "publish_on": "2028-01-07 21:00",
         "body": [
             "The draft press release said: “Real property tax collection efficiency rose 9 percent this "
             "year.” The budget officer read it and disagreed. “It went from 72 to 81. That is 12.5 percent.” "
@@ -3670,7 +3670,7 @@ DATA_POSTS = [
             ("point", "Ranking by percent change alone", "Small bases jump to the top."),
             ("point", "Expecting a rise to undo an equal fall", "Compare with the starting level."),
             ("point", "Averaging rates of different sizes", "Use totals for the overall rate."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Amounts change by percent", "=(new-old)/old."),
             ("point", "Rates change by points", "=new rate minus old rate, labeled as points."),
             ("point", "The base matters", "Show amounts beside percentages."),
@@ -3695,14 +3695,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "April 1, 2027",
+        "date": "December 29, 2027",
         "title": "Data Analytics Series, Part 29: Counting Days in Google Sheets, Working Days, Due Dates and Days Late",
         "slug": "data-analytics-part-29-counting-days",
         "category": "data",
         "summary": "How long did each application take, and when is the next one due? This part counts days "
                    "in Google Sheets with DAYS, NETWORKDAYS and WORKDAY, adds months with EDATE and EOMONTH, "
                    "handles holidays, and shows why calendar days and working days give different answers.",
-        "publish_on": "2027-04-01 21:00",
+        "publish_on": "2027-12-29 21:00",
         "body": [
             "The head of office wanted one number for the quarterly report: how many days, on average, it "
             "took to release a business permit after the papers came in. The clerk subtracted each received "
@@ -3807,7 +3807,7 @@ DATA_POSTS = [
             ("point", "Forgetting that both ends count", "Subtract one when you mean days after receipt."),
             ("point", "Each person keeping their own holiday list", "One list, one range, every formula."),
             ("point", "Dates stored as text", "Check before you count, or the formulas return errors or wrong numbers."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "DAYS", "Calendar days between two dates, end date first."),
             ("point", "NETWORKDAYS", "Working days, counting both ends, with an optional holiday list."),
             ("point", "WORKDAY", "The due date a number of working days ahead."),
@@ -3834,7 +3834,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "March 27, 2027",
+        "date": "December 20, 2027",
         "title": "Data Analytics Series, Part 28: SQL Joins, Finding Who Is Missing and Why Totals Double",
         "slug": "data-analytics-part-28-sql-joins",
         "category": "data",
@@ -3842,7 +3842,7 @@ DATA_POSTS = [
                    "difference between an inner join and a left join, how to list taxpayers with no "
                    "receipts, why a condition in the wrong place hides them again, and how a join can "
                    "quietly double a total.",
-        "publish_on": "2027-03-27 21:00",
+        "publish_on": "2027-12-20 21:00",
         "body": [
             "The head of office wanted a simple list: every registered business and how much each one paid "
             "this year. The analyst joined the taxpayers table to the receipts table, grouped by taxpayer, "
@@ -3979,7 +3979,7 @@ DATA_POSTS = [
             ("point", "Counting rows after a left join", "Count a column from the right table instead."),
             ("point", "Filtering the right table in WHERE", "Put that condition in ON to keep everyone."),
             ("point", "Joining to a table with several rows per key", "Check the row count and the total."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Inner join", "Keeps only rows that match on both sides."),
             ("point", "Left join", "Keeps every row of the first table and fills the gaps with NULL."),
             ("point", "IS NULL after a left join", "Lists who or what has no match."),
@@ -4002,14 +4002,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "March 22, 2027",
+        "date": "December 10, 2027",
         "title": "Data Analytics Series, Part 27: Choosing the Right Chart, Starting From the Question",
         "slug": "data-analytics-part-27-choosing-the-right-chart",
         "category": "data",
         "summary": "A chart should answer one question at a glance. This part matches five basic questions "
                    "to the chart types Google Sheets offers, builds two of them from practice data, and "
                    "shows the axis, title and slice mistakes that make an honest number look misleading.",
-        "publish_on": "2027-03-22 21:00",
+        "publish_on": "2027-12-10 21:00",
         "body": [
             "The analyst was proud of the pie chart: twelve slices, one for each month’s collections, each in "
             "its own color. At the meeting, nobody could tell whether March was bigger than April, or whether "
@@ -4100,7 +4100,7 @@ DATA_POSTS = [
             ("point", "Pies with many slices", "More than a few slices can become hard to compare."),
             ("point", "Bar axes that skip zero", "They exaggerate small differences."),
             ("point", "Titles that only name the data", "State the finding."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Five questions, five charts", "Trend, comparison, share, spread, relationship."),
             ("point", "Line for time, bars for comparison", "Sorted, labeled, from zero."),
             ("point", "Pies only for a few parts", "Of a meaningful whole."),
@@ -4124,7 +4124,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "March 17, 2027",
+        "date": "December 1, 2027",
         "title": "Data Analytics Series, Part 26: Mean or Median? Choosing the Middle That Tells the Truth",
         "slug": "data-analytics-part-26-mean-or-median",
         "category": "data",
@@ -4132,7 +4132,7 @@ DATA_POSTS = [
                    "and the median with nine practice receipts, shows both in Google Sheets, explains when "
                    "each one is the right answer, and gives a simple habit for reporting the middle "
                    "honestly.",
-        "publish_on": "2027-03-17 21:00",
+        "publish_on": "2027-12-01 21:00",
         "body": [
             "The report said the average business tax payment in the first week of January was ₱13,244. A "
             "councilor read it twice. “Our small stores pay that much now?” They did not. Eight of the nine "
@@ -4216,7 +4216,7 @@ DATA_POSTS = [
             ("point", "Using the mean for a typical case", "Large values can pull it away from the rest of the data."),
             ("point", "Using the median for totals", "The median times the count does not give the total."),
             ("point", "Deleting large values to fix the mean", "Check them; if real, report them."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Mean for totals", "AVERAGE, and it rebuilds the sum."),
             ("point", "Median for the typical case", "MEDIAN, and it resists extreme values."),
             ("point", "Far apart means look closer", "A gap between them points to large values."),
@@ -4239,7 +4239,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "March 12, 2027",
+        "date": "November 22, 2027",
         "title": "Data Analytics Series, Part 25: XLOOKUP, Bringing the Right Detail Into Every Row",
         "slug": "data-analytics-part-25-xlookup",
         "category": "data",
@@ -4247,7 +4247,7 @@ DATA_POSTS = [
                    "them with one formula. This part builds it step by step in Google Sheets, shows what to "
                    "do when an ID is missing, how to return two columns at once, find the latest entry, and "
                    "match a value to a bracket.",
-        "publish_on": "2027-03-12 21:00",
+        "publish_on": "2027-11-22 21:00",
         "body": [
             "The receipts list had dates, amounts and a taxpayer ID in every row. The councilor’s question "
             "needed names and barangays, which lived on a separate Taxpayers tab. An encoder started copying "
@@ -4336,7 +4336,7 @@ DATA_POSTS = [
             ("point", "Ignoring #N/A", "Give it a message, then count and fix the misses."),
             ("point", "Searching from the end on unsorted data", "“Latest” only works if the list is in date "
              "order."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Three parts", "What to find, where to look, what to return."),
             ("point", "Name the gaps", "Use the missing value to show NOT FOUND."),
             ("point", "Direction and mode", "-1 in search mode finds the last entry; -1 in match mode finds "
@@ -4360,7 +4360,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "March 7, 2027",
+        "date": "November 12, 2027",
         "title": "Data Analytics Series, Part 24: Pivot Tables, a Summary You Can Rearrange in Seconds",
         "slug": "data-analytics-part-24-pivot-tables",
         "category": "data",
@@ -4368,7 +4368,7 @@ DATA_POSTS = [
                    "lets you rearrange it with a click. This part builds one in Google Sheets step by step, "
                    "checks it against SUMIFS, and shows the traps: missing headers, value filters and totals "
                    "that hide a gap.",
-        "publish_on": "2027-03-07 21:00",
+        "publish_on": "2027-11-12 21:00",
         "body": [
             "The day after the council received its sixty-number table, a councilor called with three new "
             "questions. What about totals by type of tax, not just by barangay? How many receipts were behind "
@@ -4465,7 +4465,7 @@ DATA_POSTS = [
             ("point", "A range that stops short", "New rows outside the range are left out."),
             ("point", "Trusting a values filter on growing data", "It does not pick up new items."),
             ("point", "Skipping the grand total check", "It must match the list."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "A clean list goes in", "One row per record, headers on every column."),
             ("point", "Rows, columns, values", "Choose them, then rearrange freely."),
             ("point", "Drill down to the source", "Double-click a value to see its rows."),
@@ -4488,7 +4488,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "March 2, 2027",
+        "date": "November 3, 2027",
         "title": "Data Analytics Series, Part 23: SUMIFS, COUNTIFS and AVERAGEIFS",
         "slug": "data-analytics-part-23-sumifs-countifs-averageifs",
         "category": "data",
@@ -4496,7 +4496,7 @@ DATA_POSTS = [
                    "This part explains SUMIFS, COUNTIFS and AVERAGEIFS with treasury examples: text, number "
                    "and date conditions, a summary table that fills itself in, and a check row that catches "
                    "what the formulas miss.",
-        "publish_on": "2027-03-02 21:00",
+        "publish_on": "2027-11-03 21:00",
         "body": [
             "The council wanted a table for its budget hearing: real property tax collections for each of "
             "five barangays, for each month of last year. Sixty numbers.",
@@ -4602,7 +4602,7 @@ DATA_POSTS = [
             ("point", "Dates with “less than or equal to the 31st”", "Use “before the first of next month.”"),
             ("point", "No check row", "Compare the table’s total with the grand total."),
             ("point", "Hiding empty groups as zero", "Show “none,” with a count beside each average."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Pairs of range and test", "A row counts only if it passes every pair."),
             ("point", "Conditions", "Text in quotes, operators inside quotes, cells joined with &."),
             ("point", "One formula, many cells", "Dollar signs let one formula fill a whole table."),
@@ -4622,7 +4622,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "February 25, 2027",
+        "date": "October 25, 2027",
         "title": "Data Analytics Series, Part 22: Sorting and Filtering With Purpose",
         "slug": "data-analytics-part-22-sorting-and-filtering",
         "category": "data",
@@ -4630,7 +4630,7 @@ DATA_POSTS = [
                    "shows how to sort without scrambling rows, use sorting to find problems, filter without "
                    "changing what colleagues see, and keep a filtered answer up to date with the SORT and "
                    "FILTER functions.",
-        "publish_on": "2027-02-25 21:00",
+        "publish_on": "2027-10-25 21:00",
         "body": [
             "The head of office needs a list for Monday’s meeting: the twenty largest delinquent real property "
             "tax accounts in two barangays, biggest first. A staff member opens the shared delinquency sheet, "
@@ -4722,7 +4722,7 @@ DATA_POSTS = [
             ("point", "Filtering a shared sheet", "Use a filter view, so colleagues are not affected."),
             ("point", "Ticking values for a rule", "Use a condition when new values will arrive."),
             ("point", "Quoting totals from a filtered sheet", "Check whether hidden rows are counted."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Keep rows together", "Sort the whole table, with a Row column to return to."),
             ("point", "Sort to find problems", "Extremes and near-duplicates gather at the ends and side by side."),
             ("point", "Filter views", "Your own view, without changing anyone else’s."),
@@ -4743,7 +4743,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "February 20, 2027",
+        "date": "October 15, 2027",
         "title": "Data Analytics Series, Part 21: Stop Bad Data at the Door, Rules Inside the Database",
         "slug": "data-analytics-part-21-rules-inside-the-database",
         "category": "data",
@@ -4751,7 +4751,7 @@ DATA_POSTS = [
                    "table in SQLite that refuses duplicates, blanks, negative amounts, badly written dates and "
                    "unknown collectors, tests every rule with a bad row, and explains the two settings that "
                    "quietly switch some protection off.",
-        "publish_on": "2027-02-20 21:00",
+        "publish_on": "2027-10-15 21:00",
         "body": [
             "Part 20 ended with a view that cleans the satellite office’s import every week: commas removed, "
             "names trimmed, blanks labeled, repeats dropped. It works. But every week the same mistakes "
@@ -4850,7 +4850,7 @@ DATA_POSTS = [
             ("point", "Comparing with = in a CHECK", "A NULL result passes. Use IS where NULL can appear."),
             ("point", "Forgetting the switch", "Turn foreign keys on in every session."),
             ("point", "Assuming types are enforced", "Use STRICT, or check types with TYPEOF."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Rules in the table", "They apply to every route data takes, every time."),
             ("point", "Four kinds", "NOT NULL, UNIQUE, CHECK and foreign keys, each catching a different "
              "mistake."),
@@ -4873,7 +4873,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "February 15, 2027",
+        "date": "October 6, 2027",
         "title": "Data Analytics Series, Part 20: Cleaning Data With SQL, Without Touching the Original",
         "slug": "data-analytics-part-20-cleaning-with-sql",
         "category": "data",
@@ -4881,7 +4881,7 @@ DATA_POSTS = [
                    "finding the mess with DISTINCT and COUNT, fixing spaces and letter case, turning text "
                    "amounts into numbers, filling blanks, removing duplicates, and saving the rules in a view "
                    "so the original stays as it arrived.",
-        "publish_on": "2027-02-15 21:00",
+        "publish_on": "2027-10-06 21:00",
         "body": [
             "The analyst imports a week of receipts from a satellite office into the database from Part 19 and "
             "runs a quick total. It comes back as 3,354. The receipts on paper add up to 8,300.50.",
@@ -4991,7 +4991,7 @@ DATA_POSTS = [
             ("point", "Casting with commas", "Remove commas with REPLACE before CAST."),
             ("point", "Deleting duplicates without looking", "Rows that differ need a person, not a query."),
             ("point", "Cleaning the original", "Keep raw data as it arrived, and clean in a view."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Find first", "DISTINCT and COUNT show the mess and give you numbers to check against."),
             ("point", "Fix text", "TRIM and UPPER, knowing what each one leaves alone."),
             ("point", "Fix numbers and gaps", "REPLACE then CAST, and NULLIF with COALESCE."),
@@ -5014,7 +5014,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "February 10, 2027",
+        "date": "September 27, 2027",
         "title": "Data Analytics Series, Part 19: First Steps in SQL, Asking a Database Questions",
         "slug": "data-analytics-part-19-first-steps-in-sql",
         "category": "data",
@@ -5022,7 +5022,7 @@ DATA_POSTS = [
                    "beginner queries on a small treasury database, from listing receipts to totals by "
                    "collector and barangay, with every result shown and a few safe habits for working on "
                    "real data.",
-        "publish_on": "2027-02-10 21:00",
+        "publish_on": "2027-09-27 21:00",
         "body": [
             "In Part 14, the analyst sketched three linked tables on paper: taxpayers, receipts and "
             "collectors. The office has since built them in SQLite, the free database engine that keeps a "
@@ -5132,7 +5132,7 @@ DATA_POSTS = [
              "the other table, and totals multiply."),
             ("point", "Changing data without a SELECT first", "Look at the rows before you change them."),
             ("point", "Sharing an unchecked total", "Compare it with a figure you already trust."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "SELECT and FROM", "Choose the columns and the table."),
             ("point", "WHERE", "Keep only the rows you need, including date ranges."),
             ("point", "GROUP BY with COUNT and SUM", "Totals by collector, barangay or account."),
@@ -5153,14 +5153,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "February 5, 2027",
+        "date": "September 17, 2027",
         "title": "Data Analytics Series, Part 18: Taming Text and Dates, Names, Pesos and Day-Month Puzzles",
         "slug": "data-analytics-part-18-text-and-dates",
         "category": "data",
         "summary": "An export from an older system can arrive with names in capitals, amounts with peso signs, "
                    "receipt numbers that lose their zeros and dates the spreadsheet cannot read. This part "
                    "shows the text and date formulas that fix each one, with a few traps to avoid.",
-        "publish_on": "2027-02-05 21:00",
+        "publish_on": "2027-09-17 21:00",
         "body": [
             "The analyst receives an export of last year’s business permit payments from an older system. "
             "Names are in capitals with the family name first: “DELA CRUZ, JUAN P.” Amounts look like "
@@ -5265,7 +5265,7 @@ DATA_POSTS = [
              "told otherwise."),
             ("point", "Letting the spreadsheet guess dates", "Build dates from their parts when the order is "
              "not certain."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Codes are text", "Keep IDs and receipt numbers as text so zeros and links survive."),
             ("point", "Clean text in new columns", "UPPER, PROPER, SPLIT, TRIM and SUBSTITUTE, with the "
              "original kept."),
@@ -5287,14 +5287,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 31, 2027",
+        "date": "September 8, 2027",
         "title": "Data Analytics Series, Part 17: Samples and Margin of Error, Checking 400 Receipts Instead of 12,000",
         "slug": "data-analytics-part-17-samples-margin-of-error",
         "category": "data",
         "summary": "You do not always have to check every record to know how many are wrong. This part explains "
                    "random samples, the margin of error and how to choose a sample size, with a treasury "
                    "example worked out step by step and a plain way to report the result.",
-        "publish_on": "2027-01-31 21:00",
+        "publish_on": "2027-09-08 21:00",
         "body": [
             "After the cleanup in Part 16, the head of office asks a fair question: how many of last year’s "
             "12,000 receipts have a wrong barangay code in the system? Checking every receipt against its "
@@ -5403,7 +5403,7 @@ DATA_POSTS = [
              "population."),
             ("point", "Reporting one number alone", "Give the range and the confidence level with it."),
             ("point", "Treating the margin as the whole story", "It covers chance, not bias or checking errors."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Random means equal chance", "Every record must have the same chance of being chosen."),
             ("point", "Margin of error", "1.96 × √(p(1 − p) ÷ n) at 95% confidence, for a rate from a random "
              "sample."),
@@ -5427,7 +5427,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 26, 2027",
+        "date": "August 30, 2027",
         "title": "Data Analytics Series, Part 16: Dirty Data, the Usual Suspects and How to Spot Them",
         "slug": "data-analytics-part-16-dirty-data",
         "category": "data",
@@ -5435,7 +5435,7 @@ DATA_POSTS = [
                    "suspects in treasury data, from duplicates and stray spaces to numbers stored as text and "
                    "impossible amounts, with a quick test to spot each one and a ten-minute scan to run "
                    "before any analysis.",
-        "publish_on": "2027-01-26 21:00",
+        "publish_on": "2027-08-30 21:00",
         "body": [
             "The head of office asks a simple question: how many business permits were renewed in each "
             "barangay this year? The analyst opens the permits sheet, which three encoders filled in, and "
@@ -5560,7 +5560,7 @@ DATA_POSTS = [
             ("point", "Deleting what looks odd", "Check unusual values against the source first."),
             ("point", "Filling blanks with guesses", "A blank is a question, not a zero."),
             ("point", "Cleaning without a log", "Write down every fix so it can be repeated and explained."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Dirty is not fake", "Dirty data is real data that is not yet fit to count."),
             ("point", "Know the suspects", "Duplicates, inconsistent names, spaces, text numbers, dates, "
              "blanks, odd values and old records."),
@@ -5581,14 +5581,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 21, 2027",
+        "date": "August 20, 2027",
         "title": "Data Analytics Series, Part 15: Naming, Versions and Backups, Keeping Data Files Safe",
         "slug": "data-analytics-part-15-naming-versions-backups",
         "category": "data",
         "summary": "“Final,” “final2” and “final-REAL” are how good analysis gets lost. This part gives simple "
                    "rules for naming data files, keeping versions you can trust, and backing them up with the "
                    "3-2-1 rule, so you can find, and trust, the right file.",
-        "publish_on": "2027-01-21 21:00",
+        "publish_on": "2027-08-20 21:00",
         "body": [
             "The analyst needs last quarter’s cleaned collections file. The shared folder holds "
             "“collections.xlsx,” “collections final.xlsx,” “collections final2.xlsx,” “collections final "
@@ -5686,7 +5686,7 @@ DATA_POSTS = [
             ("point", "Overwriting the raw export", "Clean a copy. Keep the original as it arrived."),
             ("point", "Backups in the same place", "A copy on the same computer is lost with the computer."),
             ("point", "Never testing", "Restore a file each month to prove the backup works."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Names that sort", "Date first, then what, then stage, then version."),
             ("point", "Versions with a log", "Number each change and write down why."),
             ("point", "3-2-1", "Three copies, two kinds of storage, one elsewhere."),
@@ -5708,7 +5708,7 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 16, 2027",
+        "date": "August 11, 2027",
         "title": "Data Analytics Series, Part 14: Databases 101, Tables, Primary Keys and Foreign Keys",
         "slug": "data-analytics-part-14-databases-101",
         "category": "data",
@@ -5716,7 +5716,7 @@ DATA_POSTS = [
                    "counting one person as two. This part explains, in plain words, how a database splits "
                    "data into linked tables using primary keys and foreign keys, with a three-table treasury "
                    "example you can sketch on paper.",
-        "publish_on": "2027-01-16 21:00",
+        "publish_on": "2027-08-11 21:00",
         "body": [
             "The collections sheet has a row for every receipt, and each row repeats the taxpayer’s full name "
             "and address. Over the year, one taxpayer appears as “Dela Cruz, Juan,” “Juan dela Cruz” and "
@@ -5817,7 +5817,7 @@ DATA_POSTS = [
              "table, it can drift out of date. Keep it in one place."),
             ("point", "Reusing old IDs", "An ID given to a closed account should not be given to a new one."),
             ("point", "Building before sketching", "Draw the tables and test them with a question first."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Tables, records, fields", "Rows and columns about one kind of thing."),
             ("point", "Primary key", "One value, one record, never blank, never repeated."),
             ("point", "Foreign key", "A pointer to a record in another table."),
@@ -5839,14 +5839,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 11, 2027",
+        "date": "August 2, 2027",
         "title": "Data Analytics Series, Part 13: Bias in Data, and How to Catch It",
         "slug": "data-analytics-part-13-bias-in-data",
         "category": "data",
         "summary": "Data can be accurate and still lead to the wrong answer when it leans one way. This part "
                    "explains four kinds of bias, sampling, observer, interpretation and confirmation, with "
                    "treasury examples and a short checklist for catching each one.",
-        "publish_on": "2027-01-11 21:00",
+        "publish_on": "2027-08-02 21:00",
         "body": [
             "The office wants to know how taxpayers feel about its service, so it runs a short survey at the "
             "counter for two weeks. The results are excellent: nine out of ten say the service is fast and "
@@ -5953,7 +5953,7 @@ DATA_POSTS = [
             ("point", "One explanation only", "A single explanation, checked against nothing, is a guess."),
             ("point", "Hiding the limits", "State who the data covers, so readers can judge the "
              "finding fairly."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Bias leans one way", "More of the same data does not fix it."),
             ("point", "Four kinds", "Sampling, observer, interpretation and confirmation."),
             ("point", "Check who is missing", "Records describe only the people on them."),
@@ -5975,14 +5975,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 6, 2027",
+        "date": "July 23, 2027",
         "title": "Data Analytics Series, Part 12: Spreadsheets Done Right, One Row per Record",
         "slug": "data-analytics-part-12-one-row-per-record",
         "category": "data",
         "summary": "A spreadsheet can look neat to people and still be hard to sort, filter or total. This part "
                    "gives seven layout rules for treasury spreadsheets, from one header row to no merged cells "
                    "and dropdown lists, and shows a messy collections tracker fixed step by step.",
-        "publish_on": "2027-01-06 21:00",
+        "publish_on": "2027-07-23 21:00",
         "body": [
             "The revenue unit keeps a collections tracker that everyone in the office has added to over the "
             "years. It opens with a large title across the top, a merged heading that says “First Quarter,” "
@@ -6081,7 +6081,7 @@ DATA_POSTS = [
              "amount into text. Put remarks in a separate Remarks column."),
             ("point", "Hiding rows instead of deleting them", "Hidden rows still count in some formulas, so a "
              "total can include rows nobody can see."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "One row, one record", "Decide what a row stands for and keep to it."),
             ("point", "Clean layout", "One header row, no merged cells, no blank rows and no totals inside "
              "the data."),
@@ -6104,14 +6104,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "January 1, 2027",
+        "date": "July 14, 2027",
         "title": "Data Analytics Series, Part 11: Good Data or Bad Data? The ROCCC Test",
         "slug": "data-analytics-part-11-roccc-test",
         "category": "data",
         "summary": "Before you trust a data set, test it. This part explains the five ROCCC checks, reliable, "
                    "original, comprehensive, current and cited, scores two treasury data sets with them, and "
                    "shows what to do when a source fails.",
-        "publish_on": "2027-01-01 21:00",
+        "publish_on": "2027-07-14 21:00",
         "body": [
             "The revenue unit is preparing next year’s collection target for business tax. Two files are on "
             "the table. One is the office’s own record of business taxes paid over the last three years, "
@@ -6207,7 +6207,7 @@ DATA_POSTS = [
             ("point", "Assuming official means current", "An official list can still be out of date."),
             ("point", "Skipping your own data", "Your office’s records can fail a check too, such as "
              "comprehensive when days are missing."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Five checks", "Reliable, original, comprehensive, current and cited."),
             ("point", "Score honestly", "Pass, partial, fail or unknown, each with a reason."),
             ("point", "Unknown is a task", "Find the answer before treating it as a pass."),
@@ -6227,14 +6227,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "December 27, 2026",
+        "date": "July 5, 2027",
         "title": "Data Analytics Series, Part 10: Data Types, Structured Data and Wide vs Long Tables",
         "slug": "data-analytics-part-10-data-types-and-table-shapes",
         "category": "data",
         "summary": "Before you can analyze data, you need to know what kind of data it is and what shape it "
                    "is in. This part explains data types, structured and unstructured data, and wide and "
                    "long tables, with treasury examples and the mistakes each one prevents.",
-        "publish_on": "2026-12-27 21:00",
+        "publish_on": "2027-07-05 21:00",
         "body": [
             "An analyst opens a spreadsheet of business permits and asks for the total gross sales declared. "
             "The answer comes back far too low. A quick look shows why: about a third of the amounts were typed "
@@ -6331,7 +6331,7 @@ DATA_POSTS = [
             ("point", "Storing codes as numbers", "Leading zeros disappear, and matches fail."),
             ("point", "Hiding countable facts in remarks", "Give anything you will count its own column."),
             ("point", "Analyzing a wide table directly", "Reshape it to long first, or each new month can break your formulas."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Type follows use", "Numbers are for arithmetic; codes and IDs are text."),
             ("point", "Check before you sum", "Alignment and COUNT reveal values stored as the wrong type."),
             ("point", "Structure what you will count", "Give countable facts their own typed column."),
@@ -6354,14 +6354,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "December 22, 2026",
+        "date": "June 25, 2027",
         "title": "Data Analytics Series, Part 9: Where Data Comes From, First-, Second- and Third-Party",
         "slug": "data-analytics-part-9-where-data-comes-from",
         "category": "data",
         "summary": "Every data set has a history: who collected it, how, when and why. This part explains "
                    "first-, second- and third-party data with treasury examples, gives six questions to ask "
                    "any source, and shows how to record a source so the next analyst can trust it.",
-        "publish_on": "2026-12-22 21:00",
+        "publish_on": "2027-06-25 21:00",
         "body": [
             "The revenue unit wants a list of businesses that may be operating without a permit. The analyst "
             "gathers three files: the office’s own list of permits issued this year, a list of barangay "
@@ -6457,7 +6457,7 @@ DATA_POSTS = [
              "information was true."),
             ("point", "Reporting leads as findings", "A name in a third-party directory is a reason to check, "
              "not proof that a business is operating."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Three kinds by who collected it", "First-party is your own, second-party is shared by "
              "the collector, and third-party is compiled by someone else."),
             ("point", "Ask six questions", "Who, how, when, why, what each field means, and whether you may "
@@ -6477,14 +6477,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "December 17, 2026",
+        "date": "June 16, 2027",
         "title": "Data Analytics Series, Part 8: Metrics and KPIs That Tell the Truth",
         "slug": "data-analytics-part-8-metrics-and-kpis",
         "category": "data",
         "summary": "Two offices can both report 90% collection efficiency and mean completely different things. "
                    "This part explains the difference between a metric and a KPI, shows how one definition "
                    "can flatter or expose performance, and gives a template for measures that tell the truth.",
-        "publish_on": "2026-12-17 21:00",
+        "publish_on": "2027-06-16 21:00",
         "body": [
             "At a provincial meeting, two treasurers compare notes. Both report a real property tax "
             "collection efficiency of 90%. One is quietly proud. The other is worried. They are both right, "
@@ -6590,7 +6590,7 @@ DATA_POSTS = [
             "When that happens, recompute the past periods with the new definition if the records allow it. "
             "If they do not, mark the break clearly on every report, with the date the new definition began, "
             "so no one reads a jump in the number as a jump in performance.",
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Keep KPIs few", "A KPI is a metric tied to a goal that someone will act on."),
             ("point", "Write the definition", "Name, numerator, denominator, period and source, every time."),
             ("point", "Same name is not same measure", "Always say what a percentage is divided by."),
@@ -6610,14 +6610,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "December 12, 2026",
+        "date": "June 7, 2027",
         "title": "Data Analytics Series, Part 7: Six Kinds of Problems Data Can Solve",
         "slug": "data-analytics-part-7-six-problem-types",
         "category": "data",
         "summary": "A request for “a report” can hide one of several basic problem types. This part walks "
                    "through six of them with treasury examples, so you can name the problem first and pick "
                    "the right method before you open a spreadsheet.",
-        "publish_on": "2026-12-12 21:00",
+        "publish_on": "2027-06-07 21:00",
         "body": [
             "Three requests reach the analyst in one morning. The head of office asks, “Will we hit the "
             "target this year?” The cashier asks, “Why did yesterday’s deposit not match the collections?” "
@@ -6713,7 +6713,7 @@ DATA_POSTS = [
             ("point", "“What are people telling us, overall?”", "Identifying themes."),
             ("point", "“How does this relate to that?”", "Discovering connections."),
             ("point", "“What keeps happening?”", "Finding patterns."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Name the type first", "The problem type tells you what data and method you need."),
             ("point", "Categories versus themes", "Categories sort the items; themes group the categories "
              "into bigger ideas."),
@@ -6736,14 +6736,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "December 7, 2026",
+        "date": "May 28, 2027",
         "title": "Data Analytics Series, Part 6: Data Ethics and the Data Privacy Act for Analysts",
         "slug": "data-analytics-part-6-data-ethics-privacy",
         "category": "data",
         "summary": "Analysts handle other people’s information every day. This part explains the three privacy "
                    "principles of the Data Privacy Act in plain words, shows how a harmless-looking chart can "
                    "still reveal a person, and gives a checklist to run before any analysis leaves your desk.",
-        "publish_on": "2026-12-07 21:00",
+        "publish_on": "2027-05-28 21:00",
         "body": [
             "The analyst is proud of the new chart: business tax collections by barangay, by type of "
             "business, for the whole year. It goes into the monthly report and onto the bulletin board.",
@@ -6841,7 +6841,7 @@ DATA_POSTS = [
             ("point", "Format", "Am I sharing results, not raw rows?"),
             ("point", "Storage", "Is my working copy saved only where the office allows, and will I delete "
              "it when the work is done?"),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Three principles", "Transparency, legitimate purpose and proportionality guide every "
              "use of personal data."),
             ("point", "No names is not enough", "Small groups and combined details can still identify a "
@@ -6862,14 +6862,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "December 2, 2026",
+        "date": "May 19, 2027",
         "title": "Data Analytics Series, Part 5: The Analyst’s Toolkit on a Zero Budget",
         "slug": "data-analytics-part-5-zero-budget-toolkit",
         "category": "data",
         "summary": "No software budget is no excuse. This part lays out a complete analytics toolkit that costs "
                    "nothing to start: spreadsheets, a small database, Python, a free dashboard builder and a "
                    "plain notes file, with what each is good for and where each stops.",
-        "publish_on": "2026-12-02 21:00",
+        "publish_on": "2027-05-19 21:00",
         "body": [
             "The revenue clerk finishes an online course in data analytics and comes back to the office full "
             "of ideas. Then she checks the budget. There is no line for analytics software, and the next "
@@ -6968,7 +6968,7 @@ DATA_POSTS = [
             ("point", "A monthly report built the same way every time", "A Python script."),
             ("point", "Numbers several people need to see every week", "A free dashboard builder."),
             ("point", "Every analysis, without exception", "A notes file."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Start with the question", "The right tool is the cheapest one that answers it well."),
             ("point", "Know where each tool stops", "Move to the next tool when the current one gets slow, "
              "manual or confusing, not before."),
@@ -6992,14 +6992,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "November 27, 2026",
+        "date": "May 10, 2027",
         "title": "Data Analytics Series, Part 4: Four Questions, One Data Set, Worked End to End",
         "slug": "data-analytics-part-4-four-questions-worked",
         "category": "data",
         "summary": "What happened, why, what is likely and what should we do? This part takes one made-up set of "
                    "real property tax records and answers all four questions in order, with every number "
                    "shown, so you can see how each answer builds on the last.",
-        "publish_on": "2026-11-27 21:00",
+        "publish_on": "2027-05-10 21:00",
         "body": [
             "“How are we doing, and what should we do in the last two months?” The head of office asks it at the November meeting, and the room goes quiet. Everyone has a feeling about the answer. Nobody has the answer.",
             "In Part 1, I introduced four kinds of analysis: descriptive, diagnostic, predictive and prescriptive. Definitions are easy to remember and hard to use, so this part puts them to work. It takes one small set of records and answers all four questions in order, with every number shown. By the end you will see how each answer feeds the next, and you will have a four-line routine to try on your own reports.",
@@ -7095,7 +7095,7 @@ DATA_POSTS = [
              "with a full year."),
             ("point", "Is the cause confirmed or only likely?", "Say which one, in plain words."),
             ("point", "Is the forecast a range?", "A single number suggests more certainty than the data gives."),
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point", "Each answer feeds the next", "Describe the gap, find where it is, size it, then choose what to do."),
             ("point", "Say how sure you are", "A likely cause is not a proven one, and a forecast is a range, not a single number."),
             ("point", "Tell people what will not be fixed", "An honest recommendation lets the office plan for the shortfall early."),
@@ -7113,14 +7113,14 @@ DATA_POSTS = [
         ],
     },
     {
-        "date": "November 22, 2026",
+        "date": "April 30, 2027",
         "title": "Data Analytics Series, Part 3: Deciding With Data, Not Hunches",
         "slug": "data-analytics-part-3-deciding-with-data",
         "category": "data",
-        "summary": "Experience and data are not rivals. Here is what a data-driven decision really looks like in a "
-                   "local treasury, five ways analysts think before they touch a formula, and the traps that turn "
-                   "good numbers into bad choices.",
-        "publish_on": "2026-11-22 21:00",
+        "summary": ("Experience and data are not rivals. This post shows what a data-driven decision really looks "
+                   "like in a local treasury, five ways analysts think before they touch a formula, and the "
+                   "traps that turn good numbers into bad choices."),
+        "publish_on": "2027-04-30 21:00",
         "body": [
             "Every December, a treasury holds the same short meeting. Should the office open on "
             "the Saturday before the business tax deadline? Business taxes are due within the "
@@ -7259,7 +7259,7 @@ DATA_POSTS = [
             " Here is our best judgment, here is what it rests on, and here is how we will check "
             "it in a month.” That sentence is more useful, and more honest, than a confident "
             "number built on weak ground.",
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point",
              "Experience is data too",
              "Years at the counter suggest where to look. Records show whether the pattern is "
@@ -7303,9 +7303,9 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 2: The Six Steps of Every Analysis",
         "slug": "data-analytics-part-2-six-steps",
         "category": "data",
-        "summary": "Ask, Prepare, Process, Analyze, Share and Act. Here is what each step means, the mistakes that "
-                   "happen when one is skipped, and a full worked example: deciding whether a treasury office "
-                   "needs a second payment window.",
+        "summary": ("Ask, Prepare, Process, Analyze, Share and Act. Each step comes with the mistake that follows "
+                   "when it is skipped, and one worked example runs through all six: does a treasury office need "
+                   "a second payment window?"),
         "publish_on": "2026-11-17 21:00",
         "body": [
             "Every week, someone in a government office opens a spreadsheet, scrolls through a "
@@ -7321,6 +7321,11 @@ DATA_POSTS = [
             "the final decision. When you finish reading, you will know the six steps of every "
             "analysis, see them used on a real office question, and know what goes wrong when a "
             "step is skipped.",
+            ("I learned these six steps in the Google Data Analytics Professional Certificate, which I "
+             "completed in 2025, but the habit behind them mattered to me long before that. When I "
+             "headed a municipal treasury office in Quezon from 2020 to 2022, problems came from every "
+             "side, often at once, and the final call was mine. Getting the question right before "
+             "reaching for the numbers is the habit I would most want any new treasurer to have."),
             ("h", "Six Steps, in Plain Words"),
             "The Google Data Analytics Professional Certificate teaches the process as six "
             "phases: Ask, Prepare, Process, Analyze, Share and Act. Other courses and companies "
@@ -7490,7 +7495,7 @@ DATA_POSTS = [
             "faster.",
             "But no system can do Ask or Act for you. Choosing the right question and making the "
             "decision remain human work, and that is exactly as it should be.",
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point",
              "Ask comes first",
              "A specific question tied to a decision tells you which data to find, what to clean "
@@ -7505,7 +7510,7 @@ DATA_POSTS = [
             ("point",
              "Act, then measure again",
              "Every decision is a small experiment. Measure the result and loop back if it did not work."),
-            ("h", "Your Part 2 Exercise"),
+            ("h", "Walk Your Own Question Through the Steps"),
             "Take the question you wrote down after Part 1. If you did not do it yet, choose one "
             "now. Then write one or two lines for each step:",
             ("point", "Ask", "Rewrite your question so it is specific and names the decision it supports."),
@@ -7535,9 +7540,9 @@ DATA_POSTS = [
         "title": "Data Analytics Series, Part 1: What Data Analytics Really Is, and Why Every Office Already Has the Data",
         "slug": "data-analytics-part-1-what-it-is",
         "category": "data",
-        "summary": "Data analytics is the craft of turning everyday records into answers people can act on. "
-                   "Here is what it means, the four kinds of questions it can answer, a famous cholera map from 1854, "
-                   "and why a local treasury is already sitting on a mountain of useful data.",
+        "summary": ("Data analytics is the craft of turning everyday records into answers people can act on. "
+                   "Along the way: the four kinds of questions it can answer, a famous cholera map from 1854, "
+                   "and why a local treasury already sits on a mountain of useful data."),
         "publish_on": "2026-11-13",
         "body": [
             "Picture a Monday morning in a municipal treasury office. The mayor calls and asks a "
@@ -7560,9 +7565,7 @@ DATA_POSTS = [
             "Data analytics lessons online can use examples such as online shops or bike rentals."
             " Those are fine, but they can feel far from a town hall in the province. This series"
             " explains the same ideas in plain words, with examples from the work I know: "
-            "collections, disbursements, targets, deadlines and the people at the counter. By the"
-            " end of this post, you will know what data analytics is, the four kinds of questions"
-            " it answers, and why your office already holds the data to start.",
+            "collections, disbursements, targets, deadlines and the people at the counter. This first part covers what data analytics is, the four kinds of questions it answers, and why your office already holds the data to start.",
             ("h", "Data, Information and Insight"),
             "Three words are often mixed up, so let us start there. Think of them as three steps "
             "on a ladder.",
@@ -7686,7 +7689,7 @@ DATA_POSTS = [
             "Just as important, every result in ALTOS is treated as a prompt for a person to "
             "decide, never as an automatic action. Data can point to where a problem might be. "
             "People still have to look, judge and act. That idea runs through this whole series.",
-            ("h", "Key Takeaways"),
+            ("h", "Points to Keep"),
             ("point",
              "Data, information, insight",
              "Raw records become organized information, and information becomes insight when it "
@@ -7703,7 +7706,7 @@ DATA_POSTS = [
              "Start with what you have",
              "Official receipts, registers and a free spreadsheet are enough to begin. The "
              "thinking matters more than the tool."),
-            ("h", "Your Part 1 Exercise"),
+            ("h", "Three Small Steps to Try"),
             "Analytics is learned by doing. Before you read any further in this series, try these"
             " three small steps:",
             ("point",

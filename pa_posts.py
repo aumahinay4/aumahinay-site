@@ -1,5 +1,5 @@
-"""Public Administration in Practice: a master's-level series, one part every Sunday 9 pm PH
-(Butch 2026-11-19: Sundays Dec 6 2026 - Feb 7 2027, own "Public Administration" category).
+"""Public Administration in Practice: a master's-level series, one part every Saturday 9 pm PH
+(Butch 2026-11-19: own "Public Administration" category; 2026-11-27: Saturdays, Dec 12 2026 - Feb 13 2027).
 
 Each part takes one well-known idea from graduate public administration, explains it in plain words and
 tests it against everyday local government work. Ideas already used in the ALTOS Framework posts (Weber,
@@ -12,8 +12,8 @@ PA_POSTS = [
         "title": "Public Administration in Practice, Part 1: Street-Level Bureaucracy, Where Policy Meets the Counter",
         "slug": "public-administration-part-1-street-level-bureaucracy",
         "category": "pa",
-        "date": "December 6, 2026",
-        "publish_on": "2026-12-06 21:00",
+        "date": "December 12, 2026",
+        "publish_on": "2026-12-12 21:00",
         "summary": "Michael Lipsky showed that the people who serve the public face to face end up shaping policy "
                    "through hundreds of small decisions a day. This part explains his idea and tests it at a "
                    "local treasury counter.",
@@ -158,8 +158,8 @@ PA_POSTS = [
         "title": "Public Administration in Practice, Part 2: The Implementation Gap, Why Good Plans Stall on the Way Down",
         "slug": "public-administration-part-2-implementation-gap",
         "category": "pa",
-        "date": "December 13, 2026",
-        "publish_on": "2026-12-13 21:00",
+        "date": "December 19, 2026",
+        "publish_on": "2026-12-19 21:00",
         "summary": "A program can be funded, approved and announced, and still produce almost nothing. Pressman "
                    "and Wildavsky showed why in 1973. This part explains the implementation gap, the top-down "
                    "and bottom-up views, and how to plan a local rollout so it does not stall.",
@@ -258,8 +258,6 @@ PA_POSTS = [
             ("point", "Close the loop",
              "Confirm receipt, then ask the receiving office whether the report was usable. Silence is not "
              "proof of success."),
-            ("cta", "Read: Project Management Series, Part 8: Who Does What? Building a RACI Matrix",
-             "/blog/project-management-part-8-raci-matrix/"),
             ("cta", "Read: The ALTOS Framework, Principle 4: Every Owner Has a Deadline",
              "/blog/altos-framework-every-owner-has-a-deadline/"),
             ("h", "Key Takeaways"),
@@ -289,8 +287,8 @@ PA_POSTS = [
         "title": "Public Administration in Practice, Part 3: Wicked Problems, When There Is No Final Answer",
         "slug": "public-administration-part-3-wicked-problems",
         "category": "pa",
-        "date": "December 20, 2026",
-        "publish_on": "2026-12-20 21:00",
+        "date": "December 26, 2026",
+        "publish_on": "2026-12-26 21:00",
         "summary": "Some public problems can be solved once and for all. Others keep changing every time you touch "
                    "them. Rittel and Webber called these wicked problems in 1973. This part explains the idea and "
                    "how a local government can work on one without pretending it is simple.",
@@ -363,8 +361,6 @@ PA_POSTS = [
             "together to work out a shared answer. Roberts and the paper both favored collaboration when many "
             "groups are involved and people’s behavior must change. In my experience, it is also the slowest of "
             "the three, which is why it is tempting to skip.",
-            ("cta", "Read: Project Management Series, Part 3: Mapping Who Holds the Power",
-             "/blog/project-management-part-3-stakeholder-mapping/"),
             ("h", "The Most Common Mistake"),
             "In my experience, the costly mistake runs in both directions.",
             ("point", "Treating a wicked problem as tame",

@@ -8,18 +8,32 @@ from html import escape
 from pathlib import Path
 
 import tags as t
-from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
+from content import ABOUT, ALTOS, ALTOS_SERIES, BLOG, BLOG_CATEGORIES, CERTIFICATES, DISCLAIMER, LEARN_SERIES, PRIVACY, SITE, SUBSYSTEMS, TERMS, TRAININGS
 from highlight import highlight
 from share_cards import card_for
-from lessons import GLOSSARY, LAST_CHECKED, LESSONS, TUTORIAL
+from glossary import GLOSSARY, GLOSSARY_INTRO
+from lessons import LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
+from altos_demo import DEMO_URL, demo_page
+import book as BOOK
 from style import CSS
 from tags import Raw
 
 STATIC = Path(__file__).parent / "static"
 TUTORIALS = Path(__file__).parent / "tutorials"
+
+
+ANCHOR_SCRIPT = (
+    '(function(){if(location.hash.length<2)return;var stop=false;'
+    'var el=function(){var id=decodeURIComponent(location.hash.slice(1));'
+    'return document.getElementById(/^cat-/.test(id)?"blog-cats":id);};'  # blog topic links: the category button, not its hidden radio
+    'var go=function(){var e=!stop&&el();if(e)e.scrollIntoView({behavior:"instant"});};'
+    '["wheel","touchstart","keydown","mousedown"].forEach(function(n){addEventListener(n,function(){stop=true;},{passive:true});});'
+    'document.addEventListener("DOMContentLoaded",function(){go();if(window.ResizeObserver){var r=new ResizeObserver(go);'
+    'r.observe(document.body);setTimeout(function(){r.disconnect();},5000);}});addEventListener("load",go);})();'
+)
 
 
 def asset_url(name):
@@ -62,7 +76,8 @@ FULLSCREEN_ICON = Raw(
     '<svg class="exit" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>'
 )
 
-NAV = [("/", "Home"), ("/projects/", "Projects"), ("/study-notes/", "Study Notes"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
+# Projects page removed (Butch 2026-11-20): ALTOS now lives on Home at /#altos
+NAV = [("/", "Home"), ("/study-notes/", "Study Notes"), ("/tutorials/", "Tutorials"), ("/blog/", "Blog"), ("/about/", "About")]
 
 CERT_SCRIPT = """
 (function () {
@@ -96,7 +111,7 @@ CERT_VIEWER = [
 
 # The three-bar (hamburger) menu: tap it and the menu fills the screen in navy, like a news site's
 # phone menu; tapping outside it, Esc, or tapping a link closes it (no X, Butch 2026-11-10). Contact and Privacy are in the menu but not in the swipe order.
-MENU = NAV[:3] + [(RPT_URL, "RPT Calculator")] + NAV[3:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
+MENU = NAV[:2] + [(RPT_URL, "RPT Calculator"), ("/book/", "The ALTOS Book")] + NAV[2:] + [("/contact/", "Contact"), ("/privacy/", "Privacy Policy"), ("/terms/", "Terms of Use")]
 
 
 def menu_items():
@@ -106,7 +121,92 @@ def menu_items():
     return [(href, label) for href, label in MENU if href != "/study-notes/" or live_notes()]
 
 
+CLOSE_ICON = Raw('<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>')  # a check mark, not an X, while the phone menu is open (Butch 2026-11-24)
+
+
+def page_label(active):
+    """The small orange label beside the phone menu button."""
+    labels = {"/": "Public finance & civic tech", "/blog/": "Blog", "/tutorials/": "Tutorials", "/study-notes/": "Study Notes",
+              BOOK_URL: "The ALTOS Book", "/about/": "About", "/contact/": "Contact", RPT_URL: "Free Tools",
+              "/privacy/": "Privacy Policy", "/terms/": "Terms of Use", "/disclaimer/": "Disclaimer"}
+    return labels.get(active, "Menu")
+
+
+def phone_menu(active):
+    """The phone menu card: the same entries as the computer menu; Free Tools and Study Notes & Book open in place."""
+    out = []
+    for a, b in top_items():
+        if isinstance(b, list):
+            here = any(href == active for href, _ in b)
+            out.append(t.details(
+                t.summary(a, CHEVRON, class_="active" if here else None),
+                [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
+                 for href, label in b],
+                class_="pm-group", open=here or None))
+        else:
+            out.append(t.a(b, href=a, class_="active" if a == active else None, aria_current="page" if a == active else None))
+    return out
+
+
+CHEVRON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>')
+
+
+def top_items():
+    """Menu across the top on computers, as in Butch's chosen pattern file aumahinay_dev_homepage_preview
+    (Butch 2026-11-23): Home, Free Tools (drop-down), Tutorials, Study Notes & Book, Blog, About, Contact.
+    Each entry is (href, label) or (label, [(href, label), ...]) for a drop-down. Phones keep the three-bar menu."""
+    books = [("/study-notes/", "Study Notes")] if live_notes() else []
+    books.append((BOOK_URL, "The ALTOS Book"))
+    return [("/", "Home"),
+            ("Free Tools", [(RPT_URL, "Real Property Tax Calculator"), (DEMO_URL, "ALTOS Browser Demo")]),
+            ("/tutorials/", "Tutorials"),
+            ("Study Notes & Book", books) if len(books) > 1 else (BOOK_URL, "Book"),
+            ("/blog/", "Blog"), ("/about/", "About"), ("/contact/", "Contact")]
+
+
+def top_nav(active):
+    out = []
+    for a, b in top_items():
+        if isinstance(b, list):
+            here = any(href == active for href, _ in b)
+            out.append(t.div(
+                t.button(a, CHEVRON, type="button", class_="drop-btn" + (" active" if here else ""), aria_haspopup="true"),
+                t.div([t.a(label, href=href, aria_current="page" if href == active else None) for href, label in b], class_="drop"),
+                class_="top-drop"))
+        else:
+            out.append(t.a(b, href=a, class_="active" if a == active else None, aria_current="page" if a == active else None))
+    return t.nav(out, class_="top-nav", aria_label="Top menu")
+
+
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg>')  # bars long, medium, short, left-aligned (Butch 2026-11-14)
+# ---- Light by default, dark by choice (Butch 2026-11-27) ----
+THEME_HEAD_SCRIPT = (
+    'try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}'
+)
+THEME_ICONS = Raw(
+    '<svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>'
+    '<svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/>'
+    '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+)
+THEME_BUTTON_SCRIPT = """
+(function () {
+  var root = document.documentElement, btn = document.getElementById("theme-btn"), bar = document.getElementById("theme-color");
+  function show() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    if (btn) { btn.setAttribute("aria-pressed", dark ? "true" : "false"); btn.setAttribute("aria-label", dark ? "Light mode" : "Dark mode"); }
+    if (bar) bar.setAttribute("content", dark ? "#071631" : "#ffffff");
+  }
+  show();
+  if (btn) btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") !== "dark";
+    root.setAttribute("data-theme", dark ? "dark" : "light");
+    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
+    show();
+  });
+})();
+"""
+
+
 MENU_SCRIPT = """
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
@@ -119,7 +219,7 @@ MENU_SCRIPT = """
     if (open) { var a = menu.querySelector("a.active") || menu.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
     else btn.focus({ preventScroll: true });
   }
-  btn.addEventListener("click", function () { set(true); });
+  btn.addEventListener("click", function () { set(!root.classList.contains("menu-open")); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
   // tap anywhere outside the half-screen menu to close it
   document.addEventListener("click", function (e) {
@@ -136,7 +236,8 @@ SWIPE_SCRIPT = """
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
   var pages = %s;
   var path = location.pathname, here = -1;
-  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
+  var best = 0;  // the longest matching menu entry wins; posts and lessons count as their menu page
+  pages.forEach(function (p, i) { if ((path === p || (p !== "/" && path.indexOf(p) === 0)) && p.length > best) { here = i; best = p.length; } });
   if (here < 0) return;  // e.g. the "page not found" page
   var x0, y0, t0, ok;
   function scrollsSideways(el) {
@@ -170,7 +271,20 @@ SWIPE_SCRIPT = """
   // coming back with the Back button: undo the slide-out
   addEventListener("pageshow", function () { var m = document.querySelector("main"); if (m) m.classList.remove("swipe-next", "swipe-prev"); });
 })();
-"""  # filled in at build time with the menu order (incl. RPT Calculator), see layout()
+"""  # filled in at build time with the menu order, see swipe_pages()
+
+
+def swipe_pages():
+    """Phone swipe order = the menu as people see it (top_items), drop-downs opened in place, so swiping always
+    follows the menu, even when entries are added (Butch 2026-11-27: "Swipe functions do not follow the menu").
+    Hidden pages are never in the menu, so swipe never leads to them."""
+    out = []
+    for a, b in top_items():
+        for href, _ in (b if isinstance(b, list) else [(a, b)]):
+            # left out of swipe (Butch 2026-11-27): the ALTOS demo, then the book, About and Contact
+            if href.startswith("/") and "#" not in href and href not in (DEMO_URL, BOOK_URL, "/about/", "/contact/") and href not in out:
+                out.append(href)
+    return out
 
 
 
@@ -228,16 +342,22 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             # Never on the 404 page (active is None): AdSense allows no ads on error pages.
             t.script(src=f"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE['adsense_client']}",
                      crossorigin="anonymous", **{"async": "async"}) if SITE.get("adsense_client") and active is not None else None,
-            # paint the phone's browser bars in the top bar's navy, so the site looks full-screen
-            t.meta(name="theme-color", content="#f3f6fc", media="(prefers-color-scheme: light)"),
-            t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
+            # light (white) by default, even on a phone or computer set to dark; dark only when the visitor picked it
+            # with the sun/moon button, which is remembered on that device (Butch 2026-11-27)
+            t.script(Raw(THEME_HEAD_SCRIPT)),
+            # paint the phone's browser bars like the page: white, or navy in dark mode (the button script updates it)
+            t.meta(name="theme-color", content="#ffffff", id="theme-color"),
             t.title(page_title),
-            # https://aumahinay.dev is the only address: test copies on *.pages.dev and plain http jump to it
-            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            # https://aumahinay.dev is the only address: test copies on *.pages.dev, www. and plain http jump to it
+            t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || location.hostname === "www.{SITE["domain"]}" || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
+            # links to a spot on a page (/#altos, /blog/#cat-finance, "In this article") land on that spot even when
+            # pictures and fonts load later and push it down; stops as soon as the visitor scrolls or taps (Butch 2026-11-24)
+            t.script(Raw(ANCHOR_SCRIPT)),
             t.link(rel="alternate", type="application/rss+xml", title=f"{SITE['short_name']}: new posts and lessons", href="/feed.xml"),
             t.link(rel="canonical", href=f"https://{SITE['domain']}{url}") if url else None,
             t.meta(name="description", content=description or SITE["tagline"]),
-            t.meta(name="robots", content="noindex") if active is None else None,  # the 404 page
+            # the 404 page, and pages Google can't read as text (AdSense "low-value content", Butch 2026-11-20)
+            t.meta(name="robots", content="noindex") if active is None or url in NOINDEX_URLS else None,
             t.script(Raw(person_json_ld()), type="application/ld+json") if active == "/" else None,
             t.script(Raw(json.dumps(json_ld, ensure_ascii=False).replace("</", "<\\/")), type="application/ld+json") if json_ld else None,
             # link previews on Facebook, Messenger, Viber, LinkedIn and X
@@ -264,12 +384,20 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
         t.body(
             t.header(
                 t.div(
-                    t.button(MENU_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
-                             aria_controls="site-menu", aria_expanded="false"),
-                    t.nav(
-                        [t.a(label, href=href, class_="active" if href == active else None, aria_current="page" if href == active else None)
-                         for href, label in menu_items()],
-                        id="site-menu", aria_label="Main menu",
+                    # name and tagline at the left of the top bar, as in the downloaded pattern (Butch 2026-11-23)
+                    t.a(t.span(SITE["short_name"], class_="bn"), t.span(SITE["tagline_short"], class_="bt"),
+                        href="/", class_="brand-line", aria_label=f"{SITE['short_name']}, home"),
+                    top_nav(active),
+                    t.button(THEME_ICONS, type="button", id="theme-btn", class_="theme-btn", aria_label="Dark mode", aria_pressed="false",
+                             title="Light or dark mode"),
+                    # phones and tablets (Butch 2026-11-23, mobile pattern file): a second line in the top bar with a round
+                    # menu button beside the page's label; it opens a small rounded card and turns into a check mark
+                    t.div(
+                        t.button(MENU_ICON, CLOSE_ICON, type="button", id="menu-open", class_="menu-btn", aria_label="Open menu",
+                                 aria_controls="site-menu", aria_expanded="false"),
+                        t.span(page_label(active), class_="page-label"),
+                        t.nav(phone_menu(active), id="site-menu", aria_label="Main menu"),
+                        class_="phone-row",
                     ),
                     class_="wrap",
                 ),
@@ -277,17 +405,34 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             ),
             t.main(t.div(body, class_="wrap")),
             # small footer at the bottom of every page: "Built in Python" + Privacy Policy link (Butch 2026-11-10)
-            t.footer(t.div(t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
-                                  " · ",
-                                  t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
-                                  class_="legal-links"),
-                           t.span("Built in Python", class_="built"),  # below the Privacy Policy line (Butch 2026-11-12)
+            # footer: the disclaimer in a box, then the copyright and policy links (Butch 2026-11-23, downloaded pattern)
+            t.footer(t.div(
+                           t.p(t.b("Disclaimer: "), "All book chapters, articles, calculators, code samples and study notes on ",
+                               t.b(SITE["domain"]), " are written and published by Ambrosio U. Mahinay strictly in his "
+                               "personal capacity, outside official working hours, for educational and informational "
+                               "purposes. Content reflects the personal views and independent technical work of the "
+                               "author and does not constitute an official government issuance, legal advice, a formal "
+                               "tax assessment, or an endorsement by any Local Government Unit (LGU), the Bureau of Local "
+                               "Government Finance (BLGF), the Commission on Audit (COA) or any government agency. "
+                               "Always consult your local treasurer's office or qualified professionals for official "
+                               "transactions. ", t.a("Full disclaimer", href="/disclaimer/"),
+                               class_="disclaimer-box"),
+                           t.div(
+                               t.span(f"© {ph_today()[:4]} Ambrosio U. Mahinay", class_="copy"),
+                               t.span(t.a("Privacy Policy", href="/privacy/", aria_current="page" if active == "/privacy/" else None),
+                                      t.a("Terms of Use", href="/terms/", aria_current="page" if active == "/terms/" else None),
+                                      t.a("Disclaimer", href="/disclaimer/", aria_current="page" if active == "/disclaimer/" else None),
+                                      t.span("Built in Python", class_="built"),
+                                      class_="legal-links"),
+                               class_="foot-row"),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
-            t.script(Raw(SWIPE_SCRIPT % json.dumps([href for href, _ in menu_items() if href not in ("/contact/", "/privacy/", "/terms/")]))),
+            t.script(Raw(THEME_BUTTON_SCRIPT)),
+            t.script(Raw(SWIPE_SCRIPT % json.dumps(swipe_pages()))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
+        **{"data-theme": "light"},
     )
     return "<!doctype html>\n" + doc
 
@@ -333,25 +478,13 @@ def cover_img(class_):
     return t.img(src=asset_url("altos-cover.jpg"), alt=f"Cover of {ALTOS['book']['title']}", class_=class_, width="600", height="900")
 
 
-def altos_feature_card():
-    return t.div(
-        t.div(t.img(src=asset_url("altos-screen.jpg"), alt="The ALTOS sign-in page", class_="feature-shot", width="1600", height="1001", loading="lazy"), class_="feature-art wide"),
-        t.div(
-            t.p(ALTOS["where"], class_="eyebrow"),
-            t.h3(t.span(wordmark(), class_="wordmark"), " ", ALTOS["full_name"]),
-            tag_list(ALTOS["stack"]),
-            t.div(t.a("Explore ALTOS →", href="/projects/", class_="btn white"), class_="foot"),
-            class_="feature-body",
-        ),
-        class_="card feature",
-    )
-
-
 def subsystem_node(sub, summary=True):
     return t.div(
         t.div(t.span(sub["code"], class_="code"), t.span(sub["status"], class_="status" if sub["status"] == "Planned" else "status live"), class_="node-head"),
         t.p(sub["summary"]) if summary else None,
         t.div(sub["movement"], class_="forms"),
+        # the whole box opens that officer's side of the demo (Butch 2026-11-20: Home as clickable as possible)
+        t.a("Open it in the demo →", href=DEMO_URL + ("#do-home" if "Disbursement" in sub["code"] else "#col-home"), class_="go stretch"),
         class_="node child",
     )
 
@@ -361,8 +494,9 @@ def family():
     return t.div(
         t.div(
             t.div(t.span(t.span(wordmark(), class_="wordmark"), class_="code"), class_="node-head"),
-            t.h3(ALTOS["full_name"]),
+            # full name left out: the ALTOS box below shows it (no duplicates, Butch 2026-11-20)
             t.p("Collect, Disburse and Report in one database, with the ALTOS Framework built in."),
+            t.a("Try the demo →", href=DEMO_URL, class_="go stretch"),
             class_="node mother",
         ),
         t.div(class_="branch", aria_hidden="true"),
@@ -404,6 +538,24 @@ def section_head(title, link_text, href):
     return t.div(t.h2(title), t.a(f"{link_text} →", href=href, class_="more"), class_="section-head")
 
 
+def kicked(kicker, head):
+    """Small orange label above a section heading (Butch 2026-11-23, downloaded pattern)."""
+    return t.div(t.p(kicker, class_="eyebrow"), head, class_="kick")
+
+
+HERO_ART = Raw(
+    '<div class="home-art" aria-hidden="true"><div class="art-in">'
+    '<div class="art-bars"><span class="peso">₱</span><i></i><i></i><i></i></div>'
+    '<div class="art-doc"><i></i><i></i><i></i><i></i></div><span class="art-arrow">→</span>'
+    '<div class="art-code"><span class="dots"><i></i><i></i><i></i></span>'
+    '<pre><b>def</b> <em>compute_rpt</em>(av):\n    basic = av * <u>0.01</u>\n    sef = av * <u>0.01</u>\n    <b>return</b> basic + sef</pre>'
+    '</div></div></div>')
+
+
+# the three guides named in Butch's Doc "aumahinay.dev Updated Site Preview" (2026-11-24)
+ESSENTIAL_GUIDES = ["how-to-use-the-rpt-calculator", "why-i-built-altos", "altos-framework-legality-first"]
+
+
 def home():
     """Home: what the site offers (blog, free Python lessons, ALTOS), the newest writing first,
     then topics, lessons, the project and a short note about the author (Butch 2026-11-09:
@@ -411,108 +563,121 @@ def home():
     posts = sorted(live_posts(), key=post_day, reverse=True)
     lessons = [x for x in LESSONS if lesson_is_live(x)]
     topics = [(key, label, sum(b["category"] == key for b in posts)) for key, label, _ in BLOG_CATEGORIES]
+    # cornerstone posts picked by hand; a scheduled one shows only once it is live
+    guides = [b for slug in ESSENTIAL_GUIDES for b in posts if b["slug"] == slug]
     topic_text = {
         "software": "Building ALTOS, Python, and software that keeps public money accountable.",
         "finance": "Stand-alone posts on public money: local taxes, tools like the RPT calculator, and the rules behind them.",
         "treasury": "Everyday work inside a local treasury: taxes, receipts, budgets, checks, year-end and audits.",
         "personal": "The farm, the province, and life beyond the office.",
-        "security": "A plain-language series on staying safe online: passwords, scams, home networks and ransomware.",
-        "data": "A series on data analytics, from asking the right question to acting on the answer.",
-        "bi": "A series on business intelligence: data models, pipelines and dashboards that keep answers coming.",
-        "pm": "A series on running projects in a local treasury, from the first assignment to the handover.",
+        "learn": "Short series on cybersecurity, data analytics, business intelligence and project management, "
+                 "in plain words for people who work in local government.",
         "pa": "Graduate-level public administration ideas, explained plainly and tested against local government work.",
     }
     return part(
         "Home", "/",
+        # hero as in the downloaded desktop/phone pattern (Butch 2026-11-23): words at the left, two buttons,
+        # a small treasury-and-code picture at the right (below the words on phones)
         t.div(
             t.div(
-                t.div(t.h1(t.span("Where ", t.span("public finance", class_="k1"), " meets", class_="l1"), " ", t.span("Python", class_="l2")), class_="hero-name"),
-                t.img(src=asset_url("home-banner.svg"), alt="Coins, a rising bar chart and a receipt flowing into "
-                      "a short Python program that adds up the fees", width="1200", height="470", class_="hero-art"),
+                t.p("Public finance & civic tech", class_="eyebrow"),
+                t.h1("Where public finance meets Python"),
                 t.p("Plain-language writing on local treasury work and public finance, free tutorials (Python "
-                    "for treasury staff and Civil Service exam vocabulary), a free real property tax calculator, "
+                    "for treasury staff and English exam vocabulary), a free real property tax calculator, "
                     "and notes from building ALTOS. Everything here, this website included, is the work of a "
                     "treasury worker who builds software and websites.",
                     class_="lead"),
                 t.div(
-                    t.a("RPT Calculator", href=RPT_URL, class_="btn ghost"),
-                    t.a("Tutorials", href="/tutorials/", class_="btn ghost"),
-                    t.a("Blog", href="/blog/", class_="btn ghost"),
+                    t.a("Open RPT Calculator →", href=RPT_URL, class_="btn blue"),
+                    t.a("Explore ALTOS", href=ALTOS_URL, class_="btn outline"),
                     class_="btns",
                 ),
-                class_="hero-text",
+                class_="home-copy",
             ),
-            class_="hero",
+            HERO_ART,
+            class_="home-hero",
         ),
-        t.h2("What you'll find here"),
+        # "Start here" (Butch 2026-11-23, AdSense blueprint): three ways in, replacing "What you'll find here"
+        # and the separate "Free tool" box, so nothing on Home is listed twice
+        kicked("Quick entry", t.h2("Start Here")),
         t.div(
             [
-                t.a(t.h3(title), t.p(text), t.span(go, class_="go"), href=href, class_="card focus")
-                for title, text, go, href in (
-                    ("Blog",
-                     "Stories and notes on public finance, treasury work, cybersecurity and building software.",
-                     "Read the blog →", "/blog/"),
-                    ("Tutorials",
-                     "Free, beginner-friendly lessons: Python for treasury work and Civil Service exam "
-                     "vocabulary with practice questions.", "Start learning →", "/tutorials/"),
-                    *([("Treasury Study Notes",
-                        "Local treasury work in plain words: revenue, taxes, collections and payments, "
-                        "each note with a short quiz.",
-                        "Read the notes →", NOTES_INFO["url"])] if live_notes() else []),  # Butch 2026-11-14: right after Tutorials
-                    ("ALTOS",
-                     "The Automated Local Treasury Operations System, a working treasury system for "
-                     "Philippine local treasuries, written in Python.", "See the project →", "/projects/"),
+                t.div(t.p(kicker, class_="eyebrow"), t.h3(title), t.p(text),
+                      t.p([t.a(go, href=href) for go, href in links], class_="go-links"), class_="card start")
+                for kicker, title, text, links in (
+                    ("Free tool", "Real Property Tax Calculator",
+                     "Work out the basic real property tax and the Special Education Fund on any assessed value, "
+                     "with the discount or interest, and see how the tax is shared.",
+                     [("Open the calculator →", RPT_URL)]),
+                    ("Learn and practice", "Study Notes and Tutorials",
+                     "Local treasury work in plain words, each note with a short quiz, plus beginner-friendly "
+                     "Python lessons and English vocabulary for exams.",
+                     [*([("Read the study notes →", NOTES_INFO["url"])] if live_notes() else []),
+                      ("Start the tutorials →", "/tutorials/"),
+                      # English vocabulary link (Butch 2026-11-23: "add in the learn & practice the english vocabulary")
+                      *([("Practice English vocabulary →", f"/tutorials/#{VOCAB['slug']}")] if live_modules() else [])]),
+                    ("The project", "ALTOS and the Book",
+                     "The Automated Local Treasury Operations System, a browser demo with made-up data, and the "
+                     "book behind it, 360° Accountability.",
+                     [("Explore ALTOS →", ALTOS_URL), ("Try the demo →", DEMO_URL), ("Read the book →", BOOK_URL)]),
                 )
             ],
-            class_="grid three find",
+            class_="grid three start-here",
         ),
-        t.h2("Free tool"),
+        *([kicked("Cornerstone reading", t.h2("Essential Guides")),
+           t.div([t.a(t.span(category_label(p), t.span(f"{reading_minutes(p)} min read", class_="muted")),
+                      t.b(p["title"]), href=post_url(p), class_="related-card") for p in guides],
+                 class_="related guides")] if guides else []),
+        kicked("Writing", section_head("Latest posts", f"All {len(posts)} posts", "/blog/")),
+        t.div([post_card(b) for b in [p for p in posts if p not in guides][:3]], class_="post-list home-posts"),
+        # every topic in one box, as buttons with their post counts (downloaded pattern)
         t.div(
-            t.a(t.h3("Real Property Tax Calculator"),
-                t.p("Work out the basic real property tax and the Special Education Fund on any assessed value, "
-                    "with the discount or interest, and see how much goes to the province, municipality, "
-                    "barangay and school boards."),
-                t.span("Open the calculator →", class_="go"), href=RPT_URL, class_="card focus tool"),
-            class_="grid one",
+            t.div(t.div(t.h2("Browse by topic"), t.p("Each topic opens the blog with only its posts.", class_="muted")),
+                  t.span(f"{len(posts)} posts", class_="badge checked"), class_="topic-top"),
+            t.div([t.a(t.b(label), t.span(f"{n} post{'s' if n != 1 else ''} →"), href=f"/blog/#cat-{key}", class_="topic-pill",
+                       title=topic_text.get(key)) for key, label, n in topics if n], class_="topic-pills"),
+            class_="topic-box",
         ),
-        section_head("Latest posts", f"All {len(posts)} posts", "/blog/"),
-        t.div([post_card(b) for b in posts[:4]], class_="post-list home-posts"),
-        t.h2("Browse by topic"),
-        t.div(
-            [t.a(t.h3(label), t.p(topic_text.get(key, "")), t.span(f"{n} post{'s' if n != 1 else ''} →", class_="go"),
-                 href=f"/blog/#cat-{key}", class_="card focus topic") for key, label, n in topics if n],
-            class_="grid three",
-        ),
-        section_head(TUTORIAL["title"], "All lessons", "/tutorials/"),
+        kicked("Learn", section_head(TUTORIAL["title"], "All lessons", "/tutorials/")),
         t.div([lesson_card(x, mini=True) for x in lessons[::-1][:3]], class_="grid three"),
-        section_head("Project", "All about ALTOS", "/projects/"),
-        t.div(altos_feature_card(), class_="grid one"),
+        *altos_section(),
         t.h2("About the author"),
-        author_card(),
+        author_card(contact=True),
         description="Plain-language writing on Philippine local treasury work and public finance, free Python "
-                    "lessons, Civil Service exam vocabulary and a real property tax calculator.",
+                    "lessons, English exam vocabulary and a real property tax calculator.",
     )
 
 
-def author_card():
+def author_head(h1=False):
+    """Ringed photo, name and the three roles one per line, then a thin line under them. The same head on the
+    About page, the author card and the side author box (Butch 2026-11-24: "for uniformity")."""
+    name = "Ambrosio “Butch” U. Mahinay, MPA"
+    photo = t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400",
+                  class_="hero-photo author-photo", loading=None if h1 else "lazy")
+    return t.div(
+        photo if h1 else t.a(photo, href="/about/", aria_label="About Ambrosio “Butch” U. Mahinay"),
+        t.div(
+            t.h1(name, class_="author-name") if h1 else t.p(t.a(name, href="/about/"), class_="author-name"),
+            t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
+        ),
+        class_="author-top",
+    )
+
+
+def author_card(contact=False):
     """Short author box: on Home and at the end of every blog post. Matches the About page (Butch 2026-11-10:
     "be consistent"): same name, same violet roles line and the same facts, in third person ("he", Butch 2026-11-10) as the About intro."""
     return t.div(
-        t.div(
-            t.img(src=asset_url("hero-photo.jpg"), alt="Ambrosio “Butch” U. Mahinay", width="400", height="400", class_="hero-photo author-photo", loading="lazy"),
-            t.div(
-                t.p("Ambrosio “Butch” U. Mahinay, MPA", class_="author-name"),
-                t.p([t.span(r) for r in ABOUT["roles"].split(" · ")], class_="author-roles"),  # one role per line
-            ),
-            class_="author-top",
-        ),
+        author_head(),
         t.p("He is a public administration practitioner, author, and self-taught software developer in Quezon "
             "Province, Philippines, with over 15 years in government service, more than 13 of them in local treasury "
             "work. He has earned 7 Google Professional Certificates and 3 Specializations on Coursera. "
             "He writes, teaches and builds software in his personal capacity, outside official working hours.",
             class_="author-bio"),
-        t.p(t.a("Full profile", href="/about/"), t.a("Contact", href="/contact/"),
-            t.a("Privacy Policy", href="/privacy/"), class_="author-links"),
+        # Contact and Privacy Policy left out: the menu and the footer already have them (Butch 2026-11-20)
+        # Home also gets "Get in touch" (Butch's Doc, 2026-11-24); posts keep only Full profile
+        t.p(t.a("Full profile", href="/about/"), t.a("Get in touch", href="/contact/") if contact else None,
+            class_="author-links"),
         class_="card author",
     )
 
@@ -535,7 +700,7 @@ def contact():
                  "probably wondering too, and I may answer it in a future post."),
             t.li(t.b("A correction. "), "Laws, rates and procedures change. If you spot an error or an outdated "
                  "rule, tell me and I will check it and fix it."),
-            t.li(t.b("The ALTOS book. "), "Requests to read the full book and feedback on the preview."),
+            t.li(t.b("The ALTOS book. "), "Questions and feedback on any chapter of the book."),
             t.li(t.b("Talks and trainings. "), "Invitations to speak about treasury work, Python for government "
                  "offices or staying safe online."),
             class_="reasons",
@@ -551,12 +716,38 @@ def contact():
     )
 
 
-def projects():
+# where each Home ALTOS box leads in the demo (/tools/altos-demo/#<role>-<screen>)
+MOVEMENT_DEMO = {"Collect": "#col-issue", "Disburse": "#do-prepare", "Report": "#lo-craaf"}
+FEATURE_DEMO = {"Built from the forms": "#col-issue", "Rules, not just records": "#col-issue",
+                "Deadlines that count down": "#lo-craaf", "The sealed ledger": "#sys-log",
+                "Security Center": "#sys-home", "Correction without concealment": "#sys-log",
+                "Turnover built in": "#sys-home", "Data Analytics and Insights": "#sys-dashboard"}
+
+
+def principle_url(n):
+    """Principle n's blog post when it is live, else the series page (never a link to an unpublished post)."""
+    for label, _, b, live in series_posts():
+        if label == f"Principle {n}":
+            return post_url(b) if live else SERIES_URL
+    return SERIES_URL
+
+
+ALTOS_URL = "/#altos"  # the ALTOS section of Home (was the Projects page, /projects/, until 2026-11-20)
+
+
+def altos_section():
+    """ALTOS on Home (Butch 2026-11-20: the Projects page is no longer needed; its content moved here).
+    /projects/ now redirects to /#altos."""
     book = ALTOS["book"]
-    return part(
-        "Projects", "/projects/",
-        t.p("Software", class_="eyebrow"),
-        photo_title("Projects"),
+    return [
+        t.h2("Project: ALTOS", id="altos", class_="altos-anchor"),
+        # after pictures above it load, land on the heading again (old /projects/ links come here)
+        # Explore ALTOS jumps there at once, not a slow smooth scroll down Home (Butch 2026-11-24: "direct it immediately")
+        t.script(Raw('(function(){var go=function(){document.getElementById("altos").scrollIntoView({behavior:"instant"});};'
+                     'addEventListener("load",function(){if(location.hash==="#altos")go();});'
+                     'document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(\'a[href="/#altos"],a[href="#altos"]\');'
+                     'if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.button)return;e.preventDefault();'
+                     'if(location.hash!=="#altos")history.pushState(null,"","#altos");go();});})();')),
         t.p(
             "ALTOS is the mother system. Its two subsystems are now ready: the Treasury Collection System for collections "
             "and the Treasury Disbursement System for disbursements, each with its own reports.",
@@ -566,145 +757,275 @@ def projects():
         t.h2("ALTOS, the mother system"),
         t.div(
             t.div(
-                t.p("Mother system", class_="eyebrow"),
                 t.p(wordmark(), class_="wordmark big-wordmark", aria_label="ALTOS"),  # a p, so the page keeps one h1
                 t.p(ALTOS["full_name"], class_="subtitle"),
                 t.p(ALTOS["summary"], class_="lead"),
                 tag_list(ALTOS["stack"]),
+                # no second demo button (the Home hero has "ALTOS Demo"); the whole box opens the demo instead
+                t.a("", href=DEMO_URL, class_="stretch", aria_label="Try the ALTOS demo"),
             ),
             class_="altos-hero",
         ),
-        t.blockquote(t.p(ALTOS["principle"]), t.footer("The ALTOS principle")),
+        t.blockquote(t.p(ALTOS["principle"]), t.footer(t.a("The ALTOS principle →", href=SERIES_URL, class_="stretch"))),
         t.figure(
-            t.img(src=asset_url("altos-loop.png"), alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step.", width="1395", height="680", loading="lazy"),
-            t.figcaption("Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step."),
+            t.a(t.img(src=asset_url("altos-loop.png"), alt="The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. At the center: 360° accountability, a named officer at every step.", width="1395", height="680", loading="lazy"),
+                href=BOOK.chapter_url(1), aria_label="Read Chapter 1 of the ALTOS book, where this figure comes from"),
+            t.figcaption("Figure 1.1 — The ALTOS loop. The three are not a line but a loop: three movements, one accountable officer at each step. ",
+                         t.a("Read Chapter 1 of the book →", href=BOOK.chapter_url(1))),
             class_="screenshot diagram",
         ),
         t.h2("Three movements of public money"),
         t.p("Every transaction in a local treasury belongs to one of three movements. ALTOS follows each one, with a named officer answerable at every step.", class_="muted"),
         t.div(
-            [t.div(t.h3(name), t.p(desc), t.div(forms, class_="forms"), class_="card") for name, desc, forms in ALTOS["movements"]],
+            [t.div(t.h3(name), t.p(desc), t.div(forms, class_="forms"),
+                   t.a("See it in the demo →", href=DEMO_URL + MOVEMENT_DEMO.get(name, ""), class_="go stretch"), class_="card")
+             for name, desc, forms in ALTOS["movements"]],
             class_="grid three",
         ),
         t.h2("What ALTOS does"),
-        t.div([t.div(t.h3(title), t.p(desc), class_="card") for title, desc in ALTOS["features"]], class_="grid four"),
-        t.h2("The ALTOS Framework"),
+        t.div([t.div(t.h3(title), t.p(desc), t.a("See it in the demo →", href=DEMO_URL + FEATURE_DEMO.get(title, ""), class_="go stretch"), class_="card")
+               for title, desc in ALTOS["features"]], class_="grid four"),
+        section_head("The ALTOS Framework", "Read the series", SERIES_URL),
         t.p("Ten principles for Philippine public fiscal administration. ALTOS checks its own records against each one in a quarterly self-assessment.", class_="muted"),
-        t.ol([t.li(t.b(name), t.span(desc)) for name, desc in ALTOS["principles"]], class_="principles"),
+        # each principle opens its blog post once that part is live, otherwise the series page
+        t.ol([t.li(t.b(t.a(name, href=principle_url(i), class_="stretch")), t.span(desc))
+              for i, (name, desc) in enumerate(ALTOS["principles"], 1)], class_="principles"),
         t.h2("The book"),
         t.div(
-            t.a(cover_img("book-cover"), href=BOOK_URL, aria_label="Read a preview of the ALTOS book", class_="book-link"),
+            t.a(cover_img("book-cover"), href=BOOK_URL, aria_label="Read the ALTOS book", class_="book-link"),
             t.div(
                 t.span(book["status"], class_="badge spec"),
                 t.h3(book["title"]),
                 t.p(book["subtitle"], t.br(), f"{book['pages']} pages", class_="muted"),
                 t.p(book["blurb"]),
-                t.a("Read a preview →", href=BOOK_URL, class_="btn white"),
+                t.a("Read the book →", href=BOOK_URL, class_="btn white"),
             ),
             class_="card book",
         ),
-        t.p(t.em(ALTOS["motto"]), class_="motto"),
-        description=f"{ALTOS['name']}, the {ALTOS['full_name']}: software for Philippine local treasuries that "
-                    "handles collections, official receipts, the RCD, disbursements, vouchers, checks and reports.",
-        seo_title=f"ALTOS: Treasury Software for Philippine LGUs · {SITE['short_name']}",
-    )
+        t.p(t.a(t.em(ALTOS["motto"]), href=BOOK_URL), class_="motto"),
+    ]
 
 
-BOOK_PREVIEW_PAGES = 20  # cover, title, copyright, contents, Part I, Chapters 1-3 and start of Chapter 4 = PDF pp. 1-4, 9-24 (preface left out at Butch's request) (static/book/page-NN.jpg)
-BOOK_URL = "/projects/altos-book/"
-# visitors ask by email; Butch approves by sharing the Drive PDF with them (Viewer, no download/print/copy)
-BOOK_FIRST_DAYS, BOOK_MORE_DAYS = 3, 2  # reading time per approved request (Butch, 2026-11-04)
-BOOK_REQUEST_MAILTO = (f"mailto:{SITE['email']}?subject=" + quote("Request: full ALTOS book") + "&body=" + quote(
-    "Hello Butch,\n\nI would like to read the full book, 360° Accountability: The ALTOS Principles.\n\n"
-    "Name:\nGoogle (Gmail) address to share it with:\nOffice or school:\nWhy I want to read it:\nFirst request or more time:\n\nThank you."))
+BOOK_URL = "/book/"
+# Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
+# ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
+NOINDEX_URLS = {DEMO_URL}  # the book is text now (Butch 2026-11-23), so Google may read it
 
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
 # Saving is made harder (no download link, no right-click or long-press save, no dragging),
 # but no website can block the phone's or computer's own screenshot keys.
-BOOK_SCRIPT = """
+LOOP_ALT = ("The ALTOS loop: Collect (OR, RCD, deposit) leads to Disburse (voucher, check, cash advance), which leads to "
+            "Report (RAAF, CRAAF, RCI, BRS, SRE), which sets the targets and budgets for the next cycle of collections. "
+            "At the center: 360° accountability, a named officer at every step.")
+# read online only: no right-click menu, copying or text selection on the book text (casual protection only)
+BOOK_TEXT_SCRIPT = """
 (function () {
-  var r = document.getElementById("reader");
-  if (!r) return;
-  var pages = JSON.parse(r.getAttribute("data-pages")), i = 0;
-  var img = r.querySelector(".page img"), counts = r.querySelectorAll(".count");
-  var prevs = r.querySelectorAll(".prev"), nexts = r.querySelectorAll(".next");
-  function each(list, f) { for (var k = 0; k < list.length; k++) f(list[k]); }
-  function show(n) {
-    i = Math.max(0, Math.min(pages.length - 1, n));
-    img.src = pages[i];
-    img.alt = "Page " + (i + 1) + " of the preview";
-    each(counts, function (c) { c.textContent = "Page " + (i + 1) + " of " + pages.length; });
-    each(prevs, function (b) { b.disabled = i === 0; });
-    each(nexts, function (b) { b.disabled = i === pages.length - 1; });
-    if (i + 1 < pages.length) (new Image()).src = pages[i + 1];  // load the next page ahead
-  }
-  function turn(d) {  // a new page starts at its top line
-    show(i + d);
-    if (r.getBoundingClientRect().top < 0) r.scrollIntoView({ block: "start" });
-  }
-  each(prevs, function (b) { b.addEventListener("click", function () { turn(-1); }); });
-  each(nexts, function (b) { b.addEventListener("click", function () { turn(1); }); });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowRight") show(i + 1);
-    if (e.key === "ArrowLeft") show(i - 1);
+  // The book is read online only (Butch 2026-11-23): no download, print, save or copy. Google still reads the text.
+  var el = document.querySelector('.book-text') || document.querySelector('.book-col');
+  if (!el) return;
+  ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (k) {
+    el.addEventListener(k, function (e) { e.preventDefault(); });
   });
-  var x0, y0;
-  var stage = r.querySelector(".page");
-  stage.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
-  stage.addEventListener("touchend", function (e) {
-    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > 2 * Math.abs(dy)) turn(dx < 0 ? 1 : -1);
-  }, { passive: true });
-  r.addEventListener("contextmenu", function (e) { e.preventDefault(); });
-  r.addEventListener("dragstart", function (e) { e.preventDefault(); });
-  show(0);
+  document.addEventListener('contextmenu', function (e) { if (e.target.closest('.book-col')) e.preventDefault(); });
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && (k === 's' || k === 'p' || k === 'c' || k === 'a' || k === 'x')) e.preventDefault();
+  });
+  el.querySelectorAll('img').forEach(function (i) { i.setAttribute('draggable', 'false'); });
 })();
 """
 
 
-def book_reader():
-    book = ALTOS["book"]
-    pages = [asset_url(f"book/page-{n:02d}.jpg") for n in range(1, BOOK_PREVIEW_PAGES + 1)]
+def book_rich(rich):
+    out = []
+    for style, text in rich:
+        out.append(t.strong(text) if style == "b" else t.em(text) if style == "i" else text)
+    return out
+
+
+def book_block(b):
+    k = b["t"]
+    if k == "h":
+        return t.h2(b["text"], id=heading_id(b["text"]))
+    if k == "p":
+        return t.p(book_rich(b["r"]))
+    if k in ("ul", "ol"):
+        items = [t.li(book_rich(it)) for it in b["items"]]
+        return t.ul(items) if k == "ul" else t.ol(items)
+    if k == "box":
+        label = b["label"].capitalize().replace("Altos", "ALTOS")
+        return t.aside(t.p(t.b(label + "."), " ", book_rich(b["r"])), class_="book-box")
+    if k == "table":
+        return t.div(t.table(t.thead(t.tr([t.th(h) for h in b["head"]])),
+                             t.tbody([t.tr([t.td(book_rich(c), data_label=h) for h, c in zip(b["head"], row)]) for row in b["rows"]])),
+                     class_="table-wrap")
+    if k == "fig":
+        return t.figure(t.img(src=asset_url("altos-loop.png"), alt=LOOP_ALT, width="1395", height="680", loading="lazy"),
+                        t.figcaption("Figure 1.1. The ALTOS loop: three movements, one accountable officer at each step."),
+                        class_="screenshot diagram")
+    if k == "ref":
+        return t.li(book_rich(b["r"]))
+    raise ValueError(k)
+
+
+def book_blocks(blocks):
+    """Book blocks to HTML; consecutive references become one list."""
+    out, refs = [], []
+    for b in blocks:
+        if b["t"] == "ref":
+            refs.append(book_block(b))
+            continue
+        if refs:
+            out.append(t.ul(refs, class_="refs")); refs = []
+        out.append(book_block(b))
+    if refs:
+        out.append(t.ul(refs, class_="refs"))
+    return out
+
+
+def book_pages():
+    """Every web page of the book in reading order: (url, label, title)."""
+    pages = [(BOOK.chapter_url(c["n"]), f"Chapter {c['n']}", c["title"]) for c in BOOK.CHAPTERS]
+    return pages + [(BOOK.GLOSSARY_URL, "Glossary", "Glossary"), (BOOK.REFERENCES_URL, "References", "References"),
+                    (BOOK.AUTHOR_URL, "About the Author", "About the Author")]
+
+
+def book_nav(url):
+    pages = book_pages()
+    i = next(n for n, p in enumerate(pages) if p[0] == url)
+
+    def step(n, word, cls):
+        if not 0 <= n < len(pages):
+            return t.span()
+        u, label, title = pages[n]
+        return t.a(t.span(f"{word} · {label}", class_="muted"), t.b(title), href=u, class_=cls)
+
+    return t.nav(step(i - 1, "Previous", "newer"), step(i + 1, "Next", "older"), class_="post-steps book-steps",
+                 aria_label="Book pages")
+
+
+def book_crumbs(trail):
+    return t.nav(t.ol([t.li(t.a(label, href=href) if href else t.span(label, aria_current="page")) for label, href in trail]),
+                 class_="crumbs", aria_label="Breadcrumb")
+
+
+def book_home():
+    """The book's contents page: every part and chapter, each chapter a page of its own."""
+    b = ALTOS["book"]
     return part(
-        "ALTOS book preview", "/projects/",
-        t.a("← Back to Projects", href="/projects/", class_="crumb"),
-        t.p("Book preview", class_="eyebrow"),
-        t.h1(book["title"]),
-        t.p(f"{book['subtitle']} · {book['status']} · {book['pages']} pages. Read the first 20 pages here: the contents, Chapters 1 to 3 and the start of Chapter 4.", class_="lead"),
+        "360° Accountability", BOOK_URL,
         t.div(
+            book_crumbs([("Home", "/"), ("ALTOS", ALTOS_URL), ("The book", None)]),
             t.div(
-                t.button("← Previous", type="button", class_="btn prev"),
-                t.span(class_="count", aria_live="polite"),
-                t.button("Next →", type="button", class_="btn next"),
-                class_="controls",
+                cover_img("book-cover"),
+                t.div(
+                    t.p("The ALTOS principles · free to read online", class_="eyebrow"),
+                    t.h1(b["title"]),
+                    t.p(b["subtitle"], " · ", b["status"], class_="muted"),
+                    t.p(b["blurb"]),
+                    t.a("Start with Chapter 1 →", href=BOOK.chapter_url(1), class_="btn primary"),
+                ),
+                class_="book-head book-banner",
             ),
-            t.div(
-                t.img(src=pages[0], alt="Page 1 of the preview", width="900", height="1350", draggable="false"),
-                t.div(class_="shield"),  # sits on top of the page, so a long-press or right-click finds no picture to save
-                class_="page",
-            ),
-            t.div(
-                t.button("← Previous", type="button", class_="btn prev"),
-                t.span(class_="count"),
-                t.button("Next →", type="button", class_="btn next"),
-                class_="controls bottom",
-            ),
-            id="reader", class_="reader", data_pages=json.dumps(pages), data_noswipe="",
+            t.h2("Contents"),
+            [t.section(
+                t.h3(f"Part {num} · {name}"),
+                t.p(sub, class_="muted"),
+                t.ol([t.li(t.a(t.span(f"Chapter {c['n']}", class_="muted"), t.b(c["title"]), href=BOOK.chapter_url(c["n"])))
+                      for c in BOOK.CHAPTERS if c["n"] in rng], class_="book-toc"),
+                class_="book-part", id=f"part-{num.lower()}")
+             for num, name, sub, rng in BOOK.PARTS],
+            t.section(t.h3("At the back of the book"),
+                      t.ol(t.li(t.a(t.b("Glossary"), href=BOOK.GLOSSARY_URL)), t.li(t.a(t.b("References"), href=BOOK.REFERENCES_URL)),
+                           t.li(t.a(t.b("About the Author"), href=BOOK.AUTHOR_URL)),
+                           class_="book-toc"), class_="book-part"),
+            t.p("Read online only: the book cannot be downloaded, printed or copied. Please quote short parts with a link back. "
+                "Laws and circulars change: confirm the current text before relying on any rule described here.",
+                class_="muted note"),
+            t.script(Raw(BOOK_TEXT_SCRIPT)),  # same no-copy guard as the chapters
+            class_="blog-col book-col",
         ),
-        t.div(
-            t.h2("Want to read the whole book?"),
-            t.p(f"This is a preview of the 1st Edition. The full book has {book['pages']} pages. To read all of it, send a request. Once I approve it, "
-                "I'll share the full book with your Gmail address to read online only: no download, print or copy."),
-            t.p(f"Reading time: once your request is approved, you can read the whole book for {BOOK_FIRST_DAYS} days. "
-                f"Need more time? Send another request; each one after that gives you {BOOK_MORE_DAYS} more days. "
-                "Access ends automatically when the time is up. There is no limit on requests."),
-            t.a("Request the full book →", href=BOOK_REQUEST_MAILTO, class_="btn white"),
-            class_="reader-request",
-        ),
-        t.script(Raw(BOOK_SCRIPT)),
-        description=f"Read the first 20 pages of {book['title']}, a book by {SITE['name']}.",
-        seo_title=f"ALTOS Book Preview: 360° Accountability · {SITE['short_name']}",
+        description=f"Read {b['title']} by {SITE['name']} free online: fifteen chapters joining public administration "
+                    "theory with Philippine local treasury law and the lessons of building ALTOS.",
+        seo_title=f"360° Accountability: The ALTOS Book, Free to Read Online · {SITE['short_name']}",
         url=BOOK_URL,
+        json_ld={"@context": "https://schema.org", "@type": "Book", "name": b["title"], "alternativeHeadline": b["subtitle"],
+                 "author": {"@type": "Person", "name": SITE["name"]}, "bookEdition": b["status"], "inLanguage": "en",
+                 "url": f"https://{SITE['domain']}{BOOK_URL}"},
+    )
+
+
+def book_side(url):
+    """Every chapter in a list for the side column on computers, this one marked."""
+    rows = []
+    for u, label, title in book_pages():
+        inner = [t.span(label if label.startswith("Chapter") else "", class_="muted"), t.b(title)]
+        rows.append(t.li(t.span(inner, aria_current="page"), class_="here") if u == url else t.li(t.a(inner, href=u)))
+    return t.nav(t.p(t.a("The book", href=BOOK_URL), class_="eyebrow"), t.ol(rows, class_="side-chapters"),
+                 class_="side-box", aria_label="Chapters")
+
+
+def book_chapter(c):
+    num, name, _, _ = BOOK.part_of(c["n"])
+    url = BOOK.chapter_url(c["n"])
+    heads = [b["text"] for b in c["blocks"] if b["t"] == "h"]
+    minutes = max(1, round(BOOK.words(c) / 200))
+    title = f"Chapter {c['n']}: {c['title']}"
+    lead = BOOK.plain(next(b["r"] for b in c["blocks"] if b["t"] == "p"))
+    return part(
+        title, BOOK_URL,
+        # computers: chapter list at the left, the chapter at the right (downloaded book-reader pattern, Butch 2026-11-23)
+        t.div(
+            t.aside(book_side(url), class_="read-side", aria_label="Book chapters"),
+            t.div(
+                book_crumbs([("The book", BOOK_URL), (f"Part {num}", BOOK_URL + f"#part-{num.lower()}"), (f"Chapter {c['n']}", None)]),
+                t.article(
+                    t.p(f"Part {num} · {name}", class_="eyebrow"),
+                    t.h1(title),
+                    t.p("By ", t.a("Ambrosio “Butch” U. Mahinay, MPA", href="/about/"), f" · {minutes} min read", class_="byline"),
+                    t.details(t.summary("In this chapter"), t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+                              class_="toc", open=True) if len(heads) >= 3 else "",
+                    book_blocks(c["blocks"]),
+                    class_="post book-text",
+                ),
+                book_nav(url),
+                t.p(t.a("All chapters", href=BOOK_URL), " · From ", t.em(ALTOS["book"]["title"]), ", ", ALTOS["book"]["status"], ".",
+                    class_="muted note"),
+                t.script(Raw(BOOK_TEXT_SCRIPT)),
+                class_="blog-col book-col read-main",
+            ),
+            class_="read-grid side-left",
+        ),
+        description=lead if len(lead) <= 160 else lead[:157].rsplit(" ", 1)[0] + "…",
+        seo_title=f"{title} · 360° Accountability",
+        url=url,
+        json_ld=article_ld(title, lead, url, kind="Article"),
+    )
+
+
+def book_back(section, url, intro):
+    is_author = url == BOOK.AUTHOR_URL
+    return part(
+        section["title"], BOOK_URL,
+        t.div(
+            t.aside(book_side(url), class_="read-side", aria_label="Book chapters"),
+            t.div(
+                book_crumbs([("The book", BOOK_URL), (section["title"], None)]),
+                t.article(t.p("360° Accountability", class_="eyebrow"), t.h1(section["title"]),
+                          None if is_author else t.p(intro, class_="lead"),
+                          author_head() if is_author else None,  # same head as the About page (short version, Butch 2026-11-24)
+                          book_blocks(section["blocks"]),
+                          t.p(t.a("Full profile on the About page →", href="/about/")) if is_author else None,
+                          class_="post book-text"),
+                book_nav(url),
+                t.script(Raw(BOOK_TEXT_SCRIPT)),
+                class_="blog-col book-col read-main",
+            ),
+            class_="read-grid side-left",
+        ),
+        description=intro,
+        seo_title=f"{section['title']} · 360° Accountability",
+        url=url,
     )
 
 
@@ -776,7 +1097,8 @@ def note_page(n):
             t.p("✓ Last checked: " + NOTES_INFO["checked"] + " · against " + n.get("checked_against", "RA 7160 (Local Government Code) and its amendments"), class_="checked"),
             [note_block(b) for b in n["body"]],
             t.div(t.h3(ex_title), t.ol([t.li(s_) for s_ in steps]), t.p(t.b("Answer: "), ex_answer), class_="card example"),
-            t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") else None,
+            # a link to a blog post shows only once that post is live (no links to unpublished pages)
+            t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") and post_is_live(n["link"][2]) else None,
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
             practice_list(n["practice"]),
@@ -847,11 +1169,20 @@ def lesson_meta(x):
     return f"Lesson {x['number']} · {x['level']} · {x['minutes']} min"
 
 
+def short_month(text):
+    """'November 2026' -> 'Nov 2026'."""
+    month, _, year = text.partition(" ")
+    return f"{month[:3]} {year}".strip()
+
+
 def lesson_card(x, mini=False):
     open_ = SHOW_SCHEDULED or lesson_is_live(x)
     when = None if lesson_is_live(x) else t.span("Coming " + nice_date(x["publish_on"]) if x.get("publish_on") else "Coming soon", class_="badge soon")
     inner = [
-        t.div(t.span(f"Lesson {x['number']}", class_="badge"), when, t.span(f"{x['level']} · {x['minutes']} min", class_="muted"), class_="meta"),
+        t.div(t.span(f"Lesson {x['number']}", class_="badge"), when, t.span(f"{x['level']} · {x['minutes']} min", class_="muted"),
+              # "Checked Nov 2026" from LAST_CHECKED (Butch 2026-11-23, AdSense blueprint)
+              t.span("Checked " + short_month(LAST_CHECKED[x["number"]]), class_="badge checked") if LAST_CHECKED.get(x["number"]) and not mini else None,
+              class_="meta"),
         t.h3(x["title"]),
         None if mini else t.p(x["summary"]),
         None if mini else tag_list(x["topics"]),
@@ -934,6 +1265,39 @@ document.addEventListener("click", function (e) {
 """
 
 
+def glossary_id(g):
+    return "word-" + "".join(c if c.isalnum() else "-" for c in g["term"].lower())
+
+
+def glossary_card(g):
+    """One 'Words to know' entry: meaning, why it matters in treasury work, a real example and its output."""
+    lesson = next((x for x in LESSONS if x["number"] == g["lesson"]), None)
+    shown = lesson in visible_lessons()
+    python = g["term"] not in ("pip", "CSV")  # these two show a terminal command and a data file
+    code = highlight(g["code"]) if python else escape(g["code"], quote=False)
+    return t.div(
+        t.dt(g["term"], t.a(f"Lesson {g['lesson']}", href=lesson_url(lesson), class_="word-lesson") if shown else None),
+        t.dd(
+            t.p(g["means"]),
+            t.p(t.b("Why it matters in treasury work. "), g["why"], class_="word-why"),
+            code_box(g.get("label", "Example"), code, kind="code" if python else "data"),
+            t.figure(t.figcaption(t.span("What it prints", class_="fname")), t.pre(g["output"]), class_="codebox output")
+            if g.get("output") else None,
+            t.p(g["after"], class_="word-after") if g.get("after") else None,
+        ),
+        class_="term", id=glossary_id(g),
+    )
+
+
+def words_to_know():
+    return [
+        t.h2("Words to know", id="words-to-know"),
+        t.p(GLOSSARY_INTRO),
+        t.p([t.a(g["term"], href="#" + glossary_id(g), class_="tag") for g in GLOSSARY], class_="word-index"),
+        t.dl([glossary_card(g) for g in GLOSSARY], class_="glossary"),
+    ]
+
+
 def tutorials():
     shown = visible_lessons()
     return part(
@@ -945,20 +1309,19 @@ def tutorials():
         t.div(t.p(t.b("Our promise. "), TUTORIAL["pledge"]), class_="card setup pledge"),
         t.div([lesson_card(x) for x in shown], class_="lesson-list"),  # lessons not yet published stay hidden
         vocab_section(),
-        t.h2("Words to know"),
-        t.dl([t.div(t.dt(term), t.dd(meaning), class_="term") for term, meaning in GLOSSARY], class_="glossary"),
+        *words_to_know(),
         t.p(
             "New lessons are added regularly. "
             "All names, receipt numbers and amounts in the examples are made up.",
             class_="muted note",
         ),
         description="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury "
-                    "examples, plus Civil Service exam vocabulary modules with practice questions.",
+                    "examples, plus English exam vocabulary modules with practice questions.",
         seo_title=f"Free Python Lessons for Treasury Work · {SITE['short_name']}",
     )
 
 
-# ---- Civil Service Exam Vocabulary (second tutorial series, Butch 2026-11-09) ----
+# ---- English Exam Vocabulary (second tutorial series, Butch 2026-11-09) ----
 
 VOCAB_CHECKED = "November 2026"
 
@@ -983,7 +1346,8 @@ def live_modules():
 
 def module_card(m):
     return t.a(
-        t.div(t.span(f"Module {m['number']}", class_="badge"), t.span(f"{len(m['words'])} words · practice", class_="muted"), class_="meta"),
+        t.div(t.span(f"Module {m['number']}", class_="badge"), t.span(f"{len(m['words'])} words · practice", class_="muted"),
+              t.span("Checked " + short_month(VOCAB_CHECKED), class_="badge checked"), class_="meta"),
         t.h3(m["title"][:1].upper() + m["title"][1:]),
         t.p(m["summary"]),
         t.span("Start the module →", class_="go"),
@@ -1076,14 +1440,14 @@ def module_page(m):
     nxt = MODULES[i + 1] if i + 1 < len(MODULES) else None
     letters = "ABCD"
     return part(
-        f"Civil Service Exam Vocabulary, Module {m['number']}: {m['title']}", module_url(m),
+        f"{VOCAB['title']}, Module {m['number']}: {m['title']}", module_url(m),
         t.div(
             t.a("← " + VOCAB["title"], href=f"/tutorials/#{VOCAB['slug']}", class_="crumb"),
             t.p(f"{VOCAB['title']} · Module {m['number']}", class_="eyebrow"),
             t.h1(m["title"][:1].upper() + m["title"][1:], class_="lesson-title"),
             t.p(m["summary"], class_="lead"),
             t.p("✓ Last checked: " + VOCAB_CHECKED + " · meanings checked against Merriam-Webster", class_="checked"),
-            t.p(VOCAB["note"].replace("Civil Service Commission.", ""), t.a("Civil Service Commission", href=VOCAB["csc_url"], target="_blank", rel="noopener"), ".", class_="muted"),
+            t.p(VOCAB["note"], class_="muted"),
             [word_card(w) for w in m["words"]],
             t.h2("Practice"),
             t.p("Tap your answer. A green ✓ means you got it right; a red ✗ means try to learn the right one, shown in green."),
@@ -1099,7 +1463,7 @@ def module_page(m):
             class_="lesson-page vocab-page",
         ),
         description=f"{VOCAB['title']}, Module {m['number']}: {m['summary']}",
-        seo_title=f"{m['title'][:1].upper() + m['title'][1:]} · Civil Service Exam Vocabulary",
+        seo_title=f"{m['title'][:1].upper() + m['title'][1:]} · " + VOCAB["title"],
         og_type="article",
         json_ld=article_ld(f"{VOCAB['title']}, Module {m['number']}: {m['title']}", m["summary"], module_url(m),
                            kind="LearningResource"),
@@ -1140,12 +1504,49 @@ def lesson_page(x):
     )
 
 
+def heading_id(text):
+    """Anchor for a post heading, so "In this article" can link to it: "1. Why It Matters" -> "why-it-matters"."""
+    words = "".join(c.lower() if c.isalnum() else " " for c in text).split()
+    return "-".join(w for w in words if not w.isdigit()) or "section"
+
+
+def post_contents(b):
+    """'In this article' box: the post's headings as links (Butch 2026-11-23, AdSense blueprint).
+    Only on posts with four or more headings."""
+    heads = [x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "h"]
+    if len(heads) < 4:
+        return ""
+    return t.details(
+        t.summary("In this article"),
+        t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+        class_="toc narrow-only", open=True,
+    )
+
+
+_CHART_CACHE = {}
+
+
+def is_chart(path):
+    """True for a drawn chart or diagram on a white background (not a photo), so it can follow dark mode.
+    Photos have almost no pure white; charts are mostly white paper (Butch 2026-11-27)."""
+    if path not in _CHART_CACHE:
+        try:
+            from PIL import Image
+            im = Image.open(STATIC / path).convert("RGB")
+            im.thumbnail((160, 160))
+            px = list(im.getdata())
+            _CHART_CACHE[path] = sum(1 for r, g, b in px if r > 235 and g > 235 and b > 235) / len(px) >= 0.5
+        except Exception:  # no Pillow: leave every picture as it is
+            _CHART_CACHE[path] = False
+    return _CHART_CACHE[path]
+
+
 def blog_block(x):
     if isinstance(x, str):
         return t.p(x)
     kind, *rest = x
     if kind == "h":
-        return t.h3(rest[0])
+        return t.h3(rest[0], id=heading_id(rest[0]))
     if kind == "quote":
         return t.blockquote(t.p(rest[0]))
     if kind == "photo":
@@ -1153,7 +1554,7 @@ def blog_block(x):
         if not (STATIC / path).exists():  # photo not uploaded yet
             return ""
         return t.figure(t.img(src=asset_url(path), alt=caption, loading="lazy"), t.figcaption(caption),
-                        class_=" ".join(["screenshot", *size]))
+                        class_=" ".join(["screenshot", *size, *(["chart"] if is_chart(path) else [])]))
     if kind == "point":
         return t.p(t.b(rest[0] + "."), " ", rest[1], class_="point")
     if kind == "source":
@@ -1173,6 +1574,8 @@ CATEGORY = {key: (label, colour) for key, label, colour in BLOG_CATEGORIES}
 
 def category_label(b):
     label, colour = CATEGORY[b["category"]]
+    if b.get("series"):  # Learn posts keep their series name (Butch 2026-11-20)
+        label = f"{label} · {LEARN_SERIES[b['series']]}"
     return t.span(label, class_=f"cat cat-{colour}")
 
 
@@ -1342,7 +1745,8 @@ LISTEN_SCRIPT = r"""
     }
     function speak() {
       if (at >= chunks.length) { done(); return; }
-      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text);
+      // Filipino "ng" is said "nang" (Butch 2026-11-24), COA as letters (2026-11-25); the page text is not changed.
+      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text.replace(/\bng\b/g, "nang").replace(/\bCOA\b/g, "C O A"));
       if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
       u.rate = speeds[sp];
       u.onend = function () { if (on && u === current) { at += 1; speak(); } };
@@ -1403,8 +1807,8 @@ def listen_box(b):
         t.div(
             t.button(LISTEN_ICON, t.span("Listen", class_="listen-word"), type="button", class_="listen-play",
                      aria_pressed="false"),
-            t.span(f"{listen_minutes(b, rec)} min · AI voice", class_="listen-time muted",
-                   title="Read aloud by a computer voice, not by the author"),  # be open that it is not Butch reading (Butch, 2026-11-15)
+            t.span(f"{listen_minutes(b, rec)} min", class_="listen-time muted",
+                   title="Read aloud by a computer voice, not by the author"),  # be open that it is not Butch reading (Butch, 2026-11-15); visible 'AI voice' dropped for AdSense (Butch, 2026-11-20)
             t.span(class_="listen-clock muted", aria_hidden="true"),
             t.button("1\u00d7", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
             t.button(STOP_ICON, type="button", class_="listen-stop", aria_label="Stop reading", title="Stop", hidden=True),
@@ -1423,6 +1827,8 @@ def blog_post(b):
         series_line(b),
         listen_box(b),
         t.p(b["summary"], class_="lead") if b.get("summary") else "",
+        t.hr(class_="lead-rule") if b.get("summary") else "",
+        post_contents(b),
         [blog_block(x) for x in b["body"]],
         class_="post",
         data_cat=b["category"],
@@ -1439,7 +1845,14 @@ def live_posts():
 
 
 def post_is_live(url):
-    """True when url is a blog post that is live now (or not a blog post at all)."""
+    """True when url is a blog post, study note, vocabulary module or lesson that is live now
+    (or any other page). A link to a scheduled page shows only once that page is live."""
+    url = url.split("#")[0]
+    if url.startswith("/study-notes/") and url != NOTES_INFO["url"]:
+        return any(note_url(n) == url and note_is_live(n) for n in NOTES) or not any(note_url(n) == url for n in NOTES)
+    if url.startswith("/tutorials/") and url != "/tutorials/":
+        scheduled = [(module_url(m), module_is_live(m)) for m in MODULES] + [(lesson_url(x), lesson_is_live(x)) for x in LESSONS]
+        return all(live for u, live in scheduled if u == url)
     if not url.startswith("/blog/") or url in ("/blog/", SERIES_URL):
         return True
     return any(post_url(b) == url for b in live_posts())
@@ -1498,7 +1911,8 @@ def blog():
             ),
             series_banner() if posts_live else "",
             posts,
-            t.script(Raw('(function(){var m=/^#cat-(\\w+)$/.exec(location.hash);var r=m&&document.getElementById("cat-"+m[1]);if(r)r.checked=true;'
+            t.script(Raw(f'(function(){{var m=/^#cat-(\\w+)$/.exec(location.hash);var o={json.dumps({k: "learn" for k in LEARN_SERIES})};'
+                         'var r=m&&document.getElementById("cat-"+(o[m[1]]||m[1]));if(r)r.checked=true;'
                          'var d=document.getElementById("blog-cats");if(d)d.addEventListener("change",function(){d.open=false;});})();')),
             t.p(
                 "Views here are my own and do not represent any government office.",
@@ -1617,25 +2031,145 @@ def post_page(b):
 
     return part(
         b["title"], "/blog/",
+        # computers: the post at the left, a side column at the right that stays in view (In this article,
+        # the series, the author), as in the downloaded desktop pattern (Butch 2026-11-23). Phones: one column, as before.
+        # "← All posts" at the left, the breadcrumb at the right, above both columns (Butch's post pattern file, 2026-11-23)
+        t.div(t.a("← All posts", href="/blog/", class_="back-all"), breadcrumb(b), class_="post-top"),
         t.div(
-            t.a(Raw("&larr; "), "All posts", href="/blog/", class_="back"),
-            blog_post(b),
-            series_steps(b),
-            react_box(post_url(b)),
-            t.h2("About the author", class_="post-section"),
-            author_card(),
-            related_posts(b, posts, skip=(newer, older)),  # the Newer/Older links below already show those two
-            t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
-                  aria_label="More posts"),
-            t.p("Views here are my own and do not represent any government office.", class_="muted note"),
-            class_="blog-col",
+            t.div(
+                blog_post(b),
+                series_steps(b),
+                t.div(learn_series_box(b), class_="narrow-only"),
+                react_box(post_url(b)),
+                t.div(t.h2("About the author", class_="post-section"), author_card(), class_="narrow-only"),
+                related_posts(b, posts, skip=(newer, older)),  # the Newer/Older links below already show those two
+                t.nav(step(newer, "Newer post", "newer"), step(older, "Older post", "older"), class_="post-steps",
+                      aria_label="More posts"),
+                t.p("Views here are my own and do not represent any government office.", class_="muted note"),
+                class_="blog-col read-main",
+            ),
+            t.aside(t.div(side_contents([x[1] for x in b["body"] if isinstance(x, tuple) and x[0] == "h"], "In this article"),
+                          side_series(b), side_author(), class_="side-card"),
+                    class_="read-side", aria_label="About this post"),
+            class_="read-grid",
         ),
         description=b.get("description") or b.get("summary") or post_teaser(b),
         url=post_url(b),
         og_type="article",
-        json_ld=article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
-                           post_day(b), post_photo(b)),
+        json_ld=[article_ld(b["title"], b.get("description") or b.get("summary") or post_teaser(b), post_url(b),
+                            post_day(b), post_photo(b)), breadcrumb_ld(b)],
         share_image=card_for(post_photo(b)) if post_photo(b) else None,  # link previews show the post's own picture
+    )
+
+
+def side_contents(heads, label):
+    """'In this article' list for the side column on computers (four or more headings)."""
+    if len(heads) < 4:
+        return ""
+    return t.nav(t.p(label, class_="eyebrow"), t.ol([t.li(t.a(h, href=f"#{heading_id(h)}")) for h in heads]),
+                 class_="side-box side-toc", aria_label=label)
+
+
+def side_series(b):
+    """Series box for the side column: published parts only, this one highlighted ('2 / 3')."""
+    if b.get("series"):
+        parts = learn_parts(b)
+        name, href = LEARN_SERIES[b["series"]] + " Series", f"/blog/#cat-{b['category']}"
+        rows = [(p, (learn_part(p) or "") + ": " + (p["title"].split(": ", 1)[1] if ": " in p["title"] else p["title"])) for p in parts]
+    else:
+        sp = series_posts()
+        if not any(p[2] is b for p in sp):
+            return ""
+        live = live_posts()
+        parts = [p[2] for p in sp if p[2] in live]  # published parts only, never "coming" ones
+        name, href = ALTOS_SERIES["title"], SERIES_URL
+        rows = [(p, ("Introduction" if n == 0 else f"Principle {n}") + ": " + (p["title"].split(": ", 1)[1] if ": " in p["title"] else p["title"]))
+                for n, p in enumerate(parts)]  # parts go live in order, so position n is Principle n
+    if len(parts) < 2:
+        return ""
+    here = next(n for n, p in enumerate(parts) if p is b) + 1
+    return t.nav(
+        t.div(t.a(name, href=href, class_="eyebrow"), t.span(f"{here} / {len(parts)}", class_="muted"), class_="side-series-head"),
+        t.ol([t.li(t.span(label, aria_current="page"), class_="here") if p is b else t.li(t.a(label, href=post_url(p)))
+              for p, label in rows]),
+        class_="side-box side-series", aria_label=name)
+
+
+def learn_parts(b):
+    return sorted((p for p in live_posts() if p.get("series") == b["series"]), key=post_day)
+
+
+def side_author():
+    """Short author box for the side column on computers; phones get the full author card under the post."""
+    return t.div(
+        t.p("About the author", class_="eyebrow"),
+        author_head(),
+        t.p("15+ years in government service (13+ years in public finance and local treasury work in Quezon Province), "
+            "holder of 7 Google Professional Certificates, and a self-taught software developer. He writes in his personal "
+            "capacity, outside official working hours."),
+        t.p(t.a("Explore ALTOS & 360° Accountability →", href=ALTOS_URL)),
+        class_="side-box side-author",
+    )
+
+
+def crumbs(b):
+    """Blog / the post's series or topic / this part: (label, link) pairs, the last one without a link."""
+    trail = [("Blog", "/blog/")]
+    parts = series_posts()
+    i = next((n for n, p in enumerate(parts) if p[2] is b), None)
+    if i is not None:
+        trail += [(ALTOS_SERIES["title"], SERIES_URL), ("Introduction" if i == 0 else f"Principle {i}", None)]
+    elif b.get("series"):
+        name = LEARN_SERIES[b["series"]]
+        trail += [(name, f"/blog/#cat-{b['category']}"), (learn_part(b) or b["title"], None)]
+    else:
+        trail += [(CATEGORY[b["category"]][0], f"/blog/#cat-{b['category']}"), (b["title"], None)]
+    return trail
+
+
+def breadcrumb(b):
+    """Line at the top of a post: Blog / series or topic / part (Butch 2026-11-23, AdSense blueprint)."""
+    items = []
+    for label, href in crumbs(b):
+        items.append(t.li(t.a(label, href=href) if href else t.span(label, aria_current="page")))
+    return t.nav(t.ol(items), class_="crumbs", aria_label="Breadcrumb")
+
+
+def breadcrumb_ld(b):
+    site = f"https://{SITE['domain']}"
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": n + 1, "name": label, "item": site + (href or post_url(b))}
+        for n, (label, href) in enumerate(crumbs(b))]}
+
+
+def learn_part(b):
+    """'Part 2' from 'Cybersecurity Series, Part 2: Identity Is the New Perimeter', or None."""
+    head = b["title"].split(":", 1)[0]
+    return head.split(", ", 1)[1] if ", Part " in head else None
+
+
+def learn_series_box(b):
+    """Box under a Learn series post: every PUBLISHED part of that series in order, this one marked.
+    Parts not out yet are never named or counted (no "under construction", Butch 2026-11-14)."""
+    if not b.get("series"):
+        return ""
+    parts = sorted((p for p in live_posts() if p.get("series") == b["series"]), key=post_day)
+    if len(parts) < 2:
+        return ""
+
+    def row(p):
+        short = p["title"].split(": ", 1)[1] if ": " in p["title"] else p["title"]
+        inner = [t.span(learn_part(p) or "", class_="muted"), t.b(short)]
+        if p is b:
+            return t.li(t.span(inner, aria_current="page"), class_="here")
+        return t.li(t.a(inner, href=post_url(p)))
+
+    return t.section(
+        t.div(t.p("Series", class_="eyebrow"), t.b(LEARN_SERIES[b["series"]], class_="series-name"),
+              t.span(f"{len(parts)} parts", class_="muted"), class_="series-head"),
+        t.ol([row(p) for p in parts], class_="learn-parts"),
+        class_="series-box learn-series",
+        aria_label=LEARN_SERIES[b["series"]],
     )
 
 
@@ -1647,7 +2181,8 @@ def post_photo(b):
 def related_posts(b, posts, skip=()):
     """'Keep reading': up to three other live posts, same category first (newest first), then the newest others."""
     others = sorted((p for p in posts if p is not b and p not in skip), key=post_day, reverse=True)
-    picks = [p for p in others if p["category"] == b["category"]][:3]
+    picks = [p for p in others if b.get("series") and p.get("series") == b["series"]][:3]  # same Learn series first
+    picks += [p for p in others if p["category"] == b["category"] and p not in picks][:3 - len(picks)]
     picks += [p for p in others if p not in picks][:3 - len(picks)]
     if not picks:
         return ""
@@ -1683,11 +2218,18 @@ def series_count():
 
 def series_line(b):
     """Small line under a series post's byline: which part it is, linking to the series page."""
+    if b.get("series") and learn_part(b):
+        parts = learn_parts(b)
+        if len(parts) < 2:
+            return ""
+        n = next(k for k, p in enumerate(parts) if p is b) + 1
+        return t.p(f"Part {n} of {len(parts)} in the series ", t.a(LEARN_SERIES[b["series"]] + " Series", href=f"/blog/#cat-{b['category']}"),
+                   class_="series-line")
     parts = series_posts()
     i = next((n for n, p in enumerate(parts) if p[2] is b), None)
     if i is None:
         return ""
-    where = "The introduction to" if i == 0 else f"Principle {i} of 10 in"
+    where = "The introduction to" if i == 0 else f"Principle {i} in"  # no "of 10": a total ahead of the published parts reads as unfinished (AdSense; Butch 2026-11-25)
     return t.p(where, " the series ", t.a(ALTOS_SERIES["title"], href=SERIES_URL), class_="series-line")
 
 
@@ -1737,6 +2279,11 @@ def series_page():
     done, total = series_count()
     # only published parts are listed; each new part appears on its own day (no "Coming" dates, Butch 2026-11-14)
     status = "Read them in order from the top."
+    if done < total:
+        # the tagline promises ten; until every part is out, point to the book chapter that lists all ten,
+        # so the page reads as complete rather than half-built (AdSense; Butch 2026-11-25)
+        status = t.span("Read them in order from the top. All ten principles are also summed up on one page in ",
+                        t.a("Chapter 14 of the book", href=f"{BOOK_URL}chapter-14/"), ".")
 
     def row(n, label, short, p, live):
         inner = [
@@ -1770,8 +2317,8 @@ def series_page():
                 t.p("The ten principles also form the closing part of my book, ",
                     t.i(ALTOS["book"]["title"].split(":")[0]), ". You can read its first pages for free, or see what "
                     "the ALTOS software does for collections and disbursements."),
-                t.div(t.a("Preview the book", href=BOOK_URL, class_="btn primary"),
-                      t.a("About ALTOS", href="/projects/", class_="btn white"), class_="actions"),
+                t.div(t.a("Read the book online", href=BOOK_URL, class_="btn primary"),
+                      t.a("About ALTOS", href=ALTOS_URL, class_="btn white"), class_="actions"),
                 class_="card series-more",
             ),
             t.p("Views here are my own and do not represent any government office.", class_="muted note"),
@@ -1854,8 +2401,7 @@ def about():
     return part(
         "About", "/about/",
         t.p("About me", class_="eyebrow"),
-        photo_title("Ambrosio “Butch” U. Mahinay, MPA", photo=True, class_="name-title"),  # name beside the photo instead of "About" (Butch 2026-11-10)
-        t.p(ABOUT["roles"], class_="roles"),
+        author_head(h1=True),  # same head as the author card (Butch 2026-11-24)
         t.p(ABOUT["intro"], class_="lead"),
         about_story(ABOUT["paragraphs"]),
         # everything below hides together with the story's rest; Contact and the disclaimer always show
@@ -1977,7 +2523,17 @@ def terms():
         "calculator are for learning, not legal or financial advice, and are written in a personal capacity.")
 
 
-PARTS = {"/": home, "/projects/": projects, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, RPT_URL: rpt_page}
+DISCLAIMER_URL = "/disclaimer/"
+
+
+def disclaimer():
+    return _policy_page(
+        "Disclaimer", DISCLAIMER_URL, "Disclaimer", DISCLAIMER,
+        f"Disclaimer of {SITE['domain']}: everything here is written in a personal capacity for learning, "
+        "is not an official government issuance or legal advice, and is not endorsed by any office.")
+
+
+PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, DISCLAIMER_URL: disclaimer, RPT_URL: rpt_page}
 
 
 def _full_page(build):
@@ -1990,8 +2546,16 @@ def _full_page(build):
 
 
 ROUTES = {route: _full_page(build) for route, build in {**PARTS, **post_parts()}.items()}
-ROUTES[BOOK_URL] = _full_page(book_reader)
+ROUTES[BOOK_URL] = _full_page(book_home)
+ROUTES.update({BOOK.chapter_url(c["n"]): _full_page(lambda c=c: book_chapter(c)) for c in BOOK.CHAPTERS})
+ROUTES[BOOK.GLOSSARY_URL] = _full_page(lambda: book_back(BOOK.GLOSSARY, BOOK.GLOSSARY_URL,
+    "The terms used in 360° Accountability, from accountable forms to the Seal of Good Local Governance."))
+ROUTES[BOOK.REFERENCES_URL] = _full_page(lambda: book_back(BOOK.REFERENCES, BOOK.REFERENCES_URL,
+    "The books, articles, laws and issuances behind 360° Accountability."))
+ROUTES[BOOK.AUTHOR_URL] = _full_page(lambda: book_back(BOOK.AUTHOR, BOOK.AUTHOR_URL,
+    "Who wrote 360° Accountability, and the work and study behind it."))
 ROUTES[SERIES_URL] = _full_page(series_page)
+ROUTES[DEMO_URL] = demo_page  # a whole page of its own: no site layout, so no ads on the demo
 # one page per published lesson; scheduled lessons appear on their publish_on date
 ROUTES.update({lesson_url(x): _full_page(lambda x=x: lesson_page(x)) for x in LESSONS if lesson_is_live(x)})
 ROUTES.update({module_url(m): _full_page(lambda m=m: module_page(m)) for m in MODULES if module_is_live(m)})
