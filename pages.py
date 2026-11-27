@@ -17,6 +17,7 @@ from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
 from altos_demo import DEMO_URL, demo_page
+from altos_guide import GUIDE_URL, guide_page
 import book as BOOK
 from style import CSS
 from tags import Raw
@@ -127,7 +128,7 @@ CLOSE_ICON = Raw('<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><p
 def page_label(active):
     """The small orange label beside the phone menu button."""
     labels = {"/": "Public finance & civic tech", "/blog/": "Blog", "/tutorials/": "Tutorials", "/study-notes/": "Study Notes",
-              BOOK_URL: "The ALTOS Book", "/about/": "About", "/contact/": "Contact", RPT_URL: "Free Tools",
+              BOOK_URL: "The ALTOS Book", "/about/": "About", "/contact/": "Contact", RPT_URL: "Free Tools", GUIDE_URL: "Free Tools",
               "/privacy/": "Privacy Policy", "/terms/": "Terms of Use", "/disclaimer/": "Disclaimer"}
     return labels.get(active, "Menu")
 
@@ -158,7 +159,7 @@ def top_items():
     books = [("/study-notes/", "Study Notes")] if live_notes() else []
     books.append((BOOK_URL, "The ALTOS Book"))
     return [("/", "Home"),
-            ("Free Tools", [(RPT_URL, "Real Property Tax Calculator"), (DEMO_URL, "ALTOS Browser Demo")]),
+            ("Free Tools", [(RPT_URL, "Real Property Tax Calculator"), (DEMO_URL, "ALTOS Browser Demo"), (GUIDE_URL, "ALTOS Demo Guide")]),
             ("/tutorials/", "Tutorials"),
             ("Study Notes & Book", books) if len(books) > 1 else (BOOK_URL, "Book"),
             ("/blog/", "Blog"), ("/about/", "About"), ("/contact/", "Contact")]
@@ -2482,7 +2483,7 @@ def disclaimer():
         "is not an official government issuance or legal advice, and is not endorsed by any office.")
 
 
-PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, DISCLAIMER_URL: disclaimer, RPT_URL: rpt_page}
+PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, DISCLAIMER_URL: disclaimer, RPT_URL: rpt_page, GUIDE_URL: guide_page}
 
 
 def _full_page(build):
