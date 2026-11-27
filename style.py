@@ -1781,4 +1781,7 @@ CSS += """
 .loan-tabs a:hover { border-color: var(--gold); }
 .loan-tabs a[aria-current] { background: var(--panel-ink); border-color: var(--panel-ink); color: var(--bg); }
 .loan-steps li { margin-bottom: 8px; }
+/* Car Loan Calculator (/tools/car-loan-calculator/): same styles as the Salary Loan Calculator */
+.car-h { margin: 16px 0 6px; font-size: 1rem; }
+#car-details[hidden], #d-ins-row[hidden], #c-other-row[hidden], #c-ins-row[hidden], #c-adv-row[hidden], #term-dim-note[hidden] { display: none; }
 """
