@@ -81,9 +81,9 @@ def spoken(text):
     # Butch 2026-11-24: Filipino "ng" (Bangko Sentral ng Pilipinas) is said "nang", not "N G".
     # Voice only; the page keeps the correct spelling "ng". "nahng" makes this voice say the Filipino "nang".
     s = re.sub(r"\bng\b", "nahng", s)
-    # Butch 2026-11-25: COA (Commission on Audit) is said as letters C-O-A, not "ku wa".
-    s = re.sub(r"\bCOA(?:'s|s)\b", "C.O.A's", s)
-    s = re.sub(r"\bCOA\b", "C.O.A.", s)
+    # Butch 2026-11-27: COA (Commission on Audit) is said "KO-wa", the way Filipinos say it. "kohwa" makes this voice say it.
+    s = re.sub(r"\bCOA(?:'s|s)\b", "kohwa's", s)
+    s = re.sub(r"\bCOA\b", "kohwa", s)
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)
