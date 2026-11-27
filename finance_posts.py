@@ -24,9 +24,7 @@ FINANCE_POSTS = [
             "(As in my other treasury posts, the scenes here are composites. No real person, "
             "office or amount is described.)",
             "December is the season of parties and bonuses. For a local treasury, it is the "
-            "busiest closing month of the year. By the end of this post, you will know the rules "
-            "that drive December, from unspent budgets to cash advances, and a short checklist "
-            "any office or supplier can use before the year closes.",
+            "busiest closing month of the year. Let me take you through the rules that drive December, from unspent budgets to cash advances, along with the steps any office or supplier can take before the year closes.",
             ("h", "Why December Matters So Much"),
             "Local governments in the Philippines follow a fiscal year that runs with the "
             "calendar, from January 1 to December 31. Every peso the town plans to spend is "
@@ -203,10 +201,7 @@ FINANCE_POSTS = [
             " described.)",
             "The clerk smiles and says she cannot give that information. The man is annoyed. "
             "Isn’t the government supposed to be transparent?",
-            "Both of them have a point, and that is what makes this topic worth explaining. By "
-            "the end of this post, you will know what the Data Privacy Act protects at the "
-            "counter, what stays public, when the law requires names to be posted, and simple "
-            "habits that keep taxpayer data safe.",
+            "Both of them have a point, and that is what makes this topic worth explaining. What follows covers what the Data Privacy Act protects at the counter, what stays public, when the law requires names to be posted, and simple habits that keep taxpayer data safe.",
             ("h", "What a Treasury Knows About You"),
             "Think about everything you hand over at the counter in a year. Your full name, "
             "address and birthday for the cedula. Your income, because the community tax depends "
@@ -386,8 +381,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'explains what international bodies such as the International Monetary Fund (IMF), the World Bank and the '
            'PEFA program recommend, and then works through it with a Philippine example. The first problem is having '
            'cash in the right place at the right time.',
-           'By the end of this post, you will know what a treasury single account is, how the PEFA framework tests '
-           'cash management, and how to build two simple tools: a daily cash position and a monthly cash forecast.',
+           'This post explains what a treasury single account is and how the PEFA framework tests cash management, then shows how to build two simple tools: a daily cash position and a monthly cash forecast.',
            ('photo',
             'blog/finance-lfwb-cash.jpg',
             'Four habits of good cash management: know every account, see one position each day, forecast every '
@@ -654,7 +648,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Philippine rules',
             'Sections 305, 321, 322 and 324 of the Local Government Code shape how surplus is created and used.'),
            ('point', 'Agree in advance', 'A written policy turns a tense debate into a simple rule.'),
-           ('h', 'Your Part 2 Action Plan'),
+           ('h', 'One Question for Each Reader'),
            ('point',
             'If you work in a treasury',
             'Ask the accountant for last year-end’s general fund cash, continuing appropriations and unpaid '
@@ -1075,7 +1069,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'LBC No. 147 adopted the enhanced PFMAT for LGUs, based on PEFA 2016, with seven areas including '
             'citizens’ participation.'),
            ('point', 'The plan is the point', 'Every weak score should become a dated action with an owner.'),
-           ('h', 'Your Part 5 Action Plan'),
+           ('h', 'Where to Start'),
            ('point',
             'If you work in a local government',
             'Ask whether your PFM team has completed the PFMAT, and read the improvement plan for your office.'),
@@ -1509,9 +1503,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'second road costs more than the first, and the money that could have kept the first one working was '
            'never budgeted.',
            '(The road, the municipality and the costs in this post are invented. The studies are real and named.)',
-           'This is the hidden bill of public investment. By the end of this post, you will know what international '
-           'studies say about maintenance, why it can be left unfunded, and how a local government can plan for it '
-           'with two simple tools: an asset list and a yearly maintenance budget.',
+           'This is the hidden bill of public investment. This post looks at what international studies say about maintenance, why it can be left unfunded, and how a local government can plan for it with two simple tools: an asset list and a yearly maintenance budget.',
            ('photo',
             'blog/finance-lfwb-maintenance.jpg',
             'Maintenance in four steps: know what you own, check its condition, budget every year, fix early. '
@@ -1595,7 +1587,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            ('point',
             'Show the gap',
             'Compare the yearly maintenance need with the budget, and close the gap step by step.'),
-           ('h', 'Your Part 9 Action Plan'),
+           ('h', 'Who Can Do What'),
            ('point',
             'If you work in engineering or general services',
             'Start an asset list with condition ratings for the five most important assets.'),

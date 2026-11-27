@@ -5015,8 +5015,7 @@ BI_POSTS = [
             "real town or taxpayer is described.)",
             "In a large organization, three different people might take that call. In a small "
             "treasury, it may be one person. Either way, it helps to know the three jobs apart, "
-            "because each one fails in its own way and each one is fixed in its own way. By the end of this post, you will know the three kinds of BI work, how each one fails, and "
-            "how one person in a small office can do all three.",
+            "because each one fails in its own way and each one is fixed in its own way. This post separates the three kinds of BI work, shows how each one fails, and explains how one person in a small office can cover all three.",
             ("The one-person case is not theory for me. I built ALTOS, my treasury system, on my own: "
              "I worked out where each record comes from, built every screen to follow the official "
              "forms the staff already know, and decided what each report should tell the officer who "
@@ -5172,7 +5171,7 @@ BI_POSTS = [
              "Titles vary; the work does not",
              "Whatever the job is called, all three kinds of work must be done, even if one "
              "person does them."),
-            ("h", "Your Part 2 Exercise"),
+            ("h", "Three Lines About Your Report"),
             "Take the repeated report you circled in Part 1, or pick one now. Then write three short lines:",
             ("point",
              "Engineer",
@@ -5216,9 +5215,7 @@ BI_POSTS = [
             "Nothing is wrong with the clerk's work. The totals are correct. The problem is that "
             "the same questions are asked every month, and every month the answers are built from"
             " scratch. Business intelligence, or BI, is the discipline that fixes exactly this "
-            "kind of problem. By the end of this post, you will know how BI differs from data "
-            "analytics, where the name came from, the five parts of a BI system, and how a "
-            "monthly report can stop being rebuilt by hand.",
+            "kind of problem. Here I explain how BI differs from data analytics, where the name came from, the five parts of a BI system, and how a monthly report can stop being rebuilt by hand.",
             ("This kind of report is familiar to me. I have spent more than 13 years in local "
              "government fiscal administration, including two years as Acting Municipal Treasurer of a municipality in "
              "Quezon, from 2020 to 2022. As I wrote in Why I Built ALTOS, some offices still add up "
@@ -5347,7 +5344,7 @@ BI_POSTS = [
             ("point",
              "Judgment stays human",
              "A dashboard shows that a number moved. People still decide what to do about it."),
-            ("h", "Your Part 1 Exercise"),
+            ("h", "A Ten-Minute Task"),
             "Take ten minutes and do this:",
             ("point",
              "List your repeated reports",
