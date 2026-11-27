@@ -60,17 +60,25 @@ def round_down(x, step):
 
 
 def schedule(p, rate, n, method):
-    """Month-by-month table. Add-on interest is spread evenly (straight line), as most add-on loans show it."""
+    """Month-by-month table: each month's interest is charged on the balance still owed.
+
+    For an add-on loan the monthly payment stays the add-on payment, but the interest inside it is worked out at
+    the diminishing rate that gives the very same payment (see effective_rate). BSP Circular 730 (Manual of
+    Regulations for Banks, Sec. X305.5) says banks may charge interest only on the outstanding balance, so a
+    bank's own table shows interest getting smaller each month. The total interest is the same either way."""
     a = r2(payment(p, rate, n, method))
     bal = p
     rows = []
-    addon_int = r2(p * rate) if method == "addon" else 0
+    if method == "addon":
+        rate = effective_rate(p, a, n)  # the diminishing rate that gives the same payment
     for m in range(1, n + 1):
-        interest = addon_int if method == "addon" else r2(bal * rate)
+        interest = r2(bal * rate)
         prin = r2(a - interest)
         pay = a
         if m == n:  # the last payment absorbs the centavos
             prin = r2(bal)
+            if method == "addon":  # an add-on loan keeps the same payment to the end; the interest takes the centavos
+                interest = r2(a - prin)
             pay = r2(prin + interest)
         bal = r2(bal - prin)
         rows.append({"month": m, "payment": pay, "interest": interest, "principal": prin, "balance": max(bal, 0)})
