@@ -12,7 +12,8 @@ CSS = """
   /* the same colours, deep enough to read as text on white */
   --gold-ink: #9a6500; --blue-ink: #1d58b8; --green-ink: #0b7d55; --coral-ink: #c43d33; --violet-ink: #6f45c7;
   --navy: #12397f; --navy-deep: #0b2a63; --bar-ink: #12397f; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
-  --bg: #f3f6fc; --surface: #ffffff; --text: #0d1d3d; --muted: #50617f; --line: #dbe3f0;
+  --bg: #ffffff; --surface: #ffffff;  /* pure white page on every screen, no blue tint in the wide side margins of big desktops (Butch 2026-11-27) */
+  --text: #0d1d3d; --muted: #50617f; --line: #dbe3f0;
   --shadow: 0 1px 2px rgba(11, 42, 99, .06), 0 12px 32px -18px rgba(11, 42, 99, .28);
   --rainbow: linear-gradient(90deg, var(--gold), var(--blue) 25%, var(--green) 50%, var(--coral) 75%, var(--violet));
   --font-display: "Outfit", "Figtree", system-ui, sans-serif;
