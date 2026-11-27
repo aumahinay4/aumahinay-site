@@ -314,9 +314,9 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             # Never on the 404 page (active is None): AdSense allows no ads on error pages.
             t.script(src=f"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE['adsense_client']}",
                      crossorigin="anonymous", **{"async": "async"}) if SITE.get("adsense_client") and active is not None else None,
-            # paint the phone's browser bars white like the page and top bar, in light and dark mode alike
-            t.meta(name="theme-color", content="#ffffff"),
-            t.meta(name="color-scheme", content="light"),
+            # paint the phone's browser bars like the page: white in light mode, navy in dark mode
+            t.meta(name="theme-color", content="#ffffff", media="(prefers-color-scheme: light)"),
+            t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
             t.title(page_title),
             # https://aumahinay.dev is the only address: test copies on *.pages.dev, www. and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || location.hostname === "www.{SITE["domain"]}" || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
@@ -399,8 +399,6 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
-        # always the light, white look, even when the computer or phone is set to dark mode (Butch 2026-11-27)
-        **{"data-theme": "light"},
     )
     return "<!doctype html>\n" + doc
 
