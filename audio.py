@@ -57,8 +57,8 @@ def _two(a):
 
 
 def ra_words(n):
-    """How Butch reads law numbers (2026-11-15): RA 7160 -> "R A seventy-one sixty" (two pairs);
-    RA 12010 -> "R A twelve zero one zero" (first two digits as a number, the rest digit by digit)."""
+    """How Butch reads law numbers (2026-11-15): RA 7160 -> "R.A. seventy-one sixty" (two pairs);
+    RA 12010 -> "R.A. twelve zero one zero" (first two digits as a number, the rest digit by digit)."""
     if len(n) == 4:
         return _two(int(n[:2])) + " " + _two(int(n[2:]))
     return _two(int(n[:2])) + " " + " ".join(_DIG[int(d)] for d in n[2:])
@@ -72,7 +72,10 @@ def spoken(text):
     s = re.sub(r"\bNos\.\s*(?=\d)", "Numbers ", s)  # "Republic Act No. 7160" -> "Republic Act Number 7160" (Butch, 2026-11-15)
     s = re.sub(r"\bNo\.\s*(?=\d)", "Number ", s)
     s = re.sub(r"\b(Republic Act Numbers?|RA|R\.A\.)\s*(\d{4,5})\b",
-               lambda m: ("R A" if m.group(1) in ("RA", "R.A.") else m.group(1)) + " " + ra_words(m.group(2)), s)
+               lambda m: ("R.A." if m.group(1) in ("RA", "R.A.") else m.group(1)) + " " + ra_words(m.group(2)), s)
+    # Butch 2026-11-27: RA is said as the letters "Ar Eh". "R A" made this voice say "Ar uh", "R.A." says "Ar Eh".
+    s = re.sub(r"\bRA(?:'s|s)\b", "R.A's", s)
+    s = re.sub(r"\bRA\b", "R.A.", s)
     s = re.sub(r"\bCRAA[FP](s?)\b", r"Cra-ap\1", s)  # Butch 2026-11-15: CRAAF/CRAAP read "Cra-ap"
     s = re.sub(r"\bRAAF(s?)\b", r"Ra-ap\1", s)  # Butch 2026-11-15: RAAF read "Ra-ap"
     # Butch 2026-11-24: Filipino "ng" (Bangko Sentral ng Pilipinas) is said "nang", not "N G".
