@@ -96,7 +96,17 @@ def main():
     check("dim schedule ends at 0", s_dim[-1]["balance"] == 0, s_dim[-1])
     check("dim schedule total interest ~ 19,571.48", close(sum(r["interest"] for r in s_dim), 19571.48, 0.05),
           sum(r["interest"] for r in s_dim))
-    check("add-on schedule interest = 36,000", close(sum(r["interest"] for r in s_add), 36000), sum(r["interest"] for r in s_add))
+    # add-on: 36 payments of P3,777.78 = P136,000.08, so the interest in the table is P36,000.08, the same as the page's
+    # "Total interest" (the payment is rounded to centavos); every payment is the same, last one included
+    check("add-on schedule interest = page total (36,000.08)", close(sum(r["interest"] for r in s_add), 36000.08),
+          sum(r["interest"] for r in s_add))
+    check("add-on schedule: all 36 payments equal", all(r["payment"] == 3777.78 for r in s_add), s_add[-1])
+    # interest is charged on the balance (BSP Circ. 730, MORB X305.5): it falls every month, from the
+    # equivalent diminishing rate (about 1.77% a month) x P100,000 in month 1
+    check("add-on schedule: interest falls every month",
+          all(s_add[i]["interest"] > s_add[i + 1]["interest"] for i in range(35)), [r["interest"] for r in s_add[:3]])
+    check("add-on schedule: month 1 interest ~ 1.77% of P100,000", close(s_add[0]["interest"], 1766.66, 0.02),
+          s_add[0]["interest"])
     check("add-on schedule principal sums to loan", close(sum(r["principal"] for r in s_add), 100000))
     check("add-on schedule ends at 0", s_add[-1]["balance"] == 0, s_add[-1])
 
@@ -182,6 +192,14 @@ def main():
 
     # 10. same answers as Butch's own Decimal code (his Google Doc "Philippine Loan Calculators", 2026-11-26)
     check_against_decimal()
+
+    # 11. the page explains the rules checked on 2026-11-27 and shows the real Python behind it
+    import tags as t
+    from loan import loan_page
+    html = t.render(loan_page()["body"])
+    for needle in ("The Python behind the calculator", "def payment", "def schedule", "BSP Circular No. 730",
+                   "SSS salary loan charges 8% a year", "monthly effective rate × 12"):
+        check("page shows: " + needle, needle in html, needle)
 
     print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
     sys.exit(1 if FAILS else 0)
