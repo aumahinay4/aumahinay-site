@@ -967,9 +967,7 @@ BLOG = [
             "wonder why mine does not. Isn't .com the \"real\" internet? Won't visitors get "
             "confused? These are fair questions. The answer says a lot about how I like to build "
             "things, so I want to explain it here in plain words, especially for anyone who is "
-            "about to choose an address of their own. By the end of this post, you will know what"
-            " a domain name is, why .dev forces every visitor onto a secure connection, and five "
-            "tips for choosing an address of your own.",
+            "about to choose an address of their own. I will cover what a domain name is, why .dev forces every visitor onto a secure connection, and five tips for picking a good address.",
             ("h", "First, What Is a Domain Name?"),
             "A domain name is the address people type to reach a website. Think of the municipal "
             "hall. The building is the website, and the address tells people how to find it. The "
@@ -1660,8 +1658,7 @@ BLOG = [
         "body": [
             "Money in a local treasury is not one big pile. It is divided into funds, and each "
             "fund exists because a law or an ordinance said what that money is for. Mixing them, "
-            "even briefly and with good intentions, turns a legal promise into a guess. By the end of this post, you will know the main funds of a local government, why the law "
-            "keeps them apart, and a daily check that keeps every peso in the right account.",
+            "even briefly and with good intentions, turns a legal promise into a guess. This post walks through the main funds of a local government, why the law keeps them apart, and a daily check that keeps every peso in the right account.",
             ("quote",
              "Every peso has an address. The law decides which fund it lives in, and the "
              "treasury's job is to make sure it gets there and stays there."),
@@ -2176,9 +2173,7 @@ BLOG = [
             "Every treasury officer knows the feeling of the 5th of the month approaching. It is "
             "easy to treat deadlines as a burden imposed from above, one more thing that gets in "
             "the way of the real work. I want to argue the opposite. In a treasury, the deadline "
-            "is one of the most useful controls we have. By the end of this post, you will have a"
-            " simple way to build your office's deadline calendar and a quick test for which "
-            "report is most at risk of being late.",
+            "is one of the most useful controls we have. Toward the end, I share a simple way to build your office's deadline calendar and a quick test for which report is most at risk of being late.",
             ("quote",
              "A shortage found on the 5th of the next month is at most five weeks old. A shortage"
              " found at the year-end audit can be thirteen months old."),
@@ -2350,9 +2345,7 @@ BLOG = [
             "Imagine a booklet of official receipts lying on a desk that three clerks share. One "
             "page is missing. Who explains it? If the honest answer is “we are not sure,” the "
             "office has a problem, and it is not a problem about honesty. It is a problem about "
-            "ownership. By the end of this post, you will see why naming an owner matters more "
-            "than trusting everyone, what a fidelity bond really protects, and a five-point check"
-            " any office can run this week.",
+            "ownership. This post shows why naming an owner matters more than trusting everyone, what a fidelity bond really protects, and a five-point check any office can run this week.",
             ("quote",
              "Accountability needs a name. Every form in custody and every peso in hand should "
              "have one person who answers for it, and that person should be bonded."),
@@ -2523,10 +2516,7 @@ BLOG = [
             "plainer question: where is the paper? A collection that was perfectly legal but "
             "never receipted looks, a year later, exactly like a collection that never happened. "
             "A payment that was properly approved but has no voucher looks exactly like money "
-            "that simply disappeared. By the end of this post, you will know how an official "
-            "receipt is controlled from the stock room to the monthly report, why a spoiled "
-            "receipt is never thrown away, and the one question that tests this principle in any "
-            "office.",
+            "that simply disappeared. So this post follows an official receipt from the stock room to the monthly report, explains why a spoiled receipt is never thrown away, and offers one question that tests this principle in any office.",
             ("quote",
              "If a peso moved and nothing was written, then as far as the public can tell, it "
              "never moved, or it moved for the wrong reasons."),
@@ -3036,9 +3026,7 @@ BLOG = [
             "I have spent more than 13 years in local government fiscal administration, and I "
             "kept asking the same question: what if the office's own rules were built into the "
             "tools it uses every day? That question became ALTOS, the Automated Local Treasury "
-            "Operations System. By the end of this post, you will know the problem it was built "
-            "to solve, the design choices behind it, and why an office should put a written "
-            "agreement in place before it adopts software built by one of its own people.",
+            "Operations System. In this post I explain the problem it was built to solve, the design choices behind it, and why an office should put a written agreement in place before it adopts software built by one of its own people.",
             ("h", "The Idea Behind It: Close the Circle"),
             "Picture the life of a single peso in a local treasury. It is received, recorded, "
             "deposited, perhaps paid out, and finally reported. At each of those stops, someone "

@@ -6466,8 +6466,7 @@ TREASURY_POSTS = [
             "need her income?",
             "(As in every part of this series, the case is a composite. No real person or amount "
             "is described.)",
-            "It is a fair question, and the answer goes back almost a century and a half. By the end of this post, you will know where the cedula came from, how to compute what you "
-            "owe, where paying it helps your barangay most, and what it can and cannot prove.",
+            "It is a fair question, and the answer goes back almost a century and a half. This post traces where the cedula came from, then shows how to compute what you owe, where paying it helps your barangay most, and what it can and cannot prove.",
             ("h", "A Tax Older Than the Republic"),
             "Under Spain, Filipinos paid a head tax called the tribute. Historian Filomeno V. "
             "Aguilar Jr. writes that Spain abolished it in 1884 and introduced the cédula "

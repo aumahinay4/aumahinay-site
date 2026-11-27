@@ -7510,7 +7510,7 @@ DATA_POSTS = [
             ("point",
              "Act, then measure again",
              "Every decision is a small experiment. Measure the result and loop back if it did not work."),
-            ("h", "Your Part 2 Exercise"),
+            ("h", "Walk Your Own Question Through the Steps"),
             "Take the question you wrote down after Part 1. If you did not do it yet, choose one "
             "now. Then write one or two lines for each step:",
             ("point", "Ask", "Rewrite your question so it is specific and names the decision it supports."),
@@ -7565,9 +7565,7 @@ DATA_POSTS = [
             "Data analytics lessons online can use examples such as online shops or bike rentals."
             " Those are fine, but they can feel far from a town hall in the province. This series"
             " explains the same ideas in plain words, with examples from the work I know: "
-            "collections, disbursements, targets, deadlines and the people at the counter. By the"
-            " end of this post, you will know what data analytics is, the four kinds of questions"
-            " it answers, and why your office already holds the data to start.",
+            "collections, disbursements, targets, deadlines and the people at the counter. This first part covers what data analytics is, the four kinds of questions it answers, and why your office already holds the data to start.",
             ("h", "Data, Information and Insight"),
             "Three words are often mixed up, so let us start there. Think of them as three steps "
             "on a ladder.",
@@ -7708,7 +7706,7 @@ DATA_POSTS = [
              "Start with what you have",
              "Official receipts, registers and a free spreadsheet are enough to begin. The "
              "thinking matters more than the tool."),
-            ("h", "Your Part 1 Exercise"),
+            ("h", "Three Small Steps to Try"),
             "Analytics is learned by doing. Before you read any further in this series, try these"
             " three small steps:",
             ("point",

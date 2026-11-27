@@ -6720,7 +6720,7 @@ PM_POSTS = [
             ("point",
              "Every change becomes a decision",
              "With a charter, a new request comes with clear trade-offs for the sponsor to choose from."),
-            ("h", "Your Part 2 Exercise"),
+            ("h", "Draft Your Own One-Page Charter"),
             "Take the assignment you looked at in Part 1. On one sheet of paper or one screen, write:",
             ("point", "One sentence of purpose", "Why does this project exist?"),
             ("point", "Three things in, three things out", "What it delivers, and what it will not touch."),
@@ -6783,9 +6783,7 @@ PM_POSTS = [
             "and software companies. The ideas are good, but those examples can feel far from a "
             "municipal hall. This series explains the same ideas in plain words, with examples "
             "from treasury work: tax campaigns, new systems, year-end closing, audits and the "
-            "people at the counter. By the end of this post, you will be able to tell a project "
-            "from daily work, explain the three limits every project lives with, and make four "
-            "moves that set up your first two weeks.",
+            "people at the counter. We start with three things: how to tell a project from daily work, the three limits every project lives with, and four moves that set up your first two weeks.",
             ("h", "Is It a Project, or Is It Just Work?"),
             "Start with the most useful question in the whole field. Not everything you do at "
             "work is a project, and mixing the two up causes a lot of stress.",
@@ -6934,7 +6932,7 @@ PM_POSTS = [
             ("point",
              "Steer, do not just drive",
              "Your value is a clear goal, cleared blocks and a project that reaches the end."),
-            ("h", "Your Part 1 Exercise"),
+            ("h", "Look Again at Your Own Assignment"),
             "Pick one assignment you are carrying now, big or small. This week, write one line "
             "for each of these:",
             ("point", "Project or operations?", "Does it have a finish line and a new result at the end?"),
