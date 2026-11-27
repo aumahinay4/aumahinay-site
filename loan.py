@@ -20,9 +20,12 @@ build runs it to fill the page with a worked example, and the browser runs the s
 tests/test_loan.py checks it in CPython and in MicroPython.
 """
 
+import inspect
 from pathlib import Path
 
+import loan_math
 import tags as t
+from highlight import highlight
 from loan_math import DEFAULTS, view
 from tags import Raw
 
@@ -330,6 +333,38 @@ def _results():
     )
 
 
+def python_box(label, fns):
+    """A code box with the real source of the given functions, read from the running file, so the page and the
+    calculator can never disagree. The same code runs in your browser."""
+    src = "\n\n".join(inspect.getsource(f).rstrip() for f in fns) + "\n"
+    return t.figure(t.figcaption(t.span(label, class_="fname")), t.pre(t.code(Raw(highlight(src)))),
+                    class_="codebox code")
+
+
+def _python_section():
+    return t.div(
+        t.h2("The Python behind the calculator"),
+        t.p("Every number on this page comes from one small Python file, loan_math.py. The same file fills in the "
+            "example when the page is built, and runs in your browser each time you change a number, using "
+            "MicroPython, a small Python made for the web. These are its four main parts, copied straight from "
+            "the file:"),
+        t.ol(
+            t.li(t.b("payment "), "works out the equal monthly payment. For an add-on loan it is the loan plus all "
+                 "the interest, divided by the months. For a diminishing loan it is the standard amortization "
+                 "formula."),
+            t.li(t.b("principal "), "works the other way: from the payment you can afford, it finds the biggest "
+                 "loan."),
+            t.li(t.b("effective_rate "), "finds the true monthly rate. It keeps guessing a rate, halving the gap "
+                 "each time, until the payments are worth exactly the cash you received."),
+            t.li(t.b("schedule "), "builds the month-by-month table, charging each month's interest on what is "
+                 "still owed."),
+            class_="rpt-notes",
+        ),
+        python_box("loan_math.py (part)", [loan_math.payment, loan_math.principal, loan_math.effective_rate,
+                                           loan_math.schedule]),
+    )
+
+
 def _explanations():
     return [
         t.h2("How it works"),
@@ -350,14 +385,34 @@ def _explanations():
             "1% is charged on."),
         t.p(t.b("Add-on rate. "), "Interest is computed on the full loan for the whole term, added on top, and the "
             "total is divided into equal payments. On a ₱100,000 loan at 1% a month for 36 months, the interest is "
-            "₱100,000 × 1% × 36 = ₱36,000. You pay ₱136,000 in 36 payments of ₱3,777.78. You keep paying interest on "
-            "the full ₱100,000 even in the last month, when you owe very little."),
+            "₱100,000 × 1% × 36 = ₱36,000. You pay ₱136,000 in 36 payments of ₱3,777.78. The interest is worked out "
+            "as if you owed the full ₱100,000 for all 36 months, even though you owe less after every payment."),
         t.p(t.b("Diminishing balance. "), "Each month's interest is charged only on what you still owe, so the "
             "interest gets smaller as you pay. The same ₱100,000 at 1% a month for 36 months costs ₱3,321.43 a month, "
             "or ₱19,571.48 in interest, a little over half the add-on interest."),
         t.p("To compare offers fairly, look at the effective rate. The calculator shows it below the results: an add-on "
             "rate of 1% a month for 36 months works out to about 1.77% a month on a diminishing balance. When fees are taken from the "
             "loan, the effective rate goes up again, because you pay interest on money you never received."),
+        t.h3("Why the interest in the table gets smaller, even for an add-on loan"),
+        t.p("The Bangko Sentral ng Pilipinas (BSP Circular No. 730) says banks may charge interest only on the "
+            "balance still owed at the start of each month. So when a bank quotes an add-on rate, it turns it into the "
+            "diminishing rate that gives the same monthly payment, and its payment table shows the interest getting "
+            "smaller every month. The calculator's table does the same. For the ₱100,000 example, the first month's "
+            "interest is ₱1,766.66, about 1.77% of ₱100,000, and the last month's is only ₱65.57. Your payment stays "
+            "₱3,777.78 every month, and the total interest is still about ₱36,000."),
+        t.h3("How the yearly effective rate is shown"),
+        t.p("The yearly effective rate is the monthly effective rate × 12, the way a monthly rate is turned into a "
+            "simple annual rate. BSP rules allow the effective rate to be stated per month or per year. Some lenders "
+            "compound the monthly rate instead, which gives a slightly higher yearly figure (1.77% a month is 21.2% a "
+            "year times 12, or about 23.4% compounded). Compare the monthly rates when you are unsure."),
+        t.h2("Salary loans from GSIS, SSS and Pag-IBIG"),
+        t.p("Government funds charge interest on the diminishing balance, so pick \"Diminishing balance\" when you "
+            "check one of their loans. Type the rate from your own loan offer, as a rate per year."),
+        t.p("For example, the SSS salary loan charges 8% a year on the diminishing balance (10% for some renewals) and "
+            "is paid in 24 equal monthly payments. A 1% service fee is taken from the loan, so type 1 in \"Fees taken "
+            "from the loan\". SSS also takes a short advance interest from the loan release to the first due month. "
+            "You can add that as an \"Other fixed fee\" if you know it. A ₱40,000 SSS salary loan at 8% for 24 months "
+            "comes to about ₱1,809.09 a month."),
         t.h2("The ₱5,000 take-home pay rule"),
         t.p("The General Provisions of the national budget law, the General Appropriations Act, allow deductions from "
             "a government employee's salary for taxes, GSIS, PhilHealth and Pag-IBIG (HDMF), and for loans from "
@@ -400,6 +455,7 @@ def _explanations():
              "Cash in hand on ₱123,000: ₱123,000 − ₱3,690 fees − ₱50,000 old balance = ₱69,310."],
             "Too big. Borrowing ₱123,000 instead keeps the take-home pay above ₱5,000, but only about ₱69,000 reaches "
             "your hand."),
+        _python_section(),
         t.h2("Before you sign"),
         t.ul(
             t.li(t.b("Ask for the disclosure statement. "), "Under the Truth in Lending Act (RA 3765), the lender must "
@@ -465,7 +521,11 @@ def loan_page():
                 t.a("COA report on take-home pay below ₱5,000 (Manila Bulletin)", href="https://mb.com.ph/2024/5/20/coa-warns-lg-us-vs-paying-employees-less-than-p5-000-net-monthly-take-home-salary", rel="noopener"),
                 "; ",
                 t.a("Truth in Lending Act (RA 3765)", href="https://lawphil.net/statutes/repacts/ra1963/ra_3765_1963.html", rel="noopener"),
-                ", Sec. 4. Last checked " + LOAN_CHECKED + ".", class_="muted note sources-line"),
+                ", Sec. 4; ",
+                t.a("BSP Circular No. 730, s. 2011", href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/56725", rel="noopener"),
+                " (effective rate; interest on the outstanding balance); ",
+                t.a("SSS Salary Loan", href="https://www.sss.gov.ph/salary-loan", rel="noopener"),
+                ". Last checked " + LOAN_CHECKED + ".", class_="muted note sources-line"),
             t.p("The figures are worked out in Python, right in your browser. Nothing you type is sent or saved.", class_="muted note"),
             *_loader(),
         ],
