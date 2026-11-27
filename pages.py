@@ -1745,8 +1745,8 @@ LISTEN_SCRIPT = r"""
     }
     function speak() {
       if (at >= chunks.length) { done(); return; }
-      // Filipino "ng" is said "nang" (Butch 2026-11-24), COA as letters (2026-11-25); the page text is not changed.
-      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text.replace(/\bng\b/g, "nang").replace(/\bCOA\b/g, "C O A"));
+      // Filipino "ng" is said "nang" (Butch 2026-11-24), COA as "Kowa" (2026-11-27); the page text is not changed.
+      var c = chunks[at], u = new SpeechSynthesisUtterance(c.text.replace(/\bng\b/g, "nang").replace(/\bCOA\b/g, "Kowa").replace(/\bRA\b/g, "R A"));
       if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = "en-US";
       u.rate = speeds[sp];
       u.onend = function () { if (on && u === current) { at += 1; speak(); } };
