@@ -179,6 +179,34 @@ def top_nav(active):
 
 
 MENU_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg>')  # bars long, medium, short, left-aligned (Butch 2026-11-14)
+# ---- Light by default, dark by choice (Butch 2026-11-27) ----
+THEME_HEAD_SCRIPT = (
+    'try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}'
+)
+THEME_ICONS = Raw(
+    '<svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>'
+    '<svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/>'
+    '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+)
+THEME_BUTTON_SCRIPT = """
+(function () {
+  var root = document.documentElement, btn = document.getElementById("theme-btn"), bar = document.getElementById("theme-color");
+  function show() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    if (btn) { btn.setAttribute("aria-pressed", dark ? "true" : "false"); btn.setAttribute("aria-label", dark ? "Light mode" : "Dark mode"); }
+    if (bar) bar.setAttribute("content", dark ? "#071631" : "#ffffff");
+  }
+  show();
+  if (btn) btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") !== "dark";
+    root.setAttribute("data-theme", dark ? "dark" : "light");
+    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
+    show();
+  });
+})();
+"""
+
+
 MENU_SCRIPT = """
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
@@ -314,9 +342,11 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
             # Never on the 404 page (active is None): AdSense allows no ads on error pages.
             t.script(src=f"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE['adsense_client']}",
                      crossorigin="anonymous", **{"async": "async"}) if SITE.get("adsense_client") and active is not None else None,
-            # paint the phone's browser bars like the page: white in light mode, navy in dark mode
-            t.meta(name="theme-color", content="#ffffff", media="(prefers-color-scheme: light)"),
-            t.meta(name="theme-color", content="#071631", media="(prefers-color-scheme: dark)"),
+            # light (white) by default, even on a phone or computer set to dark; dark only when the visitor picked it
+            # with the sun/moon button, which is remembered on that device (Butch 2026-11-27)
+            t.script(Raw(THEME_HEAD_SCRIPT)),
+            # paint the phone's browser bars like the page: white, or navy in dark mode (the button script updates it)
+            t.meta(name="theme-color", content="#ffffff", id="theme-color"),
             t.title(page_title),
             # https://aumahinay.dev is the only address: test copies on *.pages.dev, www. and plain http jump to it
             t.script(Raw(f'if (/\\.pages\\.dev$/.test(location.hostname) || location.hostname === "www.{SITE["domain"]}" || (location.protocol === "http:" && location.hostname === "{SITE["domain"]}")) location.replace("https://{SITE["domain"]}" + location.pathname + location.search + location.hash);')),
@@ -358,6 +388,8 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                     t.a(t.span(SITE["short_name"], class_="bn"), t.span(SITE["tagline_short"], class_="bt"),
                         href="/", class_="brand-line", aria_label=f"{SITE['short_name']}, home"),
                     top_nav(active),
+                    t.button(THEME_ICONS, type="button", id="theme-btn", class_="theme-btn", aria_label="Dark mode", aria_pressed="false",
+                             title="Light or dark mode"),
                     # phones and tablets (Butch 2026-11-23, mobile pattern file): a second line in the top bar with a round
                     # menu button beside the page's label; it opens a small rounded card and turns into a check mark
                     t.div(
@@ -395,10 +427,12 @@ def layout(title, active, body, description=None, url=None, og_type="website", s
                                class_="foot-row"),
                            class_="wrap"), class_="legal"),
             t.script(Raw(MENU_SCRIPT)),
+            t.script(Raw(THEME_BUTTON_SCRIPT)),
             t.script(Raw(SWIPE_SCRIPT % json.dumps(swipe_pages()))),
             CERT_VIEWER if 'class="cert-thumb"' in t.render(body) else None,
         ),
         lang="en",
+        **{"data-theme": "light"},
     )
     return "<!doctype html>\n" + doc
 

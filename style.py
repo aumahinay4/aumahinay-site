@@ -1758,3 +1758,40 @@ CSS += """
   #english-exam-vocabulary { scroll-margin-top: 104px; }
 }
 """
+
+# ---- Light by default, dark only by choice (Butch 2026-11-27) ----
+# The site opens light (white) even when the phone or computer is set to dark. A small sun/moon button in the top bar
+# switches to dark and remembers the choice. Every dark rule written for the device setting is turned into a
+# rule for <html data-theme="dark">, so the button gives exactly the same dark look as before.
+import re as _re
+
+
+def _dark_by_choice(css):
+    out, i, head = [], 0, "@media (prefers-color-scheme: dark) {"
+    while True:
+        j = css.find(head, i)
+        if j < 0:
+            out.append(css[i:])
+            return "".join(out)
+        out.append(css[i:j])
+        k, depth = j + len(head), 1
+        while depth:
+            depth += {"{": 1, "}": -1}.get(css[k], 0)
+            k += 1
+        inner = css[j + len(head):k - 1]
+        inner = inner.replace(':root:not([data-theme="light"]) html', 'html[data-theme="dark"]')
+        out.append(inner.replace(':root:not([data-theme="light"])', ':root[data-theme="dark"]'))
+        i = k
+
+
+CSS = _dark_by_choice(CSS)
+CSS += """
+.theme-btn { flex: none; align-self: center; display: grid; place-content: center; width: 34px; height: 34px; padding: 0; margin-left: auto;
+  border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; transition: border-color .15s, color .15s; }
+.theme-btn:hover, .theme-btn:focus-visible { border-color: var(--gold-ink); color: var(--gold-ink); }
+.theme-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.theme-btn .i-sun { display: none; }
+:root[data-theme="dark"] .theme-btn .i-sun { display: block; }
+:root[data-theme="dark"] .theme-btn .i-moon { display: none; }
+@media (min-width: 1025px) { .theme-btn { margin-left: 6px; } }
+"""
