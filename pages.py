@@ -16,6 +16,7 @@ from lessons import LAST_CHECKED, LESSONS, TUTORIAL
 from vocab import MODULES, VOCAB, module_url, word_source
 from notes import NOTES, NOTES_INFO, OUTLINE, note_url
 from rpt import RPT_URL, rpt_page
+from loan import LOAN_URL, loan_page
 from altos_demo import DEMO_URL, demo_page
 import book as BOOK
 from style import CSS
@@ -127,7 +128,7 @@ CLOSE_ICON = Raw('<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><p
 def page_label(active):
     """The small orange label beside the phone menu button."""
     labels = {"/": "Public finance & civic tech", "/blog/": "Blog", "/tutorials/": "Tutorials", "/study-notes/": "Study Notes",
-              BOOK_URL: "The ALTOS Book", "/about/": "About", "/contact/": "Contact", RPT_URL: "Free Tools",
+              BOOK_URL: "The ALTOS Book", "/about/": "About", "/contact/": "Contact", RPT_URL: "Free Tools", LOAN_URL: "Free Tools",
               "/privacy/": "Privacy Policy", "/terms/": "Terms of Use", "/disclaimer/": "Disclaimer"}
     return labels.get(active, "Menu")
 
@@ -776,7 +777,8 @@ def altos_section():
 BOOK_URL = "/book/"
 # Kept on the site but hidden from Google and the sitemap: the book preview is pictures and the
 # ALTOS demo is drawn by JavaScript, so Google sees almost no text (AdSense check, Butch 2026-11-20)
-NOINDEX_URLS = {DEMO_URL}  # the book is text now (Butch 2026-11-23), so Google may read it
+NOINDEX_URLS = {DEMO_URL, LOAN_URL}  # the book is text now (Butch 2026-11-23), so Google may read it
+# LOAN_URL: the Salary Loan Calculator stays hidden (no menu, no sitemap) until AdSense approves and Butch says go (2026-11-26)
 
 # The book reader: one page at a time, Previous/Next, arrow keys, and swipe on the page.
 # Saving is made harder (no download link, no right-click or long-press save, no dragging),
@@ -2482,7 +2484,7 @@ def disclaimer():
         "is not an official government issuance or legal advice, and is not endorsed by any office.")
 
 
-PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, DISCLAIMER_URL: disclaimer, RPT_URL: rpt_page}
+PARTS = {"/": home, "/study-notes/": courses, "/tutorials/": tutorials, "/blog/": blog, "/about/": about, "/contact/": contact, PRIVACY_URL: privacy, TERMS_URL: terms, DISCLAIMER_URL: disclaimer, RPT_URL: rpt_page, LOAN_URL: loan_page}
 
 
 def _full_page(build):
