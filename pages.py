@@ -1522,6 +1522,24 @@ def post_contents(b):
     )
 
 
+_CHART_CACHE = {}
+
+
+def is_chart(path):
+    """True for a drawn chart or diagram on a white background (not a photo), so it can follow dark mode.
+    Photos have almost no pure white; charts are mostly white paper (Butch 2026-11-27)."""
+    if path not in _CHART_CACHE:
+        try:
+            from PIL import Image
+            im = Image.open(STATIC / path).convert("RGB")
+            im.thumbnail((160, 160))
+            px = list(im.getdata())
+            _CHART_CACHE[path] = sum(1 for r, g, b in px if r > 235 and g > 235 and b > 235) / len(px) >= 0.5
+        except Exception:  # no Pillow: leave every picture as it is
+            _CHART_CACHE[path] = False
+    return _CHART_CACHE[path]
+
+
 def blog_block(x):
     if isinstance(x, str):
         return t.p(x)
@@ -1535,7 +1553,7 @@ def blog_block(x):
         if not (STATIC / path).exists():  # photo not uploaded yet
             return ""
         return t.figure(t.img(src=asset_url(path), alt=caption, loading="lazy"), t.figcaption(caption),
-                        class_=" ".join(["screenshot", *size]))
+                        class_=" ".join(["screenshot", *size, *(["chart"] if is_chart(path) else [])]))
     if kind == "point":
         return t.p(t.b(rest[0] + "."), " ", rest[1], class_="point")
     if kind == "source":

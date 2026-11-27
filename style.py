@@ -1795,3 +1795,9 @@ CSS += """
 :root[data-theme="dark"] .theme-btn .i-moon { display: none; }
 @media (min-width: 1025px) { .theme-btn { margin-left: 6px; } }
 """
+CSS += """
+/* Figures follow the chosen mode (Butch 2026-11-27): in dark mode, white-paper charts and diagrams turn dark
+   (colours flipped, then blended onto the navy page). Photos and screenshots stay as they are. */
+:root[data-theme="dark"] figure.chart img, :root[data-theme="dark"] figure.diagram img {
+  filter: invert(1) hue-rotate(180deg) brightness(1.3) saturate(1.3); mix-blend-mode: screen; box-shadow: none; border-color: transparent; }
+"""
