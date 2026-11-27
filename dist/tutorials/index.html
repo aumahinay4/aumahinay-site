@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7687029622758059" crossorigin="anonymous" async="async"></script><script>try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}</script><meta name="theme-color" content="#ffffff" id="theme-color"><title>Free Python Lessons for Treasury Work · Butch Mahinay</title><script>if (/\.pages\.dev$/.test(location.hostname) || location.hostname === "www.aumahinay.dev" || (location.protocol === "http:" && location.hostname === "aumahinay.dev")) location.replace("https://aumahinay.dev" + location.pathname + location.search + location.hash);</script><script>(function(){if(location.hash.length<2)return;var stop=false;var el=function(){var id=decodeURIComponent(location.hash.slice(1));return document.getElementById(/^cat-/.test(id)?"blog-cats":id);};var go=function(){var e=!stop&&el();if(e)e.scrollIntoView({behavior:"instant"});};["wheel","touchstart","keydown","mousedown"].forEach(function(n){addEventListener(n,function(){stop=true;},{passive:true});});document.addEventListener("DOMContentLoaded",function(){go();if(window.ResizeObserver){var r=new ResizeObserver(go);r.observe(document.body);setTimeout(function(){r.disconnect();},5000);}});addEventListener("load",go);})();</script><link rel="alternate" type="application/rss+xml" title="Butch Mahinay: new posts and lessons" href="/feed.xml"><link rel="canonical" href="https://aumahinay.dev/tutorials/"><meta name="description" content="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury examples, plus English exam vocabulary modules with practice questions."><meta property="og:type" content="website"><meta property="og:site_name" content="Butch Mahinay"><meta property="og:title" content="Free Python Lessons for Treasury Work · Butch Mahinay"><meta property="og:description" content="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury examples, plus English exam vocabulary modules with practice questions."><meta property="og:url" content="https://aumahinay.dev/tutorials/"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg?v=5460c4f7"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=0a5a5302"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=f3f18bbe"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7687029622758059" crossorigin="anonymous" async="async"></script><meta name="theme-color" content="#f3f6fc" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#071631" media="(prefers-color-scheme: dark)"><title>Free Python Lessons for Treasury Work · Butch Mahinay</title><script>if (/\.pages\.dev$/.test(location.hostname) || (location.protocol === "http:" && location.hostname === "aumahinay.dev")) location.replace("https://aumahinay.dev" + location.pathname + location.search + location.hash);</script><link rel="alternate" type="application/rss+xml" title="Butch Mahinay: new posts and lessons" href="/feed.xml"><link rel="canonical" href="https://aumahinay.dev/tutorials/"><meta name="description" content="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury examples, plus Civil Service exam vocabulary modules with practice questions."><meta property="og:type" content="website"><meta property="og:site_name" content="Butch Mahinay"><meta property="og:title" content="Free Python Lessons for Treasury Work · Butch Mahinay"><meta property="og:description" content="Free, beginner-friendly Python lessons for Philippine local treasury staff, with real treasury examples, plus Civil Service exam vocabulary modules with practice questions."><meta property="og:url" content="https://aumahinay.dev/tutorials/"><meta property="og:image" content="https://aumahinay.dev/static/share.jpg?v=5460c4f7"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Butch Mahinay, aumahinay.dev"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png?v=0a5a5302"><link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=f3f18bbe"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"><style>
 /* Layout: navy cover-style panels for the big moments, quiet white pages for reading; the five ALTOS colours mark sequence and emphasis. */
 :root {
   /* ALTOS colours, bright (fills, on navy) */
@@ -7,23 +7,22 @@
   /* the same colours, deep enough to read as text on white */
   --gold-ink: #9a6500; --blue-ink: #1d58b8; --green-ink: #0b7d55; --coral-ink: #c43d33; --violet-ink: #6f45c7;
   --navy: #12397f; --navy-deep: #0b2a63; --bar-ink: #12397f; --on-navy: #eef3ff; --on-navy-muted: #a9b6d3;
-  --bg: #ffffff; --surface: #ffffff;  /* pure white page on every screen, no blue tint in the wide side margins of big desktops (Butch 2026-11-27) */
-  --text: #0d1d3d; --muted: #50617f; --line: #dbe3f0;
+  --bg: #f3f6fc; --surface: #ffffff; --text: #0d1d3d; --muted: #50617f; --line: #dbe3f0;
   --shadow: 0 1px 2px rgba(11, 42, 99, .06), 0 12px 32px -18px rgba(11, 42, 99, .28);
   --rainbow: linear-gradient(90deg, var(--gold), var(--blue) 25%, var(--green) 50%, var(--coral) 75%, var(--violet));
   --font-display: "Outfit", "Figtree", system-ui, sans-serif;
   --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 0;  /* boxes have square 90-degree corners (Butch, 2026-11-04) */ --max: 1120px;
 }
-
-  :root[data-theme="dark"] {
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
     --gold-ink: #f6c453; --blue-ink: #8fbaf5; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
     --navy: #123272; --navy-deep: #0a2458; --bar-ink: #e8edf7;
     --bg: #071631; --surface: #0d2147; --text: #e8eef9; --muted: #a0b0cf; --line: #1c3566;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 16px 36px -20px rgba(0, 0, 0, .7);
     color-scheme: dark;
   }
-
+}
 :root[data-theme="dark"] {
   --gold-ink: #f6c453; --blue-ink: #8fbaf5; --green-ink: #3ddc97; --coral-ink: #ff8a80; --violet-ink: #c9a7ff;
   --navy: #123272; --navy-deep: #0a2458; --bar-ink: #e8edf7;
@@ -309,10 +308,7 @@ ol.principles li span { color: var(--muted); font-size: 15.127px; line-height: 1
 
 /* Projects: ALTOS as the mother system, subsystems branching below */
 .family { margin-top: 36px; }
-#altos { scroll-margin-top: 80px; }
-#blog-cats { scroll-margin-top: 72px; }  /* /blog/#cat-... topic links land on the category button below the sticky top bar */  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
-#english-exam-vocabulary { scroll-margin-top: 96px; }  /* Home "Practice English vocabulary" link lands with the heading below the sticky top bar */
-@media (max-width: 1024px) { #english-exam-vocabulary { scroll-margin-top: 130px; } }
+#altos { scroll-margin-top: 80px; }  /* /#altos (old Projects link) lands with the heading below the sticky top bar */
 .node { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .node h3 { margin: 12px 0 4px; }
 .node p { margin: 10px 0 0; color: var(--muted); font-size: 15.6312px; line-height: 1.5; }
@@ -500,22 +496,10 @@ details.answer { margin: 14px 0 0; font-size: inherit; }
 details.answer > summary { display: inline-block; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--green); color: var(--green-ink); background: var(--surface); }
 details.answer > summary:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
 details.answer[open] > summary { margin-bottom: 4px; }
-.word-index { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; text-align: left; }
-.word-index .tag { text-decoration: none; }
-.word-index .tag:hover { border-color: var(--gold); }
-.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 14px; margin: 20px 0 0; }
-.glossary dt { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font: 600 1.15rem var(--font-display); color: var(--violet-ink); }
-.glossary .word-lesson { flex: none; font: 500 13.1101px var(--font-body); color: var(--blue-ink); text-decoration: none; }
-.glossary .word-lesson:hover { text-decoration: underline; }
-.glossary .term { min-width: 0; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: 80px; }
-.glossary .term:target { border-color: var(--gold); box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 35%, transparent); }
-.glossary dd { margin: 6px 0 0; }
-.glossary dd p { margin: 8px 0 0; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
-.glossary dd .word-why b { color: var(--green-ink); }
-.glossary dd .codebox { margin: 12px 0 0; }
-.glossary dd .codebox pre { font-size: 14.1185px; padding: 12px 14px; }
-.glossary dd .word-after { color: var(--muted); font-size: 15.127px; }
-@media (max-width: 640px) { .glossary .term { padding: 14px 12px; } .glossary dd .codebox pre { font-size: 13.1101px; padding: 12px; } }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 24px 0 0; }
+.glossary dt { font: 600 1.0085rem var(--font-display); color: var(--violet-ink); }
+.glossary .term { min-width: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.glossary dd { margin: 2px 0 0; color: var(--muted); font-size: 15.127px; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 
 /* Blog categories: a small coloured label on each post, and filter pills above the posts */
 .post > .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -528,7 +512,6 @@ details.answer[open] > summary { margin-bottom: 4px; }
 .cat-teal { color: var(--green-ink); background: color-mix(in srgb, var(--blue) 12%, color-mix(in srgb, var(--green) 14%, transparent)); }  /* Business Intelligence */
 .cat-amber { color: var(--coral-ink); background: color-mix(in srgb, var(--gold) 16%, color-mix(in srgb, var(--coral) 12%, transparent)); }  /* Inside the Local Treasury */
 .cat-navy { color: var(--bar-ink); background: color-mix(in srgb, var(--blue) 14%, transparent); }  /* Project Management */
-.cat-indigo { color: var(--violet-ink); background: color-mix(in srgb, var(--blue) 12%, color-mix(in srgb, var(--violet) 12%, transparent)); }  /* Public Administration */
 /* Blog category menu: a three-bar button with the chosen category and its count; it opens a vertical list. */
 .blog-filters { margin-top: 26px; position: relative; max-width: 340px; }
 .blog-filters > summary { list-style: none; display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 14px;
@@ -668,14 +651,12 @@ ol.series-list li.upcoming .num { filter: grayscale(.6); opacity: .75; }
 .blog-col:has(#cat-software:checked)  .post-card:not([data-cat="software"]) { display: none; }
 .blog-col:has(#cat-finance:checked)  .post-card:not([data-cat="finance"]) { display: none; }
 .blog-col:has(#cat-treasury:checked)  .post-card:not([data-cat="treasury"]) { display: none; }
-.blog-col:has(#cat-pa:checked)  .post-card:not([data-cat="pa"]) { display: none; }
 .blog-col:has(#cat-learn:checked)  .post-card:not([data-cat="learn"]) { display: none; }
 .blog-col:has(#cat-personal:checked)  .post-card:not([data-cat="personal"]) { display: none; }
 .blog-col:has(#cat-all:checked) .cat-now[data-k="all"] { display: inline; }
 .blog-col:has(#cat-software:checked) .cat-now[data-k="software"] { display: inline; }
 .blog-col:has(#cat-finance:checked) .cat-now[data-k="finance"] { display: inline; }
 .blog-col:has(#cat-treasury:checked) .cat-now[data-k="treasury"] { display: inline; }
-.blog-col:has(#cat-pa:checked) .cat-now[data-k="pa"] { display: inline; }
 .blog-col:has(#cat-learn:checked) .cat-now[data-k="learn"] { display: inline; }
 .blog-col:has(#cat-personal:checked) .cat-now[data-k="personal"] { display: inline; }
 
@@ -764,11 +745,11 @@ footer.site .sep { opacity: .6; }
 .disclaimer p + p { margin-top: 8px; }
 .rpt-disclaimer p { font-style: normal; }
 .policy-meta { text-align: left; }
-/* English Exam Vocabulary pages */
+/* Civil Service Exam Vocabulary pages */
 .vocab-page .card.word { margin-top: 16px; }
 .vocab-page .card.word h2 { margin: 0 0 6px; font-size: 1.45rem; }
 .vocab-page .card.word h2::after { display: none; }
-.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body); color: var(--muted); }
+.vocab-page .card.word .pos { font: italic 500 .95rem var(--font-body, inherit); color: var(--muted); }
 .vocab-page .card.word p, .practice p, .practice li { margin: 6px 0; text-align: left; hyphens: manual; }  /* short lines: left-aligned so words are not stretched apart */
 .vocab-page .card.word .meaning { font-weight: 600; }
 .vocab-page .card.word .source { font-size: .9em; text-align: left; }
@@ -859,7 +840,7 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
    are now white like the cards, for uniformity. Their touch of uniqueness: a navy stripe down the left side,
    the faint cover arches in navy, and (Home) the rainbow line along the bottom. */
 :root { --panel-ink: var(--navy); }
- :root[data-theme="dark"] { --panel-ink: #8fbaf5; } 
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --panel-ink: #8fbaf5; } }
 :root[data-theme="dark"] { --panel-ink: #8fbaf5; }
 .hero, .altos-hero, blockquote, .node.mother {
   background: var(--surface); color: var(--text); border: 1px solid var(--line); border-left: 5px solid var(--panel-ink); box-shadow: var(--shadow); }
@@ -929,11 +910,6 @@ blockquote::before { color: var(--gold-ink); }
 .rpt-table tr.total th, .rpt-table tr.total td { font-weight: 800; border-bottom: 0; border-top: 2px solid var(--text); }
 .rpt-table small { font-weight: 400; color: var(--muted); }
 .rpt-notes li { margin-bottom: 8px; }
-.rpt-steps li { margin-bottom: 8px; }
-.rpt-example { margin: 14px 0; }
-.rpt-example h3 { margin-top: 0; }
-.rpt-example ul { padding-left: 20px; }
-h3.rpt-q { margin-bottom: 4px; }
 .sources-line { text-align: left; }
 @media (max-width: 640px) { .rpt-table th, .rpt-table td { padding: 7px 4px; } .rpt-table { font-size: .86em; } }
 
@@ -1021,7 +997,7 @@ html.menu-js.menu-open .menu-close:hover, html.menu-js.menu-open .menu-close:foc
 /* Home title colours, option 3 (Butch 2026-11-14): gold "public finance", blue "Python" */
 .hero h1 .k1 { color: #b98200; }
 .hero h1 .k2 { color: var(--blue-ink); }
- :root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); } 
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 .k1 { color: var(--gold); } }
 :root[data-theme="dark"] .hero h1 .k1 { color: var(--gold); }
 
 /* Home title (Butch 2026-11-20): banner picture removed; "Where public finance" / "meets Python" on two lines,
@@ -1081,10 +1057,8 @@ figure.screenshot figcaption { font-size: 14.4715px; }
 .codebox .fname { font-size: 13.4379px; }
 .codebox button, .codebox .actions a { font-size: 12.9209px; }
 .codebox pre { font-size: 15.5052px; }
-.glossary dt { font-size: 1.1787rem; }
-.glossary .word-lesson { font-size: 13.4379px; }
-.glossary dd .codebox pre { font-size: 14.4715px; }
-.glossary dd .word-after { font-size: 15.5052px; }
+.glossary dt { font-size: 1.0337rem; }
+.glossary dd { font-size: 15.5052px; }
 .cat { font-size: 13.7824px; }
 .blog-filters > summary { font-size: 16.4815px; }
 .blog-filters label { font-size: 16.4815px; }
@@ -1156,11 +1130,11 @@ main:has(+ footer.legal) { padding-bottom: 28px; }
 /* Blog category bar: the chosen category name ("All posts") in gold, same gold as the Home title (Butch 2026-11-14) */
 .blog-filters .cat-now, .blog-filters input:checked + label,
 .blog-filters .cat-now .count, .blog-filters input:checked + label .count, .blog-filters .cat-caret { color: #b98200; }  /* number gold too (Butch 2026-11-14) */
- :root[data-theme="dark"] .blog-filters .cat-now,
-  :root[data-theme="dark"] .blog-filters input:checked + label,
-  :root[data-theme="dark"] .blog-filters .cat-now .count,
-  :root[data-theme="dark"] .blog-filters input:checked + label .count,
-  :root[data-theme="dark"] .blog-filters .cat-caret { color: var(--gold); } 
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .blog-filters .cat-now,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label,
+  :root:not([data-theme="light"]) .blog-filters .cat-now .count,
+  :root:not([data-theme="light"]) .blog-filters input:checked + label .count,
+  :root:not([data-theme="light"]) .blog-filters .cat-caret { color: var(--gold); } }
 :root[data-theme="dark"] .blog-filters .cat-now, :root[data-theme="dark"] .blog-filters input:checked + label,
 :root[data-theme="dark"] .blog-filters .cat-now .count, :root[data-theme="dark"] .blog-filters input:checked + label .count, :root[data-theme="dark"] .blog-filters .cat-caret { color: var(--gold); }
 
@@ -1218,646 +1192,7 @@ blockquote footer a.stretch { color: inherit; text-decoration: none; }
 .motto a { color: inherit; text-decoration: none; }
 .motto a:hover, figure.screenshot figcaption a { color: var(--blue-ink); }
 .card.author .author-name a { color: inherit; text-decoration: none; }
-
-/* ---- New site structure (Butch 2026-11-23, from his AdSense blueprint) ---- */
-/* short disclaimer above the footer links, every page */
-footer.legal .disclaimer-line { max-width: 640px; margin: 0 auto 4px; padding: 0 12px; font-size: 13px; line-height: 1.5;
-  color: var(--muted); text-align: center !important; text-wrap: balance; }
-@media (max-width: 640px) { footer.legal .disclaimer-line { font-size: 12.5px; } }
-/* breadcrumb at the top of a post: Blog / series or topic / part */
-.crumbs { margin-top: 8px; font-size: 14.5px; }
-.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 0; }
-.crumbs li { display: inline; color: var(--muted); }
-.crumbs li + li::before { content: "/"; margin: 0 8px; color: var(--muted); opacity: .7; }
-.crumbs a { font-weight: 600; color: var(--blue-ink); }
-.crumbs span[aria-current] { overflow-wrap: anywhere; }
-.blog-col > .crumbs + .post { margin-top: 16px; }
-/* "In this article" box, open by default, tap the title to fold it */
-.post .toc { margin: 18px 0 8px; padding: 12px 18px; background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--blue-ink); border-radius: var(--radius); }
-.post .toc summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: 16.5px; }
-.post .toc ol { margin: 8px 0 2px; padding-left: 22px; }
-.post .toc li { margin: 3px 0; text-align: left; line-height: 1.4; }
-.post .toc a { color: var(--text); text-decoration: none; }
-.post .toc a:hover { color: var(--blue-ink); text-decoration: underline; }
-.post h3[id] { scroll-margin-top: 72px; }
-@media (max-width: 640px) { .post .toc { padding: 10px 12px; } .post .toc ol { padding-left: 20px; } }
-/* Learn series box: every published part, this one marked */
-.learn-series .learn-parts { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
-.learn-series .learn-parts a, .learn-series .learn-parts .here > span { display: flex; flex-direction: column; gap: 2px; padding: 9px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--text); }
-.learn-series .learn-parts a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
-.learn-series .learn-parts .here > span { border-color: var(--gold-ink); border-left-width: 4px; }
-.learn-series .learn-parts .muted { font-size: 14px; }
-.learn-series .learn-parts b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
-/* Home "Start here" cards with one or two links each */
-.start-here .card.start { display: flex; flex-direction: column; }
-.start-here .card.start .eyebrow { margin: 0 0 4px; }
-.start-here .card.start h3 { margin-top: 0; }
-.start-here .go-links { margin: auto 0 0; padding-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 16px; text-align: left; }
-.start-here .go-links a { font-weight: 600; }
-.related.guides { margin-top: 12px; }
-/* "Checked Nov 2026" on lesson and module cards */
-.badge.checked { --c: var(--green); --ci: var(--green-ink); }
-
-/* ---- The book as web pages (Butch 2026-11-23) ---- */
-.book-col .book-head { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; align-items: start; margin-top: 16px; }
-.book-col .book-head .book-cover { width: 150px; height: auto; border-radius: 6px; box-shadow: var(--shadow); }
-.book-col .book-head h1 { margin: 2px 0 6px; }
-.book-col .book-head p { margin: 0 0 10px; }
-@media (max-width: 640px) { .book-col .book-head { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; } .book-col .book-head .book-cover { width: 96px; } }
-.book-part { margin-top: 22px; scroll-margin-top: 72px; }
-.book-part h3 { margin: 0; }
-.book-part > p { margin: 2px 0 8px; }
-.book-toc { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
-.book-toc a { display: flex; flex-direction: column; gap: 2px; padding: 11px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
-.book-toc a:hover { border-color: color-mix(in srgb, var(--blue-ink) 45%, var(--line)); }
-.book-toc .muted { font-size: 14px; }
-.book-toc b { font-family: var(--font-display); font-weight: 600; line-height: 1.3; }
-.book-text { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
-.book-text h2 { font-size: 1.18rem; margin: 26px 0 8px; scroll-margin-top: 72px; }
-.book-text h2::after { display: none; }
-.book-text .book-box { margin: 16px 0; padding: 12px 16px; background: color-mix(in srgb, var(--gold) 10%, var(--surface)); border: 1px solid var(--line); border-left: 4px solid var(--gold-ink); }
-.book-text .book-box p { margin: 0; }
-.book-text .table-wrap { overflow-x: auto; margin: 14px 0; }
-.book-text table { font-size: 14.5px; min-width: 520px; }
-.book-text th, .book-text td { text-align: left !important; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); hyphens: auto; }
-.book-text th { font-family: var(--font-display); font-weight: 700; background: color-mix(in srgb, var(--navy) 8%, var(--surface)); }
-.book-text ul.refs { padding-left: 20px; }
-.book-text ul.refs li { text-align: left; margin: 4px 0; }
-.book-text ol, .book-text ul { padding-left: 24px; }
-.book-text li { margin: 5px 0; }
-.book-steps { margin-top: 20px; }
-
-.book-col .book-head p, .book-part > p, .book-col .note { text-align: left !important; }
-/* phones: each table row becomes a small card, column name above each value */
-@media (max-width: 640px) {
-  .book-text table { min-width: 0; border: 0; box-shadow: none; background: transparent; }
-  .book-text thead { display: none; }
-  .book-text table, .book-text tbody, .book-text tr, .book-text td { display: block; width: 100%; }
-  .book-text tr { margin: 0 0 10px; background: var(--surface); border: 1px solid var(--line); }
-  .book-text td { border: 0; padding: 6px 12px; }
-  .book-text td + td { border-top: 1px dashed var(--line); }
-  .book-text td::before { content: attr(data-label); display: block; font: 700 12.5px var(--font-display); letter-spacing: .03em; color: var(--muted); text-transform: uppercase; }
-  .book-text td:first-child { font-weight: 600; }
-}
-
-.book-text td, .book-text td:last-child { white-space: normal; color: var(--text); font-variant-numeric: normal; overflow-wrap: break-word; }
-.book-text td { hyphens: manual; }
-.book-text table { box-sizing: border-box; }
-@media (max-width: 640px) { .book-text td { box-sizing: border-box; } }
-.crumbs li { margin: 0; padding: 0; }
-.crumbs a, .crumbs span { padding: 0 !important; font-size: inherit !important; white-space: normal; background: none; border: 0; }
-.crumbs ol { align-items: baseline; }
-
-:root { --radius: 12px; --orange-ink: #b45309; --orange-soft: #fff7ed; --primary: #1d4ed8; }  /* rounded boxes, as in the pattern */
- :root[data-theme="dark"] { --orange-ink: #f5a35c; --orange-soft: rgba(245, 163, 92, .12); --primary: #3b6fe8; } 
-:root[data-theme="dark"] { --orange-ink: #f5a35c; --orange-soft: rgba(245, 163, 92, .12); --primary: #3b6fe8; }
-.eyebrow { color: var(--orange-ink); }
-
-/* Top bar: name and tagline at the left; the menu in one line on computers, the three bars at the right on phones and tablets */
-header.site { background: var(--surface); box-shadow: 0 1px 0 var(--line); }
-header.site .wrap { min-height: 72px; flex-wrap: nowrap; gap: 16px; }
-.brand-line { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; color: var(--text); padding: 10px 0; }
-.brand-line:hover { text-decoration: none; }
-.brand-line:hover .bn { color: var(--blue-ink); }
-.brand-line .bn { font: 700 1.16rem var(--font-display); letter-spacing: -0.015em; color: var(--text); transition: color .15s; }
-.brand-line .bt { font: 400 12.75px var(--font-body); color: var(--muted); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.top-nav { display: none; }
-html.menu-js .menu-btn { order: 3; margin: 0 -6px 0 auto; width: 40px; height: 40px; }
-.menu-btn svg { width: 22px; height: 22px; }
-.menu-btn .b2, .menu-btn .b3 { d: path("M3 12h18"); }
-.menu-btn .b3 { d: path("M3 18h18"); }
-@media (min-width: 1025px) {
-  header.site .wrap { min-height: 80px; align-items: stretch; }
-  .brand-line { justify-content: center; }
-  .top-nav { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; }
-  header.site .top-nav a { display: flex; align-items: center; padding: 0 12px; margin-bottom: -1px; color: var(--muted); font-size: 15px; font-weight: 500;
-                           border-bottom: 2px solid transparent; white-space: nowrap; }
-  header.site .top-nav a:hover { color: var(--text); text-decoration: none; }
-  header.site .top-nav a.active { color: var(--orange-ink); border-bottom-color: var(--orange-ink); font-weight: 600; }
-  html.menu-js .menu-btn { display: none; }
-}
-
-/* Buttons from the pattern: solid blue, and a white outline one */
-.btn.blue { background: var(--primary); color: #fff; box-shadow: 0 1px 2px rgba(29, 78, 216, .25); }
-.btn.blue:hover { background: #1e40af; }
-.btn.outline { background: var(--surface); color: var(--text); border-color: var(--line); }
-.btn.outline:hover { border-color: var(--muted); }
-
-/* Home hero: words left, picture right (picture under the words on phones) */
-.home-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; padding: 44px 0 12px; }
-.home-hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.55rem); line-height: 1.04; letter-spacing: -0.035em; font-weight: 800; margin: 0 0 18px; }
-.home-hero h1 .k1 { color: var(--gold-ink); } .home-hero h1 .k2 { color: var(--blue-ink); }
-.home-hero .lead { color: var(--muted); max-width: 600px; margin: 0; text-align: justify; hyphens: auto; }
-.home-hero .btns { margin-top: 26px; }
-.home-art { background: color-mix(in srgb, var(--bg) 60%, var(--surface)); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
-.art-in { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; }
-.art-bars { position: relative; display: flex; align-items: flex-end; gap: 9px; height: 96px; padding-top: 30px; }
-.art-bars i { display: block; width: 9px; border-radius: 2px; background: var(--line); height: 34px; }
-.art-bars i:nth-child(3) { height: 62px; background: #f59e0b; } .art-bars i:nth-child(4) { height: 82px; background: var(--text); }
-.art-bars .peso { position: absolute; top: -6px; left: 14px; width: 26px; height: 26px; border-radius: 50%; border: 2px solid #f59e0b; color: var(--orange-ink);
-                  font: 700 13px/22px var(--font-body); text-align: center; }
-.art-doc { display: grid; gap: 7px; width: 48px; padding: 9px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); }
-.art-doc i { display: block; height: 4px; border-radius: 3px; background: var(--line); }
-.art-doc i:first-child { background: #f59e0b; width: 70%; } .art-doc i:last-child { background: var(--primary); width: 55%; margin-left: auto; }
-.art-arrow { color: var(--primary); font-weight: 700; }
-.art-code { flex: 1; min-width: 0; background: #0f172a; border-radius: 10px; padding: 12px 14px 14px; box-shadow: 0 10px 24px -12px rgba(15, 23, 42, .6); }
-.art-code .dots { display: flex; gap: 6px; margin-bottom: 10px; }
-.art-code .dots i { width: 9px; height: 9px; border-radius: 50%; background: #f87171; } .art-code .dots i:nth-child(2) { background: #fbbf24; } .art-code .dots i:nth-child(3) { background: #34d399; }
-.art-code pre { margin: 0; font: 12px/1.6 ui-monospace, "JetBrains Mono", Menlo, monospace; color: #e2e8f0; white-space: pre; overflow: hidden; background: none; border: 0; padding: 0; box-shadow: none; }
-.art-code pre b { color: #60a5fa; font-weight: 400; } .art-code pre em { color: #fcd34d; font-style: normal; } .art-code pre u { color: #6ee7b7; text-decoration: none; }
-@media (max-width: 900px) { .home-hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 28px; } }
-@media (max-width: 640px) {
-  .home-hero { padding-top: 18px; }
-  .home-hero h1 { font-size: clamp(2rem, 9.6vw, 2.5rem); }
-  .home-hero .btns { flex-wrap: nowrap; gap: 10px; } .home-hero .btn { padding: 12px 16px; white-space: nowrap; }
-  .home-art { padding: 16px; } .art-in { padding: 18px 12px; gap: 10px; } .art-doc { display: none; }
-}
-
-/* Section headings with a small orange label above (Home) */
-.kick { margin-top: 52px; }
-.kick .eyebrow { margin: 0 0 4px; letter-spacing: .14em; font-weight: 700; }
-.kick h2, .kick .section-head h2 { margin-top: 0; }
-.kick h2::after { display: none; }
-.kick .section-head { margin-top: 0; }
-.kick + * { margin-top: 22px !important; }
-
-/* Cards: thin border, softer shadow, rounded */
-.card, .post-card, .related-card, .post .toc, .series-box, .topic-box, .side-box { border-radius: var(--radius); }
-.card, .post-card { box-shadow: 0 1px 2px rgba(15, 23, 42, .04); }
-.related-card { padding: 18px 20px; }
-.start-here .card { padding: 28px; }
-
-/* Latest posts on Home: three cards in a row on computers */
-.home-posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.home-posts .post-card { display: flex; flex-direction: column; padding: 22px 24px; }
-.home-posts .post-card h2 { font-size: 1.18rem; }
-.home-posts .post-card .meta { font-size: 13.5px; }
-.home-posts .post-card .teaser { font-size: 15.5px; text-align: left; }
-.home-posts .post-card .more { margin-top: auto; padding-top: 14px; font-size: 15px; }
-@media (max-width: 1024px) { .home-posts { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
-
-/* Browse by topic: one box, topics as buttons with their counts */
-.topic-box { margin-top: 44px; padding: 28px 32px 32px; background: var(--surface); border: 1px solid var(--line); }
-.topic-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-.topic-box h2 { margin: 0; font-size: 1.35rem; } .topic-box h2::after { display: none; }
-.topic-box .muted { margin: 4px 0 0 !important; font-size: 15px; }
-.topic-pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 22px; }
-.topic-pill { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 10px; color: var(--text); background: var(--surface); }
-.topic-pill b { font-weight: 600; font-size: 15.5px; line-height: 1.3; }
-.topic-pill span { color: var(--muted); font-size: 13px; font-weight: 500; white-space: nowrap; }
-.topic-pill:hover { text-decoration: none; border-color: var(--blue-ink); } .topic-pill:hover span { color: var(--blue-ink); }
-@media (max-width: 1024px) { .topic-pills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .topic-box { padding: 20px 16px; } .topic-pills { grid-template-columns: minmax(0, 1fr); gap: 8px; } .topic-top .badge { display: none; } }
-
-/* Posts and book chapters on computers: the text plus a side column that stays in view */
-.read-side, .read-side + * .x { display: none; }
-@media (min-width: 1025px) {
-  .read-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 36px; align-items: start; }
-  .read-grid.side-left { grid-template-columns: 300px minmax(0, 1fr); }
-  .read-grid .read-main { max-width: none; margin: 0; min-width: 0; }
-  .read-side { display: grid; gap: 18px; position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow: auto; padding-top: 44px; scrollbar-width: thin; }
-  .read-grid .narrow-only { display: none; }
-  .read-side .series-box { margin: 0; }
-}
-.side-box { background: var(--surface); border: 1px solid var(--line); padding: 20px 22px; }
-.side-box .eyebrow { margin: 0 0 10px; font-weight: 700; letter-spacing: .14em; font-size: 12px; }
-.side-box ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.side-toc ol { counter-reset: s; }
-.side-toc li { counter-increment: s; }
-.side-toc a { display: block; padding: 4px 0; color: var(--text); font-weight: 500; font-size: 14px; line-height: 1.4; }
-.side-toc a::before { content: counter(s) ". "; color: var(--muted); }
-.side-toc a:hover { color: var(--blue-ink); text-decoration: none; }
-.side-author .side-name { margin: 0 0 8px; font: 700 1.05rem var(--font-display); }
-.side-author .side-name a { color: var(--text); }
-.side-author p { margin: 0 0 10px; font-size: 14px; color: var(--muted); line-height: 1.5; }
-.side-author p:last-child { margin: 0; font-size: 14px; }
-.side-chapters a, .side-chapters .here > span { display: block; padding: 7px 10px; border-radius: 8px; color: var(--text); font-size: 13.75px; line-height: 1.35; border: 1px solid transparent; }
-.side-chapters .muted { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; }
-.side-chapters b { font-weight: 500; }
-.side-chapters a:hover { background: var(--bg); text-decoration: none; }
-.side-chapters .here > span { background: var(--orange-soft); border-color: color-mix(in srgb, var(--orange-ink) 35%, transparent); color: var(--orange-ink); }
-.side-chapters .here b { font-weight: 700; }
-
-/* The book's contents page: navy banner, as in the downloaded book reader */
-.book-col .book-head.book-banner { background: radial-gradient(130% 120% at 0% 0%, #1b2f66 0%, #0f1c42 55%, #0a1330 100%); color: #e8eefc;
-  border-radius: 18px; padding: 32px; gap: 28px; align-items: center; box-shadow: 0 18px 40px -24px rgba(10, 19, 48, .8); }
-.book-banner h1 { color: #fff; }
-.book-banner .eyebrow { color: #fbbf24; }
-.book-banner .muted { color: #b8c4e0 !important; }
-.book-banner p { color: #dbe4f7; }
-@media (max-width: 640px) { .book-col .book-head.book-banner { padding: 20px 16px; gap: 14px; border-radius: 14px; } }
-
-/* Footer: the disclaimer in a box with an orange edge, then the copyright and the policy links */
-footer.legal { text-align: left; border-top: 1px solid var(--line); padding: 36px 0 30px; margin-top: 24px; font-size: 13.5px; }
-footer.legal .wrap { display: block; }
-footer.legal .disclaimer-box { margin: 0; padding: 18px 22px; background: color-mix(in srgb, var(--bg) 70%, var(--surface)); border: 1px solid var(--line);
-  border-left: 4px solid var(--orange-ink); border-radius: var(--radius); color: var(--muted); line-height: 1.6; text-align: left; }
-footer.legal .disclaimer-box b { color: var(--text); }
-footer.legal .disclaimer-box a { color: var(--blue-ink); }
-footer.legal .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 20px; margin-top: 20px; }
-footer.legal .legal-links { display: flex; flex-wrap: wrap; gap: 6px 18px; white-space: normal; }
-footer.legal .built { opacity: .75; }
-@media (max-width: 640px) { footer.legal { padding-top: 24px; font-size: 13px; } footer.legal .disclaimer-box { padding: 14px 14px; } footer.legal .foot-row { flex-direction: column; align-items: flex-start; } }
-
-.section-head h2 + .more { margin-top: 0; }
-.home-posts .post-card .meta { gap: 4px 8px; }
-
-.side-box .eyebrow a { color: inherit; font: inherit; padding: 0; }
-.side-box nav, .read-side nav { display: block; }
-.read-side .side-box { padding: 18px 16px; }
-.read-side nav a { padding: 7px 10px; font-size: 13.75px; border-bottom: 0; }
-.read-side .side-toc a { padding: 4px 0; font-size: 14px; }
-.read-side .series-box { padding: 18px 16px; border-left-width: 1px; }
-.read-side .series-box .series-name { font-size: 1.05rem; }
-.read-side .learn-parts { gap: 6px; }
-.read-side .learn-parts a, .read-side .learn-parts .here > span { padding: 8px 10px; font-size: 13.5px; }
-.read-side .learn-parts b { font-size: 13.75px; line-height: 1.35; }
-.book-toc a, .book-toc li > * { border-radius: 10px; }
-
-footer.legal .foot-row { width: 100%; }
-.home-hero h1 { color: var(--text); }
-body:has(.home-hero) { --bg: var(--surface); }
-body:has(.home-hero) header.site { box-shadow: 0 1px 0 var(--line); }
-.top-drop { position: relative; display: flex; }
-header.site .drop-btn { display: flex; align-items: center; gap: 4px; padding: 0 12px; margin-bottom: -1px; background: none; border: 0; border-bottom: 2px solid transparent;
-  font: 500 15px var(--font-body); color: var(--muted); cursor: pointer; white-space: nowrap; }
-.drop-btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
-.drop-btn:hover { color: var(--text); }
-.drop-btn.active { color: var(--orange-ink); border-bottom-color: var(--orange-ink); font-weight: 600; }
-.top-drop .drop { display: none; position: absolute; top: calc(100% - 6px); left: 0; min-width: 250px; padding: 8px; background: var(--surface); border: 1px solid var(--line);
-  border-radius: 12px; box-shadow: 0 16px 36px -18px rgba(15, 23, 42, .35); z-index: 30; }
-.top-drop:hover .drop, .top-drop:focus-within .drop { display: grid; gap: 2px; }
-.top-drop:hover .drop-btn svg, .top-drop:focus-within .drop-btn svg { transform: rotate(180deg); }
-header.site .top-drop .drop a { display: block; padding: 9px 12px; border: 0; margin: 0; border-radius: 8px; color: var(--text); font-size: 14.5px; font-weight: 500; }
-header.site .top-drop .drop a:hover { background: var(--bg); text-decoration: none; }
-header.site .top-drop .drop a[aria-current] { color: var(--orange-ink); }
-
-/* the three bars sit at the right now (pattern), so the menu panel opens from the right */
-@media (max-width: 1024px) {
-  html.menu-js.menu-open header.site #site-menu { inset: 0 0 auto auto; padding-left: 14px; padding-right: max(12px, env(safe-area-inset-right, 0px));
-    box-shadow: -8px 0 32px rgba(7, 22, 49, .35); border-radius: 0 0 0 12px; }
-}
-
-.card.lesson:not(.mini) .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
-.card.lesson:not(.mini) .badge.checked { margin-left: auto; background: none; border: 0; padding: 0; color: var(--muted); text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 13px; }
-
-/* Phones, as in the mobile pattern file (Butch 2026-11-23): picture right after the words, then the two buttons full width, one under the other;
-   the three bars in a small grey circle */
-@media (max-width: 640px) {
-  .home-hero { display: flex; flex-direction: column; gap: 0; }
-  .home-copy { display: contents; }
-  .home-hero .eyebrow { order: 1; } .home-hero h1 { order: 2; } .home-hero .lead { order: 3; }
-  .home-art { order: 4; margin-top: 22px; }
-  .home-hero .btns { order: 5; flex-direction: column; flex-wrap: nowrap; gap: 10px; margin-top: 22px; }
-  .home-hero .btn { display: block; width: 100%; text-align: center; padding: 14px 16px; }
-}
-@media (max-width: 1024px) {
-  html.menu-js .menu-btn { width: 36px; height: 36px; margin-right: 0; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
-  .menu-btn svg { width: 17px; height: 17px; }
-  .menu-btn svg path { stroke: currentColor !important; }
-}
-
-@media (max-width: 640px) { .home-hero { align-items: stretch; text-align: left; } .home-hero .btns { align-items: stretch; } .home-art { align-self: stretch; } }
-
-.post-top { display: flex; align-items: center; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; }
-.post-top .back-all { font-size: 15.5px; font-weight: 600; white-space: nowrap; }
-.post-top .crumbs { margin: 0; font-size: 14px; }
-.post-top .crumbs a { color: var(--muted); font-weight: 500; }
-.post-top .crumbs li:nth-child(2) a { color: var(--orange-ink); }
-.post-top .crumbs [aria-current] { color: var(--text); font-weight: 500; }
-.post-top + .post { margin-top: 18px; }
-/* post card: rounded, dark-green-blue-violet bar across the top */
-.blog-col .post { border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(15, 23, 42, .04); padding-top: 44px; }
-.blog-col .post::before { left: 0; right: 0; top: 0; height: 5px; border-radius: 0; background: linear-gradient(90deg, #0f172a, #059669 35%, #10b981 50%, #3b82f6 75%, #7c3aed); }
-.post h1 { font-weight: 800; letter-spacing: -0.03em; }
-.post .byline { margin-top: 10px; }
-.post .series-line { margin-top: 2px; }
-/* Listen: a panel with the progress line always shown */
-.post .listen { border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--surface)); padding: 12px 14px 22px; margin: 18px 0 4px; position: relative; }
-.post .listen .listen-progress { display: block; left: 14px; right: 14px; bottom: 10px; }
-.post .listen button { font-size: 14.5px; }
-.post .listen-time { margin-left: auto; }
-.post .listen:not([data-state="idle"]) { position: sticky; padding: 10px 14px 22px; }
-.post .lead { color: var(--text); opacity: .88; margin-top: 22px; }
-.post hr.lead-rule { border: 0; border-top: 1px solid var(--line); margin: 22px 0 26px; }
-/* side column: one card holding In this article, the series and the author */
-.side-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 18px; }
-.side-card > .side-box { border-radius: 14px; }
-.side-card > .side-toc { border: 0; padding: 0; background: none; }
-.side-series-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
-.side-series-head .eyebrow { margin: 0; color: var(--violet-ink); font: 700 12px var(--font-body); letter-spacing: .14em; text-transform: uppercase; padding: 0; border: 0; }
-.side-series-head .muted { font-size: 12.5px; font-weight: 600; }
-.read-side .side-series a, .read-side .side-series .here > span { display: block; padding: 6px 10px; border-radius: 8px; color: var(--muted); font-size: 13.75px; font-weight: 500; line-height: 1.4; border: 1px solid transparent; }
-.read-side .side-series a:hover { color: var(--text); background: var(--bg); text-decoration: none; }
-.read-side .side-series .here > span { color: var(--violet-ink); font-weight: 700; background: color-mix(in srgb, var(--violet) 14%, var(--surface)); border-color: color-mix(in srgb, var(--violet) 45%, transparent); }
-.side-author .side-name { font-size: 1.1rem; line-height: 1.3; }
-.side-author p { text-align: justify; hyphens: auto; }
-.side-author p:last-child { text-align: left; }
-@media (min-width: 1025px) { .read-side { padding-top: 48px; } }
-@media (max-width: 640px) {
-  .post-top .back-all { font-size: 14.5px; } .post-top .crumbs { font-size: 13px; }
-  .blog-col .post { border-radius: 14px; padding-top: 32px; }
-  .post .listen { padding: 10px 10px 20px; } .post .listen .listen-progress { left: 10px; right: 10px; }
-}
-
-.read-side .side-series-head a.eyebrow { padding: 0; margin: 0; border: 0; color: var(--violet-ink); font: 700 12px var(--font-body); letter-spacing: .14em; line-height: 1.4; }
-.side-series-head .muted { white-space: nowrap; }
-.post-top { max-width: var(--max); }
-.post-top + .read-grid .post { margin-top: 18px; }
-.post .lead { text-align: left; hyphens: manual; }
-@media (min-width: 1025px) { .read-grid:not(.side-left) .read-side { position: static; max-height: none; overflow: visible; padding-top: 18px; } }
-
-.read-side .side-author .side-name { text-align: left; hyphens: manual; }
-.read-side .side-author .eyebrow { color: var(--orange-ink); }
-.post .lead { max-width: none; }
-
-.phone-row { display: none; }
-@media (max-width: 1024px) {
-  header.site .wrap { flex-wrap: wrap; row-gap: 0; min-height: 0; }
-  header.site .brand-line { padding: 12px 0 10px; }
-  .phone-row { display: flex; align-items: center; gap: 10px; width: 100%; position: relative; padding: 9px 0; border-top: 1px solid var(--line); }
-  html.menu-js .menu-btn { order: 0; margin: 0; width: 32px; height: 32px; flex: none; border-radius: 50%; border: 1px solid var(--line);
-    background: color-mix(in srgb, var(--bg) 70%, var(--surface)); color: var(--text); display: grid; place-content: center; }
-  .menu-btn svg { width: 16px; height: 16px; }
-  .menu-btn .i-close { display: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
-  html.menu-open .menu-btn svg:not(.i-close) { display: none; }
-  html.menu-open .menu-btn .i-close { display: block; }
-  .page-label { color: var(--orange-ink); font: 700 12px/1.3 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
-  .home-hero > .home-copy > .eyebrow, .home-hero > .eyebrow { display: none; }
-  html.menu-open, html.menu-open body { overflow: visible; }
-  html.menu-js.menu-open header.site::before { content: none; }
-  html.menu-js header.site #site-menu { display: none; }
-  html.menu-js.menu-open header.site #site-menu {
-    display: grid !important; gap: 2px; position: absolute !important; inset: calc(100% - 2px) auto auto 0 !important; width: min(300px, 82vw) !important;
-    height: auto; max-height: 72dvh; overflow-y: auto; margin: 0; padding: 8px !important; box-sizing: border-box; flex-direction: column;
-    background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 18px 40px -16px rgba(15, 23, 42, .4); z-index: 50; }
-  html.menu-js.menu-open header.site #site-menu a[href], html.menu-js.menu-open header.site #site-menu summary {
-    display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 0; padding: 10px 14px; border: 1px solid transparent; border-top: 1px solid transparent;
-    border-radius: 10px; color: var(--text); font: 600 15.5px/1.3 var(--font-body); white-space: nowrap; cursor: pointer; }
-  html.menu-js.menu-open header.site #site-menu a[href]:hover, html.menu-js.menu-open header.site #site-menu summary:hover { background: var(--bg); text-decoration: none; }
-  html.menu-js.menu-open header.site #site-menu > a.active { background: #fefce8; border-color: #fde68a; color: var(--orange-ink); }
-  html.menu-js.menu-open header.site #site-menu .pm-group a[href] { padding: 8px 14px 8px 28px; font-weight: 500; font-size: 14.5px; }
-  html.menu-js.menu-open header.site #site-menu .pm-group a.active, html.menu-js.menu-open header.site #site-menu summary.active { color: var(--orange-ink); }
-  .pm-group summary { list-style: none; }
-  .pm-group summary::-webkit-details-marker { display: none; }
-  .pm-group summary svg { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-90deg); transition: transform .15s; }
-  .pm-group[open] summary svg { transform: none; }
-}
- html[data-theme="dark"].menu-js.menu-open header.site #site-menu > a.active { background: rgba(250, 204, 21, .12); border-color: rgba(250, 204, 21, .35); } 
-
-@media (max-width: 1024px) {
-  html.menu-js.menu-open header.site #site-menu > *, html.menu-js.menu-open header.site #site-menu .pm-group > * { width: 100%; box-sizing: border-box; margin: 0; }
-  html.menu-js.menu-open header.site #site-menu details { padding: 0; border: 0; background: none; display: block; }
-}
-
-@media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu a[href], html.menu-js.menu-open header.site #site-menu summary { width: 100% !important; max-width: none !important; } }
-
-@media (max-width: 1024px) { html.menu-js.menu-open header.site #site-menu { grid-template-columns: minmax(0, 1fr) !important; justify-content: stretch !important; align-items: stretch !important; } }
-
-.book-text, .book-text * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
-.book-text img { pointer-events: none; }
-@media print {
-  body:has(.book-col) header.site, body:has(.book-col) main, body:has(.book-col) footer.legal { display: none !important; }
-  body:has(.book-col)::before { content: "Printing is turned off for the ALTOS book. Please read it online at aumahinay.dev."; display: block; padding: 40px; font: 16px/1.5 sans-serif; }
-}
-
-@media (min-width: 1025px) {
-  header.site .top-nav a, header.site .drop-btn { padding-bottom: 15px; }  /* links sit level with the name, not the tagline */
-}
-@media (max-width: 1024px) {
-  header.site .wrap { position: relative; flex-wrap: nowrap; align-items: flex-start; }
-  .phone-row { display: contents; }
-  .phone-row .page-label { display: none; }
-  html.menu-js .menu-btn { margin: 10px 0 0 auto; }
-  .home-hero > .home-copy > .eyebrow, .home-hero > .eyebrow { display: block; }
-  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) max(10px, env(safe-area-inset-right, 0px)) auto auto !important; }
-}
-
-.post-card { border-radius: 16px; padding: 34px 40px 30px; box-shadow: 0 1px 3px rgba(15, 23, 42, .06), 0 1px 2px rgba(15, 23, 42, .04); }
-.post-card h2 { margin-top: 16px; font-weight: 800; letter-spacing: -.01em; text-wrap: pretty; }
-.post-card h2 a { color: var(--primary); font-weight: 800; }
-.post-card h2 a:hover { color: color-mix(in srgb, var(--primary) 75%, #000); }
-.post-card .teaser { margin-top: 14px; line-height: 1.65; }
-.post-card .more { margin-top: 18px; color: var(--primary); font-weight: 700; }
-.home-posts .post-card { padding: 22px 24px; }
-footer.legal { font-size: 14.5px; }
-footer.legal .disclaimer-box { padding: 22px 28px; line-height: 1.75; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
-footer.legal .legal-links { gap: 6px 26px; }
-footer.legal .legal-links a { font-weight: 400; }
-@media (max-width: 640px) {
-  .post-card { padding: 22px 20px 20px; }
-  footer.legal { font-size: 13.5px; }
-  footer.legal .disclaimer-box { padding: 16px 16px; line-height: 1.65; }
-}
-
- :root[data-theme="dark"] .post-card h2 a, :root[data-theme="dark"] .post-card .more { color: var(--blue-ink); } 
-:root[data-theme="dark"] .post-card h2 a, :root[data-theme="dark"] .post-card .more { color: var(--blue-ink); }
-
-@media (max-width: 1024px) {
-  html.menu-js .menu-btn { order: -1; margin: 10px 12px 0 0; }
-  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(10px, env(safe-area-inset-left, 0px)) !important; }
-}
-
-@media (max-width: 1024px) {
-  header.site .wrap { gap: 0 6px; padding-left: max(10px, env(safe-area-inset-left, 0px)); padding-right: max(10px, env(safe-area-inset-right, 0px)); }
-  html.menu-js .menu-btn { margin: 3px 0 0 0; }
-  header.site .brand-line { padding: 8px 0 7px; }
-  html.menu-js.menu-open header.site #site-menu { inset: calc(100% + 2px) auto auto max(6px, env(safe-area-inset-left, 0px)) !important; }
-}
-
-.author-top { display: flex; align-items: center; gap: 16px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
-.author-top .author-photo { width: 76px; height: 76px; min-width: 0; max-width: none; margin: 0; flex: none; aspect-ratio: 1 / 1; object-fit: cover; }
-.author-top p, .author-top h1 { margin: 0; text-align: left; }
-.author-top .author-name { font: 700 1.2em/1.2 var(--font-display); color: var(--text); letter-spacing: 0; }
-.author-top .author-name a { color: var(--text); }
-.author-top .author-name::after { display: none; }
-.author-top .author-roles { margin-top: 4px !important; font: 600 15.2px/1.4 var(--font-display); color: var(--violet-ink); }
-.author-top .author-roles span { display: block; }
-/* About page: the same head, a little larger, in a card */
-main .author-top:has(h1) { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; margin: 4px 0 18px; gap: 22px; }
-main .author-top:has(h1) .author-photo { width: 110px; height: 110px; }
-main .author-top h1.author-name { font-size: clamp(1.35rem, 2.6vw, 1.9rem); }
-main .author-top:has(h1) .author-roles { font-size: clamp(15.2px, 1.6vw, 18px); margin-top: 6px !important; }
-/* Side box on computers: smaller photo, name may wrap */
-.side-author .author-top { gap: 12px; padding-bottom: 12px; margin-bottom: 12px; }
-.side-author .author-top .author-photo { width: 54px; height: 54px; }
-.side-author .author-top .author-name { font-size: 1rem; white-space: normal; }
-.side-author .author-top .author-roles { font-size: 12.6px; }
-@media (max-width: 640px) {
-  .author-top { gap: 12px; }
-  .author-top .author-photo { width: 60px; height: 60px; }
-  main .author-top:has(h1) { padding: 16px 14px; gap: 14px; }
-  main .author-top:has(h1) .author-photo { width: 76px; height: 76px; }
-  main .author-top h1.author-name { white-space: nowrap; font-size: min(1.25rem, calc((100vw - 150px) / 16.2)); }
-  main .author-top:has(h1) .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
-}
-
-.book-text .author-top { margin-top: 16px; }
-.book-text .author-top p, .book-text .author-top .author-name { text-align: left !important; hyphens: manual; }
-@media (max-width: 640px) {
-  .book-text .author-top .author-name { white-space: nowrap; font-size: min(1.2em, calc((100vw - 150px) / 16.2)); }
-  .book-text .author-top .author-roles { font-size: min(15.2px, calc((100vw - 150px) / 17.5)); }
-}
-
-@media (min-width: 1025px) {
-  #altos, #blog-cats, .post h3[id], .book-part, .book-text h2, .glossary .term { scroll-margin-top: 96px; }
-  #english-exam-vocabulary { scroll-margin-top: 104px; }
-}
-
-.theme-btn { flex: none; align-self: center; display: grid; place-content: center; width: 34px; height: 34px; padding: 0; margin-left: auto;
-  border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; transition: border-color .15s, color .15s; }
-.theme-btn:hover, .theme-btn:focus-visible { border-color: var(--gold-ink); color: var(--gold-ink); }
-.theme-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.theme-btn .i-sun { display: none; }
-:root[data-theme="dark"] .theme-btn .i-sun { display: block; }
-:root[data-theme="dark"] .theme-btn .i-moon { display: none; }
-@media (min-width: 1025px) { .theme-btn { margin-left: 6px; } }
-
-/* Figures follow the chosen mode (Butch 2026-11-27): in dark mode, white-paper charts and diagrams turn dark
-   (colours flipped, then blended onto the navy page). Photos and screenshots stay as they are. */
-:root[data-theme="dark"] figure.chart img, :root[data-theme="dark"] figure.diagram img {
-  filter: invert(1) hue-rotate(180deg) brightness(1.3) saturate(1.3); mix-blend-mode: screen; box-shadow: none; border-color: transparent; }
-</style></head><body><header class="site"><div class="wrap"><a href="/" class="brand-line" aria-label="Butch Mahinay, home"><span class="bn">Butch Mahinay</span><span class="bt">Public finance and software for local treasuries</span></a><nav class="top-nav" aria-label="Top menu"><a href="/">Home</a><div class="top-drop"><button type="button" class="drop-btn" aria-haspopup="true">Free Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="drop"><a href="/tools/rpt-calculator/">Real Property Tax Calculator</a><a href="/tools/altos-demo/">ALTOS Browser Demo</a></div></div><a href="/tutorials/" class="active" aria-current="page">Tutorials</a><div class="top-drop"><button type="button" class="drop-btn" aria-haspopup="true">Study Notes &amp; Book<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="drop"><a href="/study-notes/">Study Notes</a><a href="/book/">The ALTOS Book</a></div></div><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav><button type="button" id="theme-btn" class="theme-btn" aria-label="Dark mode" aria-pressed="false" title="Light or dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><div class="phone-row"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg></button><span class="page-label">Tutorials</span><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><details class="pm-group"><summary>Free Tools<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><a href="/tools/rpt-calculator/">Real Property Tax Calculator</a><a href="/tools/altos-demo/">ALTOS Browser Demo</a></details><a href="/tutorials/" class="active" aria-current="page">Tutorials</a><details class="pm-group"><summary>Study Notes &amp; Book<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><a href="/study-notes/">Study Notes</a><a href="/book/">The ALTOS Book</a></details><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div></div></header><main><div class="wrap"><p class="eyebrow">Tutorials</p><h1>Python for Treasury Work</h1><p class="lead">Short, practical Python lessons built around the daily work of a local treasury office: receipts, collections, penalties, reports and audit trails. Every example uses made-up data, runs as written, and shows the output it really prints. I am learning alongside you, so the lessons grow from simple scripts to the tools I use in building software.</p><div class="card setup"><p><b>Where to begin. </b>New to Python? Start with Lesson 0. It shows how to install Python, run a script, and fix the errors almost everyone meets on the first day. Then take the lessons in order; each one builds on the one before.</p></div><div class="card setup pledge"><p><b>Our promise. </b>Every lesson is checked before it goes live: the code is run, the output you see is what it really prints, the facts and laws are checked against sources, and the page is reviewed on phone and computer. Each lesson shows the month it was last checked.</p></div><div class="lesson-list"><a href="/tutorials/getting-started/" class="card lesson"><div class="meta"><span class="badge">Lesson 0</span><span class="muted">Beginner · 20 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Getting started: install Python and run your first script</h3><p>Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.</p><div class="tags"><span class="tag">history of Python</span><span class="tag">installing Python</span><span class="tag">Command Prompt</span><span class="tag">Terminal</span><span class="tag">pip</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/add-up-daily-collections/" class="card lesson"><div class="meta"><span class="badge">Lesson 1</span><span class="muted">Beginner · 15 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Add up a day&#x27;s collections from a CSV file</h3><p>Read the day&#x27;s official receipts from a spreadsheet export and total them per fund, to the centavo.</p><div class="tags"><span class="tag">csv</span><span class="tag">Decimal</span><span class="tag">dictionaries</span><span class="tag">f-strings</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/check-or-series/" class="card lesson"><div class="meta"><span class="badge">Lesson 2</span><span class="muted">Beginner · 20 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Check an official receipt series for gaps and duplicates</h3><p>Compare the receipts recorded today with the booklet issued, and flag missing, repeated or stray numbers.</p><div class="tags"><span class="tag">sets</span><span class="tag">range</span><span class="tag">Counter</span><span class="tag">list comprehensions</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/rpt-penalty-with-decimal/" class="card lesson"><div class="meta"><span class="badge">Lesson 3</span><span class="muted">Beginner · 20 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Compute real property tax penalties with Decimal</h3><p>See why floats are unsafe for money, then compute 2% monthly penalties with a 36-month cap, rounded correctly.</p><div class="tags"><span class="tag">Decimal</span><span class="tag">functions</span><span class="tag">rounding</span><span class="tag">min()</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/rcd-summary-with-pandas/" class="card lesson"><div class="meta"><span class="badge">Lesson 4</span><span class="muted">Intermediate · 25 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Build a simple RCD summary with pandas</h3><p>Group collections by collector and fund, list the receipts used, and match collections against deposits.</p><div class="tags"><span class="tag">pandas</span><span class="tag">groupby</span><span class="tag">pivot_table</span><span class="tag">join</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/tamper-evident-log-with-hmac/" class="card lesson"><div class="meta"><span class="badge">Lesson 5</span><span class="muted">Intermediate · 25 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Make a tamper-evident log with HMAC</h3><p>Seal each log entry with a keyed hash chained to the one before it, so any later edit or deletion shows.</p><div class="tags"><span class="tag">hmac</span><span class="tag">hashlib</span><span class="tag">json</span><span class="tag">security</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/excel-report-with-openpyxl/" class="card lesson"><div class="meta"><span class="badge">Lesson 6</span><span class="muted">Beginner · 20 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Make a formatted Excel report with openpyxl</h3><p>Turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.</p><div class="tags"><span class="tag">openpyxl</span><span class="tag">Excel</span><span class="tag">formulas</span><span class="tag">number formats</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/receipts-register-with-sqlite/" class="card lesson"><div class="meta"><span class="badge">Lesson 7</span><span class="muted">Intermediate · 25 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Keep a receipts register in SQLite</h3><p>Save official receipts in a small database file, total them with SQL, and let the database itself refuse a duplicate OR number.</p><div class="tags"><span class="tag">sqlite3</span><span class="tag">SQL</span><span class="tag">placeholders</span><span class="tag">IntegrityError</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/check-data-before-you-trust-it/" class="card lesson"><div class="meta"><span class="badge">Lesson 8</span><span class="muted">Beginner · 20 min</span><span class="badge checked">Checked Nov 2026</span></div><h3>Check a collections file before you trust it</h3><p>Catch blank payors, impossible dates, mistyped funds, commas in amounts and extra decimals, and list every problem by line.</p><div class="tags"><span class="tag">validation</span><span class="tag">try and except</span><span class="tag">datetime</span><span class="tag">functions</span></div><span class="go">Start the lesson →</span></a></div><h2 id="english-exam-vocabulary">English Exam Vocabulary</h2><p>Ten words at a time to help you prepare for the English part of written exams. Vocabulary tests often ask for a word&#x27;s meaning, its synonyms and antonyms, analogies and how the word is used in a sentence, so each word comes with a plain meaning, an example from government work, words that mean the same and the opposite, and practice questions in that style.</p><div class="lesson-list"><a href="/tutorials/english-exam-vocabulary/governance-law-and-public-administration/" class="card lesson"><div class="meta"><span class="badge">Module 1</span><span class="muted">10 words · practice</span><span class="badge checked">Checked Nov 2026</span></div><h3>Governance, law and public administration</h3><p>Ten words you meet in memos, audit reports and office orders: acquiesce, ad hoc, anomaly, arbitrary, ascertain, assiduous, autonomous, bureaucracy, cognizant and compliance.</p><span class="go">Start the module →</span></a><a href="/tutorials/english-exam-vocabulary/ethics-integrity-and-professional-conduct/" class="card lesson"><div class="meta"><span class="badge">Module 2</span><span class="muted">10 words · practice</span><span class="badge checked">Checked Nov 2026</span></div><h3>Ethics, integrity and professional conduct</h3><p>Ten words about honesty and good conduct in public office: candor, capricious, collusion, discretionary, efficacy, egregious, incorruptible, integrity, prudent and transparent.</p><span class="go">Start the module →</span></a><a href="/tutorials/english-exam-vocabulary/analysis-planning-and-operations/" class="card lesson"><div class="meta"><span class="badge">Module 3</span><span class="muted">10 words · practice</span><span class="badge checked">Checked Nov 2026</span></div><h3>Analysis, planning and operations</h3><p>Ten words for reports, audits and planning: aggregate, corroborate, disseminate, empirical, feasible, fiduciary, mitigate, pragmatic, scrutinize and substantiate.</p><span class="go">Start the module →</span></a><a href="/tutorials/english-exam-vocabulary/public-finance-and-local-government/" class="card lesson"><div class="meta"><span class="badge">Module 4</span><span class="muted">10 words · practice</span><span class="badge checked">Checked Nov 2026</span></div><h3>Public finance and local government</h3><p>Ten words from budgets, taxes and local councils: amortization, appropriation, biennial, cadastral, censure, codify, concurrence, demographics, disbursement and levy.</p><span class="go">Start the module →</span></a><a href="/tutorials/english-exam-vocabulary/power-law-and-oversight/" class="card lesson"><div class="meta"><span class="badge">Module 5</span><span class="muted">10 words · practice</span><span class="badge checked">Checked Nov 2026</span></div><h3>Power, law and oversight</h3><p>Ten words about authority, laws and how they are carried out: despotism, devolution, dissent, eclectic, embezzlement, enactment, equanimity, exemption, exigency and expedient.</p><span class="go">Start the module →</span></a><a href="/tutorials/english-exam-vocabulary/honesty-records-and-careful-work/" class="card lesson"><div class="meta"><span class="badge">Module 6</span><span class="muted">10 words · practice</span><span class="badge checked">Checked Nov 2026</span></div><h3>Honesty, records and careful work</h3><p>Ten exam words for good and bad work: fabrication, facile, fallacy, fastidious, fealty, felicitous, fervent, fictitious, flagrant and florid.</p><span class="go">Start the module →</span></a></div><h2 id="words-to-know">Words to know</h2><p>These are the words that come up again and again in the lessons. Each one says what the word means, why it matters in treasury work, and gives a short example. Every Python example below was run, and the result shown under it is what it really prints.</p><p class="word-index"><a href="#word-script" class="tag">Script</a><a href="#word-library" class="tag">Library</a><a href="#word-pip" class="tag">pip</a><a href="#word-variable" class="tag">Variable</a><a href="#word-loop" class="tag">Loop</a><a href="#word-module" class="tag">Module</a><a href="#word-csv" class="tag">CSV</a><a href="#word-dictionary" class="tag">Dictionary</a><a href="#word-decimal" class="tag">Decimal</a><a href="#word-f-string" class="tag">f-string</a><a href="#word-list" class="tag">List</a><a href="#word-set" class="tag">Set</a><a href="#word-function" class="tag">Function</a><a href="#word-dataframe" class="tag">DataFrame</a><a href="#word-hash" class="tag">Hash</a><a href="#word-hmac" class="tag">HMAC</a><a href="#word-workbook" class="tag">Workbook</a><a href="#word-formula" class="tag">Formula</a><a href="#word-database" class="tag">Database</a><a href="#word-sql" class="tag">SQL</a><a href="#word-placeholder" class="tag">Placeholder</a><a href="#word-exception" class="tag">Exception</a><a href="#word-validation" class="tag">Validation</a><a href="#word-test" class="tag">Test</a><a href="#word-assert" class="tag">assert</a><a href="#word-web-app" class="tag">Web app</a><a href="#word-route" class="tag">Route</a></p><dl class="glossary"><div class="term" id="word-script"><dt>Script<a href="/tutorials/getting-started/" class="word-lesson">Lesson 0</a></dt><dd><p>A plain text file of Python instructions, saved with a name that ends in .py. When you run it, Python reads it from the top line to the bottom and does each step in order.</p><p class="word-why"><b>Why it matters in treasury work. </b>A script does the same job the same way every time. Write the steps for the day&#x27;s total once, and tomorrow you only run the file again instead of redoing the work by hand.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="c"># daily_note.py</span>
-<span class="b">print</span>(<span class="s">"Collections report for November 2, 2026"</span>)
-<span class="b">print</span>(<span class="s">"Prepared by the collecting officer"</span>)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>Collections report for November 2, 2026
-Prepared by the collecting officer</pre></figure><p class="word-after">Run it with py daily_note.py on Windows or python3 daily_note.py on Mac.</p></dd></div><div class="term" id="word-library"><dt>Library<a href="/tutorials/getting-started/" class="word-lesson">Lesson 0</a></dt><dd><p>A collection of ready-made code that someone else wrote and tested. Some libraries come with Python (the standard library, such as csv, decimal and sqlite3). Others, such as pandas, openpyxl, pytest and Flask, are installed separately with pip.</p><p class="word-why"><b>Why it matters in treasury work. </b>You do not have to write your own Excel writer or CSV reader. A library gives you a tool that is already written and tested, so you can spend your time on the treasury rules instead.</p><figure class="codebox code"><figcaption><span class="fname">If a library is not installed yet</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> pandas</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>ModuleNotFoundError: No module named &#x27;pandas&#x27;</pre></figure><p class="word-after">This error only means the library is missing. Install it once with pip (next word) and the import works.</p></dd></div><div class="term" id="word-pip"><dt>pip<a href="/tutorials/getting-started/" class="word-lesson">Lesson 0</a></dt><dd><p>Python&#x27;s installer for extra libraries. It downloads them from the Python Package Index (PyPI), the public store of free Python libraries, and sets them up on your computer.</p><p class="word-why"><b>Why it matters in treasury work. </b>You install a library once per computer, and then every script on that computer can use it. If a new office computer is set up, run the same pip command there too.</p><figure class="codebox data"><figcaption><span class="fname">Type this in Command Prompt or Terminal, not inside a script</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>py -m pip install pandas openpyxl          (Windows)
-python3 -m pip install pandas openpyxl     (Mac)</code></pre></figure><p class="word-after">Writing py -m pip (or python3 -m pip) makes sure the library goes to the same Python that runs your scripts.</p></dd></div><div class="term" id="word-variable"><dt>Variable<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>A name that holds a value, such as receipts = 10. The = sign means &quot;store this value under this name&quot;, not &quot;is equal to&quot;. You can store a new value under the same name later.</p><p class="word-why"><b>Why it matters in treasury work. </b>Good names make a script read like a report: grand_total, receipts, fund. When a value changes, such as the booklet&#x27;s first receipt number, you change it in one place.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>receipts = <span class="n">10</span>
-receipts = receipts + <span class="n">1</span>    <span class="c"># one more official receipt issued</span>
-<span class="b">print</span>(receipts)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>11</pre></figure></dd></div><div class="term" id="word-loop"><dt>Loop<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>Code that repeats once for each item in a group. In Python it is written with for, and the indented lines under it are the steps that repeat.</p><p class="word-why"><b>Why it matters in treasury work. </b>The same few lines handle 5 receipts or 5,000. A loop is how a script goes through every row of a collections file without you touching each row.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>amounts = [<span class="n">4500</span>, <span class="n">1250</span>, <span class="n">105</span>]
-total = <span class="n">0</span>
-<span class="k">for</span> amount <span class="k">in</span> amounts:
-    total = total + amount
-<span class="b">print</span>(total)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>5855</pre></figure></dd></div><div class="term" id="word-module"><dt>Module<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>One file of ready-made code that you bring into your script with import. A library is usually made of one or more modules.</p><p class="word-why"><b>Why it matters in treasury work. </b>Python comes with many modules ready to use, with nothing to install: csv reads files, decimal keeps peso amounts exact, datetime works with dates, and sqlite3 keeps a database.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> datetime <span class="k">import</span> date
-
-collected = date(<span class="n">2026</span>, <span class="n">11</span>, <span class="n">2</span>)
-deposited = date(<span class="n">2026</span>, <span class="n">11</span>, <span class="n">3</span>)
-<span class="b">print</span>((deposited - collected).days, <span class="s">"day(s) from collection to deposit"</span>)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>1 day(s) from collection to deposit</pre></figure></dd></div><div class="term" id="word-csv"><dt>CSV<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>Comma-separated values: a table saved as plain text, one row per line, with commas between the columns. The first line usually holds the column names. A value that has a comma inside it is wrapped in double quotes.</p><p class="word-why"><b>Why it matters in treasury work. </b>Excel and Google Sheets can both save a sheet as a CSV file, and Python reads it without installing anything. That makes it a simple way to move collections data from a spreadsheet into a script.</p><figure class="codebox data"><figcaption><span class="fname">collections.csv</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>or_number,date,payor,fund,amount
-7650101,2026-11-02,"Santos Bakery, Inc.",General Fund,4500.00
-7650102,2026-11-02,Juan Dela Cruz,General Fund,1250.75</code></pre></figure><p class="word-after">Python&#x27;s csv module reads every value as text, so &quot;4500.00&quot; must be turned into a number with Decimal before it can be added.</p></dd></div><div class="term" id="word-dictionary"><dt>Dictionary<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>A collection of pairs, each a key and a value, written with braces: {&quot;General Fund&quot;: 4500}. You look a value up by its key. Each key appears only once.</p><p class="word-why"><b>Why it matters in treasury work. </b>A dictionary is a ready lookup table, such as which fund each kind of collection goes to, or a running total for each fund while a script reads the day&#x27;s receipts.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>fund_of = {
-    <span class="s">"Business tax"</span>: <span class="s">"General Fund"</span>,
-    <span class="s">"Real property tax (SEF)"</span>: <span class="s">"Special Education Fund"</span>,
-}
-<span class="b">print</span>(fund_of[<span class="s">"Real property tax (SEF)"</span>])
-<span class="b">print</span>(fund_of.get(<span class="s">"Fishery rental"</span>, <span class="s">"not listed"</span>))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>Special Education Fund
-not listed</pre></figure><p class="word-after">fund_of[&quot;Fishery rental&quot;] would stop the script with a KeyError, because that key is not in the dictionary. .get() gives a fallback value instead.</p></dd></div><div class="term" id="word-decimal"><dt>Decimal<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>A number type from Python&#x27;s decimal module that stores amounts exactly as written, centavo for centavo. Ordinary numbers with a decimal point (called float) are stored in binary and cannot hold most centavo amounts exactly.</p><p class="word-why"><b>Why it matters in treasury work. </b>Totals, penalties and reports must agree to the centavo. With float, tiny errors build up as amounts are added and can show up as a centavo difference. Decimal avoids that.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> decimal <span class="k">import</span> Decimal
-
-<span class="b">print</span>(<span class="n">0.10</span> + <span class="n">0.20</span>)
-<span class="b">print</span>(Decimal(<span class="s">"0.10"</span>) + Decimal(<span class="s">"0.20"</span>))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>0.30000000000000004
-0.30</pre></figure><p class="word-after">Always make a Decimal from text, Decimal(&quot;0.10&quot;), not from a float, Decimal(0.10), or the float&#x27;s tiny error comes along with it.</p></dd></div><div class="term" id="word-f-string"><dt>f-string<a href="/tutorials/add-up-daily-collections/" class="word-lesson">Lesson 1</a></dt><dd><p>Text that starts with the letter f and fills in values written inside braces. After a colon you can say how the value should look: ,.2f means a comma between the thousands and two decimal places.</p><p class="word-why"><b>Why it matters in treasury work. </b>It is how a script prints amounts the way a report shows them, such as 21,986.15, and lines up columns so a printed summary is easy to check.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> decimal <span class="k">import</span> Decimal
-
-total = Decimal(<span class="s">"21986.15"</span>)
-<span class="b">print</span>(<span class="s">f"</span><span class="s">Total collections: </span>{total:<span class="s">,.2f</span>}<span class="s">"</span>)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>Total collections: 21,986.15</pre></figure></dd></div><div class="term" id="word-list"><dt>List<a href="/tutorials/check-or-series/" class="word-lesson">Lesson 2</a></dt><dd><p>An ordered collection written with square brackets: [7650101, 7650102]. It keeps items in the order you add them, allows repeats, and numbers its places from 0.</p><p class="word-why"><b>Why it matters in treasury work. </b>A list keeps official receipt numbers in the order they were recorded, and because it allows repeats, it lets a script find a number that was entered twice.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>used = [<span class="n">7650101</span>, <span class="n">7650102</span>, <span class="n">7650104</span>]
-used.append(<span class="n">7650105</span>)
-<span class="b">print</span>(used[<span class="n">0</span>])
-<span class="b">print</span>(<span class="b">len</span>(used), <span class="s">"receipts"</span>)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>7650101
-4 receipts</pre></figure></dd></div><div class="term" id="word-set"><dt>Set<a href="/tutorials/check-or-series/" class="word-lesson">Lesson 2</a></dt><dd><p>A collection with no repeats and no fixed order, written with braces: {7650101, 7650102}. Two sets can be compared: one minus the other gives what is in the first but not the second.</p><p class="word-why"><b>Why it matters in treasury work. </b>Put every number in a receipt booklet in one set and every number actually used in another. Subtract them and the missing receipt numbers appear in a second.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>booklet = <span class="b">set</span>(<span class="b">range</span>(<span class="n">7650101</span>, <span class="n">7650106</span>))       <span class="c"># 7650101 to 7650105</span>
-used = {<span class="n">7650101</span>, <span class="n">7650102</span>, <span class="n">7650104</span>, <span class="n">7650105</span>}
-<span class="b">print</span>(<span class="b">sorted</span>(booklet - used))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>[7650103]</pre></figure></dd></div><div class="term" id="word-function"><dt>Function<a href="/tutorials/rpt-penalty-with-decimal/" class="word-lesson">Lesson 3</a></dt><dd><p>A named set of steps that you can use again and again, written with def. You give it inputs (parameters), and it hands back a result with return.</p><p class="word-why"><b>Why it matters in treasury work. </b>A rule written once in a function is used the same way everywhere. If the rule changes, you fix one function instead of every place that does the computation, and you can test it on its own.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> decimal <span class="k">import</span> Decimal
-
-<span class="k">def</span> <span class="f">peso</span>(amount):
-    <span class="k">return</span> <span class="s">f"</span><span class="s">PHP </span>{amount:<span class="s">,.2f</span>}<span class="s">"</span>
-
-<span class="b">print</span>(peso(Decimal(<span class="s">"1250.75"</span>)))
-<span class="b">print</span>(peso(Decimal(<span class="s">"21986.15"</span>)))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>PHP 1,250.75
-PHP 21,986.15</pre></figure></dd></div><div class="term" id="word-dataframe"><dt>DataFrame<a href="/tutorials/rcd-summary-with-pandas/" class="word-lesson">Lesson 4</a></dt><dd><p>The table that the pandas library works with: rows, plus columns with names, much like a sheet in Excel. pandas can read a whole CSV into a DataFrame in one line.</p><p class="word-why"><b>Why it matters in treasury work. </b>Summaries that take many steps by hand, such as totals per fund or per collector, take one line on a DataFrame. That makes it a quick way to prepare and cross-check report figures.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> pandas <span class="k">as</span> pd
-
-df = pd.DataFrame({
-    <span class="s">"fund"</span>: [<span class="s">"General Fund"</span>, <span class="s">"Special Education Fund"</span>, <span class="s">"General Fund"</span>],
-    <span class="s">"amount"</span>: [<span class="n">4500.00</span>, <span class="n">1250.75</span>, <span class="n">105.00</span>],
-})
-<span class="b">print</span>(df.groupby(<span class="s">"fund"</span>)[<span class="s">"amount"</span>].<span class="b">sum</span>().to_string())</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>fund
-General Fund              4605.00
-Special Education Fund    1250.75</pre></figure><p class="word-after">pandas reads amounts as float, so round its results to two decimals before you put them in a report.</p></dd></div><div class="term" id="word-hash"><dt>Hash<a href="/tutorials/tamper-evident-log-with-hmac/" class="word-lesson">Lesson 5</a></dt><dd><p>A short fingerprint worked out from some data. The same data always gives the same fingerprint, but change even one character and the fingerprint changes completely. SHA-256, used in Lesson 5, gives a fingerprint written as 64 characters.</p><p class="word-why"><b>Why it matters in treasury work. </b>Keep the hash of a file when you submit it. Later, hash the file again: if the two do not match, the file was changed after it was submitted.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> hashlib
-
-<span class="k">for</span> text <span class="k">in</span> [<span class="s">"OR 7650101 4500.00"</span>, <span class="s">"OR 7650101 4600.00"</span>]:
-    <span class="b">print</span>(hashlib.sha256(text.encode()).hexdigest()[:<span class="n">16</span>])</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>31ea3865d3707925
-dedceb079797ca66</pre></figure><p class="word-after">Only the first 16 characters are shown. One changed digit gives a completely different fingerprint.</p></dd></div><div class="term" id="word-hmac"><dt>HMAC<a href="/tutorials/tamper-evident-log-with-hmac/" class="word-lesson">Lesson 5</a></dt><dd><p>A hash made with a secret key (hash-based message authentication code). Only someone who has the key can make a matching HMAC.</p><p class="word-why"><b>Why it matters in treasury work. </b>Anyone who edits a record can also make a new plain hash for it. With an HMAC they cannot, unless they have the key. That is what makes a log of collections tamper-evident.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> hashlib, hmac
-
-key = <span class="s">b"practice-key-only"</span>
-seal = hmac.new(key, <span class="s">b"OR 7650101 4500.00"</span>, hashlib.sha256).hexdigest()
-
-<span class="k">for</span> text <span class="k">in</span> [<span class="s">b"OR 7650101 4500.00"</span>, <span class="s">b"OR 7650101 4600.00"</span>]:
-    check = hmac.new(key, text, hashlib.sha256).hexdigest()
-    <span class="b">print</span>(text.decode(), hmac.compare_digest(seal, check))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>OR 7650101 4500.00 True
-OR 7650101 4600.00 False</pre></figure><p class="word-after">In real use, keep the key out of the script, for example in an environment variable.</p></dd></div><div class="term" id="word-workbook"><dt>Workbook<a href="/tutorials/excel-report-with-openpyxl/" class="word-lesson">Lesson 6</a></dt><dd><p>An Excel file (.xlsx). It holds one or more sheets, which the openpyxl library calls worksheets. A new workbook starts with one sheet named Sheet.</p><p class="word-why"><b>Why it matters in treasury work. </b>A script that writes a workbook gives the same tidy report every day, with no copying and pasting, and anyone with Excel can open it.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> openpyxl <span class="k">import</span> Workbook
-
-wb = Workbook()
-ws = wb.active
-ws.title = <span class="s">"Collections"</span>
-ws.append([<span class="s">"OR number"</span>, <span class="s">"Payor"</span>, <span class="s">"Amount"</span>])
-ws.append([<span class="n">7650101</span>, <span class="s">"Santos Bakery"</span>, <span class="n">4500.00</span>])
-<span class="b">print</span>(wb.sheetnames, ws.max_row, <span class="s">"rows"</span>)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>[&#x27;Collections&#x27;] 2 rows</pre></figure><p class="word-after">wb.save(&quot;report.xlsx&quot;) would then write the file.</p></dd></div><div class="term" id="word-formula"><dt>Formula<a href="/tutorials/excel-report-with-openpyxl/" class="word-lesson">Lesson 6</a></dt><dd><p>A calculation stored in a cell, such as =SUM(C2:C11). openpyxl saves the formula as text; Excel or another spreadsheet app works out its value when the file is opened.</p><p class="word-why"><b>Why it matters in treasury work. </b>A reviewer can click the total and see exactly how it was made, and the total updates by itself if a row is corrected later. A typed number gives neither.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> openpyxl <span class="k">import</span> Workbook
-
-ws = Workbook().active
-ws[<span class="s">"C12"</span>] = <span class="s">"=SUM(C2:C11)"</span>
-<span class="b">print</span>(ws[<span class="s">"C12"</span>].value)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>=SUM(C2:C11)</pre></figure><p class="word-after">Python shows the formula, not the answer, because openpyxl never computes formulas.</p></dd></div><div class="term" id="word-database"><dt>Database<a href="/tutorials/receipts-register-with-sqlite/" class="word-lesson">Lesson 7</a></dt><dd><p>An organised store of records that a program can search, add to and total quickly. SQLite, which comes with Python, keeps a whole database in one file.</p><p class="word-why"><b>Why it matters in treasury work. </b>A database can enforce rules by itself. Mark the official receipt number as the primary key and the database refuses the same number twice, even if a person or a script tries.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> sqlite3
-
-db = sqlite3.connect(<span class="s">":memory:"</span>)     <span class="c"># a practice database in memory</span>
-db.execute(<span class="s">"CREATE TABLE receipts (or_number INTEGER PRIMARY KEY, centavos INTEGER)"</span>)
-db.execute(<span class="s">"INSERT INTO receipts VALUES (7650101, 450000)"</span>)
-<span class="k">try</span>:
-    db.execute(<span class="s">"INSERT INTO receipts VALUES (7650101, 10500)"</span>)
-<span class="k">except</span> sqlite3.IntegrityError <span class="k">as</span> error:
-    <span class="b">print</span>(<span class="s">"Refused:"</span>, error)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>Refused: UNIQUE constraint failed: receipts.or_number</pre></figure></dd></div><div class="term" id="word-sql"><dt>SQL<a href="/tutorials/receipts-register-with-sqlite/" class="word-lesson">Lesson 7</a></dt><dd><p>Structured Query Language: short commands that ask a database for data or change it. SELECT reads, INSERT adds, WHERE picks rows, and GROUP BY totals by a column.</p><p class="word-why"><b>Why it matters in treasury work. </b>One SQL line answers the questions a treasury asks every day, such as the total per fund or every receipt of one payor, no matter how many records there are.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> sqlite3
-
-db = sqlite3.connect(<span class="s">":memory:"</span>)
-db.execute(<span class="s">"CREATE TABLE receipts (fund TEXT, centavos INTEGER)"</span>)
-db.executemany(<span class="s">"INSERT INTO receipts VALUES (?, ?)"</span>,
-               [(<span class="s">"General Fund"</span>, <span class="n">450000</span>), (<span class="s">"General Fund"</span>, <span class="n">10500</span>), (<span class="s">"Trust Fund"</span>, <span class="n">20000</span>)])
-<span class="k">for</span> fund, centavos <span class="k">in</span> db.execute(<span class="s">"SELECT fund, SUM(centavos) FROM receipts GROUP BY fund"</span>):
-    <span class="b">print</span>(fund, centavos / <span class="n">100</span>)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>General Fund 4605.0
-Trust Fund 200.0</pre></figure></dd></div><div class="term" id="word-placeholder"><dt>Placeholder<a href="/tutorials/receipts-register-with-sqlite/" class="word-lesson">Lesson 7</a></dt><dd><p>A ? in an SQL command that the database fills in with a value you pass separately. The value is treated only as data, never as part of the command.</p><p class="word-why"><b>Why it matters in treasury work. </b>Names typed into a system can contain any character, such as an apostrophe. Gluing them into the SQL text can break the command or, worse, let someone change what it does (SQL injection). Placeholders prevent both.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">import</span> sqlite3
-
-db = sqlite3.connect(<span class="s">":memory:"</span>)
-db.execute(<span class="s">"CREATE TABLE receipts (payor TEXT)"</span>)
-payor = <span class="s">"Lola's Kakanin"</span>                      <span class="c"># the apostrophe would break glued-in SQL</span>
-db.execute(<span class="s">"INSERT INTO receipts VALUES (?)"</span>, (payor,))
-<span class="b">print</span>(db.execute(<span class="s">"SELECT COUNT(*) FROM receipts WHERE payor = ?"</span>, (payor,)).fetchone()[<span class="n">0</span>])</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>1</pre></figure></dd></div><div class="term" id="word-exception"><dt>Exception<a href="/tutorials/check-data-before-you-trust-it/" class="word-lesson">Lesson 8</a></dt><dd><p>Python&#x27;s way of reporting an error while a script runs. If nothing catches it, the script stops. A try block with an except part catches it, so the script can note the problem and carry on.</p><p class="word-why"><b>Why it matters in treasury work. </b>Real files have bad rows, such as an amount typed with a comma. Catching the error lets a script list every bad row for correction instead of stopping at the first one.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> decimal <span class="k">import</span> Decimal, InvalidOperation
-
-<span class="k">for</span> text <span class="k">in</span> [<span class="s">"1250.75"</span>, <span class="s">"1,250.75"</span>]:
-    <span class="k">try</span>:
-        <span class="b">print</span>(Decimal(text))
-    <span class="k">except</span> InvalidOperation:
-        <span class="b">print</span>(<span class="s">"Not a valid amount:"</span>, text)</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>1250.75
-Not a valid amount: 1,250.75</pre></figure></dd></div><div class="term" id="word-validation"><dt>Validation<a href="/tutorials/check-data-before-you-trust-it/" class="word-lesson">Lesson 8</a></dt><dd><p>Checking that data follows the rules, such as the right format, an allowed value or a sensible amount, before you use it.</p><p class="word-why"><b>Why it matters in treasury work. </b>A total is only as good as the rows behind it. Checking first means a wrong fund name or a zero amount is caught before it reaches a report, not after the report is submitted.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code>FUNDS = {<span class="s">"General Fund"</span>, <span class="s">"Special Education Fund"</span>, <span class="s">"Trust Fund"</span>}
-
-<span class="k">def</span> <span class="f">problems</span>(fund, amount):
-    found = []
-    <span class="k">if</span> fund <span class="k">not</span> <span class="k">in</span> FUNDS:
-        found.append(<span class="s">f"</span><span class="s">unknown fund </span>{fund!r}<span class="s">"</span>)
-    <span class="k">if</span> amount &lt;= <span class="n">0</span>:
-        found.append(<span class="s">"amount must be more than zero"</span>)
-    <span class="k">return</span> found
-
-<span class="b">print</span>(problems(<span class="s">"General Fund"</span>, <span class="n">4500</span>))
-<span class="b">print</span>(problems(<span class="s">"Genral Fund"</span>, <span class="n">0</span>))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>[]
-[&quot;unknown fund &#x27;Genral Fund&#x27;&quot;, &#x27;amount must be more than zero&#x27;]</pre></figure></dd></div><div class="term" id="word-test"><dt>Test</dt><dd><p>A small function that runs your code with an input whose answer you already know, and checks that the code gives that answer. pytest finds every function whose name starts with test_, in files whose names start with test_, and runs them all at once.</p><p class="word-why"><b>Why it matters in treasury work. </b>Treasury rules have edge cases, such as a cap on months or a rounding rule. Tests check those cases every time you change the code, so a mistake is caught on your computer, not in an official computation.</p><figure class="codebox code"><figcaption><span class="fname">test_peso.py</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> decimal <span class="k">import</span> Decimal
-
-<span class="k">def</span> <span class="f">peso</span>(amount):
-    <span class="k">return</span> <span class="s">f"</span><span class="s">PHP </span>{amount:<span class="s">,.2f</span>}<span class="s">"</span>
-
-<span class="k">def</span> <span class="f">test_peso_adds_comma_and_centavos</span>():
-    <span class="k">assert</span> peso(Decimal(<span class="s">"1250.5"</span>)) == <span class="s">"PHP 1,250.50"</span></code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>1 passed</pre></figure><p class="word-after">Run it with py -m pytest test_peso.py (Windows) or python3 -m pytest test_peso.py (Mac). The last line of the report says 1 passed.</p></dd></div><div class="term" id="word-assert"><dt>assert</dt><dd><p>A Python statement that checks something is true. If it is not, the script stops with an AssertionError and the message you wrote after the comma.</p><p class="word-why"><b>Why it matters in treasury work. </b>It is the check inside every test, and a quick way to stop a script when two figures that must agree, such as collections and deposits, do not.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> decimal <span class="k">import</span> Decimal
-
-collected = Decimal(<span class="s">"5750.75"</span>)
-deposited = Decimal(<span class="s">"5750.00"</span>)
-<span class="k">assert</span> deposited == collected, <span class="s">"Deposit does not match collections"</span></code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>AssertionError: Deposit does not match collections</pre></figure><p class="word-after">Python skips assert statements when run with the -O option, so for checks that must always run in a finished script, use if and print or raise instead.</p></dd></div><div class="term" id="word-web-app"><dt>Web app</dt><dd><p>A program that answers requests from a web browser with web pages. Flask is a small library for writing one in Python. While you practise, it runs only on your own computer.</p><p class="word-why"><b>Why it matters in treasury work. </b>A web page shows the day&#x27;s collections in a browser, which is easier to read than a script&#x27;s printout. Sharing it with the whole office takes more setup and your IT office&#x27;s approval.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> flask <span class="k">import</span> Flask
-
-app = Flask(<span class="b">__name__</span>)
-
-@app.route(<span class="s">"/"</span>)
-<span class="k">def</span> <span class="f">home</span>():
-    <span class="k">return</span> <span class="s">"&lt;h1&gt;Collections today&lt;/h1&gt;"</span>
-
-<span class="b">print</span>(app.test_client().get(<span class="s">"/"</span>).get_data(as_text=<span class="k">True</span>))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>&lt;h1&gt;Collections today&lt;/h1&gt;</pre></figure><p class="word-after">test_client() asks for the page without opening a browser. In Lesson 10, app.run() serves the page at http://127.0.0.1:5000.</p></dd></div><div class="term" id="word-route"><dt>Route</dt><dd><p>In Flask, the link between a web address, such as /receipt/7650101, and the Python function that makes that page. A part in angle brackets, such as &lt;int:number&gt;, is read from the address and handed to the function.</p><p class="word-why"><b>Why it matters in treasury work. </b>Routes give every record its own address. Anyone in the office can open the page for one official receipt by its number instead of searching a long list.</p><figure class="codebox code"><figcaption><span class="fname">Example</span><span class="actions"><button type="button" class="copy" data-copy>Copy</button></span></figcaption><pre><code><span class="k">from</span> flask <span class="k">import</span> Flask
-
-app = Flask(<span class="b">__name__</span>)
-
-@app.route(<span class="s">"/receipt/&lt;int:number&gt;"</span>)
-<span class="k">def</span> <span class="f">receipt</span>(number):
-    <span class="k">return</span> <span class="s">f"</span><span class="s">Official receipt </span>{number}<span class="s">"</span>
-
-<span class="b">print</span>(app.test_client().get(<span class="s">"/receipt/7650101"</span>).get_data(as_text=<span class="k">True</span>))</code></pre></figure><figure class="codebox output"><figcaption><span class="fname">What it prints</span></figcaption><pre>Official receipt 7650101</pre></figure></dd></div></dl><p class="muted note">New lessons are added regularly. All names, receipt numbers and amounts in the examples are made up.</p></div></main><footer class="legal"><div class="wrap"><p class="disclaimer-box"><b>Disclaimer: </b>All book chapters, articles, calculators, code samples and study notes on <b>aumahinay.dev</b> are written and published by Ambrosio U. Mahinay strictly in his personal capacity, outside official working hours, for educational and informational purposes. Content reflects the personal views and independent technical work of the author and does not constitute an official government issuance, legal advice, a formal tax assessment, or an endorsement by any Local Government Unit (LGU), the Bureau of Local Government Finance (BLGF), the Commission on Audit (COA) or any government agency. Always consult your local treasurer&#x27;s office or qualified professionals for official transactions. <a href="/disclaimer/">Full disclaimer</a></p><div class="foot-row"><span class="copy">© 2026 Ambrosio U. Mahinay</span><span class="legal-links"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="/disclaimer/">Disclaimer</a><span class="built">Built in Python</span></span></div></div></footer><script>
+</style></head><body><header class="site"><div class="wrap"><button type="button" id="menu-open" class="menu-btn" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h14"/><path class="b3" d="M3 18h10"/></svg></button><nav id="site-menu" aria-label="Main menu"><a href="/">Home</a><a href="/study-notes/">Study Notes</a><a href="/tools/rpt-calculator/">RPT Calculator</a><a href="/tutorials/" class="active" aria-current="page">Tutorials</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav></div></header><main><div class="wrap"><p class="eyebrow">Tutorials</p><h1>Python for Treasury Work</h1><p class="lead">Short, practical Python lessons built around the daily work of a local treasury office: receipts, collections, penalties, reports and audit trails. Every example uses made-up data, runs as written, and shows the output it really prints. I am learning alongside you, so the lessons grow from simple scripts to the tools I use in building software.</p><div class="card setup"><p><b>Where to begin. </b>New to Python? Start with Lesson 0. It shows how to install Python, run a script, and fix the errors almost everyone meets on the first day. Then take the lessons in order; each one builds on the one before.</p></div><div class="card setup pledge"><p><b>Our promise. </b>Every lesson is checked before it goes live: the code is run, the output you see is what it really prints, the facts and laws are checked against sources, and the page is reviewed on phone and computer. Each lesson shows the month it was last checked.</p></div><div class="lesson-list"><a href="/tutorials/getting-started/" class="card lesson"><div class="meta"><span class="badge">Lesson 0</span><span class="muted">Beginner · 20 min</span></div><h3>Getting started: install Python and run your first script</h3><p>Install Python on Windows or Mac, open the command line, and run a script, with fixes for the usual first errors.</p><div class="tags"><span class="tag">history of Python</span><span class="tag">installing Python</span><span class="tag">Command Prompt</span><span class="tag">Terminal</span><span class="tag">pip</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/add-up-daily-collections/" class="card lesson"><div class="meta"><span class="badge">Lesson 1</span><span class="muted">Beginner · 15 min</span></div><h3>Add up a day&#x27;s collections from a CSV file</h3><p>Read the day&#x27;s official receipts from a spreadsheet export and total them per fund, to the centavo.</p><div class="tags"><span class="tag">csv</span><span class="tag">Decimal</span><span class="tag">dictionaries</span><span class="tag">f-strings</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/check-or-series/" class="card lesson"><div class="meta"><span class="badge">Lesson 2</span><span class="muted">Beginner · 20 min</span></div><h3>Check an official receipt series for gaps and duplicates</h3><p>Compare the receipts recorded today with the booklet issued, and flag missing, repeated or stray numbers.</p><div class="tags"><span class="tag">sets</span><span class="tag">range</span><span class="tag">Counter</span><span class="tag">list comprehensions</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/rpt-penalty-with-decimal/" class="card lesson"><div class="meta"><span class="badge">Lesson 3</span><span class="muted">Beginner · 20 min</span></div><h3>Compute real property tax penalties with Decimal</h3><p>See why floats are unsafe for money, then compute 2% monthly penalties with a 36-month cap, rounded correctly.</p><div class="tags"><span class="tag">Decimal</span><span class="tag">functions</span><span class="tag">rounding</span><span class="tag">min()</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/rcd-summary-with-pandas/" class="card lesson"><div class="meta"><span class="badge">Lesson 4</span><span class="muted">Intermediate · 25 min</span></div><h3>Build a simple RCD summary with pandas</h3><p>Group collections by collector and fund, list the receipts used, and match collections against deposits.</p><div class="tags"><span class="tag">pandas</span><span class="tag">groupby</span><span class="tag">pivot_table</span><span class="tag">join</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/tamper-evident-log-with-hmac/" class="card lesson"><div class="meta"><span class="badge">Lesson 5</span><span class="muted">Intermediate · 25 min</span></div><h3>Make a tamper-evident log with HMAC</h3><p>Seal each log entry with a keyed hash chained to the one before it, so any later edit or deletion shows.</p><div class="tags"><span class="tag">hmac</span><span class="tag">hashlib</span><span class="tag">json</span><span class="tag">security</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/excel-report-with-openpyxl/" class="card lesson"><div class="meta"><span class="badge">Lesson 6</span><span class="muted">Beginner · 20 min</span></div><h3>Make a formatted Excel report with openpyxl</h3><p>Turn the day&#x27;s receipts into a real Excel file with a bold header, peso formatting, a SUM formula and a frozen top row.</p><div class="tags"><span class="tag">openpyxl</span><span class="tag">Excel</span><span class="tag">formulas</span><span class="tag">number formats</span></div><span class="go">Start the lesson →</span></a><a href="/tutorials/receipts-register-with-sqlite/" class="card lesson"><div class="meta"><span class="badge">Lesson 7</span><span class="muted">Intermediate · 25 min</span></div><h3>Keep a receipts register in SQLite</h3><p>Save official receipts in a small database file, total them with SQL, and let the database itself refuse a duplicate OR number.</p><div class="tags"><span class="tag">sqlite3</span><span class="tag">SQL</span><span class="tag">placeholders</span><span class="tag">IntegrityError</span></div><span class="go">Start the lesson →</span></a></div><h2 id="civil-service-vocabulary">Civil Service Exam Vocabulary</h2><p>Ten words at a time for the Career Service Examination (Professional and Subprofessional). The exam&#x27;s verbal part tests vocabulary, analogies and how words are used in a sentence, so each word comes with a plain meaning, an example from government work, words that mean the same and the opposite, and practice questions in the exam&#x27;s style.</p><div class="lesson-list"><a href="/tutorials/civil-service-vocabulary/governance-law-and-public-administration/" class="card lesson"><div class="meta"><span class="badge">Module 1</span><span class="muted">10 words · practice</span></div><h3>Governance, law and public administration</h3><p>Ten words you meet in memos, audit reports and office orders: acquiesce, ad hoc, anomaly, arbitrary, ascertain, assiduous, autonomous, bureaucracy, cognizant and compliance.</p><span class="go">Start the module →</span></a><a href="/tutorials/civil-service-vocabulary/ethics-integrity-and-professional-conduct/" class="card lesson"><div class="meta"><span class="badge">Module 2</span><span class="muted">10 words · practice</span></div><h3>Ethics, integrity and professional conduct</h3><p>Ten words about honesty and good conduct in public office: candor, capricious, collusion, discretionary, efficacy, egregious, incorruptible, integrity, prudent and transparent.</p><span class="go">Start the module →</span></a><a href="/tutorials/civil-service-vocabulary/analysis-planning-and-operations/" class="card lesson"><div class="meta"><span class="badge">Module 3</span><span class="muted">10 words · practice</span></div><h3>Analysis, planning and operations</h3><p>Ten words for reports, audits and planning: aggregate, corroborate, disseminate, empirical, feasible, fiduciary, mitigate, pragmatic, scrutinize and substantiate.</p><span class="go">Start the module →</span></a><a href="/tutorials/civil-service-vocabulary/public-finance-and-local-government/" class="card lesson"><div class="meta"><span class="badge">Module 4</span><span class="muted">10 words · practice</span></div><h3>Public finance and local government</h3><p>Ten words from budgets, taxes and local councils: amortization, appropriation, biennial, cadastral, censure, codify, concurrence, demographics, disbursement and levy.</p><span class="go">Start the module →</span></a><a href="/tutorials/civil-service-vocabulary/power-law-and-oversight/" class="card lesson"><div class="meta"><span class="badge">Module 5</span><span class="muted">10 words · practice</span></div><h3>Power, law and oversight</h3><p>Ten words about authority, laws and how they are carried out: despotism, devolution, dissent, eclectic, embezzlement, enactment, equanimity, exemption, exigency and expedient.</p><span class="go">Start the module →</span></a></div><h2>Words to know</h2><dl class="glossary"><div class="term"><dt>Script</dt><dd>A text file of Python code, saved with the .py ending, that you run from start to finish.</dd></div><div class="term"><dt>Variable</dt><dd>A name that holds a value, like receipts = 10. You can change it later.</dd></div><div class="term"><dt>Loop</dt><dd>Code that repeats for each item, written with for. It is how a script goes through every row of a file.</dd></div><div class="term"><dt>Function</dt><dd>A named set of steps you can reuse, written with def. You give it inputs and it gives back a result.</dd></div><div class="term"><dt>Module</dt><dd>A file of ready-made code you bring in with import, such as csv or decimal.</dd></div><div class="term"><dt>CSV</dt><dd>Comma-separated values: a plain text table, one row per line, that Excel and most systems can export.</dd></div><div class="term"><dt>List</dt><dd>An ordered collection, written with square brackets: [7650101, 7650102].</dd></div><div class="term"><dt>Dictionary</dt><dd>Pairs of keys and values, written with braces: {&quot;General Fund&quot;: 21986.15}. You look a value up by its key.</dd></div><div class="term"><dt>Set</dt><dd>A collection with no repeats and no order. Good for comparing what you have with what you expected.</dd></div><div class="term"><dt>Decimal</dt><dd>A number type that keeps peso amounts exact, so centavos never drift.</dd></div><div class="term"><dt>f-string</dt><dd>Text that starts with f and fills in values inside braces: f&quot;Total: {total}&quot;.</dd></div><div class="term"><dt>DataFrame</dt><dd>The table that the pandas library works with: rows and named columns, like a sheet in Excel.</dd></div><div class="term"><dt>Library</dt><dd>A collection of modules someone else wrote, such as pandas. Some come with Python; others you install.</dd></div><div class="term"><dt>pip</dt><dd>Python&#x27;s installer for extra libraries: pip install pandas.</dd></div><div class="term"><dt>Hash</dt><dd>A short fingerprint of some data. Change one character and the fingerprint changes completely.</dd></div><div class="term"><dt>HMAC</dt><dd>A hash made with a secret key. Only someone with the key can make a matching one.</dd></div><div class="term"><dt>Workbook</dt><dd>An Excel file. It holds one or more sheets, which openpyxl calls worksheets.</dd></div><div class="term"><dt>Formula</dt><dd>A calculation stored in a cell, such as =SUM(E2:E11). Excel or another spreadsheet app works out its value when the file is opened.</dd></div><div class="term"><dt>Database</dt><dd>An organised store of records that a program can search, add to and total quickly. SQLite keeps a whole database in one file.</dd></div><div class="term"><dt>SQL</dt><dd>Structured Query Language: short commands such as SELECT, INSERT and GROUP BY that ask a database for data or change it.</dd></div><div class="term"><dt>Placeholder</dt><dd>A ? in an SQL command that the database fills in with a value you pass separately. It keeps typed-in text from being run as a command.</dd></div><div class="term"><dt>Exception</dt><dd>Python&#x27;s way of reporting an error while a script runs. try and except let the script catch it and carry on.</dd></div><div class="term"><dt>Validation</dt><dd>Checking that data follows the rules (right format, allowed values, sensible amounts) before using it.</dd></div><div class="term"><dt>Test</dt><dd>A small function that runs your code with a known input and checks the answer. pytest runs all of them at once.</dd></div><div class="term"><dt>assert</dt><dd>A Python statement that stops with an error if something is not true: assert total == 100.</dd></div><div class="term"><dt>Web app</dt><dd>A program that answers a browser&#x27;s requests with web pages. Flask is a library for writing one in Python.</dd></div><div class="term"><dt>Route</dt><dd>In Flask, the link between an address such as /receipt/7650101 and the function that makes that page.</dd></div></dl><p class="muted note">New lessons are added regularly. All names, receipt numbers and amounts in the examples are made up.</p></div></main><footer class="legal"><div class="wrap"><span class="legal-links"><a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms of Use</a></span><span class="built">Built in Python</span></div></footer><script>
 (function () {
   var root = document.documentElement, btn = document.getElementById("menu-open"),
       menu = document.getElementById("site-menu");
@@ -1869,7 +1204,7 @@ app = Flask(<span class="b">__name__</span>)
     if (open) { var a = menu.querySelector("a.active") || menu.querySelector("a"); if (a) a.focus({ preventScroll: true }); }
     else btn.focus({ preventScroll: true });
   }
-  btn.addEventListener("click", function () { set(!root.classList.contains("menu-open")); });
+  btn.addEventListener("click", function () { set(true); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("menu-open")) set(false); });
   // tap anywhere outside the half-screen menu to close it
   document.addEventListener("click", function (e) {
@@ -1879,29 +1214,12 @@ app = Flask(<span class="b">__name__</span>)
 })();
 </script><script>
 (function () {
-  var root = document.documentElement, btn = document.getElementById("theme-btn"), bar = document.getElementById("theme-color");
-  function show() {
-    var dark = root.getAttribute("data-theme") === "dark";
-    if (btn) { btn.setAttribute("aria-pressed", dark ? "true" : "false"); btn.setAttribute("aria-label", dark ? "Light mode" : "Dark mode"); }
-    if (bar) bar.setAttribute("content", dark ? "#071631" : "#ffffff");
-  }
-  show();
-  if (btn) btn.addEventListener("click", function () {
-    var dark = root.getAttribute("data-theme") !== "dark";
-    root.setAttribute("data-theme", dark ? "dark" : "light");
-    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
-    show();
-  });
-})();
-</script><script>
-(function () {
   // Phones: swipe left for the next menu page, swipe right for the previous one (wraps around).
   // Ignored when the swipe starts on something that scrolls sideways (code boxes, tables, the menu),
   // near the screen edge (the phone's own back/forward swipe), with two fingers, or while zoomed in.
-  var pages = ["/", "/tools/rpt-calculator/", "/tutorials/", "/study-notes/", "/blog/"];
+  var pages = ["/", "/study-notes/", "/tools/rpt-calculator/", "/tutorials/", "/blog/", "/about/"];
   var path = location.pathname, here = -1;
-  var best = 0;  // the longest matching menu entry wins; posts and lessons count as their menu page
-  pages.forEach(function (p, i) { if ((path === p || (p !== "/" && path.indexOf(p) === 0)) && p.length > best) { here = i; best = p.length; } });
+  pages.forEach(function (p, i) { if (path === p || (p !== "/" && path.indexOf(p) === 0)) here = i; });
   if (here < 0) return;  // e.g. the "page not found" page
   var x0, y0, t0, ok;
   function scrollsSideways(el) {

@@ -6,28 +6,7 @@
     <atom:link href="https://aumahinay.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New blog posts and Python for Treasury Work lessons by Butch Mahinay</description>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2026 21:00:00 +0800</lastBuildDate>
-    <item>
-      <title>The ALTOS Framework, Principle 7: Keep Money in Its Fund</title>
-      <link>https://aumahinay.dev/blog/altos-framework-keep-money-in-its-fund/</link>
-      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-keep-money-in-its-fund/</guid>
-      <pubDate>Wed, 25 Nov 2026 21:00:00 +0800</pubDate>
-      <description>A peso raised for schools should reach schools. Each peso belongs to the fund the law assigns it, and it should stay there.</description>
-    </item>
-    <item>
-      <title>The ALTOS Framework, Principle 6: Separate the Hands</title>
-      <link>https://aumahinay.dev/blog/altos-framework-separate-the-hands/</link>
-      <guid isPermaLink="true">https://aumahinay.dev/blog/altos-framework-separate-the-hands/</guid>
-      <pubDate>Mon, 23 Nov 2026 21:00:00 +0800</pubDate>
-      <description>No one person should both approve and release public money, or both hold it and record it. Trust in a treasury has to be designed, not assumed.</description>
-    </item>
-    <item>
-      <title>Lesson 8: Check a collections file before you trust it</title>
-      <link>https://aumahinay.dev/tutorials/check-data-before-you-trust-it/</link>
-      <guid isPermaLink="true">https://aumahinay.dev/tutorials/check-data-before-you-trust-it/</guid>
-      <pubDate>Sat, 21 Nov 2026 21:00:00 +0800</pubDate>
-      <description>Catch blank payors, impossible dates, mistyped funds, commas in amounts and extra decimals, and list every problem by line.</description>
-    </item>
+    <lastBuildDate>Fri, 20 Nov 2026 21:00:00 +0800</lastBuildDate>
     <item>
       <title>The ALTOS Framework, Principle 5: Every Record Has a Seal</title>
       <link>https://aumahinay.dev/blog/altos-framework-every-record-has-a-seal/</link>

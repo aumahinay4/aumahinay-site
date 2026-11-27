@@ -1,4 +1,4 @@
-/* ALTOS demo (aumahinay.dev/tools/altos-demo/). Everything here is made up and lives only in this browser tab:
+/* ALTOS demo (aumahinay.dev/projects/altos-demo/). Everything here is made up and lives only in this browser tab:
    no server, no database, nothing is saved. Reloading the page starts the demo fresh.
    The screens copy the look and the steps of ALTOS, the Automated Local Treasury Operations System. */
 (function () {
