@@ -20,8 +20,8 @@ PA_POSTS = [
         "body": [
             "It is 8:40 in the morning and the line at the collection window already reaches the door. A woman "
             "near the front has the right amount but is missing one document. The collector has a choice. She "
-            "can send the woman home, explain exactly what to bring and promise to serve her first when she "
-            "comes back, or call the supervisor and hold up everyone behind her. No ordinance tells her which "
+            "can send the woman home. She can explain exactly what to bring and promise to serve her first "
+            "when she comes back. Or she can call the supervisor and hold up everyone behind her. No ordinance tells her which "
             "of these to pick. Whatever she decides, that woman will remember it as “what the government did.”",
             "(The office and the people in this post are made up for teaching. They describe no real local "
             "government.)",
@@ -41,7 +41,7 @@ PA_POSTS = [
             "Foundation published an expanded 30th anniversary edition in 2010.",
             "He defines street-level bureaucrats as “public service workers who interact directly with citizens "
             "in the course of their jobs,” and who have real discretion in how they do that work. His examples "
-            "include teachers, police officers, social workers and health workers. In a local government, the "
+            "include teachers, police officers, social workers, judges and public defenders. In a local government, the "
             "list is long: the collector at the window, the clerk who checks permit requirements, the assessor’s "
             "staff who measure a lot, the barangay health worker, the market inspector.",
             "What makes these jobs special is not their rank. Most street-level workers sit near the bottom of "
@@ -58,11 +58,11 @@ PA_POSTS = [
             ("quote", "The written policy is what the council passed. The real policy is what happens at the "
                       "window at 8:40 in the morning."),
             ("h", "The Working Conditions Behind It"),
-            "Lipsky did not blame front-line workers. He explained their behavior by the conditions they work "
-            "in, and those conditions will sound familiar to anyone who has worked in a busy public office.",
+            "Lipsky looked for the causes of front-line behavior in the conditions of the work itself, "
+            "not in the character of the workers, and those conditions will sound familiar to anyone who has worked in a busy public office.",
             ("point", "Resources never match the demand",
-             "There are always more people to serve than time to serve them well. Lipsky also observed that when "
-             "a service improves, more people come to use it, so the pressure returns."),
+             "There are always more people to serve than time to serve them well, so every hour spent on one "
+             "person is an hour taken from the next."),
             ("point", "Goals are vague or in conflict",
              "Serve everyone quickly. Check every document carefully. Be courteous. Collect every peso due. On a "
              "busy day, these pull in different directions."),
@@ -100,7 +100,7 @@ PA_POSTS = [
             ("point", "Explanation", "Whether a taxpayer leaves knowing why the bill is what it is, or only "
                                      "knowing that they paid."),
             ("point", "Referral", "Whether a hard question is answered at the window, sent to the right office, "
-                                  "or met with “balik na lang po kayo.”"),
+                                  "or met with “balik na lang po kayo” (“please just come back”)."),
             ("point", "Tone", "Whether a mistake by the taxpayer is corrected with patience or with impatience "
                               "that the whole line can hear."),
             "Each one is small. Together, they decide whether people trust the local treasury or avoid it until "
@@ -108,8 +108,8 @@ PA_POSTS = [
             ("cta", "Read: The ALTOS Framework, Principle 8: The Taxpayer Is a Citizen",
              "/blog/altos-framework-the-taxpayer-is-a-citizen/"),
             ("h", "What a Supervisor Can Do"),
-            "Lipsky’s work suggests that you cannot remove discretion from the front line, and you should not "
-            "try. Rules that try to cover every case only grow longer and get skipped. A better approach is to "
+            "Lipsky argued that discretion cannot be removed from front-line work. In my experience, rules that "
+            "try to cover every case only grow longer and get skipped. A better approach is to "
             "shape how discretion is used.",
             ("point", "List the common judgment calls",
              "Ask the window staff which decisions they make most often without a clear rule. You will usually "
@@ -171,22 +171,22 @@ PA_POSTS = [
             "(This memo and this office are invented for the example. No real agency or local government is "
             "described.)",
             "Public administration has a name for this: the implementation gap, the distance between what a "
-            "policy promises and what actually happens on the ground. Students of the field usually meet it "
-            "through one famous book.",
+            "policy promises and what actually happens on the ground. A book from 1973 made "
+            "the idea central to the field.",
             "When you finish reading, you will know what that book found, the difference between the top-down "
             "and bottom-up views of implementation, and a simple way to map a rollout before it starts.",
             ("photo", "blog/pa-implementation.jpg",
              "Why approvals add up: if each approval has a 95 percent chance of going smoothly, the chance that "
              "all of them do falls quickly as the chain grows. (Illustration: Butch Mahinay, aumahinay.dev)",
              "medium"),
-            ("h", "The Book With the Longest Subtitle"),
+            ("h", "A Book With a Very Long Subtitle"),
             "In 1973, Jeffrey Pressman and Aaron Wildavsky published Implementation. Its full title runs to more "
-            "than forty words, beginning “How Great Expectations in Washington Are Dashed in Oakland.” The "
+            "than forty words, and the subtitle begins “How Great Expectations in Washington Are Dashed in Oakland.” The "
             "University of California Press later issued a third edition in 1984.",
             "The book follows a federal program of the late 1960s run by the Economic Development "
             "Administration. Its goal was to create lasting jobs for unemployed members of minority groups in "
-            "Oakland, California. Money was set aside, the program had political support, and the people "
-            "involved generally agreed with its aims. Yet years later, very little had happened on the ground.",
+            "Oakland, California. Money had been set aside, local "
+            "actors seemed in favor, and there was little open conflict. Yet years later, very little had happened on the ground.",
             "What makes the book a classic is the explanation. Pressman and Wildavsky did not find villains. "
             "They found what they called the complexity of joint action. The program needed many different "
             "participants, each with its own priorities and schedule, and it needed a long series of approvals "
@@ -216,9 +216,9 @@ PA_POSTS = [
             "them that vague goals and unclear responsibilities create gaps before the work even starts.",
             ("h", "Looking From the Bottom Up"),
             "The second camp starts at the other end. Michael Lipsky, whose work on street-level bureaucracy "
-            "opened this series, showed that front-line workers reshape policy as they apply it. Richard Elmore "
-            "turned that insight into a planning method in a 1979 article in Political Science Quarterly, which "
-            "he called backward mapping.",
+            "opened this series, showed that front-line workers reshape policy as they apply it. In the same "
+            "spirit, Richard Elmore proposed a planning method in a 1979 article in Political Science Quarterly, "
+            "which he called backward mapping.",
             "Backward mapping begins with the specific behavior you want to see at the point of delivery, for "
             "example a correct report submitted by the treasury every quarter. Then you work backward. What does "
             "the person preparing the report need? Who must give them the data? Who must approve the format? "
@@ -237,11 +237,11 @@ PA_POSTS = [
              "May need a change in the office’s spreadsheet or software, so the IT staff, or an outside "
              "provider, must be involved."),
             ("point", "The signatures",
-             "The local treasurer certifies the report, and the local chief executive’s office may want to see "
+             "The local treasurer may need to certify the report, and the local chief executive’s office may want to see "
              "it first."),
             ("point", "The channel",
              "Someone must know exactly where and how to submit it, and confirm that it was received."),
-            "Written out like this, the chain has seven or eight links. Each one is reasonable. Each one is also "
+            "Written out like this, even a simple report passes through many hands. Each step is reasonable. Each one is also "
             "a place where the work can sit in an inbox. Now the office can act before the deadline, not after "
             "it.",
             ("h", "Five Ways to Shorten the Chain"),
@@ -300,7 +300,7 @@ PA_POSTS = [
             "(Both situations are composites made up for this post. No real market or office is described.)",
             "The first problem will be found and fixed, probably by Friday. The second has been around for "
             "years, and every attempt to fix it seems to create a new complaint. These are different kinds of "
-            "problems, and treating them the same way is one of the most common mistakes in public work.",
+            "problems, and treating them the same way is a costly mistake.",
             "Read to the end and you will know what makes a problem “wicked,” how to tell it apart from a "
             "“tame” one, and four practical habits for working on problems that have no final answer.",
             ("photo", "blog/pa-wicked.jpg",
@@ -314,8 +314,8 @@ PA_POSTS = [
             "They called the first kind tame. A tame problem can be defined clearly, and you know when you have "
             "solved it. Balancing a cashbook is tame. So is computing the tax due on a property. The method is "
             "known, the answer can be checked, and once it is right, it stays right.",
-            "They called the second kind wicked. Not wicked in the moral sense, but stubborn, tangled and "
-            "resistant. Their argument was that social problems are never solved for good. At best, they are "
+            "They called the second kind wicked, “not because these properties are themselves ethically "
+            "deplorable,” as they put it, but because such problems are stubborn, tangled and resistant. Their argument was that social problems are never solved for good. At best, they are "
             "worked on again and again.",
             ("h", "Ten Features, in Plain Words"),
             "Rittel and Webber listed ten features of wicked problems. Here they are in my own words.",
@@ -352,7 +352,7 @@ PA_POSTS = [
             "sidewalk, provide livelihood support, or build cheaper stalls. A plan that answers only one of them "
             "will be resisted by the other three, and the problem will come back in a new form.",
             ("h", "How Governments Try to Cope"),
-            "In 2007, the Australian Public Service Commission published a widely read paper, Tackling Wicked "
+            "In 2007, the Australian Public Service Commission published a paper, Tackling Wicked "
             "Problems: A Public Policy Perspective. One of its observations fits local governments well: “Wicked "
             "problems hardly ever sit conveniently within the responsibility of any one organisation.”",
             "The paper draws on the work of Nancy Roberts, who described three broad ways of coping. An "
@@ -360,9 +360,9 @@ PA_POSTS = [
             "approach lets rival groups push their own solutions. A collaborative approach brings the groups "
             "together to work out a shared answer. Roberts and the paper both favored collaboration when many "
             "groups are involved and people’s behavior must change. In my experience, it is also the slowest of "
-            "the three, which is why it is tempting to skip.",
-            ("h", "The Most Common Mistake"),
-            "In my experience, the costly mistake runs in both directions.",
+            "the three, which makes it tempting to skip.",
+            ("h", "A Costly Mix-Up"),
+            "In my experience, the mix-up runs in both directions.",
             ("point", "Treating a wicked problem as tame",
              "One office writes a single rule, enforces it for a month, declares the problem solved, and is "
              "surprised when it returns."),
