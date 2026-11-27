@@ -1781,4 +1781,10 @@ CSS += """
 .loan-tabs a:hover { border-color: var(--gold); }
 .loan-tabs a[aria-current] { background: var(--panel-ink); border-color: var(--panel-ink); color: var(--bg); }
 .loan-steps li { margin-bottom: 8px; }
+/* Housing Loan Calculator (/tools/housing-loan-calculator/): reuses the salary loan styles */
+.loan-warn { color: var(--coral-ink, #c2410c); font-weight: 600; }
+.loan-warn[hidden], #d-reprice[hidden], #d-ins-row[hidden], #d-instotal-row[hidden], #h-details[hidden],
+#h-pagibig-note[hidden], #h-bank-note[hidden] { display: none; }
+.h-afford-title { margin: 18px 0 0; font-size: 1.02rem; }
+.h-para { margin-top: 10px; }
 """
