@@ -6,8 +6,8 @@ starts (the page uses it to highlight the paragraph being read). A post is only 
 
 Usage (needs:  pip install kokoro-onnx soundfile  and ffmpeg, plus the two model files from
 https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0 in KOKORO_DIR):
-    python audio.py                 every post that has no recording yet, or whose words changed
-    python audio.py <slug> ...      only these posts
+    python audio.py                 every post and Study Note that has no recording yet, or whose words changed
+    python audio.py <slug> ...      only these posts (a Study Note by its slug or note-<slug>)
 The site works without them: a post with no recording uses the phone's own voice instead.
 """
 
@@ -20,16 +20,51 @@ import sys
 import tempfile
 from pathlib import Path
 
-VOICE = "am_michael"
+VOICE = "am_michael"  # blog posts
+NOTE_VOICE = "bm_george"  # Study Notes: Butch picked "Voice 4", a British male voice, from 6 samples (2026-11-28)
 SPEED = 1.0
 OUT = Path(__file__).parent / "static" / "audio"
 GAP = {"title": 0.9, "h": 0.55, "p": 0.45}  # seconds of quiet after each kind of part
 LEAD_IN = 0.55  # quiet before a heading, so it sounds like a new section
 
 
+def is_note(b):
+    return "practice" in b  # a Study Note (notes.py), not a blog post
+
+
+def name(b):
+    """File name of the recording: blog posts by slug, Study Notes as note-<slug> (so the two never clash)."""
+    return ("note-" if is_note(b) else "") + b["slug"]
+
+
+def note_parts(n):
+    """What is read aloud on a Study Note (Butch 2026-11-28: the same voice as the blog), in page order:
+    title, summary, the body (each list item and table row on its own), then the worked example.
+    Not read: the "Last checked" line, the blog link, the practice quiz, laws cited and the disclaimer."""
+    out = [("title", n["title"]), ("p", n["summary"])]
+    for x in n["body"]:
+        if isinstance(x, str):
+            out.append(("p", x))
+        elif x[0] == "h":
+            out.append(("h", x[1]))
+        elif x[0] == "list":
+            out += [("p", y) for y in x[1]]
+        elif x[0] == "tip":
+            out.append(("p", "Tip: " + x[1]))
+        elif x[0] == "table":
+            out += [("p", f"{row[0]}. {row[1]}") for row in x[2]]
+    ex_title, steps, answer = n["example"]
+    out.append(("h", ex_title))
+    out += [("p", s) for s in steps]
+    out.append(("p", "Answer: " + answer))
+    return out
+
+
 def parts(b):
     """What is read aloud, in page order, as (kind, text). Must match the parts the page highlights:
     title, summary, then paragraphs, headings, quotes and points (no photos, sources, buttons, Email me)."""
+    if is_note(b):
+        return note_parts(b)
     out = [("title", b["title"])]
     if b.get("summary"):
         out.append(("p", b["summary"]))
@@ -96,6 +131,10 @@ def spoken(text):
     # Butch 2026-11-27: COA (Commission on Audit) is said "KO-wa", the way Filipinos say it. "kohwa" makes this voice say it.
     s = re.sub(r"\bCOA(?:'s|s)\b", "kohwa's", s)
     s = re.sub(r"\bCOA\b", "kohwa", s)
+    # Butch 2026-11-28: ".dev" is said "dot dev", ".com" "dot com", ".org" "dot org" (aumahinay.dev -> "aumahinay dot dev").
+    # Without this the voice drops the dot and says only "dev".
+    s = re.sub(r"(?<=\w)\.(dev|com|org)\b", lambda m: " dot " + m.group(1).lower(), s, flags=re.I)
+    s = re.sub(r"(?<![\w.])\.(dev|com|org)\b", lambda m: "dot " + m.group(1).lower(), s, flags=re.I)
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)
@@ -109,8 +148,22 @@ def spoken(text):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def voice_of(b):
+    """(voice, accent) for a post or note."""
+    return (NOTE_VOICE, "en-gb") if is_note(b) else (VOICE, "en-us")
+
+
+def say(kokoro, text, b):
+    voice, lang = voice_of(b)
+    if lang == "en-us":
+        return kokoro.create(text, voice=voice, speed=SPEED, lang=lang)
+    # The British accent links an "r" into "Cra-ap"/"Ra-ap" (CRAAF, RAAF), making "Crar-ap"; take it out.
+    ph = re.sub(r"ɑːɹ(\s?)ˈap", "ɑːˈap", kokoro.tokenizer.phonemize(text, lang))
+    return kokoro.create(ph, voice=voice, speed=SPEED, lang=lang, is_phonemes=True)
+
+
 def words_hash(b):
-    return hashlib.sha1(json.dumps([VOICE, SPEED, [spoken(t) for _, t in parts(b)]]).encode()).hexdigest()[:12]
+    return hashlib.sha1(json.dumps([voice_of(b)[0], SPEED, [spoken(t) for _, t in parts(b)]]).encode()).hexdigest()[:12]
 
 
 def make(b, kokoro):
@@ -121,7 +174,7 @@ def make(b, kokoro):
         if kind == "h" and i:
             pieces.append(np.zeros(int(LEAD_IN * rate), dtype="float32")); at += LEAD_IN
         starts.append(round(at, 2))
-        audio, rate = kokoro.create(spoken(text), voice=VOICE, speed=SPEED, lang="en-us")
+        audio, rate = say(kokoro, spoken(text), b)
         pieces += [audio.astype("float32"), np.zeros(int(GAP[kind] * rate), dtype="float32")]
         at += len(audio) / rate + GAP[kind]
     with tempfile.TemporaryDirectory() as tmp:
@@ -130,24 +183,25 @@ def make(b, kokoro):
         OUT.mkdir(parents=True, exist_ok=True)
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-ar", "24000",
                         "-b:a", "40k", "-id3v2_version", "3", "-metadata", f"title={b['title']}",
-                        "-metadata", "artist=Ambrosio “Butch” U. Mahinay", str(OUT / f"{b['slug']}.mp3")], check=True)
-    (OUT / f"{b['slug']}.json").write_text(json.dumps({"hash": words_hash(b), "voice": VOICE,
+                        "-metadata", "artist=Ambrosio “Butch” U. Mahinay", str(OUT / f"{name(b)}.mp3")], check=True)
+    (OUT / f"{name(b)}.json").write_text(json.dumps({"hash": words_hash(b), "voice": voice_of(b)[0],
                                                        "duration": round(at, 1), "starts": starts}) + "\n")
 
 
 def needs(b):
-    j = OUT / f"{b['slug']}.json"
-    return not (OUT / f"{b['slug']}.mp3").exists() or not j.exists() or json.loads(j.read_text())["hash"] != words_hash(b)
+    j = OUT / f"{name(b)}.json"
+    return not (OUT / f"{name(b)}.mp3").exists() or not j.exists() or json.loads(j.read_text())["hash"] != words_hash(b)
 
 
 def main(slugs):
     from content import BLOG
+    from notes import NOTES
     from kokoro_onnx import Kokoro
     d = Path(os.environ.get("KOKORO_DIR", "."))
     kokoro = Kokoro(str(d / "kokoro-v1.0.onnx"), str(d / "voices-v1.0.bin"))
-    todo = [b for b in BLOG if (b["slug"] in slugs if slugs else needs(b))]
+    todo = [b for b in BLOG + NOTES if (b["slug"] in slugs or name(b) in slugs if slugs else needs(b))]
     for n, b in enumerate(todo, 1):
-        print(f"[{n}/{len(todo)}] {b['slug']}", flush=True)
+        print(f"[{n}/{len(todo)}] {name(b)}", flush=True)
         make(b, kokoro)
 
 
