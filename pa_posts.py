@@ -129,17 +129,6 @@ PA_POSTS = [
              "/blog/january-rush-business-permit/"),
             ("cta", "Read: Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office",
              "/blog/inside-the-treasurers-office/"),
-            ("h", "Key Takeaways"),
-            ("point", "Front-line workers make policy",
-             "Lipsky showed that thousands of small decisions at the counter add up to the policy citizens "
-             "actually experience."),
-            ("point", "Conditions explain behavior",
-             "Scarce time, vague goals and hard-to-measure work push even good staff toward shortcuts."),
-            ("point", "Coping changes who is served",
-             "Rationing by waiting or by information, and doing easy cases first, quietly shift the service "
-             "away from the people who need the most help."),
-            ("point", "Shape discretion, do not ban it",
-             "Shared defaults, clear information and a count of who is turned away keep small decisions fair."),
             ("h", "What You Can Do This Week"),
             ("point", "If you work at a public counter",
              "Write down three decisions you made today that no rule told you how to make. Ask whether a "
@@ -260,17 +249,6 @@ PA_POSTS = [
              "proof of success."),
             ("cta", "Read: The ALTOS Framework, Principle 4: Every Owner Has a Deadline",
              "/blog/altos-framework-every-owner-has-a-deadline/"),
-            ("h", "Key Takeaways"),
-            ("point", "Good intentions are not enough",
-             "Pressman and Wildavsky showed that a funded, supported program can still produce little, because "
-             "of the complexity of joint action."),
-            ("point", "Long chains are fragile",
-             "Even reliable steps multiply into a low chance that all of them go smoothly."),
-            ("point", "Two useful lenses",
-             "Top-down asks whether the policy is clear and well designed. Bottom-up asks what the people at the "
-             "point of delivery need."),
-            ("point", "Map backward",
-             "Start from the result you want at the front line and list every link back to the memo."),
             ("h", "What You Can Do This Week"),
             ("point", "Pick one rollout",
              "Choose a new requirement your office is working on. Write down every person and approval between "
@@ -386,17 +364,6 @@ PA_POSTS = [
              "should not start from zero."),
             ("cta", "Read: Public Administration in Practice, Part 2: The Implementation Gap",
              "/blog/public-administration-part-2-implementation-gap/"),
-            ("h", "Key Takeaways"),
-            ("point", "Two kinds of problems",
-             "Rittel and Webber separated tame problems, which can be solved and checked, from wicked ones, which "
-             "can only be worked on."),
-            ("point", "The definition is the decision",
-             "How a wicked problem is described already narrows the solutions people will consider."),
-            ("point", "No single owner",
-             "Wicked problems usually cross office lines, so no single office can fix them alone."),
-            ("point", "Close the tame ones",
-             "Most daily treasury work is tame. Finish it completely, and save the patience for the problems "
-             "that truly need it."),
             ("h", "What You Can Do This Week"),
             ("point", "Sort your list",
              "Take the open problems in your office and mark each one tame or wicked. Close one tame problem "
@@ -407,6 +374,627 @@ PA_POSTS = [
              "Choose one thing you could count next month that would show the situation is getting better."),
             ("ask", "What problem in your office keeps coming back no matter what is tried? I would like to "
                     "hear how you describe it."),
+        ],
+    },
+]
+
+# Parts 4-10 (Butch 2026-11-28 PH: "Let's 4 to 10"), Saturdays 9 pm PH, Jan 2 - Feb 13, 2027.
+PA_POSTS += [
+    {
+        "title": "Public Administration in Practice, Part 4: Four Kinds of Decentralization, and the Risks That Come With Them",
+        "slug": "public-administration-part-4-four-kinds-of-decentralization",
+        "category": "pa",
+        "date": "January 2, 2027",
+        "publish_on": "2027-01-02 21:00",
+        "summary": "Not every office outside the capital is decentralized in the same way. Dennis Rondinelli "
+                   "separated four kinds of decentralization, and Rémy Prud’homme warned about its dangers. "
+                   "This part explains both and gives local offices a simple way to tell the kinds apart.",
+        "body": [
+            "Two offices sit on the same floor of a provincial building. One is the field office of a "
+            "national department. The other is the agriculture office of the local government. Both serve "
+            "farmers in the same province, and both are “local” in the everyday sense. Yet when a farmer asks "
+            "for help, one office checks with its head office in Manila, while the other answers to the "
+            "governor or mayor and to the local council.",
+            "(The building and offices here are made up to explain an idea. No real office is described.)",
+            "Both offices are examples of decentralization, but of very different kinds. Public "
+            "administration scholars learned long ago that the word covers several arrangements, and that "
+            "mixing them up leads to wrong expectations.",
+            "After this post, you will know the four kinds of decentralization, the main risks that come with "
+            "giving power to local governments, and four questions that show which kind you are looking at.",
+            ("photo", "blog/pa-decentralization.jpg",
+             "Four kinds of decentralization, from field offices to private and voluntary groups. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Rondinelli’s Four Kinds"),
+            "Dennis Rondinelli, who studied development administration, wrote about this in a 1981 article in "
+            "the International Review of Administrative Sciences, and later with G. Shabbir Cheema and others. "
+            "He described decentralization as “the transfer of responsibility for planning, management, and "
+            "resource raising and allocation” away from the central government. Where that responsibility goes "
+            "decides which kind it is.",
+            ("point", "Deconcentration",
+             "Work moves from a head office to its own field offices. The field office is closer to people, "
+             "but it still decides by the head office’s rules and answers to it."),
+            ("point", "Delegation",
+             "Specific tasks go to a body that is partly independent, such as a public corporation or a "
+             "special agency. It manages the task, but the central government keeps the final responsibility."),
+            ("point", "Devolution",
+             "Local governments get their own authority, money and responsibility to decide which services to "
+             "provide and how. They answer mainly to their own voters and councils."),
+            ("point", "Transfer to private and voluntary groups",
+             "Some services are handed to private firms, cooperatives or nongovernment organizations, through "
+             "contracts, partnerships or full privatization."),
+            ("h", "Where the Philippines Fits"),
+            "The Local Government Code of 1991 is mainly an act of devolution. Section 2 declares the policy "
+            "that local governments “shall enjoy genuine and meaningful local autonomy.” Section 17 lists basic "
+            "services that local governments must provide. For municipalities, these include agricultural "
+            "extension, health services such as primary health care, and social welfare programs. The same "
+            "section told national agencies to devolve those services, and the personnel and assets that came "
+            "with them, to local governments.",
+            "But the other three kinds still exist side by side. National departments keep regional and field "
+            "offices, which is deconcentration. Government corporations run some services on their own, which "
+            "is delegation. And local governments themselves contract private firms for some services. Knowing "
+            "which kind you are dealing with tells you who can actually say yes.",
+            ("cta", "Read: The ALTOS Framework, Principle 7: Keep Money in Its Fund",
+             "/blog/altos-framework-keep-money-in-its-fund/"),
+            ("h", "The Dangers Prud’homme Warned About"),
+            "Decentralization is often praised as bringing government closer to the people. In 1995, the economist Rémy Prud’homme published “The Dangers of Decentralization” in The World Bank "
+            "Research Observer. He did not argue against it. He argued that its risks are real and should be "
+            "planned for. His main warnings were these.",
+            ("point", "Wider gaps between places",
+             "Richer areas can raise more on their own. In his words, decentralization “will therefore make it "
+             "more difficult to pursue redistributive policies.”"),
+            ("point", "Harder national economic management",
+             "When many governments tax, spend and borrow on their own, national policies to keep the economy "
+             "stable become harder to carry out."),
+            ("point", "Weaker production of services",
+             "A small local unit may lack the skilled staff or the scale to deliver a service well, even when it "
+             "knows best what people want."),
+            ("point", "Corruption",
+             "He argued that if corruption is more common at the local level, shifting more money there can "
+             "raise the overall level."),
+            "These warnings explain why devolution usually comes with national transfers, audit and "
+            "reporting rules, and technical help from national agencies. They are the balance that keeps local "
+            "autonomy from turning into local isolation.",
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "/blog/where-your-towns-money-comes-from/"),
+            ("h", "Four Questions to Tell the Kinds Apart"),
+            "When a service seems to belong to “the local government,” ask these four questions. The answers "
+            "show which kind of decentralization you are looking at.",
+            ("point", "Who decides?", "Does the office set its own priorities, or does it apply rules made "
+                                      "somewhere else?"),
+            ("point", "Who pays?", "Does the money come from the local budget, from a national agency’s budget, "
+                                   "or from fees the body keeps?"),
+            ("point", "Who answers?", "If the service fails, who is held responsible: a mayor and council, a "
+                                      "regional director, a board, or a contractor?"),
+            ("point", "Who can change it?", "Can a local ordinance change the service, or does it need a "
+                                            "national order or a new contract?"),
+            "If the answers point to the local council and the local budget, it is devolution. If they point "
+            "to a head office, it is deconcentration. Mixed answers usually mean delegation or a partnership.",
+            ("cta", "Read: Public Administration in Practice, Part 3: Wicked Problems",
+             "/blog/public-administration-part-3-wicked-problems/"),
+            ("h", "What You Can Do This Week"),
+            ("point", "Map one service",
+             "Pick one service your office touches and answer the four questions for it."),
+            ("point", "Find the right door",
+             "List which requests your office can decide alone and which must go to a national or regional "
+             "office. Post the list where staff can see it."),
+            ("ask", "Which service in your area is hardest to place in one of the four kinds? I would like to "
+                    "hear about it."),
+        ],
+    },
+    {
+        "title": "Public Administration in Practice, Part 5: Conscience or Control? The Friedrich-Finer Debate",
+        "slug": "public-administration-part-5-friedrich-finer-debate",
+        "category": "pa",
+        "date": "January 9, 2027",
+        "publish_on": "2027-01-09 21:00",
+        "summary": "Should we trust a public servant’s professional conscience, or bind them with outside "
+                   "controls? Carl Friedrich and Herman Finer argued about this in 1940 and 1941. This part "
+                   "explains both sides and how a treasury office can use the best of each.",
+        "body": [
+            "A voucher reaches the disbursing desk with every signature and attachment in place. On paper, it "
+            "is complete. But the staff member checking it notices that a delivery receipt is dated before the "
+            "purchase order. No checklist item covers that exact case. Should she hold it on her own judgment, "
+            "or pass it because the checklist is satisfied?",
+            "(The voucher and the staff member are made up. They describe no real transaction or office.)",
+            "This small moment is a version of one of the oldest arguments in public administration. By the "
+            "last section, you will know what that argument was, why both sides were partly right, and a "
+            "simple way to handle cases the rules do not cover.",
+            ("photo", "blog/pa-friedrich-finer.jpg",
+             "Two views of responsibility in public service, side by side. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Two Scholars, Two Answers"),
+            "In 1940, the political scientist Carl Joachim Friedrich published an essay called “Public Policy "
+            "and the Nature of Administrative Responsibility” in Public Policy, a yearbook from Harvard "
+            "University Press. A year later, Herman Finer replied in Public Administration Review with "
+            "“Administrative Responsibility in Democratic Government.” Their exchange became known as the "
+            "Friedrich-Finer debate.",
+            "The scholar Richard Mulgan, writing in 2000, summed up the two sides well. Friedrich emphasized "
+            "“the inward responsibility of public servants to their professional standards and values.” Finer "
+            "reasserted “the primacy of responsibility to external political direction.”",
+            ("h", "Friedrich: Trust the Professional"),
+            "Friedrich’s point was that modern government is too technical and too complex for elected "
+            "officials to direct every decision. Laws cannot foresee every case. So public servants must be "
+            "guided by the knowledge and values of their profession, and by an awareness of what the public "
+            "needs and feels.",
+            "In a treasury, this view says a well-trained staff member who knows accounting rules, audit "
+            "standards and the purpose of each control will usually make the right call, even where no rule "
+            "spells it out.",
+            ("h", "Finer: Keep Officials Under Control"),
+            "Finer did not trust conscience alone. He worried that officials who answer mainly to themselves "
+            "will drift toward their own views of the public good. His answer was external control: elected "
+            "representatives set the direction, and officials follow it and are held to account for it.",
+            "He drew a famous distinction. Responsibility, he wrote, may mean “that X is accountable for Y to "
+            "Z,” or it may mean an inward, personal sense of moral duty. He wanted the first kind to come first.",
+            ("quote", "Rules protect the public from an official’s mistakes. Conscience protects the public from "
+                      "the rules’ gaps."),
+            ("h", "Why Both Were Partly Right"),
+            "Later scholars have argued that each side defined responsibility too narrowly. In 2001, Delmer "
+            "Dunn and Jerome Legge studied local government managers in the United States and concluded that "
+            "“both Friedrich and Finer provide too narrow a definition of accountability and responsibility.” "
+            "Real public servants answer to elected officials, to the law, to their profession and to the "
+            "public at the same time.",
+            "In my experience, a treasury needs both. Without Finer’s controls, a good office depends entirely "
+            "on good people, and fails when they leave. Without Friedrich’s professionalism, the rules are "
+            "followed to the letter while their purpose is lost.",
+            ("cta", "Read: The ALTOS Framework, Principle 6: Separate the Hands",
+             "/blog/altos-framework-separate-the-hands/"),
+            ("h", "Back to the Voucher"),
+            "So what should the staff member do with the voucher? A sensible approach uses both views.",
+            ("point", "Use judgment to stop and ask",
+             "The odd date is a professional red flag. She should not simply pass it because the checklist is "
+             "complete."),
+            ("point", "Use the chain of authority to decide",
+             "She should not reject it on her own either. She writes down what she saw and raises it to her "
+             "supervisor, who can ask the supplying office for an explanation."),
+            ("point", "Fix the rule afterward",
+             "If the case turns out to matter, add it to the checklist, so the next person does not have to "
+             "rely on luck or courage."),
+            ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance",
+             "/blog/when-coa-writes/"),
+            ("h", "A Simple Test for Gaps in the Rules"),
+            ("point", "Is there a clear rule?",
+             "If yes, follow it and keep the record. That is Finer’s side."),
+            ("point", "If not, what would a careful peer do?",
+             "Think of the most competent colleague you know in your field. That is Friedrich’s side."),
+            ("point", "Could you explain it in public?",
+             "If you would be uncomfortable explaining the decision to a citizen or an auditor, stop and ask."),
+            ("point", "Did you tell someone above you?",
+             "Judgment used quietly can look like favoritism later. Judgment raised in writing protects "
+             "everyone."),
+            ("cta", "Read: Public Administration in Practice, Part 1: Street-Level Bureaucracy",
+             "/blog/public-administration-part-1-street-level-bureaucracy/"),
+            ("h", "What You Can Do This Week"),
+            ("point", "Collect the gray cases",
+             "Ask your team for three cases in the past year where the rules gave no clear answer."),
+            ("point", "Decide the default",
+             "For each one, agree on who decides and how the decision is recorded."),
+            ("ask", "Have you faced a case where the rules were satisfied but something still felt wrong? I would "
+                    "like to hear how it ended."),
+        ],
+    },
+    {
+        "title": "Public Administration in Practice, Part 6: Why People Serve, the Idea of Public Service Motivation",
+        "slug": "public-administration-part-6-public-service-motivation",
+        "category": "pa",
+        "date": "January 16, 2027",
+        "publish_on": "2027-01-16 21:00",
+        "summary": "Salary alone does not explain why people choose government work and stay in it. James Perry "
+                   "and Lois Wise called the missing piece public service motivation. This part explains the "
+                   "idea, what research has found, and how a supervisor can protect it.",
+        "body": [
+            "Ask a room of local government employees why they took the job, and the answers vary. Some say "
+            "security of tenure. Some say it was the first offer. But many add something else after a pause: "
+            "they wanted to help, or a parent served before them, or they like seeing a project they worked on "
+            "finished in their own community.",
+            "(This room is imagined, to open the topic. It does not report a survey.)",
+            "Public administration research has a name for that second answer. Stay with me to the end, and "
+            "you will know what public service motivation means, its four commonly measured parts, what the "
+            "evidence does and does not show, and what a supervisor can do with it.",
+            ("photo", "blog/pa-motivation.jpg",
+             "The four dimensions in James Perry’s 1996 measure of public service motivation. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "The Idea"),
+            "In 1990, James Perry and Lois Wise published “The Motivational Bases of Public Service” "
+            "in Public Administration Review. They defined public service motivation as “an individual’s "
+            "predisposition to respond to motives grounded primarily or uniquely in public institutions and "
+            "organizations.”",
+            "They grouped these motives into three types.",
+            ("point", "Rational", "Motives based on what a person gains, such as the chance to take part in "
+                                  "shaping policy or to advance a program they believe in."),
+            ("point", "Norm-based", "Motives based on following social or cultural norms, such as a sense of "
+                                    "duty to serve the public interest."),
+            ("point", "Affective", "Motives based on emotion, such as concern for people affected by a "
+                                   "program."),
+            ("h", "Four Measured Parts"),
+            "In 1996, Perry developed a survey measure of the idea, published in the Journal of Public "
+            "Administration Research and Theory. It identified four dimensions.",
+            ("point", "Attraction to public policy making", "Interest in how public decisions are made."),
+            ("point", "Commitment to the public interest", "A sense of civic duty."),
+            ("point", "Compassion", "Concern for others, especially those in need."),
+            ("point", "Self-sacrifice", "Willingness to put public service ahead of personal reward."),
+            ("h", "What the Evidence Shows, and What It Does Not"),
+            "Researchers have used versions of Perry’s measure in many countries. A 2013 study by Sangmook Kim "
+            "and colleagues, covering twelve countries, found that public service motivation could be measured "
+            "across them, but warned that “the exact meaning and scaling of PSM dimensions are likely to differ "
+            "across cultures and languages.” So the idea travels, but the numbers do not always compare "
+            "neatly.",
+            "Studies have linked public service motivation to pro-social behavior and positive organizational "
+            "outcomes, as a 2011 article by Willow Jacobson put it. But the same article notes mixed findings. "
+            "The fair summary is that motivation matters, but it is not a magic switch, and it does not replace "
+            "fair pay, clear work and good supervision.",
+            ("h", "A Practitioner’s Caution"),
+            "One dimension deserves care: self-sacrifice. In my experience, the most dedicated people in an "
+            "office are often the ones asked to stay late, cover for absences and take the hardest counters, "
+            "simply because they never refuse. Over time, that turns a strength into burnout.",
+            "Public service motivation should be protected, not spent. An office that relies on a few people’s "
+            "willingness to sacrifice is not well run. It is borrowing against their health.",
+            ("cta", "Read: 360 Degrees: My First Post as Acting Municipal Treasurer",
+             "/blog/first-post-as-acting-treasurer/"),
+            ("h", "What a Supervisor Can Do"),
+            ("point", "Show where the work goes",
+             "A collector who sees the road or health center funded by the year’s collections understands why "
+             "the receipts matter. Share those results with the team."),
+            ("point", "Say thank you specifically",
+             "“Thank you for staying to finish the deposit” means more than a general word of praise."),
+            ("point", "Spread the hard work",
+             "Rotate the difficult tasks so the willing few are not always the ones who carry them."),
+            ("point", "Give people a voice",
+             "Attraction to policy making is one of the four dimensions. Ask staff how a procedure could be "
+             "better, and use the good ideas."),
+            ("point", "Fix what drains motivation",
+             "Broken equipment, unclear rules and unfair treatment wear down even the most committed people."),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends",
+             "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: The ALTOS Framework, Principle 10: Build to Outlast the Builder",
+             "/blog/altos-framework-build-to-outlast-the-builder/"),
+            ("h", "What You Can Do This Week"),
+            ("point", "Ask one question",
+             "In your next team meeting, ask what part of the job each person finds most worthwhile."),
+            ("point", "Check the load",
+             "List who stayed late most often last month. If it is always the same names, change the "
+             "schedule."),
+            ("ask", "What keeps you in public service on a hard day? I would like to hear your answer."),
+        ],
+    },
+    {
+        "title": "Public Administration in Practice, Part 7: The Hidden Cost of a Form, Administrative Burden",
+        "slug": "public-administration-part-7-administrative-burden",
+        "category": "pa",
+        "date": "January 23, 2027",
+        "publish_on": "2027-01-23 21:00",
+        "summary": "Every visit to a government office costs the citizen something beyond the fee: time to find "
+                   "out what to do, effort to comply and sometimes stress. Scholars call this administrative "
+                   "burden. This part explains the idea and how to measure and reduce it.",
+        "body": [
+            "A retired teacher wants to pay the real property tax on her small lot. She asks a neighbor where "
+            "to go, takes a tricycle to the municipal hall, lines up at the wrong window, is sent to "
+            "photocopy her old receipt, and finally pays. The tax itself took two minutes. Everything around it "
+            "took most of a morning.",
+            "(The teacher and her morning are imagined. They describe no real person or office.)",
+            "Public administration scholars call that morning administrative burden. By the end of this "
+            "reading, you will know its three parts, how it differs from red tape, what Philippine law already "
+            "requires, and a simple way to find the burden hidden in your own office’s process.",
+            ("photo", "blog/pa-burden.jpg",
+             "The three costs of administrative burden, and red tape. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Three Kinds of Cost"),
+            "In a 2015 article in the Journal of Public Administration Research and Theory, Donald Moynihan, "
+            "Pamela Herd and Hope Harvey described administrative burden as “a function of learning, "
+            "psychological, and compliance costs.”",
+            ("point", "Learning costs",
+             "The effort of finding out about a service and what applies to you: where to go, what to bring, how "
+             "much to pay."),
+            ("point", "Compliance costs",
+             "In their words, “the burdens of following administrative rules and requirements”: forms, "
+             "documents, copies, lines and return trips."),
+            ("point", "Psychological costs",
+             "The stress, stigma or loss of dignity people feel when dealing with a program or an office."),
+            "Herd and Moynihan later expanded the idea in a 2018 book, Administrative Burden: Policymaking by "
+            "Other Means. The subtitle makes their point. How hard or easy a process is to use can decide who "
+            "actually receives a service, just as much as the law that created it.",
+            ("h", "Burden Does Not Fall Equally"),
+            "Moynihan, Herd and Harvey noted that some groups of citizens may be “more or less able to manage "
+            "burdens.” A business owner with a liaison officer barely notices a long process. An older person "
+            "with no transport, a worker who loses a day’s pay, or someone who does not read English well feels "
+            "every extra step.",
+            "This is why the same requirement can be minor for one person and a reason to give up for another.",
+            ("cta", "Read: Public Administration in Practice, Part 1: Street-Level Bureaucracy",
+             "/blog/public-administration-part-1-street-level-bureaucracy/"),
+            ("h", "Burden Is Not the Same as Red Tape"),
+            "The two ideas are related but different. In 1993, Barry Bozeman defined red tape as “rules, "
+            "regulations, and procedures that remain in force and entail a compliance burden for the "
+            "organization but have no efficacy for the rules’ functional object.” In plain words, red tape is "
+            "a rule that costs effort but no longer does its job.",
+            "Administrative burden is wider. A requirement can be fully justified, such as proof of ownership "
+            "before a tax declaration is changed, and still be a heavy burden. The goal is not to remove every "
+            "requirement. It is to remove the useless ones and make the useful ones easier.",
+            ("h", "What Philippine Law Already Requires"),
+            "Republic Act No. 11032, the Ease of Doing Business and Efficient Government Service Delivery Act of "
+            "2018, attacks many of these costs directly. Its primer lists processing times of 3 working days "
+            "for simple transactions, 7 for complex ones and 20 for highly technical applications. It requires "
+            "every office to post a Citizen’s Charter showing the checklist of requirements, the steps, the "
+            "fees, the person responsible and the maximum time for each service.",
+            "In burden terms, the Citizen’s Charter is a tool against learning costs, and the processing time "
+            "limits are a tool against compliance costs. The law works best when the charter is accurate and "
+            "easy to find, not just posted.",
+            ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit",
+             "/blog/january-rush-business-permit/"),
+            ("h", "A Burden Audit in Five Steps"),
+            ("point", "1. Walk the process as a citizen",
+             "Pick one service and go through it from the gate, without using your staff ID. Note every stop."),
+            ("point", "2. Time it",
+             "Write how long each step takes, including waiting, not just the time at the window."),
+            ("point", "3. Ask why for each requirement",
+             "For every document required, find the rule that requires it. If none can be found, it may be red "
+             "tape."),
+            ("point", "4. Listen at the exit",
+             "Ask five people leaving the office what was hardest. Their answers show learning and "
+             "psychological costs that a timer cannot."),
+            ("point", "5. Fix one thing",
+             "Remove one useless step, or make one useful step easier, such as a sample filled-in form at the "
+             "entrance."),
+            ("cta", "Read: The ALTOS Framework, Principle 8: The Taxpayer Is a Citizen",
+             "/blog/altos-framework-the-taxpayer-is-a-citizen/"),
+            ("h", "What You Can Do This Week"),
+            ("point", "Check your charter",
+             "Compare your office’s posted Citizen’s Charter with what really happens at the window."),
+            ("point", "Count return trips",
+             "For one week, note how many people had to come back, and why."),
+            ("ask", "What is the most burdensome government process you have gone through? I would like to "
+                    "hear which part was hardest."),
+        ],
+    },
+    {
+        "title": "Public Administration in Practice, Part 8: Nudges in Government, Small Changes That Change Behavior",
+        "slug": "public-administration-part-8-nudges-in-government",
+        "category": "pa",
+        "date": "January 30, 2027",
+        "publish_on": "2027-01-30 21:00",
+        "summary": "The wording of a reminder letter can change how many people pay on time. Behavioral science studies small design changes like this. This part explains the idea, a "
+                   "well-known tax letter experiment from the United Kingdom, and how to use it honestly.",
+        "body": [
+            "Two reminder letters go out to people with unpaid local taxes. Both state the amount due and the "
+            "deadline. One adds a single line at the top. Weeks later, more people who received that version "
+            "have paid. Nothing else changed: same tax, same penalty, same office.",
+            "(These two letters are a teaching example. The real experiment this post describes took place in "
+            "the United Kingdom, not in a Philippine office.)",
+            "Behavioral science studies how small changes like that line affect what people do. In the next "
+            "few minutes, you will learn what a nudge is, what the UK tax letter trials found, and the rules "
+            "that keep nudges honest in a public office.",
+            ("photo", "blog/pa-nudge.jpg",
+             "Four habits for using nudges honestly in public service. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "What a Nudge Is"),
+            "The term was made popular by the economist Richard Thaler and the legal scholar Cass Sunstein in "
+            "their 2008 book, Nudge. A nudge is a change in the way choices are presented, which they call "
+            "choice architecture, that steers people in a predictable direction without banning any option or "
+            "significantly changing their costs or rewards.",
+            "Examples include a default setting, a reminder sent at the right time, a simpler form, or a "
+            "message that tells people what others do. Several governments have since set up teams to test such ideas, including the United Kingdom, which set one up in 2010.",
+            ("h", "The UK Tax Letter Experiments"),
+            "One of the best-known tests comes from the United Kingdom’s tax authority. Michael Hallsworth, "
+            "John List, Robert Metcalfe and Ivo Vlaev reported two large field experiments, involving more than "
+            "200,000 taxpayers in total, in the Journal of Public Economics in 2017.",
+            "People who had not yet paid their tax received reminder letters. Some letters were the standard "
+            "version. Others added a short line about what other people do, for example: “Nine out of ten "
+            "people in the UK pay their tax on time.” The strongest version added: “You are currently in the "
+            "very small minority of people who have not paid us yet.”",
+            "Letters with these social norm messages raised the share of people who paid, and the “minority” "
+            "message had the largest effect among the norm messages. The authors estimated that this message "
+            "alone brought in about £2.4 million more in taxes within 23 days in the first experiment. The "
+            "cost was the same as sending any other letter.",
+            ("quote", "The cheapest improvement in a public office is often a better sentence."),
+            ("h", "Why It Works"),
+            "Most people want to do what is expected of them, and many delays come from forgetting or putting "
+            "things off, not from refusing. A clear, true reminder about what most people do turns a vague "
+            "duty into a concrete, normal action.",
+            ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction",
+             "/blog/unpaid-amilyar-notice-to-auction/"),
+            ("h", "Using Nudges Honestly"),
+            "A public office holds power over citizens, so nudges must meet a higher standard than marketing. "
+            "These are the rules I would follow.",
+            ("point", "Only true statements",
+             "Never write “nine out of ten pay on time” unless your own records show it. A false norm is a lie, "
+             "and it damages trust when discovered."),
+            ("point", "Inform, do not shame",
+             "The message should make paying feel normal and easy. It should never expose or insult anyone."),
+            ("point", "Keep every option",
+             "A nudge must not hide the right to ask questions, request a review or protest an assessment."),
+            ("point", "Test before you claim",
+             "Send two versions to randomly divided groups and compare results. Without a test, you only have "
+             "a guess."),
+            ("h", "A Simple Local Test"),
+            "Suppose a treasury sends real property tax reminders every quarter. It can split the list at "
+            "random into two halves. One half receives the usual letter. The other half receives the same letter with a true "
+            "line about how many property owners in the locality paid on time last year, and a short list of "
+            "where and how to pay. After the deadline, the office compares the share who paid in each group.",
+            "This kind of test costs little, and it produces evidence instead of opinion. If the new letter does "
+            "not help, the office has lost nothing and learned something.",
+            ("cta", "Read: How to Use the RPT Calculator: Know Your Amilyar Before You Pay",
+             "/blog/how-to-use-the-rpt-calculator/"),
+            ("cta", "Read: Public Administration in Practice, Part 7: The Hidden Cost of a Form",
+             "/blog/public-administration-part-7-administrative-burden/"),
+            ("h", "What You Can Do This Week"),
+            ("point", "Read your own letter",
+             "Take your office’s standard reminder or notice and read it as a citizen. Are the action and the deadline clear in the first two lines?"),
+            ("point", "Find a true number",
+             "Check your records for a true, encouraging fact you could add, such as the share who paid on "
+             "time last year."),
+            ("ask", "Has a government letter or notice ever made you act right away? I would like to hear what "
+                    "it said."),
+        ],
+    },
+    {
+        "title": "Public Administration in Practice, Part 9: Collaborative Governance, When No Single Office Can Do It Alone",
+        "slug": "public-administration-part-9-collaborative-governance",
+        "category": "pa",
+        "date": "February 6, 2027",
+        "publish_on": "2027-02-06 21:00",
+        "summary": "Some problems cross the borders of offices, local governments and sectors. Chris Ansell "
+                   "and Alison Gash studied 137 cases to learn when working together succeeds. This part "
+                   "explains their model and how local governments can use it.",
+        "body": [
+            "A river runs through three barangays and two municipalities before it reaches the sea. Every rainy "
+            "season, garbage from upstream clogs the drainage downstream. Each local government cleans its own "
+            "stretch, and each blames the other. The problem has outlived several administrations.",
+            "(The river and the local governments here are invented. They describe no real place.)",
+            "No single office can solve a problem like this. Public administration calls the alternative "
+            "collaborative governance. In this post, you will learn how two scholars defined it, the four "
+            "things that decide whether it works, and how the Philippine Local Government Code already "
+            "allows it.",
+            ("photo", "blog/pa-collaboration.jpg",
+             "The four parts of Ansell and Gash’s model of collaborative governance. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "A Careful Definition"),
+            "In 2008, Chris Ansell and Alison Gash published “Collaborative Governance in Theory and Practice” "
+            "in the Journal of Public Administration Research and Theory. They defined it as “a governing "
+            "arrangement where one or more public agencies directly engage non-state stakeholders in a "
+            "collective decision-making process that is formal, consensus-oriented, and deliberative” and that "
+            "aims to make or carry out public policy or manage public programs or assets.",
+            "Their definition is strict on purpose. A public hearing where people only give comments does not meet it. The groups must actually decide together.",
+            "Their model, in their words, “is built on an analysis of 137 cases” from many countries and "
+            "fields.",
+            ("h", "Four Things That Decide Success"),
+            ("point", "Starting conditions",
+             "The history between the groups matters. Ansell and Gash wrote that “the prehistory of antagonism "
+             "or cooperation between stakeholders will hinder or facilitate collaboration.” Power and resource "
+             "gaps matter too."),
+            ("point", "Institutional design",
+             "Clear ground rules: who takes part, how decisions are made and how open the process is."),
+            ("point", "Facilitative leadership",
+             "Someone who brings people to the table, keeps the process fair and helps weaker groups take "
+             "part."),
+            ("point", "The collaborative process",
+             "Face-to-face dialogue, trust building, commitment to the process and shared understanding."),
+            ("h", "Small Wins Build Trust"),
+            "One of their most practical findings is about momentum. They observed that a good cycle “tends "
+            "to develop when collaborative forums focus on ‘small wins’ that deepen trust, commitment, and "
+            "shared understanding.”",
+            "For the river, that means not starting with a grand master plan. It means starting with one joint "
+            "cleanup, one shared garbage schedule, or one agreed set of figures on where the waste comes from. "
+            "Each success makes the next, harder step possible.",
+            ("cta", "Read: Public Administration in Practice, Part 3: Wicked Problems",
+             "/blog/public-administration-part-3-wicked-problems/"),
+            ("h", "Watch the Power Gap"),
+            "Ansell and Gash also warned that “power imbalances between stakeholders are a commonly noted "
+            "problem in collaborative governance.” If the larger municipality or a big business dominates the "
+            "table, the smaller barangays and ordinary residents may stop coming, and the agreement loses its "
+            "legitimacy.",
+            "A fair process gives weaker groups real time to speak, information in a form they can use, and "
+            "sometimes help to attend, such as meetings held where they live.",
+            ("h", "What Philippine Law Allows"),
+            "The 1987 Constitution, in Article X, Section 13, says local government units “may group "
+            "themselves, consolidate or coordinate their efforts, services, and resources for purposes "
+            "commonly beneficial to them in accordance with law.” Section 33 of the Local Government Code "
+            "carries this into practice. Local governments may do so through appropriate ordinances, may "
+            "contribute funds, property and personnel after the sanggunian approves following a public "
+            "hearing, and set the terms in memoranda of agreement.",
+            "The Code also lets local governments work with people’s organizations and nongovernment "
+            "organizations in delivering certain services. These provisions give collaboration a legal home. "
+            "Ansell and Gash’s model helps make it work.",
+            ("cta", "Read: Local Finance Without Borders, Part 7: Participatory Budgeting",
+             "/blog/local-finance-part-7-participatory-budgeting/"),
+            ("h", "A Starting Checklist"),
+            ("point", "Name the shared problem",
+             "Write it in words every group accepts, not in the words of one office."),
+            ("point", "Look at the history",
+             "If past dealings were bitter, plan extra time for trust building before any big decision."),
+            ("point", "Choose a fair facilitator",
+             "Pick someone all sides respect, not necessarily the most senior official."),
+            ("point", "Agree on the rules early",
+             "Decide how decisions are made and recorded before the first hard question."),
+            ("point", "Plan a small win",
+             "Choose a first task that can succeed within a few months, and celebrate it together."),
+            ("h", "What You Can Do This Week"),
+            ("point", "Find one shared problem",
+             "List one issue your office cannot solve without another office or local government."),
+            ("point", "Pick the first small win",
+             "Write down one joint step that could succeed within three months."),
+            ("ask", "Have you seen two offices or local governments work well together? I would like to hear "
+                    "what made it work."),
+        ],
+    },
+    {
+        "title": "Public Administration in Practice, Part 10: The Prismatic Society, When Written Rules and Real Practice Differ",
+        "slug": "public-administration-part-10-prismatic-society",
+        "category": "pa",
+        "date": "February 13, 2027",
+        "publish_on": "2027-02-13 21:00",
+        "summary": "Fred Riggs, who once taught in the Philippines, built a theory of administration in developing "
+                   "countries around one idea: the gap between written rules and real practice. This part "
+                   "explains his model fairly, including its limits, and how to use it on your own office.",
+        "body": [
+            "Every office has at least one form that is filled out faithfully and then never read. There is a "
+            "logbook signed every day that no one checks, or a report submitted every quarter that no one "
+            "uses. On paper, the procedure exists. In practice, it has become a ritual.",
+            "(These examples are general, not drawn from any particular office.)",
+            "A scholar named Fred Riggs gave this gap a name more than sixty years ago, and the idea is still worth knowing today. When you finish this post, you will know what he "
+            "meant by the prismatic society and formalism, what his critics say, and how to use the idea "
+            "constructively.",
+            ("photo", "blog/pa-prismatic.jpg",
+             "Riggs’s three models of society, from fused to diffracted. "
+             "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
+            ("h", "Who Fred Riggs Was"),
+            "Fred W. Riggs chaired the Comparative Administration Group from 1960 to 1971, a group of scholars who studied how government works across different countries. According to Howard McCurdy’s account of his "
+            "career, Riggs did field work in Thailand in 1957 and 1958, and taught at the newly created Philippine Institute of Public Administration in 1958 and 1959.",
+            "In 1964, he published Administration in Developing Countries: The Theory of Prismatic Society, with "
+            "Houghton Mifflin in Boston.",
+            ("h", "Light Through a Prism"),
+            "Riggs borrowed an image from physics. White light is “fused,” all colors mixed together. After "
+            "passing through a prism, it is “diffracted” into separate colors. Inside the prism, it is partly "
+            "both.",
+            ("point", "Fused",
+             "In a fused system, one structure performs many functions. A traditional leader might act as "
+             "judge, tax collector and religious head at once."),
+            ("point", "Diffracted",
+             "In a diffracted system, each structure has a specific function. Courts judge, tax offices "
+             "collect, and each follows its own rules."),
+            ("point", "Prismatic",
+             "In between is the prismatic system, which has features of both. Modern offices exist, but older "
+             "ways of working continue inside and around them."),
+            "McCurdy notes that for Riggs, “the prismatic society was not a passing inconvenience.” It could "
+            "last a long time and had its own logic.",
+            ("h", "Formalism"),
+            "McCurdy calls formalism “the most important feature” of Riggs’s model. Formalism is the gap "
+            "between what laws and procedures say should happen and what actually happens. In McCurdy’s "
+            "summary, “extensive facades and procedures exist, but they are not expected to work in practice.”",
+            "Riggs also described the “sala,” his name for the prismatic office. McCurdy explains that the word "
+            "can mean “a formal office where business is conducted,” and also “a chamber in one’s home where "
+            "traditional functions are performed.” The point is that official and personal ways of working can "
+            "share the same room.",
+            ("quote", "A rule that no one expects to work is worse than no rule. It teaches everyone to pretend."),
+            ("h", "What the Critics Say"),
+            "Riggs’s model has been criticized, and a fair reading includes that. McCurdy writes that Riggs “is "
+            "often criticized for tearing down rather than building up,” and that his models tend to explain "
+            "why Western methods do not work without suggesting what does.",
+            "There is a deeper point too. Gaps between written rules and real practice exist in every country, "
+            "rich or poor. Formalism is not a label for one nation. It is a risk in every office.",
+            ("cta", "Read: Public Administration in Practice, Part 2: The Implementation Gap",
+             "/blog/public-administration-part-2-implementation-gap/"),
+            ("h", "Using the Idea Constructively"),
+            "The most useful way to read Riggs today is as a diagnostic tool for your own office, not as a "
+            "judgment of anyone else’s.",
+            ("point", "Find the rituals",
+             "List forms, logbooks and reports that are completed but never used. Each is a sign of formalism."),
+            ("point", "Ask what each was for",
+             "Every ritual began as a real control. Find its original purpose."),
+            ("point", "Repair or retire",
+             "If the purpose still matters, make the control work, for example by having someone actually "
+             "review the logbook each week. If it no longer matters, ask the proper authority to drop it."),
+            ("point", "Make the real visible",
+             "Write procedures that describe how work is truly done, then improve them. A true procedure can be "
+             "fixed. A pretend one cannot."),
+            ("cta", "Read: The ALTOS Framework, Principle 1: Legality First",
+             "/blog/altos-framework-legality-first/"),
+            ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF",
+             "/blog/accountable-forms-blank-receipts/"),
+            ("h", "What You Can Do This Week"),
+            ("point", "Pick one form",
+             "Choose one form or report your office prepares. Ask who reads it and what decision it supports."),
+            ("point", "Close one gap",
+             "If no one uses it, either start using it properly or ask to stop it."),
+            ("ask", "What procedure in your office exists on paper but not in practice? I would like to hear "
+                    "how you would fix it."),
         ],
     },
 ]
