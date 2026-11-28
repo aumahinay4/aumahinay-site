@@ -1142,6 +1142,22 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'Section 305(i) adds that local budgets “shall operationalize approved local development plans.” In other '
            'words, the law expects every peso in the budget to connect to a plan and to an expected result. '
            'Performance budgeting is a practical way of doing what the Code already asks.',
+           ('h', 'The Budget Forms Already Have a Performance Page'),
+           'The Department of Budget and Management (DBM) turned that principle into forms. Its Budget Operations '
+           'Manual for Local Government Units, 2016 Edition, issued through Local Budget Circular No. 112 dated June '
+           '10, 2016, took effect for fiscal year 2017. Among the budget preparation forms it lists is LBP Form No. '
+           '4, “Mandate, Vision/Mission, Major Final Output, Performance Indicators and Targets by Department/Office.”',
+           'The manual calls its approach performance-informed budgeting, which it describes as one that “uses '
+           'performance information in appropriation documents to link funding to results.” It defines a Major Final '
+           'Output (MFO) as “a good or service that a department/agency is mandated to deliver to external clients.” '
+           'Performance indicators, it says, are “the means to measure how well the goods or services were '
+           'delivered,” covering the quantity, quality and timeliness of the service. Each office then sets its '
+           'targets for the budget year, taking into account the resources available.',
+           'So the one-page performance budget in this post is not an extra report. In a Philippine local '
+           'government, it lines up with information each department or office is already asked to present. The '
+           'difference lies in how carefully it is filled in. A form with vague outputs and targets copied from last '
+           'year meets the requirement but tells the council nothing. Check the latest DBM issuances for any newer '
+           'edition of the manual before relying on the form numbers.',
            ('h', 'A Worked Example: The Business Permit Office'),
            ('photo',
             'blog/finance-lfwb-results-page.jpg',
@@ -1413,6 +1429,25 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Reporting',
             'An electronic copy of the tagged AIP is submitted to the Climate Change Commission.'),
            ('point', 'When', 'For immediate compliance by all local governments starting fiscal year 2016.'),
+           ('h', 'Where the Tagged Projects Come From'),
+           'A tag is only as good as the plan behind it. The Climate Change Act of 2009, Republic Act No. 9729, '
+           'approved on October 23, 2009, makes local governments “the frontline agencies in the formulation, '
+           'planning and implementation of climate change action plans” in their areas. Section 14 asks each local '
+           'government to prepare a Local Climate Change Action Plan and to “regularly update” it to reflect changing '
+           'social, economic and environmental conditions and emerging issues. Copies of plans and their amendments '
+           'go to the Climate Change Commission within one month of adoption.',
+           'The same section says municipal and city governments shall consider climate change adaptation one of '
+           'their regular functions. It also expressly authorizes the local government to appropriate and use part '
+           'of its Internal Revenue Allotment, as the law calls it, to carry out the plan.',
+           'This is where tagging and planning meet. A climate-tagged line in the Annual Investment Program should '
+           'trace back to an action in the local plan. When a tagged project cannot be found in the plan, either the '
+           'plan needs updating or the tag deserves a second look.',
+           'Outside funding looks for the plan too. Republic Act No. 10174, enacted in 2012, amended the Climate '
+           'Change Act and created the People’s Survival Fund, a special fund in the National Treasury that supports '
+           'the adaptation activities of local governments and communities. The law sets ₱1 billion to be '
+           'appropriated for it under the General Appropriations Act and keeps its balance at not less than that '
+           'amount. Among the criteria for deciding which proposals the fund supports first is the availability of a '
+           'climate change adaptation action plan.',
            ('h', 'A Worked Example: Tagging an Investment Program'),
            ('photo',
             'blog/finance-lfwb-climate-aip.jpg',
@@ -1571,6 +1606,24 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
            'Seeing the gap does not mean closing it in one year. A practical plan protects the assets that matter '
            'most first, such as roads that carry most traffic and the market that earns income, and raises the '
            'maintenance share step by step in the following budgets.',
+           ('h', 'A Rule of Thumb for Buildings'),
+           'How much is enough? For buildings, one long-standing benchmark comes from the United States. In 1990, a '
+           'committee of the National Research Council published Committing to the Cost of Ownership: Maintenance '
+           'and Repair of Public Buildings. As a 2023 National Academies report, Strategies to Renew Federal '
+           'Facilities, explains, that committee stated that routine annual maintenance and repair of a substantial '
+           'building portfolio “should range from 2 to 4 percent of aggregate replacement value.” The same range was '
+           'cited again in a 1998 National Research Council report on federal facilities.',
+           'Replacement value means what it would cost today to build the same buildings again, not what they cost '
+           'when they were first built. The difference matters, because the books record a building at what it cost '
+           'when it was built, less depreciation, and an old market or hall can look far cheaper on paper than it '
+           'would be to replace.',
+           'Apply it to the invented municipality. Suppose rebuilding its public market and municipal hall today '
+           'would cost ₱50 million in all. Two to four percent of that is ₱1.0 million to ₱2.0 million a year. The '
+           'list above sets ₱2.0 million for the two buildings (₱1.2 million plus ₱0.8 million), at the top of the '
+           'range, which suits a market rated only fair.',
+           'The benchmark was made for building portfolios in another country, so treat it as a first check, not a '
+           'rule. It does not cover roads, water systems or vehicles. Those still need estimates from the '
+           'engineering office, based on inspections.',
            ('h', 'Why a Treasury Should Care'),
            'Some assets earn money. A public market with a leaking roof loses stallholders, and a water system with '
            'broken meters loses income. Maintaining these assets protects local revenue directly. A well-kept asset '
