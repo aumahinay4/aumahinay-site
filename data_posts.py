@@ -3614,7 +3614,7 @@ DATA_POSTS = [
             ("point", "An example", "A barangay’s business tax collections went from ₱2,000 to ₱6,000. That "
              "is a 200 percent increase, from one new store."),
             ("point", "The comparison", "Poblacion went from ₱800,000 to ₱900,000, a 12.5 percent increase, "
-             "but ₱100,000 more in pesos, fifty times the small barangay’s ₱4,000 gain."),
+             "but ₱100,000 more in pesos, twenty-five times the small barangay’s ₱4,000 gain."),
             ("point", "The fix", "Show the amounts beside the percentages. A ranking by percent change alone "
              "will put the smallest base on top."),
             ("h", "Trap 2: Changes Do Not Reverse Evenly"),

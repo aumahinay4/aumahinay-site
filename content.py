@@ -1679,8 +1679,9 @@ BLOG = [
             "Funds are how allocation is kept honest. When a law says a certain tax must pay for "
             "schools, or a certain share must go to development, a separate fund is the "
             "bookkeeping that keeps that promise visible. Charles Tiebout argued in 1956 that "
-            "people “vote with their feet” among local governments that offer different mixes of "
-            "taxes and services. Wallace Oates followed in 1972 with the idea that each public "
+            "people choose among local governments that offer different mixes of taxes and "
+            "services by moving to the one that suits them, an idea later summed up as “voting "
+            "with your feet.” Wallace Oates followed in 1972 with the idea that each public "
             "service should be provided by the lowest level of government that covers the area it"
             " benefits. The Local Government Code of 1991 put that idea into practice by "
             "devolving health, agriculture, social welfare and other services. Funds tie the "
@@ -2747,10 +2748,10 @@ BLOG = [
              "blog/container-house.jpg",
              "The container houses, my home from September 2020 to September 2022",
              "medium"),
-            "They were hard to miss, painted bright colours and lined up under old shade trees "
+            "They were hard to miss, painted bright colors and lined up under old shade trees "
             "behind a white picket fence. I lived in the blue one for most of my stay and moved "
             "to the red one for my last six months. After a long day of collections and reports, "
-            "that splash of colour was a cheerful thing to come home to.",
+            "that splash of color was a cheerful thing to come home to.",
             "Those nights by the sea taught me something about public service: you cannot always "
             "choose your conditions, but you can choose how you show up in them. I am deeply "
             "grateful to the people of the town who made those years easier. They checked on me, "
