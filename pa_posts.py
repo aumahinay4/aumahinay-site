@@ -454,7 +454,7 @@ PA_POSTS += [
             "These warnings explain why devolution usually comes with national transfers, audit and "
             "reporting rules, and technical help from national agencies. They are the balance that keeps local "
             "autonomy from turning into local isolation.",
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("h", "Four Questions to Tell the Kinds Apart"),
             "When a service seems to belong to “the local government,” ask these four questions. The answers "
@@ -643,7 +643,7 @@ PA_POSTS += [
              "better, and use the good ideas."),
             ("point", "Fix what drains motivation",
              "Broken equipment, unclear rules and unfair treatment wear down even the most committed people."),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends",
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends",
              "/blog/where-to-see-how-your-town-spends/"),
             ("cta", "Read: The ALTOS Framework, Principle 10: Build to Outlast the Builder",
              "/blog/altos-framework-build-to-outlast-the-builder/"),

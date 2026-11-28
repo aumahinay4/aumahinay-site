@@ -3888,7 +3888,7 @@ CYBER_POSTS = [
             " clumsy, the greeting was strange and the tone did not match the supposed sender. "
             "Generative AI tools have removed much of that warning sign. A scammer who barely "
             "speaks English can now produce a polished, polite message in English, Filipino or "
-            "any other language in seconds, and tailor it to your job or your town using details "
+            "any other language in seconds, and tailor it to your job or your local government using details "
             "from your public posts.",
             "Voices and faces can be copied too. With a short recording taken from a video "
             "online, tools can produce speech that sounds like a particular person. We saw in "

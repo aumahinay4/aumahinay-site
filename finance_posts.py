@@ -27,10 +27,10 @@ FINANCE_POSTS = [
             "busiest closing month of the year. Let me take you through the rules that drive December, from unspent budgets to cash advances, along with the steps any office or supplier can take before the year closes.",
             ("h", "Why December Matters So Much"),
             "Local governments in the Philippines follow a fiscal year that runs with the "
-            "calendar, from January 1 to December 31. Every peso the town plans to spend is "
+            "calendar, from January 1 to December 31. Every peso the local government plans to spend is "
             "written in an annual budget, called the appropriation ordinance. That ordinance is "
             "only good for one year.",
-            "So December is a deadline. What the town planned to buy, build or pay for this year "
+            "So December is a deadline. What the local government planned to buy, build or pay for this year "
             "has to be properly committed before the year closes. Whatever is left behind does "
             "not simply roll over.",
             ("h", "The Rule on Money Left Unspent"),
@@ -86,8 +86,8 @@ FINANCE_POSTS = [
             "number in a series must be explained.",
             "Some taxpayers also come in early. A business owner who wants to avoid the January "
             "line may ask to settle things before Christmas. Others ask about paying next year’s "
-            "real property tax in advance, since the law allows towns to give a discount for "
-            "early payment. The details depend on each town’s own revenue ordinance, so it is "
+            "real property tax in advance, since the law allows local governments to give a discount for "
+            "early payment. The details depend on each local government’s own revenue ordinance, so it is "
             "always best to ask your treasury directly.",
             ("h", "The Cash Count and the Property Count"),
             "Year-end is also when the office counts what it holds. Cash on hand is counted and "
@@ -99,7 +99,7 @@ FINANCE_POSTS = [
             "None of this is about suspicion. It is about evidence. When the numbers match, "
             "everyone who handled the money can show that they did their job right.",
             ("h", "What If the Budget Is Not Passed?"),
-            "Sometimes the town’s budget for next year is still not approved when December ends. "
+            "Sometimes the local government’s budget for next year is still not approved when December ends. "
             "The Code has an answer for this in Section 323. The sanggunian must keep holding "
             "sessions on the budget, and it may take up no other business in those sessions. If "
             "90 days pass and the budget is still not passed, the previous year’s appropriation "
@@ -151,11 +151,11 @@ FINANCE_POSTS = [
             "for your official receipt every time you pay. If you are a supplier, submit complete"
             " documents early, because a voucher with missing papers cannot be paid, no matter "
             "the season. And if you plan to renew a business permit or pay real property tax, ask"
-            " whether paying before the January rush is possible in your town.",
+            " whether paying before the January rush is possible in your local government.",
             ("h", "What I Have Learned"),
             "Year-end in the treasury is not glamorous. Much of it is counting, matching and "
             "checking. But it is where a whole year of work is proven. When the cash matches, the"
-            " receipts are complete and the reports agree, the people of the town can trust that "
+            " receipts are complete and the reports agree, the public can trust that "
             "their money was handled with care.",
             "It is also why I believe treasury systems should make year-end easier, not harder. A"
             " good system keeps the records complete every day, so December becomes a review, not"
@@ -242,7 +242,7 @@ FINANCE_POSTS = [
             "contracts remain public matters. Local governments are expected to post their "
             "budgets, financial reports and procurement results where citizens can see them. Data"
             " privacy is never a reason to hide those.",
-            "The line is simple. How the town spends public money is public. What a private "
+            "The line is simple. How a local government spends public money is public. What a private "
             "person owes, earns or owns is theirs.",
             ("h", "When the Law Says Something Must Be Posted"),
             "There are cases where the law itself requires names to be made public. When real "
@@ -318,7 +318,7 @@ FINANCE_POSTS = [
             ("point",
              "Beware of fake collectors",
              "Treasury staff do not ask for payments through personal accounts. Pay at the office"
-             " or through the channels your town has announced."),
+             " or through the channels your local government has announced."),
             ("cta", "Read: The Art of Human Hacking", "/blog/cybersecurity-part-3-human-hacking/"),
             ("h", "Privacy and Systems"),
             "When I design treasury software, privacy is part of the plan from the start, not "
@@ -813,7 +813,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             '/blog/local-finance-part-1-cash-management/'),
            ('cta', 'Read: Year-End in the Treasury', '/blog/year-end-in-the-treasury/'),
            ('cta',
-            'Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills',
+            'Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills',
             '/blog/from-budget-to-check/'),
            ('ask',
             'Have you ever waited months for a government payment? I would like to hear where the delay was.')]},
@@ -1350,7 +1350,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Read: ALTOS Principle 8, The Taxpayer Is a Citizen',
             '/blog/altos-framework-the-taxpayer-is-a-citizen/'),
            ('cta',
-            'Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends',
+            'Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends',
             '/blog/where-to-see-how-your-town-spends/'),
            ('ask', 'If your barangay had ₱500,000 for one project chosen by residents, what would you propose?')]},
  {'title': 'Local Finance Without Borders, Part 8: Climate Budget Tagging, Knowing What You Spend on Climate',
@@ -1602,7 +1602,7 @@ FINANCE_POSTS += [{'title': 'Local Finance Without Borders, Part 1: One Account,
             'Read: Local Finance Without Borders, Part 1: One Account, No Idle Cash',
             '/blog/local-finance-part-1-cash-management/'),
            ('cta',
-            'Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs',
+            'Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs',
             '/blog/public-market-economic-enterprise/'),
            ('ask', 'Which public building or road near you needs maintenance more than a new project?')]},
  {'title': 'Local Finance Without Borders, Part 10: Tips Catch More Fraud Than Audits, Building a Safe Reporting '
@@ -1897,7 +1897,7 @@ FINANCE_POSTS += [{'title': 'First Class or Fifth? How a Local Government’s In
           'near a boundary, that is a conversation worth starting before the next budget.',
           ('cta', 'Read: Study Note: Sources of Local Revenue', '/study-notes/sources-of-local-revenue/'),
           ('cta',
-           'Read: Inside the Local Treasury, Part 1: Where Your Town’s Money Comes From',
+           'Read: Inside the Local Treasury, Part 1: Where Your Local Government’s Money Comes From',
            '/blog/where-your-towns-money-comes-from/'),
           ('cta',
            'Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services',
