@@ -755,17 +755,16 @@ BLOG = [
              "or more years ahead and the discount reaches 20%: ₱400 for the year."),
             ("point",
              "Paid late",
-             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, interest "
-             "is counted from the start of the earliest unpaid quarter, here January: 2% for each "
-             "whole month before the month of payment. January to October is "
-             "ten months, so the first three quarters each carry 20% interest, or ₱75 in all. The "
-             "fourth quarter is not yet due, so it still earns the 10% discount: ₱112.50. You pay "
-             "₱562.50."),
-            "On this small lot, the gap between the best habit and the worst is ₱162.50 a year. It "
+             "Tax year 2026, nothing paid until November 20, 2026. Interest is 2% for each month or "
+             "part of a month after each quarter's deadline. The first quarter, due March 31, is "
+             "eight months late, so it carries 16%. The second is five months late (10%) and the "
+             "third is two months late (4%): ₱37.50 of interest in all. The fourth quarter is not "
+             "yet due, so it still earns the 10% discount: ₱112.50. You pay ₱525."),
+            "On this small lot, the gap between the best habit and the worst is ₱125 a year. It "
             "grows with the property. A ₱1.5 million house has an assessed value of "
             "₱375,000 and a yearly tax of ₱7,500. Paid two years ahead, it costs ₱6,000. Paid as "
-            "late as in the third example, it costs ₱8,437.50. That is a difference of more than "
-            "₱2,400, every year, for the same house.",
+            "late as in the third example, it costs ₱7,875. That is a difference of ₱1,875, "
+            "every year, for the same house.",
             ("quote", "The law sets the tax. When you pay decides what it finally costs."),
             ("h", "Where Your Money Goes"),
             "The \"Who gets what\" table is the part I most want people to see. Take the on-time "
