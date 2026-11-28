@@ -528,7 +528,8 @@ def rpt_page():
                             "Taxes of earlier years are fully paid, or paid in this same payment", class_="choice prior-paid"),
                     _field("Discount for paying on time (%)", _num("disc", "10", maximum="20"),
                            "Set by your local ordinance, up to 20%.", row_id="disc-row", hidden=True),
-                    t.p("Built-in provincial discount, worked out from the date: 10% if paid on or before the "
+                    t.p("Built-in provincial rates, computed as the Provincial Treasurer's Office does on its official receipts and "
+                        "tax clearances. Discount, worked out from the date: 10% if paid on or before the "
                         "installment deadlines, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
                         "if paid two or more years in advance. The discount is for quarters paid now on or before their due "
                         "date, even when late quarters are settled in the same payment, but not when an earlier "
@@ -622,8 +623,9 @@ def rpt_page():
             t.p("Sources: ", t.a("Local Government Code of 1991 (RA 7160)", href=law, rel="noopener"), ", Secs. 218, 233, 235, "
                 "250, 251, 255, 257, 271 and 272; ",
                 t.a("RA 12001", href="https://lawphil.net/statutes/repacts/ra2024/ra_12001_2024.html", rel="noopener"),
-                ", Sec. 29; built-in provincial rates from a provincial Revised Revenue Code of 2022, "
-                "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
+                ", Secs. 29 and 30; built-in provincial rates from a provincial Revised Revenue Code of 2022, "
+                "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52, with interest, discount and rounding computed as on an official "
+                "receipt (AF 56) and a tax clearance from the Provincial Treasurer's Office. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
             t.p("Figures are worked out in your browser and nothing you type is sent or saved.", class_="muted note"),
             t.script(Raw(RPT_SCRIPT)),
         ],
