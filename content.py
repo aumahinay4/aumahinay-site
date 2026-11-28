@@ -755,17 +755,17 @@ BLOG = [
              "or more years ahead and the discount reaches 20%: ₱400 for the year."),
             ("point",
              "Paid late",
-             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, interest is counted"
-             " by quarter: each quarter or part of a quarter after the due date adds 6%. The "
-             "first quarter is three quarters late, so it carries 18% interest. The second is two"
-             " quarters late (12%) and the third is one quarter late (6%). The fourth quarter is "
-             "not yet due, but there is no discount while the other quarters are late. You pay "
-             "₱545."),
-            "On this small lot, the gap between the best habit and the worst is ₱145 a year. It "
+             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, the "
+             "year's tax falls due on January 1, so interest on a late quarter is counted from "
+             "January: 2% for each whole month before the month of payment. January to October is "
+             "ten months, so the first three quarters each carry 20% interest, or ₱75 in all. The "
+             "fourth quarter is not yet due, so it still earns the 10% discount: ₱112.50. You pay "
+             "₱562.50."),
+            "On this small lot, the gap between the best habit and the worst is ₱162.50 a year. It "
             "grows with the property. A ₱1.5 million house has an assessed value of "
             "₱375,000 and a yearly tax of ₱7,500. Paid two years ahead, it costs ₱6,000. Paid as "
-            "late as in the third example, it costs ₱8,175. That is a difference of more than "
-            "₱2,000, every year, for the same house.",
+            "late as in the third example, it costs ₱8,437.50. That is a difference of more than "
+            "₱2,400, every year, for the same house.",
             ("quote", "The law sets the tax. When you pay decides what it finally costs."),
             ("h", "Where Your Money Goes"),
             "The \"Who gets what\" table is the part I most want people to see. Take the on-time "
