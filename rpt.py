@@ -520,7 +520,7 @@ def rpt_page():
                         "a month, up to 36 months; with the built-in provincial rates it is counted from January, 2% for each whole month before the month of payment. Mark the quarters already paid as \"Paid\"; every quarter "
                         "marked \"Not paid\" is added to the amount to pay: 10% off if paid on time, interest if late.", class_="hint block-hint"),
                 ),
-                id="rpt", class_="card rpt-form", novalidate=True,
+                id="rpt", class_="card rpt-form", novalidate=True, autocomplete="off",  # no restored choices from an earlier visit (Butch 2026-11-28)
             ),
             t.div(
                 t.p("Assessed value ", t.b("—", id="out-av"), class_="rpt-av"),
