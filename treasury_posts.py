@@ -6767,8 +6767,8 @@ TREASURY_POSTS = [
     },
     {
         "title": "Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
-        "date": "December 9, 2026",
-        "publish_on": "2026-12-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "date": "November 28, 2026",
+        "publish_on": "2026-11-28 15:00",  # moved up from Dec 9, published at once Sat Nov 28 (Butch 2026-11-28); Dec 9 left empty
         "slug": "where-your-towns-money-comes-from",
         "category": "treasury",
         "summary": "Taxes are collected at the town hall every day, yet the money never seems enough. The reason "
