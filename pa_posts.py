@@ -436,8 +436,7 @@ PA_POSTS += [
             ("cta", "Read: The ALTOS Framework, Principle 7: Keep Money in Its Fund",
              "/blog/altos-framework-keep-money-in-its-fund/"),
             ("h", "The Dangers Prud’homme Warned About"),
-            "Decentralization is often praised as bringing government closer to the people. In 1995, the "
-            "Economist Rémy Prud’homme published “The Dangers of Decentralization” in The World Bank "
+            "Decentralization is often praised as bringing government closer to the people. In 1995, the economist Rémy Prud’homme published “The Dangers of Decentralization” in The World Bank "
             "Research Observer. He did not argue against it. He argued that its risks are real and should be "
             "planned for. His main warnings were these.",
             ("point", "Wider gaps between places",
@@ -525,7 +524,7 @@ PA_POSTS += [
             "will drift toward their own views of the public good. His answer was external control: elected "
             "representatives set the direction, and officials follow it and are held to account for it.",
             "He drew a famous distinction. Responsibility, he wrote, may mean “that X is accountable for Y to "
-            "Z,” or it may mean “an inward sense of moral obligation.” He wanted the first kind to come first.",
+            "Z,” or it may mean an inward, personal sense of moral duty. He wanted the first kind to come first.",
             ("quote", "Rules protect the public from an official’s mistakes. Conscience protects the public from "
                       "the rules’ gaps."),
             ("h", "Why Both Were Partly Right"),
@@ -579,7 +578,7 @@ PA_POSTS += [
         "category": "pa",
         "date": "January 16, 2027",
         "publish_on": "2027-01-16 21:00",
-        "summary": "Salary alone does not explain why people choose and stay in government work. James Perry "
+        "summary": "Salary alone does not explain why people choose government work and stay in it. James Perry "
                    "and Lois Wise called the missing piece public service motivation. This part explains the "
                    "idea, what research has found, and how a supervisor can protect it.",
         "body": [
@@ -726,7 +725,7 @@ PA_POSTS += [
             ("point", "2. Time it",
              "Write how long each step takes, including waiting, not just the time at the window."),
             ("point", "3. Ask why for each requirement",
-             "For every document asked, find the rule that requires it. If none can be found, it may be red "
+             "For every document required, find the rule that requires it. If none can be found, it may be red "
              "tape."),
             ("point", "4. Listen at the exit",
              "Ask five people leaving the office what was hardest. Their answers show learning and "
@@ -751,8 +750,7 @@ PA_POSTS += [
         "category": "pa",
         "date": "January 30, 2027",
         "publish_on": "2027-01-30 21:00",
-        "summary": "The wording of a reminder letter can change how many people pay on time. Behavioral public "
-                   "administration studies small design changes like this. This part explains the idea, a "
+        "summary": "The wording of a reminder letter can change how many people pay on time. Behavioral science studies small design changes like this. This part explains the idea, a "
                    "well-known tax letter experiment from the United Kingdom, and how to use it honestly.",
         "body": [
             "Two reminder letters go out to people with unpaid local taxes. Both state the amount due and the "
@@ -772,8 +770,7 @@ PA_POSTS += [
             "choice architecture, that steers people in a predictable direction without banning any option or "
             "significantly changing their costs or rewards.",
             "Examples include a default setting, a reminder sent at the right time, a simpler form, or a "
-            "message that tells people what others do. In government, the idea gave rise to a field often "
-            "called behavioral public administration.",
+            "message that tells people what others do. Several governments have since set up teams to test such ideas, including the United Kingdom, which set one up in 2010.",
             ("h", "The UK Tax Letter Experiments"),
             "One of the best-known tests comes from the United Kingdom’s tax authority. Michael Hallsworth, "
             "John List, Robert Metcalfe and Ivo Vlaev reported two large field experiments, involving more than "
@@ -808,7 +805,7 @@ PA_POSTS += [
              "a guess."),
             ("h", "A Simple Local Test"),
             "Suppose a treasury sends real property tax reminders every quarter. It can split the list at "
-            "random into two halves. Half receive the usual letter. Half receive the same letter with a true "
+            "random into two halves. One half receives the usual letter. The other half receives the same letter with a true "
             "line about how many property owners in the locality paid on time last year, and a short list of "
             "where and how to pay. After the deadline, the office compares the share who paid in each group.",
             "This kind of test costs little, and it produces evidence instead of opinion. If the new letter does "
@@ -819,8 +816,7 @@ PA_POSTS += [
              "/blog/public-administration-part-7-administrative-burden/"),
             ("h", "What You Can Do This Week"),
             ("point", "Read your own letter",
-             "Take your office’s standard reminder or notice and read it as a citizen. Is the action and the "
-             "deadline clear in the first two lines?"),
+             "Take your office’s standard reminder or notice and read it as a citizen. Are the action and the deadline clear in the first two lines?"),
             ("point", "Find a true number",
              "Check your records for a true, encouraging fact you could add, such as the share who paid on "
              "time last year."),
@@ -855,8 +851,7 @@ PA_POSTS += [
             "arrangement where one or more public agencies directly engage non-state stakeholders in a "
             "collective decision-making process that is formal, consensus-oriented, and deliberative” and that "
             "aims to make or carry out public policy or manage public programs or assets.",
-            "Their definition is strict on purpose. A public hearing where people only speak is not "
-            "collaborative governance, and neither is a contract. The groups must actually decide together.",
+            "Their definition is strict on purpose. A public hearing where people only give comments does not meet it. The groups must actually decide together.",
             "Their model, in their words, “is built on an analysis of 137 cases” from many countries and "
             "fields.",
             ("h", "Four Things That Decide Success"),
@@ -925,7 +920,7 @@ PA_POSTS += [
         "category": "pa",
         "date": "February 13, 2027",
         "publish_on": "2027-02-13 21:00",
-        "summary": "Fred Riggs, who once taught in Manila, built a theory of administration in developing "
+        "summary": "Fred Riggs, who once taught in the Philippines, built a theory of administration in developing "
                    "countries around one idea: the gap between written rules and real practice. This part "
                    "explains his model fairly, including its limits, and how to use it on your own office.",
         "body": [
@@ -933,18 +928,15 @@ PA_POSTS += [
             "logbook signed every day that no one checks, or a report submitted every quarter that no one "
             "uses. On paper, the procedure exists. In practice, it has become a ritual.",
             "(These examples are general, not drawn from any particular office.)",
-            "A scholar named Fred Riggs gave this gap a name more than sixty years ago, and his theory still shapes "
-            "how public administration is taught. When you finish this post, you will know what he "
+            "A scholar named Fred Riggs gave this gap a name more than sixty years ago, and the idea is still worth knowing today. When you finish this post, you will know what he "
             "meant by the prismatic society and formalism, what his critics say, and how to use the idea "
             "constructively.",
             ("photo", "blog/pa-prismatic.jpg",
              "Riggs’s three models of society, from fused to diffracted. "
              "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
             ("h", "Who Fred Riggs Was"),
-            "Fred W. Riggs was a leading figure in comparative public administration, the study of how "
-            "government works across different countries. According to Howard McCurdy’s account of his "
-            "career, Riggs did field work in Thailand in 1957 and 1958, and taught at the Philippine Institute "
-            "of Public Administration in 1958 and 1959.",
+            "Fred W. Riggs chaired the Comparative Administration Group from 1960 to 1971, a group of scholars who studied how government works across different countries. According to Howard McCurdy’s account of his "
+            "career, Riggs did field work in Thailand in 1957 and 1958, and taught at the newly created Philippine Institute of Public Administration in 1958 and 1959.",
             "In 1964, he published Administration in Developing Countries: The Theory of Prismatic Society, with "
             "Houghton Mifflin in Boston.",
             ("h", "Light Through a Prism"),
@@ -974,8 +966,7 @@ PA_POSTS += [
             ("h", "What the Critics Say"),
             "Riggs’s model has been criticized, and a fair reading includes that. McCurdy writes that Riggs “is "
             "often criticized for tearing down rather than building up,” and that his models tend to explain "
-            "why Western methods do not work without suggesting what does. Other scholars have argued that the "
-            "model underrates the strengths of traditional institutions.",
+            "why Western methods do not work without suggesting what does.",
             "There is a deeper point too. Gaps between written rules and real practice exist in every country, "
             "rich or poor. Formalism is not a label for one nation. It is a risk in every office.",
             ("cta", "Read: Public Administration in Practice, Part 2: The Implementation Gap",
