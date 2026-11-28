@@ -131,6 +131,10 @@ def spoken(text):
     # Butch 2026-11-27: COA (Commission on Audit) is said "KO-wa", the way Filipinos say it. "kohwa" makes this voice say it.
     s = re.sub(r"\bCOA(?:'s|s)\b", "kohwa's", s)
     s = re.sub(r"\bCOA\b", "kohwa", s)
+    # Butch 2026-11-28: ".dev" is said "dot dev", ".com" "dot com", ".org" "dot org" (aumahinay.dev -> "aumahinay dot dev").
+    # Without this the voice drops the dot and says only "dev".
+    s = re.sub(r"(?<=\w)\.(dev|com|org)\b", lambda m: " dot " + m.group(1).lower(), s, flags=re.I)
+    s = re.sub(r"(?<![\w.])\.(dev|com|org)\b", lambda m: "dot " + m.group(1).lower(), s, flags=re.I)
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)
