@@ -920,7 +920,7 @@ a.card.focus .go { display: inline-block; margin-top: 10px; font-weight: 700; co
 .listen[data-audio]:not([data-state="idle"]) { padding-bottom: 14px; gap: 6px; }
 /* While reading, the bar stays just under the top bar so Pause and Stop are always in reach */
 .listen:not([data-state="idle"]) { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--listen-top, 58px)); z-index: 4; background: var(--surface); padding: 6px 0; margin-block: 6px 0; box-shadow: 0 8px 10px -10px rgba(11, 42, 99, .35); }
-.post .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
+.post .reading, .notes-page .reading { background: color-mix(in srgb, var(--gold) 18%, transparent); margin-inline: -8px; padding-inline: 8px; transition: background .3s; }  /* the part being read aloud */
 .blog-col h2.post-section { margin-top: 30px; }
 .related { display: grid; gap: 10px; margin-top: 12px; }
 .related-card { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }
@@ -1561,11 +1561,11 @@ CSS += """
 .post .byline { margin-top: 10px; }
 .post .series-line { margin-top: 2px; }
 /* Listen: a panel with the progress line always shown */
-.post .listen { border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--surface)); padding: 12px 14px 22px; margin: 18px 0 4px; position: relative; }
-.post .listen .listen-progress { display: block; left: 14px; right: 14px; bottom: 10px; }
-.post .listen button { font-size: 14.5px; }
-.post .listen-time { margin-left: auto; }
-.post .listen:not([data-state="idle"]) { position: sticky; padding: 10px 14px 22px; }
+.post .listen, .notes-page .listen { border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--surface)); padding: 12px 14px 22px; margin: 18px 0 4px; position: relative; }
+.post .listen .listen-progress, .notes-page .listen .listen-progress { display: block; left: 14px; right: 14px; bottom: 10px; }
+.post .listen button, .notes-page .listen button { font-size: 14.5px; }
+.post .listen-time, .notes-page .listen-time { margin-left: auto; }
+.post .listen:not([data-state="idle"]), .notes-page .listen:not([data-state="idle"]) { position: sticky; padding: 10px 14px 22px; }
 .post .lead { color: var(--text); opacity: .88; margin-top: 22px; }
 .post hr.lead-rule { border: 0; border-top: 1px solid var(--line); margin: 22px 0 26px; }
 /* side column: one card holding In this article, the series and the author */
@@ -1585,7 +1585,7 @@ CSS += """
 @media (max-width: 640px) {
   .post-top .back-all { font-size: 14.5px; } .post-top .crumbs { font-size: 13px; }
   .blog-col .post { border-radius: 14px; padding-top: 32px; }
-  .post .listen { padding: 10px 10px 20px; } .post .listen .listen-progress { left: 10px; right: 10px; }
+  .post .listen, .notes-page .listen { padding: 10px 10px 20px; } .post .listen .listen-progress, .notes-page .listen .listen-progress { left: 10px; right: 10px; }
 }
 """
 CSS += """

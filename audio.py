@@ -6,8 +6,8 @@ starts (the page uses it to highlight the paragraph being read). A post is only 
 
 Usage (needs:  pip install kokoro-onnx soundfile  and ffmpeg, plus the two model files from
 https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0 in KOKORO_DIR):
-    python audio.py                 every post that has no recording yet, or whose words changed
-    python audio.py <slug> ...      only these posts
+    python audio.py                 every post and Study Note that has no recording yet, or whose words changed
+    python audio.py <slug> ...      only these posts (a Study Note by its slug or note-<slug>)
 The site works without them: a post with no recording uses the phone's own voice instead.
 """
 
@@ -27,9 +27,43 @@ GAP = {"title": 0.9, "h": 0.55, "p": 0.45}  # seconds of quiet after each kind o
 LEAD_IN = 0.55  # quiet before a heading, so it sounds like a new section
 
 
+def is_note(b):
+    return "practice" in b  # a Study Note (notes.py), not a blog post
+
+
+def name(b):
+    """File name of the recording: blog posts by slug, Study Notes as note-<slug> (so the two never clash)."""
+    return ("note-" if is_note(b) else "") + b["slug"]
+
+
+def note_parts(n):
+    """What is read aloud on a Study Note (Butch 2026-11-28: the same voice as the blog), in page order:
+    title, summary, the body (each list item and table row on its own), then the worked example.
+    Not read: the "Last checked" line, the blog link, the practice quiz, laws cited and the disclaimer."""
+    out = [("title", n["title"]), ("p", n["summary"])]
+    for x in n["body"]:
+        if isinstance(x, str):
+            out.append(("p", x))
+        elif x[0] == "h":
+            out.append(("h", x[1]))
+        elif x[0] == "list":
+            out += [("p", y) for y in x[1]]
+        elif x[0] == "tip":
+            out.append(("p", "Tip: " + x[1]))
+        elif x[0] == "table":
+            out += [("p", f"{row[0]}. {row[1]}") for row in x[2]]
+    ex_title, steps, answer = n["example"]
+    out.append(("h", ex_title))
+    out += [("p", s) for s in steps]
+    out.append(("p", "Answer: " + answer))
+    return out
+
+
 def parts(b):
     """What is read aloud, in page order, as (kind, text). Must match the parts the page highlights:
     title, summary, then paragraphs, headings, quotes and points (no photos, sources, buttons, Email me)."""
+    if is_note(b):
+        return note_parts(b)
     out = [("title", b["title"])]
     if b.get("summary"):
         out.append(("p", b["summary"]))
@@ -130,24 +164,25 @@ def make(b, kokoro):
         OUT.mkdir(parents=True, exist_ok=True)
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-ar", "24000",
                         "-b:a", "40k", "-id3v2_version", "3", "-metadata", f"title={b['title']}",
-                        "-metadata", "artist=Ambrosio “Butch” U. Mahinay", str(OUT / f"{b['slug']}.mp3")], check=True)
-    (OUT / f"{b['slug']}.json").write_text(json.dumps({"hash": words_hash(b), "voice": VOICE,
+                        "-metadata", "artist=Ambrosio “Butch” U. Mahinay", str(OUT / f"{name(b)}.mp3")], check=True)
+    (OUT / f"{name(b)}.json").write_text(json.dumps({"hash": words_hash(b), "voice": VOICE,
                                                        "duration": round(at, 1), "starts": starts}) + "\n")
 
 
 def needs(b):
-    j = OUT / f"{b['slug']}.json"
-    return not (OUT / f"{b['slug']}.mp3").exists() or not j.exists() or json.loads(j.read_text())["hash"] != words_hash(b)
+    j = OUT / f"{name(b)}.json"
+    return not (OUT / f"{name(b)}.mp3").exists() or not j.exists() or json.loads(j.read_text())["hash"] != words_hash(b)
 
 
 def main(slugs):
     from content import BLOG
+    from notes import NOTES
     from kokoro_onnx import Kokoro
     d = Path(os.environ.get("KOKORO_DIR", "."))
     kokoro = Kokoro(str(d / "kokoro-v1.0.onnx"), str(d / "voices-v1.0.bin"))
-    todo = [b for b in BLOG if (b["slug"] in slugs if slugs else needs(b))]
+    todo = [b for b in BLOG + NOTES if (b["slug"] in slugs or name(b) in slugs if slugs else needs(b))]
     for n, b in enumerate(todo, 1):
-        print(f"[{n}/{len(todo)}] {b['slug']}", flush=True)
+        print(f"[{n}/{len(todo)}] {name(b)}", flush=True)
         make(b, kokoro)
 
 

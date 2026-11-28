@@ -1067,18 +1067,19 @@ def courses():
 
 
 def note_block(b):
+    # class "say" marks what the Listen recording reads, one per part of audio.note_parts (it highlights each in turn)
     if isinstance(b, str):
-        return t.p(b)
+        return t.p(b, class_="say")
     kind = b[0]
     if kind == "h":
-        return t.h2(b[1])
+        return t.h2(b[1], class_="say")
     if kind == "list":
-        return t.ul([t.li(x) for x in b[1]])
+        return t.ul([t.li(x, class_="say") for x in b[1]])
     if kind == "tip":
-        return t.p(t.b("Tip: "), b[1], class_="tip")
+        return t.p(t.b("Tip: "), b[1], class_="tip say")
     if kind == "table":
         # shown as stacked rows (label, then text) so it reads well on phones
-        return t.div([t.div(t.p(t.b(row[0]), class_="row-label"), t.p(row[1]), class_="level-row") for row in b[2]], class_="level-rows")
+        return t.div([t.div(t.p(t.b(row[0]), class_="row-label"), t.p(row[1]), class_="level-row say") for row in b[2]], class_="level-rows")
     raise ValueError(kind)
 
 
@@ -1092,11 +1093,12 @@ def note_page(n):
         t.div(
             t.a("← " + NOTES_INFO["title"], href=NOTES_INFO["url"], class_="crumb"),
             t.p(f"{NOTES_INFO['title']} · Note {n['number']}", class_="eyebrow"),
-            t.h1(n["title"], class_="lesson-title"),
-            t.p(n["summary"], class_="lead"),
+            t.h1(n["title"], class_="lesson-title say"),
+            listen_box(n, "note"),  # Butch 2026-11-28: the blog's Listen voice on Study Notes too
+            t.p(n["summary"], class_="lead say"),
             t.p("✓ Last checked: " + NOTES_INFO["checked"] + " · against " + n.get("checked_against", "RA 7160 (Local Government Code) and its amendments"), class_="checked"),
             [note_block(b) for b in n["body"]],
-            t.div(t.h3(ex_title), t.ol([t.li(s_) for s_ in steps]), t.p(t.b("Answer: "), ex_answer), class_="card example"),
+            t.div(t.h3(ex_title, class_="say"), t.ol([t.li(s_, class_="say") for s_ in steps]), t.p(t.b("Answer: "), ex_answer, class_="say"), class_="card example"),
             # a link to a blog post shows only once that post is live (no links to unpublished pages)
             t.p(n["link"][0], " ", t.a(n["link"][1] + " →", href=n["link"][2])) if n.get("link") and post_is_live(n["link"][2]) else None,
             t.h2("Practice"),
@@ -1624,7 +1626,7 @@ def post_card(b):
 LISTEN_SCRIPT = r"""
 (function start() {
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", start); return; }  // the paragraphs come after this script
-  var box = document.querySelector(".listen"), post = box && box.closest(".post");
+  var box = document.querySelector(".listen"), post = box && box.closest(".post, .notes-page");
   if (!box || !post) return;
   var play = box.querySelector(".listen-play"), word = play.querySelector(".listen-word");
   var stopBtn = box.querySelector(".listen-stop"), speedBtn = box.querySelector(".listen-speed");
@@ -1634,7 +1636,8 @@ LISTEN_SCRIPT = r"""
   try { sp = Math.max(0, speeds.indexOf(+localStorage.getItem("listenSpeed"))); } catch (e) {}
   speedBtn.textContent = speeds[sp] + "×";
   // The parts that are read aloud, in page order (audio.py reads the same parts).
-  var parts = Array.prototype.slice.call(post.querySelectorAll(
+  // A Study Note marks its read parts with class "say" (audio.note_parts reads the same ones).
+  var parts = Array.prototype.slice.call(post.querySelector(".say") ? post.querySelectorAll(".say") : post.querySelectorAll(
     ":scope > h1, :scope > .lead, :scope > p:not(.byline):not(.series-line):not(.source):not(.cta):not(.ask), "
     + ":scope > h3, :scope > blockquote"));
   var bar = document.querySelector("header.site");
@@ -1734,7 +1737,7 @@ LISTEN_SCRIPT = r"""
     function build() {
       chunks = [];
       parts.forEach(function (el) {
-        var text = el.textContent.replace(/\s+/g, " ").trim(), cur = "";
+        var text = (el.innerText || el.textContent).replace(/\s+/g, " ").trim(), cur = "";
         if (!text) return;
         (text.match(/[^.!?]+[.!?]+["”’)]*\s*|[^.!?]+$/g) || [text]).forEach(function (s) {
           if (cur && (cur + s).length > 220) { chunks.push({ el: el, text: cur }); cur = ""; }
@@ -1784,22 +1787,25 @@ STOP_ICON = Raw('<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.
 def recording(b):
     """The post's recording from audio.py as (mp3 url, info), or None if it has none or its words changed since."""
     import audio
-    j = STATIC / "audio" / f"{b['slug']}.json"
-    if not j.exists() or not (STATIC / "audio" / f"{b['slug']}.mp3").exists():
+    j = STATIC / "audio" / f"{audio.name(b)}.json"
+    if not j.exists() or not (STATIC / "audio" / f"{audio.name(b)}.mp3").exists():
         return None
     info = json.loads(j.read_text())
-    return (asset_url(f"audio/{b['slug']}.mp3"), info) if info["hash"] == audio.words_hash(b) else None
+    return (asset_url(f"audio/{audio.name(b)}.mp3"), info) if info["hash"] == audio.words_hash(b) else None
 
 
 def listen_minutes(b, rec=None):
     """Minutes the recording runs; without one, reading aloud at about 160 words a minute."""
     if rec:
         return max(1, round(rec[1]["duration"] / 60))
+    if "practice" in b:  # a Study Note
+        import audio
+        return max(1, round(sum(len(x.split()) for _, x in audio.parts(b)) / 160))
     return max(1, round(reading_minutes(b) * 200 / 160))
 
 
-def listen_box(b):
-    """Listen bar under a post's byline (hidden until the script knows it can play)."""
+def listen_box(b, what="post"):
+    """Listen bar under a post's byline or a Study Note's title (hidden until the script knows it can play)."""
     rec = recording(b)
     data = {"data_audio": rec[0], "data_starts": ",".join(str(x) for x in rec[1]["starts"]),
             "data_duration": rec[1]["duration"]} if rec else {}
@@ -1813,7 +1819,7 @@ def listen_box(b):
             t.button("1\u00d7", type="button", class_="listen-speed", aria_label="Reading speed", title="Reading speed"),
             t.button(STOP_ICON, type="button", class_="listen-stop", aria_label="Stop reading", title="Stop", hidden=True),
             t.div(t.span(class_="listen-fill"), class_="listen-progress", aria_hidden="true"),
-            class_="listen", data_state="idle", hidden=True, role="group", aria_label="Listen to this post", **data,
+            class_="listen", data_state="idle", hidden=True, role="group", aria_label=f"Listen to this {what}", **data,
         ),
         t.script(Raw(LISTEN_SCRIPT)),
     ]
