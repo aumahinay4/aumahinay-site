@@ -734,8 +734,8 @@ BLOG = [
             "equal quarters, due on or before March 31, June 30, September 30 and December 31. "
             "The calculator compares your payment date with each due date and decides, quarter by"
             " quarter, whether you earn a discount or owe interest.",
-            "Below the dates, mark each quarter of the tax year as \"Paid\" or \"Not paid\". Every "
-            "quarter starts as \"Not paid\". If you already paid some quarters, mark them \"Paid\"; "
+            "Below the dates, mark each quarter of the tax year as \"Paid\" or \"Unpaid\". Every "
+            "quarter starts as \"Unpaid\". If you already paid some quarters, mark them \"Paid\"; "
             "otherwise the calculator treats them as unpaid and late, and adds interest instead "
             "of the discount. For example, if you paid the first three quarters on time and now "
             "pay the fourth by December 31, mark Q1 to Q3 \"Paid\" and the 10% discount applies to "
@@ -755,17 +755,16 @@ BLOG = [
              "or more years ahead and the discount reaches 20%: ₱400 for the year."),
             ("point",
              "Paid late",
-             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, interest is counted"
-             " by quarter: each quarter or part of a quarter after the due date adds 6%. The "
-             "first quarter is three quarters late, so it carries 18% interest. The second is two"
-             " quarters late (12%) and the third is one quarter late (6%). The fourth quarter is "
-             "not yet due, but there is no discount while the other quarters are late. You pay "
-             "₱545."),
-            "On this small lot, the gap between the best habit and the worst is ₱145 a year. It "
+             "Tax year 2026, nothing paid until November 20, 2026. Interest is 2% for each month or "
+             "part of a month after each quarter's deadline. The first quarter, due March 31, is "
+             "eight months late, so it carries 16%. The second is five months late (10%) and the "
+             "third is two months late (4%): ₱37.50 of interest in all. The fourth quarter is not "
+             "yet due, so it still earns the 10% discount: ₱112.50. You pay ₱525."),
+            "On this small lot, the gap between the best habit and the worst is ₱125 a year. It "
             "grows with the property. A ₱1.5 million house has an assessed value of "
             "₱375,000 and a yearly tax of ₱7,500. Paid two years ahead, it costs ₱6,000. Paid as "
-            "late as in the third example, it costs ₱8,175. That is a difference of more than "
-            "₱2,000, every year, for the same house.",
+            "late as in the third example, it costs ₱7,875. That is a difference of ₱1,875, "
+            "every year, for the same house.",
             ("quote", "The law sets the tax. When you pay decides what it finally costs."),
             ("h", "Where Your Money Goes"),
             "The \"Who gets what\" table is the part I most want people to see. Take the on-time "
@@ -830,7 +829,7 @@ BLOG = [
              "Read: ALTOS Principle 8, The Taxpayer Is a Citizen",
              "/blog/altos-framework-the-taxpayer-is-a-citizen/"),
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
             ("cta", "Try the RPT Calculator", "/tools/rpt-calculator/"),
@@ -1679,8 +1678,9 @@ BLOG = [
             "Funds are how allocation is kept honest. When a law says a certain tax must pay for "
             "schools, or a certain share must go to development, a separate fund is the "
             "bookkeeping that keeps that promise visible. Charles Tiebout argued in 1956 that "
-            "people “vote with their feet” among local governments that offer different mixes of "
-            "taxes and services. Wallace Oates followed in 1972 with the idea that each public "
+            "people choose among local governments that offer different mixes of taxes and "
+            "services by moving to the one that suits them, an idea later summed up as “voting "
+            "with your feet.” Wallace Oates followed in 1972 with the idea that each public "
             "service should be provided by the lowest level of government that covers the area it"
             " benefits. The Local Government Code of 1991 put that idea into practice by "
             "devolving health, agriculture, social welfare and other services. Funds tie the "
@@ -1798,7 +1798,7 @@ BLOG = [
              "/blog/altos-framework-the-taxpayer-is-a-citizen/"),
             ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("ask",
              "Has your office ever had to untangle money recorded in the wrong fund? I'd like to "
@@ -2747,10 +2747,10 @@ BLOG = [
              "blog/container-house.jpg",
              "The container houses, my home from September 2020 to September 2022",
              "medium"),
-            "They were hard to miss, painted bright colours and lined up under old shade trees "
+            "They were hard to miss, painted bright colors and lined up under old shade trees "
             "behind a white picket fence. I lived in the blue one for most of my stay and moved "
             "to the red one for my last six months. After a long day of collections and reports, "
-            "that splash of colour was a cheerful thing to come home to.",
+            "that splash of color was a cheerful thing to come home to.",
             "Those nights by the sea taught me something about public service: you cannot always "
             "choose your conditions, but you can choose how you show up in them. I am deeply "
             "grateful to the people of the town who made those years easier. They checked on me, "
@@ -2788,7 +2788,7 @@ BLOG = [
             " the second for my final two months. Leadership changed, but the work never paused.",
             "What made that possible was the people. We worked well together across the whole "
             "municipality, from the department heads to the frontline staff. In the middle of a "
-            "pandemic, that kind of teamwork is not a bonus. It is how a town keeps running.",
+            "pandemic, that kind of teamwork is not a bonus. It is how a local government keeps running.",
             "The work of a municipal treasurer is not easy, and the accountability is high. Every"
             " collection, every disbursement and every signature carries your name, and you "
             "answer for all of it. That post taught me three lessons I still carry:",
@@ -3004,7 +3004,7 @@ BLOG = [
              "Read: The ALTOS Framework, Principle 2: Every Peso Has a Document",
              "/blog/altos-framework-every-peso-has-a-document/"),
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("ask",
              "Have you ever found a fee or a payment in your office with no clear legal basis? "

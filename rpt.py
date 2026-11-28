@@ -24,8 +24,9 @@ Quezon Province, Provincial Ordinance No. 2022-010 (Revised Revenue Code of 2022
   September 30 for one year in advance; 20% for two or more years in advance; only for properties
   without any delinquency;
 - Sec. 45 sharing 35/40/25 and SEF split equally; Sec. 47 interest 2% a month "on the unpaid amount
-  or a fraction thereof", at most 36 months. Quezon practice (Butch 2026-11-12): counted BY QUARTER, each quarter
-  or part of a quarter after the due date = 3 months = 6%; e.g. Q3 paid any day Oct 1 - Dec 31 carries 6%.
+  or a fraction thereof", at most 36 months, counted for each quarter from its own deadline (Butch chose this
+  2026-11-28 over copying office receipts, which charged one block rate, e.g. 20% on Q1-Q3 paid Nov 3, 2026).
+  A quarter paid on time in the same payment as late quarters still gets the 10% discount, as on the receipts.
 """
 
 import json
@@ -89,7 +90,7 @@ RPT_SCRIPT = r"""
   var rolledNote = '';
   function calc() {
     // a payment is never ₱0.00 (Butch 2026-11-12): when all four quarters of the tax year are paid, the next payment
-    // is for the following year, so move to it and start its quarters as "Not paid"
+    // is for the following year, so move to it and start its quarters as "Unpaid"
     if ([1, 2, 3, 4].every(function (q) { return $('qs' + q).value === 'paid'; })) {
       var y0 = Math.floor(num('taxyear')) || ph.getUTCFullYear();
       $('taxyear').value = y0 + 1;
@@ -117,29 +118,38 @@ RPT_SCRIPT = r"""
     var pd = ($('paydate').value || today).split('-').map(Number);  // [y, m, d]
     var payIdx = pd[0] * 12 + (pd[1] - 1);
     var payNum = pd[0] * 10000 + pd[1] * 100 + pd[2];
-    // each quarter is one fourth of the year's tax; the last quarter takes any centavo left over
-    var qb = r2(basic / 4), qs = r2(sef / 4);
+    // each quarter is one fourth of the year's tax, rounded so that any number of quarters adds up to the rounded
+    // fraction of the year, as on the official receipt: ₱56.30 a year -> Q1 to Q3 ₱42.23, Q4 ₱14.07
+    // (worked in whole centavos, so 5,630 × 3 / 4 = 4,222.5 rounds up to 4,223 instead of slipping to 4,222)
+    var part = function (tot, q) { var c = Math.round(tot * 100); return (Math.round(c * (q + 1) / 4) - Math.round(c * q / 4)) / 100; };
     var priorClear = $('prior-paid').checked;
-    var quarters = [], anyLate = false, unpaidLate = [], lateNow = [], fullYear = true, anyNow = false;
+    var quarters = [], anyLate = false, unpaidLate = [], lateNow = [], fullYear = true, anyNow = false, amnestyNow = [];
+    // RA 12001 Sec. 30 amnesty: interest and penalties on real property tax left unpaid before the Act took effect
+    // (July 5, 2024) are waived when paid within two years (to July 5, 2026); the tax itself is still paid.
+    // Shown on a tax clearance: 2024 Q1-Q2 paid Mar 11, 2025 with no penalty.
+    var amnestyPay = payNum >= 20240705 && payNum <= 20260705;
+    var dueOf = function (k) { return year * 10000 + (DUE[k][0] + 1) * 100 + DUE[k][1]; };
+    var amnestyQ = function (k) { return amnestyPay && dueOf(k) < 20240705; };
     for (var q = 0; q < 4; q++) {
       var dueNum = year * 10000 + (DUE[q][0] + 1) * 100 + DUE[q][1];
-      var b = q < 3 ? qb : r2(basic - 3 * qb), s = q < 3 ? qs : r2(sef - 3 * qs);
+      var b = part(basic, q), s = part(sef, q);
       var st = $('qs' + (q + 1)).value;  // now = paying now, paid = paid already, later = not paying now
-      var past = payNum > dueNum, months = 0;
+      var past = payNum > dueNum, months = 0, amnesty = false;
       if (st === 'later') fullYear = false;
       if (st === 'now') anyNow = true;
-      if (st === 'now' && past) {  // late: every month or part of a month after the due date counts, up to 36
+      if (st === 'now' && past && amnestyQ(q)) { amnesty = true; amnestyNow.push('Q' + (q + 1)); }
+      else if (st === 'now' && past) {  // late: every month or part of a month after the due date counts, up to 36
         months = Math.max(payIdx - (year * 12 + DUE[q][0]), 1);
-        if (qz) months = Math.ceil(months / 3) * 3;  // built-in provincial practice: by quarter, a part of a quarter counts as a whole quarter (6%)
         months = Math.min(months, 36);
         anyLate = true; lateNow.push('Q' + (q + 1));
       }
       if (st === 'later' && past) unpaidLate.push('Q' + (q + 1));
-      quarters.push({ q: q + 1, due: MONTHS[DUE[q][0]] + ' ' + DUE[q][1], b: b, s: s, months: months, st: st, past: past });
+      quarters.push({ q: q + 1, due: MONTHS[DUE[q][0]] + ' ' + DUE[q][1], b: b, s: s, months: months, st: st, past: past, amnesty: amnesty });
     }
     // discount: only for quarters paid now on or before their due date, and only when the property has no
-    // delinquency: no unpaid earlier year and no quarter of this year past due before this payment (built-in provincial code)
-    var delinquent = !priorClear || anyLate || unpaidLate.length > 0;
+    // delinquency: no unpaid earlier year and no quarter of this year past due before this payment. With the built-in
+    // provincial rates, late quarters settled in this same payment do not block it (official receipt, 2026-11-28)
+    var delinquent = !priorClear || (anyLate && !qz) || unpaidLate.length > 0;
     var disc = 0, discNote = '';
     if (!delinquent) {
       if (qz) {
@@ -149,7 +159,7 @@ RPT_SCRIPT = r"""
         else { disc = 10; discNote = 'paid on or before the quarterly deadlines'; }
       } else { disc = Math.min(num('disc'), 20); discNote = 'paid on time'; }
     }
-    var tb = 0, ts = 0, tbAdj = 0, tsAdj = 0;
+    var tb = 0, ts = 0, bInt = 0, sInt = 0, bDisc = 0, sDisc = 0;
     var qbody = $('q-body'); qbody.innerHTML = '';
     quarters.forEach(function (x) {
       var cells;
@@ -159,9 +169,11 @@ RPT_SCRIPT = r"""
       } else {
         var bAdj, sAdj, label;
         // keep centavos unrounded until the totals, so 15% of ₱500 is exactly ₱75 (not ₱75.04 from rounding each part)
-        if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = (qz ? (x.months / 3) + ' qtr late +' : x.months + ' mo late +') + (x.months * 2) + '%'; }
+        if (x.amnesty) { bAdj = 0; sAdj = 0; label = 'amnesty, no interest'; }
+        else if (x.months) { bAdj = x.b * x.months * 2 / 100; sAdj = x.s * x.months * 2 / 100; label = x.months + ' mo late +' + (x.months * 2) + '%'; }
         else { bAdj = -x.b * disc / 100; sAdj = -x.s * disc / 100; label = disc ? 'on time −' + disc + '%' : 'on time, no discount'; }
-        tb = r2(tb + x.b); ts = r2(ts + x.s); tbAdj += bAdj; tsAdj += sAdj;
+        tb = r2(tb + x.b); ts = r2(ts + x.s);
+        if (bAdj > 0) { bInt += bAdj; sInt += sAdj; } else { bDisc -= bAdj; sDisc -= sAdj; }
         cells = ['Q' + x.q + ', due ' + x.due, label, peso(r2(x.b + x.s)), peso(r2(bAdj + sAdj)), peso(r2(x.b + x.s + bAdj + sAdj))];
       }
       var tr = document.createElement('tr');
@@ -170,16 +182,17 @@ RPT_SCRIPT = r"""
         var td = document.createElement(i === 0 ? 'th' : 'td'); td.textContent = c; if (i === 0) td.scope = 'row'; tr.appendChild(td); });
       qbody.appendChild(tr);
     });
-    // round the whole discount or interest once, then give the SEF what is left, so 15% of ₱375 is ₱56.25
-    // exactly and the amount to pay is ₱318.75 (Butch 2026-11-12), not ₱318.76 from rounding basic and SEF apart
-    var tAdj = r2(tbAdj + tsAdj); tbAdj = r2(tbAdj); tsAdj = r2(tAdj - tbAdj);
+    // as on official receipts (AF 56 and a tax clearance, 2026-11-28): each fund's interest and each fund's discount is
+    // worked on its own and rounded once, e.g. 16% of ₱200.15 = ₱32.02 basic and ₱32.02 SEF
+    var tbAdj = r2(r2(bInt) - r2(bDisc)), tsAdj = r2(r2(sInt) - r2(sDisc));
     var bDue = r2(tb + tbAdj), sDue = r2(ts + tsAdj);
-    var adjLabel = anyLate ? 'Interest' : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
+    var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.past; });
+    var adjLabel = anyLate ? (disc && onTimeNow ? 'Interest less discount' : 'Interest') : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     var notes = [];
     if (rolledNote) notes.push(rolledNote);
-    if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
-    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Not paid" and past the due date. If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
-    var onTimeNow = quarters.some(function (x) { return x.st === 'now' && !x.months; });
+    if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and unpaid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
+    if (amnestyNow.length) notes.push(amnestyNow.join(', ') + ' of ' + year + (amnestyNow.length > 1 ? ' were' : ' was') + ' unpaid before RA 12001 took effect on July 5, 2024, and this payment is within the two-year amnesty, so ' + (amnestyNow.length > 1 ? 'they carry' : 'it carries') + ' no interest (Sec. 30). The tax itself is still paid.');
+    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Unpaid" and past the due date: 2% for each month or part of a month after each quarter\'s deadline.' + ' If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
     if (onTimeNow && delinquent) {
       var isAre = function (l) { return l.join(', ') + (l.length > 1 ? ' are' : ' is'); };
       var why = !priorClear ? 'an earlier year is unpaid' : anyLate ? isAre(lateNow) + ' paid late' : isAre(unpaidLate) + ' unpaid';
@@ -254,7 +267,7 @@ def _radio(name, value, label, checked=False):
 
 
 def _quarter_select(q):
-    return t.select(t.option("Not paid", value="now"), t.option("Paid", value="paid"), id="qs%d" % q, name="qs%d" % q)
+    return t.select(t.option("Unpaid", value="now"), t.option("Paid", value="paid"), id="qs%d" % q, name="qs%d" % q)
 
 
 def _guide_link():
@@ -295,24 +308,33 @@ def _explanations():
                  "highest rates, a property in a municipality pays 2% of its assessed value a year, and one in a city pays 3%."),
             t.li(t.b("Four equal quarters. "), "The year's tax may be paid without interest in four equal installments, "
                  "due on or before March 31, June 30, September 30 and December 31 (Sec. 250). The calculator divides "
-                 "the basic tax and the SEF by four; if the amount does not divide evenly, the last quarter takes "
-                 "the centavos left over."),
-            t.li(t.b("Discount or interest, quarter by quarter. "), "Each quarter marked \"Not paid\" is compared with the "
+                 "the basic tax and the SEF by four; if the amount does not divide evenly, the centavos are rounded "
+                 "so that the quarters add up to the year's tax, as on an official receipt."),
+            t.li(t.b("Discount or interest, quarter by quarter. "), "Each quarter marked \"Unpaid\" is compared with the "
                  "target date of payment. Paid on or before its due date, it can earn the discount for prompt or advance "
                  "payment, which the law caps at 20% of the annual tax (Sec. 251). Paid after its due date, it earns interest of 2% "
-                 "for each month or part of a month, for at most 36 months, or 72% in all (Sec. 255). With the built-in "
-                 "provincial rates, interest is counted by quarter instead: each quarter or part of a quarter late adds 6%."),
-            t.li(t.b("No discount while anything is overdue. "), "The calculator gives the discount only when the property "
-                 "has no delinquency: no unpaid earlier year and no quarter of this year already past due. This follows the "
-                 "built-in provincial revenue code. Other local codes may word it differently, so check yours."),
+                 "for each month or part of a month, for at most 36 months, or 72% in all (Sec. 255). The built-in "
+                 "provincial revenue code says the same (Sec. 47): paid in November, Q1 is eight months late (16%), Q2 five "
+                 "months (10%) and Q3 two months (4%). Some treasurer's offices charge one rate on all the late quarters "
+                 "together, so your receipt may show a little more."),
+            t.li(t.b("No discount while anything is overdue. "), "With rates you type in, the calculator gives the discount only when the property "
+                 "has no delinquency: no unpaid earlier year and no quarter of this year already past due. With the built-in "
+                 "provincial rates, quarters paid late in the same payment do not take away the discount on a quarter "
+                 "that is still on time, as on official receipts; an unpaid earlier year still does. Other local codes "
+                 "may work differently, so check yours."),
             class_="rpt-steps",
         ),
-        t.p("The discount or interest is rounded to the centavo once, on the total, and the result is then shared out "
-            "as shown in \"Who gets what\"."),
+        t.p("As on official receipts, the basic tax and the SEF are worked out separately: each one's interest and each "
+            "one's discount is rounded to the centavo once, and the result is then shared out as shown in \"Who gets what\"."),
+        t.p(t.b("RA 12001 amnesty. "), "Interest and penalties on real property tax left unpaid before July 5, 2024, "
+            "when the Real Property Valuation and Assessment Reform Act took effect, were waived if paid by July 5, 2026 "
+            "(Sec. 30). The tax itself still had to be paid. If your target date falls in that window, the calculator "
+            "shows those quarters with no interest, so you can check an old receipt or tax clearance. The amnesty did "
+            "not cover property already sold at auction, under a compromise agreement, or in a pending court case."),
         t.h2("Reading your results"),
         t.ul(
             t.li(t.b("Amount to pay. "), "The big figure is what you would bring to the treasurer's office on the target "
-                 "date: the tax for every quarter marked \"Not paid\", less any discount or plus any interest. Quarters "
+                 "date: the tax for every quarter marked \"Unpaid\", less any discount or plus any interest. Quarters "
                  "marked \"Paid\" are left out."),
             t.li(t.b("The line under the assessed value. "), "It shows the tax year, the tax for the whole year before any "
                  "discount or interest, and the target date, so you can see at a glance which case you are looking at."),
@@ -321,8 +343,7 @@ def _explanations():
             t.li(t.b("Quarter by quarter. "), "Each row shows one installment and its status. \"On time −10%\" means it earns "
                  "a 10% discount. \"2 mo late +4%\" means the quarter is two months late (a part of a month counts as a whole "
                  "month), so 4% is added. "
-                 "\"1 qtr late +6%\" is the same idea counted by quarter, under the built-in provincial rates. \"On time, "
-                 "no discount\" means the quarter is not yet due, but another quarter is overdue."),
+                 "\"On time, no discount\" means the quarter is not yet due, but another quarter is overdue."),
             t.li(t.b("Basic RPT and SEF columns. "), "The summary table keeps the two taxes apart because they go to "
                  "different funds. The basic tax and its interest go to the general funds of the local governments; the "
                  "SEF goes to the school boards."),
@@ -336,7 +357,7 @@ def _explanations():
         _example(
             "1. A lot in a city, paid in full early",
             "A city with 20 barangays. Assessed value ₱80,000. Basic rate 2%, SEF 1%, discount 10%. Tax year 2027, "
-            "target date February 15, 2027, all four quarters \"Not paid\".",
+            "target date February 15, 2027, all four quarters \"Unpaid\".",
             ["Basic tax: ₱80,000 × 2% = ₱1,600. SEF: ₱80,000 × 1% = ₱800. Tax for the year: ₱2,400, or ₱600 a quarter.",
              "Every quarter is paid before its due date, so each one earns 10%: ₱60 off each, ₱240 in all.",
              "Who gets what: the basic tax after discount is ₱1,440. The city gets 70% (₱1,008), the barangay where the "
@@ -346,7 +367,7 @@ def _explanations():
         _example(
             "2. Two quarters left, one of them late",
             "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%, discount 10%. "
-            "Tax year 2026, Q1 and Q2 \"Paid\", Q3 and Q4 \"Not paid\", target date November 5, 2026.",
+            "Tax year 2026, Q1 and Q2 \"Paid\", Q3 and Q4 \"Unpaid\", target date November 5, 2026.",
             ["Tax for the year: ₱400 basic + ₱400 SEF = ₱800, or ₱200 a quarter.",
              "Q3 was due September 30. October and part of November count as two months: 2 × 2% = 4%, or ₱8 interest.",
              "Q4 is not due until December 31, but because Q3 is overdue, Q4 gets no discount. It stays at ₱200.",
@@ -355,7 +376,7 @@ def _explanations():
         _example(
             "3. An old year and the 36-month cap",
             "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%. Tax year 2023, "
-            "all four quarters \"Not paid\", target date November 24, 2026. All the other years are paid, so the box "
+            "all four quarters \"Unpaid\", target date November 24, 2026. All the other years are paid, so the box "
             "for earlier years stays ticked.",
             ["Each quarter's tax is ₱200, and all four are late.",
              "Q1, Q2 and Q3 of 2023 are 44, 41 and 38 months late, but interest stops at 36 months: 72%, or ₱144 each.",
@@ -374,8 +395,9 @@ def _faq():
          "or your bill includes something the calculator leaves out, such as an idle land tax or a special levy. Your "
          "treasurer's office can show you how its figure was computed."),
         ("I am paying before the deadline. Why is there no discount?",
-         "Check the quarters in step 4 and the box for earlier years. If any quarter of the year is past due and "
-         "unpaid, or an earlier year is unpaid, the calculator treats the property as delinquent and gives no discount. "
+         "Check the quarters in step 4 and the box for earlier years. If an earlier year is unpaid, the calculator "
+         "treats the property as delinquent and gives no discount. With rates you type in, a past-due quarter of the "
+         "year does the same; with the built-in provincial rates, it does not, as on official receipts. "
          "Mark the quarters you have paid as \"Paid\" and tick the box if earlier years are settled."),
         ("I paid last year's tax late. Do I lose this year's discount?",
          "In the calculator, not by itself. Once last year is fully paid, including its interest, the property has no unpaid "
@@ -493,21 +515,21 @@ def rpt_page():
                             for i, d in enumerate(["Mar 31", "Jun 30", "Sep 30", "Dec 31"])],
                           class_="quarter-grid"),
                     t.label(t.input(type="checkbox", id="prior-paid", name="prior-paid", checked=True), " ",
-                            "Taxes of earlier years are fully paid", class_="choice prior-paid"),
+                            "Taxes of earlier years are fully paid, or paid in this same payment", class_="choice prior-paid"),
                     _field("Discount for paying on time (%)", _num("disc", "10", maximum="20"),
                            "Set by your local ordinance, up to 20%.", row_id="disc-row", hidden=True),
-                    t.p("Built-in provincial discount, worked out from the date: 10% if paid on or before the "
+                    t.p("Built-in provincial rates. Discount, worked out from the date: 10% if paid on or before the "
                         "installment deadlines, 15% if the whole year is paid on or before September 30 of the year before, and 20% "
-                        "if paid two or more years in advance. The discount is only for quarters paid now on or before their due "
-                        "date, and only when the property has no delinquency: no unpaid earlier year and no quarter "
-                        "of this year past due and unpaid.",
+                        "if paid two or more years in advance. The discount is for quarters paid now on or before their due "
+                        "date, even when late quarters are settled in the same payment, but not when an earlier "
+                        "year is unpaid.",
                         id="prov-disc", class_="hint block-hint"),
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
                         "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
-                        "a month, up to 36 months; with the built-in provincial rates it is counted by quarter, so each quarter or part of a quarter late adds 6%. Mark the quarters already paid as \"Paid\"; every quarter "
-                        "marked \"Not paid\" is added to the amount to pay: 10% off if paid on time, 6% more for each quarter late.", class_="hint block-hint"),
+                        "a month, up to 36 months, counted from each quarter's own deadline. Mark the quarters already paid as \"Paid\"; every quarter "
+                        "marked \"Unpaid\" is added to the amount to pay: 10% off if paid on time, interest if late.", class_="hint block-hint"),
                 ),
-                id="rpt", class_="card rpt-form", novalidate=True,
+                id="rpt", class_="card rpt-form", novalidate=True, autocomplete="off",  # no restored choices from an earlier visit (Butch 2026-11-28)
             ),
             t.div(
                 t.p("Assessed value ", t.b("—", id="out-av"), class_="rpt-av"),
@@ -590,8 +612,9 @@ def rpt_page():
             t.p("Sources: ", t.a("Local Government Code of 1991 (RA 7160)", href=law, rel="noopener"), ", Secs. 218, 233, 235, "
                 "250, 251, 255, 257, 271 and 272; ",
                 t.a("RA 12001", href="https://lawphil.net/statutes/repacts/ra2024/ra_12001_2024.html", rel="noopener"),
-                ", Sec. 29; built-in provincial rates from a provincial Revised Revenue Code of 2022, "
-                "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
+                ", Secs. 29 and 30; built-in provincial rates from a provincial Revised Revenue Code of 2022, "
+                "Secs. 25, 39, 40, 41, 43, 44, 45, 47 and 52; discount, rounding and amnesty checked against an official "
+                "receipt (AF 56) and a tax clearance from the Provincial Treasurer's Office. Last checked " + RPT_CHECKED + ".", class_="muted note sources-line"),
             t.p("Figures are worked out in your browser and nothing you type is sent or saved.", class_="muted note"),
             t.script(Raw(RPT_SCRIPT)),
         ],

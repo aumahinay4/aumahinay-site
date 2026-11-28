@@ -1928,7 +1928,7 @@ BI_POSTS = [
             "another office. Someone guessed a system problem. Someone else guessed a holiday. It took a "
             "phone call to learn the truth: a typhoon had closed the office for three days. The chart had "
             "shown the drop perfectly and explained none of it.",
-            "(The office, the review and every number below are made up for this lesson. No real town or "
+            "(The office, the review and every number below are made up for this lesson. No real local government or "
             "taxpayer is described.)",
             "Part 24 drew a line through the noise to show direction. This part adds the lines, shaded "
             "areas and words that tell a reader what they are looking at. You will finish knowing when a "
@@ -2043,7 +2043,7 @@ BI_POSTS = [
             "The daily collections chart looked like a saw blade. Up on Monday, down on Wednesday, up on "
             "Friday, flat on weekends. The head of office squinted at it and asked the only question that "
             "mattered: “Are we going up or down?” Nobody in the room could say for sure.",
-            "(The office, its people and its figures are invented. No real town or taxpayer is described.)",
+            "(The office, its people and its figures are invented. No real local government or taxpayer is described.)",
             "Part 23 joined two sources in one chart. This part helps readers see the direction inside a "
             "noisy one. By the last section, you will know what a trend line and a moving average each show, "
             "how to add them to a Data Studio chart, which type fits which question, why missing dates can "
@@ -2179,7 +2179,7 @@ BI_POSTS = [
             "The collections were in the treasury’s Daily tab. The number of real property tax accounts in "
             "each barangay was in a list kept by the assessor’s office, in a sheet the treasury could read but "
             "did not own. The answer needed both.",
-            "(The office and the people in this story are invented, and so are the figures. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real local government or "
             "taxpayer is described.)",
             "Part 22 built new measures from a single source. This part brings a second source into the same "
             "chart. Stay with me to the end, and you will know what a blend is in Data Studio, when to blend and "
@@ -2326,7 +2326,7 @@ BI_POSTS = [
             "The analyst’s first thought was to add three new columns to the sheet. Then the analyst "
             "remembered that the sheet feeds other reports, and every new column is one more thing to keep "
             "in step. The answers could be worked out inside the dashboard instead.",
-            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real local government or "
             "taxpayer is described.)",
             "This part covers calculated fields in Data Studio. After this post, you will know what a "
             "calculated field is, the difference between one saved in the data source and one made for a single "
@@ -2460,7 +2460,7 @@ BI_POSTS = [
             "The analyst almost answers “with the dashboard,” then stops. The dashboard was the last thing "
             "built, not the first. Everything people see on it rests on work they never see: a question agreed "
             "on, a model, a pipeline, checks and rules about who sees what.",
-            "(The office and the people in this story are invented, and so are the figures. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real local government or "
             "taxpayer is described.)",
             "This part gathers the earlier parts of this series into one plan, in the order the work is "
             "actually done. Stay with me to the end, and you will have a four-week plan for a first treasury BI "
@@ -2594,7 +2594,7 @@ BI_POSTS = [
             "different week, and the copying starts again.",
             "The spreadsheet already updates itself, as Part 16 set up. What is missing is a view that updates "
             "with it, that anyone allowed can open on a phone, and that lets them pick their own dates.",
-            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real local government or "
             "taxpayer is described.)",
             "This part builds that view in Data Studio, Google’s free web tool for reports and dashboards. It "
             "was called Looker Studio until April 2026, the name used in Part 17. After this post, you will know how to prepare a sheet for a dashboard, connect it, check its fields, add a scorecard, a "
@@ -2734,7 +2734,7 @@ BI_POSTS = [
             "February with all thirty-one days of January, a month that includes business permit renewals. "
             "Compared with the first ten days of February last year, collections were up.",
             "The number was calculated correctly. The comparison was not fair.",
-            "(The office and the people in this story are invented, and so are the figures. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real local government or "
             "taxpayer is described.)",
             "Part 14 built a date table, and Part 18 set thresholds on weekly totals. Both rely on comparing "
             "one period with another. Stay with me to the end, and you will know four questions to ask before any "
@@ -2873,7 +2873,7 @@ BI_POSTS = [
             "the chart the whole time, one thin line among twelve.",
             "The dashboard did its job of showing the numbers. What it did not do was say which number "
             "needed a person to look at it.",
-            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real local government or "
             "taxpayer is described.)",
             "Part 3 chose what to watch, and Part 16 added checks that stop bad data. This part adds "
             "thresholds: rules that point to the numbers that need attention. After this post, you will know four ways to set a threshold, why every alert needs an owner and an action, how to "
@@ -2997,7 +2997,7 @@ BI_POSTS = [
             "file: the Summary tab, but also the Raw tab, with every receipt, every taxpayer’s name and every "
             "amount.",
             "Nothing had leaked yet. But one paste would have shared far more than anyone asked for.",
-            "(The office and the people in this story are invented, and so are the figures. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real local government or "
             "taxpayer is described.)",
             "Part 4 put an access line in the BI brief, and Part 13 planned where each reader’s drill path "
             "stops. This part is about the settings that carry out those decisions. Stay with me to the end, and you will know how file sharing settings work, why a separate file for sharing is safer than a "
@@ -3136,7 +3136,7 @@ BI_POSTS = [
             "One Monday, the copy misses the last forty rows. Nobody notices until the head of office asks why "
             "one barangay collected almost nothing that week.",
             "The steps were right. The problem was doing them by hand, from memory, every week.",
-            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real local government or "
             "taxpayer is described.)",
             "Part 7 explained what a pipeline does: extract, transform and load. Part 15 flattened the revenue "
             "account levels during that loading step. This part builds a small pipeline in Google Sheets, which is free to use with a Google account. After this post, you will know how to lay out a pipeline in one "
@@ -3282,7 +3282,7 @@ BI_POSTS = [
             "colleague, who builds the dashboards, prefers one table with all three levels side by side. "
             "“That way the dashboard has fewer tables to join.”",
             "Both are describing real designs. The first is a snowflake. The second is a star.",
-            "(The office and the people in this story are invented, and so are the figures. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real local government or "
             "taxpayer is described.)",
             "Part 14 built the date table, one of the dimensions in the model. This part looks at dimensions "
             "that have levels inside them. Stay with me to the end, and you will know what makes a design a star or "
@@ -3413,7 +3413,7 @@ BI_POSTS = [
             "office compares this January with last January, nobody is sure whether both months had the same "
             "number of working days.",
             "None of these is a problem with the collections. Each one is a problem with the dates.",
-            "(Everyone and everything in this story is fictional, including the numbers. No real town or "
+            "(Everyone and everything in this story is fictional, including the numbers. No real local government or "
             "taxpayer is described.)",
             "Part 5 introduced facts and dimensions. This part builds a dimension that treasury "
             "models rely on: the date table. After this post, you will know what a date table is, which "
@@ -3542,7 +3542,7 @@ BI_POSTS = [
             "The view has no way to answer. It shows one total and one trend line. So the head of office sends "
             "a message to the analyst, the analyst builds a new table, and the answer arrives on Wednesday. "
             "By then, the meeting where it was needed is over.",
-            "(The office and the people in this story are invented, and so are the figures. No real town or "
+            "(The office and the people in this story are invented, and so are the figures. No real local government or "
             "taxpayer is described.)",
             "Part 12 made the view readable on a phone. This part makes it useful for the second question. "
             "By the last section, you will know the difference between a filter and a drill-down, how to "
@@ -3678,7 +3678,7 @@ BI_POSTS = [
             "enough to load on mobile data that the meeting starts first.",
             "The dashboard was correct and well designed for the analyst’s screen. It was not designed for "
             "the reader’s.",
-            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real local government or "
             "taxpayer is described.)",
             "Part 4 asked who reads each view and on what device. This part is about acting on the answer. "
             "By the end of this post, you will know how to lay out a BI view for a phone, which charts work "
@@ -3806,7 +3806,7 @@ BI_POSTS = [
             "about it.",
             "The numbers were correct and the dashboard was well built. What was missing was a briefing: a "
             "short spoken answer, shaped for one person who has to make a decision.",
-            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real local government or "
             "taxpayer is described.)",
             "Parts 8 to 10 covered how BI views are built and kept trustworthy. This part is about the moment "
             "someone has to act on them. When you finish reading, you will have a five-minute structure, a way "
@@ -3935,7 +3935,7 @@ BI_POSTS = [
             "real property tax its own account code. The dashboard counted only the basic tax account. The "
             "spreadsheet still counted both. Nobody had written the change down, so nobody "
             "knew to update the other view.",
-            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real local government or "
             "taxpayer is described.)",
             "Parts 7 to 9 made the pipeline reliable. This part is about keeping the meaning reliable. After this post, you will know how to write a data dictionary, which owners a small BI setup "
             "needs, how to keep a change log, and how these three habits work together.",
@@ -4068,7 +4068,7 @@ BI_POSTS = [
             "before, the counter system had been updated, and the column once called “amount” was now called "
             "“amount_paid.” The script could not find the old column, filled the amounts with zero, and "
             "carried on. Every count matched. Every peso was missing.",
-            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real local government or "
             "taxpayer is described.)",
             "Part 7 added four basic checks to the nightly pipeline: count, total, completeness and a run log. "
             "This part turns them into a full test plan. Read to the end and you will know five more kinds of tests, how to respond when a test fails, and how to try a "
@@ -4191,7 +4191,7 @@ BI_POSTS = [
             "again.",
             "The work was good. The format was wrong. A year-end report is a record that must stay exactly "
             "as it was signed. A live dashboard is built to change every time the data does. Choosing between them is a decision worth making at the start of a BI request, and it can go wrong when everything is called “a dashboard.”",
-            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real local government or "
             "taxpayer is described.)",
             "Parts 6 and 7 built the warehouse and the pipeline that fills it. This part is about the views "
             "people actually look at. By the last section, you will know the three kinds of BI views, what "
@@ -4322,7 +4322,7 @@ BI_POSTS = [
             "Every step she does by hand has a name. Together they are a data pipeline, and the order in "
             "which they happen has a name too. Getting that order right, and making it run without her, is "
             "what this part is about.",
-            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real local government or "
             "taxpayer is described.)",
             "Part 6 introduced the nightly copy from the working database to the warehouse. Stay with me to the end, and you will know the two main patterns for that copy, ETL and ELT, what each does well, which "
             "one suits a small treasury, and the checks every pipeline needs whichever pattern you choose.",
@@ -4442,7 +4442,7 @@ BI_POSTS = [
             "Nothing is broken. The same system is simply being asked to do two very different jobs at once: "
             "record each payment quickly and correctly, and answer big questions about thousands of past "
             "payments. Business intelligence works better when those two jobs are kept apart.",
-            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real local government or "
             "taxpayer is described.)",
             "In Part 5, we shaped the data into a star: facts in the middle, dimensions around them. This part "
             "is about where that star should live. By the end of this post, you will know the difference "
@@ -4569,7 +4569,7 @@ BI_POSTS = [
             "Some receipts were counted twice. The same barangay was also spelled three ways, so part of its "
             "money landed in rows the chart never picked up. The fix was not a better chart. It was a better "
             "shape for the data.",
-            "(This is a teaching case: the office, its staff and its figures are fictional. No real town or "
+            "(This is a teaching case: the office, its staff and its figures are fictional. No real local government or "
             "taxpayer is described.)",
             "In Part 4, the BI brief defined each measure in plain words. This part is about the tables that "
             "hold those measures. That design is called the data model, and it decides whether a dashboard "
@@ -4699,7 +4699,7 @@ BI_POSTS = [
             "Three weeks later she shows the result. The head of office looks at it politely and asks, “Where "
             "can I see which collectors have not yet turned in their reports?” That was never on the screen, "
             "because nobody asked what the dashboard was for.",
-            "(The story is made up for teaching, and so are its office, people and figures. No real town or "
+            "(The story is made up for teaching, and so are its office, people and figures. No real local government or "
             "taxpayer is described.)",
             "In Part 3, I listed six measures a treasury could watch every day. This part goes one step earlier. Before you choose a single measure, find out who will use the dashboard and what they will decide with it, then write it down on one page. I call that page the BI brief. Read to the end and you will have five interview questions, a six-line template and a filled-in example you can copy.",
             ("h", "Ask About Decisions, Not Charts"),
@@ -4822,7 +4822,7 @@ BI_POSTS = [
             "says what needs attention today. It answers every question except the one the reader"
             " actually has.",
             "(This is a teaching case: the office, its staff and its figures are fictional. No "
-            "real town or taxpayer is described.)",
+            "real local government or taxpayer is described.)",
             "In Part 1, I described BI as a service that keeps answers coming. This part is about"
             " choosing which answers deserve that treatment. The secret is to move from one-time "
             "questions to a short list of measures that are watched every day, each with a clear "
@@ -5012,7 +5012,7 @@ BI_POSTS = [
             "something really did happen at the market. That is a question of meaning, and "
             "somebody has to go and find out what it was.",
             "(As always in this series, the office, the people and the numbers are made up. No "
-            "real town or taxpayer is described.)",
+            "real local government or taxpayer is described.)",
             "In a large organization, three different people might take that call. In a small "
             "treasury, it may be one person. Either way, it helps to know the three jobs apart, "
             "because each one fails in its own way and each one is fixed in its own way. This post separates the three kinds of BI work, shows how each one fails, and explains how one person in a small office can cover all three.",
@@ -5210,8 +5210,8 @@ BI_POSTS = [
             "formulas that broke, and rebuilds the collections report for the head of office. It "
             "takes two days. By the time the report is printed, the numbers are already a week "
             "old, and next month she will do it all again.",
-            "(As always on this blog, the office, the people and the numbers are made up. No real"
-            " town or taxpayer is described.)",
+            "(As always on this blog, the office, the people and the numbers are made up. No real "
+            "local government or taxpayer is described.)",
             "Nothing is wrong with the clerk's work. The totals are correct. The problem is that "
             "the same questions are asked every month, and every month the answers are built from"
             " scratch. Business intelligence, or BI, is the discipline that fixes exactly this "

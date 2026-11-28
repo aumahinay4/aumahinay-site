@@ -132,9 +132,9 @@ TREASURY_POSTS = [
             ("point", "Trace its six stages", "Using the parts listed above."),
             ("point", "Ask one question", "Choose from the list above and ask it at your local treasury."),
             ("point", "Share what you learned", "With a family member, a classmate or a coworker."),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
             ("ask", "Which stage of the peso’s journey would you like to see more closely in your own local government?"),
         ],
@@ -531,7 +531,7 @@ TREASURY_POSTS = [
             ("point", "If you are a supplier or payee", "Deposit government checks promptly, and ask for a "
              "replacement if one has gone stale."),
             ("cta", "Read: Inside the Local Treasury, Part 45: When a Taxpayer’s Check Bounces", "/blog/when-a-tax-check-bounces/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
             ("cta", "Read: Business Intelligence Series, Part 34: Aging of Arrears, Sorting Unpaid Accounts by How Long They Have Waited", "/blog/business-intelligence-part-34-aging-of-arrears/"),
             ("ask", "Does your office review its outstanding checks every month?"),
@@ -665,7 +665,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 32: The Disaster Fund, Five Percent Set Aside Before the Storm", "/blog/local-disaster-risk-reduction-fund/"),
             ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
             ("cta", "Read: Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget", "/blog/local-finance-committee/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("ask", "Have you seen your local government’s GAD Plan and Budget?"),
         ],
     },
@@ -798,7 +798,7 @@ TREASURY_POSTS = [
              "in next year’s budget."),
             ("point", "If you are a government employee", "Check your GSIS records from time to time to see "
              "that your contributions are posted."),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
             ("cta", "Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services", "/blog/personal-services-limit/"),
             ("cta", "Read: Inside the Local Treasury, Part 38: The Local Finance Committee, Three Officers Behind Every Budget", "/blog/local-finance-committee/"),
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
@@ -936,7 +936,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review", "/blog/barangay-budget-review/"),
             ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 35: The Salary Ceiling, How Section 325 Caps Personal Services", "/blog/personal-services-limit/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("ask", "Does your barangay’s SK receive its fund on time each month?"),
         ],
     },
@@ -1062,7 +1062,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
             ("cta", "Read: Inside the Local Treasury, Part 30: Unpaid Business Taxes, Distraint, Levy and What Cannot Be Seized", "/blog/unpaid-business-taxes-distraint-and-levy/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("ask", "Does your treasury accept personal checks, and for how much?"),
         ],
     },
@@ -1322,7 +1322,7 @@ TREASURY_POSTS = [
             ("point", "If you run a small business", "Ask the nearest Negosyo Center whether you qualify, "
              "and ask your local government whether it grants any local tax relief."),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 14: Closing a Business the Right Way", "/blog/closing-a-business-the-right-way/"),
             ("ask", "Does your local government give any local tax relief to registered micro businesses?"),
@@ -1448,7 +1448,7 @@ TREASURY_POSTS = [
              "exemption."),
             ("point", "If you are a resident", "Look for your local government’s posted programs, and ask "
              "whether any release during the ban period had an exemption."),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
             ("cta", "Read: Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First", "/blog/supplemental-budgets/"),
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
             ("cta", "Read: Inside the Local Treasury, Part 39: When a Court Orders Payment, Why Public Funds Cannot Simply Be Seized", "/blog/court-judgments-and-public-funds/"),
@@ -1602,7 +1602,7 @@ TREASURY_POSTS = [
              "appropriated and applied as the rules require."),
             ("point", "If you are a resident", "Ask your barangay whether it hosts a resource and whether its "
              "share has arrived."),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
             ("cta", "Read: Inside the Local Treasury, Part 40: Barangay Budgets, From the Barangay Hall to the City or Municipal Review", "/blog/barangay-budget-review/"),
@@ -1857,7 +1857,7 @@ TREASURY_POSTS = [
             ("point", "If you are a supplier", "Keep your documents complete and follow up through the normal "
              "process. A claim that is valid and documented is easier to pay."),
             ("cta", "Read: Inside the Local Treasury, Part 37: Supplemental Budgets, and the Treasurer’s Certificate That Comes First", "/blog/supplemental-budgets/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes, From Audit Memo to Disallowance", "/blog/when-coa-writes/"),
             ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
             ("ask", "Does your treasury know who to call if a garnishment notice ever arrives?"),
@@ -2394,7 +2394,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
             ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit", "/blog/when-local-governments-borrow/"),
             ("cta", "Read: Inside the Local Treasury, Part 20: Who Does What in the Treasurer’s Office", "/blog/inside-the-treasurers-office/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("ask", "How close is your local government to its personal services ceiling?"),
         ],
     },
@@ -2650,7 +2650,7 @@ TREASURY_POSTS = [
             ("point", "If you are a resident", "Ask whether your local government has any PPP projects and how "
              "their fees are shared."),
             ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit", "/blog/when-local-governments-borrow/"),
-            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs", "/blog/public-market-economic-enterprise/"),
             ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
             ("cta", "Read: Business Intelligence Series, Part 37: The Pareto Chart, Finding the Few Causes Behind Most of a Problem", "/blog/business-intelligence-part-37-pareto-chart/"),
             ("ask", "Does your local government have a facility built or run by a private partner?"),
@@ -2780,8 +2780,8 @@ TREASURY_POSTS = [
              "and ask what it bought before the last storm season."),
             ("cta", "Read: Inside the Local Treasury, Part 31: Estimating Next Year’s Income, the Numbers Behind the Budget", "/blog/estimating-next-years-income/"),
             ("cta", "Read: Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar", "/blog/special-education-fund/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("ask", "Do you know what your local government’s disaster fund bought before the last storm?"),
         ],
     },
@@ -2910,9 +2910,9 @@ TREASURY_POSTS = [
             "The budget passed with the treasury’s figure. In December, the business tax came in at "
             "₱19,550,000, slightly above the estimate. The planning coordinator’s extra project went into a "
             "supplemental budget, paid for with money already in the bank.",
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("cta", "Read: Inside the Local Treasury, Part 29: When Local Governments Borrow, Loans, Bonds and the 20 Percent Limit", "/blog/when-local-governments-borrow/"),
             ("ask", "Have you ever compared your local government’s estimated income with what it actually collected?"),
         ],
@@ -3180,10 +3180,10 @@ TREASURY_POSTS = [
             ("point", "Question 3", "Does the loan fit? (Answer: No. =PMT(6%, 10, -50000000) gives about "
              "₱6,793,398 a year, which is more than the ₱5,000,000 room.)"),
             "If your municipality, city or province posts its statement of debt service, try the same test with its real numbers.",
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
-            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("ask", "Would you support your local government borrowing for a project, and which one?"),
         ],
     },
@@ -3313,8 +3313,8 @@ TREASURY_POSTS = [
             ("point", "If you farm or fish", "Keep every slip for a charge on your produce, and ask your "
              "treasury about it."),
             ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
-            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs", "/blog/public-market-economic-enterprise/"),
             ("cta", "Read: Inside the Local Treasury, Part 27: Sealing the Market Scales, Fees for Weights and Measures", "/blog/weights-and-measures-fees/"),
             ("ask", "Have you ever been asked to pay a charge just to bring goods through another municipality or city?"),
         ],
@@ -3326,7 +3326,7 @@ TREASURY_POSTS = [
         "slug": "weights-and-measures-fees",
         "category": "treasury",
         "summary": "A kilo at the market should be a kilo. This part explains how the Local Government Code "
-                   "lets a town charge fees for sealing and licensing weights and measures, how the "
+                   "lets a municipality charge fees for sealing and licensing weights and measures, how the "
                    "sanggunian sets the rules and penalties, when the treasurer may settle a violation, and "
                    "how the Timbangan ng Bayan scales let buyers check for themselves.",
         "body": [
@@ -3336,12 +3336,12 @@ TREASURY_POSTS = [
             "One of the two scales was wrong. The question was which one, and whose job it was to find out.",
             "(Aling Nena, the market and the vendor are invented for this post. The law and the government "
             "programs described below are real and cited.)",
-            "Part 26 covered a provincial tax on printing. This part stays in the town, at the public market "
-            "that Part 19 described as a business the town runs. You will learn what the Local Government "
+            "Part 26 covered a provincial tax on printing. This part stays in the municipality, at the public market "
+            "that Part 19 described as a business the municipality runs. You will learn what the Local Government "
             "Code says about fees for sealing and licensing weights and measures, who sets the rules and "
             "penalties, when the municipal treasurer may settle a violation, how the public scales found in "
             "some markets work, and what vendors, buyers and treasury staff should each check.",
-            ("photo", "blog/finance-scales.jpg", "Weights and measures: the town seals and licenses scales "
+            ("photo", "blog/finance-scales.jpg", "Weights and measures: the municipality seals and licenses scales "
              "for a fee, the sanggunian sets rules and penalties, and buyers can check at a public scale. "
              "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
             ("h", "What the Code Says"),
@@ -3378,7 +3378,7 @@ TREASURY_POSTS = [
             "In an August 2018 report by PTV, the Department of Trade and Industry in Antique urged local "
             "governments to calibrate market scales. The report pointed to the Consumer Act of the "
             "Philippines, and a DTI engineer said vendors’ scales should be calibrated every six months by "
-            "the treasurer’s office. She added that an ordinance on vendors’ scales would let the town "
+            "the treasurer’s office. She added that an ordinance on vendors’ scales would let the municipality "
             "collect an inspection fee.",
             ("photo", "blog/finance-scales-steps.jpg", "From a vendor’s scale to a sealed one, and what "
              "happens when a scale fails. (Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -3415,7 +3415,7 @@ TREASURY_POSTS = [
              "every day pays the difference every day."),
             ("point", "For honest vendors", "A vendor with an accurate scale competes with one who gives "
              "less for the same price. Sealing protects the honest seller too."),
-            ("point", "For the town", "The market is a business the town runs. Buyers who stop trusting "
+            ("point", "For the municipality", "The market is a business the municipality runs. Buyers who stop trusting "
              "its scales can take their shopping elsewhere."),
             ("h", "Keeping the Register"),
             "Sealing is only as good as the record behind it. A simple register, kept in a spreadsheet or a "
@@ -3451,10 +3451,10 @@ TREASURY_POSTS = [
              "code and check when instruments were last sealed."),
             ("point", "If you sell at the market", "Look at your seal date, and ask when the next check is."),
             ("point", "If you shop at the market", "Find the public scale, and use it once to see how it works."),
-            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs", "/blog/public-market-economic-enterprise/"),
             ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 26: The Printing and Publication Tax, What the Print Shop Pays the Province", "/blog/printing-and-publication-tax/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("ask", "Have you ever checked your purchase on the public scale at your market?"),
         ],
     },
@@ -3464,10 +3464,10 @@ TREASURY_POSTS = [
         "publish_on": "2027-02-24 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "printing-and-publication-tax",
         "category": "treasury",
-        "summary": "A print shop or a publisher can owe a business tax to the province, not to the town. This "
+        "summary": "A print shop or a publisher can owe a business tax to the province, not to the municipality. This "
                    "part explains what the Local Government Code covers under the printing and publication "
                    "tax, the rate ceiling, the rule for a shop in its first year, the exemption for school "
-                   "texts, and how it fits with the town’s permit fees.",
+                   "texts, and how it fits with the municipality’s permit fees.",
         "body": [
             "The print shop beside the town plaza had been busy for a year. It printed wedding invitations, "
             "certificates for the elementary school, receipts for the stores on the main road, and posters "
@@ -3475,13 +3475,13 @@ TREASURY_POSTS = [
             "at the municipal treasury a question he had been saving: why had a letter from the provincial "
             "treasurer arrived about a tax on his printing?",
             "The clerk smiled. It was a question she heard about once a year, usually from someone who had "
-            "just paid the town and assumed that settled everything.",
+            "just paid the municipality and assumed that settled everything.",
             "(The print shop, its owner and the figures are invented for this post. The sections of the Local "
             "Government Code described below are real and are cited.)",
             "Part 25 covered the idle land tax. This part returns to taxes on business, and to one that the "
-            "Local Government Code gives to the province rather than the town: the tax on the business of "
+            "Local Government Code gives to the province rather than the municipality: the tax on the business of "
             "printing and publication. You will learn what it covers, who may levy it and at what rate, how "
-            "a shop in its first year is taxed, what is exempt, and how it fits with the fees the town "
+            "a shop in its first year is taxed, what is exempt, and how it fits with the fees the municipality "
             "collects.",
             ("photo", "blog/finance-printing.jpg", "The printing and publication tax: levied by the province "
              "or city, up to half of one percent of last year’s gross receipts, with school texts exempt. "
@@ -3534,12 +3534,12 @@ TREASURY_POSTS = [
             ("photo", "blog/finance-printing-steps.jpg", "Computing the printing and publication tax: "
              "remove the exempt school-text receipts, then apply the rate. Figures are invented. "
              "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
-            ("h", "Where the Town Comes In"),
+            ("h", "Where the Municipality Comes In"),
             "This is the part of the owner’s question that needs the most care.",
             ("point", "The tax goes to the province", "Section 142 lets a municipality levy taxes, fees and "
              "charges “not otherwise levied by provinces.” Since Section 136 gives this tax to the province, "
-             "the town does not levy its own tax on the same printing business."),
-            ("point", "The town still issues the permit", "Section 147 lets a municipality impose reasonable "
+             "the municipality does not levy its own tax on the same printing business."),
+            ("point", "The municipality still issues the permit", "Section 147 lets a municipality impose reasonable "
              "fees and charges on business, such as the mayor’s permit fee. Those regulatory fees are "
              "separate from the provincial tax."),
             ("point", "Check your own codes", "How the provincial and municipal revenue codes divide the "
@@ -3550,15 +3550,15 @@ TREASURY_POSTS = [
             ("h", "What Each Person Should Check"),
             ("point", "Print shop owners", "Whether the province or city has a printing and publication "
              "tax, its rate, and whether any receipts qualify for the school-text exemption."),
-            ("point", "The provincial treasury", "A list of printers and publishers in each town, built "
+            ("point", "The provincial treasury", "A list of printers and publishers in each municipality, built "
              "with the municipal permit records."),
-            ("point", "The municipal treasury", "That the town’s permit fees are charged, and that no "
+            ("point", "The municipal treasury", "That the municipality’s permit fees are charged, and that no "
              "municipal tax is billed on the printing itself."),
             ("point", "Customers who order printing", "Nothing to file. The tax falls on the printer’s "
              "gross receipts, not on the person who orders the invitations, though a shop may consider it "
              "when it sets its prices."),
             ("h", "Mistakes to Avoid"),
-            ("point", "Assuming the town collects it", "Section 136 gives it to the province, and to cities."),
+            ("point", "Assuming the municipality collects it", "Section 136 gives it to the province, and to cities."),
             ("point", "Exempting everything printed for a school", "Only prescribed school texts and references."),
             ("point", "Using this year’s receipts", "The base is the preceding calendar year."),
             ("point", "No proof for the exemption", "Keep the order and the document that prescribes the material."),
@@ -3571,17 +3571,17 @@ TREASURY_POSTS = [
             ("point", "If you run a print shop", "Ask the provincial treasurer’s office whether you are "
              "listed, and what records to bring."),
             ("point", "If you work in a provincial treasury", "Compare your list of printers with the "
-             "towns’ business permit records."),
+             "municipalities’ business permit records."),
             ("point", "If you work in a municipal treasury", "Check that your revenue code does not tax a "
              "business the province already taxes."),
-            "The clerk walked the print shop owner through it: the permit fee to the town, the printing tax "
+            "The clerk walked the print shop owner through it: the permit fee to the municipality, the printing tax "
             "to the province, and the school readers he had printed for the district office, which he could "
             "claim as exempt if he had the papers. He went home to look for the purchase order.",
             ("cta", "Read: Inside the Local Treasury, Part 24: The Franchise Tax, What Power and Telecom Companies Pay the Province or City", "/blog/franchise-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
             ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
-            ("ask", "Does your province tax the printing business, and did you know the town does not?"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Does your province tax the printing business, and did you know the municipality does not?"),
         ],
     },
     {
@@ -3716,7 +3716,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 24: The Franchise Tax, What Power and Telecom Companies Pay the Province or City", "/blog/franchise-tax/"),
             ("cta", "Read: How to Use the RPT Calculator: Know Your Amilyar Before You Pay", "/blog/how-to-use-the-rpt-calculator/"),
             ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("ask", "Is there a large empty lot in your town center, and do you know whether it is on the idle land list?"),
         ],
     },
@@ -3734,7 +3734,7 @@ TREASURY_POSTS = [
             "A young staff member at a provincial treasury was sorting the January payments when she found "
             "a check from a telephone company that served the province. The memo line said “franchise tax.” She "
             "turned to the senior examiner beside her. The company already had a business permit "
-            "from the town, so why was it paying the province as well?",
+            "from the municipality, so why was it paying the province as well?",
             "The examiner pulled out the provincial revenue code and opened it to a page with a paper clip "
             "on it. “Because the company holds something most businesses don’t,” he said. “A franchise.”",
             "(The treasury, the telephone company and the check are illustrations for this post. The law and the "
@@ -3825,7 +3825,7 @@ TREASURY_POSTS = [
              "city, and that they match the financial statements filed."),
             ("point", "The franchise holder", "The rate in the current revenue code, the deadline, and any "
              "exemption in its own franchise, read word for word, not summarized."),
-            ("point", "Municipal treasury", "That the town does not issue a bill for this tax by mistake, "
+            ("point", "Municipal treasury", "That the municipality does not issue a bill for this tax by mistake, "
              "since the Code gives it to the province and to cities."),
             ("h", "Mistakes to Avoid"),
             ("point", "Assuming “in lieu of all taxes” covers local taxes", "The Supreme Court ruled "
@@ -3852,7 +3852,7 @@ TREASURY_POSTS = [
             "statements. “You compare,” he said. By noon she had found that the figures matched.",
             ("cta", "Read: Inside the Local Treasury, Part 23: The Sand and Gravel Tax, and Why the Barangay Gets the Biggest Share", "/blog/sand-and-gravel-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests", "/blog/local-tax-refunds-and-credits/"),
             ("ask", "Which franchise holders operate in your province or city, and do you know which office collects their tax?"),
         ],
@@ -3863,7 +3863,7 @@ TREASURY_POSTS = [
         "publish_on": "2027-02-17 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "sand-and-gravel-tax",
         "category": "treasury",
-        "summary": "Every truckload of sand taken from a river can carry a tax for the province, the town "
+        "summary": "Every truckload of sand taken from a river can carry a tax for the province, the municipality "
                    "and the barangay. This part explains who may levy the tax on sand, gravel and other "
                    "quarry resources, the 10 percent ceiling, who issues the permit, how the money is "
                    "shared 30, 30 and 40, and what the Supreme Court said about quarrying for one’s own use.",
@@ -3879,7 +3879,7 @@ TREASURY_POSTS = [
             "Part 22 covered a tax on tickets to shows. This part covers a tax on what is taken out of the "
             "ground and the riverbed. You will learn who may levy the tax on sand, gravel and other quarry "
             "resources and on what, the ceiling on the rate, who issues the permit to extract, how the money "
-            "is divided among the province, the town and the barangay, what the Supreme Court said about a "
+            "is divided among the province, the municipality and the barangay, what the Supreme Court said about a "
             "company that quarried for its own use, and what treasury workers, contractors and barangay "
             "officials should each check.",
             ("photo", "blog/finance-quarry.jpg", "The sand and gravel tax: levied by the province, up to "
@@ -3952,7 +3952,7 @@ TREASURY_POSTS = [
              "volumes are recorded per barangay, and that the 30 and 40 percent shares are released to "
              "the right municipality and barangay."),
             ("point", "Municipal treasury", "That the municipality’s 30 percent arrives, and that it "
-             "matches the volumes extracted within the town."),
+             "matches the volumes extracted within the municipality."),
             ("point", "Barangay treasurer", "That the barangay’s 40 percent arrives, with a breakdown by "
              "period. Part 17 described how to follow up on the barangay’s share of the amilyar; the same "
              "habit applies here."),
@@ -3982,7 +3982,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 22: The Amusement Tax, Cinemas, Concerts and Why Resorts Are Not Covered", "/blog/amusement-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("ask", "Is there a river or quarry near you, and do you know how much your barangay receives from it?"),
         ],
     },
@@ -3992,7 +3992,7 @@ TREASURY_POSTS = [
         "publish_on": "2027-02-15 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "amusement-tax",
         "category": "treasury",
-        "summary": "Part of every cinema or concert ticket can go to the province and the town. This part "
+        "summary": "Part of every cinema or concert ticket can go to the province and the municipality. This part "
                    "explains who may levy the amusement tax, the 10 percent ceiling set in 2009, which shows "
                    "are exempt, why the Supreme Court said resorts and swimming pools are not covered, and how "
                    "the money is shared.",
@@ -4108,7 +4108,7 @@ TREASURY_POSTS = [
              "check the rate and the list of places against Section 140 and Pelizloy."),
             ("point", "If you run an event", "Check whether it falls under the exemptions before you print "
              "tickets."),
-            ("point", "If you buy a ticket", "Know that part of it may fund your province and your town, "
+            ("point", "If you buy a ticket", "Know that part of it may fund your province and your municipality, "
              "half and half."),
             "The businessman left with two answers. The cinema owed amusement tax on its ticket sales, "
             "withheld before the split with the distributor. The resort’s entrance fees did not, though the "
@@ -4263,7 +4263,7 @@ TREASURY_POSTS = [
         "publish_on": "2027-02-10 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "inside-the-treasurers-office",
         "category": "treasury",
-        "summary": ("The treasurer’s office collects taxes, keeps the town’s money and pays its bills, but it "
+        "summary": ("The treasurer’s office collects taxes, keeps the local government’s money and pays its bills, but it "
                    "does not assess property, keep the books or prepare the budget. The Local Government Code "
                    "spells out the treasurer’s duties and who supervises the office, which tells you which "
                    "office to visit for what."),
@@ -4274,8 +4274,8 @@ TREASURY_POSTS = [
             "said, “but we don’t set the value.” By lunchtime she had visited three offices and learned more "
             "about local government than in her whole orientation.",
             "(The employee, the letter and the town hall are fictional, made up to explain the offices.)",
-            "Part 19 looked at the public market as a business the town runs. This part steps back to look "
-            "at the office that handles the town’s money. Read to the end, and you will know what the Local "
+            "Part 19 looked at the public market as a business the local government runs. This part steps back to look "
+            "at the office that handles the local government’s money. Read to the end, and you will know what the Local "
             "Government Code gives the treasurer to do, who appoints and supervises the treasurer, how the "
             "treasurer’s work differs from the assessor’s, the accountant’s and the budget officer’s, and "
             "which office a taxpayer should visit for which question.",
@@ -4368,25 +4368,25 @@ TREASURY_POSTS = [
              "which office it belongs to."),
             ("point", "If you are new to a treasury", "Visit the assessor, accountant and budget officer and "
              "ask each what they need from you."),
-            ("point", "If you follow local government", "Find who your town’s treasurer is, and where the "
+            ("point", "If you follow local government", "Find who your local government’s treasurer is, and where the "
              "office posts its reports."),
             "The new employee delivered the letter to the assessor’s office just before noon. On her way "
             "back, she drew a small map of the four offices on the back of her orientation sheet. A week "
             "later, she was the one giving directions.",
-            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs", "/blog/public-market-economic-enterprise/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs", "/blog/public-market-economic-enterprise/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means", "/blog/cash-counts-and-shortages/"),
             ("ask", "Have you ever been sent from one town hall office to another? Which question was it?"),
         ],
     },
     {
-        "title": "Inside the Local Treasury, Part 19: The Public Market, a Business the Town Runs",
+        "title": "Inside the Local Treasury, Part 19: The Public Market, a Business the Local Government Runs",
         "date": "February 8, 2027",
         "publish_on": "2027-02-08 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "public-market-economic-enterprise",
         "category": "treasury",
-        "summary": ("Stall rentals, slaughterhouse fees and terminal charges come from businesses the town itself "
+        "summary": ("Stall rentals, slaughterhouse fees and terminal charges come from businesses the local government itself "
                    "runs. The law and the DBM’s manual call them economic enterprises. Their money is kept "
                    "separate, and a simple test shows whether one pays for itself and where any excess goes."),
         "body": [
@@ -4394,10 +4394,10 @@ TREASURY_POSTS = [
             "collector a question one morning. “I pay my stall rent every day. Where does it go? The roof "
             "still leaks over my stall.” The collector did not know. Neither did the vendors beside her. "
             "The answer starts with an idea that surprises some taxpayers: the public market is a business, "
-            "and the town is its owner.",
+            "and the local government is its owner.",
             "(The vendor, the market and every number here are invented to explain the rules. No real "
             "market or person is described.)",
-            "Part 18 looked at money the treasury must return. This part looks at money the town earns, not "
+            "Part 18 looked at money the treasury must return. This part looks at money the local government earns, not "
             "from taxes, but from running an enterprise. By the end, you will know what a local economic "
             "enterprise is, why its money is kept in a special account, how to measure whether it pays for "
             "itself, what happens to any excess, and what vendors, treasury staff and councils can each "
@@ -4417,13 +4417,13 @@ TREASURY_POSTS = [
              "sanitation, and transport terminals, including bus and jeepney terminals, parking and piers."),
             ("point", "Other economic enterprises", "Public markets, slaughterhouses, cold storage, "
              "commercial spaces and local hospitals."),
-            ("quote", "A market stall’s rent is not a tax. It is the price of a service the town sells."),
+            ("quote", "A market stall’s rent is not a tax. It is the price of a service the local government sells."),
             ("h", "Where the Charges Come From"),
             "The Code gives local governments the power to charge for these services. Section 153 allows "
             "reasonable fees and charges for services rendered. Section 154 lets them fix the rates for "
             "public utilities they own and operate. Section 155 lets the council set toll fees for the use "
             "of public roads, piers or wharves. The amounts themselves are set in local ordinances, which is "
-            "why stall rents and slaughter fees differ from town to town. Part 15 explained why a fee for a "
+            "why stall rents and slaughter fees differ from one local government to another. Part 15 explained why a fee for a "
             "service follows different rules from a tax.",
             ("h", "Its Own Account"),
             "The manual cites Section 313 of the Code, which requires special accounts in the general fund "
@@ -4433,7 +4433,7 @@ TREASURY_POSTS = [
              "that enterprise."),
             ("point", "Costs out", "The manual counts personnel services, maintenance and other operating "
              "expenses, and finance charges as operating costs."),
-            ("point", "Kept apart", "So the town can see whether the market earns its keep, instead of the "
+            ("point", "Kept apart", "So the local government can see whether the market earns its keep, instead of the "
              "figures disappearing into the general fund."),
             ("h", "Does It Pay for Itself?"),
             "The manual defines a simple test. An enterprise is self-sufficient if it recovers 100 percent of "
@@ -4445,7 +4445,7 @@ TREASURY_POSTS = [
              "₱900,000 came from somewhere else, such as support from the general fund."),
             "Arrears change the picture. If the same market had ₱300,000 in unpaid stall rent and collected it, income would be ₱3,900,000, and the ratio would rise to about 86.7 percent, without raising a single rate. Before asking for a higher rent, a council can ask how much of the current rent is actually being collected.",
             "The manual describes transfers from the general fund to an enterprise as subsidies or "
-            "advances. A subsidy is not wrong in itself; a town may decide the market is worth supporting. "
+            "advances. A subsidy is not wrong in itself; a local government may decide the market is worth supporting. "
             "But it should be a decision, made with the number in view.",
             ("h", "Where Any Excess Goes"),
             "When an enterprise earns more than it spends, the manual, citing Section 313, sets an order. "
@@ -4482,7 +4482,7 @@ TREASURY_POSTS = [
             ("point", "Hiding the subsidy", "Show it as a decision, with the ratio."),
             ("point", "Unbudgeted repairs", "If it is not in the enterprise budget, the rent cannot pay for it."),
             ("h", "What to Remember"),
-            ("point", "The market is an enterprise", "Run by the town, with income from fees and rentals."),
+            ("point", "The market is an enterprise", "Run by the local government, with income from fees and rentals."),
             ("point", "Its own account and budget", "Under Section 313, as the DBM manual explains."),
             ("point", "Self-sufficiency ratio", "Income divided by expenses, times 100; 100 percent pays "
              "for itself."),
@@ -4502,7 +4502,7 @@ TREASURY_POSTS = [
             ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
             ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
             ("cta", "Read: Inside the Local Treasury, Part 18: Paid Too Much? Refunds, Tax Credits and Protests", "/blog/local-tax-refunds-and-credits/"),
-            ("ask", "Does your town’s public market pay for itself? Have you ever seen its budget?"),
+            ("ask", "Does your local government’s public market pay for itself? Have you ever seen its budget?"),
         ],
     },
     {
@@ -4522,7 +4522,7 @@ TREASURY_POSTS = [
             "more than she owed. Her first question was whether the money was gone. Her second was how to "
             "ask for it back.",
             "(The store owner, the figures and the mix-up are illustrations, not a real case.)",
-            "Part 17 followed money from the town to its barangays. This part follows money back to the "
+            "Part 17 followed money from the local government to its barangays. This part follows money back to the "
             "taxpayer. It explains what the law calls an erroneous or illegal collection, the difference "
             "between a refund and a tax credit, how to file a claim and by when, how a protest of assessment "
             "differs from a refund claim, and the separate rules for real property tax.",
@@ -4624,7 +4624,7 @@ TREASURY_POSTS = [
             "to her next quarterly payment. In April, her receipt showed the credit, and the amount due was "
             "₱6,000 smaller.",
             ("cta", "Read: Inside the Local Treasury, Part 15: Fee or Tax? Why the Difference Matters", "/blog/fee-or-tax/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
             ("cta", "Read: Inside the Local Treasury, Part 17: The Barangay’s Share of the Amilyar, and When It Must Arrive", "/blog/barangay-share-of-real-property-tax/"),
             ("ask", "Have you ever paid a local tax twice or by mistake? How did you get it back?"),
@@ -4752,7 +4752,7 @@ TREASURY_POSTS = [
             "arrive. For the first time, the line in their budget had a number behind it.",
             ("cta", "Read: Inside the Local Treasury, Part 16: The Special Education Fund, the School Money in Your Amilyar", "/blog/special-education-fund/"),
             ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
             ("ask", "Does your barangay know how much of last quarter’s amilyar came back to it?"),
         ],
@@ -4774,7 +4774,7 @@ TREASURY_POSTS = [
             "(The story is made up for teaching, and so are its office, people and figures.)",
             "The Special Education Fund, or SEF, is a local fund that the law ties to a single purpose: public education. After this post, you will know where the SEF comes from, how it is "
             "collected and shared, who decides how it is spent, what it may pay for under the current "
-            "guidelines, and where to look to see how your town used it.",
+            "guidelines, and where to look to see how your local government used it.",
             ("photo", "blog/finance-sef.jpg", "The Special Education Fund: 1 percent on real property, "
              "released to the local school board, spent on public schools, and reported to the public. "
              "(Illustration: Butch Mahinay, aumahinay.dev)", "medium"),
@@ -4809,7 +4809,7 @@ TREASURY_POSTS = [
              "by the province and the municipalities within it."),
             ("point", "Cities keep their own", "A city keeps all of its SEF collections."),
             "So if you live in a municipality within a province, the SEF you pay is split between two "
-            "school boards: the one in your town and the one at the provincial capitol. Both answer for "
+            "school boards: the one in your local government and the one at the provincial capitol. Both answer for "
             "how their share is used.",
             ("h", "Who Decides How It Is Spent"),
             "The local school board decides. Under the guidelines, the school board budget is prepared by "
@@ -4875,14 +4875,14 @@ TREASURY_POSTS = [
              "your school this year."),
             ("point", "If you work in a treasury", "Check that SEF and basic tax collections go to separate "
              "accounts, every day."),
-            "The father asked the collector who sat on the school board. She told him which office at the town hall handles the school board’s papers and showed him where the town posts its SEF reports. That evening he "
+            "The father asked the collector who sat on the school board. She told him which office at the town hall handles the school board’s papers and showed him where the local government posts its SEF reports. That evening he "
             "found the report, and on it, a line for the repair of school roofs. His daughter’s school was "
             "on the list, scheduled for the summer break.",
             ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
             ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
-            ("ask", "Have you ever seen how your town’s school board spends the SEF? What would you want it to fund?"),
+            ("ask", "Have you ever seen how your local government’s school board spends the SEF? What would you want it to fund?"),
         ],
     },
     {
@@ -4935,7 +4935,7 @@ TREASURY_POSTS = [
             ("h", "The Limits on Fees"),
             "For fees that municipalities impose on businesses and occupations, Section 147 allows reasonable fees commensurate with "
             "the cost of regulation, inspection and licensing. In plain words, a regulatory fee should be "
-            "in proportion to what it costs the town to inspect, regulate and license.",
+            "in proportion to what it costs the local government to inspect, regulate and license.",
             ("point", "Reasonable", "Not out of proportion to the work done."),
             ("point", "Tied to a purpose", "Inspection, regulation or a service, such as garbage "
              "collection."),
@@ -4946,7 +4946,7 @@ TREASURY_POSTS = [
             "declared national policy, and only after a public hearing.",
             ("h", "Public Hearings Come First"),
             "Section 187 requires public hearings before any tax ordinance is enacted. This is where "
-            "residents and business owners can speak for or against a proposed charge, and where a town "
+            "residents and business owners can speak for or against a proposed charge, and where a local government "
             "should explain what each fee pays for.",
             "If you think an ordinance is illegal or unconstitutional, Section 187 also gives a remedy. You "
             "may appeal to the Secretary of Justice within thirty days from the ordinance’s effectivity, and "
@@ -4955,7 +4955,7 @@ TREASURY_POSTS = [
             ("h", "Why the Difference Matters"),
             ("point", "To the taxpayer", "A fee should be explainable: you can ask what the inspection or "
              "the service involves and why it costs what it costs."),
-            ("point", "To the town", "A regulatory fee that is far higher than the cost of regulation can be questioned as a tax in disguise."),
+            ("point", "To the local government", "A regulatory fee that is far higher than the cost of regulation can be questioned as a tax in disguise."),
             ("point", "To the treasury", "Fees and taxes are recorded under different accounts, and some "
              "fees support a specific service. Knowing which is which keeps the books and the reports "
              "correct."),
@@ -4995,10 +4995,10 @@ TREASURY_POSTS = [
              "or fee."),
             ("point", "If you work in a treasury", "Check that every line on your assessment form names its "
              "ordinance and section."),
-            ("point", "If you care about your town", "Watch for notices of public hearings on tax "
+            ("point", "If you care about your local government", "Watch for notices of public hearings on tax "
              "ordinances, and attend one."),
             "The eatery owner asked the clerk which ordinance set the signboard fee. The clerk found it in "
-            "the town’s revenue code and showed her the section, the amount and what it covered. The owner "
+            "the local government’s revenue code and showed her the section, the amount and what it covered. The owner "
             "paid, kept her receipts and, a few months later, attended her first public hearing on a "
             "proposed change to the fee schedule.",
             ("cta", "Read the study note: Fees and charges", "/study-notes/fees-and-charges/"),
@@ -5049,11 +5049,11 @@ TREASURY_POSTS = [
             ("point", "Tax paid in January", "The bakery paid ₱9,000 in business tax for the year, based on "
              "last year’s sales."),
             ("point", "Sworn statement on closing", "From January to August, the bakery sold more than the "
-             "year before. Using the town’s ordinance rates, the tax due on those sales comes to ₱10,500."),
+             "year before. Using the local government’s ordinance rates, the tax due on those sales comes to ₱10,500."),
             ("point", "The difference", "₱10,500 minus ₱9,000 equals ₱1,500, which must be paid before the "
              "bakery is officially retired."),
             "The rates themselves come from the local tax ordinance, within the limits in Section 143, so "
-            "the figures differ from town to town. The treasurer’s office computes the final amount.",
+            "the figures differ from one local government to another. The treasurer’s office computes the final amount.",
             ("h", "Step 1: The Barangay"),
             "The town hall will want proof from the barangay that the business has stopped. In Quezon City, for example, this is a barangay certificate stating the exact closure date. Ask the barangay hall where the business operated what it issues and what it needs.",
             ("h", "Step 2: The Town Hall"),
@@ -5100,7 +5100,7 @@ TREASURY_POSTS = [
             ("h", "For Treasury Workers"),
             "A clear retirement process helps the treasury too. It keeps the list of active businesses "
             "honest, so collection targets and delinquency lists are real. Post the requirements at the "
-            "window and on the town’s page, and give each retiring owner a written list. When a business "
+            "window and on the local government’s page, and give each retiring owner a written list. When a business "
             "has clearly closed but never retired, a letter explaining the steps does more good than a "
             "growing bill.",
             ("h", "Mistakes to Avoid"),
@@ -5129,7 +5129,7 @@ TREASURY_POSTS = [
             "their certificate, and framed the last receipt next to a photo of their first loaf.",
             ("cta", "Read the study note: Business tax and the mayor’s permit", "/study-notes/business-tax-and-mayors-permit/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 13: From the Cash Box to the Bank, Why Deposits Cannot Wait", "/blog/deposits-cash-box-to-bank/"),
             ("ask", "Have you ever closed a business, or helped someone close one? Which step took the longest?"),
         ],
@@ -5141,7 +5141,7 @@ TREASURY_POSTS = [
         "slug": "deposits-cash-box-to-bank",
         "category": "treasury",
         "summary": ("Collecting the money is only half the job. Follow a day’s collections from the window to the "
-                   "bank, learn what “deposit intact” means and which banks may hold a town’s money, and see why "
+                   "bank, learn what “deposit intact” means and which banks may hold a local government’s money, and see why "
                    "a late deposit is a finding even when every peso is there."),
         "body": [
             "It was a Friday afternoon, and the market collector was having a good day. By four o’clock her cash box "
@@ -5193,7 +5193,7 @@ TREASURY_POSTS = [
              "cashier, who signs for them, or straight to the bank."),
             ("point", "Back to the books", "The validated deposit slip comes back to the office and is "
              "attached to the report, so the books, the report and the bank all show the same amount."),
-            ("h", "Which Banks May Hold a Town’s Money"),
+            ("h", "Which Banks May Hold a Local Government’s Money"),
             "A local government cannot open accounts wherever it likes. The Department of Finance’s "
             "Department Circular No. 001-2015, dated June 1, 2015, sets the rules for authorized government "
             "depository banks.",
@@ -5209,7 +5209,7 @@ TREASURY_POSTS = [
             "set aside by law for one purpose is not spent on another. A deposit slip should show which "
             "fund it belongs to, and the report should match it fund by fund.",
             ("h", "When the Bank Is Far Away"),
-            "Our collector’s problem is real in towns where the nearest bank branch is a long trip away. "
+            "Our collector’s problem is real in local governments where the nearest bank branch is a long trip away. "
             "The rules do not disappear, so the office plans around them.",
             ("point", "Schedule the trip", "Set the deposit run early enough in the day to reach the bank "
              "before it closes."),
@@ -5247,7 +5247,7 @@ TREASURY_POSTS = [
             ("point", "If you supervise collectors", "List who deposits late and why, and fix the cause, "
              "whether it is distance, schedule or staffing."),
             ("point", "If you pay taxes or fees", "Keep your next official receipt, and ask whether your "
-             "town offers payment through a bank."),
+             "local government offers payment through a bank."),
             "On Monday morning, the collector deposited the ₱60,000 the moment the bank opened. Every peso "
             "was there. Still, her supervisor changed the routine that week: on market days, the collector "
             "now turns over her collections to the cashier at three o’clock, and the cashier makes one "
@@ -5255,7 +5255,7 @@ TREASURY_POSTS = [
             ("cta", "Read the study note: Collection and deposit", "/study-notes/collection-and-deposit/"),
             ("cta", "Read: Inside the Local Treasury, Part 12: The Surprise Cash Count, and What a Shortage Means", "/blog/cash-counts-and-shortages/"),
             ("cta", "Read: Inside the Local Treasury, Part 11: The Blank Receipt Problem, Accountable Forms and the RAAF", "/blog/accountable-forms-blank-receipts/"),
-            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills", "/blog/from-budget-to-check/"),
+            ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills", "/blog/from-budget-to-check/"),
             ("ask", "How far is the nearest bank from your town hall? How does your treasury handle the trip?"),
         ],
     },
@@ -5524,29 +5524,29 @@ TREASURY_POSTS = [
             ("cta", "Read the study note: Accountable forms and the RAAF", "/study-notes/accountable-forms-and-raaf/"),
             ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula", "/blog/the-cedula-explained/"),
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes", "/blog/when-coa-writes/"),
-            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Town Spends", "/blog/where-to-see-how-your-town-spends/"),
+            ("cta", "Read: Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends", "/blog/where-to-see-how-your-town-spends/"),
             ("ask", "Have you ever been given a receipt that did not look right? What did you do?"),
         ],
     },
     {
-        "title": "Inside the Local Treasury, Part 10: Where to See How Your Town Spends",
+        "title": "Inside the Local Treasury, Part 10: Where to See How Your Local Government Spends",
         "date": "January 13, 2027",
         "publish_on": "2027-01-13 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "where-to-see-how-your-town-spends",
         "category": "treasury",
-        "summary": ("Your town’s budget, its cash flows, its bids and its audit findings are meant to be public. "
+        "summary": ("Your local government’s budget, its cash flows, its bids and its audit findings are meant to be public. "
                    "The law and the Full Disclosure Policy list what must be posted. This post shows where to "
                    "find it and how to read the first few numbers."),
         "body": [
-            "A group of senior high school students had a class project: find out how their town spent its "
+            "A group of senior high school students had a class project: find out how their local government spent its "
             "money last year. Their teacher expected them to come back with nothing. Instead, they came back "
             "with photos of a bulletin board at the municipal hall, a printout of a cash flow statement, and "
             "a question for their teacher: “Why is the money for the new market still unspent?”",
-            "(The students and their town are a composite. No real town, school or amount is described.)",
-            "A town’s finances are not supposed to be a secret, and the law says so. This post explains what "
-            "towns are required to post, where to look for it, which documents to read first, and what "
+            "(The students and their local government are a composite. No real local government, school or amount is described.)",
+            "A local government’s finances are not supposed to be a secret, and the law says so. This post explains what "
+            "local governments are required to post, where to look for it, which documents to read first, and what "
             "questions a resident, a student or a treasury worker can fairly ask after reading them.",
-            ("photo", "blog/finance-full-disclosure.jpg", "Where to see how your town spends: the bulletin "
+            ("photo", "blog/finance-full-disclosure.jpg", "Where to see how your local government spends: the bulletin "
              "board, the website, the audit report and the procurement notices. (Illustration: Butch Mahinay, "
              "aumahinay.dev)", "medium"),
             ("h", "The Law: Section 352"),
@@ -5565,7 +5565,7 @@ TREASURY_POSTS = [
             "Robredo, decided in December 2014, the Supreme Court upheld it. The Court called its posting "
             "requirements “mere transparency measures” and said the documents it requires are “well-within "
             "the contemplation of Section 352” of the Code.",
-            ("h", "What Towns Must Post"),
+            ("h", "What Local Governments Must Post"),
             "The DILG’s Full Disclosure Policy page lists the reports in three groups:",
             ("point", "Budget reports", "The annual budget report, every year. The statement of debt service, the statement of receipts and expenditures and the statement of cash flow, every quarter."),
             ("point", "Procurement reports", "The annual procurement plan or procurement list, and any "
@@ -5577,7 +5577,7 @@ TREASURY_POSTS = [
             ("point", "Bulletin boards", "The policy calls for posting in at least three conspicuous places, "
              "such as the municipal or city hall, the provincial capitol, barangay halls, public markets, "
              "hospitals and schools."),
-            ("point", "The town’s website", "The Supreme Court’s decision describes posting on websites as "
+            ("point", "The local government’s website", "The Supreme Court’s decision describes posting on websites as "
              "well as in public buildings and print media."),
             ("point", "The DILG’s Full Disclosure Policy portal", "The DILG runs an online portal for these "
              "reports, at fdpp.dilg.gov.ph."),
@@ -5586,7 +5586,7 @@ TREASURY_POSTS = [
             ("h", "Reading the First Three Documents"),
             "The full set can be long. Start with three, and look for one thing in each.",
             ("point", "The annual budget report", "Find the total budget, then the three largest items. Ask "
-             "whether they match what the town says its priorities are."),
+             "whether they match what the local government says its priorities are."),
             ("point", "The statement of receipts and expenditures", "Compare what was collected with what was estimated. A large gap is worth a question."),
             ("point", "The 20% development fund report", "Look for projects listed as not started or not "
              "completed. That is where the students found their unspent market money."),
@@ -5606,19 +5606,19 @@ TREASURY_POSTS = [
             "are specific and polite.",
             ("point", "Why was this project not started?", "There may be a good reason, such as a failed "
              "bidding or a land issue. Asking lets the office explain."),
-            ("point", "Why did this revenue fall short?", "Part 1 showed how a town depends on local "
+            ("point", "Why did this revenue fall short?", "Part 1 showed how a local government depends on local "
              "collections and transfers from the national government."),
             ("point", "Where can I see the bid results?", "The procurement reports should name the winning "
              "bidders and amounts."),
             ("point", "What did the auditor say?", "The audit report includes management’s comments on each "
              "finding."),
-            ("h", "What Happens When a Town Does Not Post"),
+            ("h", "What Happens When a Local Government Does Not Post"),
             "According to the DILG, COA auditors were directed in 2010 to monitor compliance with the Full "
             "Disclosure Policy, and deviations may be raised in an audit observation memorandum and appear in "
             "the annual audit report. The DILG also cites Section 60 of the Local Government Code, which "
             "allows officials to be disciplined for gross negligence or dereliction of duty.",
             "For a resident, the practical step is simpler: if a report is missing from the board or the "
-            "website, ask the town where it can be seen.",
+            "website, ask the local government where it can be seen.",
             ("h", "For Treasury Workers"),
             ("point", "Post on time, every time", "The Section 352 summary is due within 30 days after the "
              "year ends. Put the date on the office calendar."),
@@ -5641,17 +5641,17 @@ TREASURY_POSTS = [
              "public places."),
             ("point", "The Full Disclosure Policy asks for more", "Budget, procurement and special fund "
              "reports, upheld by the Supreme Court in 2014."),
-            ("point", "Look in four places", "Bulletin boards, the town website, the DILG portal and COA’s "
+            ("point", "Look in four places", "Bulletin boards, the local government website, the DILG portal and COA’s "
              "audit reports."),
             ("point", "Ask specific, polite questions", "The reports are meant to be read and asked about."),
             ("h", "The Question to Ask"),
-            "When did you last look at your town’s bulletin board for its budget reports? If you work in a "
+            "When did you last look at your local government’s bulletin board for its budget reports? If you work in a "
             "treasury, ask your office: are this quarter’s reports posted, and could a student read them?",
             ("cta", "Read: Inside the Local Treasury, Part 9: When COA Writes", "/blog/when-coa-writes/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check", "/blog/from-budget-to-check/"),
             ("cta", "Read: Year-End in the Treasury: What Really Happens in December", "/blog/year-end-in-the-treasury/"),
-            ("ask", "Have you ever read your town’s budget or audit report? What surprised you?"),
+            ("ask", "Have you ever read your local government’s budget or audit report? What surprised you?"),
         ],
     },
     {
@@ -5739,8 +5739,8 @@ TREASURY_POSTS = [
             "which allows the item to be removed from the books. Keep that notice. It is the proof that the "
             "matter is closed.",
             ("h", "What Residents Can Read"),
-            "Audit findings are not secret. Annual audit reports on local governments are public documents. COA posts audit reports on its website, coa.gov.ph, and some towns post their own reports on their websites. A town’s report lists the auditor’s observations, "
-            "the recommendations, and the management’s comments. Reading your town’s report is one of the "
+            "Audit findings are not secret. Annual audit reports on local governments are public documents. COA posts audit reports on its website, coa.gov.ph, and some local governments post their own reports on their websites. A local government’s report lists the auditor’s observations, "
+            "the recommendations, and the management’s comments. Reading your local government’s report is one of the "
             "clearest views of how its money was handled.",
             ("h", "For Treasury Workers"),
             ("point", "Log every letter on the day it arrives", "Write the date received and the deadline it "
@@ -5773,7 +5773,7 @@ TREASURY_POSTS = [
              "for all stages."),
             ("point", "Liability is personal", "Section 103 places it on the person directly responsible."),
             ("h", "The Question to Ask"),
-            "Have you ever read your town’s annual audit report? If you work in a treasury, ask your office: "
+            "Have you ever read your local government’s annual audit report? If you work in a treasury, ask your office: "
             "how many audit observations from last year are still unanswered, and who owns each one?",
             ("cta", "Read: Inside the Local Treasury, Part 8: Cash Advances", "/blog/cash-advances-explained/"),
             ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check", "/blog/from-budget-to-check/"),
@@ -5788,7 +5788,7 @@ TREASURY_POSTS = [
         "publish_on": "2027-01-06 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "cash-advances-explained",
         "category": "treasury",
-        "summary": ("A cash advance looks like money in hand, but it is a debt to the town until it is "
+        "summary": ("A cash advance looks like money in hand, but it is a debt to the local government until it is "
                    "liquidated. The rules say who may get one, what it may be used for and when it must be "
                    "accounted for, and missing those deadlines has consequences."),
         "body": [
@@ -5810,7 +5810,7 @@ TREASURY_POSTS = [
             "A cash advance solves that. Money is released before the expense, to an official or employee "
             "who becomes accountable for it. Until they show how it was spent and return what was not spent, "
             "the amount stays on the books as something they owe.",
-            ("quote", "A cash advance is not an allowance. It is a loan from the town that is repaid with "
+            ("quote", "A cash advance is not an allowance. It is a loan from the local government that is repaid with "
              "receipts."),
             ("h", "The Rules in the Law"),
             ("point", "Only under COA’s rules", "Section 339 of the Local Government Code says no cash "
@@ -5912,13 +5912,13 @@ TREASURY_POSTS = [
             "in a treasury, ask your office: how many advances are past due today, and who is following them "
             "up?",
             ("cta", "Read: Inside the Local Treasury, Part 7: From Budget to Check", "/blog/from-budget-to-check/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Year-End in the Treasury: What Really Happens in December", "/blog/year-end-in-the-treasury/"),
             ("ask", "What is your system for keeping receipts on an official trip? I'd like to hear what works."),
         ],
     },
     {
-        "title": "Inside the Local Treasury, Part 7: From Budget to Check, How a Town Pays Its Bills",
+        "title": "Inside the Local Treasury, Part 7: From Budget to Check, How a Local Government Pays Its Bills",
         "date": "January 1, 2027",
         "publish_on": "2027-01-01 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "from-budget-to-check",
@@ -6018,7 +6018,7 @@ TREASURY_POSTS = [
             "Payments are public money, and some of the trail is public too. Section 352 requires the treasurer "
             "to post, within 30 days after the year ends, a summary of all revenues collected and funds "
             "received, and of the appropriations and disbursements, in at least three public places. Ask your "
-            "town where it is posted, and read it.",
+            "local government where it is posted, and read it.",
             ("h", "For Treasury Workers"),
             ("point", "Check before you certify", "Your certification of available funds is a statement of "
              "fact. Confirm the balance, not just the paper."),
@@ -6046,27 +6046,27 @@ TREASURY_POSTS = [
             ("point", "Two signatures on the check", "Treasurer and administrator (Section 345)."),
             ("point", "Signatures carry liability", "That is why missing papers stop a payment."),
             ("h", "The Question to Ask"),
-            "Have you ever waited for a check from your town? Which signature was missing? If you work in a "
+            "Have you ever waited for a check from your local government? Which signature was missing? If you work in a "
             "treasury, ask your office: how long does a complete voucher take to become a check, and where "
             "does it wait the longest?",
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
-            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?", "/blog/can-the-town-forgive-a-tax/"),
             ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
             ("ask", "Have you ever waited for a government check? I'd like to hear what held it up."),
         ],
     },
     {
-        "title": "Inside the Local Treasury, Part 6: Can the Town Forgive a Tax?",
+        "title": "Inside the Local Treasury, Part 6: Can the Local Government Forgive a Tax?",
         "date": "December 28, 2026",
         "publish_on": "2026-12-28 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
         "slug": "can-the-town-forgive-a-tax",
         "category": "treasury",
-        "summary": ("After a typhoon or a bad harvest, people ask whether the town can forgive their real "
+        "summary": ("After a typhoon or a bad harvest, people ask whether the local government can forgive their real "
                    "property tax. The law sets what a sanggunian and the President may do, and the 2024 national "
                    "amnesty covered some cases but not others."),
         "body": [
             "Two weeks after a typhoon flattened the rice fields, a barangay captain sat across from the "
-            "treasurer with a folded letter from his farmers. The typhoon had taken the harvest that paid their bills. “They are asking if the town can forgive this year’s amilyar,” he said. “Can it?”",
+            "treasurer with a folded letter from his farmers. The typhoon had taken the harvest that paid their bills. “They are asking if the local government can forgive this year’s amilyar,” he said. “Can it?”",
             "(As in every part of this series, the case is a composite. No real person, place or amount is "
             "described.)",
             "The honest answer is “sometimes, and only in the ways the law allows.” When you finish reading, you will know who can reduce or forgive real property tax, under what conditions, what the 2024 national "
@@ -6138,7 +6138,7 @@ TREASURY_POSTS = [
             "maximum of six percent (6%)” of the taxes assessed before the law took effect.",
             "The cap applies to each type of real property tax, including the Special Education Fund and idle "
             "land tax. For the years after, Section 29 adds that the local government “may enact an ordinance to "
-            "impose a cap on the increase.” Whether your town did so is a question for your sanggunian.",
+            "impose a cap on the increase.” Whether your local government did so is a question for your sanggunian.",
             ("point", "An example", "A lot taxed ₱2,400 a year before the law can be billed at most ₱2,544 in "
              "the first year of the new schedule, an increase of ₱144."),
             ("h", "Is Amnesty Fair?"),
@@ -6179,13 +6179,13 @@ TREASURY_POSTS = [
             ("point", "The 6% cap still matters", "It limits the first-year increase when a new schedule of "
              "market values takes effect."),
             ("h", "The Question to Ask"),
-            "Do you know whether your town has any tax relief ordinance in force today? If you work in a "
+            "Do you know whether your local government has any tax relief ordinance in force today? If you work in a "
             "treasury, ask your office: when a calamity hits, who drafts the Section 276 ordinance, and by when?",
             ("cta", "Read: Inside the Local Treasury, Part 5: Unpaid Amilyar, From Notice to Auction", "/blog/unpaid-amilyar-notice-to-auction/"),
             ("cta", "Read the study note: Paying real property tax", "/study-notes/paying-real-property-tax/"),
             ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
-            ("ask", "Has your town ever granted tax relief after a calamity? I'd like to hear how it worked."),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("ask", "Has your local government ever granted tax relief after a calamity? I'd like to hear how it worked."),
         ],
     },
     {
@@ -6322,7 +6322,7 @@ TREASURY_POSTS = [
             "treasury, ask your office: how long does it take us to move from a posted notice to a warrant?",
             ("cta", "Read the study note: Real property tax basics", "/study-notes/real-property-tax-basics/"),
             ("cta", "Read: Inside the Local Treasury, Part 4: Selling Land? Meet the Transfer Tax", "/blog/selling-land-transfer-tax/"),
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
             ("ask", "Has your family ever found an unpaid amilyar years after the fact? I'd like to hear how it was settled."),
         ],
@@ -6443,7 +6443,7 @@ TREASURY_POSTS = [
             ("h", "The Question to Ask"),
             "If you have signed a deed in the last two months, has the transfer tax been paid? If you work in "
             "a treasury, ask your office: do we follow up the deeds the notaries send us?",
-            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
+            ("cta", "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From", "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit", "/blog/january-rush-business-permit/"),
             ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula", "/blog/the-cedula-explained/"),
             ("ask", "Have you ever had a land transfer stall at the Register of Deeds? I'd like to hear what held it up."),
@@ -6494,19 +6494,19 @@ TREASURY_POSTS = [
             "based on what you declare, and the clerk does not check your payslip.",
             "That makes it tempting to say a smaller number. But a cedula is a tax receipt with "
             "your name on it, and for a worker earning ₱300,000 a year, the honest amount is only"
-            " ₱305. Declaring it properly is a small, real way of doing your share for the town "
+            " ₱305. Declaring it properly is a small, real way of doing your share for the city or municipality "
             "you live in.",
             ("h", "Where and When to Pay"),
             "You pay in the city or municipality where you live. The tax for the year falls due "
             "on January 1 and should be paid by the last day of February. After that, unpaid "
             "community tax earns interest of 24% a year.",
-            "If you live in one town and work in another, the cedula is still paid where you "
+            "If you live in one city or municipality and work in another, the cedula is still paid where you "
             "live, not where your office or business is. A corporation is different: it pays "
             "where its principal office is. Paying early in the year also avoids the interest, "
             "which keeps running for as long as the tax stays unpaid.",
             "Here is a detail few people know. The city or municipal treasurer may deputize "
             "bonded barangay treasurers to collect the community tax. What is collected through "
-            "the barangay is split 50-50 between the town and the barangay where it was paid. If "
+            "the barangay is split 50-50 between the city or municipality and the barangay where it was paid. If "
             "your barangay collects it, getting your cedula there leaves half of what you pay in "
             "your own barangay.",
             ("h", "What the Cedula Is Not"),
@@ -6592,7 +6592,7 @@ TREASURY_POSTS = [
             "worth asking whether your barangay treasurers are deputized and bonded before the "
             "January rush begins.",
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("cta",
              "Read: Inside the Local Treasury, Part 2: The January Rush and Your Business Permit",
@@ -6627,7 +6627,7 @@ TREASURY_POSTS = [
             "January. An owner who prefers to pay by quarter can do that too, with each "
             "installment due within the first 20 days of its quarter.",
             "So the real deadline is January 20, not January 31. Because renewals for the whole "
-            "town fall due in the same twenty days, the line is longest in the last few days "
+            "local government fall due in the same twenty days, the line is longest in the last few days "
             "before the 20th.",
             "The tax is computed on what the business sold the year before. That is why the "
             "treasury asks for last year’s gross sales or receipts at renewal. My study note on "
@@ -6640,26 +6640,26 @@ TREASURY_POSTS = [
             ("point",
              "The business tax",
              "A tax on the privilege of doing business, based on gross sales. It goes to the "
-             "town’s general fund like any other tax."),
+             "local government’s general fund like any other tax."),
             ("point",
              "The regulatory fees",
              "Fees for the mayor’s permit and the inspections behind it. The law says these must "
              "be reasonable and in line with the actual cost of regulating."),
-            "The Ease of Doing Business Act (RA 11032) pushed towns to handle both in one place. "
+            "The Ease of Doing Business Act (RA 11032) pushed local governments to handle both in one place. "
             "It requires a single unified application form and a Business One Stop Shop, where "
             "the treasury, the permit office and other offices work side by side. The Bureau of "
             "Fire Protection is also meant to sit in the same area, and barangay clearances can "
             "now be issued at the city or municipal hall.",
             ("h", "What Being Late Really Costs"),
             "The Code allows the sanggunian to charge a surcharge of up to 25% of the unpaid tax,"
-            " plus interest of up to 2% a month, for no more than 36 months. Your town’s revenue "
+            " plus interest of up to 2% a month, for no more than 36 months. Your local government’s revenue "
             "code sets the actual rates.",
             "In our bakery’s case, say its first-quarter installment was ₱2,000. At the maximum "
             "rate, paying two days late added a surcharge of ₱500, and interest was added on top."
             " That is money the owner could have kept just by coming a week earlier.",
             "The sanggunian may extend the deadline for a good reason, but by no more than six "
-            "months. If your town announces an extension, it will be by ordinance or resolution, "
-            "so check the town’s official page or the treasury before you rely on a rumor in the "
+            "months. If your local government announces an extension, it will be by ordinance or resolution, "
+            "so check the local government’s official page or the treasury before you rely on a rumor in the "
             "line.",
             ("h", "Declare Sales Honestly"),
             "It can be tempting to report lower sales to pay a lower tax. It is a poor bet. The "
@@ -6669,7 +6669,7 @@ TREASURY_POSTS = [
             "Keeping simple records, such as your official receipts, sales book and bank "
             "deposits, also makes the declaration quick to prepare and easy to defend.",
             ("h", "What to Bring"),
-            "Each town sets its own list, so check with your treasury or Business One Stop Shop. "
+            "Each local government sets its own list, so check with your treasury or Business One Stop Shop. "
             "Expect to be asked for these:",
             ("point",
              "Last year’s permit and official receipts",
@@ -6681,12 +6681,12 @@ TREASURY_POSTS = [
              "The unified application form",
              "Filled in, signed, and with any changes to your address, owner or line of business."),
             ("point",
-             "Clearances your town requires",
+             "Clearances your local government requires",
              "Such as the barangay clearance and the fire safety inspection, which can often be "
              "handled at the same one-stop shop."),
             ("h", "Putting Numbers on It"),
             "Here is how the bakery’s bill could look, using the maximum rates in the Code. Your "
-            "town’s revenue code may set lower ones.",
+            "local government’s revenue code may set lower ones.",
             ("point", "Last year’s gross sales", "₱400,000, taxed as a retailer at up to 2%"),
             ("point", "Business tax for the year", "₱400,000 × 2% = ₱8,000, or ₱2,000 a quarter"),
             ("point", "Surcharge for paying late", "₱2,000 × 25% = ₱500"),
@@ -6711,11 +6711,11 @@ TREASURY_POSTS = [
             " business is officially retired. Skipping this step can leave unpaid taxes, "
             "surcharges and interest piling up on a business that no longer exists.",
             "A branch or sales outlet that records its own sales pays the tax where it is "
-            "located. If you open a second store in another town, that town is where its sales "
+            "located. If you open a second store in another city or municipality, that place is where its sales "
             "are taxed.",
             ("h", "How to Beat the Line"),
             "Go in the first two weeks of January, not the last three days before the 20th. Ask "
-            "whether your town accepts applications online, since the law requires towns to "
+            "whether your local government accepts applications online, since the law requires local governments to "
             "automate the process. If cash is tight after the holidays, pay by quarter instead of"
             " risking a late annual payment. The law also sets processing times for government "
             "offices: three working days for a simple application and seven for a complex one.",
@@ -6743,7 +6743,7 @@ TREASURY_POSTS = [
              "pay by installment."),
             ("point",
              "Late costs more than you think",
-             "Your town may add a surcharge of up to 25% and interest of up to 2% a month."),
+             "Your local government may add a surcharge of up to 25% and interest of up to 2% a month."),
             ("point",
              "Declare sales honestly",
              "Underpayments can be assessed for up to five years, or ten when there was fraud."),
@@ -6754,34 +6754,34 @@ TREASURY_POSTS = [
             ("h", "The Question to Ask"),
             "When is your business tax actually due, and do you have last year’s sales ready "
             "today? If you work in a treasury, a good question for your office is this: does our "
-            "town announce the January 20 deadline early and clearly, before the line forms?",
+            "local government announce the January 20 deadline early and clearly, before the line forms?",
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Inside the Local Treasury, Part 3: The Cedula", "/blog/the-cedula-explained/"),
             ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
             ("ask",
              "Have you ever been caught by the January deadline? I'd be glad to hear how your "
-             "town handles the rush."),
+             "local government handles the rush."),
         ],
     },
     {
-        "title": "Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
-        "date": "December 9, 2026",
-        "publish_on": "2026-12-09 21:00",  # blog rotation, one series a day (Butch 2026-11-14)
+        "title": "Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
+        "date": "November 28, 2026",
+        "publish_on": "2026-11-28 15:00",  # moved up from Dec 9, published at once Sat Nov 28 (Butch 2026-11-28); Dec 9 left empty
         "slug": "where-your-towns-money-comes-from",
         "category": "treasury",
         "summary": "Taxes are collected at the town hall every day, yet the money never seems enough. The reason "
-                   "is in one ratio most residents have never seen: how much of the town's income it raises "
+                   "is in one ratio most residents have never seen: how much of the local government's income it raises "
                    "on its own.",
         "body": [
             "A few weeks after taking office, a new barangay council member came to the treasury "
-            "with a simple question. The town collects taxes every working day, so why is there "
+            "with a simple question. The local government collects taxes every working day, so why is there "
             "never enough money for the road in their barangay? It is a fair question, and it "
             "deserves a better answer than “walang pondo.” The answer starts with where the money"
             " actually comes from. After this post, you will be able to read the one "
             "ratio that explains much of the answer, see why the national share can fall without "
-            "warning, and know what actually raises a town's own income.",
+            "warning, and know what actually raises a local government's own income.",
             "(The cases in this series are composites, not records of any real office. Names, "
             "places and amounts are changed or left out.)",
             ("h", "Two Kinds of Money"),
@@ -6790,7 +6790,7 @@ TREASURY_POSTS = [
             "revenue. It includes real property tax, business tax, other local taxes, regulatory "
             "fees and service charges. It also includes income from economic enterprises, such as"
             " a public market or a slaughterhouse.",
-            "The second is money that comes from outside. The biggest part is the town's share in"
+            "The second is money that comes from outside. The biggest part is the local government's share in"
             " national taxes, now called the National Tax Allotment (NTA). Smaller amounts may "
             "come from a share in national wealth, such as mining or energy found in the area, "
             "and from grants and transfers.",
@@ -6801,20 +6801,20 @@ TREASURY_POSTS = [
              "Read the study note: Sources of local revenue",
              "/study-notes/sources-of-local-revenue/"),
             ("h", "The One Ratio Worth Knowing"),
-            "Take your town's total income for one year and ask what share of it came from the "
+            "Take your local government's total income for one year and ask what share of it came from the "
             "National Tax Allotment. BLGF has long called this dependency on the allotment. Here "
-            "is a simple example, with round numbers for a made-up town:",
+            "is a simple example, with round numbers for a made-up municipality:",
             ("point", "Total income for the year", "₱200 million"),
             ("point", "National Tax Allotment", "₱150 million"),
             ("point",
              "Locally sourced revenue",
              "₱45 million, from real property tax, business tax, fees and market income"),
             ("point", "Other receipts", "₱5 million, such as interest and miscellaneous income"),
-            "In this example, the allotment is 75% of everything the town receives. Only about 23"
-            " centavos of every peso comes from the town's own taxpayers. The numbers are "
+            "In this example, the allotment is 75% of everything the local government receives. Only about 23"
+            " centavos of every peso comes from the local government's own taxpayers. The numbers are "
             "invented.",
             ("h", "Why the Allotment Can Fall"),
-            "A town's allotment does not depend on how well the town collects. Under Section 284 "
+            "A local government's allotment does not depend on how well the local government collects. Under Section 284 "
             "of the Local Government Code, it is based on national tax collections in the third "
             "fiscal year before the current one. Since the Mandanas-Garcia ruling, that base "
             "covers all national taxes, and the bigger share has been released since fiscal year "
@@ -6824,7 +6824,7 @@ TREASURY_POSTS = [
             " 2022. The reason was simple: the 2023 share was computed from 2020 collections, the"
             " first year of the pandemic. The same memorandum urged local governments to make "
             "full use of their own powers to raise revenue.",
-            "A town that relies on the allotment for three-quarters of its income feels a cut "
+            "A local government that relies on the allotment for three-quarters of its income feels a cut "
             "like that directly, and it arrives years after the cause, when everyone has already "
             "moved on.",
             ("h", "How the Allotment Is Divided"),
@@ -6836,10 +6836,10 @@ TREASURY_POSTS = [
             "Barangays follow their own rule, set in the same section of the Code. Each barangay "
             "with at least 100 residents receives at least ₱80,000 a year. The rest of the "
             "barangay share is divided 60% by population and 40% equally.",
-            "This is why two towns of similar size can receive very different amounts. Population"
+            "This is why two local governments of similar size can receive very different amounts. Population"
             " counts for half of the formula, and it comes from the census. For 2023, DBM used "
             "the 2020 census for population and the 2001 master list of land area from the Land "
-            "Management Bureau. A town that grows will see a bigger share only after a new census"
+            "Management Bureau. A local government that grows will see a bigger share only after a new census"
             " is used.",
             ("h", "The Year the Allotment Jumped"),
             "The Mandanas-Garcia ruling showed how much the base matters. In 2022, the first year"
@@ -6847,19 +6847,19 @@ TREASURY_POSTS = [
             "billion, and municipalities as a group shared ₱326.07 billion of it. The very next "
             "year, the total fell to about ₱820 billion because 2020 collections were low.",
             "Two years, two very different budgets, and neither change had anything to do with "
-            "how well any single town collected its own taxes. For a treasurer preparing the "
+            "how well any single local government collected its own taxes. For a treasurer preparing the "
             "income estimates, that is the lesson: the allotment can be planned for, but it "
             "cannot be controlled.",
             ("h", "Where the Road Project Went"),
-            "Back to the question at the counter. Much of the town's income is already committed "
+            "Back to the question at the counter. Much of the local government's income is already committed "
             "before the year begins. Employees must be paid. At least 20% of the allotment must "
             "go to development projects, a rule I wrote about in Principle 7 of the ALTOS "
-            "Framework. The services the town now runs on its own, from health to agriculture, "
+            "Framework. The services the local government now runs on its own, from health to agriculture, "
             "need their share too.",
             "What remains is small, and every barangay asks for part of it. Money collected at "
             "the window also does not go straight to a project. It is deposited in the right fund"
             " and can only be spent once the budget provides for it. A road waits for a place in "
-            "the town's investment program and its annual budget, not for a good day of "
+            "the local government's investment program and its annual budget, not for a good day of "
             "collections.",
             ("h", "What Actually Raises Local Income"),
             "Raising local income does not have to mean a new tax. It can come from doing the basics well:",
@@ -6869,7 +6869,7 @@ TREASURY_POSTS = [
              "and improvements."),
             ("point",
              "Collecting what is already owed",
-             "Unpaid real property tax and business tax are income the town has already earned on paper."),
+             "Unpaid real property tax and business tax are income the local government has already earned on paper."),
             ("point",
              "A complete list of businesses",
              "Every store that operates should hold a permit and pay its business tax, so honest "
@@ -6881,22 +6881,22 @@ TREASURY_POSTS = [
             ("point",
              "Paying made easy",
              "Clear schedules, short lines and simple requirements bring in more taxpayers on time."),
-            "None of this is glamorous. But each peso the town raises on its own is a peso it can"
+            "None of this is glamorous. But each peso the local government raises on its own is a peso it can"
             " plan for, whatever happens to national collections three years from now.",
             ("h", "What Residents Can Do"),
             ("point",
              "Pay on time",
-             "Real property tax and business tax paid on time are money the town can count on, "
+             "Real property tax and business tax paid on time are money the local government can count on, "
              "unlike a share that moves with national collections."),
             ("point",
              "Be counted",
              "Population drives half of the allotment formula. Taking part in the census is one "
-             "of the simplest ways to help your town’s share."),
+             "of the simplest ways to help your local government’s share."),
             ("point",
              "Ask about the numbers",
              "Budget hearings and barangay assemblies are open to residents. Asking how much the "
-             "town raised on its own is a fair and useful question."),
-            ("h", "Where to See Your Town's Numbers"),
+             "local government raised on its own is a fair and useful question."),
+            ("h", "Where to See Your Local Government's Numbers"),
             "Local treasurers report their income and spending to BLGF through the Statement of "
             "Receipts and Expenditures (SRE). Quarterly reports are due by the 20th of the month "
             "after the quarter, followed by a year-end report. BLGF uses these reports to track "
@@ -6904,20 +6904,20 @@ TREASURY_POSTS = [
             ("h", "What to Remember"),
             ("point",
              "Know the ratio",
-             "Divide the National Tax Allotment by total income to see how much of your town's "
+             "Divide the National Tax Allotment by total income to see how much of your local government's "
              "money comes from outside."),
             ("point",
              "The allotment follows national collections",
              "It is based on taxes collected three years earlier, so it can fall even when your "
-             "town collects well."),
+             "local government collects well."),
             ("point",
              "Being counted matters",
              "Population is half of the formula, and it comes from the census."),
             ("point",
-             "Local income is the part a town controls",
+             "Local income is the part a local government controls",
              "Accurate records, collecting what is owed and easy payment can raise it without a new tax."),
             ("h", "The Question to Ask"),
-            "Of every peso your town received last year, how many centavos came from its own "
+            "Of every peso your local government received last year, how many centavos came from its own "
             "taxpayers? If you work in a treasury, you can answer that from your own SRE. If you "
             "are a resident, it is a good question to bring to a barangay assembly or a public "
             "budget hearing.",
@@ -6928,7 +6928,7 @@ TREASURY_POSTS = [
              "Read: ALTOS Principle 7, Keep Money in Its Fund",
              "/blog/altos-framework-keep-money-in-its-fund/"),
             ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
-            ("ask", "Did your town's ratio surprise you? I'd be glad to hear what you found."),
+            ("ask", "Did your local government's ratio surprise you? I'd be glad to hear what you found."),
         ],
     },
 ]
