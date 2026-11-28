@@ -57,36 +57,55 @@ def _two(a):
 
 
 def ra_words(n):
-    """How Butch reads law numbers (2026-11-15): RA 7160 -> "R A seventy-one sixty" (two pairs);
-    RA 12010 -> "R A twelve zero one zero" (first two digits as a number, the rest digit by digit)."""
+    """How Butch reads law numbers (2026-11-15): RA 7160 -> "Ar Eh seventy-one sixty" (two pairs);
+    RA 12010 -> "Ar Eh twelve zero one zero" (first two digits as a number, the rest digit by digit)."""
     if len(n) == 4:
         return _two(int(n[:2])) + " " + _two(int(n[2:]))
     return _two(int(n[:2])) + " " + " ".join(_DIG[int(d)] for d in n[2:])
 
 
+def year_words(n):
+    """How a year is said (Butch 2026-11-27): 1776 -> "seventeen seventy-six", 1905 -> "nineteen oh five",
+    1900 -> "nineteen hundred", 2000 -> "two thousand", 2005 -> "two thousand five", 2024 -> "twenty twenty-four"."""
+    y = int(n)
+    if 2000 <= y <= 2009:
+        return "two thousand" + (" " + _DIG[y - 2000] if y > 2000 else "")
+    hi, lo = divmod(y, 100)
+    return _two(hi) + " " + ("hundred" if lo == 0 else _two(lo))
+
+
 def spoken(text):
     """Small fixes so the voice reads the way a person would."""
     s = text
+    s = re.sub(r"\b(1[1-9]\d\d|20\d\d)[-–](1[1-9]\d\d|20\d\d)\b", r"\1 to \2", s)  # 2023-2024
     s = re.sub(r"₱\s?([\d,]+(?:\.\d+)?)(\s?(?:million|billion|thousand))?", lambda m: m.group(1) + (m.group(2) or "") + " pesos", s)
     s = s.replace("₱", "pesos ")
     s = re.sub(r"\bNos\.\s*(?=\d)", "Numbers ", s)  # "Republic Act No. 7160" -> "Republic Act Number 7160" (Butch, 2026-11-15)
     s = re.sub(r"\bNo\.\s*(?=\d)", "Number ", s)
     s = re.sub(r"\b(Republic Act Numbers?|RA|R\.A\.)\s*(\d{4,5})\b",
-               lambda m: ("R A" if m.group(1) in ("RA", "R.A.") else m.group(1)) + " " + ra_words(m.group(2)), s)
+               lambda m: ("Ar Eh" if m.group(1) in ("RA", "R.A.") else m.group(1)) + " " + ra_words(m.group(2)), s)
+    # Butch 2026-11-27: RA is said as the letters "Ar Eh" with no pause (he picked this from 3 samples).
+    # "R A" made this voice say "Ar uh"; the spelling "Ar Eh" gives the right sound.
+    s = re.sub(r"\bR\.?A(?:'s|s)(?=\W|$)", "Ar Eh's", s)
+    s = re.sub(r"\bR\.A\.|\bRA\b", "Ar Eh", s)
     s = re.sub(r"\bCRAA[FP](s?)\b", r"Cra-ap\1", s)  # Butch 2026-11-15: CRAAF/CRAAP read "Cra-ap"
     s = re.sub(r"\bRAAF(s?)\b", r"Ra-ap\1", s)  # Butch 2026-11-15: RAAF read "Ra-ap"
     # Butch 2026-11-24: Filipino "ng" (Bangko Sentral ng Pilipinas) is said "nang", not "N G".
     # Voice only; the page keeps the correct spelling "ng". "nahng" makes this voice say the Filipino "nang".
     s = re.sub(r"\bng\b", "nahng", s)
-    # Butch 2026-11-25: COA (Commission on Audit) is said as letters C-O-A, not "ku wa".
-    s = re.sub(r"\bCOA(?:'s|s)\b", "C.O.A's", s)
-    s = re.sub(r"\bCOA\b", "C.O.A.", s)
+    # Butch 2026-11-27: COA (Commission on Audit) is said "KO-wa", the way Filipinos say it. "kohwa" makes this voice say it.
+    s = re.sub(r"\bCOA(?:'s|s)\b", "kohwa's", s)
+    s = re.sub(r"\bCOA\b", "kohwa", s)
     s = re.sub(r"\be\.g\.,?", "for example,", s)
     s = re.sub(r"\bi\.e\.,?", "that is,", s)
     s = re.sub(r"\bvs\.?(?=\s)", "versus", s)
     s = re.sub(r"\s*[—–]\s*", ", ", s)  # dashes become a short pause
     s = s.replace("“", '"').replace("”", '"').replace("’", "'").replace("‘", "'")
     s = s.replace("/", " / ") if re.search(r"\w/\w", s) and "http" not in s else s
+    # Years (1100-2099, four digits, no comma) are said like years, not "one thousand seven hundred ...".
+    # Not money ("1500 pesos"), not a number in a list of IDs ("Number 1776"), not part of a longer number.
+    s = re.sub(r"(?<![\d,.₱/-])(?<!Number )(?<!Numbers )\b(1[1-9]\d\d|20\d\d)\b(?![\d,]\d|\.\d| pesos)",
+               lambda m: year_words(m.group(1)), s)
     return re.sub(r"\s+", " ", s).strip()
 
 
