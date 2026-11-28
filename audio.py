@@ -20,7 +20,8 @@ import sys
 import tempfile
 from pathlib import Path
 
-VOICE = "am_michael"
+VOICE = "am_michael"  # blog posts
+NOTE_VOICE = "bm_george"  # Study Notes: Butch picked "Voice 4", a British male voice, from 6 samples (2026-11-28)
 SPEED = 1.0
 OUT = Path(__file__).parent / "static" / "audio"
 GAP = {"title": 0.9, "h": 0.55, "p": 0.45}  # seconds of quiet after each kind of part
@@ -143,8 +144,22 @@ def spoken(text):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def voice_of(b):
+    """(voice, accent) for a post or note."""
+    return (NOTE_VOICE, "en-gb") if is_note(b) else (VOICE, "en-us")
+
+
+def say(kokoro, text, b):
+    voice, lang = voice_of(b)
+    if lang == "en-us":
+        return kokoro.create(text, voice=voice, speed=SPEED, lang=lang)
+    # The British accent links an "r" into "Cra-ap"/"Ra-ap" (CRAAF, RAAF), making "Crar-ap"; take it out.
+    ph = re.sub(r"ɑːɹ(\s?)ˈap", "ɑːˈap", kokoro.tokenizer.phonemize(text, lang))
+    return kokoro.create(ph, voice=voice, speed=SPEED, lang=lang, is_phonemes=True)
+
+
 def words_hash(b):
-    return hashlib.sha1(json.dumps([VOICE, SPEED, [spoken(t) for _, t in parts(b)]]).encode()).hexdigest()[:12]
+    return hashlib.sha1(json.dumps([voice_of(b)[0], SPEED, [spoken(t) for _, t in parts(b)]]).encode()).hexdigest()[:12]
 
 
 def make(b, kokoro):
@@ -155,7 +170,7 @@ def make(b, kokoro):
         if kind == "h" and i:
             pieces.append(np.zeros(int(LEAD_IN * rate), dtype="float32")); at += LEAD_IN
         starts.append(round(at, 2))
-        audio, rate = kokoro.create(spoken(text), voice=VOICE, speed=SPEED, lang="en-us")
+        audio, rate = say(kokoro, spoken(text), b)
         pieces += [audio.astype("float32"), np.zeros(int(GAP[kind] * rate), dtype="float32")]
         at += len(audio) / rate + GAP[kind]
     with tempfile.TemporaryDirectory() as tmp:
@@ -165,7 +180,7 @@ def make(b, kokoro):
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-ar", "24000",
                         "-b:a", "40k", "-id3v2_version", "3", "-metadata", f"title={b['title']}",
                         "-metadata", "artist=Ambrosio “Butch” U. Mahinay", str(OUT / f"{name(b)}.mp3")], check=True)
-    (OUT / f"{name(b)}.json").write_text(json.dumps({"hash": words_hash(b), "voice": VOICE,
+    (OUT / f"{name(b)}.json").write_text(json.dumps({"hash": words_hash(b), "voice": voice_of(b)[0],
                                                        "duration": round(at, 1), "starts": starts}) + "\n")
 
 
