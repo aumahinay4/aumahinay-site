@@ -755,9 +755,9 @@ BLOG = [
              "or more years ahead and the discount reaches 20%: ₱400 for the year."),
             ("point",
              "Paid late",
-             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, the "
-             "year's tax falls due on January 1, so interest on a late quarter is counted from "
-             "January: 2% for each whole month before the month of payment. January to October is "
+             "Tax year 2026, nothing paid until November 20, 2026. Under the built-in rates, interest "
+             "is counted from the start of the earliest unpaid quarter, here January: 2% for each "
+             "whole month before the month of payment. January to October is "
              "ten months, so the first three quarters each carry 20% interest, or ₱75 in all. The "
              "fourth quarter is not yet due, so it still earns the 10% discount: ₱112.50. You pay "
              "₱562.50."),
