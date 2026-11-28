@@ -3113,7 +3113,7 @@ DATA_POSTS = [
             ("h", "When the Rule Needs Care"),
             ("point", "Very few values", "With only five or six numbers, the quartiles move a lot when one "
              "value changes. Look at the values themselves instead."),
-            ("point", "Data that is naturally lopsided", "Business tax payments in a town can include a few "
+            ("point", "Data that is naturally lopsided", "Business tax payments in a municipality can include a few "
              "large establishments and many small stores. The rule may flag every large payer, although "
              "those payments are normal. Group the data first, for example large and small businesses, "
              "and screen each group on its own."),
@@ -3571,7 +3571,7 @@ DATA_POSTS = [
             "They were both right, about different things. The sentence was wrong because it did not say "
             "which.",
             "(The office, the press release and every figure below are invented for this lesson. No real "
-            "town is described.)",
+            "local government is described.)",
             "Part 29 counted days. This part counts change. When you finish, you will know the difference "
             "between percent change and percentage points, how to compute each in Google Sheets, how to "
             "write growth so nobody misreads it, how to avoid three traps: small bases, changes that do not "
@@ -3614,7 +3614,7 @@ DATA_POSTS = [
             ("point", "An example", "A barangay’s business tax collections went from ₱2,000 to ₱6,000. That "
              "is a 200 percent increase, from one new store."),
             ("point", "The comparison", "Poblacion went from ₱800,000 to ₱900,000, a 12.5 percent increase, "
-             "but ₱100,000 more in pesos, fifty times the small barangay’s ₱4,000 gain."),
+             "but ₱100,000 more in pesos, twenty-five times the small barangay’s ₱4,000 gain."),
             ("point", "The fix", "Show the amounts beside the percentages. A ranking by percent change alone "
              "will put the smallest base on top."),
             ("h", "Trap 2: Changes Do Not Reverse Evenly"),
@@ -4375,7 +4375,7 @@ DATA_POSTS = [
             "each total? And what share of the year did each barangay bring in? The analyst could write "
             "three new sets of SUMIFS formulas. Or she could build one pivot table and drag a few fields "
             "around.",
-            "(Everyone and everything in this story is fictional, including the numbers. No real town or taxpayer is described.)",
+            "(Everyone and everything in this story is fictional, including the numbers. No real local government or taxpayer is described.)",
             "Part 23 built a summary from formulas. This part builds one without writing any. Stay with me "
             "to the end, and you will know what a pivot table is, how to build one in Google Sheets, how to "
             "change what it counts and how it groups dates, how to check it against SUMIFS, and the "
@@ -4505,7 +4505,7 @@ DATA_POSTS = [
             "middle of the afternoon the pad had forty numbers, two of them crossed out, and nobody was sure "
             "which filter had been left on when the twenty-third was written down.",
             "(This is a teaching case: the office, its staff and its figures are fictional. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 22 sorted and filtered a table to find rows. This part adds up rows without hiding any of "
             "them. By the end of this post, you will know how SUMIFS, COUNTIFS and AVERAGEIFS work, how to "
             "write conditions for text, numbers and dates, how to build a summary table that fills itself in, "
@@ -4638,7 +4638,7 @@ DATA_POSTS = [
             "The amounts move. The names beside them do not. For about ten minutes, until someone notices, the "
             "sheet shows each taxpayer next to someone else’s balance.",
             "(The story is made up for teaching, and so are its office, people and figures. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 12 laid out data as one row per record, and Part 19 asked questions of a database with WHERE "
             "and ORDER BY. This part does the same everyday work in a spreadsheet. Read to the end and you will know how to sort a table safely, use sorting to spot problems, filter without changing what "
             "colleagues see, build answers that update themselves with SORT and FILTER, and decide when a "
@@ -4760,7 +4760,7 @@ DATA_POSTS = [
             "barangay, an amount below zero, or a date written the wrong way, at the moment someone tries to "
             "save it?",
             "(This is a teaching case: the office, its staff and its figures are fictional. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 12 stopped errors at the door of a spreadsheet with dropdown lists. This part does the same "
             "for a database. By the end of this post, you will know how to write rules into a table so it "
             "rejects bad rows, what NOT NULL, UNIQUE, CHECK and foreign keys each catch, why SQLite needs two extra steps to be strict, and how to find bad rows that were saved before the rules existed. "
@@ -4889,7 +4889,7 @@ DATA_POSTS = [
             "than half. The amounts had arrived as text with commas in them, and the database had quietly read "
             "“1,250.00” as 1.",
             "(The story is made up for teaching, and so are its office, people and figures. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 16 listed the usual kinds of dirty data, and Part 18 cleaned text and dates in a spreadsheet. "
             "This part does the same work in SQL. Read to the end and you will know how to find the mess "
             "with DISTINCT and COUNT, fix spaces and letter case, turn text into numbers, handle blanks and "
@@ -5031,7 +5031,7 @@ DATA_POSTS = [
             "receipts was that?” In a spreadsheet, the analyst would filter, copy and add up. In the database, "
             "the answer is one short query.",
             "(This is a teaching case: the office, its staff and its figures are fictional. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "This part is a first look at SQL, the language used to ask databases questions. By the end of this post, you will know how to open a database, choose columns, filter rows, filter by date, "
             "total by group, join two tables, count distinct values, and keep your data safe while you "
             "practice. Every query below was run on the sample data, and the results shown are what it "
@@ -5168,7 +5168,7 @@ DATA_POSTS = [
             "“15/01/2026,” and the spreadsheet will not sort them as dates.",
             "Every value is there. None of it is ready to use.",
             "(The story is made up for teaching, and so are its office, people and figures. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 16 found the usual kinds of dirty data. This part fixes two stubborn kinds: "
             "text and dates. Read to the end and you will know how to keep codes from losing their "
             "zeros, how to change and split text safely, how to turn peso text into numbers, how to build "
@@ -5305,7 +5305,7 @@ DATA_POSTS = [
             "The head of office is doubtful. “Four hundred out of twelve thousand? That is barely three "
             "percent.” It is a reasonable worry, and this post answers it.",
             "(This is a teaching case: the office, its staff and its figures are fictional. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 13 showed how the way data is collected can tilt a result. This part shows how a small, "
             "well-chosen sample can describe a large group. By the end of this post, you will know what makes "
             "a sample random, how to draw one in a spreadsheet, what a margin of error means, how to choose a "
@@ -5446,7 +5446,7 @@ DATA_POSTS = [
             "The data is not fake, and the encoders were not careless. It is dirty: correct in spirit, but "
             "not yet fit to count.",
             "(The story is made up for teaching, and so are its office, people and figures. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 15 was about keeping data files safe. This part looks inside the file. Read to the end and you will know the usual kinds of dirty data, a quick test to spot each one in a "
             "spreadsheet, the first safe step to fix it, and a short scan to run before you trust any total.",
             ("photo", "blog/data-dirty-data.jpg", "The usual suspects in dirty data: duplicates, inconsistent "
@@ -5598,7 +5598,7 @@ DATA_POSTS = [
             "office approved is somewhere in that folder, or it is gone.",
             "Nothing in the analysis was wrong. The problem was how the files were named, saved and copied.",
             "(This is a teaching case: the office, its staff and its figures are fictional. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 14 showed how to organize data inside a database. This part is about the files themselves. "
             "By the end of this post, you will know a naming pattern that sorts itself, a simple way to keep "
             "versions, the 3-2-1 backup rule, and how to test that a backup actually works.",
@@ -5728,7 +5728,7 @@ DATA_POSTS = [
             "Both problems have the same cause: the same fact is typed in many places. Databases are designed "
             "to avoid exactly that.",
             "(The story is made up for teaching, and so are its office, people and figures. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 12 showed how to lay out one clean table. This part shows how several tables work together. "
             "Read to the end and you will know what a database table, a record and a field are, what "
             "primary and foreign keys do, how tables are linked, and how to sketch a small treasury database "
@@ -5858,7 +5858,7 @@ DATA_POSTS = [
             "gave up waiting, who never came because the notice confused them, or who came during the January "
             "rush, were never asked. Every answer was real. The sample was not the whole picture.",
             "(This is a teaching case: the office, its staff and its figures are fictional. No real "
-            "town, councilor or taxpayer is described.)",
+            "local government, councilor or taxpayer is described.)",
             "Part 11 tested whether a source can be trusted, and Part 12 put the data in a clean sheet. This "
             "part asks a different question: does the data, or the way we read it, lean one way? Stay with me to the end, and you will know four common kinds of bias, how each shows up in treasury work, and a "
             "simple check for each.",
@@ -5994,7 +5994,7 @@ DATA_POSTS = [
             "accounts, and the biggest “account” on the list is a barangay subtotal. And no simple formula counts the green rows.",
             "The sheet was built to be looked at. It was not built to be worked with.",
             "(As always in this series, the office, the people and every number below are made up. No real "
-            "town, barangay or taxpayer is described.)",
+            "local government, barangay or taxpayer is described.)",
             "Part 10 covered data types and the difference between wide and long tables. This part is about "
             "the layout of the sheet itself. When you finish reading, you will know seven rules that make a "
             "spreadsheet easy to sort, filter and total, how to fix a messy tracker without losing data, and "
@@ -6120,7 +6120,7 @@ DATA_POSTS = [
             "The handout’s number is higher, and it would make a more impressive target. Before anyone uses "
             "it, the analyst asks a simple question: how do we know this data is good enough to plan with?",
             "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
-            "town, business or taxpayer is described.)",
+            "local government, business or taxpayer is described.)",
             "Part 9 explained where data comes from, and Part 10 explained what shape it is in. This part gives "
             "a quick test of whether a source can be trusted. After this post, you will know the five "
             "ROCCC checks, how to score a data set with them, and what to do when a source fails one.",
@@ -6243,7 +6243,7 @@ DATA_POSTS = [
             "In another column, the barangay codes “007” and “012” have become 7 and 12. The lookup that "
             "matches codes to barangay names now fails for every barangay with a leading zero.",
             "(As always in this series, the office, the people and every number below are made up. No real "
-            "town, business or taxpayer is described.)",
+            "local government, business or taxpayer is described.)",
             "Part 9 asked where data comes from. This part asks what kind of data it is and what shape it is "
             "in. Read to the end and you will know the basic data types, the difference between structured "
             "and unstructured data, how wide and long tables differ, and when to use each shape.",
@@ -6373,7 +6373,7 @@ DATA_POSTS = [
             "was that the three files were treated as equally reliable, when each had a very different "
             "history.",
             "(Like every case in this series, this one is invented, from the office down to the last peso. No real "
-            "town, business or taxpayer is described.)",
+            "local government, business or taxpayer is described.)",
             "This part begins the Prepare step from Part 2. By the last section, you will know the three "
             "kinds of data by who collected them, six questions to ask any source, how to combine sources "
             "without creating false matches, and how to write a source note that keeps the history with the "
@@ -6493,7 +6493,7 @@ DATA_POSTS = [
             "this year’s collections by everything that was actually due, including unpaid taxes from past "
             "years. Same name, same percentage, very different stories about how each office is doing.",
             "(As always in this series, the office, the people and every number below are made up. No real "
-            "town or taxpayer is described.)",
+            "local government or taxpayer is described.)",
             "Part 7 showed how to name the type of problem behind a request. This part is about the numbers "
             "that answer it. Stay with me to the end, and you will know the difference between a metric and a "
             "KPI, the questions that expose a misleading measure, and a template for writing measures that "
@@ -6625,7 +6625,7 @@ DATA_POSTS = [
             "All three are called “a report.” They are really three different kinds of problems, and each "
             "needs a different approach. An analyst who treats them all the same can end up building three "
             "tables and answering none of the questions.",
-            "(Like every case in this series, this one is invented, from the office down to the last peso. No real town or "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real local government or "
             "taxpayer is described.)",
             "The Google Data Analytics Certificate groups the questions analysts meet into six common problem "
             "types. Naming the type is the first move of the Ask step from Part 2, because the type tells you "
@@ -6750,7 +6750,7 @@ DATA_POSTS = [
             "A week later, a store owner comes to the office, upset. In her barangay there is only one "
             "hardware store, hers. The chart shows exactly how much the hardware stores in that barangay paid. "
             "Anyone who reads the bulletin board now knows what her business paid, and from that, roughly how much it sells, since business tax is based on gross sales. No name appeared on the chart. It still pointed to one person.",
-            "(As always in this series, the office, the people and the numbers are made up. No real town or "
+            "(As always in this series, the office, the people and the numbers are made up. No real local government or "
             "taxpayer is described.)",
             "Part 5 touched on privacy when choosing tools. This part goes further, because analysts make "
             "privacy decisions every time they choose what to collect, what to keep and what to show. When you finish reading, you will know the three principles the Data Privacy Act asks every analysis to "
@@ -6877,7 +6877,7 @@ DATA_POSTS = [
             "They do not have to wait. Every step of the analysis process in this series can be done with "
             "tools that cost nothing to start. What they ask for instead is time to learn and care in how "
             "they are used.",
-            "(Like every case in this series, this one is invented, from the office down to the last peso. No real town or "
+            "(Like every case in this series, this one is invented, from the office down to the last peso. No real local government or "
             "taxpayer is described.)",
             "In Part 4, a whole analysis was done in a spreadsheet. This part widens the view to five kinds "
             "of free tools, what each one is good for, and where each one stops. After this post, you will be able to pick the right free tool for a task, know the limits to watch for, and set up a "
@@ -7004,7 +7004,7 @@ DATA_POSTS = [
             "“How are we doing, and what should we do in the last two months?” The head of office asks it at the November meeting, and the room goes quiet. Everyone has a feeling about the answer. Nobody has the answer.",
             "In Part 1, I introduced four kinds of analysis: descriptive, diagnostic, predictive and prescriptive. Definitions are easy to remember and hard to use, so this part puts them to work. It takes one small set of records and answers all four questions in order, with every number shown. By the end you will see how each answer feeds the next, and you will have a four-line routine to try on your own reports.",
             "(As always in this series, the office, the people and every number below are made up. No real "
-            "town or taxpayer is described. The arithmetic, however, is real, so you can check every step.)",
+            "local government or taxpayer is described. The arithmetic, however, is real, so you can check every step.)",
             ("photo", "blog/data-four-questions.jpg", "Four questions asked of one data set, in order: describe "
              "what happened, diagnose why, predict what is likely, and prescribe what to do. (Illustration: "
              "Butch Mahinay, aumahinay.dev)", "medium"),
@@ -7130,7 +7130,7 @@ DATA_POSTS = [
             "ten.” The head of office has to approve overtime and keep the vault staffed either "
             "way. Two experienced people, two opposite hunches, one decision.",
             "(Like every case in this series, this one is invented, from the office down to the last peso. No "
-            "real town or taxpayer is described.)",
+            "real local government or taxpayer is described.)",
             "This part is about what happens next in an office that thinks like an analyst. It is"
             " not about fancy tools. It is about a habit: checking what the records say before "
             "deciding, and being honest about what they cannot say. Stay with me to the end, and you will know how to weigh experience against records, which "
@@ -7550,7 +7550,7 @@ DATA_POSTS = [
             "opens a logbook. Someone else starts adding up receipt stubs from the past months. "
             "By lunchtime, the office has a total, but not yet an answer.",
             "(As in all my examples, the office and the numbers are made up. No real taxpayer or "
-            "town is described.)",
+            "local government is described.)",
             "The answer was in the office all along. It was written, line by line, on thousands "
             "of official receipts: who paid, how much, for what, and on which day. What was "
             "missing was a way to turn those records into something the mayor could decide on. "

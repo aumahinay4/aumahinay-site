@@ -829,7 +829,7 @@ BLOG = [
              "Read: ALTOS Principle 8, The Taxpayer Is a Citizen",
              "/blog/altos-framework-the-taxpayer-is-a-citizen/"),
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
             ("cta", "Try the RPT Calculator", "/tools/rpt-calculator/"),
@@ -1678,8 +1678,9 @@ BLOG = [
             "Funds are how allocation is kept honest. When a law says a certain tax must pay for "
             "schools, or a certain share must go to development, a separate fund is the "
             "bookkeeping that keeps that promise visible. Charles Tiebout argued in 1956 that "
-            "people “vote with their feet” among local governments that offer different mixes of "
-            "taxes and services. Wallace Oates followed in 1972 with the idea that each public "
+            "people choose among local governments that offer different mixes of taxes and "
+            "services by moving to the one that suits them, an idea later summed up as “voting "
+            "with your feet.” Wallace Oates followed in 1972 with the idea that each public "
             "service should be provided by the lowest level of government that covers the area it"
             " benefits. The Local Government Code of 1991 put that idea into practice by "
             "devolving health, agriculture, social welfare and other services. Funds tie the "
@@ -1797,7 +1798,7 @@ BLOG = [
              "/blog/altos-framework-the-taxpayer-is-a-citizen/"),
             ("cta", "Read: Year-End in the Treasury", "/blog/year-end-in-the-treasury/"),
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("ask",
              "Has your office ever had to untangle money recorded in the wrong fund? I'd like to "
@@ -2746,10 +2747,10 @@ BLOG = [
              "blog/container-house.jpg",
              "The container houses, my home from September 2020 to September 2022",
              "medium"),
-            "They were hard to miss, painted bright colours and lined up under old shade trees "
+            "They were hard to miss, painted bright colors and lined up under old shade trees "
             "behind a white picket fence. I lived in the blue one for most of my stay and moved "
             "to the red one for my last six months. After a long day of collections and reports, "
-            "that splash of colour was a cheerful thing to come home to.",
+            "that splash of color was a cheerful thing to come home to.",
             "Those nights by the sea taught me something about public service: you cannot always "
             "choose your conditions, but you can choose how you show up in them. I am deeply "
             "grateful to the people of the town who made those years easier. They checked on me, "
@@ -2787,7 +2788,7 @@ BLOG = [
             " the second for my final two months. Leadership changed, but the work never paused.",
             "What made that possible was the people. We worked well together across the whole "
             "municipality, from the department heads to the frontline staff. In the middle of a "
-            "pandemic, that kind of teamwork is not a bonus. It is how a town keeps running.",
+            "pandemic, that kind of teamwork is not a bonus. It is how a local government keeps running.",
             "The work of a municipal treasurer is not easy, and the accountability is high. Every"
             " collection, every disbursement and every signature carries your name, and you "
             "answer for all of it. That post taught me three lessons I still carry:",
@@ -3003,7 +3004,7 @@ BLOG = [
              "Read: The ALTOS Framework, Principle 2: Every Peso Has a Document",
              "/blog/altos-framework-every-peso-has-a-document/"),
             ("cta",
-             "Read: Inside the Local Treasury, Part 1: Where Your Town's Money Comes From",
+             "Read: Inside the Local Treasury, Part 1: Where Your Local Government's Money Comes From",
              "/blog/where-your-towns-money-comes-from/"),
             ("ask",
              "Have you ever found a fee or a payment in your office with no clear legal basis? "
