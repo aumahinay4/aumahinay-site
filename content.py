@@ -734,8 +734,8 @@ BLOG = [
             "equal quarters, due on or before March 31, June 30, September 30 and December 31. "
             "The calculator compares your payment date with each due date and decides, quarter by"
             " quarter, whether you earn a discount or owe interest.",
-            "Below the dates, mark each quarter of the tax year as \"Paid\" or \"Not paid\". Every "
-            "quarter starts as \"Not paid\". If you already paid some quarters, mark them \"Paid\"; "
+            "Below the dates, mark each quarter of the tax year as \"Paid\" or \"Unpaid\". Every "
+            "quarter starts as \"Unpaid\". If you already paid some quarters, mark them \"Paid\"; "
             "otherwise the calculator treats them as unpaid and late, and adds interest instead "
             "of the discount. For example, if you paid the first three quarters on time and now "
             "pay the fourth by December 31, mark Q1 to Q3 \"Paid\" and the 10% discount applies to "

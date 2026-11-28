@@ -90,7 +90,7 @@ RPT_SCRIPT = r"""
   var rolledNote = '';
   function calc() {
     // a payment is never ₱0.00 (Butch 2026-11-12): when all four quarters of the tax year are paid, the next payment
-    // is for the following year, so move to it and start its quarters as "Not paid"
+    // is for the following year, so move to it and start its quarters as "Unpaid"
     if ([1, 2, 3, 4].every(function (q) { return $('qs' + q).value === 'paid'; })) {
       var y0 = Math.floor(num('taxyear')) || ph.getUTCFullYear();
       $('taxyear').value = y0 + 1;
@@ -190,9 +190,9 @@ RPT_SCRIPT = r"""
     var adjLabel = anyLate ? (disc && onTimeNow ? 'Interest less discount' : 'Interest') : disc ? 'Discount (' + disc + '%, ' + discNote + ')' : 'Discount';
     var notes = [];
     if (rolledNote) notes.push(rolledNote);
-    if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and not paid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
+    if (unpaidLate.length) notes.push(unpaidLate.join(', ') + ' of this year ' + (unpaidLate.length > 1 ? 'are' : 'is') + ' past due and unpaid. The treasurer applies any payment to the oldest unpaid tax first (Sec. 250), so this payment would go there first.');
     if (amnestyNow.length) notes.push(amnestyNow.join(', ') + ' of ' + year + (amnestyNow.length > 1 ? ' were' : ' was') + ' unpaid before RA 12001 took effect on July 5, 2024, and this payment is within the two-year amnesty, so ' + (amnestyNow.length > 1 ? 'they carry' : 'it carries') + ' no interest (Sec. 30). The tax itself is still paid.');
-    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Not paid" and past the due date: 2% for each month or part of a month after each quarter\'s deadline.' + ' If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
+    if (anyLate) notes.push('Interest is added because ' + lateNow.join(', ') + (lateNow.length > 1 ? ' are' : ' is') + ' marked "Unpaid" and past the due date: 2% for each month or part of a month after each quarter\'s deadline.' + ' If you already paid ' + (lateNow.length > 1 ? 'them' : 'it') + ', set ' + (lateNow.length > 1 ? 'them' : 'it') + ' to "Paid" in step 4.');
     if (onTimeNow && delinquent) {
       var isAre = function (l) { return l.join(', ') + (l.length > 1 ? ' are' : ' is'); };
       var why = !priorClear ? 'an earlier year is unpaid' : anyLate ? isAre(lateNow) + ' paid late' : isAre(unpaidLate) + ' unpaid';
@@ -267,7 +267,7 @@ def _radio(name, value, label, checked=False):
 
 
 def _quarter_select(q):
-    return t.select(t.option("Not paid", value="now"), t.option("Paid", value="paid"), id="qs%d" % q, name="qs%d" % q)
+    return t.select(t.option("Unpaid", value="now"), t.option("Paid", value="paid"), id="qs%d" % q, name="qs%d" % q)
 
 
 def _guide_link():
@@ -310,7 +310,7 @@ def _explanations():
                  "due on or before March 31, June 30, September 30 and December 31 (Sec. 250). The calculator divides "
                  "the basic tax and the SEF by four; if the amount does not divide evenly, the centavos are rounded "
                  "so that the quarters add up to the year's tax, as on an official receipt."),
-            t.li(t.b("Discount or interest, quarter by quarter. "), "Each quarter marked \"Not paid\" is compared with the "
+            t.li(t.b("Discount or interest, quarter by quarter. "), "Each quarter marked \"Unpaid\" is compared with the "
                  "target date of payment. Paid on or before its due date, it can earn the discount for prompt or advance "
                  "payment, which the law caps at 20% of the annual tax (Sec. 251). Paid after its due date, it earns interest of 2% "
                  "for each month or part of a month, for at most 36 months, or 72% in all (Sec. 255). The built-in "
@@ -334,7 +334,7 @@ def _explanations():
         t.h2("Reading your results"),
         t.ul(
             t.li(t.b("Amount to pay. "), "The big figure is what you would bring to the treasurer's office on the target "
-                 "date: the tax for every quarter marked \"Not paid\", less any discount or plus any interest. Quarters "
+                 "date: the tax for every quarter marked \"Unpaid\", less any discount or plus any interest. Quarters "
                  "marked \"Paid\" are left out."),
             t.li(t.b("The line under the assessed value. "), "It shows the tax year, the tax for the whole year before any "
                  "discount or interest, and the target date, so you can see at a glance which case you are looking at."),
@@ -357,7 +357,7 @@ def _explanations():
         _example(
             "1. A lot in a city, paid in full early",
             "A city with 20 barangays. Assessed value ₱80,000. Basic rate 2%, SEF 1%, discount 10%. Tax year 2027, "
-            "target date February 15, 2027, all four quarters \"Not paid\".",
+            "target date February 15, 2027, all four quarters \"Unpaid\".",
             ["Basic tax: ₱80,000 × 2% = ₱1,600. SEF: ₱80,000 × 1% = ₱800. Tax for the year: ₱2,400, or ₱600 a quarter.",
              "Every quarter is paid before its due date, so each one earns 10%: ₱60 off each, ₱240 in all.",
              "Who gets what: the basic tax after discount is ₱1,440. The city gets 70% (₱1,008), the barangay where the "
@@ -367,7 +367,7 @@ def _explanations():
         _example(
             "2. Two quarters left, one of them late",
             "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%, discount 10%. "
-            "Tax year 2026, Q1 and Q2 \"Paid\", Q3 and Q4 \"Not paid\", target date November 5, 2026.",
+            "Tax year 2026, Q1 and Q2 \"Paid\", Q3 and Q4 \"Unpaid\", target date November 5, 2026.",
             ["Tax for the year: ₱400 basic + ₱400 SEF = ₱800, or ₱200 a quarter.",
              "Q3 was due September 30. October and part of November count as two months: 2 × 2% = 4%, or ₱8 interest.",
              "Q4 is not due until December 31, but because Q3 is overdue, Q4 gets no discount. It stays at ₱200.",
@@ -376,7 +376,7 @@ def _explanations():
         _example(
             "3. An old year and the 36-month cap",
             "A municipality, with rates you type in. Assessed value ₱40,000. Basic rate 1%, SEF 1%. Tax year 2023, "
-            "all four quarters \"Not paid\", target date November 24, 2026. All the other years are paid, so the box "
+            "all four quarters \"Unpaid\", target date November 24, 2026. All the other years are paid, so the box "
             "for earlier years stays ticked.",
             ["Each quarter's tax is ₱200, and all four are late.",
              "Q1, Q2 and Q3 of 2023 are 44, 41 and 38 months late, but interest stops at 36 months: 72%, or ₱144 each.",
@@ -527,7 +527,7 @@ def rpt_page():
                     t.p("The year's tax is split into four equal quarters, due March 31, June 30, September 30 and "
                         "December 31. A quarter paid after its due date earns interest of 2% for each month or part of "
                         "a month, up to 36 months, counted from each quarter's own deadline. Mark the quarters already paid as \"Paid\"; every quarter "
-                        "marked \"Not paid\" is added to the amount to pay: 10% off if paid on time, interest if late.", class_="hint block-hint"),
+                        "marked \"Unpaid\" is added to the amount to pay: 10% off if paid on time, interest if late.", class_="hint block-hint"),
                 ),
                 id="rpt", class_="card rpt-form", novalidate=True, autocomplete="off",  # no restored choices from an earlier visit (Butch 2026-11-28)
             ),
